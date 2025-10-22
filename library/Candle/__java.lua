@@ -1,0 +1,26 @@
+--- @meta
+
+--- @alias byte number
+--- @alias short number
+--- @alias int number
+--- @alias char string
+--- @alias float number
+--- @alias double number
+--- @alias long number
+--- @alias void nil
+--- @alias Unknown Object
+--- @alias Object any
+--- @alias Void void
+--- @alias Boolean boolean
+--- @alias Short short
+--- @alias Integer int
+--- @alias Float float
+--- @alias Double double
+--- @alias Long long
+--- @alias BigInt number
+--- @alias Character string
+--- @alias String string
+--- @alias KahluaTable table
+---
+--- @alias Map AbstractMap|EnumMap|HashMap
+--- @alias List AbstractList|AbstractSequentialList|ArrayList|LinkedList|Stack|Vector
