@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class ZLogger
 --- @field public class any
-ZLogger = {};
+ZLogger = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,29 +10,43 @@ ZLogger = {};
 
 --- @public
 --- @param ex Exception
---- @return void
---- @overload fun(self: ZLogger, logs: String): void
---- @overload fun(self: ZLogger, logs: String, level: String): void
---- @overload fun(self: ZLogger, arg0: String, arg1: String, arg2: boolean): void
+--- @return nil
 function ZLogger:write(ex) end
 
 --- @public
---- @param arg0 String
---- @param arg1 String
+--- @param logs string
+--- @return nil
+function ZLogger:write(logs) end
+
+--- @public
+--- @param logs string
+--- @param level string
+--- @return nil
+function ZLogger:write(logs, level) end
+
+--- @public
+--- @param arg0 string
+--- @param arg1 string
 --- @param arg2 boolean
---- @return void
+--- @return nil
+function ZLogger:write(arg0, arg1, arg2) end
+
+--- @public
+--- @param arg0 string
+--- @param arg1 string
+--- @param arg2 boolean
+--- @return nil
 function ZLogger:writeUnsafe(arg0, arg1, arg2) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 ---
----  Write logs into file and console.
+--- Write logs into file and console.
 ---
---- @param name String
---- @param useConsole boolean
+--- @param name string filename
+--- @param useConsole boolean if true then write logs into console also
 --- @return ZLogger
 function ZLogger.new(name, useConsole) end

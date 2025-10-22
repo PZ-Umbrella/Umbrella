@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class ModData TurboTuTone.   Exposed class with only allowed functions accessible for modding
 --- @field public class any
-ModData = {};
+ModData = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -10,33 +10,38 @@ ModData = {};
 
 --- @public
 --- @static
---- @param tag String
---- @param table KahluaTable
---- @return void
+--- @param tag string
+--- @param table table
+--- @return nil
 function ModData.add(tag, table) end
 
 --- @public
 --- @static
---- @return String
---- @overload fun(tag: String): KahluaTable
+--- @return string
 function ModData.create() end
 
 --- @public
 --- @static
---- @param tag String
+--- @param tag string
+--- @return table
+function ModData.create(tag) end
+
+--- @public
+--- @static
+--- @param tag string
 --- @return boolean
 function ModData.exists(tag) end
 
 --- @public
 --- @static
---- @param tag String
---- @return KahluaTable
+--- @param tag string
+--- @return table
 function ModData.get(tag) end
 
 --- @public
 --- @static
---- @param tag String
---- @return KahluaTable
+--- @param tag string
+--- @return table
 function ModData.getOrCreate(tag) end
 
 --- @public
@@ -46,25 +51,24 @@ function ModData.getTableNames() end
 
 --- @public
 --- @static
---- @param tag String
---- @return KahluaTable
+--- @param tag string
+--- @return table
 function ModData.remove(tag) end
 
 --- @public
 --- @static
---- @param tag String
---- @return void
+--- @param tag string
+--- @return nil
 function ModData.request(tag) end
 
 --- @public
 --- @static
---- @param tag String
---- @return void
+--- @param tag string
+--- @return nil
 function ModData.transmit(tag) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

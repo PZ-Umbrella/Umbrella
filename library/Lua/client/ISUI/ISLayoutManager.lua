@@ -1,33 +1,71 @@
 ---@meta
 
 ---@class ISLayoutManager
----@field layouts any
----@field [any] any
 ISLayoutManager = {}
-ISLayoutManager.windows = {}
+ISLayoutManager.windows = {} ---@type table<string, umbrella.ISLayoutManager.RegisteredWindow>
 ISLayoutManager.enableLog = false
+ISLayoutManager.layouts = nil ---@type umbrella.ISLayoutManager.Resolution[]?
 
----@return any
-function ISLayoutManager.RegisterWindow(name, funcs, target) end
----@return any
-function ISLayoutManager.DefaultRestoreWindow(window, layout) end
----@return any
-function ISLayoutManager.DefaultSaveWindow(window, layout) end
----@return any
-function ISLayoutManager.SaveWindowVisible(window, layout) end
----@return any
-function ISLayoutManager.TryRestore(name) end
----@return any
+---@param name string
+---@param layout umbrella.ISLayoutManager.Layout
 function ISLayoutManager.CallRestoreLayout(name, layout) end
----@return any
+
+---@param name string
+---@param layout umbrella.ISLayoutManager.Layout
 function ISLayoutManager.CallSaveLayout(name, layout) end
----@return any
+
+---@param window ISUIElement
+---@param layout umbrella.ISLayoutManager.Layout
+function ISLayoutManager.DefaultRestoreWindow(window, layout) end
+
+---@param window ISUIElement
+---@param layout umbrella.ISLayoutManager.Layout
+function ISLayoutManager.DefaultSaveWindow(window, layout) end
+
+---@param window ISUIElement
+---@return ISResizeWidget?
 function ISLayoutManager.FindResizeWidget(window) end
----@return any
-function ISLayoutManager.ReadIni() end
----@return any
-function ISLayoutManager.WriteIni() end
----@return any
-function ISLayoutManager.SaveLayout(name, window) end
----@return any
+
 function ISLayoutManager.OnPostSave() end
+
+function ISLayoutManager.ReadIni() end
+
+---@param name string
+---@param funcs ISUIElement
+---@param target ISUIElement
+function ISLayoutManager.RegisterWindow(name, funcs, target) end
+
+---@param name string
+---@param window ISUIElement
+function ISLayoutManager.SaveLayout(name, window) end
+
+---@param window ISUIElement
+---@param layout umbrella.ISLayoutManager.Layout
+function ISLayoutManager.SaveWindowVisible(window, layout) end
+
+---@param name string
+---@return unknown?
+function ISLayoutManager.TryRestore(name) end
+
+function ISLayoutManager.WriteIni() end
+
+---@class umbrella.ISLayoutManager.Layout
+---@field height number
+---@field name string
+---@field pin ("true" | "false")?
+---@field visible ("true" | "false")?
+---@field width number
+---@field x number
+---@field y number
+umbrella_ISLayoutManager_Layout = {}
+
+---@class umbrella.ISLayoutManager.RegisteredWindow
+---@field funcs ISUIElement
+---@field target ISUIElement
+umbrella_ISLayoutManager_RegisteredWindow = {}
+
+---@class umbrella.ISLayoutManager.Resolution
+---@field height number
+---@field width number
+---@field windows umbrella.ISLayoutManager.Layout[]
+umbrella_ISLayoutManager_Resolution = {}

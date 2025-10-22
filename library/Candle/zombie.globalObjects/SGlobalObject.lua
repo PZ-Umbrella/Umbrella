@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class SGlobalObject: GlobalObject
 --- @field public class any
-SGlobalObject = {};
+SGlobalObject = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,13 +10,11 @@ SGlobalObject = {};
 
 --- @public
 --- @param bb ByteBuffer
---- @param WorldVersion int
---- @return void
+--- @param WorldVersion integer
+--- @return nil
 function SGlobalObject:load(bb, WorldVersion) end
 
 --- @public
 --- @param bb ByteBuffer
---- @return void
+--- @return nil
 function SGlobalObject:save(bb) end
-
-

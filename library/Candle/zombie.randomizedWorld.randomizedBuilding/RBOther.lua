@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RBOther: RandomizedBuildingBase Building full of toilet paper
 --- @field public class any
-RBOther = {};
+RBOther = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -16,12 +16,11 @@ function RBOther:isValid(arg0, arg1) end
 
 --- @public
 --- @param def BuildingDef
---- @return void
+--- @return nil
 function RBOther:randomizeBuilding(def) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

@@ -1,46 +1,109 @@
 ---@meta
 
 ---@class ISTimedActionQueue : ISBaseObject
----@field current any
----@field character any
----@field queue any
----@field shouldResetGameSpeed any
----@field [any] any
+---@field character IsoPlayer
+---@field current ISBaseTimedAction?
+---@field queue ISBaseTimedAction[]
 ISTimedActionQueue = ISBaseObject:derive("ISTimedActionQueue")
+ISTimedActionQueue.Type = "ISTimedActionQueue"
 ISTimedActionQueue.IDMax = 1
-ISTimedActionQueue.queues = {}
+ISTimedActionQueue.queues = {} ---@type table<IsoPlayer, ISTimedActionQueue>
+ISTimedActionQueue.shouldResetGameSpeed = nil ---@type boolean?
 
----@return any
-function ISTimedActionQueue.getTimedActionQueue(character) end
----@return any
+---@param action ISBaseTimedAction
+---@return ISTimedActionQueue?
 function ISTimedActionQueue.add(action) end
----@return any
+
+---@param previousAction ISBaseTimedAction
+---@param action ISBaseTimedAction
+---@return ISTimedActionQueue?
+---@return ISBaseTimedAction?
 function ISTimedActionQueue.addAfter(previousAction, action) end
----@return any
-function ISTimedActionQueue.queueActions(character, addActionsFunction, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10) end
----@return any
+
+---@param character IsoPlayer
+---@param action ISBaseTimedAction
+function ISTimedActionQueue.addGetUpAndThen(character, action) end
+
+---@param character IsoPlayer
+---@return ISTimedActionQueue
 function ISTimedActionQueue.clear(character) end
----@return any
+
+---@param character IsoPlayer
+---@return ISTimedActionQueue
+function ISTimedActionQueue.getTimedActionQueue(character) end
+
+---@param action ISBaseTimedAction
+---@return boolean
 function ISTimedActionQueue.hasAction(action) end
----@return any
+
+---@param character IsoPlayer
+---@param type string
+---@return boolean
+function ISTimedActionQueue.hasActionType(character, type) end
+
+---@param playerObj IsoPlayer
+---@return boolean
 function ISTimedActionQueue.isPlayerDoingAction(playerObj) end
----@return any
+
 function ISTimedActionQueue.onTick() end
 
----@return any
+---@param character IsoPlayer
+---@param addActionsFunction umbrella.ISQueueActionsAction.AddActionsFunction
+---@param arg1 unknown?
+---@param arg2 unknown?
+---@param arg3 unknown?
+---@param arg4 unknown?
+---@param arg5 unknown?
+---@param arg6 unknown?
+---@param arg7 unknown?
+---@param arg8 unknown?
+---@param arg9 unknown?
+---@param arg10 unknown?
+---@return ISTimedActionQueue?
+function ISTimedActionQueue.queueActions(
+	character,
+	addActionsFunction,
+	arg1,
+	arg2,
+	arg3,
+	arg4,
+	arg5,
+	arg6,
+	arg7,
+	arg8,
+	arg9,
+	arg10
+)
+end
+
+---@param action ISBaseTimedAction
 function ISTimedActionQueue:addToQueue(action) end
----@return any
-function ISTimedActionQueue:indexOf(action) end
----@return any
-function ISTimedActionQueue:removeFromQueue(action) end
----@return any
+
+function ISTimedActionQueue:cancelQueue() end
+
 function ISTimedActionQueue:clearQueue() end
----@return any
+
+---@param action ISBaseTimedAction
+---@return integer
+function ISTimedActionQueue:indexOf(action) end
+
+---@param type string
+---@return integer
+function ISTimedActionQueue:indexOfType(type) end
+
+---@return boolean
+function ISTimedActionQueue:isCurrentActionAddingOtherActions() end
+
+---@param action ISBaseTimedAction
 function ISTimedActionQueue:onCompleted(action) end
----@return any
+
+---@param action ISBaseTimedAction
+function ISTimedActionQueue:removeFromQueue(action) end
+
 function ISTimedActionQueue:resetQueue() end
----@return any
+
 function ISTimedActionQueue:tick() end
 
+---@param character IsoPlayer
 ---@return ISTimedActionQueue
 function ISTimedActionQueue:new(character) end

@@ -1,29 +1,32 @@
 ---@meta
 
 ---@class ISGameLoadingUI : ISPanelJoypad
----@field buttonQuit any
----@field status any
----@field [any] any
+---@field buttonQuit ISButton
+---@field status string
 ISGameLoadingUI = ISPanelJoypad:derive("ISGameLoadingUI")
+ISGameLoadingUI.Type = "ISGameLoadingUI"
+ISGameLoadingUI.instance = nil ---@type ISGameLoadingUI?
 
----@return any
+---@param id integer
 function ISGameLoadingUI.OnJoypadActivateUI(id) end
 
----@return any
-function ISGameLoadingUI:createChildren() end
----@return any
+---@param button ISButton
 function ISGameLoadingUI:configButton(button) end
----@return any
-function ISGameLoadingUI:onExitToDesktop() end
----@return any
+
+function ISGameLoadingUI:createChildren() end
+
 function ISGameLoadingUI:onExit() end
----@return any
+
+function ISGameLoadingUI:onExitToDesktop() end
+
+---@param joypadData JoypadData
 function ISGameLoadingUI:onGainJoypadFocus(joypadData) end
----@return any
+
+---@param button integer
 function ISGameLoadingUI:onJoypadDown(button) end
 
 ---@return ISGameLoadingUI
 function ISGameLoadingUI:new(status) end
 
----@return any
+---@param status string
 function ISGameLoadingUI_OnGameLoadingUI(status) end

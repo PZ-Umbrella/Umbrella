@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RadialProgressBar: UIElement TurboTuTone.
 --- @field public class any
-RadialProgressBar = {};
+RadialProgressBar = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -13,34 +13,33 @@ RadialProgressBar = {};
 function RadialProgressBar:getTexture() end
 
 --- @public
---- @return float
+--- @return number
 function RadialProgressBar:getValue() end
 
 --- @public
---- @return void
+--- @return nil
 function RadialProgressBar:render() end
 
 --- @public
 --- @param texture Texture
---- @return void
+--- @return nil
 function RadialProgressBar:setTexture(texture) end
 
 --- @public
---- @param delta float
---- @return void
+--- @param delta number
+--- @return nil
 function RadialProgressBar:setValue(delta) end
 
 --- @public
---- @return void
+--- @return nil
 function RadialProgressBar:update() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param table KahluaTable
+--- @param table table
 --- @param tex Texture
 --- @return RadialProgressBar
 function RadialProgressBar.new(table, tex) end

@@ -1,17 +1,12 @@
---- @meta
+--- @meta _
 
 --- @class IsoCamera
 --- @field public class any
---- @field public CamCharacter IsoGameCharacter
 --- @field public cameras PlayerCamera[]
---- @field public FakePos Vector2
---- @field public FakePosVec Vector2
 --- @field public frameState FrameState
---- @field public PLAYER_OFFSET_X int
---- @field public PLAYER_OFFSET_Y int
---- @field public TargetTileX int
---- @field public TargetTileY int
-IsoCamera = {};
+--- @field public PLAYER_OFFSET_X integer
+--- @field public PLAYER_OFFSET_Y integer
+IsoCamera = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -20,194 +15,170 @@ IsoCamera = {};
 --- @public
 --- @static
 --- @param GameChar IsoGameCharacter
---- @return void
+--- @return nil
 function IsoCamera.SetCharacterToFollow(GameChar) end
 
 --- @public
 --- @static
---- @return IsoGameCharacter the CamCharacter
-function IsoCamera.getCamCharacter() end
+--- @return nil
+function IsoCamera.clearCameraCharacter() end
 
 --- @public
 --- @static
---- @return Vector2 the FakePos
-function IsoCamera.getFakePos() end
+--- @return IsoGameCharacter
+function IsoCamera.getCameraCharacter() end
 
 --- @public
 --- @static
---- @return Vector2 the FakePosVec
-function IsoCamera.getFakePosVec() end
+--- @return number
+function IsoCamera.getCameraCharacterZ() end
 
 --- @public
 --- @static
---- @return float the lastOffX
+--- @return number # the lastOffX
 function IsoCamera.getLastOffX() end
 
 --- @public
 --- @static
---- @return float the lastOffY
+--- @return number # the lastOffY
 function IsoCamera.getLastOffY() end
 
 --- @public
 --- @static
---- @return float the OffX
+--- @return number # the OffX
 function IsoCamera.getOffX() end
 
 --- @public
 --- @static
---- @return float the OffY
+--- @return number # the OffY
 function IsoCamera.getOffY() end
 
 --- @public
 --- @static
---- @param playerIndex int
---- @return int
+--- @param playerIndex integer
+--- @return integer
 function IsoCamera.getOffscreenHeight(playerIndex) end
 
 --- @public
 --- @static
---- @param playerIndex int
---- @return int
+--- @param playerIndex integer
+--- @return integer
 function IsoCamera.getOffscreenLeft(playerIndex) end
 
 --- @public
 --- @static
---- @param playerIndex int
---- @return int
+--- @param playerIndex integer
+--- @return integer
 function IsoCamera.getOffscreenTop(playerIndex) end
 
 --- @public
 --- @static
---- @param playerIndex int
---- @return int
+--- @param playerIndex integer
+--- @return integer
 function IsoCamera.getOffscreenWidth(playerIndex) end
 
 --- @public
 --- @static
---- @return float
+--- @return number
 function IsoCamera.getRightClickOffX() end
 
 --- @public
 --- @static
---- @return float
+--- @return number
 function IsoCamera.getRightClickOffY() end
 
 --- @public
 --- @static
---- @param playerIndex int
---- @return int
+--- @param playerIndex integer
+--- @return integer
 function IsoCamera.getScreenHeight(playerIndex) end
 
 --- @public
 --- @static
---- @param playerIndex int
---- @return int
+--- @param playerIndex integer
+--- @return integer
 function IsoCamera.getScreenLeft(playerIndex) end
 
 --- @public
 --- @static
---- @param playerIndex int
---- @return int
+--- @param playerIndex integer
+--- @return integer
 function IsoCamera.getScreenTop(playerIndex) end
 
 --- @public
 --- @static
---- @param playerIndex int
---- @return int
+--- @param playerIndex integer
+--- @return integer
 function IsoCamera.getScreenWidth(playerIndex) end
 
 --- @public
 --- @static
---- @return float
+--- @return number
 function IsoCamera.getTOffX() end
 
 --- @public
 --- @static
---- @return float
+--- @return number
 function IsoCamera.getTOffY() end
 
 --- @public
 --- @static
---- @return int the TargetTileX
-function IsoCamera.getTargetTileX() end
-
---- @public
---- @static
---- @return int the TargetTileY
+--- @return integer # the TargetTileY
 function IsoCamera.getTargetTileY() end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function IsoCamera.init() end
 
 --- @public
 --- @static
---- @param aCamCharacter IsoGameCharacter the CamCharacter to set
---- @return void
-function IsoCamera.setCamCharacter(aCamCharacter) end
+--- @param arg0 IsoGameCharacter
+--- @return boolean
+function IsoCamera.setCameraCharacter(arg0) end
 
 --- @public
 --- @static
---- @param aFakePos Vector2 the FakePos to set
---- @return void
-function IsoCamera.setFakePos(aFakePos) end
-
---- @public
---- @static
---- @param aFakePosVec Vector2 the FakePosVec to set
---- @return void
-function IsoCamera.setFakePosVec(aFakePosVec) end
-
---- @public
---- @static
---- @param aLastOffX float the lastOffX to set
---- @return void
+--- @param aLastOffX number the lastOffX to set
+--- @return nil
 function IsoCamera.setLastOffX(aLastOffX) end
 
 --- @public
 --- @static
---- @param aLastOffY float the lastOffY to set
---- @return void
+--- @param aLastOffY number the lastOffY to set
+--- @return nil
 function IsoCamera.setLastOffY(aLastOffY) end
 
 --- @public
 --- @static
---- @param aOffX float the OffX to set
---- @return void
+--- @param aOffX number the OffX to set
+--- @return nil
 function IsoCamera.setOffX(aOffX) end
 
 --- @public
 --- @static
---- @param aOffY float the OffY to set
---- @return void
+--- @param aOffY number the OffY to set
+--- @return nil
 function IsoCamera.setOffY(aOffY) end
 
 --- @public
 --- @static
---- @param aTargetTileX int the TargetTileX to set
---- @return void
-function IsoCamera.setTargetTileX(aTargetTileX) end
-
---- @public
---- @static
---- @param aTargetTileY int the TargetTileY to set
---- @return void
+--- @param aTargetTileY integer the TargetTileY to set
+--- @return nil
 function IsoCamera.setTargetTileY(aTargetTileY) end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function IsoCamera.update() end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function IsoCamera.updateAll() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

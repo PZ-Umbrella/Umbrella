@@ -1,10 +1,10 @@
---- @meta
+--- @meta _
 
 --- @class Translator
 --- @field public class any
 --- @field public debug boolean
 --- @field public language Language
-Translator = {};
+Translator = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -14,28 +14,40 @@ Translator = {};
 --- @static
 --- @param language Language
 --- @param languages ArrayList
---- @return void
+--- @return nil
 function Translator.addLanguageToList(language, languages) end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function Translator.debugItemEvolvedRecipeNames() end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function Translator.debugItemNames() end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function Translator.debugMultiStageBuildNames() end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function Translator.debugRecipeNames() end
+
+--- @public
+--- @static
+--- @param arg0 string
+--- @return string
+function Translator.getAttributeText(arg0) end
+
+--- @public
+--- @static
+--- @param arg0 string
+--- @return string
+function Translator.getAttributeTextOrNull(arg0) end
 
 --- @public
 --- @static
@@ -49,7 +61,7 @@ function Translator.getAzertyMap() end
 
 --- @public
 --- @static
---- @return String
+--- @return string
 function Translator.getCharset() end
 
 --- @public
@@ -59,20 +71,32 @@ function Translator.getDefaultLanguage() end
 
 --- @public
 --- @static
---- @param trim String
---- @return String
+--- @param trim string
+--- @return string
 function Translator.getDisplayItemName(trim) end
 
 --- @public
 --- @static
---- @param fullType String
---- @return String
+--- @param arg0 string
+--- @return string
+function Translator.getEntityText(arg0) end
+
+--- @public
+--- @static
+--- @param arg0 string
+--- @return string
+function Translator.getFluidText(arg0) end
+
+--- @public
+--- @static
+--- @param fullType string
+--- @return string
 function Translator.getItemEvolvedRecipeName(fullType) end
 
 --- @public
 --- @static
---- @param fullType String
---- @return String
+--- @param fullType string
+--- @return string
 function Translator.getItemNameFromFullType(fullType) end
 
 --- @public
@@ -82,20 +106,26 @@ function Translator.getLanguage() end
 
 --- @public
 --- @static
---- @param name String
---- @return String
+--- @param arg0 string
+--- @return string
+function Translator.getMapLabelText(arg0) end
+
+--- @public
+--- @static
+--- @param name string
+--- @return string
 function Translator.getMoveableDisplayName(name) end
 
 --- @public
 --- @static
---- @param name String
---- @return String
+--- @param name string
+--- @return string
 function Translator.getMoveableDisplayNameOrNull(name) end
 
 --- @public
 --- @static
---- @param name String
---- @return String
+--- @param name string
+--- @return string
 function Translator.getMultiStageBuild(name) end
 
 --- @public
@@ -105,68 +135,132 @@ function Translator.getNewsVersions() end
 
 --- @public
 --- @static
---- @param s String
---- @return String
+--- @param s string
+--- @return string
 function Translator.getRadioText(s) end
 
 --- @public
 --- @static
---- @param name String
---- @return String
+--- @param name string
+--- @return string
 function Translator.getRecipeName(name) end
 
 --- @public
 --- @static
 ---
----  Return the translated text for the selected language  If we don't fnid any
----  for the selected language, we return the default text (in English)
+--- Return the translated text for the selected language  If we don't fnid any
+--- for the selected language, we return the default text (in English)
 ---
---- @param desc String
---- @return String
---- @overload fun(desc: String, arg1: Object): String
---- @overload fun(desc: String, arg1: Object, arg2: Object): String
---- @overload fun(desc: String, arg1: Object, arg2: Object, arg3: Object): String
---- @overload fun(desc: String, arg1: Object, arg2: Object, arg3: Object, arg4: Object): String
+--- @param desc string
+--- @return string
 function Translator.getText(desc) end
 
 --- @public
 --- @static
---- @param desc String
---- @return String
+--- @param desc string
+--- @param arg1 any
+--- @return string
+function Translator.getText(desc, arg1) end
+
+--- @public
+--- @static
+--- @param desc string
+--- @param arg1 any
+--- @param arg2 any
+--- @return string
+function Translator.getText(desc, arg1, arg2) end
+
+--- @public
+--- @static
+--- @param desc string
+--- @param arg1 any
+--- @param arg2 any
+--- @param arg3 any
+--- @return string
+function Translator.getText(desc, arg1, arg2, arg3) end
+
+--- @public
+--- @static
+--- @param desc string
+--- @param arg1 any
+--- @param arg2 any
+--- @param arg3 any
+--- @param arg4 any
+--- @return string
+function Translator.getText(desc, arg1, arg2, arg3, arg4) end
+
+--- @public
+--- @static
+--- @param desc string
+--- @return string
 function Translator.getTextMediaEN(desc) end
 
 --- @public
 --- @static
---- @param desc String
---- @return String
---- @overload fun(desc: String, arg1: Object): String
---- @overload fun(desc: String, arg1: Object, arg2: Object): String
---- @overload fun(desc: String, arg1: Object, arg2: Object, arg3: Object): String
---- @overload fun(desc: String, arg1: Object, arg2: Object, arg3: Object, arg4: Object): String
+--- @param desc string
+--- @return string
 function Translator.getTextOrNull(desc) end
 
 --- @public
 --- @static
---- @return void
+--- @param desc string
+--- @param arg1 any
+--- @return string
+function Translator.getTextOrNull(desc, arg1) end
+
+--- @public
+--- @static
+--- @param desc string
+--- @param arg1 any
+--- @param arg2 any
+--- @return string
+function Translator.getTextOrNull(desc, arg1, arg2) end
+
+--- @public
+--- @static
+--- @param desc string
+--- @param arg1 any
+--- @param arg2 any
+--- @param arg3 any
+--- @return string
+function Translator.getTextOrNull(desc, arg1, arg2, arg3) end
+
+--- @public
+--- @static
+--- @param desc string
+--- @param arg1 any
+--- @param arg2 any
+--- @param arg3 any
+--- @param arg4 any
+--- @return string
+function Translator.getTextOrNull(desc, arg1, arg2, arg3, arg4) end
+
+--- @public
+--- @static
+--- @return nil
 function Translator.loadFiles() end
 
 --- @public
 --- @static
---- @param fullType String
---- @param english String
---- @return void
+--- @param fullType string
+--- @param english string
+--- @return nil
 function Translator.setDefaultItemEvolvedRecipeName(fullType, english) end
 
 --- @public
 --- @static
---- @param languageId int
---- @return void
---- @overload fun(newlanguage: Language): void
+--- @param languageId integer
+--- @return nil
 function Translator.setLanguage(languageId) end
 
+--- @public
+--- @static
+--- @param newlanguage Language
+--- @return nil
+function Translator.setLanguage(newlanguage) end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

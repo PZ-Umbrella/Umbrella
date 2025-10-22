@@ -1,18 +1,15 @@
 ---@meta
 
----@class ISMenuContext
 ISMenuContext = {}
 
-
----@return ISMenuContext_Instance
+---@return ISMenuContext
 function ISMenuContext.new() end
 
----@class ISMenuContext_Instance
----@field elements any
----@field [any] any
-local ISMenuContext_Instance = {}
+---@class ISMenuContext
+---@field elements ISPriorityTable
+local __ISMenuContext = {}
 
----@return any
-function ISMenuContext_Instance.createMenu() end
----@return any
-function ISMenuContext_Instance.loadElements(_targetTable) end
+function __ISMenuContext.createMenu() end
+
+---@param _targetTable table<string, fun(): ISMenuElement>
+function __ISMenuContext.loadElements(_targetTable) end

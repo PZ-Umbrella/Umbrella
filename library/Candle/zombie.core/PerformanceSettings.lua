@@ -1,26 +1,27 @@
---- @meta
+--- @meta _
 
 --- @class PerformanceSettings
 --- @field public class any
---- @field public AnimationSkip int
+--- @field public AnimationSkip integer
 --- @field public auto3DZombies boolean
---- @field public BaseStaticAnimFramerate int
---- @field public FogQuality int
+--- @field public BaseStaticAnimFramerate integer
+--- @field public FBORenderChunk boolean
+--- @field public FogQuality integer
 --- @field public instance PerformanceSettings
 --- @field public InterpolateAnims boolean
---- @field public LightingFPS int
---- @field public LightingFrameSkip int
+--- @field public LightingFPS integer
 --- @field public LightingThread boolean
---- @field public ManualFrameSkips int
+--- @field public ManualFrameSkips integer
 --- @field public ModelLighting boolean
 --- @field public NewRoofHiding boolean
---- @field public numberZombiesBlended int
---- @field public PuddlesQuality int
+--- @field public numberZombiesBlended integer
+--- @field public PuddlesQuality integer
 --- @field public UseFBOs boolean
---- @field public WaterQuality int
---- @field public ZombieAnimationSpeedFalloffCount int
---- @field public ZombieBonusFullspeedFalloff int
-PerformanceSettings = {};
+--- @field public ViewConeOpacity integer
+--- @field public WaterQuality integer
+--- @field public ZombieAnimationSpeedFalloffCount integer
+--- @field public ZombieBonusFullspeedFalloff integer
+PerformanceSettings = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -28,45 +29,33 @@ PerformanceSettings = {};
 
 --- @public
 --- @static
---- @return int
+--- @return integer
 function PerformanceSettings.getLockFPS() end
 
 --- @public
 --- @static
---- @return boolean
-function PerformanceSettings.isUncappedFPS() end
-
---- @public
---- @static
---- @param lockFPS int
---- @return void
+--- @param lockFPS integer
+--- @return nil
 function PerformanceSettings.setLockFPS(lockFPS) end
-
---- @public
---- @static
---- @param uncappedFPS boolean
---- @return void
-function PerformanceSettings.setUncappedFPS(uncappedFPS) end
-
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return int
+--- @return integer
 function PerformanceSettings:getFogQuality() end
 
 --- @public
---- @return int
+--- @return integer
 function PerformanceSettings:getFramerate() end
 
 --- @public
---- @return int
+--- @return integer
 function PerformanceSettings:getLightingFPS() end
 
 --- @public
---- @return int
+--- @return integer
 function PerformanceSettings:getLightingQuality() end
 
 --- @public
@@ -74,15 +63,19 @@ function PerformanceSettings:getLightingQuality() end
 function PerformanceSettings:getNewRoofHiding() end
 
 --- @public
---- @return int
+--- @return integer
 function PerformanceSettings:getPuddlesQuality() end
 
 --- @public
---- @return int
+--- @return integer
 function PerformanceSettings:getUIRenderFPS() end
 
 --- @public
---- @return int
+--- @return integer
+function PerformanceSettings:getViewConeOpacity() end
+
+--- @public
+--- @return integer
 function PerformanceSettings:getWaterQuality() end
 
 --- @public
@@ -90,48 +83,52 @@ function PerformanceSettings:getWaterQuality() end
 function PerformanceSettings:isFramerateUncapped() end
 
 --- @public
---- @param fogQuality int
---- @return void
+--- @param fogQuality integer
+--- @return nil
 function PerformanceSettings:setFogQuality(fogQuality) end
 
 --- @public
---- @param framerate int
---- @return void
+--- @param framerate integer
+--- @return nil
 function PerformanceSettings:setFramerate(framerate) end
 
 --- @public
 --- @param val boolean
---- @return void
+--- @return nil
 function PerformanceSettings:setFramerateUncapped(val) end
 
 --- @public
---- @param fps int
---- @return void
+--- @param fps integer
+--- @return nil
 function PerformanceSettings:setLightingFPS(fps) end
 
 --- @public
---- @param lighting int
---- @return void
+--- @param lighting integer
+--- @return nil
 function PerformanceSettings:setLightingQuality(lighting) end
 
 --- @public
 --- @param enabled boolean
---- @return void
+--- @return nil
 function PerformanceSettings:setNewRoofHiding(enabled) end
 
 --- @public
---- @param puddles int
---- @return void
+--- @param puddles integer
+--- @return nil
 function PerformanceSettings:setPuddlesQuality(puddles) end
 
 --- @public
---- @param water int
---- @return void
+--- @param arg0 integer
+--- @return nil
+function PerformanceSettings:setViewConeOpacity(arg0) end
+
+--- @public
+--- @param water integer
+--- @return nil
 function PerformanceSettings:setWaterQuality(water) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

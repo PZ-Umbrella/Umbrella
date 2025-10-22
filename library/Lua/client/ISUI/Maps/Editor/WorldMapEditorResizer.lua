@@ -1,35 +1,59 @@
 ---@meta
 
 ---@class WorldMapEditorResizer : ISBaseObject
----@field x1 any
----@field y1 any
----@field x2 any
----@field y2 any
----@field resizing any
----@field editor any
----@field mapUI any
----@field mapAPI any
----@field snapMode any
----@field originalBounds any
----@field [any] any
+---@field editor WorldMapEditor
+---@field mapAPI UIWorldMapV1
+---@field mapUI WorldMapEditor
+---@field originalBounds umbrella.WorldMapEditorResizer.Bounds
+---@field resizing boolean
+---@field snapMode string
+---@field x1 number
+---@field x2 number
+---@field y1 number
+---@field y2 number
 WorldMapEditorResizer = ISBaseObject:derive("WorldMapEditorResizer")
+WorldMapEditorResizer.Type = "WorldMapEditorResizer"
 
----@return any
-function WorldMapEditorResizer:setBounds(x1, y1, x2, y2) end
----@return any
-function WorldMapEditorResizer:hitTest(x, y) end
----@return any
-function WorldMapEditorResizer:startResizing() end
----@return any
-function WorldMapEditorResizer:endResizing() end
----@return any
-function WorldMapEditorResizer:onMouseMove(mx, my, hitTest) end
----@return any
 function WorldMapEditorResizer:cancelResize() end
----@return any
-function WorldMapEditorResizer:snap(xy) end
----@return any
-function WorldMapEditorResizer:render() end
 
+function WorldMapEditorResizer:endResizing() end
+
+---@param x number
+---@param y number
+---@return string?
+function WorldMapEditorResizer:hitTest(x, y) end
+
+---@param mx number
+---@param my number
+---@param hitTest string
+---@return boolean?
+function WorldMapEditorResizer:onMouseMove(mx, my, hitTest) end
+
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function WorldMapEditorResizer:render(r, g, b, a) end
+
+---@param x1 number
+---@param y1 number
+---@param x2 number
+---@param y2 number
+function WorldMapEditorResizer:setBounds(x1, y1, x2, y2) end
+
+---@param xy number
+---@return number
+function WorldMapEditorResizer:snap(xy) end
+
+function WorldMapEditorResizer:startResizing() end
+
+---@param editor WorldMapEditor
 ---@return WorldMapEditorResizer
 function WorldMapEditorResizer:new(editor) end
+
+---@class umbrella.WorldMapEditorResizer.Bounds
+---@field x1 number
+---@field x2 number
+---@field y1 number
+---@field y2 number
+umbrella_WorldMapEditorResizer_Bounds = {}

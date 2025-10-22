@@ -1,34 +1,49 @@
---- @meta
+--- @meta _
 
 --- @class IsoSurvivor: IsoLivingCharacter
 --- @field public class any
-IsoSurvivor = {};
+IsoSurvivor = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
+--- @return nil
 function IsoSurvivor:Despawn() end
 
 --- @public
---- @return String
+--- @return string
 function IsoSurvivor:getObjectName() end
 
 --- @public
---- @return void
+--- @return nil
 function IsoSurvivor:reloadSpritePart() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param cell IsoCell
 --- @return IsoSurvivor
---- @overload fun(cell: IsoCell, x: int, y: int, z: int): IsoSurvivor
---- @overload fun(desc: SurvivorDesc, cell: IsoCell, x: int, y: int, z: int): IsoSurvivor
---- @overload fun(desc: SurvivorDesc, cell: IsoCell, x: int, y: int, z: int, bSetInstance: boolean): IsoSurvivor
 function IsoSurvivor.new(cell) end
+
+--- @public
+--- @param desc SurvivorDesc
+--- @param cell IsoCell
+--- @param x integer
+--- @param y integer
+--- @param z integer
+--- @return IsoSurvivor
+function IsoSurvivor.new(desc, cell, x, y, z) end
+
+--- @public
+--- @param desc SurvivorDesc
+--- @param cell IsoCell
+--- @param x integer
+--- @param y integer
+--- @param z integer
+--- @param bSetInstance boolean
+--- @return IsoSurvivor
+function IsoSurvivor.new(desc, cell, x, y, z, bSetInstance) end

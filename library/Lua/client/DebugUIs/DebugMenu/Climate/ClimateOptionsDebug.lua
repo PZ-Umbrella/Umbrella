@@ -1,34 +1,64 @@
 ---@meta
 
 ---@class ClimateOptionsDebug : ISDebugSubPanelBase
----@field clim any
----@field allOptions any
----@field floats any
----@field colors any
----@field bools any
----@field [any] any
+---@field allOptions table<string, table>
+---@field bools table<string, table>
+---@field clim ClimateManager
+---@field colors table<string, table>
+---@field floats table<string, table>
 ClimateOptionsDebug = ISDebugSubPanelBase:derive("ClimateOptionsDebug")
+ClimateOptionsDebug.Type = "ClimateOptionsDebug"
 
----@return any
-function ClimateOptionsDebug:initialise() end
----@return any
-function ClimateOptionsDebug:createChildren() end
----@return any
+---@param _id string
+---@param _bool boolean
+---@param _x number
+---@param _y number
+---@param _w number
+---@return number
 function ClimateOptionsDebug:addBoolOption(_id, _bool, _x, _y, _w) end
----@return any
-function ClimateOptionsDebug:addFloatOption(_id, _float, _x, _y, _w) end
----@return any
+
+---@param _id string
+---@param _color ClimateManager.ClimateColor
+---@param _x number
+---@param _y number
+---@param _w number
+---@return number
 function ClimateOptionsDebug:addColorOption(_id, _color, _x, _y, _w) end
----@return any
-function ClimateOptionsDebug:prerender() end
----@return any
+
+---@param _id string
+---@param _float number
+---@param _x number
+---@param _y number
+---@param _w number
+---@return number
+function ClimateOptionsDebug:addFloatOption(_id, _float, _x, _y, _w) end
+
+function ClimateOptionsDebug:createChildren() end
+
+function ClimateOptionsDebug:initialise() end
+
+---@param _newval number
+---@param _slider ISSliderPanel
 function ClimateOptionsDebug:onSliderChange(_newval, _slider) end
----@return any
+
+---@param _index integer
+---@param _selected boolean
+---@param _tickbox ISTickBox
 function ClimateOptionsDebug:onTicked(_index, _selected, _arg1, _arg2, _tickbox) end
----@return any
+
+---@param _index integer
+---@param _selected boolean
+---@param _tickbox ISTickBox
 function ClimateOptionsDebug:onTickedValue(_index, _selected, _arg1, _arg2, _tickbox) end
----@return any
+
+function ClimateOptionsDebug:prerender() end
+
 function ClimateOptionsDebug:update() end
 
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param doStencil boolean
 ---@return ClimateOptionsDebug
 function ClimateOptionsDebug:new(x, y, width, height, doStencil) end

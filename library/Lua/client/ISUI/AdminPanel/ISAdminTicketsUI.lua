@@ -1,48 +1,55 @@
 ---@meta
 
 ---@class ISAdminTicketsUI : ISPanel
----@field no any
----@field datas any
----@field answerTicketBtn any
----@field removeBtn any
----@field refreshBtn any
----@field selectedTicket any
----@field borderColor any
----@field backgroundColor any
----@field listHeaderColor any
----@field width any
----@field height any
----@field player any
----@field selectedFaction any
----@field moveWithMouse any
----@field tickets any
----@field [any] any
+---@field answerTicketBtn ISButton
+---@field datas ISScrollingListBox
+---@field listHeaderColor umbrella.RGBA
+---@field no ISButton
+---@field player IsoPlayer
+---@field refreshBtn ISButton
+---@field removeBtn ISButton
+---@field selectedFaction unknown?
+---@field selectedTicket DBTicket?
+---@field tickets ArrayList<DBTicket>?
 ISAdminTicketsUI = ISPanel:derive("ISAdminTicketsUI")
+ISAdminTicketsUI.Type = "ISAdminTicketsUI"
 ISAdminTicketsUI.messages = {}
+ISAdminTicketsUI.instance = nil ---@type ISAdminTicketsUI?
 
----@return any
+---@param tickets ArrayList<DBTicket>
 function ISAdminTicketsUI.gotTickets(tickets) end
 
----@return any
-function ISAdminTicketsUI:initialise() end
----@return any
-function ISAdminTicketsUI:getTickets() end
----@return any
-function ISAdminTicketsUI:populateList() end
----@return any
-function ISAdminTicketsUI:update() end
----@return any
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
 function ISAdminTicketsUI:drawDatas(y, item, alt) end
----@return any
-function ISAdminTicketsUI:prerender() end
----@return any
-function ISAdminTicketsUI:render() end
----@return any
-function ISAdminTicketsUI:onClick(button) end
----@return any
-function ISAdminTicketsUI:onRemoveTicket(button) end
----@return any
+
+function ISAdminTicketsUI:getTickets() end
+
+function ISAdminTicketsUI:initialise() end
+
+---@param button ISButton
 function ISAdminTicketsUI:onAnswerTicket(button) end
 
+---@param button ISButton
+function ISAdminTicketsUI:onClick(button) end
+
+---@param button ISButton
+function ISAdminTicketsUI:onRemoveTicket(button) end
+
+function ISAdminTicketsUI:populateList() end
+
+function ISAdminTicketsUI:prerender() end
+
+function ISAdminTicketsUI:render() end
+
+function ISAdminTicketsUI:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param player IsoPlayer
 ---@return ISAdminTicketsUI
 function ISAdminTicketsUI:new(x, y, width, height, player) end

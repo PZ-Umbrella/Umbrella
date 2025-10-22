@@ -1,156 +1,261 @@
 ---@meta
 
 ---@class ISVehicleMechanics : ISCollapsableWindow
----@field vehiclePart any
----@field listWidth any
----@field generalCondition any
----@field generalCondRGB any
----@field leftListHasFocus any
----@field leftListSelection any
----@field rightListSelection any
----@field checkEngine any
----@field listbox any
----@field bodyworklist any
----@field selected any
----@field context any
----@field cheat any
----@field hidetooltip any
----@field tooltip any
----@field flashFailure any
----@field flashTimer any
----@field flashTimerAlpha any
----@field flashTimerAlphaInc any
----@field usedHood any
----@field drawJoypadFocus any
----@field minimumHeight any
----@field chr any
----@field playerNum any
----@field vehicle any
----@field partCatRGB any
----@field partRGB any
----@field title any
----@field clearStentil any
----@field xCarTexOffset any
----@field [any] any
+---@field bodyworklist ISScrollingListBox
+---@field checkEngine boolean
+---@field chr IsoPlayer
+---@field context ISContextMenu?
+---@field drawJoypadFocus boolean
+---@field flashFailure boolean
+---@field flashTimer number
+---@field flashTimerAlpha number
+---@field flashTimerAlphaInc boolean
+---@field generalCondition integer
+---@field generalCondRGB umbrella.RGB
+---@field hidetooltip boolean
+---@field leftListHasFocus boolean
+---@field leftListSelection number?
+---@field listbox ISScrollingListBox
+---@field listWidth number
+---@field partCatRGB umbrella.RGB
+---@field partRGB umbrella.RGB
+---@field playerNum integer
+---@field rightListSelection number?
+---@field selected integer
+---@field title string
+---@field tooltip ISToolTip
+---@field usedHood VehiclePart?
+---@field vehicle BaseVehicle?
+---@field vehiclePart table<string, umbrella.ISVehicleMechanics.CategoryTable>
+---@field xCarTexOffset number
 ISVehicleMechanics = ISCollapsableWindow:derive("ISVehicleMechanics")
+ISVehicleMechanics.Type = "ISVehicleMechanics"
 ISVehicleMechanics.alphaOverlay = 1
 ISVehicleMechanics.alphaOverlayInc = true
-ISVehicleMechanics.tooltip = nil
-ISVehicleMechanics.cheat = false
-ISVehicleMechanics.ghs = "<RGB:" .. getCore():getGoodHighlitedColor():getR() .. "," .. getCore():getGoodHighlitedColor():getG() .. "," .. getCore():getGoodHighlitedColor():getB() .. ">"
-ISVehicleMechanics.bhs = "<RGB:" .. getCore():getBadHighlitedColor():getR() .. "," .. getCore():getBadHighlitedColor():getG() .. "," .. getCore():getBadHighlitedColor():getB() .. ">"
+ISVehicleMechanics.cheat = getDebug()
+ISVehicleMechanics.ghs = "<GHC>"
+ISVehicleMechanics.bhs = "<BHC>"
 
----@return any
-function ISVehicleMechanics.onRepairEngine(playerObj, part) end
----@return any
-function ISVehicleMechanics.onTakeEngineParts(playerObj, part) end
----@return any
-function ISVehicleMechanics.onConfigHeadlight(playerObj, part, dir) end
----@return any
+---@param playerObj IsoPlayer
+---@param vehicle BaseVehicle
 function ISVehicleMechanics.onCheatGetKey(playerObj, vehicle) end
----@return any
-function ISVehicleMechanics.onCheatHotwire(playerObj, vehicle, hotwired, broken) end
----@return any
-function ISVehicleMechanics.onCheatRepair(playerObj, vehicle) end
----@return any
-function ISVehicleMechanics.onCheatSetRustAux(target, button, playerObj, vehicle) end
----@return any
-function ISVehicleMechanics.onCheatSetRust(playerObj, vehicle) end
----@return any
-function ISVehicleMechanics.onCheatRepairPart(playerObj, part) end
----@return any
-function ISVehicleMechanics.onCheatSetConditionAux(target, button, playerObj, part) end
----@return any
-function ISVehicleMechanics.onCheatSetCondition(playerObj, part) end
----@return any
-function ISVehicleMechanics.onCheatSetContentAmountAux(target, button, playerObj, part) end
----@return any
-function ISVehicleMechanics.onCheatSetContentAmount(playerObj, part) end
----@return any
-function ISVehicleMechanics.onCheatRemoveAux(dummy, button, playerObj, vehicle) end
----@return any
-function ISVehicleMechanics.onCheatRemove(playerObj, vehicle) end
----@return any
-function ISVehicleMechanics.onCheatToggle(playerObj) end
----@return any
-function ISVehicleMechanics.OnMechanicActionDone(chr, success, vehicleId, partId, itemId, installing) end
 
----@return any
-function ISVehicleMechanics:initialise() end
----@return any
-function ISVehicleMechanics:update() end
----@return any
-function ISVehicleMechanics:updateLayout() end
----@return any
-function ISVehicleMechanics:initParts() end
----@return any
-function ISVehicleMechanics:recalculGeneralCondition() end
----@return any
+---@param playerObj IsoPlayer
+---@param vehicle BaseVehicle
+function ISVehicleMechanics.onCheatHotwire(playerObj, vehicle, hotwired, broken) end
+
+---@param playerObj IsoPlayer
+---@param vehicle BaseVehicle
+function ISVehicleMechanics.onCheatRemove(playerObj, vehicle) end
+
+---@param dummy unknown?
+---@param button ISButton
+---@param playerObj IsoPlayer
+---@param vehicle BaseVehicle
+function ISVehicleMechanics.onCheatRemoveAux(dummy, button, playerObj, vehicle) end
+
+---@param playerObj IsoPlayer
+---@param vehicle BaseVehicle
+function ISVehicleMechanics.onCheatRepair(playerObj, vehicle) end
+
+---@param playerObj IsoPlayer
+function ISVehicleMechanics.onCheatRepairPart(playerObj, part) end
+
+---@param playerObj IsoPlayer
+---@param part VehiclePart
+function ISVehicleMechanics.onCheatSetCondition(playerObj, part) end
+
+---@param button ISButton
+---@param playerObj IsoPlayer
+---@param part VehiclePart
+function ISVehicleMechanics.onCheatSetConditionAux(target, button, playerObj, part) end
+
+---@param playerObj IsoPlayer
+---@param part VehiclePart
+function ISVehicleMechanics.onCheatSetContentAmount(playerObj, part) end
+
+---@param button ISButton
+---@param playerObj IsoPlayer
+---@param part VehiclePart
+function ISVehicleMechanics.onCheatSetContentAmountAux(target, button, playerObj, part) end
+
+---@param playerObj IsoPlayer
+---@param vehicle BaseVehicle
+function ISVehicleMechanics.onCheatSetRust(playerObj, vehicle) end
+
+---@param button ISButton
+---@param playerObj IsoPlayer
+---@param vehicle BaseVehicle
+function ISVehicleMechanics.onCheatSetRustAux(target, button, playerObj, vehicle) end
+
+---@param playerObj IsoPlayer
+function ISVehicleMechanics.onCheatToggle(playerObj) end
+
+---@param playerObj IsoPlayer
+---@param part VehiclePart
+---@param dir integer
+function ISVehicleMechanics.onConfigHeadlight(playerObj, part, dir) end
+
+---@param chr IsoPlayer
+---@param success boolean
+function ISVehicleMechanics.OnMechanicActionDone(chr, success) end
+
+---@param playerObj IsoPlayer
+---@param part VehiclePart
+function ISVehicleMechanics.onRepairEngine(playerObj, part) end
+
+---@param playerObj IsoPlayer
+---@param part VehiclePart
+function ISVehicleMechanics.onRepairLightbar(playerObj, part) end
+
+---@param playerObj IsoPlayer
+---@param part VehiclePart
+function ISVehicleMechanics.onTakeEngineParts(playerObj, part) end
+
 function ISVehicleMechanics:checkEngineFull() end
----@return any
-function ISVehicleMechanics:createChildren() end
----@return any
-function ISVehicleMechanics:onListMouseDown(x, y) end
----@return any
-function ISVehicleMechanics:onListRightMouseUp(x, y) end
----@return any
-function ISVehicleMechanics:doPartContextMenu(part, x, y) end
----@return any
-function ISVehicleMechanics:doMenuTooltip(part, option, lua, name) end
----@return any
-function ISVehicleMechanics:doDrawItem(y, item, alt) end
----@return any
-function ISVehicleMechanics:renderCarOverlay() end
----@return any
-function ISVehicleMechanics:selectPart(part) end
----@return any
-function ISVehicleMechanics:isMouseOverPart(x, y, part) end
----@return any
-function ISVehicleMechanics:getMouseOverPart(x, y) end
----@return any
-function ISVehicleMechanics:onMouseDown(x, y) end
----@return any
-function ISVehicleMechanics:onRightMouseUp(x, y) end
----@return any
-function ISVehicleMechanics:renderCarOverlayTooltip(partProps, part, carType) end
----@return any
-function ISVehicleMechanics:startFlashRed() end
----@return any
-function ISVehicleMechanics:startFlashGreen() end
----@return any
-function ISVehicleMechanics:roundContainerContentAmount(part) end
----@return any
-function ISVehicleMechanics:prerender() end
----@return any
-function ISVehicleMechanics:render() end
----@return any
-function ISVehicleMechanics:renderPartDetail(part) end
----@return any
-function ISVehicleMechanics:getConditionRGB(condition) end
----@return any
-function ISVehicleMechanics:setVisible(bVisible, joypadData) end
----@return any
+
 function ISVehicleMechanics:close() end
----@return any
-function ISVehicleMechanics:onListboxJoypadDirUp(listbox) end
----@return any
-function ISVehicleMechanics:onListboxJoypadDirDown(listbox) end
----@return any
-function ISVehicleMechanics:onGainJoypadFocus(joypadData) end
----@return any
-function ISVehicleMechanics:onJoypadDown(button) end
----@return any
-function ISVehicleMechanics:onJoypadDirUp() end
----@return any
-function ISVehicleMechanics:onJoypadDirDown() end
----@return any
-function ISVehicleMechanics:onJoypadDirLeft() end
----@return any
-function ISVehicleMechanics:onJoypadDirRight() end
----@return any
+
+function ISVehicleMechanics:createChildren() end
+
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
+function ISVehicleMechanics:doDrawItem(y, item, alt) end
+
+---@param part VehiclePart
+---@param option umbrella.ISContextMenu.Option
+---@param lua string
+---@param name string?
+function ISVehicleMechanics:doMenuTooltip(part, option, lua, name) end
+
+---@param part VehiclePart
+---@param x number
+---@param y number
+function ISVehicleMechanics:doPartContextMenu(part, x, y) end
+
+---@param condition integer
+---@return umbrella.RGB
+function ISVehicleMechanics:getConditionRGB(condition) end
+
+---@param x number
+---@param y number
+---@return VehiclePart?
+function ISVehicleMechanics:getMouseOverPart(x, y) end
+
+---@return unknown
+function ISVehicleMechanics:getScrewdriver(player) end
+
+---@return unknown
+function ISVehicleMechanics:getTirePump(player) end
+
+---@return unknown
+function ISVehicleMechanics:getWrench(player) end
+
+function ISVehicleMechanics:initialise() end
+
+function ISVehicleMechanics:initParts() end
+
+---@param key integer
+---@return boolean
 function ISVehicleMechanics:isKeyConsumed(key) end
----@return any
+
+---@param x number
+---@param y number
+---@param part VehiclePart
+---@return boolean?
+function ISVehicleMechanics:isMouseOverPart(x, y, part) end
+
+---@param joypadData JoypadData
+function ISVehicleMechanics:onGainJoypadFocus(joypadData) end
+
+function ISVehicleMechanics:onJoypadDirDown() end
+
+function ISVehicleMechanics:onJoypadDirLeft() end
+
+function ISVehicleMechanics:onJoypadDirRight() end
+
+function ISVehicleMechanics:onJoypadDirUp() end
+
+---@param button integer
+function ISVehicleMechanics:onJoypadDown(button) end
+
+---@param key integer
 function ISVehicleMechanics:onKeyRelease(key) end
 
+---@param listbox ISScrollingListBox
+function ISVehicleMechanics:onListboxJoypadDirDown(listbox) end
+
+---@param listbox ISScrollingListBox
+function ISVehicleMechanics:onListboxJoypadDirUp(listbox) end
+
+---@param x number
+---@param y number
+function ISVehicleMechanics:onListMouseDown(x, y) end
+
+---@param x number
+---@param y number
+function ISVehicleMechanics:onListRightMouseUp(x, y) end
+
+---@param x number
+---@param y number
+function ISVehicleMechanics:onMouseDown(x, y) end
+
+---@param x number
+---@param y number
+function ISVehicleMechanics:onRightMouseUp(x, y) end
+
+function ISVehicleMechanics:prerender() end
+
+function ISVehicleMechanics:recalculGeneralCondition() end
+
+function ISVehicleMechanics:render() end
+
+function ISVehicleMechanics:renderCarOverlay() end
+
+---@param partProps umbrella.ISCarMechanicsOverlay.PartListItem
+---@param part VehiclePart
+---@param carType string
+---@return boolean
+function ISVehicleMechanics:renderCarOverlayTooltip(partProps, part, carType) end
+
+---@param part VehiclePart
+function ISVehicleMechanics:renderPartDetail(part) end
+
+---@param part VehiclePart
+---@return number
+function ISVehicleMechanics:roundContainerContentAmount(part) end
+
+---@param part VehiclePart?
+function ISVehicleMechanics:selectPart(part) end
+
+---@param bVisible boolean
+---@param joypadData JoypadData?
+function ISVehicleMechanics:setVisible(bVisible, joypadData) end
+
+function ISVehicleMechanics:startFlashGreen() end
+
+function ISVehicleMechanics:startFlashRed() end
+
+function ISVehicleMechanics:update() end
+
+function ISVehicleMechanics:updateLayout() end
+
+---@param x number
+---@param y number
+---@param character IsoPlayer
+---@param vehicle BaseVehicle?
 ---@return ISVehicleMechanics
 function ISVehicleMechanics:new(x, y, character, vehicle) end
+
+---@class umbrella.ISVehicleMechanics.CategoryTable
+---@field category string
+---@field name string
+---@field parts umbrella.ISVehicleMechanics.PartTable[]
+umbrella_ISVehicleMechanics_CategoryTable = {}
+
+---@class umbrella.ISVehicleMechanics.PartTable
+---@field name string
+---@field part VehiclePart
+umbrella_ISVehicleMechanics_PartTable = {}

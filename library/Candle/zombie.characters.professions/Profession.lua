@@ -1,31 +1,30 @@
---- @meta
+--- @meta _
 
---- @class Profession
+--- @class Profession: IListBoxItem
 --- @field public class any
---- @implement IListBoxItem
-Profession = {};
+Profession = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param trait String
---- @return void
+--- @param trait string
+--- @return nil
 function Profession:addFreeTrait(trait) end
 
 --- @public
 --- @param perk Perk
---- @param level int
---- @return void
+--- @param level integer
+--- @return nil
 function Profession:addXPBoost(perk, level) end
 
 --- @public
---- @return int the cost
+--- @return integer # the cost
 function Profession:getCost() end
 
 --- @public
---- @return String the description
+--- @return string # the description
 function Profession:getDescription() end
 
 --- @public
@@ -33,7 +32,7 @@ function Profession:getDescription() end
 function Profession:getFreeRecipes() end
 
 --- @public
---- @return Stack the FreeTraitStack
+--- @return Stack # the FreeTraitStack
 function Profession:getFreeTraitStack() end
 
 --- @public
@@ -41,26 +40,35 @@ function Profession:getFreeTraitStack() end
 function Profession:getFreeTraits() end
 
 --- @public
---- @return String
+--- @return string
 function Profession:getIconPath() end
 
 --- @public
---- @return String
---- @overload fun(self: Profession): String
+--- @return string
 function Profession:getLabel() end
 
 --- @public
---- @return String
---- @overload fun(self: Profession): String
+--- @return string
+function Profession:getLabel() end
+
+--- @public
+--- @return string
 function Profession:getLeftLabel() end
 
 --- @public
---- @return String the name
+--- @return string
+function Profession:getLeftLabel() end
+
+--- @public
+--- @return string # the name
 function Profession:getName() end
 
 --- @public
---- @return String
---- @overload fun(self: Profession): String
+--- @return string
+function Profession:getRightLabel() end
+
+--- @public
+--- @return string
 function Profession:getRightLabel() end
 
 --- @public
@@ -68,7 +76,7 @@ function Profession:getRightLabel() end
 function Profession:getTexture() end
 
 --- @public
---- @return String the type
+--- @return string # the type
 function Profession:getType() end
 
 --- @public
@@ -76,50 +84,49 @@ function Profession:getType() end
 function Profession:getXPBoostMap() end
 
 --- @public
---- @param cost int the cost to set
---- @return void
+--- @param cost integer the cost to set
+--- @return nil
 function Profession:setCost(cost) end
 
 --- @public
---- @param description String the description to set
---- @return void
+--- @param description string the description to set
+--- @return nil
 function Profession:setDescription(description) end
 
 --- @public
 --- @param freeRecipes List
---- @return void
+--- @return nil
 function Profession:setFreeRecipes(freeRecipes) end
 
 --- @public
 --- @param FreeTraitStack Stack the FreeTraitStack to set
---- @return void
+--- @return nil
 function Profession:setFreeTraitStack(FreeTraitStack) end
 
 --- @public
---- @param IconPath String the IconPath to set
---- @return void
+--- @param IconPath string the IconPath to set
+--- @return nil
 function Profession:setIconPath(IconPath) end
 
 --- @public
---- @param name String the name to set
---- @return void
+--- @param name string the name to set
+--- @return nil
 function Profession:setName(name) end
 
 --- @public
---- @param type String the type to set
---- @return void
+--- @param type string the type to set
+--- @return nil
 function Profession:setType(type) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param type String
---- @param name String
---- @param IconPathname String
---- @param cost int
---- @param desc String
+--- @param type string
+--- @param name string
+--- @param IconPathname string
+--- @param cost integer
+--- @param desc string
 --- @return Profession
 function Profession.new(type, name, IconPathname, cost, desc) end

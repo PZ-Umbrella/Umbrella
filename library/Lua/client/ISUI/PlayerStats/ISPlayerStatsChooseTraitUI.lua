@@ -1,39 +1,48 @@
 ---@meta
 
----@class ISPlayerStatsChooseTraitUI : ISPanel
----@field combo any
----@field goodTrait any
----@field traitsSelector any
----@field ok any
----@field cancel any
----@field variableColor any
----@field borderColor any
----@field backgroundColor any
----@field target any
----@field onclick any
----@field chr any
----@field comboList any
----@field zOffsetSmallFont any
----@field goodTraits any
----@field badTraits any
----@field moveWithMouse any
----@field [any] any
-ISPlayerStatsChooseTraitUI = ISPanel:derive("ISPlayerStatsChooseTraitUI")
+---@alias umbrella.ISPlayerStatsChooseTraitUI.OnClick fun(target: unknown?, button: ISButton, trait: TraitFactory.Trait)
 
----@return any
-function ISPlayerStatsChooseTraitUI:initialise() end
----@return any
-function ISPlayerStatsChooseTraitUI:setVisible(visible) end
----@return any
-function ISPlayerStatsChooseTraitUI:render() end
----@return any
+---@class ISPlayerStatsChooseTraitUI : ISPanel
+---@field badTraits TraitFactory.Trait[]
+---@field cancel ISButton
+---@field chr IsoPlayer
+---@field combo ISComboBox
+---@field comboList table
+---@field goodTrait table
+---@field goodTraits TraitFactory.Trait[]
+---@field ok ISButton
+---@field onclick umbrella.ISPlayerStatsChooseTraitUI.OnClick?
+---@field target unknown?
+---@field traitsSelector ISTickBox
+---@field variableColor umbrella.RGBA
+---@field zOffsetSmallFont number
+ISPlayerStatsChooseTraitUI = ISPanel:derive("ISPlayerStatsChooseTraitUI")
+ISPlayerStatsChooseTraitUI.Type = "ISPlayerStatsChooseTraitUI"
+
 function ISPlayerStatsChooseTraitUI:create() end
----@return any
+
+function ISPlayerStatsChooseTraitUI:initialise() end
+
 function ISPlayerStatsChooseTraitUI:onChangeList() end
----@return any
-function ISPlayerStatsChooseTraitUI:populateComboList() end
----@return any
+
+---@param button ISButton
+---@param x number
+---@param y number
 function ISPlayerStatsChooseTraitUI:onOptionMouseDown(button, x, y) end
 
+function ISPlayerStatsChooseTraitUI:populateComboList() end
+
+function ISPlayerStatsChooseTraitUI:render() end
+
+---@param visible boolean
+function ISPlayerStatsChooseTraitUI:setVisible(visible) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param target unknown?
+---@param onclick umbrella.ISPlayerStatsChooseTraitUI.OnClick?
+---@param player IsoPlayer
 ---@return ISPlayerStatsChooseTraitUI
 function ISPlayerStatsChooseTraitUI:new(x, y, width, height, target, onclick, player) end

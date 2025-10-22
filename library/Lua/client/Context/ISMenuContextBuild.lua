@@ -1,16 +1,13 @@
 ---@meta
 
----@class ISMenuContextBuild
 ISMenuContextBuild = {}
 
-
----@return ISMenuContextBuild_Instance
+---@return ISMenuContextBuild
 function ISMenuContextBuild.new() end
 
----@class ISMenuContextBuild_Instance
-local ISMenuContextBuild_Instance = {}
+---@class ISMenuContextBuild : ISMenuElement
+local __ISMenuContextBuild = {}
 
----@return any
-function ISMenuContextBuild_Instance.init() end
----@return any
-function ISMenuContextBuild_Instance.createMenu() end
+function __ISMenuContextBuild.createMenu() end
+
+function __ISMenuContextBuild.init() end

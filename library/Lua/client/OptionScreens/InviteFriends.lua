@@ -1,59 +1,78 @@
 ---@meta
 
 ---@class InviteFriends : ISPanelJoypad
----@field selectedFriend any
----@field inviteTime any
----@field mouseOverButtonIndex any
----@field invited any
----@field listbox any
----@field filterEntry any
----@field backButton any
----@field inviteButton any
----@field allowButton any
----@field statusLabel any
----@field isCoopHost any
----@field [any] any
+---@field allowButton ISButton
+---@field backButton ISButton
+---@field filterEntry ISTextEntryBox
+---@field inviteButton ISButton
+---@field invited table<integer, boolean>
+---@field inviteTime number?
+---@field isCoopHost boolean
+---@field listbox ISScrollingListBox
+---@field mouseOverButtonIndex integer?
+---@field selectedFriend SteamFriend?
+---@field statusLabel ISLabel
 InviteFriends = ISPanelJoypad:derive("InviteFriends")
+InviteFriends.Type = "InviteFriends"
+InviteFriends.instance = nil ---@type InviteFriends?
 
----@return any
+---@param steamID string
 function InviteFriends.OnSteamFriendStatusChanged(steamID) end
 
----@return any
-function InviteFriends:initialise() end
----@return any
-function InviteFriends:hasChoices() end
----@return any
-function InviteFriends:fillList() end
----@return any
-function InviteFriends:refreshList() end
----@return any
-function InviteFriends:onOptionMouseDown(button, x, y) end
----@return any
-function InviteFriends:onDblClick() end
----@return any
 function InviteFriends:clickBack() end
----@return any
+
 function InviteFriends:clickInvite() end
----@return any
-function InviteFriends:prerender() end
----@return any
-function InviteFriends:render() end
----@return any
-function InviteFriends:doDrawItem(y, item, alt) end
----@return any
-function InviteFriends:onMouseDown_ListBox(x, y) end
----@return any
-function InviteFriends:toggleAllowDeny(index) end
----@return any
-function InviteFriends:onGainJoypadFocus(joypadData) end
----@return any
-function InviteFriends:loadInvitedFile() end
----@return any
-function InviteFriends:saveInvitedFile() end
----@return any
+
 function InviteFriends:create() end
----@return any
+
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
+function InviteFriends:doDrawItem(y, item, alt) end
+
+function InviteFriends:fillList() end
+
 function InviteFriends:filter() end
 
+---@return boolean
+function InviteFriends:hasChoices() end
+
+function InviteFriends:initialise() end
+
+function InviteFriends:loadInvitedFile() end
+
+function InviteFriends:onDblClick() end
+
+---@param joypadData JoypadData
+function InviteFriends:onGainJoypadFocus(joypadData) end
+
+---@param self ISScrollingListBox
+---@param x number
+---@param y number
+function InviteFriends:onMouseDown_ListBox(self, x, y) end
+
+---@param button ISButton
+---@param x number
+---@param y number
+function InviteFriends:onOptionMouseDown(button, x, y) end
+
+function InviteFriends:prerender() end
+
+function InviteFriends:refreshList() end
+
+function InviteFriends:render() end
+
+function InviteFriends:saveInvitedFile() end
+
+---@param index integer
+function InviteFriends:toggleAllowDeny(index) end
+
+function InviteFriends:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return InviteFriends
 function InviteFriends:new(x, y, width, height) end

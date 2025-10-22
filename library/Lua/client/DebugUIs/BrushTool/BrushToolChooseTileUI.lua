@@ -1,50 +1,70 @@
 ---@meta
 
 ---@class BrushToolTilePickerList : ISPanel
----@field imageName any
----@field character any
----@field posToTileNameTable any
----@field [any] any
+---@field character IsoPlayer
+---@field imageName string?
+---@field posToTileNameTable string[][]
 BrushToolTilePickerList = ISPanel:derive("BrushToolTilePickerList")
+BrushToolTilePickerList.Type = "BrushToolTilePickerList"
 
----@return any
-function BrushToolTilePickerList:render() end
----@return any
-function BrushToolTilePickerList:onMouseWheel(del) end
----@return any
+---@param x number
+---@param y number
 function BrushToolTilePickerList:onMouseDown(x, y) end
 
+---@param del number
+---@return boolean
+function BrushToolTilePickerList:onMouseWheel(del) end
+
+function BrushToolTilePickerList:render() end
+
+---@param x number
+---@param y number
+---@param w number
+---@param h number
+---@param character IsoPlayer
 ---@return BrushToolTilePickerList
 function BrushToolTilePickerList:new(x, y, w, h, character) end
 
 ---@class BrushToolChooseTileUI : ISCollapsableWindow
----@field instance any
----@field searchEntryBox any
----@field imageList any
----@field tilesList any
----@field title any
----@field character any
----@field [any] any
+---@field character IsoPlayer
+---@field imageList ISScrollingListBox
+---@field searchEntryBox ISTextEntryBox
+---@field tilesList BrushToolTilePickerList
+---@field title string
 BrushToolChooseTileUI = ISCollapsableWindow:derive("BrushToolChooseTileUI")
-BrushToolChooseTileUI.instance = nil
+BrushToolChooseTileUI.Type = "BrushToolChooseTileUI"
+BrushToolChooseTileUI.instance = nil ---@type BrushToolChooseTileUI?
 
----@return any
-function BrushToolChooseTileUI.openPanel(x, y, playerObj) end
----@return any
-function BrushToolChooseTileUI.onSelectImage(_, item) end
----@return any
+---@param key integer
 function BrushToolChooseTileUI.OnKeyPressed(key) end
 
----@return any
-function BrushToolChooseTileUI:createChildren() end
----@return any
-function BrushToolChooseTileUI:onTextChange() end
----@return any
-function BrushToolChooseTileUI:doDrawImageListItem(y, item, alt) end
----@return any
-function BrushToolChooseTileUI:populateList() end
----@return any
+---@param _ nil
+---@param item string
+function BrushToolChooseTileUI.onSelectImage(_, item) end
+
+---@param x number
+---@param y number
+---@param playerObj IsoPlayer
+function BrushToolChooseTileUI.openPanel(x, y, playerObj) end
+
 function BrushToolChooseTileUI:close() end
 
+function BrushToolChooseTileUI:createChildren() end
+
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
+function BrushToolChooseTileUI:doDrawImageListItem(y, item, alt) end
+
+function BrushToolChooseTileUI:onTextChange() end
+
+function BrushToolChooseTileUI:populateList() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param character IsoPlayer
 ---@return BrushToolChooseTileUI
 function BrushToolChooseTileUI:new(x, y, width, height, character) end

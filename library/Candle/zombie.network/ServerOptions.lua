@@ -1,12 +1,12 @@
---- @meta
+--- @meta _
 
 --- @class ServerOptions
 --- @field public class any
 --- @field public cardList ArrayList
 --- @field public clientOptionsList HashMap
 --- @field public instance ServerOptions
---- @field public MAX_PORT int
-ServerOptions = {};
+--- @field public MAX_PORT integer
+ServerOptions = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -25,14 +25,13 @@ function ServerOptions.getInstance() end
 
 --- @public
 --- @static
---- @return String
+--- @return string
 function ServerOptions.getRandomCard() end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function ServerOptions.initClientCommandsHelp() end
-
 
 ------------------------------------
 ------------- METHODS --------------
@@ -40,55 +39,59 @@ function ServerOptions.initClientCommandsHelp() end
 
 --- @public
 --- @param option ServerOption
---- @return void
+--- @return nil
 function ServerOptions:addOption(option) end
 
 --- @public
---- @param key String
---- @param value String
---- @return String
+--- @param key string
+--- @param value string
+--- @return string
 function ServerOptions:changeOption(key, value) end
 
 --- @public
---- @param key String
---- @return Boolean
+--- @param key string
+--- @return boolean
 function ServerOptions:getBoolean(key) end
 
 --- @public
---- @param key String
---- @return Double
+--- @param key string
+--- @return number
 function ServerOptions:getDouble(key) end
 
 --- @public
---- @param key String
---- @return Float
+--- @param key string
+--- @return number
 function ServerOptions:getFloat(key) end
 
 --- @public
---- @param key String
---- @return Integer
+--- @param key string
+--- @return integer
 function ServerOptions:getInteger(key) end
 
 --- @public
---- @return int
+--- @return integer
 function ServerOptions:getMaxPlayers() end
 
 --- @public
---- @return int
+--- @return integer
+function ServerOptions:getMaxPlayersForEstablishingConnection() end
+
+--- @public
+--- @return integer
 function ServerOptions:getNumOptions() end
 
 --- @public
---- @param key String
---- @return String
+--- @param key string
+--- @return string
 function ServerOptions:getOption(key) end
 
 --- @public
---- @param index int
+--- @param index integer
 --- @return ServerOption
 function ServerOptions:getOptionByIndex(index) end
 
 --- @public
---- @param name String
+--- @param name string
 --- @return ServerOption
 function ServerOptions:getOptionByName(name) end
 
@@ -101,38 +104,37 @@ function ServerOptions:getOptions() end
 function ServerOptions:getPublicOptions() end
 
 --- @public
---- @return void
+--- @return nil
 function ServerOptions:init() end
 
 --- @public
---- @param serverName String
+--- @param serverName string
 --- @return boolean
 function ServerOptions:loadServerTextFile(serverName) end
 
 --- @public
---- @param key String
---- @param value String
---- @return void
+--- @param key string
+--- @param value string
+--- @return nil
 function ServerOptions:putOption(key, value) end
 
 --- @public
---- @param key String
---- @param value String
---- @return void
+--- @param key string
+--- @param value string
+--- @return nil
 function ServerOptions:putSaveOption(key, value) end
 
 --- @public
---- @return void
+--- @return nil
 function ServerOptions:resetRegionFile() end
 
 --- @public
---- @param serverName String
+--- @param serverName string
 --- @return boolean
 function ServerOptions:saveServerTextFile(serverName) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

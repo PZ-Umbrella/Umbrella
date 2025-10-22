@@ -1,29 +1,39 @@
 ---@meta
 
 ---@class ISBaseMover : ISBaseObject
----@field javaObject any
----@field sprite any
----@field states any
----@field [any] any
+---@field javaObject IsoLuaMover
+---@field sprite IsoSprite
+---@field states ISMoverStateMachine
 ISBaseMover = ISBaseObject:derive("ISBaseMover")
+ISBaseMover.Type = "ISBaseMover"
 ISBaseMover.IDMax = 1
 
----@return any
-function ISBaseMover:init() end
----@return any
-function ISBaseMover:getSprite() end
----@return any
-function ISBaseMover:playAnim(name, seconds, looped, animate) end
----@return any
+---@param state ISBaseState
 function ISBaseMover:changeState(state) end
----@return any
-function ISBaseMover:update() end
----@return any
-function ISBaseMover:postrender(col, bDoAttached) end
----@return any
+
+---@return IsoSprite
+function ISBaseMover:getSprite() end
+
+function ISBaseMover:init() end
+
+---@param x number
+---@param y number
+---@param z number
 function ISBaseMover:placeInWorld(x, y, z) end
----@return any
+
+---@param name string
+---@param seconds number
+---@param looped boolean
+---@param animate boolean
+function ISBaseMover:playAnim(name, seconds, looped, animate) end
+
+---@param col ColorInfo
+---@param bDoAttached boolean
+function ISBaseMover:postrender(col, bDoAttached) end
+
 function ISBaseMover:removeFromWorld() end
+
+function ISBaseMover:update() end
 
 ---@return ISBaseMover
 function ISBaseMover:new() end

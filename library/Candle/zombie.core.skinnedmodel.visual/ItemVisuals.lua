@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class ItemVisuals: ArrayList
 --- @field public class any
-ItemVisuals = {};
+ItemVisuals = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -17,19 +17,22 @@ function ItemVisuals:findHat() end
 function ItemVisuals:findMask() end
 
 --- @public
+--- @return string
+function ItemVisuals:getDescription() end
+
+--- @public
 --- @param input ByteBuffer
---- @param WorldVersion int
---- @return void
+--- @param WorldVersion integer
+--- @return nil
 function ItemVisuals:load(input, WorldVersion) end
 
 --- @public
 --- @param output ByteBuffer
---- @return void
+--- @return nil
 function ItemVisuals:save(output) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

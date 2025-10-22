@@ -1,97 +1,136 @@
 ---@meta
 
 ---@class ISClothingInsPanel : ISPanelJoypad
----@field bpPanelX any
----@field bpPanelY any
----@field bpAnchorX any
----@field bpAnchorY any
----@field bodyPartPanel any
----@field mainGroup any
----@field nodeGroup any
----@field labelCoreTemp any
----@field labelCoreTempMid any
----@field labelCoreTempMin any
----@field labelCoreTempMax any
----@field coreTemperatureBar any
----@field labelCoreHeat any
----@field labelCoreHeatMid any
----@field labelCoreHeatMin any
----@field labelCoreHeatMax any
----@field coreHeatBar any
----@field currentViewID any
----@field viewButtons any
----@field nodeDetails any
----@field mainGroupViews any
----@field nodeGroupViews any
----@field maxViewsY any
----@field coreRectangleH any
----@field labelCurrentView any
----@field labelCurrentViewMid any
----@field labelCurrentViewMin any
----@field labelCurrentViewMax any
----@field legendBar any
----@field toggleAdvBtn any
----@field selectedViewIndex any
----@field views any
----@field viewsSimple any
----@field viewsAdvanced any
----@field colorScheme any
----@field selectedBodyPart any
----@field joypadButtonsY any
----@field joypadIndexY any
----@field joypadIndex any
----@field player any
----@field playerNum any
----@field refreshNeeded any
----@field bFemale any
----@field borderColor any
----@field backgroundColor any
----@field titleColor any
----@field defTextColor any
----@field btnTextColor any
----@field [any] any
+---@field bFemale boolean
+---@field bodyOutline Texture
+---@field bodyPartPanel ISBodyPartPanel
+---@field bpAnchorX number
+---@field bpAnchorY number
+---@field bpPanelX number
+---@field bpPanelY number
+---@field btnTextColor umbrella.RGBA
+---@field colorScheme umbrella.ISBodyPartPanel.ColorSchemeTable[]
+---@field coreHeatBar ISGradientBar
+---@field coreRectangleH number
+---@field coreRectangleW number
+---@field coreRectangleX number
+---@field coreTemperatureBar ISGradientBar
+---@field currentViewID string
+---@field defTextColor umbrella.RGBA
+---@field labelCoreHeat ISLabel
+---@field labelCoreHeatMax ISLabel
+---@field labelCoreHeatMid ISLabel
+---@field labelCoreHeatMin ISLabel
+---@field labelCoreTemp ISLabel
+---@field labelCoreTempMax ISLabel
+---@field labelCoreTempMid ISLabel
+---@field labelCoreTempMin ISLabel
+---@field labelCurrentView ISLabel
+---@field labelCurrentViewMax ISLabel
+---@field labelCurrentViewMid ISLabel
+---@field labelCurrentViewMin ISLabel
+---@field legendBar ISGradientBar
+---@field mainGroup ISUIElement[]
+---@field mainGroupViews table<string, ISUIElement[]>
+---@field maxViewsY number
+---@field nodeDetails table<string, umbrella.ISClothingInsPanel.NodeDetailsTable[]>
+---@field nodeGroup ISUIElement[]
+---@field nodeGroupViews table<string, ISUIElement[]>
+---@field player IsoPlayer
+---@field playerNum integer
+---@field refreshNeeded boolean
+---@field selectedBodyPart boolean
+---@field selectedViewIndex number
+---@field sex string
+---@field titleColor umbrella.RGBA
+---@field toggleAdvBtn ISButton
+---@field viewButtons table<string, ISButton[]>
+---@field views umbrella.ISClothingInsPanel.View[]
+---@field viewsAdvanced umbrella.ISClothingInsPanel.View[]
+---@field viewsSimple umbrella.ISClothingInsPanel.View[]
 ISClothingInsPanel = ISPanelJoypad:derive("ISClothingInsPanel")
+ISClothingInsPanel.Type = "ISClothingInsPanel"
 ISClothingInsPanel.viewSimpleID = "viewSimple"
 ISClothingInsPanel.viewAdvancedID = "viewAdvanced"
 
----@return any
-function ISClothingInsPanel:initialise() end
----@return any
-function ISClothingInsPanel:createChildren() end
----@return any
-function ISClothingInsPanel:addView(_viewID, _viewTable, _y) end
----@return any
+---@param _widget ISUIElement
+---@param _ignoreAddChild boolean?
+---@param _view string?
 function ISClothingInsPanel:addMainGroup(_widget, _ignoreAddChild, _view) end
----@return any
+
+---@param _widget ISUIElement
+---@param _view string?
 function ISClothingInsPanel:addNodeGroup(_widget, _view) end
----@return any
+
+---@param _viewID string
+---@param _viewTable umbrella.ISClothingInsPanel.View[]
+---@param _y number
+function ISClothingInsPanel:addView(_viewID, _viewTable, _y) end
+
 function ISClothingInsPanel:create() end
----@return any
-function ISClothingInsPanel:onResetButton(_btn) end
----@return any
+
+function ISClothingInsPanel:createChildren() end
+
+function ISClothingInsPanel:initialise() end
+
+---@param _btn ISButton
 function ISClothingInsPanel:onClickViewButton(_btn) end
----@return any
-function ISClothingInsPanel:onToggleViewStyle(_btn) end
----@return any
-function ISClothingInsPanel:setViewStyle(_viewStyle, _force) end
----@return any
-function ISClothingInsPanel:setViewIndex(_index) end
----@return any
-function ISClothingInsPanel:setSelection(_node) end
----@return any
-function ISClothingInsPanel:prerender() end
----@return any
-function ISClothingInsPanel:render() end
----@return any
-function ISClothingInsPanel:update() end
----@return any
-function ISClothingInsPanel:setJoypadButtons() end
----@return any
+
+---@param joypadData JoypadData
 function ISClothingInsPanel:onGainJoypadFocus(joypadData) end
----@return any
-function ISClothingInsPanel:onLoseJoypadFocus(joypadData) end
----@return any
+
+---@param button integer
+---@param joypadData JoypadData
 function ISClothingInsPanel:onJoypadDown(button, joypadData) end
 
+---@param joypadData JoypadData
+function ISClothingInsPanel:onLoseJoypadFocus(joypadData) end
+
+---@param _btn ISButton
+function ISClothingInsPanel:onResetButton(_btn) end
+
+---@param _btn ISButton
+function ISClothingInsPanel:onToggleViewStyle(_btn) end
+
+function ISClothingInsPanel:prerender() end
+
+function ISClothingInsPanel:render() end
+
+function ISClothingInsPanel:setJoypadButtons() end
+
+---@param _node umbrella.ISBodyPartPanel.BodyPartTable
+function ISClothingInsPanel:setSelection(_node) end
+
+---@param _index integer
+function ISClothingInsPanel:setViewIndex(_index) end
+
+---@param _viewStyle string
+---@param _force boolean?
+function ISClothingInsPanel:setViewStyle(_viewStyle, _force) end
+
+function ISClothingInsPanel:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISClothingInsPanel
 function ISClothingInsPanel:new(player, x, y, width, height) end
+
+---@class umbrella.ISClothingInsPanel.NodeDetailsTable
+---@field bar ISGradientBar?
+---@field labelMax ISLabel?
+---@field labelMid ISLabel?
+---@field labelMin ISLabel?
+---@field labelTitle ISLabel
+umbrella_ISClothingInsPanel_NodeDetailsTable = {}
+
+---@class umbrella.ISClothingInsPanel.View
+---@field functionName string
+---@field max string
+---@field mid string
+---@field min string
+---@field scheme umbrella.ISBodyPartPanel.ColorSchemeTable[]
+---@field tex Texture
+---@field title string
+umbrella_ISClothingInsPanel_View = {}

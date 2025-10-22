@@ -1,16 +1,22 @@
 ---@meta
 
 ---@class ISConfirmMonitorSettingsDialog : ISModalDialog
----@field startTime any
----@field [any] any
-ISConfirmMonitorSettingsDialog = ISModalDialog:derive("ISConfirmMonitorSettingsDialog")
+---@field startTime number
+ISConfirmMonitorSettingsDialog = ISModalDialog:derive("ISConfirmMonitorSettings")
+ISConfirmMonitorSettingsDialog.Type = "ISConfirmMonitorSettings"
 
----@return any
 function ISConfirmMonitorSettingsDialog:initialise() end
----@return any
-function ISConfirmMonitorSettingsDialog:update() end
----@return any
+
 function ISConfirmMonitorSettingsDialog:render() end
 
+function ISConfirmMonitorSettingsDialog:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param callback umbrella.ISButton.OnClick?
+---@param param1 unknown?
+---@param param2 unknown?
 ---@return ISConfirmMonitorSettingsDialog
 function ISConfirmMonitorSettingsDialog:new(x, y, width, height, callback, param1, param2) end

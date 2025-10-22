@@ -2,31 +2,41 @@
 
 ---@class STrapSystem : SGlobalObjectSystem
 STrapSystem = SGlobalObjectSystem:derive("STrapSystem")
-STrapSystem.removedCache = nil
+STrapSystem.Type = "STrapSystem"
+STrapSystem.removedCache = nil ---@type table?
+STrapSystem.instance = nil ---@type STrapSystem?
 
----@return any
-function STrapSystem.EveryDays() end
----@return any
-function STrapSystem.checkTrap() end
----@return any
-function STrapSystem.isValidModData(modData) end
----@return any
 function STrapSystem.addSound() end
 
----@return any
-function STrapSystem:initSystem() end
----@return any
+function STrapSystem.checkTrap() end
+
+function STrapSystem.EveryDays() end
+
+---@param modData table
+---@return boolean
+function STrapSystem.isValidModData(modData) end
+
 function STrapSystem:convertOldModData() end
----@return any
-function STrapSystem:newLuaObject(globalObject) end
----@return any
+
+function STrapSystem:initSystem() end
+
+---@param isoObject IsoObject
+---@return boolean
 function STrapSystem:isValidIsoObject(isoObject) end
----@return any
+
+---@param globalObject GlobalObject
+---@return STrapGlobalObject
+function STrapSystem:newLuaObject(globalObject) end
+
+---@param playerObj IsoPlayer
 function STrapSystem:OnClientCommand(command, playerObj, args) end
----@return any
-function STrapSystem:OnObjectAboutToBeRemoved(isoObject) end
----@return any
+
+---@param isoObject IsoObject
+---@param playerObj IsoPlayer
 function STrapSystem:OnDestroyIsoThumpable(isoObject, playerObj) end
+
+---@param isoObject IsoObject
+function STrapSystem:OnObjectAboutToBeRemoved(isoObject) end
 
 ---@return STrapSystem
 function STrapSystem:new() end

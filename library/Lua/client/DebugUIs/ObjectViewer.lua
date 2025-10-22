@@ -1,45 +1,64 @@
 ---@meta
 
 ---@class ObjectViewer : ISCollapsableWindow
----@field selected any
----@field obj any
----@field title any
----@field sc any
----@field objectView any
----@field backgroundColor any
----@field height any
----@field width any
----@field x any
----@field y any
----@field [any] any
+---@field obj unknown
+---@field objectView ISScrollingListBox
+---@field sc number
+---@field selected integer
+---@field title string
 ObjectViewer = ISCollapsableWindow:derive("ObjectViewer")
-ObjectViewer.map = {}
+ObjectViewer.Type = "ObjectViewer"
+ObjectViewer.map = {} ---@type table<unknown, ObjectViewer>
 
----@return any
-function ObjectViewer.onWatch(item) end
----@return any
-function ObjectViewer.onDataWrite(data) end
----@return any
+---@param data umbrella.ObjectViewer.WatchItem
 function ObjectViewer.onDataRead(data) end
 
----@return any
-function ObjectViewer:onRightMouseDownObject(x, y) end
----@return any
-function ObjectViewer:onMouseDoubleClickOpenObject(item) end
----@return any
-function ObjectViewer:storePos() end
----@return any
-function ObjectViewer:restorePos() end
----@return any
-function ObjectViewer:initialise() end
----@return any
-function ObjectViewer:onSourceMouseWheel(del) end
----@return any
-function ObjectViewer:fill() end
----@return any
+---@param data umbrella.ObjectViewer.WatchItem
+function ObjectViewer.onDataWrite(data) end
+
+---@param item umbrella.ObjectViewer.WatchItem
+function ObjectViewer.onWatch(item) end
+
+function ObjectViewer:checkFontSize() end
+
 function ObjectViewer:createChildren() end
----@return any
+
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
 function ObjectViewer:doDrawItem(y, item, alt) end
 
+function ObjectViewer:fill() end
+
+function ObjectViewer:initialise() end
+
+function ObjectViewer:onMouseDoubleClickOpenObject(item) end
+
+---@param self ISScrollingListBox
+---@param x number
+---@param y number
+function ObjectViewer:onRightMouseDownObject(self, x, y) end
+
+---@param self ISScrollingListBox
+---@param del number
+---@return boolean
+function ObjectViewer:onSourceMouseWheel(self, del) end
+
+function ObjectViewer:prerender() end
+
+function ObjectViewer:restorePos() end
+
+function ObjectViewer:storePos() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ObjectViewer
 function ObjectViewer:new(x, y, width, height, obj) end
+
+---@class umbrella.ObjectViewer.WatchItem
+---@field item umbrella.ISScrollingListBox.Item
+---@field obj unknown
+umbrella_ObjectViewer_WatchItem = {}

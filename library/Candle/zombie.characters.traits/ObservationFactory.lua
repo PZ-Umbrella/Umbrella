@@ -1,9 +1,9 @@
---- @meta
+--- @meta _
 
 --- @class ObservationFactory
 --- @field public class any
 --- @field public ObservationMap HashMap
-ObservationFactory = {};
+ObservationFactory = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -11,33 +11,32 @@ ObservationFactory = {};
 
 --- @public
 --- @static
---- @param type String
---- @param name String
---- @param desc String
---- @return void
+--- @param type string
+--- @param name string
+--- @param desc string
+--- @return nil
 function ObservationFactory.addObservation(type, name, desc) end
 
 --- @public
 --- @static
---- @param name String
+--- @param name string
 --- @return Observation
 function ObservationFactory.getObservation(name) end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function ObservationFactory.init() end
 
 --- @public
 --- @static
---- @param a String
---- @param b String
---- @return void
+--- @param a string
+--- @param b string
+--- @return nil
 function ObservationFactory.setMutualExclusive(a, b) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

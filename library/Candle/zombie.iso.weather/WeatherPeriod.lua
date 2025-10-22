@@ -1,22 +1,22 @@
---- @meta
+--- @meta _
 
 --- @class WeatherPeriod TurboTuTone.
 --- @field public class any
---- @field public FRONT_STRENGTH_THRESHOLD float
---- @field public STAGE_BLIZZARD int
---- @field public STAGE_CLEARING int
---- @field public STAGE_DRIZZLE int
---- @field public STAGE_HEAVY_PRECIP int
---- @field public STAGE_INTERMEZZO int
---- @field public STAGE_KATEBOB_STORM int
---- @field public STAGE_MAX int
---- @field public STAGE_MODDED int
---- @field public STAGE_MODERATE int
---- @field public STAGE_SHOWERS int
---- @field public STAGE_START int
---- @field public STAGE_STORM int
---- @field public STAGE_TROPICAL_STORM int
-WeatherPeriod = {};
+--- @field public FRONT_STRENGTH_THRESHOLD number
+--- @field public STAGE_BLIZZARD integer
+--- @field public STAGE_CLEARING integer
+--- @field public STAGE_DRIZZLE integer
+--- @field public STAGE_HEAVY_PRECIP integer
+--- @field public STAGE_INTERMEZZO integer
+--- @field public STAGE_KATEBOB_STORM integer
+--- @field public STAGE_MAX integer
+--- @field public STAGE_MODDED integer
+--- @field public STAGE_MODERATE integer
+--- @field public STAGE_SHOWERS integer
+--- @field public STAGE_START integer
+--- @field public STAGE_STORM integer
+--- @field public STAGE_TROPICAL_STORM integer
+WeatherPeriod = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -24,23 +24,22 @@ WeatherPeriod = {};
 
 --- @public
 --- @static
---- @return float
+--- @return number
 function WeatherPeriod.getMaxTemperatureInfluence() end
-
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param moddedID String
---- @param duration double
+--- @param moddedID string
+--- @param duration number
 --- @return WeatherStage
 function WeatherPeriod:createAndAddModdedStage(moddedID, duration) end
 
 --- @public
---- @param typeid int
---- @param duration double
+--- @param typeid integer
+--- @param duration number
 --- @return WeatherStage
 function WeatherPeriod:createAndAddStage(typeid, duration) end
 
@@ -81,15 +80,15 @@ function WeatherPeriod:getCloudColorTropical() end
 function WeatherPeriod:getCurrentStage() end
 
 --- @public
---- @return int
+--- @return integer
 function WeatherPeriod:getCurrentStageID() end
 
 --- @public
---- @return float
+--- @return number
 function WeatherPeriod:getCurrentStrength() end
 
 --- @public
---- @return double
+--- @return number
 function WeatherPeriod:getDuration() end
 
 --- @public
@@ -97,11 +96,11 @@ function WeatherPeriod:getDuration() end
 function WeatherPeriod:getFrontCache() end
 
 --- @public
---- @return int
+--- @return integer
 function WeatherPeriod:getFrontType() end
 
 --- @public
---- @return float
+--- @return number
 function WeatherPeriod:getPrecipitationFinal() end
 
 --- @public
@@ -109,28 +108,28 @@ function WeatherPeriod:getPrecipitationFinal() end
 function WeatherPeriod:getPrintStuff() end
 
 --- @public
---- @return float
+--- @return number
 function WeatherPeriod:getRainThreshold() end
 
 --- @public
---- @param worldAgeHours double
+--- @param worldAgeHours number
 --- @return WeatherStage
 function WeatherPeriod:getStageForWorldAge(worldAgeHours) end
 
 --- @public
---- @return float
+--- @return number
 function WeatherPeriod:getStageProgress() end
 
 --- @public
---- @return float
+--- @return number
 function WeatherPeriod:getTotalProgress() end
 
 --- @public
---- @return float
+--- @return number
 function WeatherPeriod:getTotalStrength() end
 
 --- @public
---- @return double
+--- @return number
 function WeatherPeriod:getWeatherNoise() end
 
 --- @public
@@ -138,7 +137,7 @@ function WeatherPeriod:getWeatherNoise() end
 function WeatherPeriod:getWeatherStages() end
 
 --- @public
---- @return float
+--- @return number
 function WeatherPeriod:getWindAngleDegrees() end
 
 --- @public
@@ -159,10 +158,17 @@ function WeatherPeriod:hasTropical() end
 
 --- @public
 --- @param front AirFront
---- @param hoursSinceStart double
---- @return void
---- @overload fun(self: WeatherPeriod, front: AirFront, hoursSinceStart: double, doThisStageOnly: int, singleStageDuration: float): void
+--- @param hoursSinceStart number
+--- @return nil
 function WeatherPeriod:initSimulationDebug(front, hoursSinceStart) end
+
+--- @public
+--- @param front AirFront
+--- @param hoursSinceStart number
+--- @param doThisStageOnly integer
+--- @param singleStageDuration number
+--- @return nil
+function WeatherPeriod:initSimulationDebug(front, hoursSinceStart, doThisStageOnly, singleStageDuration) end
 
 --- @public
 --- @return boolean
@@ -182,73 +188,72 @@ function WeatherPeriod:isTropicalStorm() end
 
 --- @public
 --- @param input DataInputStream
---- @param worldVersion int
---- @return void
+--- @param worldVersion integer
+--- @return nil
 function WeatherPeriod:load(input, worldVersion) end
 
 --- @public
 --- @param input ByteBuffer
---- @return void
+--- @return nil
 function WeatherPeriod:readNetWeatherData(input) end
 
 --- @public
 ---
----  IO
+--- IO
 ---
 --- @param output DataOutputStream
---- @return void
+--- @return nil
 function WeatherPeriod:save(output) end
 
 --- @public
 --- @param cloudcol ClimateColorInfo
---- @return void
+--- @return nil
 function WeatherPeriod:setCloudColor(cloudcol) end
 
 --- @public
 --- @param b boolean
---- @return void
+--- @return nil
 function WeatherPeriod:setDummy(b) end
 
 --- @public
---- @param x int
---- @param y int
---- @return void
+--- @param x integer
+--- @param y integer
+--- @return nil
 function WeatherPeriod:setKateBobStormCoords(x, y) end
 
 --- @public
---- @param progress float
---- @return void
+--- @param progress number
+--- @return nil
 function WeatherPeriod:setKateBobStormProgress(progress) end
 
 --- @public
 --- @param b boolean
---- @return void
+--- @return nil
 function WeatherPeriod:setPrintStuff(b) end
 
 --- @public
 --- @param warmFront boolean
---- @param strength float
---- @param angle float
+--- @param strength number
+--- @param angle number
 --- @return boolean
 function WeatherPeriod:startCreateModdedPeriod(warmFront, strength, angle) end
 
 --- @public
---- @return void
+--- @return nil
 function WeatherPeriod:stopWeatherPeriod() end
 
 --- @public
---- @param hoursSinceStart double
---- @return void
+--- @param hoursSinceStart number
+--- @return nil
 function WeatherPeriod:update(hoursSinceStart) end
 
 --- @public
 --- @param output ByteBuffer
---- @return void
+--- @return nil
 function WeatherPeriod:writeNetWeatherData(output) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

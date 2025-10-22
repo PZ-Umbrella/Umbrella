@@ -1,34 +1,42 @@
 ---@meta
 
 ---@class ISWorldItemIcon : ISBaseIcon
----@field itemObj any
----@field pinOffset any
----@field isForageable any
----@field onClickContext any
----@field onMouseDoubleClick any
----@field iconClass any
----@field isValidSquare any
----@field itemObjTable any
----@field container any
----@field [any] any
+---@field container ItemContainer
+---@field isValidSquare boolean
+---@field itemObjTable table<InventoryItem, InventoryItem>
+---@field onClickContext function
 ISWorldItemIcon = ISBaseIcon:derive("ISWorldItemIcon")
+ISWorldItemIcon.Type = "ISWorldItemIcon"
 
----@return any
-function ISWorldItemIcon:onRightMouseUp() end
----@return any
-function ISWorldItemIcon:onRightMouseDown() end
----@return any
-function ISWorldItemIcon:doPickup(_x, _y, _contextOption, _targetContainer, _items) end
----@return any
-function ISWorldItemIcon:isValidWorldItem() end
----@return any
-function ISWorldItemIcon:isValid() end
----@return any
-function ISWorldItemIcon:findPinOffset() end
----@return any
-function ISWorldItemIcon:setWorldMarkerPosition() end
----@return any
+function ISWorldItemIcon:checkForPoison() end
+
+---@return boolean
 function ISWorldItemIcon:checkIsForageable() end
 
+---@param _x number
+---@param _y number
+---@param _contextOption ISContextMenu
+---@param _targetContainer ItemContainer?
+---@param _items InventoryItem[]?
+function ISWorldItemIcon:doPickup(_x, _y, _contextOption, _targetContainer, _items) end
+
+function ISWorldItemIcon:findPinOffset() end
+
+---@return boolean
+function ISWorldItemIcon:isValid() end
+
+---@return boolean
+function ISWorldItemIcon:isValidWorldItem() end
+
+---@return boolean
+function ISWorldItemIcon:onRightMouseDown() end
+
+---@return boolean?
+function ISWorldItemIcon:onRightMouseUp() end
+
+function ISWorldItemIcon:setWorldMarkerPosition() end
+
+---@param _manager ISSearchManager
+---@param _icon umbrella.Foraging.WorldIconData
 ---@return ISWorldItemIcon
 function ISWorldItemIcon:new(_manager, _icon) end

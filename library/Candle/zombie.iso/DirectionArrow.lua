@@ -1,55 +1,64 @@
---- @meta
+--- @meta _
 
 --- @class DirectionArrow
 --- @field public class any
 --- @field public doDebug boolean
-DirectionArrow = {};
+DirectionArrow = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return float
+--- @return number
 function DirectionArrow:getA() end
 
 --- @public
---- @return float
+--- @return number
 function DirectionArrow:getB() end
 
 --- @public
---- @return float
+--- @return number
 function DirectionArrow:getG() end
 
 --- @public
---- @return int
+--- @return integer
 function DirectionArrow:getID() end
 
 --- @public
---- @return float
+--- @return number
 function DirectionArrow:getR() end
 
 --- @public
---- @return float
+--- @return number
 function DirectionArrow:getRenderHeight() end
 
 --- @public
---- @return float
+---
+--- Render width and height for the pointer texture.
+---
+--- @return number
 function DirectionArrow:getRenderWidth() end
 
 --- @public
---- @return int
+---
+--- The target position on the map for this pointer.
+---
+--- @return integer
 function DirectionArrow:getX() end
 
 --- @public
---- @return int
+--- @return integer
 function DirectionArrow:getY() end
 
 --- @public
---- @return int
+--- @return integer
 function DirectionArrow:getZ() end
 
 --- @public
+---
+--- Active can be set to false, the pointer will remain but wont be drawn.
+---
 --- @return boolean
 function DirectionArrow:isActive() end
 
@@ -58,94 +67,96 @@ function DirectionArrow:isActive() end
 function DirectionArrow:isRemoved() end
 
 --- @public
---- @return void
+---
+--- When called will remove the pointer next tick
+---
+--- @return nil
 function DirectionArrow:remove() end
 
 --- @public
---- @param arg0 float
---- @return void
-function DirectionArrow:setA(arg0) end
+--- @param a number
+--- @return nil
+function DirectionArrow:setA(a) end
 
 --- @public
---- @param arg0 boolean
---- @return void
-function DirectionArrow:setActive(arg0) end
+--- @param active boolean
+--- @return nil
+function DirectionArrow:setActive(active) end
 
 --- @public
---- @param arg0 float
---- @return void
-function DirectionArrow:setB(arg0) end
+--- @param b number
+--- @return nil
+function DirectionArrow:setB(b) end
 
 --- @public
---- @param arg0 float
---- @return void
-function DirectionArrow:setG(arg0) end
+--- @param g number
+--- @return nil
+function DirectionArrow:setG(g) end
 
 --- @public
---- @param arg0 float
---- @return void
-function DirectionArrow:setR(arg0) end
+--- @param r number
+--- @return nil
+function DirectionArrow:setR(r) end
 
 --- @public
---- @param arg0 float
---- @param arg1 float
---- @param arg2 float
---- @param arg3 float
---- @return void
-function DirectionArrow:setRGBA(arg0, arg1, arg2, arg3) end
+--- @param r number
+--- @param g number
+--- @param b number
+--- @param a number
+--- @return nil
+function DirectionArrow:setRGBA(r, g, b, a) end
 
 --- @public
---- @param arg0 float
---- @return void
-function DirectionArrow:setRenderHeight(arg0) end
+--- @param renderHeight number
+--- @return nil
+function DirectionArrow:setRenderHeight(renderHeight) end
 
 --- @public
---- @param arg0 float
---- @return void
-function DirectionArrow:setRenderWidth(arg0) end
+--- @param renderWidth number
+--- @return nil
+function DirectionArrow:setRenderWidth(renderWidth) end
 
 --- @public
---- @param arg0 String
---- @return void
-function DirectionArrow:setTexDown(arg0) end
+--- @param texname string
+--- @return nil
+function DirectionArrow:setTexDown(texname) end
 
 --- @public
---- @param arg0 String
---- @return void
-function DirectionArrow:setTexStairsDown(arg0) end
+--- @param texname string
+--- @return nil
+function DirectionArrow:setTexStairsDown(texname) end
 
 --- @public
---- @param arg0 String
---- @return void
-function DirectionArrow:setTexStairsUp(arg0) end
+--- @param texname string
+--- @return nil
+function DirectionArrow:setTexStairsUp(texname) end
 
 --- @public
---- @param arg0 String
---- @return void
-function DirectionArrow:setTexture(arg0) end
+--- @param texname string
+--- @return nil
+function DirectionArrow:setTexture(texname) end
 
 --- @public
---- @param arg0 int
---- @return void
-function DirectionArrow:setX(arg0) end
+--- @param x integer
+--- @return nil
+function DirectionArrow:setX(x) end
 
 --- @public
---- @param arg0 int
---- @return void
-function DirectionArrow:setY(arg0) end
+--- @param y integer
+--- @return nil
+function DirectionArrow:setY(y) end
 
 --- @public
---- @param arg0 int
---- @return void
-function DirectionArrow:setZ(arg0) end
-
+--- @param z integer
+--- @return nil
+function DirectionArrow:setZ(z) end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param arg0 WorldMarkers
---- @param arg1 int
+--- @param arg1 integer
 --- @return DirectionArrow
 function DirectionArrow.new(arg0, arg1) end

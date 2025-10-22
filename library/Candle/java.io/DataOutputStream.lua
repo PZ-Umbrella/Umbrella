@@ -1,100 +1,162 @@
---- @meta
+--- @meta _
 
---- @class DataOutputStream: FilterOutputStream
+--- @class DataOutputStream: FilterOutputStream, DataOutput
 --- @field public class any
---- @implement DataOutput
-DataOutputStream = {};
+DataOutputStream = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
+--- @return nil
 function DataOutputStream:flush() end
 
 --- @public
---- @return int
+--- @return integer
 function DataOutputStream:size() end
 
 --- @public
 --- @param arg0 byte[]
---- @return void
---- @overload fun(self: DataOutputStream, arg0: int): void
---- @overload fun(self: DataOutputStream, arg0: int): void
---- @overload fun(self: DataOutputStream, arg0: byte[], arg1: int, arg2: int): void
---- @overload fun(self: DataOutputStream, arg0: byte[], arg1: int, arg2: int): void
+--- @return nil
 function DataOutputStream:write(arg0) end
 
 --- @public
+--- @param arg0 integer
+--- @return nil
+function DataOutputStream:write(arg0) end
+
+--- @public
+--- @param arg0 integer
+--- @return nil
+function DataOutputStream:write(arg0) end
+
+--- @public
+--- @param arg0 byte[]
+--- @param arg1 integer
+--- @param arg2 integer
+--- @return nil
+function DataOutputStream:write(arg0, arg1, arg2) end
+
+--- @public
+--- @param arg0 byte[]
+--- @param arg1 integer
+--- @param arg2 integer
+--- @return nil
+function DataOutputStream:write(arg0, arg1, arg2) end
+
+--- @public
 --- @param arg0 boolean
---- @return void
---- @overload fun(self: DataOutputStream, arg0: boolean): void
+--- @return nil
 function DataOutputStream:writeBoolean(arg0) end
 
 --- @public
---- @param arg0 int
---- @return void
---- @overload fun(self: DataOutputStream, arg0: int): void
+--- @param arg0 boolean
+--- @return nil
+function DataOutputStream:writeBoolean(arg0) end
+
+--- @public
+--- @param arg0 integer
+--- @return nil
 function DataOutputStream:writeByte(arg0) end
 
 --- @public
---- @param arg0 String
---- @return void
---- @overload fun(self: DataOutputStream, arg0: String): void
+--- @param arg0 integer
+--- @return nil
+function DataOutputStream:writeByte(arg0) end
+
+--- @public
+--- @param arg0 string
+--- @return nil
 function DataOutputStream:writeBytes(arg0) end
 
 --- @public
---- @param arg0 int
---- @return void
---- @overload fun(self: DataOutputStream, arg0: int): void
+--- @param arg0 string
+--- @return nil
+function DataOutputStream:writeBytes(arg0) end
+
+--- @public
+--- @param arg0 integer
+--- @return nil
 function DataOutputStream:writeChar(arg0) end
 
 --- @public
---- @param arg0 String
---- @return void
---- @overload fun(self: DataOutputStream, arg0: String): void
+--- @param arg0 integer
+--- @return nil
+function DataOutputStream:writeChar(arg0) end
+
+--- @public
+--- @param arg0 string
+--- @return nil
 function DataOutputStream:writeChars(arg0) end
 
 --- @public
---- @param arg0 double
---- @return void
---- @overload fun(self: DataOutputStream, arg0: double): void
+--- @param arg0 string
+--- @return nil
+function DataOutputStream:writeChars(arg0) end
+
+--- @public
+--- @param arg0 number
+--- @return nil
 function DataOutputStream:writeDouble(arg0) end
 
 --- @public
---- @param arg0 float
---- @return void
---- @overload fun(self: DataOutputStream, arg0: float): void
+--- @param arg0 number
+--- @return nil
+function DataOutputStream:writeDouble(arg0) end
+
+--- @public
+--- @param arg0 number
+--- @return nil
 function DataOutputStream:writeFloat(arg0) end
 
 --- @public
---- @param arg0 int
---- @return void
---- @overload fun(self: DataOutputStream, arg0: int): void
+--- @param arg0 number
+--- @return nil
+function DataOutputStream:writeFloat(arg0) end
+
+--- @public
+--- @param arg0 integer
+--- @return nil
 function DataOutputStream:writeInt(arg0) end
 
 --- @public
---- @param arg0 long
---- @return void
---- @overload fun(self: DataOutputStream, arg0: long): void
+--- @param arg0 integer
+--- @return nil
+function DataOutputStream:writeInt(arg0) end
+
+--- @public
+--- @param arg0 integer
+--- @return nil
 function DataOutputStream:writeLong(arg0) end
 
 --- @public
---- @param arg0 int
---- @return void
---- @overload fun(self: DataOutputStream, arg0: int): void
+--- @param arg0 integer
+--- @return nil
+function DataOutputStream:writeLong(arg0) end
+
+--- @public
+--- @param arg0 integer
+--- @return nil
 function DataOutputStream:writeShort(arg0) end
 
 --- @public
---- @param arg0 String
---- @return void
---- @overload fun(self: DataOutputStream, arg0: String): void
+--- @param arg0 integer
+--- @return nil
+function DataOutputStream:writeShort(arg0) end
+
+--- @public
+--- @param arg0 string
+--- @return nil
 function DataOutputStream:writeUTF(arg0) end
 
+--- @public
+--- @param arg0 string
+--- @return nil
+function DataOutputStream:writeUTF(arg0) end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

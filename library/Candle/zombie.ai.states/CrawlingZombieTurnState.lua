@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class CrawlingZombieTurnState: State
 --- @field public class any
-CrawlingZombieTurnState = {};
+CrawlingZombieTurnState = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -20,35 +20,51 @@ function CrawlingZombieTurnState.calculateDir(owner, targetDir) end
 --- @return CrawlingZombieTurnState
 function CrawlingZombieTurnState.instance() end
 
-
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param owner IsoGameCharacter
---- @param event AnimEvent
---- @return void
-function CrawlingZombieTurnState:animEvent(owner, event) end
+--- @param arg0 IsoGameCharacter
+--- @param arg1 AnimLayer
+--- @param arg2 AnimationTrack
+--- @param arg3 AnimEvent
+--- @return nil
+function CrawlingZombieTurnState:animEvent(arg0, arg1, arg2, arg3) end
 
 --- @public
 --- @param owner IsoGameCharacter
---- @return void
+--- @return nil
 function CrawlingZombieTurnState:enter(owner) end
 
 --- @public
 --- @param owner IsoGameCharacter
---- @return void
+--- @return nil
 function CrawlingZombieTurnState:execute(owner) end
 
 --- @public
 --- @param owner IsoGameCharacter
---- @return void
+--- @return nil
 function CrawlingZombieTurnState:exit(owner) end
 
+--- @public
+--- @return boolean
+function CrawlingZombieTurnState:isSyncInIdle() end
+
+--- @public
+--- @return boolean
+function CrawlingZombieTurnState:isSyncOnEnter() end
+
+--- @public
+--- @return boolean
+function CrawlingZombieTurnState:isSyncOnExit() end
+
+--- @public
+--- @return boolean
+function CrawlingZombieTurnState:isSyncOnSquare() end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

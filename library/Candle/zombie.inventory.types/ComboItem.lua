@@ -1,27 +1,33 @@
---- @meta
+--- @meta _
 
 --- @class ComboItem: InventoryItem
 --- @field public class any
-ComboItem = {};
+ComboItem = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return int
+--- @return integer
 function ComboItem:getSaveType() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param module String
---- @param name String
---- @param itemType String
---- @param texName String
+--- @param module string
+--- @param name string
+--- @param itemType string
+--- @param texName string
 --- @return ComboItem
---- @overload fun(module: String, name: String, itemType: String, item: Item): ComboItem
 function ComboItem.new(module, name, itemType, texName) end
+
+--- @public
+--- @param module string
+--- @param name string
+--- @param itemType string
+--- @param item Item
+--- @return ComboItem
+function ComboItem.new(module, name, itemType, item) end

@@ -1,29 +1,32 @@
---- @meta
+--- @meta _
 
 --- @class ClimateForecaster TurboTuTone.
 --- @field public class any
-ClimateForecaster = {};
+ClimateForecaster = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return int
+--- @return integer
 function ClimateForecaster:getDaysTillFirstWeather() end
 
 --- @public
 --- @return DayForecast
---- @overload fun(self: ClimateForecaster, offset: int): DayForecast
 function ClimateForecaster:getForecast() end
+
+--- @public
+--- @param offset integer
+--- @return DayForecast
+function ClimateForecaster:getForecast(offset) end
 
 --- @public
 --- @return ArrayList
 function ClimateForecaster:getForecasts() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

@@ -1,44 +1,54 @@
 ---@meta
 
 ---@class ISResizeWidget : ISPanel
----@field mouseOver any
----@field resizing any
----@field downX any
----@field downY any
----@field x any
----@field y any
----@field borderColor any
----@field backgroundColor any
----@field backgroundColorMouseOver any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field yonly any
----@field target any
----@field [any] any
+---@field backgroundColorMouseOver umbrella.RGBA
+---@field downX number
+---@field downY number
+---@field resizeFunction boolean
+---@field resizing boolean
+---@field target ISUIElement
+---@field yonly boolean?
 ISResizeWidget = ISPanel:derive("ISResizeWidget")
+ISResizeWidget.Type = "ISResizeWidget"
 
----@return any
 function ISResizeWidget:initialise() end
----@return any
-function ISResizeWidget:resize(dx, dy) end
----@return any
-function ISResizeWidget:onMouseMove(dx, dy) end
----@return any
-function ISResizeWidget:onMouseMoveOutside(dx, dy) end
----@return any
-function ISResizeWidget:onMouseUp(x, y) end
----@return any
-function ISResizeWidget:onMouseUpOutside(x, y) end
----@return any
+
+---@param x number
+---@param y number
+---@return boolean?
 function ISResizeWidget:onMouseDown(x, y) end
----@return any
+
+---@param dx number
+---@param dy number
+function ISResizeWidget:onMouseMove(dx, dy) end
+
+---@param dx number
+---@param dy number
+function ISResizeWidget:onMouseMoveOutside(dx, dy) end
+
+---@param x number
+---@param y number
+---@return boolean?
+function ISResizeWidget:onMouseUp(x, y) end
+
+---@param x number
+---@param y number
+---@return boolean?
+function ISResizeWidget:onMouseUpOutside(x, y) end
+
 function ISResizeWidget:prerender() end
----@return any
+
 function ISResizeWidget:render() end
 
+---@param dx number
+---@param dy number
+function ISResizeWidget:resize(dx, dy) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param resizeTarget ISUIElement
+---@param yonly boolean?
 ---@return ISResizeWidget
 function ISResizeWidget:new(x, y, width, height, resizeTarget, yonly) end

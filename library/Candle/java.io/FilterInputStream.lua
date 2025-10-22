@@ -1,24 +1,24 @@
---- @meta
+--- @meta _
 
 --- @class FilterInputStream: InputStream
 --- @field public class any
-FilterInputStream = {};
+FilterInputStream = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return int
+--- @return integer
 function FilterInputStream:available() end
 
 --- @public
---- @return void
+--- @return nil
 function FilterInputStream:close() end
 
 --- @public
---- @param arg0 int
---- @return void
+--- @param arg0 integer
+--- @return nil
 function FilterInputStream:mark(arg0) end
 
 --- @public
@@ -26,18 +26,26 @@ function FilterInputStream:mark(arg0) end
 function FilterInputStream:markSupported() end
 
 --- @public
---- @return int
---- @overload fun(self: FilterInputStream, arg0: byte[]): int
---- @overload fun(self: FilterInputStream, arg0: byte[], arg1: int, arg2: int): int
+--- @return integer
 function FilterInputStream:read() end
 
 --- @public
---- @return void
+--- @param arg0 byte[]
+--- @return integer
+function FilterInputStream:read(arg0) end
+
+--- @public
+--- @param arg0 byte[]
+--- @param arg1 integer
+--- @param arg2 integer
+--- @return integer
+function FilterInputStream:read(arg0, arg1, arg2) end
+
+--- @public
+--- @return nil
 function FilterInputStream:reset() end
 
 --- @public
---- @param arg0 long
---- @return long
+--- @param arg0 integer
+--- @return integer
 function FilterInputStream:skip(arg0) end
-
-

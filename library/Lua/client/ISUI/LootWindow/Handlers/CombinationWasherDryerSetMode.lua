@@ -1,0 +1,21 @@
+---@meta
+
+---@class ISLootWindowObjectControlHandler_CombinationWasherDryerSetMode : ISLootWindowObjectControlHandler
+---@field control unknown
+ISLootWindowObjectControlHandler_CombinationWasherDryerSetMode =
+	ISLootWindowObjectControlHandler:derive("ISLootWindowObjectControlHandler_CombinationWasherDryerSetMode")
+ISLootWindowObjectControlHandler_CombinationWasherDryerSetMode.Type =
+	"ISLootWindowObjectControlHandler_CombinationWasherDryerSetMode"
+
+---@return unknown
+function ISLootWindowObjectControlHandler_CombinationWasherDryerSetMode:getControl() end
+
+function ISLootWindowObjectControlHandler_CombinationWasherDryerSetMode:handleJoypadContextMenu(context) end
+
+function ISLootWindowObjectControlHandler_CombinationWasherDryerSetMode:perform() end
+
+---@return boolean
+function ISLootWindowObjectControlHandler_CombinationWasherDryerSetMode:shouldBeVisible() end
+
+---@return ISLootWindowObjectControlHandler_CombinationWasherDryerSetMode
+function ISLootWindowObjectControlHandler_CombinationWasherDryerSetMode:new() end

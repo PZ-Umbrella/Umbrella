@@ -1,9 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class ClimbDownSheetRopeState: State
 --- @field public class any
---- @field public CLIMB_DOWN_SPEED float
-ClimbDownSheetRopeState = {};
+ClimbDownSheetRopeState = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -14,34 +13,49 @@ ClimbDownSheetRopeState = {};
 --- @return ClimbDownSheetRopeState
 function ClimbDownSheetRopeState.instance() end
 
-
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
 --- @param owner IsoGameCharacter
---- @return void
+--- @return nil
 function ClimbDownSheetRopeState:enter(owner) end
 
 --- @public
 --- @param owner IsoGameCharacter
---- @return void
+--- @return nil
 function ClimbDownSheetRopeState:execute(owner) end
 
 --- @public
 --- @param owner IsoGameCharacter
---- @return void
+--- @return nil
 function ClimbDownSheetRopeState:exit(owner) end
 
 --- @public
---- @param owner IsoGameCharacter
---- @return float
-function ClimbDownSheetRopeState:getClimbDownSheetRopeSpeed(owner) end
+--- @return boolean
+function ClimbDownSheetRopeState:isSyncInIdle() end
 
+--- @public
+--- @return boolean
+function ClimbDownSheetRopeState:isSyncOnEnter() end
+
+--- @public
+--- @return boolean
+function ClimbDownSheetRopeState:isSyncOnExit() end
+
+--- @public
+--- @return boolean
+function ClimbDownSheetRopeState:isSyncOnSquare() end
+
+--- @public
+--- @param arg0 IsoGameCharacter
+--- @param arg1 Stage
+--- @return nil
+function ClimbDownSheetRopeState:setParams(arg0, arg1) end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

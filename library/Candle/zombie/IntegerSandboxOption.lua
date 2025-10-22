@@ -1,9 +1,8 @@
---- @meta
+--- @meta _
 
---- @class IntegerSandboxOption: IntegerConfigOption
+--- @class IntegerSandboxOption: IntegerConfigOption, SandboxOption
 --- @field public class any
---- @implement SandboxOption
-IntegerSandboxOption = {};
+IntegerSandboxOption = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -11,78 +10,117 @@ IntegerSandboxOption = {};
 
 --- @public
 --- @return ConfigOption
---- @overload fun(self: IntegerSandboxOption): ConfigOption
 function IntegerSandboxOption:asConfigOption() end
 
 --- @public
---- @param table KahluaTable
---- @return void
---- @overload fun(self: IntegerSandboxOption, table: KahluaTable): void
+--- @return ConfigOption
+function IntegerSandboxOption:asConfigOption() end
+
+--- @public
+--- @param table table
+--- @return nil
 function IntegerSandboxOption:fromTable(table) end
 
 --- @public
---- @return String
---- @overload fun(self: IntegerSandboxOption): String
+--- @param table table
+--- @return nil
+function IntegerSandboxOption:fromTable(table) end
+
+--- @public
+--- @return string
 function IntegerSandboxOption:getPageName() end
 
 --- @public
---- @return String
---- @overload fun(self: IntegerSandboxOption): String
+--- @return string
+function IntegerSandboxOption:getPageName() end
+
+--- @public
+--- @return string
 function IntegerSandboxOption:getShortName() end
 
 --- @public
---- @return String
---- @overload fun(self: IntegerSandboxOption): String
+--- @return string
+function IntegerSandboxOption:getShortName() end
+
+--- @public
+--- @return string
 function IntegerSandboxOption:getTableName() end
 
 --- @public
---- @return String
---- @overload fun(self: IntegerSandboxOption): String
+--- @return string
+function IntegerSandboxOption:getTableName() end
+
+--- @public
+--- @return string
 function IntegerSandboxOption:getTooltip() end
 
 --- @public
---- @return String
---- @overload fun(self: IntegerSandboxOption): String
+--- @return string
+function IntegerSandboxOption:getTooltip() end
+
+--- @public
+--- @return string
+function IntegerSandboxOption:getTranslatedName() end
+
+--- @public
+--- @return string
 function IntegerSandboxOption:getTranslatedName() end
 
 --- @public
 --- @return boolean
---- @overload fun(self: IntegerSandboxOption): boolean
 function IntegerSandboxOption:isCustom() end
 
 --- @public
---- @return void
---- @overload fun(self: IntegerSandboxOption): void
+--- @return boolean
+function IntegerSandboxOption:isCustom() end
+
+--- @public
+--- @return nil
 function IntegerSandboxOption:setCustom() end
 
 --- @public
---- @param pageName String
+--- @return nil
+function IntegerSandboxOption:setCustom() end
+
+--- @public
+--- @param pageName string
 --- @return SandboxOption
---- @overload fun(self: IntegerSandboxOption, pageName: String): SandboxOption
 function IntegerSandboxOption:setPageName(pageName) end
 
 --- @public
---- @param translation String
+--- @param pageName string
 --- @return SandboxOption
---- @overload fun(self: IntegerSandboxOption, translation: String): SandboxOption
+function IntegerSandboxOption:setPageName(pageName) end
+
+--- @public
+--- @param translation string
+--- @return SandboxOption
 function IntegerSandboxOption:setTranslation(translation) end
 
 --- @public
---- @param table KahluaTable
---- @return void
---- @overload fun(self: IntegerSandboxOption, table: KahluaTable): void
+--- @param translation string
+--- @return SandboxOption
+function IntegerSandboxOption:setTranslation(translation) end
+
+--- @public
+--- @param table table
+--- @return nil
 function IntegerSandboxOption:toTable(table) end
 
+--- @public
+--- @param table table
+--- @return nil
+function IntegerSandboxOption:toTable(table) end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param owner SandboxOptions
---- @param name String
---- @param min int
---- @param max int
---- @param defaultValue int
+--- @param name string
+--- @param min integer
+--- @param max integer
+--- @param defaultValue integer
 --- @return IntegerSandboxOption
 function IntegerSandboxOption.new(owner, name, min, max, defaultValue) end

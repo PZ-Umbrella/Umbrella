@@ -1,30 +1,36 @@
 ---@meta
 
 ---@class ISBBQInfoWindow : ISCollapsableWindow
----@field panel any
----@field object any
----@field spriteName any
----@field fuelAmount any
----@field isLit any
----@field drawJoypadFocus any
----@field character any
----@field playerNum any
----@field [any] any
+---@field character IsoPlayer
+---@field drawJoypadFocus boolean
+---@field fuelAmount number
+---@field isLit boolean
+---@field object IsoBarbecue
+---@field panel ISToolTip
+---@field playerNum integer
+---@field spriteName string
 ISBBQInfoWindow = ISCollapsableWindow:derive("ISBBQInfoWindow")
-ISBBQInfoWindow.windows = {}
+ISBBQInfoWindow.Type = "ISBBQInfoWindow"
+ISBBQInfoWindow.windows = {} ---@type table<IsoPlayer, ISBBQInfoWindow>
 
----@return any
-function ISBBQInfoWindow:createChildren() end
----@return any
-function ISBBQInfoWindow:update() end
----@return any
-function ISBBQInfoWindow:onJoypadDown(button) end
----@return any
-function ISBBQInfoWindow:setObject(bbq) end
----@return any
-function ISBBQInfoWindow:onGainJoypadFocus(joypadData) end
----@return any
 function ISBBQInfoWindow:close() end
 
+function ISBBQInfoWindow:createChildren() end
+
+---@param joypadData JoypadData
+function ISBBQInfoWindow:onGainJoypadFocus(joypadData) end
+
+---@param button integer
+function ISBBQInfoWindow:onJoypadDown(button) end
+
+---@param bbq IsoBarbecue
+function ISBBQInfoWindow:setObject(bbq) end
+
+function ISBBQInfoWindow:update() end
+
+---@param x number
+---@param y number
+---@param character IsoPlayer
+---@param bbq IsoBarbecue
 ---@return ISBBQInfoWindow
 function ISBBQInfoWindow:new(x, y, character, bbq) end

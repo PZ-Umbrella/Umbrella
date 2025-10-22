@@ -1,6 +1,6 @@
 ---@meta
 
 ---@class HairOutfitDefinitions
-HairOutfitDefinitions = HairOutfitDefinitions or {}
+HairOutfitDefinitions = {}
 HairOutfitDefinitions.haircutDefinition = {}
 HairOutfitDefinitions.haircutOutfitDefinition = {}

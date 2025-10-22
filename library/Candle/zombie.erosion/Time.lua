@@ -1,11 +1,11 @@
---- @meta
+--- @meta _
 
 --- @class Time
 --- @field public class any
-Time = {};
+Time = {}
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

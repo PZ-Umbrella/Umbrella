@@ -1,44 +1,46 @@
 ---@meta
 
 ---@class ISUserPanelUI : ISPanel
----@field factionBtn any
----@field ticketsBtn any
----@field serverOptionBtn any
----@field showConnectionInfo any
----@field showServerInfo any
----@field showPingInfo any
----@field cancel any
----@field safehouseBtn any
----@field player any
----@field variableColor any
----@field borderColor any
----@field backgroundColor any
----@field buttonBorderColor any
----@field zOffsetSmallFont any
----@field moveWithMouse any
----@field [any] any
+---@field buttonBorderColor table
+---@field cancel ISButton
+---@field factionBtn ISButton
+---@field player unknown
+---@field safehouseBtn ISButton
+---@field serverOptionBtn ISButton
+---@field showConnectionInfo ISTickBox
+---@field showServerInfo ISTickBox
+---@field ticketsBtn ISButton
+---@field variableColor table
+---@field zOffsetSmallFont number
 ISUserPanelUI = ISPanel:derive("ISUserPanelUI")
+ISUserPanelUI.Type = "ISUserPanelUI"
+ISUserPanelUI.instance = nil ---@type ISUserPanelUI?
 
----@return any
-function ISUserPanelUI:initialise() end
----@return any
-function ISUserPanelUI:setVisible(visible) end
----@return any
-function ISUserPanelUI:render() end
----@return any
-function ISUserPanelUI:create() end
----@return any
-function ISUserPanelUI:onShowConnectionInfo(option, enabled) end
----@return any
-function ISUserPanelUI:onShowServerInfo(option, enabled) end
----@return any
-function ISUserPanelUI:onShowPingInfo(option, enabled) end
----@return any
-function ISUserPanelUI:updateButtons() end
----@return any
-function ISUserPanelUI:onOptionMouseDown(button, x, y) end
----@return any
 function ISUserPanelUI:close() end
 
+function ISUserPanelUI:create() end
+
+function ISUserPanelUI:initialise() end
+
+---@param button ISButton
+---@param x number
+---@param y number
+function ISUserPanelUI:onOptionMouseDown(button, x, y) end
+
+function ISUserPanelUI:onShowConnectionInfo(option, enabled) end
+
+function ISUserPanelUI:onShowServerInfo(option, enabled) end
+
+function ISUserPanelUI:render() end
+
+---@param visible boolean
+function ISUserPanelUI:setVisible(visible) end
+
+function ISUserPanelUI:updateButtons() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISUserPanelUI
 function ISUserPanelUI:new(x, y, width, height, player) end

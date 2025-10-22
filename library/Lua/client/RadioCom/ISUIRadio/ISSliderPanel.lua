@@ -1,88 +1,123 @@
 ---@meta
 
----@class ISSliderPanel : ISPanel
----@field sliderDim any
----@field sliderBarDim any
----@field btnLeftDim any
----@field btnRightDim any
----@field leftPressed any
----@field rightPressed any
----@field dragInside any
----@field dragClickX any
----@field minValue any
----@field maxValue any
----@field stepValue any
----@field shiftValue any
----@field doButtons any
----@field currentValue any
----@field toolTip any
----@field x any
----@field y any
----@field background any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field target any
----@field onValueChange any
----@field customPaginate any
----@field texBtnLeft any
----@field texBtnRight any
----@field buttonColor any
----@field buttonMouseOverColor any
----@field sliderColor any
----@field sliderMouseOverColor any
----@field sliderBorderColor any
----@field sliderBarColor any
----@field sliderBarBorderColor any
----@field doToolTip any
----@field toolTipText any
----@field isSliderPanel any
----@field [any] any
-ISSliderPanel = ISPanel:derive("ISSliderPanel")
+---@alias umbrella.ISSliderPanel.CustomPaginate fun(target: unknown?)
+---@alias umbrella.ISSliderPanel.OnValueChange fun(target: unknown?, value: number, panel: ISSliderPanel)
 
----@return any
-function ISSliderPanel:round(num, idp) end
----@return any
-function ISSliderPanel:initialise() end
----@return any
-function ISSliderPanel:createChildren() end
----@return any
-function ISSliderPanel:paginate() end
----@return any
-function ISSliderPanel:onMouseDown(_x, _y) end
----@return any
-function ISSliderPanel:onMouseMove(_x, _y) end
----@return any
-function ISSliderPanel:onMouseMoveOutside(_x, _y) end
----@return any
-function ISSliderPanel:onMouseUpOutside(x, y) end
----@return any
-function ISSliderPanel:onMouseUp(x, y) end
----@return any
-function ISSliderPanel:update() end
----@return any
-function ISSliderPanel:prerender() end
----@return any
-function ISSliderPanel:render() end
----@return any
-function ISSliderPanel:doOnValueChange(_newvalue) end
----@return any
-function ISSliderPanel:setValues(_min, _max, _step, _shift, _ignoreCurVal) end
----@return any
-function ISSliderPanel:setDoButtons(_b) end
----@return any
-function ISSliderPanel:setCurrentValue(_v, _ignoreOnChange) end
----@return any
-function ISSliderPanel:getCurrentValue() end
----@return any
+---@class ISSliderPanel : ISPanel
+---@field btnLeftDim umbrella.XYWH
+---@field btnRightDim umbrella.XYWH
+---@field buttonColor umbrella.RGBA
+---@field buttonMouseOverColor umbrella.RGBA
+---@field currentValue number
+---@field customPaginate umbrella.ISSliderPanel.CustomPaginate?
+---@field disabled boolean
+---@field doButtons boolean
+---@field doToolTip boolean
+---@field dragClickX number
+---@field dragInside boolean
+---@field isSlider boolean
+---@field isSliderPanel boolean
+---@field joyfocus JoypadData?
+---@field leftPressed boolean
+---@field maxValue number
+---@field minValue number
+---@field onValueChange umbrella.ISSliderPanel.OnValueChange?
+---@field rightPressed boolean
+---@field shiftValue number?
+---@field sliderBarBorderColor umbrella.RGBA
+---@field sliderBarColor umbrella.RGBA
+---@field sliderBarDim umbrella.XYWH
+---@field sliderBorderColor umbrella.RGBA
+---@field sliderColor umbrella.RGBA
+---@field sliderDim umbrella.XYWH
+---@field sliderMouseOverColor umbrella.RGBA
+---@field stepValue number
+---@field target unknown?
+---@field texBtnLeft Texture
+---@field texBtnRight Texture
+---@field toolTip ISToolTip?
+---@field toolTipText string
+ISSliderPanel = ISPanel:derive("ISSliderPanel")
+ISSliderPanel.Type = "ISSliderPanel"
+
 function ISSliderPanel:activateToolTip() end
----@return any
+
+function ISSliderPanel:createChildren() end
+
 function ISSliderPanel:deactivateToolTip() end
 
+---@param _newvalue number
+function ISSliderPanel:doOnValueChange(_newvalue) end
+
+---@return number
+function ISSliderPanel:getCurrentValue() end
+
+function ISSliderPanel:initialise() end
+
+function ISSliderPanel:onJoypadDirLeft() end
+
+function ISSliderPanel:onJoypadDirRight() end
+
+---@param _x number
+---@param _y number
+function ISSliderPanel:onMouseDown(_x, _y) end
+
+---@param _x number
+---@param _y number
+function ISSliderPanel:onMouseMove(_x, _y) end
+
+---@param _x number
+---@param _y number
+function ISSliderPanel:onMouseMoveOutside(_x, _y) end
+
+---@param x number
+---@param y number
+function ISSliderPanel:onMouseUp(x, y) end
+
+---@param x number
+---@param y number
+function ISSliderPanel:onMouseUpOutside(x, y) end
+
+function ISSliderPanel:paginate() end
+
+function ISSliderPanel:prerender() end
+
+function ISSliderPanel:render() end
+
+---@param num number
+---@param idp integer
+---@return number
+function ISSliderPanel:round(num, idp) end
+
+---@param _v number
+---@param _ignoreOnChange boolean?
+function ISSliderPanel:setCurrentValue(_v, _ignoreOnChange) end
+
+---@param _b boolean
+function ISSliderPanel:setDoButtons(_b) end
+
+---@param focused boolean
+---@param joypadData JoypadData
+function ISSliderPanel:setJoypadFocused(focused, joypadData) end
+
+---@param _min number
+---@param _max number
+---@param _step number
+---@param _shift number?
+---@param _ignoreCurVal boolean?
+function ISSliderPanel:setValues(_min, _max, _step, _shift, _ignoreCurVal) end
+
+---@param w number
+function ISSliderPanel:setWidth(w) end
+
+function ISSliderPanel:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param target unknown?
+---@param onValueChange umbrella.ISSliderPanel.OnValueChange?
+---@param customPaginate umbrella.ISSliderPanel.CustomPaginate?
 ---@return ISSliderPanel
 function ISSliderPanel:new(x, y, width, height, target, onValueChange, customPaginate) end

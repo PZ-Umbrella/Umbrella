@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RDSSkeletonPsycho: RandomizedDeadSurvivorBase Create skeleton corpses in a bedroom with one zombie as doctor
 --- @field public class any
-RDSSkeletonPsycho = {};
+RDSSkeletonPsycho = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,12 +10,11 @@ RDSSkeletonPsycho = {};
 
 --- @public
 --- @param def BuildingDef
---- @return void
+--- @return nil
 function RDSSkeletonPsycho:randomizeDeadSurvivor(def) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

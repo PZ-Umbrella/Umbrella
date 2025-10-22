@@ -1,51 +1,55 @@
 ---@meta
 
 ---@class ISLedLight : ISPanel
----@field ledIsOn any
----@field ledCntr any
----@field oldState any
----@field ledBlinkSpeed any
----@field doLedBlink any
----@field ledCol any
----@field ledColOff any
----@field x any
----@field y any
----@field background any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field ledBackTexture any
----@field ledTexture any
----@field [any] any
+---@field doLedBlink boolean
+---@field ledBackTexture Texture
+---@field ledBlinkSpeed number
+---@field ledCntr number
+---@field ledCol umbrella.RGBA
+---@field ledColOff umbrella.RGBA
+---@field ledIsOn boolean
+---@field ledTexture Texture
+---@field oldState boolean
 ISLedLight = ISPanel:derive("ISLedLight")
+ISLedLight.Type = "ISLedLight"
 
----@return any
-function ISLedLight:initialise() end
----@return any
 function ISLedLight:createChildren() end
----@return any
-function ISLedLight:update() end
----@return any
-function ISLedLight:prerender() end
----@return any
-function ISLedLight:render() end
----@return any
+
+---@return boolean
 function ISLedLight:getLedIsOn() end
----@return any
-function ISLedLight:setLedIsOn(_b) end
----@return any
+
+function ISLedLight:initialise() end
+
+function ISLedLight:prerender() end
+
+function ISLedLight:render() end
+
+---@param _i integer
 function ISLedLight:setBlinkingSpeed(_i) end
----@return any
+
+---@param _b boolean
 function ISLedLight:setIsBlinking(_b) end
----@return any
+
+---@param _a number
+---@param _r number
+---@param _g number
+---@param _b number
 function ISLedLight:setLedColor(_a, _r, _g, _b) end
----@return any
+
+---@param _a number
+---@param _r number
+---@param _g number
+---@param _b number
 function ISLedLight:setLedColorOff(_a, _r, _g, _b) end
 
+---@param _b boolean
+function ISLedLight:setLedIsOn(_b) end
+
+function ISLedLight:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISLedLight
 function ISLedLight:new(x, y, width, height) end

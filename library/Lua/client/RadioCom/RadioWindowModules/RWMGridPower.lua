@@ -1,48 +1,50 @@
 ---@meta
 
 ---@class RWMGridPower : RWMPanel
----@field led any
----@field toggleOnOffButton any
----@field x any
----@field y any
----@field background any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field [any] any
+---@field led ISLedLight
+---@field toggleOnOffButton ISButton
 RWMGridPower = RWMPanel:derive("RWMGridPower")
+RWMGridPower.Type = "RWMGridPower"
 
----@return any
-function RWMGridPower:initialise() end
----@return any
-function RWMGridPower:createChildren() end
----@return any
-function RWMGridPower:toggleOnOff() end
----@return any
 function RWMGridPower:clear() end
----@return any
-function RWMGridPower:readFromObject(_player, _deviceObject, _deviceData, _deviceType) end
----@return any
-function RWMGridPower:update() end
----@return any
-function RWMGridPower:prerender() end
----@return any
-function RWMGridPower:render() end
----@return any
-function RWMGridPower:onJoypadDown(button) end
----@return any
+
+function RWMGridPower:createChildren() end
+
+---@return string?
 function RWMGridPower:getAPrompt() end
----@return any
+
+---@return string?
 function RWMGridPower:getBPrompt() end
----@return any
+
+---@return string?
 function RWMGridPower:getXPrompt() end
----@return any
+
+---@return string?
 function RWMGridPower:getYPrompt() end
 
+function RWMGridPower:initialise() end
+
+---@param button integer
+function RWMGridPower:onJoypadDown(button) end
+
+function RWMGridPower:prerender() end
+
+---@param _player IsoPlayer
+---@param _deviceObject InventoryItem | IsoObject | VehiclePart
+---@param _deviceData DeviceData
+---@param _deviceType string
+---@return boolean
+function RWMGridPower:readFromObject(_player, _deviceObject, _deviceData, _deviceType) end
+
+function RWMGridPower:render() end
+
+function RWMGridPower:toggleOnOff() end
+
+function RWMGridPower:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return RWMGridPower
 function RWMGridPower:new(x, y, width, height) end

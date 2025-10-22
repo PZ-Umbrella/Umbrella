@@ -1,19 +1,17 @@
 ---@meta
 
 ---@class ISGeneratorInfoAction : ISBaseTimedAction
----@field maxTime any
----@field stopOnWalk any
----@field stopOnRun any
----@field character any
----@field playerNum any
----@field object any
----@field [any] any
+---@field object IsoGenerator
+---@field playerNum integer
 ISGeneratorInfoAction = ISBaseTimedAction:derive("ISGeneratorInfoAction")
+ISGeneratorInfoAction.Type = "ISGeneratorInfoAction"
 
----@return any
+---@return boolean
 function ISGeneratorInfoAction:isValid() end
----@return any
+
 function ISGeneratorInfoAction:perform() end
 
+---@param character IsoPlayer
+---@param object IsoGenerator
 ---@return ISGeneratorInfoAction
 function ISGeneratorInfoAction:new(character, object) end

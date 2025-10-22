@@ -1,45 +1,54 @@
 ---@meta
 
----@class ISRadioOption : ISPanel
----@field selected any
----@field mouseOverOption any
----@field optionCount any
----@field x any
----@field y any
----@field width any
----@field height any
----@field tickTexture any
----@field borderColor any
----@field backgroundColor any
----@field choicesColor any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field name any
----@field options any
----@field leftMargin any
----@field changeOptionMethod any
----@field changeOptionTarget any
----@field [any] any
-ISRadioOption = ISPanel:derive("ISRadioOption")
+---@alias umbrella.ISRadioOption.OnChange fun(target: unknown, selected: integer)
 
----@return any
-function ISRadioOption:initialise() end
----@return any
-function ISRadioOption:prerender() end
----@return any
-function ISRadioOption:render() end
----@return any
-function ISRadioOption:onMouseUp(x, y) end
----@return any
-function ISRadioOption:onMouseDown(x, y) end
----@return any
-function ISRadioOption:onMouseMove(dx, dy) end
----@return any
-function ISRadioOption:onMouseMoveOutside(dx, dy) end
----@return any
+---@class ISRadioOption : ISPanel
+---@field changeOptionMethod umbrella.ISRadioOption.OnChange?
+---@field changeOptionTarget unknown?
+---@field choicesColor umbrella.RGBA
+---@field leftMargin number
+---@field mouseOverOption number
+---@field name string
+---@field optionCount number
+---@field options string[]
+---@field selected number
+---@field tickTexture Texture
+ISRadioOption = ISPanel:derive("ISRadioOption")
+ISRadioOption.Type = "ISRadioOption"
+
+---@param name string
 function ISRadioOption:addOption(name) end
 
+function ISRadioOption:initialise() end
+
+---@param x number
+---@param y number
+---@return boolean
+function ISRadioOption:onMouseDown(x, y) end
+
+---@param dx number
+---@param dy number
+function ISRadioOption:onMouseMove(dx, dy) end
+
+---@param dx number
+---@param dy number
+function ISRadioOption:onMouseMoveOutside(dx, dy) end
+
+---@param x number
+---@param y number
+---@return boolean
+function ISRadioOption:onMouseUp(x, y) end
+
+function ISRadioOption:prerender() end
+
+function ISRadioOption:render() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param name string
+---@param changeOptionTarget unknown?
+---@param changeOptionMethod umbrella.ISRadioOption.OnChange?
 ---@return ISRadioOption
 function ISRadioOption:new(x, y, width, height, name, changeOptionTarget, changeOptionMethod) end

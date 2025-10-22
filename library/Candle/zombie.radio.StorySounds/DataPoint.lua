@@ -1,38 +1,37 @@
---- @meta
+--- @meta _
 
 --- @class DataPoint Turbo
 --- @field public class any
-DataPoint = {};
+DataPoint = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return float
+--- @return number
 function DataPoint:getIntensity() end
 
 --- @public
---- @return float
+--- @return number
 function DataPoint:getTime() end
 
 --- @public
---- @param intensity float
---- @return void
+--- @param intensity number
+--- @return nil
 function DataPoint:setIntensity(intensity) end
 
 --- @public
---- @param time float
---- @return void
+--- @param time number
+--- @return nil
 function DataPoint:setTime(time) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param time float
---- @param intensity float
+--- @param time number
+--- @param intensity number
 --- @return DataPoint
 function DataPoint.new(time, intensity) end

@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RecipeManager
 --- @field public class any
-RecipeManager = {};
+RecipeManager = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -10,16 +10,18 @@ RecipeManager = {};
 
 --- @public
 --- @static
---- @param itemToUse String
+--- @param itemToUse string
 --- @param recipe Recipe
 --- @return boolean
+--- @deprecated
 function RecipeManager.DoesUseItemUp(itemToUse, recipe) end
 
 --- @public
 --- @static
---- @param itemToUse String
---- @param itemToMake String
+--- @param itemToUse string
+--- @param itemToMake string
 --- @return boolean
+--- @deprecated
 function RecipeManager.DoesWipeUseDelta(itemToUse, itemToMake) end
 
 --- @public
@@ -43,9 +45,10 @@ function RecipeManager.HasAllRequiredItems(recipe, chr, selectedItem, containers
 
 --- @public
 --- @static
---- @param itemToUse String
+--- @param itemToUse string
 --- @param recipe Recipe
 --- @return boolean
+--- @deprecated
 function RecipeManager.IsItemDestroyed(itemToUse, recipe) end
 
 --- @public
@@ -59,12 +62,7 @@ function RecipeManager.IsRecipeValid(recipe, chr, item, containers) end
 
 --- @public
 --- @static
---- @return void
-function RecipeManager.Loaded() end
-
---- @public
---- @static
---- @return void
+--- @return nil
 function RecipeManager.LoadedAfterLua() end
 
 --- @public
@@ -73,15 +71,21 @@ function RecipeManager.LoadedAfterLua() end
 --- @param selectedItem InventoryItem
 --- @param chr IsoGameCharacter
 --- @param containers ArrayList
---- @return InventoryItem
+--- @return ArrayList
 function RecipeManager.PerformMakeItem(recipe, selectedItem, chr, containers) end
 
 --- @public
 --- @static
---- @param sourceFullType String
+--- @return nil
+function RecipeManager.ScriptsLoaded() end
+
+--- @public
+--- @static
+--- @param sourceFullType string
 --- @param recipe Recipe
 --- @param chr IsoGameCharacter
---- @return float
+--- @return number
+--- @deprecated
 function RecipeManager.UseAmount(sourceFullType, recipe, chr) end
 
 --- @public
@@ -111,7 +115,7 @@ function RecipeManager.getAvailableItemsNeeded(recipe, chr, containers, selected
 
 --- @public
 --- @static
---- @param item String
+--- @param item string
 --- @return Recipe
 function RecipeManager.getDismantleRecipeFor(item) end
 
@@ -127,7 +131,7 @@ function RecipeManager.getEvolvedRecipe(baseItem, chr, containers, need1ingredie
 --- @public
 --- @static
 --- @param chr IsoGameCharacter
---- @return int
+--- @return integer
 function RecipeManager.getKnownRecipesNumber(chr) end
 
 --- @public
@@ -136,13 +140,13 @@ function RecipeManager.getKnownRecipesNumber(chr) end
 --- @param chr IsoGameCharacter
 --- @param containers ArrayList
 --- @param selectedItem InventoryItem
---- @return int
+--- @return integer
 function RecipeManager.getNumberOfTimesRecipeCanBeDone(recipe, chr, containers, selectedItem) end
 
 --- @public
 --- @static
 --- @param recipe Recipe
---- @param sourceIndex int
+--- @param sourceIndex integer
 --- @param chr IsoGameCharacter
 --- @param containers ArrayList
 --- @param selectedItem InventoryItem
@@ -153,7 +157,7 @@ function RecipeManager.getSourceItemsAll(recipe, sourceIndex, chr, containers, s
 --- @public
 --- @static
 --- @param recipe Recipe
---- @param sourceIndex int
+--- @param sourceIndex integer
 --- @param chr IsoGameCharacter
 --- @param containers ArrayList
 --- @param selectedItem InventoryItem
@@ -187,9 +191,33 @@ function RecipeManager.hasHeat(recipe, item, containers, chr) end
 --- @return boolean
 function RecipeManager.isAllItemsUsableRotten(arg0, arg1, arg2, arg3) end
 
+--- @public
+--- @static
+--- @param arg0 Recipe
+--- @param arg1 IsoGameCharacter
+--- @param arg2 InventoryItem
+--- @param arg3 ArrayList
+--- @return nil
+function RecipeManager.printDebugRecipeValid(arg0, arg1, arg2, arg3) end
+
+--- @public
+--- @static
+--- @param arg0 Recipe
+--- @param arg1 InventoryItem
+--- @param arg2 ArrayList
+--- @param arg3 IsoGameCharacter
+--- @return boolean
+function RecipeManager.validateHasHeat(arg0, arg1, arg2, arg3) end
+
+--- @public
+--- @static
+--- @param arg0 Recipe
+--- @param arg1 InventoryItem
+--- @return boolean
+function RecipeManager.validateRecipeContainsSourceItem(arg0, arg1) end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

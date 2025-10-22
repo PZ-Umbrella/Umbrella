@@ -1,4 +1,4 @@
 ---@meta
 
----@return any
+---@return string
 function getDir() end

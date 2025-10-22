@@ -1,43 +1,62 @@
 ---@meta
 
----@class ISMegaVolumeControl : ISPanel
----@field dragging any
----@field tooltipUI any
----@field volume any
----@field joypadFocused any
----@field backgroundColor any
----@field borderColor any
----@field target any
----@field targetFunc any
----@field fade any
----@field isSlider any
----@field [any] any
-ISMegaVolumeControl = ISPanel:derive("ISMegaVolumeControl")
+---@alias umbrella.ISMegaVolumeControl.TargetFunction fun(target: unknown, control: ISMegaVolumeControl, volume: number)
 
----@return any
-function ISMegaVolumeControl:onMouseDown(x, y) end
----@return any
-function ISMegaVolumeControl:onMouseUp(x, y) end
----@return any
-function ISMegaVolumeControl:onMouseUpOutside(x, y) end
----@return any
-function ISMegaVolumeControl:onMouseMove(dx, dy) end
----@return any
-function ISMegaVolumeControl:getVolumeAtX(x) end
----@return any
-function ISMegaVolumeControl:prerender() end
----@return any
-function ISMegaVolumeControl:render() end
----@return any
+---@class ISMegaVolumeControl : ISPanel
+---@field dragging boolean
+---@field fade UITransition
+---@field isSlider boolean
+---@field joypadFocused boolean
+---@field targetFunc umbrella.ISMegaVolumeControl.TargetFunction
+---@field tooltipUI ISToolTip
+---@field volume number
+ISMegaVolumeControl = ISPanel:derive("ISMegaVolumeControl")
+ISMegaVolumeControl.Type = "ISMegaVolumeControl"
+
+---@return number
 function ISMegaVolumeControl:getVolume() end
----@return any
-function ISMegaVolumeControl:setVolume(volume) end
----@return any
-function ISMegaVolumeControl:setJoypadFocused(focused) end
----@return any
+
+---@param x number
+---@return number
+function ISMegaVolumeControl:getVolumeAtX(x) end
+
+---@param joypadData JoypadData
 function ISMegaVolumeControl:onJoypadDirLeft(joypadData) end
----@return any
+
+---@param joypadData JoypadData
 function ISMegaVolumeControl:onJoypadDirRight(joypadData) end
 
+---@param x number
+---@param y number
+function ISMegaVolumeControl:onMouseDown(x, y) end
+
+---@param dx number
+---@param dy number
+function ISMegaVolumeControl:onMouseMove(dx, dy) end
+
+---@param x number
+---@param y number
+function ISMegaVolumeControl:onMouseUp(x, y) end
+
+---@param x number
+---@param y number
+function ISMegaVolumeControl:onMouseUpOutside(x, y) end
+
+function ISMegaVolumeControl:prerender() end
+
+function ISMegaVolumeControl:render() end
+
+---@param focused boolean
+function ISMegaVolumeControl:setJoypadFocused(focused) end
+
+---@param volume number
+function ISMegaVolumeControl:setVolume(volume) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param target unknown?
+---@param targetFunc umbrella.ISMegaVolumeControl.TargetFunction?
 ---@return ISMegaVolumeControl
 function ISMegaVolumeControl:new(x, y, width, height, target, targetFunc) end

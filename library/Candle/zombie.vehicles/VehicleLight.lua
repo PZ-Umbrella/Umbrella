@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class VehicleLight
 --- @field public class any
-VehicleLight = {};
+VehicleLight = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,10 +10,12 @@ VehicleLight = {};
 
 --- @public
 --- @return boolean
+--- @deprecated
 function VehicleLight:canFocusingDown() end
 
 --- @public
 --- @return boolean
+--- @deprecated
 function VehicleLight:canFocusingUp() end
 
 --- @public
@@ -21,44 +23,47 @@ function VehicleLight:canFocusingUp() end
 function VehicleLight:getActive() end
 
 --- @public
---- @return float
+--- @return number
+--- @deprecated
 function VehicleLight:getDistanization() end
 
 --- @public
---- @return int
+--- @return integer
+--- @deprecated
 function VehicleLight:getFocusing() end
 
 --- @public
---- @return float
+--- @return number
 function VehicleLight:getIntensity() end
 
 --- @public
 --- @param input ByteBuffer
---- @param WorldVersion int
---- @return void
+--- @param WorldVersion integer
+--- @return nil
 function VehicleLight:load(input, WorldVersion) end
 
 --- @public
 --- @param output ByteBuffer
---- @return void
+--- @return nil
 function VehicleLight:save(output) end
 
 --- @public
 --- @param active boolean
---- @return void
+--- @return nil
 function VehicleLight:setActive(active) end
 
 --- @public
---- @return void
+--- @return nil
+--- @deprecated
 function VehicleLight:setFocusingDown() end
 
 --- @public
---- @return void
+--- @return nil
+--- @deprecated
 function VehicleLight:setFocusingUp() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

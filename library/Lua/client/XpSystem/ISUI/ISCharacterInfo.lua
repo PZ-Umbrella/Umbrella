@@ -1,66 +1,89 @@
 ---@meta
 
 ---@class ISCharacterInfo : ISPanelJoypad
----@field progressBarLoaded any
----@field reloadSkillBar any
----@field progressBars any
----@field lastLevelUpTime any
----@field playerNum any
----@field char any
----@field txtLen any
----@field perks any
----@field lastLeveledUpPerk any
----@field arrow any
----@field arrowLeft any
----@field yButton any
----@field disabledArrow any
----@field SkillPtsProgressBarEmpty any
----@field SkillPtsProgressBarStart any
----@field SkillPtsProgressBar any
----@field SkillBarSeparator any
----@field ProgressSkilMultiplier any
----@field showingPassive any
----@field barWithTooltip any
----@field joypadIndex any
----@field [any] any
+---@field arrow Texture
+---@field arrowLeft Texture
+---@field barWithTooltip ISSkillProgressBar?
+---@field buttonList ISButton[]
+---@field char IsoPlayer
+---@field collapse table<integer, boolean>
+---@field disabledArrow Texture
+---@field joypadIndex integer?
+---@field lastLeveledUpPerk PerkFactory.Perk?
+---@field lastLevelUpTime number
+---@field nameToPerk table<string, PerkFactory.Perk>
+---@field perks table<PerkFactory.Perk, PerkFactory.Perk[]>
+---@field playerNum integer
+---@field progressBarLoaded boolean
+---@field progressBars ISSkillProgressBar[]
+---@field ProgressSkilMultiplier Texture
+---@field reloadSkillBar boolean
+---@field showingPassive boolean
+---@field SkillBarSeparator Texture
+---@field SkillPtsProgressBar Texture
+---@field SkillPtsProgressBarEmpty Texture
+---@field SkillPtsProgressBarStart Texture
+---@field sorted PerkFactory.Perk[]
+---@field txtLen number
+---@field yButton Texture
 ISCharacterInfo = ISPanelJoypad:derive("ISCharacterInfo")
+ISCharacterInfo.Type = "ISCharacterInfo"
 ISCharacterInfo.timerMultiplierAnim = 0
+ISCharacterInfo.animOffset = nil ---@type number?
+ISCharacterInfo.instance = nil ---@type ISCharacterInfo?
 
----@return any
+---@param self ISCharacterInfo
+---@return table<PerkFactory.Perk, PerkFactory.Perk[]>
 function ISCharacterInfo.loadPerk(self) end
----@return any
+
+---@param oldw number
+---@param oldh number
+---@param neww number
+---@param newh number
 function ISCharacterInfo.onResolutionChange(oldw, oldh, neww, newh) end
 
----@return any
-function ISCharacterInfo:initialise() end
----@return any
+---@param button ISButton
+function ISCharacterInfo:collapseSection(button) end
+
 function ISCharacterInfo:createChildren() end
----@return any
-function ISCharacterInfo:setVisible(visible) end
----@return any
-function ISCharacterInfo:prerender() end
----@return any
-function ISCharacterInfo:render() end
----@return any
-function ISCharacterInfo:onMouseWheel(del) end
----@return any
+
 function ISCharacterInfo:ensureVisible() end
----@return any
-function ISCharacterInfo:updateTooltipForJoypad() end
----@return any
+
+function ISCharacterInfo:initialise() end
+
+---@param joypadData JoypadData
 function ISCharacterInfo:onGainJoypadFocus(joypadData) end
----@return any
-function ISCharacterInfo:onLoseJoypadFocus(joypadData) end
----@return any
-function ISCharacterInfo:onJoypadDown(button) end
----@return any
-function ISCharacterInfo:onJoypadDirUp() end
----@return any
+
 function ISCharacterInfo:onJoypadDirDown() end
----@return any
+
 function ISCharacterInfo:onJoypadDirLeft() end
----@return any
+
 function ISCharacterInfo:onJoypadDirRight() end
 
+function ISCharacterInfo:onJoypadDirUp() end
+
+---@param button integer
+function ISCharacterInfo:onJoypadDown(button) end
+
+---@param joypadData JoypadData
+function ISCharacterInfo:onLoseJoypadFocus(joypadData) end
+
+---@param del number
+---@return boolean
+function ISCharacterInfo:onMouseWheel(del) end
+
+function ISCharacterInfo:prerender() end
+
+function ISCharacterInfo:render() end
+
+function ISCharacterInfo:setVisible(visible) end
+
+function ISCharacterInfo:updateTooltipForJoypad() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param playerNum integer
 ---@return ISCharacterInfo
 function ISCharacterInfo:new(x, y, width, height, playerNum) end

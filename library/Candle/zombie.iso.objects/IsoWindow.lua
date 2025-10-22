@@ -1,10 +1,10 @@
---- @meta
+--- @meta _
 
---- @class IsoWindow: IsoObject
+--- @class IsoWindow: IsoObject, BarricadeAble, Thumpable
 --- @field public class any
---- @implement BarricadeAble
---- @implement Thumpable
-IsoWindow = {};
+--- @field public NoWeaponDoorDamage number
+--- @field public WeaponDoorDamageModifier number
+IsoWindow = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -15,7 +15,7 @@ IsoWindow = {};
 --- @param player IsoPlayer
 --- @param sq IsoGridSquare
 --- @param north boolean
---- @param itemType String
+--- @param itemType string
 --- @return boolean
 function IsoWindow.addSheetRope(player, sq, north, itemType) end
 
@@ -45,7 +45,7 @@ function IsoWindow.canClimbThroughHelper(chr, sq, oppositeSq, north) end
 --- @static
 --- @param sq IsoGridSquare
 --- @param north boolean
---- @return int
+--- @return integer
 function IsoWindow.countAddSheetRope(sq, north) end
 
 --- @public
@@ -58,8 +58,14 @@ function IsoWindow.isSheetRopeHere(sq) end
 --- @static
 --- @param sq IsoGridSquare
 --- @return boolean
---- @overload fun(sq: IsoGridSquare, north: boolean): boolean
 function IsoWindow.isTopOfSheetRopeHere(sq) end
+
+--- @public
+--- @static
+--- @param sq IsoGridSquare
+--- @param north boolean
+--- @return boolean
+function IsoWindow.isTopOfSheetRopeHere(sq, north) end
 
 --- @public
 --- @static
@@ -69,6 +75,10 @@ function IsoWindow.isTopOfSheetRopeHere(sq) end
 --- @return boolean
 function IsoWindow.removeSheetRope(player, square, north) end
 
+--- @public
+--- @static
+--- @return nil
+function IsoWindow.resetCurrentCellWindows() end
 
 ------------------------------------
 ------------- METHODS --------------
@@ -76,14 +86,12 @@ function IsoWindow.removeSheetRope(player, square, north) end
 
 --- @public
 --- @param owner IsoGameCharacter
---- @return void
+--- @return nil
 function IsoWindow:AttackObject(owner) end
 
 --- @public
---- @param amount float
---- @return void
---- @overload fun(self: IsoWindow, amount: float, isZombie: boolean): void
---- @overload fun(self: IsoWindow, amount: float, chr: IsoMovingObject): void
+--- @param amount number
+--- @return nil
 function IsoWindow:Damage(amount) end
 
 --- @public
@@ -109,51 +117,72 @@ function IsoWindow:TestVision(from, to) end
 
 --- @public
 --- @param thumper IsoMovingObject
---- @return void
---- @overload fun(self: IsoWindow, thumper: IsoMovingObject): void
+--- @return nil
+function IsoWindow:Thump(thumper) end
+
+--- @public
+--- @param thumper IsoMovingObject
+--- @return nil
 function IsoWindow:Thump(thumper) end
 
 --- @public
 --- @param chr IsoGameCharacter
---- @return void
+--- @return nil
 function IsoWindow:ToggleWindow(chr) end
 
 --- @public
 --- @param owner IsoGameCharacter
 --- @param weapon HandWeapon
---- @return void
---- @overload fun(self: IsoWindow, owner: IsoGameCharacter, weapon: HandWeapon): void
+--- @return nil
 function IsoWindow:WeaponHit(owner, weapon) end
 
 --- @public
---- @param numPlanks int
+--- @param owner IsoGameCharacter
+--- @param weapon HandWeapon
+--- @return nil
+function IsoWindow:WeaponHit(owner, weapon) end
+
+--- @public
+--- @param numPlanks integer
 --- @param metal boolean
 --- @return IsoBarricade
 function IsoWindow:addBarricadesDebug(numPlanks, metal) end
 
 --- @public
+--- @param arg0 IsoGameCharacter
+--- @param arg1 ArrayList
+--- @param arg2 CraftRecipeData
+--- @param arg3 boolean
+--- @return IsoBarricade
+function IsoWindow:addBarricadesFromCraftRecipe(arg0, arg1, arg2, arg3) end
+
+--- @public
 --- @param onOppositeSquare boolean
---- @return void
---- @overload fun(self: IsoWindow, chr: IsoMovingObject): void
+--- @return nil
 function IsoWindow:addBrokenGlass(onOppositeSquare) end
 
 --- @public
---- @return void
+--- @param chr IsoMovingObject
+--- @return nil
+function IsoWindow:addBrokenGlass(chr) end
+
+--- @public
+--- @return nil
 function IsoWindow:addRandomBarricades() end
 
 --- @public
 --- @param chr IsoGameCharacter
---- @return void
+--- @return nil
 function IsoWindow:addSheet(chr) end
 
 --- @public
 --- @param player IsoPlayer
---- @param itemType String
+--- @param itemType string
 --- @return boolean
 function IsoWindow:addSheetRope(player, itemType) end
 
 --- @public
---- @return void
+--- @return nil
 function IsoWindow:addToWorld() end
 
 --- @public
@@ -161,12 +190,18 @@ function IsoWindow:addToWorld() end
 function IsoWindow:canAddSheetRope() end
 
 --- @public
+--- @param arg0 IsoGameCharacter
+--- @param arg1 HandWeapon
+--- @return boolean
+function IsoWindow:canAttackBypassIsoBarricade(arg0, arg1) end
+
+--- @public
 --- @param chr IsoGameCharacter
 --- @return boolean
 function IsoWindow:canClimbThrough(chr) end
 
 --- @public
---- @return int
+--- @return integer
 function IsoWindow:countAddSheetRope() end
 
 --- @public
@@ -177,23 +212,37 @@ function IsoWindow:getAddSheetSquare(chr) end
 --- @public
 --- @param chr IsoGameCharacter
 --- @return IsoBarricade
---- @overload fun(self: IsoWindow, chr: IsoGameCharacter): IsoBarricade
+function IsoWindow:getBarricadeForCharacter(chr) end
+
+--- @public
+--- @param chr IsoGameCharacter
+--- @return IsoBarricade
 function IsoWindow:getBarricadeForCharacter(chr) end
 
 --- @public
 --- @return IsoBarricade
---- @overload fun(self: IsoWindow): IsoBarricade
 function IsoWindow:getBarricadeOnOppositeSquare() end
 
 --- @public
 --- @return IsoBarricade
---- @overload fun(self: IsoWindow): IsoBarricade
+function IsoWindow:getBarricadeOnOppositeSquare() end
+
+--- @public
+--- @return IsoBarricade
+function IsoWindow:getBarricadeOnSameSquare() end
+
+--- @public
+--- @return IsoBarricade
 function IsoWindow:getBarricadeOnSameSquare() end
 
 --- @public
 --- @param chr IsoGameCharacter
 --- @return IsoBarricade
---- @overload fun(self: IsoWindow, chr: IsoGameCharacter): IsoBarricade
+function IsoWindow:getBarricadeOppositeCharacter(chr) end
+
+--- @public
+--- @param chr IsoGameCharacter
+--- @return IsoBarricade
 function IsoWindow:getBarricadeOppositeCharacter(chr) end
 
 --- @public
@@ -203,13 +252,25 @@ function IsoWindow:getFacingPosition(pos) end
 
 --- @public
 --- @return IsoGameCharacter
---- @overload fun(self: IsoWindow, square: IsoGridSquare): IsoGameCharacter
 function IsoWindow:getFirstCharacterClimbingThrough() end
 
 --- @public
+--- @param square IsoGridSquare
 --- @return IsoGameCharacter
---- @overload fun(self: IsoWindow, square: IsoGridSquare): IsoGameCharacter
+function IsoWindow:getFirstCharacterClimbingThrough(square) end
+
+--- @public
+--- @return IsoGameCharacter
 function IsoWindow:getFirstCharacterClosing() end
+
+--- @public
+--- @param square IsoGridSquare
+--- @return IsoGameCharacter
+function IsoWindow:getFirstCharacterClosing(square) end
+
+--- @public
+--- @return integer
+function IsoWindow:getHealth() end
 
 --- @public
 --- @return IsoGridSquare
@@ -221,11 +282,14 @@ function IsoWindow:getInsideSquare() end
 
 --- @public
 --- @return boolean
---- @overload fun(self: IsoWindow): boolean
 function IsoWindow:getNorth() end
 
 --- @public
---- @return String
+--- @return boolean
+function IsoWindow:getNorth() end
+
+--- @public
+--- @return string
 function IsoWindow:getObjectName() end
 
 --- @public
@@ -234,7 +298,10 @@ function IsoWindow:getOpenSprite() end
 
 --- @public
 --- @return IsoGridSquare
---- @overload fun(self: IsoWindow): IsoGridSquare
+function IsoWindow:getOppositeSquare() end
+
+--- @public
+--- @return IsoGridSquare
 function IsoWindow:getOppositeSquare() end
 
 --- @public
@@ -246,14 +313,21 @@ function IsoWindow:getSmashedSprite() end
 function IsoWindow:getSquare() end
 
 --- @public
---- @return float
---- @overload fun(self: IsoWindow): float
+--- @return number
+function IsoWindow:getThumpCondition() end
+
+--- @public
+--- @return number
 function IsoWindow:getThumpCondition() end
 
 --- @public
 --- @param chr IsoGameCharacter
 --- @return Thumpable
---- @overload fun(self: IsoWindow, chr: IsoGameCharacter): Thumpable
+function IsoWindow:getThumpableFor(chr) end
+
+--- @public
+--- @param chr IsoGameCharacter
+--- @return Thumpable
 function IsoWindow:getThumpableFor(chr) end
 
 --- @public
@@ -262,17 +336,26 @@ function IsoWindow:haveSheetRope() end
 
 --- @public
 --- @return boolean
---- @overload fun(self: IsoWindow): boolean
 function IsoWindow:isBarricadeAllowed() end
 
 --- @public
 --- @return boolean
---- @overload fun(self: IsoWindow): boolean
+function IsoWindow:isBarricadeAllowed() end
+
+--- @public
+--- @return boolean
 function IsoWindow:isBarricaded() end
 
 --- @public
 --- @return boolean
---- @overload fun(self: IsoWindow): boolean
+function IsoWindow:isBarricaded() end
+
+--- @public
+--- @return boolean
+function IsoWindow:isDestroyed() end
+
+--- @public
+--- @return boolean
 function IsoWindow:isDestroyed() end
 
 --- @public
@@ -293,6 +376,10 @@ function IsoWindow:isLocked() end
 
 --- @public
 --- @return boolean
+function IsoWindow:isNorth() end
+
+--- @public
+--- @return boolean
 function IsoWindow:isPermaLocked() end
 
 --- @public
@@ -301,38 +388,38 @@ function IsoWindow:isSmashed() end
 
 --- @public
 --- @param input ByteBuffer
---- @param WorldVersion int
+--- @param WorldVersion integer
 --- @param IS_DEBUG_SAVE boolean
---- @return void
+--- @return nil
 function IsoWindow:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 --- @public
 --- @param bb ByteBuffer
---- @return void
+--- @return nil
 function IsoWindow:loadState(bb) end
 
 --- @public
---- @param x int
---- @param y int
+--- @param x integer
+--- @param y integer
 --- @return boolean
 function IsoWindow:onMouseLeftClick(x, y) end
 
 --- @public
 --- @param chr IsoGameCharacter
---- @return void
+--- @return nil
 function IsoWindow:openCloseCurtain(chr) end
 
 --- @public
---- @return void
+--- @return nil
 function IsoWindow:removeBrokenGlass() end
 
 --- @public
---- @return void
+--- @return nil
 function IsoWindow:removeFromWorld() end
 
 --- @public
 --- @param chr IsoGameCharacter
---- @return void
+--- @return nil
 function IsoWindow:removeSheet(chr) end
 
 --- @public
@@ -341,83 +428,99 @@ function IsoWindow:removeSheet(chr) end
 function IsoWindow:removeSheetRope(player) end
 
 --- @public
---- @param x float
---- @param y float
---- @param z float
+--- @param x number
+--- @param y number
+--- @param z number
 --- @param col ColorInfo
 --- @param bDoAttached boolean
 --- @param bWallLightingPass boolean
 --- @param shader Shader
---- @return void
+--- @return nil
 function IsoWindow:render(x, y, z, col, bDoAttached, bWallLightingPass, shader) end
+
+--- @public
+--- @return nil
+function IsoWindow:reset() end
 
 --- @public
 --- @param output ByteBuffer
 --- @param IS_DEBUG_SAVE boolean
---- @return void
+--- @return nil
 function IsoWindow:save(output, IS_DEBUG_SAVE) end
 
 --- @public
 --- @param bb ByteBuffer
---- @return void
+--- @return nil
 function IsoWindow:saveState(bb) end
 
 --- @public
 --- @param removed boolean
---- @return void
+--- @return nil
 function IsoWindow:setGlassRemoved(removed) end
 
 --- @public
 --- @param lock boolean
---- @return void
+--- @return nil
 function IsoWindow:setIsLocked(lock) end
 
 --- @public
 --- @param sprite IsoSprite
---- @return void
+--- @return nil
 function IsoWindow:setOpenSprite(sprite) end
 
 --- @public
---- @param permaLock Boolean
---- @return void
+--- @param permaLock boolean
+--- @return nil
 function IsoWindow:setPermaLocked(permaLock) end
 
 --- @public
 --- @param destroyed boolean
---- @return void
+--- @return nil
 function IsoWindow:setSmashed(destroyed) end
 
 --- @public
 --- @param sprite IsoSprite
---- @return void
+--- @return nil
 function IsoWindow:setSmashedSprite(sprite) end
 
 --- @public
---- @return void
---- @overload fun(self: IsoWindow, bRemote: boolean): void
---- @overload fun(self: IsoWindow, bRemote: boolean, doAlarm: boolean): void
+--- @return nil
 function IsoWindow:smashWindow() end
 
 --- @public
 --- @param bRemote boolean
---- @param val byte
---- @param source UdpConnection
---- @param bb ByteBuffer
---- @return void
-function IsoWindow:syncIsoObject(bRemote, val, source, bb) end
+--- @return nil
+function IsoWindow:smashWindow(bRemote) end
+
+--- @public
+--- @param bRemote boolean
+--- @param doAlarm boolean
+--- @return nil
+function IsoWindow:smashWindow(bRemote, doAlarm) end
+
+--- @public
+--- @param arg0 ByteBuffer
+--- @return nil
+function IsoWindow:syncIsoObjectReceive(arg0) end
 
 --- @public
 --- @param b ByteBufferWriter
---- @return void
+--- @return nil
 function IsoWindow:syncIsoObjectSend(b) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param cell IsoCell
 --- @return IsoWindow
---- @overload fun(cell: IsoCell, gridSquare: IsoGridSquare, gid: IsoSprite, north: boolean): IsoWindow
 function IsoWindow.new(cell) end
+
+--- @public
+--- @param cell IsoCell
+--- @param gridSquare IsoGridSquare
+--- @param gid IsoSprite
+--- @param north boolean
+--- @return IsoWindow
+function IsoWindow.new(cell, gridSquare, gid, north) end

@@ -1,23 +1,22 @@
 ---@meta
 
 ---@class StatisticChartPackets : StatisticChart
----@field instance any
----@field [any] any
 StatisticChartPackets = StatisticChart:derive("StatisticChartPackets")
-StatisticChartPackets.instance = nil
+StatisticChartPackets.Type = "StatisticChartPackets"
+StatisticChartPackets.instance = nil ---@type StatisticChartPackets?
 StatisticChartPackets.shiftDown = 0
 StatisticChartPackets.eventsAdded = false
 
----@return any
+---@return StatisticChartPackets?
 function StatisticChartPackets.doInstance() end
----@return any
+
+---@return StatisticChartPackets?
 function StatisticChartPackets.OnOpenPanel() end
----@return any
+
 function StatisticChartPackets.OnServerStatisticReceived() end
 
----@return any
 function StatisticChartPackets:createChildren() end
----@return any
+
 function StatisticChartPackets:initVariables() end
----@return any
+
 function StatisticChartPackets:updateValues() end

@@ -1,43 +1,43 @@
---- @meta
+--- @meta _
 
 --- @class Stage
 --- @field public class any
-Stage = {};
+Stage = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param arg0 String
---- @param arg1 String[]
---- @return void
-function Stage:Load(arg0, arg1) end
+--- @param name string
+--- @param strArray String[]
+--- @return nil
+function Stage:Load(name, strArray) end
 
 --- @public
---- @param arg0 IsoGameCharacter
---- @param arg1 IsoObject
---- @param arg2 boolean
+--- @param chr IsoGameCharacter
+--- @param itemClicked IsoObject
+--- @param cheat boolean
 --- @return boolean
-function Stage:canBeDone(arg0, arg1, arg2) end
+function Stage:canBeDone(chr, itemClicked, cheat) end
 
 --- @public
---- @param arg0 IsoGameCharacter
---- @param arg1 IsoThumpable
---- @param arg2 boolean
---- @return void
-function Stage:doStage(arg0, arg1, arg2) end
+--- @param chr IsoGameCharacter
+--- @param item IsoThumpable
+--- @param removeItems boolean
+--- @return nil
+function Stage:doStage(chr, item, removeItems) end
 
 --- @public
---- @return String
+--- @return string
 function Stage:getCraftingSound() end
 
 --- @public
---- @return String
+--- @return string
 function Stage:getDisplayName() end
 
 --- @public
---- @return KahluaTable
+--- @return table
 function Stage:getItemsLua() end
 
 --- @public
@@ -45,19 +45,19 @@ function Stage:getItemsLua() end
 function Stage:getItemsToKeep() end
 
 --- @public
---- @return String
+--- @return string
 function Stage:getKnownRecipe() end
 
 --- @public
---- @return String
+--- @return string
 function Stage:getName() end
 
 --- @public
---- @return String
+--- @return string
 function Stage:getNorthSprite() end
 
 --- @public
---- @return KahluaTable
+--- @return table
 function Stage:getPerksLua() end
 
 --- @public
@@ -65,25 +65,29 @@ function Stage:getPerksLua() end
 function Stage:getPreviousStages() end
 
 --- @public
---- @return String
+--- @return string
 function Stage:getRecipeName() end
 
 --- @public
---- @return String
+--- @return string
 function Stage:getSprite() end
 
 --- @public
---- @return String
+--- @return string
 function Stage:getThumpSound() end
 
 --- @public
---- @param arg0 IsoGameCharacter
---- @return int
-function Stage:getTimeNeeded(arg0) end
+--- @param chr IsoGameCharacter
+--- @return integer
+function Stage:getTimeNeeded(chr) end
 
+--- @public
+--- @param arg0 IsoGameCharacter
+--- @return nil
+function Stage:playCompletionSound(arg0) end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

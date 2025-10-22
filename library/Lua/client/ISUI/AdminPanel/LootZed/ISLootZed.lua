@@ -1,66 +1,70 @@
 ---@meta
 
 ---@class ISLootZed : ISPanelJoypad
----@field no any
----@field datas any
----@field searchEntryBox any
----@field playerSelect any
----@field mouseOver any
----@field downX any
----@field downY any
----@field moving any
----@field x any
----@field y any
----@field name any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field player any
----@field titlebarbkg any
----@field [any] any
+---@field datas ISScrollingListBox
+---@field name unknown?
+---@field no ISButton
+---@field player IsoPlayer
+---@field playerSelect ISComboBox
+---@field searchEntryBox ISTextEntryBox
+---@field titlebarbkg Texture
 ISLootZed = ISPanelJoypad:derive("ISLootZed")
-ISLootZed.instance = nil
+ISLootZed.Type = "ISLootZed"
+ISLootZed.instance = nil ---@type ISLootZed?
 ISLootZed.cheat = false
 
----@return any
-function ISLootZed:initialise() end
----@return any
-function ISLootZed:onTextChange() end
----@return any
-function ISLootZed:onSelectContainerType() end
----@return any
-function ISLootZed:update() end
----@return any
-function ISLootZed:drawDatas(y, item, alt) end
----@return any
 function ISLootZed:destroy() end
----@return any
+
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
+function ISLootZed:drawDatas(y, item, alt) end
+
+function ISLootZed:initialise() end
+
+---@param button ISButton
 function ISLootZed:onClick(button) end
----@return any
-function ISLootZed:titleBarHeight() end
----@return any
-function ISLootZed:prerender() end
----@return any
-function ISLootZed:updateButtons() end
----@return any
-function ISLootZed:render() end
----@return any
-function ISLootZed:onMouseMove(dx, dy) end
----@return any
-function ISLootZed:onMouseMoveOutside(dx, dy) end
----@return any
+
+---@param x number
+---@param y number
 function ISLootZed:onMouseDown(x, y) end
----@return any
+
+---@param dx number
+---@param dy number
+function ISLootZed:onMouseMove(dx, dy) end
+
+---@param dx number
+---@param dy number
+function ISLootZed:onMouseMoveOutside(dx, dy) end
+
+---@param x number
+---@param y number
 function ISLootZed:onMouseUp(x, y) end
----@return any
+
+---@param x number
+---@param y number
 function ISLootZed:onMouseUpOutside(x, y) end
----@return any
+
+function ISLootZed:onSelectContainerType() end
+
+function ISLootZed:onTextChange() end
+
+function ISLootZed:prerender() end
+
+function ISLootZed:render() end
+
+---@return number
+function ISLootZed:titleBarHeight() end
+
+function ISLootZed:update() end
+
+function ISLootZed:updateButtons() end
+
 function ISLootZed:updateContent() end
 
+---@param width number
+---@param height number
+---@param player IsoPlayer
 ---@return ISLootZed
 function ISLootZed:new(width, height, player) end

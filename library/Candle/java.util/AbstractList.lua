@@ -1,9 +1,8 @@
---- @meta
+--- @meta _
 
---- @class AbstractList: AbstractCollection
+--- @class AbstractList: AbstractCollection, List
 --- @field public class any
---- @implement List
-AbstractList = {};
+AbstractList = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -18,46 +17,172 @@ function AbstractList.copyOf(arg0) end
 --- @public
 --- @static
 --- @return List
---- @overload fun(arg0: Object[]): List
---- @overload fun(arg0: Object): List
---- @overload fun(arg0: Object, arg1: Object): List
---- @overload fun(arg0: Object, arg1: Object, arg2: Object): List
---- @overload fun(arg0: Object, arg1: Object, arg2: Object, arg3: Object): List
---- @overload fun(arg0: Object, arg1: Object, arg2: Object, arg3: Object, arg4: Object): List
---- @overload fun(arg0: Object, arg1: Object, arg2: Object, arg3: Object, arg4: Object, arg5: Object): List
---- @overload fun(arg0: Object, arg1: Object, arg2: Object, arg3: Object, arg4: Object, arg5: Object, arg6: Object): List
---- @overload fun(arg0: Object, arg1: Object, arg2: Object, arg3: Object, arg4: Object, arg5: Object, arg6: Object, arg7: Object): List
---- @overload fun(arg0: Object, arg1: Object, arg2: Object, arg3: Object, arg4: Object, arg5: Object, arg6: Object, arg7: Object, arg8: Object): List
---- @overload fun(arg0: Object, arg1: Object, arg2: Object, arg3: Object, arg4: Object, arg5: Object, arg6: Object, arg7: Object, arg8: Object, arg9: Object): List
 function AbstractList.of() end
 
+--- @public
+--- @static
+--- @param arg0 Object[]
+--- @return List
+function AbstractList.of(arg0) end
+
+--- @public
+--- @static
+--- @param arg0 any
+--- @return List
+function AbstractList.of(arg0) end
+
+--- @public
+--- @static
+--- @param arg0 any
+--- @param arg1 any
+--- @return List
+function AbstractList.of(arg0, arg1) end
+
+--- @public
+--- @static
+--- @param arg0 any
+--- @param arg1 any
+--- @param arg2 any
+--- @return List
+function AbstractList.of(arg0, arg1, arg2) end
+
+--- @public
+--- @static
+--- @param arg0 any
+--- @param arg1 any
+--- @param arg2 any
+--- @param arg3 any
+--- @return List
+function AbstractList.of(arg0, arg1, arg2, arg3) end
+
+--- @public
+--- @static
+--- @param arg0 any
+--- @param arg1 any
+--- @param arg2 any
+--- @param arg3 any
+--- @param arg4 any
+--- @return List
+function AbstractList.of(arg0, arg1, arg2, arg3, arg4) end
+
+--- @public
+--- @static
+--- @param arg0 any
+--- @param arg1 any
+--- @param arg2 any
+--- @param arg3 any
+--- @param arg4 any
+--- @param arg5 any
+--- @return List
+function AbstractList.of(arg0, arg1, arg2, arg3, arg4, arg5) end
+
+--- @public
+--- @static
+--- @param arg0 any
+--- @param arg1 any
+--- @param arg2 any
+--- @param arg3 any
+--- @param arg4 any
+--- @param arg5 any
+--- @param arg6 any
+--- @return List
+function AbstractList.of(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+
+--- @public
+--- @static
+--- @param arg0 any
+--- @param arg1 any
+--- @param arg2 any
+--- @param arg3 any
+--- @param arg4 any
+--- @param arg5 any
+--- @param arg6 any
+--- @param arg7 any
+--- @return List
+function AbstractList.of(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+
+--- @public
+--- @static
+--- @param arg0 any
+--- @param arg1 any
+--- @param arg2 any
+--- @param arg3 any
+--- @param arg4 any
+--- @param arg5 any
+--- @param arg6 any
+--- @param arg7 any
+--- @param arg8 any
+--- @return List
+function AbstractList.of(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+
+--- @public
+--- @static
+--- @param arg0 any
+--- @param arg1 any
+--- @param arg2 any
+--- @param arg3 any
+--- @param arg4 any
+--- @param arg5 any
+--- @param arg6 any
+--- @param arg7 any
+--- @param arg8 any
+--- @param arg9 any
+--- @return List
+function AbstractList.of(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param arg0 Object
+--- @param arg0 any
 --- @return boolean
---- @overload fun(self: AbstractList, arg0: Object): boolean
---- @overload fun(self: AbstractList, arg0: int, arg1: Object): void
---- @overload fun(self: AbstractList, arg0: int, arg1: Object): void
 function AbstractList:add(arg0) end
+
+--- @public
+--- @param arg0 any
+--- @return boolean
+function AbstractList:add(arg0) end
+
+--- @public
+--- @param arg0 integer
+--- @param arg1 any
+--- @return nil
+function AbstractList:add(arg0, arg1) end
+
+--- @public
+--- @param arg0 integer
+--- @param arg1 any
+--- @return nil
+function AbstractList:add(arg0, arg1) end
 
 --- @public
 --- @param arg0 Collection
 --- @return boolean
---- @overload fun(self: AbstractList, arg0: int, arg1: Collection): boolean
---- @overload fun(self: AbstractList, arg0: int, arg1: Collection): boolean
 function AbstractList:addAll(arg0) end
 
 --- @public
---- @return void
---- @overload fun(self: AbstractList): void
+--- @param arg0 integer
+--- @param arg1 Collection
+--- @return boolean
+function AbstractList:addAll(arg0, arg1) end
+
+--- @public
+--- @param arg0 integer
+--- @param arg1 Collection
+--- @return boolean
+function AbstractList:addAll(arg0, arg1) end
+
+--- @public
+--- @return nil
 function AbstractList:clear() end
 
 --- @public
---- @param arg0 Object
+--- @return nil
+function AbstractList:clear() end
+
+--- @public
+--- @param arg0 any
 --- @return boolean
 function AbstractList:contains(arg0) end
 
@@ -67,26 +192,41 @@ function AbstractList:contains(arg0) end
 function AbstractList:containsAll(arg0) end
 
 --- @public
---- @param arg0 Object
+--- @param arg0 any
 --- @return boolean
---- @overload fun(self: AbstractList, arg0: Object): boolean
 function AbstractList:equals(arg0) end
 
 --- @public
---- @param arg0 int
---- @return Object
---- @overload fun(self: AbstractList, arg0: int): Object
+--- @param arg0 any
+--- @return boolean
+function AbstractList:equals(arg0) end
+
+--- @public
+--- @param arg0 integer
+--- @return any
 function AbstractList:get(arg0) end
 
 --- @public
---- @return int
---- @overload fun(self: AbstractList): int
+--- @param arg0 integer
+--- @return any
+function AbstractList:get(arg0) end
+
+--- @public
+--- @return integer
 function AbstractList:hashCode() end
 
 --- @public
---- @param arg0 Object
---- @return int
---- @overload fun(self: AbstractList, arg0: Object): int
+--- @return integer
+function AbstractList:hashCode() end
+
+--- @public
+--- @param arg0 any
+--- @return integer
+function AbstractList:indexOf(arg0) end
+
+--- @public
+--- @param arg0 any
+--- @return integer
 function AbstractList:indexOf(arg0) end
 
 --- @public
@@ -95,27 +235,53 @@ function AbstractList:isEmpty() end
 
 --- @public
 --- @return Iterator
---- @overload fun(self: AbstractList): Iterator
 function AbstractList:iterator() end
 
 --- @public
---- @param arg0 Object
---- @return int
---- @overload fun(self: AbstractList, arg0: Object): int
+--- @return Iterator
+function AbstractList:iterator() end
+
+--- @public
+--- @param arg0 any
+--- @return integer
+function AbstractList:lastIndexOf(arg0) end
+
+--- @public
+--- @param arg0 any
+--- @return integer
 function AbstractList:lastIndexOf(arg0) end
 
 --- @public
 --- @return ListIterator
---- @overload fun(self: AbstractList): ListIterator
---- @overload fun(self: AbstractList, arg0: int): ListIterator
---- @overload fun(self: AbstractList, arg0: int): ListIterator
 function AbstractList:listIterator() end
 
 --- @public
---- @param arg0 int
---- @return Object
---- @overload fun(self: AbstractList, arg0: int): Object
---- @overload fun(self: AbstractList, arg0: Object): boolean
+--- @return ListIterator
+function AbstractList:listIterator() end
+
+--- @public
+--- @param arg0 integer
+--- @return ListIterator
+function AbstractList:listIterator(arg0) end
+
+--- @public
+--- @param arg0 integer
+--- @return ListIterator
+function AbstractList:listIterator(arg0) end
+
+--- @public
+--- @param arg0 integer
+--- @return any
+function AbstractList:remove(arg0) end
+
+--- @public
+--- @param arg0 integer
+--- @return any
+function AbstractList:remove(arg0) end
+
+--- @public
+--- @param arg0 any
+--- @return boolean
 function AbstractList:remove(arg0) end
 
 --- @public
@@ -125,7 +291,7 @@ function AbstractList:removeAll(arg0) end
 
 --- @public
 --- @param arg0 UnaryOperator
---- @return void
+--- @return nil
 function AbstractList:replaceAll(arg0) end
 
 --- @public
@@ -134,19 +300,24 @@ function AbstractList:replaceAll(arg0) end
 function AbstractList:retainAll(arg0) end
 
 --- @public
---- @param arg0 int
---- @param arg1 Object
---- @return Object
---- @overload fun(self: AbstractList, arg0: int, arg1: Object): Object
+--- @param arg0 integer
+--- @param arg1 any
+--- @return any
 function AbstractList:set(arg0, arg1) end
 
 --- @public
---- @return int
+--- @param arg0 integer
+--- @param arg1 any
+--- @return any
+function AbstractList:set(arg0, arg1) end
+
+--- @public
+--- @return integer
 function AbstractList:size() end
 
 --- @public
 --- @param arg0 Comparator
---- @return void
+--- @return nil
 function AbstractList:sort(arg0) end
 
 --- @public
@@ -154,15 +325,22 @@ function AbstractList:sort(arg0) end
 function AbstractList:spliterator() end
 
 --- @public
---- @param arg0 int
---- @param arg1 int
+--- @param arg0 integer
+--- @param arg1 integer
 --- @return List
---- @overload fun(self: AbstractList, arg0: int, arg1: int): List
+function AbstractList:subList(arg0, arg1) end
+
+--- @public
+--- @param arg0 integer
+--- @param arg1 integer
+--- @return List
 function AbstractList:subList(arg0, arg1) end
 
 --- @public
 --- @return Object[]
---- @overload fun(self: AbstractList, arg0: Object[]): Object[]
 function AbstractList:toArray() end
 
-
+--- @public
+--- @param arg0 Object[]
+--- @return Object[]
+function AbstractList:toArray(arg0) end

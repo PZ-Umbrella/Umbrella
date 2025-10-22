@@ -1,71 +1,110 @@
 ---@meta
 
 ---@class IsoRegionsWindow : ISCollapsableWindow
----@field instance any
----@field title any
----@field renderPanel any
----@field settingPath any
----@field mouseMoved any
----@field mouseDownX any
----@field mouseDownY any
----@field panning any
----@field backgroundColor any
----@field xpos any
----@field ypos any
----@field zoom any
----@field [any] any
+---@field mouseDownX number
+---@field mouseDownY number
+---@field mouseMoved boolean
+---@field panning boolean
+---@field renderPanel ISPanel
+---@field settingPath boolean
+---@field title string
+---@field xpos number
+---@field ypos number
+---@field zoom number
 IsoRegionsWindow = ISCollapsableWindow:derive("IsoRegionsWindow")
+IsoRegionsWindow.Type = "IsoRegionsWindow"
+IsoRegionsWindow.instance = nil ---@type IsoRegionsWindow?
 
----@return any
-function IsoRegionsWindow.OnOpenPanel() end
----@return any
+---@param _key integer
 function IsoRegionsWindow.onKeyStartPressed(_key) end
 
----@return any
-function IsoRegionsWindow:initialise() end
----@return any
-function IsoRegionsWindow:createChildren() end
----@return any
+function IsoRegionsWindow.OnOpenPanel() end
+
 function IsoRegionsWindow:close() end
----@return any
-function IsoRegionsWindow:onMapMouseDown(x, y) end
----@return any
-function IsoRegionsWindow:onMapMouseUp(x, y) end
----@return any
-function IsoRegionsWindow:onMapMouseUpOutside(x, y) end
----@return any
-function IsoRegionsWindow:onMapMouseMove(dx, dy) end
----@return any
-function IsoRegionsWindow:onMapRightMouseDown(x, y) end
----@return any
-function IsoRegionsWindow:rotate() end
----@return any
-function IsoRegionsWindow:onTeleport(worldX, worldY) end
----@return any
-function IsoRegionsWindow:onSquareDetails(worldX, worldY) end
----@return any
-function IsoRegionsWindow:onUnsetSelect(worldX, worldY) end
----@return any
-function IsoRegionsWindow:onRecalcChunks() end
----@return any
-function IsoRegionsWindow:onOpenLogs() end
----@return any
+
+function IsoRegionsWindow:createChildren() end
+
+function IsoRegionsWindow:initialise() end
+
+---@param option ConfigOption
 function IsoRegionsWindow:onChangeEditOption(option) end
----@return any
-function IsoRegionsWindow:onChangeZLevelOption(option) end
----@return any
+
+---@param option ConfigOption
 function IsoRegionsWindow:onChangeOption(option) end
----@return any
-function IsoRegionsWindow:onMapRightMouseUp(x, y) end
----@return any
-function IsoRegionsWindow:onMapRightMouseUpOutside(x, y) end
----@return any
-function IsoRegionsWindow:onRenderMouseWheel(del) end
----@return any
+
+---@param option ConfigOption
+function IsoRegionsWindow:onChangeZLevelOption(option) end
+
+---@param self ISPanel
+---@param x number
+---@param y number
+---@return boolean
+function IsoRegionsWindow:onMapMouseDown(self, x, y) end
+
+---@param self ISPanel
+---@param dx number
+---@param dy number
+---@return boolean
+function IsoRegionsWindow:onMapMouseMove(self, dx, dy) end
+
+---@param self ISPanel
+---@param x number
+---@param y number
+function IsoRegionsWindow:onMapMouseUp(self, x, y) end
+
+---@param self ISPanel
+---@param x number
+---@param y number
+function IsoRegionsWindow:onMapMouseUpOutside(self, x, y) end
+
+---@param self ISPanel
+---@param x number
+---@param y number
+---@return boolean
+function IsoRegionsWindow:onMapRightMouseDown(self, x, y) end
+
+---@param self ISPanel
+---@param x number
+---@param y number
+---@return boolean
+function IsoRegionsWindow:onMapRightMouseUp(self, x, y) end
+
+---@param self ISPanel
+---@param x number
+---@param y number
+---@return boolean
+function IsoRegionsWindow:onMapRightMouseUpOutside(self, x, y) end
+
+function IsoRegionsWindow:onOpenLogs() end
+
+function IsoRegionsWindow:onRecalcChunks() end
+
+---@param self ISPanel
+---@param del number
+---@return boolean
+function IsoRegionsWindow:onRenderMouseWheel(self, del) end
+
+---@param worldX number
+---@param worldY number
+function IsoRegionsWindow:onSquareDetails(worldX, worldY) end
+
+---@param worldX number
+---@param worldY number
+function IsoRegionsWindow:onTeleport(worldX, worldY) end
+
+---@param worldX number
+---@param worldY number
+function IsoRegionsWindow:onUnsetSelect(worldX, worldY) end
+
 function IsoRegionsWindow:renderTex() end
 
+function IsoRegionsWindow:rotate() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return IsoRegionsWindow
 function IsoRegionsWindow:new(x, y, width, height) end
 
----@return any
 function newIsoRegionsWindow() end

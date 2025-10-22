@@ -1,20 +1,19 @@
---- @meta
+--- @meta _
 
 --- @class PerkInfo
 --- @field public class any
-PerkInfo = {};
+PerkInfo = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return int
+--- @return integer
 function PerkInfo:getLevel() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

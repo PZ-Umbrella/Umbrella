@@ -1,32 +1,41 @@
 ---@meta
 
 ---@class ISGrabItemAction : ISBaseTimedAction
----@field maxTime any
----@field item any
----@field queueList any
----@field ignoreAction any
----@field character any
----@field stopOnWalk any
----@field stopOnRun any
----@field loopedAction any
----@field destContainer any
----@field [any] any
+---@field destContainer ItemContainer
+---@field ignoreAction boolean
+---@field item IsoWorldInventoryObject
+---@field loopedAction boolean
+---@field queueList umbrella.ISGrabItemAction.QueueItem[]
+---@field sourceContainer ItemContainer?
+---@field started boolean
+---@field transactionId number
 ISGrabItemAction = ISBaseTimedAction:derive("ISGrabItemAction")
+ISGrabItemAction.Type = "ISGrabItemAction"
 
----@return any
-function ISGrabItemAction:isValid() end
----@return any
-function ISGrabItemAction:update() end
----@return any
-function ISGrabItemAction:start() end
----@return any
-function ISGrabItemAction:stop() end
----@return any
-function ISGrabItemAction:perform() end
----@return any
-function ISGrabItemAction:transferItem(item) end
----@return any
 function ISGrabItemAction:checkQueueList() end
 
+---@return boolean
+function ISGrabItemAction:isValid() end
+
+function ISGrabItemAction:perform() end
+
+function ISGrabItemAction:start() end
+
+function ISGrabItemAction:stop() end
+
+---@param item IsoWorldInventoryObject
+function ISGrabItemAction:transferItem(item) end
+
+function ISGrabItemAction:update() end
+
+---@param character IsoPlayer
+---@param item IsoWorldInventoryObject
+---@param time number
 ---@return ISGrabItemAction
 function ISGrabItemAction:new(character, item, time) end
+
+---@class umbrella.ISGrabItemAction.QueueItem
+---@field items IsoWorldInventoryObject[]
+---@field time number
+---@field type string
+umbrella_ISGrabItemAction_QueueItem = {}

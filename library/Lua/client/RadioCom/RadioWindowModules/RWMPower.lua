@@ -1,60 +1,65 @@
 ---@meta
 
 ---@class RWMPower : RWMPanel
----@field led any
----@field toggleOnOffButton any
----@field itemDropBox any
----@field batteryStatus any
----@field x any
----@field y any
----@field background any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field fontheight any
----@field batteryTex any
----@field [any] any
+---@field batteryStatus ISBatteryStatusDisplay
+---@field batteryTex Texture
+---@field fontheight number
+---@field itemDropBox ISItemDropBox
+---@field led ISLedLight
+---@field toggleOnOffButton ISButton
 RWMPower = RWMPanel:derive("RWMPower")
+RWMPower.Type = "RWMPower"
 
----@return any
-function RWMPower:initialise() end
----@return any
-function RWMPower:createChildren() end
----@return any
-function RWMPower:toggleOnOff() end
----@return any
-function RWMPower:removeBattery() end
----@return any
+---@param _items InventoryItem[]
 function RWMPower:addBattery(_items) end
----@return any
-function RWMPower:verifyItem(_item) end
----@return any
+
 function RWMPower:clear() end
----@return any
-function RWMPower:readFromObject(_player, _deviceObject, _deviceData, _deviceType) end
----@return any
-function RWMPower:powerUpdateSimulation() end
----@return any
-function RWMPower:update() end
----@return any
-function RWMPower:prerender() end
----@return any
-function RWMPower:render() end
----@return any
-function RWMPower:onJoypadDown(button) end
----@return any
+
+function RWMPower:createChildren() end
+
+---@return string?
 function RWMPower:getAPrompt() end
----@return any
+
+---@return string?
 function RWMPower:getBPrompt() end
----@return any
+
+---@return string?
 function RWMPower:getXPrompt() end
----@return any
+
+---@return string?
 function RWMPower:getYPrompt() end
 
+function RWMPower:initialise() end
+
+---@param button integer
+function RWMPower:onJoypadDown(button) end
+
+function RWMPower:powerUpdateSimulation() end
+
+function RWMPower:prerender() end
+
+---@param _player IsoPlayer
+---@param _deviceObject InventoryItem | IsoObject | VehiclePart
+---@param _deviceData DeviceData
+---@param _deviceType string
+---@return boolean
+function RWMPower:readFromObject(_player, _deviceObject, _deviceData, _deviceType) end
+
+function RWMPower:removeBattery() end
+
+function RWMPower:render() end
+
+function RWMPower:toggleOnOff() end
+
+function RWMPower:update() end
+
+---@param _item InventoryItem
+---@return boolean?
+function RWMPower:verifyItem(_item) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return RWMPower
 function RWMPower:new(x, y, width, height) end

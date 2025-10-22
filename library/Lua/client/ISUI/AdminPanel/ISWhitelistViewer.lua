@@ -1,42 +1,49 @@
 ---@meta
 
 ---@class ISWhitelistViewer : ISPanel
----@field activeView any
----@field panel any
----@field close any
----@field refreshBtn any
----@field modify any
----@field delete any
----@field schema any
----@field buttonBorderColor any
----@field backgroundColor any
----@field moveWithMouse any
----@field canModify any
----@field [any] any
-ISWhitelistViewer = ISPanel:derive("ISWhitelistViewer")
+---@field activeView ISWhitelistTable?
+---@field buttonBorderColor umbrella.RGBA
+---@field canModify boolean
+---@field close ISButton
+---@field delete ISButton
+---@field modify ISButton
+---@field panel ISTabPanel
+---@field refreshBtn ISButton
+---@field schema table<string, umbrella.DBSchemaEntry[]>
+ISWhitelistViewer = {}
+ISWhitelistViewer.Type = "ISWhitelistViewer"
 ISWhitelistViewer.bottomInfoHeight = 40
+ISWhitelistViewer.instance = nil ---@type ISWhitelistViewer?
 
----@return any
+---@param schema table<string, umbrella.DBSchemaEntry[]>
 function ISWhitelistViewer.receiveDBSchema(schema) end
 
----@return any
-function ISWhitelistViewer:initialise() end
----@return any
-function ISWhitelistViewer:render() end
----@return any
-function ISWhitelistViewer:onActivateView() end
----@return any
-function ISWhitelistViewer:refreshButtons() end
----@return any
-function ISWhitelistViewer:createChildren() end
----@return any
-function ISWhitelistViewer:onOptionMouseDown(button, x, y) end
----@return any
-function ISWhitelistViewer:onRemove(button, view) end
----@return any
-function ISWhitelistViewer:refresh() end
----@return any
 function ISWhitelistViewer:closeSelf() end
 
+function ISWhitelistViewer:createChildren() end
+
+function ISWhitelistViewer:initialise() end
+
+function ISWhitelistViewer:onActivateView() end
+
+---@param button ISButton
+---@param x number
+---@param y number
+function ISWhitelistViewer:onOptionMouseDown(button, x, y) end
+
+---@param button ISButton
+---@param view ISWhitelistTable
+function ISWhitelistViewer:onRemove(button, view) end
+
+function ISWhitelistViewer:refresh() end
+
+function ISWhitelistViewer:refreshButtons() end
+
+function ISWhitelistViewer:render() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISWhitelistViewer
 function ISWhitelistViewer:new(x, y, width, height) end

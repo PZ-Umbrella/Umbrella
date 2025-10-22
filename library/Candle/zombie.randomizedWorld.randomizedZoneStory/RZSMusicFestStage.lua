@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RZSMusicFestStage: RandomizedZoneStoryBase
 --- @field public class any
-RZSMusicFestStage = {};
+RZSMusicFestStage = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,12 +10,11 @@ RZSMusicFestStage = {};
 
 --- @public
 --- @param zone Zone
---- @return void
+--- @return nil
 function RZSMusicFestStage:randomizeZoneStory(zone) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

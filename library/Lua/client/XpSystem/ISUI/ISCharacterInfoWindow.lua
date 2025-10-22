@@ -1,42 +1,56 @@
 ---@meta
 
 ---@class ISCharacterInfoWindow : ISCollapsableWindow
----@field panel any
----@field charScreen any
----@field characterView any
----@field healthView any
----@field protectionView any
----@field clothingView any
----@field visibleOnStartup any
----@field isCollapsed any
----@field playerNum any
----@field [any] any
+---@field characterView ISCharacterInfo
+---@field charScreen ISCharacterScreen
+---@field clothingView ISClothingInsPanel
+---@field healthView ISHealthPanel
+---@field panel ISTabPanel
+---@field playerNum integer
+---@field protectionView ISCharacterProtection
+---@field visibleOnStartup boolean
 ISCharacterInfoWindow = ISCollapsableWindow:derive("ISCharacterInfoWindow")
-ISCharacterInfoWindow.view = {}
+ISCharacterInfoWindow.Type = "ISCharacterInfoWindow"
+ISCharacterInfoWindow.view = nil ---@type umbrella.ISTabPanel.View[]
+ISCharacterInfoWindow.instance = nil ---@type ISCharacterInfoWindow?
 
----@return any
+---@param chr IsoPlayer
 function ISCharacterInfoWindow.OnClothingUpdated(chr) end
 
----@return any
-function ISCharacterInfoWindow:initialise() end
----@return any
-function ISCharacterInfoWindow:isActive(viewName) end
----@return any
-function ISCharacterInfoWindow:toggleView(viewName) end
----@return any
-function ISCharacterInfoWindow:onJoypadDown(button) end
----@return any
-function ISCharacterInfoWindow:createChildren() end
----@return any
-function ISCharacterInfoWindow:render() end
----@return any
 function ISCharacterInfoWindow:close() end
----@return any
+
+function ISCharacterInfoWindow:createChildren() end
+
+function ISCharacterInfoWindow:initialise() end
+
+---@param viewName string
+---@return boolean
+function ISCharacterInfoWindow:isActive(viewName) end
+
+---@param button integer
+function ISCharacterInfoWindow:onJoypadDown(button) end
+
+---@param view umbrella.ISTabPanel.View
+---@param window ISCollapsableWindow
 function ISCharacterInfoWindow:onTabTornOff(view, window) end
----@return any
+
+function ISCharacterInfoWindow:render() end
+
+---@param name string
+---@param layout umbrella.ISLayoutManager.Layout
 function ISCharacterInfoWindow:RestoreLayout(name, layout) end
----@return any
+
+---@param name string
+---@param layout umbrella.ISLayoutManager.Layout
 function ISCharacterInfoWindow:SaveLayout(name, layout) end
 
+---@param viewName string
+function ISCharacterInfoWindow:toggleView(viewName) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param playerNum integer
 ---@return ISCharacterInfoWindow
 function ISCharacterInfoWindow:new(x, y, width, height, playerNum) end

@@ -1,42 +1,36 @@
 ---@meta
 
 ---@class ISUIEmoteConfig : ISCollapsableWindow
----@field saveBtn any
----@field close any
----@field categoryLbl any
----@field categoryCB any
----@field emoteLbl any
----@field emoteCB any
----@field addNewEmoteBtn any
----@field remoteEmoteBtn any
----@field playerNum any
----@field width any
----@field height any
----@field chr any
----@field moveWithMouse any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field x any
----@field y any
----@field [any] any
+---@field addNewEmoteBtn ISButton
+---@field categoryCB ISComboBox
+---@field categoryLbl ISLabel
+---@field chr IsoPlayer
+---@field close ISButton
+---@field emoteCB ISComboBox
+---@field emoteLbl ISLabel
+---@field playerNum integer
+---@field remoteEmoteBtn ISButton
+---@field saveBtn ISButton
 ISUIEmoteConfig = ISCollapsableWindow:derive("ISUIEmoteConfig")
+ISUIEmoteConfig.Type = "ISUIEmoteConfig"
 
----@return any
-function ISUIEmoteConfig:createChildren() end
----@return any
-function ISUIEmoteConfig:selectCategory(combo) end
----@return any
-function ISUIEmoteConfig:prerender() end
----@return any
-function ISUIEmoteConfig:render() end
----@return any
 function ISUIEmoteConfig:close() end
----@return any
-function ISUIEmoteConfig:writeToFile() end
----@return any
+
+function ISUIEmoteConfig:createChildren() end
+
+function ISUIEmoteConfig:prerender() end
+
 function ISUIEmoteConfig:readFile() end
 
+function ISUIEmoteConfig:render() end
+
+---@param combo ISComboBox
+function ISUIEmoteConfig:selectCategory(combo) end
+
+function ISUIEmoteConfig:writeToFile() end
+
+---@param x number
+---@param y number
+---@param character IsoPlayer
 ---@return ISUIEmoteConfig
 function ISUIEmoteConfig:new(x, y, character) end

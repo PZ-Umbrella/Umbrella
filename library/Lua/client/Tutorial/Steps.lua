@@ -1,62 +1,85 @@
 ---@meta
 
 ---@class TutorialTests
----@field homing2 any
----@field homing1 any
----@field marker1 any
----@field currentZoom any
----@field [any] any
 TutorialTests = {}
 TutorialTests.klight_x = 160
 TutorialTests.klight_y = 156
 TutorialTests.llight_x = 151
 TutorialTests.llight_y = 151
+TutorialTests.homing2 = nil ---@type WorldMarkers.PlayerHomingPoint?
+TutorialTests.homing1 = nil ---@type WorldMarkers.PlayerHomingPoint?
+TutorialTests.marker1 = nil ---@type WorldMarkers.GridSquareMarker?
+TutorialTests.currentZoom = nil ---@type number?
 
----@return any
+---@param sq IsoGridSquare
+---@param yoffset number?
+---@param xoffset number?
+---@param color umbrella.RGB?
 function TutorialTests.addHoming(sq, yoffset, xoffset, color) end
----@return any
+
+---@param sq IsoGridSquare
+---@param size number
 function TutorialTests.addMarker(sq, size) end
----@return any
-function TutorialTests.stopHighlight(obj) end
----@return any
-function TutorialTests.highlight(obj, thickness) end
----@return any
-function TutorialTests.RemoveMarkers() end
----@return any
-function TutorialTests.ZoomedIn() end
----@return any
-function TutorialTests.ZoomedOut() end
----@return any
-function TutorialTests.PlayerInfoOpen() end
----@return any
+
+---@return boolean
 function TutorialTests.HealthOpen() end
----@return any
-function TutorialTests.SkillsPage() end
----@return any
-function TutorialTests.NotSkillsPage() end
----@return any
+
+---@param obj IsoObject
+---@param thickness number?
+function TutorialTests.highlight(obj, thickness) end
+
+---@param x number
+---@param y number
+---@param w number
+---@param h number
+---@return boolean
+function TutorialTests.inArea(x, y, w, h) end
+
+---@return boolean
 function TutorialTests.LookedAround() end
+
+---@return boolean
+function TutorialTests.NotSkillsPage() end
+
+---@return boolean
+function TutorialTests.PlayerInfoOpen() end
+
+function TutorialTests.RemoveMarkers() end
+
+---@return boolean
+function TutorialTests.SkillsPage() end
+
+---@param obj IsoObject
+function TutorialTests.stopHighlight(obj) end
+
+---@return boolean
+function TutorialTests.ZoomedIn() end
+
+---@return boolean
+function TutorialTests.ZoomedOut() end
 
 ---@class WelcomeStep : TutorialStep
 WelcomeStep = TutorialStep:derive("WelcomeStep")
+WelcomeStep.Type = "WelcomeStep"
+WelcomeStep.finished = nil ---@type boolean?
 
----@return any
 function WelcomeStep:begin() end
----@return any
-function WelcomeStep:isComplete() end
----@return any
+
 function WelcomeStep:finish() end
+
+---@return boolean
+function WelcomeStep:isComplete() end
 
 ---@return WelcomeStep
 function WelcomeStep:new() end
 
 ---@class WalkToAdjacent : TutorialStep
 WalkToAdjacent = TutorialStep:derive("WalkToAdjacent")
+WalkToAdjacent.Type = "WalkToAdjacent"
 WalkToAdjacent.otherRoomInLocX = 152
 WalkToAdjacent.otherRoomInLocY = 153
 WalkToAdjacent.otherRoomY1 = 156
 WalkToAdjacent.otherRoomX1 = 153
-WalkToAdjacent.otherRoomY1 = 156
 WalkToAdjacent.otherRoomX2 = 155
 WalkToAdjacent.otherRoomY2 = 158
 WalkToAdjacent.highlightFloor = nil
@@ -66,265 +89,354 @@ WalkToAdjacent.runned = false
 WalkToAdjacent.x2 = 157
 WalkToAdjacent.y2 = 153
 WalkToAdjacent.sneaked = false
-WalkToAdjacent.appleContainer = nil
+WalkToAdjacent.appleContainer = nil ---@type IsoObject?
 WalkToAdjacent.z = 0
+WalkToAdjacent.finished = nil ---@type boolean?
 
----@return any
 function WalkToAdjacent:begin() end
----@return any
-function WalkToAdjacent:inLoc() end
----@return any
-function WalkToAdjacent:strafed() end
----@return any
-function WalkToAdjacent:inLoc2() end
----@return any
-function WalkToAdjacent:isComplete() end
----@return any
+
 function WalkToAdjacent:finish() end
+
+---@return boolean
+function WalkToAdjacent:inLoc() end
+
+---@return boolean
+function WalkToAdjacent:inLoc2() end
+
+---@return boolean
+function WalkToAdjacent:isComplete() end
+
+---@return boolean
+function WalkToAdjacent:strafed() end
 
 ---@return WalkToAdjacent
 function WalkToAdjacent:new() end
 
 ---@class InventoryLootingStep : TutorialStep
 InventoryLootingStep = TutorialStep:derive("InventoryLootingStep")
-InventoryLootingStep.itemToEat = "DeadMouse"
+InventoryLootingStep.Type = "InventoryLootingStep"
+InventoryLootingStep.itemToEat = "DeadRat"
+InventoryLootingStep.container = nil ---@type IsoObject?
+InventoryLootingStep.finished = nil ---@type boolean?
 
----@return any
 function InventoryLootingStep:begin() end
----@return any
-function InventoryLootingStep:openInventoryJoypad() end
----@return any
-function InventoryLootingStep:focusCorrectPanel() end
----@return any
-function InventoryLootingStep:focusLootingPanel() end
----@return any
-function InventoryLootingStep:haveItem() end
----@return any
-function InventoryLootingStep:haveWater() end
----@return any
-function InventoryLootingStep:isComplete() end
----@return any
+
 function InventoryLootingStep:finish() end
+
+---@return boolean
+function InventoryLootingStep:focusCorrectPanel() end
+
+---@return boolean
+function InventoryLootingStep:focusLootingPanel() end
+
+---@return boolean
+function InventoryLootingStep:haveItem() end
+
+---@return boolean
+function InventoryLootingStep:haveWater() end
+
+---@return boolean
+function InventoryLootingStep:isComplete() end
+
+---@return boolean
+function InventoryLootingStep:openInventoryJoypad() end
 
 ---@return InventoryLootingStep
 function InventoryLootingStep:new() end
 
 ---@class InventoryUseStep : TutorialStep
 InventoryUseStep = TutorialStep:derive("InventoryUseStep")
+InventoryUseStep.Type = "InventoryUseStep"
 InventoryUseStep.sinkX = 156
 InventoryUseStep.sinkY = 154
-InventoryUseStep.sink = nil
-InventoryUseStep.lastInventory = nil
+InventoryUseStep.sink = nil ---@type IsoObject?
+InventoryUseStep.lastInventory = nil ---@type ItemContainer?
 InventoryUseStep.clickedOnInventory = false
-InventoryUseStep.panContainer = nil
+InventoryUseStep.panContainer = nil ---@type IsoObject?
+InventoryUseStep.dontTurn = nil ---@type boolean?
+InventoryUseStep.bloodMouse1 = nil ---@type boolean?
+InventoryUseStep.finished = nil ---@type boolean?
 
----@return any
+---@return InventoryItem
 function InventoryUseStep.spawnPan() end
 
----@return any
 function InventoryUseStep:begin() end
----@return any
-function InventoryUseStep:InLocJoypad() end
----@return any
-function InventoryUseStep:selectInventory() end
----@return any
-function InventoryUseStep:focusLootingPanel() end
----@return any
+
+---@return boolean
 function InventoryUseStep:eat() end
----@return any
+
+---@return boolean
 function InventoryUseStep:fillBottle() end
----@return any
-function InventoryUseStep:seeWeapon() end
----@return any
-function InventoryUseStep:lootWeapon() end
----@return any
-function InventoryUseStep:isComplete() end
----@return any
+
 function InventoryUseStep:finish() end
+
+---@return boolean
+function InventoryUseStep:focusLootingPanel() end
+
+---@return boolean
+function InventoryUseStep:InLocJoypad() end
+
+---@return boolean
+function InventoryUseStep:isComplete() end
+
+---@return boolean
+function InventoryUseStep:lootWeapon() end
+
+---@return boolean
+function InventoryUseStep:seeWeapon() end
+
+---@return boolean
+function InventoryUseStep:selectInventory() end
 
 ---@return InventoryUseStep
 function InventoryUseStep:new() end
 
 ---@class FightStep : TutorialStep
 FightStep = TutorialStep:derive("FightStep")
+FightStep.Type = "FightStep"
 FightStep.windowX = 162
 FightStep.windowY = 154
-FightStep.window = nil
+FightStep.window = nil ---@type IsoWindow?
 FightStep.climbThrough = false
 FightStep.zombieMomSpawnX = 165
 FightStep.zombieMomSpawnY = 154
-FightStep.momzombie = nil
+FightStep.momzombie = nil ---@type IsoZombie?
 FightStep.zombieSawYou = false
 FightStep.highlightFloor = nil
+FightStep.floor = nil ---@type IsoObject?
 FightStep.wasOpen = true
+FightStep.playerX = nil ---@type number?
+FightStep.playerY = nil ---@type number?
+FightStep.momDead = nil ---@type boolean?
+FightStep.stopHighlight = nil ---@type boolean?
+FightStep.pinInv = nil ---@type boolean?
+FightStep.finished = nil ---@type boolean?
+FightStep.floor1SQ = nil ---@type IsoGridSquare?
+FightStep.floor2SQ = nil ---@type IsoGridSquare?
+FightStep.markerDone = nil ---@type boolean?
 
----@return any
 function FightStep:begin() end
----@return any
-function FightStep:WalkToWindow() end
----@return any
-function FightStep:spawnMom() end
----@return any
-function FightStep:OpenWindow() end
----@return any
+
+---@return boolean
 function FightStep:ClimbThroughWindow() end
----@return any
-function FightStep:IsAiming() end
----@return any
-function FightStep:OnMomDead(zed) end
----@return any
-function FightStep:HitZombie() end
----@return any
-function FightStep:KillZombie() end
----@return any
-function FightStep:LootKnife() end
----@return any
-function FightStep:isComplete() end
----@return any
+
 function FightStep:finish() end
+
+---@return boolean
+function FightStep:HitZombie() end
+
+---@return unknown
+function FightStep:IsAiming() end
+
+---@return boolean
+function FightStep:isComplete() end
+
+---@return boolean
+function FightStep:KillZombie() end
+
+---@return boolean
+function FightStep:LootKnife() end
+
+function FightStep:OnMomDead(zed) end
+
+---@return boolean
+function FightStep:OpenWindow() end
+
+function FightStep:spawnMom() end
+
+---@return boolean
+function FightStep:WalkToWindow() end
 
 ---@return FightStep
 function FightStep:new() end
 
 ---@class SneakStep : TutorialStep
----@field shotgun any
----@field [any] any
 SneakStep = TutorialStep:derive("SneakStep")
+SneakStep.Type = "SneakStep"
 SneakStep.zombieDadSpawnX = 166
 SneakStep.zombieDadSpawnY = 147
+SneakStep.dadzombie = nil ---@type IsoZombie?
+SneakStep.isDadDead = nil ---@type boolean?
+SneakStep.sqGate = nil ---@type IsoGridSquare?
+SneakStep.wasSneaking = nil ---@type boolean?
+SneakStep.pinInv = nil ---@type boolean?
+SneakStep.bag = nil ---@type InventoryItem?
+SneakStep.shotgun = nil ---@type InventoryItem?
+SneakStep.finished = nil ---@type boolean?
 
----@return any
-function SneakStep.setZoom(depth) end
----@return any
-function SneakStep.Sneak() end
----@return any
+---@param owner IsoGameCharacter
+---@param weapon HandWeapon
+---@param zed IsoZombie
+---@param dmg number
 function SneakStep.OnSwingAtDad(owner, weapon, zed, dmg) end
----@return any
+
+---@param depth number
+function SneakStep.setZoom(depth) end
+
+---@return boolean
+function SneakStep.Sneak() end
+
+---@return InventoryItem
 function SneakStep.spawnShotgun() end
 
----@return any
 function SneakStep:begin() end
----@return any
-function SneakStep:spawnDad() end
----@return any
-function SneakStep:OnDadDead() end
----@return any
-function SneakStep:GoThroughDoor() end
----@return any
-function SneakStep:SneakingGate() end
----@return any
-function SneakStep:OpenGate() end
----@return any
-function SneakStep:DadDead() end
----@return any
-function SneakStep:EquippedBag() end
----@return any
+
+---@return boolean
 function SneakStep:CheckBag() end
----@return any
+
+---@return boolean
+function SneakStep:DadDead() end
+
+---@return boolean?
+function SneakStep:EquippedBag() end
+
+---@return boolean
 function SneakStep:EquipShotgun() end
----@return any
-function SneakStep:isComplete() end
----@return any
+
 function SneakStep:finish() end
+
+---@return boolean
+function SneakStep:GoThroughDoor() end
+
+---@return boolean
+function SneakStep:isComplete() end
+
+function SneakStep:OnDadDead() end
+
+---@return unknown
+function SneakStep:OpenGate() end
+
+---@return boolean
+function SneakStep:SneakingGate() end
+
+function SneakStep:spawnDad() end
 
 ---@return SneakStep
 function SneakStep:new() end
 
 ---@class BandageStep : TutorialStep
----@field fences any
----@field vaultedWrong any
----@field vaulted any
----@field runned any
----@field extTimer any
----@field vaultedWindow any
----@field vaultedWrongZoom any
----@field brother1 any
----@field brother2 any
----@field sqDoor any
----@field sqWindow any
----@field blink any
----@field containers any
----@field spawnedItems any
----@field [any] any
 BandageStep = TutorialStep:derive("BandageStep")
+BandageStep.Type = "BandageStep"
 BandageStep.brotherX = 182
 BandageStep.brotherY = 147
+BandageStep.window = nil ---@type IsoWindow?
+BandageStep.fences = nil ---@type IsoObject[]?
+BandageStep.runned = nil ---@type boolean?
+BandageStep.vaulted = nil ---@type boolean?
+BandageStep.vaultedWrong = nil ---@type boolean?
+BandageStep.vaultedWrongZoom = nil ---@type boolean?
+BandageStep.vaultedWindow = nil ---@type boolean?
+BandageStep.extTimer = nil ---@type number?
+BandageStep.oneDead = nil ---@type boolean?
+BandageStep.isBrothersDead = nil ---@type boolean?
+BandageStep.brother1 = nil ---@type IsoZombie?
+BandageStep.brother2 = nil ---@type IsoZombie?
+BandageStep.sqDoor = nil ---@type IsoGridSquare?
+BandageStep.sqWindow = nil ---@type IsoGridSquare?
+BandageStep.containers = nil ---@type IsoGridSquare[]?
+BandageStep.spawnedItems = nil ---@type boolean?
+BandageStep.blink = nil ---@type boolean?
+BandageStep.finished = nil ---@type boolean?
 
----@return any
-function BandageStep.Vault() end
----@return any
-function BandageStep.ThroughWindow() end
----@return any
-function BandageStep.CheckWindow() end
----@return any
-function BandageStep.OpenCurtain() end
----@return any
-function BandageStep.HealthOpen() end
----@return any
-function BandageStep.spawnBrothers() end
----@return any
+---@return boolean
 function BandageStep.BandageYourself() end
----@return any
+
+---@return boolean
+function BandageStep.CheckWindow() end
+
+---@return boolean
+function BandageStep.HealthOpen() end
+
+---@return boolean
+function BandageStep.OpenCurtain() end
+
+function BandageStep.spawnBrothers() end
+
+---@return boolean
 function BandageStep.ThroughDoor() end
 
----@return any
+---@return boolean
+function BandageStep.ThroughWindow() end
+
+---@return boolean
+function BandageStep.Vault() end
+
 function BandageStep:begin() end
----@return any
-function BandageStep:OnBrothersDead() end
----@return any
-function BandageStep:isComplete() end
----@return any
+
 function BandageStep:finish() end
+
+---@return boolean
+function BandageStep:isComplete() end
+
+function BandageStep:OnBrothersDead() end
 
 ---@return BandageStep
 function BandageStep:new() end
 
 ---@class ShotgunStep : TutorialStep
----@field soundDone any
----@field timeOfDeath any
----@field vaulted any
----@field hassprintedTimer any
----@field sneaked any
----@field brotherWakeupTimer any
----@field squares any
----@field soundTimer any
----@field [any] any
 ShotgunStep = TutorialStep:derive("ShotgunStep")
+ShotgunStep.Type = "ShotgunStep"
 ShotgunStep.tickBeforeHordeSpawn = 0
 ShotgunStep.hassprintedTimer = 0
 ShotgunStep.soundTimer = 0
+ShotgunStep.lockedX = nil
+ShotgunStep.lockedY = nil
+ShotgunStep.squares = nil ---@type IsoGridSquare[]?
+ShotgunStep.outhouseSQ = nil ---@type IsoGridSquare[]?
+ShotgunStep.timeOfDeath = nil ---@type number?
+ShotgunStep.soundDone = nil ---@type boolean?
+ShotgunStep.vaulted = nil ---@type boolean?
+ShotgunStep.forcedShoutBinding = nil ---@type boolean?
+ShotgunStep.sneaked = nil ---@type boolean?
+ShotgunStep.brotherWakeupTimer = nil ---@type number?
+ShotgunStep.finished = nil ---@type boolean?
+ShotgunStep.forceSpawnHorde = nil ---@type boolean?
+ShotgunStep.spawnedHorde = nil ---@type boolean?
 
----@return any
-function ShotgunStep.TheEnd() end
----@return any
-function ShotgunStep.Outhouse() end
----@return any
+---@return boolean
 function ShotgunStep.BackOverFence() end
----@return any
-function ShotgunStep.ClimbedFence() end
----@return any
-function ShotgunStep.Sprinted() end
----@return any
-function ShotgunStep.OnSquare() end
----@return any
+
+---@return boolean
 function ShotgunStep.BrothersDead() end
----@return any
+
+---@return boolean
+function ShotgunStep.ClimbedFence() end
+
+---@return boolean
+function ShotgunStep.OnSquare() end
+
+---@return boolean
+function ShotgunStep.Outhouse() end
+
+---@param player IsoPlayer
+function ShotgunStep.playerUpdate(player) end
+
+---@return boolean
+function ShotgunStep.Sprinted() end
+
+---@return boolean
 function ShotgunStep.SurvivalGuideOpen() end
 
----@return any
-function ShotgunStep:begin() end
----@return any
+function ShotgunStep.TheEnd() end
+
+---@return boolean
 function ShotgunStep:Aiming() end
----@return any
-function ShotgunStep:Shout() end
----@return any
-function ShotgunStep:isComplete() end
----@return any
+
+function ShotgunStep:begin() end
+
 function ShotgunStep:finish() end
----@return any
+
+---@return boolean
+function ShotgunStep:isComplete() end
+
+---@return boolean
 function ShotgunStep:isPlayedDead() end
----@return any
+
+---@return boolean
 function ShotgunStep:isPlayedDeadJoypad() end
+
+---@return boolean
+function ShotgunStep:Shout() end
 
 ---@return ShotgunStep
 function ShotgunStep:new() end

@@ -1,26 +1,26 @@
---- @meta
+--- @meta _
 
 --- @class BaseVisual
 --- @field public class any
-BaseVisual = {};
+BaseVisual = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
+--- @return nil
 function BaseVisual:clear() end
 
 --- @public
 --- @param other BaseVisual
---- @return void
+--- @return nil
 function BaseVisual:copyFrom(other) end
 
 --- @public
---- @param outfitName String
+--- @param outfitName string
 --- @param itemVisuals ItemVisuals
---- @return void
+--- @return nil
 function BaseVisual:dressInNamedOutfit(outfitName, itemVisuals) end
 
 --- @public
@@ -33,18 +33,17 @@ function BaseVisual:getModelScript() end
 
 --- @public
 --- @param input ByteBuffer
---- @param WorldVersion int
---- @return void
+--- @param WorldVersion integer
+--- @return nil
 function BaseVisual:load(input, WorldVersion) end
 
 --- @public
 --- @param output ByteBuffer
---- @return void
+--- @return nil
 function BaseVisual:save(output) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

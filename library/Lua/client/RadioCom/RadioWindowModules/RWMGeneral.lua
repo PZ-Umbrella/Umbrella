@@ -1,46 +1,50 @@
 ---@meta
 
 ---@class RWMGeneral : RWMPanel
----@field itemTexture any
----@field isoTexture any
----@field infoLines any
----@field isTv any
----@field deviceFrequency any
----@field x any
----@field y any
----@field background any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field fontheight any
----@field [any] any
+---@field deviceFrequency number
+---@field fontheight number
+---@field infoLines umbrella.RWMGeneral.InfoLine[]
+---@field isoTexture boolean
+---@field isTv boolean
+---@field itemTexture Texture?
 RWMGeneral = RWMPanel:derive("RWMGeneral")
+RWMGeneral.Type = "RWMGeneral"
 
----@return any
-function RWMGeneral:initialise() end
----@return any
-function RWMGeneral:createChildren() end
----@return any
-function RWMGeneral:clear() end
----@return any
-function RWMGeneral:readFromObject(_player, _deviceObject, _deviceData, _deviceType) end
----@return any
-function RWMGeneral:setInfoLines() end
----@return any
+---@param _prefix string
+---@param _line string
 function RWMGeneral:addInfoLine(_prefix, _line) end
----@return any
-function RWMGeneral:recalulateDim() end
----@return any
-function RWMGeneral:update() end
----@return any
+
+function RWMGeneral:clear() end
+
+function RWMGeneral:createChildren() end
+
+function RWMGeneral:initialise() end
+
 function RWMGeneral:prerender() end
----@return any
+
+---@param _player IsoPlayer
+---@param _deviceObject InventoryItem | IsoObject | VehiclePart
+---@param _deviceData DeviceData
+---@param _deviceType string
+---@return boolean
+function RWMGeneral:readFromObject(_player, _deviceObject, _deviceData, _deviceType) end
+
+function RWMGeneral:recalulateDim() end
+
 function RWMGeneral:render() end
 
+function RWMGeneral:setInfoLines() end
+
+function RWMGeneral:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return RWMGeneral
 function RWMGeneral:new(x, y, width, height) end
+
+---@class umbrella.RWMGeneral.InfoLine
+---@field line string
+---@field prefix string
+umbrella_RWMGeneral_InfoLine = {}

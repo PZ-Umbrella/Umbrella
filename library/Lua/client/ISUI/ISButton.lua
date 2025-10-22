@@ -1,127 +1,206 @@
 ---@meta
 
----@class ISButton : ISPanel
----@field mouseOver any
----@field joypadFocused any
----@field pressed any
----@field isJoypad any
----@field joypadTexture any
----@field blinkBGAlpha any
----@field blinkBGAlphaIncrease any
----@field backgroundColorPressed any
----@field image any
----@field forcedWidthImage any
----@field forcedHeightImage any
----@field overlayText any
----@field blinkImageAlpha any
----@field blinkImageAlphaIncrease any
----@field font any
----@field title any
----@field onmouseover any
----@field onmouseoutfunction any
----@field displayBackground any
----@field pressedTime any
----@field tooltipUI any
----@field repeatWhilePressedFunc any
----@field enable any
----@field borderColorEnabled any
----@field tooltip any
----@field onclick any
----@field onClickArgs any
----@field x any
----@field y any
----@field borderColor any
----@field backgroundColor any
----@field backgroundColorMouseOver any
----@field textureColor any
----@field textColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field target any
----@field onmousedown any
----@field isButton any
----@field allowMouseUpProcessing any
----@field yoffset any
----@field fade any
----@field joypadTextureWH any
----@field sounds any
----@field [any] any
-ISButton = ISPanel:derive("ISButton")
+---@alias umbrella.ISButton.MouseCallback fun(target: unknown, button: ISButton, x: number, y: number)
+---@alias umbrella.ISButton.OnClick fun(target: unknown, button: ISButton, ...: unknown)
+---@alias umbrella.ISButton.RepeatWhilePressed fun(target: unknown, button: ISButton)
 
----@return any
-function ISButton:initialise() end
----@return any
-function ISButton:onMouseMove(dx, dy) end
----@return any
-function ISButton:onMouseMoveOutside(dx, dy) end
----@return any
-function ISButton:setJoypadFocused(focused) end
----@return any
-function ISButton:onMouseUp(x, y) end
----@return any
-function ISButton:onMouseUpOutside(x, y) end
----@return any
-function ISButton:onMouseDown(x, y) end
----@return any
-function ISButton:onMouseDoubleClick(x, y) end
----@return any
-function ISButton:forceClick() end
----@return any
-function ISButton:setJoypadButton(texture) end
----@return any
+---@class ISButton : ISPanel
+---@field allowMouseUpProcessing boolean?
+---@field backgroundColorEnabled umbrella.RGBA
+---@field backgroundColorMouseOver umbrella.RGBA
+---@field backgroundColorPressed table
+---@field blinkBGAlpha number
+---@field blinkBGAlphaIncrease boolean
+---@field blinkImageAlpha number
+---@field blinkImageAlphaIncrease boolean
+---@field borderColorEnabled umbrella.RGBA
+---@field displayBackground boolean
+---@field enable boolean
+---@field fade UITransition
+---@field font UIFont
+---@field forcedHeightImage number?
+---@field forcedWidthImage number?
+---@field iconRight unknown?
+---@field iconRightColor table
+---@field iconRightHeight number
+---@field iconRightWidth number
+---@field image Texture?
+---@field isButton true
+---@field isJoypad boolean
+---@field joypadTexture unknown?
+---@field joypadTextureWH number
+---@field onclick umbrella.ISButton.OnClick?
+---@field onClickArgs unknown[]
+---@field onmousedown umbrella.ISButton.MouseCallback?
+---@field onmouseoutfunction umbrella.ISButton.MouseCallback?
+---@field onmouseover umbrella.ISButton.MouseCallback?
+---@field originalHeight number
+---@field originalWidth number
+---@field overlayText string?
+---@field pressed boolean
+---@field pressedTime number?
+---@field repeatWhilePressedFunc umbrella.ISButton.RepeatWhilePressed?
+---@field repeatWhilePressedTimer number
+---@field sounds table<string, string>
+---@field target unknown?
+---@field textColor umbrella.RGBA
+---@field textureBackground Texture?
+---@field textureColor umbrella.RGBA
+---@field title string
+---@field titleLeft boolean
+---@field tooltip string?
+---@field tooltipUI ISToolTip
+---@field yoffset number
+ISButton = ISPanel:derive("ISButton")
+ISButton.Type = "ISButton"
+
+---@param _preferredWidth number?
+---@param _preferredHeight number?
+function ISButton:calculateLayout(_preferredWidth, _preferredHeight) end
+
 function ISButton:clearJoypadButton() end
----@return any
-function ISButton:prerender() end
----@return any
-function ISButton:setImage(image) end
----@return any
+
+function ISButton:enableAcceptColor() end
+
+function ISButton:enableCancelColor() end
+
+---@return unknown?
+function ISButton:forceClick() end
+
+---@param width number
+---@param height number
 function ISButton:forceImageSize(width, height) end
----@return any
-function ISButton:setOverlayText(text) end
----@return any
-function ISButton:render() end
----@return any
-function ISButton:setFont(font) end
----@return any
+
+---@return string
 function ISButton:getTitle() end
----@return any
-function ISButton:setTitle(title) end
----@return any
-function ISButton:setOnMouseOverFunction(onmouseover) end
----@return any
-function ISButton:setOnMouseOutFunction(onmouseout) end
----@return any
-function ISButton:setDisplayBackground(background) end
----@return any
-function ISButton:update() end
----@return any
-function ISButton:updateTooltip() end
----@return any
-function ISButton:setRepeatWhilePressed(func) end
----@return any
-function ISButton:setBackgroundRGBA(r, g, b, a) end
----@return any
-function ISButton:setBackgroundColorMouseOverRGBA(r, g, b, a) end
----@return any
-function ISButton:setBorderRGBA(r, g, b, a) end
----@return any
-function ISButton:setTextureRGBA(r, g, b, a) end
----@return any
-function ISButton:setEnable(bEnabled) end
----@return any
+
+function ISButton:initialise() end
+
+---@return boolean
 function ISButton:isEnabled() end
----@return any
-function ISButton:setTooltip(tooltip) end
----@return any
-function ISButton:setWidthToTitle(minWidth, isJoypad) end
----@return any
+
+---@param x number
+---@param y number
+---@return unknown?
+function ISButton:onMouseDoubleClick(x, y) end
+
+---@param x number
+---@param y number
+function ISButton:onMouseDown(x, y) end
+
+---@param dx number
+---@param dy number
+function ISButton:onMouseMove(dx, dy) end
+
+---@param dx number
+---@param dy number
+function ISButton:onMouseMoveOutside(dx, dy) end
+
+---@param x number
+---@param y number
+function ISButton:onMouseUp(x, y) end
+
+---@param x number
+---@param y number
+function ISButton:onMouseUpOutside(x, y) end
+
+function ISButton:prerender() end
+
+function ISButton:render() end
+
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function ISButton:setBackgroundColorMouseOverRGBA(r, g, b, a) end
+
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function ISButton:setBackgroundRGBA(r, g, b, a) end
+
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function ISButton:setBorderRGBA(r, g, b, a) end
+
+---@param background boolean
+function ISButton:setDisplayBackground(background) end
+
+---@param bEnabled boolean
+function ISButton:setEnable(bEnabled) end
+
+---@param font UIFont
+function ISButton:setFont(font) end
+
+---@param image Texture?
+function ISButton:setImage(image) end
+
+---@param texture Texture
+function ISButton:setJoypadButton(texture) end
+
+---@param focused boolean
+function ISButton:setJoypadFocused(focused) end
+
+---@param func umbrella.ISButton.OnClick
+---@param arg1 unknown?
+---@param arg2 unknown?
+---@param arg3 unknown?
+---@param arg4 unknown?
 function ISButton:setOnClick(func, arg1, arg2, arg3, arg4) end
----@return any
+
+---@param onmouseout umbrella.ISButton.MouseCallback?
+function ISButton:setOnMouseOutFunction(onmouseout) end
+
+---@param onmouseover umbrella.ISButton.MouseCallback?
+function ISButton:setOnMouseOverFunction(onmouseover) end
+
+---@param text string?
+function ISButton:setOverlayText(text) end
+
+---@param func umbrella.ISButton.RepeatWhilePressed?
+function ISButton:setRepeatWhilePressed(func) end
+
+---@param which string
+---@param soundName string?
 function ISButton:setSound(which, soundName) end
 
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function ISButton:setTextureRGBA(r, g, b, a) end
+
+---@param title string
+function ISButton:setTitle(title) end
+
+---@param tooltip string?
+function ISButton:setTooltip(tooltip) end
+
+---@param visible boolean
+function ISButton:setVisible(visible) end
+
+---@param minWidth number?
+---@param isJoypad boolean?
+function ISButton:setWidthToTitle(minWidth, isJoypad) end
+
+---@param bEnabled boolean
+function ISButton:toggleAcceptCancel(bEnabled) end
+
+function ISButton:update() end
+
+function ISButton:updateTooltip() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param title string
+---@param clicktarget unknown?
+---@param onclick umbrella.ISButton.OnClick?
+---@param onmousedown umbrella.ISButton.MouseCallback?
+---@param allowMouseUpProcessing boolean?
 ---@return ISButton
 function ISButton:new(x, y, width, height, title, clicktarget, onclick, onmousedown, allowMouseUpProcessing) end

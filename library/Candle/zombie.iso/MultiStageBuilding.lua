@@ -1,9 +1,9 @@
---- @meta
+--- @meta _
 
 --- @class MultiStageBuilding
 --- @field public class any
 --- @field public stages ArrayList
-MultiStageBuilding = {};
+MultiStageBuilding = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -12,8 +12,14 @@ MultiStageBuilding = {};
 --- @public
 --- @static
 --- @param stage Stage
---- @return void
+--- @return nil
 function MultiStageBuilding.addStage(stage) end
+
+--- @public
+--- @static
+--- @param arg0 string
+--- @return Stage
+function MultiStageBuilding.getStage(arg0) end
 
 --- @public
 --- @static
@@ -23,9 +29,8 @@ function MultiStageBuilding.addStage(stage) end
 --- @return ArrayList
 function MultiStageBuilding.getStages(chr, itemClicked, cheat) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

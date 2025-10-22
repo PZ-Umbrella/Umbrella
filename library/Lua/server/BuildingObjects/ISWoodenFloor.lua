@@ -1,19 +1,31 @@
 ---@meta
 
 ---@class ISWoodenFloor : ISBuildingObject
----@field sq any
----@field javaObject any
----@field buildLow any
----@field floor any
----@field [any] any
+---@field buildLow boolean
+---@field floor boolean
+---@field javaObject IsoThumpable?
+---@field sq IsoGridSquare
 ISWoodenFloor = ISBuildingObject:derive("ISWoodenFloor")
+ISWoodenFloor.Type = "ISWoodenFloor"
 
----@return any
+---@param x number
+---@param y number
+---@param z number
+---@param north boolean
+---@param sprite string
 function ISWoodenFloor:create(x, y, z, north, sprite) end
----@return any
+
+---@param square IsoGridSquare
+---@return boolean
 function ISWoodenFloor:isValid(square) end
----@return any
+
+---@param x number
+---@param y number
+---@param z number
+---@param square IsoGridSquare
 function ISWoodenFloor:render(x, y, z, square) end
 
+---@param sprite string
+---@param northSprite string
 ---@return ISWoodenFloor
 function ISWoodenFloor:new(sprite, northSprite) end

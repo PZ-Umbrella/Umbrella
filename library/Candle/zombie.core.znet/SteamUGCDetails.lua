@@ -1,16 +1,16 @@
---- @meta
+--- @meta _
 
 --- @class SteamUGCDetails
 --- @field public class any
-SteamUGCDetails = {};
+SteamUGCDetails = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param index int
---- @return long
+--- @param index integer
+--- @return integer
 function SteamUGCDetails:getChildID(index) end
 
 --- @public
@@ -18,48 +18,47 @@ function SteamUGCDetails:getChildID(index) end
 function SteamUGCDetails:getChildren() end
 
 --- @public
---- @return int
+--- @return integer
 function SteamUGCDetails:getFileSize() end
 
 --- @public
---- @return long
+--- @return integer
 function SteamUGCDetails:getID() end
 
 --- @public
---- @return String
+--- @return string
 function SteamUGCDetails:getIDString() end
 
 --- @public
---- @return int
+--- @return integer
 function SteamUGCDetails:getNumChildren() end
 
 --- @public
---- @return String
+--- @return string
 function SteamUGCDetails:getState() end
 
 --- @public
---- @return long
+--- @return integer
 function SteamUGCDetails:getTimeCreated() end
 
 --- @public
---- @return long
+--- @return integer
 function SteamUGCDetails:getTimeUpdated() end
 
 --- @public
---- @return String
+--- @return string
 function SteamUGCDetails:getTitle() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param ID long
---- @param title String
---- @param timeCreated long
---- @param timeUpdated long
---- @param fileSize int
+--- @param ID integer
+--- @param title string
+--- @param timeCreated integer
+--- @param timeUpdated integer
+--- @param fileSize integer
 --- @param childIDs long[]
 --- @return SteamUGCDetails
 function SteamUGCDetails.new(ID, title, timeCreated, timeUpdated, fileSize, childIDs) end

@@ -1,32 +1,64 @@
---- @meta
+--- @meta _
 
 --- @class WorldSound
 --- @field public class any
-WorldSound = {};
+WorldSound = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param arg0 Object
---- @param arg1 int
---- @param arg2 int
---- @param arg3 int
---- @param arg4 int
---- @param arg5 int
+--- @param source any
+--- @param x integer
+--- @param y integer
+--- @param z integer
+--- @param radius integer
+--- @param volume integer
 --- @return WorldSound
---- @overload fun(self: WorldSound, arg0: Object, arg1: int, arg2: int, arg3: int, arg4: int, arg5: int, arg6: boolean): WorldSound
---- @overload fun(self: WorldSound, arg0: boolean, arg1: int, arg2: int, arg3: int, arg4: int, arg5: int, arg6: boolean, arg7: float, arg8: float): WorldSound
---- @overload fun(self: WorldSound, arg0: Object, arg1: int, arg2: int, arg3: int, arg4: int, arg5: int, arg6: boolean, arg7: float, arg8: float): WorldSound
-function WorldSound:init(arg0, arg1, arg2, arg3, arg4, arg5) end
+function WorldSound:init(source, x, y, z, radius, volume) end
 
+--- @public
+--- @param source any
+--- @param x integer
+--- @param y integer
+--- @param z integer
+--- @param radius integer
+--- @param volume integer
+--- @param stresshumans boolean
+--- @return WorldSound
+function WorldSound:init(source, x, y, z, radius, volume, stresshumans) end
+
+--- @public
+--- @param sourceIsZombie boolean
+--- @param x integer
+--- @param y integer
+--- @param z integer
+--- @param radius integer
+--- @param volume integer
+--- @param stressHumans boolean
+--- @param zombieIgnoreDist number
+--- @param stressMod number
+--- @return WorldSound
+function WorldSound:init(sourceIsZombie, x, y, z, radius, volume, stressHumans, zombieIgnoreDist, stressMod) end
+
+--- @public
+--- @param source any
+--- @param x integer
+--- @param y integer
+--- @param z integer
+--- @param radius integer
+--- @param volume integer
+--- @param stresshumans boolean
+--- @param zombieIgnoreDist number
+--- @param stressMod number
+--- @return WorldSound
+function WorldSound:init(source, x, y, z, radius, volume, stresshumans, zombieIgnoreDist, stressMod) end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param arg0 WorldSoundManager
 --- @return WorldSound
-function WorldSound.new(arg0) end
+function WorldSound.new() end

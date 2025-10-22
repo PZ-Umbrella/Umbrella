@@ -3,9 +3,14 @@
 ---@class ISBuildingBlueprintManager
 ISBuildingBlueprintManager = {}
 
----@return any
+---@param x number
+---@param y number
 function ISBuildingBlueprintManager.MouseDown(x, y) end
----@return any
+
+---@param x number
+---@param y number
+---@param wx number
+---@param wy number
 function ISBuildingBlueprintManager.MouseMove(x, y, wx, wy) end
----@return any
+
 function ISBuildingBlueprintManager.RenderUI() end

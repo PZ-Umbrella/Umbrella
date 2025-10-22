@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RZSBaseball: RandomizedZoneStoryBase
 --- @field public class any
-RZSBaseball = {};
+RZSBaseball = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,12 +10,11 @@ RZSBaseball = {};
 
 --- @public
 --- @param zone Zone
---- @return void
+--- @return nil
 function RZSBaseball:randomizeZoneStory(zone) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

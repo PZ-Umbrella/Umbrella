@@ -1,75 +1,93 @@
 ---@meta
 
 ---@class ISRadioAction : ISBaseTimedAction
----@field mode any
----@field character any
----@field device any
----@field deviceData any
----@field secondaryItem any
----@field stopOnWalk any
----@field stopOnRun any
----@field maxTime any
----@field [any] any
+---@field device InventoryItem | IsoObject | VehiclePart
+---@field deviceData DeviceData
+---@field ignoreHandsWounds boolean
+---@field mode string
+---@field secondaryItem (InventoryItem | boolean | number)?
 ISRadioAction = ISBaseTimedAction:derive("ISRadioAction")
+ISRadioAction.Type = "ISRadioAction"
 
----@return any
+---@return boolean?
 function ISRadioAction:isValid() end
----@return any
-function ISRadioAction:update() end
----@return any
-function ISRadioAction:perform() end
----@return any
-function ISRadioAction:isValidToggleOnOff() end
----@return any
-function ISRadioAction:performToggleOnOff() end
----@return any
-function ISRadioAction:isValidRemoveBattery() end
----@return any
-function ISRadioAction:performRemoveBattery() end
----@return any
+
+---@return boolean
 function ISRadioAction:isValidAddBattery() end
----@return any
-function ISRadioAction:performAddBattery() end
----@return any
-function ISRadioAction:isValidSetChannel() end
----@return any
-function ISRadioAction:performSetChannel() end
----@return any
-function ISRadioAction:isValidMuteVolume() end
----@return any
-function ISRadioAction:performMuteVolume() end
----@return any
-function ISRadioAction:isValidUnMuteVolume() end
----@return any
-function ISRadioAction:performUnMuteVolume() end
----@return any
-function ISRadioAction:isValidSetVolume() end
----@return any
-function ISRadioAction:performSetVolume() end
----@return any
-function ISRadioAction:isValidMuteMicrophone() end
----@return any
-function ISRadioAction:performMuteMicrophone() end
----@return any
-function ISRadioAction:isValidRemoveHeadphones() end
----@return any
-function ISRadioAction:performRemoveHeadphones() end
----@return any
+
+---@return boolean
 function ISRadioAction:isValidAddHeadphones() end
----@return any
-function ISRadioAction:performAddHeadphones() end
----@return any
-function ISRadioAction:isValidTogglePlayMedia() end
----@return any
-function ISRadioAction:performTogglePlayMedia() end
----@return any
+
+---@return boolean
 function ISRadioAction:isValidAddMedia() end
----@return any
-function ISRadioAction:performAddMedia() end
----@return any
+
+---@return boolean
+function ISRadioAction:isValidMuteMicrophone() end
+
+---@return boolean
+function ISRadioAction:isValidMuteVolume() end
+
+---@return boolean
+function ISRadioAction:isValidRemoveBattery() end
+
+---@return boolean
+function ISRadioAction:isValidRemoveHeadphones() end
+
+---@return boolean
 function ISRadioAction:isValidRemoveMedia() end
----@return any
+
+---@return boolean
+function ISRadioAction:isValidSetChannel() end
+
+---@return boolean
+function ISRadioAction:isValidSetVolume() end
+
+---@return boolean
+function ISRadioAction:isValidToggleOnOff() end
+
+---@return boolean
+function ISRadioAction:isValidTogglePlayMedia() end
+
+---@return boolean
+function ISRadioAction:isValidUnMuteVolume() end
+
+function ISRadioAction:perform() end
+
+function ISRadioAction:performAddBattery() end
+
+function ISRadioAction:performAddHeadphones() end
+
+function ISRadioAction:performAddMedia() end
+
+function ISRadioAction:performMuteMicrophone() end
+
+function ISRadioAction:performMuteVolume() end
+
+function ISRadioAction:performRemoveBattery() end
+
+function ISRadioAction:performRemoveHeadphones() end
+
 function ISRadioAction:performRemoveMedia() end
 
+function ISRadioAction:performSetChannel() end
+
+function ISRadioAction:performSetVolume() end
+
+function ISRadioAction:performToggleOnOff() end
+
+function ISRadioAction:performTogglePlayMedia() end
+
+function ISRadioAction:performUnMuteVolume() end
+
+function ISRadioAction:start() end
+
+function ISRadioAction:startSetChannel() end
+
+function ISRadioAction:update() end
+
+---@param mode string
+---@param character IsoPlayer
+---@param device InventoryItem | IsoObject | VehiclePart
+---@param secondaryItem (InventoryItem | boolean | number)?
 ---@return ISRadioAction
 function ISRadioAction:new(mode, character, device, secondaryItem) end

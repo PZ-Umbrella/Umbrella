@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class WornItems
 --- @field public class any
-WornItems = {};
+WornItems = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,11 +10,11 @@ WornItems = {};
 
 --- @public
 --- @param container ItemContainer
---- @return void
+--- @return nil
 function WornItems:addItemsToItemContainer(container) end
 
 --- @public
---- @return void
+--- @return nil
 function WornItems:clear() end
 
 --- @public
@@ -24,16 +24,16 @@ function WornItems:contains(item) end
 
 --- @public
 --- @param other WornItems
---- @return void
+--- @return nil
 function WornItems:copyFrom(other) end
 
 --- @public
 --- @param c Consumer
---- @return void
+--- @return nil
 function WornItems:forEach(c) end
 
 --- @public
---- @param index int
+--- @param index integer
 --- @return WornItem
 function WornItems:get(index) end
 
@@ -42,23 +42,23 @@ function WornItems:get(index) end
 function WornItems:getBodyLocationGroup() end
 
 --- @public
---- @param location String
+--- @param location string
 --- @return InventoryItem
 function WornItems:getItem(location) end
 
 --- @public
---- @param index int
+--- @param index integer
 --- @return InventoryItem
 function WornItems:getItemByIndex(index) end
 
 --- @public
 --- @param itemVisuals ItemVisuals
---- @return void
+--- @return nil
 function WornItems:getItemVisuals(itemVisuals) end
 
 --- @public
 --- @param item InventoryItem
---- @return String
+--- @return string
 function WornItems:getLocation(item) end
 
 --- @public
@@ -66,32 +66,46 @@ function WornItems:getLocation(item) end
 function WornItems:isEmpty() end
 
 --- @public
+--- @param arg0 ByteBuffer
+--- @param arg1 integer
+--- @return nil
+function WornItems:load(arg0, arg1) end
+
+--- @public
 --- @param item InventoryItem
---- @return void
+--- @return nil
 function WornItems:remove(item) end
 
 --- @public
+--- @param arg0 ByteBuffer
+--- @return nil
+function WornItems:save(arg0) end
+
+--- @public
 --- @param itemVisuals ItemVisuals
---- @return void
+--- @return nil
 function WornItems:setFromItemVisuals(itemVisuals) end
 
 --- @public
---- @param location String
+--- @param location string
 --- @param item InventoryItem
---- @return void
+--- @return nil
 function WornItems:setItem(location, item) end
 
 --- @public
---- @return int
+--- @return integer
 function WornItems:size() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param group BodyLocationGroup
 --- @return WornItems
---- @overload fun(other: WornItems): WornItems
 function WornItems.new(group) end
+
+--- @public
+--- @param other WornItems
+--- @return WornItems
+function WornItems.new(other) end

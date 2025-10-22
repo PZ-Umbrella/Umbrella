@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class ClimbOverWallState: State
 --- @field public class any
-ClimbOverWallState = {};
+ClimbOverWallState = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -13,55 +13,71 @@ ClimbOverWallState = {};
 --- @return ClimbOverWallState
 function ClimbOverWallState.instance() end
 
-
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param owner IsoGameCharacter
---- @param event AnimEvent
---- @return void
-function ClimbOverWallState:animEvent(owner, event) end
+--- @param arg0 IsoGameCharacter
+--- @param arg1 AnimLayer
+--- @param arg2 AnimationTrack
+--- @param arg3 AnimEvent
+--- @return nil
+function ClimbOverWallState:animEvent(arg0, arg1, arg2, arg3) end
 
 --- @public
 --- @param owner IsoGameCharacter
---- @return void
+--- @return nil
 function ClimbOverWallState:enter(owner) end
 
 --- @public
 --- @param owner IsoGameCharacter
---- @return void
+--- @return nil
 function ClimbOverWallState:execute(owner) end
 
 --- @public
 --- @param owner IsoGameCharacter
---- @return void
+--- @return nil
 function ClimbOverWallState:exit(owner) end
 
 --- @public
 ---
----  Description copied from class: State
+--- Description copied from class: State
 ---
 --- @param owner IsoGameCharacter
---- @param fromX int
---- @param fromY int
---- @param fromZ int
---- @param toX int
---- @param toY int
---- @param toZ int
+--- @param fromX integer
+--- @param fromY integer
+--- @param fromZ integer
+--- @param toX integer
+--- @param toY integer
+--- @param toZ integer
 --- @return boolean
 function ClimbOverWallState:isIgnoreCollide(owner, fromX, fromY, fromZ, toX, toY, toZ) end
 
 --- @public
+--- @return boolean
+function ClimbOverWallState:isSyncInIdle() end
+
+--- @public
+--- @return boolean
+function ClimbOverWallState:isSyncOnEnter() end
+
+--- @public
+--- @return boolean
+function ClimbOverWallState:isSyncOnExit() end
+
+--- @public
+--- @return boolean
+function ClimbOverWallState:isSyncOnSquare() end
+
+--- @public
 --- @param owner IsoGameCharacter
 --- @param dir IsoDirections
---- @return void
+--- @return nil
 function ClimbOverWallState:setParams(owner, dir) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

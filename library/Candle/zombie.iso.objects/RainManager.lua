@@ -1,37 +1,37 @@
---- @meta
+--- @meta _
 
 --- @class RainManager
 --- @field public class any
---- @field public AddNewSplashesDelay int
---- @field public AddNewSplashesTimer int
+--- @field public AddNewSplashesDelay integer
+--- @field public AddNewSplashesTimer integer
 --- @field public DarkRaindropTintMod ColorInfo
---- @field public GravModMax float
---- @field public GravModMin float
+--- @field public GravModMax number
+--- @field public GravModMin number
 --- @field public IsRaining boolean
---- @field public MaxRaindropObjects int
---- @field public MaxRainSplashObjects int
---- @field public NumActiveRaindrops int
---- @field public NumActiveRainSplashes int
+--- @field public MaxRaindropObjects integer
+--- @field public MaxRainSplashObjects integer
+--- @field public NumActiveRaindrops integer
+--- @field public NumActiveRainSplashes integer
 --- @field public PlayerLocation IsoGridSquare[]
 --- @field public PlayerMoved boolean
 --- @field public PlayerOldLocation IsoGridSquare[]
 --- @field public RainAmbient Audio
---- @field public RainDesiredIntensity float
---- @field public RaindropGravity float
+--- @field public RainDesiredIntensity number
+--- @field public RaindropGravity number
 --- @field public RaindropReuseStack Stack
 --- @field public RaindropStack ArrayList
---- @field public RaindropStartDistance float
+--- @field public RaindropStartDistance number
 --- @field public RaindropTintMod ColorInfo
---- @field public RainIntensity float
---- @field public RainRadius int
---- @field public RainSplashAnimDelay float
+--- @field public RainIntensity number
+--- @field public RainRadius integer
+--- @field public RainSplashAnimDelay number
 --- @field public RainSplashReuseStack Stack
 --- @field public RainSplashStack ArrayList
 --- @field public RainSplashTintMod ColorInfo
---- @field public randRainMax int
---- @field public randRainMin int
+--- @field public randRainMax integer
+--- @field public randRainMin integer
 --- @field public ThunderAmbient Audio
-RainManager = {};
+RainManager = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -40,43 +40,43 @@ RainManager = {};
 --- @public
 --- @static
 --- @param NewRainSplash IsoRainSplash
---- @return void
+--- @return nil
 function RainManager.AddRainSplash(NewRainSplash) end
 
 --- @public
 --- @static
 --- @param NewRaindrop IsoRaindrop
---- @return void
+--- @return nil
 function RainManager.AddRaindrop(NewRaindrop) end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function RainManager.AddSplashes() end
 
 --- @public
 --- @static
 --- @param sq IsoGridSquare
---- @return void
+--- @return nil
 function RainManager.RemoveAllOn(sq) end
 
 --- @public
 --- @static
 --- @param DyingRainSplash IsoRainSplash
---- @return void
+--- @return nil
 function RainManager.RemoveRainSplash(DyingRainSplash) end
 
 --- @public
 --- @static
 --- @param DyingRaindrop IsoRaindrop
---- @return void
+--- @return nil
 function RainManager.RemoveRaindrop(DyingRaindrop) end
 
 --- @public
 --- @static
---- @param playerIndex int
+--- @param playerIndex integer
 --- @param PlayerCurrentSquare IsoGridSquare
---- @return void
+--- @return nil
 function RainManager.SetPlayerLocation(playerIndex, PlayerCurrentSquare) end
 
 --- @public
@@ -84,7 +84,7 @@ function RainManager.SetPlayerLocation(playerIndex, PlayerCurrentSquare) end
 --- @param cell IsoCell
 --- @param gridSquare IsoGridSquare
 --- @param CanSee boolean
---- @return void
+--- @return nil
 function RainManager.StartRainSplash(cell, gridSquare, CanSee) end
 
 --- @public
@@ -92,22 +92,22 @@ function RainManager.StartRainSplash(cell, gridSquare, CanSee) end
 --- @param cell IsoCell
 --- @param gridSquare IsoGridSquare
 --- @param CanSee boolean
---- @return void
+--- @return nil
 function RainManager.StartRaindrop(cell, gridSquare, CanSee) end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function RainManager.Update() end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function RainManager.UpdateServer() end
 
 --- @public
 --- @static
---- @return float
+--- @return number
 function RainManager.getRainIntensity() end
 
 --- @public
@@ -118,39 +118,38 @@ function RainManager.inBounds(sq) end
 
 --- @public
 --- @static
---- @return Boolean
+--- @return boolean
 function RainManager.isRaining() end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function RainManager.reset() end
 
 --- @public
 --- @static
---- @param pRandRainMax int
---- @return void
+--- @param pRandRainMax integer
+--- @return nil
 function RainManager.setRandRainMax(pRandRainMax) end
 
 --- @public
 --- @static
---- @param pRandRainMin int
---- @return void
+--- @param pRandRainMin integer
+--- @return nil
 function RainManager.setRandRainMin(pRandRainMin) end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function RainManager.startRaining() end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function RainManager.stopRaining() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

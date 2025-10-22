@@ -1,125 +1,164 @@
 ---@meta
 
 ---@class ISFarmingInfo : ISPanelJoypad
----@field plant any
----@field vegetable any
----@field character any
----@field [any] any
+---@field character IsoPlayer
+---@field isEnabled boolean
+---@field plant CPlantGlobalObject
+---@field vegetable Texture
 ISFarmingInfo = ISPanelJoypad:derive("ISFarmingInfo")
+ISFarmingInfo.Type = "ISFarmingInfo"
 
----@return any
-function ISFarmingInfo.getHealth(info, farmingLevel) end
----@return any
-function ISFarmingInfo.getWaterLvl(plant, farmingLevel) end
----@return any
-function ISFarmingInfo.getTitleColor(plant) end
----@return any
-function ISFarmingInfo.getWaterBarWidth(info) end
----@return any
-function ISFarmingInfo.getWaterLvlBarColor(info, farmingLevel) end
----@return any
-function ISFarmingInfo.getNoWateredSinceColor(plant, lastWatedHour, farmingLevel) end
----@return any
-function ISFarmingInfo.RequiredWidth() end
----@return any
-function ISFarmingInfo.getWaterLvlColor(plant, farmingLevel) end
----@return any
-function ISFarmingInfo.getHealthColor(info, farmingLevel) end
----@return any
+---@param info ISFarmingInfo
+---@param farmingLevel number
+---@return string | false
 function ISFarmingInfo.getCurrentGrowingPhase(info, farmingLevel) end
----@return any
-function ISFarmingInfo.getNextGrowingPhase(info) end
----@return any
+
+---@param diseaseLvl number
+---@param farmingLevel number
+---@param disease table
+---@param info ISFarmingInfo
+---@param index number
+---@param string string
+function ISFarmingInfo.getDisease(diseaseLvl, farmingLevel, disease, info, index, string) end
+
+---@param info ISFarmingInfo
+---@return umbrella.ISFarmingInfo.DiseaseTable
 function ISFarmingInfo.getDiseaseName(info) end
----@return any
-function ISFarmingInfo.getLastWatedHour(plant) end
----@return any
+
+function ISFarmingInfo.getDiseaseStats(info) end
+
+---@param diseaseLvl number
+---@param farmingLevel number
+---@return string
+function ISFarmingInfo.getDiseaseString(diseaseLvl, farmingLevel) end
+
+---@param info ISFarmingInfo
 function ISFarmingInfo.getFertilizerColor(info) end
 
----@return any
-function ISFarmingInfo:initialise() end
----@return any
-function ISFarmingInfo:setPlant(plant) end
----@return any
-function ISFarmingInfo:prerender() end
----@return any
-function ISFarmingInfo:render() end
----@return any
-function ISFarmingInfo:update() end
----@return any
-function ISFarmingInfo:isPlantValid() end
----@return any
-function ISFarmingInfo:onGainJoypadFocus(joypadData) end
----@return any
-function ISFarmingInfo:onLoseJoypadFocus(joypadData) end
----@return any
-function ISFarmingInfo:onJoypadDown(button, joypadData) end
----@return any
+---@param info ISFarmingInfo
+---@param farmingLevel number
+---@return string
+function ISFarmingInfo.getHealth(info, farmingLevel) end
+
+---@param info ISFarmingInfo
+---@param farmingLevel number
+function ISFarmingInfo.getHealthColor(info, farmingLevel) end
+
+---@param plant SPlantGlobalObject
+---@return number
+function ISFarmingInfo.getLastWatedHour(plant) end
+
+---@param info ISFarmingInfo
+---@return string
+function ISFarmingInfo.getNextGrowingPhase(info) end
+
+---@param plant SPlantGlobalObject
+---@param lastWatedHour number
+---@param farmingLevel number
+---@return umbrella.RGB
+function ISFarmingInfo.getNoWateredSinceColor(plant, lastWatedHour, farmingLevel) end
+
+---@param plant SPlantGlobalObject
+---@return umbrella.RGB
+function ISFarmingInfo.getTitleColor(plant) end
+
+---@param info ISFarmingInfo
+---@return number
+function ISFarmingInfo.getWaterBarWidth(info) end
+
+---@param plant SPlantGlobalObject
+---@param farmingLevel number
+---@return string
+function ISFarmingInfo.getWaterLvl(plant, farmingLevel) end
+
+---@param info ISFarmingInfo
+---@param farmingLevel number
+function ISFarmingInfo.getWaterLvlBarColor(info, farmingLevel) end
+
+---@param plant SPlantGlobalObject
+---@param farmingLevel number
+---@return umbrella.RGB
+function ISFarmingInfo.getWaterLvlColor(plant, farmingLevel) end
+
+---@param plant SPlantGlobalObject
+---@return boolean
+function ISFarmingInfo.hasDisease(plant) end
+
+---@return number
+function ISFarmingInfo.RequiredWidth() end
+
+---@param list table
 function ISFarmingInfo:getBlueBar(list) end
----@return any
-function ISFarmingInfo:getOrangeBar(list) end
----@return any
-function ISFarmingInfo:getRedBar(list) end
----@return any
+
+---@param diseaseLvl number
+---@param index string
+---@param info ISFarmingInfo
 function ISFarmingInfo:getDiseaseColor(diseaseLvl, index, info) end
----@return any
+
+---@param list table
+---@param index string?
 function ISFarmingInfo:getGreen(list, index) end
----@return any
+
+---@param list table
+---@param index string?
 function ISFarmingInfo:getOrange(list, index) end
----@return any
+
+---@param list table
+function ISFarmingInfo:getOrangeBar(list) end
+
+---@param list table
+---@param index string?
 function ISFarmingInfo:getRed(list, index) end
----@return any
+
+---@param list table
+function ISFarmingInfo:getRedBar(list) end
+
+---@param list table
+---@param index string?
 function ISFarmingInfo:getWhite(list, index) end
 
+function ISFarmingInfo:initialise() end
+
+---@return boolean
+function ISFarmingInfo:isPlantValid() end
+
+---@param joypadData JoypadData
+function ISFarmingInfo:onGainJoypadFocus(joypadData) end
+
+---@param button integer
+---@param joypadData JoypadData
+function ISFarmingInfo:onJoypadDown(button, joypadData) end
+
+---@param joypadData JoypadData
+function ISFarmingInfo:onLoseJoypadFocus(joypadData) end
+
+function ISFarmingInfo:prerender() end
+
+function ISFarmingInfo:render() end
+
+---@param val boolean
+function ISFarmingInfo:setEnabled(val) end
+
+---@param plant SPlantGlobalObject
+function ISFarmingInfo:setPlant(plant) end
+
+function ISFarmingInfo:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param character IsoPlayer
+---@param plant CPlantGlobalObject
 ---@return ISFarmingInfo
 function ISFarmingInfo:new(x, y, width, height, character, plant) end
 
-water_rgb = {
-    ["r"] = 255.0,
-    ["g"] = 255.0,
-    ["b"] = 255.0,
-}
+---@class umbrella.ISFarmingInfo.DiseaseTable
+---@field [integer] umbrella.ISFarmingInfo.DiseaseInfo?
+---@field text string
+umbrella_ISFarmingInfo_DiseaseTable = {}
 
-waterbar_rgb = {
-    ["r"] = 0.15,
-    ["g"] = 0.3,
-    ["b"] = 0.63,
-}
-
-fertilizer_rgb = {
-    ["r"] = 0.0,
-    ["g"] = 0.0,
-    ["b"] = 0.0,
-}
-
-health_rgb = {
-    ["r"] = 0.0,
-    ["g"] = 0.0,
-    ["b"] = 0.0,
-}
-
-nowateredsince_rgb = {
-    ["r"] = 255.0,
-    ["g"] = 255.0,
-    ["b"] = 255.0,
-}
-
-disease_rgb = {
-    ["0r"] = 255.0,
-    ["0g"] = 255.0,
-    ["0b"] = 255.0,
-}
-
----@class disease
----@field text any
----@field [any] any
-disease = {}
-
-title_rgb = {
-    ["r"] = 1.0,
-    ["g"] = 1.0,
-    ["b"] = 1.0,
-}
-
----@return any
-function round2(num, idp) end
+---@class umbrella.ISFarmingInfo.DiseaseInfo
+---@field name string?
+---@field value string?
+umbrella_ISFarmingInfo_DiseaseInfo = {}

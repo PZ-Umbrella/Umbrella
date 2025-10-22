@@ -1,4 +1,4 @@
---- @meta
+--- @meta _
 
 --- @class IsoFlagType: Enum
 --- @field public class any
@@ -14,6 +14,7 @@
 --- @field public attachedW IsoFlagType
 --- @field public attachtostairs IsoFlagType
 --- @field public bed IsoFlagType
+--- @field public BlockRain IsoFlagType
 --- @field public blocksight IsoFlagType
 --- @field public blueprint IsoFlagType
 --- @field public burning IsoFlagType
@@ -41,7 +42,14 @@
 --- @field public doorW IsoFlagType
 --- @field public DoorWallN IsoFlagType
 --- @field public DoorWallW IsoFlagType
+--- @field public DoubleDoor1 IsoFlagType
+--- @field public DoubleDoor2 IsoFlagType
+--- @field public EntityScript IsoFlagType
 --- @field public exterior IsoFlagType
+--- @field public FloorAttachmentE IsoFlagType
+--- @field public FloorAttachmentN IsoFlagType
+--- @field public FloorAttachmentS IsoFlagType
+--- @field public FloorAttachmentW IsoFlagType
 --- @field public floorE IsoFlagType
 --- @field public FloorHeightOneThird IsoFlagType
 --- @field public FloorHeightTwoThirds IsoFlagType
@@ -50,18 +58,23 @@
 --- @field public ForceAmbient IsoFlagType
 --- @field public forceRender IsoFlagType
 --- @field public halfheight IsoFlagType
+--- @field public HasLightOnSprite IsoFlagType
 --- @field public HasRaindrop IsoFlagType
 --- @field public HasRainSplashes IsoFlagType
 --- @field public hidewalls IsoFlagType
 --- @field public HoppableN IsoFlagType
 --- @field public HoppableW IsoFlagType
 --- @field public invisible IsoFlagType
+--- @field public isEave IsoFlagType
+--- @field public IsFloorAttached IsoFlagType
 --- @field public makeWindowInvincible IsoFlagType
 --- @field public MAX IsoFlagType
+--- @field public NeverCutaway IsoFlagType
 --- @field public noStart IsoFlagType
 --- @field public NoWallLighting IsoFlagType
 --- @field public ontable IsoFlagType
 --- @field public open IsoFlagType
+--- @field public openAir IsoFlagType
 --- @field public pushable IsoFlagType
 --- @field public sheetCurtains IsoFlagType
 --- @field public shelfE IsoFlagType
@@ -71,6 +84,7 @@
 --- @field public solidfloor IsoFlagType
 --- @field public solidtrans IsoFlagType
 --- @field public SpearOnlyAttackThrough IsoFlagType
+--- @field public SpriteConfig IsoFlagType
 --- @field public tableE IsoFlagType
 --- @field public tableN IsoFlagType
 --- @field public tableNE IsoFlagType
@@ -87,6 +101,7 @@
 --- @field public transparentN IsoFlagType
 --- @field public transparentW IsoFlagType
 --- @field public unflamable IsoFlagType
+--- @field public unlit IsoFlagType
 --- @field public vegitation IsoFlagType
 --- @field public WallN IsoFlagType
 --- @field public WallNTrans IsoFlagType
@@ -99,7 +114,7 @@
 --- @field public waterPiped IsoFlagType
 --- @field public windowN IsoFlagType
 --- @field public windowW IsoFlagType
-IsoFlagType = {};
+IsoFlagType = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -107,38 +122,35 @@ IsoFlagType = {};
 
 --- @public
 --- @static
---- @param str String
+--- @param str string
 --- @return IsoFlagType
 function IsoFlagType.FromString(str) end
 
 --- @public
 --- @static
---- @param value int
+--- @param value integer
 --- @return IsoFlagType
 function IsoFlagType.fromIndex(value) end
 
 --- @public
 --- @static
---- @param arg0 String
+--- @param arg0 string
 --- @return IsoFlagType
 function IsoFlagType.valueOf(arg0) end
 
 --- @public
 --- @static
 ---
----  Returns an array containing the constants of this enum class, in the order they
----  declared.
+--- Returns an array containing the constants of this enum class, in the order they
+--- declared.
 ---
---- @return IsoFlagType[] an array containing the constants of this enum class, in the order they are declared
+--- @return IsoFlagType[] # an array containing the constants of this enum class, in the order they are declared
 function IsoFlagType.values() end
-
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return int
+--- @return integer
 function IsoFlagType:index() end
-
-

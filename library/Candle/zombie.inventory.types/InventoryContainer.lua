@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class InventoryContainer: InventoryItem
 --- @field public class any
-InventoryContainer = {};
+InventoryContainer = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,45 +10,50 @@ InventoryContainer = {};
 
 --- @public
 --- @param tooltipUI ObjectTooltip
---- @return void
---- @overload fun(self: InventoryContainer, tooltipUI: ObjectTooltip, layout: Layout): void
+--- @return nil
 function InventoryContainer:DoTooltip(tooltipUI) end
+
+--- @public
+--- @param tooltipUI ObjectTooltip
+--- @param layout Layout
+--- @return nil
+function InventoryContainer:DoTooltip(tooltipUI, layout) end
 
 --- @public
 --- @return boolean
 function InventoryContainer:IsInventoryContainer() end
 
 --- @public
---- @return String
+--- @return string
 function InventoryContainer:canBeEquipped() end
 
 --- @public
---- @return float
+--- @return number
 function InventoryContainer:getBloodLevel() end
 
 --- @public
---- @return int
+--- @return integer
 function InventoryContainer:getCapacity() end
 
 --- @public
---- @return String
+--- @return string
 function InventoryContainer:getCategory() end
 
 --- @public
---- @return String
+--- @return string
 function InventoryContainer:getClothingExtraSubmenu() end
 
 --- @public
---- @return float
+--- @return number
 function InventoryContainer:getContentsWeight() end
 
 --- @public
 --- @param chr IsoGameCharacter
---- @return int
+--- @return integer
 function InventoryContainer:getEffectiveCapacity(chr) end
 
 --- @public
---- @return float
+--- @return number
 function InventoryContainer:getEquippedWeight() end
 
 --- @public
@@ -56,7 +61,7 @@ function InventoryContainer:getEquippedWeight() end
 function InventoryContainer:getInventory() end
 
 --- @public
---- @return float
+--- @return number
 function InventoryContainer:getInventoryWeight() end
 
 --- @public
@@ -64,63 +69,74 @@ function InventoryContainer:getInventoryWeight() end
 function InventoryContainer:getItemContainer() end
 
 --- @public
---- @return int
+--- @return number
+function InventoryContainer:getMaxItemSize() end
+
+--- @public
+--- @return integer
 function InventoryContainer:getSaveType() end
 
 --- @public
---- @return int
+--- @return integer
 function InventoryContainer:getWeightReduction() end
 
 --- @public
+--- @return boolean
+function InventoryContainer:isEmpty() end
+
+--- @public
 --- @param input ByteBuffer
---- @param WorldVersion int
---- @return void
+--- @param WorldVersion integer
+--- @return nil
 function InventoryContainer:load(input, WorldVersion) end
+
+--- @public
+--- @return nil
+function InventoryContainer:reset() end
 
 --- @public
 --- @param output ByteBuffer
 --- @param net boolean
---- @return void
+--- @return nil
 function InventoryContainer:save(output, net) end
 
 --- @public
---- @param delta float
---- @return void
+--- @param delta number
+--- @return nil
 function InventoryContainer:setBloodLevel(delta) end
 
 --- @public
---- @param canBeEquipped String
---- @return void
+--- @param canBeEquipped string
+--- @return nil
 function InventoryContainer:setCanBeEquipped(canBeEquipped) end
 
 --- @public
---- @param capacity int
---- @return void
+--- @param capacity integer
+--- @return nil
 function InventoryContainer:setCapacity(capacity) end
 
 --- @public
 --- @param cont ItemContainer
---- @return void
+--- @return nil
 function InventoryContainer:setItemContainer(cont) end
 
 --- @public
---- @param weightReduction int
---- @return void
+--- @param weightReduction integer
+--- @return nil
 function InventoryContainer:setWeightReduction(weightReduction) end
 
 --- @public
---- @return void
+--- @return nil
 function InventoryContainer:updateAge() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param module String
---- @param name String
---- @param itemType String
---- @param texName String
+--- @param module string
+--- @param name string
+--- @param itemType string
+--- @param texName string
 --- @return InventoryContainer
 function InventoryContainer.new(module, name, itemType, texName) end

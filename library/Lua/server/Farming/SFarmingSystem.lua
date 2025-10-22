@@ -1,55 +1,114 @@
 ---@meta
 
 ---@class SFarmingSystem : SGlobalObjectSystem
----@field hoursElapsed any
----@field hourElapsedForWater any
----@field previousHourHealth any
----@field previousHour any
----@field [any] any
+---@field hourElapsedForWater integer
+---@field hoursElapsed integer
+---@field previousHour integer
+---@field previousHourHealth number
 SFarmingSystem = SGlobalObjectSystem:derive("SFarmingSystem")
+SFarmingSystem.Type = "SFarmingSystem"
+SFarmingSystem.instance = nil ---@type SFarmingSystem?
 
----@return any
-function SFarmingSystem:initSystem() end
----@return any
-function SFarmingSystem:getInitialStateForClient() end
----@return any
-function SFarmingSystem:newLuaObject(globalObject) end
----@return any
-function SFarmingSystem:isValidModData(modData) end
----@return any
-function SFarmingSystem:isValidIsoObject(isoObject) end
----@return any
-function SFarmingSystem:convertOldModData() end
----@return any
-function SFarmingSystem:OnClientCommand(command, playerObj, args) end
----@return any
-function SFarmingSystem:EveryTenMinutes() end
----@return any
-function SFarmingSystem:lowerWaterLvlAndUpDisease() end
----@return any
+---@param square IsoGridSquare
+function SFarmingSystem.destroyPlant(square) end
+
 function SFarmingSystem:changeHealth() end
----@return any
+
+---@param player IsoPlayer
+function SFarmingSystem:changePlayer(player) end
+
 function SFarmingSystem:checkPlant() end
----@return any
-function SFarmingSystem:growPlant(luaObject, nextGrowing, updateNbOfGrow) end
----@return any
-function SFarmingSystem:harvest(luaObject, player) end
----@return any
-function SFarmingSystem:diseaseThis(luaObject, checkClosePlant) end
----@return any
-function SFarmingSystem:diseaseClosePlant(luaObject) end
----@return any
-function SFarmingSystem:destroyOnWalk(luaObject) end
----@return any
+
+---@param luaObject SPlantGlobalObject
+function SFarmingSystem:checkPlant2(luaObject) end
+
+---@param luaObject SPlantGlobalObject
+function SFarmingSystem:checkPlantSquare(luaObject) end
+
+---@param luaObject SPlantGlobalObject
+function SFarmingSystem:checkWater(luaObject) end
+
+function SFarmingSystem:convertOldModData() end
+
+---@param luaObject SPlantGlobalObject
+---@param square IsoGridSquare
+function SFarmingSystem:destroyOnWalk(luaObject, square) end
+
+---@param luaObject SPlantGlobalObject
+---@param aphidsBane boolean?
+---@param fliesBane boolean?
+---@param slugsBane boolean?
+function SFarmingSystem:diseaseClosePlant(luaObject, aphidsBane, fliesBane, slugsBane) end
+
+---@param luaObject SPlantGlobalObject
+function SFarmingSystem:diseaseThis(luaObject) end
+
+function SFarmingSystem:EveryTenMinutes() end
+
+---@param player IsoPlayer
+---@param luaObject SPlantGlobalObject
+function SFarmingSystem:gainXp(player, luaObject) end
+
+---@return integer
 function SFarmingSystem:getHealth() end
----@return any
+
+---@return { hoursElapsed: integer }
+function SFarmingSystem:getInitialStateForClient() end
+
+---@param luaObject SPlantGlobalObject
+---@param nextGrowing unknown?
+---@param updateNbOfGrow boolean
+function SFarmingSystem:growPlant(luaObject, nextGrowing, updateNbOfGrow) end
+
+---@param luaObject SPlantGlobalObject
+---@param player IsoPlayer
+function SFarmingSystem:harvest(luaObject, player) end
+
+---@param square IsoGridSquare
+---@return boolean
+function SFarmingSystem:hasWeeds(square) end
+
+---@param v IsoObject
+---@return boolean?
+function SFarmingSystem:hasWeeds2(v) end
+
+function SFarmingSystem:initSystem() end
+
+---@param isoObject IsoObject
+---@return boolean
+function SFarmingSystem:isValidIsoObject(isoObject) end
+
+---@param modData table?
+---@return boolean?
+function SFarmingSystem:isValidModData(modData) end
+
+function SFarmingSystem:lowerWaterLvlAndUpDisease() end
+
+---@param globalObject GlobalObject
+---@return SPlantGlobalObject
+function SFarmingSystem:newLuaObject(globalObject) end
+
+---@param command string
+---@param playerObj IsoPlayer
+---@param args table
+function SFarmingSystem:OnClientCommand(command, playerObj, args) end
+
+---@param square IsoGridSquare
 function SFarmingSystem:plow(square) end
----@return any
-function SFarmingSystem:removePlant(luaObject) end
----@return any
-function SFarmingSystem:removeTallGrass(sq) end
----@return any
+
+---@param luaObject SPlantGlobalObject
+function SFarmingSystem:plowFadeCheck(luaObject) end
+
+---@param playerObj IsoPlayer
+---@param command string
+---@param args table
 function SFarmingSystem:receiveCommand(playerObj, command, args) end
+
+---@param luaObject SPlantGlobalObject
+function SFarmingSystem:removePlant(luaObject) end
+
+---@param sq IsoGridSquare
+function SFarmingSystem:removeTallGrass(sq) end
 
 ---@return SFarmingSystem
 function SFarmingSystem:new() end

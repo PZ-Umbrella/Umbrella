@@ -1,25 +1,24 @@
---- @meta
+--- @meta _
 
 --- @class StashBuilding
 --- @field public class any
-StashBuilding = {};
+StashBuilding = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return String
+--- @return string
 function StashBuilding:getName() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param stashName String
---- @param buildingX int
---- @param buildingY int
+--- @param stashName string
+--- @param buildingX integer
+--- @param buildingY integer
 --- @return StashBuilding
 function StashBuilding.new(stashName, buildingX, buildingY) end

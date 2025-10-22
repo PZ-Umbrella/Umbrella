@@ -1,13 +1,13 @@
---- @meta
+--- @meta _
 
 --- @class SliceY
 --- @field public class any
 --- @field public SliceBuffer ByteBuffer
---- @field public SliceBufferLock Object
-SliceY = {};
+--- @field public SliceBufferLock any
+SliceY = {}
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

@@ -1,82 +1,85 @@
---- @meta
+--- @meta _
 
 --- @class IntegerConfigOption: ConfigOption
 --- @field public class any
-IntegerConfigOption = {};
+IntegerConfigOption = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return int
+--- @return integer
 function IntegerConfigOption:getDefaultValue() end
 
 --- @public
---- @return double
+--- @return number
 function IntegerConfigOption:getMax() end
 
 --- @public
---- @return double
+--- @return number
 function IntegerConfigOption:getMin() end
 
 --- @public
---- @return String
+--- @return string
 function IntegerConfigOption:getTooltip() end
 
 --- @public
---- @return String
+--- @return string
 function IntegerConfigOption:getType() end
 
 --- @public
---- @return int
+--- @return integer
 function IntegerConfigOption:getValue() end
 
 --- @public
---- @return Object
+--- @return any
 function IntegerConfigOption:getValueAsObject() end
 
 --- @public
---- @return String
+--- @return string
 function IntegerConfigOption:getValueAsString() end
 
 --- @public
---- @param s String
+--- @param s string
 --- @return boolean
 function IntegerConfigOption:isValidString(s) end
 
 --- @public
---- @param s String
---- @return void
+--- @return ConfigOption
+function IntegerConfigOption:makeCopy() end
+
+--- @public
+--- @param s string
+--- @return nil
 function IntegerConfigOption:parse(s) end
 
 --- @public
---- @return void
+--- @return nil
 function IntegerConfigOption:resetToDefault() end
 
 --- @public
---- @return void
+--- @return nil
 function IntegerConfigOption:setDefaultToCurrentValue() end
 
 --- @public
---- @param value int
---- @return void
+--- @param value integer
+--- @return nil
 function IntegerConfigOption:setValue(value) end
 
 --- @public
---- @param o Object
---- @return void
+--- @param o any
+--- @return nil
 function IntegerConfigOption:setValueFromObject(o) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param name String
---- @param min int
---- @param max int
---- @param defaultValue int
+--- @param name string
+--- @param min integer
+--- @param max integer
+--- @param defaultValue integer
 --- @return IntegerConfigOption
 function IntegerConfigOption.new(name, min, max, defaultValue) end

@@ -1,0 +1,141 @@
+--- @meta _
+
+--- @class ItemBodyLocation: Enum
+--- @field public class any
+--- @field public AMMO_STRAP ItemBodyLocation
+--- @field public ANKLE_HOLSTER ItemBodyLocation
+--- @field public BACK ItemBodyLocation
+--- @field public BANDAGE ItemBodyLocation
+--- @field public BATH_ROBE ItemBodyLocation
+--- @field public BELLY_BUTTON ItemBodyLocation
+--- @field public BELT ItemBodyLocation
+--- @field public BELT_EXTRA ItemBodyLocation
+--- @field public BODY_COSTUME ItemBodyLocation
+--- @field public BOILERSUIT ItemBodyLocation
+--- @field public CALF_LEFT ItemBodyLocation
+--- @field public CALF_LEFT_TEXTURE ItemBodyLocation
+--- @field public CALF_RIGHT ItemBodyLocation
+--- @field public CALF_RIGHT_TEXTURE ItemBodyLocation
+--- @field public CODPIECE ItemBodyLocation
+--- @field public CUIRASS ItemBodyLocation
+--- @field public DRESS ItemBodyLocation
+--- @field public EAR_TOP ItemBodyLocation
+--- @field public EARS ItemBodyLocation
+--- @field public ELBOW_LEFT ItemBodyLocation
+--- @field public ELBOW_RIGHT ItemBodyLocation
+--- @field public EYES ItemBodyLocation
+--- @field public FANNY_PACK_BACK ItemBodyLocation
+--- @field public FANNY_PACK_FRONT ItemBodyLocation
+--- @field public FORE_ARM_LEFT ItemBodyLocation
+--- @field public FORE_ARM_RIGHT ItemBodyLocation
+--- @field public FULL_HAT ItemBodyLocation
+--- @field public FULL_ROBE ItemBodyLocation
+--- @field public FULL_SUIT ItemBodyLocation
+--- @field public FULL_SUIT_HEAD ItemBodyLocation
+--- @field public FULL_SUIT_HEAD_SCBA ItemBodyLocation
+--- @field public FULL_TOP ItemBodyLocation
+--- @field public GAITER_LEFT ItemBodyLocation
+--- @field public GAITER_RIGHT ItemBodyLocation
+--- @field public GORGET ItemBodyLocation
+--- @field public HANDS ItemBodyLocation
+--- @field public HANDS_LEFT ItemBodyLocation
+--- @field public HANDS_RIGHT ItemBodyLocation
+--- @field public HAT ItemBodyLocation
+--- @field public JACKET ItemBodyLocation
+--- @field public JACKET_BULKY ItemBodyLocation
+--- @field public JACKET_DOWN ItemBodyLocation
+--- @field public JACKET_HAT ItemBodyLocation
+--- @field public JACKET_HAT_BULKY ItemBodyLocation
+--- @field public JACKET_SUIT ItemBodyLocation
+--- @field public JERSEY ItemBodyLocation
+--- @field public KNEE_LEFT ItemBodyLocation
+--- @field public KNEE_RIGHT ItemBodyLocation
+--- @field public LEFT_ARM ItemBodyLocation
+--- @field public LEFT_EYE ItemBodyLocation
+--- @field public LEFT_MIDDLE_FINGER ItemBodyLocation
+--- @field public LEFT_RING_FINGER ItemBodyLocation
+--- @field public LEFT_WRIST ItemBodyLocation
+--- @field public LEGS1 ItemBodyLocation
+--- @field public LEGS5 ItemBodyLocation
+--- @field public LONG_DRESS ItemBodyLocation
+--- @field public LONG_SKIRT ItemBodyLocation
+--- @field public MAKE_UP_EYES ItemBodyLocation
+--- @field public MAKE_UP_EYES_SHADOW ItemBodyLocation
+--- @field public MAKE_UP_FULL_FACE ItemBodyLocation
+--- @field public MAKE_UP_LIPS ItemBodyLocation
+--- @field public MASK ItemBodyLocation
+--- @field public MASK_EYES ItemBodyLocation
+--- @field public MASK_FULL ItemBodyLocation
+--- @field public NECK ItemBodyLocation
+--- @field public NECK_TEXTURE ItemBodyLocation
+--- @field public NECKLACE ItemBodyLocation
+--- @field public NECKLACE_LONG ItemBodyLocation
+--- @field public NOSE ItemBodyLocation
+--- @field public PANTS ItemBodyLocation
+--- @field public PANTS_EXTRA ItemBodyLocation
+--- @field public PANTS_SKINNY ItemBodyLocation
+--- @field public RIGHT_ARM ItemBodyLocation
+--- @field public RIGHT_EYE ItemBodyLocation
+--- @field public RIGHT_MIDDLE_FINGER ItemBodyLocation
+--- @field public RIGHT_RING_FINGER ItemBodyLocation
+--- @field public RIGHT_WRIST ItemBodyLocation
+--- @field public SCARF ItemBodyLocation
+--- @field public SCBA ItemBodyLocation
+--- @field public SCBANOTANK ItemBodyLocation
+--- @field public SHIRT ItemBodyLocation
+--- @field public SHOES ItemBodyLocation
+--- @field public SHORT_PANTS ItemBodyLocation
+--- @field public SHORT_SLEEVE_SHIRT ItemBodyLocation
+--- @field public SHORTS_SHORT ItemBodyLocation
+--- @field public SHOULDER_HOLSTER ItemBodyLocation
+--- @field public SHOULDERPAD_LEFT ItemBodyLocation
+--- @field public SHOULDERPAD_RIGHT ItemBodyLocation
+--- @field public SKIRT ItemBodyLocation
+--- @field public SOCKS ItemBodyLocation
+--- @field public SPORT_SHOULDERPAD ItemBodyLocation
+--- @field public SPORT_SHOULDERPAD_ON_TOP ItemBodyLocation
+--- @field public SWEATER ItemBodyLocation
+--- @field public SWEATER_HAT ItemBodyLocation
+--- @field public TAIL ItemBodyLocation
+--- @field public TANK_TOP ItemBodyLocation
+--- @field public THIGH_LEFT ItemBodyLocation
+--- @field public THIGH_RIGHT ItemBodyLocation
+--- @field public TORSO1 ItemBodyLocation
+--- @field public TORSO1LEGS1 ItemBodyLocation
+--- @field public TORSO_EXTRA ItemBodyLocation
+--- @field public TORSO_EXTRA_VEST ItemBodyLocation
+--- @field public TORSO_EXTRA_VEST_BULLET ItemBodyLocation
+--- @field public TSHIRT ItemBodyLocation
+--- @field public UNDERWEAR ItemBodyLocation
+--- @field public UNDERWEAR_BOTTOM ItemBodyLocation
+--- @field public UNDERWEAR_EXTRA1 ItemBodyLocation
+--- @field public UNDERWEAR_EXTRA2 ItemBodyLocation
+--- @field public UNDERWEAR_TOP ItemBodyLocation
+--- @field public VEST_TEXTURE ItemBodyLocation
+--- @field public WEBBING ItemBodyLocation
+--- @field public WOUND ItemBodyLocation
+--- @field public ZED_DMG ItemBodyLocation
+ItemBodyLocation = {}
+
+------------------------------------
+---------- STATIC METHODS ----------
+------------------------------------
+
+--- @public
+--- @static
+--- @param arg0 string
+--- @return ItemBodyLocation
+function ItemBodyLocation.valueOf(arg0) end
+
+--- @public
+--- @static
+--- @return ItemBodyLocation[]
+function ItemBodyLocation.values() end
+
+------------------------------------
+------------- METHODS --------------
+------------------------------------
+
+--- @public
+--- @return string
+function ItemBodyLocation:toString() end

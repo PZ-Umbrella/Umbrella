@@ -1,93 +1,123 @@
 ---@meta
 
 ---@class ISCharacterScreen : ISPanelJoypad
----@field bFemale any
----@field sexText any
----@field profImage any
----@field avatarX any
----@field avatarY any
----@field avatarWidth any
----@field avatarHeight any
----@field avatarPanel any
----@field avatarBackgroundTexture any
----@field xOffset any
----@field hairButton any
----@field beardButton any
----@field literatureButton any
----@field literatureUI any
----@field refreshNeeded any
----@field joypadButtonsY any
----@field joypadIndex any
----@field joypadIndexY any
----@field joypadButtons any
----@field playerNum any
----@field char any
----@field borderColor any
----@field backgroundColor any
----@field weightIncTexture any
----@field weightIncLotTexture any
----@field weightDecTexture any
----@field traits any
----@field displayedTraits any
----@field [any] any
+---@field avatarBackgroundTexture Texture
+---@field avatarHeight number
+---@field avatarPanel ISCharacterScreenAvatar
+---@field avatarWidth number
+---@field avatarX number
+---@field avatarY number
+---@field beardButton ISButton
+---@field bFemale boolean
+---@field char IsoPlayer
+---@field displayedTraits TraitFactory.Trait[]
+---@field hairButton ISButton
+---@field joypadButtons ISButton[]
+---@field literatureButton ISButton
+---@field literatureUI ISLiteratureUI
+---@field playerNum integer
+---@field profImage ISImage
+---@field refreshNeeded boolean
+---@field sexText string
+---@field traits ISImage[]
+---@field weightDecTexture Texture
+---@field weightIncLotTexture Texture
+---@field weightIncTexture Texture
+---@field xOffset number
 ISCharacterScreen = ISPanelJoypad:derive("ISCharacterScreen")
+ISCharacterScreen.Type = "ISCharacterScreen"
 
----@return any
-function ISCharacterScreen.onTrimBeard(playerObj, beardStyle) end
----@return any
-function ISCharacterScreen.onCutHair(playerObj, hairStyle, time) end
----@return any
-function ISCharacterScreen.setDisplayedTraits(self) end
----@return any
-function ISCharacterScreen.traitsChanged(self) end
----@return any
-function ISCharacterScreen.loadTraits(self) end
----@return any
+---@param self ISCharacterScreen
 function ISCharacterScreen.loadBeardAndHairStyle(self) end
----@return any
-function ISCharacterScreen.loadProfession(self) end
----@return any
+
+---@param self ISCharacterScreen
 function ISCharacterScreen.loadFavouriteWeapon(self) end
 
----@return any
-function ISCharacterScreen:initialise() end
----@return any
-function ISCharacterScreen:setVisible(visible, joypadData) end
----@return any
-function ISCharacterScreen:prerender() end
----@return any
-function ISCharacterScreen:render() end
----@return any
-function ISCharacterScreen:maxTextWidth(font, text, maxWidth) end
----@return any
-function ISCharacterScreen:create() end
----@return any
-function ISCharacterScreen:hairMenu(button) end
----@return any
-function ISCharacterScreen:onShowLiterature() end
----@return any
+---@param self ISCharacterScreen
+function ISCharacterScreen.loadProfession(self) end
+
+---@param self ISCharacterScreen
+function ISCharacterScreen.loadTraits(self) end
+
+---@param playerObj IsoPlayer
+---@param hairStyle string
+---@param time number
+function ISCharacterScreen.onCutHair(playerObj, hairStyle, time) end
+
+---@param playerObj IsoPlayer
+---@param beardStyle string
+function ISCharacterScreen.onTrimBeard(playerObj, beardStyle) end
+
+---@param self ISCharacterScreen
+function ISCharacterScreen.setDisplayedTraits(self) end
+
+---@param self ISCharacterScreen
+---@return boolean
+function ISCharacterScreen.traitsChanged(self) end
+
+---@param option umbrella.ISContextMenu.Option
+---@param text string
 function ISCharacterScreen:addTooltip(option, text) end
----@return any
+
+---@param button ISButton
 function ISCharacterScreen:beardMenu(button) end
----@return any
-function ISCharacterScreen:updateAvatar() end
----@return any
+
+function ISCharacterScreen:create() end
+
+---@param button ISButton
+function ISCharacterScreen:hairMenu(button) end
+
+function ISCharacterScreen:initialise() end
+
+---@param joypadData JoypadData
 function ISCharacterScreen:initJoypadButtons(joypadData) end
----@return any
+
+---@param font UIFont
+---@param text string
+---@param maxWidth number
+---@return number
+function ISCharacterScreen:maxTextWidth(font, text, maxWidth) end
+
+---@param joypadData JoypadData
 function ISCharacterScreen:onGainJoypadFocus(joypadData) end
----@return any
-function ISCharacterScreen:onLoseJoypadFocus(joypadData) end
----@return any
+
+---@param button integer
 function ISCharacterScreen:onJoypadDown(button) end
 
+---@param joypadData JoypadData
+function ISCharacterScreen:onLoseJoypadFocus(joypadData) end
+
+function ISCharacterScreen:onShowLiterature() end
+
+function ISCharacterScreen:prerender() end
+
+function ISCharacterScreen:render() end
+
+---@param visible boolean
+---@param joypadData JoypadData?
+function ISCharacterScreen:setVisible(visible, joypadData) end
+
+function ISCharacterScreen:updateAvatar() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param playerNum integer
 ---@return ISCharacterScreen
 function ISCharacterScreen:new(x, y, width, height, playerNum) end
 
 ---@class ISCharacterScreenAvatar : ISUI3DModel
 ISCharacterScreenAvatar = ISUI3DModel:derive("ISCharacterScreenAvatar")
+ISCharacterScreenAvatar.Type = "ISCharacterScreenAvatar"
 
----@return any
+---@param x number
+---@param y number
 function ISCharacterScreenAvatar:onMouseUp(x, y) end
 
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISCharacterScreenAvatar
 function ISCharacterScreenAvatar:new(x, y, width, height) end

@@ -1,73 +1,77 @@
 ---@meta
 
 ---@class RWMVolume : RWMPanel
----@field speakerButton any
----@field volumeBar any
----@field itemDropBox any
----@field hasEnabledHeadphones any
----@field volume any
----@field isMute any
----@field x any
----@field y any
----@field background any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field fontheight any
----@field textureSize any
----@field marginLeft any
----@field marginRight any
----@field marginTop any
----@field marginBottom any
----@field innerHeight any
----@field headphonesTex any
----@field earbudsTex any
----@field [any] any
+---@field earbudsTex Texture
+---@field hasEnabledHeadphones boolean
+---@field headphonesTex Texture
+---@field isMute boolean
+---@field itemDropBox ISItemDropBox
+---@field speakerButton ISSpeakerButton
+---@field volume number
+---@field volumeBar ISVolumeBar
 RWMVolume = RWMPanel:derive("RWMVolume")
+RWMVolume.Type = "RWMVolume"
 
----@return any
-function RWMVolume:initialise() end
----@return any
-function RWMVolume:createChildren() end
----@return any
-function RWMVolume:toggleHeaphoneSupport(enable) end
----@return any
+---@param _items InventoryItem[]
 function RWMVolume:addHeadphone(_items) end
----@return any
-function RWMVolume:removeHeadphone() end
----@return any
-function RWMVolume:verifyItem(_item) end
----@return any
-function RWMVolume:round(num, idp) end
----@return any
-function RWMVolume:onVolumeChange(_newVol) end
----@return any
-function RWMVolume:onSpeakerButton(_ismute) end
----@return any
+
 function RWMVolume:clear() end
----@return any
-function RWMVolume:readFromObject(_player, _deviceObject, _deviceData, _deviceType) end
----@return any
-function RWMVolume:update() end
----@return any
-function RWMVolume:prerender() end
----@return any
-function RWMVolume:render() end
----@return any
-function RWMVolume:onJoypadDown(button) end
----@return any
+
+function RWMVolume:createChildren() end
+
+---@return string
 function RWMVolume:getAPrompt() end
----@return any
+
+---@return string
 function RWMVolume:getBPrompt() end
----@return any
+
+---@return string?
 function RWMVolume:getXPrompt() end
----@return any
+
+---@return string?
 function RWMVolume:getYPrompt() end
 
+function RWMVolume:initialise() end
+
+---@param button integer
+function RWMVolume:onJoypadDown(button) end
+
+---@param _ismute boolean
+function RWMVolume:onSpeakerButton(_ismute) end
+
+---@param _newVol number
+function RWMVolume:onVolumeChange(_newVol) end
+
+function RWMVolume:prerender() end
+
+---@param _player IsoPlayer
+---@param _deviceObject InventoryItem | IsoObject | VehiclePart
+---@param _deviceData DeviceData
+---@param _deviceType string
+---@return boolean
+function RWMVolume:readFromObject(_player, _deviceObject, _deviceData, _deviceType) end
+
+function RWMVolume:removeHeadphone() end
+
+function RWMVolume:render() end
+
+---@param num number
+---@param idp integer
+---@return number
+function RWMVolume:round(num, idp) end
+
+---@param enable boolean
+function RWMVolume:toggleHeaphoneSupport(enable) end
+
+function RWMVolume:update() end
+
+---@param _item InventoryItem
+---@return boolean?
+function RWMVolume:verifyItem(_item) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return RWMVolume
 function RWMVolume:new(x, y, width, height) end

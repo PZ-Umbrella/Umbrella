@@ -1,24 +1,24 @@
---- @meta
+--- @meta _
 
 --- @class HairStyle
 --- @field public class any
-HairStyle = {};
+HairStyle = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param category String
---- @return String
+--- @param category string
+--- @return string
 function HairStyle:getAlternate(category) end
 
 --- @public
---- @return int
+--- @return integer
 function HairStyle:getLevel() end
 
 --- @public
---- @return String
+--- @return string
 function HairStyle:getName() end
 
 --- @public
@@ -41,9 +41,8 @@ function HairStyle:isNoChoose() end
 --- @return boolean
 function HairStyle:isValid() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

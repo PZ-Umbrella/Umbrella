@@ -1,55 +1,50 @@
 ---@meta
 
 ---@class ISVehicleACUI : ISPanelJoypad
----@field close any
----@field tempKnob any
----@field ok any
----@field joypadIndexY any
----@field joypadIndex any
----@field joypadButtons any
----@field vehicle any
----@field heater any
----@field playerNum any
----@field width any
----@field height any
----@field character any
----@field moveWithMouse any
----@field knobTex any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field x any
----@field y any
----@field [any] any
+---@field character IsoPlayer
+---@field close ISButton
+---@field heater VehiclePart
+---@field joypadButtons ISButton[]
+---@field knobTex Texture
+---@field ok ISButton
+---@field playerNum integer
+---@field tempKnob ISKnob
+---@field vehicle BaseVehicle
 ISVehicleACUI = ISPanelJoypad:derive("ISVehicleACUI")
+ISVehicleACUI.Type = "ISVehicleACUI"
 
----@return any
-function ISVehicleACUI:createChildren() end
----@return any
-function ISVehicleACUI:changeKnob() end
----@return any
-function ISVehicleACUI:update() end
----@return any
-function ISVehicleACUI:updateButtons() end
----@return any
 function ISVehicleACUI:addKnobValues() end
----@return any
-function ISVehicleACUI:render() end
----@return any
-function ISVehicleACUI:prerender() end
----@return any
-function ISVehicleACUI:onClick(button) end
----@return any
-function ISVehicleACUI:undisplay() end
----@return any
-function ISVehicleACUI:onGainJoypadFocus(joypadData) end
----@return any
-function ISVehicleACUI:onJoypadDown(button) end
----@return any
+
 function ISVehicleACUI:centerOnScreen() end
----@return any
+
+function ISVehicleACUI:changeKnob() end
+
+function ISVehicleACUI:createChildren() end
+
+---@param button ISButton
+function ISVehicleACUI:onClick(button) end
+
+---@param joypadData JoypadData
+function ISVehicleACUI:onGainJoypadFocus(joypadData) end
+
+---@param button integer
+function ISVehicleACUI:onJoypadDown(button) end
+
+function ISVehicleACUI:prerender() end
+
+function ISVehicleACUI:render() end
+
+---@param vehicle BaseVehicle
 function ISVehicleACUI:setVehicle(vehicle) end
 
+function ISVehicleACUI:undisplay() end
+
+function ISVehicleACUI:update() end
+
+function ISVehicleACUI:updateButtons() end
+
+---@param x number
+---@param y number
+---@param character IsoPlayer
 ---@return ISVehicleACUI
 function ISVehicleACUI:new(x, y, character) end

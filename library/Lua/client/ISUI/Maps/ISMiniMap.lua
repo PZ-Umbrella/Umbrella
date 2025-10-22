@@ -1,152 +1,262 @@
 ---@meta
 
 ---@class ISMiniMapOuter : ISPanelJoypad
----@field inner any
----@field titleBar any
----@field bottomPanel any
----@field button1 any
----@field button2 any
----@field button3 any
----@field button4 any
----@field button5 any
----@field button6 any
----@field joypadIndex any
----@field joypadIndexY any
----@field hideInventoryX any
----@field userPosition any
----@field playerNum any
----@field backgroundColor any
----@field borderColor any
----@field borderSize any
----@field bottomHeight any
----@field [any] any
+---@field borderSize number
+---@field bottomHeight number
+---@field bottomPanel ISPanel
+---@field button1 ISButton
+---@field button2 ISButton
+---@field button3 ISButton
+---@field button4 ISButton
+---@field button5 ISButton
+---@field button6 ISButton
+---@field hideInventoryX unknown?
+---@field inner ISMiniMapInner
+---@field optionsUI ISMiniMapOptionsPanel
+---@field playerNum integer
+---@field titleBar ISMiniMapTitleBar
+---@field userPosition boolean
 ISMiniMapOuter = ISPanelJoypad:derive("ISMiniMapOuter")
+ISMiniMapOuter.Type = "ISMiniMapOuter"
 
----@return any
 function ISMiniMapOuter:createChildren() end
----@return any
-function ISMiniMapOuter:prerender() end
----@return any
-function ISMiniMapOuter:render() end
----@return any
-function ISMiniMapOuter:setAdornmentsVisible(visible) end
----@return any
-function ISMiniMapOuter:setPosition() end
----@return any
+
 function ISMiniMapOuter:onButton1() end
----@return any
+
 function ISMiniMapOuter:onButton2() end
----@return any
+
 function ISMiniMapOuter:onButton3() end
----@return any
+
 function ISMiniMapOuter:onButton4() end
----@return any
+
 function ISMiniMapOuter:onButton5() end
----@return any
+
 function ISMiniMapOuter:onButton6() end
----@return any
-function ISMiniMapOuter:saveSettings() end
----@return any
-function ISMiniMapOuter:restoreSettings() end
----@return any
+
+---@param joypadData JoypadData
 function ISMiniMapOuter:onGainJoypadFocus(joypadData) end
----@return any
-function ISMiniMapOuter:onLoseJoypadFocus(joypadData) end
----@return any
+
+---@param button integer
+---@param joypadData JoypadData
 function ISMiniMapOuter:onJoypadDown(button, joypadData) end
----@return any
+
+---@param joypadData JoypadData
+function ISMiniMapOuter:onLoseJoypadFocus(joypadData) end
+
+function ISMiniMapOuter:onToggleOptionsPanel() end
+
+function ISMiniMapOuter:prerender() end
+
+function ISMiniMapOuter:render() end
+
+---@param name string
+---@param layout umbrella.ISLayoutManager.Layout
 function ISMiniMapOuter:RestoreLayout(name, layout) end
----@return any
+
+function ISMiniMapOuter:restoreSettings() end
+
+---@param name string
+---@param layout umbrella.ISLayoutManager.Layout
 function ISMiniMapOuter:SaveLayout(name, layout) end
 
+function ISMiniMapOuter:saveSettings() end
+
+---@param visible boolean
+function ISMiniMapOuter:setAdornmentsVisible(visible) end
+
+function ISMiniMapOuter:setPosition() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param playerNum integer
 ---@return ISMiniMapOuter
 function ISMiniMapOuter:new(x, y, width, height, playerNum) end
 
 ---@class ISMiniMapInner : ISUIElement
----@field javaObject any
----@field mapAPI any
----@field dragging any
----@field dragMoved any
----@field dragStartX any
----@field dragStartY any
----@field dragStartCX any
----@field dragStartCY any
----@field dragStartZoomF any
----@field dragStartWorldX any
----@field dragStartWorldY any
----@field rightMouseDown any
----@field playerNum any
----@field [any] any
+---@field dragging boolean
+---@field dragMoved boolean
+---@field dragStartCX number
+---@field dragStartCY number
+---@field dragStartWorldX number
+---@field dragStartWorldY number
+---@field dragStartX number
+---@field dragStartY number
+---@field dragStartZoomF number
+---@field isTerrainImage boolean
+---@field javaObject UIWorldMap
+---@field mapAPI UIWorldMapV1
+---@field playerNum integer
+---@field rightMouseDown boolean
 ISMiniMapInner = ISUIElement:derive("ISMiniMapInner")
+ISMiniMapInner.Type = "ISMiniMapInner"
 
----@return any
+function ISMiniMapInner:checkTerrainImage() end
+
 function ISMiniMapInner:instantiate() end
----@return any
-function ISMiniMapInner:prerenderHack() end
----@return any
+
+---@param x number
+---@param y number
+---@return boolean
 function ISMiniMapInner:onMouseDown(x, y) end
----@return any
-function ISMiniMapInner:onMouseUp(x, y) end
----@return any
-function ISMiniMapInner:onMouseUpOutside(x, y) end
----@return any
+
+---@param dx number
+---@param dy number
+---@return boolean?
 function ISMiniMapInner:onMouseMove(dx, dy) end
----@return any
+
+---@param dx number
+---@param dy number
+---@return boolean?
 function ISMiniMapInner:onMouseMoveOutside(dx, dy) end
----@return any
+
+---@param x number
+---@param y number
+function ISMiniMapInner:onMouseUp(x, y) end
+
+---@param x number
+---@param y number
+function ISMiniMapInner:onMouseUpOutside(x, y) end
+
+---@param del number
+---@return boolean
 function ISMiniMapInner:onMouseWheel(del) end
----@return any
+
+---@param x number
+---@param y number
 function ISMiniMapInner:onRightMouseDown(x, y) end
----@return any
+
+---@param x number
+---@param y number
 function ISMiniMapInner:onRightMouseUp(x, y) end
----@return any
+
+---@param x number
+---@param y number
 function ISMiniMapInner:onRightMouseUpOutside(x, y) end
----@return any
+
+---@param worldX number
+---@param worldY number
 function ISMiniMapInner:onTeleport(worldX, worldY) end
 
+function ISMiniMapInner:onToggleTerrainImage() end
+
+function ISMiniMapInner:prerender() end
+
+function ISMiniMapInner:prerenderHack() end
+
+function ISMiniMapInner:showTerrainImage() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param playerNum integer
 ---@return ISMiniMapInner
 function ISMiniMapInner:new(x, y, width, height, playerNum) end
 
 ---@class ISMiniMapTitleBar : ISPanel
----@field downX any
----@field downY any
----@field dragging any
----@field miniMap any
----@field titlebarbkg any
----@field [any] any
+---@field downX number
+---@field downY number
+---@field dragging boolean
+---@field miniMap ISMiniMapOuter
+---@field titlebarbkg Texture
 ISMiniMapTitleBar = ISPanel:derive("ISMiniMapTitleBar")
+ISMiniMapTitleBar.Type = "ISMiniMapTitleBar"
 
----@return any
+---@return number
 function ISMiniMapTitleBar.TitleBarHeight() end
 
----@return any
-function ISMiniMapTitleBar:prerender() end
----@return any
-function ISMiniMapTitleBar:titleBarHeight() end
----@return any
+---@param x number
+---@param y number
+---@return boolean
 function ISMiniMapTitleBar:onMouseDown(x, y) end
----@return any
-function ISMiniMapTitleBar:onMouseUp(x, y) end
----@return any
-function ISMiniMapTitleBar:onMouseUpOutside(x, y) end
----@return any
+
+---@param dx number
+---@param dy number
 function ISMiniMapTitleBar:onMouseMove(dx, dy) end
----@return any
+
+---@param dx number
+---@param dy number
 function ISMiniMapTitleBar:onMouseMoveOutside(dx, dy) end
 
+---@param x number
+---@param y number
+---@return boolean
+function ISMiniMapTitleBar:onMouseUp(x, y) end
+
+---@param x number
+---@param y number
+---@return boolean
+function ISMiniMapTitleBar:onMouseUpOutside(x, y) end
+
+function ISMiniMapTitleBar:prerender() end
+
+---@return number
+function ISMiniMapTitleBar:titleBarHeight() end
+
+---@param miniMap ISMiniMapOuter
 ---@return ISMiniMapTitleBar
 function ISMiniMapTitleBar:new(miniMap) end
+
+---@class ISMiniMapOptionsPanel : ISCollapsableWindowJoypad
+---@field doubleBoxes table
+---@field map ISMiniMapInner
+---@field screenHeight unknown
+---@field showAllOptions boolean
+---@field tickBoxes table
+ISMiniMapOptionsPanel = ISCollapsableWindowJoypad:derive("ISMiniMapOptionsPanel")
+ISMiniMapOptionsPanel.Type = "ISMiniMapOptionsPanel"
+
+function ISMiniMapOptionsPanel:createChildren() end
+
+---@return table
+function ISMiniMapOptionsPanel:getVisibleOptions() end
+
+---@param optionName string
+---@return boolean
+function ISMiniMapOptionsPanel:isMultiplayerOption(optionName) end
+
+function ISMiniMapOptionsPanel:onCommandEntered(entry, option) end
+
+function ISMiniMapOptionsPanel:onGainJoypadFocus(joypadData) end
+
+function ISMiniMapOptionsPanel:onJoypadDown(button, joypadData) end
+
+---@param x number
+---@param y number
+function ISMiniMapOptionsPanel:onMouseDownOutside(x, y) end
+
+function ISMiniMapOptionsPanel:onTickBox(index, selected, option) end
+
+function ISMiniMapOptionsPanel:synchUI() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param map ISMiniMapInner
+---@return ISMiniMapOptionsPanel
+function ISMiniMapOptionsPanel:new(x, y, width, height, map) end
 
 ---@class ISMiniMap
 ISMiniMap = {}
 
----@return any
-function ISMiniMap.IsAllowed() end
----@return any
-function ISMiniMap.InitPlayer(playerNum) end
----@return any
-function ISMiniMap.ToggleMiniMap(playerNum) end
----@return any
+---@param playerNum integer
 function ISMiniMap.FocusMiniMap(playerNum) end
----@return any
+
+---@param playerNum integer
+---@return ISMiniMapOuter
+function ISMiniMap.InitPlayer(playerNum) end
+
+---@return boolean?
+function ISMiniMap.IsAllowed() end
+
+---@return boolean?
+function ISMiniMap.NeedsLight() end
+
+---@param playerNum integer
 function ISMiniMap.Recreate(playerNum) end
+
+---@param playerNum integer
+function ISMiniMap.ToggleMiniMap(playerNum) end

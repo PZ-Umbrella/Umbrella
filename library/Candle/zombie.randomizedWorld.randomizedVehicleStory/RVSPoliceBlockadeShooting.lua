@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RVSPoliceBlockadeShooting: RandomizedVehicleStoryBase Police barricading a road, 2 police cars, some zombies police with guns/rifle, dead corpses around
 --- @field public class any
-RVSPoliceBlockadeShooting = {};
+RVSPoliceBlockadeShooting = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -25,18 +25,17 @@ function RVSPoliceBlockadeShooting:isValid(zone, chunk, force) end
 --- @public
 --- @param zone Zone
 --- @param chunk IsoChunk
---- @return void
+--- @return nil
 function RVSPoliceBlockadeShooting:randomizeVehicleStory(zone, chunk) end
 
 --- @public
 --- @param spawner VehicleStorySpawner
 --- @param element Element
---- @return void
+--- @return nil
 function RVSPoliceBlockadeShooting:spawnElement(spawner, element) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

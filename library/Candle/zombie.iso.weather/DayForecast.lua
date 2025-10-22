@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class DayForecast
 --- @field public class any
-DayForecast = {};
+DayForecast = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -13,7 +13,7 @@ DayForecast = {};
 function DayForecast:getAirFront() end
 
 --- @public
---- @return String
+--- @return string
 function DayForecast:getAirFrontString() end
 
 --- @public
@@ -21,23 +21,23 @@ function DayForecast:getAirFrontString() end
 function DayForecast:getCloudiness() end
 
 --- @public
---- @return float
+--- @return number
 function DayForecast:getDawn() end
 
 --- @public
---- @return float
+--- @return number
 function DayForecast:getDayLightHours() end
 
 --- @public
---- @return float
+--- @return number
 function DayForecast:getDusk() end
 
 --- @public
---- @return float
+--- @return number
 function DayForecast:getFogDuration() end
 
 --- @public
---- @return float
+--- @return number
 function DayForecast:getFogStrength() end
 
 --- @public
@@ -45,15 +45,15 @@ function DayForecast:getFogStrength() end
 function DayForecast:getHumidity() end
 
 --- @public
---- @return int
+--- @return integer
 function DayForecast:getIndexOffset() end
 
 --- @public
---- @return String
+--- @return string
 function DayForecast:getMeanWindAngleString() end
 
 --- @public
---- @return String
+--- @return string
 function DayForecast:getName() end
 
 --- @public
@@ -61,7 +61,7 @@ function DayForecast:getName() end
 function DayForecast:getTemperature() end
 
 --- @public
---- @return float
+--- @return number
 function DayForecast:getWeatherEndTime() end
 
 --- @public
@@ -77,7 +77,7 @@ function DayForecast:getWeatherPeriod() end
 function DayForecast:getWeatherStages() end
 
 --- @public
---- @return float
+--- @return number
 function DayForecast:getWeatherStartTime() end
 
 --- @public
@@ -116,9 +116,8 @@ function DayForecast:isHasTropicalStorm() end
 --- @return boolean
 function DayForecast:isWeatherStarts() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

@@ -1,71 +1,83 @@
 ---@meta
 
 ---@class RWMMedia : RWMPanel
----@field lcd any
----@field itemDropBox any
----@field toggleOnOffButton any
----@field mediaIndex any
----@field mediaText any
----@field x any
----@field y any
----@field background any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field fontheight any
----@field cdTex any
----@field tapeTex any
----@field idleText any
----@field lcdBlue any
----@field lcdGreen any
----@field textPlay any
----@field textStop any
----@field textNoCD any
----@field textNoTape any
----@field [any] any
+---@field cdTex Texture
+---@field fontheight number
+---@field idleText string
+---@field itemDropBox ISItemDropBox
+---@field lcd ISLcdBar
+---@field lcdBlue umbrella.RWMMedia.ColorContainer
+---@field lcdGreen umbrella.RWMMedia.ColorContainer
+---@field mediaIndex number
+---@field mediaText string
+---@field tapeTex Texture
+---@field textNoCD string
+---@field textNoTape string
+---@field textPlay string
+---@field textStop string
+---@field toggleOnOffButton ISButton
 RWMMedia = RWMPanel:derive("RWMMedia")
+RWMMedia.Type = "RWMMedia"
 
----@return any
-function RWMMedia:initialise() end
----@return any
-function RWMMedia:createChildren() end
----@return any
-function RWMMedia:togglePlayMedia() end
----@return any
-function RWMMedia:removeMedia() end
----@return any
+---@param _items InventoryItem[]
 function RWMMedia:addMedia(_items) end
----@return any
+
+---@param item InventoryItem
 function RWMMedia:addMediaAux(item) end
----@return any
-function RWMMedia:verifyItem(_item) end
----@return any
+
 function RWMMedia:clear() end
----@return any
-function RWMMedia:readFromObject(_player, _deviceObject, _deviceData, _deviceType) end
----@return any
-function RWMMedia:getMediaText() end
----@return any
-function RWMMedia:update() end
----@return any
-function RWMMedia:prerender() end
----@return any
-function RWMMedia:render() end
----@return any
-function RWMMedia:onJoypadDown(button) end
----@return any
+
+function RWMMedia:createChildren() end
+
+---@return string?
 function RWMMedia:getAPrompt() end
----@return any
+
+---@return string?
 function RWMMedia:getBPrompt() end
----@return any
+
+---@return string
+function RWMMedia:getMediaText() end
+
+---@return string?
 function RWMMedia:getXPrompt() end
----@return any
+
+---@return string?
 function RWMMedia:getYPrompt() end
 
+function RWMMedia:initialise() end
+
+---@param button integer
+function RWMMedia:onJoypadDown(button) end
+
+function RWMMedia:prerender() end
+
+---@param _player IsoPlayer
+---@param _deviceObject InventoryItem | IsoObject | VehiclePart
+---@param _deviceData DeviceData
+---@param _deviceType string
+---@return boolean
+function RWMMedia:readFromObject(_player, _deviceObject, _deviceData, _deviceType) end
+
+function RWMMedia:removeMedia() end
+
+function RWMMedia:render() end
+
+function RWMMedia:togglePlayMedia() end
+
+function RWMMedia:update() end
+
+---@param _item InventoryItem
+---@return boolean?
+function RWMMedia:verifyItem(_item) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return RWMMedia
 function RWMMedia:new(x, y, width, height) end
+
+---@class umbrella.RWMMedia.ColorContainer
+---@field back umbrella.RGBA
+---@field text umbrella.RGBA
+umbrella_RWMMedia_ColorContainer = {}

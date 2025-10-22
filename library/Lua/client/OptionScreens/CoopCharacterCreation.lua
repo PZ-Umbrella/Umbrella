@@ -1,40 +1,46 @@
 ---@meta
 
 ---@class CoopCharacterCreation : ISPanelJoypad
----@field coopUserName any
----@field mapSpawnSelect any
----@field charCreationMain any
----@field charCreationProfession any
----@field charCreationHeader any
----@field joypadIndex any
----@field joypadData any
----@field playerIndex any
----@field visibleUI any
----@field [any] any
+---@field charCreationMain CoopCharacterCreationMain
+---@field charCreationProfession CoopCharacterCreationProfession
+---@field coopUserName CoopUserName
+---@field joypadData JoypadData?
+---@field joypadIndex integer?
+---@field mapSpawnSelect CoopMapSpawnSelect
+---@field playerIndex integer
 CoopCharacterCreation = ISPanelJoypad:derive("CoopCharacterCreation")
-CoopCharacterCreation.visibleUI = {}
+CoopCharacterCreation.Type = "CoopCharacterCreation"
+CoopCharacterCreation.instance = nil ---@type CoopCharacterCreation?
+CoopCharacterCreation.visibleUI = nil ---@type ISUIElement[]
 
----@return any
+---@return JoypadData?
 function CoopCharacterCreation.getJoypad() end
----@return any
-function CoopCharacterCreation.setVisibleAllUI(visible) end
----@return any
+
+---@param joypadIndex integer
+---@param joypadData JoypadData
 function CoopCharacterCreation.newPlayer(joypadIndex, joypadData) end
 
----@return any
-function CoopCharacterCreation:initPlayer() end
----@return any
-function CoopCharacterCreation:accept1() end
----@return any
+---@param visible boolean
+function CoopCharacterCreation.setVisibleAllUI(visible) end
+
 function CoopCharacterCreation:accept() end
----@return any
+
+---@return boolean?
+function CoopCharacterCreation:accept1() end
+
 function CoopCharacterCreation:cancel() end
----@return any
+
 function CoopCharacterCreation:createChildren() end
----@return any
+
+function CoopCharacterCreation:initPlayer() end
+
 function CoopCharacterCreation:newPlayerMouse() end
----@return any
+
+---@param index integer
 function CoopCharacterCreation:OnJoypadBeforeDeactivate(index) end
 
+---@param joypadIndex integer?
+---@param joypadData JoypadData?
+---@param playerIndex integer
 ---@return CoopCharacterCreation
 function CoopCharacterCreation:new(joypadIndex, joypadData, playerIndex) end

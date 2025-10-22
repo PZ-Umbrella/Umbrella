@@ -1,44 +1,38 @@
 ---@meta
 
 ---@class ISSLSounds : ISPanel
----@field columns any
----@field filterEntry any
----@field lastText any
----@field soundList any
----@field playSoundButton any
----@field filterText any
----@field x any
----@field y any
----@field background any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field [any] any
+---@field columns { percent: number }[]
+---@field filterEntry ISTextEntryBox
+---@field filterText string
+---@field lastText string
+---@field playSoundButton ISButton
+---@field soundList ISScrollingListBox
 ISSLSounds = ISPanel:derive("ISSLSounds")
+ISSLSounds.Type = "ISSLSounds"
 
----@return any
-function ISSLSounds:initialise() end
----@return any
-function ISSLSounds:createChildren() end
----@return any
-function ISSLSounds:loadSounds(_filter) end
----@return any
+---@param _sound StorySound
 function ISSLSounds:addSoundItem(_sound) end
----@return any
-function ISSLSounds:playSoundFromMainList() end
----@return any
-function ISSLSounds:update() end
----@return any
-function ISSLSounds:prerender() end
----@return any
-function ISSLSounds:render() end
----@return any
+
+function ISSLSounds:createChildren() end
+
+function ISSLSounds:initialise() end
+
+---@param _filter string?
+function ISSLSounds:loadSounds(_filter) end
+
 function ISSLSounds:onResize() end
 
+function ISSLSounds:playSoundFromMainList() end
+
+function ISSLSounds:prerender() end
+
+function ISSLSounds:render() end
+
+function ISSLSounds:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISSLSounds
 function ISSLSounds:new(x, y, width, height) end

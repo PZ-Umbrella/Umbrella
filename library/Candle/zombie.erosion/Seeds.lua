@@ -1,11 +1,11 @@
---- @meta
+--- @meta _
 
 --- @class Seeds
 --- @field public class any
-Seeds = {};
+Seeds = {}
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

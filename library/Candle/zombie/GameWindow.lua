@@ -1,10 +1,10 @@
---- @meta
+--- @meta _
 
 --- @class GameWindow
 --- @field public class any
 --- @field public ActivatedJoyPad Joypad
 --- @field public assetManagers AssetManagers
---- @field public averageFPS float
+--- @field public averageFPS number
 --- @field public bGameThreadExited boolean
 --- @field public bLoadedAsClient boolean
 --- @field public bLuaDebuggerKeyDown boolean
@@ -15,14 +15,14 @@
 --- @field public fileSystem FileSystem
 --- @field public GameInput Input
 --- @field public GameThread Thread
---- @field public kickReason String
---- @field public lastP String
+--- @field public kickReason string
+--- @field public lastP string
 --- @field public OkToSaveOnExit boolean
 --- @field public states GameStateMachine
 --- @field public texturePacks ArrayList
 --- @field public texturePackTextures TexturePackTextures
---- @field public version String
-GameWindow = {};
+--- @field public version string
+GameWindow = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -30,111 +30,156 @@ GameWindow = {};
 
 --- @public
 --- @static
---- @param text String
---- @return void
+--- @param text string
+--- @return nil
 function GameWindow.DoLoadingText(text) end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function GameWindow.InitDisplay() end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function GameWindow.InitGameThread() end
 
 --- @public
 --- @static
---- @param pack String
---- @param flags int
---- @return void
---- @overload fun(pack: String, flags: int, modID: String): void
+--- @param pack string
+--- @param flags integer
+--- @return nil
 function GameWindow.LoadTexturePack(pack, flags) end
 
 --- @public
 --- @static
---- @param pack String
---- @return void
-function GameWindow.LoadTexturePackDDS(pack) end
+--- @param pack string
+--- @param flags integer
+--- @param modID string
+--- @return nil
+function GameWindow.LoadTexturePack(pack, flags, modID) end
 
 --- @public
 --- @static
 --- @param input DataInputStream
---- @return String
---- @overload fun(input: ByteBuffer): String
+--- @return string
 function GameWindow.ReadString(input) end
 
 --- @public
 --- @static
 --- @param input ByteBuffer
---- @return String
+--- @return string
+function GameWindow.ReadString(input) end
+
+--- @public
+--- @static
+--- @param input ByteBuffer
+--- @return string
 function GameWindow.ReadStringUTF(input) end
 
 --- @public
 --- @static
+--- @param arg0 ByteBuffer
+--- @return UUID
+function GameWindow.ReadUUID(arg0) end
+
+--- @public
+--- @static
 --- @param output DataOutputStream
---- @param str String
---- @return void
---- @overload fun(output: ByteBuffer, str: String): void
+--- @param str string
+--- @return nil
 function GameWindow.WriteString(output, str) end
 
 --- @public
 --- @static
 --- @param output ByteBuffer
---- @param str String
---- @return void
+--- @param str string
+--- @return nil
+function GameWindow.WriteString(output, str) end
+
+--- @public
+--- @static
+--- @param output ByteBuffer
+--- @param str string
+--- @return nil
 function GameWindow.WriteStringUTF(output, str) end
 
 --- @public
 --- @static
+--- @param arg0 ByteBuffer
+--- @param arg1 UUID
+--- @return nil
+function GameWindow.WriteUUID(arg0, arg1) end
+
+--- @public
+--- @static
 --- @param b boolean
---- @return void
+--- @return nil
 function GameWindow.doRenderEvent(b) end
 
 --- @public
 --- @static
---- @return String
+--- @return string
 function GameWindow.getCoopServerHome() end
 
 --- @public
 --- @static
+--- @param arg0 string
+--- @return ByteBuffer
+function GameWindow.getEncodedBytesUTF(arg0) end
+
+--- @public
+--- @static
+--- @return integer
+function GameWindow.getUpdateTime() end
+
+--- @public
+--- @static
+--- @return nil
+function GameWindow.initFonts() end
+
+--- @public
+--- @static
+--- @return boolean
+function GameWindow.isIngameState() end
+
+--- @public
+--- @static
 --- @param __in__ DataInputStream
---- @return int
+--- @return integer
 function GameWindow.readInt(__in__) end
 
 --- @public
 --- @static
 --- @param __in__ DataInputStream
---- @return long
+--- @return integer
 function GameWindow.readLong(__in__) end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function GameWindow.render() end
 
 --- @public
 --- @static
 --- @param bDoChars boolean
---- @return void
+--- @return nil
 function GameWindow.save(bDoChars) end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function GameWindow.setTexturePackLookup() end
 
 --- @public
 --- @static
 --- @param thread Thread
 --- @param e Throwable
---- @return void
+--- @return nil
 function GameWindow.uncaughtException(thread, e) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

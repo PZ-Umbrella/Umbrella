@@ -1,941 +1,201 @@
 ---@meta
 
-local MultiColumnPanelJoypad = ISPanelJoypad:derive("MultiColumnPanelJoypad")
-local SpawnRegionsPanel = MultiColumnPanelJoypad:derive("SpawnRegionsPanel")
-local ServerSettingsScreenModsPanel = MultiColumnPanelJoypad:derive("ServerSettingsScreenModsPanel")
-local ServerSettingsScreenMapsPanel = MultiColumnPanelJoypad:derive("ServerSettingsScreenMapsPanel")
-local ServerSettingsScreenWorkshopPanel = MultiColumnPanelJoypad:derive("ServerSettingsScreenWorkshopPanel")
-local SandboxPresetPanel = MultiColumnPanelJoypad:derive("SandboxPresetPanel")
+---@alias umbrella.ServerSettingsScreen.Setting
+---| umbrella.ServerSettingsScreen.CheckboxSetting
+---| umbrella.ServerSettingsScreen.EntrySetting
+---| umbrella.ServerSettingsScreen.EnumSetting
+---| umbrella.ServerSettingsScreen.StringSetting
 
 ---@class ServerSettingsScreen : ISPanelJoypad
----@field pageStart any
----@field pageNew any
----@field pageEdit any
----@field pageDuplicate any
----@field pageRename any
----@field pageDelete any
----@field pageSpawnPoints any
----@field joyfocus any
----@field [any] any
+---@field initialSelectedSettings string?
+---@field pageDelete ISPanelJoypad
+---@field pageDuplicate BaseServerSettingsPanel
+---@field pageEdit ISPanelJoypad
+---@field pageNew BaseServerSettingsPanel
+---@field pageRename BaseServerSettingsPanel
+---@field pageSpawnPoints ISPanelJoypad
+---@field pageStart ISPanelJoypad
+---@field prevScreen CoopOptionsScreen
 ServerSettingsScreen = ISPanelJoypad:derive("ServerSettingsScreen")
+ServerSettingsScreen.Type = "ServerSettingsScreen"
+ServerSettingsScreen.instance = nil ---@type ServerSettingsScreen?
 
----@return any
+---@return umbrella.ServerSettingsScreen.SettingsPage[]
 function ServerSettingsScreen.getSandboxSettingsTable() end
 
----@return any
-function ServerSettingsScreen:create() end
----@return any
 function ServerSettingsScreen:aboutToShow() end
----@return any
-function ServerSettingsScreen:onResolutionChange(oldw, oldh, neww, newh) end
----@return any
-function ServerSettingsScreen:onGainJoypadFocus(joypadData) end
----@return any
+
+function ServerSettingsScreen:create() end
+
+---@return ISUIElement?
 function ServerSettingsScreen:getCurrentFocusForController() end
----@return any
+
+---@param joypadData JoypadData
+function ServerSettingsScreen:onGainJoypadFocus(joypadData) end
+
+---@param joypadData JoypadData
 function ServerSettingsScreen:onJoypadBeforeDeactivate(joypadData) end
 
+---@param reason string
+function ServerSettingsScreen:onResetLua(reason) end
+
+---@param oldw number
+---@param oldh number
+---@param neww number
+---@param newh number
+function ServerSettingsScreen:onResolutionChange(oldw, oldh, neww, newh) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ServerSettingsScreen
 function ServerSettingsScreen:new(x, y, width, height) end
 
 ---@class BaseServerSettingsPanel : ISPanelJoypad
----@field joypadIndexY any
----@field [any] any
 BaseServerSettingsPanel = ISPanelJoypad:derive("BaseServerSettingsPanel")
+BaseServerSettingsPanel.Type = "BaseServerSettingsPanel"
 
----@return any
-function BaseServerSettingsPanel:onLoseJoypadFocus(joypadData) end
----@return any
-function BaseServerSettingsPanel:onJoypadDown(button, joypadData) end
----@return any
-function BaseServerSettingsPanel:onJoypadDirUp(joypadData) end
----@return any
+---@param joypadData JoypadData
 function BaseServerSettingsPanel:onJoypadDirDown(joypadData) end
 
----@class SpawnRegionsNameFilePanel : ISPanelJoypad
----@field entryName any
----@field entryFile any
----@field joypadIndexY any
----@field joypadIndex any
----@field joypadButtons any
----@field selectedItem any
----@field joypadFocused any
----@field joyfocus any
----@field [any] any
-SpawnRegionsNameFilePanel = ISPanelJoypad:derive("SpawnRegionsNameFilePanel")
+---@param joypadData JoypadData
+function BaseServerSettingsPanel:onJoypadDirUp(joypadData) end
 
----@return any
+---@param button integer
+---@param joypadData JoypadData
+function BaseServerSettingsPanel:onJoypadDown(button, joypadData) end
+
+---@param joypadData JoypadData
+function BaseServerSettingsPanel:onLoseJoypadFocus(joypadData) end
+
+---@class SpawnRegionsNameFilePanel : ISPanelJoypad
+---@field entryFile ISTextEntryBox
+---@field entryName ISTextEntryBox
+---@field joypadButtons ISButton[]
+---@field joypadFocused boolean?
+---@field selectedItem umbrella.ServerSettingsScreen.SpawnRegionItem?
+SpawnRegionsNameFilePanel = ISPanelJoypad:derive("SpawnRegionsNameFilePanel")
+SpawnRegionsNameFilePanel.Type = "SpawnRegionsNameFilePanel"
+
 function SpawnRegionsNameFilePanel:createChildren() end
----@return any
-function SpawnRegionsNameFilePanel:render() end
----@return any
-function SpawnRegionsNameFilePanel:onNameEntered() end
----@return any
+
 function SpawnRegionsNameFilePanel:onFileEntered() end
----@return any
-function SpawnRegionsNameFilePanel:setJoypadFocused(focused, joypadData) end
----@return any
+
+---@param joypadData JoypadData
 function SpawnRegionsNameFilePanel:onGainJoypadFocus(joypadData) end
----@return any
-function SpawnRegionsNameFilePanel:onLoseJoypadFocus(joypadData) end
----@return any
+
+---@param button integer
+---@param joypadData JoypadData
 function SpawnRegionsNameFilePanel:onJoypadDown(button, joypadData) end
----@return any
+
+---@param button ISButton
+---@param joypadData JoypadData
+---@return boolean
 function SpawnRegionsNameFilePanel:onJoypadDownInParent(button, joypadData) end
 
+---@param joypadData JoypadData
+function SpawnRegionsNameFilePanel:onLoseJoypadFocus(joypadData) end
+
+function SpawnRegionsNameFilePanel:onNameEntered() end
+
+function SpawnRegionsNameFilePanel:render() end
+
+---@param joypadData JoypadData
+function SpawnRegionsNameFilePanel:setJoypadFocused(focused, joypadData) end
+
+---@param x number
+---@param y number
+---@param width number
 ---@return SpawnRegionsNameFilePanel
 function SpawnRegionsNameFilePanel:new(x, y, width) end
 
 ---@class DefaultServerSettings
 DefaultServerSettings = {}
 
----@return any
+---@param _table table
 function DefaultServerSettings:insertUnique(_table, value) end
----@return any
-function DefaultServerSettings:setServerOptionValue(settings, option, _table) end
----@return any
+
+---@param settings ServerSettings
 function DefaultServerSettings:setDefaultsFromSingleplayer(settings) end
 
-SettingsTable = {
-    {
-        name = "INI",
-        pages = {
-            {
-                name = "Details",
-                settings = {
-                    {
-                        name = "DefaultPort",
-                    },
-                    {
-                        name = "PublicName",
-                    },
-                    {
-                        name = "PublicDescription",
-                    },
-                    {
-                        name = "Public",
-                    },
-                    {
-                        name = "Password",
-                    },
-                    {
-                        name = "PauseEmpty",
-                    },
-                    {
-                        name = "ResetID",
-                    },
-                },
-            },
-            {
-                name = "Steam",
-                steamOnly = true,
-                settings = {
-                    {
-                        name = "UDPPort",
-                    },
-                    {
-                        name = "MaxAccountsPerUser",
-                    },
-                    {
-                        name = "SteamScoreboard",
-                    },
-                },
-            },
-            {
-                name = "Backups",
-                settings = {
-                    {
-                        name = "BackupsCount",
-                    },
-                    {
-                        name = "BackupsOnStart",
-                    },
-                    {
-                        name = "BackupsOnVersionChange",
-                    },
-                    {
-                        name = "BackupsPeriod",
-                    },
-                },
-            },
-            {
-                name = "SteamWorkshop",
-                steamOnly = true,
-                customui = ServerSettingsScreenWorkshopPanel,
-                settings = {},
-            },
-            {
-                name = "Mods",
-                customui = ServerSettingsScreenModsPanel,
-                settings = {},
-            },
-            {
-                name = "Map",
-                customui = ServerSettingsScreenMapsPanel,
-                settings = {},
-            },
-            {
-                name = "SpawnRegions",
-                settings = {},
-                customui = SpawnRegionsPanel,
-            },
-            {
-                name = "Players",
-                settings = {
-                    {
-                        name = "MaxPlayers",
-                    },
-                    {
-                        name = "Open",
-                    },
-                    {
-                        name = "AutoCreateUserInWhiteList",
-                    },
-                    {
-                        name = "DropOffWhiteListAfterDeath",
-                    },
-                    {
-                        name = "DisplayUserName",
-                    },
-                    {
-                        name = "ShowFirstAndLastName",
-                    },
-                    {
-                        name = "SpawnItems",
-                    },
-                    {
-                        name = "PingLimit",
-                    },
-                    {
-                        name = "ServerPlayerID",
-                    },
-                    {
-                        name = "SleepAllowed",
-                    },
-                    {
-                        name = "SleepNeeded",
-                    },
-                    {
-                        name = "PlayerRespawnWithSelf",
-                    },
-                    {
-                        name = "PlayerRespawnWithOther",
-                    },
-                    {
-                        name = "RemovePlayerCorpsesOnCorpseRemoval",
-                    },
-                    {
-                        name = "TrashDeleteAll",
-                    },
-                    {
-                        name = "PVPMeleeWhileHitReaction",
-                    },
-                    {
-                        name = "MouseOverToSeeDisplayName",
-                    },
-                    {
-                        name = "HidePlayersBehindYou",
-                    },
-                    {
-                        name = "PlayerBumpPlayer",
-                    },
-                    {
-                        name = "MapRemotePlayerVisibility",
-                    },
-                    {
-                        name = "AllowCoop",
-                    },
-                },
-            },
-            {
-                name = "Admin",
-                settings = {
-                    {
-                        name = "ClientCommandFilter",
-                    },
-                    {
-                        name = "ClientActionLogs",
-                    },
-                    {
-                        name = "PerkLogs",
-                    },
-                    {
-                        name = "DisableRadioStaff",
-                    },
-                    {
-                        name = "DisableRadioAdmin",
-                    },
-                    {
-                        name = "DisableRadioGM",
-                    },
-                    {
-                        name = "DisableRadioOverseer",
-                    },
-                    {
-                        name = "DisableRadioModerator",
-                    },
-                    {
-                        name = "DisableRadioInvisible",
-                    },
-                },
-            },
-            {
-                name = "Fire",
-                settings = {
-                    {
-                        name = "NoFire",
-                    },
-                },
-            },
-            {
-                name = "PVP",
-                settings = {
-                    {
-                        name = "PVP",
-                    },
-                    {
-                        name = "SafetySystem",
-                    },
-                    {
-                        name = "ShowSafety",
-                    },
-                    {
-                        name = "SafetyToggleTimer",
-                    },
-                    {
-                        name = "SafetyCooldownTimer",
-                    },
-                    {
-                        name = "PVPMeleeDamageModifier",
-                    },
-                    {
-                        name = "PVPFirearmDamageModifier",
-                    },
-                },
-            },
-            {
-                name = "Loot",
-                settings = {
-                    {
-                        name = "HoursForLootRespawn",
-                    },
-                    {
-                        name = "MaxItemsForLootRespawn",
-                    },
-                    {
-                        name = "ConstructionPreventsLootRespawn",
-                    },
-                    {
-                        name = "ItemNumbersLimitPerContainer",
-                    },
-                },
-            },
-            {
-                name = "Faction",
-                settings = {
-                    {
-                        name = "Faction",
-                    },
-                    {
-                        name = "FactionDaySurvivedToCreate",
-                    },
-                    {
-                        name = "FactionPlayersRequiredForTag",
-                    },
-                },
-            },
-            {
-                name = "Safehouse",
-                settings = {
-                    {
-                        name = "AdminSafehouse",
-                    },
-                    {
-                        name = "PlayerSafehouse",
-                    },
-                    {
-                        name = "SafehouseAllowTrepass",
-                    },
-                    {
-                        name = "SafehouseAllowFire",
-                    },
-                    {
-                        name = "SafehouseAllowLoot",
-                    },
-                    {
-                        name = "SafehouseAllowRespawn",
-                    },
-                    {
-                        name = "SafehouseDaySurvivedToClaim",
-                    },
-                    {
-                        name = "SafeHouseRemovalTime",
-                    },
-                    {
-                        name = "DisableSafehouseWhenPlayerConnected",
-                    },
-                    {
-                        name = "SafehouseAllowNonResidential",
-                    },
-                },
-            },
-            {
-                name = "Chat",
-                settings = {
-                    {
-                        name = "GlobalChat",
-                    },
-                    {
-                        name = "AnnounceDeath",
-                    },
-                    {
-                        name = "ServerWelcomeMessage",
-                    },
-                },
-            },
-            {
-                name = "RCON",
-                settings = {
-                    {
-                        name = "RCONPort",
-                    },
-                    {
-                        name = "RCONPassword",
-                    },
-                },
-            },
-            {
-                name = "Discord",
-                settings = {
-                    {
-                        name = "DiscordEnable",
-                    },
-                    {
-                        name = "DiscordToken",
-                    },
-                    {
-                        name = "DiscordChannel",
-                    },
-                },
-            },
-            {
-                name = "UPnP",
-                settings = {
-                    {
-                        name = "UPnP",
-                    },
-                },
-            },
-            {
-                name = "Other",
-                settings = {
-                    {
-                        name = "DoLuaChecksum",
-                    },
-                    {
-                        name = "AllowDestructionBySledgehammer",
-                    },
-                    {
-                        name = "SledgehammerOnlyInSafehouse",
-                    },
-                    {
-                        name = "MinutesPerPage",
-                    },
-                    {
-                        name = "SaveWorldEveryMinutes",
-                    },
-                    {
-                        name = "FastForwardMultiplier",
-                    },
-                    {
-                        name = "BloodSplatLifespanDays",
-                    },
-                    {
-                        name = "AllowNonAsciiUsername",
-                    },
-                },
-            },
-            {
-                name = "Vehicles",
-                settings = {
-                    {
-                        name = "SpeedLimit",
-                    },
-                },
-            },
-            {
-                name = "Voice",
-                settings = {
-                    {
-                        name = "VoiceEnable",
-                    },
-                    {
-                        name = "VoiceMinDistance",
-                    },
-                    {
-                        name = "VoiceMaxDistance",
-                    },
-                    {
-                        name = "Voice3D",
-                    },
-                },
-            },
-        },
-    },
-    {
-        name = "Sandbox",
-        pages = {
-            {
-                title = getText("UI_ServerSettingsGroup_SandboxPresets"),
-                settings = {},
-                customui = SandboxPresetPanel,
-            },
-            {
-                name = "PopulationOptions",
-                settings = {
-                    {
-                        name = "Zombies",
-                    },
-                    {
-                        name = "Distribution",
-                    },
-                },
-            },
-            {
-                name = "TimeOptions",
-                settings = {
-                    {
-                        name = "DayLength",
-                    },
-                    {
-                        name = "StartMonth",
-                    },
-                    {
-                        name = "StartDay",
-                    },
-                    {
-                        name = "StartTime",
-                    },
-                },
-            },
-            {
-                name = "WorldOptions",
-                settings = {
-                    {
-                        name = "WaterShutModifier",
-                    },
-                    {
-                        name = "ElecShutModifier",
-                    },
-                    {
-                        name = "WaterShut",
-                    },
-                    {
-                        name = "ElecShut",
-                    },
-                    {
-                        name = "Alarm",
-                    },
-                    {
-                        name = "LockedHouses",
-                    },
-                    {
-                        name = "FoodRotSpeed",
-                    },
-                    {
-                        name = "FridgeFactor",
-                    },
-                    {
-                        name = "DaysForRottenFoodRemoval",
-                    },
-                    {
-                        name = "LootRespawn",
-                        singlePlayerOnly = true,
-                    },
-                    {
-                        name = "SeenHoursPreventLootRespawn",
-                    },
-                    {
-                        name = "WorldItemRemovalList",
-                    },
-                    {
-                        name = "HoursForWorldItemRemoval",
-                    },
-                    {
-                        name = "ItemRemovalListBlacklistToggle",
-                    },
-                    {
-                        name = "TimeSinceApo",
-                    },
-                    {
-                        name = "NightDarkness",
-                    },
-                    {
-                        name = "FireSpread",
-                    },
-                    {
-                        name = "AllowExteriorGenerator",
-                    },
-                    {
-                        name = "FuelStationGas",
-                    },
-                    {
-                        name = "LightBulbLifespan",
-                    },
-                },
-            },
-            {
-                name = "NatureOptions",
-                settings = {
-                    {
-                        name = "Temperature",
-                    },
-                    {
-                        name = "Rain",
-                    },
-                    {
-                        name = "ErosionSpeed",
-                    },
-                    {
-                        name = "ErosionDays",
-                    },
-                    {
-                        name = "Farming",
-                    },
-                    {
-                        name = "PlantResilience",
-                    },
-                    {
-                        name = "PlantAbundance",
-                    },
-                    {
-                        name = "NatureAbundance",
-                    },
-                    {
-                        name = "CompostTime",
-                    },
-                    {
-                        name = "MaxFogIntensity",
-                    },
-                    {
-                        name = "MaxRainFxIntensity",
-                    },
-                    {
-                        name = "EnableSnowOnGround",
-                    },
-                    {
-                        name = "EnableTaintedWaterText",
-                    },
-                },
-            },
-            {
-                name = "SadisticAIDirector",
-                settings = {
-                    {
-                        name = "Helicopter",
-                    },
-                    {
-                        name = "MetaEvent",
-                    },
-                    {
-                        name = "SleepingEvent",
-                    },
-                },
-            },
-            {
-                name = "Meta",
-                settings = {
-                    {
-                        name = "GeneratorSpawning",
-                    },
-                    {
-                        name = "GeneratorFuelConsumption",
-                    },
-                    {
-                        name = "SurvivorHouseChance",
-                    },
-                    {
-                        name = "VehicleStoryChance",
-                    },
-                    {
-                        name = "ZoneStoryChance",
-                    },
-                    {
-                        name = "AnnotatedMapChance",
-                    },
-                    {
-                        name = "HoursForCorpseRemoval",
-                    },
-                    {
-                        name = "DecayingCorpseHealthImpact",
-                    },
-                    {
-                        name = "BloodLevel",
-                    },
-                    {
-                        name = "MaggotSpawn",
-                    },
-                },
-            },
-            {
-                name = "LootRarity",
-                settings = {
-                    {
-                        name = "FoodLoot",
-                    },
-                    {
-                        name = "CannedFoodLoot",
-                    },
-                    {
-                        name = "WeaponLoot",
-                    },
-                    {
-                        name = "RangedWeaponLoot",
-                    },
-                    {
-                        name = "AmmoLoot",
-                    },
-                    {
-                        name = "MedicalLoot",
-                    },
-                    {
-                        name = "SurvivalGearsLoot",
-                    },
-                    {
-                        name = "MechanicsLoot",
-                    },
-                    {
-                        name = "LiteratureLoot",
-                    },
-                    {
-                        name = "OtherLoot",
-                    },
-                },
-            },
-            {
-                name = "Character",
-                settings = {
-                    {
-                        name = "XpMultiplier",
-                    },
-                    {
-                        name = "XpMultiplierAffectsPassive",
-                    },
-                    {
-                        name = "StatsDecrease",
-                    },
-                    {
-                        name = "EndRegen",
-                    },
-                    {
-                        name = "Nutrition",
-                    },
-                    {
-                        name = "StarterKit",
-                    },
-                    {
-                        name = "CharacterFreePoints",
-                    },
-                    {
-                        name = "ConstructionBonusPoints",
-                    },
-                    {
-                        name = "InjurySeverity",
-                    },
-                    {
-                        name = "BoneFracture",
-                    },
-                    {
-                        name = "ClothingDegradation",
-                    },
-                    {
-                        name = "RearVulnerability",
-                    },
-                    {
-                        name = "MultiHitZombies",
-                    },
-                    {
-                        name = "AttackBlockMovements",
-                    },
-                    {
-                        name = "AllClothesUnlocked",
-                    },
-                    {
-                        name = "EnablePoisoning",
-                    },
-                },
-            },
-            {
-                name = "Map",
-                settings = {
-                    {
-                        name = "Map.AllowMiniMap",
-                    },
-                    {
-                        name = "Map.AllowWorldMap",
-                    },
-                    {
-                        name = "Map.MapAllKnown",
-                    },
-                },
-            },
-            {
-                name = "Vehicle",
-                settings = {
-                    {
-                        name = "EnableVehicles",
-                    },
-                    {
-                        name = "VehicleEasyUse",
-                    },
-                    {
-                        name = "RecentlySurvivorVehicles",
-                    },
-                    {
-                        name = "ZombieAttractionMultiplier",
-                    },
-                    {
-                        name = "CarSpawnRate",
-                    },
-                    {
-                        name = "ChanceHasGas",
-                    },
-                    {
-                        name = "InitialGas",
-                    },
-                    {
-                        name = "CarGasConsumption",
-                    },
-                    {
-                        name = "LockedCar",
-                    },
-                    {
-                        name = "CarGeneralCondition",
-                    },
-                    {
-                        name = "TrafficJam",
-                    },
-                    {
-                        name = "CarAlarm",
-                    },
-                    {
-                        name = "PlayerDamageFromCrash",
-                    },
-                    {
-                        name = "CarDamageOnImpact",
-                    },
-                    {
-                        name = "SirenShutoffHours",
-                    },
-                    {
-                        name = "DamageToPlayerFromHitByACar",
-                    },
-                },
-            },
-            {
-                name = "ZombieLore",
-                groupBox = "ProperZombies",
-                settings = {
-                    {
-                        name = "ZombieLore.Speed",
-                    },
-                    {
-                        name = "ZombieLore.Strength",
-                    },
-                    {
-                        name = "ZombieLore.Toughness",
-                    },
-                    {
-                        name = "ZombieLore.Transmission",
-                    },
-                    {
-                        name = "ZombieLore.Mortality",
-                    },
-                    {
-                        name = "ZombieLore.Reanimate",
-                    },
-                    {
-                        name = "ZombieLore.Cognition",
-                    },
-                    {
-                        name = "ZombieLore.CrawlUnderVehicle",
-                    },
-                    {
-                        name = "ZombieLore.Memory",
-                    },
-                    {
-                        name = "ZombieLore.Sight",
-                    },
-                    {
-                        name = "ZombieLore.Hearing",
-                    },
-                    {
-                        name = "ZombieLore.ThumpNoChasing",
-                    },
-                    {
-                        name = "ZombieLore.ThumpOnConstruction",
-                    },
-                    {
-                        name = "ZombieLore.ActiveOnly",
-                    },
-                    {
-                        name = "ZombieLore.TriggerHouseAlarm",
-                    },
-                    {
-                        name = "ZombieLore.ZombiesDragDown",
-                    },
-                    {
-                        name = "ZombieLore.ZombiesFenceLunge",
-                    },
-                    {
-                        name = "ZombieLore.DisableFakeDead",
-                    },
-                },
-            },
-            {
-                name = "ZombieAdvanced",
-                settings = {
-                    {
-                        name = "ZombieConfig.PopulationMultiplier",
-                    },
-                    {
-                        name = "ZombieConfig.PopulationStartMultiplier",
-                    },
-                    {
-                        name = "ZombieConfig.PopulationPeakMultiplier",
-                    },
-                    {
-                        name = "ZombieConfig.PopulationPeakDay",
-                    },
-                    {
-                        name = "ZombieConfig.RespawnHours",
-                    },
-                    {
-                        name = "ZombieConfig.RespawnUnseenHours",
-                    },
-                    {
-                        name = "ZombieConfig.RespawnMultiplier",
-                    },
-                    {
-                        name = "ZombieConfig.RedistributeHours",
-                    },
-                    {
-                        name = "ZombieConfig.FollowSoundDistance",
-                    },
-                    {
-                        name = "ZombieConfig.RallyGroupSize",
-                    },
-                    {
-                        name = "ZombieConfig.RallyTravelDistance",
-                    },
-                    {
-                        name = "ZombieConfig.RallyGroupSeparation",
-                    },
-                    {
-                        name = "ZombieConfig.RallyGroupRadius",
-                    },
-                },
-            },
-        },
-    },
-}
+---@param settings ServerSettings
+---@param option string
+---@param _table table
+function DefaultServerSettings:setServerOptionValue(settings, option, _table) end
+
+---@class Page3.ChooseModsWindow : ISPanelJoypad
+---@field buttonAccept ISButton
+---@field buttonCancel ISButton
+---@field buttonMods ISButton
+---@field listbox ISScrollingListBox
+---@field modInfoByID table<string, ChooseGameInfo.Mod>
+local __page3_ChooseModsWindow = ISPanelJoypad:derive("Page3.ChooseModsWindow")
+__page3_ChooseModsWindow.Type = "Page3.ChooseModsWindow"
+
+function __page3_ChooseModsWindow:aboutToShow() end
+
+---@param modID string
+function __page3_ChooseModsWindow:addModToList(modID) end
+
+function __page3_ChooseModsWindow:create() end
+
+function __page3_ChooseModsWindow:onButtonCancel() end
+
+function __page3_ChooseModsWindow:onButtonMods() end
+
+function __page3_ChooseModsWindow:onButtonNext() end
+
+---@param joypadData JoypadData
+function __page3_ChooseModsWindow:onGainJoypadFocus(joypadData) end
+
+function __page3_ChooseModsWindow:render() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@return Page3.ChooseModsWindow
+function __page3_ChooseModsWindow:new(x, y, width, height) end
+
+---@class umbrella.ServerSettingsScreen.SettingsPage
+---@field customui ISUIElement?
+---@field name string
+---@field settings umbrella.ServerSettingsScreen.Setting[]
+---@field steamOnly boolean?
+---@field title string?
+umbrella_ServerSettingsScreen_SettingsPage = {}
+
+---@class umbrella.ServerSettingsScreen.BaseSetting
+---@field name string
+---@field tooltip string?
+---@field translatedName string
+---@field type string
+umbrella_ServerSettingsScreen_BaseSetting = {}
+
+---@class umbrella.ServerSettingsScreen.CheckboxSetting
+---@field default boolean
+---@field type "checkbox"
+umbrella_ServerSettingsScreen_CheckboxSetting = {}
+
+---@class umbrella.ServerSettingsScreen.EntrySetting
+---@field onlyNumbers boolean?
+---@field text string
+---@field type "entry"
+umbrella_ServerSettingsScreen_EntrySetting = {}
+
+---@class umbrella.ServerSettingsScreen.EnumSetting
+---@field default integer
+---@field type "enum"
+---@field values string[]
+umbrella_ServerSettingsScreen_EnumSetting = {}
+
+---@class umbrella.ServerSettingsScreen.StringSetting
+---@field text string
+---@field type "string" | "text"
+umbrella_ServerSettingsScreen_StringSetting = {}
+
+---@class umbrella.ServerSettingsScreen.SpawnRegionItem
+---@field file string
+---@field name string
+umbrella_ServerSettingsScreen_SpawnRegionItem = {}

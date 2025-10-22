@@ -1,66 +1,69 @@
---- @meta
+--- @meta _
 
 --- @class ConfigOption
 --- @field public class any
-ConfigOption = {};
+ConfigOption = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return String
+--- @return string
 function ConfigOption:getName() end
 
 --- @public
---- @return String
+--- @return string
 function ConfigOption:getTooltip() end
 
 --- @public
---- @return String
+--- @return string
 function ConfigOption:getType() end
 
 --- @public
---- @return String
+--- @return string
 function ConfigOption:getValueAsLuaString() end
 
 --- @public
---- @return Object
+--- @return any
 function ConfigOption:getValueAsObject() end
 
 --- @public
---- @return String
+--- @return string
 function ConfigOption:getValueAsString() end
 
 --- @public
---- @param s String
+--- @param s string
 --- @return boolean
 function ConfigOption:isValidString(s) end
 
 --- @public
---- @param s String
---- @return void
+--- @return ConfigOption
+function ConfigOption:makeCopy() end
+
+--- @public
+--- @param s string
+--- @return nil
 function ConfigOption:parse(s) end
 
 --- @public
---- @return void
+--- @return nil
 function ConfigOption:resetToDefault() end
 
 --- @public
---- @return void
+--- @return nil
 function ConfigOption:setDefaultToCurrentValue() end
 
 --- @public
---- @param o Object
---- @return void
+--- @param o any
+--- @return nil
 function ConfigOption:setValueFromObject(o) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param name String
+--- @param name string
 --- @return ConfigOption
 function ConfigOption.new(name) end

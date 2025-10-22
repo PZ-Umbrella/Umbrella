@@ -1,11 +1,8 @@
---- @meta
+--- @meta _
 
---- @class Writer
+--- @class Writer: Appendable, Closeable, Flushable
 --- @field public class any
---- @implement Appendable
---- @implement Closeable
---- @implement Flushable
-Writer = {};
+Writer = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -16,41 +13,102 @@ Writer = {};
 --- @return Writer
 function Writer.nullWriter() end
 
-
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param arg0 char
+--- @param arg0 string
 --- @return Writer
---- @overload fun(self: Writer, arg0: char): Appendable
---- @overload fun(self: Writer, arg0: char): Appendable
---- @overload fun(self: Writer, arg0: CharSequence): Appendable
---- @overload fun(self: Writer, arg0: CharSequence): Writer
---- @overload fun(self: Writer, arg0: CharSequence): Appendable
---- @overload fun(self: Writer, arg0: CharSequence, arg1: int, arg2: int): Writer
---- @overload fun(self: Writer, arg0: CharSequence, arg1: int, arg2: int): Appendable
---- @overload fun(self: Writer, arg0: CharSequence, arg1: int, arg2: int): Appendable
 function Writer:append(arg0) end
 
 --- @public
---- @return void
---- @overload fun(self: Writer): void
+--- @param arg0 string
+--- @return Appendable
+function Writer:append(arg0) end
+
+--- @public
+--- @param arg0 string
+--- @return Appendable
+function Writer:append(arg0) end
+
+--- @public
+--- @param arg0 CharSequence
+--- @return Appendable
+function Writer:append(arg0) end
+
+--- @public
+--- @param arg0 CharSequence
+--- @return Writer
+function Writer:append(arg0) end
+
+--- @public
+--- @param arg0 CharSequence
+--- @return Appendable
+function Writer:append(arg0) end
+
+--- @public
+--- @param arg0 CharSequence
+--- @param arg1 integer
+--- @param arg2 integer
+--- @return Writer
+function Writer:append(arg0, arg1, arg2) end
+
+--- @public
+--- @param arg0 CharSequence
+--- @param arg1 integer
+--- @param arg2 integer
+--- @return Appendable
+function Writer:append(arg0, arg1, arg2) end
+
+--- @public
+--- @param arg0 CharSequence
+--- @param arg1 integer
+--- @param arg2 integer
+--- @return Appendable
+function Writer:append(arg0, arg1, arg2) end
+
+--- @public
+--- @return nil
 function Writer:close() end
 
 --- @public
---- @return void
---- @overload fun(self: Writer): void
+--- @return nil
+function Writer:close() end
+
+--- @public
+--- @return nil
+function Writer:flush() end
+
+--- @public
+--- @return nil
 function Writer:flush() end
 
 --- @public
 --- @param arg0 char[]
---- @return void
---- @overload fun(self: Writer, arg0: int): void
---- @overload fun(self: Writer, arg0: String): void
---- @overload fun(self: Writer, arg0: char[], arg1: int, arg2: int): void
---- @overload fun(self: Writer, arg0: String, arg1: int, arg2: int): void
+--- @return nil
 function Writer:write(arg0) end
 
+--- @public
+--- @param arg0 integer
+--- @return nil
+function Writer:write(arg0) end
 
+--- @public
+--- @param arg0 string
+--- @return nil
+function Writer:write(arg0) end
+
+--- @public
+--- @param arg0 char[]
+--- @param arg1 integer
+--- @param arg2 integer
+--- @return nil
+function Writer:write(arg0, arg1, arg2) end
+
+--- @public
+--- @param arg0 string
+--- @param arg1 integer
+--- @param arg2 integer
+--- @return nil
+function Writer:write(arg0, arg1, arg2) end

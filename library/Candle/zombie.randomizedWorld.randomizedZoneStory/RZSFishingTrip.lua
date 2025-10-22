@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RZSFishingTrip: RandomizedZoneStoryBase
 --- @field public class any
-RZSFishingTrip = {};
+RZSFishingTrip = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -18,19 +18,17 @@ function RZSFishingTrip.getFishes() end
 --- @return ArrayList
 function RZSFishingTrip.getFishingTools() end
 
-
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
 --- @param zone Zone
---- @return void
+--- @return nil
 function RZSFishingTrip:randomizeZoneStory(zone) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

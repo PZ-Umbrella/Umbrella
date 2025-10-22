@@ -1,36 +1,59 @@
 ---@meta
 
 ---@class xpUpdate
----@field lastX any
----@field lastY any
----@field characterInfo any
----@field [any] any
 xpUpdate = {}
-xpUpdate.characterInfo = nil
+xpUpdate.characterInfo = nil ---@type ISCharacterInfoWindow?
 xpUpdate.lastX = 0
 xpUpdate.lastY = 0
 
----@return any
-function xpUpdate.onPlayerMove() end
----@return any
-function xpUpdate.OnWeaponHitTree(owner, weapon) end
----@return any
-function xpUpdate.onWeaponHitXp(owner, weapon, hitObject, damage) end
----@return any
-function xpUpdate.onMakeItem(item, resultItem, recipe) end
----@return any
-function xpUpdate.displayCharacterInfo(key) end
----@return any
-function xpUpdate.randXp() end
----@return any
+---@param owner IsoPlayer
+---@param type PerkFactory.Perk
+---@param amount number
 function xpUpdate.addXp(owner, type, amount) end
----@return any
-function xpUpdate.levelPerk(owner, perk, level, addBuffer) end
----@return any
+
+---@param playerObj IsoPlayer
+---@param perk PerkFactory.Perk
 function xpUpdate.checkForLosingLevel(playerObj, perk) end
----@return any
+
+---@param key integer
+function xpUpdate.displayCharacterInfo(key) end
+
 function xpUpdate.everyTenMinutes() end
----@return any
+
+---@param playerObj IsoPlayer
+---@return table?
 function xpUpdate.getModData(playerObj) end
----@return any
+
+---@param owner IsoPlayer
+---@param perk PerkFactory.Perk
+---@param level integer
+---@param addBuffer boolean
+function xpUpdate.levelPerk(owner, perk, level, addBuffer) end
+
+function xpUpdate.onLoad() end
+
+---@param item InventoryItem
+---@param resultItem InventoryItem
+---@param recipe Recipe
+function xpUpdate.onMakeItem(item, resultItem, recipe) end
+
+---@param playerObj IsoPlayer
+---@param square IsoGridSquare
 function xpUpdate.onNewGame(playerObj, square) end
+
+---@param player IsoPlayer
+function xpUpdate.onPlayerMove(player) end
+
+---@param owner IsoPlayer
+---@param weapon HandWeapon
+function xpUpdate.OnWeaponHitTree(owner, weapon) end
+
+---@param owner IsoPlayer
+---@param weapon HandWeapon
+---@param hitObject IsoMovingObject
+---@param damage number
+---@param hitCount integer
+function xpUpdate.onWeaponHitXp(owner, weapon, hitObject, damage, hitCount) end
+
+---@return boolean
+function xpUpdate.randXp() end

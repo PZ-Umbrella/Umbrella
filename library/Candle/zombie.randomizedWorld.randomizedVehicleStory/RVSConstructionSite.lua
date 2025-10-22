@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RVSConstructionSite: RandomizedVehicleStoryBase Van with a sewer hole & road cones around it, some construction worker and a foreman + some tools in ground
 --- @field public class any
-RVSConstructionSite = {};
+RVSConstructionSite = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -18,18 +18,17 @@ function RVSConstructionSite:initVehicleStorySpawner(zone, chunk, debug) end
 --- @public
 --- @param zone Zone
 --- @param chunk IsoChunk
---- @return void
+--- @return nil
 function RVSConstructionSite:randomizeVehicleStory(zone, chunk) end
 
 --- @public
 --- @param spawner VehicleStorySpawner
 --- @param element Element
---- @return void
+--- @return nil
 function RVSConstructionSite:spawnElement(spawner, element) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

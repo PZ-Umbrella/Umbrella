@@ -1,4 +1,4 @@
---- @meta
+--- @meta _
 
 --- @class BodyPartType: Enum
 --- @field public class any
@@ -20,7 +20,7 @@
 --- @field public UpperArm_R BodyPartType
 --- @field public UpperLeg_L BodyPartType
 --- @field public UpperLeg_R BodyPartType
-BodyPartType = {};
+BodyPartType = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -28,80 +28,80 @@ BodyPartType = {};
 
 --- @public
 --- @static
---- @param index int
+--- @param index integer
 --- @return BodyPartType
 function BodyPartType.FromIndex(index) end
 
 --- @public
 --- @static
---- @param str String
+--- @param str string
 --- @return BodyPartType
 function BodyPartType.FromString(str) end
 
 --- @public
 --- @static
 --- @param bodyPartType BodyPartType
---- @return float
+--- @return number
 function BodyPartType.GetDistToCore(bodyPartType) end
 
 --- @public
 --- @static
 --- @param bodyPartType BodyPartType
---- @return float
+--- @return number
 function BodyPartType.GetMaxActionPenalty(bodyPartType) end
 
 --- @public
 --- @static
 --- @param bodyPartType BodyPartType
---- @return float
+--- @return number
 function BodyPartType.GetMaxMovementPenalty(bodyPartType) end
 
 --- @public
 --- @static
 --- @param bodyPartType BodyPartType
---- @return float
+--- @return number
 function BodyPartType.GetSkinSurface(bodyPartType) end
 
 --- @public
 --- @static
 --- @param bodyPartType BodyPartType
---- @return float
+--- @return number
 function BodyPartType.GetUmbrellaMod(bodyPartType) end
 
 --- @public
 --- @static
 --- @param BPT BodyPartType
---- @return int
+--- @return integer
 function BodyPartType.ToIndex(BPT) end
 
 --- @public
 --- @static
 --- @param BPT BodyPartType
---- @return String
+--- @return string
 function BodyPartType.ToString(BPT) end
 
 --- @public
 --- @static
---- @param index int
---- @return float
+--- @param index integer
+--- @return number
 function BodyPartType.getBleedingTimeModifyer(index) end
 
 --- @public
 --- @static
---- @param index int
---- @return float
+--- @param index integer
+--- @return number
 function BodyPartType.getDamageModifyer(index) end
 
 --- @public
 --- @static
 --- @param BPT BodyPartType
---- @return String
+--- @return string
 function BodyPartType.getDisplayName(BPT) end
 
 --- @public
 --- @static
---- @param index int
---- @return float
+--- @param index integer
+--- @return number
 function BodyPartType.getPainModifyer(index) end
 
 --- @public
@@ -111,45 +111,42 @@ function BodyPartType.getRandom() end
 
 --- @public
 --- @static
---- @param arg0 String
+--- @param arg0 string
 --- @return BodyPartType
 function BodyPartType.valueOf(arg0) end
 
 --- @public
 --- @static
 ---
----  Returns an array containing the constants of this enum class, in the order they
----  declared.
+--- Returns an array containing the constants of this enum class, in the order they
+--- declared.
 ---
---- @return BodyPartType[] an array containing the constants of this enum class, in the order they are declared
+--- @return BodyPartType[] # an array containing the constants of this enum class, in the order they are declared
 function BodyPartType.values() end
-
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return String
+--- @return string
 function BodyPartType:getBandageModel() end
 
 --- @public
 --- @param female boolean
---- @return String
+--- @return string
 function BodyPartType:getBiteWoundModel(female) end
 
 --- @public
 --- @param female boolean
---- @return String
+--- @return string
 function BodyPartType:getCutWoundModel(female) end
 
 --- @public
 --- @param female boolean
---- @return String
+--- @return string
 function BodyPartType:getScratchWoundModel(female) end
 
 --- @public
---- @return int
+--- @return integer
 function BodyPartType:index() end
-
-

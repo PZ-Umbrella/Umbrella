@@ -1,10 +1,9 @@
---- @meta
+--- @meta _
 
---- @class PropertyContainer
+--- @class PropertyContainer: TShortShortHashMap
 --- @field public class any
 --- @field public sorted List
---- @field public test NonBlockingHashMap
-PropertyContainer = {};
+PropertyContainer = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -12,41 +11,69 @@ PropertyContainer = {};
 
 --- @public
 --- @param other PropertyContainer
---- @return void
+--- @return nil
 function PropertyContainer:AddProperties(other) end
 
 --- @public
---- @return void
+--- @return nil
 function PropertyContainer:Clear() end
 
 --- @public
---- @return void
+--- @return nil
 function PropertyContainer:CreateKeySet() end
 
 --- @public
---- @param flag Double
+--- @param flag number
 --- @return boolean
---- @overload fun(self: PropertyContainer, isoPropertyType: String): boolean
---- @overload fun(self: PropertyContainer, flag: IsoFlagType): boolean
+function PropertyContainer:Is(flag) end
+
+--- @public
+--- @param isoPropertyType string
+--- @return boolean
+function PropertyContainer:Is(isoPropertyType) end
+
+--- @public
+--- @param flag IsoFlagType
+--- @return boolean
 function PropertyContainer:Is(flag) end
 
 --- @public
 --- @param flag IsoFlagType
---- @return void
---- @overload fun(self: PropertyContainer, propName: String, propName2: String): void
---- @overload fun(self: PropertyContainer, flag: IsoFlagType, ignored: String): void
---- @overload fun(self: PropertyContainer, propName: String, propName2: String, checkIsoFlagType: boolean): void
+--- @return nil
 function PropertyContainer:Set(flag) end
 
 --- @public
---- @param propName String
---- @return void
---- @overload fun(self: PropertyContainer, flag: IsoFlagType): void
+--- @param propName string
+--- @param propName2 string
+--- @return nil
+function PropertyContainer:Set(propName, propName2) end
+
+--- @public
+--- @param flag IsoFlagType
+--- @param ignored string
+--- @return nil
+function PropertyContainer:Set(flag, ignored) end
+
+--- @public
+--- @param propName string
+--- @param propName2 string
+--- @param checkIsoFlagType boolean
+--- @return nil
+function PropertyContainer:Set(propName, propName2, checkIsoFlagType) end
+
+--- @public
+--- @param propName string
+--- @return nil
 function PropertyContainer:UnSet(propName) end
 
 --- @public
---- @param property String
---- @return String
+--- @param flag IsoFlagType
+--- @return nil
+function PropertyContainer:UnSet(flag) end
+
+--- @public
+--- @param property string
+--- @return string
 function PropertyContainer:Val(property) end
 
 --- @public
@@ -54,7 +81,7 @@ function PropertyContainer:Val(property) end
 function PropertyContainer:getFlagsList() end
 
 --- @public
---- @return int
+--- @return integer
 function PropertyContainer:getItemHeight() end
 
 --- @public
@@ -62,11 +89,23 @@ function PropertyContainer:getItemHeight() end
 function PropertyContainer:getPropertyNames() end
 
 --- @public
---- @return int
+--- @return IsoDirections
+function PropertyContainer:getSlopedSurfaceDirection() end
+
+--- @public
+--- @return integer
+function PropertyContainer:getSlopedSurfaceHeightMax() end
+
+--- @public
+--- @return integer
+function PropertyContainer:getSlopedSurfaceHeightMin() end
+
+--- @public
+--- @return integer
 function PropertyContainer:getStackReplaceTileOffset() end
 
 --- @public
---- @return int
+--- @return integer
 function PropertyContainer:getSurface() end
 
 --- @public
@@ -81,9 +120,20 @@ function PropertyContainer:isTable() end
 --- @return boolean
 function PropertyContainer:isTableTop() end
 
+--- @public
+--- @param arg0 string
+--- @param arg1 string
+--- @return boolean
+function PropertyContainer:valueEquals(arg0, arg1) end
+
+--- @public
+--- @param arg0 string
+--- @param arg1 string
+--- @return boolean
+function PropertyContainer:valueEqualsIgnoreCase(arg0, arg1) end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

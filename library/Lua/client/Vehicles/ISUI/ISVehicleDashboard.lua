@@ -1,98 +1,114 @@
 ---@meta
 
 ---@class ISVehicleDashboard : ISPanel
----@field backgroundTex any
----@field btn_partSpeed any
----@field doorTex any
----@field engineTex any
----@field lightsTex any
----@field heaterTex any
----@field ignitionTex any
----@field batteryTex any
----@field trunkTex any
----@field speedregulatorTex any
----@field fuelGauge any
----@field engineGauge any
----@field speedGauge any
----@field flickingTimer any
----@field flickAlpha any
----@field flickAlphaUp any
----@field vehicle any
----@field gauges any
----@field gasTank any
----@field fuelValue any
----@field wasKeyInIgnition any
----@field playerNum any
----@field character any
----@field texEngine any
----@field iconEngine any
----@field iconAirCondition any
----@field iconDoor any
----@field iconLights any
----@field iconHeater any
----@field iconIgnition any
----@field iconIgnitionKey any
----@field iconIgnitionStarted any
----@field iconIgnitionHotwired any
----@field iconBattery any
----@field iconTrunk any
----@field iconSpeedRegulator any
----@field dashboardBG any
----@field gaugeFull any
----@field gaugeLow any
----@field gaugeEmpty any
----@field engineGaugeTex any
----@field speedGaugeTex any
----@field lastVehicleDamageTimer any
----@field lastVehicleDamage any
----@field [any] any
+---@field backgroundTex ISImage
+---@field batteryTex ISImage
+---@field btn_partSpeed ISLabel
+---@field character IsoPlayer
+---@field dashboardBG Texture
+---@field doorTex ISImage
+---@field engineGauge ISVehicleGauge
+---@field engineGaugeTex Texture
+---@field engineTex ISImage
+---@field flickAlpha number
+---@field flickAlphaUp boolean
+---@field flickingTimer number
+---@field fuelGauge ISVehicleGauge
+---@field fuelValue number
+---@field gasTank VehiclePart?
+---@field gaugeEmpty Texture
+---@field gaugeFull Texture
+---@field gaugeLow Texture
+---@field gauges ISVehicleGauge[]
+---@field heaterTex ISImage
+---@field iconAirCondition Texture
+---@field iconBattery Texture
+---@field iconDoor Texture
+---@field iconEngine Texture
+---@field iconHeater Texture
+---@field iconIgnition Texture
+---@field iconIgnitionHotwired Texture
+---@field iconIgnitionKey Texture
+---@field iconIgnitionStarted Texture
+---@field iconLights Texture
+---@field iconRadio Texture
+---@field iconSpeedRegulator Texture
+---@field iconTrunk Texture
+---@field ignitionTex ISImage
+---@field leftSideFuel ISImage
+---@field leftSideFuelTex Texture
+---@field lightsTex ISImage
+---@field playerNum integer
+---@field radioTex ISImage
+---@field rightSideFuel ISImage
+---@field rightSideFuelTex Texture
+---@field speedGauge ISVehicleGauge
+---@field speedGaugeTex Texture
+---@field speedregulatorTex ISImage
+---@field texEngine Texture
+---@field trunkTex ISImage
+---@field vehicle BaseVehicle?
+---@field wasKeyInIgnition boolean
 ISVehicleDashboard = ISPanel:derive("ISVehicleDashboard")
-ISVehicleDashboard.lastVehicleDamage = nil
+ISVehicleDashboard.Type = "ISVehicleDashboard"
+ISVehicleDashboard.lastVehicleDamage = nil ---@type table<VehiclePart, integer>?
 ISVehicleDashboard.lastVehicleDamageTimer = 0
 
----@return any
-function ISVehicleDashboard.damageFlick(character) end
----@return any
-function ISVehicleDashboard.onEnterVehicle(character) end
----@return any
-function ISVehicleDashboard.onExitVehicle(character) end
----@return any
-function ISVehicleDashboard.onSwitchVehicleSeat(character) end
----@return any
-function ISVehicleDashboard.OnGameStart() end
----@return any
-function ISVehicleDashboard.getVehicleCondition(vehicle) end
----@return any
 function ISVehicleDashboard.damageChecker() end
----@return any
+
+---@param character IsoPlayer
+function ISVehicleDashboard.damageFlick(character) end
+
+---@param vehicle BaseVehicle
+---@return table<VehiclePart, integer>
+function ISVehicleDashboard.getVehicleCondition(vehicle) end
+
+---@param character IsoPlayer
+function ISVehicleDashboard.onEnterVehicle(character) end
+
+---@param character IsoPlayer
+function ISVehicleDashboard.onExitVehicle(character) end
+
 function ISVehicleDashboard.onGameStart() end
 
----@return any
-function ISVehicleDashboard:createChildren() end
----@return any
-function ISVehicleDashboard:getAlphaFlick(default) end
----@return any
-function ISVehicleDashboard:setVehicle(vehicle) end
----@return any
-function ISVehicleDashboard:prerender() end
----@return any
+function ISVehicleDashboard.OnGameStart() end
+
+---@param character IsoPlayer
+function ISVehicleDashboard.onSwitchVehicleSeat(character) end
+
+---@return boolean
 function ISVehicleDashboard:checkEngineFull() end
----@return any
-function ISVehicleDashboard:render() end
----@return any
-function ISVehicleDashboard:onResolutionChange() end
----@return any
-function ISVehicleDashboard:onClickEngine() end
----@return any
-function ISVehicleDashboard:onClickHeadlights() end
----@return any
+
+function ISVehicleDashboard:createChildren() end
+
+---@param default number
+---@return number
+function ISVehicleDashboard:getAlphaFlick(default) end
+
 function ISVehicleDashboard:onClickDoors() end
----@return any
-function ISVehicleDashboard:onClickTrunk() end
----@return any
+
+function ISVehicleDashboard:onClickEngine() end
+
+function ISVehicleDashboard:onClickHeadlights() end
+
 function ISVehicleDashboard:onClickHeater() end
----@return any
+
 function ISVehicleDashboard:onClickKeys() end
 
+function ISVehicleDashboard:onClickRadio() end
+
+function ISVehicleDashboard:onClickTrunk() end
+
+function ISVehicleDashboard:onResolutionChange() end
+
+function ISVehicleDashboard:prerender() end
+
+function ISVehicleDashboard:render() end
+
+---@param vehicle BaseVehicle
+function ISVehicleDashboard:setVehicle(vehicle) end
+
+---@param playerNum integer
+---@param chr IsoPlayer
 ---@return ISVehicleDashboard
 function ISVehicleDashboard:new(playerNum, chr) end

@@ -1,100 +1,155 @@
 ---@meta
 
 ---@class LoadGameScreen : ISPanelJoypad
----@field javaObject any
----@field listbox any
----@field configPanel any
----@field infoPanel any
----@field backButton any
----@field playButton any
----@field configButton any
----@field deleteButton any
----@field richText any
----@field modal any
----@field joyfocus any
----@field joypadFocused any
----@field x any
----@field y any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field itemheightoverride any
----@field selected any
----@field startY any
----@field deadTexture any
----@field mapGroups any
----@field [any] any
+---@field backButton ISButton
+---@field configButton ISButton
+---@field configPanel ISPanelJoypad
+---@field deadTexture Texture
+---@field deleteButton ISButton
+---@field infoPanel ISPanelJoypad
+---@field itemheightoverride table<string, number>
+---@field listbox ISScrollingListBox
+---@field listCache table<string, umbrella.LoadGameScreen.SaveInfo>
+---@field mapGroups MapGroups
+---@field modal ISModalDialog?
+---@field playButton ISButton
+---@field richText ISRichTextPanel
+---@field searchEntry ISTextEntryBox
+---@field searchLabel ISLabel
+---@field selected number
+---@field startY number
+---@field title string
 LoadGameScreen = ISPanelJoypad:derive("LoadGameScreen")
+LoadGameScreen.Type = "LoadGameScreen"
+LoadGameScreen.instance = nil ---@type LoadGameScreen?
 
----@return any
 function LoadGameScreen.onClickWorld() end
----@return any
+
+---@param key integer
 function LoadGameScreen.OnKeyPressed(key) end
 
----@return any
-function LoadGameScreen:initialise() end
----@return any
-function LoadGameScreen:instantiate() end
----@return any
-function LoadGameScreen:setSaveGamesList() end
----@return any
-function LoadGameScreen:hasChoices() end
----@return any
-function LoadGameScreen:create() end
----@return any
-function LoadGameScreen:drawMap(y, item, alt) end
----@return any
-function LoadGameScreen:render() end
----@return any
-function LoadGameScreen:prerender() end
----@return any
-function LoadGameScreen:showConfigPanel() end
----@return any
-function LoadGameScreen:hideConfigPanel() end
----@return any
-function LoadGameScreen:onOptionMouseDown(button, x, y) end
----@return any
-function LoadGameScreen:onDblClickWorld() end
----@return any
-function LoadGameScreen:clickPlay() end
----@return any
-function LoadGameScreen:onDeleteModalClick(button) end
----@return any
-function LoadGameScreen:onErrorLoadingClick(button) end
----@return any
-function LoadGameScreen:onGainJoypadFocus(joypadData) end
----@return any
-function LoadGameScreen:onJoypadBeforeDeactivate(joypadData) end
----@return any
-function LoadGameScreen:onGainJoypadFocus_child(joypadData) end
----@return any
-function LoadGameScreen:onLoseJoypadFocus_child(joypadData) end
----@return any
-function LoadGameScreen:onJoypadBeforeDeactivate_child(joypadData) end
----@return any
-function LoadGameScreen:onJoypadDirLeft_child(joypadData) end
----@return any
-function LoadGameScreen:onJoypadDirRight_child(joypadData) end
----@return any
-function LoadGameScreen:getChallenge(item) end
----@return any
+---@param item umbrella.LoadGameScreen.SaveInfo
 function LoadGameScreen:checkChallenge(item) end
----@return any
+
+---@param item umbrella.LoadGameScreen.SaveInfo
+---@return boolean
 function LoadGameScreen:checkMapsAvailable(item) end
----@return any
+
+function LoadGameScreen:clickPlay() end
+
+function LoadGameScreen:create() end
+
 function LoadGameScreen:disableBtn() end
----@return any
-function LoadGameScreen:onSavefileModsChanged(folder) end
----@return any
+
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
+function LoadGameScreen:drawMap(y, item, alt) end
+
+---@param item umbrella.LoadGameScreen.SaveInfo
+---@return umbrella.LastStandChallenge.Challenge?
+function LoadGameScreen:getChallenge(item) end
+
+---@return boolean
+function LoadGameScreen:hasChoices() end
+
+function LoadGameScreen:hideConfigPanel() end
+
+function LoadGameScreen:initialise() end
+
+function LoadGameScreen:instantiate() end
+
+function LoadGameScreen:onDblClickWorld() end
+
+---@param button ISButton
+function LoadGameScreen:onDeleteModalClick(button) end
+
+---@param button ISButton
+function LoadGameScreen:onErrorLoadingClick(button) end
+
+---@param joypadData JoypadData
+function LoadGameScreen:onGainJoypadFocus(joypadData) end
+
+---@param joypadData JoypadData
+function LoadGameScreen:onGainJoypadFocus_child(joypadData) end
+
+---@param joypadData JoypadData
+function LoadGameScreen:onJoypadBeforeDeactivate(joypadData) end
+
+---@param joypadData JoypadData
+function LoadGameScreen:onJoypadBeforeDeactivate_child(joypadData) end
+
+---@param joypadData JoypadData
+function LoadGameScreen:onJoypadDirLeft_child(joypadData) end
+
+---@param joypadData JoypadData
+function LoadGameScreen:onJoypadDirRight_child(joypadData) end
+
+---@param button ISButton
+---@param joypadData JoypadData
+function LoadGameScreen:onJoypadDown_listbox(button, joypadData) end
+
+---@param button ISButton
+---@param joypadData JoypadData
+function LoadGameScreen:onJoypadDownSearchEntry(button, joypadData) end
+
+function LoadGameScreen:onJoypadNavigateStart_Descendant(descendant, button, joypadData) end
+
+function LoadGameScreen:onKeyRelease(key) end
+
+---@param joypadData JoypadData
+function LoadGameScreen:onLoseJoypadFocus_child(joypadData) end
+
+---@param button ISButton
+---@param x number
+---@param y number
+function LoadGameScreen:onOptionMouseDown(button, x, y) end
+
+---@param oldw number
+---@param oldh number
+---@param neww number
+---@param newh number
 function LoadGameScreen:onResolutionChange(oldw, oldh, neww, newh) end
 
+---@param folder string
+function LoadGameScreen:onSavefileModsChanged(folder) end
+
+function LoadGameScreen:onSearchTextChange() end
+
+function LoadGameScreen:prerender() end
+
+function LoadGameScreen:render() end
+
+---@param str string
+function LoadGameScreen:searchSetText(str) end
+
+function LoadGameScreen:setSaveGamesList() end
+
+function LoadGameScreen:showConfigPanel() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return LoadGameScreen
 function LoadGameScreen:new(x, y, width, height) end
 
----@return any
+---@class umbrella.LoadGameScreen.SaveInfo
+---@field activeMods ActiveMods
+---@field gameMode string
+---@field lastPlayed string
+---@field mapName string
+---@field playerAlive boolean
+---@field players umbrella.LoadGameScreen.SavePlayer[]
+---@field saveName string
+---@field worldVersion integer | "unknown"
+umbrella_LoadGameScreen_SaveInfo = {}
+
+---@class umbrella.LoadGameScreen.SavePlayer
+---@field isDead boolean
+---@field name string
+---@field sqlID number
+umbrella_LoadGameScreen_SavePlayer = {}
+
 function LoadGameScreen_onModsModified() end

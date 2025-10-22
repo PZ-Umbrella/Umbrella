@@ -1,230 +1,293 @@
 ---@meta
 
 ---@class MainScreen : ISPanelJoypad
----@field javaObject any
----@field bottomPanel any
----@field mainOptions any
----@field exitOption any
----@field maxMenuItemWidth any
----@field versionDetail any
----@field versionLabel any
----@field threeD any
----@field desc any
----@field animPopup any
----@field termsOfService any
----@field modListDetail any
----@field quitToDesktop any
----@field returnOption any
----@field optionsOption any
----@field defaultJoypadOption any
----@field scoreOption any
----@field inviteOption any
----@field debOption any
----@field latestSaveOption any
----@field loadOption any
----@field tutorialOption any
----@field survivalOption any
----@field onlineOption any
----@field onlineCoopOption any
----@field modsOption any
----@field workshopOption any
----@field resetLua any
----@field controllerLabel any
----@field abutton any
----@field controllerLabel2 any
----@field sandOptions any
----@field worldSelect any
----@field mapSpawnSelect any
----@field modSelect any
----@field charCreationMain any
----@field charCreationProfession any
----@field charCreationHeader any
----@field lastStandPlayerSelect any
----@field serverSettingsScreen any
----@field scoreboard any
----@field inviteFriends any
----@field joinServer any
----@field bootstrapConnectPopup any
----@field connectToServer any
----@field serverConnectPopup any
----@field joinPublicServer any
----@field soloScreen any
----@field loadScreen any
----@field onlineCoopScreen any
----@field serverWorkshopItem any
----@field workshopSubmit any
----@field time any
----@field demoMessagePanel any
----@field warningFade any
----@field creditTime any
----@field creditsIndex any
----@field firstFrame any
----@field delay any
----@field overBottomPanelButton any
----@field MouseEnterMainMenuItem any
----@field quitToDesktopDialog any
----@field infoRichText any
----@field termsOfServiceDialog any
----@field infoModList any
----@field x any
----@field y any
----@field backgroundColor any
----@field borderColor any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field warningFadeMax any
----@field credits any
----@field creditTimeMax any
----@field inGame any
----@field logoTexture any
----@field joypadIndexY any
----@field joypadIndex any
----@field joypadButtons any
----@field [any] any
+---@field abutton ISImage
+---@field animPopup ISModalRichText
+---@field bootstrapConnectPopup BootstrapConnectPopup
+---@field bottomPanel ISPanel
+---@field charCreationMain CharacterCreationMain
+---@field charCreationProfession CharacterCreationProfession
+---@field checkSavefileModal ISModalRichText?
+---@field connectToServer ConnectToServer
+---@field controllerLabel ISLabel
+---@field controllerLabel2 ISLabel
+---@field createWorld boolean
+---@field credits LuaList
+---@field creditsIndex number
+---@field creditTime number
+---@field creditTimeMax number
+---@field debOption ISLabel
+---@field defaultJoypadOption ISLabel
+---@field delay number
+---@field demoMessagePanel ISRichTextPanel
+---@field desc SurvivorDesc
+---@field exitOption ISLabel
+---@field firstFrame boolean
+---@field infoModList ISPauseModListUI?
+---@field infoRichText ISNewsUpdate
+---@field inGame boolean
+---@field inviteFriends InviteFriends
+---@field inviteOption ISLabel
+---@field joinPublicServer PublicServerList
+---@field joypadButtons ISButton[]
+---@field joypadIndexY integer?
+---@field lastStandPlayerSelect LastStandPlayerSelect
+---@field latestSaveOption ISLabel
+---@field loadOption ISLabel
+---@field loadScreen LoadGameScreen
+---@field logoTexture Texture
+---@field mainOptions MainOptions
+---@field mapSpawnSelect MapSpawnSelect
+---@field maxMenuItemWidth number
+---@field modListDetail ISButton
+---@field modSelect ModSelector
+---@field modsOption ISLabel
+---@field MouseEnterMainMenuItem integer?
+---@field multiplayer MultiplayerScreen
+---@field onlineCoopScreen CoopOptionsScreen
+---@field optionsOption ISLabel
+---@field overBottomPanelButton ISUIElement?
+---@field quitToDesktop ISLabel
+---@field quitToDesktopDialog ISModalDialog?
+---@field reportBug ISButton
+---@field resetLua ISButton
+---@field returnOption ISLabel
+---@field sandOptions SandboxOptionsScreen
+---@field scoreboard ISScoreboard
+---@field scoreOption ISLabel
+---@field seedLabel ISLabel
+---@field serverConnectPopup ServerConnectPopup
+---@field serverList ServerList
+---@field serverSettingsScreen ServerSettingsScreen
+---@field serverWorkshopItem ServerWorkshopItemScreen
+---@field soloScreen NewGameScreen
+---@field survivalOption ISLabel
+---@field termsOfService ISButton
+---@field termsOfServiceDialog ISTermsOfServiceUI?
+---@field threeD ISUI3DModel
+---@field time number
+---@field tutorialButton ISButton?
+---@field tutorialOption ISLabel
+---@field versionDetail ISButton
+---@field versionLabel ISLabel
+---@field warningFade number
+---@field warningFadeMax number
+---@field workshopOption ISLabel
+---@field workshopSubmit WorkshopSubmitScreen
+---@field worldSelect WorldSelect
 MainScreen = ISPanelJoypad:derive("MainScreen")
+MainScreen.Type = "MainScreen"
+MainScreen.latestSaveWorld = nil
+MainScreen.latestSaveGameMode = nil
+MainScreen.instance = nil ---@type MainScreen?
+MainScreen.StaticHeight = nil ---@type number?
+MainScreen.StaticWidth = nil ---@type number?
 
----@return any
-function MainScreen.checkTutorial(button) end
----@return any
-function MainScreen.onTutorialControllerWarn() end
----@return any
-function MainScreen.startTutorial() end
----@return any
+---@param mapName string
+---@param activeMods ActiveMods
+---@param mapAvailable table<string, boolean>
+---@return boolean
 function MainScreen.checkMapsAvailable(mapName, activeMods, mapAvailable) end
----@return any
+
+---@return boolean?
 function MainScreen.checkSaveFile() end
----@return any
-function MainScreen.displayCheckSavefileModal(text) end
----@return any
-function MainScreen.resetLuaIfNeeded() end
----@return any
-function MainScreen.onCheckSavefileModalClick(button) end
----@return any
-function MainScreen.continueLatestSaveAux(fromResetLua) end
----@return any
+
+---@param button ISButton
+---@return boolean
+function MainScreen.checkTutorial(button) end
+
+---@param gameMode string
+---@param saveName string
 function MainScreen.continueLatestSave(gameMode, saveName) end
----@return any
-function MainScreen.onMenuItemMouseDownMainMenu(item, x, y) end
----@return any
-function MainScreen.OnTick(totalTicks) end
----@return any
-function MainScreen.onResetLua(reason) end
----@return any
-function MainScreen.onResolutionChange(oldw, oldh, neww, newh) end
----@return any
+
+---@param fromResetLua boolean
+function MainScreen.continueLatestSaveAux(fromResetLua) end
+
+---@param text string
+---@param fatal boolean
+function MainScreen.displayCheckSavefileModal(text, fatal) end
+
+---@param activeMods ActiveMods
+---@return string[]
+function MainScreen.getMissingMods(activeMods) end
+
+---@param connectionString string
 function MainScreen.onAcceptInvite(connectionString) end
----@return any
+
+---@param model unknown?
+---@param button ISButton
+function MainScreen.onCheckSavefileModalClick(model, button) end
+
+---@param index integer
 function MainScreen.OnJoypadBeforeDeactivate(index) end
 
----@return any
-function MainScreen:initialise() end
----@return any
-function MainScreen:getLatestSave() end
----@return any
-function MainScreen:setBottomPanelVisible(visible) end
----@return any
-function MainScreen:instantiate() end
----@return any
-function MainScreen:OnClickNews() end
----@return any
-function MainScreen:render() end
----@return any
+---@param item ISUIElement
+---@param x number
+---@param y number
+function MainScreen.onMenuItemMouseDownMainMenu(item, x, y) end
+
+---@param reason string
+function MainScreen.onResetLua(reason) end
+
+---@param oldw number
+---@param oldh number
+---@param neww number
+---@param newh number
+function MainScreen.onResolutionChange(oldw, oldh, neww, newh) end
+
+---@param totalTicks number
+function MainScreen.OnTick(totalTicks) end
+
+function MainScreen.onTutorialControllerWarn() end
+
+function MainScreen.resetLuaIfNeeded() end
+
+function MainScreen.startTutorial() end
+
+---@param credit string
+---@param number number
+function MainScreen:addCredit(credit, number) end
+
+---@return number
 function MainScreen:calcLogoHeight() end
----@return any
-function MainScreen:prerender() end
----@return any
-function MainScreen:prerenderBottomPanelLabel() end
----@return any
-function MainScreen:onMouseMove(dx, dy) end
----@return any
-function MainScreen:updateBottomPanelButtons() end
----@return any
-function MainScreen:setDefaultSandboxVars() end
----@return any
-function MainScreen:onTutorialModalClick(button) end
----@return any
-function MainScreen:onTutorialControllerWarn2(button) end
----@return any
-function MainScreen:quitToDesktopFunc() end
----@return any
-function MainScreen:onConfirmQuitToDesktop(button) end
----@return any
-function MainScreen:onClickVersionDetail() end
----@return any
-function MainScreen:onClickTermsOfService(button) end
----@return any
-function MainScreen:onTermsOfServiceOK() end
----@return any
-function MainScreen:onClickModList() end
----@return any
-function MainScreen:presentServerConnectPopup() end
----@return any
-function MainScreen:update() end
----@return any
-function MainScreen:setSandboxPreset(preset) end
----@return any
-function MainScreen:setBeginnerPreset() end
----@return any
-function MainScreen:setEasyPreset() end
----@return any
-function MainScreen:setNormalPreset() end
----@return any
-function MainScreen:setHardPreset() end
----@return any
-function MainScreen:setHardcorePreset() end
----@return any
-function MainScreen:onEnterFromGame() end
----@return any
-function MainScreen:onReturnToGame() end
----@return any
-function MainScreen:addCredit(title, name) end
----@return any
+
 function MainScreen:doArtCredits() end
----@return any
+
 function MainScreen:doCodeCredits() end
----@return any
-function MainScreen:doWritingCredits() end
----@return any
-function MainScreen:doScriptingCredits() end
----@return any
+
 function MainScreen:doCredits() end
----@return any
-function MainScreen:onGainJoypadFocus(joypadData) end
----@return any
-function MainScreen:onLoseJoypadFocus(joypadData) end
----@return any
-function MainScreen:onJoypadDown(button, joypadData) end
----@return any
-function MainScreen:onJoypadDirUp(joypadData) end
----@return any
-function MainScreen:onJoypadDirDown(joypadData) end
----@return any
-function MainScreen:showInviteFailDialog(message) end
----@return any
-function MainScreen:onInviteFailDialogButton(button, focus) end
----@return any
+
+function MainScreen:doScriptingCredits() end
+
+function MainScreen:doWritingCredits() end
+
+---@return ISUIElement[]
 function MainScreen:getAllUIs() end
----@return any
+
+---@return ISUIElement?
 function MainScreen:getCurrentFocusForController() end
 
+function MainScreen:getLatestSave() end
+
+function MainScreen:initialise() end
+
+function MainScreen:instantiate() end
+
+function MainScreen:onClickModList() end
+
+function MainScreen:OnClickNews() end
+
+---@param button ISButton
+function MainScreen:onClickReportBug(button) end
+
+---@param button ISButton
+function MainScreen:onClickTermsOfService(button) end
+
+function MainScreen:onClickVersionDetail() end
+
+---@param button ISButton
+function MainScreen:onConfirmQuitToDesktop(button) end
+
+function MainScreen:onEnterFromGame() end
+
+---@param joypadData JoypadData
+function MainScreen:onGainJoypadFocus(joypadData) end
+
+---@param button ISButton
+---@param focus ISUIElement?
+function MainScreen:onInviteFailDialogButton(button, focus) end
+
+---@param joypadData JoypadData
+function MainScreen:onJoypadDirDown(joypadData) end
+
+---@param joypadData JoypadData
+function MainScreen:onJoypadDirUp(joypadData) end
+
+---@param button integer
+---@param joypadData JoypadData
+function MainScreen:onJoypadDown(button, joypadData) end
+
+function MainScreen:onKeyRelease(key) end
+
+---@param joypadData JoypadData
+function MainScreen:onLoseJoypadFocus(joypadData) end
+
+---@param dx number
+---@param dy number
+function MainScreen:onMouseMove(dx, dy) end
+
+function MainScreen:onReturnToGame() end
+
+function MainScreen:onTermsOfServiceOK() end
+
+---@param button ISButton
+function MainScreen:onTutorialControllerWarn2(button) end
+
+---@param button ISButton
+function MainScreen:onTutorialModalClick(button) end
+
+function MainScreen:prerender() end
+
+function MainScreen:prerenderBottomPanelLabel() end
+
+function MainScreen:presentServerConnectPopup() end
+
+function MainScreen:quitToDesktopFunc() end
+
+function MainScreen:render() end
+
+function MainScreen:setBeginnerPreset() end
+
+---@param visible boolean
+function MainScreen:setBottomPanelVisible(visible) end
+
+function MainScreen:setDefaultSandboxVars() end
+
+function MainScreen:setEasyPreset() end
+
+function MainScreen:setHardcorePreset() end
+
+function MainScreen:setHardPreset() end
+
+function MainScreen:setNormalPreset() end
+
+---@param preset umbrella.SandboxOptionsScreen.Preset
+function MainScreen:setSandboxPreset(preset) end
+
+---@param message string
+function MainScreen:showInviteFailDialog(message) end
+
+function MainScreen:update() end
+
+function MainScreen:updateBottomPanelButtons() end
+
+---@param inGame boolean
 ---@return MainScreen
 function MainScreen:new(inGame) end
 
----@return any
 function LoadMainScreenPanel() end
----@return any
+
+---@param playerObj IsoPlayer
+---@return boolean
 function isPlayerDoingActionThatCanBeCancelled(playerObj) end
----@return any
+
+---@param playerObj IsoPlayer
 function stopDoingActionThatCanBeCancelled(playerObj) end
----@return any
+
+---@param playerNum integer
+function CancelAction(playerNum) end
+
+---@param key integer
 function ToggleEscapeMenu(key) end
----@return any
+
 function LoadMainScreenPanelIngame() end
----@return any
+
+---@param ingame boolean
 function LoadMainScreenPanelInt(ingame) end
----@return any
+
 function MainScreenPanelJoinSteam() end
----@return any
-function MainScreenPanelJoinSteam_onConfirmLeaveGame(this, button, player, bed) end
+
+---@param this unknown?
+---@param button ISButton
+---@param player integer
+function MainScreenPanelJoinSteam_onConfirmLeaveGame(this, button, player) end

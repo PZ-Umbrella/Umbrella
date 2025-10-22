@@ -1,0 +1,21 @@
+---@meta
+
+---@class ISLootWindowObjectControlHandler_PropaneBarbecueRemoveTank : ISLootWindowObjectControlHandler
+---@field control unknown
+ISLootWindowObjectControlHandler_PropaneBarbecueRemoveTank =
+	ISLootWindowObjectControlHandler:derive("ISLootWindowObjectControlHandler_PropaneBarbecueRemoveTank")
+ISLootWindowObjectControlHandler_PropaneBarbecueRemoveTank.Type =
+	"ISLootWindowObjectControlHandler_PropaneBarbecueRemoveTank"
+
+---@return unknown
+function ISLootWindowObjectControlHandler_PropaneBarbecueRemoveTank:getControl() end
+
+function ISLootWindowObjectControlHandler_PropaneBarbecueRemoveTank:handleJoypadContextMenu(context) end
+
+function ISLootWindowObjectControlHandler_PropaneBarbecueRemoveTank:perform() end
+
+---@return unknown
+function ISLootWindowObjectControlHandler_PropaneBarbecueRemoveTank:shouldBeVisible() end
+
+---@return ISLootWindowObjectControlHandler_PropaneBarbecueRemoveTank
+function ISLootWindowObjectControlHandler_PropaneBarbecueRemoveTank:new() end

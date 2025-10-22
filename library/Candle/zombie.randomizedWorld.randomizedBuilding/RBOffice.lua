@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RBOffice: RandomizedBuildingBase Random clutter in office
 --- @field public class any
-RBOffice = {};
+RBOffice = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,7 +10,7 @@ RBOffice = {};
 
 --- @public
 ---
----  Description copied from class: RandomizedBuildingBase
+--- Description copied from class: RandomizedBuildingBase
 ---
 --- @param def BuildingDef
 --- @param force boolean
@@ -19,7 +19,7 @@ function RBOffice:isValid(def, force) end
 
 --- @public
 --- @param def BuildingDef
---- @return void
+--- @return nil
 function RBOffice:randomizeBuilding(def) end
 
 --- @public
@@ -27,9 +27,8 @@ function RBOffice:randomizeBuilding(def) end
 --- @return boolean
 function RBOffice:roomValid(sq) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

@@ -1,9 +1,8 @@
---- @meta
+--- @meta _
 
---- @class DoubleServerOption: DoubleConfigOption
+--- @class DoubleServerOption: DoubleConfigOption, ServerOption
 --- @field public class any
---- @implement ServerOption
-DoubleServerOption = {};
+DoubleServerOption = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -11,24 +10,29 @@ DoubleServerOption = {};
 
 --- @public
 --- @return ConfigOption
---- @overload fun(self: DoubleServerOption): ConfigOption
 function DoubleServerOption:asConfigOption() end
 
 --- @public
---- @return String
---- @overload fun(self: DoubleServerOption): String
+--- @return ConfigOption
+function DoubleServerOption:asConfigOption() end
+
+--- @public
+--- @return string
 function DoubleServerOption:getTooltip() end
 
+--- @public
+--- @return string
+function DoubleServerOption:getTooltip() end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param owner ServerOptions
---- @param name String
---- @param min double
---- @param max double
---- @param defaultValue double
+--- @param name string
+--- @param min number
+--- @param max number
+--- @param defaultValue number
 --- @return DoubleServerOption
 function DoubleServerOption.new(owner, name, min, max, defaultValue) end

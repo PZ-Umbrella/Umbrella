@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RBPizzaWhirled: RandomizedBuildingBase Add some food on table
 --- @field public class any
-RBPizzaWhirled = {};
+RBPizzaWhirled = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,7 +10,7 @@ RBPizzaWhirled = {};
 
 --- @public
 ---
----  Description copied from class: RandomizedBuildingBase
+--- Description copied from class: RandomizedBuildingBase
 ---
 --- @param def BuildingDef
 --- @param force boolean
@@ -19,7 +19,7 @@ function RBPizzaWhirled:isValid(def, force) end
 
 --- @public
 --- @param def BuildingDef
---- @return void
+--- @return nil
 function RBPizzaWhirled:randomizeBuilding(def) end
 
 --- @public
@@ -27,9 +27,8 @@ function RBPizzaWhirled:randomizeBuilding(def) end
 --- @return boolean
 function RBPizzaWhirled:roomValid(sq) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

@@ -3,17 +3,25 @@
 ---@class ISJoystickButtonRadialMenu
 ISJoystickButtonRadialMenu = {}
 
----@return any
-function ISJoystickButtonRadialMenu.onJoypadDown(button, joypadData) end
----@return any
-function ISJoystickButtonRadialMenu.onJoypadButtonReleased(button, joypadData) end
----@return any
-function ISJoystickButtonRadialMenu.onRepeatLeftStickButton(joypadData) end
----@return any
+---@param joypadData JoypadData
 function ISJoystickButtonRadialMenu.displayLeft(joypadData) end
----@return any
-function ISJoystickButtonRadialMenu.onToggleCrouch(playerObj) end
----@return any
-function ISJoystickButtonRadialMenu.onToggleSit(playerObj) end
----@return any
+
+---@param button integer
+---@param joypadData JoypadData?
+function ISJoystickButtonRadialMenu.onJoypadButtonReleased(button, joypadData) end
+
+---@param button integer
+---@param joypadData JoypadData?
+function ISJoystickButtonRadialMenu.onJoypadDown(button, joypadData) end
+
+---@param joypadData JoypadData
+function ISJoystickButtonRadialMenu.onRepeatLeftStickButton(joypadData) end
+
+---@param playerObj IsoPlayer
 function ISJoystickButtonRadialMenu.onToggleAutoWalk(playerObj) end
+
+---@param playerObj IsoPlayer
+function ISJoystickButtonRadialMenu.onToggleCrouch(playerObj) end
+
+---@param playerObj IsoPlayer
+function ISJoystickButtonRadialMenu.onToggleSit(playerObj) end

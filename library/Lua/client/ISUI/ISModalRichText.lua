@@ -1,54 +1,61 @@
 ---@meta
 
 ---@class ISModalRichText : ISPanelJoypad
----@field chatText any
----@field ok any
----@field yes any
----@field no any
----@field name any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field text any
----@field yesno any
----@field target any
----@field onclick any
----@field player any
----@field param1 any
----@field param2 any
----@field destroyOnClick any
----@field x any
----@field y any
----@field [any] any
+---@field chatText ISRichTextPanel
+---@field destroyOnClick boolean
+---@field name unknown?
+---@field no ISButton?
+---@field ok ISButton?
+---@field onclick umbrella.ISButton.OnClick?
+---@field param1 unknown?
+---@field param2 unknown?
+---@field player number?
+---@field target unknown?
+---@field text string
+---@field yes ISButton?
+---@field yesno boolean
 ISModalRichText = ISPanelJoypad:derive("ISModalRichText")
+ISModalRichText.Type = "ISModalRichText"
 
----@return any
-function ISModalRichText:initialise() end
----@return any
-function ISModalRichText:updateButtons() end
----@return any
 function ISModalRichText:destroy() end
----@return any
+
+function ISModalRichText:initialise() end
+
+---@param button ISButton
 function ISModalRichText:onClick(button) end
----@return any
-function ISModalRichText:prerender() end
----@return any
-function ISModalRichText:onMouseDown(x, y) end
----@return any
+
+---@param joypadData JoypadData
 function ISModalRichText:onGainJoypadFocus(joypadData) end
----@return any
-function ISModalRichText:onLoseJoypadFocus(joypadData) end
----@return any
+
+---@param button integer
 function ISModalRichText:onJoypadDown(button) end
----@return any
-function ISModalRichText:update() end
----@return any
+
+---@param joypadData JoypadData
+function ISModalRichText:onLoseJoypadFocus(joypadData) end
+
+---@param x number
+---@param y number
+---@return boolean
+function ISModalRichText:onMouseDown(x, y) end
+
+function ISModalRichText:prerender() end
+
 function ISModalRichText:setHeightToContents() end
 
+function ISModalRichText:update() end
+
+function ISModalRichText:updateButtons() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param text string
+---@param yesno boolean
+---@param target unknown?
+---@param onclick umbrella.ISButton.OnClick?
+---@param player integer?
+---@param param1 unknown?
+---@param param2 unknown?
 ---@return ISModalRichText
 function ISModalRichText:new(x, y, width, height, text, yesno, target, onclick, player, param1, param2) end

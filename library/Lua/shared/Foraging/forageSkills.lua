@@ -1,0 +1,675 @@
+---@meta
+
+---@class forageZones
+forageZones = {
+	DeepForest = {
+		name = "DeepForest",
+		densityMin = 8,
+		densityMax = 10,
+		refillPercent = 7,
+		abundanceSetting = "NatureAbundance",
+	},
+	FarmLand = {
+		name = "FarmLand",
+		densityMin = 5,
+		densityMax = 7.5,
+		refillPercent = 5,
+		abundanceSetting = "NatureAbundance",
+	},
+	Farm = {
+		name = "Farm",
+		densityMin = 5,
+		densityMax = 7.5,
+		refillPercent = 5,
+		abundanceSetting = "NatureAbundance",
+	},
+	Forest = {
+		name = "Forest",
+		densityMin = 8,
+		densityMax = 10,
+		refillPercent = 7,
+		abundanceSetting = "NatureAbundance",
+	},
+	ForagingNav = {
+		name = "ForagingNav",
+		densityMin = 3,
+		densityMax = 5,
+		refillPercent = 3,
+		abundanceSetting = "OtherLoot",
+	},
+	TownZone = {
+		name = "TownZone",
+		densityMin = 3,
+		densityMax = 5,
+		refillPercent = 3,
+		abundanceSetting = "OtherLoot",
+	},
+	TrailerPark = {
+		name = "TrailerPark",
+		densityMin = 1.5,
+		densityMax = 5,
+		refillPercent = 3,
+		abundanceSetting = "OtherLoot",
+	},
+	Vegitation = {
+		name = "Vegitation",
+		densityMin = 6,
+		densityMax = 8,
+		refillPercent = 5,
+		abundanceSetting = "NatureAbundance",
+	},
+}
+
+---@class forageSystem
+forageSystem = {}
+forageSystem.forageSkillDefinitions = {
+	parkranger = {
+		name = "parkranger",
+		type = "occupation",
+		visionBonus = 2,
+		weatherEffect = 33,
+		darknessEffect = 15,
+		specialisations = {
+			Animals = 10,
+			Berries = 20,
+			Mushrooms = 10,
+			MedicinalPlants = 75,
+			WildPlants = 50,
+			WildHerbs = 50,
+			ForestRarities = 10,
+			Trash = 5,
+			Junk = 5,
+		},
+	},
+	veteran = {
+		name = "veteran",
+		type = "occupation",
+		visionBonus = 1.75,
+		weatherEffect = 33,
+		darknessEffect = 15,
+		specialisations = {
+			Animals = 5,
+			Ammunition = 50,
+			MedicinalPlants = 20,
+			WildPlants = 10,
+			WildHerbs = 10,
+			ForestRarities = 5,
+		},
+	},
+	farmer = {
+		name = "farmer",
+		type = "occupation",
+		visionBonus = 1.5,
+		weatherEffect = 33,
+		darknessEffect = 10,
+		specialisations = {
+			Animals = 10,
+			Crops = 50,
+			JunkFood = 5,
+			MedicinalPlants = 5,
+			WildPlants = 5,
+			WildHerbs = 15,
+			Fruits = 10,
+			Vegetables = 10,
+		},
+	},
+	lumberjack = {
+		name = "lumberjack",
+		type = "occupation",
+		visionBonus = 1.25,
+		weatherEffect = 33,
+		darknessEffect = 15,
+		specialisations = {
+			Firewood = 50,
+			Mushrooms = 20,
+			WildPlants = 5,
+			WildHerbs = 5,
+		},
+	},
+	chef = {
+		name = "chef",
+		type = "occupation",
+		visionBonus = 0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			Animals = 10,
+			Berries = 20,
+			Mushrooms = 50,
+			JunkFood = 15,
+			MedicinalPlants = 15,
+			WildPlants = 10,
+			WildHerbs = 20,
+		},
+	},
+	fisherman = {
+		name = "fisherman",
+		type = "occupation",
+		visionBonus = 1.00,
+		weatherEffect = 40,
+		darknessEffect = 10,
+		specialisations = {
+			Insects = 50,
+			FishBait = 50,
+		},
+	},
+	unemployed = {
+		name = "unemployed",
+		type = "occupation",
+		visionBonus = 0.50,
+		weatherEffect = 10,
+		darknessEffect = 5,
+		specialisations = {
+			MedicinalPlants = 5,
+			WildPlants = 5,
+			WildHerbs = 5,
+			JunkFood = 10,
+			Trash = 10,
+			Junk = 10,
+		},
+	},
+	burgerflipper = {
+		name = "burgerflipper",
+		type = "occupation",
+		visionBonus = 0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			Animals = 5,
+			Berries = 5,
+			Mushrooms = 15,
+			JunkFood = 30,
+			MedicinalPlants = 5,
+		},
+	},
+	doctor = {
+		name = "doctor",
+		type = "occupation",
+		visionBonus = 0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			Medical = 40,
+			MedicinalPlants = 10,
+		},
+	},
+	nurse = {
+		name = "nurse",
+		type = "occupation",
+		visionBonus = 0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			Medical = 40,
+			MedicinalPlants = 10,
+		},
+	},
+	fitnessInstructor = {
+		name = "fitnessInstructor",
+		type = "occupation",
+		visionBonus = 0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			Medical = 5,
+			JunkFood = 25,
+			MedicinalPlants = 15,
+			WildPlants = 5,
+			WildHerbs = 5,
+		},
+	},
+	repairman = {
+		name = "repairman",
+		type = "occupation",
+		visionBonus = 0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			Trash = 33,
+			Junk = 33,
+		},
+	},
+	mechanics = {
+		name = "mechanics",
+		type = "occupation",
+		visionBonus = 0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			Trash = 33,
+			Junk = 33,
+		},
+	},
+	electrician = {
+		name = "electrician",
+		type = "occupation",
+		visionBonus = 0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			Trash = 20,
+			Junk = 20,
+		},
+	},
+	engineer = {
+		name = "engineer",
+		type = "occupation",
+		visionBonus = 0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			Trash = 10,
+			Junk = 10,
+		},
+	},
+	metalworker = {
+		name = "metalworker",
+		type = "occupation",
+		visionBonus = 0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			Trash = 10,
+			Junk = 10,
+		},
+	},
+	constructionworker = {
+		name = "constructionworker",
+		type = "occupation",
+		visionBonus = 0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			Trash = 10,
+			Junk = 10,
+		},
+	},
+	carpenter = {
+		name = "carpenter",
+		type = "occupation",
+		visionBonus = 0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			Firewood = 30,
+			Junk = 10,
+		},
+	},
+	burglar = {
+		name = "burglar",
+		type = "occupation",
+		visionBonus = 0,
+		weatherEffect = 5,
+		darknessEffect = 15,
+		specialisations = {
+			Trash = 10,
+			Junk = 10,
+			JunkWeapons = 10,
+			Ammunition = 10,
+		},
+	},
+	securityguard = {
+		name = "securityguard",
+		type = "occupation",
+		visionBonus = 0,
+		weatherEffect = 5,
+		darknessEffect = 10,
+		specialisations = {
+			Trash = 10,
+			Junk = 10,
+			JunkWeapons = 10,
+			Ammunition = 10,
+		},
+	},
+	policeofficer = {
+		name = "policeofficer",
+		type = "occupation",
+		visionBonus = 0,
+		weatherEffect = 5,
+		darknessEffect = 10,
+		specialisations = {
+			Trash = 10,
+			Junk = 10,
+			JunkWeapons = 10,
+			Ammunition = 10,
+		},
+	},
+	fireofficer = {
+		name = "fireofficer",
+		type = "occupation",
+		visionBonus = 0,
+		weatherEffect = 5,
+		darknessEffect = 10,
+		specialisations = {
+			Firewood = 20,
+			Junk = 10,
+		},
+	},
+	Whittler = {
+		name = "Whittler",
+		type = "trait",
+		visionBonus = 0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			Firewood = 30,
+		},
+	},
+	Mason = {
+		name = "Mason",
+		type = "trait",
+		visionBonus = 0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			Stones = 30,
+		},
+	},
+	Unlucky = {
+		name = "Unlucky",
+		type = "trait",
+		visionBonus = -1.0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			ForestRarities = -5,
+			Medical = -5,
+			Ammunition = -5,
+			JunkWeapons = -5,
+		},
+	},
+	Lucky = {
+		name = "Lucky",
+		type = "trait",
+		visionBonus = 1.0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			ForestRarities = 5,
+			Medical = 5,
+			Ammunition = 5,
+			JunkWeapons = 5,
+		},
+	},
+	Formerscout = {
+		name = "Formerscout",
+		type = "trait",
+		visionBonus = 0.7,
+		weatherEffect = 13,
+		darknessEffect = 3,
+		specialisations = {
+			MedicinalPlants = 5,
+			Trash = 10,
+		},
+	},
+	Hiker = {
+		name = "Hiker",
+		type = "trait",
+		visionBonus = 0.7,
+		weatherEffect = 13,
+		darknessEffect = 3,
+		specialisations = {
+			MedicinalPlants = 3,
+			Berries = 3,
+			Mushrooms = 3,
+		},
+	},
+	Hunter = {
+		name = "Hunter",
+		type = "trait",
+		visionBonus = 0.5,
+		weatherEffect = 13,
+		darknessEffect = 5,
+		specialisations = {
+			Animals = 5,
+			Berries = 3,
+			Mushrooms = 3,
+			MedicinalPlants = 3,
+		},
+	},
+	EagleEyed = {
+		name = "EagleEyed",
+		type = "trait",
+		visionBonus = 1.0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {},
+	},
+	Gardener = {
+		name = "Gardener",
+		type = "trait",
+		visionBonus = 0.4,
+		weatherEffect = 13,
+		darknessEffect = 0,
+		specialisations = {
+			MedicinalPlants = 3,
+			Crops = 5,
+			Fruits = 5,
+			Vegetables = 5,
+		},
+	},
+	Outdoorsman = {
+		name = "Outdoorsman",
+		type = "trait",
+		visionBonus = 0.4,
+		weatherEffect = 13,
+		darknessEffect = 5,
+		specialisations = {
+			Animals = 5,
+			Berries = 5,
+			Mushrooms = 5,
+			MedicinalPlants = 5,
+			WildPlants = 5,
+			WildHerbs = 5,
+		},
+	},
+	WildernessKnowledge = {
+		name = "WildernessKnowledge",
+		type = "trait",
+		visionBonus = 0.4,
+		weatherEffect = 13,
+		darknessEffect = 5,
+		specialisations = {
+			Animals = 5,
+			Berries = 5,
+			Mushrooms = 5,
+			MedicinalPlants = 5,
+			WildPlants = 5,
+			WildHerbs = 5,
+			Firewood = 5,
+			Stones = 5,
+		},
+	},
+	Cook = {
+		name = "Cook",
+		type = "trait",
+		visionBonus = 0.2,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			Animals = 5,
+			Berries = 5,
+			Mushrooms = 5,
+			JunkFood = 5,
+			MedicinalPlants = 3,
+			WildPlants = 5,
+			WildHerbs = 5,
+		},
+	},
+	Cook2 = {
+		name = "Cook2",
+		type = "trait",
+		visionBonus = 0.2,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			Animals = 5,
+			Berries = 5,
+			Mushrooms = 5,
+			JunkFood = 5,
+			MedicinalPlants = 3,
+			WildPlants = 5,
+			WildHerbs = 5,
+		},
+	},
+	NightVision = {
+		name = "NightVision",
+		type = "trait",
+		visionBonus = 0.4,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {},
+	},
+	Nutritionist = {
+		name = "Nutritionist",
+		type = "trait",
+		visionBonus = 0.2,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			JunkFood = 5,
+			MedicinalPlants = 5,
+			WildPlants = 5,
+			WildHerbs = 5,
+		},
+	},
+	Nutritionist2 = {
+		name = "Nutritionist2",
+		type = "trait",
+		visionBonus = 0.2,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			JunkFood = 5,
+			MedicinalPlants = 5,
+			WildPlants = 5,
+			WildHerbs = 5,
+		},
+	},
+	Herbalist = {
+		name = "Herbalist",
+		type = "trait",
+		visionBonus = 0.2,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			MedicinalPlants = 15,
+			WildPlants = 5,
+			WildHerbs = 5,
+			Crops = 5,
+			Berries = 5,
+			Mushrooms = 5,
+		},
+	},
+	Agoraphobic = {
+		name = "Agoraphobic",
+		type = "trait",
+		visionBonus = -1.5,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {},
+	},
+	HeartyAppetite = {
+		name = "HeartyAppetite",
+		type = "trait",
+		visionBonus = 0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			Animals = 3,
+			Berries = 3,
+			Mushrooms = 3,
+			JunkFood = 3,
+		},
+	},
+	Marksman = {
+		name = "Marksman",
+		type = "trait",
+		visionBonus = 0.5,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			Ammunition = 3,
+		},
+	},
+	FirstAid = {
+		name = "FirstAid",
+		type = "trait",
+		visionBonus = 0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			Medical = 3,
+		},
+	},
+	Fishing = {
+		name = "Fishing",
+		type = "trait",
+		visionBonus = 0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			Insects = 5,
+			FishBait = 5,
+		},
+	},
+	ShortSighted = {
+		name = "ShortSighted",
+		type = "trait",
+		visionBonus = -2.0,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {},
+		testFuncs = {
+			forageSystem.doGlassesCheck,
+		},
+	},
+}
+
+---@class forageSkills
+forageSkills = {}
+forageSkills.parkranger = nil ---@type unknown
+forageSkills.veteran = nil ---@type unknown
+forageSkills.farmer = nil ---@type unknown
+forageSkills.lumberjack = nil ---@type unknown
+forageSkills.chef = nil ---@type unknown
+forageSkills.fisherman = nil ---@type unknown
+forageSkills.unemployed = nil ---@type unknown
+forageSkills.burgerflipper = nil ---@type unknown
+forageSkills.doctor = nil ---@type unknown
+forageSkills.nurse = nil ---@type unknown
+forageSkills.fitnessInstructor = nil ---@type unknown
+forageSkills.repairman = nil ---@type unknown
+forageSkills.mechanics = nil ---@type unknown
+forageSkills.electrician = nil ---@type unknown
+forageSkills.engineer = nil ---@type unknown
+forageSkills.metalworker = nil ---@type unknown
+forageSkills.constructionworker = nil ---@type unknown
+forageSkills.carpenter = nil ---@type unknown
+forageSkills.burglar = nil ---@type unknown
+forageSkills.securityguard = nil ---@type unknown
+forageSkills.policeofficer = nil ---@type unknown
+forageSkills.fireofficer = nil ---@type unknown
+forageSkills.Whittler = nil ---@type unknown
+forageSkills.Mason = nil ---@type unknown
+forageSkills.Unlucky = nil ---@type unknown
+forageSkills.Lucky = nil ---@type unknown
+forageSkills.Formerscout = nil ---@type unknown
+forageSkills.Hiker = nil ---@type unknown
+forageSkills.Hunter = nil ---@type unknown
+forageSkills.EagleEyed = nil ---@type unknown
+forageSkills.Gardener = nil ---@type unknown
+forageSkills.Outdoorsman = nil ---@type unknown
+forageSkills.WildernessKnowledge = nil ---@type unknown
+forageSkills.Cook = nil ---@type unknown
+forageSkills.Cook2 = nil ---@type unknown
+forageSkills.NightVision = nil ---@type unknown
+forageSkills.Nutritionist = nil ---@type unknown
+forageSkills.Nutritionist2 = nil ---@type unknown
+forageSkills.Herbalist = nil ---@type unknown
+forageSkills.Agoraphobic = nil ---@type unknown
+forageSkills.HeartyAppetite = nil ---@type unknown
+forageSkills.Marksman = nil ---@type unknown
+forageSkills.FirstAid = nil ---@type unknown
+forageSkills.Fishing = nil ---@type unknown
+forageSkills.ShortSighted = nil ---@type unknown

@@ -1,27 +1,26 @@
 ---@meta
 
 ---@class ISPlantInfoAction : ISBaseTimedAction
----@field character any
----@field playerNum any
----@field plant any
----@field maxTime any
----@field stopOnWalk any
----@field stopOnRun any
----@field [any] any
+---@field plant CPlantGlobalObject
+---@field playerNum integer
 ISPlantInfoAction = ISBaseTimedAction:derive("ISPlantInfoAction")
+ISPlantInfoAction.Type = "ISPlantInfoAction"
 
----@return any
+---@return boolean
 function ISPlantInfoAction:isValid() end
----@return any
-function ISPlantInfoAction:waitToStart() end
----@return any
-function ISPlantInfoAction:update() end
----@return any
-function ISPlantInfoAction:start() end
----@return any
-function ISPlantInfoAction:stop() end
----@return any
+
 function ISPlantInfoAction:perform() end
 
+function ISPlantInfoAction:start() end
+
+function ISPlantInfoAction:stop() end
+
+function ISPlantInfoAction:update() end
+
+---@return boolean
+function ISPlantInfoAction:waitToStart() end
+
+---@param character IsoPlayer
+---@param plant CPlantGlobalObject
 ---@return ISPlantInfoAction
 function ISPlantInfoAction:new(character, plant) end

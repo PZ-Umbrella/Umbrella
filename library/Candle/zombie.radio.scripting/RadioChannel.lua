@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RadioChannel Turbo
 --- @field public class any
-RadioChannel = {};
+RadioChannel = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,7 +10,7 @@ RadioChannel = {};
 
 --- @public
 --- @param script RadioScript
---- @return void
+--- @return nil
 function RadioChannel:AddRadioScript(script) end
 
 --- @public
@@ -18,11 +18,11 @@ function RadioChannel:AddRadioScript(script) end
 function RadioChannel:GetCategory() end
 
 --- @public
---- @return int
+--- @return integer
 function RadioChannel:GetFrequency() end
 
 --- @public
---- @return String
+--- @return string
 function RadioChannel:GetName() end
 
 --- @public
@@ -34,24 +34,24 @@ function RadioChannel:GetPlayerIsListening() end
 function RadioChannel:IsTv() end
 
 --- @public
---- @param guid String
---- @param line int
---- @return void
+--- @param guid string
+--- @param line integer
+--- @return nil
 function RadioChannel:LoadAiringBroadcast(guid, line) end
 
 --- @public
 --- @param isListening boolean
---- @return void
+--- @return nil
 function RadioChannel:SetPlayerIsListening(isListening) end
 
 --- @public
---- @param timestamp int
---- @param day int
---- @return void
+--- @param timestamp integer
+--- @param day integer
+--- @return nil
 function RadioChannel:UpdateScripts(timestamp, day) end
 
 --- @public
---- @return float
+--- @return number
 function RadioChannel:getAirCounterMultiplier() end
 
 --- @public
@@ -63,23 +63,23 @@ function RadioChannel:getAiringBroadcast() end
 function RadioChannel:getCurrentScript() end
 
 --- @public
---- @return int
+--- @return integer
 function RadioChannel:getCurrentScriptLoop() end
 
 --- @public
---- @return int
+--- @return integer
 function RadioChannel:getCurrentScriptMaxLoops() end
 
 --- @public
---- @return String
+--- @return string
 function RadioChannel:getGUID() end
 
 --- @public
---- @return String
+--- @return string
 function RadioChannel:getLastAiredLine() end
 
 --- @public
---- @return String
+--- @return string
 function RadioChannel:getLastBroadcastID() end
 
 --- @public
@@ -87,7 +87,7 @@ function RadioChannel:getLastBroadcastID() end
 function RadioChannel:getRadioData() end
 
 --- @public
---- @param script String
+--- @param script string
 --- @return RadioScript
 function RadioChannel:getRadioScript(script) end
 
@@ -100,54 +100,67 @@ function RadioChannel:isTimeSynced() end
 function RadioChannel:isVanilla() end
 
 --- @public
---- @param scriptName String
---- @param day int
---- @return void
---- @overload fun(self: RadioChannel, scriptName: String, day: int, loop: int, maxloops: int): void
+--- @param scriptName string
+--- @param day integer
+--- @return nil
 function RadioChannel:setActiveScript(scriptName, day) end
 
 --- @public
---- @return void
+--- @param scriptName string
+--- @param day integer
+--- @param loop integer
+--- @param maxloops integer
+--- @return nil
+function RadioChannel:setActiveScript(scriptName, day, loop, maxloops) end
+
+--- @public
+--- @return nil
 function RadioChannel:setActiveScriptNull() end
 
 --- @public
---- @param airCounterMultiplier float
---- @return void
+--- @param airCounterMultiplier number
+--- @return nil
 function RadioChannel:setAirCounterMultiplier(airCounterMultiplier) end
 
 --- @public
 --- @param bc RadioBroadCast
---- @return void
+--- @return nil
 function RadioChannel:setAiringBroadcast(bc) end
 
 --- @public
 --- @param b boolean
---- @return void
+--- @return nil
 function RadioChannel:setLouisvilleObfuscate(b) end
 
 --- @public
 --- @param radioData RadioData
---- @return void
+--- @return nil
 function RadioChannel:setRadioData(radioData) end
 
 --- @public
 --- @param isTimeSynced boolean
---- @return void
+--- @return nil
 function RadioChannel:setTimeSynced(isTimeSynced) end
 
 --- @public
---- @return void
+--- @return nil
 function RadioChannel:update() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param n String
---- @param freq int
+--- @param n string
+--- @param freq integer
 --- @param c ChannelCategory
 --- @return RadioChannel
---- @overload fun(n: String, freq: int, c: ChannelCategory, guid: String): RadioChannel
 function RadioChannel.new(n, freq, c) end
+
+--- @public
+--- @param n string
+--- @param freq integer
+--- @param c ChannelCategory
+--- @param guid string
+--- @return RadioChannel
+function RadioChannel.new(n, freq, c, guid) end

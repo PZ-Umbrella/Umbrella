@@ -1,92 +1,100 @@
 ---@meta
 
 ---@class ClimateDebug : ISCollapsableWindow
----@field eventsAdded any
----@field instance any
----@field buttonM1 any
----@field buttonH1 any
----@field buttonD1 any
----@field historyM1 any
----@field historyH1 any
----@field historyD1 any
----@field charts any
----@field chartLabelsLeft any
----@field chartLabelsLeftTxt any
----@field chartLabelsRight any
----@field chartLabelsRightTxt any
----@field varInfo any
----@field colTable any
----@field hourStamp any
----@field dayStamp any
----@field monthStamp any
----@field yearStamp any
----@field currentTile any
----@field x any
----@field y any
----@field player any
----@field playerNum any
----@field borderColor any
----@field backgroundColor any
----@field greyCol any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field pin any
----@field isCollapsed any
----@field collapseCounter any
----@field title any
----@field resizable any
----@field drawFrame any
----@field richtext any
----@field overrideBPrompt any
----@field subFocus any
----@field hotKeyPanels any
----@field isJoypadWindow any
----@field year any
----@field [any] any
+---@field buttonD1 ISButton
+---@field buttonH1 ISButton
+---@field buttonM1 ISButton
+---@field chartLabelsLeft ISLabel[]
+---@field chartLabelsLeftTxt string[]
+---@field chartLabelsRight ISLabel[]
+---@field chartLabelsRightTxt string[]
+---@field charts ValuePlotter[]
+---@field colTable umbrella.RGBA[]
+---@field currentTile unknown?
+---@field dayStamp number
+---@field greyCol umbrella.RGBA
+---@field historyD1 ValuePlotter
+---@field historyH1 ValuePlotter
+---@field historyM1 ValuePlotter
+---@field hotKeyPanels table
+---@field hourStamp number
+---@field isJoypadWindow boolean
+---@field monthStamp number
+---@field overrideBPrompt boolean
+---@field player IsoPlayer
+---@field playerNum integer
+---@field richtext unknown?
+---@field subFocus unknown?
+---@field title string
+---@field varInfo umbrella.ClimateDebug.VarInfo[]
+---@field year number
+---@field yearStamp number?
 ClimateDebug = ISCollapsableWindow:derive("ClimateDebug")
-ClimateDebug.instance = nil
+ClimateDebug.Type = "ClimateDebug"
+ClimateDebug.instance = nil ---@type ClimateDebug?
 ClimateDebug.shiftDown = 0
 ClimateDebug.eventsAdded = false
 
----@return any
-function ClimateDebug.OnOpenPanel() end
----@return any
+---@param mgr ClimateManager
 function ClimateDebug.OnClimateTickDebug(mgr) end
 
----@return any
-function ClimateDebug:initialise() end
----@return any
-function ClimateDebug:createChildren() end
----@return any
-function ClimateDebug:initVariables() end
----@return any
+---@return ClimateDebug?
+function ClimateDebug.OnOpenPanel() end
+
+---@param _r number
+---@param _g number
+---@param _b number
 function ClimateDebug:addColor(_r, _g, _b) end
----@return any
+
+---@param _name string
+---@param _desc string
+---@param _min number
+---@param _max number
+---@param _func fun(mgr: ErosionSeason): number
 function ClimateDebug:addVarInfo(_name, _desc, _min, _max, _func) end
----@return any
-function ClimateDebug:updateValues(_mgr) end
----@return any
-function ClimateDebug:onButton(_btn) end
----@return any
-function ClimateDebug:onButtonToggle(_btn) end
----@return any
-function ClimateDebug:onResize() end
----@return any
-function ClimateDebug:update() end
----@return any
-function ClimateDebug:prerender() end
----@return any
-function ClimateDebug:stayOnSplitScreen() end
----@return any
-function ClimateDebug:render() end
----@return any
-function ClimateDebug:close() end
----@return any
+
 function ClimateDebug:clear() end
 
+function ClimateDebug:close() end
+
+function ClimateDebug:createChildren() end
+
+function ClimateDebug:initialise() end
+
+function ClimateDebug:initVariables() end
+
+---@param _btn ISButton
+function ClimateDebug:onButton(_btn) end
+
+---@param _btn ISButton
+function ClimateDebug:onButtonToggle(_btn) end
+
+function ClimateDebug:onResize() end
+
+function ClimateDebug:prerender() end
+
+function ClimateDebug:render() end
+
+function ClimateDebug:stayOnSplitScreen() end
+
+function ClimateDebug:update() end
+
+---@param _mgr ClimateManager
+function ClimateDebug:updateValues(_mgr) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param player IsoPlayer
 ---@return ClimateDebug
 function ClimateDebug:new(x, y, width, height, player) end
+
+---@class umbrella.ClimateDebug.VarInfo
+---@field col number[]
+---@field desc string
+---@field func fun(mgr: ErosionSeason): number
+---@field max integer
+---@field min integer
+---@field name string
+umbrella_ClimateDebug_VarInfo = {}

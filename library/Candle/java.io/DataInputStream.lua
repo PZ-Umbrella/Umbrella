@@ -1,9 +1,8 @@
---- @meta
+--- @meta _
 
---- @class DataInputStream: FilterInputStream
+--- @class DataInputStream: FilterInputStream, DataInput
 --- @field public class any
---- @implement DataInput
-DataInputStream = {};
+DataInputStream = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -12,9 +11,8 @@ DataInputStream = {};
 --- @public
 --- @static
 --- @param arg0 DataInput
---- @return String
+--- @return string
 function DataInputStream.readUTF(arg0) end
-
 
 ------------------------------------
 ------------- METHODS --------------
@@ -22,87 +20,149 @@ function DataInputStream.readUTF(arg0) end
 
 --- @public
 --- @param arg0 byte[]
---- @return int
---- @overload fun(self: DataInputStream, arg0: byte[], arg1: int, arg2: int): int
+--- @return integer
 function DataInputStream:read(arg0) end
 
 --- @public
+--- @param arg0 byte[]
+--- @param arg1 integer
+--- @param arg2 integer
+--- @return integer
+function DataInputStream:read(arg0, arg1, arg2) end
+
+--- @public
 --- @return boolean
---- @overload fun(self: DataInputStream): boolean
 function DataInputStream:readBoolean() end
 
 --- @public
---- @return byte
---- @overload fun(self: DataInputStream): byte
+--- @return boolean
+function DataInputStream:readBoolean() end
+
+--- @public
+--- @return integer
 function DataInputStream:readByte() end
 
 --- @public
---- @return char
---- @overload fun(self: DataInputStream): char
+--- @return integer
+function DataInputStream:readByte() end
+
+--- @public
+--- @return string
 function DataInputStream:readChar() end
 
 --- @public
---- @return double
---- @overload fun(self: DataInputStream): double
+--- @return string
+function DataInputStream:readChar() end
+
+--- @public
+--- @return number
 function DataInputStream:readDouble() end
 
 --- @public
---- @return float
---- @overload fun(self: DataInputStream): float
+--- @return number
+function DataInputStream:readDouble() end
+
+--- @public
+--- @return number
+function DataInputStream:readFloat() end
+
+--- @public
+--- @return number
 function DataInputStream:readFloat() end
 
 --- @public
 --- @param arg0 byte[]
---- @return void
---- @overload fun(self: DataInputStream, arg0: byte[]): void
---- @overload fun(self: DataInputStream, arg0: byte[], arg1: int, arg2: int): void
---- @overload fun(self: DataInputStream, arg0: byte[], arg1: int, arg2: int): void
+--- @return nil
 function DataInputStream:readFully(arg0) end
 
 --- @public
---- @return int
---- @overload fun(self: DataInputStream): int
+--- @param arg0 byte[]
+--- @return nil
+function DataInputStream:readFully(arg0) end
+
+--- @public
+--- @param arg0 byte[]
+--- @param arg1 integer
+--- @param arg2 integer
+--- @return nil
+function DataInputStream:readFully(arg0, arg1, arg2) end
+
+--- @public
+--- @param arg0 byte[]
+--- @param arg1 integer
+--- @param arg2 integer
+--- @return nil
+function DataInputStream:readFully(arg0, arg1, arg2) end
+
+--- @public
+--- @return integer
 function DataInputStream:readInt() end
 
 --- @public
---- @return String
---- @overload fun(self: DataInputStream): String
+--- @return integer
+function DataInputStream:readInt() end
+
+--- @public
+--- @return string
+--- @deprecated
 function DataInputStream:readLine() end
 
 --- @public
---- @return long
---- @overload fun(self: DataInputStream): long
+--- @return string
+function DataInputStream:readLine() end
+
+--- @public
+--- @return integer
+function DataInputStream:readLong() end
+
+--- @public
+--- @return integer
 function DataInputStream:readLong() end
 
 --- @public
 --- @return short
---- @overload fun(self: DataInputStream): short
 function DataInputStream:readShort() end
 
 --- @public
---- @return String
---- @overload fun(self: DataInputStream): String
+--- @return short
+function DataInputStream:readShort() end
+
+--- @public
+--- @return string
 function DataInputStream:readUTF() end
 
 --- @public
---- @return int
---- @overload fun(self: DataInputStream): int
+--- @return string
+function DataInputStream:readUTF() end
+
+--- @public
+--- @return integer
 function DataInputStream:readUnsignedByte() end
 
 --- @public
---- @return int
---- @overload fun(self: DataInputStream): int
+--- @return integer
+function DataInputStream:readUnsignedByte() end
+
+--- @public
+--- @return integer
 function DataInputStream:readUnsignedShort() end
 
 --- @public
---- @param arg0 int
---- @return int
---- @overload fun(self: DataInputStream, arg0: int): int
+--- @return integer
+function DataInputStream:readUnsignedShort() end
+
+--- @public
+--- @param arg0 integer
+--- @return integer
 function DataInputStream:skipBytes(arg0) end
 
+--- @public
+--- @param arg0 integer
+--- @return integer
+function DataInputStream:skipBytes(arg0) end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

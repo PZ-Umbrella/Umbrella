@@ -1,64 +1,71 @@
---- @meta
+--- @meta _
 
---- @class Observation
+--- @class Observation: IListBoxItem
 --- @field public class any
---- @implement IListBoxItem
-Observation = {};
+Observation = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return String
+--- @return string
 function Observation:getDescription() end
 
 --- @public
---- @return String
---- @overload fun(self: Observation): String
+--- @return string
 function Observation:getLabel() end
 
 --- @public
---- @return String
---- @overload fun(self: Observation): String
+--- @return string
+function Observation:getLabel() end
+
+--- @public
+--- @return string
 function Observation:getLeftLabel() end
 
 --- @public
---- @return String
+--- @return string
+function Observation:getLeftLabel() end
+
+--- @public
+--- @return string
 function Observation:getName() end
 
 --- @public
---- @return String
---- @overload fun(self: Observation): String
+--- @return string
 function Observation:getRightLabel() end
 
 --- @public
---- @return String
+--- @return string
+function Observation:getRightLabel() end
+
+--- @public
+--- @return string
 function Observation:getTraitID() end
 
 --- @public
---- @param description String
---- @return void
+--- @param description string
+--- @return nil
 function Observation:setDescription(description) end
 
 --- @public
---- @param name String
---- @return void
+--- @param name string
+--- @return nil
 function Observation:setName(name) end
 
 --- @public
---- @param traitID String
---- @return void
+--- @param traitID string
+--- @return nil
 function Observation:setTraitID(traitID) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param tr String
---- @param name String
---- @param desc String
+--- @param tr string
+--- @param name string
+--- @param desc string
 --- @return Observation
 function Observation.new(tr, name, desc) end

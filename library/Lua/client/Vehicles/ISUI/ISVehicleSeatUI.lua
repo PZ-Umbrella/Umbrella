@@ -3,13 +3,13 @@
 ---@class ImageScale
 ImageScale = {}
 ImageScale["4door_"] = 1.0
-ImageScale["offroad_"] = 1.0
-ImageScale["smallcar_"] = 1.1
-ImageScale["sportscar_"] = 1.15
-ImageScale["stationwagon_"] = 1.15
-ImageScale["suv_"] = 1.0
-ImageScale["truck_"] = 1.1
-ImageScale["van_"] = 1.1
+ImageScale.offroad_ = 1.0
+ImageScale.smallcar_ = 1.1
+ImageScale.sportscar_ = 1.15
+ImageScale.stationwagon_ = 1.15
+ImageScale.suv_ = 1.0
+ImageScale.truck_ = 1.1
+ImageScale.van_ = 1.1
 
 ---@class SeatOffsetX
 SeatOffsetX = {}
@@ -62,61 +62,78 @@ SeatOffsetY["Base.SUV"] = -2
 SeatOffsetY["Base.OffRoad"] = 30
 
 ---@class ISVehicleSeatUI : ISPanelJoypad
----@field richText any
----@field close any
----@field seatText any
----@field mouseOverSeat any
----@field mouseOverExit any
----@field joypadSeat any
----@field vehicle any
----@field characterSeat any
----@field character any
----@field playerNum any
----@field [any] any
+---@field character IsoPlayer
+---@field characterSeat unknown?
+---@field close ISButton
+---@field joypadSeat integer
+---@field mouseOverExit number?
+---@field mouseOverSeat number?
+---@field playerNum integer
+---@field richText ISRichTextLayout
+---@field seatText string?
+---@field vehicle BaseVehicle
 ISVehicleSeatUI = ISPanelJoypad:derive("ISVehicleSeatUI")
+ISVehicleSeatUI.Type = "ISVehicleSeatUI"
 
----@return any
-function ISVehicleSeatUI:createChildren() end
----@return any
-function ISVehicleSeatUI:prerender() end
----@return any
-function ISVehicleSeatUI:render() end
----@return any
-function ISVehicleSeatUI:update() end
----@return any
-function ISVehicleSeatUI:onMouseDown(x, y) end
----@return any
-function ISVehicleSeatUI:onMouseDownOutside(x, y) end
----@return any
-function ISVehicleSeatUI:isSeatInstalled(seat) end
----@return any
-function ISVehicleSeatUI:useSeat(seat) end
----@return any
-function ISVehicleSeatUI:exitSeat(seat) end
----@return any
-function ISVehicleSeatUI:closeSelf() end
----@return any
-function ISVehicleSeatUI:onGainJoypadFocus(joypadData) end
----@return any
-function ISVehicleSeatUI:onJoypadDown(button) end
----@return any
-function ISVehicleSeatUI:onJoypadDirUp() end
----@return any
-function ISVehicleSeatUI:onJoypadDirDown() end
----@return any
-function ISVehicleSeatUI:onJoypadDirLeft() end
----@return any
-function ISVehicleSeatUI:onJoypadDirRight() end
----@return any
-function ISVehicleSeatUI:setVehicle(vehicle) end
----@return any
-function ISVehicleSeatUI:isKeyConsumed(key) end
----@return any
-function ISVehicleSeatUI:onKeyPress(key) end
----@return any
-function ISVehicleSeatUI:onKeyRelease(key) end
----@return any
 function ISVehicleSeatUI:centerOnScreen() end
 
+function ISVehicleSeatUI:closeSelf() end
+
+function ISVehicleSeatUI:createChildren() end
+
+---@param seat integer
+function ISVehicleSeatUI:exitSeat(seat) end
+
+---@param key integer
+---@return boolean
+function ISVehicleSeatUI:isKeyConsumed(key) end
+
+---@param seat integer
+---@return boolean
+function ISVehicleSeatUI:isSeatInstalled(seat) end
+
+---@param joypadData JoypadData
+function ISVehicleSeatUI:onGainJoypadFocus(joypadData) end
+
+function ISVehicleSeatUI:onJoypadDirDown() end
+
+function ISVehicleSeatUI:onJoypadDirLeft() end
+
+function ISVehicleSeatUI:onJoypadDirRight() end
+
+function ISVehicleSeatUI:onJoypadDirUp() end
+
+---@param button integer
+function ISVehicleSeatUI:onJoypadDown(button) end
+
+---@param key integer
+function ISVehicleSeatUI:onKeyPress(key) end
+
+---@param key integer
+function ISVehicleSeatUI:onKeyRelease(key) end
+
+---@param x number
+---@param y number
+function ISVehicleSeatUI:onMouseDown(x, y) end
+
+---@param x number
+---@param y number
+function ISVehicleSeatUI:onMouseDownOutside(x, y) end
+
+function ISVehicleSeatUI:prerender() end
+
+function ISVehicleSeatUI:render() end
+
+---@param vehicle BaseVehicle
+function ISVehicleSeatUI:setVehicle(vehicle) end
+
+function ISVehicleSeatUI:update() end
+
+---@param seat integer
+function ISVehicleSeatUI:useSeat(seat) end
+
+---@param x number
+---@param y number
+---@param character IsoPlayer
 ---@return ISVehicleSeatUI
 function ISVehicleSeatUI:new(x, y, character) end

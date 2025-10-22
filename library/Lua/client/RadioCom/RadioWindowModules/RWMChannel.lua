@@ -1,89 +1,108 @@
 ---@meta
 
 ---@class RWMChannel : RWMPanel
----@field editPresetPanel any
----@field comboBox any
----@field tuneInButton any
----@field addPresetButton any
----@field editPresetButton any
----@field deletePresetButton any
----@field editMode any
----@field presetMode any
----@field selectedPreset any
----@field presets any
----@field lastModeExpanded any
----@field parent any
----@field focusElement any
----@field x any
----@field y any
----@field background any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field fontheight any
----@field frequencyDivider any
----@field [any] any
+---@field addPresetButton ISButton
+---@field comboBox ISComboBox
+---@field deletePresetButton ISButton
+---@field editMode boolean
+---@field editPresetButton ISButton
+---@field editPresetPanel RWMSubEditPreset
+---@field focusElement ISUIElement?
+---@field fontheight number
+---@field frequencyDivider number
+---@field lastModeExpanded boolean
+---@field parent ISUIElement?
+---@field presetMode string?
+---@field presets ArrayList<PresetEntry>?
+---@field selectedPreset PresetEntry?
+---@field tuneInButton ISButton
 RWMChannel = RWMPanel:derive("RWMChannel")
+RWMChannel.Type = "RWMChannel"
 
----@return any
-function RWMChannel:initialise() end
----@return any
-function RWMChannel:createChildren() end
----@return any
-function RWMChannel:setPanelMode(_edit, _ignoreParent) end
----@return any
-function RWMChannel:round(num, idp) end
----@return any
-function RWMChannel:onChildSave(_freq, _name) end
----@return any
-function RWMChannel:isValidPresets() end
----@return any
-function RWMChannel:comboChange() end
----@return any
-function RWMChannel:doTuneInButton() end
----@return any
-function RWMChannel:doAddPresetButton() end
----@return any
-function RWMChannel:doEditPresetButton() end
----@return any
-function RWMChannel:doDeletePresetButton() end
----@return any
+---@param _freq number
+---@param _name string
 function RWMChannel:addComboOption(_freq, _name) end
----@return any
-function RWMChannel:readPresets(_selected) end
----@return any
+
 function RWMChannel:clear() end
----@return any
-function RWMChannel:readFromObject(_player, _deviceObject, _deviceData, _deviceType) end
----@return any
-function RWMChannel:prerender() end
----@return any
-function RWMChannel:update() end
----@return any
-function RWMChannel:render() end
----@return any
-function RWMChannel:setParent(_parent) end
----@return any
-function RWMChannel:getParent() end
----@return any
+
+---@param joypadData JoypadData
 function RWMChannel:clearJoypadFocus(joypadData) end
----@return any
-function RWMChannel:onJoypadDown(button) end
----@return any
+
+function RWMChannel:comboChange() end
+
+function RWMChannel:createChildren() end
+
+function RWMChannel:doAddPresetButton() end
+
+function RWMChannel:doDeletePresetButton() end
+
+function RWMChannel:doEditPresetButton() end
+
+function RWMChannel:doTuneInButton() end
+
+---@return string?
 function RWMChannel:getAPrompt() end
----@return any
+
+---@return string?
 function RWMChannel:getBPrompt() end
----@return any
-function RWMChannel:getXPrompt() end
----@return any
-function RWMChannel:getYPrompt() end
----@return any
+
+---@return ISUIElement?
+function RWMChannel:getParent() end
+
+---@return string?
 function RWMChannel:getRBPrompt() end
 
+---@return string?
+function RWMChannel:getXPrompt() end
+
+---@return string?
+function RWMChannel:getYPrompt() end
+
+function RWMChannel:initialise() end
+
+---@return boolean?
+function RWMChannel:isValidPresets() end
+
+---@param _freq number
+---@param _name string
+function RWMChannel:onChildSave(_freq, _name) end
+
+---@param button integer
+---@return boolean
+---@return boolean
+function RWMChannel:onJoypadDown(button) end
+
+function RWMChannel:prerender() end
+
+---@param _player IsoPlayer
+---@param _deviceObject InventoryItem | IsoObject | VehiclePart
+---@param _deviceData DeviceData
+---@param _deviceType string
+---@return boolean
+function RWMChannel:readFromObject(_player, _deviceObject, _deviceData, _deviceType) end
+
+---@param _selected integer
+function RWMChannel:readPresets(_selected) end
+
+function RWMChannel:render() end
+
+---@param num number
+---@param idp integer
+---@return number
+function RWMChannel:round(num, idp) end
+
+---@param _edit boolean
+---@param _ignoreParent boolean?
+function RWMChannel:setPanelMode(_edit, _ignoreParent) end
+
+---@param _parent ISUIElement
+function RWMChannel:setParent(_parent) end
+
+function RWMChannel:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return RWMChannel
 function RWMChannel:new(x, y, width, height) end

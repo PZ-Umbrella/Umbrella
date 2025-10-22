@@ -1,23 +1,30 @@
 ---@meta
 
 ---@class MoveToState : ISBaseState
----@field x any
----@field y any
----@field z any
----@field mover any
----@field [any] any
+---@field mover Rabbit
+---@field x number
+---@field y number
+---@field z number
 MoveToState = ISBaseState:derive("MoveToState")
+MoveToState.Type = "MoveToState"
 
----@return any
-function MoveToState:enter() end
----@return any
 function MoveToState:during() end
----@return any
+
+function MoveToState:enter() end
+
 function MoveToState:exit() end
----@return any
-function MoveToState:setTarget(x, y, z) end
----@return any
+
+---@return boolean
 function MoveToState:isFinished() end
 
+---@param x number
+---@param y number
+---@param z number
+function MoveToState:setTarget(x, y, z) end
+
+---@param mover Rabbit
+---@param x number
+---@param y number
+---@param z number
 ---@return MoveToState
 function MoveToState:new(mover, x, y, z) end

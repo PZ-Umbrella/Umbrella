@@ -1,100 +1,145 @@
---- @meta
+--- @meta _
 
---- @class IsoZombie: IsoGameCharacter
+--- @class IsoZombie: IsoGameCharacter, IHumanVisual
 --- @field public class any
---- @implement IHumanVisual
---- @field public AllowRepathDelayMax int
---- @field public AttackAnimTimeMax int
---- @field public CRAWLER_DAMAGE_DOT float
---- @field public CRAWLER_DAMAGE_RANGE float
---- @field public EAT_BODY_DIST float
---- @field public EAT_BODY_TIME float
---- @field public HEARING_NORMAL byte
---- @field public HEARING_PINPOINT byte
---- @field public HEARING_POOR byte
---- @field public HEARING_RANDOM byte
---- @field public LUNGE_TIME float
---- @field public PALETTE_COUNT int
---- @field public SPEED_FAST_SHAMBLER byte
---- @field public SPEED_RANDOM byte
---- @field public SPEED_SHAMBLER byte
---- @field public SPEED_SPRINTER byte
+--- @field public AllowRepathDelayMax integer
+--- @field public CRAWLER_DAMAGE_DOT number
+--- @field public CRAWLER_DAMAGE_RANGE number
+--- @field public EAT_BODY_DIST number
+--- @field public EAT_BODY_TIME number
+--- @field public HEARING_NORMAL integer
+--- @field public HEARING_NORMAL_OR_POOR integer
+--- @field public HEARING_PINPOINT integer
+--- @field public HEARING_POOR integer
+--- @field public HEARING_RANDOM integer
+--- @field public LUNGE_TIME number
+--- @field public PALETTE_COUNT integer
+--- @field public SPEED_FAST_SHAMBLER integer
+--- @field public SPEED_RANDOM integer
+--- @field public SPEED_SHAMBLER integer
+--- @field public SPEED_SPRINTER integer
 --- @field public SPRINTER_FIXES boolean
---- @field public THUMP_FLAG_GARAGE_DOOR byte
---- @field public THUMP_FLAG_GENERIC byte
---- @field public THUMP_FLAG_METAL byte
---- @field public THUMP_FLAG_WINDOW byte
---- @field public THUMP_FLAG_WINDOW_EXTRA byte
-IsoZombie = {};
+--- @field public THUMP_FLAG_CHAINLINK_FENCE integer
+--- @field public THUMP_FLAG_GARAGE_DOOR integer
+--- @field public THUMP_FLAG_GENERIC integer
+--- @field public THUMP_FLAG_METAL integer
+--- @field public THUMP_FLAG_METAL_POLE_GATE integer
+--- @field public THUMP_FLAG_WINDOW integer
+--- @field public THUMP_FLAG_WINDOW_EXTRA integer
+--- @field public THUMP_FLAG_WOOD integer
+IsoZombie = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
+--- @return nil
 function IsoZombie:DoCorpseInventory() end
 
 --- @public
---- @param volume float
---- @return void
---- @overload fun(self: IsoZombie, type: String): void
+--- @param volume number
+--- @return nil
 function IsoZombie:DoFootstepSound(volume) end
 
 --- @public
---- @return void
+--- @param type string
+--- @return nil
+function IsoZombie:DoFootstepSound(type) end
+
+--- @public
+--- @return nil
 function IsoZombie:DoZombieInventory() end
 
 --- @public
---- @param spMod float
---- @return void
+--- @param spMod number
+--- @return nil
 function IsoZombie:DoZombieSpeeds(spMod) end
 
 --- @public
---- @return void
+--- @return nil
 function IsoZombie:DoZombieStats() end
 
 --- @public
---- @return String
+--- @return string
 function IsoZombie:GetAnimSetName() end
 
 --- @public
 --- @param vehicle BaseVehicle
---- @param speed float
+--- @param speed number
 --- @param isHitFromBehind boolean
 --- @param hitDir Vector2
---- @return float
---- @overload fun(self: IsoZombie, vehicle: BaseVehicle, speed: float, isHitFromBehind: boolean, hitDirX: float, hitDirY: float): float
---- @overload fun(self: IsoZombie, weapon: HandWeapon, wielder: IsoGameCharacter, damageSplit: float, bIgnoreDamage: boolean, modDelta: float, bRemote: boolean): float
+--- @return number
 function IsoZombie:Hit(vehicle, speed, isHitFromBehind, hitDir) end
 
 --- @public
---- @return void
---- @overload fun(self: IsoZombie, desc: SurvivorDesc): void
+--- @param vehicle BaseVehicle
+--- @param speed number
+--- @param isHitFromBehind boolean
+--- @param hitDirX number
+--- @param hitDirY number
+--- @return number
+function IsoZombie:Hit(vehicle, speed, isHitFromBehind, hitDirX, hitDirY) end
+
+--- @public
+--- @param weapon HandWeapon
+--- @param wielder IsoGameCharacter
+--- @param damageSplit number
+--- @param bIgnoreDamage boolean
+--- @param modDelta number
+--- @param bRemote boolean
+--- @return number
+function IsoZombie:Hit(weapon, wielder, damageSplit, bIgnoreDamage, modDelta, bRemote) end
+
+--- @public
+--- @return nil
 function IsoZombie:InitSpritePartsZombie() end
 
 --- @public
+--- @param desc SurvivorDesc
+--- @return nil
+function IsoZombie:InitSpritePartsZombie(desc) end
+
+--- @public
 --- @param killer IsoGameCharacter
---- @return void
---- @overload fun(self: IsoZombie, killer: IsoGameCharacter, bGory: boolean): void
+--- @return nil
 function IsoZombie:Kill(killer) end
 
 --- @public
+--- @param killer IsoGameCharacter
+--- @param bGory boolean
+--- @return nil
+function IsoZombie:Kill(killer, bGory) end
+
+--- @public
+--- @param arg0 HandWeapon
+--- @param arg1 IsoGameCharacter
+--- @return nil
+function IsoZombie:Kill(arg0, arg1) end
+
+--- @public
+--- @param arg0 HandWeapon
+--- @param arg1 IsoGameCharacter
+--- @param arg2 boolean
+--- @return nil
+function IsoZombie:Kill(arg0, arg1, arg2) end
+
+--- @public
 --- @param dir Vector2
---- @return void
+--- @return nil
 function IsoZombie:Move(dir) end
 
 --- @public
 --- @param dir Vector2
---- @return void
+--- @return nil
 function IsoZombie:MoveUnmodded(dir) end
 
 --- @public
---- @return void
+--- @return nil
 function IsoZombie:RespondToSound() end
 
 --- @public
---- @return void
+--- @return nil
 function IsoZombie:Wander() end
 
 --- @public
@@ -103,122 +148,161 @@ function IsoZombie:WanderFromWindow() end
 
 --- @public
 --- @param sender ActionContext
---- @return void
+--- @return nil
 function IsoZombie:actionStateChanged(sender) end
 
 --- @public
 --- @param other IsoMovingObject
---- @param damage float
---- @return void
+--- @param damage number
+--- @return nil
 function IsoZombie:addAggro(other, damage) end
 
 --- @public
---- @param speed float
---- @return void
+--- @param speed number
+--- @return nil
 function IsoZombie:addBlood(speed) end
 
 --- @public
+--- @return nil
+function IsoZombie:addFootstepParametersIfNeeded() end
+
+--- @public
 --- @param item InventoryItem
---- @return void
+--- @return nil
 function IsoZombie:addItemToSpawnAtDeath(item) end
 
 --- @public
---- @return void
+--- @return nil
 function IsoZombie:addRandomBloodDirtHolesEtc() end
 
 --- @public
 ---
----  Possibly add visual bandages (bloody) on the zombie  TODO: Make InventoryItem
----  to it in DeadBodyAtlas to being able to remove them (like primary/secondary
+--- Possibly add visual bandages (bloody) on the zombie  TODO: Make InventoryItem
+--- to it in DeadBodyAtlas to being able to remove them (like primary/secondary
 ---
---- @return void
+--- @return nil
 function IsoZombie:addRandomVisualBandages() end
 
 --- @public
 ---
----  Add some random visual damage (clothing actually) to the zombies.  Those items
----  appear in inventory.
+--- Add some random visual damage (clothing actually) to the zombies.  Those items
+--- appear in inventory.
 ---
---- @return void
+--- @return nil
 function IsoZombie:addRandomVisualDamages() end
 
 --- @public
 --- @param bodyPart BodyPartType
 --- @param bloody boolean
---- @return void
+--- @return nil
 function IsoZombie:addVisualBandage(bodyPart, bloody) end
 
 --- @public
---- @param vehicleSpeed float
---- @param damage float
---- @return void
+--- @return boolean
+function IsoZombie:allowsTwist() end
+
+--- @public
+--- @param vehicleSpeed number
+--- @param damage number
+--- @return nil
 function IsoZombie:applyDamageFromVehicle(vehicleSpeed, damage) end
 
 --- @public
---- @return void
+--- @return IsoDeadBody
 function IsoZombie:becomeCorpse() end
 
 --- @public
 --- @param wielder IsoGameCharacter
 --- @param weapon HandWeapon
 --- @param out Vector2
---- @return Float
+--- @return number
 function IsoZombie:calcHitDir(wielder, weapon, out) end
 
 --- @public
---- @param minDistance float
+--- @param minDistance number
 --- @return boolean
 function IsoZombie:canBeDeletedUnnoticed(minDistance) end
 
 --- @public
---- @return void
+--- @param arg0 IsoPlayer
+--- @return boolean
+function IsoZombie:canSeeHeadSquare(arg0) end
+
+--- @public
+--- @return boolean
+function IsoZombie:cantBite() end
+
+--- @public
+--- @return nil
 function IsoZombie:clearAggroList() end
 
 --- @public
---- @return void
+--- @return nil
 function IsoZombie:clearItemsToSpawnAtDeath() end
 
 --- @public
 ---
----  Description copied from class: IsoGameCharacter
+--- Description copied from class: IsoGameCharacter
 ---
---- @param itemGuid String The item's Globally Unique Identifier (GUID).
---- @return void
+--- @param itemGuid string The item's Globally Unique Identifier (GUID).
+--- @return nil
 function IsoZombie:clothingItemChanged(itemGuid) end
 
 --- @public
 --- @param obj IsoObject
---- @return void
+--- @return nil
 function IsoZombie:collideWith(obj) end
 
 --- @public
---- @param itemGUID String
---- @return void
+--- @param arg0 IsoPlayer
+--- @return boolean
+function IsoZombie:couldSeeHeadSquare(arg0) end
+
+--- @public
+--- @return nil
+function IsoZombie:doZombieSpeed() end
+
+--- @public
+--- @param arg0 integer
+--- @return nil
+function IsoZombie:doZombieSpeed(arg0) end
+
+--- @public
+--- @param itemGUID string
+--- @return nil
 function IsoZombie:dressInClothingItem(itemGUID) end
 
 --- @public
---- @param outfitName String
---- @return void
+--- @param outfitName string
+--- @return nil
 function IsoZombie:dressInNamedOutfit(outfitName) end
 
 --- @public
---- @param outfitID int
---- @return void
+--- @param outfitID integer
+--- @return nil
 function IsoZombie:dressInPersistentOutfitID(outfitID) end
 
 --- @public
 ---
----  Description copied from class: IsoGameCharacter
+--- Description copied from class: IsoGameCharacter
 ---
---- @return void
+--- @return nil
 function IsoZombie:dressInRandomOutfit() end
 
 --- @public
---- @return ActionContext
-function IsoZombie:getActionContext() end
+--- @return boolean
+function IsoZombie:getAttackDidDamage() end
 
 --- @public
---- @return int
+--- @return string
+function IsoZombie:getAttackOutcome() end
+
+--- @public
+--- @return string
+function IsoZombie:getBiteSoundName() end
+
+--- @public
+--- @return integer
 function IsoZombie:getCrawlerType() end
 
 --- @public
@@ -226,19 +310,24 @@ function IsoZombie:getCrawlerType() end
 function IsoZombie:getEatBodyTarget() end
 
 --- @public
---- @return float
+--- @return number
 function IsoZombie:getEatSpeed() end
 
 --- @public
---- @return float
+--- @return number
 function IsoZombie:getFootstepVolume() end
+
+--- @public
+--- @param arg0 IsoPlayer
+--- @return IsoGridSquare
+function IsoZombie:getHeadSquare(arg0) end
 
 --- @public
 --- @return Vector2
 function IsoZombie:getHitAngle() end
 
 --- @public
---- @return int
+--- @return integer
 function IsoZombie:getHitHeadWhileOnFloor() end
 
 --- @public
@@ -246,26 +335,41 @@ function IsoZombie:getHitHeadWhileOnFloor() end
 function IsoZombie:getHitReactionNetworkAI() end
 
 --- @public
---- @return int
+--- @return integer
 function IsoZombie:getHitTime() end
 
 --- @public
 --- @return HumanVisual
---- @overload fun(self: IsoZombie): HumanVisual
+function IsoZombie:getHumanVisual() end
+
+--- @public
+--- @return HumanVisual
 function IsoZombie:getHumanVisual() end
 
 --- @public
 --- @return ItemVisuals
---- @overload fun(self: IsoZombie, itemVisuals: ItemVisuals): void
---- @overload fun(self: IsoZombie, itemVisuals: ItemVisuals): void
 function IsoZombie:getItemVisuals() end
+
+--- @public
+--- @param itemVisuals ItemVisuals
+--- @return nil
+function IsoZombie:getItemVisuals(itemVisuals) end
+
+--- @public
+--- @param itemVisuals ItemVisuals
+--- @return nil
+function IsoZombie:getItemVisuals(itemVisuals) end
+
+--- @public
+--- @return string
+function IsoZombie:getLastHitPart() end
 
 --- @public
 --- @return NetworkCharacterAI
 function IsoZombie:getNetworkCharacterAI() end
 
 --- @public
---- @return String
+--- @return string
 function IsoZombie:getObjectName() end
 
 --- @public
@@ -273,11 +377,23 @@ function IsoZombie:getObjectName() end
 function IsoZombie:getOnlineID() end
 
 --- @public
---- @return String
+--- @return string
+function IsoZombie:getOutfitName() end
+
+--- @public
+--- @return UdpConnection
+function IsoZombie:getOwner() end
+
+--- @public
+--- @return IsoPlayer
+function IsoZombie:getOwnerPlayer() end
+
+--- @public
+--- @return string
 function IsoZombie:getPlayerAttackPosition() end
 
 --- @public
---- @return String
+--- @return string
 function IsoZombie:getRealState() end
 
 --- @public
@@ -285,13 +401,13 @@ function IsoZombie:getRealState() end
 function IsoZombie:getReanimatedPlayer() end
 
 --- @public
---- @param playerIndex int
---- @return int
+--- @param playerIndex integer
+--- @return integer
 function IsoZombie:getScreenProperX(playerIndex) end
 
 --- @public
---- @param playerIndex int
---- @return int
+--- @param playerIndex integer
+--- @return integer
 function IsoZombie:getScreenProperY(playerIndex) end
 
 --- @public
@@ -299,7 +415,7 @@ function IsoZombie:getScreenProperY(playerIndex) end
 function IsoZombie:getSharedDescriptor() end
 
 --- @public
---- @return int
+--- @return integer
 function IsoZombie:getSharedDescriptorID() end
 
 --- @public
@@ -307,19 +423,19 @@ function IsoZombie:getSharedDescriptorID() end
 function IsoZombie:getTarget() end
 
 --- @public
---- @return float
+--- @return number
 function IsoZombie:getTargetSeenTime() end
 
 --- @public
---- @return float
+--- @return number
 function IsoZombie:getThumpCondition() end
 
 --- @public
---- @return int
+--- @return integer
 function IsoZombie:getThumpTimer() end
 
 --- @public
---- @return float
+--- @return number
 function IsoZombie:getTurnDelta() end
 
 --- @public
@@ -327,31 +443,39 @@ function IsoZombie:getTurnDelta() end
 function IsoZombie:getVisual() end
 
 --- @public
---- @return void
+--- @return integer
+function IsoZombie:getVoiceChoice() end
+
+--- @public
+--- @return string
+function IsoZombie:getVoiceSoundName() end
+
+--- @public
+--- @return nil
 function IsoZombie:getZombieLungeSpeed() end
 
 --- @public
---- @param speed float
---- @param dist float
+--- @param speed number
+--- @param dist number
 --- @param temp Vector2
---- @return void
+--- @return nil
 function IsoZombie:getZombieWalkTowardSpeed(speed, dist, temp) end
 
 --- @public
 --- @param weapon HandWeapon
 --- @param wielder IsoGameCharacter
 --- @param bIgnoreDamage boolean
---- @param damage float
+--- @param damage number
 --- @param bRemote boolean
---- @return void
+--- @return nil
 function IsoZombie:hitConsequences(weapon, wielder, bIgnoreDamage, damage, bRemote) end
 
 --- @public
---- @return void
+--- @return nil
 function IsoZombie:initCanCrawlUnderVehicle() end
 
 --- @public
---- @return void
+--- @return nil
 function IsoZombie:initializeStates() end
 
 --- @public
@@ -400,6 +524,10 @@ function IsoZombie:isForceFakeDead() end
 
 --- @public
 --- @return boolean
+function IsoZombie:isGettingUp() end
+
+--- @public
+--- @return boolean
 function IsoZombie:isHitLegsWhileOnFloor() end
 
 --- @public
@@ -418,6 +546,10 @@ function IsoZombie:isLeadAggro(other) end
 --- @public
 --- @return boolean
 function IsoZombie:isLocal() end
+
+--- @public
+--- @return boolean
+function IsoZombie:isMovingToPlayerSound() end
 
 --- @public
 --- @return boolean
@@ -446,6 +578,10 @@ function IsoZombie:isReanimate() end
 
 --- @public
 --- @return boolean
+function IsoZombie:isReanimatedForGrappleOnly() end
+
+--- @public
+--- @return boolean
 function IsoZombie:isReanimatedPlayer() end
 
 --- @public
@@ -454,12 +590,23 @@ function IsoZombie:isRemoteZombie() end
 
 --- @public
 --- @return boolean
+function IsoZombie:isRespondingToPlayerSound() end
+
+--- @public
+--- @return boolean
 function IsoZombie:isSitAgainstWall() end
 
 --- @public
 --- @return boolean
---- @overload fun(self: IsoZombie): boolean
 function IsoZombie:isSkeleton() end
+
+--- @public
+--- @return boolean
+function IsoZombie:isSkeleton() end
+
+--- @public
+--- @return boolean
+function IsoZombie:isSkipResolveCollision() end
 
 --- @public
 --- @return boolean
@@ -470,8 +617,8 @@ function IsoZombie:isSolidForSeparate() end
 function IsoZombie:isStaggerBack() end
 
 --- @public
---- @param dist float
---- @param dot float
+--- @param dist number
+--- @param dot number
 --- @return boolean
 function IsoZombie:isTargetInCone(dist, dot) end
 
@@ -498,293 +645,347 @@ function IsoZombie:isVehicleCollisionActive(testVehicle) end
 
 --- @public
 --- @return boolean
---- @overload fun(self: IsoZombie): boolean
 function IsoZombie:isZombie() end
 
 --- @public
 --- @return boolean
---- @overload fun(self: IsoZombie, other: IsoMovingObject): boolean
+function IsoZombie:isZombie() end
+
+--- @public
+--- @return boolean
 function IsoZombie:isZombieAttacking() end
 
 --- @public
+--- @param other IsoMovingObject
+--- @return boolean
+function IsoZombie:isZombieAttacking(other) end
+
+--- @public
 --- @param hitFromBehind boolean
---- @return void
+--- @return nil
 function IsoZombie:knockDown(hitFromBehind) end
 
 --- @public
 --- @param input ByteBuffer
---- @param WorldVersion int
+--- @param WorldVersion integer
 --- @param IS_DEBUG_SAVE boolean
---- @return void
+--- @return nil
 function IsoZombie:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 --- @public
 --- @param binactive boolean
---- @return void
+--- @return nil
 function IsoZombie:makeInactive(binactive) end
 
 --- @public
---- @return void
+--- @param arg0 HandWeapon
+--- @param arg1 IsoGameCharacter
+--- @param arg2 boolean
+--- @return boolean
+function IsoZombie:onDeath_ShouldDoSplatterAndSounds(arg0, arg1, arg2) end
+
+--- @public
+--- @return nil
 function IsoZombie:onMouseLeftClick() end
 
 --- @public
---- @return void
+--- @return nil
 function IsoZombie:onWornItemsChanged() end
 
 --- @public
+--- @return nil
+function IsoZombie:onZombieGrappleEnded() end
+
+--- @public
 --- @param target IsoGameCharacter
---- @return void
+--- @return nil
 function IsoZombie:pathToCharacter(target) end
 
 --- @public
---- @param x float
---- @param y float
---- @param z float
---- @return void
+--- @param x number
+--- @param y number
+--- @param z number
+--- @return nil
 function IsoZombie:pathToLocationF(x, y, z) end
 
 --- @public
---- @return void
+--- @return integer
 function IsoZombie:playHurtSound() end
 
 --- @public
---- @return void
+--- @return nil
 function IsoZombie:postupdate() end
 
 --- @public
---- @return void
+--- @return nil
 function IsoZombie:preupdate() end
 
 --- @public
---- @return void
+--- @return nil
 function IsoZombie:removeFromWorld() end
 
 --- @public
---- @param x float
---- @param y float
---- @param z float
+--- @param x number
+--- @param y number
+--- @param z number
 --- @param col ColorInfo
 --- @param bDoChild boolean
 --- @param bWallLightingPass boolean
 --- @param shader Shader
---- @return void
+--- @return nil
 function IsoZombie:render(x, y, z, col, bDoChild, bWallLightingPass, shader) end
 
 --- @public
---- @return void
+--- @return nil
 function IsoZombie:renderlast() end
 
 --- @public
---- @return void
+--- @return nil
 function IsoZombie:resetForReuse() end
 
 --- @public
 --- @param output ByteBuffer
 --- @param IS_DEBUG_SAVE boolean
---- @return void
+--- @return nil
 function IsoZombie:save(output, IS_DEBUG_SAVE) end
 
 --- @public
 --- @param alwaysKnockedDown boolean
---- @return void
+--- @return nil
 function IsoZombie:setAlwaysKnockedDown(alwaysKnockedDown) end
 
 --- @public
---- @return void
+--- @return nil
 function IsoZombie:setAsSurvivor() end
 
 --- @public
+--- @param arg0 boolean
+--- @return nil
+function IsoZombie:setAttackDidDamage(arg0) end
+
+--- @public
+--- @param arg0 string
+--- @return nil
+function IsoZombie:setAttackOutcome(arg0) end
+
+--- @public
 --- @param crawler boolean
---- @return void
+--- @return nil
 function IsoZombie:setBecomeCrawler(crawler) end
 
 --- @public
 --- @param body IsoDeadBody
---- @return void
+--- @return nil
 function IsoZombie:setBodyToEat(body) end
 
 --- @public
 --- @param b boolean
---- @return void
+--- @return nil
 function IsoZombie:setCanCrawlUnderVehicle(b) end
 
 --- @public
 --- @param bCanStand boolean
---- @return void
+--- @return nil
 function IsoZombie:setCanWalk(bCanStand) end
 
 --- @public
 --- @param crawling boolean
---- @return void
+--- @return nil
 function IsoZombie:setCrawler(crawling) end
 
 --- @public
---- @param crawlerType int
---- @return void
+--- @param crawlerType integer
+--- @return nil
 function IsoZombie:setCrawlerType(crawlerType) end
 
 --- @public
 --- @param dressInRandom boolean
---- @return void
+--- @return nil
 function IsoZombie:setDressInRandomOutfit(dressInRandom) end
 
 --- @public
 --- @param target IsoMovingObject
 --- @param force boolean
---- @return void
---- @overload fun(self: IsoZombie, target: IsoMovingObject, force: boolean, eatSpeed: float): void
+--- @return nil
 function IsoZombie:setEatBodyTarget(target, force) end
 
 --- @public
+--- @param target IsoMovingObject
+--- @param force boolean
+--- @param eatSpeed number
+--- @return nil
+function IsoZombie:setEatBodyTarget(target, force, eatSpeed) end
+
+--- @public
 --- @param bFakeDead boolean
---- @return void
+--- @return nil
 function IsoZombie:setFakeDead(bFakeDead) end
 
 --- @public
 --- @param female boolean
---- @return void
+--- @return nil
 function IsoZombie:setFemaleEtc(female) end
 
 --- @public
 --- @param forceEatingAnimation boolean
---- @return void
+--- @return nil
 function IsoZombie:setForceEatingAnimation(forceEatingAnimation) end
 
 --- @public
 --- @param bForceFakeDead boolean
---- @return void
+--- @return nil
 function IsoZombie:setForceFakeDead(bForceFakeDead) end
 
 --- @public
 --- @param hitAngle Vector2
---- @return void
+--- @return nil
 function IsoZombie:setHitAngle(hitAngle) end
 
 --- @public
---- @param hitHeadWhileOnFloor int
---- @return void
+--- @param hitHeadWhileOnFloor integer
+--- @return nil
 function IsoZombie:setHitHeadWhileOnFloor(hitHeadWhileOnFloor) end
 
 --- @public
 --- @param hitLegsWhileOnFloor boolean
---- @return void
+--- @return nil
 function IsoZombie:setHitLegsWhileOnFloor(hitLegsWhileOnFloor) end
 
 --- @public
---- @param hitTime int
---- @return void
+--- @param hitTime integer
+--- @return nil
 function IsoZombie:setHitTime(hitTime) end
 
 --- @public
 --- @param immortal boolean
---- @return void
+--- @return nil
 function IsoZombie:setImmortalTutorialZombie(immortal) end
 
 --- @public
 --- @param bJawStabAttach boolean
---- @return void
+--- @return nil
 function IsoZombie:setJawStabAttach(bJawStabAttach) end
 
 --- @public
 --- @param bKnifeDeath boolean
---- @return void
+--- @return nil
 function IsoZombie:setKnifeDeath(bKnifeDeath) end
 
 --- @public
 --- @param noTeeth boolean
---- @return void
+--- @return nil
 function IsoZombie:setNoTeeth(noTeeth) end
 
 --- @public
 --- @param onlyJawStab boolean
---- @return void
+--- @return nil
 function IsoZombie:setOnlyJawStab(onlyJawStab) end
 
 --- @public
---- @param playerAttackPosition String
---- @return void
+--- @param arg0 UdpConnection
+--- @return nil
+function IsoZombie:setOwner(arg0) end
+
+--- @public
+--- @param arg0 IsoPlayer
+--- @return nil
+function IsoZombie:setOwnerPlayer(arg0) end
+
+--- @public
+--- @param playerAttackPosition string
+--- @return nil
 function IsoZombie:setPlayerAttackPosition(playerAttackPosition) end
 
 --- @public
 --- @param reanimate boolean
---- @return void
+--- @return nil
 function IsoZombie:setReanimate(reanimate) end
 
 --- @public
+--- @param arg0 boolean
+--- @return nil
+function IsoZombie:setReanimatedForGrappleOnly(arg0) end
+
+--- @public
 --- @param reanimated boolean
---- @return void
+--- @return nil
 function IsoZombie:setReanimatedPlayer(reanimated) end
 
 --- @public
 --- @param sitAgainstWall boolean
---- @return void
+--- @return nil
 function IsoZombie:setSitAgainstWall(sitAgainstWall) end
 
 --- @public
 --- @param isSkeleton boolean
---- @return void
+--- @return nil
 function IsoZombie:setSkeleton(isSkeleton) end
 
 --- @public
 --- @param bStaggerBack boolean
---- @return void
+--- @return nil
 function IsoZombie:setStaggerBack(bStaggerBack) end
 
 --- @public
 --- @param t IsoMovingObject
---- @return void
+--- @return nil
 function IsoZombie:setTarget(t) end
 
 --- @public
---- @param seconds float
---- @return void
+--- @param seconds number
+--- @return nil
 function IsoZombie:setTargetSeenTime(seconds) end
 
 --- @public
---- @param condition float
---- @return void
---- @overload fun(self: IsoZombie, condition: int, maxCondition: int): void
+--- @param condition number
+--- @return nil
 function IsoZombie:setThumpCondition(condition) end
 
 --- @public
---- @param v int
---- @return void
+--- @param condition integer
+--- @param maxCondition integer
+--- @return nil
+function IsoZombie:setThumpCondition(condition, maxCondition) end
+
+--- @public
+--- @param v integer
+--- @return nil
 function IsoZombie:setThumpFlag(v) end
 
 --- @public
---- @param thumpTimer int
---- @return void
+--- @param thumpTimer integer
+--- @return nil
 function IsoZombie:setThumpTimer(thumpTimer) end
 
 --- @public
---- @param soundX int
---- @param soundY int
---- @return void
+--- @param soundX integer
+--- @param soundY integer
+--- @return nil
 function IsoZombie:setTurnAlertedValues(soundX, soundY) end
 
 --- @public
 --- @param useless boolean
---- @return void
+--- @return nil
 function IsoZombie:setUseless(useless) end
 
 --- @public
 --- @param vehicle BaseVehicle
---- @return void
+--- @return nil
 function IsoZombie:setVehicle4TestCollision(vehicle) end
 
 --- @public
 --- @param vehicle BaseVehicle
---- @return void
+--- @return nil
 function IsoZombie:setVehicleHitLocation(vehicle) end
 
 --- @public
---- @param _walkType String
---- @return void
+--- @param _walkType string
+--- @return nil
 function IsoZombie:setWalkType(_walkType) end
 
 --- @public
 --- @param wasFakeDead boolean
---- @return void
+--- @return nil
 function IsoZombie:setWasFakeDead(wasFakeDead) end
 
 --- @public
@@ -793,17 +994,34 @@ function IsoZombie:shouldDoFenceLunge() end
 
 --- @public
 --- @return boolean
-function IsoZombie:shouldDoInventory() end
+function IsoZombie:shouldDressInRandomOutfit() end
 
 --- @public
 --- @return boolean
 function IsoZombie:shouldGetUpFromCrawl() end
 
 --- @public
+--- @param arg0 boolean
+--- @return boolean
+function IsoZombie:shouldZombieHaveKey(arg0) end
+
+--- @public
 --- @param other IsoMovingObject
 --- @param bForced boolean
---- @return void
+--- @return nil
 function IsoZombie:spotted(other, bForced) end
+
+--- @public
+--- @param arg0 IsoMovingObject
+--- @param arg1 boolean
+--- @return nil
+function IsoZombie:spottedNew(arg0, arg1) end
+
+--- @public
+--- @param arg0 IsoMovingObject
+--- @param arg1 boolean
+--- @return nil
+function IsoZombie:spottedOld(arg0, arg1) end
 
 --- @public
 --- @param vehicle BaseVehicle
@@ -811,7 +1029,11 @@ function IsoZombie:spotted(other, bForced) end
 function IsoZombie:testCollideWithVehicles(vehicle) end
 
 --- @public
---- @return void
+--- @return string
+function IsoZombie:toString() end
+
+--- @public
+--- @return nil
 function IsoZombie:toggleCrawling() end
 
 --- @public
@@ -820,38 +1042,34 @@ function IsoZombie:toggleCrawling() end
 function IsoZombie:tryThump(square) end
 
 --- @public
---- @return void
+--- @return nil
 function IsoZombie:update() end
 
 --- @public
---- @return void
+--- @return nil
 function IsoZombie:updateVocalProperties() end
 
 --- @public
 --- @param sharedDesc Descriptor
---- @return void
+--- @return nil
 function IsoZombie:useDescriptor(sharedDesc) end
 
 --- @public
 --- @return boolean
 function IsoZombie:wasFakeDead() end
 
---- @public
---- @return boolean
-function IsoZombie:wasLocal() end
-
---- @public
---- @param b ByteBuffer
---- @return void
-function IsoZombie:writeInventory(b) end
-
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param cell IsoCell
 --- @return IsoZombie
---- @overload fun(cell: IsoCell, desc: SurvivorDesc, _palette: int): IsoZombie
 function IsoZombie.new(cell) end
+
+--- @public
+--- @param cell IsoCell
+--- @param desc SurvivorDesc
+--- @param _palette integer
+--- @return IsoZombie
+function IsoZombie.new(cell, desc, _palette) end

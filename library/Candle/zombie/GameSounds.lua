@@ -1,10 +1,11 @@
---- @meta
+--- @meta _
 
 --- @class GameSounds
 --- @field public class any
 --- @field public soundIsPaused boolean
---- @field public VERSION int
-GameSounds = {};
+--- @field public VCA_VOLUME boolean
+--- @field public VERSION integer
+GameSounds = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -12,30 +13,30 @@ GameSounds = {};
 
 --- @public
 --- @static
---- @param fileName String
---- @return void
-function GameSounds.ReloadFile(fileName) end
+--- @param arg0 GameSoundScript
+--- @return nil
+function GameSounds.OnReloadSound(arg0) end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function GameSounds.Reset() end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function GameSounds.ScriptsLoaded() end
 
 --- @public
 --- @static
 --- @param sound GameSound
---- @return void
+--- @return nil
 function GameSounds.addSound(sound) end
 
 --- @public
 --- @static
 --- @param inMenu boolean
---- @return void
+--- @return nil
 function GameSounds.fix3DListenerPosition(inMenu) end
 
 --- @public
@@ -45,25 +46,25 @@ function GameSounds.getCategories() end
 
 --- @public
 --- @static
---- @param name String
+--- @param name string
 --- @return GameSound
 function GameSounds.getOrCreateSound(name) end
 
 --- @public
 --- @static
---- @param name String
+--- @param name string
 --- @return GameSound
 function GameSounds.getSound(name) end
 
 --- @public
 --- @static
---- @param category String
+--- @param category string
 --- @return ArrayList
 function GameSounds.getSoundsInCategory(category) end
 
 --- @public
 --- @static
---- @param name String
+--- @param name string
 --- @return boolean
 function GameSounds.isKnownSound(name) end
 
@@ -74,28 +75,27 @@ function GameSounds.isPreviewPlaying() end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function GameSounds.loadINI() end
 
 --- @public
 --- @static
---- @param name String
---- @return void
+--- @param name string
+--- @return nil
 function GameSounds.previewSound(name) end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function GameSounds.saveINI() end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function GameSounds.stopPreview() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class ZombieOnGroundState: State
 --- @field public class any
-ZombieOnGroundState = {};
+ZombieOnGroundState = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -20,6 +20,11 @@ function ZombieOnGroundState.instance() end
 --- @return boolean
 function ZombieOnGroundState.isCharacterStandingOnOther(chrStanding, chrProne) end
 
+--- @public
+--- @static
+--- @param arg0 IsoZombie
+--- @return nil
+function ZombieOnGroundState.startReanimateTimer(arg0) end
 
 ------------------------------------
 ------------- METHODS --------------
@@ -27,22 +32,37 @@ function ZombieOnGroundState.isCharacterStandingOnOther(chrStanding, chrProne) e
 
 --- @public
 --- @param owner IsoGameCharacter
---- @return void
+--- @return nil
 function ZombieOnGroundState:enter(owner) end
 
 --- @public
 --- @param owner IsoGameCharacter
---- @return void
+--- @return nil
 function ZombieOnGroundState:execute(owner) end
 
 --- @public
 --- @param owner IsoGameCharacter
---- @return void
+--- @return nil
 function ZombieOnGroundState:exit(owner) end
 
+--- @public
+--- @return boolean
+function ZombieOnGroundState:isSyncInIdle() end
+
+--- @public
+--- @return boolean
+function ZombieOnGroundState:isSyncOnEnter() end
+
+--- @public
+--- @return boolean
+function ZombieOnGroundState:isSyncOnExit() end
+
+--- @public
+--- @return boolean
+function ZombieOnGroundState:isSyncOnSquare() end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

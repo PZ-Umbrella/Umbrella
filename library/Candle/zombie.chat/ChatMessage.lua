@@ -1,9 +1,8 @@
---- @meta
+--- @meta _
 
---- @class ChatMessage
+--- @class ChatMessage: Cloneable
 --- @field public class any
---- @implement Cloneable
-ChatMessage = {};
+ChatMessage = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -11,11 +10,14 @@ ChatMessage = {};
 
 --- @public
 --- @return ChatMessage
---- @overload fun(self: ChatMessage): Object
 function ChatMessage:clone() end
 
 --- @public
---- @return String
+--- @return any
+function ChatMessage:clone() end
+
+--- @public
+--- @return string
 function ChatMessage:getAuthor() end
 
 --- @public
@@ -23,11 +25,11 @@ function ChatMessage:getAuthor() end
 function ChatMessage:getChat() end
 
 --- @public
---- @return int
+--- @return integer
 function ChatMessage:getChatID() end
 
 --- @public
---- @return String
+--- @return string
 function ChatMessage:getCustomTag() end
 
 --- @public
@@ -35,15 +37,15 @@ function ChatMessage:getCustomTag() end
 function ChatMessage:getDatetime() end
 
 --- @public
---- @return String
+--- @return string
 function ChatMessage:getDatetimeStr() end
 
 --- @public
---- @return int
+--- @return integer
 function ChatMessage:getRadioChannel() end
 
 --- @public
---- @return String
+--- @return string
 function ChatMessage:getText() end
 
 --- @public
@@ -51,11 +53,11 @@ function ChatMessage:getText() end
 function ChatMessage:getTextColor() end
 
 --- @public
---- @return String
+--- @return string
 function ChatMessage:getTextWithPrefix() end
 
 --- @public
---- @return String
+--- @return string
 function ChatMessage:getTextWithReplacedParentheses() end
 
 --- @public
@@ -99,91 +101,96 @@ function ChatMessage:isShowAuthor() end
 function ChatMessage:isShowInChat() end
 
 --- @public
---- @return void
+--- @return nil
 function ChatMessage:makeFromDiscord() end
 
 --- @public
 --- @param b ByteBufferWriter
---- @return void
+--- @return nil
 function ChatMessage:pack(b) end
 
 --- @public
---- @param author String
---- @return void
+--- @param author string
+--- @return nil
 function ChatMessage:setAuthor(author) end
 
 --- @public
---- @param customTag String
---- @return void
+--- @param customTag string
+--- @return nil
 function ChatMessage:setCustomTag(customTag) end
 
 --- @public
 --- @param datetime LocalDateTime
---- @return void
+--- @return nil
 function ChatMessage:setDatetime(datetime) end
 
 --- @public
 --- @param __local__ boolean
---- @return void
+--- @return nil
 function ChatMessage:setLocal(__local__) end
 
 --- @public
 --- @param overHeadSpeech boolean
---- @return void
+--- @return nil
 function ChatMessage:setOverHeadSpeech(overHeadSpeech) end
 
 --- @public
---- @param radioChannel int
---- @return void
+--- @param radioChannel integer
+--- @return nil
 function ChatMessage:setRadioChannel(radioChannel) end
 
 --- @public
---- @param text String
---- @return void
+--- @param text string
+--- @return nil
 function ChatMessage:setScrambledText(text) end
 
 --- @public
 --- @param serverAlert boolean
---- @return void
+--- @return nil
 function ChatMessage:setServerAlert(serverAlert) end
 
 --- @public
 --- @param serverAuthor boolean
---- @return void
+--- @return nil
 function ChatMessage:setServerAuthor(serverAuthor) end
 
 --- @public
 --- @param shouldAttractZombies boolean
---- @return void
+--- @return nil
 function ChatMessage:setShouldAttractZombies(shouldAttractZombies) end
 
 --- @public
 --- @param showInChat boolean
---- @return void
+--- @return nil
 function ChatMessage:setShowInChat(showInChat) end
 
 --- @public
---- @param text String
---- @return void
+--- @param text string
+--- @return nil
 function ChatMessage:setText(text) end
 
 --- @public
 --- @param textColor Color
---- @return void
+--- @return nil
 function ChatMessage:setTextColor(textColor) end
 
 --- @public
---- @return String
+--- @return string
 function ChatMessage:toString() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param chat ChatBase
---- @param text String
+--- @param text string
 --- @return ChatMessage
---- @overload fun(chat: ChatBase, datetime: LocalDateTime, text: String): ChatMessage
 function ChatMessage.new(chat, text) end
+
+--- @public
+--- @param chat ChatBase
+--- @param datetime LocalDateTime
+--- @param text string
+--- @return ChatMessage
+function ChatMessage.new(chat, datetime, text) end

@@ -1,100 +1,75 @@
---- @meta
+--- @meta _
 
 --- @class IsoMarkers
 --- @field public class any
 --- @field public instance IsoMarkers
-IsoMarkers = {};
+IsoMarkers = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param gs IsoGridSquare
---- @param r float
---- @param g float
---- @param b float
---- @param a float
---- @return CircleIsoMarker
-function IsoMarkers:addCircleIsoMarker(gs, r, g, b, a) end
-
---- @public
---- @param spriteName String
---- @param gs IsoGridSquare
---- @param r float
---- @param g float
---- @param b float
---- @param doAlpha boolean
---- @param doIsoObject boolean
+--- @param arg0 string
+--- @param arg1 IsoGridSquare
+--- @param arg2 number
+--- @param arg3 number
+--- @param arg4 number
+--- @param arg5 number
 --- @return IsoMarker
---- @overload fun(self: IsoMarkers, textureTable: KahluaTable, textureOverlayTable: KahluaTable, gs: IsoGridSquare, r: float, g: float, b: float, doAlpha: boolean, doIsoObject: boolean): IsoMarker
---- @overload fun(self: IsoMarkers, textureTable: KahluaTable, textureOverlayTable: KahluaTable, gs: IsoGridSquare, r: float, g: float, b: float, doAlpha: boolean, doIsoObject: boolean, fadeSpeed: float, fadeMin: float, fadeMax: float): IsoMarker
-function IsoMarkers:addIsoMarker(spriteName, gs, r, g, b, doAlpha, doIsoObject) end
+function IsoMarkers:addIsoMarker(arg0, arg1, arg2, arg3, arg4, arg5) end
 
 --- @public
---- @param id int
---- @return CircleIsoMarker
-function IsoMarkers:getCircleIsoMarker(id) end
+--- @param arg0 table
+--- @param arg1 IsoGridSquare
+--- @param arg2 number
+--- @param arg3 number
+--- @param arg4 number
+--- @param arg5 number
+--- @return IsoMarker
+function IsoMarkers:addIsoMarker(arg0, arg1, arg2, arg3, arg4, arg5) end
 
 --- @public
---- @param id int
+--- @param arg0 InventoryItem
+--- @param arg1 IsoGridSquare
+--- @param arg2 number
+--- @param arg3 number
+--- @param arg4 number
+--- @param arg5 number
+--- @param arg6 number
+--- @return IsoMarker
+function IsoMarkers:addIsoMarker(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+
+--- @public
+--- @param id integer
 --- @return IsoMarker
 function IsoMarkers:getIsoMarker(id) end
 
 --- @public
---- @return void
-function IsoMarkers:init() end
-
---- @public
---- @param id int
+--- @param id integer
 --- @return boolean
---- @overload fun(self: IsoMarkers, marker: CircleIsoMarker): boolean
-function IsoMarkers:removeCircleIsoMarker(id) end
-
---- @public
---- @param id int
---- @return boolean
---- @overload fun(self: IsoMarkers, marker: IsoMarker): boolean
 function IsoMarkers:removeIsoMarker(id) end
 
 --- @public
---- @return void
+--- @param marker IsoMarker
+--- @return boolean
+function IsoMarkers:removeIsoMarker(marker) end
+
+--- @public
+--- @return nil
 function IsoMarkers:render() end
 
 --- @public
 --- @param perPlayerRender PerPlayerRender
---- @param zLayer int
---- @param playerIndex int
---- @return void
-function IsoMarkers:renderCircleIsoMarkers(perPlayerRender, zLayer, playerIndex) end
-
---- @public
---- @param perPlayerRender PerPlayerRender
---- @param zLayer int
---- @param playerIndex int
---- @return void
+--- @param zLayer integer
+--- @param playerIndex integer
+--- @return nil
 function IsoMarkers:renderIsoMarkers(perPlayerRender, zLayer, playerIndex) end
 
 --- @public
---- @param perPlayerRender PerPlayerRender
---- @param zLayer int
---- @param playerIndex int
---- @return void
-function IsoMarkers:renderIsoMarkersDeferred(perPlayerRender, zLayer, playerIndex) end
-
---- @public
---- @param perPlayerRender PerPlayerRender
---- @param zLayer int
---- @param playerIndex int
---- @return void
-function IsoMarkers:renderIsoMarkersOnSquare(perPlayerRender, zLayer, playerIndex) end
-
---- @public
---- @return void
+--- @return nil
 function IsoMarkers:reset() end
 
 --- @public
---- @return void
+--- @return nil
 function IsoMarkers:update() end
-
-

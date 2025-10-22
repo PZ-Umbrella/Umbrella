@@ -1,59 +1,112 @@
 ---@meta
 
 ---@class ISBaseTimedAction : ISBaseObject
----@field maxTime any
----@field action any
----@field character any
----@field stopOnWalk any
----@field stopOnRun any
----@field stopOnAim any
----@field caloriesModifier any
----@field [any] any
+---@field _isAddingActions boolean?
+---@field _numAddedActions number?
+---@field action LuaTimedActionNew
+---@field caloriesModifier number
+---@field character IsoPlayer
+---@field forceProgressBar boolean?
+---@field loopedAction boolean?
+---@field maxTime number
+---@field name string?
+---@field netAction NetTimedAction?
+---@field path Path?
+---@field stopOnAim boolean
+---@field stopOnRun boolean
+---@field stopOnWalk boolean
+---@field useProgressBar boolean?
 ISBaseTimedAction = ISBaseObject:derive("ISBaseTimedAction")
+ISBaseTimedAction.Type = "ISBaseTimedAction"
 ISBaseTimedAction.IDMax = 1
 
----@return any
-function ISBaseTimedAction:isValidStart() end
----@return any
-function ISBaseTimedAction:isValid() end
----@return any
-function ISBaseTimedAction:update() end
----@return any
-function ISBaseTimedAction:forceComplete() end
----@return any
-function ISBaseTimedAction:forceStop() end
----@return any
-function ISBaseTimedAction:getJobDelta() end
----@return any
-function ISBaseTimedAction:resetJobDelta() end
----@return any
-function ISBaseTimedAction:waitToStart() end
----@return any
-function ISBaseTimedAction:start() end
----@return any
-function ISBaseTimedAction:stop() end
----@return any
-function ISBaseTimedAction:perform() end
----@return any
-function ISBaseTimedAction:create() end
----@return any
-function ISBaseTimedAction:begin() end
----@return any
-function ISBaseTimedAction:setCurrentTime(time) end
----@return any
-function ISBaseTimedAction:setTime(time) end
----@return any
-function ISBaseTimedAction:adjustMaxTime(maxTime) end
----@return any
-function ISBaseTimedAction:setActionAnim(_action, _displayItemModels) end
----@return any
-function ISBaseTimedAction:setOverrideHandModels(_primaryHand, _secondaryHand, _resetModel) end
----@return any
-function ISBaseTimedAction:setOverrideHandModelsString(_primaryHand, _secondaryHand, _resetModel) end
----@return any
-function ISBaseTimedAction:setAnimVariable(_key, _val) end
----@return any
+---@param action ISBaseTimedAction
+---@return ISBaseTimedAction?
 function ISBaseTimedAction:addAfter(action) end
 
+---@param maxTime number
+---@return number
+function ISBaseTimedAction:adjustMaxTime(maxTime) end
+
+function ISBaseTimedAction:begin() end
+
+function ISBaseTimedAction:beginAddingActions() end
+
+function ISBaseTimedAction:create() end
+
+---@return boolean
+function ISBaseTimedAction:endAddingActions() end
+
+function ISBaseTimedAction:forceCancel() end
+
+function ISBaseTimedAction:forceComplete() end
+
+function ISBaseTimedAction:forceStop() end
+
+---@param deltas MoveDeltaModifiers
+function ISBaseTimedAction:getDeltaModifiers(deltas) end
+
+---@return number
+function ISBaseTimedAction:getDuration() end
+
+---@return number
+function ISBaseTimedAction:getJobDelta() end
+
+---@return boolean
+function ISBaseTimedAction:isStarted() end
+
+---@return boolean
+function ISBaseTimedAction:isUsingTimeout() end
+
+function ISBaseTimedAction:isValid() end
+
+---@return boolean
+function ISBaseTimedAction:isValidStart() end
+
+function ISBaseTimedAction:overrideWeaponType() end
+
+function ISBaseTimedAction:perform() end
+
+---@return unknown?
+function ISBaseTimedAction:resetJobDelta() end
+
+function ISBaseTimedAction:restoreWeaponType() end
+
+---@param _action CharacterActionAnims | string
+---@param _displayItemModels unknown?
+function ISBaseTimedAction:setActionAnim(_action, _displayItemModels) end
+
+---@param _key string
+---@param _val string
+function ISBaseTimedAction:setAnimVariable(_key, _val) end
+
+---@param time number
+function ISBaseTimedAction:setCurrentTime(time) end
+
+function ISBaseTimedAction:setJobDelta(delta) end
+
+---@param _primaryHand InventoryItem?
+---@param _secondaryHand InventoryItem?
+---@param _resetModel boolean?
+function ISBaseTimedAction:setOverrideHandModels(_primaryHand, _secondaryHand, _resetModel) end
+
+---@param _primaryHand string?
+---@param _secondaryHand string?
+---@param _resetModel boolean?
+function ISBaseTimedAction:setOverrideHandModelsString(_primaryHand, _secondaryHand, _resetModel) end
+
+---@param time number
+function ISBaseTimedAction:setTime(time) end
+
+function ISBaseTimedAction:start() end
+
+function ISBaseTimedAction:stop() end
+
+function ISBaseTimedAction:update() end
+
+---@return boolean
+function ISBaseTimedAction:waitToStart() end
+
+---@param character IsoPlayer
 ---@return ISBaseTimedAction
 function ISBaseTimedAction:new(character) end

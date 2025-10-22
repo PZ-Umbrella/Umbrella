@@ -1,41 +1,45 @@
 ---@meta
 
 ---@class ISPvpZonePanel : ISPanel
----@field nonPvpList any
----@field removeZone any
----@field teleportToZone any
----@field addZone any
----@field seeZoneOnGround any
----@field no any
----@field selectedZone any
----@field borderColor any
----@field backgroundColor any
----@field width any
----@field height any
----@field player any
----@field moveWithMouse any
----@field buttonBorderColor any
----@field [any] any
+---@field addZone ISButton
+---@field buttonBorderColor umbrella.RGBA
+---@field no ISButton
+---@field nonPvpList ISScrollingListBox
+---@field player IsoPlayer
+---@field removeZone ISButton
+---@field seeZoneOnGround ISButton
+---@field selectedZone NonPvpZone?
+---@field teleportToZone ISButton
 ISPvpZonePanel = ISPanel:derive("ISPvpZonePanel")
+ISPvpZonePanel.Type = "ISPvpZonePanel"
+ISPvpZonePanel.instance = nil ---@type ISPvpZonePanel?
 
----@return any
-function ISPvpZonePanel:initialise() end
----@return any
-function ISPvpZonePanel:populateList() end
----@return any
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
 function ISPvpZonePanel:drawList(y, item, alt) end
----@return any
-function ISPvpZonePanel:render() end
----@return any
-function ISPvpZonePanel:prerender() end
----@return any
-function ISPvpZonePanel:updateButtons() end
----@return any
-function ISPvpZonePanel:render() end
----@return any
+
+function ISPvpZonePanel:initialise() end
+
+---@param button ISButton
 function ISPvpZonePanel:onClick(button) end
----@return any
+
+---@param button ISButton
 function ISPvpZonePanel:onRemoveZone(button) end
 
+function ISPvpZonePanel:populateList() end
+
+function ISPvpZonePanel:prerender() end
+
+function ISPvpZonePanel:render() end
+
+function ISPvpZonePanel:updateButtons() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param player IsoPlayer
 ---@return ISPvpZonePanel
 function ISPvpZonePanel:new(x, y, width, height, player) end

@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RadioData Turbo
 --- @field public class any
-RadioData = {};
+RadioData = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -19,7 +19,6 @@ function RadioData.fetchAllRadioData() end
 --- @return ArrayList
 function RadioData.getTranslatorNames(language) end
 
-
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
@@ -32,12 +31,11 @@ function RadioData:getRadioChannels() end
 --- @return boolean
 function RadioData:isVanilla() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param xmlFile String
+--- @param xmlFile string
 --- @return RadioData
 function RadioData.new(xmlFile) end

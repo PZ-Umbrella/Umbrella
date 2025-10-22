@@ -1,33 +1,37 @@
 ---@meta
 
 ---@class ISMedicalCheckAction : ISBaseTimedAction
----@field character any
----@field otherPlayer any
----@field otherPlayerX any
----@field otherPlayerY any
----@field stopOnWalk any
----@field stopOnRun any
----@field maxTime any
----@field forceProgressBar any
----@field [any] any
+---@field forceProgressBar boolean
+---@field otherPlayer IsoPlayer
+---@field otherPlayerX number
+---@field otherPlayerY number
 ISMedicalCheckAction = ISBaseTimedAction:derive("ISMedicalCheckAction")
-ISMedicalCheckAction.HealthWindows = {}
+ISMedicalCheckAction.Type = "ISMedicalCheckAction"
+ISMedicalCheckAction.HealthWindows = {} ---@type table<integer, umbrella.ISMedicalCheckAction.HealthWindow>
 
----@return any
+---@param playerObj IsoPlayer
+---@return umbrella.ISMedicalCheckAction.HealthWindow?
 function ISMedicalCheckAction.getHealthWindowForPlayer(playerObj) end
 
----@return any
+---@return boolean
 function ISMedicalCheckAction:isValid() end
----@return any
-function ISMedicalCheckAction:waitToStart() end
----@return any
-function ISMedicalCheckAction:update() end
----@return any
-function ISMedicalCheckAction:start() end
----@return any
-function ISMedicalCheckAction:stop() end
----@return any
+
 function ISMedicalCheckAction:perform() end
 
+function ISMedicalCheckAction:start() end
+
+function ISMedicalCheckAction:stop() end
+
+function ISMedicalCheckAction:update() end
+
+---@return boolean
+function ISMedicalCheckAction:waitToStart() end
+
+---@param character IsoPlayer
+---@param otherPlayer IsoPlayer
 ---@return ISMedicalCheckAction
 function ISMedicalCheckAction:new(character, otherPlayer) end
+
+---@class umbrella.ISMedicalCheckAction.HealthWindow : ISCollapsableWindow
+---@field nested ISHealthPanel
+umbrella_ISMedicalCheckAction_HealthWindow = {}

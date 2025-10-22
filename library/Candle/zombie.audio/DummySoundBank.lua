@@ -1,42 +1,41 @@
---- @meta
+--- @meta _
 
 --- @class DummySoundBank: BaseSoundBank
 --- @field public class any
-DummySoundBank = {};
+DummySoundBank = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param alias String
---- @param grass String
---- @param wood String
---- @param concrete String
---- @param upstairs String
---- @return void
+--- @param alias string
+--- @param grass string
+--- @param wood string
+--- @param concrete string
+--- @param upstairs string
+--- @return nil
 function DummySoundBank:addFootstep(alias, grass, wood, concrete, upstairs) end
 
 --- @public
---- @param alias String
---- @param sound String
---- @param priority float
---- @return void
+--- @param alias string
+--- @param sound string
+--- @param priority number
+--- @return nil
 function DummySoundBank:addVoice(alias, sound, priority) end
 
 --- @public
---- @param alias String
+--- @param alias string
 --- @return FMODFootstep
 function DummySoundBank:getFootstep(alias) end
 
 --- @public
---- @param alias String
+--- @param alias string
 --- @return FMODVoice
 function DummySoundBank:getVoice(alias) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

@@ -1,41 +1,48 @@
 ---@meta
 
-local TEST = false
-
 ---@class WorkshopSubmitScreen : ISPanelJoypad
----@field page1 any
----@field page2 any
----@field page3 any
----@field page4 any
----@field page5 any
----@field page6 any
----@field page7 any
----@field page8 any
----@field page9 any
----@field page10 any
----@field [any] any
-WorkshopSubmitScreen = ISPanelJoypad:derive("WorkshopSubmitScreen")
-WorkshopSubmitScreen.TEST = TEST
+---@field page1 ISPanelJoypad
+---@field page10 ISPanelJoypad
+---@field page2 ISPanelJoypad
+---@field page3 ISPanelJoypad
+---@field page4 ISPanelJoypad
+---@field page5 ISPanelJoypad
+---@field page6 ISPanelJoypad
+---@field page7 ISPanelJoypad
+---@field page8 ISPanelJoypad
+---@field page9 ISPanelJoypad
+WorkshopSubmitScreen = ISPanelJoypad:derive("WorkshopSubmit")
+WorkshopSubmitScreen.Type = "WorkshopSubmit"
+WorkshopSubmitScreen.TEST = false
+WorkshopSubmitScreen.instance = nil ---@type WorkshopSubmitScreen?
 
----@return any
+---@param itemID string
+---@param bUserNeedsToAcceptWorkshopLegalAgreement boolean
 function WorkshopSubmitScreen.OnSteamWorkshopItemCreated(itemID, bUserNeedsToAcceptWorkshopLegalAgreement) end
----@return any
+
+---@param result integer
 function WorkshopSubmitScreen.OnSteamWorkshopItemNotCreated(result) end
----@return any
-function WorkshopSubmitScreen.OnSteamWorkshopItemUpdated(bUserNeedsToAcceptWorkshopLegalAgreement) end
----@return any
+
+---@param result integer
 function WorkshopSubmitScreen.OnSteamWorkshopItemNotUpdated(result) end
 
----@return any
+---@param bUserNeedsToAcceptWorkshopLegalAgreement boolean
+function WorkshopSubmitScreen.OnSteamWorkshopItemUpdated(bUserNeedsToAcceptWorkshopLegalAgreement) end
+
 function WorkshopSubmitScreen:create() end
----@return any
-function WorkshopSubmitScreen:render() end
----@return any
+
 function WorkshopSubmitScreen:fillList() end
----@return any
+
 function WorkshopSubmitScreen:onButtonBack() end
----@return any
+
+---@param joypadData JoypadData
 function WorkshopSubmitScreen:onGainJoypadFocus(joypadData) end
 
+function WorkshopSubmitScreen:render() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return WorkshopSubmitScreen
 function WorkshopSubmitScreen:new(x, y, width, height) end

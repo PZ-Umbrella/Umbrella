@@ -1,20 +1,27 @@
 ---@meta
 
 ---@class ISInfoContainer : ISCollapsableWindow
----@field panel any
----@field instance any
----@field [any] any
+---@field panel ISPanel
+---@field title string
 ISInfoContainer = ISCollapsableWindow:derive("ISInfoContainer")
+ISInfoContainer.Type = "ISInfoContainer"
+ISInfoContainer.instance = nil ---@type ISInfoContainer?
 
----@return any
+---@param title string
+---@param infopanel CharacterInfoPage
 function ISInfoContainer.doInfo(title, infopanel) end
----@return any
+
+---@param title string
+---@return ISInfoContainer
 function ISInfoContainer.get(title) end
 
----@return any
 function ISInfoContainer:initialise() end
----@return any
+
 function ISInfoContainer:prerender() end
 
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISInfoContainer
 function ISInfoContainer:new(x, y, width, height) end

@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class ClimateBool
 --- @field public class any
-ClimateBool = {};
+ClimateBool = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -13,7 +13,7 @@ ClimateBool = {};
 function ClimateBool:getAdminValue() end
 
 --- @public
---- @return int
+--- @return integer
 function ClimateBool:getID() end
 
 --- @public
@@ -25,7 +25,7 @@ function ClimateBool:getInternalValue() end
 function ClimateBool:getModdedValue() end
 
 --- @public
---- @return String
+--- @return string
 function ClimateBool:getName() end
 
 --- @public
@@ -33,8 +33,8 @@ function ClimateBool:getName() end
 function ClimateBool:getOverride() end
 
 --- @public
---- @param id int
---- @param name String
+--- @param id integer
+--- @param name string
 --- @return ClimateBool
 function ClimateBool:init(id, name) end
 
@@ -48,42 +48,41 @@ function ClimateBool:isEnableOverride() end
 
 --- @public
 --- @param b boolean
---- @return void
+--- @return nil
 function ClimateBool:setAdminValue(b) end
 
 --- @public
 --- @param b boolean
---- @return void
+--- @return nil
 function ClimateBool:setEnableAdmin(b) end
 
 --- @public
 --- @param b boolean
---- @return void
+--- @return nil
 function ClimateBool:setEnableModded(b) end
 
 --- @public
 --- @param b boolean
---- @return void
+--- @return nil
 function ClimateBool:setEnableOverride(b) end
 
 --- @public
 --- @param b boolean
---- @return void
+--- @return nil
 function ClimateBool:setFinalValue(b) end
 
 --- @public
 --- @param b boolean
---- @return void
+--- @return nil
 function ClimateBool:setModdedValue(b) end
 
 --- @public
 --- @param b boolean
---- @return void
+--- @return nil
 function ClimateBool:setOverride(b) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

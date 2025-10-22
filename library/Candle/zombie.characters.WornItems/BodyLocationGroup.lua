@@ -1,16 +1,16 @@
---- @meta
+--- @meta _
 
 --- @class BodyLocationGroup
 --- @field public class any
-BodyLocationGroup = {};
+BodyLocationGroup = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param locationId String
---- @return void
+--- @param locationId string
+--- @return nil
 function BodyLocationGroup:checkValid(locationId) end
 
 --- @public
@@ -18,75 +18,86 @@ function BodyLocationGroup:checkValid(locationId) end
 function BodyLocationGroup:getAllLocations() end
 
 --- @public
---- @param locationId String
+--- @param locationId string
 --- @return BodyLocation
 function BodyLocationGroup:getLocation(locationId) end
 
 --- @public
---- @param index int
+--- @param index integer
 --- @return BodyLocation
 function BodyLocationGroup:getLocationByIndex(index) end
 
 --- @public
---- @param locationId String
+--- @param locationId string
 --- @return BodyLocation
 function BodyLocationGroup:getLocationNotNull(locationId) end
 
 --- @public
---- @param locationId String
+--- @param arg0 ItemBodyLocation
 --- @return BodyLocation
-function BodyLocationGroup:getOrCreateLocation(locationId) end
+function BodyLocationGroup:getOrCreateLocation(arg0) end
 
 --- @public
---- @param locationId String
---- @return int
+--- @param locationId string
+--- @return integer
 function BodyLocationGroup:indexOf(locationId) end
 
 --- @public
---- @param firstId String
---- @param secondId String
+--- @param arg0 string
+--- @param arg1 string
+--- @return boolean
+function BodyLocationGroup:isAltModel(arg0, arg1) end
+
+--- @public
+--- @param firstId string
+--- @param secondId string
 --- @return boolean
 function BodyLocationGroup:isExclusive(firstId, secondId) end
 
 --- @public
---- @param firstId String
---- @param secondId String
+--- @param firstId string
+--- @param secondId string
 --- @return boolean
 function BodyLocationGroup:isHideModel(firstId, secondId) end
 
 --- @public
---- @param locationId String
+--- @param locationId string
 --- @return boolean
 function BodyLocationGroup:isMultiItem(locationId) end
 
 --- @public
---- @param firstId String
---- @param secondId String
---- @return void
+--- @param arg0 string
+--- @param arg1 string
+--- @return nil
+function BodyLocationGroup:setAltModel(arg0, arg1) end
+
+--- @public
+--- @param firstId string
+--- @param secondId string
+--- @return nil
 function BodyLocationGroup:setExclusive(firstId, secondId) end
 
 --- @public
---- @param firstId String
---- @param secondId String
---- @return void
+--- @param firstId string
+--- @param secondId string
+--- @return nil
 function BodyLocationGroup:setHideModel(firstId, secondId) end
 
 --- @public
---- @param locationId String
+--- @param locationId string
 --- @param bMultiItem boolean
---- @return void
+--- @return nil
 function BodyLocationGroup:setMultiItem(locationId, bMultiItem) end
 
 --- @public
---- @return int
+--- @return integer
 function BodyLocationGroup:size() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param id String
+--- @param id string
 --- @return BodyLocationGroup
 function BodyLocationGroup.new(id) end

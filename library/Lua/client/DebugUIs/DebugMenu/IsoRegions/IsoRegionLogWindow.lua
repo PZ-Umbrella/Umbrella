@@ -1,41 +1,46 @@
 ---@meta
 
 ---@class IsoRegionLogWindow : ISPanel
----@field instance any
----@field firstTableName any
----@field tableNamesList any
----@field variableColor any
----@field borderColor any
----@field backgroundColor any
----@field buttonBorderColor any
----@field zOffsetSmallFont any
----@field moveWithMouse any
----@field panelTitle any
----@field [any] any
+---@field buttonBorderColor umbrella.RGBA
+---@field firstTableName boolean
+---@field panelTitle string
+---@field tableNamesList ISScrollingListBox
+---@field variableColor umbrella.RGBA
+---@field zOffsetSmallFont number
 IsoRegionLogWindow = ISPanel:derive("IsoRegionLogWindow")
-IsoRegionLogWindow.instance = nil
+IsoRegionLogWindow.Type = "IsoRegionLogWindow"
+IsoRegionLogWindow.instance = nil ---@type IsoRegionLogWindow?
 
----@return any
+---@return IsoRegionLogWindow?
 function IsoRegionLogWindow.OnOpenPanel() end
 
----@return any
-function IsoRegionLogWindow:initialise() end
----@return any
-function IsoRegionLogWindow:createChildren() end
----@return any
-function IsoRegionLogWindow:onClickClose() end
----@return any
-function IsoRegionLogWindow:OnTableNamesListMouseDown(item) end
----@return any
-function IsoRegionLogWindow:populateList() end
----@return any
-function IsoRegionLogWindow:drawTableNameList(y, item, alt) end
----@return any
-function IsoRegionLogWindow:prerender() end
----@return any
-function IsoRegionLogWindow:update() end
----@return any
 function IsoRegionLogWindow:close() end
 
+function IsoRegionLogWindow:createChildren() end
+
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
+function IsoRegionLogWindow:drawTableNameList(y, item, alt) end
+
+function IsoRegionLogWindow:initialise() end
+
+function IsoRegionLogWindow:onClickClose() end
+
+---@param item table
+function IsoRegionLogWindow:OnTableNamesListMouseDown(item) end
+
+function IsoRegionLogWindow:populateList() end
+
+function IsoRegionLogWindow:prerender() end
+
+function IsoRegionLogWindow:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param title string
 ---@return IsoRegionLogWindow
 function IsoRegionLogWindow:new(x, y, width, height, title) end

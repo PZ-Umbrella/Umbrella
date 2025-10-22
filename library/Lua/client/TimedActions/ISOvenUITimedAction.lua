@@ -1,25 +1,24 @@
 ---@meta
 
 ---@class ISOvenUITimedAction : ISBaseTimedAction
----@field character any
----@field stove any
----@field mcwave any
----@field stopOnWalk any
----@field stopOnRun any
----@field maxTime any
----@field [any] any
+---@field mcwave IsoStove?
+---@field stove IsoStove?
 ISOvenUITimedAction = ISBaseTimedAction:derive("ISOvenUITimedAction")
+ISOvenUITimedAction.Type = "ISOvenUITimedAction"
 
----@return any
+---@return boolean
 function ISOvenUITimedAction:isValid() end
----@return any
-function ISOvenUITimedAction:update() end
----@return any
-function ISOvenUITimedAction:start() end
----@return any
-function ISOvenUITimedAction:stop() end
----@return any
+
 function ISOvenUITimedAction:perform() end
 
+function ISOvenUITimedAction:start() end
+
+function ISOvenUITimedAction:stop() end
+
+function ISOvenUITimedAction:update() end
+
+---@param character IsoPlayer
+---@param stove IsoStove?
+---@param mcwave IsoStove?
 ---@return ISOvenUITimedAction
 function ISOvenUITimedAction:new(character, stove, mcwave) end

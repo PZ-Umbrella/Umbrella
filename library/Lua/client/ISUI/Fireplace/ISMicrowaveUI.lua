@@ -1,48 +1,49 @@
 ---@meta
 
 ---@class ISMicrowaveUI : ISPanelJoypad
----@field tempKnob any
----@field timerKnob any
----@field ok any
----@field close any
----@field joypadIndexY any
----@field joypadIndex any
----@field joypadButtons any
----@field width any
----@field height any
----@field character any
----@field oven any
----@field moveWithMouse any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field x any
----@field y any
----@field [any] any
+---@field character IsoPlayer
+---@field close ISButton
+---@field joypadButtons ISButton[]
+---@field ok ISButton
+---@field oven IsoStove
+---@field playerNum unknown
+---@field tempKnob ISKnob
+---@field timerKnob ISKnob
 ISMicrowaveUI = ISPanelJoypad:derive("ISMicrowaveUI")
+ISMicrowaveUI.Type = "ISMicrowaveUI"
+ISMicrowaveUI.instance = {}
 ISMicrowaveUI.messages = {}
 
----@return any
-function ISMicrowaveUI:initialise() end
----@return any
-function ISMicrowaveUI:ChangeKnob() end
----@return any
-function ISMicrowaveUI:update() end
----@return any
-function ISMicrowaveUI:updateButtons() end
----@return any
 function ISMicrowaveUI:addKnobValues() end
----@return any
-function ISMicrowaveUI:render() end
----@return any
-function ISMicrowaveUI:prerender() end
----@return any
+
+function ISMicrowaveUI:ChangeKnob() end
+
+function ISMicrowaveUI:close() end
+
+function ISMicrowaveUI:initialise() end
+
+---@param button ISButton
 function ISMicrowaveUI:onClick(button) end
----@return any
+
+---@param joypadData JoypadData
 function ISMicrowaveUI:onGainJoypadFocus(joypadData) end
----@return any
+
+---@param button integer
 function ISMicrowaveUI:onJoypadDown(button) end
 
+function ISMicrowaveUI:prerender() end
+
+function ISMicrowaveUI:render() end
+
+function ISMicrowaveUI:update() end
+
+function ISMicrowaveUI:updateButtons() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param oven IsoStove
+---@param character IsoPlayer
 ---@return ISMicrowaveUI
 function ISMicrowaveUI:new(x, y, width, height, oven, character) end

@@ -1,41 +1,42 @@
 ---@meta
 
 ---@class ISCharacterProtection : ISPanelJoypad
----@field cacheColor any
----@field colorScheme any
----@field bpPanelX any
----@field bpPanelY any
----@field bpAnchorX any
----@field bpAnchorY any
----@field bodyPartPanel any
----@field maxLabelWidth any
----@field bparts any
----@field playerNum any
----@field char any
----@field bFemale any
----@field borderColor any
----@field backgroundColor any
----@field sex any
----@field bodyOutline any
----@field [any] any
+---@field bFemale boolean
+---@field bodyOutline Texture
+---@field bodyPartPanel ISBodyPartPanel
+---@field bparts table<string, boolean>
+---@field bpPanelX number
+---@field bpPanelY number
+---@field cacheColor Color
+---@field char IsoPlayer
+---@field colorScheme umbrella.ISBodyPartPanel.ColorSchemeTable[]
+---@field maxLabelWidth number
+---@field playerNum integer
+---@field sex string
 ISCharacterProtection = ISPanelJoypad:derive("ISCharacterProtection")
+ISCharacterProtection.Type = "ISCharacterProtection"
 
----@return any
-function ISCharacterProtection:initialise() end
----@return any
-function ISCharacterProtection:createChildren() end
----@return any
-function ISCharacterProtection:setVisible(visible) end
----@return any
-function ISCharacterProtection:prerender() end
----@return any
-function ISCharacterProtection:render() end
----@return any
 function ISCharacterProtection:create() end
----@return any
+
+function ISCharacterProtection:createChildren() end
+
+function ISCharacterProtection:initialise() end
+
 function ISCharacterProtection:initTextures() end
----@return any
+
+---@param button integer
 function ISCharacterProtection:onJoypadDown(button) end
 
+function ISCharacterProtection:prerender() end
+
+function ISCharacterProtection:render() end
+
+function ISCharacterProtection:setVisible(visible) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param playerNum integer
 ---@return ISCharacterProtection
 function ISCharacterProtection:new(x, y, width, height, playerNum) end

@@ -1,54 +1,75 @@
---- @meta
+--- @meta _
 
---- @class FMODAudio
+--- @class FMODAudio: Audio
 --- @field public class any
---- @implement Audio
-FMODAudio = {};
+FMODAudio = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return String
---- @overload fun(self: FMODAudio): String
+--- @return string
+function FMODAudio:getName() end
+
+--- @public
+--- @return string
 function FMODAudio:getName() end
 
 --- @public
 --- @return boolean
---- @overload fun(self: FMODAudio): boolean
 function FMODAudio:isPlaying() end
 
 --- @public
---- @return void
---- @overload fun(self: FMODAudio): void
+--- @return boolean
+function FMODAudio:isPlaying() end
+
+--- @public
+--- @return nil
 function FMODAudio:pause() end
 
 --- @public
---- @param arg0 String
---- @return void
---- @overload fun(self: FMODAudio, arg0: String): void
+--- @return nil
+function FMODAudio:pause() end
+
+--- @public
+--- @param arg0 string
+--- @return nil
 function FMODAudio:setName(arg0) end
 
 --- @public
---- @param arg0 float
---- @return void
---- @overload fun(self: FMODAudio, arg0: float): void
+--- @param arg0 string
+--- @return nil
+function FMODAudio:setName(arg0) end
+
+--- @public
+--- @param arg0 number
+--- @return nil
 function FMODAudio:setVolume(arg0) end
 
 --- @public
---- @return void
---- @overload fun(self: FMODAudio): void
+--- @param arg0 number
+--- @return nil
+function FMODAudio:setVolume(arg0) end
+
+--- @public
+--- @return nil
 function FMODAudio:start() end
 
 --- @public
---- @return void
---- @overload fun(self: FMODAudio): void
+--- @return nil
+function FMODAudio:start() end
+
+--- @public
+--- @return nil
 function FMODAudio:stop() end
 
+--- @public
+--- @return nil
+function FMODAudio:stop() end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

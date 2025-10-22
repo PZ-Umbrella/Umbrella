@@ -1,43 +1,47 @@
 ---@meta
 
 ---@class ISVehicleRoadtripDebug : ISCollapsableWindow
----@field start any
----@field stop any
----@field vehicle any
----@field startedTrip any
----@field startTimer any
----@field stopTimer any
----@field partsCondition any
----@field previousSq any
----@field totalDist any
----@field initialBattery any
----@field initialGas any
----@field playerNum any
----@field width any
----@field height any
----@field character any
----@field moveWithMouse any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field x any
----@field y any
----@field [any] any
+---@field character IsoPlayer
+---@field initialBattery number
+---@field initialGas number
+---@field partsCondition table<string, umbrella.ISVehicleRoadtripDebug.ConditionInfo>
+---@field playerNum integer
+---@field previousSq IsoGridSquare
+---@field start ISButton
+---@field startedTrip boolean
+---@field startTimer integer?
+---@field stop ISButton
+---@field stopTimer unknown?
+---@field totalDist number
+---@field vehicle BaseVehicle
 ISVehicleRoadtripDebug = ISCollapsableWindow:derive("ISVehicleRoadtripDebug")
+ISVehicleRoadtripDebug.Type = "ISVehicleRoadtripDebug"
 
----@return any
 function ISVehicleRoadtripDebug:createChildren() end
----@return any
-function ISVehicleRoadtripDebug:update() end
----@return any
-function ISVehicleRoadtripDebug:startRoadtrip() end
----@return any
-function ISVehicleRoadtripDebug:stopRoadtrip() end
----@return any
+
 function ISVehicleRoadtripDebug:render() end
----@return any
+
+function ISVehicleRoadtripDebug:startRoadtrip() end
+
+function ISVehicleRoadtripDebug:stopRoadtrip() end
+
+function ISVehicleRoadtripDebug:update() end
+
+---@param x number
+---@param y number
+---@param startingListY integer
+---@return number
+---@return number
 function ISVehicleRoadtripDebug:updateXY(x, y, startingListY) end
 
+---@param x number
+---@param y number
+---@param character IsoPlayer
 ---@return ISVehicleRoadtripDebug
 function ISVehicleRoadtripDebug:new(x, y, character) end
+
+---@class umbrella.ISVehicleRoadtripDebug.ConditionInfo
+---@field condition integer
+---@field id string
+---@field item InventoryItem
+umbrella_ISVehicleRoadtripDebug_ConditionInfo = {}

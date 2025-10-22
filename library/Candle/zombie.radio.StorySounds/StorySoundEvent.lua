@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class StorySoundEvent Turbo
 --- @field public class any
-StorySoundEvent = {};
+StorySoundEvent = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -13,25 +13,28 @@ StorySoundEvent = {};
 function StorySoundEvent:getEventSounds() end
 
 --- @public
---- @return String
+--- @return string
 function StorySoundEvent:getName() end
 
 --- @public
 --- @param eventSounds ArrayList
---- @return void
+--- @return nil
 function StorySoundEvent:setEventSounds(eventSounds) end
 
 --- @public
---- @param name String
---- @return void
+--- @param name string
+--- @return nil
 function StorySoundEvent:setName(name) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @return StorySoundEvent
---- @overload fun(name: String): StorySoundEvent
 function StorySoundEvent.new() end
+
+--- @public
+--- @param name string
+--- @return StorySoundEvent
+function StorySoundEvent.new(name) end

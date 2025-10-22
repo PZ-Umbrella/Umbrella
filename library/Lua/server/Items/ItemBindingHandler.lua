@@ -3,7 +3,8 @@
 ---@class ItemBindingHandler
 ItemBindingHandler = {}
 
----@return any
+---@param key integer
 function ItemBindingHandler.onKeyPressed(key) end
----@return any
+
+---@param key integer
 function ItemBindingHandler.toggleLight(key) end

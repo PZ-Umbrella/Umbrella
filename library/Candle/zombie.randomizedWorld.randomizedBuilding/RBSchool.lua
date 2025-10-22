@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RBSchool: RandomizedBuildingBase Add pen, pencils, books... on school desk
 --- @field public class any
-RBSchool = {};
+RBSchool = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,7 +10,7 @@ RBSchool = {};
 
 --- @public
 ---
----  Description copied from class: RandomizedBuildingBase
+--- Description copied from class: RandomizedBuildingBase
 ---
 --- @param def BuildingDef
 --- @param force boolean
@@ -19,7 +19,7 @@ function RBSchool:isValid(def, force) end
 
 --- @public
 --- @param def BuildingDef
---- @return void
+--- @return nil
 function RBSchool:randomizeBuilding(def) end
 
 --- @public
@@ -27,9 +27,8 @@ function RBSchool:randomizeBuilding(def) end
 --- @return boolean
 function RBSchool:roomValid(sq) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

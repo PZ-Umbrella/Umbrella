@@ -1,38 +1,48 @@
 ---@meta
 
 ---@class ServerWorkshopItemScreen : ISPanelJoypad
----@field label any
----@field listbox any
----@field installButton any
----@field disconnectButton any
----@field ISButtonA any
----@field ISButtonB any
----@field prevScreen any
----@field [any] any
+---@field disconnectButton ISButton
+---@field installButton ISButton
+---@field label ISLabel
+---@field listbox ISScrollingListBox
+---@field prevScreen ISUIElement
 ServerWorkshopItemScreen = ISPanelJoypad:derive("ServerWorkshopItemScreen")
+ServerWorkshopItemScreen.Type = "ServerWorkshopItemScreen"
+ServerWorkshopItemScreen.instance = nil ---@type ServerWorkshopItemScreen?
 
----@return any
 function ServerWorkshopItemScreen:create() end
----@return any
-function ServerWorkshopItemScreen:prerender() end
----@return any
-function ServerWorkshopItemScreen:render() end
----@return any
-function ServerWorkshopItemScreen:onButtonInstall() end
----@return any
+
 function ServerWorkshopItemScreen:onButtonDisconnect() end
----@return any
-function ServerWorkshopItemScreen:setRequiredItems(itemIDs) end
----@return any
-function ServerWorkshopItemScreen:updateItemDetails(detailsList) end
----@return any
-function ServerWorkshopItemScreen:progress(id, downloaded, total) end
----@return any
+
+function ServerWorkshopItemScreen:onButtonInstall() end
+
+---@param joypadData JoypadData
 function ServerWorkshopItemScreen:onGainJoypadFocus(joypadData) end
----@return any
-function ServerWorkshopItemScreen:onJoypadDirUp(joypadData) end
----@return any
+
+---@param joypadData JoypadData
 function ServerWorkshopItemScreen:onJoypadDirDown(joypadData) end
 
+---@param joypadData JoypadData
+function ServerWorkshopItemScreen:onJoypadDirUp(joypadData) end
+
+function ServerWorkshopItemScreen:prerender() end
+
+---@param id string
+---@param downloaded integer
+---@param total integer
+function ServerWorkshopItemScreen:progress(id, downloaded, total) end
+
+function ServerWorkshopItemScreen:render() end
+
+---@param itemIDs ArrayList<integer>
+function ServerWorkshopItemScreen:setRequiredItems(itemIDs) end
+
+---@param detailsList ArrayList<SteamUGCDetails>
+function ServerWorkshopItemScreen:updateItemDetails(detailsList) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ServerWorkshopItemScreen
 function ServerWorkshopItemScreen:new(x, y, width, height) end

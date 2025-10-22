@@ -1,117 +1,186 @@
 ---@meta
 
 ---@class ISBuildingObject : ISBaseObject
----@field canPassThrough any
----@field northSprite any
----@field eastSprite any
----@field southSprite any
----@field sprite any
----@field choosenSprite any
----@field dragNilAfterPlace any
----@field isLeftDown any
----@field clickedUI any
----@field canBeBuild any
----@field build any
----@field square any
----@field nSprite any
----@field north any
----@field south any
----@field east any
----@field west any
----@field xJoypad any
----@field yJoypad any
----@field zJoypad any
----@field isWallLike any
----@field isCorner any
----@field completionSound any
----@field canBeAlwaysPlaced any
----@field isContainer any
----@field canBarricade any
----@field thumpDmg any
----@field isDoor any
----@field isDoorFrame any
----@field crossSpeed any
----@field blockAllTheSquare any
----@field dismantable any
----@field canBePlastered any
----@field hoppable any
----@field isThumpable any
----@field modData any
----@field RENDER_SPRITE_NAME any
----@field RENDER_SPRITE any
----@field RENDER_SPRITE_FLOOR any
----@field [any] any
+---@field blockAllTheSquare boolean
+---@field blockBuild boolean
+---@field build boolean
+---@field canBarricade boolean
+---@field canBeAlwaysPlaced boolean
+---@field canBeBuild boolean
+---@field canBePlastered boolean
+---@field canPassThrough boolean
+---@field chosenSprite string?
+---@field clickedUI boolean
+---@field completionSound string?
+---@field crossSpeed number
+---@field dismantable boolean
+---@field dragNilAfterPlace boolean
+---@field east boolean
+---@field eastSprite string?
+---@field hoppable boolean
+---@field isContainer boolean
+---@field isCorner boolean
+---@field isDoor boolean
+---@field isDoorFrame boolean
+---@field isFloor boolean
+---@field isLeftDown boolean
+---@field isThumpable boolean
+---@field isWallLike boolean
+---@field modData table
+---@field north boolean
+---@field northSprite string?
+---@field nSprite integer
+---@field RENDER_SPRITE IsoSprite?
+---@field RENDER_SPRITE_FLOOR IsoSprite?
+---@field RENDER_SPRITE_NAME string?
+---@field south boolean
+---@field southSprite string?
+---@field sprite string?
+---@field square IsoGridSquare?
+---@field thumpDmg number
+---@field west boolean
+---@field xJoypad number
+---@field yJoypad number
+---@field zJoypad number
 ISBuildingObject = ISBaseObject:derive("ISBuildingObject")
+ISBuildingObject.Type = "ISBuildingObject"
+ISBuildingObject.floorCursorSprite = nil ---@type IsoSprite?
 
----@return any
+---@param thump IsoThumpable
+---@param player IsoPlayer?
 function ISBuildingObject.onDestroy(thump, player) end
----@return any
+
+---@param square IsoGridSquare
 function ISBuildingObject.removeFromGround(square) end
 
----@return any
-function ISBuildingObject:initialise() end
----@return any
-function ISBuildingObject:setCanPassThrough(passThrough) end
----@return any
-function ISBuildingObject:setNorthSprite(sprite) end
----@return any
-function ISBuildingObject:setEastSprite(sprite) end
----@return any
-function ISBuildingObject:setSouthSprite(sprite) end
----@return any
-function ISBuildingObject:setSprite(sprite) end
----@return any
-function ISBuildingObject:setDragNilAfterPlace(nilAfter) end
----@return any
-function ISBuildingObject:tryBuild(x, y, z) end
----@return any
-function ISBuildingObject:walkTo(x, y, z) end
----@return any
-function ISBuildingObject:onTimedActionStart(action) end
----@return any
-function ISBuildingObject:onTimedActionStop(action) end
----@return any
-function ISBuildingObject:haveMaterial(square) end
----@return any
-function ISBuildingObject:reinit() end
----@return any
-function ISBuildingObject:reset() end
----@return any
-function ISBuildingObject:init() end
----@return any
-function ISBuildingObject:getSprite() end
----@return any
-function ISBuildingObject:isValid(square) end
----@return any
-function ISBuildingObject:render(x, y, z, square) end
----@return any
-function ISBuildingObject:rotateKey(key) end
----@return any
-function ISBuildingObject:rotateMouse(x, y) end
----@return any
 function ISBuildingObject:deactivate() end
----@return any
-function ISBuildingObject:onJoypadPressButton(joypadIndex, joypadData, button) end
----@return any
-function ISBuildingObject:onJoypadDirDown(joypadData) end
----@return any
-function ISBuildingObject:onJoypadDirUp(joypadData) end
----@return any
-function ISBuildingObject:onJoypadDirRight(joypadData) end
----@return any
-function ISBuildingObject:onJoypadDirLeft(joypadData) end
----@return any
+
+---@return string?
 function ISBuildingObject:getAPrompt() end
----@return any
+
+---@return string
 function ISBuildingObject:getBPrompt() end
----@return any
-function ISBuildingObject:getYPrompt() end
----@return any
+
+---@return IsoSprite?
+function ISBuildingObject:getFloorCursorSprite() end
+
+---@return string
 function ISBuildingObject:getLBPrompt() end
----@return any
+
+---@return string
 function ISBuildingObject:getRBPrompt() end
 
----@return any
+---@return string?
+function ISBuildingObject:getSprite() end
+
+---@return string?
+function ISBuildingObject:getYPrompt() end
+
+---@param square IsoGridSquare
+---@return boolean
+function ISBuildingObject:haveMaterial(square) end
+
+function ISBuildingObject:init() end
+
+function ISBuildingObject:initialise() end
+
+---@param square IsoGridSquare
+---@return boolean
+function ISBuildingObject:isValid(square) end
+
+function ISBuildingObject:onActionComplete() end
+
+---@param joypadData JoypadData
+function ISBuildingObject:onJoypadDirDown(joypadData) end
+
+---@param joypadData JoypadData
+function ISBuildingObject:onJoypadDirLeft(joypadData) end
+
+---@param joypadData JoypadData
+function ISBuildingObject:onJoypadDirRight(joypadData) end
+
+---@param joypadData JoypadData
+function ISBuildingObject:onJoypadDirUp(joypadData) end
+
+---@param joypadIndex integer
+---@param joypadData JoypadData
+---@param button integer
+function ISBuildingObject:onJoypadPressButton(joypadIndex, joypadData, button) end
+
+---@param action ISBaseTimedAction
+function ISBuildingObject:onTimedActionStart(action) end
+
+---@param action ISBaseTimedAction
+function ISBuildingObject:onTimedActionStop(action) end
+
+function ISBuildingObject:reinit() end
+
+---@param x number
+---@param y number
+---@param z number
+---@param square IsoGridSquare
+function ISBuildingObject:render(x, y, z, square) end
+
+---@param x number
+---@param y number
+---@param z number
+---@param square IsoGridSquare
+function ISBuildingObject:renderOpaqueObjectsInWorld(x, y, z, square) end
+
+function ISBuildingObject:reset() end
+
+---@param key integer
+function ISBuildingObject:rotateKey(key) end
+
+---@param x number
+---@param y number
+function ISBuildingObject:rotateMouse(x, y) end
+
+---@param passThrough string
+function ISBuildingObject:setCanPassThrough(passThrough) end
+
+---@param nilAfter boolean
+function ISBuildingObject:setDragNilAfterPlace(nilAfter) end
+
+---@param sprite string
+function ISBuildingObject:setEastSprite(sprite) end
+
+---@param sprite string
+function ISBuildingObject:setNorthSprite(sprite) end
+
+---@param sprite string
+function ISBuildingObject:setSouthSprite(sprite) end
+
+---@param sprite string
+function ISBuildingObject:setSprite(sprite) end
+
+---@param x number
+---@param y number
+---@param z number
+---@return ISBuildAction?
+function ISBuildingObject:tryBuild(x, y, z) end
+
+function ISBuildingObject:update() end
+
+function ISBuildingObject:updateModData() end
+
+---@param x number
+---@param y number
+---@param z number
+---@return boolean?
+function ISBuildingObject:walkTo(x, y, z) end
+
+---@param draggingItem ISBuildingObject
+---@param isRender boolean
+---@param x number
+---@param y number
+---@param z number
+---@param square IsoGridSquare
 function DoTileBuilding(draggingItem, isRender, x, y, z, square) end
----@return any
+
+---@param draggingItem ISBuildingObject
+---@param isRender boolean
+---@param x number
+---@param y number
+---@param z number
 function DoTileBuildingJoyPad(draggingItem, isRender, x, y, z) end

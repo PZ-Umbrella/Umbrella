@@ -1,46 +1,59 @@
 ---@meta
 
 ---@class TutorialFocus : ISPanel
----@field x any
----@field y any
----@field focusx any
----@field focusy any
----@field focuswidth any
----@field focusheight any
----@field focusx2 any
----@field focusy2 any
----@field width any
----@field height any
----@field backgroundColor any
----@field borderColor any
----@field mouseover any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field instance any
----@field [any] any
+---@field focusheight number
+---@field focuswidth number
+---@field focusx number
+---@field focusx2 number
+---@field focusy number
+---@field focusy2 number
+---@field height unknown
+---@field mouseover boolean
+---@field width unknown
 TutorialFocus = ISPanel:derive("TutorialFocus")
+TutorialFocus.Type = "TutorialFocus"
+TutorialFocus.instance = nil ---@type TutorialFocus?
 
----@return any
+---@param x number
+---@param y number
+---@param w number
+---@param h number
 function TutorialFocus.set(x, y, w, h) end
----@return any
+
 function TutorialFocus.unset() end
 
----@return any
 function TutorialFocus:initialise() end
----@return any
-function TutorialFocus:prerender() end
----@return any
+
+---@param x number
+---@param y number
+---@return boolean
 function TutorialFocus:isInside(x, y) end
----@return any
-function TutorialFocus:onRightMouseUp(x, y) end
----@return any
-function TutorialFocus:onRightMouseDown(x, y) end
----@return any
-function TutorialFocus:onMouseUp(x, y) end
----@return any
+
+---@param x number
+---@param y number
+---@return boolean
 function TutorialFocus:onMouseDown(x, y) end
 
+---@param x number
+---@param y number
+---@return boolean
+function TutorialFocus:onMouseUp(x, y) end
+
+---@param x number
+---@param y number
+---@return boolean
+function TutorialFocus:onRightMouseDown(x, y) end
+
+---@param x number
+---@param y number
+---@return boolean
+function TutorialFocus:onRightMouseUp(x, y) end
+
+function TutorialFocus:prerender() end
+
+---@param focusx number
+---@param focusy number
+---@param focuswidth number
+---@param focusheight number
 ---@return TutorialFocus
 function TutorialFocus:new(focusx, focusy, focuswidth, focusheight) end

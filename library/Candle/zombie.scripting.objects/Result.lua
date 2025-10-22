@@ -1,56 +1,55 @@
---- @meta
+--- @meta _
 
 --- @class Result
 --- @field public class any
-Result = {};
+Result = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return int
+--- @return integer
 function Result:getCount() end
 
 --- @public
---- @return int
+--- @return integer
 function Result:getDrainableCount() end
 
 --- @public
---- @return String
+--- @return string
 function Result:getFullType() end
 
 --- @public
---- @return String
+--- @return string
 function Result:getModule() end
 
 --- @public
---- @return String
+--- @return string
 function Result:getType() end
 
 --- @public
---- @param count int
---- @return void
+--- @param count integer
+--- @return nil
 function Result:setCount(count) end
 
 --- @public
---- @param count int
---- @return void
+--- @param count integer
+--- @return nil
 function Result:setDrainableCount(count) end
 
 --- @public
---- @param module String
---- @return void
+--- @param module string
+--- @return nil
 function Result:setModule(module) end
 
 --- @public
---- @param type String
---- @return void
+--- @param type string
+--- @return nil
 function Result:setType(type) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

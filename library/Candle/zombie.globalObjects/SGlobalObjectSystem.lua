@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class SGlobalObjectSystem: GlobalObjectSystem
 --- @field public class any
-SGlobalObjectSystem = {};
+SGlobalObjectSystem = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,90 +10,103 @@ SGlobalObjectSystem = {};
 
 --- @public
 --- @param isoObject IsoObject
---- @return void
+--- @return nil
 function SGlobalObjectSystem:OnIsoObjectChangedItself(isoObject) end
 
 --- @public
---- @return void
+--- @param arg0 IsoObject
+--- @return nil
+function SGlobalObjectSystem:OnModDataChangeItself(arg0) end
+
+--- @public
+--- @return nil
 function SGlobalObjectSystem:Reset() end
 
 --- @public
 --- @param globalObject SGlobalObject
---- @return void
+--- @return nil
 function SGlobalObjectSystem:addGlobalObjectOnClient(globalObject) end
 
 --- @public
---- @param wx int
---- @param wy int
---- @return void
+--- @param wx integer
+--- @param wy integer
+--- @return nil
 function SGlobalObjectSystem:chunkLoaded(wx, wy) end
 
 --- @public
---- @return KahluaTable
+--- @return table
 function SGlobalObjectSystem:getInitialStateForClient() end
 
 --- @public
---- @return void
---- @overload fun(self: SGlobalObjectSystem, bb: ByteBuffer, WorldVersion: int): void
+--- @return nil
 function SGlobalObjectSystem:load() end
 
 --- @public
---- @return int
+--- @param bb ByteBuffer
+--- @param WorldVersion integer
+--- @return nil
+function SGlobalObjectSystem:load(bb, WorldVersion) end
+
+--- @public
+--- @return integer
 function SGlobalObjectSystem:loadedWorldVersion() end
 
 --- @public
---- @param command String
+--- @param command string
 --- @param playerObj IsoPlayer
---- @param args KahluaTable
---- @return void
+--- @param args table
+--- @return nil
 function SGlobalObjectSystem:receiveClientCommand(command, playerObj, args) end
 
 --- @public
 --- @param globalObject SGlobalObject
---- @return void
+--- @return nil
 function SGlobalObjectSystem:removeGlobalObjectOnClient(globalObject) end
 
 --- @public
---- @return void
---- @overload fun(self: SGlobalObjectSystem, bb: ByteBuffer): void
+--- @return nil
 function SGlobalObjectSystem:save() end
 
 --- @public
---- @param command String
---- @param args KahluaTable
---- @return void
+--- @param bb ByteBuffer
+--- @return nil
+function SGlobalObjectSystem:save(bb) end
+
+--- @public
+--- @param command string
+--- @param args table
+--- @return nil
 function SGlobalObjectSystem:sendCommand(command, args) end
 
 --- @public
---- @param keys KahluaTable
---- @return void
+--- @param keys table
+--- @return nil
 function SGlobalObjectSystem:setModDataKeys(keys) end
 
 --- @public
---- @param keys KahluaTable
---- @return void
+--- @param keys table
+--- @return nil
 function SGlobalObjectSystem:setObjectModDataKeys(keys) end
 
 --- @public
---- @param keys KahluaTable
---- @return void
+--- @param keys table
+--- @return nil
 function SGlobalObjectSystem:setObjectSyncKeys(keys) end
 
 --- @public
---- @return void
+--- @return nil
 function SGlobalObjectSystem:update() end
 
 --- @public
 --- @param globalObject SGlobalObject
---- @return void
+--- @return nil
 function SGlobalObjectSystem:updateGlobalObjectOnClient(globalObject) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param name String
+--- @param name string
 --- @return SGlobalObjectSystem
 function SGlobalObjectSystem.new(name) end

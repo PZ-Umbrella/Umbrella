@@ -1,29 +1,38 @@
 ---@meta
 
----@class ISSpinBox : ISPanel
----@field selected any
----@field leftButton any
----@field rightButton any
----@field tooltipUI any
----@field backgroundColor any
----@field borderColor any
----@field options any
----@field target any
----@field targetFunc any
----@field fade any
----@field [any] any
-ISSpinBox = ISPanel:derive("ISSpinBox")
+---@alias umbrella.ISSpinBox.OnClick fun(target: unknown, box: ISSpinBox)
 
----@return any
+---@class ISSpinBox : ISPanel
+---@field fade UITransition
+---@field leftButton ISButton
+---@field options string[]
+---@field rightButton ISButton
+---@field selected number
+---@field target unknown?
+---@field targetFunc umbrella.ISSpinBox.OnClick?
+---@field tooltipUI ISToolTip
+ISSpinBox = ISPanel:derive("ISSpinBox")
+ISSpinBox.Type = "ISSpinBox"
+
+---@param option string
 function ISSpinBox:addOption(option) end
----@return any
+
 function ISSpinBox:createChildren() end
----@return any
+
+---@param button ISButton
 function ISSpinBox:onButton(button) end
----@return any
+
+function ISSpinBox:onMouseWheel(delta) end
+
 function ISSpinBox:prerender() end
----@return any
+
 function ISSpinBox:render() end
 
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param target unknown?
+---@param targetFunc umbrella.ISSpinBox.OnClick?
 ---@return ISSpinBox
 function ISSpinBox:new(x, y, width, height, target, targetFunc) end

@@ -1,33 +1,32 @@
---- @meta
+--- @meta _
 
 --- @class IsoPhysicsObject: IsoMovingObject
 --- @field public class any
-IsoPhysicsObject = {};
+IsoPhysicsObject = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
+--- @return nil
 function IsoPhysicsObject:collideGround() end
 
 --- @public
---- @return void
+--- @return nil
 function IsoPhysicsObject:collideWall() end
 
 --- @public
 --- @param bDoNoises boolean
---- @return float
+--- @return number
 function IsoPhysicsObject:getGlobalMovementMod(bDoNoises) end
 
 --- @public
---- @return void
+--- @return nil
 function IsoPhysicsObject:update() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

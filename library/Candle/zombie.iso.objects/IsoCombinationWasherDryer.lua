@@ -1,19 +1,19 @@
---- @meta
+--- @meta _
 
 --- @class IsoCombinationWasherDryer: IsoObject
 --- @field public class any
-IsoCombinationWasherDryer = {};
+IsoCombinationWasherDryer = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
+--- @return nil
 function IsoCombinationWasherDryer:addToWorld() end
 
 --- @public
---- @return String
+--- @return string
 function IsoCombinationWasherDryer:getObjectName() end
 
 --- @public
@@ -42,58 +42,63 @@ function IsoCombinationWasherDryer:isRemoveItemAllowedFromContainer(container, i
 
 --- @public
 --- @param input ByteBuffer
---- @param WorldVersion int
+--- @param WorldVersion integer
 --- @param IS_DEBUG_SAVE boolean
---- @return void
+--- @return nil
 function IsoCombinationWasherDryer:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 --- @public
---- @param change String
+--- @param change string
 --- @param bb ByteBuffer
---- @return void
+--- @return nil
 function IsoCombinationWasherDryer:loadChange(change, bb) end
 
 --- @public
---- @return void
+--- @return nil
 function IsoCombinationWasherDryer:removeFromWorld() end
 
 --- @public
 --- @param output ByteBuffer
 --- @param IS_DEBUG_SAVE boolean
---- @return void
+--- @return nil
 function IsoCombinationWasherDryer:save(output, IS_DEBUG_SAVE) end
 
 --- @public
---- @param change String
---- @param tbl KahluaTable
+--- @param change string
+--- @param tbl table
 --- @param bb ByteBuffer
---- @return void
+--- @return nil
 function IsoCombinationWasherDryer:saveChange(change, tbl, bb) end
 
 --- @public
 --- @param activated boolean
---- @return void
+--- @return nil
 function IsoCombinationWasherDryer:setActivated(activated) end
 
 --- @public
---- @return void
+--- @return nil
 function IsoCombinationWasherDryer:setModeDryer() end
 
 --- @public
---- @return void
+--- @return nil
 function IsoCombinationWasherDryer:setModeWasher() end
 
 --- @public
---- @return void
+--- @return nil
 function IsoCombinationWasherDryer:update() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param cell IsoCell
 --- @return IsoCombinationWasherDryer
---- @overload fun(cell: IsoCell, sq: IsoGridSquare, gid: IsoSprite): IsoCombinationWasherDryer
 function IsoCombinationWasherDryer.new(cell) end
+
+--- @public
+--- @param cell IsoCell
+--- @param sq IsoGridSquare
+--- @param gid IsoSprite
+--- @return IsoCombinationWasherDryer
+function IsoCombinationWasherDryer.new(cell, sq, gid) end

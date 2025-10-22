@@ -1,9 +1,8 @@
---- @meta
+--- @meta _
 
---- @class TextServerOption: StringConfigOption
+--- @class TextServerOption: StringConfigOption, ServerOption
 --- @field public class any
---- @implement ServerOption
-TextServerOption = {};
+TextServerOption = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -11,27 +10,32 @@ TextServerOption = {};
 
 --- @public
 --- @return ConfigOption
---- @overload fun(self: TextServerOption): ConfigOption
 function TextServerOption:asConfigOption() end
 
 --- @public
---- @return String
---- @overload fun(self: TextServerOption): String
+--- @return ConfigOption
+function TextServerOption:asConfigOption() end
+
+--- @public
+--- @return string
 function TextServerOption:getTooltip() end
 
 --- @public
---- @return String
+--- @return string
+function TextServerOption:getTooltip() end
+
+--- @public
+--- @return string
 function TextServerOption:getType() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param owner ServerOptions
---- @param name String
---- @param defaultValue String
---- @param maxLength int
+--- @param name string
+--- @param defaultValue string
+--- @param maxLength integer
 --- @return TextServerOption
 function TextServerOption.new(owner, name, defaultValue, maxLength) end

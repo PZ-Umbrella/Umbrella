@@ -1,9 +1,8 @@
---- @meta
+--- @meta _
 
---- @class StringSandboxOption: StringConfigOption
+--- @class StringSandboxOption: StringConfigOption, SandboxOption
 --- @field public class any
---- @implement SandboxOption
-StringSandboxOption = {};
+StringSandboxOption = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -11,77 +10,116 @@ StringSandboxOption = {};
 
 --- @public
 --- @return ConfigOption
---- @overload fun(self: StringSandboxOption): ConfigOption
 function StringSandboxOption:asConfigOption() end
 
 --- @public
---- @param table KahluaTable
---- @return void
---- @overload fun(self: StringSandboxOption, table: KahluaTable): void
+--- @return ConfigOption
+function StringSandboxOption:asConfigOption() end
+
+--- @public
+--- @param table table
+--- @return nil
 function StringSandboxOption:fromTable(table) end
 
 --- @public
---- @return String
---- @overload fun(self: StringSandboxOption): String
+--- @param table table
+--- @return nil
+function StringSandboxOption:fromTable(table) end
+
+--- @public
+--- @return string
 function StringSandboxOption:getPageName() end
 
 --- @public
---- @return String
---- @overload fun(self: StringSandboxOption): String
+--- @return string
+function StringSandboxOption:getPageName() end
+
+--- @public
+--- @return string
 function StringSandboxOption:getShortName() end
 
 --- @public
---- @return String
---- @overload fun(self: StringSandboxOption): String
+--- @return string
+function StringSandboxOption:getShortName() end
+
+--- @public
+--- @return string
 function StringSandboxOption:getTableName() end
 
 --- @public
---- @return String
---- @overload fun(self: StringSandboxOption): String
+--- @return string
+function StringSandboxOption:getTableName() end
+
+--- @public
+--- @return string
 function StringSandboxOption:getTooltip() end
 
 --- @public
---- @return String
---- @overload fun(self: StringSandboxOption): String
+--- @return string
+function StringSandboxOption:getTooltip() end
+
+--- @public
+--- @return string
+function StringSandboxOption:getTranslatedName() end
+
+--- @public
+--- @return string
 function StringSandboxOption:getTranslatedName() end
 
 --- @public
 --- @return boolean
---- @overload fun(self: StringSandboxOption): boolean
 function StringSandboxOption:isCustom() end
 
 --- @public
---- @return void
---- @overload fun(self: StringSandboxOption): void
+--- @return boolean
+function StringSandboxOption:isCustom() end
+
+--- @public
+--- @return nil
 function StringSandboxOption:setCustom() end
 
 --- @public
---- @param pageName String
+--- @return nil
+function StringSandboxOption:setCustom() end
+
+--- @public
+--- @param pageName string
 --- @return SandboxOption
---- @overload fun(self: StringSandboxOption, pageName: String): SandboxOption
 function StringSandboxOption:setPageName(pageName) end
 
 --- @public
---- @param translation String
+--- @param pageName string
 --- @return SandboxOption
---- @overload fun(self: StringSandboxOption, translation: String): SandboxOption
+function StringSandboxOption:setPageName(pageName) end
+
+--- @public
+--- @param translation string
+--- @return SandboxOption
 function StringSandboxOption:setTranslation(translation) end
 
 --- @public
---- @param table KahluaTable
---- @return void
---- @overload fun(self: StringSandboxOption, table: KahluaTable): void
+--- @param translation string
+--- @return SandboxOption
+function StringSandboxOption:setTranslation(translation) end
+
+--- @public
+--- @param table table
+--- @return nil
 function StringSandboxOption:toTable(table) end
 
+--- @public
+--- @param table table
+--- @return nil
+function StringSandboxOption:toTable(table) end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param owner SandboxOptions
---- @param name String
---- @param defaultValue String
---- @param maxLength int
+--- @param name string
+--- @param defaultValue string
+--- @param maxLength integer
 --- @return StringSandboxOption
 function StringSandboxOption.new(owner, name, defaultValue, maxLength) end

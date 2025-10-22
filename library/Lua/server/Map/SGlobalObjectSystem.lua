@@ -1,69 +1,120 @@
 ---@meta
 
 ---@class SGlobalObjectSystem : ISBaseObject
----@field system any
----@field systemName any
----@field wantNoise any
----@field [any] any
+---@field system GlobalObjectSystem
+---@field systemName string
+---@field wantNoise boolean
 SGlobalObjectSystem = ISBaseObject:derive("SGlobalObjectSystem")
+SGlobalObjectSystem.Type = "SGlobalObjectSystem"
 
----@return any
+---@param luaClass SGlobalObjectSystem
 function SGlobalObjectSystem.RegisterSystemClass(luaClass) end
 
----@return any
-function SGlobalObjectSystem:noise(message) end
----@return any
-function SGlobalObjectSystem:initSystem() end
----@return any
+---@return unknown?
 function SGlobalObjectSystem:getInitialStateForClient() end
----@return any
-function SGlobalObjectSystem:getLuaObjectCount() end
----@return any
-function SGlobalObjectSystem:getLuaObjectByIndex(index) end
----@return any
-function SGlobalObjectSystem:initLuaObjects() end
----@return any
-function SGlobalObjectSystem:isValidIsoObject(isoObject) end
----@return any
-function SGlobalObjectSystem:getIsoObjectOnSquare(square) end
----@return any
+
+---@param x number
+---@param y number
+---@param z number
+---@return IsoObject?
 function SGlobalObjectSystem:getIsoObjectAt(x, y, z) end
----@return any
-function SGlobalObjectSystem:newLuaObject(globalObject) end
----@return any
-function SGlobalObjectSystem:newLuaObjectAt(x, y, z) end
----@return any
-function SGlobalObjectSystem:newLuaObjectOnSquare(square) end
----@return any
-function SGlobalObjectSystem:removeLuaObject(luaObject) end
----@return any
-function SGlobalObjectSystem:removeLuaObjectAt(x, y, z) end
----@return any
-function SGlobalObjectSystem:removeLuaObjectOnSquare(square) end
----@return any
-function SGlobalObjectSystem:newLuaObjectOnClient(luaObject) end
----@return any
-function SGlobalObjectSystem:removeLuaObjectOnClient(luaObject) end
----@return any
+
+---@param square IsoGridSquare
+---@return IsoObject?
+function SGlobalObjectSystem:getIsoObjectOnSquare(square) end
+
+---@param x number
+---@param y number
+---@param z number
+---@return SGlobalObject?
 function SGlobalObjectSystem:getLuaObjectAt(x, y, z) end
----@return any
+
+---@param index integer
+---@return SGlobalObject
+function SGlobalObjectSystem:getLuaObjectByIndex(index) end
+
+---@return integer
+function SGlobalObjectSystem:getLuaObjectCount() end
+
+---@param square IsoGridSquare
+---@return SGlobalObject?
 function SGlobalObjectSystem:getLuaObjectOnSquare(square) end
----@return any
+
+function SGlobalObjectSystem:initLuaObjects() end
+
+function SGlobalObjectSystem:initSystem() end
+
+---@param isoObject IsoObject
+function SGlobalObjectSystem:isValidIsoObject(isoObject) end
+
+---@param isoObject IsoObject
 function SGlobalObjectSystem:loadIsoObject(isoObject) end
----@return any
-function SGlobalObjectSystem:sendCommand(command, args) end
----@return any
-function SGlobalObjectSystem:OnClientCommand(command, playerObj, args) end
----@return any
-function SGlobalObjectSystem:OnDestroyIsoThumpable(isoObject, playerObj) end
----@return any
-function SGlobalObjectSystem:OnObjectAdded(isoObject) end
----@return any
-function SGlobalObjectSystem:OnObjectAboutToBeRemoved(isoObject) end
----@return any
-function SGlobalObjectSystem:OnIsoObjectChangedItself(isoObject) end
----@return any
+
+---@param globalObject GlobalObject
+function SGlobalObjectSystem:newLuaObject(globalObject) end
+
+---@param x number
+---@param y number
+---@param z number
+---@return SGlobalObject?
+function SGlobalObjectSystem:newLuaObjectAt(x, y, z) end
+
+---@param luaObject SGlobalObject?
+function SGlobalObjectSystem:newLuaObjectOnClient(luaObject) end
+
+---@param square IsoGridSquare
+---@return SGlobalObject?
+function SGlobalObjectSystem:newLuaObjectOnSquare(square) end
+
+---@param message string
+function SGlobalObjectSystem:noise(message) end
+
+---@param wx number
+---@param wy number
 function SGlobalObjectSystem:OnChunkLoaded(wx, wy) end
 
+---@param command string
+---@param playerObj IsoPlayer
+---@param args table
+function SGlobalObjectSystem:OnClientCommand(command, playerObj, args) end
+
+---@param isoObject IsoObject
+---@param playerObj IsoPlayer
+function SGlobalObjectSystem:OnDestroyIsoThumpable(isoObject, playerObj) end
+
+---@param isoObject IsoObject
+function SGlobalObjectSystem:OnIsoObjectChangedItself(isoObject) end
+
+---@param isoObject IsoObject
+function SGlobalObjectSystem:OnModDataChangeItself(isoObject) end
+
+---@param isoObject IsoObject
+function SGlobalObjectSystem:OnObjectAboutToBeRemoved(isoObject) end
+
+---@param isoObject IsoObject
+function SGlobalObjectSystem:OnObjectAdded(isoObject) end
+
+---@param luaObject SGlobalObject?
+function SGlobalObjectSystem:removeLuaObject(luaObject) end
+
+---@param x number
+---@param y number
+---@param z number
+function SGlobalObjectSystem:removeLuaObjectAt(x, y, z) end
+
+---@param luaObject SGlobalObject
+function SGlobalObjectSystem:removeLuaObjectOnClient(luaObject) end
+
+---@param square IsoGridSquare
+function SGlobalObjectSystem:removeLuaObjectOnSquare(square) end
+
+---@param command string
+---@param args table
+function SGlobalObjectSystem:sendCommand(command, args) end
+
+---@param luaObject SGlobalObject
+function SGlobalObjectSystem:updateLuaObjectOnClient(luaObject) end
+
+---@param name string
 ---@return SGlobalObjectSystem
 function SGlobalObjectSystem:new(name) end

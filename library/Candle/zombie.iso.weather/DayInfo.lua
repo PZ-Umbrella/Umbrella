@@ -1,31 +1,31 @@
---- @meta
+--- @meta _
 
 --- @class DayInfo DAY INFO
 --- @field public class any
-DayInfo = {};
+DayInfo = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return long
+--- @return integer
 function DayInfo:getDateValue() end
 
 --- @public
---- @return int
+--- @return integer
 function DayInfo:getDay() end
 
 --- @public
---- @return int
+--- @return integer
 function DayInfo:getHour() end
 
 --- @public
---- @return int
+--- @return integer
 function DayInfo:getMinutes() end
 
 --- @public
---- @return int
+--- @return integer
 function DayInfo:getMonth() end
 
 --- @public
@@ -33,19 +33,18 @@ function DayInfo:getMonth() end
 function DayInfo:getSeason() end
 
 --- @public
---- @return int
+--- @return integer
 function DayInfo:getYear() end
 
 --- @public
---- @param day int
---- @param month int
---- @param year int
---- @return void
+--- @param day integer
+--- @param month integer
+--- @param year integer
+--- @return nil
 function DayInfo:set(day, month, year) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

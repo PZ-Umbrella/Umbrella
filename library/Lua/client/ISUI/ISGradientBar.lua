@@ -1,48 +1,61 @@
 ---@meta
 
 ---@class ISGradientBar : ISPanel
----@field gradientTex any
----@field value any
----@field x any
----@field y any
----@field background any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field highlightTex any
----@field highlightTex_L any
----@field highlightTex_R any
----@field settings any
----@field [any] any
+---@field gradientTex Texture
+---@field highlightTex Texture
+---@field highlightTex_L Texture
+---@field highlightTex_R Texture
+---@field settings umbrella.ISGradientBar.Settings
+---@field value number
 ISGradientBar = ISPanel:derive("ISGradientBar")
+ISGradientBar.Type = "ISGradientBar"
 
----@return any
-function ISGradientBar:initialise() end
----@return any
 function ISGradientBar:createChildren() end
----@return any
+
+function ISGradientBar:initialise() end
+
 function ISGradientBar:prerender() end
----@return any
+
 function ISGradientBar:render() end
----@return any
-function ISGradientBar:setGradientTexture(_tex) end
----@return any
-function ISGradientBar:setHighlightRadius(_rad) end
----@return any
-function ISGradientBar:setDarkAlpha(_alpha) end
----@return any
+
+---@param _a number
+---@param _r number
+---@param _g number
+---@param _b number
 function ISGradientBar:setBorderColor(_a, _r, _g, _b) end
----@return any
+
+---@param _a number
+---@param _r number
+---@param _g number
+---@param _b number
 function ISGradientBar:setBorderInnerColor(_a, _r, _g, _b) end
----@return any
+
+---@param _alpha number
+function ISGradientBar:setDarkAlpha(_alpha) end
+
+---@param _b boolean
 function ISGradientBar:setDoKnob(_b) end
----@return any
+
+---@param _tex Texture
+function ISGradientBar:setGradientTexture(_tex) end
+
+---@param _rad number
+function ISGradientBar:setHighlightRadius(_rad) end
+
+---@param _v number
 function ISGradientBar:setValue(_v) end
 
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISGradientBar
 function ISGradientBar:new(x, y, width, height) end
+
+---@class umbrella.ISGradientBar.Settings
+---@field colBorder umbrella.RGBA
+---@field colBorderInner umbrella.RGBA
+---@field darkAlpha number
+---@field doKnob boolean
+---@field radius integer
+umbrella_ISGradientBar_Settings = {}

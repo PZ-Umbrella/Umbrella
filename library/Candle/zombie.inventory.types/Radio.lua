@@ -1,64 +1,116 @@
---- @meta
+--- @meta _
 
---- @class Radio: Moveable Turbo
+--- @class Radio: Moveable, Talker, IUpdater, WaveSignalDevice Turbo
 --- @field public class any
---- @implement Talker
---- @implement IUpdater
---- @implement WaveSignalDevice
-Radio = {};
+Radio = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param line String
---- @param r float
---- @param g float
---- @param b float
---- @param guid String
---- @param codes String
---- @param distance int
---- @return void
---- @overload fun(self: Radio, line: String, r: float, g: float, b: float, guid: String, codes: String, distance: int): void
---- @overload fun(self: Radio, msg: ChatMessage, r: float, g: float, b: float, guid: String, codes: String, distance: int): void
---- @overload fun(self: Radio, arg0: IsoPlayer, arg1: String, arg2: float, arg3: float, arg4: float, arg5: String, arg6: String, arg7: int): void
+--- @param line string
+--- @param r number
+--- @param g number
+--- @param b number
+--- @param guid string
+--- @param codes string
+--- @param distance integer
+--- @return nil
 function Radio:AddDeviceText(line, r, g, b, guid, codes, distance) end
 
 --- @public
+--- @param line string
+--- @param r number
+--- @param g number
+--- @param b number
+--- @param guid string
+--- @param codes string
+--- @param distance integer
+--- @return nil
+function Radio:AddDeviceText(line, r, g, b, guid, codes, distance) end
+
+--- @public
+--- @param msg ChatMessage
+--- @param r number
+--- @param g number
+--- @param b number
+--- @param guid string
+--- @param codes string
+--- @param distance integer
+--- @return nil
+function Radio:AddDeviceText(msg, r, g, b, guid, codes, distance) end
+
+--- @public
+--- @param arg0 IsoPlayer
+--- @param arg1 string
+--- @param arg2 number
+--- @param arg3 number
+--- @param arg4 number
+--- @param arg5 string
+--- @param arg6 string
+--- @param arg7 integer
+--- @return nil
+function Radio:AddDeviceText(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+
+--- @public
 --- @return boolean
---- @overload fun(self: Radio): boolean
 function Radio:HasPlayerInRange() end
 
 --- @public
 --- @return boolean
---- @overload fun(self: Radio): boolean
+function Radio:HasPlayerInRange() end
+
+--- @public
+--- @return boolean
 function Radio:IsSpeaking() end
 
 --- @public
---- @param sprite String
+--- @return boolean
+function Radio:IsSpeaking() end
+
+--- @public
+--- @param sprite string
 --- @return boolean
 function Radio:ReadFromWorldSprite(sprite) end
 
 --- @public
---- @param line String
---- @return void
---- @overload fun(self: Radio, line: String): void
+--- @param line string
+--- @return nil
 function Radio:Say(line) end
 
 --- @public
---- @param distance int
---- @return void
+--- @param line string
+--- @return nil
+function Radio:Say(line) end
+
+--- @public
+--- @return string
+function Radio:canBeEquipped() end
+
+--- @public
+--- @param distance integer
+--- @return nil
 function Radio:doReceiveSignal(distance) end
 
 --- @public
---- @return float
---- @overload fun(self: Radio): float
+--- @return string
+function Radio:getClothingExtraSubmenu() end
+
+--- @public
+--- @return number
+function Radio:getDelta() end
+
+--- @public
+--- @return number
 function Radio:getDelta() end
 
 --- @public
 --- @return DeviceData
---- @overload fun(self: Radio): DeviceData
+function Radio:getDeviceData() end
+
+--- @public
+--- @return DeviceData
 function Radio:getDeviceData() end
 
 --- @public
@@ -66,87 +118,126 @@ function Radio:getDeviceData() end
 function Radio:getPlayer() end
 
 --- @public
---- @return int
+--- @return integer
 function Radio:getSaveType() end
 
 --- @public
---- @return String
---- @overload fun(self: Radio): String
+--- @return string
+function Radio:getSayLine() end
+
+--- @public
+--- @return string
 function Radio:getSayLine() end
 
 --- @public
 --- @return IsoGridSquare
---- @overload fun(self: Radio): IsoGridSquare
 function Radio:getSquare() end
 
 --- @public
---- @return String
---- @overload fun(self: Radio): String
+--- @return IsoGridSquare
+function Radio:getSquare() end
+
+--- @public
+--- @return string
 function Radio:getTalkerType() end
 
 --- @public
---- @return float
---- @overload fun(self: Radio): float
+--- @return string
+function Radio:getTalkerType() end
+
+--- @public
+--- @return number
 function Radio:getX() end
 
 --- @public
---- @return float
---- @overload fun(self: Radio): float
+--- @return number
+function Radio:getX() end
+
+--- @public
+--- @return number
 function Radio:getY() end
 
 --- @public
---- @return float
---- @overload fun(self: Radio): float
+--- @return number
+function Radio:getY() end
+
+--- @public
+--- @return number
+function Radio:getZ() end
+
+--- @public
+--- @return number
 function Radio:getZ() end
 
 --- @public
 --- @param input ByteBuffer
---- @param WorldVersion int
---- @return void
+--- @param WorldVersion integer
+--- @return nil
 function Radio:load(input, WorldVersion) end
 
 --- @public
---- @return void
---- @overload fun(self: Radio): void
+--- @return nil
 function Radio:render() end
 
 --- @public
---- @return void
---- @overload fun(self: Radio): void
+--- @return nil
+function Radio:render() end
+
+--- @public
+--- @return nil
+function Radio:renderlast() end
+
+--- @public
+--- @return nil
 function Radio:renderlast() end
 
 --- @public
 --- @param output ByteBuffer
 --- @param net boolean
---- @return void
+--- @return nil
 function Radio:save(output, net) end
 
 --- @public
---- @param delta float
---- @return void
---- @overload fun(self: Radio, delta: float): void
+--- @param arg0 string
+--- @return nil
+function Radio:setCanBeEquipped(arg0) end
+
+--- @public
+--- @param delta number
+--- @return nil
+function Radio:setDelta(delta) end
+
+--- @public
+--- @param delta number
+--- @return nil
 function Radio:setDelta(delta) end
 
 --- @public
 --- @param data DeviceData
---- @return void
---- @overload fun(self: Radio, data: DeviceData): void
+--- @return nil
 function Radio:setDeviceData(data) end
 
 --- @public
---- @return void
---- @overload fun(self: Radio): void
+--- @param data DeviceData
+--- @return nil
+function Radio:setDeviceData(data) end
+
+--- @public
+--- @return nil
 function Radio:update() end
 
+--- @public
+--- @return nil
+function Radio:update() end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param module String
---- @param name String
---- @param itemType String
---- @param texName String
+--- @param module string
+--- @param name string
+--- @param itemType string
+--- @param texName string
 --- @return Radio
 function Radio.new(module, name, itemType, texName) end

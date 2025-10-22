@@ -1,90 +1,125 @@
 ---@meta
 
 ---@class ISTradingUI : ISPanel
----@field infoBtn any
----@field no any
----@field yourOfferDatas any
----@field remove any
----@field hisOfferDatas any
----@field sealOffer any
----@field historic any
----@field acceptDeal any
----@field otherSealedOffer any
----@field blockingMessage2 any
----@field blockingMessage any
----@field toolRender any
----@field historyMessageCD any
----@field historicalUI any
----@field infoRichText any
----@field borderColor any
----@field backgroundColor any
----@field listHeaderColor any
----@field width any
----@field height any
----@field player any
----@field otherPlayer any
----@field moveWithMouse any
----@field yourOffer any
----@field hisOffer any
----@field selectedItem any
----@field pendingRequest any
----@field historyMessage any
----@field historical any
----@field tradeQuestionUI any
----@field [any] any
+---@field acceptDeal ISButton
+---@field blockingMessage string?
+---@field blockingMessage2 string?
+---@field hisOffer unknown?
+---@field hisOfferDatas ISScrollingListBox
+---@field historic ISButton
+---@field historical umbrella.ISTradingUI.HistoryMessage[]
+---@field historicalUI ISTradingUIHistorical
+---@field historyMessage string?
+---@field historyMessageCD number
+---@field infoBtn ISButton
+---@field infoRichText ISModalRichText
+---@field listHeaderColor umbrella.RGBA
+---@field no ISButton
+---@field otherPlayer IsoPlayer
+---@field otherSealedOffer boolean
+---@field pendingRequest boolean
+---@field player IsoPlayer
+---@field remove ISButton
+---@field sealOffer ISTickBox
+---@field selectedItem umbrella.ISScrollingListBox.Item?
+---@field toolRender ISToolTipInv
+---@field yourOffer unknown?
+---@field yourOfferDatas ISScrollingListBox
 ISTradingUI = ISPanel:derive("ISTradingUI")
+ISTradingUI.Type = "ISTradingUI"
 ISTradingUI.messages = {}
 ISTradingUI.CoolDownMessage = 300
-ISTradingUI.States = {}
-ISTradingUI.States.PlayerClosedWindow = 0
-ISTradingUI.States.SealOffer = 1
-ISTradingUI.States.UnSealOffer = 2
-ISTradingUI.States.FinalizeDeal = 3
+ISTradingUI.States = {
+	PlayerClosedWindow = 0,
+	SealOffer = 1,
+	UnSealOffer = 2,
+	FinalizeDeal = 3,
+}
 ISTradingUI.MaxItems = 20
+ISTradingUI.instance = nil ---@type ISTradingUI?
+ISTradingUI.tradeQuestionUI = nil ---@type ISModalDialog?
 
----@return any
-function ISTradingUI.ReceiveTradeRequest(requester) end
----@return any
+---@param accepted boolean
 function ISTradingUI.AcceptedTrade(accepted) end
----@return any
+
+---@param player IsoPlayer
+---@param item InventoryItem
 function ISTradingUI.OtherAddNewItem(player, item) end
----@return any
-function ISTradingUI.RemoveItem(player, index) end
----@return any
+
+---@param requester string
+function ISTradingUI.ReceiveTradeRequest(requester) end
+
+---@param player IsoPlayer
+---@param itemId integer
+function ISTradingUI.RemoveItem(player, itemId) end
+
+---@param player IsoPlayer
+---@param state integer
 function ISTradingUI.UpdateState(player, state) end
 
----@return any
-function ISTradingUI:initialise() end
----@return any
-function ISTradingUI:onSealOffer(clickedOption, enabled) end
----@return any
+---@param item InventoryItem
 function ISTradingUI:addItemToYourOffer(item) end
----@return any
-function ISTradingUI:yourOfferMouseUp(x, y) end
----@return any
-function ISTradingUI:populateList() end
----@return any
-function ISTradingUI:update() end
----@return any
-function ISTradingUI:removeItem(item) end
----@return any
+
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
 function ISTradingUI:drawOffer(y, item, alt) end
----@return any
-function ISTradingUI:prerender() end
----@return any
-function ISTradingUI:updateTooltip() end
----@return any
-function ISTradingUI:updateButtons() end
----@return any
-function ISTradingUI:render() end
----@return any
-function ISTradingUI:onClick(button) end
----@return any
+
 function ISTradingUI:finalizeDeal() end
----@return any
+
+---@param itemId integer
+---@return integer
+function ISTradingUI:getIndexFromItemId(itemId) end
+
+function ISTradingUI:initialise() end
+
+---@param button ISButton
 function ISTradingUI:onAnswerTradeRequest(button) end
----@return any
+
+---@param button ISButton
+function ISTradingUI:onClick(button) end
+
+---@param clickedOption integer
+---@param enabled boolean
+function ISTradingUI:onSealOffer(clickedOption, enabled) end
+
+function ISTradingUI:populateList() end
+
+function ISTradingUI:prerender() end
+
+---@param item umbrella.ISScrollingListBox.Item
+function ISTradingUI:removeItem(item) end
+
+function ISTradingUI:render() end
+
+---@param message string
+---@param publishInHistorical boolean
+---@param add boolean
+---@param remove boolean
 function ISTradingUI:setHistoryMessage(message, publishInHistorical, add, remove) end
 
+function ISTradingUI:update() end
+
+function ISTradingUI:updateButtons() end
+
+function ISTradingUI:updateTooltip() end
+
+---@param x number
+---@param y number
+function ISTradingUI:yourOfferMouseUp(x, y) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param player IsoPlayer
+---@param otherPlayer IsoPlayer
 ---@return ISTradingUI
 function ISTradingUI:new(x, y, width, height, player, otherPlayer) end
+
+---@class umbrella.ISTradingUI.HistoryMessage
+---@field add boolean?
+---@field message string
+---@field remove boolean?
+umbrella_ISTradingUI_HistoryMessage = {}

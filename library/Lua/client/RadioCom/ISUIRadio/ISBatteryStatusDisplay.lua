@@ -1,42 +1,39 @@
 ---@meta
 
 ---@class ISBatteryStatusDisplay : ISPanel
----@field led any
----@field power any
----@field powerInt any
----@field powerDisp any
----@field x any
----@field y any
----@field background any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field fontheight any
----@field doLed any
----@field backTexture any
----@field powerDispH any
----@field [any] any
+---@field backTexture Texture
+---@field doLed boolean?
+---@field fontheight number
+---@field led ISLedLight?
+---@field power number
+---@field powerDisp string
+---@field powerDispH number
+---@field powerInt integer
 ISBatteryStatusDisplay = ISPanel:derive("ISBatteryStatusDisplay")
+ISBatteryStatusDisplay.Type = "ISBatteryStatusDisplay"
 
----@return any
-function ISBatteryStatusDisplay:initialise() end
----@return any
 function ISBatteryStatusDisplay:createChildren() end
----@return any
-function ISBatteryStatusDisplay:round(num, idp) end
----@return any
-function ISBatteryStatusDisplay:setPower(_power) end
----@return any
-function ISBatteryStatusDisplay:update() end
----@return any
+
+function ISBatteryStatusDisplay:initialise() end
+
 function ISBatteryStatusDisplay:prerender() end
----@return any
+
 function ISBatteryStatusDisplay:render() end
 
+---@param num number
+---@param idp integer?
+---@return number
+function ISBatteryStatusDisplay:round(num, idp) end
+
+---@param _power number
+function ISBatteryStatusDisplay:setPower(_power) end
+
+function ISBatteryStatusDisplay:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param addAlertLed boolean?
 ---@return ISBatteryStatusDisplay
 function ISBatteryStatusDisplay:new(x, y, width, height, addAlertLed) end

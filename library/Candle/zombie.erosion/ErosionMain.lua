@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class ErosionMain
 --- @field public class any
-ErosionMain = {};
+ErosionMain = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -11,23 +11,23 @@ ErosionMain = {};
 --- @public
 --- @static
 --- @param _chunk IsoChunk
---- @return void
+--- @return nil
 function ErosionMain.ChunkLoaded(_chunk) end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function ErosionMain.EveryTenMinutes() end
 
 --- @public
 --- @static
 --- @param _sq IsoGridSquare
---- @return void
+--- @return nil
 function ErosionMain.LoadGridsquare(_sq) end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function ErosionMain.Reset() end
 
 --- @public
@@ -35,13 +35,12 @@ function ErosionMain.Reset() end
 --- @return ErosionMain
 function ErosionMain.getInstance() end
 
-
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
+--- @return nil
 function ErosionMain:DebugUpdateMapNow() end
 
 --- @public
@@ -49,7 +48,7 @@ function ErosionMain:DebugUpdateMapNow() end
 function ErosionMain:getConfig() end
 
 --- @public
---- @return int
+--- @return integer
 function ErosionMain:getEtick() end
 
 --- @public
@@ -57,11 +56,11 @@ function ErosionMain:getEtick() end
 function ErosionMain:getSeasons() end
 
 --- @public
---- @return int
+--- @return integer
 function ErosionMain:getSnowFraction() end
 
 --- @public
---- @return int
+--- @return integer
 function ErosionMain:getSnowFractionYesterday() end
 
 --- @public
@@ -73,30 +72,29 @@ function ErosionMain:getSpriteManager() end
 function ErosionMain:isSnow() end
 
 --- @public
---- @return void
+--- @return nil
 function ErosionMain:mainTimer() end
 
 --- @public
 --- @param bb ByteBuffer
---- @return void
+--- @return nil
 function ErosionMain:receiveState(bb) end
 
 --- @public
 --- @param bb ByteBuffer
---- @return void
+--- @return nil
 function ErosionMain:sendState(bb) end
 
 --- @public
---- @return void
+--- @return nil
 function ErosionMain:snowCheck() end
 
 --- @public
---- @return void
+--- @return nil
 function ErosionMain:start() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

@@ -1,21 +1,20 @@
 ---@meta
 
 ---@class ISLightbarUITimedAction : ISBaseTimedAction
----@field character any
----@field maxTime any
----@field [any] any
 ISLightbarUITimedAction = ISBaseTimedAction:derive("ISLightbarUITimedAction")
+ISLightbarUITimedAction.Type = "ISLightbarUITimedAction"
 
----@return any
+---@return boolean
 function ISLightbarUITimedAction:isValid() end
----@return any
-function ISLightbarUITimedAction:update() end
----@return any
-function ISLightbarUITimedAction:start() end
----@return any
-function ISLightbarUITimedAction:stop() end
----@return any
+
 function ISLightbarUITimedAction:perform() end
 
+function ISLightbarUITimedAction:start() end
+
+function ISLightbarUITimedAction:stop() end
+
+function ISLightbarUITimedAction:update() end
+
+---@param character IsoPlayer
 ---@return ISLightbarUITimedAction
 function ISLightbarUITimedAction:new(character) end

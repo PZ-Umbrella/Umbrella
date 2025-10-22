@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class IsoLightSwitch: IsoObject
 --- @field public class any
-IsoLightSwitch = {};
+IsoLightSwitch = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -11,9 +11,8 @@ IsoLightSwitch = {};
 --- @public
 --- @static
 --- @param chunk IsoChunk
---- @return void
+--- @return nil
 function IsoLightSwitch.chunkLoaded(chunk) end
-
 
 ------------------------------------
 ------------- METHODS --------------
@@ -22,21 +21,21 @@ function IsoLightSwitch.chunkLoaded(chunk) end
 --- @public
 --- @param chr IsoGameCharacter
 --- @param battery InventoryItem
---- @return void
+--- @return nil
 function IsoLightSwitch:addBattery(chr, battery) end
 
 --- @public
 --- @param chr IsoGameCharacter
 --- @param bulb InventoryItem
---- @return void
+--- @return nil
 function IsoLightSwitch:addLightBulb(chr, bulb) end
 
 --- @public
---- @return void
+--- @return nil
 function IsoLightSwitch:addLightSourceFromSprite() end
 
 --- @public
---- @return void
+--- @return nil
 function IsoLightSwitch:addToWorld() end
 
 --- @public
@@ -44,7 +43,7 @@ function IsoLightSwitch:addToWorld() end
 function IsoLightSwitch:canSwitchLight() end
 
 --- @public
---- @return String
+--- @return string
 function IsoLightSwitch:getBulbItem() end
 
 --- @public
@@ -53,11 +52,11 @@ function IsoLightSwitch:getCanBeModified() end
 
 --- @public
 --- @param item InventoryItem
---- @return void
+--- @return nil
 function IsoLightSwitch:getCustomSettingsFromItem(item) end
 
 --- @public
---- @return float
+--- @return number
 function IsoLightSwitch:getDelta() end
 
 --- @public
@@ -69,28 +68,32 @@ function IsoLightSwitch:getHasBattery() end
 function IsoLightSwitch:getLights() end
 
 --- @public
---- @return String
+--- @return string
 function IsoLightSwitch:getObjectName() end
 
 --- @public
---- @return float
+--- @return number
 function IsoLightSwitch:getPower() end
 
 --- @public
---- @return float
+--- @return number
 function IsoLightSwitch:getPrimaryB() end
 
 --- @public
---- @return float
+--- @return number
 function IsoLightSwitch:getPrimaryG() end
 
 --- @public
---- @return float
+--- @return number
 function IsoLightSwitch:getPrimaryR() end
 
 --- @public
 --- @return boolean
 function IsoLightSwitch:getUseBattery() end
+
+--- @public
+--- @return boolean
+function IsoLightSwitch:hasAnimatedAttachments() end
 
 --- @public
 --- @return boolean
@@ -102,22 +105,16 @@ function IsoLightSwitch:isActivated() end
 
 --- @public
 --- @param input ByteBuffer
---- @param WorldVersion int
+--- @param WorldVersion integer
 --- @param IS_DEBUG_SAVE boolean
---- @return void
+--- @return nil
 function IsoLightSwitch:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 --- @public
---- @param x int
---- @param y int
+--- @param x integer
+--- @param y integer
 --- @return boolean
 function IsoLightSwitch:onMouseLeftClick(x, y) end
-
---- @public
---- @param bb ByteBuffer
---- @param connection UdpConnection
---- @return void
-function IsoLightSwitch:receiveSyncCustomizedSettings(bb, connection) end
 
 --- @public
 --- @param chr IsoGameCharacter
@@ -125,7 +122,7 @@ function IsoLightSwitch:receiveSyncCustomizedSettings(bb, connection) end
 function IsoLightSwitch:removeBattery(chr) end
 
 --- @public
---- @return void
+--- @return nil
 function IsoLightSwitch:removeFromWorld() end
 
 --- @public
@@ -134,84 +131,134 @@ function IsoLightSwitch:removeFromWorld() end
 function IsoLightSwitch:removeLightBulb(chr) end
 
 --- @public
+--- @param arg0 number
+--- @param arg1 number
+--- @param arg2 number
+--- @param arg3 ColorInfo
+--- @return nil
+function IsoLightSwitch:renderAnimatedAttachments(arg0, arg1, arg2, arg3) end
+
+--- @public
 --- @param output ByteBuffer
 --- @param IS_DEBUG_SAVE boolean
---- @return void
+--- @return nil
 function IsoLightSwitch:save(output, IS_DEBUG_SAVE) end
+
+--- @public
+--- @param arg0 boolean
+--- @return nil
+function IsoLightSwitch:setActivated(arg0) end
 
 --- @public
 --- @param active boolean
 --- @return boolean
---- @overload fun(self: IsoLightSwitch, active: boolean, setActiveBoolOnly: boolean): boolean
---- @overload fun(self: IsoLightSwitch, active: boolean, setActiveBoolOnly: boolean, ignoreSwitchCheck: boolean): boolean
 function IsoLightSwitch:setActive(active) end
 
 --- @public
---- @param item String
---- @return void
+--- @param active boolean
+--- @param setActiveBoolOnly boolean
+--- @return boolean
+function IsoLightSwitch:setActive(active, setActiveBoolOnly) end
+
+--- @public
+--- @param active boolean
+--- @param setActiveBoolOnly boolean
+--- @param ignoreSwitchCheck boolean
+--- @return boolean
+function IsoLightSwitch:setActive(active, setActiveBoolOnly, ignoreSwitchCheck) end
+
+--- @public
+--- @param item string
+--- @return nil
 function IsoLightSwitch:setBulbItemRaw(item) end
 
 --- @public
+--- @param arg0 boolean
+--- @return nil
+function IsoLightSwitch:setCanBeModified(arg0) end
+
+--- @public
 --- @param item InventoryItem
---- @return void
+--- @return nil
 function IsoLightSwitch:setCustomSettingsToItem(item) end
 
 --- @public
---- @param delta float
---- @return void
+--- @param delta number
+--- @return nil
 function IsoLightSwitch:setDelta(delta) end
 
 --- @public
+--- @param arg0 boolean
+--- @return nil
+function IsoLightSwitch:setHasBattery(arg0) end
+
+--- @public
 --- @param b boolean
---- @return void
+--- @return nil
 function IsoLightSwitch:setHasBatteryRaw(b) end
 
 --- @public
---- @param power float
---- @return void
+--- @param power number
+--- @return nil
 function IsoLightSwitch:setPower(power) end
 
 --- @public
---- @param b float
---- @return void
+--- @param b number
+--- @return nil
 function IsoLightSwitch:setPrimaryB(b) end
 
 --- @public
---- @param g float
---- @return void
+--- @param g number
+--- @return nil
 function IsoLightSwitch:setPrimaryG(g) end
 
 --- @public
---- @param r float
---- @return void
+--- @param r number
+--- @return nil
 function IsoLightSwitch:setPrimaryR(r) end
 
 --- @public
 --- @param b boolean
---- @return void
+--- @return nil
 function IsoLightSwitch:setUseBattery(b) end
 
 --- @public
+--- @param arg0 boolean
+--- @return nil
+function IsoLightSwitch:setUseBatteryDirect(arg0) end
+
+--- @public
+--- @return boolean
+function IsoLightSwitch:shouldShowOnOverlay() end
+
+--- @public
 --- @param Activated boolean
---- @return void
+--- @return nil
 function IsoLightSwitch:switchLight(Activated) end
 
 --- @public
 --- @param source UdpConnection
---- @return void
+--- @return nil
 function IsoLightSwitch:syncCustomizedSettings(source) end
 
 --- @public
 --- @param bRemote boolean
---- @param val byte
+--- @param val integer
 --- @param source UdpConnection
---- @return void
---- @overload fun(self: IsoLightSwitch, bRemote: boolean, val: byte, source: UdpConnection, bb: ByteBuffer): void
+--- @return nil
 function IsoLightSwitch:syncIsoObject(bRemote, val, source) end
 
 --- @public
+--- @param bRemote boolean
+--- @param val integer
+--- @param source UdpConnection
+--- @param bb ByteBuffer
+--- @return nil
+function IsoLightSwitch:syncIsoObject(bRemote, val, source, bb) end
+
+--- @public
 --- @param b ByteBufferWriter
---- @return void
+--- @return nil
 function IsoLightSwitch:syncIsoObjectSend(b) end
 
 --- @public
@@ -219,16 +266,22 @@ function IsoLightSwitch:syncIsoObjectSend(b) end
 function IsoLightSwitch:toggle() end
 
 --- @public
---- @return void
+--- @return nil
 function IsoLightSwitch:update() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param cell IsoCell
 --- @return IsoLightSwitch
---- @overload fun(cell: IsoCell, sq: IsoGridSquare, gid: IsoSprite, RoomID: int): IsoLightSwitch
 function IsoLightSwitch.new(cell) end
+
+--- @public
+--- @param arg0 IsoCell
+--- @param arg1 IsoGridSquare
+--- @param arg2 IsoSprite
+--- @param arg3 integer
+--- @return IsoLightSwitch
+function IsoLightSwitch.new(arg0, arg1, arg2, arg3) end

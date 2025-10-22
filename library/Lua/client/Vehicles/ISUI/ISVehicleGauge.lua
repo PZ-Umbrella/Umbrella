@@ -1,23 +1,31 @@
 ---@meta
 
 ---@class ISVehicleGauge : ISUIElement
----@field javaObject any
----@field texture any
----@field needleX any
----@field needleY any
----@field minAngle any
----@field maxAngle any
----@field [any] any
+---@field maxAngle number
+---@field minAngle number
+---@field needleX number
+---@field needleY number
+---@field texture Texture
 ISVehicleGauge = ISUIElement:derive("ISVehicleGauge")
+ISVehicleGauge.Type = "ISVehicleGauge"
 
----@return any
-function ISVehicleGauge:setNeedleWidth(width) end
----@return any
-function ISVehicleGauge:setTexture(texture) end
----@return any
-function ISVehicleGauge:setValue(value) end
----@return any
 function ISVehicleGauge:instantiate() end
 
+---@param width number
+function ISVehicleGauge:setNeedleWidth(width) end
+
+---@param texture Texture
+function ISVehicleGauge:setTexture(texture) end
+
+---@param value number
+function ISVehicleGauge:setValue(value) end
+
+---@param x number
+---@param y number
+---@param texture Texture
+---@param needleX number
+---@param needleY number
+---@param minAngle number
+---@param maxAngle number
 ---@return ISVehicleGauge
 function ISVehicleGauge:new(x, y, texture, needleX, needleY, minAngle, maxAngle) end

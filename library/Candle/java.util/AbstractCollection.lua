@@ -1,60 +1,84 @@
---- @meta
+--- @meta _
 
---- @class AbstractCollection
+--- @class AbstractCollection: Collection
 --- @field public class any
---- @implement Collection
-AbstractCollection = {};
+AbstractCollection = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param arg0 Object
+--- @param arg0 any
 --- @return boolean
---- @overload fun(self: AbstractCollection, arg0: Object): boolean
+function AbstractCollection:add(arg0) end
+
+--- @public
+--- @param arg0 any
+--- @return boolean
 function AbstractCollection:add(arg0) end
 
 --- @public
 --- @param arg0 Collection
 --- @return boolean
---- @overload fun(self: AbstractCollection, arg0: Collection): boolean
 function AbstractCollection:addAll(arg0) end
 
 --- @public
---- @return void
---- @overload fun(self: AbstractCollection): void
+--- @param arg0 Collection
+--- @return boolean
+function AbstractCollection:addAll(arg0) end
+
+--- @public
+--- @return nil
 function AbstractCollection:clear() end
 
 --- @public
---- @param arg0 Object
+--- @return nil
+function AbstractCollection:clear() end
+
+--- @public
+--- @param arg0 any
 --- @return boolean
---- @overload fun(self: AbstractCollection, arg0: Object): boolean
+function AbstractCollection:contains(arg0) end
+
+--- @public
+--- @param arg0 any
+--- @return boolean
 function AbstractCollection:contains(arg0) end
 
 --- @public
 --- @param arg0 Collection
 --- @return boolean
---- @overload fun(self: AbstractCollection, arg0: Collection): boolean
 function AbstractCollection:containsAll(arg0) end
 
 --- @public
---- @param arg0 Object
+--- @param arg0 Collection
+--- @return boolean
+function AbstractCollection:containsAll(arg0) end
+
+--- @public
+--- @param arg0 any
 --- @return boolean
 function AbstractCollection:equals(arg0) end
 
 --- @public
---- @return int
+--- @return integer
 function AbstractCollection:hashCode() end
 
 --- @public
 --- @return boolean
---- @overload fun(self: AbstractCollection): boolean
+function AbstractCollection:isEmpty() end
+
+--- @public
+--- @return boolean
 function AbstractCollection:isEmpty() end
 
 --- @public
 --- @return Iterator
---- @overload fun(self: AbstractCollection): Iterator
+function AbstractCollection:iterator() end
+
+--- @public
+--- @return Iterator
 function AbstractCollection:iterator() end
 
 --- @public
@@ -62,15 +86,23 @@ function AbstractCollection:iterator() end
 function AbstractCollection:parallelStream() end
 
 --- @public
---- @param arg0 Object
+--- @param arg0 any
 --- @return boolean
---- @overload fun(self: AbstractCollection, arg0: Object): boolean
+function AbstractCollection:remove(arg0) end
+
+--- @public
+--- @param arg0 any
+--- @return boolean
 function AbstractCollection:remove(arg0) end
 
 --- @public
 --- @param arg0 Collection
 --- @return boolean
---- @overload fun(self: AbstractCollection, arg0: Collection): boolean
+function AbstractCollection:removeAll(arg0) end
+
+--- @public
+--- @param arg0 Collection
+--- @return boolean
 function AbstractCollection:removeAll(arg0) end
 
 --- @public
@@ -81,12 +113,19 @@ function AbstractCollection:removeIf(arg0) end
 --- @public
 --- @param arg0 Collection
 --- @return boolean
---- @overload fun(self: AbstractCollection, arg0: Collection): boolean
 function AbstractCollection:retainAll(arg0) end
 
 --- @public
---- @return int
---- @overload fun(self: AbstractCollection): int
+--- @param arg0 Collection
+--- @return boolean
+function AbstractCollection:retainAll(arg0) end
+
+--- @public
+--- @return integer
+function AbstractCollection:size() end
+
+--- @public
+--- @return integer
 function AbstractCollection:size() end
 
 --- @public
@@ -99,14 +138,27 @@ function AbstractCollection:stream() end
 
 --- @public
 --- @return Object[]
---- @overload fun(self: AbstractCollection): Object[]
---- @overload fun(self: AbstractCollection, arg0: Object[]): Object[]
---- @overload fun(self: AbstractCollection, arg0: Object[]): Object[]
---- @overload fun(self: AbstractCollection, arg0: IntFunction): Object[]
 function AbstractCollection:toArray() end
 
 --- @public
---- @return String
+--- @return Object[]
+function AbstractCollection:toArray() end
+
+--- @public
+--- @param arg0 Object[]
+--- @return Object[]
+function AbstractCollection:toArray(arg0) end
+
+--- @public
+--- @param arg0 Object[]
+--- @return Object[]
+function AbstractCollection:toArray(arg0) end
+
+--- @public
+--- @param arg0 IntFunction
+--- @return Object[]
+function AbstractCollection:toArray(arg0) end
+
+--- @public
+--- @return string
 function AbstractCollection:toString() end
-
-

@@ -1,22 +1,21 @@
 ---@meta
 
 ---@class ISHorn : ISBaseTimedAction
----@field t any
----@field character any
----@field maxTime any
----@field [any] any
+---@field t number
 ISHorn = ISBaseTimedAction:derive("ISHorn")
+ISHorn.Type = "ISHorn"
 
----@return any
+---@return boolean
 function ISHorn:isValid() end
----@return any
-function ISHorn:update() end
----@return any
-function ISHorn:start() end
----@return any
-function ISHorn:stop() end
----@return any
+
 function ISHorn:perform() end
 
+function ISHorn:start() end
+
+function ISHorn:stop() end
+
+function ISHorn:update() end
+
+---@param character IsoPlayer
 ---@return ISHorn
 function ISHorn:new(character) end

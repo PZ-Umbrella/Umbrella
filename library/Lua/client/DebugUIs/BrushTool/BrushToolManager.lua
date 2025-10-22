@@ -1,26 +1,30 @@
 ---@meta
 
 ---@class BrushToolManager : ISCollapsableWindow
----@field instance any
----@field chooseTile any
----@field controlFire any
----@field help any
----@field title any
----@field character any
----@field [any] any
+---@field character IsoPlayer
+---@field chooseTile ISButton
+---@field controlFire ISButton
+---@field help ISButton
+---@field title string
 BrushToolManager = ISCollapsableWindow:derive("BrushToolManager")
+BrushToolManager.Type = "BrushToolManager"
 BrushToolManager.cheat = false
-BrushToolManager.instance = nil
+BrushToolManager.instance = nil ---@type BrushToolManager?
 
----@return any
+---@param playerObj IsoPlayer
 function BrushToolManager.openPanel(playerObj) end
 
----@return any
-function BrushToolManager:createChildren() end
----@return any
-function BrushToolManager:onClick(button) end
----@return any
 function BrushToolManager:close() end
 
+function BrushToolManager:createChildren() end
+
+---@param button ISButton
+function BrushToolManager:onClick(button) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param character IsoPlayer
 ---@return BrushToolManager
 function BrushToolManager:new(x, y, width, height, character) end

@@ -1,33 +1,33 @@
---- @meta
+--- @meta _
 
 --- @class Fixing: BaseScriptObject
 --- @field public class any
-Fixing = {};
+Fixing = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param name String
---- @param strArray String[]
---- @return void
-function Fixing:Load(name, strArray) end
+--- @param arg0 string
+--- @param arg1 string
+--- @return nil
+function Fixing:Load(arg0, arg1) end
 
 --- @public
---- @param require String
---- @return void
+--- @param require string
+--- @return nil
 function Fixing:addRequiredItem(require) end
 
 --- @public
 --- @param chr IsoGameCharacter
 --- @param fixer Fixer
 --- @param brokenObject InventoryItem
---- @return int
+--- @return integer
 function Fixing:countUses(chr, fixer, brokenObject) end
 
 --- @public
---- @return float
+--- @return number
 function Fixing:getConditionModifier() end
 
 --- @public
@@ -39,7 +39,7 @@ function Fixing:getFixers() end
 function Fixing:getGlobalItem() end
 
 --- @public
---- @return String
+--- @return string
 function Fixing:getName() end
 
 --- @public
@@ -74,18 +74,18 @@ function Fixing:haveGlobalItem(chr) end
 function Fixing:haveThisFixer(chr, fixer, brokenObject) end
 
 --- @public
---- @param conditionModifier float
---- @return void
+--- @param conditionModifier number
+--- @return nil
 function Fixing:setConditionModifier(conditionModifier) end
 
 --- @public
 --- @param globalItem Fixer
---- @return void
+--- @return nil
 function Fixing:setGlobalItem(globalItem) end
 
 --- @public
---- @param name String
---- @return void
+--- @param name string
+--- @return nil
 function Fixing:setName(name) end
 
 --- @public
@@ -94,9 +94,8 @@ function Fixing:setName(name) end
 --- @return Fixer
 function Fixing:usedInFixer(itemType, chr) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RBKateAndBaldspot: RandomizedBuildingBase
 --- @field public class any
-RBKateAndBaldspot = {};
+RBKateAndBaldspot = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,7 +10,7 @@ RBKateAndBaldspot = {};
 
 --- @public
 ---
----  Description copied from class: RandomizedBuildingBase
+--- Description copied from class: RandomizedBuildingBase
 ---
 --- @param def BuildingDef
 --- @param force boolean
@@ -19,12 +19,11 @@ function RBKateAndBaldspot:isValid(def, force) end
 
 --- @public
 --- @param def BuildingDef
---- @return void
+--- @return nil
 function RBKateAndBaldspot:randomizeBuilding(def) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

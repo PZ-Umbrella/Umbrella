@@ -1,21 +1,20 @@
 ---@meta
 
 ---@class ISStopVehicle : ISBaseTimedAction
----@field character any
----@field maxTime any
----@field [any] any
 ISStopVehicle = ISBaseTimedAction:derive("ISStopVehicle")
+ISStopVehicle.Type = "ISStopVehicle"
 
----@return any
+---@return boolean
 function ISStopVehicle:isValid() end
----@return any
-function ISStopVehicle:update() end
----@return any
-function ISStopVehicle:start() end
----@return any
-function ISStopVehicle:stop() end
----@return any
+
 function ISStopVehicle:perform() end
 
+function ISStopVehicle:start() end
+
+function ISStopVehicle:stop() end
+
+function ISStopVehicle:update() end
+
+---@param character IsoPlayer
 ---@return ISStopVehicle
 function ISStopVehicle:new(character) end

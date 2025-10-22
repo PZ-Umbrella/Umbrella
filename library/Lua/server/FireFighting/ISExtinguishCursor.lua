@@ -1,44 +1,87 @@
 ---@meta
 
 ---@class ISExtinguishCursor : ISBuildingObject
----@field extinguisher any
----@field character any
----@field player any
----@field skipBuildAction any
----@field noNeedHammer any
----@field skipWalk any
----@field renderFloorHelper any
----@field [any] any
+---@field character IsoPlayer
+---@field extinguisher InventoryItem?
+---@field noNeedHammer boolean
+---@field player integer
+---@field renderFloorHelper boolean
+---@field skipBuildAction boolean
+---@field skipWalk boolean
 ISExtinguishCursor = ISBuildingObject:derive("ISExtinguishCursor")
+ISExtinguishCursor.Type = "ISExtinguishCursor"
+ISExtinguishCursor._colorInfo = nil
 
----@return any
+---@param x number
+---@param y number
+---@param z number
+---@param north boolean
+---@param sprite string
 function ISExtinguishCursor:create(x, y, z, north, sprite) end
----@return any
-function ISExtinguishCursor:walkTo(x, y, z) end
----@return any
-function ISExtinguishCursor:isValid(square) end
----@return any
-function ISExtinguishCursor:isValidArea(x, y, z) end
----@return any
-function ISExtinguishCursor:isRunningAction() end
----@return any
-function ISExtinguishCursor:getTopLeftOfSquares(x, y, z) end
----@return any
-function ISExtinguishCursor:render(x, y, z, square) end
----@return any
-function ISExtinguishCursor:onJoypadPressButton(joypadIndex, joypadData, button) end
----@return any
+
+---@return string?
 function ISExtinguishCursor:getAPrompt() end
----@return any
-function ISExtinguishCursor:getLBPrompt() end
----@return any
-function ISExtinguishCursor:getRBPrompt() end
----@return any
-function ISExtinguishCursor:getSquares(x, y, z) end
----@return any
+
+---@param squares IsoGridSquare[]
+---@return number?
 function ISExtinguishCursor:getClosestSquare(squares) end
----@return any
+
+---@param square IsoGridSquare
+---@return IsoFire[]
 function ISExtinguishCursor:getFireObjects(square) end
 
+---@return string?
+function ISExtinguishCursor:getLBPrompt() end
+
+---@return string?
+function ISExtinguishCursor:getRBPrompt() end
+
+---@param x number
+---@param y number
+---@param z number
+---@return IsoGridSquare[]
+function ISExtinguishCursor:getSquares(x, y, z) end
+
+---@param x number
+---@param y number
+---@param z number
+---@return number
+---@return number
+---@return number
+function ISExtinguishCursor:getTopLeftOfSquares(x, y, z) end
+
+---@return ISBaseTimedAction?
+function ISExtinguishCursor:isRunningAction() end
+
+---@param square IsoGridSquare
+---@return boolean
+function ISExtinguishCursor:isValid(square) end
+
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function ISExtinguishCursor:isValidArea(x, y, z) end
+
+---@param joypadIndex integer
+---@param joypadData JoypadData
+---@param button integer
+---@return unknown?
+function ISExtinguishCursor:onJoypadPressButton(joypadIndex, joypadData, button) end
+
+---@param x number
+---@param y number
+---@param z number
+---@param square IsoGridSquare
+function ISExtinguishCursor:render(x, y, z, square) end
+
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function ISExtinguishCursor:walkTo(x, y, z) end
+
+---@param character IsoPlayer
+---@param extinguisher InventoryItem
 ---@return ISExtinguishCursor
 function ISExtinguishCursor:new(character, extinguisher) end

@@ -1,44 +1,40 @@
 ---@meta
 
 ---@class ISSleepDialog : ISPanelJoypad
----@field spinBox any
----@field yes any
----@field no any
----@field joypadIndexY any
----@field joypadIndex any
----@field player any
----@field playerNum any
----@field playerX any
----@field playerY any
----@field name any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field text any
----@field x any
----@field y any
----@field [any] any
+---@field name unknown?
+---@field no ISButton?
+---@field player IsoPlayer
+---@field playerNum integer
+---@field playerX number
+---@field playerY number
+---@field spinBox ISSpinBox
+---@field text string
+---@field yes ISButton?
 ISSleepDialog = ISPanelJoypad:derive("ISSleepDialog")
+ISSleepDialog.Type = "ISSleepDialog"
 
----@return any
-function ISSleepDialog:initialise() end
----@return any
 function ISSleepDialog:destroy() end
----@return any
+
+function ISSleepDialog:initialise() end
+
+---@param button ISButton
 function ISSleepDialog:onClick(button) end
----@return any
-function ISSleepDialog:prerender() end
----@return any
+
+---@param joypadData JoypadData
 function ISSleepDialog:onGainJoypadFocus(joypadData) end
----@return any
+
+---@param button integer
 function ISSleepDialog:onJoypadDown(button) end
----@return any
+
+function ISSleepDialog:prerender() end
+
 function ISSleepDialog:update() end
 
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param text string
+---@param player IsoPlayer
 ---@return ISSleepDialog
 function ISSleepDialog:new(x, y, width, height, text, player) end

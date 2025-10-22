@@ -1,60 +1,71 @@
---- @meta
+--- @meta _
 
 --- @class SpeedControls: UIElement
 --- @field public class any
---- @field public FasterForward HUDButton
---- @field public FastForward HUDButton
+--- @field public FasterForwardSpeed integer
+--- @field public FastForwardSpeed integer
 --- @field public instance SpeedControls
---- @field public Pause HUDButton
---- @field public Play HUDButton
---- @field public Wait HUDButton
-SpeedControls = {};
+--- @field public PauseSpeed integer
+--- @field public PlaySpeed integer
+--- @field public WaitSpeed integer
+SpeedControls = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param name String
---- @return void
+--- @param name string
+--- @return nil
 function SpeedControls:ButtonClicked(name) end
 
 --- @public
---- @return void
+--- @return nil
+function SpeedControls:Pause() end
+
+--- @public
+--- @return nil
 function SpeedControls:SetCorrectIconStates() end
 
 --- @public
---- @param NewSpeed int
---- @return void
+--- @param NewSpeed integer
+--- @return nil
 function SpeedControls:SetCurrentGameSpeed(NewSpeed) end
 
 --- @public
---- @return int
+--- @return integer
 function SpeedControls:getCurrentGameSpeed() end
 
 --- @public
---- @param dx double
---- @param dy double
---- @return Boolean
+--- @return boolean
+function SpeedControls:isPaused() end
+
+--- @public
+--- @param dx number
+--- @param dy number
+--- @return boolean
 function SpeedControls:onMouseMove(dx, dy) end
 
 --- @public
---- @param dx double
---- @param dy double
---- @return void
+--- @param dx number
+--- @param dy number
+--- @return nil
 function SpeedControls:onMouseMoveOutside(dx, dy) end
 
 --- @public
---- @return void
+--- @return nil
 function SpeedControls:render() end
 
 --- @public
---- @return void
+--- @return nil
+function SpeedControls:stepForward() end
+
+--- @public
+--- @return nil
 function SpeedControls:update() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

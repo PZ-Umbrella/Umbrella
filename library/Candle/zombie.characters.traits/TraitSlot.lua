@@ -1,29 +1,27 @@
---- @meta
+--- @meta _
 
 --- @class TraitSlot
 --- @field public class any
-TraitSlot = {};
+TraitSlot = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param arg0 String
+--- @param name string
 --- @return boolean
-function TraitSlot:isName(arg0) end
+function TraitSlot:isName(name) end
 
 --- @public
 --- @return boolean
 function TraitSlot:isSet() end
 
 --- @public
---- @param arg0 boolean
---- @return void
-function TraitSlot:set(arg0) end
+--- @param val boolean
+--- @return nil
+function TraitSlot:set(val) end
 
 --- @public
---- @return String
+--- @return string
 function TraitSlot:toString() end
-
-

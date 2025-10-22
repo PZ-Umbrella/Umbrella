@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class IsoTelevision: IsoWaveSignal
 --- @field public class any
-IsoTelevision = {};
+IsoTelevision = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,15 +10,15 @@ IsoTelevision = {};
 
 --- @public
 --- @param sprite IsoSprite
---- @return void
+--- @return nil
 function IsoTelevision:addTvScreenSprite(sprite) end
 
 --- @public
---- @return void
+--- @return nil
 function IsoTelevision:clearTvScreenSprites() end
 
 --- @public
---- @return String
+--- @return string
 function IsoTelevision:getObjectName() end
 
 --- @public
@@ -28,37 +28,42 @@ function IsoTelevision:isFacing(player) end
 
 --- @public
 --- @param input ByteBuffer
---- @param WorldVersion int
+--- @param WorldVersion integer
 --- @param IS_DEBUG_SAVE boolean
---- @return void
+--- @return nil
 function IsoTelevision:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 --- @public
 --- @param sprite IsoSprite
---- @return void
+--- @return nil
 function IsoTelevision:removeTvScreenSprite(sprite) end
 
 --- @public
---- @return void
+--- @return nil
 function IsoTelevision:renderlast() end
 
 --- @public
 --- @param output ByteBuffer
 --- @param IS_DEBUG_SAVE boolean
---- @return void
+--- @return nil
 function IsoTelevision:save(output, IS_DEBUG_SAVE) end
 
 --- @public
---- @return void
+--- @return nil
 function IsoTelevision:update() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param cell IsoCell
 --- @return IsoTelevision
---- @overload fun(cell: IsoCell, sq: IsoGridSquare, spr: IsoSprite): IsoTelevision
 function IsoTelevision.new(cell) end
+
+--- @public
+--- @param cell IsoCell
+--- @param sq IsoGridSquare
+--- @param spr IsoSprite
+--- @return IsoTelevision
+function IsoTelevision.new(cell, sq, spr) end

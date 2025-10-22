@@ -1,42 +1,45 @@
 ---@meta
 
 ---@class ISSLEvent : ISPanel
----@field eventFrame any
----@field eventSoundList any
----@field storyEvent any
----@field eventData any
----@field x any
----@field y any
----@field background any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field [any] any
+---@field eventData umbrella.ISSSLEvent.EventDataTable[]
+---@field eventFrame ISSLFrame
+---@field eventSoundList ISScrollingListBox
+---@field storyEvent StorySoundEvent?
 ISSLEvent = ISPanel:derive("ISSLEvent")
+ISSLEvent.Type = "ISSLEvent"
 
----@return any
-function ISSLEvent:initialise() end
----@return any
-function ISSLEvent:createChildren() end
----@return any
-function ISSLEvent:setEvent(_event) end
----@return any
+---@param _eventSound EventSound
 function ISSLEvent:addEventSoundItem(_eventSound) end
----@return any
+
+function ISSLEvent:createChildren() end
+
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
 function ISSLEvent:drawEventSoundItem(y, item, alt) end
----@return any
-function ISSLEvent:update() end
----@return any
-function ISSLEvent:prerender() end
----@return any
-function ISSLEvent:render() end
----@return any
+
+function ISSLEvent:initialise() end
+
 function ISSLEvent:onResize() end
 
+function ISSLEvent:prerender() end
+
+function ISSLEvent:render() end
+
+---@param _event StorySoundEvent?
+function ISSLEvent:setEvent(_event) end
+
+function ISSLEvent:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISSLEvent
 function ISSLEvent:new(x, y, width, height) end
+
+---@class umbrella.ISSSLEvent.EventDataTable
+---@field dataPoints ArrayList<DataPoint>
+---@field eventSound EventSound
+umbrella_ISSSLEvent_EventDataTable = {}

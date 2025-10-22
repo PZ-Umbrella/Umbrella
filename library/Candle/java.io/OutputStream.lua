@@ -1,10 +1,8 @@
---- @meta
+--- @meta _
 
---- @class OutputStream
+--- @class OutputStream: Closeable, Flushable
 --- @field public class any
---- @implement Closeable
---- @implement Flushable
-OutputStream = {};
+OutputStream = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -15,31 +13,45 @@ OutputStream = {};
 --- @return OutputStream
 function OutputStream.nullOutputStream() end
 
-
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
---- @overload fun(self: OutputStream): void
+--- @return nil
 function OutputStream:close() end
 
 --- @public
---- @return void
---- @overload fun(self: OutputStream): void
+--- @return nil
+function OutputStream:close() end
+
+--- @public
+--- @return nil
+function OutputStream:flush() end
+
+--- @public
+--- @return nil
 function OutputStream:flush() end
 
 --- @public
 --- @param arg0 byte[]
---- @return void
---- @overload fun(self: OutputStream, arg0: int): void
---- @overload fun(self: OutputStream, arg0: byte[], arg1: int, arg2: int): void
+--- @return nil
 function OutputStream:write(arg0) end
 
+--- @public
+--- @param arg0 integer
+--- @return nil
+function OutputStream:write(arg0) end
+
+--- @public
+--- @param arg0 byte[]
+--- @param arg1 integer
+--- @param arg2 integer
+--- @return nil
+function OutputStream:write(arg0, arg1, arg2) end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

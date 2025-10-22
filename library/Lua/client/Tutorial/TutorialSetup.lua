@@ -4,13 +4,13 @@
 TutorialData = {}
 TutorialData.choosenChallenge = {}
 
----@return any
 function preLoadTutorialInit() end
----@return any
+
 function doTutorialDraw() end
----@return any
+
 function doTutorialInit() end
----@return any
+
 function savePlayerInFile(player) end
----@return any
+
+---@param id integer
 function doTutorialCreatePlayer(id) end

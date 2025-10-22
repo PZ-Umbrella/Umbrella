@@ -1,54 +1,93 @@
 ---@meta
 
 ---@class ISScrollBar : ISUIElement
----@field scrolling any
----@field pos any
----@field javaObject any
----@field anchorTop any
----@field anchorRight any
----@field anchorBottom any
----@field x any
----@field y any
----@field width any
----@field height any
----@field anchorLeft any
----@field barx any
----@field bary any
----@field barwidth any
----@field barheight any
----@field backgroundColor any
----@field borderColor any
----@field parent any
----@field vertical any
----@field background any
----@field uptex any
----@field downtex any
----@field toptex any
----@field midtex any
----@field bottex any
----@field [any] any
+---@field background boolean
+---@field backgroundColor umbrella.RGBA
+---@field barheight number
+---@field barwidth number
+---@field barx number
+---@field bary number
+---@field borderColor umbrella.RGBA
+---@field bottex Texture
+---@field downtex Texture
+---@field midtex Texture
+---@field parent ISUIElement
+---@field pos number
+---@field scrolling boolean
+---@field toptex Texture
+---@field uptex Texture
+---@field vertical boolean
 ISScrollBar = ISUIElement:derive("ISScrollBar")
+ISScrollBar.Type = "ISScrollBar"
 
----@return any
+---@param x number
+---@param y number
+---@return string?
+function ISScrollBar:hitTest(x, y) end
+
 function ISScrollBar:initialise() end
----@return any
-function ISScrollBar:onMouseDown(x, y) end
----@return any
-function ISScrollBar:onMouseUp(x, y) end
----@return any
-function ISScrollBar:refresh() end
----@return any
-function ISScrollBar:onMouseUpOutside(x, y) end
----@return any
-function ISScrollBar:onMouseMoveOutside(dx, dy) end
----@return any
-function ISScrollBar:updatePos() end
----@return any
-function ISScrollBar:onMouseMove(dx, dy) end
----@return any
+
 function ISScrollBar:instantiate() end
----@return any
+
+---@param x number
+---@param y number
+---@return boolean
+function ISScrollBar:isPointOverThumb(x, y) end
+
+function ISScrollBar:onClickArrowDown() end
+
+function ISScrollBar:onClickArrowLeft() end
+
+function ISScrollBar:onClickArrowRight() end
+
+function ISScrollBar:onClickArrowUp() end
+
+---@param y number
+function ISScrollBar:onClickTrackDown(y) end
+
+---@param x number
+function ISScrollBar:onClickTrackLeft(x) end
+
+---@param x number
+function ISScrollBar:onClickTrackRight(x) end
+
+---@param y number
+function ISScrollBar:onClickTrackUp(y) end
+
+---@param x number
+---@param y number
+---@return boolean
+function ISScrollBar:onMouseDoubleClick(x, y) end
+
+---@param x number
+---@param y number
+---@return boolean
+function ISScrollBar:onMouseDown(x, y) end
+
+---@param dx number
+---@param dy number
+function ISScrollBar:onMouseMove(dx, dy) end
+
+---@param dx number
+---@param dy number
+function ISScrollBar:onMouseMoveOutside(dx, dy) end
+
+---@param x number
+---@param y number
+---@return boolean
+function ISScrollBar:onMouseUp(x, y) end
+
+---@param x number
+---@param y number
+function ISScrollBar:onMouseUpOutside(x, y) end
+
+function ISScrollBar:refresh() end
+
 function ISScrollBar:render() end
 
+function ISScrollBar:updatePos() end
+
+---@param parent ISUIElement
+---@param vertical boolean
 ---@return ISScrollBar
 function ISScrollBar:new(parent, vertical) end

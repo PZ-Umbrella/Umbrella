@@ -1,40 +1,44 @@
---- @meta
+--- @meta _
 
 --- @class TraitCollection
 --- @field public class any
-TraitCollection = {};
+TraitCollection = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param trait String
---- @return void
+--- @param trait string
+--- @return nil
 function TraitCollection:add(trait) end
 
 --- @public
 --- @param c Collection
---- @return void
+--- @return nil
 function TraitCollection:addAll(c) end
 
 --- @public
---- @return void
+--- @return nil
 function TraitCollection:clear() end
 
 --- @public
---- @param o Object
+--- @param o any
 --- @return boolean
---- @overload fun(self: TraitCollection, trait: String): boolean
 function TraitCollection:contains(o) end
 
 --- @public
---- @param n int
---- @return String
+--- @param trait string
+--- @return boolean
+function TraitCollection:contains(trait) end
+
+--- @public
+--- @param n integer
+--- @return string
 function TraitCollection:get(n) end
 
 --- @public
---- @param name String
+--- @param name string
 --- @return TraitSlot
 function TraitCollection:getTraitSlot(name) end
 
@@ -43,33 +47,36 @@ function TraitCollection:getTraitSlot(name) end
 function TraitCollection:isEmpty() end
 
 --- @public
---- @param o Object
+--- @param o any
 --- @return boolean
---- @overload fun(self: TraitCollection, name: String): boolean
 function TraitCollection:remove(o) end
 
 --- @public
+--- @param name string
+--- @return boolean
+function TraitCollection:remove(name) end
+
+--- @public
 --- @param c Collection
---- @return void
+--- @return nil
 function TraitCollection:removeAll(c) end
 
 --- @public
---- @param name String
+--- @param name string
 --- @param val boolean
---- @return void
+--- @return nil
 function TraitCollection:set(name, val) end
 
 --- @public
---- @return int
+--- @return integer
 function TraitCollection:size() end
 
 --- @public
---- @return String
+--- @return string
 function TraitCollection:toString() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

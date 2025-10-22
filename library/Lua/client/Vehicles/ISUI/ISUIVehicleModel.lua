@@ -1,34 +1,49 @@
 ---@meta
 
 ---@class ISUIVehicleModel : ISUIElement
----@field javaObject any
----@field mouseDown any
----@field background any
----@field backgroundColor any
----@field borderColor any
----@field [any] any
+---@field background boolean
+---@field backgroundColor umbrella.RGBA
+---@field borderColor umbrella.RGBA
+---@field mouseDown boolean
 ISUIVehicleModel = ISUIElement:derive("ISUIVehicleModel")
+ISUIVehicleModel.Type = "ISUIVehicleModel"
 
----@return any
-function ISUIVehicleModel:instantiate() end
----@return any
-function ISUIVehicleModel:prerender() end
----@return any
-function ISUIVehicleModel:onMouseDown(x, y) end
----@return any
-function ISUIVehicleModel:onMouseMove(dx, dy) end
----@return any
-function ISUIVehicleModel:onMouseUp(x, y) end
----@return any
-function ISUIVehicleModel:onMouseUpOutside(x, y) end
----@return any
-function ISUIVehicleModel:onMouseWheel(del) end
----@return any
-function ISUIVehicleModel:setVehicle(vehicle) end
----@return any
-function ISUIVehicleModel:setView(name) end
----@return any
+---@return string
 function ISUIVehicleModel:getView() end
 
+function ISUIVehicleModel:instantiate() end
+
+---@param x number
+---@param y number
+function ISUIVehicleModel:onMouseDown(x, y) end
+
+---@param dx number
+---@param dy number
+function ISUIVehicleModel:onMouseMove(dx, dy) end
+
+---@param x number
+---@param y number
+function ISUIVehicleModel:onMouseUp(x, y) end
+
+---@param x number
+---@param y number
+function ISUIVehicleModel:onMouseUpOutside(x, y) end
+
+---@param del number
+---@return boolean
+function ISUIVehicleModel:onMouseWheel(del) end
+
+function ISUIVehicleModel:prerender() end
+
+---@param vehicle BaseVehicle
+function ISUIVehicleModel:setVehicle(vehicle) end
+
+---@param name string
+function ISUIVehicleModel:setView(name) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISUIVehicleModel
 function ISUIVehicleModel:new(x, y, width, height) end

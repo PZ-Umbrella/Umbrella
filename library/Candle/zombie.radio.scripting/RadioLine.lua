@@ -1,35 +1,35 @@
---- @meta
+--- @meta _
 
 --- @class RadioLine Turbo
 --- @field public class any
-RadioLine = {};
+RadioLine = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return float
+--- @return number
 function RadioLine:getAirTime() end
 
 --- @public
---- @return float
+--- @return number
 function RadioLine:getB() end
 
 --- @public
---- @return String
+--- @return string
 function RadioLine:getEffectsString() end
 
 --- @public
---- @return float
+--- @return number
 function RadioLine:getG() end
 
 --- @public
---- @return float
+--- @return number
 function RadioLine:getR() end
 
 --- @public
---- @return String
+--- @return string
 function RadioLine:getText() end
 
 --- @public
@@ -37,25 +37,32 @@ function RadioLine:getText() end
 function RadioLine:isCustomAirTime() end
 
 --- @public
---- @param airTime float
---- @return void
+--- @param airTime number
+--- @return nil
 function RadioLine:setAirTime(airTime) end
 
 --- @public
---- @param text String
---- @return void
+--- @param text string
+--- @return nil
 function RadioLine:setText(text) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param txt String
---- @param red float
---- @param green float
---- @param blue float
+--- @param txt string
+--- @param red number
+--- @param green number
+--- @param blue number
 --- @return RadioLine
---- @overload fun(txt: String, red: float, green: float, blue: float, fx: String): RadioLine
 function RadioLine.new(txt, red, green, blue) end
+
+--- @public
+--- @param txt string
+--- @param red number
+--- @param green number
+--- @param blue number
+--- @param fx string
+--- @return RadioLine
+function RadioLine.new(txt, red, green, blue, fx) end

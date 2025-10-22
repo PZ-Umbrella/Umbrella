@@ -1,45 +1,49 @@
 ---@meta
 
 ---@class DebugToolstrip : ISPanel
----@field mapWindow any
----@field settingsWindow any
----@field debugLogWindow any
----@field errorsWindow any
----@field mapView any
----@field debugOptions any
----@field debugLog any
----@field errors any
----@field showDebuggerOnError any
----@field buttonStepInto any
----@field buttonStepOver any
----@field buttonResume any
----@field x any
----@field y any
----@field backgroundColor any
----@field borderColor any
----@field [any] any
+---@field buttonResume ISButton
+---@field buttonStepInto ISButton
+---@field buttonStepOver ISButton
+---@field comboFont ISComboBox
+---@field debugLog ISButton
+---@field debugLogWindow DebugLogSettings
+---@field debugOptions ISButton
+---@field errors ISButton
+---@field errorsWindow DebugErrorsWindow
+---@field mapView ISButton
+---@field mapWindow StreamMapWindow
+---@field settingsWindow DebugOptionsWindow
+---@field showDebuggerOnError ISTickBox
 DebugToolstrip = ISPanel:derive("DebugToolstrip")
+DebugToolstrip.Type = "DebugToolstrip"
 
----@return any
-function DebugToolstrip:onMapClick() end
----@return any
-function DebugToolstrip:onOptionsClick() end
----@return any
-function DebugToolstrip:onDebugLog() end
----@return any
-function DebugToolstrip:onToggleBreak(index, selected) end
----@return any
-function DebugToolstrip:onShowErrors() end
----@return any
-function DebugToolstrip:onButtonStepInto() end
----@return any
-function DebugToolstrip:onButtonStepOver() end
----@return any
-function DebugToolstrip:onButtonResume() end
----@return any
-function DebugToolstrip:prerender() end
----@return any
 function DebugToolstrip:createChildren() end
 
+function DebugToolstrip:onButtonResume() end
+
+function DebugToolstrip:onButtonStepInto() end
+
+function DebugToolstrip:onButtonStepOver() end
+
+function DebugToolstrip:onComboFont() end
+
+function DebugToolstrip:onDebugLog() end
+
+function DebugToolstrip:onMapClick() end
+
+function DebugToolstrip:onOptionsClick() end
+
+function DebugToolstrip:onShowErrors() end
+
+---@param index integer
+---@param selected boolean
+function DebugToolstrip:onToggleBreak(index, selected) end
+
+function DebugToolstrip:prerender() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return DebugToolstrip
 function DebugToolstrip:new(x, y, width, height) end

@@ -1,22 +1,27 @@
---- @meta
+--- @meta _
 
 --- @class ContainerOverlays
 --- @field public class any
 --- @field public instance ContainerOverlays
-ContainerOverlays = {};
+ContainerOverlays = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
+--- @return nil
 function ContainerOverlays:Reset() end
 
 --- @public
---- @param overlayMap KahluaTableImpl
---- @return void
+--- @param overlayMap table
+--- @return nil
 function ContainerOverlays:addOverlays(overlayMap) end
+
+--- @public
+--- @param arg0 string
+--- @return ArrayList
+function ContainerOverlays:getUnderlyingSpriteNames(arg0) end
 
 --- @public
 --- @param obj IsoObject
@@ -25,12 +30,11 @@ function ContainerOverlays:hasOverlays(obj) end
 
 --- @public
 --- @param obj IsoObject
---- @return void
+--- @return nil
 function ContainerOverlays:updateContainerOverlaySprite(obj) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

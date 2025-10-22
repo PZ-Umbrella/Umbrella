@@ -1,79 +1,74 @@
 ---@meta
 
 ---@class ISLcdBar : ISPanel
----@field textMode any
----@field posCounter any
----@field pos any
----@field isOn any
----@field doScroll any
----@field textCache any
----@field text any
----@field charW any
----@field charH any
----@field x any
----@field y any
----@field background any
----@field backgroundColor any
----@field borderColor any
----@field gridColor any
----@field greyCol any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field ledColor any
----@field ledTextColor any
----@field lcdwidth any
----@field lcdfont any
----@field lcdback any
----@field [any] any
+---@field charH number
+---@field charW number
+---@field doScroll boolean
+---@field greyCol umbrella.RGBA
+---@field gridColor umbrella.RGBA
+---@field isOn boolean
+---@field lcdback Texture
+---@field lcdfont Texture
+---@field lcdwidth number
+---@field ledColor umbrella.RGBA
+---@field ledTextColor umbrella.RGBA
+---@field pos number
+---@field posCounter number
+---@field text string
+---@field textCache string
+---@field textMode boolean
 ISLcdBar = ISPanel:derive("ISLcdBar")
-ISLcdBar.charW = 8
-ISLcdBar.charH = 12
+ISLcdBar.Type = "ISLcdBar"
 ISLcdBar.indexes = " !\"#$%&'()*+,-./0123456789:;<=>?@abcdefghijklmnopqrstuvwxyz[\\]^_"
-ISLcdBar.unsupported = {
-    "CH",
-    "CN",
-    "JP",
-    "KO",
-    "RU",
-    "TH",
-    "UA",
-}
-ISLcdBar.special = {
-    "[",
-    "%",
-    "(",
-}
+ISLcdBar.unsupported = nil ---@type string[]
+ISLcdBar.special = nil ---@type string[]
 
----@return any
-function ISLcdBar:initialise() end
----@return any
 function ISLcdBar:createChildren() end
----@return any
-function ISLcdBar:update() end
----@return any
-function ISLcdBar:prerender() end
----@return any
-function ISLcdBar:toggleOn(_b) end
----@return any
-function ISLcdBar:renderChar(_pos, _index, _r, _g, _b, _a) end
----@return any
+
+function ISLcdBar:initialise() end
+
+---@param _char string
+---@return boolean
 function ISLcdBar:isSpecial(_char) end
----@return any
+
+function ISLcdBar:prerender() end
+
+---@param _pos number
+---@param _char string
 function ISLcdBar:printChar(_pos, _char) end
----@return any
+
 function ISLcdBar:render() end
----@return any
+
+---@param _r number
+---@param _g number
+---@param _b number
+---@param _a number
 function ISLcdBar:renderBackground(_r, _g, _b, _a) end
----@return any
+
+---@param _pos number
+---@param _index number
+---@param _r number
+---@param _g number
+---@param _b number
+---@param _a number
+function ISLcdBar:renderChar(_pos, _index, _r, _g, _b, _a) end
+
+---@param _b boolean
 function ISLcdBar:setDoScroll(_b) end
----@return any
-function ISLcdBar:setTextMode(_b) end
----@return any
+
+---@param _text string
 function ISLcdBar:setText(_text) end
 
+---@param _b boolean
+function ISLcdBar:setTextMode(_b) end
+
+---@param _b boolean
+function ISLcdBar:toggleOn(_b) end
+
+function ISLcdBar:update() end
+
+---@param x number
+---@param y number
+---@param charWidth number
 ---@return ISLcdBar
 function ISLcdBar:new(x, y, charWidth) end

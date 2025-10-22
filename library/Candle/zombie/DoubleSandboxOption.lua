@@ -1,9 +1,8 @@
---- @meta
+--- @meta _
 
---- @class DoubleSandboxOption: DoubleConfigOption
+--- @class DoubleSandboxOption: DoubleConfigOption, SandboxOption
 --- @field public class any
---- @implement SandboxOption
-DoubleSandboxOption = {};
+DoubleSandboxOption = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -11,78 +10,117 @@ DoubleSandboxOption = {};
 
 --- @public
 --- @return ConfigOption
---- @overload fun(self: DoubleSandboxOption): ConfigOption
 function DoubleSandboxOption:asConfigOption() end
 
 --- @public
---- @param table KahluaTable
---- @return void
---- @overload fun(self: DoubleSandboxOption, table: KahluaTable): void
+--- @return ConfigOption
+function DoubleSandboxOption:asConfigOption() end
+
+--- @public
+--- @param table table
+--- @return nil
 function DoubleSandboxOption:fromTable(table) end
 
 --- @public
---- @return String
---- @overload fun(self: DoubleSandboxOption): String
+--- @param table table
+--- @return nil
+function DoubleSandboxOption:fromTable(table) end
+
+--- @public
+--- @return string
 function DoubleSandboxOption:getPageName() end
 
 --- @public
---- @return String
---- @overload fun(self: DoubleSandboxOption): String
+--- @return string
+function DoubleSandboxOption:getPageName() end
+
+--- @public
+--- @return string
 function DoubleSandboxOption:getShortName() end
 
 --- @public
---- @return String
---- @overload fun(self: DoubleSandboxOption): String
+--- @return string
+function DoubleSandboxOption:getShortName() end
+
+--- @public
+--- @return string
 function DoubleSandboxOption:getTableName() end
 
 --- @public
---- @return String
---- @overload fun(self: DoubleSandboxOption): String
+--- @return string
+function DoubleSandboxOption:getTableName() end
+
+--- @public
+--- @return string
 function DoubleSandboxOption:getTooltip() end
 
 --- @public
---- @return String
---- @overload fun(self: DoubleSandboxOption): String
+--- @return string
+function DoubleSandboxOption:getTooltip() end
+
+--- @public
+--- @return string
+function DoubleSandboxOption:getTranslatedName() end
+
+--- @public
+--- @return string
 function DoubleSandboxOption:getTranslatedName() end
 
 --- @public
 --- @return boolean
---- @overload fun(self: DoubleSandboxOption): boolean
 function DoubleSandboxOption:isCustom() end
 
 --- @public
---- @return void
---- @overload fun(self: DoubleSandboxOption): void
+--- @return boolean
+function DoubleSandboxOption:isCustom() end
+
+--- @public
+--- @return nil
 function DoubleSandboxOption:setCustom() end
 
 --- @public
---- @param pageName String
+--- @return nil
+function DoubleSandboxOption:setCustom() end
+
+--- @public
+--- @param pageName string
 --- @return SandboxOption
---- @overload fun(self: DoubleSandboxOption, pageName: String): SandboxOption
 function DoubleSandboxOption:setPageName(pageName) end
 
 --- @public
---- @param translation String
+--- @param pageName string
 --- @return SandboxOption
---- @overload fun(self: DoubleSandboxOption, translation: String): SandboxOption
+function DoubleSandboxOption:setPageName(pageName) end
+
+--- @public
+--- @param translation string
+--- @return SandboxOption
 function DoubleSandboxOption:setTranslation(translation) end
 
 --- @public
---- @param table KahluaTable
---- @return void
---- @overload fun(self: DoubleSandboxOption, table: KahluaTable): void
+--- @param translation string
+--- @return SandboxOption
+function DoubleSandboxOption:setTranslation(translation) end
+
+--- @public
+--- @param table table
+--- @return nil
 function DoubleSandboxOption:toTable(table) end
 
+--- @public
+--- @param table table
+--- @return nil
+function DoubleSandboxOption:toTable(table) end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param owner SandboxOptions
---- @param name String
---- @param min double
---- @param max double
---- @param defaultValue double
+--- @param name string
+--- @param min number
+--- @param max number
+--- @param defaultValue number
 --- @return DoubleSandboxOption
 function DoubleSandboxOption.new(owner, name, min, max, defaultValue) end

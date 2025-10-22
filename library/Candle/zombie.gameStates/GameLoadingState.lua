@@ -1,20 +1,16 @@
---- @meta
+--- @meta _
 
 --- @class GameLoadingState: GameState
 --- @field public class any
---- @field public bDone boolean
---- @field public build23Stop boolean
---- @field public convertingFileCount int
---- @field public convertingFileMax int
+--- @field public convertingFileCount integer
+--- @field public convertingFileMax integer
 --- @field public convertingWorld boolean
---- @field public GameLoadingString String
+--- @field public GameLoadingString string
 --- @field public loader Thread
 --- @field public mapDownloadFailed boolean
---- @field public newGame boolean
---- @field public playerCreated boolean
 --- @field public playerWrongIP boolean
---- @field public unexpectedError boolean
-GameLoadingState = {};
+--- @field public worldVersionError boolean
+GameLoadingState = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -22,25 +18,24 @@ GameLoadingState = {};
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function GameLoadingState.Done() end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function GameLoadingState.SendDone() end
-
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
+--- @return nil
 function GameLoadingState:enter() end
 
 --- @public
---- @return void
+--- @return nil
 function GameLoadingState:exit() end
 
 --- @public
@@ -48,16 +43,15 @@ function GameLoadingState:exit() end
 function GameLoadingState:redirectState() end
 
 --- @public
---- @return void
+--- @return nil
 function GameLoadingState:render() end
 
 --- @public
 --- @return StateAction
 function GameLoadingState:update() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

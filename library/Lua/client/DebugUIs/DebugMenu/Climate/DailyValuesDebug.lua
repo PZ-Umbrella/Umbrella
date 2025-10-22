@@ -1,69 +1,71 @@
 ---@meta
 
 ---@class DailyValuesDebug : ISCollapsableWindow
----@field fx any
----@field cm any
----@field instance any
----@field labels any
----@field tempColor any
----@field currentTile any
----@field x any
----@field y any
----@field player any
----@field playerNum any
----@field borderColor any
----@field backgroundColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field pin any
----@field isCollapsed any
----@field collapseCounter any
----@field title any
----@field resizable any
----@field drawFrame any
----@field richtext any
----@field overrideBPrompt any
----@field subFocus any
----@field hotKeyPanels any
----@field isJoypadWindow any
----@field [any] any
+---@field currentTile unknown?
+---@field hotKeyPanels table
+---@field isJoypadWindow boolean
+---@field labels table<string, table>
+---@field overrideBPrompt boolean
+---@field player IsoPlayer
+---@field playerNum integer
+---@field richtext unknown?
+---@field subFocus unknown?
+---@field tempColor umbrella.RGBA
+---@field title string
 DailyValuesDebug = ISCollapsableWindow:derive("DailyValuesDebug")
-DailyValuesDebug.instance = nil
+DailyValuesDebug.Type = "DailyValuesDebug"
+DailyValuesDebug.instance = nil ---@type DailyValuesDebug?
 DailyValuesDebug.shiftDown = 0
+DailyValuesDebug.fx = nil ---@type IsoWeatherFX?
+DailyValuesDebug.cm = nil ---@type ClimateManager?
 
----@return any
+---@return DailyValuesDebug?
 function DailyValuesDebug.OnOpenPanel() end
 
----@return any
-function DailyValuesDebug:initialise() end
----@return any
-function DailyValuesDebug:createChildren() end
----@return any
+---@param _curY number
+---@param _labelID string
+---@param _title string
+---@return number
 function DailyValuesDebug:addLabel(_curY, _labelID, _title) end
----@return any
+
+---@param _curY number
+---@param _type string
+---@param _labelID string
+---@param _title string
+---@param _defaultVal number
+---@return number
 function DailyValuesDebug:addLabelValue(_curY, _type, _labelID, _title, _defaultVal) end
----@return any
-function DailyValuesDebug:getTitleLabel(_labelID) end
----@return any
-function DailyValuesDebug:getValueLabel(_labelID) end
----@return any
-function DailyValuesDebug:onResize() end
----@return any
-function DailyValuesDebug:update() end
----@return any
-function DailyValuesDebug:prerender() end
----@return any
-function DailyValuesDebug:stayOnSplitScreen() end
----@return any
-function DailyValuesDebug:render() end
----@return any
-function DailyValuesDebug:close() end
----@return any
+
 function DailyValuesDebug:clear() end
 
+function DailyValuesDebug:close() end
+
+function DailyValuesDebug:createChildren() end
+
+---@param _labelID string
+---@return ISLabel?
+function DailyValuesDebug:getTitleLabel(_labelID) end
+
+---@param _labelID string
+---@return ISLabel?
+function DailyValuesDebug:getValueLabel(_labelID) end
+
+function DailyValuesDebug:initialise() end
+
+function DailyValuesDebug:onResize() end
+
+function DailyValuesDebug:prerender() end
+
+function DailyValuesDebug:render() end
+
+function DailyValuesDebug:stayOnSplitScreen() end
+
+function DailyValuesDebug:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param player IsoPlayer
 ---@return DailyValuesDebug
 function DailyValuesDebug:new(x, y, width, height, player) end

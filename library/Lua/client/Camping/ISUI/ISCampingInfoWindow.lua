@@ -1,31 +1,38 @@
 ---@meta
 
 ---@class ISCampingInfoWindow : ISCollapsableWindow
----@field panel any
----@field campfireTable any
----@field object any
----@field spriteName any
----@field fuelAmount any
----@field isLit any
----@field drawJoypadFocus any
----@field character any
----@field playerNum any
----@field [any] any
+---@field campfireTable CCampfireGlobalObject
+---@field character IsoPlayer
+---@field drawJoypadFocus boolean
+---@field fuelAmount number
+---@field isLit boolean
+---@field object IsoObject
+---@field panel ISToolTip
+---@field playerNum integer
+---@field spriteName string
 ISCampingInfoWindow = ISCollapsableWindow:derive("ISCampingInfoWindow")
-ISCampingInfoWindow.windows = {}
+ISCampingInfoWindow.Type = "ISCampingInfoWindow"
+ISCampingInfoWindow.windows = {} ---@type table<IsoPlayer, ISCampingInfoWindow>
 
----@return any
-function ISCampingInfoWindow:createChildren() end
----@return any
-function ISCampingInfoWindow:update() end
----@return any
-function ISCampingInfoWindow:onJoypadDown(button) end
----@return any
-function ISCampingInfoWindow:setObject(campfireObject) end
----@return any
-function ISCampingInfoWindow:onGainJoypadFocus(joypadData) end
----@return any
 function ISCampingInfoWindow:close() end
 
+function ISCampingInfoWindow:createChildren() end
+
+---@param joypadData JoypadData
+function ISCampingInfoWindow:onGainJoypadFocus(joypadData) end
+
+---@param button integer
+function ISCampingInfoWindow:onJoypadDown(button) end
+
+---@param campfireObject IsoObject
+function ISCampingInfoWindow:setObject(campfireObject) end
+
+function ISCampingInfoWindow:update() end
+
+---@param x number
+---@param y number
+---@param character IsoPlayer
+---@param campfireObject IsoObject
+---@param campfireTable CCampfireGlobalObject
 ---@return ISCampingInfoWindow
 function ISCampingInfoWindow:new(x, y, character, campfireObject, campfireTable) end

@@ -1,40 +1,68 @@
 ---@meta
 
 ---@class ISPacketCounts : ISPanel
----@field category any
----@field listbox any
----@field update any
----@field close any
----@field borderColor any
----@field backgroundColor any
----@field moveWithMouse any
----@field currentCounts any
----@field [any] any
+---@field category ISComboBox
+---@field clear ISButton
+---@field close ISButton
+---@field currentCounts table<string, integer>
+---@field listbox ISPacketCountsList
+---@field minusBtn ISButton
+---@field ordering number
+---@field period ISTextEntryBox
+---@field plusBtn ISButton
+---@field priority number
+---@field reliability number
+---@field tickBoxOrdering ISTickBox
+---@field tickBoxPriority ISTickBox
+---@field tickBoxReliability ISTickBox
+---@field type ISComboBox
+---@field update ISButton
 ISPacketCounts = ISPanel:derive("ISPacketCounts")
+ISPacketCounts.Type = "ISPacketCounts"
+ISPacketCounts.instance = nil ---@type ISPacketCounts?
 
----@return any
-function ISPacketCounts:createChildren() end
----@return any
-function ISPacketCounts:render() end
----@return any
-function ISPacketCounts:onSelectCategory() end
----@return any
-function ISPacketCounts:onUpdate() end
----@return any
-function ISPacketCounts:onClose() end
----@return any
 function ISPacketCounts:closeSelf() end
 
+function ISPacketCounts:createChildren() end
+
+function ISPacketCounts:onClear() end
+
+function ISPacketCounts:onClickMinus() end
+
+function ISPacketCounts:onClickPlus() end
+
+function ISPacketCounts:onClose() end
+
+function ISPacketCounts:onSelectCategory() end
+
+function ISPacketCounts:onSelectType() end
+
+function ISPacketCounts:onTicked(index, selected) end
+
+function ISPacketCounts:onUpdate() end
+
+function ISPacketCounts:render() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISPacketCounts
 function ISPacketCounts:new(x, y, width, height) end
 
 ---@class ISPacketCountsList : ISPanel
-ISPacketCountsList = ISPanel:derive("ISPacketCountsList")
+ISPacketCountsList = ISPanel:derive("ISPacketCountsPanel")
+ISPacketCountsList.Type = "ISPacketCountsPanel"
 
----@return any
-function ISPacketCountsList:prerender() end
----@return any
+---@param del number
+---@return boolean
 function ISPacketCountsList:onMouseWheel(del) end
 
+function ISPacketCountsList:prerender() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISPacketCountsList
 function ISPacketCountsList:new(x, y, width, height) end

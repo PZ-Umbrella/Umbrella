@@ -1,143 +1,143 @@
---- @meta
+--- @meta _
 
 --- @class Keyboard
 --- @field public class any
---- @field public CHAR_NONE int
---- @field public KEY_0 int
---- @field public KEY_1 int
---- @field public KEY_2 int
---- @field public KEY_3 int
---- @field public KEY_4 int
---- @field public KEY_5 int
---- @field public KEY_6 int
---- @field public KEY_7 int
---- @field public KEY_8 int
---- @field public KEY_9 int
---- @field public KEY_A int
---- @field public KEY_ADD int
---- @field public KEY_APOSTROPHE int
---- @field public KEY_APPS int
---- @field public KEY_AT int
---- @field public KEY_AX int
---- @field public KEY_B int
---- @field public KEY_BACK int
---- @field public KEY_BACKSLASH int
---- @field public KEY_C int
---- @field public KEY_CAPITAL int
---- @field public KEY_CIRCUMFLEX int
---- @field public KEY_CLEAR int
---- @field public KEY_COLON int
---- @field public KEY_COMMA int
---- @field public KEY_CONVERT int
---- @field public KEY_D int
---- @field public KEY_DECIMAL int
---- @field public KEY_DELETE int
---- @field public KEY_DIVIDE int
---- @field public KEY_DOWN int
---- @field public KEY_E int
---- @field public KEY_END int
---- @field public KEY_EQUALS int
---- @field public KEY_ESCAPE int
---- @field public KEY_F int
---- @field public KEY_F1 int
---- @field public KEY_F10 int
---- @field public KEY_F11 int
---- @field public KEY_F12 int
---- @field public KEY_F13 int
---- @field public KEY_F14 int
---- @field public KEY_F15 int
---- @field public KEY_F16 int
---- @field public KEY_F17 int
---- @field public KEY_F18 int
---- @field public KEY_F19 int
---- @field public KEY_F2 int
---- @field public KEY_F3 int
---- @field public KEY_F4 int
---- @field public KEY_F5 int
---- @field public KEY_F6 int
---- @field public KEY_F7 int
---- @field public KEY_F8 int
---- @field public KEY_F9 int
---- @field public KEY_FUNCTION int
---- @field public KEY_G int
---- @field public KEY_GRAVE int
---- @field public KEY_H int
---- @field public KEY_HOME int
---- @field public KEY_I int
---- @field public KEY_INSERT int
---- @field public KEY_J int
---- @field public KEY_K int
---- @field public KEY_KANA int
---- @field public KEY_KANJI int
---- @field public KEY_L int
---- @field public KEY_LBRACKET int
---- @field public KEY_LCONTROL int
---- @field public KEY_LEFT int
---- @field public KEY_LMENU int
---- @field public KEY_LMETA int
---- @field public KEY_LSHIFT int
---- @field public KEY_LWIN int
---- @field public KEY_M int
---- @field public KEY_MINUS int
---- @field public KEY_MULTIPLY int
---- @field public KEY_N int
---- @field public KEY_NEXT int
---- @field public KEY_NOCONVERT int
---- @field public KEY_NONE int
---- @field public KEY_NUMLOCK int
---- @field public KEY_NUMPAD0 int
---- @field public KEY_NUMPAD1 int
---- @field public KEY_NUMPAD2 int
---- @field public KEY_NUMPAD3 int
---- @field public KEY_NUMPAD4 int
---- @field public KEY_NUMPAD5 int
---- @field public KEY_NUMPAD6 int
---- @field public KEY_NUMPAD7 int
---- @field public KEY_NUMPAD8 int
---- @field public KEY_NUMPAD9 int
---- @field public KEY_NUMPADCOMMA int
---- @field public KEY_NUMPADENTER int
---- @field public KEY_NUMPADEQUALS int
---- @field public KEY_O int
---- @field public KEY_P int
---- @field public KEY_PAUSE int
---- @field public KEY_PERIOD int
---- @field public KEY_POWER int
---- @field public KEY_PRIOR int
---- @field public KEY_Q int
---- @field public KEY_R int
---- @field public KEY_RBRACKET int
---- @field public KEY_RCONTROL int
---- @field public KEY_RETURN int
---- @field public KEY_RIGHT int
---- @field public KEY_RMENU int
---- @field public KEY_RMETA int
---- @field public KEY_RSHIFT int
---- @field public KEY_RWIN int
---- @field public KEY_S int
---- @field public KEY_SCROLL int
---- @field public KEY_SECTION int
---- @field public KEY_SEMICOLON int
---- @field public KEY_SLASH int
---- @field public KEY_SLEEP int
---- @field public KEY_SPACE int
---- @field public KEY_STOP int
---- @field public KEY_SUBTRACT int
---- @field public KEY_SYSRQ int
---- @field public KEY_T int
---- @field public KEY_TAB int
---- @field public KEY_U int
---- @field public KEY_UNDERLINE int
---- @field public KEY_UNLABELED int
---- @field public KEY_UP int
---- @field public KEY_V int
---- @field public KEY_W int
---- @field public KEY_X int
---- @field public KEY_Y int
---- @field public KEY_YEN int
---- @field public KEY_Z int
---- @field public KEYBOARD_SIZE int
-Keyboard = {};
+--- @field public CHAR_NONE integer
+--- @field public KEY_0 integer
+--- @field public KEY_1 integer
+--- @field public KEY_2 integer
+--- @field public KEY_3 integer
+--- @field public KEY_4 integer
+--- @field public KEY_5 integer
+--- @field public KEY_6 integer
+--- @field public KEY_7 integer
+--- @field public KEY_8 integer
+--- @field public KEY_9 integer
+--- @field public KEY_A integer
+--- @field public KEY_ADD integer
+--- @field public KEY_APOSTROPHE integer
+--- @field public KEY_APPS integer
+--- @field public KEY_AT integer
+--- @field public KEY_AX integer
+--- @field public KEY_B integer
+--- @field public KEY_BACK integer
+--- @field public KEY_BACKSLASH integer
+--- @field public KEY_C integer
+--- @field public KEY_CAPITAL integer
+--- @field public KEY_CIRCUMFLEX integer
+--- @field public KEY_CLEAR integer
+--- @field public KEY_COLON integer
+--- @field public KEY_COMMA integer
+--- @field public KEY_CONVERT integer
+--- @field public KEY_D integer
+--- @field public KEY_DECIMAL integer
+--- @field public KEY_DELETE integer
+--- @field public KEY_DIVIDE integer
+--- @field public KEY_DOWN integer
+--- @field public KEY_E integer
+--- @field public KEY_END integer
+--- @field public KEY_EQUALS integer
+--- @field public KEY_ESCAPE integer
+--- @field public KEY_F integer
+--- @field public KEY_F1 integer
+--- @field public KEY_F10 integer
+--- @field public KEY_F11 integer
+--- @field public KEY_F12 integer
+--- @field public KEY_F13 integer
+--- @field public KEY_F14 integer
+--- @field public KEY_F15 integer
+--- @field public KEY_F16 integer
+--- @field public KEY_F17 integer
+--- @field public KEY_F18 integer
+--- @field public KEY_F19 integer
+--- @field public KEY_F2 integer
+--- @field public KEY_F3 integer
+--- @field public KEY_F4 integer
+--- @field public KEY_F5 integer
+--- @field public KEY_F6 integer
+--- @field public KEY_F7 integer
+--- @field public KEY_F8 integer
+--- @field public KEY_F9 integer
+--- @field public KEY_FUNCTION integer
+--- @field public KEY_G integer
+--- @field public KEY_GRAVE integer
+--- @field public KEY_H integer
+--- @field public KEY_HOME integer
+--- @field public KEY_I integer
+--- @field public KEY_INSERT integer
+--- @field public KEY_J integer
+--- @field public KEY_K integer
+--- @field public KEY_KANA integer
+--- @field public KEY_KANJI integer
+--- @field public KEY_L integer
+--- @field public KEY_LBRACKET integer
+--- @field public KEY_LCONTROL integer
+--- @field public KEY_LEFT integer
+--- @field public KEY_LMENU integer
+--- @field public KEY_LMETA integer
+--- @field public KEY_LSHIFT integer
+--- @field public KEY_LWIN integer
+--- @field public KEY_M integer
+--- @field public KEY_MINUS integer
+--- @field public KEY_MULTIPLY integer
+--- @field public KEY_N integer
+--- @field public KEY_NEXT integer
+--- @field public KEY_NOCONVERT integer
+--- @field public KEY_NONE integer
+--- @field public KEY_NUMLOCK integer
+--- @field public KEY_NUMPAD0 integer
+--- @field public KEY_NUMPAD1 integer
+--- @field public KEY_NUMPAD2 integer
+--- @field public KEY_NUMPAD3 integer
+--- @field public KEY_NUMPAD4 integer
+--- @field public KEY_NUMPAD5 integer
+--- @field public KEY_NUMPAD6 integer
+--- @field public KEY_NUMPAD7 integer
+--- @field public KEY_NUMPAD8 integer
+--- @field public KEY_NUMPAD9 integer
+--- @field public KEY_NUMPADCOMMA integer
+--- @field public KEY_NUMPADENTER integer
+--- @field public KEY_NUMPADEQUALS integer
+--- @field public KEY_O integer
+--- @field public KEY_P integer
+--- @field public KEY_PAUSE integer
+--- @field public KEY_PERIOD integer
+--- @field public KEY_POWER integer
+--- @field public KEY_PRIOR integer
+--- @field public KEY_Q integer
+--- @field public KEY_R integer
+--- @field public KEY_RBRACKET integer
+--- @field public KEY_RCONTROL integer
+--- @field public KEY_RETURN integer
+--- @field public KEY_RIGHT integer
+--- @field public KEY_RMENU integer
+--- @field public KEY_RMETA integer
+--- @field public KEY_RSHIFT integer
+--- @field public KEY_RWIN integer
+--- @field public KEY_S integer
+--- @field public KEY_SCROLL integer
+--- @field public KEY_SECTION integer
+--- @field public KEY_SEMICOLON integer
+--- @field public KEY_SLASH integer
+--- @field public KEY_SLEEP integer
+--- @field public KEY_SPACE integer
+--- @field public KEY_STOP integer
+--- @field public KEY_SUBTRACT integer
+--- @field public KEY_SYSRQ integer
+--- @field public KEY_T integer
+--- @field public KEY_TAB integer
+--- @field public KEY_U integer
+--- @field public KEY_UNDERLINE integer
+--- @field public KEY_UNLABELED integer
+--- @field public KEY_UP integer
+--- @field public KEY_V integer
+--- @field public KEY_W integer
+--- @field public KEY_X integer
+--- @field public KEY_Y integer
+--- @field public KEY_YEN integer
+--- @field public KEY_Z integer
+--- @field public KEYBOARD_SIZE integer
+Keyboard = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -145,15 +145,15 @@ Keyboard = {};
 
 --- @public
 --- @static
---- @param arg0 char
---- @return void
+--- @param arg0 string
+--- @return nil
 function Keyboard.addCharEvent(arg0) end
 
 --- @public
 --- @static
---- @param arg0 int
---- @param arg1 int
---- @return void
+--- @param arg0 integer
+--- @param arg1 integer
+--- @return nil
 function Keyboard.addKeyEvent(arg0, arg1) end
 
 --- @public
@@ -163,28 +163,28 @@ function Keyboard.areRepeatEventsEnabled() end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function Keyboard.create() end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function Keyboard.destroy() end
 
 --- @public
 --- @static
 --- @param arg0 boolean
---- @return void
+--- @return nil
 function Keyboard.enableRepeatEvents(arg0) end
 
 --- @public
 --- @static
---- @return char
+--- @return string
 function Keyboard.getEventCharacter() end
 
 --- @public
 --- @static
---- @return int
+--- @return integer
 function Keyboard.getEventKey() end
 
 --- @public
@@ -194,24 +194,24 @@ function Keyboard.getEventKeyState() end
 
 --- @public
 --- @static
---- @return long
+--- @return integer
 function Keyboard.getEventNanoseconds() end
 
 --- @public
 --- @static
---- @param arg0 String
---- @return int
+--- @param arg0 string
+--- @return integer
 function Keyboard.getKeyIndex(arg0) end
 
 --- @public
 --- @static
---- @param arg0 int
---- @return String
+--- @param arg0 integer
+--- @return string
 function Keyboard.getKeyName(arg0) end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function Keyboard.initKeyNames() end
 
 --- @public
@@ -221,7 +221,7 @@ function Keyboard.isCreated() end
 
 --- @public
 --- @static
---- @param arg0 int
+--- @param arg0 integer
 --- @return boolean
 function Keyboard.isKeyDown(arg0) end
 
@@ -237,12 +237,11 @@ function Keyboard.next() end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function Keyboard.poll() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

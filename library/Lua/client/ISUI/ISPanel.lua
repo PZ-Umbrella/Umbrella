@@ -1,43 +1,49 @@
 ---@meta
 
 ---@class ISPanel : ISUIElement
----@field background any
----@field moving any
----@field downX any
----@field downY any
----@field mouseOver any
----@field x any
----@field y any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field moveWithMouse any
----@field [any] any
+---@field background boolean
+---@field backgroundColor umbrella.RGBA
+---@field borderColor umbrella.RGBA
+---@field downX number
+---@field downY number
+---@field mouseOver boolean
+---@field moveWithMouse boolean
+---@field moving boolean
 ISPanel = ISUIElement:derive("ISPanel")
+ISPanel.Type = "ISPanel"
 
----@return any
-function ISPanel:initialise() end
----@return any
-function ISPanel:noBackground() end
----@return any
 function ISPanel:close() end
----@return any
-function ISPanel:prerender() end
----@return any
-function ISPanel:onMouseUp(x, y) end
----@return any
-function ISPanel:onMouseUpOutside(x, y) end
----@return any
+
+function ISPanel:initialise() end
+
+function ISPanel:noBackground() end
+
+---@param x number
+---@param y number
+---@return boolean?
 function ISPanel:onMouseDown(x, y) end
----@return any
-function ISPanel:onMouseMoveOutside(dx, dy) end
----@return any
+
+---@param dx number
+---@param dy number
 function ISPanel:onMouseMove(dx, dy) end
 
+---@param dx number
+---@param dy number
+function ISPanel:onMouseMoveOutside(dx, dy) end
+
+---@param x number
+---@param y number
+function ISPanel:onMouseUp(x, y) end
+
+---@param x number
+---@param y number
+function ISPanel:onMouseUpOutside(x, y) end
+
+function ISPanel:prerender() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISPanel
 function ISPanel:new(x, y, width, height) end

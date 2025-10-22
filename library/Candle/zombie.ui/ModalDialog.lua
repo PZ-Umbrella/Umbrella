@@ -1,31 +1,30 @@
---- @meta
+--- @meta _
 
 --- @class ModalDialog: NewWindow
 --- @field public class any
-ModalDialog = {};
+ModalDialog = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param name String
---- @return void
+--- @param name string
+--- @return nil
 function ModalDialog:ButtonClicked(name) end
 
 --- @public
---- @param name String
---- @return void
+--- @param name string
+--- @return nil
 function ModalDialog:Clicked(name) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param name String
---- @param help String
+--- @param name string
+--- @param help string
 --- @param bYesNo boolean
 --- @return ModalDialog
 function ModalDialog.new(name, help, bYesNo) end

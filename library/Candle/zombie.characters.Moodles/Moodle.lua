@@ -1,24 +1,19 @@
---- @meta
+--- @meta _
 
 --- @class Moodle
 --- @field public class any
-Moodle = {};
+Moodle = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param val int
---- @return void
-function Moodle:SetLevel(val) end
-
---- @public
 --- @return boolean
 function Moodle:Update() end
 
 --- @public
---- @param count int
+--- @param count integer
 --- @param isup boolean
 --- @param col Color
 --- @return boolean
@@ -29,32 +24,34 @@ function Moodle:chevronDifference(count, isup, col) end
 function Moodle:getChevronColor() end
 
 --- @public
---- @return int
+--- @return integer
 function Moodle:getChevronCount() end
 
 --- @public
---- @return int
+--- @return integer
 function Moodle:getLevel() end
+
+--- @public
+--- @return MoodleType
+function Moodle:getMoodleType() end
 
 --- @public
 --- @return boolean
 function Moodle:isChevronIsUp() end
 
 --- @public
---- @param count int
+--- @param count integer
 --- @param isup boolean
 --- @param col Color
---- @return void
+--- @return nil
 function Moodle:setChevron(count, isup, col) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param ChosenType MoodleType
 --- @param parent IsoGameCharacter
 --- @return Moodle
---- @overload fun(ChosenType: MoodleType, parent: IsoGameCharacter, maxChevrons: int): Moodle
 function Moodle.new(ChosenType, parent) end

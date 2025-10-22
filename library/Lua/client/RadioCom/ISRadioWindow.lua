@@ -1,101 +1,118 @@
 ---@meta
 
 ---@class ISRadioWindow : ISCollapsableWindow
----@field drawJoypadFocus any
----@field subFocus any
----@field player any
----@field device any
----@field deviceData any
----@field deviceType any
----@field hotKeyPanels any
----@field title any
----@field x any
----@field y any
----@field playerNum any
----@field borderColor any
----@field backgroundColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field pin any
----@field isCollapsed any
----@field collapseCounter any
----@field resizable any
----@field drawFrame any
----@field modules any
----@field overrideBPrompt any
----@field isJoypadWindow any
----@field [any] any
+---@field device (InventoryItem | IsoObject | VehiclePart)?
+---@field deviceData DeviceData?
+---@field deviceType string?
+---@field drawJoypadFocus boolean
+---@field hotKeyPanels table<string, ISUIElement>
+---@field isJoypadWindow boolean
+---@field modules RWMElement[]
+---@field overrideBPrompt boolean
+---@field player IsoPlayer?
+---@field playerNum integer
+---@field subFocus ISUIElement?
+---@field title string
 ISRadioWindow = ISCollapsableWindow:derive("ISRadioWindow")
-ISRadioWindow.instances = {}
-ISRadioWindow.instancesIso = {}
+ISRadioWindow.Type = "ISRadioWindow"
+ISRadioWindow.instances = {} ---@type table<integer, ISRadioWindow>
+ISRadioWindow.instancesIso = {} ---@type table<integer, ISRadioWindow>
 
----@return any
+---@param _player IsoPlayer
+---@param _deviceObject InventoryItem | IsoObject | VehiclePart
+---@return ISRadioWindow
 function ISRadioWindow.activate(_player, _deviceObject) end
----@return any
+
+---@param _player IsoPlayer
+---@param _deviceObject InventoryItem | IsoObject | VehiclePart
+function ISRadioWindow.closeIfActive(_player, _deviceObject) end
+
+---@param _player IsoPlayer
+---@param _deviceObject InventoryItem | IsoObject | VehiclePart
+---@return boolean
+function ISRadioWindow.isActive(_player, _deviceObject) end
+
+---@param _player IsoPlayer
+---@param _item InventoryItem
 function ISRadioWindow.onEquip(_player, _item) end
 
----@return any
-function ISRadioWindow:initialise() end
----@return any
-function ISRadioWindow:close() end
----@return any
+---@param _modulePanel RWMPanel
+---@param _moduleName string
+---@param _enable boolean
 function ISRadioWindow:addModule(_modulePanel, _moduleName, _enable) end
----@return any
-function ISRadioWindow:createChildren() end
----@return any
-function ISRadioWindow:update() end
----@return any
-function ISRadioWindow:prerender() end
----@return any
-function ISRadioWindow:stayOnSplitScreen() end
----@return any
-function ISRadioWindow:render() end
----@return any
-function ISRadioWindow:onLoseJoypadFocus(joypadData) end
----@return any
-function ISRadioWindow:onGainJoypadFocus(joypadData) end
----@return any
-function ISRadioWindow:close() end
----@return any
+
 function ISRadioWindow:clear() end
----@return any
-function ISRadioWindow:readFromObject(_player, _deviceObject) end
----@return any
-function ISRadioWindow:onJoypadDirUp() end
----@return any
-function ISRadioWindow:onJoypadDirDown() end
----@return any
-function ISRadioWindow:onJoypadDirLeft() end
----@return any
-function ISRadioWindow:onJoypadDirRight() end
----@return any
-function ISRadioWindow:onJoypadDown(button) end
----@return any
-function ISRadioWindow:getAPrompt() end
----@return any
-function ISRadioWindow:getBPrompt() end
----@return any
-function ISRadioWindow:getXPrompt() end
----@return any
-function ISRadioWindow:getYPrompt() end
----@return any
-function ISRadioWindow:getLBPrompt() end
----@return any
-function ISRadioWindow:getRBPrompt() end
----@return any
-function ISRadioWindow:unfocusSelf() end
----@return any
-function ISRadioWindow:focusSelf() end
----@return any
-function ISRadioWindow:isValidPrompt() end
----@return any
+
+function ISRadioWindow:close() end
+
+function ISRadioWindow:createChildren() end
+
+---@param _up boolean?
 function ISRadioWindow:focusNext(_up) end
----@return any
+
+function ISRadioWindow:focusSelf() end
+
+---@return string?
+function ISRadioWindow:getAPrompt() end
+
+---@return string
+function ISRadioWindow:getBPrompt() end
+
+---@return string
+function ISRadioWindow:getLBPrompt() end
+
+---@return string
+function ISRadioWindow:getRBPrompt() end
+
+---@return string?
+function ISRadioWindow:getXPrompt() end
+
+---@return string?
+function ISRadioWindow:getYPrompt() end
+
+function ISRadioWindow:initialise() end
+
+---@return (boolean | DeviceData)?
+function ISRadioWindow:isValidPrompt() end
+
+---@param joypadData JoypadData
+function ISRadioWindow:onGainJoypadFocus(joypadData) end
+
+function ISRadioWindow:onJoypadDirDown() end
+
+function ISRadioWindow:onJoypadDirLeft() end
+
+function ISRadioWindow:onJoypadDirRight() end
+
+function ISRadioWindow:onJoypadDirUp() end
+
+---@param button integer
+function ISRadioWindow:onJoypadDown(button) end
+
+---@param joypadData JoypadData
+function ISRadioWindow:onLoseJoypadFocus(joypadData) end
+
+function ISRadioWindow:prerender() end
+
+---@param _player IsoPlayer
+---@param _deviceObject InventoryItem | IsoObject | VehiclePart
+function ISRadioWindow:readFromObject(_player, _deviceObject) end
+
+function ISRadioWindow:render() end
+
+---@param _newFocus ISUIElement?
 function ISRadioWindow:setSubFocus(_newFocus) end
 
+function ISRadioWindow:stayOnSplitScreen() end
+
+function ISRadioWindow:unfocusSelf() end
+
+function ISRadioWindow:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param player IsoPlayer
 ---@return ISRadioWindow
 function ISRadioWindow:new(x, y, width, height, player) end

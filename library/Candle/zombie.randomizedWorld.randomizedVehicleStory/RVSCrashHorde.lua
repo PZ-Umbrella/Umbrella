@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RVSCrashHorde: RandomizedVehicleStoryBase Car crashed with quite some zombies around it
 --- @field public class any
-RVSCrashHorde = {};
+RVSCrashHorde = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -18,18 +18,17 @@ function RVSCrashHorde:initVehicleStorySpawner(zone, chunk, debug) end
 --- @public
 --- @param zone Zone
 --- @param chunk IsoChunk
---- @return void
+--- @return nil
 function RVSCrashHorde:randomizeVehicleStory(zone, chunk) end
 
 --- @public
 --- @param spawner VehicleStorySpawner
 --- @param element Element
---- @return void
+--- @return nil
 function RVSCrashHorde:spawnElement(spawner, element) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

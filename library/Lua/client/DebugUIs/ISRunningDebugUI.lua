@@ -1,41 +1,35 @@
 ---@meta
 
 ---@class ISRunningDebugUI : ISCollapsableWindow
----@field start any
----@field restoreEnd any
----@field totalEndurance any
----@field startedTrip any
----@field stopTimer any
----@field startTimer any
----@field startingEndurance any
----@field totalDistance any
----@field totalDist any
----@field previousSq any
----@field playerNum any
----@field width any
----@field height any
----@field character any
----@field chr any
----@field moveWithMouse any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field x any
----@field y any
----@field [any] any
+---@field character IsoPlayer
+---@field chr IsoPlayer
+---@field playerNum integer
+---@field previousSq IsoGridSquare
+---@field restoreEnd ISButton
+---@field start ISButton
+---@field startedTrip boolean
+---@field startingEndurance number
+---@field startTimer number
+---@field stopTimer unknown?
+---@field title string
+---@field totalDist number
+---@field totalDistance number
+---@field totalEndurance number
 ISRunningDebugUI = ISCollapsableWindow:derive("ISRunningDebugUI")
+ISRunningDebugUI.Type = "ISRunningDebugUI"
 
----@return any
 function ISRunningDebugUI:createChildren() end
----@return any
-function ISRunningDebugUI:restoreEndurance() end
----@return any
-function ISRunningDebugUI:update() end
----@return any
-function ISRunningDebugUI:startTrip() end
----@return any
+
 function ISRunningDebugUI:render() end
 
+function ISRunningDebugUI:restoreEndurance() end
+
+function ISRunningDebugUI:startTrip() end
+
+function ISRunningDebugUI:update() end
+
+---@param x number
+---@param y number
+---@param character IsoPlayer
 ---@return ISRunningDebugUI
 function ISRunningDebugUI:new(x, y, character) end

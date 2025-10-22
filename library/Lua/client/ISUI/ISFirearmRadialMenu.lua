@@ -1,38 +1,54 @@
 ---@meta
 
 ---@class ISFirearmRadialMenu : ISBaseObject
----@field character any
----@field playerNum any
----@field [any] any
+---@field character IsoPlayer
+---@field playerNum integer
 ISFirearmRadialMenu = ISBaseObject:derive("ISFirearmRadialMenu")
+ISFirearmRadialMenu.Type = "ISFirearmRadialMenu"
 
----@return any
-function ISFirearmRadialMenu.checkWeapon(playerObj) end
----@return any
-function ISFirearmRadialMenu.getBestLBButtonAction(buttonPrompt) end
----@return any
-function ISFirearmRadialMenu.getBestRBButtonAction(buttonPrompt) end
----@return any
-function ISFirearmRadialMenu.onRepeatRBumper(buttonPrompt) end
----@return any
-function ISFirearmRadialMenu.onJoypadButtonReleased(buttonPrompt, button) end
----@return any
+---@param key integer
+---@return boolean
 function ISFirearmRadialMenu.checkKey(key) end
----@return any
+
+---@param playerObj IsoPlayer
+---@return boolean
+function ISFirearmRadialMenu.checkWeapon(playerObj) end
+
+---@param buttonPrompt ISButtonPrompt
+---@return boolean
+function ISFirearmRadialMenu.getBestLBButtonAction(buttonPrompt) end
+
+---@param buttonPrompt ISButtonPrompt
+---@return boolean?
+function ISFirearmRadialMenu.getBestRBButtonAction(buttonPrompt) end
+
+---@param buttonPrompt ISButtonPrompt
+---@param button integer
+---@param joypadData JoypadData
+function ISFirearmRadialMenu.onJoypadButtonReleased(buttonPrompt, button, joypadData) end
+
+---@param key integer
 function ISFirearmRadialMenu.onKeyPressed(key) end
----@return any
-function ISFirearmRadialMenu.onKeyRepeat(key) end
----@return any
+
+---@param key integer
 function ISFirearmRadialMenu.onKeyReleased(key) end
 
----@return any
+---@param key integer
+function ISFirearmRadialMenu.onKeyRepeat(key) end
+
+---@param buttonPrompt ISButtonPrompt
+---@return boolean?
+function ISFirearmRadialMenu.onRepeatRBumper(buttonPrompt) end
+
 function ISFirearmRadialMenu:center() end
----@return any
-function ISFirearmRadialMenu:getWeapon() end
----@return any
-function ISFirearmRadialMenu:fillMenu() end
----@return any
+
 function ISFirearmRadialMenu:display() end
 
+function ISFirearmRadialMenu:fillMenu() end
+
+---@return HandWeapon?
+function ISFirearmRadialMenu:getWeapon() end
+
+---@param character IsoPlayer
 ---@return ISFirearmRadialMenu
 function ISFirearmRadialMenu:new(character) end

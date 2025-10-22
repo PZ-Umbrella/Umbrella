@@ -1,9 +1,8 @@
---- @meta
+--- @meta _
 
---- @class BooleanSandboxOption: BooleanConfigOption
+--- @class BooleanSandboxOption: BooleanConfigOption, SandboxOption
 --- @field public class any
---- @implement SandboxOption
-BooleanSandboxOption = {};
+BooleanSandboxOption = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -11,76 +10,115 @@ BooleanSandboxOption = {};
 
 --- @public
 --- @return ConfigOption
---- @overload fun(self: BooleanSandboxOption): ConfigOption
 function BooleanSandboxOption:asConfigOption() end
 
 --- @public
---- @param table KahluaTable
---- @return void
---- @overload fun(self: BooleanSandboxOption, table: KahluaTable): void
+--- @return ConfigOption
+function BooleanSandboxOption:asConfigOption() end
+
+--- @public
+--- @param table table
+--- @return nil
 function BooleanSandboxOption:fromTable(table) end
 
 --- @public
---- @return String
---- @overload fun(self: BooleanSandboxOption): String
+--- @param table table
+--- @return nil
+function BooleanSandboxOption:fromTable(table) end
+
+--- @public
+--- @return string
 function BooleanSandboxOption:getPageName() end
 
 --- @public
---- @return String
---- @overload fun(self: BooleanSandboxOption): String
+--- @return string
+function BooleanSandboxOption:getPageName() end
+
+--- @public
+--- @return string
 function BooleanSandboxOption:getShortName() end
 
 --- @public
---- @return String
---- @overload fun(self: BooleanSandboxOption): String
+--- @return string
+function BooleanSandboxOption:getShortName() end
+
+--- @public
+--- @return string
 function BooleanSandboxOption:getTableName() end
 
 --- @public
---- @return String
---- @overload fun(self: BooleanSandboxOption): String
+--- @return string
+function BooleanSandboxOption:getTableName() end
+
+--- @public
+--- @return string
 function BooleanSandboxOption:getTooltip() end
 
 --- @public
---- @return String
---- @overload fun(self: BooleanSandboxOption): String
+--- @return string
+function BooleanSandboxOption:getTooltip() end
+
+--- @public
+--- @return string
+function BooleanSandboxOption:getTranslatedName() end
+
+--- @public
+--- @return string
 function BooleanSandboxOption:getTranslatedName() end
 
 --- @public
 --- @return boolean
---- @overload fun(self: BooleanSandboxOption): boolean
 function BooleanSandboxOption:isCustom() end
 
 --- @public
---- @return void
---- @overload fun(self: BooleanSandboxOption): void
+--- @return boolean
+function BooleanSandboxOption:isCustom() end
+
+--- @public
+--- @return nil
 function BooleanSandboxOption:setCustom() end
 
 --- @public
---- @param pageName String
+--- @return nil
+function BooleanSandboxOption:setCustom() end
+
+--- @public
+--- @param pageName string
 --- @return SandboxOption
---- @overload fun(self: BooleanSandboxOption, pageName: String): SandboxOption
 function BooleanSandboxOption:setPageName(pageName) end
 
 --- @public
---- @param translation String
+--- @param pageName string
 --- @return SandboxOption
---- @overload fun(self: BooleanSandboxOption, translation: String): SandboxOption
+function BooleanSandboxOption:setPageName(pageName) end
+
+--- @public
+--- @param translation string
+--- @return SandboxOption
 function BooleanSandboxOption:setTranslation(translation) end
 
 --- @public
---- @param table KahluaTable
---- @return void
---- @overload fun(self: BooleanSandboxOption, table: KahluaTable): void
+--- @param translation string
+--- @return SandboxOption
+function BooleanSandboxOption:setTranslation(translation) end
+
+--- @public
+--- @param table table
+--- @return nil
 function BooleanSandboxOption:toTable(table) end
 
+--- @public
+--- @param table table
+--- @return nil
+function BooleanSandboxOption:toTable(table) end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param owner SandboxOptions
---- @param name String
+--- @param name string
 --- @param defaultValue boolean
 --- @return BooleanSandboxOption
 function BooleanSandboxOption.new(owner, name, defaultValue) end

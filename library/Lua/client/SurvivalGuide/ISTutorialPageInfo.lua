@@ -1,40 +1,51 @@
 ---@meta
 
 ---@class ISTutorialPageInfo : ISBaseObject
----@field data any
----@field title any
----@field text any
----@field nextcondition any
----@field moreTextInfo any
----@field [any] any
+---@field data table
+---@field moreTextInfo string
+---@field nextcondition (fun(): boolean)?
+---@field text string
+---@field title string
 ISTutorialPageInfo = ISBaseObject:derive("ISTutorialPageInfo")
+ISTutorialPageInfo.Type = "ISTutorialPageInfo"
 
----@return any
 function ISTutorialPageInfo:initialise() end
 
+---@param title string
+---@param text string
+---@param moreTextInfo string
+---@param nextcondition (fun(): boolean)?
 ---@return ISTutorialPageInfo
 function ISTutorialPageInfo:new(title, text, moreTextInfo, nextcondition) end
 
 ---@class ISTutorialSetInfo : ISBaseObject
----@field pageCount any
----@field currentPage any
----@field pages any
----@field [any] any
+---@field currentPage integer
+---@field pageCount integer
+---@field pages ISTutorialPageInfo[]
 ISTutorialSetInfo = ISBaseObject:derive("ISTutorialSetInfo")
+ISTutorialSetInfo.Type = "ISTutorialSetInfo"
 
----@return any
-function ISTutorialSetInfo:initialise() end
----@return any
+---@param pagetitle string
+---@param pagetext string
+---@param moreTextInfo string
+---@param pagenextcondition (fun(): boolean)?
 function ISTutorialSetInfo:addPage(pagetitle, pagetext, moreTextInfo, pagenextcondition) end
----@return any
-function ISTutorialSetInfo:getCurrent() end
----@return any
+
+---@param tutorialPanel ISRichTextPanel
 function ISTutorialSetInfo:applyPageToRichTextPanel(tutorialPanel) end
----@return any
+
+---@return ISTutorialPageInfo?
+function ISTutorialSetInfo:getCurrent() end
+
+---@return boolean
 function ISTutorialSetInfo:hasNext() end
----@return any
+
+---@return boolean
 function ISTutorialSetInfo:hasPrevious() end
----@return any
+
+function ISTutorialSetInfo:initialise() end
+
+---@param tutorialPanel ISRichTextPanel
 function ISTutorialSetInfo:update(tutorialPanel) end
 
 ---@return ISTutorialSetInfo

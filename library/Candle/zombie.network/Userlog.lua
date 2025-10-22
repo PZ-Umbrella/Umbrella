@@ -1,53 +1,62 @@
---- @meta
+--- @meta _
 
 --- @class Userlog
 --- @field public class any
-Userlog = {};
+Userlog = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return int
+--- @return integer
 function Userlog:getAmount() end
 
 --- @public
---- @return String
+--- @return string
 function Userlog:getIssuedBy() end
 
 --- @public
---- @return String
+--- @return string
 function Userlog:getLastUpdate() end
 
 --- @public
---- @return String
+--- @return string
 function Userlog:getText() end
 
 --- @public
---- @return String
+--- @return string
 function Userlog:getType() end
 
 --- @public
---- @return String
+--- @return string
 function Userlog:getUsername() end
 
 --- @public
---- @param amount int
---- @return void
+--- @param amount integer
+--- @return nil
 function Userlog:setAmount(amount) end
 
+--- @public
+--- @param arg0 ByteBuffer
+--- @return nil
+function Userlog:write(arg0) end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param arg0 String
---- @param arg1 String
---- @param arg2 String
---- @param arg3 String
---- @param arg4 int
---- @param arg5 String
+--- @param arg0 ByteBuffer
+--- @return Userlog
+function Userlog.new(arg0) end
+
+--- @public
+--- @param arg0 string
+--- @param arg1 string
+--- @param arg2 string
+--- @param arg3 string
+--- @param arg4 integer
+--- @param arg5 string
 --- @return Userlog
 function Userlog.new(arg0, arg1, arg2, arg3, arg4, arg5) end

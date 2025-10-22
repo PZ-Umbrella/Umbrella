@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class Debug
 --- @field public class any
-Debug = {};
+Debug = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -13,16 +13,15 @@ Debug = {};
 function Debug:getEnabled() end
 
 --- @public
---- @return int
+--- @return integer
 function Debug:getStartDay() end
 
 --- @public
---- @return int
+--- @return integer
 function Debug:getStartMonth() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

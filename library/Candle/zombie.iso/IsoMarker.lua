@@ -1,52 +1,35 @@
---- @meta
+--- @meta _
 
 --- @class IsoMarker
 --- @field public class any
-IsoMarker = {};
+IsoMarker = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param tempObject IsoObject
---- @return void
-function IsoMarker:addTempSquareObject(tempObject) end
-
---- @public
---- @return float
+--- @return number
 function IsoMarker:getA() end
 
 --- @public
---- @return float
-function IsoMarker:getAlpha() end
-
---- @public
---- @return float
-function IsoMarker:getAlphaMax() end
-
---- @public
---- @return float
-function IsoMarker:getAlphaMin() end
-
---- @public
---- @return float
+--- @return number
 function IsoMarker:getB() end
 
 --- @public
---- @return float
-function IsoMarker:getFadeSpeed() end
+--- @return number
+function IsoMarker:getCircleSize() end
 
 --- @public
---- @return float
+--- @return number
 function IsoMarker:getG() end
 
 --- @public
---- @return int
+--- @return integer
 function IsoMarker:getID() end
 
 --- @public
---- @return float
+--- @return number
 function IsoMarker:getR() end
 
 --- @public
@@ -54,32 +37,43 @@ function IsoMarker:getR() end
 function IsoMarker:getSquare() end
 
 --- @public
---- @return float
+--- @return number
 function IsoMarker:getX() end
 
 --- @public
---- @return float
+--- @return number
 function IsoMarker:getY() end
 
 --- @public
---- @return float
+--- @return number
 function IsoMarker:getZ() end
 
 --- @public
---- @return boolean
-function IsoMarker:hasTempSquareObject() end
+--- @param arg0 string
+--- @param arg1 integer
+--- @param arg2 integer
+--- @param arg3 integer
+--- @param arg4 IsoGridSquare
+--- @return nil
+function IsoMarker:init(arg0, arg1, arg2, arg3, arg4) end
 
 --- @public
---- @param spriteName String
---- @param x int
---- @param y int
---- @param z int
---- @param gs IsoGridSquare
---- @param doTempIsoObject boolean
---- @return void
---- @overload fun(self: IsoMarker, textureTable: KahluaTable, textureOverlayTable: KahluaTable, x: int, y: int, z: int, gs: IsoGridSquare): void
---- @overload fun(self: IsoMarker, textureTable: KahluaTable, textureOverlayTable: KahluaTable, x: int, y: int, z: int, gs: IsoGridSquare, doTempIsoObject: boolean): void
-function IsoMarker:init(spriteName, x, y, z, gs, doTempIsoObject) end
+--- @param arg0 table
+--- @param arg1 integer
+--- @param arg2 integer
+--- @param arg3 integer
+--- @param arg4 IsoGridSquare
+--- @return nil
+function IsoMarker:init(arg0, arg1, arg2, arg3, arg4) end
+
+--- @public
+--- @param arg0 InventoryItem
+--- @param arg1 integer
+--- @param arg2 integer
+--- @param arg3 integer
+--- @param arg4 IsoGridSquare
+--- @return nil
+function IsoMarker:init(arg0, arg1, arg2, arg3, arg4) end
 
 --- @public
 --- @return boolean
@@ -87,85 +81,74 @@ function IsoMarker:isActive() end
 
 --- @public
 --- @return boolean
-function IsoMarker:isDoAlpha() end
-
---- @public
---- @return boolean
 function IsoMarker:isRemoved() end
 
 --- @public
---- @return void
+--- @return nil
 function IsoMarker:remove() end
 
 --- @public
---- @return void
-function IsoMarker:removeTempSquareObjects() end
-
---- @public
---- @param a float
---- @return void
+--- @param a number
+--- @return nil
 function IsoMarker:setA(a) end
 
 --- @public
 --- @param active boolean
---- @return void
+--- @return nil
 function IsoMarker:setActive(active) end
 
 --- @public
---- @param alpha float
---- @return void
+--- @param alpha number
+--- @return nil
 function IsoMarker:setAlpha(alpha) end
 
 --- @public
---- @param alphaMax float
---- @return void
-function IsoMarker:setAlphaMax(alphaMax) end
-
---- @public
---- @param alphaMin float
---- @return void
-function IsoMarker:setAlphaMin(alphaMin) end
-
---- @public
---- @param b float
---- @return void
+--- @param b number
+--- @return nil
 function IsoMarker:setB(b) end
 
 --- @public
---- @param doAlpha boolean
---- @return void
-function IsoMarker:setDoAlpha(doAlpha) end
+--- @param arg0 number
+--- @return nil
+function IsoMarker:setCircleSize(arg0) end
 
 --- @public
---- @param fadeSpeed float
---- @return void
-function IsoMarker:setFadeSpeed(fadeSpeed) end
+--- @param arg0 number
+--- @param arg1 number
+--- @param arg2 number
+--- @param arg3 number
+--- @return nil
+function IsoMarker:setColor(arg0, arg1, arg2, arg3) end
 
 --- @public
---- @param g float
---- @return void
+--- @param g number
+--- @return nil
 function IsoMarker:setG(g) end
 
 --- @public
---- @param x int
---- @param y int
---- @param z int
---- @return void
+--- @param x integer
+--- @param y integer
+--- @param z integer
+--- @return nil
 function IsoMarker:setPos(x, y, z) end
 
 --- @public
---- @param r float
---- @return void
+--- @param r number
+--- @return nil
 function IsoMarker:setR(r) end
 
 --- @public
+--- @param arg0 number
+--- @return nil
+function IsoMarker:setRotation(arg0) end
+
+--- @public
 --- @param square IsoGridSquare
---- @return void
+--- @return nil
 function IsoMarker:setSquare(square) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

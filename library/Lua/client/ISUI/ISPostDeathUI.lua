@@ -1,55 +1,72 @@
 ---@meta
 
 ---@class ISPostDeathUI : ISPanelJoypad
----@field buttonRespawn any
----@field buttonExit any
----@field buttonQuit any
----@field waitOver any
----@field screenX any
----@field screenY any
----@field screenWidth any
----@field screenHeight any
----@field textY any
----@field quitToDesktopDialog any
----@field background any
----@field playerIndex any
----@field [any] any
+---@field buttonExit ISButton
+---@field buttonQuit ISButton
+---@field buttonRespawn ISButton
+---@field lines string[]
+---@field playerIndex integer
+---@field quitToDesktopDialog ISModalDialog?
+---@field screenHeight number
+---@field screenWidth number
+---@field screenX number
+---@field screenY number
+---@field textY number
+---@field timeOfDeath number
+---@field waitOver boolean
 ISPostDeathUI = ISPanelJoypad:derive("ISPostDeathUI")
-ISPostDeathUI.instance = {}
+ISPostDeathUI.Type = "ISPostDeathUI"
+ISPostDeathUI.instance = {} ---@type table<integer, ISPostDeathUI>
 
----@return any
+---@param playerObj IsoPlayer
 function ISPostDeathUI.OnPlayerDeath(playerObj) end
 
----@return any
-function ISPostDeathUI:createChildren() end
----@return any
+---@param button ISButton
 function ISPostDeathUI:configButton(button) end
----@return any
-function ISPostDeathUI:prerender() end
----@return any
-function ISPostDeathUI:render() end
----@return any
-function ISPostDeathUI:onQuitToDesktop() end
----@return any
+
+function ISPostDeathUI:createChildren() end
+
+---@param button ISButton
 function ISPostDeathUI:onConfirmQuitToDesktop(button) end
----@return any
+
 function ISPostDeathUI:onExit() end
----@return any
-function ISPostDeathUI:onRespawn() end
----@return any
-function ISPostDeathUI:onMouseDown(x, y) end
----@return any
-function ISPostDeathUI:onMouseUp(x, y) end
----@return any
-function ISPostDeathUI:onMouseMove(dx, dy) end
----@return any
-function ISPostDeathUI:onMouseWheel(del) end
----@return any
+
+---@param joypadData JoypadData
 function ISPostDeathUI:onGainJoypadFocus(joypadData) end
----@return any
+
+---@param joypadData JoypadData
 function ISPostDeathUI:onJoypadBeforeDeactivate(joypadData) end
----@return any
+
+---@param joypadData JoypadData
 function ISPostDeathUI:onJoypadReactivate(joypadData) end
 
+---@param x number
+---@param y number
+---@return boolean
+function ISPostDeathUI:onMouseDown(x, y) end
+
+---@param dx number
+---@param dy number
+---@return boolean
+function ISPostDeathUI:onMouseMove(dx, dy) end
+
+---@param x number
+---@param y number
+---@return boolean
+function ISPostDeathUI:onMouseUp(x, y) end
+
+---@param del number
+---@return boolean
+function ISPostDeathUI:onMouseWheel(del) end
+
+function ISPostDeathUI:onQuitToDesktop() end
+
+function ISPostDeathUI:onRespawn() end
+
+function ISPostDeathUI:prerender() end
+
+function ISPostDeathUI:render() end
+
+---@param playerIndex integer
 ---@return ISPostDeathUI
 function ISPostDeathUI:new(playerIndex) end

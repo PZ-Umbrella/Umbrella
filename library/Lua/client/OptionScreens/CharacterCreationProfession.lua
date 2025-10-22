@@ -1,166 +1,221 @@
 ---@meta
 
 ---@class CharacterCreationProfession : ISPanelJoypad
----@field javaObject any
----@field maletex any
----@field femaletex any
----@field freeTraits any
----@field pointToSpend any
----@field mainPanel any
----@field tablePadX any
----@field tableWidth any
----@field topOfLists any
----@field tooltipHgt any
----@field belowLists any
----@field bottomOfLists any
----@field smallFontHgt any
----@field mediumFontHgt any
----@field traitButtonHgt any
----@field traitButtonPad any
----@field backButton any
----@field playButton any
----@field listboxTraitSelected any
----@field listboxXpBoost any
----@field listboxTrait any
----@field listboxBadTrait any
----@field addTraitBtn any
----@field removeTraitBtn any
----@field addBadTraitBtn any
----@field listboxProf any
----@field tooltipRichText any
----@field randomButton any
----@field resetButton any
----@field infoBtn any
----@field presetPanel any
----@field savedBuilds any
----@field saveBuildButton any
----@field deleteBuildButton any
----@field profession any
----@field cost any
----@field infoRichText any
----@field previousScreen any
----@field tooltipLabel any
----@field tooltipColor any
----@field joyfocus any
----@field x any
----@field y any
----@field backgroundColor any
----@field borderColor any
----@field itemheightoverride any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field defaultToppal any
----@field defaultBottomspal any
----@field defaultToppalColor any
----@field defaultBottomspalColor any
----@field defaultTop any
----@field defaultBottoms any
----@field whiteBar any
----@field fontHgt any
----@field inputModal any
----@field [any] any
+---@field addBadTraitBtn ISButton
+---@field addTraitBtn ISButton
+---@field backButton ISButton
+---@field belowLists number
+---@field bottomOfLists number
+---@field cost integer
+---@field deleteBuildButton ISButton
+---@field fontHgt number
+---@field freeTraits TraitFactory.Trait[]
+---@field infoBtn ISButton
+---@field infoRichText ISModalRichText?
+---@field inputModal ISTextBox
+---@field itemheightoverride table<string, number>
+---@field joypadNavigate table
+---@field listboxBadTrait ISScrollingListBox
+---@field listboxProf ISScrollingListBox
+---@field listboxTrait ISScrollingListBox
+---@field listboxTraitSelected ISScrollingListBox
+---@field listboxXpBoost ISScrollingListBox
+---@field playButton ISButton
+---@field pointToSpend integer
+---@field presetPanel ISScrollingListBox
+---@field previousScreen string?
+---@field profession ProfessionFactory.Profession?
+---@field randomButton ISButton
+---@field removeTraitBtn ISButton
+---@field resetButton ISButton
+---@field saveBuildButton ISButton
+---@field savedBuilds ISComboBox
+---@field tablePadX number
+---@field tableWidth number
+---@field tooltipColor umbrella.RGB
+---@field tooltipHgt number
+---@field tooltipLabel string?
+---@field tooltipRichText ISRichTextPanel
+---@field topOfLists number
+---@field traitButtonHgt number
+---@field traitButtonPad number
+---@field whiteBar Texture
 CharacterCreationProfession = ISPanelJoypad:derive("CharacterCreationProfession")
+CharacterCreationProfession.Type = "CharacterCreationProfession"
+CharacterCreationProfession.instance = nil ---@type CharacterCreationProfession?
 
----@return any
 function CharacterCreationProfession.initWorld() end
----@return any
+
+---@param self CharacterCreationProfession
+---@param box ISComboBox
 function CharacterCreationProfession.loadBuild(self, box) end
 
----@return any
-function CharacterCreationProfession:initialise() end
----@return any
-function CharacterCreationProfession:instantiate() end
----@return any
-function CharacterCreationProfession:create() end
----@return any
-function CharacterCreationProfession:onSelectChosenTrait(item) end
----@return any
-function CharacterCreationProfession:onSelectTrait(item) end
----@return any
-function CharacterCreationProfession:onSelectBadTrait(item) end
----@return any
-function CharacterCreationProfession:onDblClickSelectedTrait(item) end
----@return any
-function CharacterCreationProfession:onDblClickBadTrait(item) end
----@return any
-function CharacterCreationProfession:onDblClickTrait(item) end
----@return any
-function CharacterCreationProfession:checkXPBoost() end
----@return any
-function CharacterCreationProfession:onSelectProf(item) end
----@return any
-function CharacterCreationProfession:changeClothes() end
----@return any
-function CharacterCreationProfession:setVisible(visible, joypadData) end
----@return any
-function CharacterCreationProfession:onOptionMouseDown(button, x, y) end
----@return any
+function CharacterCreationProfession:addBadTrait() end
+
+function CharacterCreationProfession:addGoodTrait() end
+
+---@param bad boolean
 function CharacterCreationProfession:addTrait(bad) end
----@return any
-function CharacterCreationProfession:mutualyExclusive(trait, bAdd) end
----@return any
-function CharacterCreationProfession:isTraitExcluded(trait) end
----@return any
-function CharacterCreationProfession:removeTrait() end
----@return any
-function CharacterCreationProfession:drawAvatar() end
----@return any
-function CharacterCreationProfession:update() end
----@return any
-function CharacterCreationProfession:prerender() end
----@return any
-function CharacterCreationProfession:render() end
----@return any
-function CharacterCreationProfession:PointToSpend() end
----@return any
-function CharacterCreationProfession:populateProfessionList(list) end
----@return any
-function CharacterCreationProfession:populateTraitList(list) end
----@return any
-function CharacterCreationProfession:populateBadTraitList(list) end
----@return any
-function CharacterCreationProfession:drawXpBoostMap(y, item, alt) end
----@return any
-function CharacterCreationProfession:getTraitColor(trait) end
----@return any
-function CharacterCreationProfession:drawTraitMap(y, item, alt) end
----@return any
-function CharacterCreationProfession:drawProfessionMap(y, item, alt) end
----@return any
-function CharacterCreationProfession:onGainJoypadFocus(joypadData) end
----@return any
-function CharacterCreationProfession:onLoseJoypadFocus(joypadData) end
----@return any
-function CharacterCreationProfession:onJoypadBeforeDeactivate(joypadData) end
----@return any
-function CharacterCreationProfession:onJoypadDirUp(joypadData) end
----@return any
-function CharacterCreationProfession:onJoypadDirLeft(joypadData) end
----@return any
-function CharacterCreationProfession:onJoypadDirRight(joypadData) end
----@return any
-function CharacterCreationProfession:onResolutionChange(oldw, oldh, neww, newh) end
----@return any
-function CharacterCreationProfession:saveBuildValidate(text) end
----@return any
-function CharacterCreationProfession:presetExists(findText) end
----@return any
-function CharacterCreationProfession:saveBuildStep1() end
----@return any
-function CharacterCreationProfession:saveBuildStep2(button, joypadData, param2) end
----@return any
+
+function CharacterCreationProfession:changeClothes() end
+
+function CharacterCreationProfession:checkXPBoost() end
+
+function CharacterCreationProfession:create() end
+
 function CharacterCreationProfession:deleteBuildStep1() end
----@return any
+
+---@param button ISButton
+---@param joypadData JoypadData
 function CharacterCreationProfession:deleteBuildStep2(button, joypadData) end
----@return any
+
+---@param trait TraitFactory.Trait
+---@param isRemovingTrait boolean
+function CharacterCreationProfession:doTestForMutuallyExclusiveTraits(trait, isRemovingTrait) end
+
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
+function CharacterCreationProfession:drawProfessionMap(y, item, alt) end
+
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
+function CharacterCreationProfession:drawTraitMap(y, item, alt) end
+
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
+function CharacterCreationProfession:drawXpBoostMap(y, item, alt) end
+
+---@return unknown
+function CharacterCreationProfession:getSelectedProf() end
+
+---@param trait TraitFactory.Trait
+---@return umbrella.RGB
+function CharacterCreationProfession:getTraitColor(trait) end
+
+function CharacterCreationProfession:initialise() end
+
+function CharacterCreationProfession:instantiate() end
+
+---@param trait TraitFactory.Trait
+---@return boolean
+function CharacterCreationProfession:isTraitExcluded(trait) end
+
+---@return number
+function CharacterCreationProfession:negativeTraitOffset() end
+
+---@param item TraitFactory.Trait
+function CharacterCreationProfession:onDblClickBadTrait(item) end
+
+---@param item TraitFactory.Trait
+function CharacterCreationProfession:onDblClickSelectedTrait(item) end
+
+---@param item TraitFactory.Trait
+function CharacterCreationProfession:onDblClickTrait(item) end
+
+---@param joypadData JoypadData
+function CharacterCreationProfession:onGainJoypadFocus(joypadData) end
+
+---@param joypadData JoypadData
+function CharacterCreationProfession:onJoypadBeforeDeactivate(joypadData) end
+
+---@param joypadData JoypadData
+function CharacterCreationProfession:onJoypadDirLeft(joypadData) end
+
+---@param joypadData JoypadData
+function CharacterCreationProfession:onJoypadDirRight(joypadData) end
+
+---@param joypadData JoypadData
+function CharacterCreationProfession:onJoypadDirUp(joypadData) end
+
+function CharacterCreationProfession:onJoypadNavigateStart(joypadData) end
+
+function CharacterCreationProfession:onJoypadNavigateStart_Descendant(descendant, joypadData) end
+
+function CharacterCreationProfession:onKeyRelease(key) end
+
+---@param joypadData JoypadData
+function CharacterCreationProfession:onLoseJoypadFocus(joypadData) end
+
+---@param button ISButton
+---@param x number?
+---@param y number?
+function CharacterCreationProfession:onOptionMouseDown(button, x, y) end
+
+---@param oldw number
+---@param oldh number
+---@param neww number
+---@param newh number
+function CharacterCreationProfession:onResolutionChange(oldw, oldh, neww, newh) end
+
+---@param item TraitFactory.Trait
+function CharacterCreationProfession:onSelectBadTrait(item) end
+
+---@param item TraitFactory.Trait
+function CharacterCreationProfession:onSelectChosenTrait(item) end
+
+---@param item ProfessionFactory.Profession
+function CharacterCreationProfession:onSelectProf(item) end
+
+---@param item TraitFactory.Trait
+function CharacterCreationProfession:onSelectTrait(item) end
+
+---@return number
+function CharacterCreationProfession:PointToSpend() end
+
+---@param list ISScrollingListBox
+function CharacterCreationProfession:populateBadTraitList(list) end
+
+---@param list ISScrollingListBox
+function CharacterCreationProfession:populateProfessionList(list) end
+
+---@param list ISScrollingListBox
+function CharacterCreationProfession:populateTraitList(list) end
+
+function CharacterCreationProfession:prerender() end
+
+---@param findText string
+---@return boolean
+function CharacterCreationProfession:presetExists(findText) end
+
 function CharacterCreationProfession:randomizeTraits() end
----@return any
+
+function CharacterCreationProfession:removeTrait() end
+
+function CharacterCreationProfession:render() end
+
+function CharacterCreationProfession:repopulateTraitLists() end
+
 function CharacterCreationProfession:resetBuild() end
----@return any
+
 function CharacterCreationProfession:resetTraits() end
 
+function CharacterCreationProfession:saveBuildStep1() end
+
+---@param button ISButton
+---@param joypadData JoypadData
+---@param param2 unknown?
+function CharacterCreationProfession:saveBuildStep2(button, joypadData, param2) end
+
+---@param text string
+---@return boolean
+function CharacterCreationProfession:saveBuildValidate(text) end
+
+---@param visible boolean
+---@param joypadData JoypadData?
+function CharacterCreationProfession:setVisible(visible, joypadData) end
+
+function CharacterCreationProfession:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return CharacterCreationProfession
 function CharacterCreationProfession:new(x, y, width, height) end
 
@@ -168,13 +223,46 @@ function CharacterCreationProfession:new(x, y, width, height) end
 BCRC = {}
 BCRC.savefile = "saved_builds.txt"
 
----@return any
-function BCRC.inputModal(_centered, _width, _height, _posX, _posY, _text, _onclick, target, param1, param2) end
----@return any
-function BCRC.readSaveFile() end
----@return any
-function BCRC.writeSaveFile(options) end
----@return any
+---@param lvl integer?
+---@return string
 function BCRC.dump(o, lvl) end
----@return any
+
+---@param _centered boolean
+---@param _width number?
+---@param _height number?
+---@param _posX number?
+---@param _posY number?
+---@param _text string
+---@param _onclick umbrella.ISButton.OnClick?
+---@param target unknown?
+---@param param1 unknown?
+---@param param2 unknown?
+---@return ISTextBox
+function BCRC.inputModal(_centered, _width, _height, _posX, _posY, _text, _onclick, target, param1, param2) end
+
 function BCRC.pline(text) end
+
+---@return table
+function BCRC.readSaveFile() end
+
+---@param options table<string, string>
+function BCRC.writeSaveFile(options) end
+
+---@class CharacterCreationMain
+CharacterCreationMain = {}
+
+---@param list umbrella.ISScrollingListBox.Item[]
+function CharacterCreationMain.invertSort(list) end
+
+---@param list umbrella.ISScrollingListBox.Item[]
+function CharacterCreationMain.sort(list) end
+
+---@param a umbrella.ISScrollingListBox.Item
+---@param b umbrella.ISScrollingListBox.Item
+---@return boolean
+function CharacterCreationMain.sortByCost(a, b) end
+
+---@param a umbrella.ISScrollingListBox.Item
+---@param b umbrella.ISScrollingListBox.Item
+---@return boolean
+function CharacterCreationMain.sortByInvertCost(a, b) end

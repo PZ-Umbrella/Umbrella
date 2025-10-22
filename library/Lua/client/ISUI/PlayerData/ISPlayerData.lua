@@ -1,41 +1,76 @@
 ---@meta
 
 ---@class ISPlayerData
+---@field [integer] ISPlayerDataObject
 ISPlayerData = {}
 
----@return any
+---@param id integer
+---@return ISPlayerDataObject?
 function getPlayerData(id) end
----@return any
+
+---@param id integer
 function removeInventoryUI(id) end
----@return any
+
+---@param id integer
+---@return ISButtonPrompt?
 function getButtonPrompts(id) end
----@return any
+
+---@param id integer
+---@return ISInventoryPage?
 function getPlayerInventory(id) end
----@return any
+
+---@param id integer
+---@return ISInventoryPage?
 function getPlayerLoot(id) end
----@return any
+
+---@param id integer
+---@return ISContextMenu?
 function getPlayerContextMenu(id) end
----@return any
+
+---@param id integer
+---@return ISHotbar?
 function getPlayerHotbar(id) end
----@return any
+
+---@param id integer
+---@return ISCharacterInfoWindow?
 function getPlayerInfoPanel(id) end
----@return any
+
+---@param id integer
+---@return ISBackButtonWheel?
 function getPlayerBackButtonWheel(id) end
----@return any
-function getPlayerSafetyUI(id) end
----@return any
+
+---@param id integer
+---@return ISCraftingUI?
 function getPlayerCraftingUI(id) end
----@return any
+
+---@param id integer
+---@return ISDesignationZonePanel?
+function getPlayerZoneUI(id) end
+
+---@param id integer
+---@return ISVehicleMechanics
 function getPlayerMechanicsUI(id) end
----@return any
+
+---@param id integer
+---@return ISMiniMapOuter?
 function getPlayerMiniMap(id) end
----@return any
+
+---@param id integer
+---@return ISVehicleDashboard?
 function getPlayerVehicleDashboard(id) end
----@return any
+
+---@param id integer
+---@return ISRadialMenu?
 function getPlayerRadialMenu(id) end
----@return any
+
+---@param id integer
+---@return ISSleepingUI?
+function getPlayerSleepingUI(id) end
+
+---@param id integer
 function createPlayerData(id) end
----@return any
+
+---@param playerObj IsoPlayer
 function destroyPlayerData(playerObj) end
----@return any
+
 function destroyAllPlayerData() end

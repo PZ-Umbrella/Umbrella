@@ -1,64 +1,69 @@
 ---@meta
 
----@class ISDigitalCode : ISPanelJoypad
----@field button1p any
----@field number1 any
----@field button1m any
----@field button2p any
----@field number2 any
----@field button2m any
----@field button3p any
----@field number3 any
----@field button3m any
----@field ok any
----@field joypadIndexY any
----@field joypadIndex any
----@field joypadButtons any
----@field character any
----@field name any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field target any
----@field onclick any
----@field player any
----@field playerX any
----@field playerY any
----@field padlock any
----@field thumpable any
----@field new any
----@field x any
----@field y any
----@field [any] any
-ISDigitalCode = ISPanelJoypad:derive("ISDigitalCode")
+---@alias umbrella.ISDigitalCode.OnClick fun(target: unknown, button: ISButton, character: IsoPlayer, padlock: InventoryItem?, thumpable: IsoThumpable)
 
----@return any
-function ISDigitalCode:initialise() end
----@return any
-function ISDigitalCode:destroy() end
----@return any
-function ISDigitalCode:onClick(button) end
----@return any
-function ISDigitalCode:increment(number) end
----@return any
+---@class ISDigitalCode : ISPanelJoypad
+---@field button1m ISButton
+---@field button1p ISButton
+---@field button2m ISButton
+---@field button2p ISButton
+---@field button3m ISButton
+---@field button3p ISButton
+---@field character IsoPlayer?
+---@field joypadButtons ISButton[]?
+---@field name unknown?
+---@field new boolean
+---@field number1 ISTextEntryBox
+---@field number2 ISTextEntryBox
+---@field number3 ISTextEntryBox
+---@field ok ISButton
+---@field onclick umbrella.ISDigitalCode.OnClick?
+---@field padlock InventoryItem?
+---@field player integer
+---@field playerX number
+---@field playerY number
+---@field target unknown?
+---@field thumpable IsoThumpable
+ISDigitalCode = ISPanelJoypad:derive("ISDigitalCode")
+ISDigitalCode.Type = "ISDigitalCode"
+
+---@param number number
 function ISDigitalCode:decrement(number) end
----@return any
-function ISDigitalCode:prerender() end
----@return any
-function ISDigitalCode:render() end
----@return any
-function ISDigitalCode:update() end
----@return any
-function ISDigitalCode:onGainJoypadFocus(joypadData) end
----@return any
-function ISDigitalCode:onJoypadDown(button) end
----@return any
+
+function ISDigitalCode:destroy() end
+
+---@return number
 function ISDigitalCode:getCode() end
 
+---@param number number
+function ISDigitalCode:increment(number) end
+
+function ISDigitalCode:initialise() end
+
+---@param button ISButton
+function ISDigitalCode:onClick(button) end
+
+---@param joypadData JoypadData
+function ISDigitalCode:onGainJoypadFocus(joypadData) end
+
+---@param button integer
+function ISDigitalCode:onJoypadDown(button) end
+
+function ISDigitalCode:prerender() end
+
+function ISDigitalCode:render() end
+
+function ISDigitalCode:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param target unknown?
+---@param onclick umbrella.ISDigitalCode.OnClick?
+---@param player integer
+---@param padlock InventoryItem?
+---@param thumpable IsoThumpable
+---@param new boolean
 ---@return ISDigitalCode
 function ISDigitalCode:new(x, y, width, height, target, onclick, player, padlock, thumpable, new) end

@@ -1,25 +1,24 @@
---- @meta
+--- @meta _
 
 --- @class IsoDummyCameraCharacter: IsoGameCharacter
 --- @field public class any
-IsoDummyCameraCharacter = {};
+IsoDummyCameraCharacter = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
+--- @return nil
 function IsoDummyCameraCharacter:update() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param x float
---- @param y float
---- @param z float
+--- @param x number
+--- @param y number
+--- @param z number
 --- @return IsoDummyCameraCharacter
 function IsoDummyCameraCharacter.new(x, y, z) end

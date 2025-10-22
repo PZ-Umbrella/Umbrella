@@ -4,5 +4,5 @@
 ClimateMain = {}
 ClimateMain.versionStamp = "20201015_100656"
 
----@return any
+---@param _clim ClimateManager
 function ClimateMain.onClimateManagerInit(_clim) end

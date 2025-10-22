@@ -1,9 +1,8 @@
---- @meta
+--- @meta _
 
---- @class BooleanServerOption: BooleanConfigOption
+--- @class BooleanServerOption: BooleanConfigOption, ServerOption
 --- @field public class any
---- @implement ServerOption
-BooleanServerOption = {};
+BooleanServerOption = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -11,22 +10,27 @@ BooleanServerOption = {};
 
 --- @public
 --- @return ConfigOption
---- @overload fun(self: BooleanServerOption): ConfigOption
 function BooleanServerOption:asConfigOption() end
 
 --- @public
---- @return String
---- @overload fun(self: BooleanServerOption): String
+--- @return ConfigOption
+function BooleanServerOption:asConfigOption() end
+
+--- @public
+--- @return string
 function BooleanServerOption:getTooltip() end
 
+--- @public
+--- @return string
+function BooleanServerOption:getTooltip() end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param owner ServerOptions
---- @param name String
+--- @param name string
 --- @param defaultValue boolean
 --- @return BooleanServerOption
 function BooleanServerOption.new(owner, name, defaultValue) end

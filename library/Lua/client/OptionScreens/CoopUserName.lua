@@ -1,43 +1,48 @@
 ---@meta
 
 ---@class CoopUserName : ISPanelJoypad
----@field fontHgt any
----@field entry any
----@field backButton any
----@field nextButton any
----@field ISButtonA any
----@field ISButtonB any
----@field joypadButtonsY any
----@field joypadButtons any
----@field joypadIndexY any
----@field joypadIndex any
----@field [any] any
+---@field backButton ISButton
+---@field entry ISTextEntryBox
+---@field fontHgt number
+---@field nextButton ISButton
 CoopUserName = ISPanelJoypad:derive("CoopUserName")
+CoopUserName.Type = "CoopUserName"
+CoopUserName.instance = nil ---@type CoopUserName?
 
----@return any
-function CoopUserName:createChildren() end
----@return any
-function CoopUserName:shouldShow() end
----@return any
-function CoopUserName:getUserName() end
----@return any
 function CoopUserName:beforeShow() end
----@return any
+
 function CoopUserName:clickBack() end
----@return any
+
 function CoopUserName:clickNext() end
----@return any
-function CoopUserName:prerender() end
----@return any
-function CoopUserName:render() end
----@return any
+
+function CoopUserName:createChildren() end
+
+---@return string
+function CoopUserName:getUserName() end
+
+---@param joypadData JoypadData
 function CoopUserName:onGainJoypadFocus(joypadData) end
----@return any
-function CoopUserName:onJoypadDown(button, joypadData) end
----@return any
+
+---@param joypadData JoypadData
 function CoopUserName:onJoypadDirDown(joypadData) end
----@return any
+
+---@param joypadData JoypadData
 function CoopUserName:onJoypadDirUp(joypadData) end
 
+---@param button integer
+---@param joypadData JoypadData
+function CoopUserName:onJoypadDown(button, joypadData) end
+
+function CoopUserName:prerender() end
+
+function CoopUserName:render() end
+
+---@return boolean
+function CoopUserName:shouldShow() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return CoopUserName
 function CoopUserName:new(x, y, width, height) end

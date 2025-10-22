@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class MapObjects
 --- @field public class any
-MapObjects = {};
+MapObjects = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -10,72 +10,85 @@ MapObjects = {};
 
 --- @public
 --- @static
---- @param spriteName String
---- @param __function__ LuaClosure
---- @param priority int
---- @return void
---- @overload fun(spriteNames: KahluaTable, __function__: LuaClosure, priority: int): void
+--- @param spriteName string
+--- @param __function__ function
+--- @param priority integer
+--- @return nil
 function MapObjects.OnLoadWithSprite(spriteName, __function__, priority) end
 
 --- @public
 --- @static
---- @param spriteName String
---- @param __function__ LuaClosure
---- @param priority int
---- @return void
---- @overload fun(spriteNames: KahluaTable, __function__: LuaClosure, priority: int): void
+--- @param spriteNames table
+--- @param __function__ function
+--- @param priority integer
+--- @return nil
+function MapObjects.OnLoadWithSprite(spriteNames, __function__, priority) end
+
+--- @public
+--- @static
+--- @param spriteName string
+--- @param __function__ function
+--- @param priority integer
+--- @return nil
 function MapObjects.OnNewWithSprite(spriteName, __function__, priority) end
 
 --- @public
 --- @static
---- @return void
+--- @param spriteNames table
+--- @param __function__ function
+--- @param priority integer
+--- @return nil
+function MapObjects.OnNewWithSprite(spriteNames, __function__, priority) end
+
+--- @public
+--- @static
+--- @return nil
 function MapObjects.Reset() end
 
 --- @public
 --- @static
---- @param wx int
---- @param wy int
---- @return void
+--- @param wx integer
+--- @param wy integer
+--- @return nil
 function MapObjects.debugLoadChunk(wx, wy) end
 
 --- @public
 --- @static
---- @param x int
---- @param y int
---- @param z int
---- @return void
+--- @param x integer
+--- @param y integer
+--- @param z integer
+--- @return nil
 function MapObjects.debugLoadSquare(x, y, z) end
 
 --- @public
 --- @static
---- @param x int
---- @param y int
---- @param z int
---- @return void
+--- @param x integer
+--- @param y integer
+--- @param z integer
+--- @return nil
 function MapObjects.debugNewSquare(x, y, z) end
 
 --- @public
 --- @static
 --- @param square IsoGridSquare
---- @return void
+--- @return nil
 function MapObjects.loadGridSquare(square) end
 
 --- @public
 --- @static
 --- @param square IsoGridSquare
---- @return void
+--- @return nil
 function MapObjects.newGridSquare(square) end
 
 --- @public
 --- @static
 --- @param prototype Prototype
---- @param luaClosure LuaClosure
---- @return void
+--- @param luaClosure function
+--- @return nil
 function MapObjects.reroute(prototype, luaClosure) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

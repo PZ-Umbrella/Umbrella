@@ -1,41 +1,25 @@
 ---@meta _
 
----@class Reader
----@class InputStream
-
 __classmetatables = {}
 
----@param value any
----@param multiline string?
----@param indent string?
+---@param str string
 ---@return string
-function serialize(value, multiline, indent) end
+function string.trim(str) end
 
----@param s string
----@return any
-function deserialize(s) end
+---@param str string
+---@param regex string
+---@return string[]
+function string.split(str, regex) end
 
----@param value any
----@return string
-function pp(value) end
+---@param str string
+---@param other string
+---@return boolean
+function string.sort(str, other) end
 
----@param thread thread?
----@param level integer?
----@param maxLines integer?
----@param maxLevel integer?
-function debugstacktrace(thread, level, maxLines, maxLevel) end
-
----@param stream Reader | InputStream
----@param chunkname string
----@return function?
----@return string?
-function loadstream(stream, chunkname) end
-
----@deprecated
----@param loader string
----@return (string | function)?
-function bytecodeloader(loader) end
-
+---@param str string
+---@param other string
+---@return boolean
+function string.contains(str, other) end
 
 table.pairs = pairs
 
@@ -46,41 +30,53 @@ function table.isempty(table) end
 ---@param table table
 function table.wipe(table) end
 
+---@return table
 ---@overload fun(table: table): table
----@overload fun(...: any): table
 function table.newarray(...) end
 
+---@class Reader
 
----@param s string
----@return string
-function string.trim(s) end
-
----@param s string
----@param regex string
----@return string[]
-function string.split(s, regex) end
-
----@param s string
----@param other string
----@return boolean
-function string.sort(s, other) end
-
----@param s string
----@param other string
----@return boolean
-function string.contains(s, other) end
-
+---@class InputStream
 
 ---@class Random
-local Random = {}
-
----@return Random
-function newrandom() end
-
----@param value any?
-function Random:seed(value) end
+local __random = {}
 
 ---@param m integer?
 ---@param n integer?
 ---@return number
-function Random:random(m, n) end
+function __random:random(m, n) end
+
+---@param value unknown?
+function __random:seed(value) end
+
+---@param multiline string?
+---@param indent string?
+---@return string
+function serialize(value, multiline, indent) end
+
+---@param s string
+---@return unknown
+function deserialize(s) end
+
+---@return string
+function pp(value) end
+
+---@param thread thread?
+---@param level integer?
+---@param maxLines integer?
+---@param maxLevel integer?
+---@return string
+function debugstacktrace(thread, level, maxLines, maxLevel) end
+
+---@param stream Reader | InputStream
+---@param chunkname string
+---@return function?
+---@return string?
+function loadstream(stream, chunkname) end
+
+---@param loader string
+---@return (string | function)?
+function bytecodeloader(loader) end
+
+---@return Random
+function newrandom() end

@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class Moveable: InventoryItem Turbo.
 --- @field public class any
-Moveable = {};
+Moveable = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -13,52 +13,62 @@ Moveable = {};
 function Moveable:CanBeDroppedOnFloor() end
 
 --- @public
---- @param sprite String
+--- @param sprite string
 --- @return boolean
 function Moveable:ReadFromWorldSprite(sprite) end
 
 --- @public
---- @return String
+--- @param arg0 string
+--- @return nil
+function Moveable:getCustomIcon(arg0) end
+
+--- @public
+--- @return string
 function Moveable:getCustomNameFull() end
 
 --- @public
---- @return String
+--- @return string
 function Moveable:getDisplayName() end
 
 --- @public
---- @return float
+--- @return number
 function Moveable:getLightB() end
 
 --- @public
---- @return String
+--- @return string
 function Moveable:getLightBulbItem() end
 
 --- @public
---- @return float
+--- @return number
 function Moveable:getLightDelta() end
 
 --- @public
---- @return float
+--- @return number
 function Moveable:getLightG() end
 
 --- @public
---- @return float
+--- @return number
 function Moveable:getLightPower() end
 
 --- @public
---- @return float
+--- @return number
 function Moveable:getLightR() end
 
 --- @public
---- @return String
+--- @return string
 function Moveable:getMovableFullName() end
 
 --- @public
---- @return String the name
+--- @return string # the name
 function Moveable:getName() end
 
 --- @public
---- @return int
+--- @param arg0 IsoPlayer
+--- @return string
+function Moveable:getName(arg0) end
+
+--- @public
+--- @return integer
 function Moveable:getSaveType() end
 
 --- @public
@@ -66,7 +76,7 @@ function Moveable:getSaveType() end
 function Moveable:getSpriteGrid() end
 
 --- @public
---- @return String
+--- @return string
 function Moveable:getWorldSprite() end
 
 --- @public
@@ -87,76 +97,82 @@ function Moveable:isMultiGridAnchor() end
 
 --- @public
 --- @param input ByteBuffer
---- @param WorldVersion int
---- @return void
+--- @param WorldVersion integer
+--- @return nil
 function Moveable:load(input, WorldVersion) end
 
 --- @public
 --- @param output ByteBuffer
 --- @param net boolean
---- @return void
+--- @return nil
 function Moveable:save(output, net) end
 
 --- @public
 --- @param isLight boolean
---- @return void
+--- @return nil
 function Moveable:setLight(isLight) end
 
 --- @public
---- @param lightB float
---- @return void
+--- @param lightB number
+--- @return nil
 function Moveable:setLightB(lightB) end
 
 --- @public
---- @param lightBulbItem String
---- @return void
+--- @param lightBulbItem string
+--- @return nil
 function Moveable:setLightBulbItem(lightBulbItem) end
 
 --- @public
---- @param lightDelta float
---- @return void
+--- @param lightDelta number
+--- @return nil
 function Moveable:setLightDelta(lightDelta) end
 
 --- @public
---- @param lightG float
---- @return void
+--- @param lightG number
+--- @return nil
 function Moveable:setLightG(lightG) end
 
 --- @public
 --- @param lightHasBattery boolean
---- @return void
+--- @return nil
 function Moveable:setLightHasBattery(lightHasBattery) end
 
 --- @public
---- @param lightPower float
---- @return void
+--- @param lightPower number
+--- @return nil
 function Moveable:setLightPower(lightPower) end
 
 --- @public
---- @param lightR float
---- @return void
+--- @param lightR number
+--- @return nil
 function Moveable:setLightR(lightR) end
 
 --- @public
 --- @param lightUseBattery boolean
---- @return void
+--- @return nil
 function Moveable:setLightUseBattery(lightUseBattery) end
 
 --- @public
---- @param WorldSprite String
---- @return void
+--- @param WorldSprite string
+--- @return nil
 function Moveable:setWorldSprite(WorldSprite) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param module String
---- @param name String
---- @param type String
---- @param tex String
+--- @param module string
+--- @param name string
+--- @param type string
+--- @param tex string
 --- @return Moveable
---- @overload fun(module: String, name: String, type: String, item: Item): Moveable
 function Moveable.new(module, name, type, tex) end
+
+--- @public
+--- @param module string
+--- @param name string
+--- @param type string
+--- @param item Item
+--- @return Moveable
+function Moveable.new(module, name, type, item) end

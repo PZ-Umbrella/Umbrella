@@ -1,104 +1,89 @@
 ---@meta
 
 ---@class ISChat : ISCollapsableWindow
----@field showTimestamp any
----@field showTitle any
----@field minOpaque any
----@field maxOpaque any
----@field fadeTime any
----@field chatFont any
----@field opaqueOnFocus any
----@field pin any
----@field resizeWidget any
----@field resizeWidget2 any
----@field closeButton any
----@field lockButton any
----@field gearButton any
----@field minimumHeight any
----@field minimumWidth any
----@field tabs any
----@field tabCnt any
----@field btnHeight any
----@field currentTabID any
----@field inset any
----@field fontHgt any
----@field textEntry any
----@field panel any
----@field mutedUsers any
----@field background any
----@field drawFrame any
----@field locked any
----@field servermsgTimer any
----@field servermsg any
----@field chatText any
----@field x any
----@field y any
----@field borderColor any
----@field backgroundColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field onRightMouseUp any
----@field prevBtnTxt any
----@field nextBtnTxt any
----@field closeBtnTxt any
----@field chatLockedButtonTexture any
----@field chatUnLockedButtonTexture any
----@field timerTextEntry any
----@field fade any
----@field chat any
----@field [any] any
+---@field btnHeight number
+---@field chatFont string
+---@field chatLockedButtonTexture Texture
+---@field chatText ISRichTextPanel?
+---@field chatUnLockedButtonTexture Texture
+---@field currentTabID integer
+---@field defaultTab ISRichTextPanel?
+---@field fade UITransition
+---@field fadeTime number
+---@field fontHgt number
+---@field gearButton ISButton
+---@field inset number
+---@field lockButton ISButton
+---@field locked boolean
+---@field maxOpaque number
+---@field minOpaque number
+---@field mutedUsers table<string, true?>
+---@field nextBtnTxt Texture
+---@field opaqueOnFocus boolean
+---@field panel ISTabPanel
+---@field prevBtnTxt Texture
+---@field servermsg string
+---@field servermsgTimer number
+---@field showSlowModeFeedback boolean
+---@field showTimestamp boolean
+---@field showTitle boolean
+---@field slowTimeRemainingRatio number
+---@field tabCnt integer
+---@field tabs ISRichTextPanel[]
+---@field textEntry ISTextEntryBox
+---@field timerMessageSlowMode number
+---@field timerTextEntry number
 ISChat = ISCollapsableWindow:derive("ISChat")
+ISChat.Type = "ISChat"
 ISChat.maxLine = 50
 ISChat.focused = false
-ISChat.allChatStreams = {}
-ISChat.allChatStreams[1] = {
-    name = "say",
-    command = "/say ",
-    shortCommand = "/s ",
-    tabID = 1,
+ISChat.allChatStreams = {
+	{
+		name = "say",
+		command = "/say ",
+		shortCommand = "/s ",
+		tabID = 1,
+	},
+	{
+		name = "yell",
+		command = "/yell ",
+		shortCommand = "/y ",
+		tabID = 1,
+	},
+	{
+		name = "whisper",
+		command = "/whisper ",
+		shortCommand = "/w ",
+		tabID = 1,
+	},
+	{
+		name = "faction",
+		command = "/faction ",
+		shortCommand = "/f ",
+		tabID = 1,
+	},
+	{
+		name = "safehouse",
+		command = "/safehouse ",
+		shortCommand = "/sh ",
+		tabID = 1,
+	},
+	{
+		name = "general",
+		command = "/all ",
+		tabID = 1,
+	},
+	{
+		name = "admin",
+		command = "/admin ",
+		shortCommand = "/a ",
+		tabID = 2,
+	},
 }
-ISChat.allChatStreams[2] = {
-    name = "yell",
-    command = "/yell ",
-    shortCommand = "/y ",
-    tabID = 1,
+ISChat.defaultTabStream = {
+	ISChat.allChatStreams[1],
+	ISChat.allChatStreams[7],
 }
-ISChat.allChatStreams[3] = {
-    name = "whisper",
-    command = "/whisper ",
-    shortCommand = "/w ",
-    tabID = 1,
-}
-ISChat.allChatStreams[4] = {
-    name = "faction",
-    command = "/faction ",
-    shortCommand = "/f ",
-    tabID = 1,
-}
-ISChat.allChatStreams[5] = {
-    name = "safehouse",
-    command = "/safehouse ",
-    shortCommand = "/sh ",
-    tabID = 1,
-}
-ISChat.allChatStreams[6] = {
-    name = "general",
-    command = "/all ",
-    tabID = 1,
-}
-ISChat.allChatStreams[7] = {
-    name = "admin",
-    command = "/admin ",
-    shortCommand = "/a ",
-    tabID = 2,
-}
-ISChat.defaultTabStream = {}
-ISChat.defaultTabStream[1] = ISChat.allChatStreams[1]
-ISChat.defaultTabStream[2] = ISChat.allChatStreams[7]
 ISChat.minControlOpaque = 0.5
 ISChat.minGeneralOpaque = 0.0
 ISChat.maxGeneralOpaque = 1.0
@@ -114,121 +99,181 @@ ISChat.lockButtonName = "chat lock button"
 ISChat.gearButtonName = "chat gear button"
 ISChat.textPanelName = "chat text element"
 ISChat.windowName = "chat window"
+ISChat.instance = nil ---@type ISChat?
+ISChat.chat = nil ---@type ISChat?
 
----@return any
-function ISChat.initChat() end
----@return any
-function ISChat.onSwitchStream() end
----@return any
-function ISChat.onTextChange() end
----@return any
-function ISChat.onToggleTimestampPrefix() end
----@return any
-function ISChat.onToggleTagPrefix() end
----@return any
-function ISChat.onFontSizeChange(target, value) end
----@return any
-function ISChat.onMinOpaqueChange(target, value) end
----@return any
-function ISChat.onMaxOpaqueChange(target, value) end
----@return any
-function ISChat.onFadeTimeChange(target, value) end
----@return any
-function ISChat.onFocusOpaqueChange(target, value) end
----@return any
+---@param message ChatMessage
+---@param tabID integer
 function ISChat.addLineInChat(message, tabID) end
----@return any
-function ISChat.onToggleChatBox(key) end
----@return any
-function ISChat.onKeyKeepPressed(key) end
----@return any
-function ISChat.onTabAdded(tabTitle, tabID) end
----@return any
-function ISChat.onTabRemoved(tabTitle, tabID) end
----@return any
-function ISChat.onSetDefaultTab(defaultTabTitle) end
----@return any
-function ISChat.onMouseUp(target, x, y) end
----@return any
-function ISChat.onMouseDown(target, x, y) end
----@return any
-function ISChat.ISTabPanelOnMouseDown(target, x, y) end
----@return any
-function ISChat.ontick() end
----@return any
-function ISChat.unfocusEvent() end
----@return any
+
 function ISChat.createChat() end
 
----@return any
-function ISChat:initialise() end
----@return any
-function ISChat:createChildren() end
----@return any
-function ISChat:setDrawFrame(visible) end
----@return any
-function ISChat:collapse() end
----@return any
-function ISChat:close() end
----@return any
-function ISChat:pin() end
----@return any
-function ISChat:onGearButtonClick() end
----@return any
-function ISChat:createTab() end
----@return any
-function ISChat:initFade(durationInS) end
----@return any
+function ISChat.initChat() end
+
+---@param target ISTabPanel
+---@param x number
+---@param y number
+---@return boolean
+function ISChat.ISTabPanelOnMouseDown(target, x, y) end
+
+---@param target ISChat
+---@param value number
+function ISChat.onFadeTimeChange(target, value) end
+
+---@param target ISChat
+---@param value number
+function ISChat.onFocusOpaqueChange(target, value) end
+
+---@param target ISChat
+---@param value string
+function ISChat.onFontSizeChange(target, value) end
+
+---@param key integer
+function ISChat.onKeyKeepPressed(key) end
+
+---@param target ISChat
+---@param value number
+function ISChat.onMaxOpaqueChange(target, value) end
+
+---@param target ISChat
+---@param value number
+function ISChat.onMinOpaqueChange(target, value) end
+
+---@param target ISUIElement
+---@param x number
+---@param y number
+---@return boolean
+function ISChat.onMouseDown(target, x, y) end
+
+---@param target ISUIElement
+---@param x number
+---@param y number
+---@return boolean
+function ISChat.onMouseUp(target, x, y) end
+
+---@param defaultTabTitle string
+function ISChat.onSetDefaultTab(defaultTabTitle) end
+
+function ISChat.onSwitchStream() end
+
+---@param tabTitle string
+---@param tabID integer
+function ISChat.onTabAdded(tabTitle, tabID) end
+
+---@param tabTitle string
+---@param tabID integer
+function ISChat.onTabRemoved(tabTitle, tabID) end
+
+function ISChat.onTextChange() end
+
+function ISChat.ontick() end
+
+---@param key integer
+function ISChat.onToggleChatBox(key) end
+
+function ISChat.onToggleTagPrefix() end
+
+function ISChat.onToggleTimestampPrefix() end
+
+function ISChat.unfocusEvent() end
+
+---@param defaultMin number
+---@param defaultMax number
+---@param fraction number
+---@return number
 function ISChat:calcAlpha(defaultMin, defaultMax, fraction) end
----@return any
-function ISChat:makeFade(fraction) end
----@return any
-function ISChat:prerender() end
----@return any
-function ISChat:render() end
----@return any
-function ISChat:render_chatText() end
----@return any
-function ISChat:onContextClear() end
----@return any
-function ISChat:logChatCommand(command) end
----@return any
-function ISChat:onCommandEntered() end
----@return any
-function ISChat:onOtherKey(key) end
----@return any
-function ISChat:focus() end
----@return any
-function ISChat:unfocus() end
----@return any
-function ISChat:updateChatPrefixSettings() end
----@return any
-function ISChat:calcTabSize() end
----@return any
+
+---@return { x: number, y: number }
 function ISChat:calcTabPos() end
----@return any
-function ISChat:onActivateView() end
----@return any
-function ISChat:onPressDown() end
----@return any
-function ISChat:onPressUp() end
----@return any
+
+---@return { width: number, height: number }
+function ISChat:calcTabSize() end
+
+function ISChat:close() end
+
+function ISChat:collapse() end
+
+function ISChat:createChildren() end
+
+---@return ISRichTextPanel
+function ISChat:createTab() end
+
+function ISChat:focus() end
+
+---@param durationInS number
+function ISChat:initFade(durationInS) end
+
+function ISChat:initialise() end
+
+---@param x number
+---@param y number
+---@return boolean
 function ISChat:isCursorOnTitlebar(x, y) end
----@return any
-function ISChat:onRightMouseUp(x, y) end
----@return any
-function ISChat:onRightMouseDown(x, y) end
----@return any
-function ISChat:mute(username) end
----@return any
+
+---@param username string
+---@return boolean
 function ISChat:isMuted(username) end
----@return any
+
+---@param command string
+function ISChat:logChatCommand(command) end
+
+---@param fraction number
+function ISChat:makeFade(fraction) end
+
+---@param username string
+function ISChat:mute(username) end
+
+function ISChat:onActivateView() end
+
+function ISChat:onCommandEntered() end
+
+function ISChat:onContextClear() end
+
+function ISChat:onGearButtonClick() end
+
+---@param key integer
+function ISChat:onOtherKey(key) end
+
+function ISChat:onPressDown() end
+
+function ISChat:onPressUp() end
+
+---@param x number
+---@param y number
+---@return boolean
+function ISChat:onRightMouseDown(x, y) end
+
+---@param x number
+---@param y number
+---@return boolean
+function ISChat:onRightMouseUp(x, y) end
+
+function ISChat:pin() end
+
+function ISChat:prerender() end
+
+function ISChat:render() end
+
+function ISChat:render_chatText() end
+
+---@param name string
+---@param layout umbrella.ISLayoutManager.Layout
 function ISChat:RestoreLayout(name, layout) end
----@return any
+
+---@param name string
+---@param layout umbrella.ISLayoutManager.Layout
 function ISChat:SaveLayout(name, layout) end
 
+---@param visible boolean
+function ISChat:setDrawFrame(visible) end
+
+function ISChat:unfocus() end
+
+function ISChat:updateChatPrefixSettings() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISChat
 function ISChat:new(x, y, width, height) end
-
----@return any
-function logTo01(value) end

@@ -1,25 +1,37 @@
 ---@meta
 
 ---@class ISWoodenDoor : ISBuildingObject
----@field sq any
----@field javaObject any
----@field openSprite any
----@field openNorthSprite any
----@field isDoor any
----@field thumpDmg any
----@field name any
----@field isWallLike any
----@field [any] any
+---@field javaObject IsoThumpable?
+---@field name string
+---@field openNorthSprite string
+---@field openSprite string
+---@field sq IsoGridSquare
 ISWoodenDoor = ISBuildingObject:derive("ISWoodenDoor")
+ISWoodenDoor.Type = "ISWoodenDoor"
 
----@return any
+---@param x number
+---@param y number
+---@param z number
+---@param north boolean
+---@param sprite string
 function ISWoodenDoor:create(x, y, z, north, sprite) end
----@return any
+
+---@return number
 function ISWoodenDoor:getHealth() end
----@return any
+
+---@param square IsoGridSquare
+---@return boolean
 function ISWoodenDoor:isValid(square) end
----@return any
+
+---@param x number
+---@param y number
+---@param z number
+---@param square IsoGridSquare
 function ISWoodenDoor:render(x, y, z, square) end
 
+---@param sprite string
+---@param northSprite string
+---@param openSprite string
+---@param openNorthSprite string
 ---@return ISWoodenDoor
 function ISWoodenDoor:new(sprite, northSprite, openSprite, openNorthSprite) end

@@ -1,75 +1,87 @@
 ---@meta
 
 ---@class ISSpawnHordeUI : ISCollapsableWindow
----@field zombiesNbrLabel any
----@field zombiesNbr any
----@field radiusLbl any
----@field radius any
----@field outfitLbl any
----@field outfit any
----@field maleOutfits any
----@field femaleOutfits any
----@field boolOptions any
----@field healthSliderTitle any
----@field healthSliderLabel any
----@field healthSlider any
----@field pickNewSq any
----@field add any
----@field removezombies any
----@field clearbodies any
----@field closeButton2 any
----@field cursor any
----@field selectX any
----@field selectY any
----@field selectZ any
----@field marker any
----@field arrow any
----@field playerNum any
----@field width any
----@field height any
----@field chr any
----@field moveWithMouse any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field x any
----@field y any
----@field [any] any
+---@field add ISButton
+---@field arrow WorldMarkers.DirectionArrow?
+---@field boolOptions ISTickBox
+---@field chr IsoPlayer
+---@field clearbodies ISButton
+---@field closeButton2 ISButton
+---@field cursor ISSelectCursor?
+---@field femaleOutfits ArrayList<string>
+---@field healthSlider ISSliderPanel
+---@field healthSliderLabel ISLabel
+---@field healthSliderTitle ISLabel
+---@field heightOffset ISTextEntryBox
+---@field heightOffsetLbl ISLabel
+---@field isShiftDown boolean
+---@field maleOutfits ArrayList<string>
+---@field marker WorldMarkers.GridSquareMarker?
+---@field outfit ISComboBox
+---@field outfitLbl ISLabel
+---@field pickedSquareLabel ISLabel
+---@field pickNewSq ISButton
+---@field playerNum integer
+---@field radius ISTextEntryBox
+---@field radiusLbl ISLabel
+---@field removezombies ISButton
+---@field selectX number
+---@field selectY number
+---@field selectZ number
+---@field title string
+---@field zombiesNbr ISTextEntryBox
+---@field zombiesNbrLabel ISLabel
 ISSpawnHordeUI = ISCollapsableWindow:derive("ISSpawnHordeUI")
+ISSpawnHordeUI.Type = "ISSpawnHordeUI"
 
----@return any
-function ISSpawnHordeUI:createChildren() end
----@return any
-function ISSpawnHordeUI:onBoolOptionsChange(index, selected) end
----@return any
-function ISSpawnHordeUI:onSliderChange(_newval, _slider) end
----@return any
-function ISSpawnHordeUI:getRadius() end
----@return any
-function ISSpawnHordeUI:onSpawn() end
----@return any
-function ISSpawnHordeUI:getZombiesNumber() end
----@return any
-function ISSpawnHordeUI:getOutfit() end
----@return any
-function ISSpawnHordeUI:onRemoveZombies() end
----@return any
-function ISSpawnHordeUI:onRemoveBodies() end
----@return any
-function ISSpawnHordeUI:onSelectNewSquare() end
----@return any
-function ISSpawnHordeUI:onSquareSelected(square) end
----@return any
-function ISSpawnHordeUI:prerender() end
----@return any
-function ISSpawnHordeUI:render() end
----@return any
+---@param square IsoGridSquare
+---@param radius number
 function ISSpawnHordeUI:addMarker(square, radius) end
----@return any
-function ISSpawnHordeUI:removeMarker() end
----@return any
+
 function ISSpawnHordeUI:close() end
 
+function ISSpawnHordeUI:createChildren() end
+
+---@return number?
+function ISSpawnHordeUI:getHeightOffset() end
+
+---@return string?
+function ISSpawnHordeUI:getOutfit() end
+
+---@return number
+function ISSpawnHordeUI:getRadius() end
+
+---@return number
+function ISSpawnHordeUI:getZombiesNumber() end
+
+---@param index integer
+---@param selected boolean
+function ISSpawnHordeUI:onBoolOptionsChange(index, selected) end
+
+function ISSpawnHordeUI:onRemoveBodies() end
+
+function ISSpawnHordeUI:onRemoveZombies() end
+
+function ISSpawnHordeUI:onSelectNewSquare() end
+
+---@param _newval number
+---@param _slider ISSliderPanel
+function ISSpawnHordeUI:onSliderChange(_newval, _slider) end
+
+function ISSpawnHordeUI:onSpawn() end
+
+---@param square IsoGridSquare
+function ISSpawnHordeUI:onSquareSelected(square) end
+
+function ISSpawnHordeUI:prerender() end
+
+function ISSpawnHordeUI:removeMarker() end
+
+function ISSpawnHordeUI:render() end
+
+---@param x number
+---@param y number
+---@param character IsoPlayer
+---@param square IsoGridSquare
 ---@return ISSpawnHordeUI
 function ISSpawnHordeUI:new(x, y, character, square) end

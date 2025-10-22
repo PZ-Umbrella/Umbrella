@@ -1,57 +1,91 @@
 ---@meta
 
 ---@class ZombiePopulationWindow : ISCollapsableWindow
----@field title any
----@field renderPanel any
----@field settingPath any
----@field mouseMoved any
----@field mouseDownX any
----@field mouseDownY any
----@field panning any
----@field backgroundColor any
----@field xpos any
----@field ypos any
----@field zoom any
----@field instance any
----@field [any] any
+---@field mouseDownX number
+---@field mouseDownY number
+---@field mouseMoved boolean
+---@field panning boolean
+---@field renderPanel ISPanel
+---@field settingPath boolean
+---@field title string
+---@field xpos number
+---@field ypos number
+---@field zoom number
 ZombiePopulationWindow = ISCollapsableWindow:derive("ZombiePopulationWindow")
+ZombiePopulationWindow.Type = "ZombiePopulationWindow"
+ZombiePopulationWindow.instance = nil ---@type ZombiePopulationWindow?
 
----@return any
 function ZombiePopulationWindow.OnOpenPanel() end
 
----@return any
-function ZombiePopulationWindow:initialise() end
----@return any
-function ZombiePopulationWindow:createChildren() end
----@return any
 function ZombiePopulationWindow:close() end
----@return any
-function ZombiePopulationWindow:onMapMouseDown(x, y) end
----@return any
-function ZombiePopulationWindow:onMapMouseUp(x, y) end
----@return any
-function ZombiePopulationWindow:onMapMouseUpOutside(x, y) end
----@return any
-function ZombiePopulationWindow:onMapMouseMove(dx, dy) end
----@return any
-function ZombiePopulationWindow:onMapRightMouseDown(x, y) end
----@return any
+
+function ZombiePopulationWindow:createChildren() end
+
+function ZombiePopulationWindow:initialise() end
+
+---@param worldX number
+---@param worldY number
 function ZombiePopulationWindow:onAddWorldSound(worldX, worldY) end
----@return any
-function ZombiePopulationWindow:onTeleport(worldX, worldY) end
----@return any
+
+---@param option ConfigOption
 function ZombiePopulationWindow:onChangeOption(option) end
----@return any
-function ZombiePopulationWindow:onMapRightMouseUp(x, y) end
----@return any
-function ZombiePopulationWindow:onMapRightMouseUpOutside(x, y) end
----@return any
-function ZombiePopulationWindow:onRenderMouseWheel(del) end
----@return any
+
+---@param self ISPanel
+---@param x number
+---@param y number
+---@return boolean
+function ZombiePopulationWindow:onMapMouseDown(self, x, y) end
+
+---@param self ISPanel
+---@param dx number
+---@param dy number
+---@return boolean
+function ZombiePopulationWindow:onMapMouseMove(self, dx, dy) end
+
+---@param self ISPanel
+---@param x number
+---@param y number
+function ZombiePopulationWindow:onMapMouseUp(self, x, y) end
+
+---@param self ISPanel
+---@param x number
+---@param y number
+function ZombiePopulationWindow:onMapMouseUpOutside(self, x, y) end
+
+---@param self ISPanel
+---@param x number
+---@param y number
+---@return boolean
+function ZombiePopulationWindow:onMapRightMouseDown(self, x, y) end
+
+---@param self ISPanel
+---@param x number
+---@param y number
+---@return boolean
+function ZombiePopulationWindow:onMapRightMouseUp(self, x, y) end
+
+---@param self ISPanel
+---@param x number
+---@param y number
+---@return boolean
+function ZombiePopulationWindow:onMapRightMouseUpOutside(self, x, y) end
+
+---@param self ISPanel
+---@param del number
+---@return boolean
+function ZombiePopulationWindow:onRenderMouseWheel(self, del) end
+
+---@param worldX number
+---@param worldY number
+function ZombiePopulationWindow:onTeleport(worldX, worldY) end
+
 function ZombiePopulationWindow:renderTex() end
 
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ZombiePopulationWindow
 function ZombiePopulationWindow:new(x, y, width, height) end
 
----@return any
 function newZombiePopulationWindow() end

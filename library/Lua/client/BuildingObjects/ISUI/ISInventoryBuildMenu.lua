@@ -3,13 +3,22 @@
 ---@class ISInventoryBuildMenu
 ISInventoryBuildMenu = {}
 
----@return any
+---@param player integer
+---@param context ISContextMenu
+---@param worldobjects IsoObject[]
+---@param test boolean?
+---@return boolean?
 function ISInventoryBuildMenu.doBuildMenu(player, context, worldobjects, test) end
----@return any
-function ISInventoryBuildMenu.onTakeThing(playerObj, groundType) end
----@return any
-function ISInventoryBuildMenu.onSpillGravel(playerObj) end
----@return any
-function ISInventoryBuildMenu.onSpillSand(playerObj) end
----@return any
+
+---@param playerObj IsoPlayer
 function ISInventoryBuildMenu.onSpillDirt(playerObj) end
+
+---@param playerObj IsoPlayer
+function ISInventoryBuildMenu.onSpillGravel(playerObj) end
+
+---@param playerObj IsoPlayer
+function ISInventoryBuildMenu.onSpillSand(playerObj) end
+
+---@param playerObj IsoPlayer
+---@param groundType string
+function ISInventoryBuildMenu.onTakeThing(playerObj, groundType) end

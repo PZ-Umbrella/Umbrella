@@ -1,19 +1,19 @@
---- @meta
+--- @meta _
 
 --- @class Position
 --- @field public class any
-Position = {};
+Position = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return String
+--- @return string
 function Position:getArea() end
 
 --- @public
---- @return String
+--- @return string
 function Position:getId() end
 
 --- @public
@@ -24,9 +24,8 @@ function Position:getOffset() end
 --- @return Vector3f
 function Position:getRotate() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

@@ -1,148 +1,223 @@
 ---@meta
 
----@class ISComboBox : ISPanel
----@field popup any
----@field filterText any
----@field joypadFocused any
----@field expanded any
----@field selected any
----@field tooltipUI any
----@field sawMouseDown any
----@field mouseOver any
----@field editor any
----@field tooltip any
----@field options any
----@field editable any
----@field x any
----@field y any
----@field backgroundColor any
----@field backgroundColorMouseOver any
----@field borderColor any
----@field font any
----@field textColor any
----@field width any
----@field height any
----@field baseHeight any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field target any
----@field onChange any
----@field onChangeArgs any
----@field isCombobox any
----@field disabled any
----@field image any
----@field fade any
----@field [any] any
-ISComboBox = ISPanel:derive("ISComboBox")
+---@alias umbrella.ISComboBox.OnChange fun(target: unknown, combo: ISComboBox, ...: unknown)
 
----@return any
-function ISComboBox:initialise() end
----@return any
-function ISComboBox:createChildren() end
----@return any
-function ISComboBox:showPopup() end
----@return any
-function ISComboBox:hidePopup() end
----@return any
-function ISComboBox:setJoypadFocused(focused) end
----@return any
-function ISComboBox:onJoypadDirUp(joypadData) end
----@return any
-function ISComboBox:onJoypadDirDown(joypadData) end
----@return any
-function ISComboBox:forceClick() end
----@return any
-function ISComboBox:prerender() end
----@return any
-function ISComboBox:onMouseDown(x, y) end
----@return any
-function ISComboBox:onMouseUp(x, y) end
----@return any
-function ISComboBox:onMouseDownOutside(x, y) end
----@return any
-function ISComboBox:onMouseMove(dx, dy) end
----@return any
-function ISComboBox:select(option) end
----@return any
-function ISComboBox:selectData(data) end
----@return any
-function ISComboBox:find(func, arg1, arg2) end
----@return any
+---@class ISComboBox : ISPanel
+---@field backgroundColorMouseOver umbrella.RGBA
+---@field baseHeight number
+---@field disabled boolean
+---@field editable boolean
+---@field editor ISComboBoxEditor
+---@field expanded boolean
+---@field fade UITransition
+---@field filterText string?
+---@field font UIFont
+---@field image Texture
+---@field isCombobox boolean
+---@field onChange umbrella.ISComboBox.OnChange?
+---@field onChangeArgs unknown[]
+---@field options (string | umbrella.ISComboBox.Option)[]
+---@field popup ISComboBoxPopup
+---@field sawMouseDown boolean
+---@field selected integer
+---@field target unknown?
+---@field textColor umbrella.RGBA
+---@field tooltip table<string, string>?
+---@field tooltipUI ISToolTip
+ISComboBox = ISPanel:derive("ISComboBox")
+ISComboBox.Type = "ISComboBox"
+ISComboBox.SharedPopup = nil ---@type ISComboBoxPopup?
+
+---@param option string
 function ISComboBox:addOption(option) end
----@return any
+
+---@param option string
+---@param data unknown?
 function ISComboBox:addOptionWithData(option, data) end
----@return any
-function ISComboBox:contains(text) end
----@return any
-function ISComboBox:getOptionText(index) end
----@return any
-function ISComboBox:getOptionData(index) end
----@return any
-function ISComboBox:getOptionTooltip(index) end
----@return any
-function ISComboBox:onMouseMoveOutside(dx, dy) end
----@return any
-function ISComboBox:setToolTipMap(tooltipmap) end
----@return any
-function ISComboBox:getSelectedText() end
----@return any
-function ISComboBox:setWidthToOptions(minWidth) end
----@return any
+
 function ISComboBox:clear() end
----@return any
-function ISComboBox:setEditable(editable) end
----@return any
-function ISComboBox:isEditable() end
----@return any
-function ISComboBox:setFilterText(text) end
----@return any
+
+---@return boolean
+function ISComboBox:contains(text) end
+
+function ISComboBox:createChildren() end
+
+---@param func fun(text: string, data: unknown?, ...: unknown)
+---@param arg1 unknown?
+---@param arg2 unknown?
+---@return integer
+function ISComboBox:find(func, arg1, arg2) end
+
+function ISComboBox:forceClick() end
+
+---@return string?
 function ISComboBox:getFilterText() end
----@return any
+
+---@return integer
+function ISComboBox:getOptionCount() end
+
+---@param index integer
+---@return unknown?
+function ISComboBox:getOptionData(index) end
+
+---@param index integer
+---@return string?
+function ISComboBox:getOptionText(index) end
+
+---@param index integer
+---@return string?
+function ISComboBox:getOptionTooltip(index) end
+
+---@return integer
+function ISComboBox:getSelected() end
+
+---@return string?
+function ISComboBox:getSelectedText() end
+
+---@return boolean
 function ISComboBox:hasFilterText() end
 
+function ISComboBox:hidePopup() end
+
+function ISComboBox:initialise() end
+
+---@return boolean
+function ISComboBox:isEditable() end
+
+---@return boolean
+function ISComboBox:isEmpty() end
+
+---@return boolean
+function ISComboBox:isEnabled() end
+
+---@param joypadData JoypadData
+function ISComboBox:onJoypadDirDown(joypadData) end
+
+---@param joypadData JoypadData
+function ISComboBox:onJoypadDirUp(joypadData) end
+
+---@param x number
+---@param y number
+---@return boolean
+function ISComboBox:onMouseDown(x, y) end
+
+---@param x number
+---@param y number
+function ISComboBox:onMouseDownOutside(x, y) end
+
+---@param dx number
+---@param dy number
+function ISComboBox:onMouseMove(dx, dy) end
+
+---@param dx number
+---@param dy number
+function ISComboBox:onMouseMoveOutside(dx, dy) end
+
+---@param x number
+---@param y number
+function ISComboBox:onMouseUp(x, y) end
+
+function ISComboBox:pointOnItem(index) end
+
+function ISComboBox:prerender() end
+
+---@param option string
+function ISComboBox:select(option) end
+
+function ISComboBox:selectData(data) end
+
+---@param editable boolean
+function ISComboBox:setEditable(editable) end
+
+---@param enabled boolean
+function ISComboBox:setEnabled(enabled) end
+
+---@param text string
+function ISComboBox:setFilterText(text) end
+
+---@param focused boolean
+function ISComboBox:setJoypadFocused(focused) end
+
+---@param value integer
+function ISComboBox:setSelected(value) end
+
+---@param tooltipmap table<string, string>
+function ISComboBox:setToolTipMap(tooltipmap) end
+
+---@param minWidth number?
+function ISComboBox:setWidthToOptions(minWidth) end
+
+function ISComboBox:showPopup() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param target unknown?
+---@param onChange umbrella.ISComboBox.OnChange?
+---@param onChangeArg1 unknown?
+---@param onChangeArg2 unknown?
 ---@return ISComboBox
 function ISComboBox:new(x, y, width, height, target, onChange, onChangeArg1, onChangeArg2) end
 
 ---@class ISComboBoxEditor : ISTextEntryBox
----@field parentCombo any
----@field [any] any
+---@field parentCombo ISComboBox
 ISComboBoxEditor = ISTextEntryBox:derive("ISComboBoxEditor")
+ISComboBoxEditor.Type = "ISComboBoxEditor"
 
----@return any
-function ISComboBoxEditor:onTextChange() end
----@return any
+---@param key integer
 function ISComboBoxEditor:onOtherKey(key) end
 
+function ISComboBoxEditor:onTextChange() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param comboBox ISComboBox
 ---@return ISComboBoxEditor
 function ISComboBoxEditor:new(x, y, width, height, comboBox) end
 
 ---@class ISComboBoxPopup : ISScrollingListBox
----@field parentCombo any
----@field tooWide any
----@field tooWideY any
----@field selected any
----@field borderColor any
----@field backgroundColor any
----@field [any] any
+---@field parentCombo ISComboBox?
+---@field selected number
+---@field tooWide umbrella.ISScrollingListBox.Item?
+---@field tooWideY number?
 ISComboBoxPopup = ISScrollingListBox:derive("ISComboBoxPopup")
+ISComboBoxPopup.Type = "ISComboBoxPopup"
 
----@return any
-function ISComboBoxPopup:prerender() end
----@return any
-function ISComboBoxPopup:render() end
----@return any
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
 function ISComboBoxPopup:doDrawItem(y, item, alt) end
----@return any
+
+---@param x number
+---@param y number
+---@return boolean?
 function ISComboBoxPopup:onMouseDown(x, y) end
----@return any
+
+---@param x number
+---@param y number
 function ISComboBoxPopup:onMouseUp(x, y) end
----@return any
+
+function ISComboBoxPopup:prerender() end
+
+function ISComboBoxPopup:render() end
+
+---@param comboBox ISComboBox
 function ISComboBoxPopup:setComboBox(comboBox) end
 
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISComboBoxPopup
 function ISComboBoxPopup:new(x, y, width, height) end
 
----@return any
+---@class umbrella.ISComboBox.Option
+---@field data unknown
+---@field text string
+umbrella_ISComboBox_Option = {}
+
 function testcomboBox() end

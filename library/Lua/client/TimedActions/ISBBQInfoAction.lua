@@ -1,21 +1,20 @@
 ---@meta
 
 ---@class ISBBQInfoAction : ISBaseTimedAction
----@field maxTime any
----@field stopOnWalk any
----@field stopOnRun any
----@field character any
----@field playerNum any
----@field bbq any
----@field [any] any
+---@field bbq IsoBarbecue
+---@field playerNum integer
 ISBBQInfoAction = ISBaseTimedAction:derive("ISBBQInfoAction")
+ISBBQInfoAction.Type = "ISBBQInfoAction"
 
----@return any
+---@return boolean
 function ISBBQInfoAction:isValid() end
----@return any
-function ISBBQInfoAction:waitToStart() end
----@return any
+
 function ISBBQInfoAction:perform() end
 
+---@return boolean
+function ISBBQInfoAction:waitToStart() end
+
+---@param character IsoPlayer
+---@param bbq IsoBarbecue
 ---@return ISBBQInfoAction
 function ISBBQInfoAction:new(character, bbq) end

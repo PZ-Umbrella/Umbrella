@@ -1,30 +1,36 @@
 ---@meta
 
----@class ISPlayerStatsWarningPointUI : ISPanel
----@field reason any
----@field amount any
----@field ok any
----@field cancel any
----@field variableColor any
----@field borderColor any
----@field backgroundColor any
----@field target any
----@field onclick any
----@field zOffsetSmallFont any
----@field moveWithMouse any
----@field [any] any
-ISPlayerStatsWarningPointUI = ISPanel:derive("ISPlayerStatsWarningPointUI")
+---@alias umbrella.ISPlayerStatsWarningPointUI.OnClick fun(target: unknown?, button: ISButton, reason: string, amount: string)
 
----@return any
-function ISPlayerStatsWarningPointUI:initialise() end
----@return any
-function ISPlayerStatsWarningPointUI:setVisible(visible) end
----@return any
-function ISPlayerStatsWarningPointUI:render() end
----@return any
+---@class ISPlayerStatsWarningPointUI : ISPanel
+---@field amount ISTextEntryBox
+---@field cancel ISButton
+---@field ok ISButton
+---@field onclick umbrella.ISPlayerStatsWarningPointUI.OnClick?
+---@field reason ISTextEntryBox
+---@field variableColor umbrella.RGBA
+ISPlayerStatsWarningPointUI = ISPanel:derive("ISPlayerStatsWarningPointUI")
+ISPlayerStatsWarningPointUI.Type = "ISPlayerStatsWarningPointUI"
+
 function ISPlayerStatsWarningPointUI:create() end
----@return any
+
+function ISPlayerStatsWarningPointUI:initialise() end
+
+---@param button ISButton
+---@param x number
+---@param y number
 function ISPlayerStatsWarningPointUI:onOptionMouseDown(button, x, y) end
 
+function ISPlayerStatsWarningPointUI:render() end
+
+---@param visible boolean
+function ISPlayerStatsWarningPointUI:setVisible(visible) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param target unknown?
+---@param onclick umbrella.ISPlayerStatsWarningPointUI.OnClick?
 ---@return ISPlayerStatsWarningPointUI
 function ISPlayerStatsWarningPointUI:new(x, y, width, height, target, onclick) end

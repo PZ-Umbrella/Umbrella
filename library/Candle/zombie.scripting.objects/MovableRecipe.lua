@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class MovableRecipe: Recipe TurboTuTone.
 --- @field public class any
-MovableRecipe = {};
+MovableRecipe = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -17,7 +17,7 @@ function MovableRecipe:getPrimaryTools() end
 function MovableRecipe:getSecondaryTools() end
 
 --- @public
---- @return String
+--- @return string
 function MovableRecipe:getWorldSprite() end
 
 --- @public
@@ -33,66 +33,55 @@ function MovableRecipe:hasXpPerk() end
 function MovableRecipe:isValid() end
 
 --- @public
---- @param name String
---- @return void
+--- @param name string
+--- @return nil
 function MovableRecipe:setName(name) end
 
 --- @public
---- @param onCreate String
---- @return void
-function MovableRecipe:setOnCreate(onCreate) end
-
---- @public
---- @param onXP String
---- @return void
-function MovableRecipe:setOnXP(onXP) end
-
---- @public
 --- @param perk Perk
---- @param level int
---- @return void
+--- @param level integer
+--- @return nil
 function MovableRecipe:setRequiredSkill(perk, level) end
 
 --- @public
---- @param resultItem String
---- @param count int
---- @return void
+--- @param resultItem string
+--- @param count integer
+--- @return nil
 function MovableRecipe:setResult(resultItem, count) end
 
 --- @public
---- @param sourceItem String
---- @return void
+--- @param sourceItem string
+--- @return nil
 function MovableRecipe:setSource(sourceItem) end
 
 --- @public
---- @param time float
---- @return void
+--- @param time number
+--- @return nil
 function MovableRecipe:setTime(time) end
 
 --- @public
---- @param tools String
+--- @param tools string
 --- @param isPrimary boolean
---- @return void
+--- @return nil
 function MovableRecipe:setTool(tools, isPrimary) end
 
 --- @public
 --- @param valid boolean
---- @return void
+--- @return nil
 function MovableRecipe:setValid(valid) end
 
 --- @public
---- @param worldSprite String
---- @return void
+--- @param worldSprite string
+--- @return nil
 function MovableRecipe:setWorldSprite(worldSprite) end
 
 --- @public
 --- @param perk Perk
---- @return void
+--- @return nil
 function MovableRecipe:setXpPerk(perk) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

@@ -1,106 +1,148 @@
 ---@meta
 
+---@alias umbrella.ISTabPanel.TabTornOff fun(target: unknown, tornOff: umbrella.ISTabPanel.View, newWindow: ISCollapsableWindow)
+
 ---@class ISTabPanel : ISPanel
----@field scrollX any
----@field smoothScrollTargetX any
----@field smoothScrollX any
----@field tabTransparency any
----@field textTransparency any
----@field blinkTabAlpha any
----@field blinkTabAlphaIncrease any
----@field isDragging any
----@field draggingTab any
----@field viewList any
----@field activeView any
----@field xMouse any
----@field yMouse any
----@field viewDragging any
----@field maxLength any
----@field equalTabWidth any
----@field centerTabs any
----@field tabTornOffTarget any
----@field tabTornOff any
----@field x any
----@field y any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field blinkTabs any
----@field tabHeight any
----@field tabPadX any
----@field allowDraggingTabs any
----@field allowTornOffTabs any
----@field [any] any
+---@field activeView umbrella.ISTabPanel.View?
+---@field allowDraggingTabs boolean
+---@field allowTornOffTabs boolean
+---@field blinkTabAlpha number
+---@field blinkTabAlphaIncrease boolean
+---@field blinkTabs table
+---@field centerTabs boolean
+---@field draggingTab integer?
+---@field equalTabWidth boolean
+---@field isDragging boolean
+---@field maxLength number
+---@field onActivateView (fun(target: unknown?, panel: ISTabPanel))?
+---@field scrollX number?
+---@field smoothScrollTargetX number?
+---@field smoothScrollX number?
+---@field tabHeight number
+---@field tabPadX number
+---@field tabTornOff umbrella.ISTabPanel.TabTornOff?
+---@field tabTornOffTarget unknown?
+---@field tabTransparency number
+---@field textTransparency number
+---@field viewList umbrella.ISTabPanel.View[]
 ISTabPanel = ISPanel:derive("ISTabPanel")
-ISTabPanel.tabSelected = nil
-ISTabPanel.tabUnSelected = nil
+ISTabPanel.Type = "ISTabPanel"
+ISTabPanel.tabSelected = nil ---@type Texture?
+ISTabPanel.tabUnSelected = nil ---@type Texture?
 ISTabPanel.xMouse = -1
 ISTabPanel.yMouse = -1
 ISTabPanel.mouseOut = false
-ISTabPanel.viewDragging = nil
-ISTabPanel.tabSelected = getTexture("media/ui/XpSystemUI/tab_selected.png")
-ISTabPanel.tabUnSelected = getTexture("media/ui/XpSystemUI/tab_unselected.png")
+ISTabPanel.viewDragging = nil ---@type umbrella.ISTabPanel.View?
+ISTabPanel.viewDraggin = nil ---@type table?
+ISTabPanel.fromOutside = nil ---@type boolean?
 
----@return any
+---@param self ISTabPanel
 function ISTabPanel.redoTab(self) end
 
----@return any
-function ISTabPanel:initialise() end
----@return any
-function ISTabPanel:updateSmoothScrolling() end
----@return any
-function ISTabPanel:ensureVisible(index) end
----@return any
-function ISTabPanel:setTabsTransparency(alpha) end
----@return any
-function ISTabPanel:setTextTransparency(alpha) end
----@return any
-function ISTabPanel:prerender() end
----@return any
-function ISTabPanel:render() end
----@return any
-function ISTabPanel:onMouseDown(x, y) end
----@return any
-function ISTabPanel:onMouseMoveOutside(dx, dy) end
----@return any
-function ISTabPanel:onMouseMove(dx, dy) end
----@return any
-function ISTabPanel:onMouseUpOutside(x, y) end
----@return any
-function ISTabPanel:onMouseUp(x, y) end
----@return any
-function ISTabPanel:onMouseWheel(del) end
----@return any
-function ISTabPanel:getView(viewName) end
----@return any
+---@param viewName string
+---@return boolean
 function ISTabPanel:activateView(viewName) end
----@return any
-function ISTabPanel:getActiveView() end
----@return any
-function ISTabPanel:getActiveViewIndex() end
----@return any
+
+---@param name string
+---@param view ISUIElement
 function ISTabPanel:addView(name, view) end
----@return any
-function ISTabPanel:removeView(view) end
----@return any
-function ISTabPanel:setEqualTabWidth(equal) end
----@return any
-function ISTabPanel:setCenterTabs(center) end
----@return any
-function ISTabPanel:getWidthOfAllTabs() end
----@return any
-function ISTabPanel:getTabX(tabIndex, scrollX) end
----@return any
-function ISTabPanel:getTabIndexAtX(x, scrollX) end
----@return any
+
+---@param index integer
+function ISTabPanel:ensureVisible(index) end
+
+---@return ISUIElement?
+function ISTabPanel:getActiveView() end
+
+---@return integer?
+function ISTabPanel:getActiveViewIndex() end
+
+---@param x number
+---@return string?
 function ISTabPanel:getScrollButtonAtX(x) end
----@return any
+
+---@param x number
+---@param scrollX number
+---@return integer
+function ISTabPanel:getTabIndexAtX(x, scrollX) end
+
+---@param tabIndex integer
+---@param scrollX number
+---@return number
+function ISTabPanel:getTabX(tabIndex, scrollX) end
+
+---@param viewName string
+---@return ISUIElement?
+function ISTabPanel:getView(viewName) end
+
+---@return number
+function ISTabPanel:getWidthOfAllTabs() end
+
+function ISTabPanel:initialise() end
+
+---@param x number
+---@param y number
+function ISTabPanel:onMouseDown(x, y) end
+
+---@param dx number
+---@param dy number
+function ISTabPanel:onMouseMove(dx, dy) end
+
+---@param dx number
+---@param dy number
+function ISTabPanel:onMouseMoveOutside(dx, dy) end
+
+---@param x number
+---@param y number
+function ISTabPanel:onMouseUp(x, y) end
+
+---@param x number
+---@param y number
+function ISTabPanel:onMouseUpOutside(x, y) end
+
+---@param del number
+---@return boolean
+function ISTabPanel:onMouseWheel(del) end
+
+function ISTabPanel:prerender() end
+
+---@param view ISUIElement
+function ISTabPanel:removeView(view) end
+
+function ISTabPanel:render() end
+
+---@param view ISUIElement
+---@param panel ISUIElement
+---@return ISUIElement?
+function ISTabPanel:replaceView(view, panel) end
+
+---@param center boolean
+function ISTabPanel:setCenterTabs(center) end
+
+---@param equal boolean
+function ISTabPanel:setEqualTabWidth(equal) end
+
+---@param target unknown?
+---@param method umbrella.ISTabPanel.TabTornOff
 function ISTabPanel:setOnTabTornOff(target, method) end
 
+---@param alpha number
+function ISTabPanel:setTabsTransparency(alpha) end
+
+---@param alpha number
+function ISTabPanel:setTextTransparency(alpha) end
+
+function ISTabPanel:updateSmoothScrolling() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISTabPanel
 function ISTabPanel:new(x, y, width, height) end
+
+---@class umbrella.ISTabPanel.View
+---@field fade UITransition
+---@field name string
+---@field tabWidth number
+---@field view ISUIElement
+umbrella_ISTabPanel_View = {}

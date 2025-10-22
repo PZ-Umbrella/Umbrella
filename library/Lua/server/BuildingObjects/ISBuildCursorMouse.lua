@@ -1,32 +1,47 @@
 ---@meta
 
----@class ISBuildCursorMouse : ISBuildingObject
----@field sq any
----@field previousSprite any
----@field sprite any
----@field tooltip any
----@field onSquareSelected any
----@field isValid any
----@field character any
----@field player any
----@field noNeedHammer any
----@field skipBuildAction any
----@field [any] any
-ISBuildCursorMouse = ISBuildingObject:derive("ISBuildCursorMouse")
+---@alias umbrella.ISBuildCursorMouse.OnSquareSelected fun(square: IsoGridSquare)
+---@alias umbrella.ISBuildCursorMouse.ValidationFunction fun(square: IsoGridSquare): boolean
 
----@return any
+---@class ISBuildCursorMouse : ISBuildingObject
+---@field character IsoPlayer
+---@field chosenSprite string?
+---@field isValid boolean
+---@field noNeedHammer boolean
+---@field onSquareSelected umbrella.ISBuildCursorMouse.OnSquareSelected
+---@field player integer
+---@field previousSprite string?
+---@field skipBuildAction boolean
+---@field sq IsoGridSquare
+---@field tooltip ISToolTip?
+ISBuildCursorMouse = ISBuildingObject:derive("ISBuildCursorMouse")
+ISBuildCursorMouse.Type = "ISBuildCursorMouse"
+ISBuildCursorMouse.spriteRender = nil ---@type IsoSprite?
+
+---@return boolean
 function ISBuildCursorMouse.IsVisible() end
 
----@return any
+---@param x number
+---@param y number
+---@param z number
+---@param north boolean
+---@param sprite string
 function ISBuildCursorMouse:create(x, y, z, north, sprite) end
----@return any
-function ISBuildCursorMouse:render(x, y, z, square) end
----@return any
+
 function ISBuildCursorMouse:deactivate() end
----@return any
+
 function ISBuildCursorMouse:hideTooltip() end
----@return any
+
+---@param x number
+---@param y number
+---@param z number
+---@param square IsoGridSquare
+function ISBuildCursorMouse:render(x, y, z, square) end
+
 function ISBuildCursorMouse:renderTooltip() end
 
+---@param character IsoPlayer
+---@param onSquareSelected umbrella.ISBuildCursorMouse.OnSquareSelected
+---@param isValid umbrella.ISBuildCursorMouse.ValidationFunction
 ---@return ISBuildCursorMouse
 function ISBuildCursorMouse:new(character, onSquareSelected, isValid) end

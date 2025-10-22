@@ -1,33 +1,27 @@
 ---@meta
 
 ---@class RWM : ISPanel
----@field player any
----@field device any
----@field x any
----@field y any
----@field background any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field fontheight any
----@field [any] any
+---@field device (InventoryItem | IsoObject | VehiclePart)?
+---@field fontheight number
+---@field player IsoPlayer?
 RWM = ISPanel:derive("RWM")
+RWM.Type = "RWM"
 
----@return any
-function RWM:initialise() end
----@return any
 function RWM:createChildren() end
----@return any
-function RWM:readFromObject(_player, _deviceObject) end
----@return any
+
+function RWM:initialise() end
+
 function RWM:prerender() end
----@return any
+
+---@param _player IsoPlayer
+---@param _deviceObject InventoryItem | IsoObject | VehiclePart
+function RWM:readFromObject(_player, _deviceObject) end
+
 function RWM:render() end
 
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return RWM
 function RWM:new(x, y, width, height) end

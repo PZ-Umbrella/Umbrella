@@ -1,35 +1,38 @@
 ---@meta
 
 ---@class JoypadState
----@field saveFocus any
----@field debugUI any
----@field [any] any
 JoypadState = {}
-JoypadState.controllers = {}
-JoypadState.players = {}
-JoypadState.joypads = {}
-JoypadState.forceActivate = nil
+JoypadState.controllers = {} ---@type table<integer, JoypadControllerData>
+JoypadState.players = {} ---@type table<integer, JoypadData>
+JoypadState.joypads = {} ---@type table<integer, JoypadData>
+JoypadState.forceActivate = nil ---@type integer?
+JoypadState.saveFocus = nil ---@type table<integer, ISUIElement>?
+JoypadState.debugUI = nil ---@type ISJoypadDebugUI?
 
----@return any
-function JoypadState.onGamepadConnect(id) end
----@return any
-function JoypadState.onGamepadDisconnect(id) end
----@return any
-function JoypadState.useKeyboardMouse() end
----@return any
+---@return JoypadData?
 function JoypadState.getMainMenuJoypad() end
----@return any
-function JoypadState.saveAllFocus() end
----@return any
-function JoypadState.restoreAllFocus() end
----@return any
-function JoypadState.onPlayerDeath(playerObj) end
----@return any
+
+---@param playerNum integer
 function JoypadState.onCoopJoinFailed(playerNum) end
----@return any
+
+---@param id integer
+function JoypadState.onGamepadConnect(id) end
+
+---@param id integer
+function JoypadState.onGamepadDisconnect(id) end
+
 function JoypadState.onGameStart() end
----@return any
+
+---@param playerObj IsoPlayer
+function JoypadState.onPlayerDeath(playerObj) end
+
 function JoypadState.onRenderUI() end
+
+function JoypadState.restoreAllFocus() end
+
+function JoypadState.saveAllFocus() end
+
+function JoypadState.useKeyboardMouse() end
 
 ---@class Joypad
 Joypad = {}
@@ -48,123 +51,260 @@ Joypad.DPadLeft = 100
 Joypad.DPadRight = 101
 Joypad.DPadUp = 102
 Joypad.DPadDown = 103
-Joypad.Texture = {}
-Joypad.Texture.AButton = getTexture("media/ui/xbox/XBOX_A.png")
-Joypad.Texture.BButton = getTexture("media/ui/xbox/XBOX_B.png")
-Joypad.Texture.XButton = getTexture("media/ui/xbox/XBOX_X.png")
-Joypad.Texture.YButton = getTexture("media/ui/xbox/XBOX_Y.png")
-Joypad.Texture.LBumper = getTexture("media/ui/xbox/xbox_lb.png")
-Joypad.Texture.RBumper = getTexture("media/ui/xbox/xbox_rb.png")
-Joypad.Texture.DPadLeft = getTexture("media/ui/xbox/XBOX_dpad_left.png")
-Joypad.Texture.DPadRight = getTexture("media/ui/xbox/XBOX_dpad_right.png")
-Joypad.Texture.DPadUp = getTexture("media/ui/xbox/XBOX_dpad_up.png")
-Joypad.Texture.DPadDown = getTexture("media/ui/xbox/XBOX_dpad_down.png")
-Joypad.Texture.DPad = getTexture("media/ui/xbox/XBOX_dpad.png")
-Joypad.Texture.LStick = getTexture("media/ui/leftstick.png")
-Joypad.Texture.RStick = getTexture("media/ui/rightstick.png")
-Joypad.Texture.LTrigger = getTexture("media/ui/xbox/xbox_lefttrigger.png")
-Joypad.Texture.RTrigger = getTexture("media/ui/xbox/xbox_righttrigger.png")
-Joypad.Texture.Menu = getTexture("media/ui/xbox/XBOX_Menu.png")
-Joypad.Texture.View = getTexture("media/ui/xbox/XBOX_View.png")
-Joypad.Texture.Back = Joypad.Texture.View
-Joypad.Texture.Start = Joypad.Texture.Menu
+Joypad.Texture = {
+	AButton = getTexture(
+		"media/ui/controller/" .. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4") .. "_A.png"
+	),
+	BButton = getTexture(
+		"media/ui/controller/" .. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4") .. "_B.png"
+	),
+	XButton = getTexture(
+		"media/ui/controller/" .. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4") .. "_X.png"
+	),
+	YButton = getTexture(
+		"media/ui/controller/" .. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4") .. "_Y.png"
+	),
+	LBumper = getTexture(
+		"media/ui/controller/" .. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4") .. "_LB.png"
+	),
+	RBumper = getTexture(
+		"media/ui/controller/" .. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4") .. "_RB.png"
+	),
+	DPadLeft = getTexture(
+		"media/ui/controller/"
+			.. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4")
+			.. "_DPad_Left.png"
+	),
+	DPadRight = getTexture(
+		"media/ui/controller/"
+			.. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4")
+			.. "_DPad_Right.png"
+	),
+	DPadUp = getTexture(
+		"media/ui/controller/"
+			.. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4")
+			.. "_DPad_Up.png"
+	),
+	DPadDown = getTexture(
+		"media/ui/controller/"
+			.. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4")
+			.. "_DPad_Down.png"
+	),
+	DPad = getTexture(
+		"media/ui/controller/" .. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4") .. "_DPad.png"
+	),
+	LStick = getTexture(
+		"media/ui/controller/"
+			.. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4")
+			.. "_AnalogueL.png"
+	),
+	LStickUD = getTexture(
+		"media/ui/controller/"
+			.. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4")
+			.. "_AnalogueL_UD.png"
+	),
+	LStickLR = getTexture(
+		"media/ui/controller/"
+			.. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4")
+			.. "_AnalogueL_LR.png"
+	),
+	RStick = getTexture(
+		"media/ui/controller/"
+			.. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4")
+			.. "_AnalogueR.png"
+	),
+	RStickUD = getTexture(
+		"media/ui/controller/"
+			.. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4")
+			.. "_AnalogueR_UD.png"
+	),
+	RStickLR = getTexture(
+		"media/ui/controller/"
+			.. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4")
+			.. "_AnalogueR_LR.png"
+	),
+	LTrigger = getTexture(
+		"media/ui/controller/"
+			.. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4")
+			.. "_LeftTrigger.png"
+	),
+	RTrigger = getTexture(
+		"media/ui/controller/"
+			.. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4")
+			.. "_RightTrigger.png"
+	),
+	Menu = getTexture(
+		"media/ui/controller/" .. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4") .. "_Menu.png"
+	),
+	View = getTexture(
+		"media/ui/controller/" .. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4") .. "_View.png"
+	),
+	Back = Joypad.Texture.View,
+	Start = Joypad.Texture.Menu,
+}
 
 ---@class joypad
 joypad = {}
 joypad.wantNoise = getDebug()
 
 ---@class JoypadControllerData : ISBaseObject
----@field joypad any
----@field id any
----@field pressed any
----@field wasPressed any
----@field connected any
----@field [any] any
+---@field connected boolean
+---@field down boolean
+---@field dtdown number
+---@field dtleft number
+---@field dtprocdown number
+---@field dtprocleft number
+---@field dtprocright number
+---@field dtprocup number
+---@field dtright number
+---@field dtup number
+---@field id integer
+---@field joypad JoypadData?
+---@field left boolean
+---@field pressed table<integer, boolean>
+---@field pressedTime table<integer, number>
+---@field right boolean
+---@field timedown number
+---@field timedownproc number
+---@field timeleft number
+---@field timeleftproc number
+---@field timeright number
+---@field timerightproc number
+---@field timeup number
+---@field timeupproc number
+---@field up boolean
+---@field wasPressed table<integer, boolean>
 JoypadControllerData = ISBaseObject:derive("JoypadControllerData")
+JoypadControllerData.Type = "JoypadControllerData"
 
----@return any
-function JoypadControllerData:setJoypad(joypadData) end
----@return any
 function JoypadControllerData:clearJoypad() end
----@return any
+
+---@param button integer
+---@param time number
+function JoypadControllerData:onHoldButton(button, time) end
+
 function JoypadControllerData:onPauseButtonPressed() end
----@return any
-function JoypadControllerData:onPressButtonNoFocus(button) end
----@return any
+
+---@param button integer
 function JoypadControllerData:onPressButton(button) end
----@return any
-function JoypadControllerData:onReleaseButton(button) end
----@return any
-function JoypadControllerData:onPressUp() end
----@return any
-function JoypadControllerData:onReleaseUp() end
----@return any
+
+---@param button integer
+function JoypadControllerData:onPressButtonNoFocus(button) end
+
 function JoypadControllerData:onPressDown() end
----@return any
-function JoypadControllerData:onReleaseDown() end
----@return any
+
 function JoypadControllerData:onPressLeft() end
----@return any
-function JoypadControllerData:onReleaseLeft() end
----@return any
+
 function JoypadControllerData:onPressRight() end
----@return any
+
+function JoypadControllerData:onPressUp() end
+
+---@param button integer
+function JoypadControllerData:onReleaseButton(button) end
+
+function JoypadControllerData:onReleaseDown() end
+
+function JoypadControllerData:onReleaseLeft() end
+
 function JoypadControllerData:onReleaseRight() end
----@return any
+
+function JoypadControllerData:onReleaseUp() end
+
+---@param joypadData JoypadData
+function JoypadControllerData:setJoypad(joypadData) end
+
+---@param time number
 function JoypadControllerData:update(time) end
 
+---@param id integer
 ---@return JoypadControllerData
 function JoypadControllerData:new(id) end
 
 ---@class JoypadData : ISBaseObject
----@field id any
----@field controller any
----@field isActive any
----@field player any
----@field focus any
----@field lastfocus any
----@field prevfocus any
----@field prevprevfocus any
----@field inMainMenu any
----@field listBox any
----@field [any] any
+---@field controller JoypadControllerData?
+---@field currentNavigateUI ISUIElement?
+---@field focus ISUIElement?
+---@field id integer
+---@field inMainMenu boolean
+---@field isActive boolean
+---@field isDoingNavigation boolean
+---@field lastfocus ISUIElement?
+---@field listBox ISJoypadListBox?
+---@field player integer?
+---@field prevfocus ISUIElement?
+---@field prevprevfocus ISUIElement?
 JoypadData = ISBaseObject:derive("JoypadData")
+JoypadData.Type = "JoypadData"
 
----@return any
-function JoypadData:setController(controller) end
----@return any
 function JoypadData:clearController() end
----@return any
+
+function JoypadData:endNavigation() end
+
+---@return boolean?
 function JoypadData:isConnected() end
----@return any
+
+---@param ui ISUIElement
+---@return boolean
+function JoypadData:isFocusOnElementOrDescendant(ui) end
+
+---@param isActive boolean
 function JoypadData:setActive(isActive) end
+
+---@param controller JoypadControllerData
+function JoypadData:setController(controller) end
+
+function JoypadData:startNavigation() end
 
 ---@return JoypadData
 function JoypadData:new() end
 
----@return any
+---@param playerNum integer
+---@return ISUIElement?
 function getFocusForPlayer(playerNum) end
----@return any
+
+---@param playerNum integer
+---@param ui ISUIElement
+---@return boolean?
+function isJoypadFocusOnElementOrDescendant(playerNum, ui) end
+
+---@param playerID integer
+---@return JoypadData
+function getJoypadData(playerID) end
+
+---@param playerID integer
+---@return ISUIElement?
 function getJoypadFocus(playerID) end
----@return any
+
+---@param playerID integer
+---@param control ISUIElement?
 function setJoypadFocus(playerID, control) end
----@return any
+
+---@param playerID integer
 function setPrevFocusForPlayer(playerID) end
----@return any
+
+---@param playerID integer
 function setPrevPrevFocusForPlayer(playerID) end
----@return any
+
+---@param joypadData JoypadData?
 function updateJoypadFocus(joypadData) end
----@return any
+
+---@param ticks unknown?
 function onJoypadRenderTick(ticks) end
----@return any
+
+---@param id integer
 function onJoypadActivate(id) end
----@return any
+
+---@param id integer
 function onJoypadActivateUI(id) end
----@return any
+
+---@param id integer
 function onJoypadBeforeDeactivate(id) end
----@return any
+
+---@param id integer
 function onJoypadDeactivate(id) end
----@return any
+
+---@param id integer
 function onJoypadBeforeReactivate(id) end
----@return any
+
+---@param id integer
 function onJoypadReactivate(id) end

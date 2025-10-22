@@ -1,4 +1,4 @@
---- @meta
+--- @meta _
 
 --- @class ChannelCategory: Enum
 --- @field public class any
@@ -10,7 +10,7 @@
 --- @field public Radio ChannelCategory
 --- @field public Television ChannelCategory
 --- @field public Undefined ChannelCategory
-ChannelCategory = {};
+ChannelCategory = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -18,17 +18,15 @@ ChannelCategory = {};
 
 --- @public
 --- @static
---- @param arg0 String
+--- @param arg0 string
 --- @return ChannelCategory
 function ChannelCategory.valueOf(arg0) end
 
 --- @public
 --- @static
 ---
----  Returns an array containing the constants of this enum class, in the order they
----  declared.
+--- Returns an array containing the constants of this enum class, in the order they
+--- declared.
 ---
---- @return ChannelCategory[] an array containing the constants of this enum class, in the order they are declared
+--- @return ChannelCategory[] # an array containing the constants of this enum class, in the order they are declared
 function ChannelCategory.values() end
-
-

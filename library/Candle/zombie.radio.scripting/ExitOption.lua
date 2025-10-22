@@ -1,33 +1,32 @@
---- @meta
+--- @meta _
 
 --- @class ExitOption
 --- @field public class any
-ExitOption = {};
+ExitOption = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return int
+--- @return integer
 function ExitOption:getChance() end
 
 --- @public
---- @return String
+--- @return string
 function ExitOption:getScriptname() end
 
 --- @public
---- @return int
+--- @return integer
 function ExitOption:getStartDelay() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param name String
---- @param rollchance int
---- @param startdelay int
+--- @param name string
+--- @param rollchance integer
+--- @param startdelay integer
 --- @return ExitOption
 function ExitOption.new(name, rollchance, startdelay) end

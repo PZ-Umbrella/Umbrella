@@ -1,43 +1,55 @@
---- @meta
+--- @meta _
 
 --- @class Location
 --- @field public class any
-Location = {};
+Location = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param other Object
+--- @param other any
 --- @return boolean
 function Location:equals(other) end
 
 --- @public
---- @return int
+--- @param arg0 integer
+--- @param arg1 integer
+--- @param arg2 integer
+--- @return boolean
+function Location:equals(arg0, arg1, arg2) end
+
+--- @public
+--- @return integer
 function Location:getX() end
 
 --- @public
---- @return int
+--- @return integer
 function Location:getY() end
 
 --- @public
---- @return int
+--- @return integer
 function Location:getZ() end
 
 --- @public
---- @param x int
---- @param y int
---- @param z int
+--- @param x integer
+--- @param y integer
+--- @param z integer
 --- @return Location
 function Location:set(x, y, z) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @return Location
---- @overload fun(x: int, y: int, z: int): Location
 function Location.new() end
+
+--- @public
+--- @param x integer
+--- @param y integer
+--- @param z integer
+--- @return Location
+function Location.new(x, y, z) end

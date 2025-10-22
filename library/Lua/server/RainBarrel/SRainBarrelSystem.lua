@@ -2,17 +2,22 @@
 
 ---@class SRainBarrelSystem : SGlobalObjectSystem
 SRainBarrelSystem = SGlobalObjectSystem:derive("SRainBarrelSystem")
+SRainBarrelSystem.Type = "SRainBarrelSystem"
+SRainBarrelSystem.instance = nil ---@type SRainBarrelSystem?
 
----@return any
-function SRainBarrelSystem:initSystem() end
----@return any
-function SRainBarrelSystem:newLuaObject(globalObject) end
----@return any
-function SRainBarrelSystem:isValidIsoObject(isoObject) end
----@return any
-function SRainBarrelSystem:convertOldModData() end
----@return any
 function SRainBarrelSystem:checkRain() end
+
+function SRainBarrelSystem:convertOldModData() end
+
+function SRainBarrelSystem:initSystem() end
+
+---@param isoObject IsoObject
+---@return boolean
+function SRainBarrelSystem:isValidIsoObject(isoObject) end
+
+---@param globalObject GlobalObject
+---@return SRainBarrelGlobalObject
+function SRainBarrelSystem:newLuaObject(globalObject) end
 
 ---@return SRainBarrelSystem
 function SRainBarrelSystem:new() end

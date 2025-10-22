@@ -1,21 +1,24 @@
 ---@meta
 
 ---@class ISRect : ISUIElement
----@field x any
----@field y any
----@field width any
----@field height any
----@field r any
----@field g any
----@field b any
----@field a any
----@field [any] any
+---@field a number
+---@field b number
+---@field g number
+---@field r number
 ISRect = ISUIElement:derive("ISRect")
+ISRect.Type = "ISRect"
 
----@return any
 function ISRect:initialise() end
----@return any
+
 function ISRect:prerender() end
 
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param a number
+---@param r number
+---@param g number
+---@param b number
 ---@return ISRect
 function ISRect:new(x, y, width, height, a, r, g, b) end

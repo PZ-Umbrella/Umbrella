@@ -1,32 +1,40 @@
 ---@meta
 
----@class ISWalkToTimedAction : ISBaseTimedAction
----@field result any
----@field onCompleteFunc any
----@field onCompleteArgs any
----@field character any
----@field stopOnWalk any
----@field stopOnRun any
----@field maxTime any
----@field location any
----@field pathIndex any
----@field additionalTest any
----@field additionalContext any
----@field [any] any
-ISWalkToTimedAction = ISBaseTimedAction:derive("ISWalkToTimedAction")
+---@alias umbrella.ISWalkToTimedAction.AdditionalTest fun(additionalContext: unknown?): boolean
 
----@return any
+---@class ISWalkToTimedAction : ISBaseTimedAction
+---@field additionalContext unknown?
+---@field additionalTest umbrella.ISWalkToTimedAction.AdditionalTest?
+---@field character IsoPlayer
+---@field location IsoGridSquare
+---@field onCompleteArgs table?
+---@field onCompleteFunc function?
+---@field pathIndex number
+---@field result BehaviorResult?
+ISWalkToTimedAction = ISBaseTimedAction:derive("ISWalkToTimedAction")
+ISWalkToTimedAction.Type = "ISWalkToTimedAction"
+
+---@return boolean
 function ISWalkToTimedAction:isValid() end
----@return any
-function ISWalkToTimedAction:update() end
----@return any
-function ISWalkToTimedAction:start() end
----@return any
-function ISWalkToTimedAction:stop() end
----@return any
+
 function ISWalkToTimedAction:perform() end
----@return any
+
+---@param func function?
+---@param arg1 unknown?
+---@param arg2 unknown?
+---@param arg3 unknown?
+---@param arg4 unknown?
 function ISWalkToTimedAction:setOnComplete(func, arg1, arg2, arg3, arg4) end
 
+function ISWalkToTimedAction:start() end
+
+function ISWalkToTimedAction:stop() end
+
+function ISWalkToTimedAction:update() end
+
+---@param character IsoPlayer
+---@param location IsoGridSquare
+---@param additionalTest umbrella.ISWalkToTimedAction.AdditionalTest?
+---@param additionalContext unknown?
 ---@return ISWalkToTimedAction
 function ISWalkToTimedAction:new(character, location, additionalTest, additionalContext) end

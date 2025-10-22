@@ -1,33 +1,42 @@
 ---@meta
 
----@class ISPlayerStatsAddXPUI : ISPanel
----@field perkList any
----@field combo any
----@field entry any
----@field ok any
----@field cancel any
----@field variableColor any
----@field borderColor any
----@field backgroundColor any
----@field target any
----@field onclick any
----@field zOffsetSmallFont any
----@field moveWithMouse any
----@field [any] any
-ISPlayerStatsAddXPUI = ISPanel:derive("ISPlayerStatsAddXPUI")
+---@alias umbrella.ISPlayerStatsAddXPUI.OnClick fun(target: unknown?, button: ISButton, perk: PerkFactory.Perk, amount: string, addGlobalXP: boolean, useMultipliers: boolean)
 
----@return any
-function ISPlayerStatsAddXPUI:initialise() end
----@return any
-function ISPlayerStatsAddXPUI:setVisible(visible) end
----@return any
-function ISPlayerStatsAddXPUI:render() end
----@return any
+---@class ISPlayerStatsAddXPUI : ISPanel
+---@field cancel ISButton
+---@field combo ISComboBox
+---@field entry ISTextEntryBox
+---@field ok ISButton
+---@field onclick umbrella.ISPlayerStatsAddXPUI.OnClick?
+---@field perkList PerkFactory.Perk[]
+---@field target unknown?
+---@field useMultipliers ISTickBox
+---@field variableColor table
+---@field zOffsetSmallFont number?
+ISPlayerStatsAddXPUI = ISPanel:derive("ISPlayerStatsAddXPUI")
+ISPlayerStatsAddXPUI.Type = "ISPlayerStatsAddXPUI"
+
 function ISPlayerStatsAddXPUI:create() end
----@return any
-function ISPlayerStatsAddXPUI:onSelectPerk() end
----@return any
+
+function ISPlayerStatsAddXPUI:initialise() end
+
+---@param button ISButton
+---@param x number
+---@param y number
 function ISPlayerStatsAddXPUI:onOptionMouseDown(button, x, y) end
 
+function ISPlayerStatsAddXPUI:onSelectPerk() end
+
+function ISPlayerStatsAddXPUI:render() end
+
+---@param visible boolean
+function ISPlayerStatsAddXPUI:setVisible(visible) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param target unknown?
+---@param onclick umbrella.ISPlayerStatsAddXPUI.OnClick?
 ---@return ISPlayerStatsAddXPUI
 function ISPlayerStatsAddXPUI:new(x, y, width, height, target, onclick) end

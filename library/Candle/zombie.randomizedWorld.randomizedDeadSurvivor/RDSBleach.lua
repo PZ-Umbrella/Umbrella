@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RDSBleach: RandomizedDeadSurvivorBase Create a dead survivor in the kitchen with empty bleach bottle around him
 --- @field public class any
-RDSBleach = {};
+RDSBleach = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,12 +10,11 @@ RDSBleach = {};
 
 --- @public
 --- @param def BuildingDef
---- @return void
+--- @return nil
 function RDSBleach:randomizeDeadSurvivor(def) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

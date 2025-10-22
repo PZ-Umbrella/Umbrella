@@ -1,11 +1,11 @@
---- @meta
+--- @meta _
 
 --- @class StashSystem
 --- @field public class any
 --- @field public allStashes ArrayList
 --- @field public buildingsToDo ArrayList
 --- @field public possibleStashes ArrayList
-StashSystem = {};
+StashSystem = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -13,37 +13,47 @@ StashSystem = {};
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function StashSystem.Reset() end
 
 --- @public
 --- @static
 ---
----  check if the spawned item could be a stash item (map or note...)
+--- check if the spawned item could be a stash item (map or note...)
 ---
 --- @param item InventoryItem
---- @return void
+--- @return nil
 function StashSystem.checkStashItem(item) end
 
 --- @public
 --- @static
 ---
----  Fetch our list of building in which we'll spawn stash, if this building
----  we do the necessary stuff
+--- Fetch our list of building in which we'll spawn stash, if this building
+--- we do the necessary stuff
 ---
 --- @param def BuildingDef
---- @return void
+--- @return nil
 function StashSystem.doBuildingStash(def) end
 
 --- @public
 --- @static
 ---
----  Public for lua debug stash map
+--- Public for lua debug stash map
 ---
 --- @param stash Stash
 --- @param item InventoryItem
---- @return void
+--- @return nil
 function StashSystem.doStashItem(stash, item) end
+
+--- @public
+--- @static
+--- @return ArrayList
+function StashSystem.getAllStashes() end
+
+--- @public
+--- @static
+--- @return ArrayList
+function StashSystem.getAlreadyReadMap() end
 
 --- @public
 --- @static
@@ -52,63 +62,68 @@ function StashSystem.getPossibleStashes() end
 
 --- @public
 --- @static
---- @param stashName String
+--- @param stashName string
 --- @return Stash
 function StashSystem.getStash(stashName) end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function StashSystem.init() end
 
 --- @public
 --- @static
 ---
----  Load our different stashes description from lua files in
+--- Load our different stashes description from lua files in
 ---
---- @return void
+--- @return nil
 function StashSystem.initAllStashes() end
 
 --- @public
 --- @static
+--- @param arg0 BuildingDef
+--- @return boolean
+function StashSystem.isStashBuilding(arg0) end
+
+--- @public
+--- @static
 --- @param input ByteBuffer
---- @param WorldVersion int
---- @return void
+--- @param WorldVersion integer
+--- @return nil
 function StashSystem.load(input, WorldVersion) end
 
 --- @public
 --- @static
 ---
----  Used when you read an annoted map
+--- Used when you read an annoted map
 ---
---- @param stashName String
---- @return void
+--- @param stashName string
+--- @return nil
 function StashSystem.prepareBuildingStash(stashName) end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function StashSystem.reinit() end
 
 --- @public
 --- @static
 --- @param output ByteBuffer
---- @return void
+--- @return nil
 function StashSystem.save(output) end
 
 --- @public
 --- @static
 ---
----  Check if the visited building is in one of our random stash, in that case we
----  spawn any stash for this building
+--- Check if the visited building is in one of our random stash, in that case we
+--- spawn any stash for this building
 ---
 --- @param def BuildingDef
---- @return void
+--- @return nil
 function StashSystem.visitedBuilding(def) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

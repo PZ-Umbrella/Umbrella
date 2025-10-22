@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class IsoZombieGiblets: IsoPhysicsObject
 --- @field public class any
-IsoZombieGiblets = {};
+IsoZombieGiblets = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -13,31 +13,40 @@ IsoZombieGiblets = {};
 function IsoZombieGiblets:Serialize() end
 
 --- @public
---- @return String
+--- @return string
 function IsoZombieGiblets:getObjectName() end
 
 --- @public
---- @param x float
---- @param y float
---- @param z float
+--- @param x number
+--- @param y number
+--- @param z number
 --- @param info ColorInfo
 --- @param bDoAttached boolean
 --- @param bWallLightingPass boolean
 --- @param shader Shader
---- @return void
+--- @return nil
 function IsoZombieGiblets:render(x, y, z, info, bDoAttached, bWallLightingPass, shader) end
 
 --- @public
---- @return void
+--- @return nil
 function IsoZombieGiblets:update() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param cell IsoCell
 --- @return IsoZombieGiblets
---- @overload fun(type: GibletType, cell: IsoCell, x: float, y: float, z: float, xvel: float, yvel: float): IsoZombieGiblets
 function IsoZombieGiblets.new(cell) end
+
+--- @public
+--- @param type GibletType
+--- @param cell IsoCell
+--- @param x number
+--- @param y number
+--- @param z number
+--- @param xvel number
+--- @param yvel number
+--- @return IsoZombieGiblets
+function IsoZombieGiblets.new(type, cell, x, y, z, xvel, yvel) end

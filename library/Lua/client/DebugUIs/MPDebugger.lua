@@ -2,6 +2,7 @@
 
 ---@class MPDebugger : ISCollapsableWindow
 MPDebugger = ISCollapsableWindow:derive("MPDebugger")
+MPDebugger.Type = "MPDebugger"
 
----@return any
+---@param key integer
 function MPDebugger.onKeyPressed(key) end

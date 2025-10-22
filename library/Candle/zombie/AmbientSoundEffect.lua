@@ -1,61 +1,82 @@
---- @meta
+--- @meta _
 
---- @class AmbientSoundEffect
+--- @class AmbientSoundEffect: Audio
 --- @field public class any
---- @implement Audio
-AmbientSoundEffect = {};
+AmbientSoundEffect = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return String
---- @overload fun(self: AmbientSoundEffect): String
+--- @return string
+function AmbientSoundEffect:getName() end
+
+--- @public
+--- @return string
 function AmbientSoundEffect:getName() end
 
 --- @public
 --- @return boolean
---- @overload fun(self: AmbientSoundEffect): boolean
 function AmbientSoundEffect:isPlaying() end
 
 --- @public
---- @return void
---- @overload fun(self: AmbientSoundEffect): void
+--- @return boolean
+function AmbientSoundEffect:isPlaying() end
+
+--- @public
+--- @return nil
 function AmbientSoundEffect:pause() end
 
 --- @public
---- @param choice String
---- @return void
---- @overload fun(self: AmbientSoundEffect, choice: String): void
+--- @return nil
+function AmbientSoundEffect:pause() end
+
+--- @public
+--- @param choice string
+--- @return nil
 function AmbientSoundEffect:setName(choice) end
 
 --- @public
---- @param volume float
---- @return void
---- @overload fun(self: AmbientSoundEffect, volume: float): void
+--- @param choice string
+--- @return nil
+function AmbientSoundEffect:setName(choice) end
+
+--- @public
+--- @param volume number
+--- @return nil
 function AmbientSoundEffect:setVolume(volume) end
 
 --- @public
---- @return void
---- @overload fun(self: AmbientSoundEffect): void
+--- @param volume number
+--- @return nil
+function AmbientSoundEffect:setVolume(volume) end
+
+--- @public
+--- @return nil
 function AmbientSoundEffect:start() end
 
 --- @public
---- @return void
---- @overload fun(self: AmbientSoundEffect): void
+--- @return nil
+function AmbientSoundEffect:start() end
+
+--- @public
+--- @return nil
 function AmbientSoundEffect:stop() end
 
 --- @public
---- @return void
+--- @return nil
+function AmbientSoundEffect:stop() end
+
+--- @public
+--- @return nil
 function AmbientSoundEffect:update() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param name String
+--- @param name string
 --- @return AmbientSoundEffect
 function AmbientSoundEffect.new(name) end

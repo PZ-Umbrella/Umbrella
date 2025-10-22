@@ -1,57 +1,62 @@
 ---@meta
 
 ---@class ISTermsOfServiceUI : ISPanelJoypad
----@field textureY any
----@field richText any
----@field button1 any
----@field button2 any
----@field buttonAccept any
----@field buttonQuit any
----@field joypadIndex any
----@field joypadIndexY any
----@field name any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field ok any
----@field destroyOnClick any
----@field texture any
----@field instance any
----@field [any] any
+---@field button1 ISButton
+---@field button2 ISButton
+---@field buttonAccept ISButton
+---@field buttonQuit ISButton
+---@field destroyOnClick boolean
+---@field javaStateObj TermsOfServiceState
+---@field name unknown?
+---@field ok unknown?
+---@field prevFocus ISUIElement
+---@field richText ISRichTextPanel
+---@field texture Texture
+---@field textureY number
 ISTermsOfServiceUI = ISPanelJoypad:derive("ISTermsOfServiceUI")
+ISTermsOfServiceUI.Type = "ISTermsOfServiceUI"
+ISTermsOfServiceUI.instance = nil ---@type ISTermsOfServiceUI?
 
----@return any
+---@param javaStateObj GameState
 function ISTermsOfServiceUI.OnGameStateEnter(javaStateObj) end
 
----@return any
 function ISTermsOfServiceUI:createChildren() end
----@return any
+
 function ISTermsOfServiceUI:destroy() end
----@return any
+
+---@param button ISButton
 function ISTermsOfServiceUI:onButton1(button) end
----@return any
+
+---@param button ISButton
 function ISTermsOfServiceUI:onButton2(button) end
----@return any
+
+---@param button ISButton
 function ISTermsOfServiceUI:onButtonAccept(button) end
----@return any
+
+---@param button ISButton
 function ISTermsOfServiceUI:onButtonQuit(button) end
----@return any
-function ISTermsOfServiceUI:prerender() end
----@return any
-function ISTermsOfServiceUI:onMouseDown(x, y) end
----@return any
+
+---@param joypadData JoypadData
 function ISTermsOfServiceUI:onGainJoypadFocus(joypadData) end
----@return any
-function ISTermsOfServiceUI:onLoseJoypadFocus(joypadData) end
----@return any
+
+---@param button integer
 function ISTermsOfServiceUI:onJoypadDown(button) end
----@return any
+
+---@param joypadData JoypadData
+function ISTermsOfServiceUI:onLoseJoypadFocus(joypadData) end
+
+---@param x number
+---@param y number
+---@return boolean
+function ISTermsOfServiceUI:onMouseDown(x, y) end
+
+function ISTermsOfServiceUI:prerender() end
+
 function ISTermsOfServiceUI:update() end
 
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISTermsOfServiceUI
 function ISTermsOfServiceUI:new(x, y, width, height) end

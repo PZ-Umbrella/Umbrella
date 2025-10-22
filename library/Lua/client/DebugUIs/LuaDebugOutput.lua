@@ -1,36 +1,47 @@
 ---@meta
 
 ---@class LuaDebugOutput : ISPanel
----@field outputListbox any
----@field x any
----@field y any
----@field backgroundColor any
----@field borderColor any
----@field cat any
----@field [any] any
+---@field cat table<string, boolean>
+---@field outputListbox ISScrollingListBox
 LuaDebugOutput = ISPanel:derive("LuaDebugOutput")
+LuaDebugOutput.Type = "LuaDebugOutput"
+LuaDebugOutput.instance = nil ---@type LuaDebugOutput?
 
----@return any
-function LuaDebugOutput:createChildren() end
----@return any
-function LuaDebugOutput:doDrawItem(y, item, alt) end
----@return any
-function LuaDebugOutput:debug(text) end
----@return any
 function LuaDebugOutput:clear() end
----@return any
+
+function LuaDebugOutput:createChildren() end
+
+---@param text string
+function LuaDebugOutput:debug(text) end
+
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
+function LuaDebugOutput:doDrawItem(y, item, alt) end
+
+---@param text string
 function LuaDebugOutput:error(text) end
 
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return LuaDebugOutput
 function LuaDebugOutput:new(x, y, width, height) end
 
----@return any
+---@param text string
+---@param cat string?
 function pzerror(text, cat) end
----@return any
+
+---@param cat string
+---@param enabled boolean
 function pzdebugenabled(cat, enabled) end
----@return any
+
+---@param text string
+---@param cat string?
 function pzdebug(text, cat) end
----@return any
+
 function DoTickDebugLuaDebugOutputWindow() end
----@return any
+
 function DoDebugLuaDebugOutputWindow() end

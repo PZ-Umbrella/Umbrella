@@ -1,26 +1,30 @@
---- @meta
+--- @meta _
 
---- @class Trait
+--- @class Trait: IListBoxItem
 --- @field public class any
---- @implement IListBoxItem
-Trait = {};
+Trait = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
+--- @param arg0 string
+--- @return nil
+function Trait:addFreeTrait(arg0) end
+
+--- @public
 --- @param perk Perk
---- @param level int
---- @return void
+--- @param level integer
+--- @return nil
 function Trait:addXPBoost(perk, level) end
 
 --- @public
---- @return int
+--- @return integer
 function Trait:getCost() end
 
 --- @public
---- @return String
+--- @return string
 function Trait:getDescription() end
 
 --- @public
@@ -28,13 +32,23 @@ function Trait:getDescription() end
 function Trait:getFreeRecipes() end
 
 --- @public
---- @return String
---- @overload fun(self: Trait): String
+--- @return ArrayList
+function Trait:getFreeTraits() end
+
+--- @public
+--- @return string
 function Trait:getLabel() end
 
 --- @public
---- @return String
---- @overload fun(self: Trait): String
+--- @return string
+function Trait:getLabel() end
+
+--- @public
+--- @return string
+function Trait:getLeftLabel() end
+
+--- @public
+--- @return string
 function Trait:getLeftLabel() end
 
 --- @public
@@ -42,8 +56,11 @@ function Trait:getLeftLabel() end
 function Trait:getMutuallyExclusiveTraits() end
 
 --- @public
---- @return String
---- @overload fun(self: Trait): String
+--- @return string
+function Trait:getRightLabel() end
+
+--- @public
+--- @return string
 function Trait:getRightLabel() end
 
 --- @public
@@ -51,7 +68,7 @@ function Trait:getRightLabel() end
 function Trait:getTexture() end
 
 --- @public
---- @return String
+--- @return string
 function Trait:getType() end
 
 --- @public
@@ -63,34 +80,38 @@ function Trait:getXPBoostMap() end
 function Trait:isFree() end
 
 --- @public
+--- @param arg0 Trait
+--- @return boolean
+function Trait:isMutuallyExclusive(arg0) end
+
+--- @public
 --- @return boolean
 function Trait:isRemoveInMP() end
 
 --- @public
---- @param desc String
---- @return void
+--- @param desc string
+--- @return nil
 function Trait:setDescription(desc) end
 
 --- @public
 --- @param freeRecipes List
---- @return void
+--- @return nil
 function Trait:setFreeRecipes(freeRecipes) end
 
 --- @public
 --- @param removeInMP boolean
---- @return void
+--- @return nil
 function Trait:setRemoveInMP(removeInMP) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param tr String
---- @param name String
---- @param cost int
---- @param desc String
+--- @param tr string
+--- @param name string
+--- @param cost integer
+--- @param desc string
 --- @param prof boolean
 --- @param removeInMP boolean
 --- @return Trait

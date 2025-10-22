@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class ClimateHistory TurboTuTone.
 --- @field public class any
-ClimateHistory = {};
+ClimateHistory = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,17 +10,16 @@ ClimateHistory = {};
 
 --- @public
 --- @param climateManager ClimateManager
---- @return void
+--- @return nil
 function ClimateHistory:init(climateManager) end
 
 --- @public
 --- @param climateManager ClimateManager
---- @return void
+--- @return nil
 function ClimateHistory:updateDayChange(climateManager) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

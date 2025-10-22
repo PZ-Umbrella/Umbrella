@@ -1,27 +1,26 @@
---- @meta
+--- @meta _
 
 --- @class RadarPanel: UIElement
 --- @field public class any
-RadarPanel = {};
+RadarPanel = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
+--- @return nil
 function RadarPanel:render() end
 
 --- @public
---- @return void
+--- @return nil
 function RadarPanel:update() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param playerIndex int
+--- @param playerIndex integer
 --- @return RadarPanel
 function RadarPanel.new(playerIndex) end

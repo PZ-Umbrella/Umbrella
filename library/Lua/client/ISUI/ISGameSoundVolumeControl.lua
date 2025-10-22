@@ -1,48 +1,69 @@
 ---@meta
 
----@class ISGameSoundVolumeControl : ISPanel
----@field dragging any
----@field tooltip any
----@field tooltipUI any
----@field volume any
----@field joypadFocused any
----@field backgroundColor any
----@field borderColor any
----@field target any
----@field targetFunc any
----@field fade any
----@field isSlider any
----@field [any] any
-ISGameSoundVolumeControl = ISPanel:derive("ISGameSoundVolumeControl")
+---@alias umbrella.ISGameSoundVolumeControl.TargetFunction fun(target: unknown, control: ISGameSoundVolumeControl, volume: number)
 
----@return any
-function ISGameSoundVolumeControl:instantiate() end
----@return any
-function ISGameSoundVolumeControl:onMouseDown(x, y) end
----@return any
-function ISGameSoundVolumeControl:onMouseUp(x, y) end
----@return any
-function ISGameSoundVolumeControl:onMouseUpOutside(x, y) end
----@return any
-function ISGameSoundVolumeControl:onMouseMove(dx, dy) end
----@return any
-function ISGameSoundVolumeControl:getVolumeAtX(x) end
----@return any
-function ISGameSoundVolumeControl:prerender() end
----@return any
-function ISGameSoundVolumeControl:render() end
----@return any
-function ISGameSoundVolumeControl:getVolume() end
----@return any
-function ISGameSoundVolumeControl:setVolume(volume) end
----@return any
+---@class ISGameSoundVolumeControl : ISPanel
+---@field dragging boolean
+---@field fade UITransition
+---@field isSlider boolean
+---@field joypadFocused boolean?
+---@field targetFunc umbrella.ISGameSoundVolumeControl.TargetFunction?
+---@field tooltip unknown?
+---@field tooltipUI ISToolTip
+---@field volume number
+ISGameSoundVolumeControl = ISPanel:derive("ISGameSoundVolumeControl")
+ISGameSoundVolumeControl.Type = "ISGameSoundVolumeControl"
+ISGameSoundVolumeControl.capture = nil ---@type ISGameSoundVolumeControl?
+
+---@return string
 function ISGameSoundVolumeControl:getTooltip() end
----@return any
-function ISGameSoundVolumeControl:setJoypadFocused(focused) end
----@return any
+
+---@return number
+function ISGameSoundVolumeControl:getVolume() end
+
+---@param x number
+---@return number
+function ISGameSoundVolumeControl:getVolumeAtX(x) end
+
+function ISGameSoundVolumeControl:instantiate() end
+
+---@param joypadData JoypadData
 function ISGameSoundVolumeControl:onJoypadDirLeft(joypadData) end
----@return any
+
+---@param joypadData JoypadData
 function ISGameSoundVolumeControl:onJoypadDirRight(joypadData) end
 
+---@param x number
+---@param y number
+function ISGameSoundVolumeControl:onMouseDown(x, y) end
+
+---@param dx number
+---@param dy number
+function ISGameSoundVolumeControl:onMouseMove(dx, dy) end
+
+---@param x number
+---@param y number
+function ISGameSoundVolumeControl:onMouseUp(x, y) end
+
+---@param x number
+---@param y number
+function ISGameSoundVolumeControl:onMouseUpOutside(x, y) end
+
+function ISGameSoundVolumeControl:prerender() end
+
+function ISGameSoundVolumeControl:render() end
+
+---@param focused boolean
+function ISGameSoundVolumeControl:setJoypadFocused(focused) end
+
+---@param volume number
+function ISGameSoundVolumeControl:setVolume(volume) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param target unknown?
+---@param targetFunc umbrella.ISGameSoundVolumeControl.TargetFunction?
 ---@return ISGameSoundVolumeControl
 function ISGameSoundVolumeControl:new(x, y, width, height, target, targetFunc) end

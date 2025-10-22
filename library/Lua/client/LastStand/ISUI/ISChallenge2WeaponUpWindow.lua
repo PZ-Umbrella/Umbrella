@@ -1,34 +1,43 @@
 ---@meta
 
 ---@class ISChallenge2WeaponUpWindow : ISPanelJoypad
----@field joypadButtonsY any
----@field joypadIndex any
----@field joypadIndexY any
----@field joypadButtons any
----@field char any
----@field playerId any
----@field borderColor any
----@field backgroundColor any
----@field buttons any
----@field [any] any
+---@field buttons ISButton[]
+---@field char IsoPlayer
+---@field joypadButtons ISButton[]
+---@field playerId integer
 ISChallenge2WeaponUpWindow = ISPanelJoypad:derive("ISChallenge2WeaponUpWindow")
+ISChallenge2WeaponUpWindow.Type = "ISChallenge2WeaponUpWindow"
 
----@return any
-function ISChallenge2WeaponUpWindow:initialise() end
----@return any
-function ISChallenge2WeaponUpWindow:render() end
----@return any
 function ISChallenge2WeaponUpWindow:create() end
----@return any
+
+---@param x number
+---@param y number
+---@param itemType string
+---@param cost integer
+---@param itemType2 string?
 function ISChallenge2WeaponUpWindow:createItemButton(x, y, itemType, cost, itemType2) end
----@return any
-function ISChallenge2WeaponUpWindow:onOptionMouseDown(button, x, y) end
----@return any
-function ISChallenge2WeaponUpWindow:reloadButtons() end
----@return any
+
+function ISChallenge2WeaponUpWindow:initialise() end
+
 function ISChallenge2WeaponUpWindow:loadJoypadButtons() end
----@return any
+
+---@param button integer
+---@param joypadData JoypadData
 function ISChallenge2WeaponUpWindow:onJoypadDown(button, joypadData) end
 
+---@param button ISButton
+---@param x number
+---@param y number
+function ISChallenge2WeaponUpWindow:onOptionMouseDown(button, x, y) end
+
+function ISChallenge2WeaponUpWindow:reloadButtons() end
+
+function ISChallenge2WeaponUpWindow:render() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param player integer
 ---@return ISChallenge2WeaponUpWindow
 function ISChallenge2WeaponUpWindow:new(x, y, width, height, player) end

@@ -1,51 +1,74 @@
---- @meta
+--- @meta _
 
 --- @class UIDebugConsole: NewWindow
 --- @field public class any
 --- @field public instance UIDebugConsole
-UIDebugConsole = {};
+UIDebugConsole = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
+--- @return nil
 function UIDebugConsole:ProcessCommand() end
 
 --- @public
 --- @param b byte[]
---- @param __off__ int
---- @param len int
---- @return void
-function UIDebugConsole:addOutput(b, __off__, len) end
+--- @param off integer
+--- @param len integer
+--- @return nil
+function UIDebugConsole:addOutput(b, off, len) end
 
 --- @public
 --- @param lhs CharSequence
 --- @param rhs CharSequence
---- @return int
+--- @return integer
 function UIDebugConsole:levenshteinDistance(lhs, rhs) end
 
 --- @public
---- @param key int
---- @return void
+--- @param arg0 number
+--- @param arg1 number
+--- @return boolean
+function UIDebugConsole:onMouseDown(arg0, arg1) end
+
+--- @public
+--- @param arg0 number
+--- @param arg1 number
+--- @return boolean
+function UIDebugConsole:onMouseMove(arg0, arg1) end
+
+--- @public
+--- @param arg0 number
+--- @param arg1 number
+--- @return boolean
+function UIDebugConsole:onMouseUp(arg0, arg1) end
+
+--- @public
+--- @param arg0 number
+--- @param arg1 number
+--- @return nil
+function UIDebugConsole:onMouseUpOutside(arg0, arg1) end
+
+--- @public
+--- @param key integer
+--- @return nil
 function UIDebugConsole:onOtherKey(key) end
 
 --- @public
---- @return void
+--- @return nil
 function UIDebugConsole:render() end
 
 --- @public
---- @return void
+--- @return nil
 function UIDebugConsole:update() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param x int
---- @param y int
+--- @param x integer
+--- @param y integer
 --- @return UIDebugConsole
 function UIDebugConsole.new(x, y) end

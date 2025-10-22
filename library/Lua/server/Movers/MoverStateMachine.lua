@@ -1,21 +1,22 @@
 ---@meta
 
 ---@class ISMoverStateMachine : ISBaseObject
----@field state any
----@field mover any
----@field moverInst any
----@field [any] any
+---@field mover ISBaseMover
+---@field moverInst unknown
+---@field state unknown?
 ISMoverStateMachine = ISBaseObject:derive("ISMoverStateMachine")
+ISMoverStateMachine.Type = "ISMoverStateMachine"
 ISMoverStateMachine.IDMax = 1
 
----@return any
-function ISMoverStateMachine:init() end
----@return any
-function ISMoverStateMachine:getCurrent() end
----@return any
 function ISMoverStateMachine:changeState(new) end
----@return any
+
+---@return unknown?
+function ISMoverStateMachine:getCurrent() end
+
+function ISMoverStateMachine:init() end
+
 function ISMoverStateMachine:update() end
 
+---@param mover ISBaseMover
 ---@return ISMoverStateMachine
 function ISMoverStateMachine:new(mover) end

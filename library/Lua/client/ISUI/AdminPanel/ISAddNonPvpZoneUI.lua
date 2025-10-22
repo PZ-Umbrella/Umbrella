@@ -1,35 +1,35 @@
 ---@meta
 
 ---@class ISAddNonPvpZoneUI : ISPanel
----@field cancel any
----@field ok any
----@field defineStartingPointBtn any
----@field titleEntry any
----@field size any
----@field startingX any
----@field startingY any
----@field endX any
----@field endY any
----@field borderColor any
----@field backgroundColor any
----@field width any
----@field height any
----@field player any
----@field moveWithMouse any
----@field buttonBorderColor any
----@field x any
----@field y any
----@field [any] any
+---@field buttonBorderColor umbrella.RGBA
+---@field cancel ISButton
+---@field defineStartingPointBtn ISButton
+---@field endX number
+---@field endY number
+---@field interception boolean
+---@field ok ISButton
+---@field player IsoPlayer
+---@field size number
+---@field startingX number
+---@field startingY number
+---@field titleEntry ISTextEntryBox
 ISAddNonPvpZoneUI = ISPanel:derive("ISAddNonPvpZoneUI")
+ISAddNonPvpZoneUI.Type = "ISAddNonPvpZoneUI"
+ISAddNonPvpZoneUI.instance = nil ---@type ISAddNonPvpZoneUI?
 
----@return any
 function ISAddNonPvpZoneUI:initialise() end
----@return any
-function ISAddNonPvpZoneUI:prerender() end
----@return any
-function ISAddNonPvpZoneUI:updateButtons() end
----@return any
+
+---@param button ISButton
 function ISAddNonPvpZoneUI:onClick(button) end
 
+function ISAddNonPvpZoneUI:prerender() end
+
+function ISAddNonPvpZoneUI:updateButtons() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param player IsoPlayer
 ---@return ISAddNonPvpZoneUI
 function ISAddNonPvpZoneUI:new(x, y, width, height, player) end

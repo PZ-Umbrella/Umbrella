@@ -1,46 +1,88 @@
 ---@meta
 
 ---@class ISEmptyGraves : ISBuildingObject
----@field sq any
----@field javaObject any
----@field sprite2 any
----@field northSprite2 any
----@field noNeedHammer any
----@field ignoreNorth any
----@field equipBothHandItem any
----@field maxTime any
----@field actionAnim any
----@field craftingBank any
----@field [any] any
+---@field actionAnim CharacterActionAnims
+---@field craftingBank string
+---@field equipBothHandItem InventoryItem?
+---@field ignoreNorth boolean
+---@field javaObject IsoThumpable?
+---@field maxTime number
+---@field noNeedHammer boolean
+---@field northSprite2 string
+---@field sprite2 string
+---@field sq IsoGridSquare?
 ISEmptyGraves = ISBuildingObject:derive("ISEmptyGraves")
+ISEmptyGraves.Type = "ISEmptyGraves"
 
----@return any
-function ISEmptyGraves.shovelledFloorCanDig(square) end
----@return any
+---@param worldObjects IsoObject[]
+---@return boolean
 function ISEmptyGraves.canDigHere(worldObjects) end
----@return any
+
+---@param grave unknown?
+---@return number
 function ISEmptyGraves.getMaxCorpses(grave) end
----@return any
-function ISEmptyGraves.isGraveFullOfCorpses(grave) end
----@return any
+
+---@param grave IsoObject
+---@return boolean
 function ISEmptyGraves.isGraveFilledIn(grave) end
 
----@return any
+---@param grave IsoObject
+---@return boolean
+function ISEmptyGraves.isGraveFullOfCorpses(grave) end
+
+---@param square IsoGridSquare
+---@return boolean
+function ISEmptyGraves.shovelledFloorCanDig(square) end
+
+---@param x number
+---@param y number
+---@param z number
+---@param north boolean
+---@param sprite string
 function ISEmptyGraves:create(x, y, z, north, sprite) end
----@return any
-function ISEmptyGraves:walkTo(x, y, z) end
----@return any
-function ISEmptyGraves:setInfo(square, north, sprite, cell, spriteType) end
----@return any
+
+---@return number
 function ISEmptyGraves:getHealth() end
----@return any
-function ISEmptyGraves:render(x, y, z, square) end
----@return any
-function ISEmptyGraves:isValid(square) end
----@return any
-function ISEmptyGraves:getSquare2Pos(square, north) end
----@return any
+
+---@param square IsoGridSquare
+---@param north boolean
+---@return IsoGridSquare
 function ISEmptyGraves:getSquare2(square, north) end
 
+---@param square IsoGridSquare
+---@param north boolean
+---@return number
+---@return number
+---@return number
+function ISEmptyGraves:getSquare2Pos(square, north) end
+
+---@param square IsoGridSquare
+---@return boolean
+function ISEmptyGraves:isValid(square) end
+
+---@param x number
+---@param y number
+---@param z number
+---@param square IsoGridSquare
+function ISEmptyGraves:render(x, y, z, square) end
+
+---@param square IsoGridSquare
+---@param north boolean
+---@param sprite string
+---@param cell IsoCell
+---@param spriteType string
+function ISEmptyGraves:setInfo(square, north, sprite, cell, spriteType) end
+
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function ISEmptyGraves:walkTo(x, y, z) end
+
+---@param sprite string
+---@param sprite2 string
+---@param northSprite string
+---@param northSprite2 string
+---@param equipBothHandItem InventoryItem?
 ---@return ISEmptyGraves
-function ISEmptyGraves:new(sprite1, sprite2, northSprite1, northSprite2, shovel) end
+function ISEmptyGraves:new(sprite, sprite2, northSprite, northSprite2, equipBothHandItem) end

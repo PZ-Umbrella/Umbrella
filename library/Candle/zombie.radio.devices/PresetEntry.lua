@@ -1,37 +1,41 @@
---- @meta
+--- @meta _
 
 --- @class PresetEntry turbo
 --- @field public class any
-PresetEntry = {};
+PresetEntry = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return int
+--- @return integer
 function PresetEntry:getFrequency() end
 
 --- @public
---- @return String
+--- @return string
 function PresetEntry:getName() end
 
 --- @public
---- @param f int
---- @return void
+--- @param f integer
+--- @return nil
 function PresetEntry:setFrequency(f) end
 
 --- @public
---- @param n String
---- @return void
+--- @param n string
+--- @return nil
 function PresetEntry:setName(n) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @return PresetEntry
---- @overload fun(n: String, f: int): PresetEntry
 function PresetEntry.new() end
+
+--- @public
+--- @param n string
+--- @param f integer
+--- @return PresetEntry
+function PresetEntry.new(n, f) end

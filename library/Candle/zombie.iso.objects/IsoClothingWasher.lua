@@ -1,19 +1,19 @@
---- @meta
+--- @meta _
 
 --- @class IsoClothingWasher: IsoObject
 --- @field public class any
-IsoClothingWasher = {};
+IsoClothingWasher = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
+--- @return nil
 function IsoClothingWasher:addToWorld() end
 
 --- @public
---- @return String
+--- @return string
 function IsoClothingWasher:getObjectName() end
 
 --- @public
@@ -34,50 +34,55 @@ function IsoClothingWasher:isRemoveItemAllowedFromContainer(container, item) end
 
 --- @public
 --- @param input ByteBuffer
---- @param WorldVersion int
+--- @param WorldVersion integer
 --- @param IS_DEBUG_SAVE boolean
---- @return void
+--- @return nil
 function IsoClothingWasher:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 --- @public
---- @param change String
+--- @param change string
 --- @param bb ByteBuffer
---- @return void
+--- @return nil
 function IsoClothingWasher:loadChange(change, bb) end
 
 --- @public
---- @return void
+--- @return nil
 function IsoClothingWasher:removeFromWorld() end
 
 --- @public
 --- @param output ByteBuffer
 --- @param IS_DEBUG_SAVE boolean
---- @return void
+--- @return nil
 function IsoClothingWasher:save(output, IS_DEBUG_SAVE) end
 
 --- @public
---- @param change String
---- @param tbl KahluaTable
+--- @param change string
+--- @param tbl table
 --- @param bb ByteBuffer
---- @return void
+--- @return nil
 function IsoClothingWasher:saveChange(change, tbl, bb) end
 
 --- @public
 --- @param activated boolean
---- @return void
+--- @return nil
 function IsoClothingWasher:setActivated(activated) end
 
 --- @public
---- @return void
+--- @return nil
 function IsoClothingWasher:update() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param cell IsoCell
 --- @return IsoClothingWasher
---- @overload fun(cell: IsoCell, sq: IsoGridSquare, gid: IsoSprite): IsoClothingWasher
 function IsoClothingWasher.new(cell) end
+
+--- @public
+--- @param cell IsoCell
+--- @param sq IsoGridSquare
+--- @param gid IsoSprite
+--- @return IsoClothingWasher
+function IsoClothingWasher.new(cell, sq, gid) end

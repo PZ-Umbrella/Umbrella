@@ -1,79 +1,93 @@
 ---@meta
 
 ---@class SCampfireGlobalObject : SGlobalObject
----@field exterior any
----@field isLit any
----@field fuelAmt any
----@field radius any
----@field spriteName any
----@field transmitObject any
----@field transmitSprite any
----@field transmitContainer any
----@field transmitContainerTemp any
----@field transmitFire any
----@field [any] any
+---@field exterior boolean
+---@field fuelAmt number
+---@field isLit boolean
+---@field radius number
+---@field spriteName string
+---@field transmitContainer boolean
+---@field transmitContainerTemp boolean
+---@field transmitFire boolean
+---@field transmitObject boolean
+---@field transmitSprite boolean
 SCampfireGlobalObject = SGlobalObject:derive("SCampfireGlobalObject")
+SCampfireGlobalObject.Type = "SCampfireGlobalObject"
 
----@return any
-function SCampfireGlobalObject:initNew() end
----@return any
-function SCampfireGlobalObject:stateFromIsoObject(isoObject) end
----@return any
-function SCampfireGlobalObject:stateToIsoObject(isoObject) end
----@return any
-function SCampfireGlobalObject:getObject() end
----@return any
-function SCampfireGlobalObject:getContainer() end
----@return any
-function SCampfireGlobalObject:processContainerItems() end
----@return any
-function SCampfireGlobalObject:getFireObject() end
----@return any
-function SCampfireGlobalObject:addObject() end
----@return any
-function SCampfireGlobalObject:removeObject() end
----@return any
-function SCampfireGlobalObject:setSpriteName(spriteName) end
----@return any
 function SCampfireGlobalObject:addContainer() end
----@return any
+
 function SCampfireGlobalObject:addFireObject() end
----@return any
-function SCampfireGlobalObject:removeFireObject() end
----@return any
-function SCampfireGlobalObject:transferItemsToGround() end
----@return any
-function SCampfireGlobalObject:fromModData(modData) end
----@return any
-function SCampfireGlobalObject:toModData(modData) end
----@return any
-function SCampfireGlobalObject:fromObject(isoObject) end
----@return any
-function SCampfireGlobalObject:syncIsoObject() end
----@return any
-function SCampfireGlobalObject:syncSprite() end
----@return any
-function SCampfireGlobalObject:syncModData() end
----@return any
-function SCampfireGlobalObject:syncContainer() end
----@return any
-function SCampfireGlobalObject:syncIsoFire() end
----@return any
-function SCampfireGlobalObject:changeFireLvl() end
----@return any
-function SCampfireGlobalObject:fireRatio() end
----@return any
-function SCampfireGlobalObject:fireRadius() end
----@return any
-function SCampfireGlobalObject:saveData() end
----@return any
-function SCampfireGlobalObject:lightFire() end
----@return any
-function SCampfireGlobalObject:putOut() end
----@return any
+
+---@param fuelAmt number
 function SCampfireGlobalObject:addFuel(fuelAmt) end
----@return any
+
+function SCampfireGlobalObject:addObject() end
+
+function SCampfireGlobalObject:changeFireLvl() end
+
+---@return number
+function SCampfireGlobalObject:fireRadius() end
+
+---@return number
+function SCampfireGlobalObject:fireRatio() end
+
+---@param modData table
+function SCampfireGlobalObject:fromModData(modData) end
+
+---@param isoObject IsoObject
+function SCampfireGlobalObject:fromObject(isoObject) end
+
+---@return ItemContainer?
+function SCampfireGlobalObject:getContainer() end
+
+---@return IsoFire?
+function SCampfireGlobalObject:getFireObject() end
+
+---@return IsoObject
+function SCampfireGlobalObject:getObject() end
+
+function SCampfireGlobalObject:initNew() end
+
+function SCampfireGlobalObject:lightFire() end
+
+function SCampfireGlobalObject:processContainerItems() end
+
+function SCampfireGlobalObject:putOut() end
+
+function SCampfireGlobalObject:removeFireObject() end
+
+function SCampfireGlobalObject:removeObject() end
+
+function SCampfireGlobalObject:saveData() end
+
+---@param fuelAmt number
 function SCampfireGlobalObject:setFuel(fuelAmt) end
 
+---@param spriteName string
+function SCampfireGlobalObject:setSpriteName(spriteName) end
+
+---@param isoObject IsoObject
+function SCampfireGlobalObject:stateFromIsoObject(isoObject) end
+
+---@param isoObject IsoObject
+function SCampfireGlobalObject:stateToIsoObject(isoObject) end
+
+function SCampfireGlobalObject:syncContainer() end
+
+function SCampfireGlobalObject:syncIsoFire() end
+
+function SCampfireGlobalObject:syncIsoObject() end
+
+function SCampfireGlobalObject:syncModData() end
+
+function SCampfireGlobalObject:syncSprite() end
+
+---@param modData table
+function SCampfireGlobalObject:toModData(modData) end
+
+function SCampfireGlobalObject:transferItemsToGround() end
+
+---@param luaSystem SCampfireSystem
+---@param globalObject GlobalObject
 ---@return SCampfireGlobalObject
 function SCampfireGlobalObject:new(luaSystem, globalObject) end

@@ -1,61 +1,61 @@
 ---@meta
 
 ---@class ServerConnectPopup : ISPanelJoypad
----@field serverPasswordEntry any
----@field usernameLabel any
----@field usernameEntry any
----@field passwordLabel any
----@field passwordEntry any
----@field cancelBtn any
----@field connectBtn any
----@field joypadIndex any
----@field joypadIndexY any
----@field joypadButtons any
----@field connectTypeLabel any
----@field connectTypeEntry any
----@field ip any
----@field port any
----@field ISButtonA any
----@field ISButtonB any
----@field javaObject any
----@field x any
----@field y any
----@field backgroundColor any
----@field borderColor any
----@field itemheightoverride any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field NoLabel any
----@field anchorBottom any
----@field [any] any
+---@field cancelBtn ISButton
+---@field connectBtn ISButton
+---@field connectTypeEntry ISTickBox
+---@field connectTypeLabel ISLabel
+---@field ip string
+---@field itemheightoverride table
+---@field joypadButtons ISButton[]
+---@field NoLabel boolean
+---@field passwordEntry ISTextEntryBox
+---@field passwordLabel ISLabel
+---@field port string
+---@field serverPasswordEntry ISTextEntryBox
+---@field usernameEntry ISTextEntryBox
+---@field usernameLabel ISLabel
 ServerConnectPopup = ISPanelJoypad:derive("ServerConnectPopup")
+ServerConnectPopup.Type = "ServerConnectPopup"
+ServerConnectPopup.instance = nil ---@type ServerConnectPopup?
 
----@return any
-function ServerConnectPopup:create() end
----@return any
-function ServerConnectPopup:setServer(ip, port, passwordStr) end
----@return any
-function ServerConnectPopup:prerender() end
----@return any
-function ServerConnectPopup:initialise() end
----@return any
-function ServerConnectPopup:onOptionMouseDown(button, x, y) end
----@return any
+---@return boolean
 function ServerConnectPopup:checkFields() end
----@return any
+
+function ServerConnectPopup:create() end
+
+function ServerConnectPopup:initialise() end
+
 function ServerConnectPopup:instantiate() end
----@return any
+
+---@param joypadData JoypadData
 function ServerConnectPopup:onGainJoypadFocus(joypadData) end
----@return any
-function ServerConnectPopup:onJoypadDown(button, joypadData) end
----@return any
-function ServerConnectPopup:onJoypadDirUp(joypadData) end
----@return any
+
+---@param joypadData JoypadData
 function ServerConnectPopup:onJoypadDirDown(joypadData) end
 
+---@param joypadData JoypadData
+function ServerConnectPopup:onJoypadDirUp(joypadData) end
+
+---@param button integer
+---@param joypadData JoypadData
+function ServerConnectPopup:onJoypadDown(button, joypadData) end
+
+---@param button ISButton
+---@param x number
+---@param y number
+function ServerConnectPopup:onOptionMouseDown(button, x, y) end
+
+function ServerConnectPopup:prerender() end
+
+---@param ip string
+---@param port string
+---@param passwordStr string
+function ServerConnectPopup:setServer(ip, port, passwordStr) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ServerConnectPopup
 function ServerConnectPopup:new(x, y, width, height) end
-
----@return any
-function strsplit(inputstr, sep) end

@@ -1,34 +1,38 @@
---- @meta
+--- @meta _
 
 --- @class VehicleWindow
 --- @field public class any
-VehicleWindow = {};
+VehicleWindow = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param amount int
---- @return void
+--- @param amount integer
+--- @return nil
 function VehicleWindow:damage(amount) end
 
 --- @public
---- @return int
+--- @return integer
 function VehicleWindow:getHealth() end
 
 --- @public
---- @return float
+--- @return number
 function VehicleWindow:getOpenDelta() end
 
 --- @public
+--- @return VehiclePart
+function VehicleWindow:getPart() end
+
+--- @public
 --- @param chr IsoGameCharacter
---- @return void
+--- @return nil
 function VehicleWindow:hit(chr) end
 
 --- @public
 --- @param scriptWindow Window
---- @return void
+--- @return nil
 function VehicleWindow:init(scriptWindow) end
 
 --- @public
@@ -49,28 +53,30 @@ function VehicleWindow:isOpenable() end
 
 --- @public
 --- @param input ByteBuffer
---- @param WorldVersion int
---- @return void
+--- @param WorldVersion integer
+--- @return nil
 function VehicleWindow:load(input, WorldVersion) end
 
 --- @public
 --- @param output ByteBuffer
---- @return void
+--- @return nil
 function VehicleWindow:save(output) end
 
 --- @public
---- @param health int
---- @return void
-function VehicleWindow:setHealth(health) end
-
---- @public
 --- @param open boolean
---- @return void
+--- @return nil
 function VehicleWindow:setOpen(open) end
 
 --- @public
---- @param delta float
---- @return void
+--- @param delta number
+--- @return nil
 function VehicleWindow:setOpenDelta(delta) end
 
+------------------------------------
+----------- CONSTRUCTORS -----------
+------------------------------------
 
+--- @public
+--- @param arg0 VehiclePart
+--- @return VehicleWindow
+function VehicleWindow.new(arg0) end

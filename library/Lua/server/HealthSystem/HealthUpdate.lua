@@ -1,15 +1,15 @@
 ---@meta
 
 ---@class healthUpdate
----@field bodyDmg any
----@field [any] any
 healthUpdate = {}
-healthUpdate.lastGrid = nil
-healthUpdate.bodyDmg = nil
+healthUpdate.lastGrid = nil ---@type IsoGridSquare?
+healthUpdate.bodyDmg = nil ---@type BodyDamage?
 
----@return any
-function healthUpdate.update() end
----@return any
-function healthUpdate.scratchFromWindow(feeler) end
----@return any
+---@param feeler IsoGridSquare
+---@return unknown?
 function healthUpdate.getBrokenWindow(feeler) end
+
+---@param feeler IsoGridSquare
+function healthUpdate.scratchFromWindow(feeler) end
+
+function healthUpdate.update() end

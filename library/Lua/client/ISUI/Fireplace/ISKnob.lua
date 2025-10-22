@@ -1,55 +1,84 @@
 ---@meta
 
 ---@class ISKnob : ISUIElement
----@field amplitude any
----@field selected any
----@field joypadFocused any
----@field lastValue any
----@field draggingX any
----@field originalX any
----@field dragging any
----@field width any
----@field height any
----@field player any
----@field values any
----@field valuesBg any
----@field title any
----@field isKnob any
----@field tex any
----@field [any] any
+---@field amplitude number
+---@field dragging boolean
+---@field draggingX number
+---@field height number
+---@field isKnob boolean
+---@field lastValue number
+---@field originalX number
+---@field player IsoPlayer
+---@field selected integer
+---@field switchSound string
+---@field tex Texture
+---@field title string
+---@field values umbrella.ISKnob.ValueTable[]
+---@field valuesBg Texture
+---@field width number
 ISKnob = ISUIElement:derive("ISKnob")
+ISKnob.Type = "ISKnob"
 ISKnob.messages = {}
 
----@return any
-function ISKnob:initialise() end
----@return any
-function ISKnob:render() end
----@return any
-function ISKnob:prerender() end
----@return any
+---@param angle number
+---@param value number
 function ISKnob:addValue(angle, value) end
----@return any
+
 function ISKnob:forceClick() end
----@return any
-function ISKnob:setJoypadFocused(focused) end
----@return any
-function ISKnob:onJoypadDirUp(joypadData) end
----@return any
-function ISKnob:onJoypadDirDown(joypadData) end
----@return any
+
+---@return number
 function ISKnob:getValue() end
----@return any
-function ISKnob:setKnobPosition(value) end
----@return any
+
+function ISKnob:initialise() end
+
+---@param joypadData JoypadData
+function ISKnob:onJoypadDirDown(joypadData) end
+
+---@param joypadData JoypadData
+function ISKnob:onJoypadDirUp(joypadData) end
+
+---@param x number
+---@param y number
 function ISKnob:onMouseDown(x, y) end
----@return any
-function ISKnob:onMouseUp(x, y) end
----@return any
-function ISKnob:onMouseUpOutside(x, y) end
----@return any
-function ISKnob:onMouseMoveOutside(dx, dy) end
----@return any
+
+---@param dx number
+---@param dy number
 function ISKnob:onMouseMove(dx, dy) end
 
+---@param dx number
+---@param dy number
+function ISKnob:onMouseMoveOutside(dx, dy) end
+
+---@param x number
+---@param y number
+function ISKnob:onMouseUp(x, y) end
+
+---@param x number
+---@param y number
+function ISKnob:onMouseUpOutside(x, y) end
+
+function ISKnob:playSwitchSound() end
+
+function ISKnob:prerender() end
+
+function ISKnob:render() end
+
+---@param focused boolean
+function ISKnob:setJoypadFocused(focused) end
+
+---@param value number
+function ISKnob:setKnobPosition(value) end
+
+---@param x number
+---@param y number
+---@param tex Texture
+---@param valuesBg Texture
+---@param title string
+---@param player IsoPlayer
 ---@return ISKnob
 function ISKnob:new(x, y, tex, valuesBg, title, player) end
+
+---@class umbrella.ISKnob.ValueTable
+---@field angle number
+---@field value number
+umbrella_ISKnob_ValueTable = {}

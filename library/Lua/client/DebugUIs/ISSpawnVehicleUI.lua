@@ -1,63 +1,66 @@
 ---@meta
 
 ---@class ISSpawnVehicleUI : ISPanelJoypad
----@field vehicleComboBox any
----@field boolOptions any
----@field spawn any
----@field close any
----@field getKey any
----@field repair any
----@field vehicle any
----@field mouseOver any
----@field downX any
----@field downY any
----@field moving any
----@field name any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field player any
----@field titlebarbkg any
----@field x any
----@field y any
----@field [any] any
+---@field boolOptions ISTickBox
+---@field close ISButton
+---@field getKey ISButton
+---@field name unknown?
+---@field player IsoPlayer
+---@field repair ISButton
+---@field spawn ISButton
+---@field titlebarbkg Texture
+---@field vehicle BaseVehicle
+---@field vehicleComboBox ISComboBox
 ISSpawnVehicleUI = ISPanelJoypad:derive("ISSpawnVehicleUI")
+ISSpawnVehicleUI.Type = "ISSpawnVehicleUI"
 
----@return any
-function ISSpawnVehicleUI:initialise() end
----@return any
-function ISSpawnVehicleUI:onSelectOption() end
----@return any
-function ISSpawnVehicleUI:populateList() end
----@return any
 function ISSpawnVehicleUI:destroy() end
----@return any
+
+---@return string
 function ISSpawnVehicleUI:getVehicle() end
----@return any
-function ISSpawnVehicleUI:update() end
----@return any
+
+function ISSpawnVehicleUI:initialise() end
+
+---@param button ISButton
 function ISSpawnVehicleUI:onClick(button) end
----@return any
-function ISSpawnVehicleUI:titleBarHeight() end
----@return any
-function ISSpawnVehicleUI:prerender() end
----@return any
-function ISSpawnVehicleUI:render() end
----@return any
-function ISSpawnVehicleUI:onMouseMove(dx, dy) end
----@return any
-function ISSpawnVehicleUI:onMouseMoveOutside(dx, dy) end
----@return any
+
+---@param x number
+---@param y number
 function ISSpawnVehicleUI:onMouseDown(x, y) end
----@return any
+
+---@param dx number
+---@param dy number
+function ISSpawnVehicleUI:onMouseMove(dx, dy) end
+
+---@param dx number
+---@param dy number
+function ISSpawnVehicleUI:onMouseMoveOutside(dx, dy) end
+
+---@param x number
+---@param y number
 function ISSpawnVehicleUI:onMouseUp(x, y) end
----@return any
+
+---@param x number
+---@param y number
 function ISSpawnVehicleUI:onMouseUpOutside(x, y) end
 
+function ISSpawnVehicleUI:onSelectOption() end
+
+function ISSpawnVehicleUI:populateList() end
+
+function ISSpawnVehicleUI:prerender() end
+
+function ISSpawnVehicleUI:render() end
+
+---@return number
+function ISSpawnVehicleUI:titleBarHeight() end
+
+function ISSpawnVehicleUI:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param player IsoPlayer
 ---@return ISSpawnVehicleUI
 function ISSpawnVehicleUI:new(x, y, width, height, player) end

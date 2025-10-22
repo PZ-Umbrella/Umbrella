@@ -1,23 +1,21 @@
 ---@meta
 
 ---@class ISRainPanel : ISPanel
----@field intensity any
----@field speed any
----@field alpha any
----@field reloadButton any
----@field [any] any
+---@field alpha ISTextEntryBox
+---@field intensity ISSpinBox
+---@field reloadButton ISButton
+---@field speed ISSpinBox
 ISRainPanel = ISPanel:derive("ISRainPanel")
+ISRainPanel.Type = "ISRainPanel"
 
----@return any
-function ISRainPanel:createChildren() end
----@return any
 function ISRainPanel:changeIntensity() end
----@return any
+
 function ISRainPanel:changeSpeed() end
----@return any
+
+function ISRainPanel:createChildren() end
+
 function ISRainPanel:onChangeAlpha() end
----@return any
+
 function ISRainPanel:reloadTextures() end
 
----@return any
 function addRainPanel() end

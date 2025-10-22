@@ -1,31 +1,38 @@
 ---@meta
 
 ---@class ISTradingUIHistorical : ISPanel
----@field no any
----@field list any
----@field msgList any
----@field borderColor any
----@field backgroundColor any
----@field width any
----@field height any
----@field otherPlayer any
----@field moveWithMouse any
----@field [any] any
+---@field list ISScrollingListBox
+---@field msgList umbrella.ISTradingUI.HistoryMessage[]
+---@field no ISButton
+---@field otherPlayer IsoPlayer
 ISTradingUIHistorical = ISPanel:derive("ISTradingUIHistorical")
+ISTradingUIHistorical.Type = "ISTradingUIHistorical"
 ISTradingUIHistorical.messages = {}
+ISTradingUIHistorical.instance = nil ---@type ISTradingUIHistorical?
 
----@return any
-function ISTradingUIHistorical:initialise() end
----@return any
-function ISTradingUIHistorical:populateList(list) end
----@return any
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
 function ISTradingUIHistorical:drawList(y, item, alt) end
----@return any
-function ISTradingUIHistorical:render() end
----@return any
-function ISTradingUIHistorical:prerender() end
----@return any
+
+function ISTradingUIHistorical:initialise() end
+
+---@param button ISButton
 function ISTradingUIHistorical:onClick(button) end
 
+---@param list umbrella.ISTradingUI.HistoryMessage[]
+function ISTradingUIHistorical:populateList(list) end
+
+function ISTradingUIHistorical:prerender() end
+
+function ISTradingUIHistorical:render() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param list umbrella.ISTradingUI.HistoryMessage[]
+---@param otherPlayer IsoPlayer
 ---@return ISTradingUIHistorical
 function ISTradingUIHistorical:new(x, y, width, height, list, otherPlayer) end

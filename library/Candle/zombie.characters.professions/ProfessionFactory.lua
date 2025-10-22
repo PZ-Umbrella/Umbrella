@@ -1,9 +1,9 @@
---- @meta
+--- @meta _
 
 --- @class ProfessionFactory
 --- @field public class any
 --- @field public ProfessionMap LinkedHashMap
-ProfessionFactory = {};
+ProfessionFactory = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -11,21 +11,21 @@ ProfessionFactory = {};
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function ProfessionFactory.Reset() end
 
 --- @public
 --- @static
---- @param type String
---- @param name String
---- @param IconPath String
---- @param points int
+--- @param type string
+--- @param name string
+--- @param IconPath string
+--- @param points integer
 --- @return Profession
 function ProfessionFactory.addProfession(type, name, IconPath, points) end
 
 --- @public
 --- @static
---- @param type String
+--- @param type string
 --- @return Profession
 function ProfessionFactory.getProfession(type) end
 
@@ -36,12 +36,11 @@ function ProfessionFactory.getProfessions() end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function ProfessionFactory.init() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

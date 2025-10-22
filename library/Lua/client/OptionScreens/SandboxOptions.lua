@@ -1,118 +1,172 @@
 ---@meta
 
 ---@class SandboxOptionsScreen : ISPanelJoypad
----@field javaObject any
----@field selectedYear any
----@field selectedMonth any
----@field backButton any
----@field playButton any
----@field presetPanel any
----@field presetList any
----@field savePresetButton any
----@field deletePresetButton any
----@field listbox any
----@field controls any
----@field groupBox any
----@field defaultPreset any
----@field devPresetButton any
----@field currentPanel any
----@field presets any
----@field hadJoypadFocus any
----@field ISButtonY any
----@field x any
----@field y any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field addY any
----@field nonDefaultOptions any
----@field [any] any
+---@field advancedCheckBox ISTickBox
+---@field backButton ISButton
+---@field controls table<string, ISUIElement>
+---@field currentPanel ISUIElement?
+---@field deletePresetButton ISButton
+---@field devPresetButton ISButton
+---@field hadJoypadFocus boolean
+---@field joypadNavigate table
+---@field listbox ISScrollingListBox
+---@field nonDefaultOptions SandboxOptions
+---@field playButton ISButton
+---@field presetList ISComboBox
+---@field presetPanel ISPanelJoypad
+---@field presets umbrella.SandboxOptionsScreen.Preset[]
+---@field savePresetButton ISButton
+---@field searchEntry ISTextEntryBox
+---@field selectedMonth integer?
+---@field selectedYear integer?
 SandboxOptionsScreen = ISPanelJoypad:derive("SandboxOptionsScreen")
+SandboxOptionsScreen.Type = "SandboxOptionsScreen"
+SandboxOptionsScreen.instance = nil ---@type SandboxOptionsScreen?
 
----@return any
-function SandboxOptionsScreen.load() end
+---@param self ISTextEntryBox
+function SandboxOptionsScreen.searchPrerender(self) end
 
----@return any
-function SandboxOptionsScreen:initialise() end
----@return any
-function SandboxOptionsScreen:instantiate() end
----@return any
-function SandboxOptionsScreen:syncStartDay() end
----@return any
+---@param fileName string
+---@param text string
+---@param userDefined boolean
+function SandboxOptionsScreen:addPresetToList(fileName, text, userDefined) end
+
+---@param _ integer
+---@param bool boolean
+function SandboxOptionsScreen:changeAdvancedMode(_, bool) end
+
 function SandboxOptionsScreen:create() end
----@return any
+
+---@param page umbrella.ServerSettingsScreen.SettingsPage
+---@return ISUIElement
 function SandboxOptionsScreen:createPanel(page) end
----@return any
-function SandboxOptionsScreen:settingsToUI(options) end
----@return any
-function SandboxOptionsScreen:settingsFromUI(options) end
----@return any
-function SandboxOptionsScreen:onMouseDownListbox(item) end
----@return any
-function SandboxOptionsScreen:onResolutionChange(oldw, oldh, neww, newh) end
----@return any
-function SandboxOptionsScreen:onPresetChange() end
----@return any
-function SandboxOptionsScreen:getDefaultPreset() end
----@return any
-function SandboxOptionsScreen:loadPresets() end
----@return any
-function SandboxOptionsScreen:getNormalPreset() end
----@return any
-function SandboxOptionsScreen:getSurvivalPreset() end
----@return any
-function SandboxOptionsScreen:getHardPreset() end
----@return any
-function SandboxOptionsScreen:getBeginnerPreset() end
----@return any
-function SandboxOptionsScreen:getApocalypsePreset() end
----@return any
-function SandboxOptionsScreen:getSurvivorPreset() end
----@return any
-function SandboxOptionsScreen:getBuilderPreset() end
----@return any
-function SandboxOptionsScreen:subPanelPreRender() end
----@return any
-function SandboxOptionsScreen:subPanelRender() end
----@return any
-function SandboxOptionsScreen:prerender() end
----@return any
-function SandboxOptionsScreen:render() end
----@return any
-function SandboxOptionsScreen:setSandboxVars() end
----@return any
-function SandboxOptionsScreen:onOptionMouseDown(button, x, y) end
----@return any
-function SandboxOptionsScreen:onSavePreset(button, joypadData) end
----@return any
+
+---@param preset umbrella.SandboxOptionsScreen.Preset
 function SandboxOptionsScreen:deletePresetStep1(preset) end
----@return any
+
+---@param button ISButton
+---@param joypadData JoypadData
 function SandboxOptionsScreen:deletePresetStep2(button, joypadData) end
----@return any
-function SandboxOptionsScreen:onValidateSavePreset(text) end
----@return any
-function SandboxOptionsScreen:onSaveDeveloperPreset(button, joypadData) end
----@return any
+
+function SandboxOptionsScreen:doSearch() end
+
+---@return umbrella.SandboxOptionsScreen.Preset
+function SandboxOptionsScreen:getApocalypsePreset() end
+
+---@return umbrella.SandboxOptionsScreen.Preset
+function SandboxOptionsScreen:getBeginnerPreset() end
+
+---@return umbrella.SandboxOptionsScreen.Preset
+function SandboxOptionsScreen:getBuilderPreset() end
+
+---@return umbrella.SandboxOptionsScreen.Preset
+function SandboxOptionsScreen:getHardPreset() end
+
+---@return umbrella.SandboxOptionsScreen.Preset
+function SandboxOptionsScreen:getNormalPreset() end
+
+---@return umbrella.SandboxOptionsScreen.Preset
+function SandboxOptionsScreen:getSurvivalPreset() end
+
+---@return umbrella.SandboxOptionsScreen.Preset
+function SandboxOptionsScreen:getSurvivorPreset() end
+
+function SandboxOptionsScreen:loadPresets() end
+
+---@param combo ISComboBox
+---@param optionName string
 function SandboxOptionsScreen:onComboBoxSelected(combo, optionName) end
----@return any
-function SandboxOptionsScreen:onGroupBox(index, selected, groupBoxName) end
----@return any
-function SandboxOptionsScreen:setVisible(visible, joypadData) end
----@return any
+
+---@param joypadData JoypadData
 function SandboxOptionsScreen:onGainJoypadFocus(joypadData) end
----@return any
-function SandboxOptionsScreen:onLoseJoypadFocus(joypadData) end
----@return any
-function SandboxOptionsScreen:onJoypadDirUp(joypadData) end
----@return any
+
+---@param joypadData JoypadData
 function SandboxOptionsScreen:onJoypadDirLeft(joypadData) end
----@return any
+
+---@param joypadData JoypadData
 function SandboxOptionsScreen:onJoypadDirRight(joypadData) end
 
+---@param joypadData JoypadData
+function SandboxOptionsScreen:onJoypadDirUp(joypadData) end
+
+---@param button integer
+---@param joypadData JoypadData
+function SandboxOptionsScreen:onJoypadDown(button, joypadData) end
+
+function SandboxOptionsScreen:onJoypadNavigateStart(joypadData) end
+
+function SandboxOptionsScreen:onJoypadNavigateStart_Descendant(descendant, joypadData) end
+
+---@param joypadData JoypadData
+function SandboxOptionsScreen:onLoseJoypadFocus(joypadData) end
+
+---@param item umbrella.SandboxOptionsScreen.ListBoxItem
+function SandboxOptionsScreen:onMouseDownListbox(item) end
+
+---@param button ISButton
+---@param x number
+---@param y number
+function SandboxOptionsScreen:onOptionMouseDown(button, x, y) end
+
+function SandboxOptionsScreen:onPanelChange() end
+
+function SandboxOptionsScreen:onPresetChange() end
+
+---@param oldw number
+---@param oldh number
+---@param neww number
+---@param newh number
+function SandboxOptionsScreen:onResolutionChange(oldw, oldh, neww, newh) end
+
+---@param button ISButton
+---@param joypadData JoypadData
+function SandboxOptionsScreen:onSaveDeveloperPreset(button, joypadData) end
+
+---@param button ISButton
+---@param joypadData JoypadData
+function SandboxOptionsScreen:onSavePreset(button, joypadData) end
+
+---@param _ integer
+---@param value boolean
+---@param optionName string
+function SandboxOptionsScreen:onTickBoxSelected(_, value, optionName) end
+
+---@param text string?
+---@return boolean
+function SandboxOptionsScreen:onValidateSavePreset(text) end
+
+function SandboxOptionsScreen:prerender() end
+
+function SandboxOptionsScreen:render() end
+
+function SandboxOptionsScreen:setSandboxVars() end
+
+---@param options SandboxOptions
+function SandboxOptionsScreen:settingsFromUI(options) end
+
+---@param options SandboxOptions
+function SandboxOptionsScreen:settingsToUI(options) end
+
+---@param visible boolean
+---@param joypadData JoypadData?
+function SandboxOptionsScreen:setVisible(visible, joypadData) end
+
+function SandboxOptionsScreen:syncStartDay() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return SandboxOptionsScreen
 function SandboxOptionsScreen:new(x, y, width, height) end
+
+---@class umbrella.SandboxOptionsScreen.Preset
+---@field name string
+---@field options SandboxOptions
+---@field userDefined boolean?
+umbrella_SandboxOptionsScreen_Preset = {}
+
+---@class umbrella.SandboxOptionsScreen.ListBoxItem
+---@field page umbrella.ServerSettingsScreen.SettingsPage
+---@field panel ISUIElement
+umbrella_SandboxOptionsScreen_ListBoxItem = {}

@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class MapGroups
 --- @field public class any
-MapGroups = {};
+MapGroups = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -10,10 +10,9 @@ MapGroups = {};
 
 --- @public
 --- @static
---- @param mapName String
---- @return String
+--- @param mapName string
+--- @return string
 function MapGroups.addMissingVanillaDirectories(mapName) end
-
 
 ------------------------------------
 ------------- METHODS --------------
@@ -24,37 +23,47 @@ function MapGroups.addMissingVanillaDirectories(mapName) end
 function MapGroups:checkMapConflicts() end
 
 --- @public
---- @return void
---- @overload fun(self: MapGroups, activeMods: ActiveMods, includeVanilla: boolean): void
---- @overload fun(self: MapGroups, activeMods: ActiveMods, includeVanilla: boolean, includeChallenges: boolean): void
+--- @return nil
 function MapGroups:createGroups() end
+
+--- @public
+--- @param activeMods ActiveMods
+--- @param includeVanilla boolean
+--- @return nil
+function MapGroups:createGroups(activeMods, includeVanilla) end
+
+--- @public
+--- @param activeMods ActiveMods
+--- @param includeVanilla boolean
+--- @param includeChallenges boolean
+--- @return nil
+function MapGroups:createGroups(activeMods, includeVanilla, includeChallenges) end
 
 --- @public
 --- @return ArrayList
 function MapGroups:getAllMapsInOrder() end
 
 --- @public
---- @param mapName String
+--- @param mapName string
 --- @return ArrayList
 function MapGroups:getMapConflicts(mapName) end
 
 --- @public
---- @param groupIndex int
+--- @param groupIndex integer
 --- @return ArrayList
 function MapGroups:getMapDirectoriesInGroup(groupIndex) end
 
 --- @public
---- @return int
+--- @return integer
 function MapGroups:getNumberOfGroups() end
 
 --- @public
---- @param groupIndex int
---- @return void
+--- @param groupIndex integer
+--- @return nil
 function MapGroups:setWorld(groupIndex) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

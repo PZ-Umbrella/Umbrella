@@ -1,61 +1,95 @@
 ---@meta
 
 ---@class ISTeleportDebugUI : ISPanelJoypad
----@field yes any
----@field no any
----@field fontHgt any
----@field entryX any
----@field entryY any
----@field entryZ any
----@field mouseOver any
----@field downX any
----@field downY any
----@field moving any
----@field name any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field target any
----@field onclick any
----@field player any
----@field titlebarbkg any
----@field numLines any
----@field maxLines any
----@field multipleLine any
----@field x any
----@field y any
----@field [any] any
+---@field copy ISButton
+---@field entryX ISTextEntryBox
+---@field entryY ISTextEntryBox
+---@field entryZ ISTextEntryBox
+---@field maxLines number
+---@field multipleLine boolean
+---@field name unknown?
+---@field no ISButton
+---@field numLines number
+---@field onclick (fun(target: unknown?, x: string, y: string, z: string))?
+---@field paste ISButton
+---@field player IsoPlayer
+---@field refresh ISButton
+---@field target unknown?
+---@field titlebarbkg Texture
+---@field yes ISButton
 ISTeleportDebugUI = ISPanelJoypad:derive("ISTeleportDebugUI")
+ISTeleportDebugUI.Type = "ISTeleportDebugUI"
 
----@return any
-function ISTeleportDebugUI:initialise() end
----@return any
+function ISTeleportDebugUI:copyCoords() end
+
 function ISTeleportDebugUI:destroy() end
----@return any
+
+---@return number?
+---@return number?
+---@return number?
+function ISTeleportDebugUI:extractClipboardCoords() end
+
+---@return unknown
+---@return unknown
+---@return unknown
+function ISTeleportDebugUI:getPlayerCoords() end
+
+function ISTeleportDebugUI:initialise() end
+
+---@return boolean
+function ISTeleportDebugUI:isValidClipboardCoords() end
+
+---@param button ISButton
 function ISTeleportDebugUI:onClick(button) end
----@return any
-function ISTeleportDebugUI:titleBarHeight() end
----@return any
-function ISTeleportDebugUI:prerender() end
----@return any
-function ISTeleportDebugUI:updateButtons() end
----@return any
-function ISTeleportDebugUI:render() end
----@return any
-function ISTeleportDebugUI:onMouseMove(dx, dy) end
----@return any
-function ISTeleportDebugUI:onMouseMoveOutside(dx, dy) end
----@return any
+
+function ISTeleportDebugUI:onCommandEntered() end
+
+function ISTeleportDebugUI:onDoubleClick() end
+
+---@param x number
+---@param y number
 function ISTeleportDebugUI:onMouseDown(x, y) end
----@return any
+
+---@param dx number
+---@param dy number
+function ISTeleportDebugUI:onMouseMove(dx, dy) end
+
+---@param dx number
+---@param dy number
+function ISTeleportDebugUI:onMouseMoveOutside(dx, dy) end
+
+---@param x number
+---@param y number
 function ISTeleportDebugUI:onMouseUp(x, y) end
----@return any
+
+---@param x number
+---@param y number
 function ISTeleportDebugUI:onMouseUpOutside(x, y) end
 
+function ISTeleportDebugUI:onOtherKey(key) end
+
+function ISTeleportDebugUI:pasteCoords() end
+
+---@return boolean
+function ISTeleportDebugUI:playerHasMoved() end
+
+function ISTeleportDebugUI:prerender() end
+
+function ISTeleportDebugUI:refreshCoords() end
+
+function ISTeleportDebugUI:render() end
+
+---@return number
+function ISTeleportDebugUI:titleBarHeight() end
+
+function ISTeleportDebugUI:updateButtons() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param player IsoPlayer
+---@param target unknown?
+---@param onclick (fun(target: unknown?, x: string, y: string, z: string))?
 ---@return ISTeleportDebugUI
 function ISTeleportDebugUI:new(x, y, width, height, player, target, onclick) end

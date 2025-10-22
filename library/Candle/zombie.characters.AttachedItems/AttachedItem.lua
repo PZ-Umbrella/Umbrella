@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class AttachedItem
 --- @field public class any
-AttachedItem = {};
+AttachedItem = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -13,16 +13,15 @@ AttachedItem = {};
 function AttachedItem:getItem() end
 
 --- @public
---- @return String
+--- @return string
 function AttachedItem:getLocation() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param location String
+--- @param location string
 --- @param item InventoryItem
 --- @return AttachedItem
 function AttachedItem.new(location, item) end

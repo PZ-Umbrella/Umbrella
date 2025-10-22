@@ -1,28 +1,49 @@
---- @meta
+--- @meta _
 
 --- @class Stats
 --- @field public class any
---- @field public NumCloseZombies int
-Stats = {};
+--- @field public _Anger integer
+--- @field public _Boredom integer
+--- @field public _Drunkennes integer
+--- @field public _Endurance integer
+--- @field public _Fatigue integer
+--- @field public _Fear integer
+--- @field public _Fitness integer
+--- @field public _Hunger integer
+--- @field public _MaxStat integer
+--- @field public _Morale integer
+--- @field public _Pain integer
+--- @field public _Panic integer
+--- @field public _Sanity integer
+--- @field public _Sickness integer
+--- @field public _Stress integer
+--- @field public _StressFromCigarettes integer
+--- @field public _Thirst integer
+--- @field public NumCloseZombies integer
+Stats = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return float the Anger
+--- @return number # the Anger
 function Stats:getAnger() end
 
 --- @public
---- @return float the boredom
+--- @return number
+function Stats:getBasicStress() end
+
+--- @public
+--- @return number # the boredom
 function Stats:getBoredom() end
 
 --- @public
---- @return float the Drunkenness
+--- @return number # the Drunkenness
 function Stats:getDrunkenness() end
 
 --- @public
---- @return float the endurance
+--- @return number # the endurance
 function Stats:getEndurance() end
 
 --- @public
@@ -30,231 +51,333 @@ function Stats:getEndurance() end
 function Stats:getEnduranceRecharging() end
 
 --- @public
---- @return float the endurancedanger
+--- @return number # the endurancedanger
 function Stats:getEndurancedanger() end
 
 --- @public
---- @return float the endurancelast
+--- @return number # the endurancelast
 function Stats:getEndurancelast() end
 
 --- @public
---- @return float the endurancewarn
+--- @return number # the endurancewarn
 function Stats:getEndurancewarn() end
 
 --- @public
---- @return float the fatigue
+--- @return number # the fatigue
 function Stats:getFatigue() end
 
 --- @public
---- @return float the Fear
+--- @return number # the Fear
 function Stats:getFear() end
 
 --- @public
---- @return float the fitness
+--- @return number # the fitness
 function Stats:getFitness() end
 
 --- @public
---- @return float the hunger
+--- @return number # the hunger
 function Stats:getHunger() end
 
 --- @public
---- @return float the idleboredom
-function Stats:getIdleboredom() end
+--- @return number
+function Stats:getIdleness() end
 
 --- @public
---- @return float
+--- @return number
 function Stats:getMaxStressFromCigarettes() end
 
 --- @public
---- @return float the morale
+--- @return number # the morale
 function Stats:getMorale() end
 
 --- @public
---- @return int
+--- @return integer
 function Stats:getNumChasingZombies() end
 
 --- @public
---- @return int
+--- @return integer
 function Stats:getNumVeryCloseZombies() end
 
 --- @public
---- @return int
+--- @return integer
 function Stats:getNumVisibleZombies() end
 
 --- @public
---- @return float the Pain
+--- @return number # the Pain
 function Stats:getPain() end
 
 --- @public
---- @return float the Panic
+--- @return number # the Panic
 function Stats:getPanic() end
 
 --- @public
---- @return float the Sanity
+--- @return number # the Sanity
 function Stats:getSanity() end
 
 --- @public
---- @return float the Sickness
+--- @return number # the Sickness
 function Stats:getSickness() end
 
 --- @public
---- @return float the stress
+--- @return number # the stress
 function Stats:getStress() end
 
 --- @public
---- @return float
+--- @return number
 function Stats:getStressFromCigarettes() end
 
 --- @public
---- @return float the thirst
+--- @return number # the thirst
 function Stats:getThirst() end
 
 --- @public
---- @return float the TrippingRotAngle
+--- @return number # the TrippingRotAngle
 function Stats:getTrippingRotAngle() end
 
 --- @public
---- @return int the NumVisibleZombies
+--- @return integer # the NumVisibleZombies
 function Stats:getVisibleZombies() end
 
 --- @public
---- @return boolean the Tripping
+--- @return boolean # the Tripping
 function Stats:isTripping() end
 
 --- @public
 --- @param input DataInputStream
---- @return void
---- @overload fun(self: Stats, input: ByteBuffer, WorldVersion: int): void
+--- @return nil
 function Stats:load(input) end
 
 --- @public
---- @return void
+--- @param input ByteBuffer
+--- @param WorldVersion integer
+--- @return nil
+function Stats:load(input, WorldVersion) end
+
+--- @public
+--- @return nil
+function Stats:normalizeAnger() end
+
+--- @public
+--- @return nil
+function Stats:normalizeDrunkeness() end
+
+--- @public
+--- @return nil
+function Stats:normalizeEndurance() end
+
+--- @public
+--- @return nil
+function Stats:normalizeFatigue() end
+
+--- @public
+--- @return nil
+function Stats:normalizeFear() end
+
+--- @public
+--- @return nil
+function Stats:normalizeFitness() end
+
+--- @public
+--- @return nil
+function Stats:normalizeHunger() end
+
+--- @public
+--- @return nil
+function Stats:normalizeIdleness() end
+
+--- @public
+--- @param arg0 number
+--- @return number
+function Stats:normalizeMaxOneHundredValue(arg0) end
+
+--- @public
+--- @param arg0 number
+--- @return number
+function Stats:normalizeMaxOneValue(arg0) end
+
+--- @public
+--- @return nil
+function Stats:normalizeMorale() end
+
+--- @public
+--- @return nil
+function Stats:normalizePain() end
+
+--- @public
+--- @return nil
+function Stats:normalizePanic() end
+
+--- @public
+--- @return nil
+function Stats:normalizeSanity() end
+
+--- @public
+--- @return nil
+function Stats:normalizeSickness() end
+
+--- @public
+--- @return nil
+function Stats:normalizeStats() end
+
+--- @public
+--- @return nil
+function Stats:normalizeStress() end
+
+--- @public
+--- @return nil
+function Stats:normalizeStressFromCigarettes() end
+
+--- @public
+--- @return nil
+function Stats:normalizeThirst() end
+
+--- @public
+--- @return nil
+function Stats:normalize_boredom() end
+
+--- @public
+--- @param arg0 ByteBuffer
+--- @param arg1 integer
+--- @return nil
+function Stats:parse(arg0, arg1) end
+
+--- @public
+--- @return nil
 function Stats:resetStats() end
 
 --- @public
 --- @param output DataOutputStream
---- @return void
---- @overload fun(self: Stats, output: ByteBuffer): void
+--- @return nil
 function Stats:save(output) end
 
 --- @public
---- @param Anger float the Anger to set
---- @return void
+--- @param output ByteBuffer
+--- @return nil
+function Stats:save(output) end
+
+--- @public
+--- @param Anger number the Anger to set
+--- @return nil
 function Stats:setAnger(Anger) end
 
 --- @public
---- @param boredom float the boredom to set
---- @return void
+--- @param boredom number the boredom to set
+--- @return nil
 function Stats:setBoredom(boredom) end
 
 --- @public
---- @param Drunkenness float the Drunkenness to set
---- @return void
+--- @param Drunkenness number the Drunkenness to set
+--- @return nil
 function Stats:setDrunkenness(Drunkenness) end
 
 --- @public
---- @param endurance float the endurance to set
---- @return void
+--- @param endurance number the endurance to set
+--- @return nil
 function Stats:setEndurance(endurance) end
 
 --- @public
---- @param endurancedanger float the endurancedanger to set
---- @return void
+--- @param endurancedanger number the endurancedanger to set
+--- @return nil
 function Stats:setEndurancedanger(endurancedanger) end
 
 --- @public
---- @param endurancelast float the endurancelast to set
---- @return void
+--- @param endurancelast number the endurancelast to set
+--- @return nil
 function Stats:setEndurancelast(endurancelast) end
 
 --- @public
---- @param endurancewarn float the endurancewarn to set
---- @return void
+--- @param endurancewarn number the endurancewarn to set
+--- @return nil
 function Stats:setEndurancewarn(endurancewarn) end
 
 --- @public
---- @param fatigue float the fatigue to set
---- @return void
+--- @param fatigue number the fatigue to set
+--- @return nil
 function Stats:setFatigue(fatigue) end
 
 --- @public
---- @param Fear float the Fear to set
---- @return void
+--- @param Fear number the Fear to set
+--- @return nil
 function Stats:setFear(Fear) end
 
 --- @public
---- @param fitness float the fitness to set
---- @return void
+--- @param fitness number the fitness to set
+--- @return nil
 function Stats:setFitness(fitness) end
 
 --- @public
---- @param hunger float the hunger to set
---- @return void
+--- @param hunger number the hunger to set
+--- @return nil
 function Stats:setHunger(hunger) end
 
 --- @public
---- @param idleboredom float the idleboredom to set
---- @return void
-function Stats:setIdleboredom(idleboredom) end
+--- @param arg0 number
+--- @return nil
+function Stats:setIdleness(arg0) end
 
 --- @public
---- @param morale float the morale to set
---- @return void
+--- @param morale number the morale to set
+--- @return nil
 function Stats:setMorale(morale) end
 
 --- @public
---- @param NumVisibleZombies int the NumVisibleZombies to set
---- @return void
+--- @param NumVisibleZombies integer the NumVisibleZombies to set
+--- @return nil
 function Stats:setNumVisibleZombies(NumVisibleZombies) end
 
 --- @public
---- @param Pain float the Pain to set
---- @return void
+--- @param Pain number the Pain to set
+--- @return nil
 function Stats:setPain(Pain) end
 
 --- @public
---- @param Panic float the Panic to set
---- @return void
+--- @param Panic number the Panic to set
+--- @return nil
 function Stats:setPanic(Panic) end
 
 --- @public
---- @param Sanity float the Sanity to set
---- @return void
+--- @param Sanity number the Sanity to set
+--- @return nil
 function Stats:setSanity(Sanity) end
 
 --- @public
---- @param Sickness float the Sickness to set
---- @return void
+--- @param Sickness number the Sickness to set
+--- @return nil
 function Stats:setSickness(Sickness) end
 
 --- @public
---- @param stress float the stress to set
---- @return void
+--- @param stress number the stress to set
+--- @return nil
 function Stats:setStress(stress) end
 
 --- @public
---- @param stressFromCigarettes float
---- @return void
+--- @param stressFromCigarettes number
+--- @return nil
 function Stats:setStressFromCigarettes(stressFromCigarettes) end
 
 --- @public
---- @param thirst float the thirst to set
---- @return void
+--- @param thirst number the thirst to set
+--- @return nil
 function Stats:setThirst(thirst) end
 
 --- @public
 --- @param Tripping boolean the Tripping to set
---- @return void
+--- @return nil
 function Stats:setTripping(Tripping) end
 
 --- @public
---- @param TrippingRotAngle float the TrippingRotAngle to set
---- @return void
+--- @param TrippingRotAngle number the TrippingRotAngle to set
+--- @return nil
 function Stats:setTrippingRotAngle(TrippingRotAngle) end
 
+--- @public
+--- @param arg0 ByteBuffer
+--- @param arg1 integer
+--- @return nil
+function Stats:write(arg0, arg1) end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

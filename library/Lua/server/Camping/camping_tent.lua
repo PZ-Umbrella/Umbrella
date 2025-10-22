@@ -3,35 +3,60 @@
 ---@class camping
 camping = {}
 camping.tentSprites = {
-    sheet = {
-        frontLeft = "TileIndieStoneTentFrontLeft",
-        backLeft = "TileIndieStoneTentBackLeft",
-        frontRight = "TileIndieStoneTentFrontRight",
-        backRight = "TileIndieStoneTentBackRight",
-    },
-    tarp = {
-        frontLeft = "camping_01_3",
-        backLeft = "camping_01_2",
-        frontRight = "camping_01_0",
-        backRight = "camping_01_1",
-    },
+	sheet = {
+		frontLeft = "TileIndieStoneTentFrontLeft",
+		backLeft = "TileIndieStoneTentBackLeft",
+		frontRight = "TileIndieStoneTentFrontRight",
+		backRight = "TileIndieStoneTentBackRight",
+	},
+	tarp = {
+		frontLeft = "camping_01_3",
+		backLeft = "camping_01_2",
+		frontRight = "camping_01_0",
+		backRight = "camping_01_1",
+	},
 }
 
----@return any
-function camping.findTentSprites(sprite) end
----@return any
+---@param grid IsoGridSquare
+---@param sprite string
+---@return IsoThumpable
 function camping.addTent(grid, sprite) end
----@return any
-function camping.removeTent(tent) end
----@return any
+
+---@param tent IsoObject
 function camping.destroyTent(tent) end
----@return any
-function camping.getTentObjects(tent) end
----@return any
-function camping.isTentObject(object) end
----@return any
+
+---@param square IsoGridSquare
+---@return IsoObject?
 function camping.findTentObject(square) end
----@return any
-function camping.tentAt(x, y, z) end
----@return any
+
+---@param sprite string
+---@return umbrella.Camping.TentSprites?
+function camping.findTentSprites(sprite) end
+
+---@param grid IsoGridSquare
+---@return IsoObject?
 function camping.getCurrentTent(grid) end
+
+---@param tent IsoObject
+---@return IsoObject[]
+function camping.getTentObjects(tent) end
+
+---@param object IsoObject
+---@return boolean
+function camping.isTentObject(object) end
+
+---@param tent IsoObject?
+function camping.removeTent(tent) end
+
+---@param x number
+---@param y number
+---@param z number
+---@return IsoObject?
+function camping.tentAt(x, y, z) end
+
+---@class umbrella.Camping.TentSprites
+---@field backLeft string
+---@field backRight string
+---@field frontLeft string
+---@field frontRight string
+umbrella_Camping_TentSprites = {}

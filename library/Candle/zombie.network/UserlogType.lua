@@ -1,4 +1,4 @@
---- @meta
+--- @meta _
 
 --- @class UserlogType: Enum
 --- @field public class any
@@ -10,7 +10,7 @@
 --- @field public SuspiciousActivity UserlogType
 --- @field public UnauthorizedPacket UserlogType
 --- @field public WarningPoint UserlogType
-UserlogType = {};
+UserlogType = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -18,38 +18,35 @@ UserlogType = {};
 
 --- @public
 --- @static
---- @param str String
+--- @param str string
 --- @return UserlogType
 function UserlogType.FromString(str) end
 
 --- @public
 --- @static
---- @param value int
+--- @param value integer
 --- @return UserlogType
 function UserlogType.fromIndex(value) end
 
 --- @public
 --- @static
---- @param arg0 String
+--- @param arg0 string
 --- @return UserlogType
 function UserlogType.valueOf(arg0) end
 
 --- @public
 --- @static
 ---
----  Returns an array containing the constants of this enum class, in the order they
----  declared.
+--- Returns an array containing the constants of this enum class, in the order they
+--- declared.
 ---
---- @return UserlogType[] an array containing the constants of this enum class, in the order they are declared
+--- @return UserlogType[] # an array containing the constants of this enum class, in the order they are declared
 function UserlogType.values() end
-
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return int
+--- @return integer
 function UserlogType:index() end
-
-

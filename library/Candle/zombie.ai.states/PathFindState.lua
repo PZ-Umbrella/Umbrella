@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class PathFindState: State
 --- @field public class any
-PathFindState = {};
+PathFindState = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -13,9 +13,28 @@ PathFindState = {};
 --- @return PathFindState2
 function PathFindState.instance() end
 
+------------------------------------
+------------- METHODS --------------
+------------------------------------
+
+--- @public
+--- @return boolean
+function PathFindState:isSyncInIdle() end
+
+--- @public
+--- @return boolean
+function PathFindState:isSyncOnEnter() end
+
+--- @public
+--- @return boolean
+function PathFindState:isSyncOnExit() end
+
+--- @public
+--- @return boolean
+function PathFindState:isSyncOnSquare() end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

@@ -1,12 +1,12 @@
---- @meta
+--- @meta _
 
 --- @class ThunderStorm TurboTuTone.
 --- @field public class any
---- @field public MAP_MAX_X int
---- @field public MAP_MAX_Y int
---- @field public MAP_MIN_X int
---- @field public MAP_MIN_Y int
-ThunderStorm = {};
+--- @field public MAP_MAX_X integer
+--- @field public MAP_MAX_Y integer
+--- @field public MAP_MIN_X integer
+--- @field public MAP_MIN_Y integer
+ThunderStorm = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -14,9 +14,8 @@ ThunderStorm = {};
 
 --- @public
 --- @static
---- @return int
+--- @return integer
 function ThunderStorm.getMapDiagonal() end
-
 
 ------------------------------------
 ------------- METHODS --------------
@@ -28,18 +27,18 @@ function ThunderStorm:HasActiveThunderClouds() end
 
 --- @public
 --- @param renderSettings PlayerRenderSettings
---- @param plrIndex int
+--- @param plrIndex integer
 --- @param player IsoPlayer
---- @return void
+--- @return nil
 function ThunderStorm:applyLightningForPlayer(renderSettings, plrIndex, player) end
 
 --- @public
---- @param x int
---- @param y int
+--- @param x integer
+--- @param y integer
 --- @param doStrike boolean
 --- @param doLightning boolean
 --- @param doRumble boolean
---- @return void
+--- @return nil
 function ThunderStorm:enqueueThunderEvent(x, y, doStrike, doLightning, doRumble) end
 
 --- @public
@@ -52,70 +51,90 @@ function ThunderStorm:isModifyingNight() end
 
 --- @public
 --- @param input DataInputStream
---- @return void
+--- @return nil
 function ThunderStorm:load(input) end
 
 --- @public
---- @param s String
---- @return void
+--- @param s string
+--- @return nil
 function ThunderStorm:noise(s) end
 
 --- @public
 --- @param input ByteBuffer
---- @return void
+--- @return nil
 function ThunderStorm:readNetThunderEvent(input) end
 
 --- @public
 ---
----  IO
+--- IO
 ---
 --- @param output DataOutputStream
---- @return void
+--- @return nil
 function ThunderStorm:save(output) end
 
 --- @public
---- @param str float
---- @param angle float
---- @param radius float
---- @param eventFreq float
---- @param thunderRatio float
---- @param duration double
+--- @param str number
+--- @param angle number
+--- @param radius number
+--- @param eventFreq number
+--- @param thunderRatio number
+--- @param duration number
 --- @param targetRandomPlayer boolean
---- @return void
---- @overload fun(self: ThunderStorm, str: float, angle: float, radius: float, eventFreq: float, thunderRatio: float, duration: double, targetRandomPlayer: boolean, percentageOffset: float): ThunderCloud
+--- @return nil
 function ThunderStorm:startThunderCloud(str, angle, radius, eventFreq, thunderRatio, duration, targetRandomPlayer) end
 
 --- @public
---- @return void
+--- @param str number
+--- @param angle number
+--- @param radius number
+--- @param eventFreq number
+--- @param thunderRatio number
+--- @param duration number
+--- @param targetRandomPlayer boolean
+--- @param percentageOffset number
+--- @return ThunderCloud
+function ThunderStorm:startThunderCloud(
+	str,
+	angle,
+	radius,
+	eventFreq,
+	thunderRatio,
+	duration,
+	targetRandomPlayer,
+	percentageOffset
+)
+end
+
+--- @public
+--- @return nil
 function ThunderStorm:stopAllClouds() end
 
 --- @public
---- @param id int
---- @return void
+--- @param id integer
+--- @return nil
 function ThunderStorm:stopCloud(id) end
 
 --- @public
---- @param x int
---- @param y int
+--- @param x integer
+--- @param y integer
 --- @param doStrike boolean
 --- @param doLightning boolean
 --- @param doRumble boolean
---- @return void
+--- @return nil
 function ThunderStorm:triggerThunderEvent(x, y, doStrike, doLightning, doRumble) end
 
 --- @public
---- @param currentTime double
---- @return void
+--- @param currentTime number
+--- @return nil
 function ThunderStorm:update(currentTime) end
 
 --- @public
 --- @param output ByteBuffer
---- @return void
+--- @return nil
 function ThunderStorm:writeNetThunderEvent(output) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

@@ -1,10 +1,10 @@
---- @meta
+--- @meta _
 
 --- @class VehicleType Contains all car model with their associated skin index
 --- @field public class any
 --- @field public specialVehicles ArrayList
 --- @field public vehicles HashMap
-VehicleType = {};
+VehicleType = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -12,61 +12,65 @@ VehicleType = {};
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function VehicleType.Reset() end
 
 --- @public
 --- @static
---- @param zoneName String
+--- @param zoneName string
 --- @return VehicleType
---- @overload fun(zoneName: String, doNormalWhenSpecific: Boolean): VehicleType
 function VehicleType.getRandomVehicleType(zoneName) end
 
 --- @public
 --- @static
---- @param name String
+--- @param zoneName string
+--- @param doNormalWhenSpecific boolean
+--- @return VehicleType
+function VehicleType.getRandomVehicleType(zoneName, doNormalWhenSpecific) end
+
+--- @public
+--- @static
+--- @param name string
 --- @return VehicleType
 function VehicleType.getTypeFromName(name) end
 
 --- @public
 --- @static
---- @param zoneName String
+--- @param zoneName string
 --- @return boolean
 function VehicleType.hasTypeForZone(zoneName) end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function VehicleType.init() end
-
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return float
+--- @return number
 function VehicleType:getBaseVehicleQuality() end
 
 --- @public
---- @return int
+--- @return integer
 function VehicleType:getChanceToSpawnKey() end
 
 --- @public
---- @return float
+--- @return number
 function VehicleType:getRandomBaseVehicleQuality() end
 
 --- @public
---- @param chanceToSpawnKey int
---- @return void
+--- @param chanceToSpawnKey integer
+--- @return nil
 function VehicleType:setChanceToSpawnKey(chanceToSpawnKey) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param name String
+--- @param name string
 --- @return VehicleType
 function VehicleType.new(name) end

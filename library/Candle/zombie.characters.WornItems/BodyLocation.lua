@@ -1,34 +1,39 @@
---- @meta
+--- @meta _
 
 --- @class BodyLocation
 --- @field public class any
-BodyLocation = {};
+BodyLocation = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param alias String
+--- @param alias string
 --- @return BodyLocation
 function BodyLocation:addAlias(alias) end
 
 --- @public
---- @return String
+--- @return string
 function BodyLocation:getId() end
 
 --- @public
---- @param id String
+--- @param arg0 string
+--- @return boolean
+function BodyLocation:isAltModel(arg0) end
+
+--- @public
+--- @param id string
 --- @return boolean
 function BodyLocation:isExclusive(id) end
 
 --- @public
---- @param otherId String
+--- @param otherId string
 --- @return boolean
 function BodyLocation:isHideModel(otherId) end
 
 --- @public
---- @param id String
+--- @param id string
 --- @return boolean
 function BodyLocation:isID(id) end
 
@@ -37,12 +42,17 @@ function BodyLocation:isID(id) end
 function BodyLocation:isMultiItem() end
 
 --- @public
---- @param otherId String
+--- @param arg0 string
+--- @return BodyLocation
+function BodyLocation:setAltModel(arg0) end
+
+--- @public
+--- @param otherId string
 --- @return BodyLocation
 function BodyLocation:setExclusive(otherId) end
 
 --- @public
---- @param otherId String
+--- @param otherId string
 --- @return BodyLocation
 function BodyLocation:setHideModel(otherId) end
 
@@ -51,13 +61,12 @@ function BodyLocation:setHideModel(otherId) end
 --- @return BodyLocation
 function BodyLocation:setMultiItem(bMultiItem) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param group BodyLocationGroup
---- @param id String
+--- @param id string
 --- @return BodyLocation
 function BodyLocation.new(group, id) end

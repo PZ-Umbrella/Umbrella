@@ -1,11 +1,10 @@
---- @meta
+--- @meta _
 
 --- @class SystemDisabler
 --- @field public class any
 --- @field public doCharacterStats boolean
+--- @field public doEnableDetectOpenGLErrors boolean
 --- @field public doEnableDetectOpenGLErrorsInTexture boolean
---- @field public doKickInDebug boolean
---- @field public doObjectStateSyncEnable boolean
 --- @field public doOverridePOVCharacters boolean
 --- @field public doPlayerCreation boolean
 --- @field public doSurvivorCreation boolean
@@ -13,10 +12,8 @@
 --- @field public doVehiclesWithoutTextures boolean
 --- @field public doWorldSyncEnable boolean
 --- @field public doZombieCreation boolean
---- @field public useNetworkCharacter boolean
 --- @field public zombiesDontAttack boolean
---- @field public zombiesSwitchOwnershipEachUpdate boolean
-SystemDisabler = {};
+SystemDisabler = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -24,13 +21,8 @@ SystemDisabler = {};
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function SystemDisabler.Reset() end
-
---- @public
---- @static
---- @return boolean
-function SystemDisabler.getAllowDebugConnections() end
 
 --- @public
 --- @static
@@ -45,7 +37,17 @@ function SystemDisabler.getEnableAdvancedSoundOptions() end
 --- @public
 --- @static
 --- @return boolean
+function SystemDisabler.getKickInDebug() end
+
+--- @public
+--- @static
+--- @return boolean
 function SystemDisabler.getOverrideServerConnectDebugCheck() end
+
+--- @public
+--- @static
+--- @return boolean
+function SystemDisabler.getUncappedFPS() end
 
 --- @public
 --- @static
@@ -59,61 +61,65 @@ function SystemDisabler.getdoVehicleLowRider() end
 
 --- @public
 --- @static
+--- @return boolean
+function SystemDisabler.printDetailedInfo() end
+
+--- @public
+--- @static
 --- @param bDo boolean
---- @return void
+--- @return nil
 function SystemDisabler.setDoCharacterStats(bDo) end
 
 --- @public
 --- @static
 --- @param bDo boolean
---- @return void
+--- @return nil
 function SystemDisabler.setDoPlayerCreation(bDo) end
 
 --- @public
 --- @static
 --- @param bDo boolean
---- @return void
+--- @return nil
 function SystemDisabler.setDoSurvivorCreation(bDo) end
 
 --- @public
 --- @static
 --- @param bDo boolean
---- @return void
+--- @return nil
 function SystemDisabler.setDoZombieCreation(bDo) end
 
 --- @public
 --- @static
 --- @param enable boolean
---- @return void
+--- @return nil
 function SystemDisabler.setEnableAdvancedSoundOptions(enable) end
 
 --- @public
 --- @static
 --- @param bDo boolean
---- @return void
-function SystemDisabler.setObjectStateSyncEnable(bDo) end
-
---- @public
---- @static
---- @param bDo boolean
---- @return void
+--- @return nil
 function SystemDisabler.setOverridePOVCharacters(bDo) end
 
 --- @public
 --- @static
+--- @param arg0 boolean
+--- @return nil
+function SystemDisabler.setUncappedFPS(arg0) end
+
+--- @public
+--- @static
 --- @param bDo boolean
---- @return void
+--- @return nil
 function SystemDisabler.setVehiclesEverywhere(bDo) end
 
 --- @public
 --- @static
 --- @param bDo boolean
---- @return void
+--- @return nil
 function SystemDisabler.setWorldSyncEnable(bDo) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

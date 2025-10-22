@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class BooleanConfigOption: ConfigOption
 --- @field public class any
-BooleanConfigOption = {};
+BooleanConfigOption = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -13,11 +13,11 @@ BooleanConfigOption = {};
 function BooleanConfigOption:getDefaultValue() end
 
 --- @public
---- @return String
+--- @return string
 function BooleanConfigOption:getTooltip() end
 
 --- @public
---- @return String
+--- @return string
 function BooleanConfigOption:getType() end
 
 --- @public
@@ -25,48 +25,51 @@ function BooleanConfigOption:getType() end
 function BooleanConfigOption:getValue() end
 
 --- @public
---- @return Object
+--- @return any
 function BooleanConfigOption:getValueAsObject() end
 
 --- @public
---- @return String
+--- @return string
 function BooleanConfigOption:getValueAsString() end
 
 --- @public
---- @param s String
+--- @param s string
 --- @return boolean
 function BooleanConfigOption:isValidString(s) end
 
 --- @public
---- @param s String
---- @return void
+--- @return ConfigOption
+function BooleanConfigOption:makeCopy() end
+
+--- @public
+--- @param s string
+--- @return nil
 function BooleanConfigOption:parse(s) end
 
 --- @public
---- @return void
+--- @return nil
 function BooleanConfigOption:resetToDefault() end
 
 --- @public
---- @return void
+--- @return nil
 function BooleanConfigOption:setDefaultToCurrentValue() end
 
 --- @public
 --- @param value boolean
---- @return void
+--- @return nil
 function BooleanConfigOption:setValue(value) end
 
 --- @public
---- @param o Object
---- @return void
+--- @param o any
+--- @return nil
 function BooleanConfigOption:setValueFromObject(o) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param name String
+--- @param name string
 --- @param defaultValue boolean
 --- @return BooleanConfigOption
 function BooleanConfigOption.new(name, defaultValue) end

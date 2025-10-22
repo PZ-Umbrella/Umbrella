@@ -1,0 +1,21 @@
+---@meta
+
+---@class ISLootWindowObjectControlHandler_CombinationWasherDryerToggle : ISLootWindowObjectControlHandler
+---@field control unknown
+ISLootWindowObjectControlHandler_CombinationWasherDryerToggle =
+	ISLootWindowObjectControlHandler:derive("ISLootWindowObjectControlHandler_CombinationWasherDryerToggle")
+ISLootWindowObjectControlHandler_CombinationWasherDryerToggle.Type =
+	"ISLootWindowObjectControlHandler_CombinationWasherDryerToggle"
+
+---@return unknown
+function ISLootWindowObjectControlHandler_CombinationWasherDryerToggle:getControl() end
+
+function ISLootWindowObjectControlHandler_CombinationWasherDryerToggle:handleJoypadContextMenu(context) end
+
+function ISLootWindowObjectControlHandler_CombinationWasherDryerToggle:perform() end
+
+---@return boolean
+function ISLootWindowObjectControlHandler_CombinationWasherDryerToggle:shouldBeVisible() end
+
+---@return ISLootWindowObjectControlHandler_CombinationWasherDryerToggle
+function ISLootWindowObjectControlHandler_CombinationWasherDryerToggle:new() end

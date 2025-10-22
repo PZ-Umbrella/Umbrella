@@ -1,39 +1,45 @@
 ---@meta
 
 ---@class ISSafehouseAddPlayerUI : ISPanel
----@field playerList any
----@field no any
----@field addPlayer any
----@field borderColor any
----@field backgroundColor any
----@field width any
----@field height any
----@field player any
----@field safehouse any
----@field moveWithMouse any
----@field scoreboard any
----@field isOwner any
----@field x any
----@field y any
----@field [any] any
+---@field addPlayer ISButton
+---@field isOwner boolean
+---@field no ISButton
+---@field player IsoPlayer
+---@field playerList ISScrollingListBox
+---@field safehouse SafeHouse
+---@field scoreboard umbrella.ISMiniScoreboardUI.Scoreboard?
 ISSafehouseAddPlayerUI = ISPanel:derive("ISSafehouseAddPlayerUI")
+ISSafehouseAddPlayerUI.Type = "ISSafehouseAddPlayerUI"
 ISSafehouseAddPlayerUI.messages = {}
+ISSafehouseAddPlayerUI.instance = nil ---@type ISSafehouseAddPlayerUI?
 
----@return any
-function ISSafehouseAddPlayerUI.OnScoreboardUpdate(usernames, displayNames, steamIDs) end
----@return any
 function ISSafehouseAddPlayerUI.OnMiniScoreboardUpdate() end
 
----@return any
-function ISSafehouseAddPlayerUI:initialise() end
----@return any
-function ISSafehouseAddPlayerUI:populateList() end
----@return any
+---@param usernames ArrayList<string>
+---@param displayNames ArrayList<string>
+---@param steamIDs ArrayList<string>
+function ISSafehouseAddPlayerUI.OnScoreboardUpdate(usernames, displayNames, steamIDs) end
+
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
 function ISSafehouseAddPlayerUI:drawPlayers(y, item, alt) end
----@return any
-function ISSafehouseAddPlayerUI:prerender() end
----@return any
+
+function ISSafehouseAddPlayerUI:initialise() end
+
+---@param button ISButton
 function ISSafehouseAddPlayerUI:onClick(button) end
 
+function ISSafehouseAddPlayerUI:populateList() end
+
+function ISSafehouseAddPlayerUI:prerender() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param safehouse SafeHouse
+---@param player IsoPlayer
 ---@return ISSafehouseAddPlayerUI
 function ISSafehouseAddPlayerUI:new(x, y, width, height, safehouse, player) end

@@ -1,61 +1,67 @@
---- @meta
+--- @meta _
 
 --- @class ClothingPatch
 --- @field public class any
-ClothingPatch = {};
+ClothingPatch = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return int
+--- @return integer
 function ClothingPatch:getBiteDefense() end
 
 --- @public
---- @return int
+--- @return integer
 function ClothingPatch:getFabricType() end
 
 --- @public
---- @return String
+--- @return string
 function ClothingPatch:getFabricTypeName() end
 
 --- @public
---- @return int
+--- @return integer
 function ClothingPatch:getScratchDefense() end
 
 --- @public
---- @param arg0 ByteBuffer
---- @param arg1 int
---- @return void
-function ClothingPatch:load(arg0, arg1) end
+--- @param input ByteBuffer
+--- @param WorldVersion integer
+--- @return nil
+function ClothingPatch:load(input, WorldVersion) end
 
 --- @public
---- @param arg0 ByteBuffer
---- @param arg1 int
---- @param arg2 boolean
---- @return void
-function ClothingPatch:load_old(arg0, arg1, arg2) end
+--- @param input ByteBuffer
+--- @param WorldVersion integer
+--- @param net boolean
+--- @return nil
+--- @deprecated
+function ClothingPatch:load_old(input, WorldVersion, net) end
 
 --- @public
---- @param arg0 ByteBuffer
---- @param arg1 boolean
---- @return void
-function ClothingPatch:save(arg0, arg1) end
+--- @param output ByteBuffer
+--- @param net boolean
+--- @return nil
+function ClothingPatch:save(output, net) end
 
 --- @public
---- @param arg0 ByteBuffer
---- @param arg1 boolean
---- @return void
-function ClothingPatch:save_old(arg0, arg1) end
-
+--- @param output ByteBuffer
+--- @param net boolean
+--- @return nil
+--- @deprecated
+function ClothingPatch:save_old(output, net) end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param arg0 Clothing
 --- @return ClothingPatch
---- @overload fun(arg0: Clothing, arg1: int, arg2: int, arg3: boolean): ClothingPatch
-function ClothingPatch.new(arg0) end
+function ClothingPatch.new() end
+
+--- @public
+--- @param tailorLvl integer
+--- @param fabricType integer
+--- @param hasHole boolean
+--- @return ClothingPatch
+function ClothingPatch.new(tailorLvl, fabricType, hasHole) end

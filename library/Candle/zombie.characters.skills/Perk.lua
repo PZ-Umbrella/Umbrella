@@ -1,19 +1,19 @@
---- @meta
+--- @meta _
 
 --- @class Perk
 --- @field public class any
-Perk = {};
+Perk = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return String
+--- @return string
 function Perk:getId() end
 
 --- @public
---- @return String
+--- @return string
 function Perk:getName() end
 
 --- @public
@@ -21,8 +21,8 @@ function Perk:getName() end
 function Perk:getParent() end
 
 --- @public
---- @param level int
---- @return float
+--- @param level integer
+--- @return number
 function Perk:getTotalXpForLevel(level) end
 
 --- @public
@@ -30,52 +30,52 @@ function Perk:getTotalXpForLevel(level) end
 function Perk:getType() end
 
 --- @public
---- @return int
+--- @return integer
 function Perk:getXp1() end
 
 --- @public
---- @return int
+--- @return integer
 function Perk:getXp10() end
 
 --- @public
---- @return int
+--- @return integer
 function Perk:getXp2() end
 
 --- @public
---- @return int
+--- @return integer
 function Perk:getXp3() end
 
 --- @public
---- @return int
+--- @return integer
 function Perk:getXp4() end
 
 --- @public
---- @return int
+--- @return integer
 function Perk:getXp5() end
 
 --- @public
---- @return int
+--- @return integer
 function Perk:getXp6() end
 
 --- @public
---- @return int
+--- @return integer
 function Perk:getXp7() end
 
 --- @public
---- @return int
+--- @return integer
 function Perk:getXp8() end
 
 --- @public
---- @return int
+--- @return integer
 function Perk:getXp9() end
 
 --- @public
---- @param level int
---- @return float
+--- @param level integer
+--- @return number
 function Perk:getXpForLevel(level) end
 
 --- @public
---- @return int
+--- @return integer
 function Perk:index() end
 
 --- @public
@@ -87,20 +87,24 @@ function Perk:isCustom() end
 function Perk:isPassiv() end
 
 --- @public
---- @return void
+--- @return nil
 function Perk:setCustom() end
 
 --- @public
---- @return String
+--- @return string
 function Perk:toString() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param id String
+--- @param id string
 --- @return Perk
---- @overload fun(id: String, parent: Perk): Perk
 function Perk.new(id) end
+
+--- @public
+--- @param id string
+--- @param parent Perk
+--- @return Perk
+function Perk.new(id, parent) end

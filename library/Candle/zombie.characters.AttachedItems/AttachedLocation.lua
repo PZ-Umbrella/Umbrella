@@ -1,33 +1,32 @@
---- @meta
+--- @meta _
 
 --- @class AttachedLocation
 --- @field public class any
-AttachedLocation = {};
+AttachedLocation = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return String
+--- @return string
 function AttachedLocation:getAttachmentName() end
 
 --- @public
---- @return String
+--- @return string
 function AttachedLocation:getId() end
 
 --- @public
---- @param attachmentName String
---- @return void
+--- @param attachmentName string
+--- @return nil
 function AttachedLocation:setAttachmentName(attachmentName) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param group AttachedLocationGroup
---- @param id String
+--- @param id string
 --- @return AttachedLocation
 function AttachedLocation.new(group, id) end

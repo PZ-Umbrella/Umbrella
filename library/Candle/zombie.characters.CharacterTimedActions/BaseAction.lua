@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class BaseAction
 --- @field public class any
-BaseAction = {};
+BaseAction = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,34 +10,43 @@ BaseAction = {};
 
 --- @public
 --- @param event AnimEvent
---- @return void
+--- @return nil
 function BaseAction:OnAnimEvent(event) end
 
 --- @public
---- @param name String
---- @param radius int
---- @param maxGain float
---- @return void
+--- @param name string
+--- @param radius integer
+--- @param maxGain number
+--- @return nil
 function BaseAction:PlayLoopedSoundTillComplete(name, radius, maxGain) end
+
+--- @public
+--- @return nil
+function BaseAction:complete() end
 
 --- @public
 --- @return boolean
 function BaseAction:finished() end
 
 --- @public
---- @return void
+--- @return nil
 function BaseAction:forceComplete() end
 
 --- @public
---- @return void
+--- @return nil
 function BaseAction:forceStop() end
 
 --- @public
---- @return float
+--- @return number
 function BaseAction:getCurrentTime() end
 
 --- @public
---- @return float
+--- @param arg0 MoveDeltaModifiers
+--- @return nil
+function BaseAction:getDeltaModifiers(arg0) end
+
+--- @public
+--- @return number
 function BaseAction:getJobDelta() end
 
 --- @public
@@ -45,7 +54,7 @@ function BaseAction:getJobDelta() end
 function BaseAction:getPrimaryHandItem() end
 
 --- @public
---- @return String
+--- @return string
 function BaseAction:getPrimaryHandMdl() end
 
 --- @public
@@ -53,7 +62,7 @@ function BaseAction:getPrimaryHandMdl() end
 function BaseAction:getSecondaryHandItem() end
 
 --- @public
---- @return String
+--- @return string
 function BaseAction:getSecondaryHandMdl() end
 
 --- @public
@@ -61,85 +70,150 @@ function BaseAction:getSecondaryHandMdl() end
 function BaseAction:hasStalled() end
 
 --- @public
---- @return void
+--- @return boolean
+function BaseAction:isAllowedWhileDraggingCorpses() end
+
+--- @public
+--- @return boolean
+function BaseAction:isForceComplete() end
+
+--- @public
+--- @return boolean
+function BaseAction:isPathfinding() end
+
+--- @public
+--- @return boolean
+function BaseAction:isStarted() end
+
+--- @public
+--- @return nil
+function BaseAction:overrideWeaponType() end
+
+--- @public
+--- @return nil
 function BaseAction:perform() end
 
 --- @public
---- @return void
+--- @return nil
 function BaseAction:reset() end
 
 --- @public
---- @return void
+--- @return nil
 function BaseAction:resetJobDelta() end
 
 --- @public
---- @param animNode String
---- @return void
---- @overload fun(self: BaseAction, act: CharacterActionAnims): void
+--- @return nil
+function BaseAction:restoreWeaponType() end
+
+--- @public
+--- @param animNode string
+--- @return nil
 function BaseAction:setActionAnim(animNode) end
 
 --- @public
---- @param key String
+--- @param act CharacterActionAnims
+--- @return nil
+function BaseAction:setActionAnim(act) end
+
+--- @public
+--- @param arg0 boolean
+--- @return nil
+function BaseAction:setAllowedWhileDraggingCorpses(arg0) end
+
+--- @public
+--- @param key string
 --- @param val boolean
---- @return void
---- @overload fun(self: BaseAction, key: String, val: String): void
+--- @return nil
+function BaseAction:setAnimVariable(key, val) end
+
+--- @public
+--- @param key string
+--- @param val string
+--- @return nil
 function BaseAction:setAnimVariable(key, val) end
 
 --- @public
 --- @param block boolean
---- @return void
+--- @return nil
 function BaseAction:setBlockMovementEtc(block) end
 
 --- @public
+--- @param arg0 number
+--- @return nil
+function BaseAction:setJobDelta(arg0) end
+
+--- @public
 --- @param looped boolean
---- @return void
+--- @return nil
 function BaseAction:setLoopedAction(looped) end
 
 --- @public
 --- @param override boolean
---- @return void
+--- @return nil
 function BaseAction:setOverrideAnimation(override) end
 
 --- @public
 --- @param primaryHand InventoryItem
 --- @param secondaryHand InventoryItem
---- @return void
---- @overload fun(self: BaseAction, primaryHand: InventoryItem, secondaryHand: InventoryItem, resetModel: boolean): void
+--- @return nil
 function BaseAction:setOverrideHandModels(primaryHand, secondaryHand) end
 
 --- @public
---- @param primaryHand Object
---- @param secondaryHand Object
+--- @param primaryHand InventoryItem
+--- @param secondaryHand InventoryItem
 --- @param resetModel boolean
---- @return void
+--- @return nil
+function BaseAction:setOverrideHandModels(primaryHand, secondaryHand, resetModel) end
+
+--- @public
+--- @param primaryHand any
+--- @param secondaryHand any
+--- @param resetModel boolean
+--- @return nil
 function BaseAction:setOverrideHandModelsObject(primaryHand, secondaryHand, resetModel) end
 
 --- @public
---- @param primaryHand String
---- @param secondaryHand String
---- @return void
---- @overload fun(self: BaseAction, primaryHand: String, secondaryHand: String, resetModel: boolean): void
+--- @param primaryHand string
+--- @param secondaryHand string
+--- @return nil
 function BaseAction:setOverrideHandModelsString(primaryHand, secondaryHand) end
 
 --- @public
+--- @param primaryHand string
+--- @param secondaryHand string
+--- @param resetModel boolean
+--- @return nil
+function BaseAction:setOverrideHandModelsString(primaryHand, secondaryHand, resetModel) end
+
+--- @public
+--- @param arg0 boolean
+--- @return nil
+function BaseAction:setPathfinding(arg0) end
+
+--- @public
 --- @param use boolean
---- @return void
+--- @return nil
 function BaseAction:setUseProgressBar(use) end
 
 --- @public
---- @return void
+--- @param arg0 boolean
+--- @return nil
+function BaseAction:setWaitForFinished(arg0) end
+
+--- @public
+--- @return nil
 function BaseAction:start() end
 
 --- @public
---- @return void
+--- @return nil
 function BaseAction:stop() end
 
 --- @public
---- @return void
+--- @return nil
 function BaseAction:stopTimedActionAnim() end
 
 --- @public
---- @return void
+--- @return nil
 function BaseAction:update() end
 
 --- @public
@@ -147,12 +221,11 @@ function BaseAction:update() end
 function BaseAction:valid() end
 
 --- @public
---- @return void
+--- @return nil
 function BaseAction:waitToStart() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

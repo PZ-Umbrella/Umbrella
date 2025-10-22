@@ -1,30 +1,43 @@
 ---@meta
 
 ---@class TrapBO : ISBuildingObject
----@field sq any
----@field javaObject any
----@field name any
----@field character any
----@field player any
----@field trap any
----@field blockAllTheSquare any
----@field noNeedHammer any
----@field thumpDmg any
----@field actionAnim any
----@field trapDef any
----@field [any] any
+---@field actionAnim string
+---@field character unknown?
+---@field javaObject IsoThumpable?
+---@field name string
+---@field noNeedHammer boolean
+---@field player IsoPlayer
+---@field sq IsoGridSquare
+---@field trap InventoryItem
+---@field trapDef umbrella.TrapDefinition
 TrapBO = ISBuildingObject:derive("TrapBO")
+TrapBO.Type = "TrapBO"
 
----@return any
+---@param x number
+---@param y number
+---@param z number
+---@param north boolean
+---@param sprite string
 function TrapBO:create(x, y, z, north, sprite) end
----@return any
-function TrapBO:onTimedActionStart(action) end
----@return any
-function TrapBO:isValid(square, north) end
----@return any
+
+---@return string?
 function TrapBO:getAPrompt() end
----@return any
+
+---@param square IsoGridSquare
+---@param north boolean
+---@return boolean
+function TrapBO:isValid(square, north) end
+
+---@param action ISBaseTimedAction
+function TrapBO:onTimedActionStart(action) end
+
+---@param x number
+---@param y number
+---@param z number
+---@param square IsoGridSquare
 function TrapBO:render(x, y, z, square) end
 
+---@param player IsoPlayer?
+---@param trap InventoryItem
 ---@return TrapBO
 function TrapBO:new(player, trap) end

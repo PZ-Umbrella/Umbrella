@@ -1,56 +1,55 @@
---- @meta
+--- @meta _
 
 --- @class Area
 --- @field public class any
-Area = {};
+Area = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return Double
+--- @return number
 function Area:getH() end
 
 --- @public
---- @return String
+--- @return string
 function Area:getId() end
 
 --- @public
---- @return Double
+--- @return number
 function Area:getW() end
 
 --- @public
---- @return Double
+--- @return number
 function Area:getX() end
 
 --- @public
---- @return Double
+--- @return number
 function Area:getY() end
 
 --- @public
---- @param d Double
---- @return void
+--- @param d number
+--- @return nil
 function Area:setH(d) end
 
 --- @public
---- @param d Double
---- @return void
+--- @param d number
+--- @return nil
 function Area:setW(d) end
 
 --- @public
---- @param d Double
---- @return void
+--- @param d number
+--- @return nil
 function Area:setX(d) end
 
 --- @public
---- @param d Double
---- @return void
+--- @param d number
+--- @return nil
 function Area:setY(d) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

@@ -1,29 +1,29 @@
---- @meta
+--- @meta _
 
 --- @class SimpleDateFormat: DateFormat
 --- @field public class any
-SimpleDateFormat = {};
+SimpleDateFormat = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param arg0 String
---- @return void
+--- @param arg0 string
+--- @return nil
 function SimpleDateFormat:applyLocalizedPattern(arg0) end
 
 --- @public
---- @param arg0 String
---- @return void
+--- @param arg0 string
+--- @return nil
 function SimpleDateFormat:applyPattern(arg0) end
 
 --- @public
---- @return Object
+--- @return any
 function SimpleDateFormat:clone() end
 
 --- @public
---- @param arg0 Object
+--- @param arg0 any
 --- @return boolean
 function SimpleDateFormat:equals(arg0) end
 
@@ -35,7 +35,7 @@ function SimpleDateFormat:equals(arg0) end
 function SimpleDateFormat:format(arg0, arg1, arg2) end
 
 --- @public
---- @param arg0 Object
+--- @param arg0 any
 --- @return AttributedCharacterIterator
 function SimpleDateFormat:formatToCharacterIterator(arg0) end
 
@@ -48,41 +48,54 @@ function SimpleDateFormat:get2DigitYearStart() end
 function SimpleDateFormat:getDateFormatSymbols() end
 
 --- @public
---- @return int
+--- @return integer
 function SimpleDateFormat:hashCode() end
 
 --- @public
---- @param arg0 String
+--- @param arg0 string
 --- @param arg1 ParsePosition
 --- @return Date
 function SimpleDateFormat:parse(arg0, arg1) end
 
 --- @public
 --- @param arg0 Date
---- @return void
+--- @return nil
 function SimpleDateFormat:set2DigitYearStart(arg0) end
 
 --- @public
 --- @param arg0 DateFormatSymbols
---- @return void
+--- @return nil
 function SimpleDateFormat:setDateFormatSymbols(arg0) end
 
 --- @public
---- @return String
+--- @return string
 function SimpleDateFormat:toLocalizedPattern() end
 
 --- @public
---- @return String
+--- @return string
 function SimpleDateFormat:toPattern() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @return SimpleDateFormat
---- @overload fun(arg0: String): SimpleDateFormat
---- @overload fun(arg0: String, arg1: DateFormatSymbols): SimpleDateFormat
---- @overload fun(arg0: String, arg1: Locale): SimpleDateFormat
 function SimpleDateFormat.new() end
+
+--- @public
+--- @param arg0 string
+--- @return SimpleDateFormat
+function SimpleDateFormat.new(arg0) end
+
+--- @public
+--- @param arg0 string
+--- @param arg1 DateFormatSymbols
+--- @return SimpleDateFormat
+function SimpleDateFormat.new(arg0, arg1) end
+
+--- @public
+--- @param arg0 string
+--- @param arg1 Locale
+--- @return SimpleDateFormat
+function SimpleDateFormat.new(arg0, arg1) end

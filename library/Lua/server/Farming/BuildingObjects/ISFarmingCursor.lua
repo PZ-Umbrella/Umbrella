@@ -1,37 +1,55 @@
 ---@meta
 
 ---@class ISFarmingCursor : ISBuildingObject
----@field renderX any
----@field renderY any
----@field renderZ any
----@field floorSprite any
----@field character any
----@field player any
----@field skipBuildAction any
----@field noNeedHammer any
----@field skipWalk any
----@field dragNilAfterPlace any
----@field [any] any
+---@field character IsoPlayer
+---@field noNeedHammer boolean
+---@field player integer
+---@field renderX number
+---@field renderY number
+---@field renderZ number
+---@field skipBuildAction boolean
+---@field skipWalk boolean
 ISFarmingCursor = ISBuildingObject:derive("ISFarmingCursor")
+ISFarmingCursor.Type = "ISFarmingCursor"
 
----@return any
+---@param x number
+---@param y number
+---@param z number
+---@param north boolean
+---@param sprite string
 function ISFarmingCursor:create(x, y, z, north, sprite) end
----@return any
-function ISFarmingCursor:rotateKey(key) end
----@return any
-function ISFarmingCursor:isValid(square) end
----@return any
-function ISFarmingCursor:render(x, y, z, square) end
----@return any
-function ISFarmingCursor:onJoypadPressButton(joypadIndex, joypadData, button) end
----@return any
+
+---@return string?
 function ISFarmingCursor:getAPrompt() end
----@return any
+
+---@return string?
 function ISFarmingCursor:getLBPrompt() end
----@return any
-function ISFarmingCursor:getRBPrompt() end
----@return any
+
+---@return CPlantGlobalObject[]
 function ISFarmingCursor:getObjectList() end
 
+---@return string?
+function ISFarmingCursor:getRBPrompt() end
+
+---@param square IsoGridSquare
+---@return boolean
+function ISFarmingCursor:isValid(square) end
+
+---@param joypadIndex integer
+---@param joypadData JoypadData
+---@param button integer
+---@return unknown?
+function ISFarmingCursor:onJoypadPressButton(joypadIndex, joypadData, button) end
+
+---@param x number
+---@param y number
+---@param z number
+---@param square IsoGridSquare
+function ISFarmingCursor:render(x, y, z, square) end
+
+---@param key integer
+function ISFarmingCursor:rotateKey(key) end
+
+---@param character IsoPlayer
 ---@return ISFarmingCursor
 function ISFarmingCursor:new(character) end

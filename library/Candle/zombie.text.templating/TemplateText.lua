@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class TemplateText TurboTuTone.
 --- @field public class any
-TemplateText = {};
+TemplateText = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -10,42 +10,86 @@ TemplateText = {};
 
 --- @public
 --- @static
---- @param input String
---- @return String
---- @overload fun(input: String, table: KahluaTableImpl): String
---- @overload fun(input: String, replaceProvider: IReplaceProvider): String
+--- @param input string
+--- @return string
 function TemplateText.Build(input) end
 
 --- @public
 --- @static
---- @return void
+--- @param input string
+--- @param table table
+--- @return string
+function TemplateText.Build(input, table) end
+
+--- @public
+--- @static
+--- @param input string
+--- @param replaceProvider IReplaceProvider
+--- @return string
+function TemplateText.Build(input, replaceProvider) end
+
+--- @public
+--- @static
+--- @return ITemplateBuilder
+function TemplateText.CreateBlanc() end
+
+--- @public
+--- @static
+--- @return ITemplateBuilder
+function TemplateText.CreateCopy() end
+
+--- @public
+--- @static
+--- @return nil
 function TemplateText.Initialize() end
 
 --- @public
 --- @static
---- @param bound float
---- @return float
---- @overload fun(bound: int): int
---- @overload fun(min: float, max: float): float
---- @overload fun(min: int, max: int): int
+--- @param bound number
+--- @return number
 function TemplateText.RandNext(bound) end
 
 --- @public
 --- @static
---- @param key String
---- @param table KahluaTableImpl
---- @return void
---- @overload fun(key: String, replace: IReplace): void
+--- @param bound integer
+--- @return integer
+function TemplateText.RandNext(bound) end
+
+--- @public
+--- @static
+--- @param min number
+--- @param max number
+--- @return number
+function TemplateText.RandNext(min, max) end
+
+--- @public
+--- @static
+--- @param min integer
+--- @param max integer
+--- @return integer
+function TemplateText.RandNext(min, max) end
+
+--- @public
+--- @static
+--- @param key string
+--- @param table table
+--- @return nil
 function TemplateText.RegisterKey(key, table) end
 
 --- @public
 --- @static
---- @return void
+--- @param key string
+--- @param replace IReplace
+--- @return nil
+function TemplateText.RegisterKey(key, replace) end
+
+--- @public
+--- @static
+--- @return nil
 function TemplateText.Reset() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

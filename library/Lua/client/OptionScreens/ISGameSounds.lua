@@ -1,49 +1,73 @@
 ---@meta
 
 ---@class ISGameSounds : ISPanelJoypad
----@field addY any
----@field mainPanel any
----@field tabs any
----@field maxLabelWidth any
----@field buttonClose any
----@field buttonReload any
----@field volumesChanged any
----@field previewControl any
----@field joyfocus any
----@field backgroundColor any
----@field borderColor any
----@field anchorRight any
----@field anchorBottom any
----@field [any] any
+---@field addY number
+---@field buttonClose ISButton
+---@field buttonReload ISButton
+---@field mainPanel ISPanelJoypad
+---@field maxLabelWidth number
+---@field previewControl ISUIElement?
+---@field tabs ISTabPanel
+---@field volumesChanged boolean
 ISGameSounds = ISPanelJoypad:derive("ISGameSounds")
+ISGameSounds.Type = "ISGameSounds"
 
----@return any
+---@param args [ISGameSounds, ISUIElement]
 function ISGameSounds.onPlaySound(args) end
 
----@return any
+---@param x number
+---@param y number
+---@param w number
+---@param h number
+---@param name string
+---@param options string[]
+---@param selected integer
+---@param target unknown?
+---@param onchange umbrella.ISComboBox.OnChange?
+---@return ISComboBox
 function ISGameSounds:addCombo(x, y, w, h, name, options, selected, target, onchange) end
----@return any
-function ISGameSounds:addVolumeControl(x, y, w, h, name, volume, target, onchange) end
----@return any
-function ISGameSounds:onMouseWheel(del) end
----@return any
+
+---@param name string
 function ISGameSounds:addPage(name) end
----@return any
+
+---@param x number
+---@param y number
+---@param w number
+---@param h number
+---@param name string
+---@param volume number
+---@param target unknown?
+---@param onchange umbrella.ISGameSoundVolumeControl.TargetFunction?
+---@return ISGameSoundVolumeControl
+function ISGameSounds:addVolumeControl(x, y, w, h, name, volume, target, onchange) end
+
 function ISGameSounds:createChildren() end
----@return any
-function ISGameSounds:onVolumeChanged(control, volume) end
----@return any
-function ISGameSounds:onStopSound() end
----@return any
+
 function ISGameSounds:onClose() end
----@return any
-function ISGameSounds:onReload() end
----@return any
-function ISGameSounds:onReturnToGame() end
----@return any
+
+---@param joypadData JoypadData
 function ISGameSounds:onGainJoypadFocus(joypadData) end
----@return any
+
+---@param joypadData JoypadData
 function ISGameSounds:onJoypadBeforeDeactivate(joypadData) end
 
+---@param del number
+---@return boolean
+function ISGameSounds:onMouseWheel(del) end
+
+function ISGameSounds:onReload() end
+
+function ISGameSounds:onReturnToGame() end
+
+function ISGameSounds:onStopSound() end
+
+---@param control ISGameSoundVolumeControl
+---@param volume number
+function ISGameSounds:onVolumeChanged(control, volume) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISGameSounds
 function ISGameSounds:new(x, y, width, height) end

@@ -1,25 +1,26 @@
 ---@meta
 
----@class ISMenuContextInventory
 ISMenuContextInventory = {}
 
-
----@return ISMenuContextInventory_Instance
+---@return ISMenuContextInventory
 function ISMenuContextInventory.new() end
 
----@class ISMenuContextInventory_Instance
----@field playerNum any
----@field player any
----@field context any
----@field items any
----@field inventory any
----@field test any
----@field [any] any
-local ISMenuContextInventory_Instance = {}
+---@class ISMenuContextInventory : ISMenuElement
+---@field context ISContextMenu?
+---@field inventory ItemContainer?
+---@field items (InventoryItem[] | umbrella.ContextMenuItemStack[])?
+---@field player IsoPlayer?
+---@field playerNum integer?
+---@field test boolean?
+local __ISMenuContextInventory = {}
 
----@return any
-function ISMenuContextInventory_Instance.init() end
----@return any
-function ISMenuContextInventory_Instance.createMenu(_player, _context, _items, _item) end
----@return any
-function ISMenuContextInventory_Instance.checkInvItem(_item) end
+---@param _item InventoryItem
+function __ISMenuContextInventory.checkInvItem(_item) end
+
+---@param _player integer
+---@param _context ISContextMenu
+---@param _items InventoryItem[] | umbrella.ContextMenuItemStack[]
+---@param _item unknown?
+function __ISMenuContextInventory.createMenu(_player, _context, _items, _item) end
+
+function __ISMenuContextInventory.init() end

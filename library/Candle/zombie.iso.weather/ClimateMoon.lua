@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class ClimateMoon TurboTuTone.
 --- @field public class any
-ClimateMoon = {};
+ClimateMoon = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -13,36 +13,35 @@ ClimateMoon = {};
 --- @return ClimateMoon
 function ClimateMoon.getInstance() end
 
---- @public
---- @static
---- @return float
-function ClimateMoon.getMoonFloat() end
-
---- @public
---- @static
---- @return String
-function ClimateMoon.getPhaseName() end
-
---- @public
---- @static
---- @param year int
---- @param month int
---- @param day int
---- @return void
-function ClimateMoon.updatePhase(year, month, day) end
-
-
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return int
+--- @return nil
+function ClimateMoon:Reset() end
+
+--- @public
+--- @return integer
 function ClimateMoon:getCurrentMoonPhase() end
 
+--- @public
+--- @return number
+function ClimateMoon:getMoonFloat() end
+
+--- @public
+--- @return string
+function ClimateMoon:getPhaseName() end
+
+--- @public
+--- @param year integer
+--- @param month integer
+--- @param day integer
+--- @return nil
+function ClimateMoon:updatePhase(year, month, day) end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

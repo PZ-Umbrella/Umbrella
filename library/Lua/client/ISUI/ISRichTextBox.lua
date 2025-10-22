@@ -1,61 +1,86 @@
 ---@meta
 
 ---@class ISRichTextBox : ISPanelJoypad
----@field yes any
----@field no any
----@field fontHgt any
----@field entry any
----@field chatText any
----@field validateTarget any
----@field validateFunc any
----@field validateArgs any
----@field validateTooltipText any
----@field joypadButtons any
----@field name any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field text any
----@field target any
----@field onclick any
----@field player any
----@field param1 any
----@field param2 any
----@field param3 any
----@field param4 any
----@field defaultEntryText any
----@field x any
----@field y any
----@field [any] any
+---@field chatText ISRichTextPanel
+---@field defaultEntryText string
+---@field entry ISTextEntryBox
+---@field fontHgt number
+---@field name unknown?
+---@field no ISButton
+---@field onclick umbrella.ISButton.OnClick?
+---@field param1 unknown?
+---@field param2 unknown?
+---@field param3 unknown?
+---@field param4 unknown?
+---@field player integer
+---@field text string
+---@field validateArgs table?
+---@field validateFunc umbrella.ISTextBox.ValidateFunction?
+---@field validateTarget unknown?
+---@field validateTooltipText string?
+---@field yes ISButton
 ISRichTextBox = ISPanelJoypad:derive("ISRichTextBox")
+ISRichTextBox.Type = "ISRichTextBox"
 
----@return any
-function ISRichTextBox:initialise() end
----@return any
-function ISRichTextBox:update() end
----@return any
-function ISRichTextBox:setOnlyNumbers(onlyNumbers) end
----@return any
-function ISRichTextBox:setValidateFunction(target, func, arg1, arg2) end
----@return any
-function ISRichTextBox:setValidateTooltipText(text) end
----@return any
 function ISRichTextBox:destroy() end
----@return any
+
+function ISRichTextBox:initialise() end
+
+---@param button ISButton
 function ISRichTextBox:onClick(button) end
----@return any
-function ISRichTextBox:prerender() end
----@return any
-function ISRichTextBox:render() end
----@return any
+
+---@param joypadData JoypadData
 function ISRichTextBox:onGainJoypadFocus(joypadData) end
----@return any
+
+---@param button integer
+---@param joypadData JoypadData
 function ISRichTextBox:onJoypadDown(button, joypadData) end
 
+function ISRichTextBox:prerender() end
+
+function ISRichTextBox:render() end
+
+---@param onlyNumbers boolean
+function ISRichTextBox:setOnlyNumbers(onlyNumbers) end
+
+---@param target unknown?
+---@param func umbrella.ISTextBox.ValidateFunction?
+---@param arg1 unknown?
+---@param arg2 unknown?
+function ISRichTextBox:setValidateFunction(target, func, arg1, arg2) end
+
+---@param text string?
+function ISRichTextBox:setValidateTooltipText(text) end
+
+function ISRichTextBox:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param text string
+---@param defaultEntryText string
+---@param target unknown?
+---@param onclick umbrella.ISButton.OnClick?
+---@param player integer
+---@param param1 unknown?
+---@param param2 unknown?
+---@param param3 unknown?
+---@param param4 unknown?
 ---@return ISRichTextBox
-function ISRichTextBox:new(x, y, width, height, text, defaultEntryText, target, onclick, player, param1, param2, param3, param4) end
+function ISRichTextBox:new(
+	x,
+	y,
+	width,
+	height,
+	text,
+	defaultEntryText,
+	target,
+	onclick,
+	player,
+	param1,
+	param2,
+	param3,
+	param4
+)
+end

@@ -1,30 +1,22 @@
 ---@meta
 
 ---@class ISSLManager : ISPanel
----@field x any
----@field y any
----@field background any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field [any] any
 ISSLManager = ISPanel:derive("ISSLManager")
+ISSLManager.Type = "ISSLManager"
 
----@return any
-function ISSLManager:initialise() end
----@return any
 function ISSLManager:createChildren() end
----@return any
-function ISSLManager:update() end
----@return any
+
+function ISSLManager:initialise() end
+
 function ISSLManager:prerender() end
----@return any
+
 function ISSLManager:render() end
 
+function ISSLManager:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISSLManager
 function ISSLManager:new(x, y, width, height) end

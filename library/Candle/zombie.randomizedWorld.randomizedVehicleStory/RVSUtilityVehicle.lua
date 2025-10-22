@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RVSUtilityVehicle: RandomizedVehicleStoryBase An utility vehicle (mccoys, fire dept, police, ranger, postal..) with corresponding outfit zeds and sometimes tools
 --- @field public class any
-RVSUtilityVehicle = {};
+RVSUtilityVehicle = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -11,16 +11,28 @@ RVSUtilityVehicle = {};
 --- @public
 --- @param zone Zone
 --- @param chunk IsoChunk
---- @param zoneName String
---- @param scriptName String
---- @param outfits String
---- @param femaleChance Integer
---- @param vehicleDistrib String
+--- @param zoneName string
+--- @param scriptName string
+--- @param outfits string
+--- @param femaleChance integer
+--- @param vehicleDistrib string
 --- @param items ArrayList
---- @param nbrOfItem int
+--- @param nbrOfItem integer
 --- @param addTrailer boolean
---- @return void
-function RVSUtilityVehicle:doUtilityVehicle(zone, chunk, zoneName, scriptName, outfits, femaleChance, vehicleDistrib, items, nbrOfItem, addTrailer) end
+--- @return nil
+function RVSUtilityVehicle:doUtilityVehicle(
+	zone,
+	chunk,
+	zoneName,
+	scriptName,
+	outfits,
+	femaleChance,
+	vehicleDistrib,
+	items,
+	nbrOfItem,
+	addTrailer
+)
+end
 
 --- @public
 --- @param zone Zone
@@ -32,18 +44,17 @@ function RVSUtilityVehicle:initVehicleStorySpawner(zone, chunk, debug) end
 --- @public
 --- @param zone Zone
 --- @param chunk IsoChunk
---- @return void
+--- @return nil
 function RVSUtilityVehicle:randomizeVehicleStory(zone, chunk) end
 
 --- @public
 --- @param spawner VehicleStorySpawner
 --- @param element Element
---- @return void
+--- @return nil
 function RVSUtilityVehicle:spawnElement(spawner, element) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

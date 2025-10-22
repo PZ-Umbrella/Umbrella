@@ -1,21 +1,26 @@
 ---@meta
 
 ---@class ISTriggerThunderUI : ISCollapsableWindow
----@field users any
----@field onlineUsers any
----@field tickBox any
----@field triggerThunder any
----@field title any
----@field character any
----@field [any] any
+---@field character IsoPlayer
+---@field onlineUsers ArrayList<IsoPlayer>
+---@field tickBox ISTickBox
+---@field title string
+---@field triggerThunder ISButton
+---@field users ISComboBox
 ISTriggerThunderUI = ISCollapsableWindow:derive("ISTriggerThunderUI")
+ISTriggerThunderUI.Type = "ISTriggerThunderUI"
 
----@return any
-function ISTriggerThunderUI:createChildren() end
----@return any
-function ISTriggerThunderUI:onClick(button) end
----@return any
 function ISTriggerThunderUI:close() end
 
+function ISTriggerThunderUI:createChildren() end
+
+---@param button ISButton
+function ISTriggerThunderUI:onClick(button) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param character IsoPlayer
 ---@return ISTriggerThunderUI
 function ISTriggerThunderUI:new(x, y, width, height, character) end

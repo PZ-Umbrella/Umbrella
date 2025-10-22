@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RBCafe: RandomizedBuildingBase Add some food on table
 --- @field public class any
-RBCafe = {};
+RBCafe = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,7 +10,7 @@ RBCafe = {};
 
 --- @public
 ---
----  Description copied from class: RandomizedBuildingBase
+--- Description copied from class: RandomizedBuildingBase
 ---
 --- @param def BuildingDef
 --- @param force boolean
@@ -19,7 +19,7 @@ function RBCafe:isValid(def, force) end
 
 --- @public
 --- @param def BuildingDef
---- @return void
+--- @return nil
 function RBCafe:randomizeBuilding(def) end
 
 --- @public
@@ -27,9 +27,8 @@ function RBCafe:randomizeBuilding(def) end
 --- @return boolean
 function RBCafe:roomValid(sq) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

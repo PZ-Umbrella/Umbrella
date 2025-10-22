@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class Nutrition
 --- @field public class any
-Nutrition = {};
+Nutrition = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,20 +10,20 @@ Nutrition = {};
 
 --- @public
 ---
----  > 100 obese 85 to 100 over weight 75 to 85 normal 65 to 75 underweight 50 to 
----  very underweight <= 50 emaciated
+--- > 100 obese 85 to 100 over weight 75 to 85 normal 65 to 75 underweight 50 to  65
+--- underweight <= 50 emaciated
 ---
---- @return void
+--- @return nil
 function Nutrition:applyTraitFromWeight() end
 
 --- @public
---- @return void
+--- @return nil
 function Nutrition:applyWeightFromTraits() end
 
 --- @public
 ---
----  You gain xp only if you're in good shape As underweight or overweight you can 
----  be "fit"
+--- You gain xp only if you're in good shape As underweight or overweight you can
+--- be "fit"
 ---
 --- @return boolean
 function Nutrition:canAddFitnessXp() end
@@ -33,23 +33,23 @@ function Nutrition:canAddFitnessXp() end
 function Nutrition:characterHaveWeightTrouble() end
 
 --- @public
---- @return float
+--- @return number
 function Nutrition:getCalories() end
 
 --- @public
---- @return float
+--- @return number
 function Nutrition:getCarbohydrates() end
 
 --- @public
---- @return float
+--- @return number
 function Nutrition:getLipids() end
 
 --- @public
---- @return float
+--- @return number
 function Nutrition:getProteins() end
 
 --- @public
---- @return double
+--- @return number
 function Nutrition:getWeight() end
 
 --- @public
@@ -66,65 +66,64 @@ function Nutrition:isIncWeightLot() end
 
 --- @public
 --- @param input ByteBuffer
---- @return void
+--- @return nil
 function Nutrition:load(input) end
 
 --- @public
 --- @param output ByteBuffer
---- @return void
+--- @return nil
 function Nutrition:save(output) end
 
 --- @public
---- @param calories float
---- @return void
+--- @param calories number
+--- @return nil
 function Nutrition:setCalories(calories) end
 
 --- @public
---- @param carbohydrates float
---- @return void
+--- @param carbohydrates number
+--- @return nil
 function Nutrition:setCarbohydrates(carbohydrates) end
 
 --- @public
 --- @param decWeight boolean
---- @return void
+--- @return nil
 function Nutrition:setDecWeight(decWeight) end
 
 --- @public
 --- @param incWeight boolean
---- @return void
+--- @return nil
 function Nutrition:setIncWeight(incWeight) end
 
 --- @public
 --- @param incWeightLot boolean
---- @return void
+--- @return nil
 function Nutrition:setIncWeightLot(incWeightLot) end
 
 --- @public
---- @param lipids float
---- @return void
+--- @param lipids number
+--- @return nil
 function Nutrition:setLipids(lipids) end
 
 --- @public
---- @param proteins float
---- @return void
+--- @param proteins number
+--- @return nil
 function Nutrition:setProteins(proteins) end
 
 --- @public
---- @param weight double
---- @return void
+--- @param weight number
+--- @return nil
 function Nutrition:setWeight(weight) end
 
 --- @public
---- @return void
+--- @return nil
 function Nutrition:syncWeight() end
 
 --- @public
---- @return void
+--- @return nil
 function Nutrition:update() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

@@ -2,14 +2,15 @@
 
 ---@class ISBaseState : ISBaseObject
 ISBaseState = ISBaseObject:derive("ISBaseState")
+ISBaseState.Type = "ISBaseState"
 
----@return any
-function ISBaseState:enter() end
----@return any
 function ISBaseState:during() end
----@return any
+
+function ISBaseState:enter() end
+
 function ISBaseState:exit() end
----@return any
+
+---@return boolean
 function ISBaseState:isFinished() end
 
 ---@return ISBaseState

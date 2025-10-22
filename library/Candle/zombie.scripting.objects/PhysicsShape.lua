@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class PhysicsShape
 --- @field public class any
-PhysicsShape = {};
+PhysicsShape = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -17,7 +17,11 @@ function PhysicsShape:getExtents() end
 function PhysicsShape:getOffset() end
 
 --- @public
---- @return float
+--- @return string
+function PhysicsShape:getPhysicsShapeScript() end
+
+--- @public
+--- @return number
 function PhysicsShape:getRadius() end
 
 --- @public
@@ -25,17 +29,21 @@ function PhysicsShape:getRadius() end
 function PhysicsShape:getRotate() end
 
 --- @public
---- @return String
+--- @return string
 function PhysicsShape:getTypeString() end
 
 --- @public
---- @param radius float
---- @return void
+--- @param arg0 string
+--- @return nil
+function PhysicsShape:setPhysicsShapeScript(arg0) end
+
+--- @public
+--- @param radius number
+--- @return nil
 function PhysicsShape:setRadius(radius) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

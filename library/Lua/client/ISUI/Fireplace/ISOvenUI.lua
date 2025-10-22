@@ -1,54 +1,57 @@
 ---@meta
 
 ---@class ISOvenUI : ISPanelJoypad
----@field tempKnob any
----@field tempType any
----@field timerKnob any
----@field ok any
----@field close any
----@field joypadIndexY any
----@field joypadIndex any
----@field joypadButtons any
----@field width any
----@field height any
----@field character any
----@field oven any
----@field moveWithMouse any
----@field knobTex any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field x any
----@field y any
----@field [any] any
+---@field character IsoPlayer
+---@field close ISButton
+---@field joypadButtons ISButton[]
+---@field knobTex Texture
+---@field ok ISButton
+---@field oven IsoStove
+---@field playerNum unknown
+---@field tempKnob ISKnob
+---@field tempType ISTickBox
+---@field timerKnob ISKnob
 ISOvenUI = ISPanelJoypad:derive("ISOvenUI")
+ISOvenUI.Type = "ISOvenUI"
+ISOvenUI.instance = {}
 ISOvenUI.messages = {}
 
----@return any
-function ISOvenUI:initialise() end
----@return any
-function ISOvenUI:onChangeTempType(clickedOption, enabled) end
----@return any
-function ISOvenUI:changeTempType() end
----@return any
-function ISOvenUI:ChangeKnob() end
----@return any
-function ISOvenUI:update() end
----@return any
-function ISOvenUI:updateButtons() end
----@return any
 function ISOvenUI:addKnobValues() end
----@return any
-function ISOvenUI:render() end
----@return any
-function ISOvenUI:prerender() end
----@return any
+
+function ISOvenUI:ChangeKnob() end
+
+function ISOvenUI:changeTempType() end
+
+function ISOvenUI:close() end
+
+function ISOvenUI:initialise() end
+
+---@param clickedOption integer
+---@param enabled boolean
+function ISOvenUI:onChangeTempType(clickedOption, enabled) end
+
+---@param button ISButton
 function ISOvenUI:onClick(button) end
----@return any
+
+---@param joypadData JoypadData
 function ISOvenUI:onGainJoypadFocus(joypadData) end
----@return any
+
+---@param button integer
 function ISOvenUI:onJoypadDown(button) end
 
+function ISOvenUI:prerender() end
+
+function ISOvenUI:render() end
+
+function ISOvenUI:update() end
+
+function ISOvenUI:updateButtons() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param oven IsoStove
+---@param character IsoPlayer
 ---@return ISOvenUI
 function ISOvenUI:new(x, y, width, height, oven, character) end

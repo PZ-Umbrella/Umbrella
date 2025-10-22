@@ -1,9 +1,9 @@
---- @meta
+--- @meta _
 
 --- @class MapItem: InventoryItem
 --- @field public class any
 --- @field public WORLD_MAP_INSTANCE MapItem
-MapItem = {};
+MapItem = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -11,24 +11,29 @@ MapItem = {};
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function MapItem.LoadWorldMap() end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function MapItem.Reset() end
 
 --- @public
 --- @static
---- @return void
+--- @return nil
 function MapItem.SaveWorldMap() end
+
+--- @public
+--- @static
+--- @param arg0 SaveBufferMap
+--- @return nil
+function MapItem.SaveWorldMapToBufferMap(arg0) end
 
 --- @public
 --- @static
 --- @return MapItem
 function MapItem.getSingleton() end
-
 
 ------------------------------------
 ------------- METHODS --------------
@@ -39,11 +44,19 @@ function MapItem.getSingleton() end
 function MapItem:IsMap() end
 
 --- @public
---- @return String
+--- @return boolean
+function MapItem:checkDefaultAnnotationsLoaded() end
+
+--- @public
+--- @return nil
+function MapItem:clearDefaultAnnotations() end
+
+--- @public
+--- @return string
 function MapItem:getMapID() end
 
 --- @public
---- @return int
+--- @return integer
 function MapItem:getSaveType() end
 
 --- @public
@@ -52,31 +65,37 @@ function MapItem:getSymbols() end
 
 --- @public
 --- @param input ByteBuffer
---- @param WorldVersion int
---- @return void
+--- @param WorldVersion integer
+--- @return nil
 function MapItem:load(input, WorldVersion) end
 
 --- @public
 --- @param output ByteBuffer
 --- @param net boolean
---- @return void
+--- @return nil
 function MapItem:save(output, net) end
 
 --- @public
---- @param mapID String
---- @return void
+--- @param mapID string
+--- @return nil
 function MapItem:setMapID(mapID) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param module String
---- @param name String
---- @param type String
---- @param tex String
+--- @param module string
+--- @param name string
+--- @param type string
+--- @param tex string
 --- @return MapItem
---- @overload fun(module: String, name: String, type: String, item: Item): MapItem
 function MapItem.new(module, name, type, tex) end
+
+--- @public
+--- @param module string
+--- @param name string
+--- @param type string
+--- @param item Item
+--- @return MapItem
+function MapItem.new(module, name, type, item) end

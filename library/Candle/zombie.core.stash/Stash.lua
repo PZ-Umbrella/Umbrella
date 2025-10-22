@@ -1,40 +1,44 @@
---- @meta
+--- @meta _
 
 --- @class Stash
 --- @field public class any
-Stash = {};
+Stash = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return int
+--- @param arg0 UIWorldMap
+--- @return nil
+function Stash:applyAnnotations(arg0) end
+
+--- @public
+--- @return integer
 function Stash:getBuildingX() end
 
 --- @public
---- @return int
+--- @return integer
 function Stash:getBuildingY() end
 
 --- @public
---- @return String
+--- @return string
 function Stash:getItem() end
 
 --- @public
---- @return String
+--- @return string
 function Stash:getName() end
 
 --- @public
---- @param stashDesc KahluaTableImpl
---- @return void
+--- @param stashDesc table
+--- @return nil
 function Stash:load(stashDesc) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param name String
+--- @param name string
 --- @return Stash
 function Stash.new(name) end

@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class SteamFriend Created by Gennadiy on 11.06.2015.
 --- @field public class any
-SteamFriend = {};
+SteamFriend = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -13,23 +13,27 @@ SteamFriend = {};
 function SteamFriend:getAvatar() end
 
 --- @public
---- @return String
+--- @return string
 function SteamFriend:getName() end
 
 --- @public
---- @return String
+--- @return string
 function SteamFriend:getState() end
 
 --- @public
---- @return String
+--- @return string
 function SteamFriend:getSteamID() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @return SteamFriend
---- @overload fun(name: String, steamID: long): SteamFriend
 function SteamFriend.new() end
+
+--- @public
+--- @param name string
+--- @param steamID integer
+--- @return SteamFriend
+function SteamFriend.new(name, steamID) end

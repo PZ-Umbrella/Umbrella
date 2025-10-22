@@ -1,112 +1,177 @@
 ---@meta
 
+---@alias umbrella.MapUI
+---| umbrella.MapUI.WithMapObj
+---| umbrella.MapUI.WithMapItem
+
 ---@class ISMap : ISPanelJoypad
----@field javaObject any
----@field mapAPI any
----@field symbolsUI any
----@field ok any
----@field editSymbolsBtn any
----@field scaleBtn any
----@field placeSymbBtn any
----@field draggingStartingX any
----@field draggingStartingY any
----@field dragStartCX any
----@field dragStartCY any
----@field dragStartZoomF any
----@field dragStartWorldX any
----@field dragStartWorldY any
----@field dragging any
----@field dragMoved any
----@field getJoypadFocus any
----@field setMapData any
----@field updateMS any
----@field povYms any
----@field povXms any
----@field RBumperZoom any
----@field LBumperZoom any
----@field character any
----@field playerNum any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field mapObj any
----@field textCursor any
----@field cross any
----@field symbolTexList any
----@field selectedColor any
----@field [any] any
+---@field character IsoPlayer
+---@field cross Texture
+---@field dragging boolean
+---@field draggingStartingX number
+---@field draggingStartingY number
+---@field dragMoved boolean
+---@field dragStartCX number
+---@field dragStartCY number
+---@field dragStartWorldX number
+---@field dragStartWorldY number
+---@field dragStartZoomF number
+---@field editSymbolsBtn ISButton
+---@field getJoypadFocus boolean
+---@field javaObject UIWorldMap
+---@field joypadPromptHgt number
+---@field LBumperZoom number?
+---@field mapAPI UIWorldMapV1
+---@field mapKey ISWorldMapKey
+---@field mapObj MapItem
+---@field ok ISButton
+---@field placeSymbBtn ISButton
+---@field playerNum integer
+---@field povXms number?
+---@field povYms number?
+---@field RBumperZoom number?
+---@field revealBtn ISButton
+---@field scaleBtn ISButton
+---@field selectedColor unknown?
+---@field setMapData boolean
+---@field showMapKey ISButton
+---@field symbolsUI ISWorldMapSymbols
+---@field symbolTexList table
+---@field textCursor Texture
+---@field updateMS number
 ISMap = ISPanelJoypad:derive("ISMap")
+ISMap.Type = "ISMap"
 ISMap.SCALE = 0.666
 
----@return any
-function ISMap:instantiate() end
----@return any
-function ISMap:createChildren() end
----@return any
-function ISMap:destroy() end
----@return any
-function ISMap:onButtonClick(button) end
----@return any
-function ISMap:onMouseDown(x, y) end
----@return any
-function ISMap:onMouseUp(x, y) end
----@return any
-function ISMap:canWrite() end
----@return any
+---@return boolean
 function ISMap:canErase() end
----@return any
-function ISMap:onConfirmRemove(button, note) end
----@return any
-function ISMap:onMouseUpOutside() end
----@return any
-function ISMap:onMouseWheel(del) end
----@return any
-function ISMap:onMouseMove(dx, dy) end
----@return any
-function ISMap:onMouseMoveOutside(dx, dy) end
----@return any
-function ISMap:onRightMouseDown(x, y) end
----@return any
-function ISMap:prerender() end
----@return any
-function ISMap:render() end
----@return any
-function ISMap:renderJoypadIcons() end
----@return any
-function ISMap:update() end
----@return any
+
+---@return boolean
+function ISMap:canWrite() end
+
+function ISMap:copySymbolsToWorldMap() end
+
+function ISMap:createChildren() end
+
+function ISMap:destroy() end
+
 function ISMap:initMapData() end
----@return any
-function ISMap:updateJoypad() end
----@return any
-function ISMap:updateButtons() end
----@return any
+
+function ISMap:instantiate() end
+
+---@param button ISButton
+function ISMap:onButtonClick(button) end
+
+---@param button ISButton
+---@param note integer
+function ISMap:onConfirmRemove(button, note) end
+
+---@param joypadData JoypadData
 function ISMap:onGainJoypadFocus(joypadData) end
----@return any
+
+---@param button integer
+---@param joypadData JoypadData
 function ISMap:onJoypadDown(button, joypadData) end
 
+---@param x number
+---@param y number
+---@return boolean?
+function ISMap:onMouseDown(x, y) end
+
+---@param dx number
+---@param dy number
+---@return boolean?
+function ISMap:onMouseMove(dx, dy) end
+
+---@param dx number
+---@param dy number
+function ISMap:onMouseMoveOutside(dx, dy) end
+
+---@param x number
+---@param y number
+---@return boolean?
+function ISMap:onMouseUp(x, y) end
+
+function ISMap:onMouseUpOutside() end
+
+---@param del number
+---@return boolean
+function ISMap:onMouseWheel(del) end
+
+---@param x number
+---@param y number
+---@return boolean
+function ISMap:onRightMouseDown(x, y) end
+
+function ISMap:prerender() end
+
+function ISMap:render() end
+
+---@param texture Texture
+---@param text string
+---@param x number
+---@param y number
+---@return number
+function ISMap:renderButtonTextureAndText(texture, text, x, y) end
+
+function ISMap:renderJoypadIcons() end
+
+function ISMap:revealOnWorldMap() end
+
+function ISMap:update() end
+
+function ISMap:updateButtons() end
+
+function ISMap:updateJoypad() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param map MapItem
+---@param player integer
 ---@return ISMap
 function ISMap:new(x, y, width, height, map, player) end
 
 ---@class ISMapWrapper : ISCollapsableWindow
 ISMapWrapper = ISCollapsableWindow:derive("ISMapWrapper")
+ISMapWrapper.Type = "ISMapWrapper"
 ISMapWrapper.__index = ISMapWrapper
 
----@return any
-function ISMapWrapper:isKeyConsumed(key) end
----@return any
-function ISMapWrapper:onKeyPress(key) end
----@return any
-function ISMapWrapper:onKeyRelease(key) end
----@return any
-function ISMapWrapper:setVisible(bVisible) end
----@return any
-function ISMapWrapper:prerender() end
----@return any
-function ISMapWrapper:render() end
----@return any
 function ISMapWrapper:close() end
 
+function ISMapWrapper:instantiate() end
+
+---@param key integer
+---@return boolean
+function ISMapWrapper:isKeyConsumed(key) end
+
+---@param key integer
+function ISMapWrapper:onKeyPress(key) end
+
+---@param key integer
+function ISMapWrapper:onKeyRelease(key) end
+
+function ISMapWrapper:prerender() end
+
+function ISMapWrapper:render() end
+
+---@param bVisible boolean
+function ISMapWrapper:setVisible(bVisible) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISMapWrapper
 function ISMapWrapper:new(x, y, width, height) end
+
+---@class umbrella.MapUI.WithMapItem : ISUIElement
+---@field javaObject UIWorldMap
+---@field mapItem MapItem
+umbrella_MapUI_WithMapItem = {}
+
+---@class umbrella.MapUI.WithMapObj : ISUIElement
+---@field javaObject UIWorldMap
+---@field mapItem MapItem
+umbrella_MapUI_WithMapObj = {}

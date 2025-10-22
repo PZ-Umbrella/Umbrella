@@ -1,127 +1,96 @@
 ---@meta
 
 ---@class CDDA
----@field xcell any
----@field ycell any
----@field x any
----@field y any
----@field z any
----@field [any] any
 CDDA = {}
+CDDA.x = (36 * 300) + 21
+CDDA.y = (31 * 300) + 111
+CDDA.z = 0
 CDDA.id = "AReallyCDDAy"
 CDDA.completionText = "Survive a night to unlock next challenge."
 CDDA.image = "media/lua/client/LastStand/AReallyCDDAy.png"
+CDDA.video = "CDDA.bik"
 CDDA.gameMode = "A Really CD DA"
 CDDA.world = "Muldraugh, KY"
-CDDA.xcell = 36
-CDDA.ycell = 31
-CDDA.x = 21
-CDDA.y = 111
-CDDA.z = 0
 CDDA.spawns = {
-    {
-        xcell = 35,
-        ycell = 33,
-        x = 288,
-        y = 85,
-        z = 0,
-    },
-    {
-        xcell = 35,
-        ycell = 32,
-        x = 193,
-        y = 145,
-        z = 0,
-    },
-    {
-        xcell = 35,
-        ycell = 32,
-        x = 270,
-        y = 88,
-        z = 0,
-    },
-    {
-        xcell = 35,
-        ycell = 31,
-        x = 240 + 6,
-        y = 107 + 6,
-        z = 1,
-    },
-    {
-        xcell = 39,
-        ycell = 22,
-        x = 91,
-        y = 255,
-        z = 0,
-    },
-    {
-        xcell = 38,
-        ycell = 22,
-        x = 198 + 6,
-        y = 271 + 6,
-        z = 1,
-    },
-    {
-        xcell = 38,
-        ycell = 22,
-        x = 96,
-        y = 100,
-        z = 1,
-    },
-    {
-        xcell = 38,
-        ycell = 22,
-        x = 15,
-        y = 65,
-        z = 0,
-    },
-    {
-        xcell = 37,
-        ycell = 22,
-        x = 112 + 6,
-        y = 185 + 6,
-        z = 1,
-    },
-    {
-        xcell = 37,
-        ycell = 22,
-        x = 111 + 6,
-        y = 191 + 6,
-        z = 1,
-    },
-    {
-        xcell = 35,
-        ycell = 22,
-        x = 133 + 6,
-        y = 194 + 6,
-        z = 1,
-    },
-    {
-        xcell = 36,
-        ycell = 33,
-        x = 33 + 6,
-        y = 247 + 6,
-        z = 1,
-    },
-    {
-        xcell = 38,
-        ycell = 22,
-        x = 273,
-        y = 204 + 6,
-        z = 1,
-    },
+	{
+		x = 10788,
+		y = 9985,
+		z = 0,
+	},
+	{
+		x = 10693,
+		y = 9745,
+		z = 0,
+	},
+	{
+		x = 10770,
+		y = 9688,
+		z = 0,
+	},
+	{
+		x = 10746,
+		y = 9413,
+		z = 1,
+	},
+	{
+		x = 11791,
+		y = 6855,
+		z = 0,
+	},
+	{
+		x = 11604,
+		y = 6877,
+		z = 1,
+	},
+	{
+		x = 11496,
+		y = 6700,
+		z = 1,
+	},
+	{
+		x = 11415,
+		y = 6665,
+		z = 0,
+	},
+	{
+		x = 11218,
+		y = 6791,
+		z = 1,
+	},
+	{
+		x = 11217,
+		y = 6797,
+		z = 1,
+	},
+	{
+		x = 10639,
+		y = 6800,
+		z = 1,
+	},
+	{
+		x = 10839,
+		y = 12153,
+		z = 1,
+	},
+	{
+		x = 11673,
+		y = 6810,
+		z = 1,
+	},
 }
 CDDA.hourOfDay = 7
 
----@return any
 function CDDA.Add() end
----@return any
-function CDDA.OnGameStart() end
----@return any
-function CDDA.OnInitWorld() end
----@return any
-function CDDA.RemovePlayer(p) end
----@return any
+
+---@param playerNum integer
+---@param playerObj IsoPlayer
 function CDDA.AddPlayer(playerNum, playerObj) end
----@return any
+
+function CDDA.OnGameStart() end
+
+function CDDA.OnInitWorld() end
+
+---@param p IsoPlayer
+function CDDA.RemovePlayer(p) end
+
 function CDDA.Render() end

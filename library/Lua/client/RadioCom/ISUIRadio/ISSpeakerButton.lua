@@ -1,45 +1,49 @@
 ---@meta
 
----@class ISSpeakerButton : ISPanel
----@field hover any
----@field enableControls any
----@field x any
----@field y any
----@field background any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field isMute any
----@field onclick any
----@field onclickTarget any
----@field speakerTexture any
----@field muteTexture any
----@field [any] any
-ISSpeakerButton = ISPanel:derive("ISSpeakerButton")
+---@alias umbrella.ISSpeakerButton.OnClick fun(target: unknown?, isMute: boolean)
 
----@return any
-function ISSpeakerButton:initialise() end
----@return any
+---@class ISSpeakerButton : ISPanel
+---@field enableControls boolean
+---@field hover boolean
+---@field isMute boolean
+---@field muteTexture Texture
+---@field onclick umbrella.ISSpeakerButton.OnClick?
+---@field onclickTarget unknown?
+---@field speakerTexture Texture
+ISSpeakerButton = ISPanel:derive("ISSpeakerButton")
+ISSpeakerButton.Type = "ISSpeakerButton"
+
 function ISSpeakerButton:createChildren() end
----@return any
-function ISSpeakerButton:onMouseMove(x, y) end
----@return any
-function ISSpeakerButton:onMouseMoveOutside(x, y) end
----@return any
-function ISSpeakerButton:onMouseUp(x, y) end
----@return any
-function ISSpeakerButton:prerender() end
----@return any
-function ISSpeakerButton:render() end
----@return any
-function ISSpeakerButton:setEnableControls(_b) end
----@return any
+
+---@return boolean
 function ISSpeakerButton:getEnableControls() end
 
+function ISSpeakerButton:initialise() end
+
+---@param x number
+---@param y number
+function ISSpeakerButton:onMouseMove(x, y) end
+
+---@param x number
+---@param y number
+function ISSpeakerButton:onMouseMoveOutside(x, y) end
+
+---@param x number
+---@param y number
+function ISSpeakerButton:onMouseUp(x, y) end
+
+function ISSpeakerButton:prerender() end
+
+function ISSpeakerButton:render() end
+
+---@param _b boolean
+function ISSpeakerButton:setEnableControls(_b) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param onclick umbrella.ISSpeakerButton.OnClick?
+---@param onclickTarget unknown?
 ---@return ISSpeakerButton
 function ISSpeakerButton:new(x, y, width, height, onclick, onclickTarget) end

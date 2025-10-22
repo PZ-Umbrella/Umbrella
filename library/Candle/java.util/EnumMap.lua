@@ -1,31 +1,32 @@
---- @meta
+--- @meta _
 
---- @class EnumMap: AbstractMap
+--- @class EnumMap: AbstractMap, Serializable, Cloneable
 --- @field public class any
---- @implement Serializable
---- @implement Cloneable
-EnumMap = {};
+EnumMap = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
+--- @return nil
 function EnumMap:clear() end
 
 --- @public
---- @return Object
---- @overload fun(self: EnumMap): EnumMap
+--- @return any
 function EnumMap:clone() end
 
 --- @public
---- @param arg0 Object
+--- @return EnumMap
+function EnumMap:clone() end
+
+--- @public
+--- @param arg0 any
 --- @return boolean
 function EnumMap:containsKey(arg0) end
 
 --- @public
---- @param arg0 Object
+--- @param arg0 any
 --- @return boolean
 function EnumMap:containsValue(arg0) end
 
@@ -34,17 +35,17 @@ function EnumMap:containsValue(arg0) end
 function EnumMap:entrySet() end
 
 --- @public
---- @param arg0 Object
+--- @param arg0 any
 --- @return boolean
 function EnumMap:equals(arg0) end
 
 --- @public
---- @param arg0 Object
---- @return Object
+--- @param arg0 any
+--- @return any
 function EnumMap:get(arg0) end
 
 --- @public
---- @return int
+--- @return integer
 function EnumMap:hashCode() end
 
 --- @public
@@ -53,37 +54,49 @@ function EnumMap:keySet() end
 
 --- @public
 --- @param arg0 Enum
---- @param arg1 Object
---- @return Object
---- @overload fun(self: EnumMap, arg0: Object, arg1: Object): Object
+--- @param arg1 any
+--- @return any
+function EnumMap:put(arg0, arg1) end
+
+--- @public
+--- @param arg0 any
+--- @param arg1 any
+--- @return any
 function EnumMap:put(arg0, arg1) end
 
 --- @public
 --- @param arg0 Map
---- @return void
+--- @return nil
 function EnumMap:putAll(arg0) end
 
 --- @public
---- @param arg0 Object
---- @return Object
+--- @param arg0 any
+--- @return any
 function EnumMap:remove(arg0) end
 
 --- @public
---- @return int
+--- @return integer
 function EnumMap:size() end
 
 --- @public
 --- @return Collection
 function EnumMap:values() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param arg0 Class
 --- @return EnumMap
---- @overload fun(arg0: EnumMap): EnumMap
---- @overload fun(arg0: Map): EnumMap
+function EnumMap.new(arg0) end
+
+--- @public
+--- @param arg0 EnumMap
+--- @return EnumMap
+function EnumMap.new(arg0) end
+
+--- @public
+--- @param arg0 Map
+--- @return EnumMap
 function EnumMap.new(arg0) end

@@ -1,32 +1,54 @@
 ---@meta
 
 ---@class SourceWindow : ISCollapsableWindow
----@field title any
----@field sourceView any
----@field reloadBtn any
----@field backgroundColor any
----@field filename any
----@field keepOnScreen any
----@field [any] any
+---@field filename string
+---@field keepOnScreen boolean
+---@field reloadBtn ISButton
+---@field sourceView ISScrollingListBox
+---@field title string
 SourceWindow = ISCollapsableWindow:derive("SourceWindow")
-SourceWindow.map = {}
+SourceWindow.Type = "SourceWindow"
+SourceWindow.map = {} ---@type table<string, SourceWindow>
 
----@return any
-function SourceWindow:onMouseDoubleClickBreakpointToggle(item) end
----@return any
-function SourceWindow:initialise() end
----@return any
-function SourceWindow:onSourceMouseWheel(del) end
----@return any
-function SourceWindow:reloadFile() end
----@return any
-function SourceWindow:fill() end
----@return any
+function SourceWindow:checkFontSize() end
+
 function SourceWindow:createChildren() end
----@return any
-function SourceWindow:renderSrc() end
----@return any
+
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@return number
 function SourceWindow:doDrawItem(y, item) end
 
+function SourceWindow:fill() end
+
+function SourceWindow:initialise() end
+
+---@param item string
+function SourceWindow:onMouseDoubleClickBreakpointToggle(item) end
+
+---@param self ISScrollingListBox
+---@param del number
+---@return boolean
+function SourceWindow:onSourceMouseWheel(self, del) end
+
+function SourceWindow:prerender() end
+
+---@return boolean
+function SourceWindow:reloadFile() end
+
+---@param self ISScrollingListBox
+function SourceWindow:renderSrc(self) end
+
+---@param line number
+function SourceWindow:scrollToLine(line) end
+
+---@param listBox ISScrollingListBox
+function SourceWindow:setListBoxItemHeight(listBox) end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param filename string
 ---@return SourceWindow
 function SourceWindow:new(x, y, width, height, filename) end

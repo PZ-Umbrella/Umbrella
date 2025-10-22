@@ -1,43 +1,47 @@
 ---@meta
 
 ---@class ISTicketsUI : ISPanel
----@field no any
----@field datas any
----@field addTicketBtn any
----@field borderColor any
----@field backgroundColor any
----@field listHeaderColor any
----@field width any
----@field height any
----@field player any
----@field selectedFaction any
----@field moveWithMouse any
----@field tickets any
----@field [any] any
+---@field addTicketBtn ISButton
+---@field datas ISScrollingListBox
+---@field listHeaderColor table
+---@field no ISButton
+---@field player unknown
+---@field selectedFaction unknown?
+---@field tickets unknown?
 ISTicketsUI = ISPanel:derive("ISTicketsUI")
+ISTicketsUI.Type = "ISTicketsUI"
 ISTicketsUI.messages = {}
+ISTicketsUI.instance = nil ---@type ISTicketsUI?
 
----@return any
 function ISTicketsUI.gotTickets(tickets) end
 
----@return any
-function ISTicketsUI:initialise() end
----@return any
-function ISTicketsUI:getTickets() end
----@return any
-function ISTicketsUI:populateList() end
----@return any
-function ISTicketsUI:drawDatas(y, item, alt) end
----@return any
-function ISTicketsUI:prerender() end
----@return any
-function ISTicketsUI:render() end
----@return any
-function ISTicketsUI:onClick(button) end
----@return any
 function ISTicketsUI:close() end
----@return any
+
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
+function ISTicketsUI:drawDatas(y, item, alt) end
+
+function ISTicketsUI:getTickets() end
+
+function ISTicketsUI:initialise() end
+
+---@param button ISButton
 function ISTicketsUI:onAddTicket(button) end
 
+---@param button ISButton
+function ISTicketsUI:onClick(button) end
+
+function ISTicketsUI:populateList() end
+
+function ISTicketsUI:prerender() end
+
+function ISTicketsUI:render() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISTicketsUI
 function ISTicketsUI:new(x, y, width, height, player) end

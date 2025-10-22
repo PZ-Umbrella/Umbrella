@@ -1,61 +1,69 @@
 ---@meta
 
 ---@class RWMPanel : ISPanelJoypad
----@field player any
----@field device any
----@field deviceData any
----@field deviceType any
----@field focusElement any
----@field playerNum any
----@field radioParent any
----@field wrapParent any
----@field x any
----@field y any
----@field background any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field overrideBPrompt any
----@field [any] any
+---@field device (InventoryItem | IsoObject | VehiclePart)?
+---@field deviceData DeviceData?
+---@field deviceType string?
+---@field focusElement ISUIElement?
+---@field overrideBPrompt boolean
+---@field player IsoPlayer?
+---@field playerNum integer
+---@field radioParent ISRadioWindow?
+---@field wrapParent RWMElement?
 RWMPanel = ISPanelJoypad:derive("RWMPanel")
+RWMPanel.Type = "RWMPanel"
 
----@return any
-function RWMPanel:initialise() end
----@return any
-function RWMPanel:createChildren() end
----@return any
 function RWMPanel:clear() end
----@return any
-function RWMPanel:readFromObject(_player, _deviceObject, _deviceData, _deviceType) end
----@return any
-function RWMPanel:update() end
----@return any
-function RWMPanel:prerender() end
----@return any
-function RWMPanel:render() end
----@return any
-function RWMPanel:doWalkTo() end
----@return any
-function RWMPanel:setFocus(_playerNum, _radioParent, _parent) end
----@return any
+
+---@param joypadData JoypadData
 function RWMPanel:clearJoypadFocus(joypadData) end
----@return any
-function RWMPanel:onJoypadDown(button) end
----@return any
+
+function RWMPanel:createChildren() end
+
+---@return boolean?
+function RWMPanel:doWalkTo() end
+
+---@return string?
 function RWMPanel:getAPrompt() end
----@return any
+
+---@return string?
 function RWMPanel:getBPrompt() end
----@return any
+
+---@return string?
 function RWMPanel:getXPrompt() end
----@return any
+
+---@return string?
 function RWMPanel:getYPrompt() end
----@return any
+
+function RWMPanel:initialise() end
+
+---@return (boolean | DeviceData)?
 function RWMPanel:isValidPrompt() end
 
+---@param button integer
+function RWMPanel:onJoypadDown(button) end
+
+function RWMPanel:prerender() end
+
+---@param _player IsoPlayer
+---@param _deviceObject InventoryItem | IsoObject | VehiclePart
+---@param _deviceData DeviceData
+---@param _deviceType string
+---@return boolean
+function RWMPanel:readFromObject(_player, _deviceObject, _deviceData, _deviceType) end
+
+function RWMPanel:render() end
+
+---@param _playerNum integer
+---@param _radioParent ISRadioWindow
+---@param _parent RWMElement?
+function RWMPanel:setFocus(_playerNum, _radioParent, _parent) end
+
+function RWMPanel:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return RWMPanel
 function RWMPanel:new(x, y, width, height) end

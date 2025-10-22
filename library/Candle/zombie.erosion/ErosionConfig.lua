@@ -1,15 +1,15 @@
---- @meta
+--- @meta _
 
 --- @class ErosionConfig
 --- @field public class any
-ErosionConfig = {};
+ErosionConfig = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
+--- @return nil
 function ErosionConfig:consolePrint() end
 
 --- @public
@@ -18,27 +18,26 @@ function ErosionConfig:getDebug() end
 
 --- @public
 --- @param bb ByteBuffer
---- @return void
+--- @return nil
 function ErosionConfig:load(bb) end
 
 --- @public
---- @param _file String
+--- @param _file string
 --- @return boolean
 function ErosionConfig:readFile(_file) end
 
 --- @public
 --- @param bb ByteBuffer
---- @return void
+--- @return nil
 function ErosionConfig:save(bb) end
 
 --- @public
---- @param _file String
---- @return void
+--- @param _file string
+--- @return nil
 function ErosionConfig:writeFile(_file) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

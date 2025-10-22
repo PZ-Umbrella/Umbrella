@@ -1,15 +1,19 @@
 ---@meta
 
 ---@class CTrapGlobalObject : CGlobalObject
----@field animal any
----@field bait any
----@field [any] any
+---@field animal umbrella.TrapAnimalDefinition
+---@field bait string?
 CTrapGlobalObject = CGlobalObject:derive("CTrapGlobalObject")
+CTrapGlobalObject.Type = "CTrapGlobalObject"
 
----@return any
-function CTrapGlobalObject:fromModData(modData) end
----@return any
+---@param square IsoGridSquare
+---@return boolean
 function CTrapGlobalObject:checkForWallExploit(square) end
 
+---@param modData table
+function CTrapGlobalObject:fromModData(modData) end
+
+---@param luaSystem CTrapSystem
+---@param globalObject GlobalObject
 ---@return CTrapGlobalObject
 function CTrapGlobalObject:new(luaSystem, globalObject) end

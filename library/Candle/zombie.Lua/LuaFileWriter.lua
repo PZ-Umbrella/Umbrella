@@ -1,30 +1,29 @@
---- @meta
+--- @meta _
 
 --- @class LuaFileWriter
 --- @field public class any
-LuaFileWriter = {};
+LuaFileWriter = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
+--- @return nil
 function LuaFileWriter:close() end
 
 --- @public
---- @param str String
---- @return void
+--- @param str string
+--- @return nil
 function LuaFileWriter:write(str) end
 
 --- @public
---- @param str String
---- @return void
+--- @param str string
+--- @return nil
 function LuaFileWriter:writeln(str) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

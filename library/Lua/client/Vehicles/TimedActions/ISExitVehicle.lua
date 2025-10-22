@@ -1,24 +1,24 @@
 ---@meta
 
 ---@class ISExitVehicle : ISBaseTimedAction
----@field vehicle any
----@field character any
----@field maxTime any
----@field [any] any
+---@field vehicle BaseVehicle
 ISExitVehicle = ISBaseTimedAction:derive("ISExitVehicle")
+ISExitVehicle.Type = "ISExitVehicle"
 
----@return any
-function ISExitVehicle:isValid() end
----@return any
-function ISExitVehicle:update() end
----@return any
-function ISExitVehicle:start() end
----@return any
-function ISExitVehicle:stop() end
----@return any
-function ISExitVehicle:perform() end
----@return any
+---@return string[]?
 function ISExitVehicle:getExtraLogData() end
 
+---@return boolean
+function ISExitVehicle:isValid() end
+
+function ISExitVehicle:perform() end
+
+function ISExitVehicle:start() end
+
+function ISExitVehicle:stop() end
+
+function ISExitVehicle:update() end
+
+---@param character IsoPlayer
 ---@return ISExitVehicle
 function ISExitVehicle:new(character) end

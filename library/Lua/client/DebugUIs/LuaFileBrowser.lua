@@ -1,38 +1,54 @@
 ---@meta
 
 ---@class LuaFileBrowser : ISCollapsableWindow
----@field title any
----@field lastText any
----@field buttonReloadRow any
----@field fileList any
----@field textEntry any
----@field buttonReload any
----@field backgroundColor any
----@field [any] any
+---@field buttonReload ISButton
+---@field buttonReloadRow number
+---@field fileList ISScrollingListBox
+---@field lastText string
+---@field textEntry ISTextEntryBox
+---@field title string
 LuaFileBrowser = ISCollapsableWindow:derive("LuaFileBrowser")
+LuaFileBrowser.Type = "LuaFileBrowser"
 
----@return any
-function LuaFileBrowser:initialise() end
----@return any
-function LuaFileBrowser:onMouseDoubleClickFile(item) end
----@return any
-function LuaFileBrowser:update() end
----@return any
-function LuaFileBrowser:fill() end
----@return any
-function LuaFileBrowser:updateReloadButton() end
----@return any
-function LuaFileBrowser:onButtonReload() end
----@return any
+function LuaFileBrowser:checkFontSize() end
+
 function LuaFileBrowser:createChildren() end
 
+function LuaFileBrowser:fill() end
+
+function LuaFileBrowser:initialise() end
+
+function LuaFileBrowser:onButtonReload() end
+
+---@param item string
+function LuaFileBrowser:onMouseDoubleClickFile(item) end
+
+function LuaFileBrowser:prerender() end
+
+---@param listBox ISScrollingListBox
+function LuaFileBrowser:setListBoxItemHeight(listBox) end
+
+function LuaFileBrowser:update() end
+
+function LuaFileBrowser:updateReloadButton() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return LuaFileBrowser
 function LuaFileBrowser:new(x, y, width, height) end
 
 ---@class LuaFileBrowserList : ISScrollingListBox
 LuaFileBrowserList = ISScrollingListBox:derive("LuaFileBrowserList")
+LuaFileBrowserList.Type = "LuaFileBrowserList"
 
----@return any
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
 function LuaFileBrowserList:doDrawItem(y, item, alt) end
----@return any
+
+---@param del number
+---@return boolean
 function LuaFileBrowserList:onMouseWheel(del) end

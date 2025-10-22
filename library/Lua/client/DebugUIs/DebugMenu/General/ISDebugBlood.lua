@@ -1,26 +1,32 @@
 ---@meta
 
 ---@class ISDebugBlood : ISDebugSubPanelBase
----@field partToSlider any
----@field updateTime any
----@field ignoreSlider any
----@field [any] any
+---@field ignoreSlider boolean
+---@field partToSlider table<BloodBodyPartType, ISSliderPanel>
+---@field updateTime number
 ISDebugBlood = ISDebugSubPanelBase:derive("ISDebugBlood")
+ISDebugBlood.Type = "ISDebugBlood"
 
----@return any
-function ISDebugBlood:initialise() end
----@return any
 function ISDebugBlood:createChildren() end
----@return any
-function ISDebugBlood:prerender() end
----@return any
-function ISDebugBlood:setSliderValues() end
----@return any
-function ISDebugBlood:onSliderChange(_newval, _slider) end
----@return any
-function ISDebugBlood:onZeroAll() end
----@return any
+
+function ISDebugBlood:initialise() end
+
 function ISDebugBlood:onRandomBlood() end
 
+---@param _newval number
+---@param _slider ISSliderPanel
+function ISDebugBlood:onSliderChange(_newval, _slider) end
+
+function ISDebugBlood:onZeroAll() end
+
+function ISDebugBlood:prerender() end
+
+function ISDebugBlood:setSliderValues() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param doStencil boolean?
 ---@return ISDebugBlood
 function ISDebugBlood:new(x, y, width, height, doStencil) end

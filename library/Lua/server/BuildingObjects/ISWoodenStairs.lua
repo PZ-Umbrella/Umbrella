@@ -1,32 +1,71 @@
 ---@meta
 
 ---@class ISWoodenStairs : ISBuildingObject
----@field sq any
----@field sprite2 any
----@field sprite3 any
----@field northSprite2 any
----@field northSprite3 any
----@field pillar any
----@field pillarNorth any
----@field [any] any
+---@field northSprite2 string
+---@field northSprite3 string
+---@field pillar string
+---@field pillarNorth string
+---@field sprite2 string
+---@field sprite3 string
+---@field sq IsoGridSquare
 ISWoodenStairs = ISBuildingObject:derive("ISWoodenStairs")
+ISWoodenStairs.Type = "ISWoodenStairs"
 
----@return any
+---@param x number
+---@param y number
+---@param z number
+---@param north boolean
+---@param sprite string
 function ISWoodenStairs:create(x, y, z, north, sprite) end
----@return any
-function ISWoodenStairs:setInfo(square, level, north, sprite, luaobject) end
----@return any
+
+---@return number
 function ISWoodenStairs:getHealth() end
----@return any
-function ISWoodenStairs:render(x, y, z, square) end
----@return any
-function ISWoodenStairs:isValid(square) end
----@return any
+
+---@param square IsoGridSquare
+---@param north boolean
+---@return number
+---@return number
+---@return number
 function ISWoodenStairs:getSquare2Pos(square, north) end
----@return any
+
+---@param square IsoGridSquare
+---@param north boolean
+---@return number
+---@return number
+---@return number
 function ISWoodenStairs:getSquare3Pos(square, north) end
----@return any
+
+---@param square IsoGridSquare
+---@param north boolean
+---@return number
+---@return number
+---@return number
 function ISWoodenStairs:getSquareTopPos(square, north) end
 
+---@param square IsoGridSquare
+---@return boolean
+function ISWoodenStairs:isValid(square) end
+
+---@param x number
+---@param y number
+---@param z number
+---@param square IsoGridSquare
+function ISWoodenStairs:render(x, y, z, square) end
+
+---@param square IsoGridSquare
+---@param level number
+---@param north boolean
+---@param sprite string
+---@param luaobject ISWoodenStairs
+function ISWoodenStairs:setInfo(square, level, north, sprite, luaobject) end
+
+---@param sprite string
+---@param sprite2 string
+---@param sprite3 string
+---@param northSprite string
+---@param northSprite2 string
+---@param northSprite3 string
+---@param pillar string
+---@param pillarNorth string
 ---@return ISWoodenStairs
-function ISWoodenStairs:new(sprite1, sprite2, sprite3, northSprite1, northSprite2, northSprite3, pillar, pillarNorth) end
+function ISWoodenStairs:new(sprite, sprite2, sprite3, northSprite, northSprite2, northSprite3, pillar, pillarNorth) end

@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class ClimateValues TurboTuTone.
 --- @field public class any
-ClimateValues = {};
+ClimateValues = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -10,51 +10,51 @@ ClimateValues = {};
 
 --- @public
 --- @param copy ClimateValues
---- @return void
+--- @return nil
 function ClimateValues:CopyValues(copy) end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getAirFrontAirmass() end
 
 --- @public
---- @return double
+--- @return number
 function ClimateValues:getAirMassNoiseFrequencyMod() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getAirMassTemperature() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getAmbient() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getBaseTemperature() end
 
 --- @public
---- @return int
+--- @return integer
 function ClimateValues:getCacheDay() end
 
 --- @public
---- @return int
+--- @return integer
 function ClimateValues:getCacheMonth() end
 
 --- @public
---- @return double
+--- @return number
 function ClimateValues:getCacheWorldAgeHours() end
 
 --- @public
---- @return int
+--- @return integer
 function ClimateValues:getCacheYear() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getCloudIntensity() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getCloudyT() end
 
 --- @public
@@ -62,83 +62,83 @@ function ClimateValues:getCloudyT() end
 function ClimateValues:getCopy() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getDawn() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getDayFogDuration() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getDayFogStrength() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getDayLightLagged() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getDayLightStrength() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getDayLightStrengthBase() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getDayMeanTemperature() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getDesaturation() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getDusk() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getHumidity() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getLerpNight() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getNightLagged() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getNightStrength() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getNoiseAirmass() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getNoon() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getTemperature() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getTime() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getWindAngleDegrees() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getWindAngleIntensity() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateValues:getWindIntensity() end
 
 --- @public
@@ -151,19 +151,39 @@ function ClimateValues:isTemperatureIsSnow() end
 
 --- @public
 --- @param calendar GregorianCalendar
---- @return void
---- @overload fun(self: ClimateValues, year: int, month: int, dayOfMonth: int): void
---- @overload fun(self: ClimateValues, year: int, month: int, dayOfMonth: int, hourOfDay: int): void
---- @overload fun(self: ClimateValues, year: int, month: int, dayOfMonth: int, hourOfDay: int, minute: int): void
+--- @return nil
 function ClimateValues:pollDate(calendar) end
 
 --- @public
---- @return void
+--- @param year integer
+--- @param month integer
+--- @param dayOfMonth integer
+--- @return nil
+function ClimateValues:pollDate(year, month, dayOfMonth) end
+
+--- @public
+--- @param year integer
+--- @param month integer
+--- @param dayOfMonth integer
+--- @param hourOfDay integer
+--- @return nil
+function ClimateValues:pollDate(year, month, dayOfMonth, hourOfDay) end
+
+--- @public
+--- @param year integer
+--- @param month integer
+--- @param dayOfMonth integer
+--- @param hourOfDay integer
+--- @param minute integer
+--- @return nil
+function ClimateValues:pollDate(year, month, dayOfMonth, hourOfDay, minute) end
+
+--- @public
+--- @return nil
 function ClimateValues:print() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

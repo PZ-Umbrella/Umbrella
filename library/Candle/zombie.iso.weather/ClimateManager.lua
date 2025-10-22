@@ -1,44 +1,44 @@
---- @meta
+--- @meta _
 
 --- @class ClimateManager TurboTuTone.
 --- @field public class any
 --- @field public A_STORM_IS_COMING boolean
---- @field public AVG_FAV_AIR_TEMPERATURE float
---- @field public BOOL_IS_SNOW int
---- @field public BOOL_MAX int
---- @field public COLOR_GLOBAL_LIGHT int
---- @field public COLOR_MAX int
---- @field public COLOR_NEW_FOG int
---- @field public FLOAT_AMBIENT int
---- @field public FLOAT_CLOUD_INTENSITY int
---- @field public FLOAT_DAYLIGHT_STRENGTH int
---- @field public FLOAT_DESATURATION int
---- @field public FLOAT_FOG_INTENSITY int
---- @field public FLOAT_GLOBAL_LIGHT_INTENSITY int
---- @field public FLOAT_HUMIDITY int
---- @field public FLOAT_MAX int
---- @field public FLOAT_NIGHT_STRENGTH int
---- @field public FLOAT_PRECIPITATION_INTENSITY int
---- @field public FLOAT_TEMPERATURE int
---- @field public FLOAT_VIEW_DISTANCE int
---- @field public FLOAT_WIND_ANGLE_INTENSITY int
---- @field public FLOAT_WIND_INTENSITY int
---- @field public FRONT_COLD int
---- @field public FRONT_STATIONARY int
---- @field public FRONT_WARM int
---- @field public MAX_WINDSPEED_KPH float
---- @field public MAX_WINDSPEED_MPH float
---- @field public PacketAdminVarsUpdate byte
---- @field public PacketClientChangedAdminVars byte
---- @field public PacketClientChangedWeather byte
---- @field public PacketFlare byte
---- @field public PacketRequestAdminVars byte
---- @field public PacketThunderEvent byte
---- @field public PacketUpdateClimateVars byte
---- @field public PacketWeatherUpdate byte
+--- @field public AVG_FAV_AIR_TEMPERATURE number
+--- @field public BOOL_IS_SNOW integer
+--- @field public BOOL_MAX integer
+--- @field public COLOR_GLOBAL_LIGHT integer
+--- @field public COLOR_MAX integer
+--- @field public COLOR_NEW_FOG integer
+--- @field public FLOAT_AMBIENT integer
+--- @field public FLOAT_CLOUD_INTENSITY integer
+--- @field public FLOAT_DAYLIGHT_STRENGTH integer
+--- @field public FLOAT_DESATURATION integer
+--- @field public FLOAT_FOG_INTENSITY integer
+--- @field public FLOAT_GLOBAL_LIGHT_INTENSITY integer
+--- @field public FLOAT_HUMIDITY integer
+--- @field public FLOAT_MAX integer
+--- @field public FLOAT_NIGHT_STRENGTH integer
+--- @field public FLOAT_PRECIPITATION_INTENSITY integer
+--- @field public FLOAT_TEMPERATURE integer
+--- @field public FLOAT_VIEW_DISTANCE integer
+--- @field public FLOAT_WIND_ANGLE_INTENSITY integer
+--- @field public FLOAT_WIND_INTENSITY integer
+--- @field public FRONT_COLD integer
+--- @field public FRONT_STATIONARY integer
+--- @field public FRONT_WARM integer
+--- @field public MAX_WINDSPEED_KPH number
+--- @field public MAX_WINDSPEED_MPH number
+--- @field public PacketAdminVarsUpdate integer
+--- @field public PacketClientChangedAdminVars integer
+--- @field public PacketClientChangedWeather integer
+--- @field public PacketFlare integer
+--- @field public PacketRequestAdminVars integer
+--- @field public PacketThunderEvent integer
+--- @field public PacketUpdateClimateVars integer
+--- @field public PacketWeatherUpdate integer
 --- @field public THE_DESCENDING_FOG boolean
 --- @field public WINTER_IS_COMING boolean
-ClimateManager = {};
+ClimateManager = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -46,37 +46,44 @@ ClimateManager = {};
 
 --- @public
 --- @static
---- @param val float
---- @return float
+--- @param val number
+--- @return number
 function ClimateManager.ToKph(val) end
 
 --- @public
 --- @static
---- @param val float
---- @return float
+--- @param val number
+--- @return number
 function ClimateManager.ToMph(val) end
 
 --- @public
 --- @static
---- @param min float
---- @param max float
---- @param val float
---- @return float
---- @overload fun(min: int, max: int, val: int): int
+--- @param min number
+--- @param max number
+--- @param val number
+--- @return number
 function ClimateManager.clamp(min, max, val) end
 
 --- @public
 --- @static
---- @param val float
---- @return float
+--- @param min integer
+--- @param max integer
+--- @param val integer
+--- @return integer
+function ClimateManager.clamp(min, max, val) end
+
+--- @public
+--- @static
+--- @param val number
+--- @return number
 function ClimateManager.clamp01(val) end
 
 --- @public
 --- @static
---- @param t float
---- @param a float
---- @param b float
---- @return float
+--- @param t number
+--- @param a number
+--- @param b number
+--- @return number
 function ClimateManager.clerp(t, a, b) end
 
 --- @public
@@ -86,128 +93,151 @@ function ClimateManager.getInstance() end
 
 --- @public
 --- @static
---- @param angle float
---- @return String
+--- @param angle number
+--- @return string
 function ClimateManager.getWindAngleString(angle) end
 
 --- @public
 --- @static
---- @return double
+--- @return number
 function ClimateManager.getWindNoiseBase() end
 
 --- @public
 --- @static
---- @return double
+--- @return number
 function ClimateManager.getWindNoiseFinal() end
 
 --- @public
 --- @static
---- @return double
+--- @return number
 function ClimateManager.getWindTickFinal() end
 
 --- @public
 --- @static
---- @param t float
---- @param a float
---- @param b float
---- @return float
+--- @param t number
+--- @param a number
+--- @param b number
+--- @return number
 function ClimateManager.lerp(t, a, b) end
 
 --- @public
 --- @static
---- @param v float
---- @param n float
---- @return float
+--- @param v number
+--- @param n number
+--- @return number
 function ClimateManager.normalizeRange(v, n) end
 
 --- @public
 --- @static
---- @param v float
---- @return float
+--- @param v number
+--- @return number
 function ClimateManager.posToPosNegRange(v) end
 
 --- @public
 --- @static
 --- @param inst ClimateManager
---- @return void
+--- @return nil
 function ClimateManager.setInstance(inst) end
-
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param year int
---- @param month int
---- @param day int
+--- @param year integer
+--- @param month integer
+--- @param day integer
 --- @param front AirFront
---- @return void
+--- @return nil
 function ClimateManager:CalculateWeatherFrontStrength(year, month, day, front) end
 
 --- @public
 --- @param copy ClimateValues
---- @return void
+--- @return nil
 function ClimateManager:CopyClimateValues(copy) end
 
 --- @public
---- @return void
---- @overload fun(self: ClimateManager, RainModOverride: int): void
+--- @return nil
+function ClimateManager:Reset() end
+
+--- @public
+--- @return nil
 function ClimateManager:execute_Simulation() end
 
 --- @public
---- @return void
+--- @param RainModOverride integer
+--- @return nil
+function ClimateManager:execute_Simulation(RainModOverride) end
+
+--- @public
+--- @return nil
 function ClimateManager:forceDayInfoUpdate() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getAirMass() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getAirMassDaily() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getAirMassTemperature() end
 
 --- @public
 --- @param plr IsoGameCharacter
---- @return float
---- @overload fun(self: ClimateManager, plr: IsoGameCharacter, doWindChill: boolean): float
+--- @return number
 function ClimateManager:getAirTemperatureForCharacter(plr) end
 
 --- @public
+--- @param plr IsoGameCharacter
+--- @param doWindChill boolean
+--- @return number
+function ClimateManager:getAirTemperatureForCharacter(plr, doWindChill) end
+
+--- @public
 --- @param square IsoGridSquare
---- @return float
---- @overload fun(self: ClimateManager, square: IsoGridSquare, vehicle: BaseVehicle): float
---- @overload fun(self: ClimateManager, square: IsoGridSquare, vehicle: BaseVehicle, doWindChill: boolean): float
+--- @return number
 function ClimateManager:getAirTemperatureForSquare(square) end
 
 --- @public
---- @return float
+--- @param square IsoGridSquare
+--- @param vehicle BaseVehicle
+--- @return number
+function ClimateManager:getAirTemperatureForSquare(square, vehicle) end
+
+--- @public
+--- @param square IsoGridSquare
+--- @param vehicle BaseVehicle
+--- @param doWindChill boolean
+--- @return number
+function ClimateManager:getAirTemperatureForSquare(square, vehicle, doWindChill) end
+
+--- @public
+--- @return number
 function ClimateManager:getAmbient() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getBaseTemperature() end
 
 --- @public
---- @return int
+--- @return integer
 function ClimateManager:getBoolMax() end
 
 --- @public
---- @param id int
+--- @param id integer
 --- @return ClimateBool
 function ClimateManager:getClimateBool(id) end
 
 --- @public
---- @param id int
+--- @param id integer
 --- @return ClimateColor
 function ClimateManager:getClimateColor(id) end
 
 --- @public
---- @param id int
+--- @param id integer
 --- @return ClimateFloat
 function ClimateManager:getClimateFloat(id) end
 
@@ -224,7 +254,7 @@ function ClimateManager:getClimateHistory() end
 function ClimateManager:getClimateValuesCopy() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getCloudIntensity() end
 
 --- @public
@@ -252,7 +282,7 @@ function ClimateManager:getColNightMoon() end
 function ClimateManager:getColNightNoMoon() end
 
 --- @public
---- @return int
+--- @return integer
 function ClimateManager:getColorMax() end
 
 --- @public
@@ -260,7 +290,7 @@ function ClimateManager:getColorMax() end
 function ClimateManager:getColorNewFog() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getCorrectedWindAngleIntensity() end
 
 --- @public
@@ -268,15 +298,15 @@ function ClimateManager:getCorrectedWindAngleIntensity() end
 function ClimateManager:getCurrentDay() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getDayLightStrength() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getDayMeanTemperature() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getDesaturation() end
 
 --- @public
@@ -292,11 +322,11 @@ function ClimateManager:getEnabledSimulation() end
 function ClimateManager:getEnabledWeatherGeneration() end
 
 --- @public
---- @return int
+--- @return integer
 function ClimateManager:getFloatMax() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getFogIntensity() end
 
 --- @public
@@ -308,7 +338,7 @@ function ClimateManager:getFogTintStorm() end
 function ClimateManager:getFogTintTropical() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getFrontStrength() end
 
 --- @public
@@ -316,7 +346,7 @@ function ClimateManager:getFrontStrength() end
 function ClimateManager:getGlobalLight() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getGlobalLightIntensity() end
 
 --- @public
@@ -324,7 +354,7 @@ function ClimateManager:getGlobalLightIntensity() end
 function ClimateManager:getGlobalLightInternal() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getHumidity() end
 
 --- @public
@@ -332,15 +362,15 @@ function ClimateManager:getHumidity() end
 function ClimateManager:getIsThunderStorming() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getMaxWindspeedKph() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getMaxWindspeedMph() end
 
 --- @public
---- @return KahluaTable
+--- @return table
 function ClimateManager:getModData() end
 
 --- @public
@@ -348,11 +378,11 @@ function ClimateManager:getModData() end
 function ClimateManager:getNextDay() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getNightStrength() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getPrecipitationIntensity() end
 
 --- @public
@@ -364,7 +394,7 @@ function ClimateManager:getPrecipitationIsSnow() end
 function ClimateManager:getPreviousDay() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getRainIntensity() end
 
 --- @public
@@ -372,54 +402,62 @@ function ClimateManager:getRainIntensity() end
 function ClimateManager:getSeason() end
 
 --- @public
---- @param segment int
---- @param temperature int
---- @param season int
+--- @param segment integer
+--- @param temperature integer
+--- @param season integer
 --- @return ClimateColorInfo
 function ClimateManager:getSeasonColor(segment, temperature, season) end
 
 --- @public
---- @return String
+--- @return integer
+function ClimateManager:getSeasonId() end
+
+--- @public
+--- @return string
 function ClimateManager:getSeasonName() end
 
 --- @public
---- @return float
+--- @return string
+function ClimateManager:getSeasonNameTranslated() end
+
+--- @public
+--- @return number
 function ClimateManager:getSeasonProgression() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getSeasonStrength() end
 
 --- @public
---- @return double
+--- @return number
 function ClimateManager:getSimplexOffsetA() end
 
 --- @public
---- @return double
+--- @return number
 function ClimateManager:getSimplexOffsetB() end
 
 --- @public
---- @return double
+--- @return number
 function ClimateManager:getSimplexOffsetC() end
 
 --- @public
---- @return double
+--- @return number
 function ClimateManager:getSimplexOffsetD() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getSnowFracNow() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getSnowIntensity() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getSnowStrength() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getTemperature() end
 
 --- @public
@@ -427,11 +465,11 @@ function ClimateManager:getTemperature() end
 function ClimateManager:getThunderStorm() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getViewDistance() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getWeatherInterference() end
 
 --- @public
@@ -439,46 +477,46 @@ function ClimateManager:getWeatherInterference() end
 function ClimateManager:getWeatherPeriod() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getWindAngleDegrees() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getWindAngleIntensity() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getWindAngleRadians() end
 
 --- @public
 --- @param character IsoGameCharacter
---- @param angle float
---- @return float
+--- @param angle number
+--- @return number
 function ClimateManager:getWindForceMovement(character, angle) end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getWindIntensity() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getWindPower() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getWindSpeedMovement() end
 
 --- @public
---- @return float
+--- @return number
 function ClimateManager:getWindspeedKph() end
 
 --- @public
---- @return double
+--- @return number
 function ClimateManager:getWorldAgeHours() end
 
 --- @public
 --- @param metaGrid IsoMetaGrid
---- @return void
+--- @return nil
 function ClimateManager:init(metaGrid) end
 
 --- @public
@@ -494,235 +532,264 @@ function ClimateManager:isSnowing() end
 function ClimateManager:isUpdated() end
 
 --- @public
---- @return void
+--- @return nil
 function ClimateManager:launchFlare() end
 
 --- @public
 --- @param input DataInputStream
---- @param worldVersion int
---- @return void
+--- @param worldVersion integer
+--- @return nil
 function ClimateManager:load(input, worldVersion) end
 
 --- @public
---- @return void
+--- @return nil
 function ClimateManager:postCellLoadSetSnow() end
 
 --- @public
 --- @param bb ByteBuffer
 --- @param ignoreConnection UdpConnection
---- @return void
+--- @return nil
 function ClimateManager:receiveClimatePacket(bb, ignoreConnection) end
 
 --- @public
---- @return void
+--- @return nil
 function ClimateManager:resetAdmin() end
 
 --- @public
---- @return void
+--- @return nil
 function ClimateManager:resetModded() end
 
 --- @public
---- @return void
+--- @return nil
 function ClimateManager:resetOverrides() end
 
 --- @public
 ---
----  IO
+--- IO
 ---
 --- @param output DataOutputStream
---- @return void
+--- @return nil
 function ClimateManager:save(output) end
 
 --- @public
 --- @param connection UdpConnection
---- @return void
+--- @return nil
 function ClimateManager:sendInitialState(connection) end
 
 --- @public
---- @param f float
---- @return void
+--- @param f number
+--- @return nil
 function ClimateManager:setAmbient(f) end
 
 --- @public
---- @param f float
---- @return void
+--- @param f number
+--- @return nil
 function ClimateManager:setDayLightStrength(f) end
 
 --- @public
---- @param desaturation float
---- @return void
+--- @param desaturation number
+--- @return nil
 function ClimateManager:setDesaturation(desaturation) end
 
 --- @public
 --- @param b boolean
---- @return void
+--- @return nil
 function ClimateManager:setEnabledFxUpdate(b) end
 
 --- @public
 --- @param b boolean
---- @return void
+--- @return nil
 function ClimateManager:setEnabledSimulation(b) end
 
 --- @public
 --- @param b boolean
---- @return void
+--- @return nil
 function ClimateManager:setEnabledWeatherGeneration(b) end
 
 --- @public
---- @param b float
---- @return void
+--- @param b number
+--- @return nil
 function ClimateManager:setNightStrength(b) end
 
 --- @public
 --- @param b boolean
---- @return void
+--- @return nil
 function ClimateManager:setPrecipitationIsSnow(b) end
 
 --- @public
---- @param temperature int
---- @param season int
---- @param r float
---- @param g float
---- @param b float
---- @param a float
+--- @param temperature integer
+--- @param season integer
+--- @param r number
+--- @param g number
+--- @param b number
+--- @param a number
 --- @param exterior boolean
---- @return void
+--- @return nil
 function ClimateManager:setSeasonColorDawn(temperature, season, r, g, b, a, exterior) end
 
 --- @public
---- @param temperature int
---- @param season int
---- @param r float
---- @param g float
---- @param b float
---- @param a float
+--- @param temperature integer
+--- @param season integer
+--- @param r number
+--- @param g number
+--- @param b number
+--- @param a number
 --- @param exterior boolean
---- @return void
+--- @return nil
 function ClimateManager:setSeasonColorDay(temperature, season, r, g, b, a, exterior) end
 
 --- @public
---- @param temperature int
---- @param season int
---- @param r float
---- @param g float
---- @param b float
---- @param a float
+--- @param temperature integer
+--- @param season integer
+--- @param r number
+--- @param g number
+--- @param b number
+--- @param a number
 --- @param exterior boolean
---- @return void
+--- @return nil
 function ClimateManager:setSeasonColorDusk(temperature, season, r, g, b, a, exterior) end
 
 --- @public
---- @param f float
---- @return void
+--- @param f number
+--- @return nil
 function ClimateManager:setViewDistance(f) end
 
 --- @public
---- @return void
+--- @return nil
 function ClimateManager:stopWeatherAndThunder() end
 
 --- @public
---- @return void
+--- @return nil
 function ClimateManager:transmitClientChangeAdminVars() end
 
 --- @public
---- @param strength float
---- @param front int
---- @return void
+--- @param strength number
+--- @param front integer
+--- @return nil
 function ClimateManager:transmitGenerateWeather(strength, front) end
 
 --- @public
---- @return void
+--- @return nil
 function ClimateManager:transmitRequestAdminVars() end
 
 --- @public
---- @param intensity float
---- @return void
+--- @param intensity number
+--- @return nil
 function ClimateManager:transmitServerStartRain(intensity) end
 
 --- @public
---- @return void
+--- @return nil
 function ClimateManager:transmitServerStopRain() end
 
 --- @public
---- @return void
+--- @return nil
 function ClimateManager:transmitServerStopWeather() end
 
 --- @public
---- @param x int
---- @param y int
+--- @param x integer
+--- @param y integer
 --- @param doStrike boolean
 --- @param doLightning boolean
 --- @param doRumble boolean
---- @return void
+--- @return nil
 function ClimateManager:transmitServerTriggerLightning(x, y, doStrike, doLightning, doRumble) end
 
 --- @public
---- @param duration float
---- @return void
+--- @param duration number
+--- @return nil
 function ClimateManager:transmitServerTriggerStorm(duration) end
 
 --- @public
---- @return void
+--- @return nil
 function ClimateManager:transmitStopWeather() end
 
 --- @public
---- @param duration float
---- @return void
+--- @param duration number
+--- @return nil
 function ClimateManager:transmitTriggerBlizzard(duration) end
 
 --- @public
---- @param duration float
---- @return void
+--- @param duration number
+--- @return nil
 function ClimateManager:transmitTriggerStorm(duration) end
 
 --- @public
---- @param duration float
---- @return void
+--- @param duration number
+--- @return nil
 function ClimateManager:transmitTriggerTropical(duration) end
 
 --- @public
---- @param strength float
+--- @param strength number
 --- @param warmFront boolean
 --- @return boolean
 function ClimateManager:triggerCustomWeather(strength, warmFront) end
 
 --- @public
---- @param stage int
---- @param duration float
+--- @param stage integer
+--- @param duration number
 --- @return boolean
 function ClimateManager:triggerCustomWeatherStage(stage, duration) end
 
 --- @public
---- @param centerX int
---- @param centerY int
---- @param duration double
---- @param strength float
---- @param initialProgress float
---- @param angle float
---- @param initialPuddles float
---- @return void
---- @overload fun(self: ClimateManager, centerX: int, centerY: int, duration: double, strength: float, initialProgress: float, angle: float, initialPuddles: float, cloudcolor: ClimateColorInfo): void
-function ClimateManager:triggerKateBobIntroStorm(centerX, centerY, duration, strength, initialProgress, angle, initialPuddles) end
+--- @param centerX integer
+--- @param centerY integer
+--- @param duration number
+--- @param strength number
+--- @param initialProgress number
+--- @param angle number
+--- @param initialPuddles number
+--- @return nil
+function ClimateManager:triggerKateBobIntroStorm(
+	centerX,
+	centerY,
+	duration,
+	strength,
+	initialProgress,
+	angle,
+	initialPuddles
+)
+end
 
 --- @public
---- @return void
+--- @param centerX integer
+--- @param centerY integer
+--- @param duration number
+--- @param strength number
+--- @param initialProgress number
+--- @param angle number
+--- @param initialPuddles number
+--- @param cloudcolor ClimateColorInfo
+--- @return nil
+function ClimateManager:triggerKateBobIntroStorm(
+	centerX,
+	centerY,
+	duration,
+	strength,
+	initialProgress,
+	angle,
+	initialPuddles,
+	cloudcolor
+)
+end
+
+--- @public
+--- @return nil
 function ClimateManager:triggerWinterIsComingStorm() end
 
 --- @public
---- @return void
+--- @return nil
 function ClimateManager:update() end
 
 --- @public
---- @return void
+--- @return nil
 function ClimateManager:updateEveryTenMins() end
 
 --- @public
---- @return void
+--- @return nil
 function ClimateManager:updateOLD() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

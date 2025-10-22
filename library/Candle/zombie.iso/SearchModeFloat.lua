@@ -1,86 +1,93 @@
---- @meta
+--- @meta _
 
 --- @class SearchModeFloat
 --- @field public class any
-SearchModeFloat = {};
+SearchModeFloat = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
+--- @return nil
 function SearchModeFloat:equalise() end
 
 --- @public
---- @return float
+--- @return number
 function SearchModeFloat:getExterior() end
 
 --- @public
---- @return float
+--- @return number
 function SearchModeFloat:getInterior() end
 
 --- @public
---- @return float
+--- @return number
 function SearchModeFloat:getMax() end
 
 --- @public
---- @return float
+--- @return number
 function SearchModeFloat:getMin() end
 
 --- @public
---- @return float
+--- @return number
 function SearchModeFloat:getStepsize() end
 
 --- @public
---- @return float
+--- @return number
 function SearchModeFloat:getTargetExterior() end
 
 --- @public
---- @return float
+--- @return number
 function SearchModeFloat:getTargetInterior() end
 
 --- @public
---- @return void
+--- @return nil
 function SearchModeFloat:reset() end
 
 --- @public
---- @param exterior float
---- @param targetExterior float
---- @param interior float
---- @param targetInterior float
---- @return void
+--- @return nil
+function SearchModeFloat:resetAll() end
+
+--- @public
+--- @param exterior number
+--- @param targetExterior number
+--- @param interior number
+--- @param targetInterior number
+--- @return nil
 function SearchModeFloat:set(exterior, targetExterior, interior, targetInterior) end
 
 --- @public
---- @param exterior float
---- @return void
+--- @param arg0 number
+--- @return nil
+function SearchModeFloat:setAll(arg0) end
+
+--- @public
+--- @param exterior number
+--- @return nil
 function SearchModeFloat:setExterior(exterior) end
 
 --- @public
---- @param interior float
---- @return void
+--- @param interior number
+--- @return nil
 function SearchModeFloat:setInterior(interior) end
 
 --- @public
---- @param targetExterior float
---- @return void
+--- @param targetExterior number
+--- @return nil
 function SearchModeFloat:setTargetExterior(targetExterior) end
 
 --- @public
---- @param targetInterior float
---- @return void
+--- @param targetInterior number
+--- @return nil
 function SearchModeFloat:setTargetInterior(targetInterior) end
 
 --- @public
---- @param targetExterior float
---- @param targetInterior float
---- @return void
+--- @param targetExterior number
+--- @param targetInterior number
+--- @return nil
 function SearchModeFloat:setTargets(targetExterior, targetInterior) end
 
 --- @public
---- @param delta float
---- @return void
+--- @param delta number
+--- @return nil
 function SearchModeFloat:update(delta) end
-
-

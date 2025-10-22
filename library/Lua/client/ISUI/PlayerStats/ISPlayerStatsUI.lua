@@ -1,105 +1,162 @@
 ---@meta
 
 ---@class ISPlayerStatsUI : ISPanel
----@field selectedPerk any
----@field syncWeightTimer any
----@field mainPanel any
----@field closeBtn any
----@field addTraitBtn any
----@field changeProfession any
----@field changeUsernameBtn any
----@field changeForename any
----@field changeSurname any
----@field muteAllBtn any
----@field changeAccessLvlBtn any
----@field userlogBtn any
----@field warningPointsBtn any
----@field weightBtn any
----@field manageInvBtn any
----@field xpListBox any
----@field addXpBtn any
----@field addLvlBtn any
----@field loseLvlBtn any
----@field char any
----@field variableColor any
----@field admin any
----@field borderColor any
----@field listHeaderColor any
----@field backgroundColor any
----@field buttonBorderColor any
----@field traits any
----@field traitsRemoveButtons any
----@field perks any
----@field perksAddXPButtons any
----@field userlogs any
----@field xoffset any
----@field buttonOffset any
----@field buttonWidth any
----@field buttonPadY any
----@field buttonHeight any
----@field warningPoint any
----@field windows any
----@field moveWithMouse any
----@field [any] any
+---@field addLvlBtn ISButton
+---@field addTraitBtn ISButton
+---@field addXpBtn ISButton
+---@field admin IsoPlayer
+---@field buttonBorderColor umbrella.RGBA
+---@field buttonHeight number
+---@field buttonOffset number
+---@field buttonPadY number
+---@field buttonWidth number
+---@field changeAccessLvlBtn ISButton
+---@field changeForename ISButton
+---@field changeProfession ISButton
+---@field changeSurname ISButton
+---@field changeUsernameBtn ISButton
+---@field char IsoPlayer
+---@field closeBtn ISButton
+---@field listHeaderColor umbrella.RGBA
+---@field loseLvlBtn ISButton
+---@field mainPanel ISPanel
+---@field manageInvBtn ISButton
+---@field muteAllBtn ISButton
+---@field perks table
+---@field perksAddXPButtons table
+---@field selectedPerk umbrella.ISPlayerStatsUI.PerkTable?
+---@field syncWeightTimer number
+---@field traits ISImage[]
+---@field traitsRemoveButtons table<string, ISButton>
+---@field userlogBtn ISButton
+---@field userlogs umbrella.ISPlayerStatsUI.Userlog[]
+---@field variableColor umbrella.RGBA
+---@field warningPoint number
+---@field warningPointsBtn ISButton
+---@field weightBtn ISButton
+---@field windows ISUIElement[]
+---@field xpListBox ISScrollingListBox
 ISPlayerStatsUI = ISPanel:derive("ISPlayerStatsUI")
+ISPlayerStatsUI.Type = "ISPlayerStatsUI"
+ISPlayerStatsUI.instance = nil ---@type ISPlayerStatsUI?
 
----@return any
-function ISPlayerStatsUI.loadTraits(self) end
----@return any
-function ISPlayerStatsUI.loadProfession(self) end
----@return any
+---@param self ISPlayerStatsUI
 function ISPlayerStatsUI.loadPerks(self) end
----@return any
+
+---@param self ISPlayerStatsUI
+function ISPlayerStatsUI.loadProfession(self) end
+
+---@param self ISPlayerStatsUI
+function ISPlayerStatsUI.loadTraits(self) end
+
+---@param self ISPlayerStatsUI
 function ISPlayerStatsUI.loadUserlog(self) end
----@return any
-function ISPlayerStatsUI.receiveUserLog(username, logs) end
----@return any
+
 function ISPlayerStatsUI.OnOpenPanel() end
 
----@return any
-function ISPlayerStatsUI:initialise() end
----@return any
-function ISPlayerStatsUI:setVisible(visible) end
----@return any
-function ISPlayerStatsUI:subPanelPreRender() end
----@return any
-function ISPlayerStatsUI:subPanelRender() end
----@return any
-function ISPlayerStatsUI:prerender() end
----@return any
-function ISPlayerStatsUI:render() end
----@return any
-function ISPlayerStatsUI:updateWeight() end
----@return any
+---@param username string
+---@param logs ArrayList<Userlog>
+function ISPlayerStatsUI.receiveUserLog(username, logs) end
+
+---@return boolean
 function ISPlayerStatsUI:canModifyThis() end
----@return any
-function ISPlayerStatsUI:updateButtons() end
----@return any
-function ISPlayerStatsUI:onMouseWheelXXX(del) end
----@return any
+
 function ISPlayerStatsUI:create() end
----@return any
-function ISPlayerStatsUI:onOptionMouseDown(button, x, y) end
----@return any
-function ISPlayerStatsUI:onAddWarningPoint(button, reason, amount) end
----@return any
-function ISPlayerStatsUI:onAddTrait(button, trait) end
----@return any
-function ISPlayerStatsUI:onChangeProfession(button, prof) end
----@return any
-function ISPlayerStatsUI:onChangeAccessLevel(button, accessLevel) end
----@return any
-function ISPlayerStatsUI:onChangeName(button, player, changedName) end
----@return any
-function ISPlayerStatsUI:onChangeWeight(button, player) end
----@return any
-function ISPlayerStatsUI:onRemoveTrait(button, x, y) end
----@return any
+
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
 function ISPlayerStatsUI:drawPerk(y, item, alt) end
----@return any
-function ISPlayerStatsUI:onAddXP(button, perk, amount, addGlobalXP) end
----@return any
+
+function ISPlayerStatsUI:initialise() end
+
+---@param button ISButton
+---@param trait TraitFactory.Trait
+function ISPlayerStatsUI:onAddTrait(button, trait) end
+
+---@param button ISButton
+---@param reason string
+---@param amount string
+function ISPlayerStatsUI:onAddWarningPoint(button, reason, amount) end
+
+---@param button ISButton
+---@param perk PerkFactory.Perk
+---@param amount string
+---@param addGlobalXP boolean
+---@param useMultipliers boolean
+function ISPlayerStatsUI:onAddXP(button, perk, amount, addGlobalXP, useMultipliers) end
+
+---@param button ISButton
+---@param accessLevel string
+function ISPlayerStatsUI:onChangeAccessLevel(button, accessLevel) end
+
+---@param button ISButton
+---@param player IsoPlayer
+---@param changedName string
+function ISPlayerStatsUI:onChangeName(button, player, changedName) end
+
+---@param button ISButton
+---@param prof ProfessionFactory.Profession
+function ISPlayerStatsUI:onChangeProfession(button, prof) end
+
+---@param button ISButton
+---@param player IsoPlayer
+function ISPlayerStatsUI:onChangeWeight(button, player) end
+
+---@param del number
+---@return boolean?
+function ISPlayerStatsUI:onMouseWheelXXX(del) end
+
+---@param button ISButton
+---@param x number
+---@param y number
+function ISPlayerStatsUI:onOptionMouseDown(button, x, y) end
+
+---@param button ISButton
+---@param x number
+---@param y number
+function ISPlayerStatsUI:onRemoveTrait(button, x, y) end
+
+function ISPlayerStatsUI:prerender() end
+
+function ISPlayerStatsUI:render() end
+
+---@param visible boolean
+function ISPlayerStatsUI:setVisible(visible) end
+
+function ISPlayerStatsUI:subPanelPreRender() end
+
+function ISPlayerStatsUI:subPanelRender() end
+
+function ISPlayerStatsUI:updateButtons() end
+
 function ISPlayerStatsUI:updateColumns() end
 
+function ISPlayerStatsUI:updateWeight() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param playerChecked IsoPlayer
+---@param admin IsoPlayer
 ---@return ISPlayerStatsUI
 function ISPlayerStatsUI:new(x, y, width, height, playerChecked, admin) end
+
+---@class umbrella.ISPlayerStatsUI.PerkTable
+---@field boost string
+---@field level integer
+---@field multiplier number
+---@field name string
+---@field perk PerkFactory.Perk
+---@field xp number
+---@field xpToLevel number
+umbrella_ISPlayerStatsUI_PerkTable = {}
+
+---@class umbrella.ISPlayerStatsUI.Userlog
+---@field amount integer
+---@field issuedBy string
+---@field text string
+---@field type string
+umbrella_ISPlayerStatsUI_Userlog = {}

@@ -1,29 +1,37 @@
 ---@meta
 
 ---@class ISServerDisconnectUI : ISPanelJoypad
----@field buttonExit any
----@field buttonQuit any
----@field reason any
----@field [any] any
+---@field buttonExit ISButton
+---@field buttonQuit ISButton
+---@field reason string
 ISServerDisconnectUI = ISPanelJoypad:derive("ISServerDisconnectUI")
+ISServerDisconnectUI.Type = "ISServerDisconnectUI"
+ISServerDisconnectUI.instance = nil ---@type ISServerDisconnectUI?
 
----@return any
-function ISServerDisconnectUI:createChildren() end
----@return any
+---@param button ISButton
 function ISServerDisconnectUI:configButton(button) end
----@return any
-function ISServerDisconnectUI:onToMainMenu() end
----@return any
-function ISServerDisconnectUI:onToDesktop() end
----@return any
+
+function ISServerDisconnectUI:createChildren() end
+
+---@param joypadData JoypadData
 function ISServerDisconnectUI:onGainJoypadFocus(joypadData) end
----@return any
+
+---@param button integer
 function ISServerDisconnectUI:onJoypadDown(button) end
----@return any
+
+---@param oldw number
+---@param oldh number
+---@param neww number
+---@param newh number
 function ISServerDisconnectUI:onResolutionChange(oldw, oldh, neww, newh) end
 
+function ISServerDisconnectUI:onToDesktop() end
+
+function ISServerDisconnectUI:onToMainMenu() end
+
+---@param reason string
 ---@return ISServerDisconnectUI
 function ISServerDisconnectUI:new(reason) end
 
----@return any
+---@param reason string
 function ISServerDisconnectUI_OnServerDisconnectUI(reason) end

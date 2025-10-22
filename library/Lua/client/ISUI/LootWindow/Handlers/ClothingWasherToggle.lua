@@ -1,0 +1,20 @@
+---@meta
+
+---@class ISLootWindowObjectControlHandler_ClothingWasherToggle : ISLootWindowObjectControlHandler
+---@field control unknown
+ISLootWindowObjectControlHandler_ClothingWasherToggle =
+	ISLootWindowObjectControlHandler:derive("ISLootWindowObjectControlHandler_ClothingWasherToggle")
+ISLootWindowObjectControlHandler_ClothingWasherToggle.Type = "ISLootWindowObjectControlHandler_ClothingWasherToggle"
+
+---@return unknown
+function ISLootWindowObjectControlHandler_ClothingWasherToggle:getControl() end
+
+function ISLootWindowObjectControlHandler_ClothingWasherToggle:handleJoypadContextMenu(context) end
+
+function ISLootWindowObjectControlHandler_ClothingWasherToggle:perform() end
+
+---@return boolean
+function ISLootWindowObjectControlHandler_ClothingWasherToggle:shouldBeVisible() end
+
+---@return ISLootWindowObjectControlHandler_ClothingWasherToggle
+function ISLootWindowObjectControlHandler_ClothingWasherToggle:new() end

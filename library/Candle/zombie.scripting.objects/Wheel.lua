@@ -1,24 +1,23 @@
---- @meta
+--- @meta _
 
 --- @class Wheel
 --- @field public class any
-Wheel = {};
+Wheel = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return String
+--- @return string
 function Wheel:getId() end
 
 --- @public
 --- @return Vector3f
 function Wheel:getOffset() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

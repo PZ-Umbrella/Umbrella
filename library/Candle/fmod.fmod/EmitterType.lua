@@ -1,11 +1,11 @@
---- @meta
+--- @meta _
 
 --- @class EmitterType: Enum
 --- @field public class any
 --- @field public Extra EmitterType
 --- @field public Footstep EmitterType
 --- @field public Voice EmitterType
-EmitterType = {};
+EmitterType = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -13,7 +13,7 @@ EmitterType = {};
 
 --- @public
 --- @static
---- @param arg0 String
+--- @param arg0 string
 --- @return EmitterType
 function EmitterType.valueOf(arg0) end
 
@@ -21,5 +21,3 @@ function EmitterType.valueOf(arg0) end
 --- @static
 --- @return EmitterType[]
 function EmitterType.values() end
-
-

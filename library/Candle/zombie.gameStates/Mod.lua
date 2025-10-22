@@ -1,39 +1,71 @@
---- @meta
+--- @meta _
 
 --- @class Mod
 --- @field public class any
-Mod = {};
+Mod = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param name String
---- @param flags int
---- @return void
+--- @param name string
+--- @param flags integer
+--- @return nil
 function Mod:addPack(name, flags) end
 
 --- @public
---- @param name String
---- @param fileNumber int
---- @return void
+--- @param name string
+--- @param fileNumber integer
+--- @return nil
 function Mod:addTileDef(name, fileNumber) end
 
 --- @public
---- @return String
+--- @return string
+function Mod:getAuthor() end
+
+--- @public
+--- @return string
+function Mod:getCategory() end
+
+--- @public
+--- @return string
+function Mod:getCommonDir() end
+
+--- @public
+--- @return string
 function Mod:getDescription() end
 
 --- @public
---- @return String
+--- @return string
 function Mod:getDir() end
 
 --- @public
---- @return String
+--- @return string
+function Mod:getIcon() end
+
+--- @public
+--- @return string
 function Mod:getId() end
 
 --- @public
---- @return String
+--- @return ArrayList
+function Mod:getIncompatible() end
+
+--- @public
+--- @return ArrayList
+function Mod:getLoadAfter() end
+
+--- @public
+--- @return ArrayList
+function Mod:getLoadBefore() end
+
+--- @public
+--- @return string
+function Mod:getModVersion() end
+
+--- @public
+--- @return string
 function Mod:getName() end
 
 --- @public
@@ -41,12 +73,12 @@ function Mod:getName() end
 function Mod:getPacks() end
 
 --- @public
---- @param index int
---- @return String
+--- @param index integer
+--- @return string
 function Mod:getPoster(index) end
 
 --- @public
---- @return int
+--- @return integer
 function Mod:getPosterCount() end
 
 --- @public
@@ -62,8 +94,12 @@ function Mod:getTexture() end
 function Mod:getTileDefs() end
 
 --- @public
---- @return String
+--- @return string
 function Mod:getUrl() end
+
+--- @public
+--- @return string
+function Mod:getVersionDir() end
 
 --- @public
 --- @return GameVersion
@@ -74,7 +110,7 @@ function Mod:getVersionMax() end
 function Mod:getVersionMin() end
 
 --- @public
---- @return String
+--- @return string
 function Mod:getWorkshopID() end
 
 --- @public
@@ -82,41 +118,80 @@ function Mod:getWorkshopID() end
 function Mod:isAvailable() end
 
 --- @public
+--- @return boolean
+function Mod:isAvailableSelf() end
+
+--- @public
+--- @param arg0 string
+--- @return nil
+function Mod:setAuthor(arg0) end
+
+--- @public
 --- @param available boolean
---- @return void
+--- @return nil
+--- @deprecated
 function Mod:setAvailable(available) end
 
 --- @public
---- @param id String
---- @return void
+--- @param arg0 string
+--- @return nil
+function Mod:setCategory(arg0) end
+
+--- @public
+--- @param arg0 string
+--- @return nil
+function Mod:setIcon(arg0) end
+
+--- @public
+--- @param id string
+--- @return nil
 function Mod:setId(id) end
 
 --- @public
---- @param name String
---- @return void
+--- @param arg0 ArrayList
+--- @return nil
+function Mod:setIncompatible(arg0) end
+
+--- @public
+--- @param arg0 ArrayList
+--- @return nil
+function Mod:setLoadAfter(arg0) end
+
+--- @public
+--- @param arg0 ArrayList
+--- @return nil
+function Mod:setLoadBefore(arg0) end
+
+--- @public
+--- @param arg0 string
+--- @return nil
+function Mod:setModVersion(arg0) end
+
+--- @public
+--- @param name string
+--- @return nil
 function Mod:setName(name) end
 
 --- @public
 --- @param require ArrayList
---- @return void
+--- @return nil
 function Mod:setRequire(require) end
 
 --- @public
 --- @param tex Texture
---- @return void
+--- @return nil
 function Mod:setTexture(tex) end
 
 --- @public
---- @param url String
---- @return void
+--- @param url string
+--- @return nil
 function Mod:setUrl(url) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param dir String
+--- @param dir string
 --- @return Mod
 function Mod.new(dir) end

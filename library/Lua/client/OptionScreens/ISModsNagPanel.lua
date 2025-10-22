@@ -1,24 +1,31 @@
 ---@meta
 
 ---@class ISModsNagPanel : ISPanelJoypad
----@field textureX any
----@field textureY any
----@field textureW any
----@field textureH any
----@field richText any
----@field ok any
----@field texture any
----@field [any] any
+---@field ok ISButton
+---@field richText ISRichTextPanel
+---@field texture Texture
+---@field textureH number
+---@field textureW number
+---@field textureX number
+---@field textureY number
 ISModsNagPanel = ISPanelJoypad:derive("ISModsNagPanel")
+ISModsNagPanel.Type = "ISModsNagPanel"
 
----@return any
 function ISModsNagPanel:createChildren() end
----@return any
-function ISModsNagPanel:render() end
----@return any
+
+---@param joypadData JoypadData
 function ISModsNagPanel:onGainJoypadFocus(joypadData) end
----@return any
+
+---@param button ISButton
+---@param x number
+---@param y number
 function ISModsNagPanel:onOK(button, x, y) end
 
+function ISModsNagPanel:render() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
 ---@return ISModsNagPanel
 function ISModsNagPanel:new(x, y, width, height) end

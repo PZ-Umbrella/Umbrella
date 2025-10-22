@@ -1,42 +1,41 @@
---- @meta
+--- @meta _
 
 --- @class VehicleGauge: UIElement
 --- @field public class any
-VehicleGauge = {};
+VehicleGauge = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
+--- @return nil
 function VehicleGauge:render() end
 
 --- @public
---- @param newSize int
---- @return void
+--- @param newSize integer
+--- @return nil
 function VehicleGauge:setNeedleWidth(newSize) end
 
 --- @public
 --- @param newText Texture
---- @return void
+--- @return nil
 function VehicleGauge:setTexture(newText) end
 
 --- @public
---- @param value float
---- @return void
+--- @param value number
+--- @return nil
 function VehicleGauge:setValue(value) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param texture Texture
---- @param needleX int
---- @param needleY int
---- @param minAngle float
---- @param maxAngle float
+--- @param needleX integer
+--- @param needleY integer
+--- @param minAngle number
+--- @param maxAngle number
 --- @return VehicleGauge
 function VehicleGauge.new(texture, needleX, needleY, minAngle, maxAngle) end

@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RVSCarCrash: RandomizedVehicleStoryBase
 --- @field public class any
-RVSCarCrash = {};
+RVSCarCrash = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -18,18 +18,17 @@ function RVSCarCrash:initVehicleStorySpawner(zone, chunk, debug) end
 --- @public
 --- @param zone Zone
 --- @param chunk IsoChunk
---- @return void
+--- @return nil
 function RVSCarCrash:randomizeVehicleStory(zone, chunk) end
 
 --- @public
 --- @param spawner VehicleStorySpawner
 --- @param element Element
---- @return void
+--- @return nil
 function RVSCarCrash:spawnElement(spawner, element) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

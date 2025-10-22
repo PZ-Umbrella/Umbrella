@@ -1,9 +1,8 @@
---- @meta
+--- @meta _
 
---- @class IsoMannequin: IsoObject
+--- @class IsoMannequin: IsoObject, IHumanVisual
 --- @field public class any
---- @implement IHumanVisual
-IsoMannequin = {};
+IsoMannequin = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -12,7 +11,7 @@ IsoMannequin = {};
 --- @public
 --- @static
 --- @param item Moveable
---- @param playerIndex int
+--- @param playerIndex integer
 --- @return IsoDirections
 function IsoMannequin.getDirectionFromItem(item, playerIndex) end
 
@@ -25,81 +24,103 @@ function IsoMannequin.isMannequinSprite(sprite) end
 --- @public
 --- @static
 --- @param item Moveable
---- @param x int
---- @param y int
---- @param z int
+--- @param x integer
+--- @param y integer
+--- @param z integer
 --- @param dir IsoDirections
---- @return void
+--- @return nil
 function IsoMannequin.renderMoveableItem(item, x, y, z, dir) end
 
 --- @public
 --- @static
 --- @param mannequin IsoMannequin
---- @param x int
---- @param y int
---- @param z int
+--- @param x integer
+--- @param y integer
+--- @param z integer
 --- @param dir IsoDirections
---- @return void
+--- @return nil
 function IsoMannequin.renderMoveableObject(mannequin, x, y, z, dir) end
-
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
+--- @return nil
 function IsoMannequin:addToWorld() end
 
 --- @public
 --- @param removedItem InventoryItem
---- @return void
+--- @return nil
 function IsoMannequin:checkClothing(removedItem) end
 
 --- @public
---- @return String
+--- @param arg0 integer
+--- @return nil
+function IsoMannequin:checkRenderDirection(arg0) end
+
+--- @public
+--- @return string
 function IsoMannequin:getAnimSetName() end
 
 --- @public
---- @return String
+--- @return string
 function IsoMannequin:getAnimStateName() end
 
 --- @public
+--- @return BodyTexture
+function IsoMannequin:getAtlasTexture() end
+
+--- @public
 --- @param item InventoryItem
---- @return void
+--- @return nil
 function IsoMannequin:getCustomSettingsFromItem(item) end
 
 --- @public
 --- @return HumanVisual
---- @overload fun(self: IsoMannequin): HumanVisual
+function IsoMannequin:getHumanVisual() end
+
+--- @public
+--- @return HumanVisual
 function IsoMannequin:getHumanVisual() end
 
 --- @public
 --- @param itemVisuals ItemVisuals
---- @return void
---- @overload fun(self: IsoMannequin, itemVisuals: ItemVisuals): void
+--- @return nil
 function IsoMannequin:getItemVisuals(itemVisuals) end
 
 --- @public
---- @return String
+--- @param itemVisuals ItemVisuals
+--- @return nil
+function IsoMannequin:getItemVisuals(itemVisuals) end
+
+--- @public
+--- @return string
 function IsoMannequin:getMannequinScriptName() end
 
 --- @public
---- @return String
+--- @return string
 function IsoMannequin:getObjectName() end
 
 --- @public
---- @return String
+--- @return string
 function IsoMannequin:getPose() end
 
 --- @public
 --- @param vars Map
---- @return void
+--- @return nil
 function IsoMannequin:getVariables(vars) end
 
 --- @public
+--- @return WornItems
+function IsoMannequin:getWornItems() end
+
+--- @public
 --- @return boolean
---- @overload fun(self: IsoMannequin): boolean
+function IsoMannequin:isFemale() end
+
+--- @public
+--- @return boolean
 function IsoMannequin:isFemale() end
 
 --- @public
@@ -110,102 +131,128 @@ function IsoMannequin:isItemAllowedInContainer(container, item) end
 
 --- @public
 --- @return boolean
---- @overload fun(self: IsoMannequin): boolean
 function IsoMannequin:isSkeleton() end
 
 --- @public
 --- @return boolean
---- @overload fun(self: IsoMannequin): boolean
+function IsoMannequin:isSkeleton() end
+
+--- @public
+--- @return boolean
+function IsoMannequin:isZombie() end
+
+--- @public
+--- @return boolean
 function IsoMannequin:isZombie() end
 
 --- @public
 --- @param input ByteBuffer
---- @param WorldVersion int
+--- @param WorldVersion integer
 --- @param IS_DEBUG_SAVE boolean
---- @return void
+--- @return nil
 function IsoMannequin:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 --- @public
---- @param change String
+--- @param change string
 --- @param bb ByteBuffer
---- @return void
+--- @return nil
 function IsoMannequin:loadChange(change, bb) end
 
 --- @public
 --- @param input ByteBuffer
---- @return void
+--- @return nil
 function IsoMannequin:loadState(input) end
 
 --- @public
---- @param x float
---- @param y float
---- @param z float
+--- @return nil
+function IsoMannequin:removeFromWorld() end
+
+--- @public
+--- @param x number
+--- @param y number
+--- @param z number
 --- @param col ColorInfo
 --- @param bDoChild boolean
 --- @param bWallLightingPass boolean
 --- @param shader Shader
---- @return void
+--- @return nil
 function IsoMannequin:render(x, y, z, col, bDoChild, bWallLightingPass, shader) end
 
 --- @public
---- @param x float
---- @param y float
---- @param z float
+--- @param x number
+--- @param y number
+--- @param z number
 --- @param bDoAttached boolean
---- @return void
+--- @return nil
 function IsoMannequin:renderFxMask(x, y, z, bDoAttached) end
 
 --- @public
+--- @param arg0 number
+--- @param arg1 number
+--- @param arg2 number
+--- @return nil
+function IsoMannequin:renderShadow(arg0, arg1, arg2) end
+
+--- @public
 --- @param newDir IsoDirections
---- @return void
+--- @return nil
 function IsoMannequin:rotate(newDir) end
 
 --- @public
 --- @param output ByteBuffer
 --- @param IS_DEBUG_SAVE boolean
---- @return void
+--- @return nil
 function IsoMannequin:save(output, IS_DEBUG_SAVE) end
 
 --- @public
---- @param change String
---- @param tbl KahluaTable
+--- @param change string
+--- @param tbl table
 --- @param bb ByteBuffer
---- @return void
+--- @return nil
 function IsoMannequin:saveChange(change, tbl, bb) end
 
 --- @public
 --- @param output ByteBuffer
---- @return void
+--- @return nil
 function IsoMannequin:saveState(output) end
 
 --- @public
 --- @param item InventoryItem
---- @return void
+--- @return nil
 function IsoMannequin:setCustomSettingsToItem(item) end
 
 --- @public
---- @param name String
---- @return void
+--- @param name string
+--- @return nil
 function IsoMannequin:setMannequinScriptName(name) end
 
 --- @public
 --- @param newDir IsoDirections
---- @return void
+--- @return nil
 function IsoMannequin:setRenderDirection(newDir) end
+
+--- @public
+--- @return boolean
+function IsoMannequin:shouldRenderEachFrame() end
 
 --- @public
 --- @param item InventoryItem
 --- @param chr IsoGameCharacter
---- @return void
+--- @return nil
 function IsoMannequin:wearItem(item, chr) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param cell IsoCell
 --- @return IsoMannequin
---- @overload fun(cell: IsoCell, square: IsoGridSquare, sprite: IsoSprite): IsoMannequin
 function IsoMannequin.new(cell) end
+
+--- @public
+--- @param cell IsoCell
+--- @param square IsoGridSquare
+--- @param sprite IsoSprite
+--- @return IsoMannequin
+function IsoMannequin.new(cell, square, sprite) end

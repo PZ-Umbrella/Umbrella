@@ -1,28 +1,27 @@
---- @meta
+--- @meta _
 
 --- @class RequiredSkill
 --- @field public class any
-RequiredSkill = {};
+RequiredSkill = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return int
+--- @return integer
 function RequiredSkill:getLevel() end
 
 --- @public
 --- @return Perk
 function RequiredSkill:getPerk() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
 --- @param perk Perk
---- @param level int
+--- @param level integer
 --- @return RequiredSkill
 function RequiredSkill.new(perk, level) end

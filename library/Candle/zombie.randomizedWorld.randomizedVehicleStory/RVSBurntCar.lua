@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class RVSBurntCar: RandomizedVehicleStoryBase Just a burnt car with 0, 1 or 2 burnt corpses near it
 --- @field public class any
-RVSBurntCar = {};
+RVSBurntCar = {}
 
 ------------------------------------
 ------------- METHODS --------------
@@ -18,18 +18,17 @@ function RVSBurntCar:initVehicleStorySpawner(zone, chunk, debug) end
 --- @public
 --- @param zone Zone
 --- @param chunk IsoChunk
---- @return void
+--- @return nil
 function RVSBurntCar:randomizeVehicleStory(zone, chunk) end
 
 --- @public
 --- @param spawner VehicleStorySpawner
 --- @param element Element
---- @return void
+--- @return nil
 function RVSBurntCar:spawnElement(spawner, element) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

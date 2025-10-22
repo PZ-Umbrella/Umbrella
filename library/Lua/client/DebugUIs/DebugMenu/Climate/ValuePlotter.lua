@@ -1,63 +1,75 @@
 ---@meta
 
 ---@class ValuePlotter : ISPanel
----@field indexPointer any
----@field his any
----@field x any
----@field y any
----@field background any
----@field backgroundColor any
----@field borderColor any
----@field gridColor any
----@field greyCol any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field doGridLines any
----@field gridHorzSpacing any
----@field gridVertSpacing any
----@field maxPlotPoints any
----@field vars any
----@field vertBars any
----@field horzBars any
----@field [any] any
+---@field doGridLines boolean
+---@field greyCol umbrella.RGBA
+---@field gridColor umbrella.RGBA
+---@field gridHorzSpacing number
+---@field gridVertSpacing number
+---@field his number[][]
+---@field horzBars table[]
+---@field indexPointer number
+---@field maxPlotPoints number
+---@field vars table[]
+---@field vertBars table<integer, umbrella.RGBA | false>
 ValuePlotter = ISPanel:derive("ValuePlotter")
+ValuePlotter.Type = "ValuePlotter"
 
----@return any
-function ValuePlotter:initialise() end
----@return any
-function ValuePlotter:createChildren() end
----@return any
-function ValuePlotter:update() end
----@return any
-function ValuePlotter:prerender() end
----@return any
-function ValuePlotter:render() end
----@return any
+---@param dataset number[]
+---@param vertbarCol umbrella.RGBA | false
 function ValuePlotter:addPlotPoint(dataset, vertbarCol) end
----@return any
-function ValuePlotter:calcMinMax(indexLine, minmax) end
----@return any
+
+---@param _minmax table
+---@param indexLine number
 function ValuePlotter:applyMinMax(_minmax, indexLine) end
----@return any
-function ValuePlotter:getDataSet() end
----@return any
-function ValuePlotter:getVars() end
----@return any
-function ValuePlotter:getVarCount() end
----@return any
+
+---@param indexLine number
+---@param minmax table?
+---@return table
+function ValuePlotter:calcMinMax(indexLine, minmax) end
+
 function ValuePlotter:clearHistory() end
----@return any
-function ValuePlotter:setVariableEnabled(_name, _bool) end
----@return any
+
+function ValuePlotter:createChildren() end
+
+---@param name string
+---@param color umbrella.RGBA
+---@param minVal number
+---@param maxVal number
 function ValuePlotter:defineVariable(name, color, minVal, maxVal) end
----@return any
+
+---@return number[][]
+function ValuePlotter:getDataSet() end
+
+---@return number
+function ValuePlotter:getVarCount() end
+
+---@return table[]
+function ValuePlotter:getVars() end
+
+function ValuePlotter:initialise() end
+
+function ValuePlotter:prerender() end
+
+function ValuePlotter:render() end
+
+---@param value number
+---@param col umbrella.RGBA
 function ValuePlotter:setHorzLine(value, col) end
----@return any
+
+---@param _name string
+---@param _bool boolean
+function ValuePlotter:setVariableEnabled(_name, _bool) end
+
+---@param idx integer
 function ValuePlotter:unsetHorzLine(idx) end
 
+function ValuePlotter:update() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param maxPlotPoints number
 ---@return ValuePlotter
 function ValuePlotter:new(x, y, width, height, maxPlotPoints) end

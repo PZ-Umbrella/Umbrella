@@ -1,24 +1,29 @@
 ---@meta
 
 ---@class CGlobalObject : ISBaseObject
----@field luaSystem any
----@field globalObject any
----@field x any
----@field y any
----@field z any
----@field [any] any
+---@field globalObject GlobalObject
+---@field luaSystem CGlobalObjectSystem
+---@field x number
+---@field y number
+---@field z number
 CGlobalObject = ISBaseObject:derive("CGlobalObject")
+CGlobalObject.Type = "CGlobalObject"
 
----@return any
-function CGlobalObject:noise(message) end
----@return any
-function CGlobalObject:getIsoObject() end
----@return any
-function CGlobalObject:getSquare() end
----@return any
+---@param modData table
 function CGlobalObject:fromModData(modData) end
----@return any
+
+---@return IsoObject?
+function CGlobalObject:getIsoObject() end
+
+---@return IsoGridSquare
+function CGlobalObject:getSquare() end
+
+---@param message string
+function CGlobalObject:noise(message) end
+
 function CGlobalObject:updateFromIsoObject() end
 
+---@param luaSystem CGlobalObjectSystem
+---@param globalObject GlobalObject
 ---@return CGlobalObject
 function CGlobalObject:new(luaSystem, globalObject) end

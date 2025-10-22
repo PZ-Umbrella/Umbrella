@@ -1,18 +1,18 @@
---- @meta
+--- @meta _
 
 --- @class EvolvedRecipe: BaseScriptObject
 --- @field public class any
-EvolvedRecipe = {};
+EvolvedRecipe = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param name String
---- @param strArray String[]
---- @return void
-function EvolvedRecipe:Load(name, strArray) end
+--- @param arg0 string
+--- @param arg1 string
+--- @return nil
+function EvolvedRecipe:Load(arg0, arg1) end
 
 --- @public
 --- @param baseItem InventoryItem
@@ -22,15 +22,15 @@ function EvolvedRecipe:Load(name, strArray) end
 function EvolvedRecipe:addItem(baseItem, usedItem, chr) end
 
 --- @public
---- @return String
+--- @return string
 function EvolvedRecipe:getAddIngredientSound() end
 
 --- @public
---- @return String
+--- @return string
 function EvolvedRecipe:getBaseItem() end
 
 --- @public
---- @return String
+--- @return string
 function EvolvedRecipe:getFullResultItem() end
 
 --- @public
@@ -50,15 +50,19 @@ function EvolvedRecipe:getItemsCanBeUse(chr, baseItem, containers) end
 function EvolvedRecipe:getItemsList() end
 
 --- @public
---- @return int
+--- @return integer
 function EvolvedRecipe:getMaxItems() end
 
 --- @public
---- @return String
+--- @return number
+function EvolvedRecipe:getMinimumWater() end
+
+--- @public
+--- @return string
 function EvolvedRecipe:getName() end
 
 --- @public
---- @return String
+--- @return string
 function EvolvedRecipe:getOriginalname() end
 
 --- @public
@@ -66,12 +70,17 @@ function EvolvedRecipe:getOriginalname() end
 function EvolvedRecipe:getPossibleItems() end
 
 --- @public
---- @return String
+--- @return string
 function EvolvedRecipe:getResultItem() end
 
 --- @public
---- @return String
+--- @return string
 function EvolvedRecipe:getUntranslatedName() end
+
+--- @public
+--- @param arg0 InventoryItem
+--- @return boolean
+function EvolvedRecipe:hasMinimumWater(arg0) end
 
 --- @public
 --- @return boolean
@@ -103,20 +112,19 @@ function EvolvedRecipe:needToBeCooked(itemTest) end
 
 --- @public
 --- @param allow boolean
---- @return void
+--- @return nil
 function EvolvedRecipe:setAllowFrozenItem(allow) end
 
 --- @public
 --- @param hide boolean
---- @return void
+--- @return nil
 function EvolvedRecipe:setIsHidden(hide) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param name String
+--- @param name string
 --- @return EvolvedRecipe
 function EvolvedRecipe.new(name) end

@@ -1,48 +1,47 @@
 ---@meta
 
 ---@class ISMediaInfo : ISCollapsableWindowJoypad
----@field instance any
----@field buttonOK any
----@field richText any
----@field name any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field text any
----@field fontHgt any
----@field playerNum any
----@field x any
----@field y any
----@field [any] any
+---@field buttonOK ISButton
+---@field fontHgt number
+---@field name unknown?
+---@field playerNum integer
+---@field richText ISRichTextPanel
+---@field text string
 ISMediaInfo = ISCollapsableWindowJoypad:derive("ISMediaInfo")
-ISMediaInfo.instance = nil
+ISMediaInfo.Type = "ISMediaInfo"
+ISMediaInfo.instance = nil ---@type ISMediaInfo?
 
----@return any
+---@param _playerNum integer
+---@param _text string
+---@return ISMediaInfo?
 function ISMediaInfo.openPanel(_playerNum, _text) end
 
----@return any
-function ISMediaInfo:initialise() end
----@return any
-function ISMediaInfo:createChildren() end
----@return any
-function ISMediaInfo:destroy() end
----@return any
-function ISMediaInfo:onClick(button) end
----@return any
 function ISMediaInfo:close() end
----@return any
-function ISMediaInfo:prerender() end
----@return any
-function ISMediaInfo:render() end
----@return any
+
+function ISMediaInfo:createChildren() end
+
+function ISMediaInfo:destroy() end
+
+function ISMediaInfo:initialise() end
+
+---@param button ISButton
+function ISMediaInfo:onClick(button) end
+
+---@param joypadData JoypadData
 function ISMediaInfo:onGainJoypadFocus(joypadData) end
----@return any
+
+---@param button integer
 function ISMediaInfo:onJoypadDown(button) end
 
+function ISMediaInfo:prerender() end
+
+function ISMediaInfo:render() end
+
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param playerNum integer
+---@param text string
 ---@return ISMediaInfo
 function ISMediaInfo:new(x, y, width, height, playerNum, text) end

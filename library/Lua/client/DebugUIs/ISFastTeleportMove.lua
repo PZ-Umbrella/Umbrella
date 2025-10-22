@@ -1,21 +1,23 @@
 ---@meta
 
 ---@class ISFastTeleportMove
----@field currentZ any
----@field isAdded any
----@field [any] any
 ISFastTeleportMove = {}
 ISFastTeleportMove.cheat = false
 ISFastTeleportMove.currentZ = 0
 ISFastTeleportMove.isAdded = false
 
----@return any
+---@param dx number
+---@param dy number
 function ISFastTeleportMove.moveXY(player, dx, dy) end
----@return any
+
+---@param player IsoPlayer
+---@param dz number
 function ISFastTeleportMove.moveZ(player, dz) end
----@return any
+
+---@param key integer
 function ISFastTeleportMove.OnKeyKeepPressed(key) end
----@return any
+
+---@param key integer
 function ISFastTeleportMove.OnKeyStartPressed(key) end
----@return any
+
 function ISFastTeleportMove.OnTick() end

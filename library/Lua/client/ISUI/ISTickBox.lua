@@ -1,89 +1,134 @@
 ---@meta
 
----@class ISTickBox : ISPanel
----@field joypadFocused any
----@field joypadIndex any
----@field selected any
----@field _textColor any
----@field tooltipUI any
----@field mouseOverOption any
----@field disabledOptions any
----@field options any
----@field optionsIndex any
----@field textures any
----@field optionData any
----@field optionCount any
----@field font any
----@field fontHgt any
----@field x any
----@field y any
----@field width any
----@field height any
----@field tickTexture any
----@field borderColor any
----@field backgroundColor any
----@field choicesColor any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field name any
----@field leftMargin any
----@field boxSize any
----@field textGap any
----@field itemGap any
----@field itemHgt any
----@field isTickBox any
----@field tooltip any
----@field changeOptionMethod any
----@field changeOptionTarget any
----@field changeOptionArgs any
----@field enable any
----@field [any] any
-ISTickBox = ISPanel:derive("ISTickBox")
+---@alias umbrella.ISTickBox.OnChange fun(target: unknown, index: integer, selected: boolean, arg1: unknown?, arg2: unknown?, tickbox: ISTickBox)
 
----@return any
-function ISTickBox:initialise() end
----@return any
-function ISTickBox:prerender() end
----@return any
-function ISTickBox:setJoypadFocused(focused) end
----@return any
-function ISTickBox:onJoypadDirUp(joypadData) end
----@return any
-function ISTickBox:onJoypadDirDown(joypadData) end
----@return any
-function ISTickBox:forceClick() end
----@return any
-function ISTickBox:setSelected(index, selected) end
----@return any
-function ISTickBox:isSelected(index) end
----@return any
-function ISTickBox:render() end
----@return any
-function ISTickBox:getTextColor(index, color) end
----@return any
-function ISTickBox:onMouseUp(x, y) end
----@return any
-function ISTickBox:onMouseDown(x, y) end
----@return any
-function ISTickBox:onMouseMove(dx, dy) end
----@return any
-function ISTickBox:onMouseMoveOutside(dx, dy) end
----@return any
-function ISTickBox:disableOption(name, disable) end
----@return any
-function ISTickBox:clearOptions() end
----@return any
+---@class ISTickBox : ISPanel
+---@field _textColor umbrella.RGBA
+---@field boxSize number
+---@field changeOptionArgs table
+---@field changeOptionMethod umbrella.ISTickBox.OnChange?
+---@field changeOptionTarget unknown?
+---@field choicesColor umbrella.RGBA
+---@field clickedOption integer?
+---@field disabledOptions table<string, boolean>
+---@field enable boolean
+---@field font UIFont
+---@field fontHgt number
+---@field isTickBox boolean
+---@field itemGap number
+---@field itemHgt number
+---@field joypadIndex integer
+---@field leftMargin number
+---@field mouseDownOverOption unknown?
+---@field mouseOverOption integer
+---@field name string
+---@field optionCount integer
+---@field optionData table<integer, unknown>
+---@field options string[]
+---@field optionsIndex table<integer, string>
+---@field selected table<integer, boolean>
+---@field textGap number
+---@field textures table<integer, Texture>
+---@field tickTexture Texture
+---@field tooltip string?
+---@field tooltipUI ISToolTip
+ISTickBox = ISPanel:derive("ISTickBox")
+ISTickBox.Type = "ISTickBox"
+
+---@param name string
+---@param data unknown?
+---@param texture Texture?
+---@return integer
 function ISTickBox:addOption(name, data, texture) end
----@return any
+
+function ISTickBox:clearOptions() end
+
+---@param name string
+---@param disable boolean
+function ISTickBox:disableOption(name, disable) end
+
+function ISTickBox:forceClick() end
+
+---@return integer
 function ISTickBox:getOptionCount() end
----@return any
+
+---@param index integer
+---@return unknown?
 function ISTickBox:getOptionData(index) end
----@return any
+
+---@param index integer
+---@param color table
+function ISTickBox:getTextColor(index, color) end
+
+function ISTickBox:initialise() end
+
+---@param index integer
+---@return boolean
+function ISTickBox:isSelected(index) end
+
+---@param joypadData JoypadData
+function ISTickBox:onJoypadDirDown(joypadData) end
+
+---@param joypadData JoypadData
+function ISTickBox:onJoypadDirUp(joypadData) end
+
+---@param x number
+---@param y number
+---@return boolean
+function ISTickBox:onMouseDown(x, y) end
+
+---@param dx number
+---@param dy number
+function ISTickBox:onMouseMove(dx, dy) end
+
+---@param dx number
+---@param dy number
+function ISTickBox:onMouseMoveOutside(dx, dy) end
+
+---@param x number
+---@param y number
+---@return boolean?
+function ISTickBox:onMouseUp(x, y) end
+
+---@param x number
+---@param y number
+function ISTickBox:onMouseUpOutside(x, y) end
+
+function ISTickBox:prerender() end
+
+function ISTickBox:render() end
+
+---@param font UIFont
 function ISTickBox:setFont(font) end
----@return any
+
+---@param focused boolean
+function ISTickBox:setJoypadFocused(focused) end
+
+---@param index integer
+---@param selected boolean
+function ISTickBox:setSelected(index, selected) end
+
 function ISTickBox:setWidthToFit() end
 
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param name string
+---@param changeOptionTarget unknown?
+---@param changeOptionMethod umbrella.ISTickBox.OnChange?
+---@param changeOptionArg1 unknown?
+---@param changeOptionArg2 unknown?
 ---@return ISTickBox
-function ISTickBox:new(x, y, width, height, name, changeOptionTarget, changeOptionMethod, changeOptionArg1, changeOptionArg2) end
+function ISTickBox:new(
+	x,
+	y,
+	width,
+	height,
+	name,
+	changeOptionTarget,
+	changeOptionMethod,
+	changeOptionArg1,
+	changeOptionArg2
+)
+end

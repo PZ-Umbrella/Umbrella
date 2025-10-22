@@ -3,9 +3,16 @@
 ---@class TimedActionTests
 TimedActionTests = {}
 
----@return any
-function TimedActionTests.runOne(name) end
----@return any
+---@return umbrella.TimedActionTests.Test[]
+function TimedActionTests.getTests() end
+
 function TimedActionTests.runAll() end
----@return any
+
+---@param name string
+function TimedActionTests.runOne(name) end
+
 function TimedActionTests.stop() end
+
+---@class umbrella.TimedActionTests.Test
+---@field run fun(self: umbrella.TimedActionTests.Test)
+umbrella_TimedActionTests_Test = {}

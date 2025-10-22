@@ -1,29 +1,35 @@
 ---@meta
 
 ---@class ISAttachTrailerToVehicle : ISBaseTimedAction
----@field stopOnWalk any
----@field stopOnRun any
----@field maxTime any
----@field vehicleA any
----@field vehicleB any
----@field attachmentA any
----@field attachmentB any
----@field hitchPos any
----@field [any] any
+---@field attachmentA string
+---@field attachmentB string
+---@field hitchPos Vector3f
+---@field sound integer?
+---@field vehicleA BaseVehicle
+---@field vehicleB BaseVehicle
 ISAttachTrailerToVehicle = ISBaseTimedAction:derive("ISAttachTrailerToVehicle")
+ISAttachTrailerToVehicle.Type = "ISAttachTrailerToVehicle"
 
----@return any
+---@return boolean
 function ISAttachTrailerToVehicle:isValid() end
----@return any
-function ISAttachTrailerToVehicle:waitToStart() end
----@return any
-function ISAttachTrailerToVehicle:update() end
----@return any
-function ISAttachTrailerToVehicle:start() end
----@return any
-function ISAttachTrailerToVehicle:stop() end
----@return any
+
 function ISAttachTrailerToVehicle:perform() end
 
+function ISAttachTrailerToVehicle:start() end
+
+function ISAttachTrailerToVehicle:stop() end
+
+function ISAttachTrailerToVehicle:stopSound() end
+
+function ISAttachTrailerToVehicle:update() end
+
+---@return boolean
+function ISAttachTrailerToVehicle:waitToStart() end
+
+---@param character IsoPlayer
+---@param vehicleA BaseVehicle
+---@param vehicleB BaseVehicle
+---@param attachmentA string
+---@param attachmentB string
 ---@return ISAttachTrailerToVehicle
 function ISAttachTrailerToVehicle:new(character, vehicleA, vehicleB, attachmentA, attachmentB) end

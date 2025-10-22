@@ -1,8 +1,8 @@
---- @meta
+--- @meta _
 
 --- @class SteamWorkshopItem
 --- @field public class any
-SteamWorkshopItem = {};
+SteamWorkshopItem = {}
 
 ------------------------------------
 ---------- STATIC METHODS ----------
@@ -13,7 +13,6 @@ SteamWorkshopItem = {};
 --- @return ArrayList
 function SteamWorkshopItem.getAllowedTags() end
 
-
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
@@ -23,36 +22,36 @@ function SteamWorkshopItem.getAllowedTags() end
 function SteamWorkshopItem:create() end
 
 --- @public
---- @return String
+--- @return string
 function SteamWorkshopItem:getChangeNote() end
 
 --- @public
---- @return String
+--- @return string
 function SteamWorkshopItem:getContentFolder() end
 
 --- @public
---- @return String
+--- @return string
 function SteamWorkshopItem:getDescription() end
 
 --- @public
---- @param error String
---- @return String
+--- @param error string
+--- @return string
 function SteamWorkshopItem:getExtendedErrorInfo(error) end
 
 --- @public
---- @return String
+--- @return string
 function SteamWorkshopItem:getFolderName() end
 
 --- @public
---- @return String
+--- @return string
 function SteamWorkshopItem:getID() end
 
 --- @public
---- @return String
+--- @return string
 function SteamWorkshopItem:getPreviewImage() end
 
 --- @public
---- @return String
+--- @return string
 function SteamWorkshopItem:getSubmitDescription() end
 
 --- @public
@@ -64,24 +63,24 @@ function SteamWorkshopItem:getSubmitTags() end
 function SteamWorkshopItem:getTags() end
 
 --- @public
---- @return String
+--- @return string
 function SteamWorkshopItem:getTitle() end
 
 --- @public
---- @param table KahluaTable
+--- @param table table
 --- @return boolean
 function SteamWorkshopItem:getUpdateProgress(table) end
 
 --- @public
---- @return int
+--- @return integer
 function SteamWorkshopItem:getUpdateProgressTotal() end
 
 --- @public
---- @return String
+--- @return string
 function SteamWorkshopItem:getVisibility() end
 
 --- @public
---- @return int
+--- @return integer
 function SteamWorkshopItem:getVisibilityInteger() end
 
 --- @public
@@ -89,38 +88,38 @@ function SteamWorkshopItem:getVisibilityInteger() end
 function SteamWorkshopItem:readWorkshopTxt() end
 
 --- @public
---- @param changeNote String
---- @return void
+--- @param changeNote string
+--- @return nil
 function SteamWorkshopItem:setChangeNote(changeNote) end
 
 --- @public
---- @param description String
---- @return void
+--- @param description string
+--- @return nil
 function SteamWorkshopItem:setDescription(description) end
 
 --- @public
---- @param ID String
---- @return void
+--- @param ID string
+--- @return nil
 function SteamWorkshopItem:setID(ID) end
 
 --- @public
 --- @param tags ArrayList
---- @return void
+--- @return nil
 function SteamWorkshopItem:setTags(tags) end
 
 --- @public
---- @param title String
---- @return void
+--- @param title string
+--- @return nil
 function SteamWorkshopItem:setTitle(title) end
 
 --- @public
---- @param visibility String
---- @return void
+--- @param visibility string
+--- @return nil
 function SteamWorkshopItem:setVisibility(visibility) end
 
 --- @public
---- @param v int
---- @return void
+--- @param v integer
+--- @return nil
 function SteamWorkshopItem:setVisibilityInteger(v) end
 
 --- @public
@@ -128,24 +127,23 @@ function SteamWorkshopItem:setVisibilityInteger(v) end
 function SteamWorkshopItem:submitUpdate() end
 
 --- @public
---- @return String
+--- @return string
 function SteamWorkshopItem:validateContents() end
 
 --- @public
 --- @param path Path
---- @return String
+--- @return string
 function SteamWorkshopItem:validatePreviewImage(path) end
 
 --- @public
 --- @return boolean
 function SteamWorkshopItem:writeWorkshopTxt() end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public
---- @param workshopFolder String
+--- @param workshopFolder string
 --- @return SteamWorkshopItem
 function SteamWorkshopItem.new(workshopFolder) end

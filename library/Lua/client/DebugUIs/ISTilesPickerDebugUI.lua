@@ -1,61 +1,69 @@
 ---@meta
 
 ---@class ISTilesPickerDebugUI : ISCollapsableWindow
----@field filesList any
----@field tilesList any
----@field cursor any
----@field selectX any
----@field selectY any
----@field selectZ any
----@field marker any
----@field arrow any
----@field playerNum any
----@field width any
----@field height any
----@field chr any
----@field moveWithMouse any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field x any
----@field y any
----@field [any] any
+---@field arrow WorldMarkers.DirectionArrow?
+---@field chr IsoPlayer
+---@field cursor ISSelectCursor?
+---@field filesList ISScrollingListBox
+---@field height integer
+---@field marker WorldMarkers.GridSquareMarker?
+---@field playerNum integer
+---@field selectX number
+---@field selectY number
+---@field selectZ number
+---@field tilesList ISTilesPickerTilesList
+---@field title string
 ISTilesPickerDebugUI = ISCollapsableWindow:derive("ISTilesPickerDebugUI")
+ISTilesPickerDebugUI.Type = "ISTilesPickerDebugUI"
 
----@return any
-function ISTilesPickerDebugUI:createChildren() end
----@return any
-function ISTilesPickerDebugUI:populateList() end
----@return any
-function ISTilesPickerDebugUI:drawTilesetList(y, item, alt) end
----@return any
-function ISTilesPickerDebugUI:onSelectNewSquare() end
----@return any
-function ISTilesPickerDebugUI:onSquareSelected(square) end
----@return any
-function ISTilesPickerDebugUI:prerender() end
----@return any
-function ISTilesPickerDebugUI:render() end
----@return any
+---@param square IsoGridSquare
+---@param radius number
 function ISTilesPickerDebugUI:addMarker(square, radius) end
----@return any
-function ISTilesPickerDebugUI:removeMarker() end
----@return any
+
 function ISTilesPickerDebugUI:close() end
 
+function ISTilesPickerDebugUI:createChildren() end
+
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
+---@return number
+function ISTilesPickerDebugUI:drawTilesetList(y, item, alt) end
+
+function ISTilesPickerDebugUI:onSelectNewSquare() end
+
+---@param square IsoGridSquare
+function ISTilesPickerDebugUI:onSquareSelected(square) end
+
+function ISTilesPickerDebugUI:populateList() end
+
+function ISTilesPickerDebugUI:prerender() end
+
+function ISTilesPickerDebugUI:removeMarker() end
+
+function ISTilesPickerDebugUI:render() end
+
+---@param x number
+---@param y number
+---@param character IsoPlayer
+---@param square IsoGridSquare
 ---@return ISTilesPickerDebugUI
 function ISTilesPickerDebugUI:new(x, y, character, square) end
 
 ---@class ISTilesPickerTilesList : ISPanel
----@field tileset any
----@field [any] any
+---@field tileset string?
 ISTilesPickerTilesList = ISPanel:derive("ISTilesPickerTilesList")
+ISTilesPickerTilesList.Type = "ISTilesPickerTilesList"
 
----@return any
-function ISTilesPickerTilesList:render() end
----@return any
+---@param del number
+---@return boolean
 function ISTilesPickerTilesList:onMouseWheel(del) end
 
+function ISTilesPickerTilesList:render() end
+
+---@param x number
+---@param y number
+---@param w number
+---@param h number
 ---@return ISTilesPickerTilesList
 function ISTilesPickerTilesList:new(x, y, w, h) end

@@ -1,57 +1,57 @@
---- @meta
+--- @meta _
 
 --- @class PuddlesFloat
 --- @field public class any
-PuddlesFloat = {};
+PuddlesFloat = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @param f float
---- @return void
+--- @param f number
+--- @return nil
 function PuddlesFloat:addFinalValue(f) end
 
 --- @public
---- @param f float
---- @param maximum float
---- @return void
+--- @param f number
+--- @param maximum number
+--- @return nil
 function PuddlesFloat:addFinalValueForMax(f, maximum) end
 
 --- @public
---- @return float
+--- @return number
 function PuddlesFloat:getAdminValue() end
 
 --- @public
---- @return float
+--- @return number
 function PuddlesFloat:getFinalValue() end
 
 --- @public
---- @return int
+--- @return integer
 function PuddlesFloat:getID() end
 
 --- @public
---- @return float
+--- @return number
 function PuddlesFloat:getMax() end
 
 --- @public
---- @return float
+--- @return number
 function PuddlesFloat:getMin() end
 
 --- @public
---- @return String
+--- @return string
 function PuddlesFloat:getName() end
 
 --- @public
---- @param id int
---- @param name String
+--- @param id integer
+--- @param name string
 --- @return PuddlesFloat
 function PuddlesFloat:init(id, name) end
 
 --- @public
---- @param f float
---- @return void
+--- @param f number
+--- @return nil
 function PuddlesFloat:interpolateFinalValue(f) end
 
 --- @public
@@ -59,23 +59,22 @@ function PuddlesFloat:interpolateFinalValue(f) end
 function PuddlesFloat:isEnableAdmin() end
 
 --- @public
---- @param f float
---- @return void
+--- @param f number
+--- @return nil
 function PuddlesFloat:setAdminValue(f) end
 
 --- @public
 --- @param b boolean
---- @return void
+--- @return nil
 function PuddlesFloat:setEnableAdmin(b) end
 
 --- @public
---- @param f float
---- @return void
+--- @param f number
+--- @return nil
 function PuddlesFloat:setFinalValue(f) end
 
-
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

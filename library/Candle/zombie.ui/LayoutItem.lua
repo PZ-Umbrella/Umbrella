@@ -1,72 +1,75 @@
---- @meta
+--- @meta _
 
 --- @class LayoutItem
 --- @field public class any
-LayoutItem = {};
+LayoutItem = {}
 
 ------------------------------------
 ------------- METHODS --------------
 ------------------------------------
 
 --- @public
---- @return void
+--- @return nil
 function LayoutItem:calcSizes() end
 
 --- @public
---- @param x int
---- @param y int
---- @param mid int
---- @param right int
+--- @param x integer
+--- @param y integer
+--- @param mid integer
+--- @param right integer
 --- @param ui ObjectTooltip
---- @return void
+--- @return nil
 function LayoutItem:render(x, y, mid, right, ui) end
 
 --- @public
---- @return void
+--- @return nil
 function LayoutItem:reset() end
 
 --- @public
---- @param label String
---- @param r float
---- @param g float
---- @param b float
---- @param a float
---- @return void
+--- @param label string
+--- @param r number
+--- @param g number
+--- @param b number
+--- @param a number
+--- @return nil
 function LayoutItem:setLabel(label, r, g, b, a) end
 
 --- @public
---- @param fraction float
---- @param r float
---- @param g float
---- @param b float
---- @param a float
---- @return void
+--- @param fraction number
+--- @param r number
+--- @param g number
+--- @param b number
+--- @param a number
+--- @return nil
 function LayoutItem:setProgress(fraction, r, g, b, a) end
 
 --- @public
---- @param label String
---- @param r float
---- @param g float
---- @param b float
---- @param a float
---- @return void
+--- @param label string
+--- @param r number
+--- @param g number
+--- @param b number
+--- @param a number
+--- @return nil
 function LayoutItem:setValue(label, r, g, b, a) end
 
 --- @public
---- @param value int
+--- @param value integer
 --- @param highGood boolean
---- @return void
+--- @return nil
 function LayoutItem:setValueRight(value, highGood) end
 
 --- @public
---- @param value float
---- @return void
---- @overload fun(self: LayoutItem, value: int): void
+--- @param value number
+--- @return nil
 function LayoutItem:setValueRightNoPlus(value) end
 
+--- @public
+--- @param value integer
+--- @return nil
+function LayoutItem:setValueRightNoPlus(value) end
 
 ------------------------------------
------------ CONSTRUCTOR ------------
+----------- CONSTRUCTORS -----------
 ------------------------------------
 
 --- @public

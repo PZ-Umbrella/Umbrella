@@ -1,67 +1,79 @@
 ---@meta
 
 ---@class ISRemoveItemTool : ISPanelJoypad
----@field select any
----@field remove any
----@field close any
----@field itemType any
----@field selectEnd any
----@field startPos any
----@field endPos any
----@field zPos any
----@field selectStart any
----@field mouseOver any
----@field downX any
----@field downY any
----@field moving any
----@field name any
----@field backgroundColor any
----@field borderColor any
----@field width any
----@field height any
----@field anchorLeft any
----@field anchorRight any
----@field anchorTop any
----@field anchorBottom any
----@field player any
----@field titlebarbkg any
----@field numLines any
----@field maxLines any
----@field multipleLine any
----@field x any
----@field y any
----@field [any] any
+---@field close ISButton
+---@field endPos table?
+---@field highlightSquares IsoObject[]
+---@field itemType ISRadioButtons
+---@field marker WorldMarkers.GridSquareMarker?
+---@field maxLines number
+---@field multipleLine boolean
+---@field name unknown?
+---@field numLines number
+---@field OnRenderTick function?
+---@field player IsoPlayer
+---@field remove ISButton
+---@field select ISButton
+---@field selectEnd boolean
+---@field selectStart boolean
+---@field startPos table?
+---@field titlebarbkg Texture
+---@field zPos number
 ISRemoveItemTool = ISPanelJoypad:derive("ISRemoveItemTool")
+ISRemoveItemTool.Type = "ISRemoveItemTool"
 
----@return any
+---@param item InventoryItem
+---@param player integer
 function ISRemoveItemTool.removeItem(item, player) end
----@return any
+
+---@param items InventoryItem[]
+---@param player integer
 function ISRemoveItemTool.removeItems(items, player) end
 
----@return any
-function ISRemoveItemTool:initialise() end
----@return any
 function ISRemoveItemTool:destroy() end
----@return any
+
+function ISRemoveItemTool:initialise() end
+
+---@param button ISButton
 function ISRemoveItemTool:onClick(button) end
----@return any
-function ISRemoveItemTool:titleBarHeight() end
----@return any
-function ISRemoveItemTool:prerender() end
----@return any
-function ISRemoveItemTool:render() end
----@return any
-function ISRemoveItemTool:onMouseMove(dx, dy) end
----@return any
-function ISRemoveItemTool:onMouseMoveOutside(dx, dy) end
----@return any
+
+---@param buttons ISRadioButtons
+---@param index integer
+function ISRemoveItemTool:onItemType(buttons, index) end
+
+---@param x number
+---@param y number
 function ISRemoveItemTool:onMouseDown(x, y) end
----@return any
-function ISRemoveItemTool:onMouseUp(x, y) end
----@return any
-function ISRemoveItemTool:onMouseUpOutside(x, y) end
----@return any
+
+---@param x number
+---@param y number
 function ISRemoveItemTool:onMouseDownOutside(x, y) end
 
+---@param dx number
+---@param dy number
+function ISRemoveItemTool:onMouseMove(dx, dy) end
+
+---@param dx number
+---@param dy number
+function ISRemoveItemTool:onMouseMoveOutside(dx, dy) end
+
+---@param x number
+---@param y number
+function ISRemoveItemTool:onMouseUp(x, y) end
+
+---@param x number
+---@param y number
+function ISRemoveItemTool:onMouseUpOutside(x, y) end
+
+function ISRemoveItemTool:prerender() end
+
+function ISRemoveItemTool:render() end
+
+---@return number
+function ISRemoveItemTool:titleBarHeight() end
+
+---@param x number
+---@param y number
+---@param player IsoPlayer
 ---@return ISRemoveItemTool
-function ISRemoveItemTool:new(x, y, width, height, player) end
+function ISRemoveItemTool:new(x, y, player) end
