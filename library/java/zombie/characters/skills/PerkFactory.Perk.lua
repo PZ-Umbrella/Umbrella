@@ -81,6 +81,6 @@ function Perk.new(id, parent) end
 ---@type Class<PerkFactory.Perk>
 Perk.class = nil
 
-__classmetatables[Perk.class] = {__index = __Perk}
+__classmetatables[Perk.class] = { __index = __Perk }
 
 zombie.characters.skills.PerkFactory.Perk = Perk

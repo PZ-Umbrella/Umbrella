@@ -25,6 +25,6 @@ function RBPileOCrepe.new() end
 ---@type Class<RBPileOCrepe>
 RBPileOCrepe.class = nil
 
-__classmetatables[RBPileOCrepe.class] = {__index = __RBPileOCrepe}
+__classmetatables[RBPileOCrepe.class] = { __index = __RBPileOCrepe }
 
 zombie.randomizedWorld.randomizedBuilding.RBPileOCrepe = RBPileOCrepe

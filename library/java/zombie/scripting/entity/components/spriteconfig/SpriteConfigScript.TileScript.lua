@@ -20,6 +20,6 @@ function TileScript.new() end
 ---@type Class<SpriteConfigScript.TileScript>
 TileScript.class = nil
 
-__classmetatables[TileScript.class] = {__index = __TileScript}
+__classmetatables[TileScript.class] = { __index = __TileScript }
 
 zombie.scripting.entity.components.spriteconfig.SpriteConfigScript.TileScript = TileScript

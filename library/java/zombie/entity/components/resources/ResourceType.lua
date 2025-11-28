@@ -34,6 +34,6 @@ function ResourceType.values() end
 ---@type Class<ResourceType>
 ResourceType.class = nil
 
-__classmetatables[ResourceType.class] = {__index = __ResourceType}
+__classmetatables[ResourceType.class] = { __index = __ResourceType }
 
 zombie.entity.components.resources.ResourceType = ResourceType

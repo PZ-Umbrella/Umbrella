@@ -23,6 +23,6 @@ function RBJackieJaye.new() end
 ---@type Class<RBJackieJaye>
 RBJackieJaye.class = nil
 
-__classmetatables[RBJackieJaye.class] = {__index = __RBJackieJaye}
+__classmetatables[RBJackieJaye.class] = { __index = __RBJackieJaye }
 
 zombie.randomizedWorld.randomizedBuilding.RBJackieJaye = RBJackieJaye

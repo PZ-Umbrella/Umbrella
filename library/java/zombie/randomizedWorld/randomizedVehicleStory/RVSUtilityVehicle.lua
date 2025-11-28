@@ -38,6 +38,6 @@ function RVSUtilityVehicle.new() end
 ---@type Class<RVSUtilityVehicle>
 RVSUtilityVehicle.class = nil
 
-__classmetatables[RVSUtilityVehicle.class] = {__index = __RVSUtilityVehicle}
+__classmetatables[RVSUtilityVehicle.class] = { __index = __RVSUtilityVehicle }
 
 zombie.randomizedWorld.randomizedVehicleStory.RVSUtilityVehicle = RVSUtilityVehicle

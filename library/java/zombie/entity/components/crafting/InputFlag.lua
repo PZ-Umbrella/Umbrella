@@ -210,6 +210,6 @@ function InputFlag.values() end
 ---@type Class<InputFlag>
 InputFlag.class = nil
 
-__classmetatables[InputFlag.class] = {__index = __InputFlag}
+__classmetatables[InputFlag.class] = { __index = __InputFlag }
 
 zombie.entity.components.crafting.InputFlag = InputFlag

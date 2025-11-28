@@ -117,6 +117,6 @@ function WorldMapSymbolsV2.new(arg0, arg1) end
 ---@type Class<WorldMapSymbolsV2>
 WorldMapSymbolsV2.class = nil
 
-__classmetatables[WorldMapSymbolsV2.class] = {__index = __WorldMapSymbolsV2}
+__classmetatables[WorldMapSymbolsV2.class] = { __index = __WorldMapSymbolsV2 }
 
 zombie.worldMap.symbols.WorldMapSymbolsV2 = WorldMapSymbolsV2

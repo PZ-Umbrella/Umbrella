@@ -72,6 +72,6 @@ function Attribute.init() end
 ---@type Class<Attribute>
 Attribute.class = nil
 
-__classmetatables[Attribute.class] = {__index = __Attribute}
+__classmetatables[Attribute.class] = { __index = __Attribute }
 
 zombie.entity.components.attributes.Attribute = Attribute

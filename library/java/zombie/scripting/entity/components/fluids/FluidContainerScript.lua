@@ -52,6 +52,6 @@ FluidContainerScript = {}
 ---@type Class<FluidContainerScript>
 FluidContainerScript.class = nil
 
-__classmetatables[FluidContainerScript.class] = {__index = __FluidContainerScript}
+__classmetatables[FluidContainerScript.class] = { __index = __FluidContainerScript }
 
 zombie.scripting.entity.components.fluids.FluidContainerScript = FluidContainerScript

@@ -14,6 +14,6 @@ WorldMapGridSquareMarkerV1 = {}
 ---@type Class<WorldMapMarkersV1.WorldMapGridSquareMarkerV1>
 WorldMapGridSquareMarkerV1.class = nil
 
-__classmetatables[WorldMapGridSquareMarkerV1.class] = {__index = __WorldMapGridSquareMarkerV1}
+__classmetatables[WorldMapGridSquareMarkerV1.class] = { __index = __WorldMapGridSquareMarkerV1 }
 
 zombie.worldMap.markers.WorldMapMarkersV1.WorldMapGridSquareMarkerV1 = WorldMapGridSquareMarkerV1

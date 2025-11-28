@@ -172,6 +172,6 @@ BaseSoundEmitter = {}
 ---@type Class<BaseSoundEmitter>
 BaseSoundEmitter.class = nil
 
-__classmetatables[BaseSoundEmitter.class] = {__index = __BaseSoundEmitter}
+__classmetatables[BaseSoundEmitter.class] = { __index = __BaseSoundEmitter }
 
 zombie.audio.BaseSoundEmitter = BaseSoundEmitter

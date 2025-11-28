@@ -21,6 +21,6 @@ function RBShopLooted.new() end
 ---@type Class<RBShopLooted>
 RBShopLooted.class = nil
 
-__classmetatables[RBShopLooted.class] = {__index = __RBShopLooted}
+__classmetatables[RBShopLooted.class] = { __index = __RBShopLooted }
 
 zombie.randomizedWorld.randomizedBuilding.RBShopLooted = RBShopLooted

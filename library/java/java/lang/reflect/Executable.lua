@@ -15,7 +15,7 @@ local __Executable = {}
 --- Returns an array of length 0 if the method/constructor declares no
 --- exceptions.
 ---@return kahlua.Array<AnnotatedType> # an array of objects representing the declared
---- exceptions of the method or constructor represented by this 
+--- exceptions of the method or constructor represented by this
 --- Executable
 function __Executable:getAnnotatedExceptionTypes() end
 
@@ -40,7 +40,7 @@ function __Executable:getAnnotatedParameterTypes() end
 --- by this Executable object.
 ---
 --- The receiver type of a method/constructor is available only if the
---- method/constructor has a receiver parameter (JLS 8.4.1). If this 
+--- method/constructor has a receiver parameter (JLS 8.4.1). If this
 --- Executable object represents an instance method or represents a
 --- constructor of an inner member class, and the
 --- method/constructor either has no receiver parameter or has a
@@ -60,10 +60,10 @@ function __Executable:getAnnotatedReceiverType() end
 --- specify the return type of the method/constructor represented by this
 --- Executable.
 ---
---- If this Executable object represents a constructor, the 
+--- If this Executable object represents a constructor, the
 --- AnnotatedType object represents the type of the constructed object.
 ---
---- If this Executable object represents a method, the 
+--- If this Executable object represents a method, the
 --- AnnotatedType object represents the use of a type to specify the return
 --- type of the method.
 ---@return AnnotatedType # an object representing the return type of the method
@@ -128,7 +128,7 @@ function __Executable:getDeclaringClass() end
 ---Returns an array of Class objects that represent the
 --- types of exceptions declared to be thrown by the underlying
 --- executable represented by this object.  Returns an array of
---- length 0 if the executable declares no exceptions in its 
+--- length 0 if the executable declares no exceptions in its
 --- throws clause.
 ---@return kahlua.Array<Class<any>> # the exception types declared as being thrown by the
 --- executable this object represents

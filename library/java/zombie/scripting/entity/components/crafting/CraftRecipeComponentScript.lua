@@ -34,6 +34,6 @@ CraftRecipeComponentScript = {}
 ---@type Class<CraftRecipeComponentScript>
 CraftRecipeComponentScript.class = nil
 
-__classmetatables[CraftRecipeComponentScript.class] = {__index = __CraftRecipeComponentScript}
+__classmetatables[CraftRecipeComponentScript.class] = { __index = __CraftRecipeComponentScript }
 
 zombie.scripting.entity.components.crafting.CraftRecipeComponentScript = CraftRecipeComponentScript

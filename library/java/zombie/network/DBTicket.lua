@@ -57,6 +57,6 @@ function DBTicket.new(arg0, arg1, arg2, arg3) end
 ---@type Class<DBTicket>
 DBTicket.class = nil
 
-__classmetatables[DBTicket.class] = {__index = __DBTicket}
+__classmetatables[DBTicket.class] = { __index = __DBTicket }
 
 zombie.network.DBTicket = DBTicket

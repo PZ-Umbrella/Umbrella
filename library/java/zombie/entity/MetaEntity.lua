@@ -57,6 +57,6 @@ MetaEntity = {}
 ---@type Class<MetaEntity>
 MetaEntity.class = nil
 
-__classmetatables[MetaEntity.class] = {__index = __MetaEntity}
+__classmetatables[MetaEntity.class] = { __index = __MetaEntity }
 
 zombie.entity.MetaEntity = MetaEntity

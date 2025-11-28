@@ -30,6 +30,6 @@ function Stash.new(name) end
 ---@type Class<Stash>
 Stash.class = nil
 
-__classmetatables[Stash.class] = {__index = __Stash}
+__classmetatables[Stash.class] = { __index = __Stash }
 
 zombie.core.stash.Stash = Stash

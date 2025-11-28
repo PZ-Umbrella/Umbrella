@@ -57,6 +57,6 @@ function ModelAttachment.new(id) end
 ---@type Class<ModelAttachment>
 ModelAttachment.class = nil
 
-__classmetatables[ModelAttachment.class] = {__index = __ModelAttachment}
+__classmetatables[ModelAttachment.class] = { __index = __ModelAttachment }
 
 zombie.scripting.objects.ModelAttachment = ModelAttachment

@@ -4,7 +4,7 @@
 ---An AttributedCharacterIterator allows iteration through both text and
 --- related attribute information.
 ---
---- 
+---
 --- An attribute is a key/value pair, identified by the key.  No two
 --- attributes on a given character can have the same key.
 ---
@@ -14,11 +14,11 @@
 ---
 --- A run with respect to an attribute is a maximum text range for
 --- which:
---- 
+---
 --- the attribute is undefined or null for the entire range, or
 --- the attribute value is defined and has the same non-null value for the
 ---     entire range.
---- 
+---
 ---
 --- A run with respect to a set of attributes is a maximum text range for
 --- which this condition is met for each member attribute.
@@ -34,7 +34,7 @@
 --- The returned attribute information is limited to runs that contain
 --- the current character.
 ---
---- 
+---
 --- Attribute keys are instances of AttributedCharacterIterator.Attribute and its
 --- subclasses, such as TextAttribute.
 ---@class AttributedCharacterIterator
@@ -52,7 +52,7 @@
 --- AttributedCharacterIterator returned
 --- from DateFormat.formatToCharacterIterator and as
 --- field identifiers in FieldPosition.
---- 
+---
 --- The class also provides two methods to map
 --- between its constants and the corresponding Calendar constants.
 ---@class DateFormat.Field
@@ -64,7 +64,7 @@
 --- SimpleDateFormat uses
 --- DateFormatSymbols to encapsulate this information.
 ---
---- 
+---
 --- Typically you shouldn't use DateFormatSymbols directly.
 --- Rather, you are encouraged to create a date-time formatter with the
 --- DateFormat class's factory methods: getTimeInstance,
@@ -76,20 +76,20 @@
 --- creating formatters using DateFormat's factory methods,
 --- see DateFormat.
 ---
---- 
+---
 --- If you decide to create a date-time formatter with a specific
 --- format pattern for a specific locale, you can do so with:
---- 
---- 
+---
+---
 --- new SimpleDateFormat(aPattern, DateFormatSymbols.getInstance(aLocale)).
---- 
---- 
+---
+---
 ---
 --- If the locale contains "rg" (region override)
 --- Unicode extension,
 --- the symbols are overridden for the designated region.
 ---
---- 
+---
 --- DateFormatSymbols objects are cloneable. When you obtain
 --- a DateFormatSymbols object, feel free to modify the
 --- date-time formatting data. For instance, you can replace the localized
@@ -97,7 +97,7 @@
 --- to remember. Or you can change the representative cities
 --- to your favorite ones.
 ---
---- 
+---
 --- New DateFormatSymbols subclasses may be added to support
 --- SimpleDateFormat for date-time formatting for additional locales.
 ---@class DateFormatSymbols
@@ -109,27 +109,27 @@
 ---FieldPosition is a simple class used by Format
 --- and its subclasses to identify fields in formatted output. Fields can
 --- be identified in two ways:
---- 
+---
 ---  By an integer constant, whose names typically end with
 ---      _FIELD. The constants are defined in the various
 ---      subclasses of Format.
 ---  By a Format.Field constant, see ERA_FIELD
 ---      and its friends in DateFormat for an example.
---- 
---- 
+---
+---
 --- FieldPosition keeps track of the position of the
 --- field within the formatted output with two indices: the index
 --- of the first character of the field and the index of the last
 --- character of the field.
 ---
---- 
+---
 --- One version of the format method in the various
 --- Format classes requires a FieldPosition
 --- object as an argument. You use this format method
 --- to perform partial formatting or to get information about the
 --- formatted output (such as the position of a field).
 ---
---- 
+---
 --- If you are interested in the positions of all attributes in the
 --- formatted string use the Format method
 --- formatToCharacterIterator.
@@ -147,7 +147,7 @@
 --- The parseObject method in the various Format
 --- classes requires a ParsePosition object as an argument.
 ---
---- 
+---
 --- By design, as you parse through a string with different formats,
 --- you can use the same ParsePosition, since the index parameter
 --- records the current position.

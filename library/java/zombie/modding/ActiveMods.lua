@@ -64,6 +64,6 @@ function ActiveMods.new(id) end
 ---@type Class<ActiveMods>
 ActiveMods.class = nil
 
-__classmetatables[ActiveMods.class] = {__index = __ActiveMods}
+__classmetatables[ActiveMods.class] = { __index = __ActiveMods }
 
 zombie.modding.ActiveMods = ActiveMods

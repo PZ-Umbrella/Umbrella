@@ -73,6 +73,6 @@ function UIWorldMapV3.new(arg0) end
 ---@type Class<UIWorldMapV3>
 UIWorldMapV3.class = nil
 
-__classmetatables[UIWorldMapV3.class] = {__index = __UIWorldMapV3}
+__classmetatables[UIWorldMapV3.class] = { __index = __UIWorldMapV3 }
 
 zombie.worldMap.UIWorldMapV3 = UIWorldMapV3

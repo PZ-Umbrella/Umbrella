@@ -141,6 +141,6 @@ function GridSquareMarker.new() end
 ---@type Class<WorldMarkers.GridSquareMarker>
 GridSquareMarker.class = nil
 
-__classmetatables[GridSquareMarker.class] = {__index = __GridSquareMarker}
+__classmetatables[GridSquareMarker.class] = { __index = __GridSquareMarker }
 
 zombie.iso.WorldMarkers.GridSquareMarker = GridSquareMarker

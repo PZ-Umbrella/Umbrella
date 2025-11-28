@@ -11,7 +11,7 @@
 --- coordinate of (0, 0).  Any Raster used to construct a
 --- BufferedImage must therefore have minX=0 and minY=0.
 ---
---- 
+---
 --- This class relies on the data fetching and setting methods
 --- of Raster,
 --- and on the color characterization methods of ColorModel.

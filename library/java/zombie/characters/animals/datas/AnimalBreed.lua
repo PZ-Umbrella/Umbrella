@@ -44,6 +44,6 @@ function AnimalBreed.new() end
 ---@type Class<AnimalBreed>
 AnimalBreed.class = nil
 
-__classmetatables[AnimalBreed.class] = {__index = __AnimalBreed}
+__classmetatables[AnimalBreed.class] = { __index = __AnimalBreed }
 
 zombie.characters.animals.datas.AnimalBreed = AnimalBreed

@@ -29,6 +29,6 @@ function SteamFriend.new(name, steamID) end
 ---@type Class<SteamFriend>
 SteamFriend.class = nil
 
-__classmetatables[SteamFriend.class] = {__index = __SteamFriend}
+__classmetatables[SteamFriend.class] = { __index = __SteamFriend }
 
 zombie.core.znet.SteamFriend = SteamFriend

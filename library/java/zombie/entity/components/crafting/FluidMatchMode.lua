@@ -27,6 +27,6 @@ function FluidMatchMode.values() end
 ---@type Class<FluidMatchMode>
 FluidMatchMode.class = nil
 
-__classmetatables[FluidMatchMode.class] = {__index = __FluidMatchMode}
+__classmetatables[FluidMatchMode.class] = { __index = __FluidMatchMode }
 
 zombie.entity.components.crafting.FluidMatchMode = FluidMatchMode

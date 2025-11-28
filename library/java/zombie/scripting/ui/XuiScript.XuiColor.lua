@@ -23,6 +23,6 @@ XuiColor = {}
 ---@type Class<XuiScript.XuiColor>
 XuiColor.class = nil
 
-__classmetatables[XuiColor.class] = {__index = __XuiColor}
+__classmetatables[XuiColor.class] = { __index = __XuiColor }
 
 zombie.scripting.ui.XuiScript.XuiColor = XuiColor

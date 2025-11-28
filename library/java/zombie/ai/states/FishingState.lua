@@ -40,6 +40,6 @@ function FishingState.new() end
 ---@type Class<FishingState>
 FishingState.class = nil
 
-__classmetatables[FishingState.class] = {__index = __FishingState}
+__classmetatables[FishingState.class] = { __index = __FishingState }
 
 zombie.ai.states.FishingState = FishingState

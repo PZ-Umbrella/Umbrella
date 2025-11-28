@@ -82,6 +82,6 @@ function ContainerID.new() end
 ---@type Class<ContainerID>
 ContainerID.class = nil
 
-__classmetatables[ContainerID.class] = {__index = __ContainerID}
+__classmetatables[ContainerID.class] = { __index = __ContainerID }
 
 zombie.network.fields.ContainerID = ContainerID

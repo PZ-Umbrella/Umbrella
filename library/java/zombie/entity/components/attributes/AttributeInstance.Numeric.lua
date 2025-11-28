@@ -29,6 +29,6 @@ Numeric = {}
 ---@type Class<AttributeInstance.Numeric>
 Numeric.class = nil
 
-__classmetatables[Numeric.class] = {__index = __Numeric}
+__classmetatables[Numeric.class] = { __index = __Numeric }
 
 zombie.entity.components.attributes.AttributeInstance.Numeric = Numeric

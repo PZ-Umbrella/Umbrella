@@ -8,6 +8,6 @@ XuiString = {}
 ---@type Class<XuiLuaStyle.XuiString>
 XuiString.class = nil
 
-__classmetatables[XuiString.class] = {__index = __XuiString}
+__classmetatables[XuiString.class] = { __index = __XuiString }
 
 zombie.scripting.ui.XuiLuaStyle.XuiString = XuiString

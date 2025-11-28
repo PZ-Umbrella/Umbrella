@@ -127,6 +127,6 @@ FurnaceLogic = {}
 ---@type Class<FurnaceLogic>
 FurnaceLogic.class = nil
 
-__classmetatables[FurnaceLogic.class] = {__index = __FurnaceLogic}
+__classmetatables[FurnaceLogic.class] = { __index = __FurnaceLogic }
 
 zombie.entity.components.crafting.FurnaceLogic = FurnaceLogic

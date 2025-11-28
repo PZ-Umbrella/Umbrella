@@ -38,6 +38,6 @@ function Result.new() end
 ---@type Class<Recipe.Result>
 Result.class = nil
 
-__classmetatables[Result.class] = {__index = __Result}
+__classmetatables[Result.class] = { __index = __Result }
 
 zombie.scripting.objects.Recipe.Result = Result

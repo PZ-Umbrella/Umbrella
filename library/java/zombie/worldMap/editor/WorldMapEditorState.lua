@@ -47,6 +47,6 @@ function WorldMapEditorState.new() end
 ---@type Class<WorldMapEditorState>
 WorldMapEditorState.class = nil
 
-__classmetatables[WorldMapEditorState.class] = {__index = __WorldMapEditorState}
+__classmetatables[WorldMapEditorState.class] = { __index = __WorldMapEditorState }
 
 zombie.worldMap.editor.WorldMapEditorState = WorldMapEditorState

@@ -40,6 +40,6 @@ function EventSound.new(name) end
 ---@type Class<EventSound>
 EventSound.class = nil
 
-__classmetatables[EventSound.class] = {__index = __EventSound}
+__classmetatables[EventSound.class] = { __index = __EventSound }
 
 zombie.radio.StorySounds.EventSound = EventSound

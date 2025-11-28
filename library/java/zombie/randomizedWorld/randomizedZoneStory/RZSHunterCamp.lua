@@ -17,6 +17,6 @@ function RZSHunterCamp.new() end
 ---@type Class<RZSHunterCamp>
 RZSHunterCamp.class = nil
 
-__classmetatables[RZSHunterCamp.class] = {__index = __RZSHunterCamp}
+__classmetatables[RZSHunterCamp.class] = { __index = __RZSHunterCamp }
 
 zombie.randomizedWorld.randomizedZoneStory.RZSHunterCamp = RZSHunterCamp

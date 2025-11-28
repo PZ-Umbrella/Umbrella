@@ -8,6 +8,6 @@ XuiFunction = {}
 ---@type Class<XuiScript.XuiFunction>
 XuiFunction.class = nil
 
-__classmetatables[XuiFunction.class] = {__index = __XuiFunction}
+__classmetatables[XuiFunction.class] = { __index = __XuiFunction }
 
 zombie.scripting.ui.XuiScript.XuiFunction = XuiFunction

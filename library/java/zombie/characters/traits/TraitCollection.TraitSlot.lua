@@ -21,6 +21,6 @@ TraitSlot = {}
 ---@type Class<TraitCollection.TraitSlot>
 TraitSlot.class = nil
 
-__classmetatables[TraitSlot.class] = {__index = __TraitSlot}
+__classmetatables[TraitSlot.class] = { __index = __TraitSlot }
 
 zombie.characters.traits.TraitCollection.TraitSlot = TraitSlot

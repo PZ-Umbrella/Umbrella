@@ -177,6 +177,6 @@ function WorldMarkers.intersectLineSegments(arg0, arg1, arg2) end
 ---@type Class<WorldMarkers>
 WorldMarkers.class = nil
 
-__classmetatables[WorldMarkers.class] = {__index = __WorldMarkers}
+__classmetatables[WorldMarkers.class] = { __index = __WorldMarkers }
 
 zombie.iso.WorldMarkers = WorldMarkers

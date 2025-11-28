@@ -14,6 +14,6 @@ MetaTagComponent = {}
 ---@type Class<MetaTagComponent>
 MetaTagComponent.class = nil
 
-__classmetatables[MetaTagComponent.class] = {__index = __MetaTagComponent}
+__classmetatables[MetaTagComponent.class] = { __index = __MetaTagComponent }
 
 zombie.entity.meta.MetaTagComponent = MetaTagComponent

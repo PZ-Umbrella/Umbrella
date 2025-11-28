@@ -59,6 +59,6 @@ ObjectInfo = {}
 ---@type Class<SpriteConfigManager.ObjectInfo>
 ObjectInfo.class = nil
 
-__classmetatables[ObjectInfo.class] = {__index = __ObjectInfo}
+__classmetatables[ObjectInfo.class] = { __index = __ObjectInfo }
 
 zombie.entity.components.spriteconfig.SpriteConfigManager.ObjectInfo = ObjectInfo

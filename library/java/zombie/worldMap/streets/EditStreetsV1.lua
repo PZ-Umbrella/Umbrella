@@ -83,6 +83,6 @@ function EditStreetsV1.new(arg0) end
 ---@type Class<EditStreetsV1>
 EditStreetsV1.class = nil
 
-__classmetatables[EditStreetsV1.class] = {__index = __EditStreetsV1}
+__classmetatables[EditStreetsV1.class] = { __index = __EditStreetsV1 }
 
 zombie.worldMap.streets.EditStreetsV1 = EditStreetsV1

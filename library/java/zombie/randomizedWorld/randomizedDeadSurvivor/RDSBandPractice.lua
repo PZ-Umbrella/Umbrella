@@ -23,6 +23,6 @@ function RDSBandPractice.new() end
 ---@type Class<RDSBandPractice>
 RDSBandPractice.class = nil
 
-__classmetatables[RDSBandPractice.class] = {__index = __RDSBandPractice}
+__classmetatables[RDSBandPractice.class] = { __index = __RDSBandPractice }
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSBandPractice = RDSBandPractice

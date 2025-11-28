@@ -38,6 +38,6 @@ function ForecastValue.new() end
 ---@type Class<ClimateForecaster.ForecastValue>
 ForecastValue.class = nil
 
-__classmetatables[ForecastValue.class] = {__index = __ForecastValue}
+__classmetatables[ForecastValue.class] = { __index = __ForecastValue }
 
 zombie.iso.weather.ClimateForecaster.ForecastValue = ForecastValue

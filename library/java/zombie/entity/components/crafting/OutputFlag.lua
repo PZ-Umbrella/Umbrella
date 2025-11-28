@@ -45,6 +45,6 @@ function OutputFlag.values() end
 ---@type Class<OutputFlag>
 OutputFlag.class = nil
 
-__classmetatables[OutputFlag.class] = {__index = __OutputFlag}
+__classmetatables[OutputFlag.class] = { __index = __OutputFlag }
 
 zombie.entity.components.crafting.OutputFlag = OutputFlag

@@ -81,7 +81,7 @@
 --- should be used only to detect bugs.
 ---
 --- This class is a member of the
---- 
+---
 --- Java Collections Framework.
 ---@class HashMap<K, V>: AbstractMap<K, V>, Map<K, V>, Cloneable, Serializable
 local __HashMap = {}
@@ -366,6 +366,6 @@ function HashMap.new(m) end
 ---@type Class<HashMap>
 HashMap.class = nil
 
-__classmetatables[HashMap.class] = {__index = __HashMap}
+__classmetatables[HashMap.class] = { __index = __HashMap }
 
 java.util.HashMap = HashMap

@@ -177,6 +177,6 @@ function Translator.new() end
 ---@type Class<Translator>
 Translator.class = nil
 
-__classmetatables[Translator.class] = {__index = __Translator}
+__classmetatables[Translator.class] = { __index = __Translator }
 
 zombie.core.Translator = Translator

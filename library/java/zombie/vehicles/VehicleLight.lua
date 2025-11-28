@@ -49,6 +49,6 @@ function VehicleLight.new() end
 ---@type Class<VehicleLight>
 VehicleLight.class = nil
 
-__classmetatables[VehicleLight.class] = {__index = __VehicleLight}
+__classmetatables[VehicleLight.class] = { __index = __VehicleLight }
 
 zombie.vehicles.VehicleLight = VehicleLight

@@ -60,6 +60,6 @@ function Safety.new(character) end
 ---@type Class<Safety>
 Safety.class = nil
 
-__classmetatables[Safety.class] = {__index = __Safety}
+__classmetatables[Safety.class] = { __index = __Safety }
 
 zombie.characters.Safety = Safety

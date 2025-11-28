@@ -39,6 +39,6 @@ XuiVar = {}
 ---@type Class<XuiLuaStyle.XuiVar>
 XuiVar.class = nil
 
-__classmetatables[XuiVar.class] = {__index = __XuiVar}
+__classmetatables[XuiVar.class] = { __index = __XuiVar }
 
 zombie.scripting.ui.XuiLuaStyle.XuiVar = XuiVar

@@ -165,6 +165,6 @@ function PlayerHomingPoint.new(plrIndex) end
 ---@type Class<WorldMarkers.PlayerHomingPoint>
 PlayerHomingPoint.class = nil
 
-__classmetatables[PlayerHomingPoint.class] = {__index = __PlayerHomingPoint}
+__classmetatables[PlayerHomingPoint.class] = { __index = __PlayerHomingPoint }
 
 zombie.iso.WorldMarkers.PlayerHomingPoint = PlayerHomingPoint

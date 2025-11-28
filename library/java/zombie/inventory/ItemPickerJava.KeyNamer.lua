@@ -39,6 +39,6 @@ function KeyNamer.new() end
 ---@type Class<ItemPickerJava.KeyNamer>
 KeyNamer.class = nil
 
-__classmetatables[KeyNamer.class] = {__index = __KeyNamer}
+__classmetatables[KeyNamer.class] = { __index = __KeyNamer }
 
 zombie.inventory.ItemPickerJava.KeyNamer = KeyNamer

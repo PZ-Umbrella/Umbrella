@@ -72,6 +72,6 @@ function GameEntityFactory.new() end
 ---@type Class<GameEntityFactory>
 GameEntityFactory.class = nil
 
-__classmetatables[GameEntityFactory.class] = {__index = __GameEntityFactory}
+__classmetatables[GameEntityFactory.class] = { __index = __GameEntityFactory }
 
 zombie.entity.GameEntityFactory = GameEntityFactory

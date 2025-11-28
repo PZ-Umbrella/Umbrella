@@ -62,6 +62,6 @@ IsoMarkers.instance = nil
 ---@type Class<IsoMarkers>
 IsoMarkers.class = nil
 
-__classmetatables[IsoMarkers.class] = {__index = __IsoMarkers}
+__classmetatables[IsoMarkers.class] = { __index = __IsoMarkers }
 
 zombie.iso.IsoMarkers = IsoMarkers

@@ -2,7 +2,7 @@
 
 ---(Not exposed)
 ---This class provides a skeletal implementation of the Collection
---- interface, to minimize the effort required to implement this interface. 
+--- interface, to minimize the effort required to implement this interface.
 ---
 --- To implement an unmodifiable collection, the programmer needs only to
 --- extend this class and provide implementations for the iterator and
@@ -24,7 +24,7 @@
 --- the collection being implemented admits a more efficient implementation.
 ---
 --- This class is a member of the
---- 
+---
 --- Java Collections Framework.
 ---@class AbstractCollection<E>: Collection<E>
 local __AbstractCollection = {}

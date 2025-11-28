@@ -22,6 +22,6 @@ Enum = {}
 ---@type Class<AttributeType.Enum>
 Enum.class = nil
 
-__classmetatables[Enum.class] = {__index = __Enum}
+__classmetatables[Enum.class] = { __index = __Enum }
 
 zombie.entity.components.attributes.AttributeType.Enum = Enum

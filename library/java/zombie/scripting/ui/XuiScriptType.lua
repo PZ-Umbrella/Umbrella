@@ -27,6 +27,6 @@ function XuiScriptType.values() end
 ---@type Class<XuiScriptType>
 XuiScriptType.class = nil
 
-__classmetatables[XuiScriptType.class] = {__index = __XuiScriptType}
+__classmetatables[XuiScriptType.class] = { __index = __XuiScriptType }
 
 zombie.scripting.ui.XuiScriptType = XuiScriptType

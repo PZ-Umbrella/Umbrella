@@ -34,6 +34,6 @@ function ThunderCloud.new() end
 ---@type Class<ThunderStorm.ThunderCloud>
 ThunderCloud.class = nil
 
-__classmetatables[ThunderCloud.class] = {__index = __ThunderCloud}
+__classmetatables[ThunderCloud.class] = { __index = __ThunderCloud }
 
 zombie.iso.weather.ThunderStorm.ThunderCloud = ThunderCloud

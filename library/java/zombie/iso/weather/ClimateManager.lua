@@ -428,7 +428,16 @@ function __ClimateManager:triggerCustomWeatherStage(stage, duration) end
 ---@param initialProgress number
 ---@param angle number
 ---@param initialPuddles number
-function __ClimateManager:triggerKateBobIntroStorm(centerX, centerY, duration, strength, initialProgress, angle, initialPuddles) end
+function __ClimateManager:triggerKateBobIntroStorm(
+	centerX,
+	centerY,
+	duration,
+	strength,
+	initialProgress,
+	angle,
+	initialPuddles
+)
+end
 
 ---@param centerX integer
 ---@param centerY integer
@@ -438,7 +447,17 @@ function __ClimateManager:triggerKateBobIntroStorm(centerX, centerY, duration, s
 ---@param angle number
 ---@param initialPuddles number
 ---@param cloudcolor ClimateColorInfo
-function __ClimateManager:triggerKateBobIntroStorm(centerX, centerY, duration, strength, initialProgress, angle, initialPuddles, cloudcolor) end
+function __ClimateManager:triggerKateBobIntroStorm(
+	centerX,
+	centerY,
+	duration,
+	strength,
+	initialProgress,
+	angle,
+	initialPuddles,
+	cloudcolor
+)
+end
 
 function __ClimateManager:triggerWinterIsComingStorm() end
 
@@ -628,6 +647,6 @@ function ClimateManager.new() end
 ---@type Class<ClimateManager>
 ClimateManager.class = nil
 
-__classmetatables[ClimateManager.class] = {__index = __ClimateManager}
+__classmetatables[ClimateManager.class] = { __index = __ClimateManager }
 
 zombie.iso.weather.ClimateManager = ClimateManager

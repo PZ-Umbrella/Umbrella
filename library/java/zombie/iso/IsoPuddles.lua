@@ -114,6 +114,6 @@ function IsoPuddles.new() end
 ---@type Class<IsoPuddles>
 IsoPuddles.class = nil
 
-__classmetatables[IsoPuddles.class] = {__index = __IsoPuddles}
+__classmetatables[IsoPuddles.class] = { __index = __IsoPuddles }
 
 zombie.iso.IsoPuddles = IsoPuddles

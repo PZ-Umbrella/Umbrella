@@ -118,6 +118,6 @@ function IsoObjectType.values() end
 ---@type Class<IsoObjectType>
 IsoObjectType.class = nil
 
-__classmetatables[IsoObjectType.class] = {__index = __IsoObjectType}
+__classmetatables[IsoObjectType.class] = { __index = __IsoObjectType }
 
 zombie.iso.SpriteDetails.IsoObjectType = IsoObjectType

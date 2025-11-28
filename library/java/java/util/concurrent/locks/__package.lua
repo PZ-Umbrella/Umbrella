@@ -86,12 +86,12 @@
 --- lock, as described in
 --- Chapter 17 of
 --- The Java Language Specification:
---- 
+---
 --- A successful lock operation has the same memory
 --- synchronization effects as a successful Lock action.
 --- A successful unlock operation has the same
 --- memory synchronization effects as a successful Unlock action.
---- 
+---
 ---
 --- Unsuccessful locking and unlocking operations, and reentrant
 --- locking/unlocking operations, do not require any memory

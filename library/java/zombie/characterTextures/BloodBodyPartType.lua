@@ -96,6 +96,6 @@ function BloodBodyPartType.values() end
 ---@type Class<BloodBodyPartType>
 BloodBodyPartType.class = nil
 
-__classmetatables[BloodBodyPartType.class] = {__index = __BloodBodyPartType}
+__classmetatables[BloodBodyPartType.class] = { __index = __BloodBodyPartType }
 
 zombie.characterTextures.BloodBodyPartType = BloodBodyPartType

@@ -838,6 +838,6 @@ function UIElement.new(table) end
 ---@type Class<UIElement>
 UIElement.class = nil
 
-__classmetatables[UIElement.class] = {__index = __UIElement}
+__classmetatables[UIElement.class] = { __index = __UIElement }
 
 zombie.ui.UIElement = UIElement

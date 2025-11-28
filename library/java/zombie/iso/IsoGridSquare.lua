@@ -2081,6 +2081,6 @@ function IsoGridSquare.new(cell, slice, x, y, z) end
 ---@type Class<IsoGridSquare>
 IsoGridSquare.class = nil
 
-__classmetatables[IsoGridSquare.class] = {__index = __IsoGridSquare}
+__classmetatables[IsoGridSquare.class] = { __index = __IsoGridSquare }
 
 zombie.iso.IsoGridSquare = IsoGridSquare

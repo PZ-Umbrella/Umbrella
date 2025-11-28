@@ -31,6 +31,6 @@ function ISWorldObjectContextMenuLogic.new() end
 ---@type Class<ISWorldObjectContextMenuLogic>
 ISWorldObjectContextMenuLogic.class = nil
 
-__classmetatables[ISWorldObjectContextMenuLogic.class] = {__index = __ISWorldObjectContextMenuLogic}
+__classmetatables[ISWorldObjectContextMenuLogic.class] = { __index = __ISWorldObjectContextMenuLogic }
 
 zombie.iso.ISWorldObjectContextMenuLogic = ISWorldObjectContextMenuLogic

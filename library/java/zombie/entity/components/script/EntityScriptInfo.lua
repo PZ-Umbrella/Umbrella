@@ -20,6 +20,6 @@ EntityScriptInfo = {}
 ---@type Class<EntityScriptInfo>
 EntityScriptInfo.class = nil
 
-__classmetatables[EntityScriptInfo.class] = {__index = __EntityScriptInfo}
+__classmetatables[EntityScriptInfo.class] = { __index = __EntityScriptInfo }
 
 zombie.entity.components.script.EntityScriptInfo = EntityScriptInfo

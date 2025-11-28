@@ -15,6 +15,6 @@ SGlobalObject = {}
 ---@type Class<SGlobalObject>
 SGlobalObject.class = nil
 
-__classmetatables[SGlobalObject.class] = {__index = __SGlobalObject}
+__classmetatables[SGlobalObject.class] = { __index = __SGlobalObject }
 
 zombie.globalObjects.SGlobalObject = SGlobalObject

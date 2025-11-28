@@ -314,6 +314,6 @@ function XuiScript.new(arg0, arg1, arg2, arg3) end
 ---@type Class<XuiScript>
 XuiScript.class = nil
 
-__classmetatables[XuiScript.class] = {__index = __XuiScript}
+__classmetatables[XuiScript.class] = { __index = __XuiScript }
 
 zombie.scripting.ui.XuiScript = XuiScript

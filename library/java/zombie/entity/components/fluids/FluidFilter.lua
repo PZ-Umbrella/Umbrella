@@ -105,6 +105,6 @@ function FluidFilter.new() end
 ---@type Class<FluidFilter>
 FluidFilter.class = nil
 
-__classmetatables[FluidFilter.class] = {__index = __FluidFilter}
+__classmetatables[FluidFilter.class] = { __index = __FluidFilter }
 
 zombie.entity.components.fluids.FluidFilter = FluidFilter

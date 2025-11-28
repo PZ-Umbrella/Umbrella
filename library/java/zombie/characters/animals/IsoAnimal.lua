@@ -818,6 +818,6 @@ function IsoAnimal.new(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
 ---@type Class<IsoAnimal>
 IsoAnimal.class = nil
 
-__classmetatables[IsoAnimal.class] = {__index = __IsoAnimal}
+__classmetatables[IsoAnimal.class] = { __index = __IsoAnimal }
 
 zombie.characters.animals.IsoAnimal = IsoAnimal

@@ -18,6 +18,6 @@ XuiUnit = {}
 ---@type Class<XuiScript.XuiUnit>
 XuiUnit.class = nil
 
-__classmetatables[XuiUnit.class] = {__index = __XuiUnit}
+__classmetatables[XuiUnit.class] = { __index = __XuiUnit }
 
 zombie.scripting.ui.XuiScript.XuiUnit = XuiUnit

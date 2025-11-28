@@ -67,6 +67,6 @@ function BREBuilding.new() end
 ---@type Class<BREBuilding>
 BREBuilding.class = nil
 
-__classmetatables[BREBuilding.class] = {__index = __BREBuilding}
+__classmetatables[BREBuilding.class] = { __index = __BREBuilding }
 
 zombie.buildingRooms.BREBuilding = BREBuilding

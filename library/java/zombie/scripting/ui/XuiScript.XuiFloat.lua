@@ -8,6 +8,6 @@ XuiFloat = {}
 ---@type Class<XuiScript.XuiFloat>
 XuiFloat.class = nil
 
-__classmetatables[XuiFloat.class] = {__index = __XuiFloat}
+__classmetatables[XuiFloat.class] = { __index = __XuiFloat }
 
 zombie.scripting.ui.XuiScript.XuiFloat = XuiFloat

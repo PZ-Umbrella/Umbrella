@@ -52,6 +52,6 @@ function VehicleType.new(name) end
 ---@type Class<VehicleType>
 VehicleType.class = nil
 
-__classmetatables[VehicleType.class] = {__index = __VehicleType}
+__classmetatables[VehicleType.class] = { __index = __VehicleType }
 
 zombie.vehicles.VehicleType = VehicleType

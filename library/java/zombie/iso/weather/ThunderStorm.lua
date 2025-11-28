@@ -56,7 +56,17 @@ function __ThunderStorm:startThunderCloud(str, angle, radius, eventFreq, thunder
 ---@param targetRandomPlayer boolean
 ---@param percentageOffset number
 ---@return ThunderStorm.ThunderCloud
-function __ThunderStorm:startThunderCloud(str, angle, radius, eventFreq, thunderRatio, duration, targetRandomPlayer, percentageOffset) end
+function __ThunderStorm:startThunderCloud(
+	str,
+	angle,
+	radius,
+	eventFreq,
+	thunderRatio,
+	duration,
+	targetRandomPlayer,
+	percentageOffset
+)
+end
 
 function __ThunderStorm:stopAllClouds() end
 
@@ -100,6 +110,6 @@ function ThunderStorm.new(climmgr) end
 ---@type Class<ThunderStorm>
 ThunderStorm.class = nil
 
-__classmetatables[ThunderStorm.class] = {__index = __ThunderStorm}
+__classmetatables[ThunderStorm.class] = { __index = __ThunderStorm }
 
 zombie.iso.weather.ThunderStorm = ThunderStorm

@@ -21,6 +21,6 @@ function RDSHenDo.new() end
 ---@type Class<RDSHenDo>
 RDSHenDo.class = nil
 
-__classmetatables[RDSHenDo.class] = {__index = __RDSHenDo}
+__classmetatables[RDSHenDo.class] = { __index = __RDSHenDo }
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSHenDo = RDSHenDo

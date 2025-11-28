@@ -20,12 +20,12 @@
 --- is in an appropriate class, package, or module. The check when invoked by
 --- JNI code with no Java
 --- class on the stack only succeeds if the member and the declaring class are
---- public, and the class is in a package that is exported to all modules. 
+--- public, and the class is in a package that is exported to all modules.
 ---
 ---  The one variation from Java language access control is that the checks
 --- by reflected objects assume readability. That is, the module containing
 --- the use of a reflected object is assumed to read the module in which
---- the underlying field, method, or constructor is declared. 
+--- the underlying field, method, or constructor is declared.
 ---
 ---  Whether the checks for Java language access control can be suppressed
 --- (and thus, whether access can be enabled) depends on whether the reflected
@@ -179,42 +179,42 @@ function __AccessibleObject:isAnnotationPresent(annotationClass) end
 --- control when it is used, with the variation noted in the class description.
 ---
 ---  This method may be used by a caller in class C to enable
---- access to a member of declaring class D if any of the following hold: 
+--- access to a member of declaring class D if any of the following hold:
 ---
---- 
----      C and D are in the same module. 
+---
+---      C and D are in the same module.
 ---
 ---      The member is public and D is public in
 ---     a package that the module containing D exports to at least the module
----     containing C. 
+---     containing C.
 ---
 ---      The member is protected static, D is
 ---     public in a package that the module containing D
 ---     exports to at least the module containing C, and C
----     is a subclass of D. 
+---     is a subclass of D.
 ---
 ---      D is in a package that the module containing D
 ---     opens to at least the module
 ---     containing C.
 ---     All packages in unnamed and open modules are open to all modules and
 ---     so this method always succeeds when D is in an unnamed or
----     open module. 
---- 
+---     open module.
+---
 ---
 ---  This method cannot be used to enable access to private members,
 --- members with default (package) access, protected instance members, or
 --- protected constructors when the declaring class is in a different module
 --- to the caller and the package containing the declaring class is not open
---- to the caller's module. 
+--- to the caller's module.
 ---
 ---  This method cannot be used to enable write
 --- access to a non-modifiable final field.  The following fields
 --- are non-modifiable:
---- 
+---
 --- static final fields declared in any class or interface
 --- final fields declared in a hidden class
 --- final fields declared in a record
---- 
+---
 ---  The accessible flag when true suppresses Java language access
 --- control checks to only enable read access to
 --- these non-modifiable final fields.
@@ -230,7 +230,7 @@ function __AccessibleObject:setAccessible(flag) end
 --- invoking setAccessible(true), and returns
 --- the possibly-updated value for the accessible flag. If access
 --- cannot be enabled, i.e. the checks or Java language access control cannot
---- be suppressed, this method returns false (as opposed to 
+--- be suppressed, this method returns false (as opposed to
 --- setAccessible(true) throwing InaccessibleObjectException when
 --- it fails).
 ---
@@ -246,7 +246,7 @@ function __AccessibleObject:setAccessible(flag) end
 --- the code below successfully sets the accessible flag
 --- to true.
 ---
---- 
+---
 --- <code>
 ---     p.T obj = ....;  // instance of p.T
 ---     :

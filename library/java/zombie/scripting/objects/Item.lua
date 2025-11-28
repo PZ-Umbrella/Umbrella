@@ -1057,6 +1057,6 @@ function Item.new() end
 ---@type Class<Item>
 Item.class = nil
 
-__classmetatables[Item.class] = {__index = __Item}
+__classmetatables[Item.class] = { __index = __Item }
 
 zombie.scripting.objects.Item = Item

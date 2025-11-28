@@ -144,6 +144,6 @@ function BodyPartSyncPacket.new() end
 ---@type Class<BodyPartSyncPacket>
 BodyPartSyncPacket.class = nil
 
-__classmetatables[BodyPartSyncPacket.class] = {__index = __BodyPartSyncPacket}
+__classmetatables[BodyPartSyncPacket.class] = { __index = __BodyPartSyncPacket }
 
 zombie.network.packets.BodyPartSyncPacket = BodyPartSyncPacket

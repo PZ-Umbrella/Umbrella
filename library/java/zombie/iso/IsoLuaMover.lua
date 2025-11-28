@@ -32,6 +32,6 @@ function IsoLuaMover.new(table) end
 ---@type Class<IsoLuaMover>
 IsoLuaMover.class = nil
 
-__classmetatables[IsoLuaMover.class] = {__index = __IsoLuaMover}
+__classmetatables[IsoLuaMover.class] = { __index = __IsoLuaMover }
 
 zombie.iso.IsoLuaMover = IsoLuaMover

@@ -45,6 +45,6 @@ function EditVehicleState.new() end
 ---@type Class<EditVehicleState>
 EditVehicleState.class = nil
 
-__classmetatables[EditVehicleState.class] = {__index = __EditVehicleState}
+__classmetatables[EditVehicleState.class] = { __index = __EditVehicleState }
 
 zombie.vehicles.EditVehicleState = EditVehicleState

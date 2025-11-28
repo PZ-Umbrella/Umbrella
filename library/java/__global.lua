@@ -304,7 +304,24 @@ function addZombiesInOutfit(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8
 ---@param arg13 boolean
 ---@param arg14 number
 ---@return ArrayList<IsoZombie>
-function addZombiesInOutfit(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14) end
+function addZombiesInOutfit(
+	arg0,
+	arg1,
+	arg2,
+	arg3,
+	arg4,
+	arg5,
+	arg6,
+	arg7,
+	arg8,
+	arg9,
+	arg10,
+	arg11,
+	arg12,
+	arg13,
+	arg14
+)
+end
 
 ---@param x1 integer
 ---@param y1 integer
@@ -3008,4 +3025,3 @@ function zpopSpawnNow(cellX, cellY) end
 ---@param cellX integer
 ---@param cellY integer
 function zpopSpawnTimeToZero(cellX, cellY) end
-

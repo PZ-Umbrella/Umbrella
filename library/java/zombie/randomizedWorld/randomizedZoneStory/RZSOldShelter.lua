@@ -14,6 +14,6 @@ function RZSOldShelter.new() end
 ---@type Class<RZSOldShelter>
 RZSOldShelter.class = nil
 
-__classmetatables[RZSOldShelter.class] = {__index = __RZSOldShelter}
+__classmetatables[RZSOldShelter.class] = { __index = __RZSOldShelter }
 
 zombie.randomizedWorld.randomizedZoneStory.RZSOldShelter = RZSOldShelter

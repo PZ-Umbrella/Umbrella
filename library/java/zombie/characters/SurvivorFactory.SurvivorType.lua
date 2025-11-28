@@ -26,6 +26,6 @@ function SurvivorType.values() end
 ---@type Class<SurvivorFactory.SurvivorType>
 SurvivorType.class = nil
 
-__classmetatables[SurvivorType.class] = {__index = __SurvivorType}
+__classmetatables[SurvivorType.class] = { __index = __SurvivorType }
 
 zombie.characters.SurvivorFactory.SurvivorType = SurvivorType

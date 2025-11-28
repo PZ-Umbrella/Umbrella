@@ -258,7 +258,7 @@ function __InputStream:readNBytes(b, off, len) end
 ---
 ---  The general contract of reset is:
 ---
---- 
+---
 ---  If the method markSupported returns
 --- true, then:
 ---
@@ -274,7 +274,7 @@ function __InputStream:readNBytes(b, off, len) end
 ---     file, if mark has not been called) will be resupplied
 ---     to subsequent callers of the read method, followed by
 ---     any bytes that otherwise would have been the next input data as of
----     the time of the call to reset. 
+---     the time of the call to reset.
 ---
 ---  If the method markSupported returns
 --- false, then:
@@ -286,7 +286,7 @@ function __InputStream:readNBytes(b, off, len) end
 ---     is reset to a fixed state that depends on the particular type of the
 ---     input stream and how it was created. The bytes that will be supplied
 ---     to subsequent callers of the read method depend on the
----     particular type of the input stream. 
+---     particular type of the input stream.
 ---
 --- The method reset for class InputStream
 --- does nothing except throw an IOException.
@@ -332,13 +332,13 @@ function __InputStream:skipNBytes(n) end
 --- given output stream in the order that they are read. On return, this
 --- input stream will be at end of stream. This method does not close either
 --- stream.
---- 
+---
 --- This method may block indefinitely reading from the input stream, or
 --- writing to the output stream. The behavior for the case where the input
 --- and/or output stream is asynchronously closed, or the thread
 --- interrupted during the transfer, is highly input and output stream
 --- specific, and therefore not specified.
---- 
+---
 --- If an I/O error occurs reading from the input stream or writing to the
 --- output stream, then it may do so after some bytes have been read or
 --- written. Consequently the input stream may not be at end of stream and

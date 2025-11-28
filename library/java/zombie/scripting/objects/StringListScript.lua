@@ -32,6 +32,6 @@ StringListScript = {}
 ---@type Class<StringListScript>
 StringListScript.class = nil
 
-__classmetatables[StringListScript.class] = {__index = __StringListScript}
+__classmetatables[StringListScript.class] = { __index = __StringListScript }
 
 zombie.scripting.objects.StringListScript = StringListScript

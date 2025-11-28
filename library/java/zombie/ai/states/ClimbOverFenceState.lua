@@ -70,6 +70,6 @@ function ClimbOverFenceState.instance() end
 ---@type Class<ClimbOverFenceState>
 ClimbOverFenceState.class = nil
 
-__classmetatables[ClimbOverFenceState.class] = {__index = __ClimbOverFenceState}
+__classmetatables[ClimbOverFenceState.class] = { __index = __ClimbOverFenceState }
 
 zombie.ai.states.ClimbOverFenceState = ClimbOverFenceState

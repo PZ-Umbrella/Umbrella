@@ -130,6 +130,6 @@ WorldMapTextureStyleLayerV1 = {}
 ---@type Class<WorldMapStyleV1.WorldMapTextureStyleLayerV1>
 WorldMapTextureStyleLayerV1.class = nil
 
-__classmetatables[WorldMapTextureStyleLayerV1.class] = {__index = __WorldMapTextureStyleLayerV1}
+__classmetatables[WorldMapTextureStyleLayerV1.class] = { __index = __WorldMapTextureStyleLayerV1 }
 
 zombie.worldMap.styles.WorldMapStyleV1.WorldMapTextureStyleLayerV1 = WorldMapTextureStyleLayerV1

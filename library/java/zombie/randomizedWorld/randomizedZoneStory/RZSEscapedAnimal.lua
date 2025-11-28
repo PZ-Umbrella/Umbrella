@@ -17,6 +17,6 @@ function RZSEscapedAnimal.new() end
 ---@type Class<RZSEscapedAnimal>
 RZSEscapedAnimal.class = nil
 
-__classmetatables[RZSEscapedAnimal.class] = {__index = __RZSEscapedAnimal}
+__classmetatables[RZSEscapedAnimal.class] = { __index = __RZSEscapedAnimal }
 
 zombie.randomizedWorld.randomizedZoneStory.RZSEscapedAnimal = RZSEscapedAnimal

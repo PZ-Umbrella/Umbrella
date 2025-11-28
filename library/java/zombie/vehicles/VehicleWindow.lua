@@ -55,6 +55,6 @@ function VehicleWindow.new(arg0) end
 ---@type Class<VehicleWindow>
 VehicleWindow.class = nil
 
-__classmetatables[VehicleWindow.class] = {__index = __VehicleWindow}
+__classmetatables[VehicleWindow.class] = { __index = __VehicleWindow }
 
 zombie.vehicles.VehicleWindow = VehicleWindow

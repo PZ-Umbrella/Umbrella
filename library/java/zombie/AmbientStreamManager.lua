@@ -93,6 +93,6 @@ function AmbientStreamManager.new() end
 ---@type Class<AmbientStreamManager>
 AmbientStreamManager.class = nil
 
-__classmetatables[AmbientStreamManager.class] = {__index = __AmbientStreamManager}
+__classmetatables[AmbientStreamManager.class] = { __index = __AmbientStreamManager }
 
 zombie.AmbientStreamManager = AmbientStreamManager

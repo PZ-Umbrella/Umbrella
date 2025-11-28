@@ -41,6 +41,6 @@ function Observation.new(tr, name, desc) end
 ---@type Class<ObservationFactory.Observation>
 Observation.class = nil
 
-__classmetatables[Observation.class] = {__index = __Observation}
+__classmetatables[Observation.class] = { __index = __Observation }
 
 zombie.characters.traits.ObservationFactory.Observation = Observation

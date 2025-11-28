@@ -39,6 +39,6 @@ function IsoJukebox.new(cell, sq, gid) end
 ---@type Class<IsoJukebox>
 IsoJukebox.class = nil
 
-__classmetatables[IsoJukebox.class] = {__index = __IsoJukebox}
+__classmetatables[IsoJukebox.class] = { __index = __IsoJukebox }
 
 zombie.iso.objects.IsoJukebox = IsoJukebox

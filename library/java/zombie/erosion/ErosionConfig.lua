@@ -29,6 +29,6 @@ function ErosionConfig.new() end
 ---@type Class<ErosionConfig>
 ErosionConfig.class = nil
 
-__classmetatables[ErosionConfig.class] = {__index = __ErosionConfig}
+__classmetatables[ErosionConfig.class] = { __index = __ErosionConfig }
 
 zombie.erosion.ErosionConfig = ErosionConfig

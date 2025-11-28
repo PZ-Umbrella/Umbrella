@@ -128,6 +128,6 @@ function IsoWeatherFX.new() end
 ---@type Class<IsoWeatherFX>
 IsoWeatherFX.class = nil
 
-__classmetatables[IsoWeatherFX.class] = {__index = __IsoWeatherFX}
+__classmetatables[IsoWeatherFX.class] = { __index = __IsoWeatherFX }
 
 zombie.iso.weather.fx.IsoWeatherFX = IsoWeatherFX

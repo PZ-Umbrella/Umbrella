@@ -29,6 +29,6 @@ function IsoWheelieBin.new(cell, x, y, z) end
 ---@type Class<IsoWheelieBin>
 IsoWheelieBin.class = nil
 
-__classmetatables[IsoWheelieBin.class] = {__index = __IsoWheelieBin}
+__classmetatables[IsoWheelieBin.class] = { __index = __IsoWheelieBin }
 
 zombie.iso.objects.IsoWheelieBin = IsoWheelieBin

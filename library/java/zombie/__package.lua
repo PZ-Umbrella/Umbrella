@@ -45,7 +45,7 @@
 ---(Not exposed)
 ---PredicatedFileWatcher
 --- An advanced form of the regular DebugFileWatcher
---- 
+---
 --- Includes the watched file path, a predicate callback, and a callback in case the predicate returns TRUE.
 ---@class PredicatedFileWatcher
 

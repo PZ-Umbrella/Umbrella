@@ -38,6 +38,6 @@ function EntryScript.new() end
 ---@type Class<ContextMenuConfigScript.EntryScript>
 EntryScript.class = nil
 
-__classmetatables[EntryScript.class] = {__index = __EntryScript}
+__classmetatables[EntryScript.class] = { __index = __EntryScript }
 
 zombie.scripting.entity.components.contextmenuconfig.ContextMenuConfigScript.EntryScript = EntryScript

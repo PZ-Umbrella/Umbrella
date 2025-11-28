@@ -256,6 +256,6 @@ function Array.new(arg0, arg1, arg2, arg3) end
 ---@type Class<Array>
 Array.class = nil
 
-__classmetatables[Array.class] = {__index = __Array}
+__classmetatables[Array.class] = { __index = __Array }
 
 zombie.entity.util.Array = Array

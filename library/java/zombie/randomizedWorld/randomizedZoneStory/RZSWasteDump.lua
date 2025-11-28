@@ -14,6 +14,6 @@ function RZSWasteDump.new() end
 ---@type Class<RZSWasteDump>
 RZSWasteDump.class = nil
 
-__classmetatables[RZSWasteDump.class] = {__index = __RZSWasteDump}
+__classmetatables[RZSWasteDump.class] = { __index = __RZSWasteDump }
 
 zombie.randomizedWorld.randomizedZoneStory.RZSWasteDump = RZSWasteDump

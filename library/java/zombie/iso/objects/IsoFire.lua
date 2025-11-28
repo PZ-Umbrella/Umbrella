@@ -168,6 +168,6 @@ function IsoFire.new(cell, gridSquare, CanBurnAnywhere, StartingEnergy) end
 ---@type Class<IsoFire>
 IsoFire.class = nil
 
-__classmetatables[IsoFire.class] = {__index = __IsoFire}
+__classmetatables[IsoFire.class] = { __index = __IsoFire }
 
 zombie.iso.objects.IsoFire = IsoFire

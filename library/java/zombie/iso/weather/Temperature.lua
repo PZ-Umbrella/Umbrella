@@ -139,6 +139,6 @@ function Temperature.new() end
 ---@type Class<Temperature>
 Temperature.class = nil
 
-__classmetatables[Temperature.class] = {__index = __Temperature}
+__classmetatables[Temperature.class] = { __index = __Temperature }
 
 zombie.iso.weather.Temperature = Temperature

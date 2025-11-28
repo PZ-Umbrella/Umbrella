@@ -44,6 +44,6 @@ function WeaponPart.new() end
 ---@type Class<ItemKey.WeaponPart>
 WeaponPart.class = nil
 
-__classmetatables[WeaponPart.class] = {__index = __WeaponPart}
+__classmetatables[WeaponPart.class] = { __index = __WeaponPart }
 
 zombie.scripting.objects.ItemKey.WeaponPart = WeaponPart

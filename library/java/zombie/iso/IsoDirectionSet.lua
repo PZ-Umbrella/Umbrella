@@ -19,6 +19,6 @@ function IsoDirectionSet.new() end
 ---@type Class<IsoDirectionSet>
 IsoDirectionSet.class = nil
 
-__classmetatables[IsoDirectionSet.class] = {__index = __IsoDirectionSet}
+__classmetatables[IsoDirectionSet.class] = { __index = __IsoDirectionSet }
 
 zombie.iso.IsoDirectionSet = IsoDirectionSet

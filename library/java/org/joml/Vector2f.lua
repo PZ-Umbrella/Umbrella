@@ -502,6 +502,6 @@ function Vector2f.new(arg0, arg1) end
 ---@type Class<Vector2f>
 Vector2f.class = nil
 
-__classmetatables[Vector2f.class] = {__index = __Vector2f}
+__classmetatables[Vector2f.class] = { __index = __Vector2f }
 
 org.joml.Vector2f = Vector2f

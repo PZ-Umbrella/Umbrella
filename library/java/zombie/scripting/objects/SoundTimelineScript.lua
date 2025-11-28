@@ -24,6 +24,6 @@ function SoundTimelineScript.new() end
 ---@type Class<SoundTimelineScript>
 SoundTimelineScript.class = nil
 
-__classmetatables[SoundTimelineScript.class] = {__index = __SoundTimelineScript}
+__classmetatables[SoundTimelineScript.class] = { __index = __SoundTimelineScript }
 
 zombie.scripting.objects.SoundTimelineScript = SoundTimelineScript

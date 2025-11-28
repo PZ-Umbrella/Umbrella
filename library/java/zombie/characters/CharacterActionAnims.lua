@@ -87,6 +87,6 @@ function CharacterActionAnims.values() end
 ---@type Class<CharacterActionAnims>
 CharacterActionAnims.class = nil
 
-__classmetatables[CharacterActionAnims.class] = {__index = __CharacterActionAnims}
+__classmetatables[CharacterActionAnims.class] = { __index = __CharacterActionAnims }
 
 zombie.characters.CharacterActionAnims = CharacterActionAnims

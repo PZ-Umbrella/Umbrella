@@ -46,6 +46,6 @@ function CrawlingZombieTurnState.new() end
 ---@type Class<CrawlingZombieTurnState>
 CrawlingZombieTurnState.class = nil
 
-__classmetatables[CrawlingZombieTurnState.class] = {__index = __CrawlingZombieTurnState}
+__classmetatables[CrawlingZombieTurnState.class] = { __index = __CrawlingZombieTurnState }
 
 zombie.ai.states.CrawlingZombieTurnState = CrawlingZombieTurnState

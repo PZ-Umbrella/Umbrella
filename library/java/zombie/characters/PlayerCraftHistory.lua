@@ -25,6 +25,6 @@ function PlayerCraftHistory.new(arg0) end
 ---@type Class<PlayerCraftHistory>
 PlayerCraftHistory.class = nil
 
-__classmetatables[PlayerCraftHistory.class] = {__index = __PlayerCraftHistory}
+__classmetatables[PlayerCraftHistory.class] = { __index = __PlayerCraftHistory }
 
 zombie.characters.PlayerCraftHistory = PlayerCraftHistory

@@ -65,6 +65,6 @@ function XuiManager.new() end
 ---@type Class<XuiManager>
 XuiManager.class = nil
 
-__classmetatables[XuiManager.class] = {__index = __XuiManager}
+__classmetatables[XuiManager.class] = { __index = __XuiManager }
 
 zombie.scripting.ui.XuiManager = XuiManager

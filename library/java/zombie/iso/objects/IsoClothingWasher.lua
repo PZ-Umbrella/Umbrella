@@ -61,6 +61,6 @@ function IsoClothingWasher.new(cell, sq, gid) end
 ---@type Class<IsoClothingWasher>
 IsoClothingWasher.class = nil
 
-__classmetatables[IsoClothingWasher.class] = {__index = __IsoClothingWasher}
+__classmetatables[IsoClothingWasher.class] = { __index = __IsoClothingWasher }
 
 zombie.iso.objects.IsoClothingWasher = IsoClothingWasher

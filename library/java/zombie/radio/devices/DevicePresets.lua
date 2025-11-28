@@ -66,6 +66,6 @@ function DevicePresets.new() end
 ---@type Class<DevicePresets>
 DevicePresets.class = nil
 
-__classmetatables[DevicePresets.class] = {__index = __DevicePresets}
+__classmetatables[DevicePresets.class] = { __index = __DevicePresets }
 
 zombie.radio.devices.DevicePresets = DevicePresets

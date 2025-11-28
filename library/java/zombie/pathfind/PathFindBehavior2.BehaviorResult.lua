@@ -24,6 +24,6 @@ function BehaviorResult.values() end
 ---@type Class<PathFindBehavior2.BehaviorResult>
 BehaviorResult.class = nil
 
-__classmetatables[BehaviorResult.class] = {__index = __BehaviorResult}
+__classmetatables[BehaviorResult.class] = { __index = __BehaviorResult }
 
 zombie.pathfind.PathFindBehavior2.BehaviorResult = BehaviorResult

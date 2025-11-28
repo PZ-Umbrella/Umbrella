@@ -281,6 +281,6 @@ function DebugLog.new() end
 ---@type Class<DebugLog>
 DebugLog.class = nil
 
-__classmetatables[DebugLog.class] = {__index = __DebugLog}
+__classmetatables[DebugLog.class] = { __index = __DebugLog }
 
 zombie.debug.DebugLog = DebugLog

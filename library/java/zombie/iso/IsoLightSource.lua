@@ -124,6 +124,6 @@ function IsoLightSource.new(x, y, z, r, g, b, radius, life) end
 ---@type Class<IsoLightSource>
 IsoLightSource.class = nil
 
-__classmetatables[IsoLightSource.class] = {__index = __IsoLightSource}
+__classmetatables[IsoLightSource.class] = { __index = __IsoLightSource }
 
 zombie.iso.IsoLightSource = IsoLightSource

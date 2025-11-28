@@ -83,6 +83,6 @@ function Profession.new(type, name, IconPathname, cost, desc) end
 ---@type Class<ProfessionFactory.Profession>
 Profession.class = nil
 
-__classmetatables[Profession.class] = {__index = __Profession}
+__classmetatables[Profession.class] = { __index = __Profession }
 
 zombie.characters.professions.ProfessionFactory.Profession = Profession

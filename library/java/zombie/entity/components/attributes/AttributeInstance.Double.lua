@@ -50,6 +50,6 @@ function Double.new() end
 ---@type Class<AttributeInstance.Double>
 Double.class = nil
 
-__classmetatables[Double.class] = {__index = __Double}
+__classmetatables[Double.class] = { __index = __Double }
 
 zombie.entity.components.attributes.AttributeInstance.Double = Double

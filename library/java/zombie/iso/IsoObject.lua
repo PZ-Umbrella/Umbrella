@@ -40,7 +40,17 @@ function __IsoObject:AttachAnim(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, 
 ---@param DeleteWhenFinished boolean
 ---@param zBias number
 ---@param TintMod ColorInfo
-function __IsoObject:AttachExistingAnim(spr, OffsetX, OffsetY, Looping, FinishHoldFrameIndex, DeleteWhenFinished, zBias, TintMod) end
+function __IsoObject:AttachExistingAnim(
+	spr,
+	OffsetX,
+	OffsetY,
+	Looping,
+	FinishHoldFrameIndex,
+	DeleteWhenFinished,
+	zBias,
+	TintMod
+)
+end
 
 ---@param spr IsoSprite
 ---@param OffsetX integer
@@ -49,7 +59,16 @@ function __IsoObject:AttachExistingAnim(spr, OffsetX, OffsetY, Looping, FinishHo
 ---@param FinishHoldFrameIndex integer
 ---@param DeleteWhenFinished boolean
 ---@param zBias number
-function __IsoObject:AttachExistingAnim(spr, OffsetX, OffsetY, Looping, FinishHoldFrameIndex, DeleteWhenFinished, zBias) end
+function __IsoObject:AttachExistingAnim(
+	spr,
+	OffsetX,
+	OffsetY,
+	Looping,
+	FinishHoldFrameIndex,
+	DeleteWhenFinished,
+	zBias
+)
+end
 
 ---@param owner IsoGameCharacter
 function __IsoObject:AttackObject(owner) end
@@ -865,7 +884,18 @@ function __IsoObject:renderAttachedAndOverlaySprites(arg0, arg1, arg2, arg3, arg
 ---@param shader Shader
 ---@param texdModifier Consumer<TextureDraw>
 ---@param attachedAndOverlayModifier Consumer<TextureDraw>
-function __IsoObject:renderFloorTile(x, y, z, col, bDoAttached, bWallLightingPass, shader, texdModifier, attachedAndOverlayModifier) end
+function __IsoObject:renderFloorTile(
+	x,
+	y,
+	z,
+	col,
+	bDoAttached,
+	bWallLightingPass,
+	shader,
+	texdModifier,
+	attachedAndOverlayModifier
+)
+end
 
 ---@param x number
 ---@param y number
@@ -1442,6 +1472,6 @@ function IsoObject.new(square, tile) end
 ---@type Class<IsoObject>
 IsoObject.class = nil
 
-__classmetatables[IsoObject.class] = {__index = __IsoObject}
+__classmetatables[IsoObject.class] = { __index = __IsoObject }
 
 zombie.iso.IsoObject = IsoObject

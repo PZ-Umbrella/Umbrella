@@ -19,6 +19,6 @@ function RequiredSkill.new(arg0, arg1) end
 ---@type Class<CraftRecipe.RequiredSkill>
 RequiredSkill.class = nil
 
-__classmetatables[RequiredSkill.class] = {__index = __RequiredSkill}
+__classmetatables[RequiredSkill.class] = { __index = __RequiredSkill }
 
 zombie.scripting.entity.components.crafting.CraftRecipe.RequiredSkill = RequiredSkill

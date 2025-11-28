@@ -25,6 +25,6 @@ function RBBar.new() end
 ---@type Class<RBBar>
 RBBar.class = nil
 
-__classmetatables[RBBar.class] = {__index = __RBBar}
+__classmetatables[RBBar.class] = { __index = __RBBar }
 
 zombie.randomizedWorld.randomizedBuilding.RBBar = RBBar

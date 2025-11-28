@@ -119,6 +119,6 @@ function IsoTree.new(sq, gid) end
 ---@type Class<IsoTree>
 IsoTree.class = nil
 
-__classmetatables[IsoTree.class] = {__index = __IsoTree}
+__classmetatables[IsoTree.class] = { __index = __IsoTree }
 
 zombie.iso.objects.IsoTree = IsoTree

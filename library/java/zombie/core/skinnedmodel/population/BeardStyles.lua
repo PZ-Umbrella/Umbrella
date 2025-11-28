@@ -40,6 +40,6 @@ function BeardStyles.new() end
 ---@type Class<BeardStyles>
 BeardStyles.class = nil
 
-__classmetatables[BeardStyles.class] = {__index = __BeardStyles}
+__classmetatables[BeardStyles.class] = { __index = __BeardStyles }
 
 zombie.core.skinnedmodel.population.BeardStyles = BeardStyles

@@ -68,6 +68,6 @@ function PZUnmodifiableList.wrap(arg0) end
 ---@type Class<PZUnmodifiableList>
 PZUnmodifiableList.class = nil
 
-__classmetatables[PZUnmodifiableList.class] = {__index = __PZUnmodifiableList}
+__classmetatables[PZUnmodifiableList.class] = { __index = __PZUnmodifiableList }
 
 zombie.util.list.PZUnmodifiableList = PZUnmodifiableList

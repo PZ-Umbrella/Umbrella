@@ -124,6 +124,6 @@ function CharacterSoundEmitter.new(chr) end
 ---@type Class<CharacterSoundEmitter>
 CharacterSoundEmitter.class = nil
 
-__classmetatables[CharacterSoundEmitter.class] = {__index = __CharacterSoundEmitter}
+__classmetatables[CharacterSoundEmitter.class] = { __index = __CharacterSoundEmitter }
 
 zombie.characters.CharacterSoundEmitter = CharacterSoundEmitter

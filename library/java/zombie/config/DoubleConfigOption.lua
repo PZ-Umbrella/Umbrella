@@ -59,6 +59,6 @@ function DoubleConfigOption.new(name, min, max, defaultValue) end
 ---@type Class<DoubleConfigOption>
 DoubleConfigOption.class = nil
 
-__classmetatables[DoubleConfigOption.class] = {__index = __DoubleConfigOption}
+__classmetatables[DoubleConfigOption.class] = { __index = __DoubleConfigOption }
 
 zombie.config.DoubleConfigOption = DoubleConfigOption

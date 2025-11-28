@@ -23,6 +23,6 @@ function RBTwiggy.new() end
 ---@type Class<RBTwiggy>
 RBTwiggy.class = nil
 
-__classmetatables[RBTwiggy.class] = {__index = __RBTwiggy}
+__classmetatables[RBTwiggy.class] = { __index = __RBTwiggy }
 
 zombie.randomizedWorld.randomizedBuilding.RBTwiggy = RBTwiggy

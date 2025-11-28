@@ -53,6 +53,6 @@ function AnimalAllele.new() end
 ---@type Class<AnimalAllele>
 AnimalAllele.class = nil
 
-__classmetatables[AnimalAllele.class] = {__index = __AnimalAllele}
+__classmetatables[AnimalAllele.class] = { __index = __AnimalAllele }
 
 zombie.characters.animals.AnimalAllele = AnimalAllele

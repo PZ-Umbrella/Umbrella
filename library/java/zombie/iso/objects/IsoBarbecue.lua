@@ -125,6 +125,6 @@ function IsoBarbecue.new(cell, sq, gid) end
 ---@type Class<IsoBarbecue>
 IsoBarbecue.class = nil
 
-__classmetatables[IsoBarbecue.class] = {__index = __IsoBarbecue}
+__classmetatables[IsoBarbecue.class] = { __index = __IsoBarbecue }
 
 zombie.iso.objects.IsoBarbecue = IsoBarbecue

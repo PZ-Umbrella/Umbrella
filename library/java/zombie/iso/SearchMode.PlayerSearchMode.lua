@@ -46,6 +46,6 @@ function PlayerSearchMode.new(index, sm) end
 ---@type Class<SearchMode.PlayerSearchMode>
 PlayerSearchMode.class = nil
 
-__classmetatables[PlayerSearchMode.class] = {__index = __PlayerSearchMode}
+__classmetatables[PlayerSearchMode.class] = { __index = __PlayerSearchMode }
 
 zombie.iso.SearchMode.PlayerSearchMode = PlayerSearchMode

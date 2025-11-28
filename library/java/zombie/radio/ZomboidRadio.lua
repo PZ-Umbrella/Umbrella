@@ -29,7 +29,20 @@ function __ZomboidRadio:PlayerListensChannel(channel, listenmode, isTV) end
 ---@param b number
 ---@param signalStrength integer
 ---@param isTV boolean
-function __ZomboidRadio:ReceiveTransmission(sourceX, sourceY, channel, msg, guid, codes, r, g, b, signalStrength, isTV) end
+function __ZomboidRadio:ReceiveTransmission(
+	sourceX,
+	sourceY,
+	channel,
+	msg,
+	guid,
+	codes,
+	r,
+	g,
+	b,
+	signalStrength,
+	isTV
+)
+end
 
 ---@param device WaveSignalDevice
 function __ZomboidRadio:RegisterDevice(device) end
@@ -69,7 +82,21 @@ function __ZomboidRadio:SendTransmission(sourceX, sourceY, channel, msg, guid, c
 ---@param b number
 ---@param signalStrength integer
 ---@param isTV boolean
-function __ZomboidRadio:SendTransmission(source, sourceX, sourceY, channel, msg, guid, codes, r, g, b, signalStrength, isTV) end
+function __ZomboidRadio:SendTransmission(
+	source,
+	sourceX,
+	sourceY,
+	channel,
+	msg,
+	guid,
+	codes,
+	r,
+	g,
+	b,
+	signalStrength,
+	isTV
+)
+end
 
 ---@param device WaveSignalDevice
 function __ZomboidRadio:UnRegisterDevice(device) end
@@ -203,6 +230,6 @@ function ZomboidRadio.isStaticSound(str) end
 ---@type Class<ZomboidRadio>
 ZomboidRadio.class = nil
 
-__classmetatables[ZomboidRadio.class] = {__index = __ZomboidRadio}
+__classmetatables[ZomboidRadio.class] = { __index = __ZomboidRadio }
 
 zombie.radio.ZomboidRadio = ZomboidRadio

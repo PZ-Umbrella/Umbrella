@@ -77,6 +77,6 @@ function VirtualAnimal.new() end
 ---@type Class<VirtualAnimal>
 VirtualAnimal.class = nil
 
-__classmetatables[VirtualAnimal.class] = {__index = __VirtualAnimal}
+__classmetatables[VirtualAnimal.class] = { __index = __VirtualAnimal }
 
 zombie.characters.animals.VirtualAnimal = VirtualAnimal

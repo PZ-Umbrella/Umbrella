@@ -46,6 +46,6 @@ function MapGroups.new() end
 ---@type Class<MapGroups>
 MapGroups.class = nil
 
-__classmetatables[MapGroups.class] = {__index = __MapGroups}
+__classmetatables[MapGroups.class] = { __index = __MapGroups }
 
 zombie.MapGroups = MapGroups

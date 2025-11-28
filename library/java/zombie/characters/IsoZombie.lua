@@ -768,6 +768,6 @@ function IsoZombie.new(cell, desc, _palette) end
 ---@type Class<IsoZombie>
 IsoZombie.class = nil
 
-__classmetatables[IsoZombie.class] = {__index = __IsoZombie}
+__classmetatables[IsoZombie.class] = { __index = __IsoZombie }
 
 zombie.characters.IsoZombie = IsoZombie

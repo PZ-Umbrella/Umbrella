@@ -31,6 +31,6 @@ function ClimateMoon.new() end
 ---@type Class<ClimateMoon>
 ClimateMoon.class = nil
 
-__classmetatables[ClimateMoon.class] = {__index = __ClimateMoon}
+__classmetatables[ClimateMoon.class] = { __index = __ClimateMoon }
 
 zombie.iso.weather.ClimateMoon = ClimateMoon

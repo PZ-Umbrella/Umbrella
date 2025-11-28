@@ -65,6 +65,6 @@ BRERoom = {}
 ---@type Class<BRERoom>
 BRERoom.class = nil
 
-__classmetatables[BRERoom.class] = {__index = __BRERoom}
+__classmetatables[BRERoom.class] = { __index = __BRERoom }
 
 zombie.buildingRooms.BRERoom = BRERoom

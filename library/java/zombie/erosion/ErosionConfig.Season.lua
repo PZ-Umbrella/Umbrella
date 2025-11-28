@@ -11,6 +11,6 @@ function Season.new() end
 ---@type Class<ErosionConfig.Season>
 Season.class = nil
 
-__classmetatables[Season.class] = {__index = __Season}
+__classmetatables[Season.class] = { __index = __Season }
 
 zombie.erosion.ErosionConfig.Season = Season

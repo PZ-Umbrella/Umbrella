@@ -54,6 +54,6 @@ function UIDebugConsole.new(x, y) end
 ---@type Class<UIDebugConsole>
 UIDebugConsole.class = nil
 
-__classmetatables[UIDebugConsole.class] = {__index = __UIDebugConsole}
+__classmetatables[UIDebugConsole.class] = { __index = __UIDebugConsole }
 
 zombie.ui.UIDebugConsole = UIDebugConsole

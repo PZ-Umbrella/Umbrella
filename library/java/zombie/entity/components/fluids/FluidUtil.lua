@@ -106,6 +106,6 @@ function FluidUtil.new() end
 ---@type Class<FluidUtil>
 FluidUtil.class = nil
 
-__classmetatables[FluidUtil.class] = {__index = __FluidUtil}
+__classmetatables[FluidUtil.class] = { __index = __FluidUtil }
 
 zombie.entity.components.fluids.FluidUtil = FluidUtil

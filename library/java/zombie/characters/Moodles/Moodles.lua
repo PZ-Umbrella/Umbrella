@@ -63,6 +63,6 @@ function Moodles.new(parent) end
 ---@type Class<Moodles>
 Moodles.class = nil
 
-__classmetatables[Moodles.class] = {__index = __Moodles}
+__classmetatables[Moodles.class] = { __index = __Moodles }
 
 zombie.characters.Moodles.Moodles = Moodles

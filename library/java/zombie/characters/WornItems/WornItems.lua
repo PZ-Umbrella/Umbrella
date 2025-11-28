@@ -76,6 +76,6 @@ function WornItems.new(other) end
 ---@type Class<WornItems>
 WornItems.class = nil
 
-__classmetatables[WornItems.class] = {__index = __WornItems}
+__classmetatables[WornItems.class] = { __index = __WornItems }
 
 zombie.characters.WornItems.WornItems = WornItems

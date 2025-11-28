@@ -39,6 +39,6 @@ function IsoAnimalTrack.new(arg0, arg1, arg2) end
 ---@type Class<IsoAnimalTrack>
 IsoAnimalTrack.class = nil
 
-__classmetatables[IsoAnimalTrack.class] = {__index = __IsoAnimalTrack}
+__classmetatables[IsoAnimalTrack.class] = { __index = __IsoAnimalTrack }
 
 zombie.iso.objects.IsoAnimalTrack = IsoAnimalTrack

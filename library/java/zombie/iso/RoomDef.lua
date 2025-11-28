@@ -188,6 +188,6 @@ function RoomDef.new() end
 ---@type Class<RoomDef>
 RoomDef.class = nil
 
-__classmetatables[RoomDef.class] = {__index = __RoomDef}
+__classmetatables[RoomDef.class] = { __index = __RoomDef }
 
 zombie.iso.RoomDef = RoomDef

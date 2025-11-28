@@ -45,6 +45,6 @@ function ContainerType.values() end
 ---@type Class<ContainerID.ContainerType>
 ContainerType.class = nil
 
-__classmetatables[ContainerType.class] = {__index = __ContainerType}
+__classmetatables[ContainerType.class] = { __index = __ContainerType }
 
 zombie.network.fields.ContainerID.ContainerType = ContainerType

@@ -93,6 +93,6 @@ function NetworkUser.new(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
 ---@type Class<NetworkUser>
 NetworkUser.class = nil
 
-__classmetatables[NetworkUser.class] = {__index = __NetworkUser}
+__classmetatables[NetworkUser.class] = { __index = __NetworkUser }
 
 zombie.characters.NetworkUser = NetworkUser

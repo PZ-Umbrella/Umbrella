@@ -19,6 +19,6 @@ function RBPoliceSiege.new() end
 ---@type Class<RBPoliceSiege>
 RBPoliceSiege.class = nil
 
-__classmetatables[RBPoliceSiege.class] = {__index = __RBPoliceSiege}
+__classmetatables[RBPoliceSiege.class] = { __index = __RBPoliceSiege }
 
 zombie.randomizedWorld.randomizedBuilding.RBPoliceSiege = RBPoliceSiege

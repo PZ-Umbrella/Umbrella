@@ -27,6 +27,6 @@ function ColorSet.values() end
 ---@type Class<Colors.ColorSet>
 ColorSet.class = nil
 
-__classmetatables[ColorSet.class] = {__index = __ColorSet}
+__classmetatables[ColorSet.class] = { __index = __ColorSet }
 
 zombie.core.Colors.ColorSet = ColorSet

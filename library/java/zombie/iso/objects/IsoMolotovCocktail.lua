@@ -43,6 +43,6 @@ function IsoMolotovCocktail.new(cell, x, y, z, xvel, yvel, weapon, character) en
 ---@type Class<IsoMolotovCocktail>
 IsoMolotovCocktail.class = nil
 
-__classmetatables[IsoMolotovCocktail.class] = {__index = __IsoMolotovCocktail}
+__classmetatables[IsoMolotovCocktail.class] = { __index = __IsoMolotovCocktail }
 
 zombie.iso.objects.IsoMolotovCocktail = IsoMolotovCocktail

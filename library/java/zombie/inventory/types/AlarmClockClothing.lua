@@ -114,6 +114,6 @@ function AlarmClockClothing.new(module, name, itemType, item, palette, SpriteNam
 ---@type Class<AlarmClockClothing>
 AlarmClockClothing.class = nil
 
-__classmetatables[AlarmClockClothing.class] = {__index = __AlarmClockClothing}
+__classmetatables[AlarmClockClothing.class] = { __index = __AlarmClockClothing }
 
 zombie.inventory.types.AlarmClockClothing = AlarmClockClothing

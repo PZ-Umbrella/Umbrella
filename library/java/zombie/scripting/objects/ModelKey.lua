@@ -11596,6 +11596,6 @@ function ModelKey.new(arg0) end
 ---@type Class<ModelKey>
 ModelKey.class = nil
 
-__classmetatables[ModelKey.class] = {__index = __ModelKey}
+__classmetatables[ModelKey.class] = { __index = __ModelKey }
 
 zombie.scripting.objects.ModelKey = ModelKey

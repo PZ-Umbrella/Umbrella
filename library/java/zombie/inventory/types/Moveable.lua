@@ -126,6 +126,6 @@ function Moveable.new(module, name, type, item) end
 ---@type Class<Moveable>
 Moveable.class = nil
 
-__classmetatables[Moveable.class] = {__index = __Moveable}
+__classmetatables[Moveable.class] = { __index = __Moveable }
 
 zombie.inventory.types.Moveable = Moveable

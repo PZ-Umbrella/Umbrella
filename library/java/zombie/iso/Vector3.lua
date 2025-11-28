@@ -163,6 +163,6 @@ function Vector3.new(x, y, z) end
 ---@type Class<Vector3>
 Vector3.class = nil
 
-__classmetatables[Vector3.class] = {__index = __Vector3}
+__classmetatables[Vector3.class] = { __index = __Vector3 }
 
 zombie.iso.Vector3 = Vector3

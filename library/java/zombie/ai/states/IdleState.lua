@@ -42,6 +42,6 @@ function IdleState.new() end
 ---@type Class<IdleState>
 IdleState.class = nil
 
-__classmetatables[IdleState.class] = {__index = __IdleState}
+__classmetatables[IdleState.class] = { __index = __IdleState }
 
 zombie.ai.states.IdleState = IdleState

@@ -32,6 +32,6 @@ function RVSPoliceBlockadeShooting.new() end
 ---@type Class<RVSPoliceBlockadeShooting>
 RVSPoliceBlockadeShooting.class = nil
 
-__classmetatables[RVSPoliceBlockadeShooting.class] = {__index = __RVSPoliceBlockadeShooting}
+__classmetatables[RVSPoliceBlockadeShooting.class] = { __index = __RVSPoliceBlockadeShooting }
 
 zombie.randomizedWorld.randomizedVehicleStory.RVSPoliceBlockadeShooting = RVSPoliceBlockadeShooting

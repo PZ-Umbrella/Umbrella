@@ -408,6 +408,6 @@ function Color.new(value) end
 ---@type Class<Color>
 Color.class = nil
 
-__classmetatables[Color.class] = {__index = __Color}
+__classmetatables[Color.class] = { __index = __Color }
 
 zombie.core.Color = Color

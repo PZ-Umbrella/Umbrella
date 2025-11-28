@@ -134,6 +134,6 @@ function ComponentType.values() end
 ---@type Class<ComponentType>
 ComponentType.class = nil
 
-__classmetatables[ComponentType.class] = {__index = __ComponentType}
+__classmetatables[ComponentType.class] = { __index = __ComponentType }
 
 zombie.entity.ComponentType = ComponentType

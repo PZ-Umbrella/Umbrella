@@ -21,6 +21,6 @@ function RDSFootballNight.new() end
 ---@type Class<RDSFootballNight>
 RDSFootballNight.class = nil
 
-__classmetatables[RDSFootballNight.class] = {__index = __RDSFootballNight}
+__classmetatables[RDSFootballNight.class] = { __index = __RDSFootballNight }
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSFootballNight = RDSFootballNight

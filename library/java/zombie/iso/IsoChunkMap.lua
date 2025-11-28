@@ -193,6 +193,6 @@ function IsoChunkMap.new(cell) end
 ---@type Class<IsoChunkMap>
 IsoChunkMap.class = nil
 
-__classmetatables[IsoChunkMap.class] = {__index = __IsoChunkMap}
+__classmetatables[IsoChunkMap.class] = { __index = __IsoChunkMap }
 
 zombie.iso.IsoChunkMap = IsoChunkMap

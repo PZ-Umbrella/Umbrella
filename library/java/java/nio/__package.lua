@@ -6,38 +6,38 @@
 ---  This class defines six categories of operations upon
 --- byte buffers:
 ---
---- 
+---
 ---
 ---    Absolute and relative get and
 ---   put methods that read and write
----   single bytes; 
+---   single bytes;
 ---
 ---    Absolute and relative bulk get
 ---   methods that transfer contiguous sequences of bytes from this buffer
----   into an array; 
+---   into an array;
 ---
 ---    Absolute and relative bulk put
 ---   methods that transfer contiguous sequences of bytes from a
 ---   byte array{#if[char]?,&#32;a&#32;string,} or some other byte
----   buffer into this buffer;{#if[!byte]?&#32;and} 
+---   buffer into this buffer;{#if[!byte]?&#32;and}
 ---
 ---
 ---
 ---    Absolute and relative get
 ---   and put methods that read and
 ---   write values of other primitive types, translating them to and from
----   sequences of bytes in a particular byte order; 
+---   sequences of bytes in a particular byte order;
 ---
 ---    Methods for creating view buffers,
 ---   which allow a byte buffer to be viewed as a buffer containing values of
----   some other primitive type; and 
+---   some other primitive type; and
 ---
 ---
 ---
 ---    A method for compacting
----   a byte buffer.  
+---   a byte buffer.
 ---
---- 
+---
 ---
 ---  Byte buffers can be created either by allocation, which allocates space for the buffer's
 ---
@@ -56,8 +56,8 @@
 ---
 ---
 ---
---- 
----  Direct vs. non-direct buffers 
+---
+---  Direct vs. non-direct buffers
 ---
 ---  A byte buffer is either direct or non-direct.  Given a
 --- direct byte buffer, the Java virtual machine will make a best effort to
@@ -89,8 +89,8 @@
 --- that explicit buffer management can be done in performance-critical code.
 ---
 ---
---- 
----  Access to binary data 
+---
+---  Access to binary data
 ---
 ---  This class defines methods for reading and writing values of all other
 --- primitive types, except boolean.  Primitive values are translated
@@ -103,7 +103,7 @@
 --- get and put methods for each type.  For 32-bit floating-point
 --- values, for example, this class defines:
 ---
---- 
+---
 --- float  <a href="#getFloat()"><code>getFloat()</code></a>
 --- float  <a href="#getFloat(int)"><code>getFloat(int index)</code></a>
 ---  void  <a href="#putFloat(float)"><code>putFloat(float f)</code></a>
@@ -114,7 +114,7 @@
 --- parameters of the absolute get and put methods are in terms of
 --- bytes rather than of the type being read or written.
 ---
---- 
+---
 ---
 ---  For access to homogeneous binary data, that is, sequences of values of
 --- the same type, this class defines methods that can create views of a
@@ -129,22 +129,22 @@
 ---  View buffers have three important advantages over the families of
 --- type-specific get and put methods described above:
 ---
---- 
+---
 ---
 ---    A view buffer is indexed not in terms of bytes but rather in terms
----   of the type-specific size of its values;  
+---   of the type-specific size of its values;
 ---
 ---    A view buffer provides relative bulk get and put
 ---   methods that can transfer contiguous sequences of values between a buffer
----   and an array or some other buffer of the same type; and  
+---   and an array or some other buffer of the same type; and
 ---
 ---    A view buffer is potentially much more efficient because it will
----   be direct if, and only if, its backing byte buffer is direct.  
+---   be direct if, and only if, its backing byte buffer is direct.
 ---
---- 
+---
 ---
 ---  The byte order of a view buffer is fixed to be that of its byte buffer
---- at the time that the view is created.  
+--- at the time that the view is created.
 ---
 ---
 ---
@@ -172,7 +172,7 @@
 ---
 ---
 ---
----  Invocation chaining 
+---  Invocation chaining
 ---
 ---
 ---  Methods in this class that do not otherwise have a value to return are
@@ -183,14 +183,14 @@
 ---
 --- The sequence of statements
 ---
---- 
+---
 --- bb.putInt(0xCAFEBABE);
 --- bb.putShort(3);
 --- bb.putShort(45);
 ---
 --- can, for example, be replaced by the single statement
 ---
---- 
+---
 --- bb.putInt(0xCAFEBABE).putShort(3).putShort(45);
 ---@class ByteBuffer
 
@@ -200,11 +200,11 @@
 ---  This class defines four categories of operations upon
 --- char buffers:
 ---
---- 
+---
 ---
 ---    Absolute and relative get and
 ---   put methods that read and write
----   single chars; 
+---   single chars;
 ---
 ---    Absolute and relative bulk get
 ---   methods that transfer contiguous sequences of chars from this buffer
@@ -213,7 +213,7 @@
 ---    Absolute and relative bulk put
 ---   methods that transfer contiguous sequences of chars from a
 ---   char array{#if[char]?,&#32;a&#32;string,} or some other char
----   buffer into this buffer;{#if[!byte]?&#32;and} 
+---   buffer into this buffer;{#if[!byte]?&#32;and}
 ---
 ---
 ---
@@ -229,9 +229,9 @@
 ---
 ---
 ---    A method for compacting
----   a char buffer.  
+---   a char buffer.
 ---
---- 
+---
 ---
 ---  Char buffers can be created either by allocation, which allocates space for the buffer's
 ---
@@ -353,7 +353,7 @@
 --- char buffer created via the wrap methods of this class will
 --- be non-direct.  A char buffer created as a view of a byte buffer will
 --- be direct if, and only if, the byte buffer itself is direct.  Whether or not
---- a char buffer is direct may be determined by invoking the isDirect method.  
+--- a char buffer is direct may be determined by invoking the isDirect method.
 ---
 ---
 ---
@@ -364,7 +364,7 @@
 --- example in the regular-expression package java.util.regex.
 --- The methods defined by CharSequence operate relative to the current
 --- position of the buffer when they are invoked.
---- 
+---
 ---
 ---
 ---
@@ -395,7 +395,7 @@
 ---
 --- The sequence of statements
 ---
---- 
+---
 --- cb.put("text/");
 --- cb.put(subtype);
 --- cb.put("; charset=");
@@ -403,7 +403,7 @@
 ---
 --- can, for example, be replaced by the single statement
 ---
---- 
+---
 --- cb.put("text/").put(subtype).put("; charset=").put(enc);
 ---@class CharBuffer
 
@@ -413,11 +413,11 @@
 ---  This class defines four categories of operations upon
 --- float buffers:
 ---
---- 
+---
 ---
 ---    Absolute and relative get and
 ---   put methods that read and write
----   single floats; 
+---   single floats;
 ---
 ---    Absolute and relative bulk get
 ---   methods that transfer contiguous sequences of floats from this buffer
@@ -426,7 +426,7 @@
 ---    Absolute and relative bulk put
 ---   methods that transfer contiguous sequences of floats from a
 ---   float array{#if[char]?,&#32;a&#32;string,} or some other float
----   buffer into this buffer;{#if[!byte]?&#32;and} 
+---   buffer into this buffer;{#if[!byte]?&#32;and}
 ---
 ---
 ---
@@ -442,9 +442,9 @@
 ---
 ---
 ---    A method for compacting
----   a float buffer.  
+---   a float buffer.
 ---
---- 
+---
 ---
 ---  Float buffers can be created either by allocation, which allocates space for the buffer's
 ---
@@ -566,7 +566,7 @@
 --- float buffer created via the wrap methods of this class will
 --- be non-direct.  A float buffer created as a view of a byte buffer will
 --- be direct if, and only if, the byte buffer itself is direct.  Whether or not
---- a float buffer is direct may be determined by invoking the isDirect method.  
+--- a float buffer is direct may be determined by invoking the isDirect method.
 ---
 ---
 ---

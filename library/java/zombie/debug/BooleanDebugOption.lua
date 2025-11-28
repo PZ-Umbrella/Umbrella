@@ -43,6 +43,6 @@ function BooleanDebugOption.new(name, debugOnly, defaultValue) end
 ---@type Class<BooleanDebugOption>
 BooleanDebugOption.class = nil
 
-__classmetatables[BooleanDebugOption.class] = {__index = __BooleanDebugOption}
+__classmetatables[BooleanDebugOption.class] = { __index = __BooleanDebugOption }
 
 zombie.debug.BooleanDebugOption = BooleanDebugOption

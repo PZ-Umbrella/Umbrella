@@ -29,6 +29,6 @@ function WorldMapMarkers.new() end
 ---@type Class<WorldMapMarkers>
 WorldMapMarkers.class = nil
 
-__classmetatables[WorldMapMarkers.class] = {__index = __WorldMapMarkers}
+__classmetatables[WorldMapMarkers.class] = { __index = __WorldMapMarkers }
 
 zombie.worldMap.markers.WorldMapMarkers = WorldMapMarkers

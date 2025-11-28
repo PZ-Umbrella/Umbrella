@@ -22,6 +22,6 @@ function IntegerServerOption.new(owner, name, min, max, defaultValue) end
 ---@type Class<ServerOptions.IntegerServerOption>
 IntegerServerOption.class = nil
 
-__classmetatables[IntegerServerOption.class] = {__index = __IntegerServerOption}
+__classmetatables[IntegerServerOption.class] = { __index = __IntegerServerOption }
 
 zombie.network.ServerOptions.IntegerServerOption = IntegerServerOption

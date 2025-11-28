@@ -347,6 +347,6 @@ function DebugType.values() end
 ---@type Class<DebugType>
 DebugType.class = nil
 
-__classmetatables[DebugType.class] = {__index = __DebugType}
+__classmetatables[DebugType.class] = { __index = __DebugType }
 
 zombie.debug.DebugType = DebugType

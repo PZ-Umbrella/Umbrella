@@ -87,7 +87,7 @@
 --- The Map
 --- instances created by these methods have the following characteristics:
 ---
---- 
+---
 --- They are unmodifiable. Keys and values
 --- cannot be added, removed, or updated. Calling any mutator method on the Map
 --- will always cause UnsupportedOperationException to be thrown.
@@ -109,10 +109,10 @@
 --- They are serialized as specified on the
 --- Serialized Form
 --- page.
---- 
+---
 ---
 --- This interface is a member of the
---- 
+---
 --- Java Collections Framework.
 ---@class Map<K, V>
 local __Map = {}

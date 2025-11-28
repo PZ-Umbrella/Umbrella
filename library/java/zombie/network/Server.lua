@@ -251,6 +251,6 @@ function Server.new() end
 ---@type Class<Server>
 Server.class = nil
 
-__classmetatables[Server.class] = {__index = __Server}
+__classmetatables[Server.class] = { __index = __Server }
 
 zombie.network.Server = Server

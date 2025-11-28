@@ -56,6 +56,6 @@ function AnimalInventoryItem.new(arg0, arg1, arg2, arg3) end
 ---@type Class<AnimalInventoryItem>
 AnimalInventoryItem.class = nil
 
-__classmetatables[AnimalInventoryItem.class] = {__index = __AnimalInventoryItem}
+__classmetatables[AnimalInventoryItem.class] = { __index = __AnimalInventoryItem }
 
 zombie.inventory.types.AnimalInventoryItem = AnimalInventoryItem

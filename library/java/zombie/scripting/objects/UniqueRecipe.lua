@@ -53,6 +53,6 @@ function UniqueRecipe.new(name) end
 ---@type Class<UniqueRecipe>
 UniqueRecipe.class = nil
 
-__classmetatables[UniqueRecipe.class] = {__index = __UniqueRecipe}
+__classmetatables[UniqueRecipe.class] = { __index = __UniqueRecipe }
 
 zombie.scripting.objects.UniqueRecipe = UniqueRecipe

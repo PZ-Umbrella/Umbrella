@@ -25,6 +25,6 @@ function EnumServerOption.new(arg0, arg1, arg2, arg3) end
 ---@type Class<ServerOptions.EnumServerOption>
 EnumServerOption.class = nil
 
-__classmetatables[EnumServerOption.class] = {__index = __EnumServerOption}
+__classmetatables[EnumServerOption.class] = { __index = __EnumServerOption }
 
 zombie.network.ServerOptions.EnumServerOption = EnumServerOption

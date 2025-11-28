@@ -20,6 +20,6 @@ function RBSafehouse.new() end
 ---@type Class<RBSafehouse>
 RBSafehouse.class = nil
 
-__classmetatables[RBSafehouse.class] = {__index = __RBSafehouse}
+__classmetatables[RBSafehouse.class] = { __index = __RBSafehouse }
 
 zombie.randomizedWorld.randomizedBuilding.RBSafehouse = RBSafehouse

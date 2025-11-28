@@ -23,18 +23,18 @@
 --- should generally implement this interface.  As a rule of thumb, a
 --- List implementation should implement this interface if,
 --- for typical instances of the class, this loop:
---- 
+---
 ---     for (int i=0, n=list.size(); i < n; i++)
 ---         list.get(i);
---- 
+---
 --- runs faster than this loop:
---- 
+---
 ---     for (Iterator i=list.iterator(); i.hasNext(); )
 ---         i.next();
---- 
+---
 ---
 --- This interface is a member of the
---- 
+---
 --- Java Collections Framework.
 ---@class RandomAccess
 local __RandomAccess = {}

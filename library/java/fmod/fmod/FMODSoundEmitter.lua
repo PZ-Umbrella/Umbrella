@@ -180,6 +180,6 @@ function FMODSoundEmitter.new() end
 ---@type Class<FMODSoundEmitter>
 FMODSoundEmitter.class = nil
 
-__classmetatables[FMODSoundEmitter.class] = {__index = __FMODSoundEmitter}
+__classmetatables[FMODSoundEmitter.class] = { __index = __FMODSoundEmitter }
 
 fmod.fmod.FMODSoundEmitter = FMODSoundEmitter

@@ -22,6 +22,6 @@ EnumSet = {}
 ---@type Class<AttributeType.EnumSet>
 EnumSet.class = nil
 
-__classmetatables[EnumSet.class] = {__index = __EnumSet}
+__classmetatables[EnumSet.class] = { __index = __EnumSet }
 
 zombie.entity.components.attributes.AttributeType.EnumSet = EnumSet

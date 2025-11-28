@@ -15,6 +15,6 @@ function RDSSuicidePact.new() end
 ---@type Class<RDSSuicidePact>
 RDSSuicidePact.class = nil
 
-__classmetatables[RDSSuicidePact.class] = {__index = __RDSSuicidePact}
+__classmetatables[RDSSuicidePact.class] = { __index = __RDSSuicidePact }
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSSuicidePact = RDSSuicidePact

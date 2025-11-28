@@ -17,6 +17,6 @@ function AnimationsMesh.new() end
 ---@type Class<AnimationsMesh>
 AnimationsMesh.class = nil
 
-__classmetatables[AnimationsMesh.class] = {__index = __AnimationsMesh}
+__classmetatables[AnimationsMesh.class] = { __index = __AnimationsMesh }
 
 zombie.scripting.objects.AnimationsMesh = AnimationsMesh

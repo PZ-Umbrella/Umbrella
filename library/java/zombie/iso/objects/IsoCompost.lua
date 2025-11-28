@@ -86,6 +86,6 @@ function IsoCompost.new(arg0, arg1, arg2) end
 ---@type Class<IsoCompost>
 IsoCompost.class = nil
 
-__classmetatables[IsoCompost.class] = {__index = __IsoCompost}
+__classmetatables[IsoCompost.class] = { __index = __IsoCompost }
 
 zombie.iso.objects.IsoCompost = IsoCompost

@@ -71,6 +71,6 @@ function RBBasic.new() end
 ---@type Class<RBBasic>
 RBBasic.class = nil
 
-__classmetatables[RBBasic.class] = {__index = __RBBasic}
+__classmetatables[RBBasic.class] = { __index = __RBBasic }
 
 zombie.randomizedWorld.randomizedBuilding.RBBasic = RBBasic

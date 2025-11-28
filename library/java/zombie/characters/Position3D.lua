@@ -32,6 +32,6 @@ function Position3D.new(arg0, arg1, arg2) end
 ---@type Class<Position3D>
 Position3D.class = nil
 
-__classmetatables[Position3D.class] = {__index = __Position3D}
+__classmetatables[Position3D.class] = { __index = __Position3D }
 
 zombie.characters.Position3D = Position3D

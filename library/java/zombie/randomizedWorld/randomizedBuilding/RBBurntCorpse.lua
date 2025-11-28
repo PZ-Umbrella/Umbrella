@@ -21,6 +21,6 @@ function RBBurntCorpse.new() end
 ---@type Class<RBBurntCorpse>
 RBBurntCorpse.class = nil
 
-__classmetatables[RBBurntCorpse.class] = {__index = __RBBurntCorpse}
+__classmetatables[RBBurntCorpse.class] = { __index = __RBBurntCorpse }
 
 zombie.randomizedWorld.randomizedBuilding.RBBurntCorpse = RBBurntCorpse

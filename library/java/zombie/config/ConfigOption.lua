@@ -43,6 +43,6 @@ ConfigOption = {}
 ---@type Class<ConfigOption>
 ConfigOption.class = nil
 
-__classmetatables[ConfigOption.class] = {__index = __ConfigOption}
+__classmetatables[ConfigOption.class] = { __index = __ConfigOption }
 
 zombie.config.ConfigOption = ConfigOption

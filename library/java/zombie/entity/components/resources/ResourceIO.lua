@@ -31,6 +31,6 @@ function ResourceIO.values() end
 ---@type Class<ResourceIO>
 ResourceIO.class = nil
 
-__classmetatables[ResourceIO.class] = {__index = __ResourceIO}
+__classmetatables[ResourceIO.class] = { __index = __ResourceIO }
 
 zombie.entity.components.resources.ResourceIO = ResourceIO

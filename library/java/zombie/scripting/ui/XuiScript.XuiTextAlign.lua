@@ -8,6 +8,6 @@ XuiTextAlign = {}
 ---@type Class<XuiScript.XuiTextAlign>
 XuiTextAlign.class = nil
 
-__classmetatables[XuiTextAlign.class] = {__index = __XuiTextAlign}
+__classmetatables[XuiTextAlign.class] = { __index = __XuiTextAlign }
 
 zombie.scripting.ui.XuiScript.XuiTextAlign = XuiTextAlign

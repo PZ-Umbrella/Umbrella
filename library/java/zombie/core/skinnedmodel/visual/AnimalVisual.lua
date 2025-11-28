@@ -56,6 +56,6 @@ function AnimalVisual.new(arg0) end
 ---@type Class<AnimalVisual>
 AnimalVisual.class = nil
 
-__classmetatables[AnimalVisual.class] = {__index = __AnimalVisual}
+__classmetatables[AnimalVisual.class] = { __index = __AnimalVisual }
 
 zombie.core.skinnedmodel.visual.AnimalVisual = AnimalVisual

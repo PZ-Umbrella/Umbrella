@@ -147,6 +147,6 @@ function RandomizedBuildingBase.new() end
 ---@type Class<RandomizedBuildingBase>
 RandomizedBuildingBase.class = nil
 
-__classmetatables[RandomizedBuildingBase.class] = {__index = __RandomizedBuildingBase}
+__classmetatables[RandomizedBuildingBase.class] = { __index = __RandomizedBuildingBase }
 
 zombie.randomizedWorld.randomizedBuilding.RandomizedBuildingBase = RandomizedBuildingBase

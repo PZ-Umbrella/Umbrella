@@ -21,6 +21,6 @@ function RDSStagDo.new() end
 ---@type Class<RDSStagDo>
 RDSStagDo.class = nil
 
-__classmetatables[RDSStagDo.class] = {__index = __RDSStagDo}
+__classmetatables[RDSStagDo.class] = { __index = __RDSStagDo }
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSStagDo = RDSStagDo

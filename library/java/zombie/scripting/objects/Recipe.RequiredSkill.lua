@@ -19,6 +19,6 @@ function RequiredSkill.new(perk, level) end
 ---@type Class<Recipe.RequiredSkill>
 RequiredSkill.class = nil
 
-__classmetatables[RequiredSkill.class] = {__index = __RequiredSkill}
+__classmetatables[RequiredSkill.class] = { __index = __RequiredSkill }
 
 zombie.scripting.objects.Recipe.RequiredSkill = RequiredSkill

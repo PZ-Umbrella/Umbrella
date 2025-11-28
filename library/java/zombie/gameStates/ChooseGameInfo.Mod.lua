@@ -136,6 +136,6 @@ function Mod.new(dir) end
 ---@type Class<ChooseGameInfo.Mod>
 Mod.class = nil
 
-__classmetatables[Mod.class] = {__index = __Mod}
+__classmetatables[Mod.class] = { __index = __Mod }
 
 zombie.gameStates.ChooseGameInfo.Mod = Mod

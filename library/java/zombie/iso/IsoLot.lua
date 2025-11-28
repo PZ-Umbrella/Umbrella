@@ -84,6 +84,6 @@ function IsoLot.new() end
 ---@type Class<IsoLot>
 IsoLot.class = nil
 
-__classmetatables[IsoLot.class] = {__index = __IsoLot}
+__classmetatables[IsoLot.class] = { __index = __IsoLot }
 
 zombie.iso.IsoLot = IsoLot

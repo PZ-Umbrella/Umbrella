@@ -113,6 +113,6 @@ function XP.new(arg0, arg1) end
 ---@type Class<IsoGameCharacter.XP>
 XP.class = nil
 
-__classmetatables[XP.class] = {__index = __XP}
+__classmetatables[XP.class] = { __index = __XP }
 
 zombie.characters.IsoGameCharacter.XP = XP

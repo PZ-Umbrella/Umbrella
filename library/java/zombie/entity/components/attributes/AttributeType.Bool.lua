@@ -14,6 +14,6 @@ Bool = {}
 ---@type Class<AttributeType.Bool>
 Bool.class = nil
 
-__classmetatables[Bool.class] = {__index = __Bool}
+__classmetatables[Bool.class] = { __index = __Bool }
 
 zombie.entity.components.attributes.AttributeType.Bool = Bool

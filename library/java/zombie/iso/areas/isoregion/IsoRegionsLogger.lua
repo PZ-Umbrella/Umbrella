@@ -21,6 +21,6 @@ function IsoRegionsLogger.new(doConsolePrint) end
 ---@type Class<IsoRegionsLogger>
 IsoRegionsLogger.class = nil
 
-__classmetatables[IsoRegionsLogger.class] = {__index = __IsoRegionsLogger}
+__classmetatables[IsoRegionsLogger.class] = { __index = __IsoRegionsLogger }
 
 zombie.iso.areas.isoregion.IsoRegionsLogger = IsoRegionsLogger

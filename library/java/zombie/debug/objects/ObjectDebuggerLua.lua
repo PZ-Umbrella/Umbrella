@@ -44,6 +44,6 @@ function ObjectDebuggerLua.new() end
 ---@type Class<ObjectDebuggerLua>
 ObjectDebuggerLua.class = nil
 
-__classmetatables[ObjectDebuggerLua.class] = {__index = __ObjectDebuggerLua}
+__classmetatables[ObjectDebuggerLua.class] = { __index = __ObjectDebuggerLua }
 
 zombie.debug.objects.ObjectDebuggerLua = ObjectDebuggerLua

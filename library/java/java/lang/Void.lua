@@ -16,6 +16,6 @@ Void.TYPE = nil
 ---@type Class<Void>
 Void.class = nil
 
-__classmetatables[Void.class] = {__index = __Void}
+__classmetatables[Void.class] = { __index = __Void }
 
 java.lang.Void = Void

@@ -89,6 +89,6 @@ function ResourceBlueprint.release(arg0) end
 ---@type Class<ResourceBlueprint>
 ResourceBlueprint.class = nil
 
-__classmetatables[ResourceBlueprint.class] = {__index = __ResourceBlueprint}
+__classmetatables[ResourceBlueprint.class] = { __index = __ResourceBlueprint }
 
 zombie.entity.components.resources.ResourceBlueprint = ResourceBlueprint

@@ -182,6 +182,6 @@ function ErosionSeason.new() end
 ---@type Class<ErosionSeason>
 ErosionSeason.class = nil
 
-__classmetatables[ErosionSeason.class] = {__index = __ErosionSeason}
+__classmetatables[ErosionSeason.class] = { __index = __ErosionSeason }
 
 zombie.erosion.season.ErosionSeason = ErosionSeason

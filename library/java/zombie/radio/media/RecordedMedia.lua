@@ -94,6 +94,6 @@ function RecordedMedia.new() end
 ---@type Class<RecordedMedia>
 RecordedMedia.class = nil
 
-__classmetatables[RecordedMedia.class] = {__index = __RecordedMedia}
+__classmetatables[RecordedMedia.class] = { __index = __RecordedMedia }
 
 zombie.radio.media.RecordedMedia = RecordedMedia

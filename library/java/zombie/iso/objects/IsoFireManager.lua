@@ -149,6 +149,6 @@ function IsoFireManager.new() end
 ---@type Class<IsoFireManager>
 IsoFireManager.class = nil
 
-__classmetatables[IsoFireManager.class] = {__index = __IsoFireManager}
+__classmetatables[IsoFireManager.class] = { __index = __IsoFireManager }
 
 zombie.iso.objects.IsoFireManager = IsoFireManager

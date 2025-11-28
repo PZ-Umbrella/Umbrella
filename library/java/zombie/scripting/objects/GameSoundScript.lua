@@ -17,6 +17,6 @@ function GameSoundScript.new() end
 ---@type Class<GameSoundScript>
 GameSoundScript.class = nil
 
-__classmetatables[GameSoundScript.class] = {__index = __GameSoundScript}
+__classmetatables[GameSoundScript.class] = { __index = __GameSoundScript }
 
 zombie.scripting.objects.GameSoundScript = GameSoundScript

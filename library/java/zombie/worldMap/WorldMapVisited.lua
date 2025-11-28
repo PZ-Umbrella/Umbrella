@@ -135,6 +135,6 @@ function WorldMapVisited.new() end
 ---@type Class<WorldMapVisited>
 WorldMapVisited.class = nil
 
-__classmetatables[WorldMapVisited.class] = {__index = __WorldMapVisited}
+__classmetatables[WorldMapVisited.class] = { __index = __WorldMapVisited }
 
 zombie.worldMap.WorldMapVisited = WorldMapVisited

@@ -51,6 +51,6 @@ function BooleanConfigOption.new(name, defaultValue) end
 ---@type Class<BooleanConfigOption>
 BooleanConfigOption.class = nil
 
-__classmetatables[BooleanConfigOption.class] = {__index = __BooleanConfigOption}
+__classmetatables[BooleanConfigOption.class] = { __index = __BooleanConfigOption }
 
 zombie.config.BooleanConfigOption = BooleanConfigOption

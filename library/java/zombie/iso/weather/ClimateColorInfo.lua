@@ -92,6 +92,6 @@ function ClimateColorInfo.new(r, g, b, a, r2, g2, b2, a2) end
 ---@type Class<ClimateColorInfo>
 ClimateColorInfo.class = nil
 
-__classmetatables[ClimateColorInfo.class] = {__index = __ClimateColorInfo}
+__classmetatables[ClimateColorInfo.class] = { __index = __ClimateColorInfo }
 
 zombie.iso.weather.ClimateColorInfo = ClimateColorInfo

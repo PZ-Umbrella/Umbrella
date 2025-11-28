@@ -29,6 +29,6 @@ function PresetEntry.new(n, f) end
 ---@type Class<PresetEntry>
 PresetEntry.class = nil
 
-__classmetatables[PresetEntry.class] = {__index = __PresetEntry}
+__classmetatables[PresetEntry.class] = { __index = __PresetEntry }
 
 zombie.radio.devices.PresetEntry = PresetEntry

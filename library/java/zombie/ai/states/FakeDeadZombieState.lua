@@ -35,6 +35,6 @@ function FakeDeadZombieState.new() end
 ---@type Class<FakeDeadZombieState>
 FakeDeadZombieState.class = nil
 
-__classmetatables[FakeDeadZombieState.class] = {__index = __FakeDeadZombieState}
+__classmetatables[FakeDeadZombieState.class] = { __index = __FakeDeadZombieState }
 
 zombie.ai.states.FakeDeadZombieState = FakeDeadZombieState

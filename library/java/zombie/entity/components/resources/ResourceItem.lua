@@ -185,6 +185,6 @@ ResourceItem = {}
 ---@type Class<ResourceItem>
 ResourceItem.class = nil
 
-__classmetatables[ResourceItem.class] = {__index = __ResourceItem}
+__classmetatables[ResourceItem.class] = { __index = __ResourceItem }
 
 zombie.entity.components.resources.ResourceItem = ResourceItem

@@ -175,6 +175,6 @@ function WeaponPart.new(module, name, itemType, texName) end
 ---@type Class<WeaponPart>
 WeaponPart.class = nil
 
-__classmetatables[WeaponPart.class] = {__index = __WeaponPart}
+__classmetatables[WeaponPart.class] = { __index = __WeaponPart }
 
 zombie.inventory.types.WeaponPart = WeaponPart

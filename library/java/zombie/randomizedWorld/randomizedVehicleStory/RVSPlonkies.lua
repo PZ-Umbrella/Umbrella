@@ -25,6 +25,6 @@ function RVSPlonkies.new() end
 ---@type Class<RVSPlonkies>
 RVSPlonkies.class = nil
 
-__classmetatables[RVSPlonkies.class] = {__index = __RVSPlonkies}
+__classmetatables[RVSPlonkies.class] = { __index = __RVSPlonkies }
 
 zombie.randomizedWorld.randomizedVehicleStory.RVSPlonkies = RVSPlonkies

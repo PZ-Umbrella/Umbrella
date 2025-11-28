@@ -23,6 +23,6 @@ function Clipboard.new() end
 ---@type Class<Clipboard>
 Clipboard.class = nil
 
-__classmetatables[Clipboard.class] = {__index = __Clipboard}
+__classmetatables[Clipboard.class] = { __index = __Clipboard }
 
 zombie.core.Clipboard = Clipboard

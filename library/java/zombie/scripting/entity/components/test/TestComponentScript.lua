@@ -25,6 +25,6 @@ TestComponentScript = {}
 ---@type Class<TestComponentScript>
 TestComponentScript.class = nil
 
-__classmetatables[TestComponentScript.class] = {__index = __TestComponentScript}
+__classmetatables[TestComponentScript.class] = { __index = __TestComponentScript }
 
 zombie.scripting.entity.components.test.TestComponentScript = TestComponentScript

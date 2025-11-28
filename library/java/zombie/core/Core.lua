@@ -1682,6 +1682,6 @@ function Core.new() end
 ---@type Class<Core>
 Core.class = nil
 
-__classmetatables[Core.class] = {__index = __Core}
+__classmetatables[Core.class] = { __index = __Core }
 
 zombie.core.Core = Core

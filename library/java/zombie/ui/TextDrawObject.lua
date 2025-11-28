@@ -243,7 +243,15 @@ function __TextDrawObject:setScrambleVal(value) end
 ---@param allowColors boolean
 ---@param allowFonts boolean
 ---@param equalizeLineHeights boolean
-function __TextDrawObject:setSettings(allowBBcode, allowImages, allowChatIcons, allowColors, allowFonts, equalizeLineHeights) end
+function __TextDrawObject:setSettings(
+	allowBBcode,
+	allowImages,
+	allowChatIcons,
+	allowColors,
+	allowFonts,
+	equalizeLineHeights
+)
+end
 
 ---@param list kahlua.Array<string>
 function __TextDrawObject:setValidFonts(list) end
@@ -289,11 +297,22 @@ function TextDrawObject.new(r, g, b, allowBBcode) end
 ---@param allowFonts boolean
 ---@param equalizeLineHeights boolean
 ---@return TextDrawObject
-function TextDrawObject.new(r, g, b, allowBBcode, allowImages, allowChatIcons, allowColors, allowFonts, equalizeLineHeights) end
+function TextDrawObject.new(
+	r,
+	g,
+	b,
+	allowBBcode,
+	allowImages,
+	allowChatIcons,
+	allowColors,
+	allowFonts,
+	equalizeLineHeights
+)
+end
 
 ---@type Class<TextDrawObject>
 TextDrawObject.class = nil
 
-__classmetatables[TextDrawObject.class] = {__index = __TextDrawObject}
+__classmetatables[TextDrawObject.class] = { __index = __TextDrawObject }
 
 zombie.ui.TextDrawObject = TextDrawObject

@@ -25,6 +25,6 @@ function RBClinic.new() end
 ---@type Class<RBClinic>
 RBClinic.class = nil
 
-__classmetatables[RBClinic.class] = {__index = __RBClinic}
+__classmetatables[RBClinic.class] = { __index = __RBClinic }
 
 zombie.randomizedWorld.randomizedBuilding.RBClinic = RBClinic

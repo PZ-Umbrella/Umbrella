@@ -24,6 +24,6 @@ function IsoRegionLogType.values() end
 ---@type Class<IsoRegionLogType>
 IsoRegionLogType.class = nil
 
-__classmetatables[IsoRegionLogType.class] = {__index = __IsoRegionLogType}
+__classmetatables[IsoRegionLogType.class] = { __index = __IsoRegionLogType }
 
 zombie.iso.areas.isoregion.IsoRegionLogType = IsoRegionLogType

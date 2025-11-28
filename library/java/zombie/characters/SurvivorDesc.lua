@@ -254,6 +254,6 @@ function SurvivorDesc.new(other) end
 ---@type Class<SurvivorDesc>
 SurvivorDesc.class = nil
 
-__classmetatables[SurvivorDesc.class] = {__index = __SurvivorDesc}
+__classmetatables[SurvivorDesc.class] = { __index = __SurvivorDesc }
 
 zombie.characters.SurvivorDesc = SurvivorDesc

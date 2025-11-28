@@ -143,6 +143,6 @@ function CraftLogicUILogic.new(arg0, arg1, arg2) end
 ---@type Class<CraftLogicUILogic>
 CraftLogicUILogic.class = nil
 
-__classmetatables[CraftLogicUILogic.class] = {__index = __CraftLogicUILogic}
+__classmetatables[CraftLogicUILogic.class] = { __index = __CraftLogicUILogic }
 
 zombie.entity.components.crafting.CraftLogicUILogic = CraftLogicUILogic

@@ -45,6 +45,6 @@ function FluidConsume.combine(arg0, arg1) end
 ---@type Class<FluidConsume>
 FluidConsume.class = nil
 
-__classmetatables[FluidConsume.class] = {__index = __FluidConsume}
+__classmetatables[FluidConsume.class] = { __index = __FluidConsume }
 
 zombie.entity.components.fluids.FluidConsume = FluidConsume

@@ -41,6 +41,6 @@ function ServerSettingsManager.new() end
 ---@type Class<ServerSettingsManager>
 ServerSettingsManager.class = nil
 
-__classmetatables[ServerSettingsManager.class] = {__index = __ServerSettingsManager}
+__classmetatables[ServerSettingsManager.class] = { __index = __ServerSettingsManager }
 
 zombie.network.ServerSettingsManager = ServerSettingsManager

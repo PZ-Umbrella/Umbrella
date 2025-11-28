@@ -40,6 +40,6 @@ function XuiLuaStyle.Reset() end
 ---@type Class<XuiLuaStyle>
 XuiLuaStyle.class = nil
 
-__classmetatables[XuiLuaStyle.class] = {__index = __XuiLuaStyle}
+__classmetatables[XuiLuaStyle.class] = { __index = __XuiLuaStyle }
 
 zombie.scripting.ui.XuiLuaStyle = XuiLuaStyle

@@ -14,6 +14,6 @@ function RZSTragicPicnic.new() end
 ---@type Class<RZSTragicPicnic>
 RZSTragicPicnic.class = nil
 
-__classmetatables[RZSTragicPicnic.class] = {__index = __RZSTragicPicnic}
+__classmetatables[RZSTragicPicnic.class] = { __index = __RZSTragicPicnic }
 
 zombie.randomizedWorld.randomizedZoneStory.RZSTragicPicnic = RZSTragicPicnic

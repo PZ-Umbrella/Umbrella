@@ -66,6 +66,6 @@ function SyncPlayerStatsPacket.new() end
 ---@type Class<SyncPlayerStatsPacket>
 SyncPlayerStatsPacket.class = nil
 
-__classmetatables[SyncPlayerStatsPacket.class] = {__index = __SyncPlayerStatsPacket}
+__classmetatables[SyncPlayerStatsPacket.class] = { __index = __SyncPlayerStatsPacket }
 
 zombie.network.packets.SyncPlayerStatsPacket = SyncPlayerStatsPacket

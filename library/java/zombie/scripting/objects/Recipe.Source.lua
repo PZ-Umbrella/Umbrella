@@ -44,6 +44,6 @@ function Source.new() end
 ---@type Class<Recipe.Source>
 Source.class = nil
 
-__classmetatables[Source.class] = {__index = __Source}
+__classmetatables[Source.class] = { __index = __Source }
 
 zombie.scripting.objects.Recipe.Source = Source

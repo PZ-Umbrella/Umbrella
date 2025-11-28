@@ -288,6 +288,6 @@ function Stats.new() end
 ---@type Class<Stats>
 Stats.class = nil
 
-__classmetatables[Stats.class] = {__index = __Stats}
+__classmetatables[Stats.class] = { __index = __Stats }
 
 zombie.characters.Stats = Stats

@@ -25,6 +25,6 @@ function RBPizzaWhirled.new() end
 ---@type Class<RBPizzaWhirled>
 RBPizzaWhirled.class = nil
 
-__classmetatables[RBPizzaWhirled.class] = {__index = __RBPizzaWhirled}
+__classmetatables[RBPizzaWhirled.class] = { __index = __RBPizzaWhirled }
 
 zombie.randomizedWorld.randomizedBuilding.RBPizzaWhirled = RBPizzaWhirled

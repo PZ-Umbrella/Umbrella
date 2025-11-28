@@ -74,6 +74,6 @@ function StashSystem.new() end
 ---@type Class<StashSystem>
 StashSystem.class = nil
 
-__classmetatables[StashSystem.class] = {__index = __StashSystem}
+__classmetatables[StashSystem.class] = { __index = __StashSystem }
 
 zombie.core.stash.StashSystem = StashSystem

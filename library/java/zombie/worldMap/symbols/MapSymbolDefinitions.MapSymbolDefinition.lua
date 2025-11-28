@@ -26,6 +26,6 @@ function MapSymbolDefinition.new() end
 ---@type Class<MapSymbolDefinitions.MapSymbolDefinition>
 MapSymbolDefinition.class = nil
 
-__classmetatables[MapSymbolDefinition.class] = {__index = __MapSymbolDefinition}
+__classmetatables[MapSymbolDefinition.class] = { __index = __MapSymbolDefinition }
 
 zombie.worldMap.symbols.MapSymbolDefinitions.MapSymbolDefinition = MapSymbolDefinition

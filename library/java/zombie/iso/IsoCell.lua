@@ -749,6 +749,6 @@ function IsoCell.new(width, height) end
 ---@type Class<IsoCell>
 IsoCell.class = nil
 
-__classmetatables[IsoCell.class] = {__index = __IsoCell}
+__classmetatables[IsoCell.class] = { __index = __IsoCell }
 
 zombie.iso.IsoCell = IsoCell

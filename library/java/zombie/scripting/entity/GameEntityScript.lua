@@ -86,6 +86,6 @@ function GameEntityScript.new() end
 ---@type Class<GameEntityScript>
 GameEntityScript.class = nil
 
-__classmetatables[GameEntityScript.class] = {__index = __GameEntityScript}
+__classmetatables[GameEntityScript.class] = { __index = __GameEntityScript }
 
 zombie.scripting.entity.GameEntityScript = GameEntityScript

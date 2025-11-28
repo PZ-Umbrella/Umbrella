@@ -24,6 +24,6 @@ function TermsOfServiceState.new() end
 ---@type Class<TermsOfServiceState>
 TermsOfServiceState.class = nil
 
-__classmetatables[TermsOfServiceState.class] = {__index = __TermsOfServiceState}
+__classmetatables[TermsOfServiceState.class] = { __index = __TermsOfServiceState }
 
 zombie.gameStates.TermsOfServiceState = TermsOfServiceState

@@ -31,6 +31,6 @@ Long = {}
 ---@type Class<AttributeType.Long>
 Long.class = nil
 
-__classmetatables[Long.class] = {__index = __Long}
+__classmetatables[Long.class] = { __index = __Long }
 
 zombie.entity.components.attributes.AttributeType.Long = Long

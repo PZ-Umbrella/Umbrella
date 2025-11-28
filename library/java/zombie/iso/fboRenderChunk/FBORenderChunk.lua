@@ -117,6 +117,6 @@ function FBORenderChunk.new() end
 ---@type Class<FBORenderChunk>
 FBORenderChunk.class = nil
 
-__classmetatables[FBORenderChunk.class] = {__index = __FBORenderChunk}
+__classmetatables[FBORenderChunk.class] = { __index = __FBORenderChunk }
 
 zombie.iso.fboRenderChunk.FBORenderChunk = FBORenderChunk

@@ -48,6 +48,6 @@ function CloseWindowState.new() end
 ---@type Class<CloseWindowState>
 CloseWindowState.class = nil
 
-__classmetatables[CloseWindowState.class] = {__index = __CloseWindowState}
+__classmetatables[CloseWindowState.class] = { __index = __CloseWindowState }
 
 zombie.ai.states.CloseWindowState = CloseWindowState

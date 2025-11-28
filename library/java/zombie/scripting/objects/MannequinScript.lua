@@ -62,6 +62,6 @@ function MannequinScript.new() end
 ---@type Class<MannequinScript>
 MannequinScript.class = nil
 
-__classmetatables[MannequinScript.class] = {__index = __MannequinScript}
+__classmetatables[MannequinScript.class] = { __index = __MannequinScript }
 
 zombie.scripting.objects.MannequinScript = MannequinScript

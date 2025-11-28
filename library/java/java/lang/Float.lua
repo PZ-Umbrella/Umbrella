@@ -86,7 +86,7 @@ Float = {}
 Float.BYTES = nil
 
 ---Maximum exponent a finite float variable may have.  It
---- is equal to the value returned by 
+--- is equal to the value returned by
 --- Math.getExponent(Float.MAX_VALUE).
 ---@type integer
 Float.MAX_EXPONENT = nil
@@ -100,7 +100,7 @@ Float.MAX_EXPONENT = nil
 Float.MAX_VALUE = nil
 
 ---Minimum exponent a normalized float variable may have.
---- It is equal to the value returned by 
+--- It is equal to the value returned by
 --- Math.getExponent(Float.MIN_NORMAL).
 ---@type integer
 Float.MIN_EXPONENT = nil
@@ -240,6 +240,6 @@ function Float.new(s) end
 ---@type Class<Float>
 Float.class = nil
 
-__classmetatables[Float.class] = {__index = __Float}
+__classmetatables[Float.class] = { __index = __Float }
 
 java.lang.Float = Float

@@ -70,6 +70,6 @@ function SearchMode.reset() end
 ---@type Class<SearchMode>
 SearchMode.class = nil
 
-__classmetatables[SearchMode.class] = {__index = __SearchMode}
+__classmetatables[SearchMode.class] = { __index = __SearchMode }
 
 zombie.iso.SearchMode = SearchMode

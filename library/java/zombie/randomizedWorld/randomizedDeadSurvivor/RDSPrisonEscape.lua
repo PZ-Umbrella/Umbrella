@@ -16,6 +16,6 @@ function RDSPrisonEscape.new() end
 ---@type Class<RDSPrisonEscape>
 RDSPrisonEscape.class = nil
 
-__classmetatables[RDSPrisonEscape.class] = {__index = __RDSPrisonEscape}
+__classmetatables[RDSPrisonEscape.class] = { __index = __RDSPrisonEscape }
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSPrisonEscape = RDSPrisonEscape

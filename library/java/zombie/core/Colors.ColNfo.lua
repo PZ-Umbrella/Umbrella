@@ -47,6 +47,6 @@ function ColNfo.new(arg0, arg1, arg2) end
 ---@type Class<Colors.ColNfo>
 ColNfo.class = nil
 
-__classmetatables[ColNfo.class] = {__index = __ColNfo}
+__classmetatables[ColNfo.class] = { __index = __ColNfo }
 
 zombie.core.Colors.ColNfo = ColNfo

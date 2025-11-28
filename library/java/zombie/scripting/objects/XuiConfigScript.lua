@@ -32,6 +32,6 @@ function XuiConfigScript.new() end
 ---@type Class<XuiConfigScript>
 XuiConfigScript.class = nil
 
-__classmetatables[XuiConfigScript.class] = {__index = __XuiConfigScript}
+__classmetatables[XuiConfigScript.class] = { __index = __XuiConfigScript }
 
 zombie.scripting.objects.XuiConfigScript = XuiConfigScript

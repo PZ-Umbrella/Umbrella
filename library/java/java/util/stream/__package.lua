@@ -68,13 +68,13 @@
 --- behavior, such as the lambda expression w -> w.getWeight() passed to
 --- mapToInt in the example above.  To preserve correct behavior,
 --- these behavioral parameters:
---- 
+---
 --- must be non-interfering
 --- (they do not modify the stream source); and
 --- in most cases must be stateless
 --- (their result should not depend on any state that might change during execution
 --- of the stream pipeline).
---- 
+---
 ---
 --- Such parameters are always instances of a
 --- functional interface such

@@ -52,6 +52,6 @@ function FluidFilterScript.new() end
 ---@type Class<FluidFilterScript>
 FluidFilterScript.class = nil
 
-__classmetatables[FluidFilterScript.class] = {__index = __FluidFilterScript}
+__classmetatables[FluidFilterScript.class] = { __index = __FluidFilterScript }
 
 zombie.scripting.objects.FluidFilterScript = FluidFilterScript

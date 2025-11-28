@@ -21,6 +21,6 @@ function XuiColorsScript.new() end
 ---@type Class<XuiColorsScript>
 XuiColorsScript.class = nil
 
-__classmetatables[XuiColorsScript.class] = {__index = __XuiColorsScript}
+__classmetatables[XuiColorsScript.class] = { __index = __XuiColorsScript }
 
 zombie.scripting.objects.XuiColorsScript = XuiColorsScript

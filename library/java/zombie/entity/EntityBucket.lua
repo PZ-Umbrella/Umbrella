@@ -24,6 +24,6 @@ EntityBucket = {}
 ---@type Class<EntityBucket>
 EntityBucket.class = nil
 
-__classmetatables[EntityBucket.class] = {__index = __EntityBucket}
+__classmetatables[EntityBucket.class] = { __index = __EntityBucket }
 
 zombie.entity.EntityBucket = EntityBucket

@@ -20,6 +20,6 @@ function RBKateAndBaldspot.new() end
 ---@type Class<RBKateAndBaldspot>
 RBKateAndBaldspot.class = nil
 
-__classmetatables[RBKateAndBaldspot.class] = {__index = __RBKateAndBaldspot}
+__classmetatables[RBKateAndBaldspot.class] = { __index = __RBKateAndBaldspot }
 
 zombie.randomizedWorld.randomizedBuilding.RBKateAndBaldspot = RBKateAndBaldspot

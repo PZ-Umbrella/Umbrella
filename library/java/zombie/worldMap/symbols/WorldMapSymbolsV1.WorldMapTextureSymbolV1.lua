@@ -76,6 +76,6 @@ function WorldMapTextureSymbolV1.new() end
 ---@type Class<WorldMapSymbolsV1.WorldMapTextureSymbolV1>
 WorldMapTextureSymbolV1.class = nil
 
-__classmetatables[WorldMapTextureSymbolV1.class] = {__index = __WorldMapTextureSymbolV1}
+__classmetatables[WorldMapTextureSymbolV1.class] = { __index = __WorldMapTextureSymbolV1 }
 
 zombie.worldMap.symbols.WorldMapSymbolsV1.WorldMapTextureSymbolV1 = WorldMapTextureSymbolV1

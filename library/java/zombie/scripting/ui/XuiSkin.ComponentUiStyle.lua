@@ -29,6 +29,6 @@ function ComponentUiStyle.new() end
 ---@type Class<XuiSkin.ComponentUiStyle>
 ComponentUiStyle.class = nil
 
-__classmetatables[ComponentUiStyle.class] = {__index = __ComponentUiStyle}
+__classmetatables[ComponentUiStyle.class] = { __index = __ComponentUiStyle }
 
 zombie.scripting.ui.XuiSkin.ComponentUiStyle = ComponentUiStyle

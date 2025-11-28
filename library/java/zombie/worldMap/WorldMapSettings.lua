@@ -57,6 +57,6 @@ function WorldMapSettings.new() end
 ---@type Class<WorldMapSettings>
 WorldMapSettings.class = nil
 
-__classmetatables[WorldMapSettings.class] = {__index = __WorldMapSettings}
+__classmetatables[WorldMapSettings.class] = { __index = __WorldMapSettings }
 
 zombie.worldMap.WorldMapSettings = WorldMapSettings

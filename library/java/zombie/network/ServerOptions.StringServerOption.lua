@@ -21,6 +21,6 @@ function StringServerOption.new(owner, name, defaultValue, maxLength) end
 ---@type Class<ServerOptions.StringServerOption>
 StringServerOption.class = nil
 
-__classmetatables[StringServerOption.class] = {__index = __StringServerOption}
+__classmetatables[StringServerOption.class] = { __index = __StringServerOption }
 
 zombie.network.ServerOptions.StringServerOption = StringServerOption

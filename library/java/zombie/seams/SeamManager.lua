@@ -117,6 +117,6 @@ function SeamManager.getInstance() end
 ---@type Class<SeamManager>
 SeamManager.class = nil
 
-__classmetatables[SeamManager.class] = {__index = __SeamManager}
+__classmetatables[SeamManager.class] = { __index = __SeamManager }
 
 zombie.seams.SeamManager = SeamManager

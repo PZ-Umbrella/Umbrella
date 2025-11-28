@@ -15,6 +15,6 @@ LuaComponent = {}
 ---@type Class<LuaComponent>
 LuaComponent.class = nil
 
-__classmetatables[LuaComponent.class] = {__index = __LuaComponent}
+__classmetatables[LuaComponent.class] = { __index = __LuaComponent }
 
 zombie.entity.components.lua.LuaComponent = LuaComponent

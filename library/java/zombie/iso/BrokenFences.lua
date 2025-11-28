@@ -57,6 +57,6 @@ function BrokenFences.new() end
 ---@type Class<BrokenFences>
 BrokenFences.class = nil
 
-__classmetatables[BrokenFences.class] = {__index = __BrokenFences}
+__classmetatables[BrokenFences.class] = { __index = __BrokenFences }
 
 zombie.iso.BrokenFences = BrokenFences

@@ -104,13 +104,13 @@ function __Reader:skip(n) end
 --- given writer in the order that they are read. On return, this reader
 --- will be at end of the stream. This method does not close either reader
 --- or writer.
---- 
+---
 --- This method may block indefinitely reading from the reader, or
 --- writing to the writer. The behavior for the case where the reader
 --- and/or writer is asynchronously closed, or the thread
 --- interrupted during the transfer, is highly reader and writer
 --- specific, and therefore not specified.
---- 
+---
 --- If an I/O error occurs reading from the reader or writing to the
 --- writer, then it may do so after some characters have been read or
 --- written. Consequently the reader may not be at end of the stream and

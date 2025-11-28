@@ -98,6 +98,6 @@ BaseScriptObject = {}
 ---@type Class<BaseScriptObject>
 BaseScriptObject.class = nil
 
-__classmetatables[BaseScriptObject.class] = {__index = __BaseScriptObject}
+__classmetatables[BaseScriptObject.class] = { __index = __BaseScriptObject }
 
 zombie.scripting.objects.BaseScriptObject = BaseScriptObject

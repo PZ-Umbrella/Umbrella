@@ -31,6 +31,6 @@ Double = {}
 ---@type Class<AttributeType.Double>
 Double.class = nil
 
-__classmetatables[Double.class] = {__index = __Double}
+__classmetatables[Double.class] = { __index = __Double }
 
 zombie.entity.components.attributes.AttributeType.Double = Double

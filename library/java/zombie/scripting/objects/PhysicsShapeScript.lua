@@ -12,6 +12,6 @@ PhysicsShapeScript = {}
 ---@type Class<PhysicsShapeScript>
 PhysicsShapeScript.class = nil
 
-__classmetatables[PhysicsShapeScript.class] = {__index = __PhysicsShapeScript}
+__classmetatables[PhysicsShapeScript.class] = { __index = __PhysicsShapeScript }
 
 zombie.scripting.objects.PhysicsShapeScript = PhysicsShapeScript

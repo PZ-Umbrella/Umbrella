@@ -207,6 +207,6 @@ function ItemVisual.new(other) end
 ---@type Class<ItemVisual>
 ItemVisual.class = nil
 
-__classmetatables[ItemVisual.class] = {__index = __ItemVisual}
+__classmetatables[ItemVisual.class] = { __index = __ItemVisual }
 
 zombie.core.skinnedmodel.visual.ItemVisual = ItemVisual

@@ -47,6 +47,6 @@ function Part.new() end
 ---@type Class<VehicleScript.Part>
 Part.class = nil
 
-__classmetatables[Part.class] = {__index = __Part}
+__classmetatables[Part.class] = { __index = __Part }
 
 zombie.scripting.objects.VehicleScript.Part = Part

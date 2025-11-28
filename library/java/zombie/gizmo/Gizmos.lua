@@ -38,6 +38,6 @@ function Gizmos.getInstance() end
 ---@type Class<Gizmos>
 Gizmos.class = nil
 
-__classmetatables[Gizmos.class] = {__index = __Gizmos}
+__classmetatables[Gizmos.class] = { __index = __Gizmos }
 
 zombie.gizmo.Gizmos = Gizmos

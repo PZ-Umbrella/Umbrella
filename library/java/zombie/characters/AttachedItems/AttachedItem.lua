@@ -19,6 +19,6 @@ function AttachedItem.new(location, item) end
 ---@type Class<AttachedItem>
 AttachedItem.class = nil
 
-__classmetatables[AttachedItem.class] = {__index = __AttachedItem}
+__classmetatables[AttachedItem.class] = { __index = __AttachedItem }
 
 zombie.characters.AttachedItems.AttachedItem = AttachedItem

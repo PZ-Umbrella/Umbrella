@@ -122,6 +122,6 @@ function PZArrayList.new(elementType, initialCapacity) end
 ---@type Class<PZArrayList>
 PZArrayList.class = nil
 
-__classmetatables[PZArrayList.class] = {__index = __PZArrayList}
+__classmetatables[PZArrayList.class] = { __index = __PZArrayList }
 
 zombie.util.list.PZArrayList = PZArrayList

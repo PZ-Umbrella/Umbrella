@@ -260,6 +260,6 @@ function UITextBox2.new(font, x, y, width, height, text, HasFrame) end
 ---@type Class<UITextBox2>
 UITextBox2.class = nil
 
-__classmetatables[UITextBox2.class] = {__index = __UITextBox2}
+__classmetatables[UITextBox2.class] = { __index = __UITextBox2 }
 
 zombie.ui.UITextBox2 = UITextBox2

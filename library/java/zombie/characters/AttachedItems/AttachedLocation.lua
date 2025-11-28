@@ -22,6 +22,6 @@ function AttachedLocation.new(group, id) end
 ---@type Class<AttachedLocation>
 AttachedLocation.class = nil
 
-__classmetatables[AttachedLocation.class] = {__index = __AttachedLocation}
+__classmetatables[AttachedLocation.class] = { __index = __AttachedLocation }
 
 zombie.characters.AttachedItems.AttachedLocation = AttachedLocation

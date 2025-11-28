@@ -138,6 +138,6 @@ function FluidType.values() end
 ---@type Class<FluidType>
 FluidType.class = nil
 
-__classmetatables[FluidType.class] = {__index = __FluidType}
+__classmetatables[FluidType.class] = { __index = __FluidType }
 
 zombie.entity.components.fluids.FluidType = FluidType

@@ -98,6 +98,6 @@ function ThermalNode.new(arg0, arg1, arg2, arg3, arg4) end
 ---@type Class<Thermoregulator.ThermalNode>
 ThermalNode.class = nil
 
-__classmetatables[ThermalNode.class] = {__index = __ThermalNode}
+__classmetatables[ThermalNode.class] = { __index = __ThermalNode }
 
 zombie.characters.BodyDamage.Thermoregulator.ThermalNode = ThermalNode

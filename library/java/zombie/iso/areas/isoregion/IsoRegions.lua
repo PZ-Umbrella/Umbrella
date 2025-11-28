@@ -205,6 +205,6 @@ function IsoRegions.new() end
 ---@type Class<IsoRegions>
 IsoRegions.class = nil
 
-__classmetatables[IsoRegions.class] = {__index = __IsoRegions}
+__classmetatables[IsoRegions.class] = { __index = __IsoRegions }
 
 zombie.iso.areas.isoregion.IsoRegions = IsoRegions

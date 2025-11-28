@@ -138,6 +138,6 @@ function IsoFeedingTrough.new(arg0, arg1, arg2) end
 ---@type Class<IsoFeedingTrough>
 IsoFeedingTrough.class = nil
 
-__classmetatables[IsoFeedingTrough.class] = {__index = __IsoFeedingTrough}
+__classmetatables[IsoFeedingTrough.class] = { __index = __IsoFeedingTrough }
 
 zombie.iso.objects.IsoFeedingTrough = IsoFeedingTrough

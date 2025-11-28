@@ -54,6 +54,6 @@ WaveSignalDevice = {}
 ---@type Class<WaveSignalDevice>
 WaveSignalDevice.class = nil
 
-__classmetatables[WaveSignalDevice.class] = {__index = __WaveSignalDevice}
+__classmetatables[WaveSignalDevice.class] = { __index = __WaveSignalDevice }
 
 zombie.radio.devices.WaveSignalDevice = WaveSignalDevice

@@ -2106,6 +2106,6 @@ function BaseVehicle.new(cell) end
 ---@type Class<BaseVehicle>
 BaseVehicle.class = nil
 
-__classmetatables[BaseVehicle.class] = {__index = __BaseVehicle}
+__classmetatables[BaseVehicle.class] = { __index = __BaseVehicle }
 
 zombie.vehicles.BaseVehicle = BaseVehicle

@@ -25,6 +25,6 @@ function ComboItem.new(module, name, itemType, item) end
 ---@type Class<ComboItem>
 ComboItem.class = nil
 
-__classmetatables[ComboItem.class] = {__index = __ComboItem}
+__classmetatables[ComboItem.class] = { __index = __ComboItem }
 
 zombie.inventory.types.ComboItem = ComboItem

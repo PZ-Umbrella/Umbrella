@@ -72,6 +72,6 @@ function LuaTimedActionNew.new(table, chr) end
 ---@type Class<LuaTimedActionNew>
 LuaTimedActionNew.class = nil
 
-__classmetatables[LuaTimedActionNew.class] = {__index = __LuaTimedActionNew}
+__classmetatables[LuaTimedActionNew.class] = { __index = __LuaTimedActionNew }
 
 zombie.characters.CharacterTimedActions.LuaTimedActionNew = LuaTimedActionNew

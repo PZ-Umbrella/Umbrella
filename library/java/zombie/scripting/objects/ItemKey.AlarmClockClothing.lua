@@ -59,6 +59,6 @@ function AlarmClockClothing.new() end
 ---@type Class<ItemKey.AlarmClockClothing>
 AlarmClockClothing.class = nil
 
-__classmetatables[AlarmClockClothing.class] = {__index = __AlarmClockClothing}
+__classmetatables[AlarmClockClothing.class] = { __index = __AlarmClockClothing }
 
 zombie.scripting.objects.ItemKey.AlarmClockClothing = AlarmClockClothing

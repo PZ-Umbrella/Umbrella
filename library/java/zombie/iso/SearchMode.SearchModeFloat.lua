@@ -63,6 +63,6 @@ SearchModeFloat = {}
 ---@type Class<SearchMode.SearchModeFloat>
 SearchModeFloat.class = nil
 
-__classmetatables[SearchModeFloat.class] = {__index = __SearchModeFloat}
+__classmetatables[SearchModeFloat.class] = { __index = __SearchModeFloat }
 
 zombie.iso.SearchMode.SearchModeFloat = SearchModeFloat

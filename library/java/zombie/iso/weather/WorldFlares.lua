@@ -62,6 +62,6 @@ function WorldFlares.new() end
 ---@type Class<WorldFlares>
 WorldFlares.class = nil
 
-__classmetatables[WorldFlares.class] = {__index = __WorldFlares}
+__classmetatables[WorldFlares.class] = { __index = __WorldFlares }
 
 zombie.iso.weather.WorldFlares = WorldFlares

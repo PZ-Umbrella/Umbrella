@@ -14,6 +14,6 @@ function WorldMapStreetV1.new() end
 ---@type Class<WorldMapStreetV1>
 WorldMapStreetV1.class = nil
 
-__classmetatables[WorldMapStreetV1.class] = {__index = __WorldMapStreetV1}
+__classmetatables[WorldMapStreetV1.class] = { __index = __WorldMapStreetV1 }
 
 zombie.worldMap.streets.WorldMapStreetV1 = WorldMapStreetV1

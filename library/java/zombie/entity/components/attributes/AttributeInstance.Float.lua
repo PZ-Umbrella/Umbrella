@@ -50,6 +50,6 @@ function Float.new() end
 ---@type Class<AttributeInstance.Float>
 Float.class = nil
 
-__classmetatables[Float.class] = {__index = __Float}
+__classmetatables[Float.class] = { __index = __Float }
 
 zombie.entity.components.attributes.AttributeInstance.Float = Float

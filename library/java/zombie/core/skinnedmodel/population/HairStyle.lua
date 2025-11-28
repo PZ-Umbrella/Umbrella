@@ -36,6 +36,6 @@ function HairStyle.new() end
 ---@type Class<HairStyle>
 HairStyle.class = nil
 
-__classmetatables[HairStyle.class] = {__index = __HairStyle}
+__classmetatables[HairStyle.class] = { __index = __HairStyle }
 
 zombie.core.skinnedmodel.population.HairStyle = HairStyle

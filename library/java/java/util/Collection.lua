@@ -191,7 +191,7 @@
 --- Comparator is also serializable.
 ---
 --- This interface is a member of the
---- 
+---
 --- Java Collections Framework.
 ---@class Collection<E>: Iterable<E>
 local __Collection = {}

@@ -22,6 +22,6 @@ function RBStripclub.new() end
 ---@type Class<RBStripclub>
 RBStripclub.class = nil
 
-__classmetatables[RBStripclub.class] = {__index = __RBStripclub}
+__classmetatables[RBStripclub.class] = { __index = __RBStripclub }
 
 zombie.randomizedWorld.randomizedBuilding.RBStripclub = RBStripclub

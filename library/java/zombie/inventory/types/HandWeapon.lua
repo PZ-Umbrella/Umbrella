@@ -994,6 +994,6 @@ function HandWeapon.new(module, name, itemType, item) end
 ---@type Class<HandWeapon>
 HandWeapon.class = nil
 
-__classmetatables[HandWeapon.class] = {__index = __HandWeapon}
+__classmetatables[HandWeapon.class] = { __index = __HandWeapon }
 
 zombie.inventory.types.HandWeapon = HandWeapon

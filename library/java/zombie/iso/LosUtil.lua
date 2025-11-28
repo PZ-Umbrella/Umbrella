@@ -97,6 +97,6 @@ function LosUtil.new() end
 ---@type Class<LosUtil>
 LosUtil.class = nil
 
-__classmetatables[LosUtil.class] = {__index = __LosUtil}
+__classmetatables[LosUtil.class] = { __index = __LosUtil }
 
 zombie.iso.LosUtil = LosUtil

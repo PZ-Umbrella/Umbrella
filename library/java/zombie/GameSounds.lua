@@ -64,6 +64,6 @@ function GameSounds.new() end
 ---@type Class<GameSounds>
 GameSounds.class = nil
 
-__classmetatables[GameSounds.class] = {__index = __GameSounds}
+__classmetatables[GameSounds.class] = { __index = __GameSounds }
 
 zombie.GameSounds = GameSounds

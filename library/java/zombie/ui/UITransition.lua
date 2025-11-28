@@ -36,6 +36,6 @@ function UITransition.new() end
 ---@type Class<UITransition>
 UITransition.class = nil
 
-__classmetatables[UITransition.class] = {__index = __UITransition}
+__classmetatables[UITransition.class] = { __index = __UITransition }
 
 zombie.ui.UITransition = UITransition

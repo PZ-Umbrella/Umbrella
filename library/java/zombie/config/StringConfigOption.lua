@@ -64,6 +64,6 @@ function StringConfigOption.new(arg0, arg1, arg2) end
 ---@type Class<StringConfigOption>
 StringConfigOption.class = nil
 
-__classmetatables[StringConfigOption.class] = {__index = __StringConfigOption}
+__classmetatables[StringConfigOption.class] = { __index = __StringConfigOption }
 
 zombie.config.StringConfigOption = StringConfigOption

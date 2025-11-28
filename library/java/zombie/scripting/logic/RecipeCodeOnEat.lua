@@ -47,6 +47,6 @@ function RecipeCodeOnEat.new() end
 ---@type Class<RecipeCodeOnEat>
 RecipeCodeOnEat.class = nil
 
-__classmetatables[RecipeCodeOnEat.class] = {__index = __RecipeCodeOnEat}
+__classmetatables[RecipeCodeOnEat.class] = { __index = __RecipeCodeOnEat }
 
 zombie.scripting.logic.RecipeCodeOnEat = RecipeCodeOnEat

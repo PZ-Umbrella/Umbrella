@@ -56,6 +56,6 @@ function Map.new() end
 ---@type Class<ItemKey.Map>
 Map.class = nil
 
-__classmetatables[Map.class] = {__index = __Map}
+__classmetatables[Map.class] = { __index = __Map }
 
 zombie.scripting.objects.ItemKey.Map = Map

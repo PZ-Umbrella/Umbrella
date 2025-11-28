@@ -48,6 +48,6 @@ function TraitFactory.new() end
 ---@type Class<TraitFactory>
 TraitFactory.class = nil
 
-__classmetatables[TraitFactory.class] = {__index = __TraitFactory}
+__classmetatables[TraitFactory.class] = { __index = __TraitFactory }
 
 zombie.characters.traits.TraitFactory = TraitFactory

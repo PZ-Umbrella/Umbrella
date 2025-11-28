@@ -25,6 +25,6 @@ function RVSRichJerk.new() end
 ---@type Class<RVSRichJerk>
 RVSRichJerk.class = nil
 
-__classmetatables[RVSRichJerk.class] = {__index = __RVSRichJerk}
+__classmetatables[RVSRichJerk.class] = { __index = __RVSRichJerk }
 
 zombie.randomizedWorld.randomizedVehicleStory.RVSRichJerk = RVSRichJerk

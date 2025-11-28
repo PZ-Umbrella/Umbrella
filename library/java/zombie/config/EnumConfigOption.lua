@@ -20,6 +20,6 @@ function EnumConfigOption.new(name, numValues, defaultValue) end
 ---@type Class<EnumConfigOption>
 EnumConfigOption.class = nil
 
-__classmetatables[EnumConfigOption.class] = {__index = __EnumConfigOption}
+__classmetatables[EnumConfigOption.class] = { __index = __EnumConfigOption }
 
 zombie.config.EnumConfigOption = EnumConfigOption

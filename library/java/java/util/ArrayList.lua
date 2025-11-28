@@ -40,7 +40,7 @@
 --- unsynchronized access to the list:
 ---   List list = Collections.synchronizedList(new ArrayList(...));
 ---
---- 
+---
 --- The iterators returned by this class's iterator and
 --- listIterator methods are fail-fast:
 --- if the list is structurally modified at any time after the iterator is
@@ -61,7 +61,7 @@
 --- should be used only to detect bugs.
 ---
 --- This class is a member of the
---- 
+---
 --- Java Collections Framework.
 ---@class ArrayList<E>: AbstractList<E>, List<E>, RandomAccess, Cloneable, Serializable
 local __ArrayList = {}
@@ -278,9 +278,9 @@ function __ArrayList:spliterator() end
 --- a list can be used as a range operation by passing a subList view
 --- instead of a whole list.  For example, the following idiom
 --- removes a range of elements from a list:
---- 
+---
 ---      list.subList(from, to).clear();
---- 
+---
 --- Similar idioms may be constructed for indexOf(Object) and
 --- lastIndexOf(Object), and all of the algorithms in the
 --- Collections class can be applied to a subList.
@@ -357,6 +357,6 @@ function ArrayList.new(c) end
 ---@type Class<ArrayList>
 ArrayList.class = nil
 
-__classmetatables[ArrayList.class] = {__index = __ArrayList}
+__classmetatables[ArrayList.class] = { __index = __ArrayList }
 
 java.util.ArrayList = ArrayList

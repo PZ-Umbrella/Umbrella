@@ -602,6 +602,6 @@ function PZMath.new() end
 ---@type Class<PZMath>
 PZMath.class = nil
 
-__classmetatables[PZMath.class] = {__index = __PZMath}
+__classmetatables[PZMath.class] = { __index = __PZMath }
 
 zombie.core.math.PZMath = PZMath

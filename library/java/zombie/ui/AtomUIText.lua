@@ -31,6 +31,6 @@ function AtomUIText.new(arg0) end
 ---@type Class<AtomUIText>
 AtomUIText.class = nil
 
-__classmetatables[AtomUIText.class] = {__index = __AtomUIText}
+__classmetatables[AtomUIText.class] = { __index = __AtomUIText }
 
 zombie.ui.AtomUIText = AtomUIText

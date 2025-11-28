@@ -17,10 +17,10 @@
 --- to wrap a BufferedWriter around any Writer whose write() operations may be
 --- costly, such as FileWriters and OutputStreamWriters.  For example,
 ---
---- 
+---
 --- PrintWriter out
 ---   = new PrintWriter(new BufferedWriter(new FileWriter("foo.out")));
---- 
+---
 ---
 --- will buffer the PrintWriter's output to the file.  Without buffering, each
 --- invocation of a print() method would cause characters to be converted into
@@ -81,6 +81,6 @@ function BufferedWriter.new(out, sz) end
 ---@type Class<BufferedWriter>
 BufferedWriter.class = nil
 
-__classmetatables[BufferedWriter.class] = {__index = __BufferedWriter}
+__classmetatables[BufferedWriter.class] = { __index = __BufferedWriter }
 
 java.io.BufferedWriter = BufferedWriter

@@ -11,6 +11,6 @@ function WorldMapSymbolsAPI.new() end
 ---@type Class<WorldMapSymbolsAPI>
 WorldMapSymbolsAPI.class = nil
 
-__classmetatables[WorldMapSymbolsAPI.class] = {__index = __WorldMapSymbolsAPI}
+__classmetatables[WorldMapSymbolsAPI.class] = { __index = __WorldMapSymbolsAPI }
 
 zombie.worldMap.symbols.WorldMapSymbolsAPI = WorldMapSymbolsAPI

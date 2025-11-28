@@ -20,6 +20,6 @@ function BooleanServerOption.new(owner, name, defaultValue) end
 ---@type Class<ServerOptions.BooleanServerOption>
 BooleanServerOption.class = nil
 
-__classmetatables[BooleanServerOption.class] = {__index = __BooleanServerOption}
+__classmetatables[BooleanServerOption.class] = { __index = __BooleanServerOption }
 
 zombie.network.ServerOptions.BooleanServerOption = BooleanServerOption

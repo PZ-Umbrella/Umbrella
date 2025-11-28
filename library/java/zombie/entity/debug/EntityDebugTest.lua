@@ -21,6 +21,6 @@ function EntityDebugTest.Update() end
 ---@type Class<EntityDebugTest>
 EntityDebugTest.class = nil
 
-__classmetatables[EntityDebugTest.class] = {__index = __EntityDebugTest}
+__classmetatables[EntityDebugTest.class] = { __index = __EntityDebugTest }
 
 zombie.entity.debug.EntityDebugTest = EntityDebugTest

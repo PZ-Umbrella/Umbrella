@@ -30,6 +30,6 @@ function XuiLayoutScript.new(arg0, arg1) end
 ---@type Class<XuiLayoutScript>
 XuiLayoutScript.class = nil
 
-__classmetatables[XuiLayoutScript.class] = {__index = __XuiLayoutScript}
+__classmetatables[XuiLayoutScript.class] = { __index = __XuiLayoutScript }
 
 zombie.scripting.objects.XuiLayoutScript = XuiLayoutScript

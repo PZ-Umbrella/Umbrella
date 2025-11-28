@@ -14,6 +14,6 @@ String = {}
 ---@type Class<AttributeType.String>
 String.class = nil
 
-__classmetatables[String.class] = {__index = __String}
+__classmetatables[String.class] = { __index = __String }
 
 zombie.entity.components.attributes.AttributeType.String = String

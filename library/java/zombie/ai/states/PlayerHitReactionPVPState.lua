@@ -41,6 +41,6 @@ function PlayerHitReactionPVPState.new() end
 ---@type Class<PlayerHitReactionPVPState>
 PlayerHitReactionPVPState.class = nil
 
-__classmetatables[PlayerHitReactionPVPState.class] = {__index = __PlayerHitReactionPVPState}
+__classmetatables[PlayerHitReactionPVPState.class] = { __index = __PlayerHitReactionPVPState }
 
 zombie.ai.states.PlayerHitReactionPVPState = PlayerHitReactionPVPState

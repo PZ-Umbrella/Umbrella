@@ -63,6 +63,6 @@ function ClimbSheetRopeState.new() end
 ---@type Class<ClimbSheetRopeState>
 ClimbSheetRopeState.class = nil
 
-__classmetatables[ClimbSheetRopeState.class] = {__index = __ClimbSheetRopeState}
+__classmetatables[ClimbSheetRopeState.class] = { __index = __ClimbSheetRopeState }
 
 zombie.ai.states.ClimbSheetRopeState = ClimbSheetRopeState

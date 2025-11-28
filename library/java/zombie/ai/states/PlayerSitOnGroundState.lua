@@ -45,6 +45,6 @@ function PlayerSitOnGroundState.new() end
 ---@type Class<PlayerSitOnGroundState>
 PlayerSitOnGroundState.class = nil
 
-__classmetatables[PlayerSitOnGroundState.class] = {__index = __PlayerSitOnGroundState}
+__classmetatables[PlayerSitOnGroundState.class] = { __index = __PlayerSitOnGroundState }
 
 zombie.ai.states.PlayerSitOnGroundState = PlayerSitOnGroundState

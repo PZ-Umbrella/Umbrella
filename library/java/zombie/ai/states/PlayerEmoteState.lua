@@ -39,6 +39,6 @@ function PlayerEmoteState.instance() end
 ---@type Class<PlayerEmoteState>
 PlayerEmoteState.class = nil
 
-__classmetatables[PlayerEmoteState.class] = {__index = __PlayerEmoteState}
+__classmetatables[PlayerEmoteState.class] = { __index = __PlayerEmoteState }
 
 zombie.ai.states.PlayerEmoteState = PlayerEmoteState

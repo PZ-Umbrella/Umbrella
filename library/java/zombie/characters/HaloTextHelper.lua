@@ -149,6 +149,6 @@ function HaloTextHelper.new() end
 ---@type Class<HaloTextHelper>
 HaloTextHelper.class = nil
 
-__classmetatables[HaloTextHelper.class] = {__index = __HaloTextHelper}
+__classmetatables[HaloTextHelper.class] = { __index = __HaloTextHelper }
 
 zombie.characters.HaloTextHelper = HaloTextHelper

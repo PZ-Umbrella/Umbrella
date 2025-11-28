@@ -36,6 +36,6 @@ function RadioAPI.timeToTimeStamp(days, hours, minutes) end
 ---@type Class<RadioAPI>
 RadioAPI.class = nil
 
-__classmetatables[RadioAPI.class] = {__index = __RadioAPI}
+__classmetatables[RadioAPI.class] = { __index = __RadioAPI }
 
 zombie.radio.RadioAPI = RadioAPI

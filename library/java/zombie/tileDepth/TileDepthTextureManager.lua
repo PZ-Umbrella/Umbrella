@@ -91,6 +91,6 @@ function TileDepthTextureManager.getInstance() end
 ---@type Class<TileDepthTextureManager>
 TileDepthTextureManager.class = nil
 
-__classmetatables[TileDepthTextureManager.class] = {__index = __TileDepthTextureManager}
+__classmetatables[TileDepthTextureManager.class] = { __index = __TileDepthTextureManager }
 
 zombie.tileDepth.TileDepthTextureManager = TileDepthTextureManager

@@ -35,6 +35,6 @@ function BasementsV1.new() end
 ---@type Class<BasementsV1>
 BasementsV1.class = nil
 
-__classmetatables[BasementsV1.class] = {__index = __BasementsV1}
+__classmetatables[BasementsV1.class] = { __index = __BasementsV1 }
 
 zombie.basements.BasementsV1 = BasementsV1

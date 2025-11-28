@@ -32,6 +32,6 @@ function ProfessionFactory.new() end
 ---@type Class<ProfessionFactory>
 ProfessionFactory.class = nil
 
-__classmetatables[ProfessionFactory.class] = {__index = __ProfessionFactory}
+__classmetatables[ProfessionFactory.class] = { __index = __ProfessionFactory }
 
 zombie.characters.professions.ProfessionFactory = ProfessionFactory

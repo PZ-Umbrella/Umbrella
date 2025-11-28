@@ -141,6 +141,6 @@ function ClimateValues.new(clim) end
 ---@type Class<ClimateValues>
 ClimateValues.class = nil
 
-__classmetatables[ClimateValues.class] = {__index = __ClimateValues}
+__classmetatables[ClimateValues.class] = { __index = __ClimateValues }
 
 zombie.iso.weather.ClimateValues = ClimateValues

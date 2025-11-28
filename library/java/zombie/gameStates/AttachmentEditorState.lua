@@ -60,6 +60,6 @@ function AttachmentEditorState.new() end
 ---@type Class<AttachmentEditorState>
 AttachmentEditorState.class = nil
 
-__classmetatables[AttachmentEditorState.class] = {__index = __AttachmentEditorState}
+__classmetatables[AttachmentEditorState.class] = { __index = __AttachmentEditorState }
 
 zombie.gameStates.AttachmentEditorState = AttachmentEditorState

@@ -135,6 +135,6 @@ function ChatMessage.new(chat, datetime, text) end
 ---@type Class<ChatMessage>
 ChatMessage.class = nil
 
-__classmetatables[ChatMessage.class] = {__index = __ChatMessage}
+__classmetatables[ChatMessage.class] = { __index = __ChatMessage }
 
 zombie.chat.ChatMessage = ChatMessage

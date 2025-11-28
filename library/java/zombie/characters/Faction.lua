@@ -123,6 +123,6 @@ function Faction.new(name, owner) end
 ---@type Class<Faction>
 Faction.class = nil
 
-__classmetatables[Faction.class] = {__index = __Faction}
+__classmetatables[Faction.class] = { __index = __Faction }
 
 zombie.characters.Faction = Faction

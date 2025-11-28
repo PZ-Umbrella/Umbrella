@@ -251,6 +251,6 @@ function BuildingDef.new(arg0) end
 ---@type Class<BuildingDef>
 BuildingDef.class = nil
 
-__classmetatables[BuildingDef.class] = {__index = __BuildingDef}
+__classmetatables[BuildingDef.class] = { __index = __BuildingDef }
 
 zombie.iso.BuildingDef = BuildingDef

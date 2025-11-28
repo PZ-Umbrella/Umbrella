@@ -89,6 +89,6 @@ function TilesetDepthTexture.new(arg0, arg1, arg2, arg3, arg4) end
 ---@type Class<TilesetDepthTexture>
 TilesetDepthTexture.class = nil
 
-__classmetatables[TilesetDepthTexture.class] = {__index = __TilesetDepthTexture}
+__classmetatables[TilesetDepthTexture.class] = { __index = __TilesetDepthTexture }
 
 zombie.tileDepth.TilesetDepthTexture = TilesetDepthTexture

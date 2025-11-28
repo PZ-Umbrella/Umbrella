@@ -15,6 +15,6 @@ function RDSBleach.new() end
 ---@type Class<RDSBleach>
 RDSBleach.class = nil
 
-__classmetatables[RDSBleach.class] = {__index = __RDSBleach}
+__classmetatables[RDSBleach.class] = { __index = __RDSBleach }
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSBleach = RDSBleach

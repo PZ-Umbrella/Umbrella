@@ -20,6 +20,6 @@ function RBOther.new() end
 ---@type Class<RBOther>
 RBOther.class = nil
 
-__classmetatables[RBOther.class] = {__index = __RBOther}
+__classmetatables[RBOther.class] = { __index = __RBOther }
 
 zombie.randomizedWorld.randomizedBuilding.RBOther = RBOther

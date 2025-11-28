@@ -48,6 +48,6 @@ function SteamUGCDetails.new(ID, title, timeCreated, timeUpdated, fileSize, chil
 ---@type Class<SteamUGCDetails>
 SteamUGCDetails.class = nil
 
-__classmetatables[SteamUGCDetails.class] = {__index = __SteamUGCDetails}
+__classmetatables[SteamUGCDetails.class] = { __index = __SteamUGCDetails }
 
 zombie.core.znet.SteamUGCDetails = SteamUGCDetails

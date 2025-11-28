@@ -23,6 +23,6 @@ function CachedRecipeInfo.new() end
 ---@type Class<HandcraftLogic.CachedRecipeInfo>
 CachedRecipeInfo.class = nil
 
-__classmetatables[CachedRecipeInfo.class] = {__index = __CachedRecipeInfo}
+__classmetatables[CachedRecipeInfo.class] = { __index = __CachedRecipeInfo }
 
 zombie.entity.components.crafting.recipe.HandcraftLogic.CachedRecipeInfo = CachedRecipeInfo

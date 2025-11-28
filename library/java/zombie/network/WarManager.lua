@@ -57,6 +57,6 @@ function WarManager.updateWar(arg0, arg1, arg2, arg3) end
 ---@type Class<WarManager>
 WarManager.class = nil
 
-__classmetatables[WarManager.class] = {__index = __WarManager}
+__classmetatables[WarManager.class] = { __index = __WarManager }
 
 zombie.network.WarManager = WarManager

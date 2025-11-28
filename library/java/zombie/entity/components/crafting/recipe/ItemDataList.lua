@@ -58,6 +58,6 @@ function ItemDataList.new(arg0) end
 ---@type Class<ItemDataList>
 ItemDataList.class = nil
 
-__classmetatables[ItemDataList.class] = {__index = __ItemDataList}
+__classmetatables[ItemDataList.class] = { __index = __ItemDataList }
 
 zombie.entity.components.crafting.recipe.ItemDataList = ItemDataList

@@ -60,6 +60,6 @@ function AttachedItems.new(other) end
 ---@type Class<AttachedItems>
 AttachedItems.class = nil
 
-__classmetatables[AttachedItems.class] = {__index = __AttachedItems}
+__classmetatables[AttachedItems.class] = { __index = __AttachedItems }
 
 zombie.characters.AttachedItems.AttachedItems = AttachedItems

@@ -14,6 +14,6 @@ function RZSMusicFestStage.new() end
 ---@type Class<RZSMusicFestStage>
 RZSMusicFestStage.class = nil
 
-__classmetatables[RZSMusicFestStage.class] = {__index = __RZSMusicFestStage}
+__classmetatables[RZSMusicFestStage.class] = { __index = __RZSMusicFestStage }
 
 zombie.randomizedWorld.randomizedZoneStory.RZSMusicFestStage = RZSMusicFestStage

@@ -72,6 +72,6 @@ function FMODDebugEventPlayer.new() end
 ---@type Class<FMODDebugEventPlayer>
 FMODDebugEventPlayer.class = nil
 
-__classmetatables[FMODDebugEventPlayer.class] = {__index = __FMODDebugEventPlayer}
+__classmetatables[FMODDebugEventPlayer.class] = { __index = __FMODDebugEventPlayer }
 
 fmod.fmod.FMODDebugEventPlayer = FMODDebugEventPlayer

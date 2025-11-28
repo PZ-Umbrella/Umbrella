@@ -87,6 +87,6 @@ function IsoCarBatteryCharger.new(item, cell, square) end
 ---@type Class<IsoCarBatteryCharger>
 IsoCarBatteryCharger.class = nil
 
-__classmetatables[IsoCarBatteryCharger.class] = {__index = __IsoCarBatteryCharger}
+__classmetatables[IsoCarBatteryCharger.class] = { __index = __IsoCarBatteryCharger }
 
 zombie.iso.objects.IsoCarBatteryCharger = IsoCarBatteryCharger

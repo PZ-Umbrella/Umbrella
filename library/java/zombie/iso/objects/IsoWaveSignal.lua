@@ -126,6 +126,6 @@ function IsoWaveSignal.new(cell, sq, spr) end
 ---@type Class<IsoWaveSignal>
 IsoWaveSignal.class = nil
 
-__classmetatables[IsoWaveSignal.class] = {__index = __IsoWaveSignal}
+__classmetatables[IsoWaveSignal.class] = { __index = __IsoWaveSignal }
 
 zombie.iso.objects.IsoWaveSignal = IsoWaveSignal

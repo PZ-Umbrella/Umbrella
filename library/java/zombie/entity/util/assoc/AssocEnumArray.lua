@@ -84,6 +84,6 @@ function AssocEnumArray.new(arg0, arg1) end
 ---@type Class<AssocEnumArray>
 AssocEnumArray.class = nil
 
-__classmetatables[AssocEnumArray.class] = {__index = __AssocEnumArray}
+__classmetatables[AssocEnumArray.class] = { __index = __AssocEnumArray }
 
 zombie.entity.util.assoc.AssocEnumArray = AssocEnumArray

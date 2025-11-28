@@ -39,6 +39,6 @@ function PZCalendar.new(calendar) end
 ---@type Class<PZCalendar>
 PZCalendar.class = nil
 
-__classmetatables[PZCalendar.class] = {__index = __PZCalendar}
+__classmetatables[PZCalendar.class] = { __index = __PZCalendar }
 
 zombie.util.PZCalendar = PZCalendar

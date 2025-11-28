@@ -67,6 +67,6 @@ function RadioScriptManager.hasInstance() end
 ---@type Class<RadioScriptManager>
 RadioScriptManager.class = nil
 
-__classmetatables[RadioScriptManager.class] = {__index = __RadioScriptManager}
+__classmetatables[RadioScriptManager.class] = { __index = __RadioScriptManager }
 
 zombie.radio.scripting.RadioScriptManager = RadioScriptManager

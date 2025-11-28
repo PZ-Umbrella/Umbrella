@@ -217,6 +217,6 @@ function WeatherPeriod.new(climmgr, ts) end
 ---@type Class<WeatherPeriod>
 WeatherPeriod.class = nil
 
-__classmetatables[WeatherPeriod.class] = {__index = __WeatherPeriod}
+__classmetatables[WeatherPeriod.class] = { __index = __WeatherPeriod }
 
 zombie.iso.weather.WeatherPeriod = WeatherPeriod

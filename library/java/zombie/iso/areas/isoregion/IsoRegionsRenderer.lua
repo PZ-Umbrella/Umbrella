@@ -214,6 +214,6 @@ function IsoRegionsRenderer.new() end
 ---@type Class<IsoRegionsRenderer>
 IsoRegionsRenderer.class = nil
 
-__classmetatables[IsoRegionsRenderer.class] = {__index = __IsoRegionsRenderer}
+__classmetatables[IsoRegionsRenderer.class] = { __index = __IsoRegionsRenderer }
 
 zombie.iso.areas.isoregion.IsoRegionsRenderer = IsoRegionsRenderer

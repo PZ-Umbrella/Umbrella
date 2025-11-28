@@ -45,6 +45,6 @@ function PlayerActionsState.new() end
 ---@type Class<PlayerActionsState>
 PlayerActionsState.class = nil
 
-__classmetatables[PlayerActionsState.class] = {__index = __PlayerActionsState}
+__classmetatables[PlayerActionsState.class] = { __index = __PlayerActionsState }
 
 zombie.ai.states.PlayerActionsState = PlayerActionsState

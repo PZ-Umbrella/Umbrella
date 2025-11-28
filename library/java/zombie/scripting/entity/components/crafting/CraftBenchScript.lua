@@ -37,6 +37,6 @@ CraftBenchScript = {}
 ---@type Class<CraftBenchScript>
 CraftBenchScript.class = nil
 
-__classmetatables[CraftBenchScript.class] = {__index = __CraftBenchScript}
+__classmetatables[CraftBenchScript.class] = { __index = __CraftBenchScript }
 
 zombie.scripting.entity.components.crafting.CraftBenchScript = CraftBenchScript

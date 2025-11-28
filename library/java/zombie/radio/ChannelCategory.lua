@@ -41,6 +41,6 @@ function ChannelCategory.values() end
 ---@type Class<ChannelCategory>
 ChannelCategory.class = nil
 
-__classmetatables[ChannelCategory.class] = {__index = __ChannelCategory}
+__classmetatables[ChannelCategory.class] = { __index = __ChannelCategory }
 
 zombie.radio.ChannelCategory = ChannelCategory

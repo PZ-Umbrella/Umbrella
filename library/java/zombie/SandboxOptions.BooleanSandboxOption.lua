@@ -51,6 +51,6 @@ function BooleanSandboxOption.new(owner, name, defaultValue) end
 ---@type Class<SandboxOptions.BooleanSandboxOption>
 BooleanSandboxOption.class = nil
 
-__classmetatables[BooleanSandboxOption.class] = {__index = __BooleanSandboxOption}
+__classmetatables[BooleanSandboxOption.class] = { __index = __BooleanSandboxOption }
 
 zombie.SandboxOptions.BooleanSandboxOption = BooleanSandboxOption

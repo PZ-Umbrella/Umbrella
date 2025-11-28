@@ -34,6 +34,6 @@ function ZLogger.new(name, useConsole) end
 ---@type Class<ZLogger>
 ZLogger.class = nil
 
-__classmetatables[ZLogger.class] = {__index = __ZLogger}
+__classmetatables[ZLogger.class] = { __index = __ZLogger }
 
 zombie.core.logger.ZLogger = ZLogger

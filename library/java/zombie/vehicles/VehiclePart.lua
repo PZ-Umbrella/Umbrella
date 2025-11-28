@@ -319,6 +319,6 @@ function VehiclePart.new(vehicle) end
 ---@type Class<VehiclePart>
 VehiclePart.class = nil
 
-__classmetatables[VehiclePart.class] = {__index = __VehiclePart}
+__classmetatables[VehiclePart.class] = { __index = __VehiclePart }
 
 zombie.vehicles.VehiclePart = VehiclePart

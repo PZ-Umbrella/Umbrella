@@ -15,6 +15,6 @@ function RDSZombieLockedBathroom.new() end
 ---@type Class<RDSZombieLockedBathroom>
 RDSZombieLockedBathroom.class = nil
 
-__classmetatables[RDSZombieLockedBathroom.class] = {__index = __RDSZombieLockedBathroom}
+__classmetatables[RDSZombieLockedBathroom.class] = { __index = __RDSZombieLockedBathroom }
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSZombieLockedBathroom = RDSZombieLockedBathroom

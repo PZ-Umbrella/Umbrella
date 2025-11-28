@@ -17,6 +17,6 @@ function WorldMapGridSquareMarker.new() end
 ---@type Class<WorldMapGridSquareMarker>
 WorldMapGridSquareMarker.class = nil
 
-__classmetatables[WorldMapGridSquareMarker.class] = {__index = __WorldMapGridSquareMarker}
+__classmetatables[WorldMapGridSquareMarker.class] = { __index = __WorldMapGridSquareMarker }
 
 zombie.worldMap.markers.WorldMapGridSquareMarker = WorldMapGridSquareMarker

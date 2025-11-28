@@ -54,6 +54,6 @@ SpriteConfig = {}
 ---@type Class<SpriteConfig>
 SpriteConfig.class = nil
 
-__classmetatables[SpriteConfig.class] = {__index = __SpriteConfig}
+__classmetatables[SpriteConfig.class] = { __index = __SpriteConfig }
 
 zombie.entity.components.spriteconfig.SpriteConfig = SpriteConfig

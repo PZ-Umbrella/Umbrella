@@ -160,6 +160,6 @@ function IsoUtils.new() end
 ---@type Class<IsoUtils>
 IsoUtils.class = nil
 
-__classmetatables[IsoUtils.class] = {__index = __IsoUtils}
+__classmetatables[IsoUtils.class] = { __index = __IsoUtils }
 
 zombie.iso.IsoUtils = IsoUtils

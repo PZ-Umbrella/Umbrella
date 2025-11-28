@@ -36,6 +36,6 @@ function FaceScript.new() end
 ---@type Class<SpriteConfigScript.FaceScript>
 FaceScript.class = nil
 
-__classmetatables[FaceScript.class] = {__index = __FaceScript}
+__classmetatables[FaceScript.class] = { __index = __FaceScript }
 
 zombie.scripting.entity.components.spriteconfig.SpriteConfigScript.FaceScript = FaceScript

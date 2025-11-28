@@ -87,6 +87,6 @@ function Role.new(arg0) end
 ---@type Class<Role>
 Role.class = nil
 
-__classmetatables[Role.class] = {__index = __Role}
+__classmetatables[Role.class] = { __index = __Role }
 
 zombie.characters.Role = Role

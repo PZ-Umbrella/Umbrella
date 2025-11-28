@@ -29,6 +29,6 @@ function MusicIntensityEvent.new(arg0, arg1, arg2) end
 ---@type Class<MusicIntensityEvent>
 MusicIntensityEvent.class = nil
 
-__classmetatables[MusicIntensityEvent.class] = {__index = __MusicIntensityEvent}
+__classmetatables[MusicIntensityEvent.class] = { __index = __MusicIntensityEvent }
 
 zombie.audio.MusicIntensityEvent = MusicIntensityEvent

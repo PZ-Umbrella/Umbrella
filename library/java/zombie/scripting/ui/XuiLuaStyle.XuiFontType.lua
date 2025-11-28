@@ -8,6 +8,6 @@ XuiFontType = {}
 ---@type Class<XuiLuaStyle.XuiFontType>
 XuiFontType.class = nil
 
-__classmetatables[XuiFontType.class] = {__index = __XuiFontType}
+__classmetatables[XuiFontType.class] = { __index = __XuiFontType }
 
 zombie.scripting.ui.XuiLuaStyle.XuiFontType = XuiFontType

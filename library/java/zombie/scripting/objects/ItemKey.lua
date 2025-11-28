@@ -33,6 +33,6 @@ function ItemKey.new(arg0, arg1) end
 ---@type Class<ItemKey>
 ItemKey.class = nil
 
-__classmetatables[ItemKey.class] = {__index = __ItemKey}
+__classmetatables[ItemKey.class] = { __index = __ItemKey }
 
 zombie.scripting.objects.ItemKey = ItemKey

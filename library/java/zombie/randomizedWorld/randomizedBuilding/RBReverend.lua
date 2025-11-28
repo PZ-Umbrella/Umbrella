@@ -23,6 +23,6 @@ function RBReverend.new() end
 ---@type Class<RBReverend>
 RBReverend.class = nil
 
-__classmetatables[RBReverend.class] = {__index = __RBReverend}
+__classmetatables[RBReverend.class] = { __index = __RBReverend }
 
 zombie.randomizedWorld.randomizedBuilding.RBReverend = RBReverend

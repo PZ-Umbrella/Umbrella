@@ -135,6 +135,6 @@ WorldMapPolygonStyleLayerV1 = {}
 ---@type Class<WorldMapStyleV1.WorldMapPolygonStyleLayerV1>
 WorldMapPolygonStyleLayerV1.class = nil
 
-__classmetatables[WorldMapPolygonStyleLayerV1.class] = {__index = __WorldMapPolygonStyleLayerV1}
+__classmetatables[WorldMapPolygonStyleLayerV1.class] = { __index = __WorldMapPolygonStyleLayerV1 }
 
 zombie.worldMap.styles.WorldMapStyleV1.WorldMapPolygonStyleLayerV1 = WorldMapPolygonStyleLayerV1

@@ -14,6 +14,6 @@ function RZSMurderScene.new() end
 ---@type Class<RZSMurderScene>
 RZSMurderScene.class = nil
 
-__classmetatables[RZSMurderScene.class] = {__index = __RZSMurderScene}
+__classmetatables[RZSMurderScene.class] = { __index = __RZSMurderScene }
 
 zombie.randomizedWorld.randomizedZoneStory.RZSMurderScene = RZSMurderScene

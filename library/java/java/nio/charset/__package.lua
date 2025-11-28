@@ -4,7 +4,7 @@
 ---An engine that can transform a sequence of bytes in a specific charset into a sequence of
 --- sixteen-bit Unicode characters.
 ---
---- 
+---
 ---
 ---  The input byte sequence is provided in a byte buffer or a series
 --- of such buffers.  The output character sequence is written to a character buffer
@@ -12,23 +12,23 @@
 --- the following sequence of method invocations, hereinafter referred to as a
 --- decoding operation:
 ---
---- 
+---
 ---
 ---    Reset the decoder via the reset method, unless it
----   has not been used before; 
+---   has not been used before;
 ---
 ---    Invoke the decode method zero or more times, as
 ---   long as additional input may be available, passing false for the
 ---   endOfInput argument and filling the input buffer and flushing the
----   output buffer between invocations; 
+---   output buffer between invocations;
 ---
 ---    Invoke the decode method one final time, passing
----   true for the endOfInput argument; and then 
+---   true for the endOfInput argument; and then
 ---
 ---    Invoke the flush method so that the decoder can
----   flush any internal state to the output buffer. 
+---   flush any internal state to the output buffer.
 ---
---- 
+---
 ---
 --- Each invocation of the decode method will decode as many
 --- bytes as possible from the input buffer, writing the resulting characters
@@ -39,14 +39,14 @@
 --- examine this object and fill the input buffer, flush the output buffer, or
 --- attempt to recover from a decoding error, as appropriate, and try again.
 ---
---- 
+---
 ---
 ---  There are two general types of decoding errors.  If the input byte
 --- sequence is not legal for this charset then the input is considered malformed.  If
 --- the input byte sequence is legal but cannot be mapped to a valid
 --- Unicode character then an unmappable character has been encountered.
 ---
---- 
+---
 ---
 ---  How a decoding error is handled depends upon the action requested for
 --- that type of error, which is described by an instance of the CodingErrorAction class.  The possible error actions are to ignore the erroneous input, report the error to the invoker via

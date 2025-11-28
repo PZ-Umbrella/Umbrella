@@ -14,7 +14,7 @@
 ---
 --- In addition to these and related methods for directly
 --- manipulating status and results, CompletableFuture implements
---- interface CompletionStage with the following policies: 
+--- interface CompletionStage with the following policies:
 ---
 --- Actions supplied for dependent completions of
 --- non-async methods may be performed by the thread that
@@ -44,10 +44,10 @@
 --- CompletionStage, use method minimalCompletionStage(). Or to
 --- ensure only that clients do not themselves modify a future, use
 --- method copy().
---- 
+---
 ---
 --- CompletableFuture also implements Future with the following
---- policies: 
+--- policies:
 ---
 --- Since (unlike FutureTask) this class has no direct
 --- control over the computation that causes it to be completed,
@@ -64,7 +64,7 @@
 --- contexts, this class also defines methods join() and
 --- getNow(T) that instead throw the CompletionException directly
 --- in these cases.
---- 
+---
 ---
 --- Arguments used to pass a completion result (that is, for
 --- parameters of type T) for methods accepting them may be
@@ -113,7 +113,7 @@
 --- Bulk operations that add, remove, or examine multiple elements,
 --- such as addAll(java.util.Collection<? extends E>), removeIf(java.util.function.Predicate<? super E>) or forEach(java.util.function.Consumer<? super E>),
 --- are not guaranteed to be performed atomically.
---- For example, a forEach traversal concurrent with an 
+--- For example, a forEach traversal concurrent with an
 --- addAll operation might observe only some of the added elements.
 ---
 --- This class and its iterator implement all of the optional
@@ -127,7 +127,7 @@
 --- the ConcurrentLinkedDeque in another thread.
 ---
 --- This class is a member of the
---- 
+---
 --- Java Collections Framework.
 ---@class ConcurrentLinkedDeque<E>
 
@@ -147,7 +147,7 @@
 ---
 --- This implementation employs an efficient non-blocking
 --- algorithm based on one described in
---- 
+---
 --- Simple, Fast, and Practical Non-Blocking and Blocking Concurrent Queue
 --- Algorithms by Maged M. Michael and Michael L. Scott.
 ---
@@ -166,7 +166,7 @@
 --- Bulk operations that add, remove, or examine multiple elements,
 --- such as addAll(java.util.Collection<? extends E>), removeIf(java.util.function.Predicate<? super E>) or forEach(java.util.function.Consumer<? super E>),
 --- are not guaranteed to be performed atomically.
---- For example, a forEach traversal concurrent with an 
+--- For example, a forEach traversal concurrent with an
 --- addAll operation might observe only some of the added elements.
 ---
 --- This class and its iterator implement all of the optional
@@ -180,7 +180,7 @@
 --- the ConcurrentLinkedQueue in another thread.
 ---
 --- This class is a member of the
---- 
+---
 --- Java Collections Framework.
 ---@class ConcurrentLinkedQueue<E>
 
@@ -202,6 +202,6 @@
 --- the ConcurrentMap in another thread.
 ---
 --- This interface is a member of the
---- 
+---
 --- Java Collections Framework.
 ---@class ConcurrentMap<K, V>

@@ -43,6 +43,6 @@ function IsoBrokenGlass.new(cell) end
 ---@type Class<IsoBrokenGlass>
 IsoBrokenGlass.class = nil
 
-__classmetatables[IsoBrokenGlass.class] = {__index = __IsoBrokenGlass}
+__classmetatables[IsoBrokenGlass.class] = { __index = __IsoBrokenGlass }
 
 zombie.iso.objects.IsoBrokenGlass = IsoBrokenGlass

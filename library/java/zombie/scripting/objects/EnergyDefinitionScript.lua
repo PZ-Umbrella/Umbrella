@@ -65,6 +65,6 @@ function EnergyDefinitionScript.getDefaultVerticalBarTexture() end
 ---@type Class<EnergyDefinitionScript>
 EnergyDefinitionScript.class = nil
 
-__classmetatables[EnergyDefinitionScript.class] = {__index = __EnergyDefinitionScript}
+__classmetatables[EnergyDefinitionScript.class] = { __index = __EnergyDefinitionScript }
 
 zombie.scripting.objects.EnergyDefinitionScript = EnergyDefinitionScript

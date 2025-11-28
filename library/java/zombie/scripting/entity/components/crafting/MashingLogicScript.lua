@@ -34,6 +34,6 @@ MashingLogicScript = {}
 ---@type Class<MashingLogicScript>
 MashingLogicScript.class = nil
 
-__classmetatables[MashingLogicScript.class] = {__index = __MashingLogicScript}
+__classmetatables[MashingLogicScript.class] = { __index = __MashingLogicScript }
 
 zombie.scripting.entity.components.crafting.MashingLogicScript = MashingLogicScript

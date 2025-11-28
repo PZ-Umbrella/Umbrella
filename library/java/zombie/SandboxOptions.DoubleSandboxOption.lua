@@ -53,6 +53,6 @@ function DoubleSandboxOption.new(owner, name, min, max, defaultValue) end
 ---@type Class<SandboxOptions.DoubleSandboxOption>
 DoubleSandboxOption.class = nil
 
-__classmetatables[DoubleSandboxOption.class] = {__index = __DoubleSandboxOption}
+__classmetatables[DoubleSandboxOption.class] = { __index = __DoubleSandboxOption }
 
 zombie.SandboxOptions.DoubleSandboxOption = DoubleSandboxOption

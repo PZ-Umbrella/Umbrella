@@ -17,6 +17,6 @@ function SliceY.new() end
 ---@type Class<SliceY>
 SliceY.class = nil
 
-__classmetatables[SliceY.class] = {__index = __SliceY}
+__classmetatables[SliceY.class] = { __index = __SliceY }
 
 zombie.iso.SliceY = SliceY

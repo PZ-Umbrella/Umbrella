@@ -31,6 +31,6 @@ Byte = {}
 ---@type Class<AttributeType.Byte>
 Byte.class = nil
 
-__classmetatables[Byte.class] = {__index = __Byte}
+__classmetatables[Byte.class] = { __index = __Byte }
 
 zombie.entity.components.attributes.AttributeType.Byte = Byte

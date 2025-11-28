@@ -296,6 +296,6 @@ function Integer.new(s) end
 ---@type Class<Integer>
 Integer.class = nil
 
-__classmetatables[Integer.class] = {__index = __Integer}
+__classmetatables[Integer.class] = { __index = __Integer }
 
 java.lang.Integer = Integer

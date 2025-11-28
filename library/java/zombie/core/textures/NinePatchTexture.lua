@@ -103,6 +103,6 @@ function NinePatchTexture.onTexturePacksChanged() end
 ---@type Class<NinePatchTexture>
 NinePatchTexture.class = nil
 
-__classmetatables[NinePatchTexture.class] = {__index = __NinePatchTexture}
+__classmetatables[NinePatchTexture.class] = { __index = __NinePatchTexture }
 
 zombie.core.textures.NinePatchTexture = NinePatchTexture

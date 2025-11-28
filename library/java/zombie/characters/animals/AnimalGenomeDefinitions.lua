@@ -22,6 +22,6 @@ function AnimalGenomeDefinitions.new() end
 ---@type Class<AnimalGenomeDefinitions>
 AnimalGenomeDefinitions.class = nil
 
-__classmetatables[AnimalGenomeDefinitions.class] = {__index = __AnimalGenomeDefinitions}
+__classmetatables[AnimalGenomeDefinitions.class] = { __index = __AnimalGenomeDefinitions }
 
 zombie.characters.animals.AnimalGenomeDefinitions = AnimalGenomeDefinitions

@@ -14,6 +14,6 @@ function RZSWaterPump.new() end
 ---@type Class<RZSWaterPump>
 RZSWaterPump.class = nil
 
-__classmetatables[RZSWaterPump.class] = {__index = __RZSWaterPump}
+__classmetatables[RZSWaterPump.class] = { __index = __RZSWaterPump }
 
 zombie.randomizedWorld.randomizedZoneStory.RZSWaterPump = RZSWaterPump

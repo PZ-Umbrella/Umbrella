@@ -136,6 +136,6 @@ function IsoDirections.values() end
 ---@type Class<IsoDirections>
 IsoDirections.class = nil
 
-__classmetatables[IsoDirections.class] = {__index = __IsoDirections}
+__classmetatables[IsoDirections.class] = { __index = __IsoDirections }
 
 zombie.iso.IsoDirections = IsoDirections

@@ -33,6 +33,6 @@ function MoodlesUI.new() end
 ---@type Class<MoodlesUI>
 MoodlesUI.class = nil
 
-__classmetatables[MoodlesUI.class] = {__index = __MoodlesUI}
+__classmetatables[MoodlesUI.class] = { __index = __MoodlesUI }
 
 zombie.ui.MoodlesUI = MoodlesUI

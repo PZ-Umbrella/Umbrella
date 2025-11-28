@@ -24,6 +24,6 @@ function ItemApplyMode.values() end
 ---@type Class<ItemApplyMode>
 ItemApplyMode.class = nil
 
-__classmetatables[ItemApplyMode.class] = {__index = __ItemApplyMode}
+__classmetatables[ItemApplyMode.class] = { __index = __ItemApplyMode }
 
 zombie.entity.components.crafting.ItemApplyMode = ItemApplyMode

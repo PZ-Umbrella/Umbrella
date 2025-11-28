@@ -581,6 +581,6 @@ function IsoWorld.new() end
 ---@type Class<IsoWorld>
 IsoWorld.class = nil
 
-__classmetatables[IsoWorld.class] = {__index = __IsoWorld}
+__classmetatables[IsoWorld.class] = { __index = __IsoWorld }
 
 zombie.iso.IsoWorld = IsoWorld

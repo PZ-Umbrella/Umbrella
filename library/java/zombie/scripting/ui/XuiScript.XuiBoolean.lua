@@ -8,6 +8,6 @@ XuiBoolean = {}
 ---@type Class<XuiScript.XuiBoolean>
 XuiBoolean.class = nil
 
-__classmetatables[XuiBoolean.class] = {__index = __XuiBoolean}
+__classmetatables[XuiBoolean.class] = { __index = __XuiBoolean }
 
 zombie.scripting.ui.XuiScript.XuiBoolean = XuiBoolean

@@ -10,7 +10,7 @@
 --- modified UTF-8
 --- format and writing the resulting series
 --- of bytes.
---- 
+---
 --- For all the methods in this interface that
 --- write bytes, it is generally true that if
 --- a byte cannot be written for any reason,
@@ -207,7 +207,7 @@ function __DataOutput:writeLong(v) end
 --- <code>
 --- (byte)(0xff & (v >> 8))
 --- (byte)(0xff & v)
---- </code> 
+--- </code>
 --- The bytes written by this method may be
 --- read by the readShort method
 --- of interface DataInput, which
@@ -232,7 +232,7 @@ function __DataOutput:writeShort(v) end
 --- is in the range &#92;u0001 through
 --- &#92;u007f, it is represented
 --- by one byte:
---- (byte)c   
+--- (byte)c
 --- If a character c is &#92;u0000
 --- or is in the range &#92;u0080
 --- through &#92;u07ff, then it is

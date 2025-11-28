@@ -387,6 +387,6 @@ function CraftRecipeData.new(arg0, arg1, arg2, arg3, arg4) end
 ---@type Class<CraftRecipeData>
 CraftRecipeData.class = nil
 
-__classmetatables[CraftRecipeData.class] = {__index = __CraftRecipeData}
+__classmetatables[CraftRecipeData.class] = { __index = __CraftRecipeData }
 
 zombie.entity.components.crafting.recipe.CraftRecipeData = CraftRecipeData

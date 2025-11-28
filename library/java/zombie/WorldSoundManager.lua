@@ -49,7 +49,21 @@ function __WorldSoundManager:addSound(source, x, y, z, radius, volume, stressHum
 ---@param doSend boolean
 ---@param remote boolean
 ---@return WorldSoundManager.WorldSound
-function __WorldSoundManager:addSound(source, x, y, z, radius, volume, stressHumans, zombieIgnoreDist, stressMod, sourceIsZombie, doSend, remote) end
+function __WorldSoundManager:addSound(
+	source,
+	x,
+	y,
+	z,
+	radius,
+	volume,
+	stressHumans,
+	zombieIgnoreDist,
+	stressMod,
+	sourceIsZombie,
+	doSend,
+	remote
+)
+end
 
 ---@param arg0 any
 ---@param arg1 integer
@@ -65,7 +79,22 @@ function __WorldSoundManager:addSound(source, x, y, z, radius, volume, stressHum
 ---@param arg11 boolean
 ---@param arg12 boolean
 ---@return WorldSoundManager.WorldSound
-function __WorldSoundManager:addSound(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12) end
+function __WorldSoundManager:addSound(
+	arg0,
+	arg1,
+	arg2,
+	arg3,
+	arg4,
+	arg5,
+	arg6,
+	arg7,
+	arg8,
+	arg9,
+	arg10,
+	arg11,
+	arg12
+)
+end
 
 ---@param arg0 any
 ---@param arg1 integer
@@ -152,6 +181,6 @@ function WorldSoundManager.new() end
 ---@type Class<WorldSoundManager>
 WorldSoundManager.class = nil
 
-__classmetatables[WorldSoundManager.class] = {__index = __WorldSoundManager}
+__classmetatables[WorldSoundManager.class] = { __index = __WorldSoundManager }
 
 zombie.WorldSoundManager = WorldSoundManager

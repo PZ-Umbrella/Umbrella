@@ -35,6 +35,6 @@ function PhysicsShape.new() end
 ---@type Class<VehicleScript.PhysicsShape>
 PhysicsShape.class = nil
 
-__classmetatables[PhysicsShape.class] = {__index = __PhysicsShape}
+__classmetatables[PhysicsShape.class] = { __index = __PhysicsShape }
 
 zombie.scripting.objects.VehicleScript.PhysicsShape = PhysicsShape

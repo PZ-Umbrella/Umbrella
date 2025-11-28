@@ -36,6 +36,6 @@ function PlayerShearAnimalState.new() end
 ---@type Class<PlayerShearAnimalState>
 PlayerShearAnimalState.class = nil
 
-__classmetatables[PlayerShearAnimalState.class] = {__index = __PlayerShearAnimalState}
+__classmetatables[PlayerShearAnimalState.class] = { __index = __PlayerShearAnimalState }
 
 zombie.ai.states.player.PlayerShearAnimalState = PlayerShearAnimalState

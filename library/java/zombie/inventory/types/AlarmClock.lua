@@ -104,6 +104,6 @@ function AlarmClock.new(module, name, itemType, item) end
 ---@type Class<AlarmClock>
 AlarmClock.class = nil
 
-__classmetatables[AlarmClock.class] = {__index = __AlarmClock}
+__classmetatables[AlarmClock.class] = { __index = __AlarmClock }
 
 zombie.inventory.types.AlarmClock = AlarmClock

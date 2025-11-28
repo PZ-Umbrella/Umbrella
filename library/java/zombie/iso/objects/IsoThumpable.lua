@@ -579,6 +579,6 @@ function IsoThumpable.new(arg0, arg1, arg2, arg3) end
 ---@type Class<IsoThumpable>
 IsoThumpable.class = nil
 
-__classmetatables[IsoThumpable.class] = {__index = __IsoThumpable}
+__classmetatables[IsoThumpable.class] = { __index = __IsoThumpable }
 
 zombie.iso.objects.IsoThumpable = IsoThumpable

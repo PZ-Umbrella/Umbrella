@@ -21,6 +21,6 @@ function CraftMode.values() end
 ---@type Class<CraftMode>
 CraftMode.class = nil
 
-__classmetatables[CraftMode.class] = {__index = __CraftMode}
+__classmetatables[CraftMode.class] = { __index = __CraftMode }
 
 zombie.entity.components.crafting.CraftMode = CraftMode

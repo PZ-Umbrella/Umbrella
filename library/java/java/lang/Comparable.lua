@@ -38,10 +38,10 @@
 ---
 --- Virtually all Java core classes that implement Comparable
 --- have natural orderings that are consistent with equals.  One
---- exception is BigDecimal, whose natural ordering equates 
+--- exception is BigDecimal, whose natural ordering equates
 --- BigDecimal objects with equal numerical values and different
 --- representations (such as 4.0 and 4.00). For BigDecimal.equals() to return true,
---- the representation and numerical value of the two 
+--- the representation and numerical value of the two
 --- BigDecimal objects must be the same.
 ---
 --- For the mathematically inclined, the relation that defines
@@ -57,7 +57,7 @@
 --- class's natural ordering is consistent with equals, we mean that the
 --- quotient for the natural ordering is the equivalence relation defined by
 --- the class's equals(Object) method:
----     {(x, y) such that x.equals(y)}. 
+---     {(x, y) such that x.equals(y)}.
 ---
 --- In other words, when a class's natural ordering is consistent with
 --- equals, the equivalence classes defined by the equivalence relation
@@ -65,7 +65,7 @@
 --- the quotient of the compareTo method are the same.
 ---
 --- This interface is a member of the
---- 
+---
 --- Java Collections Framework.
 ---@class Comparable<T>
 local __Comparable = {}
@@ -75,15 +75,15 @@ local __Comparable = {}
 --- than, equal to, or greater than the specified object.
 ---
 --- The implementor must ensure signum(x.compareTo(y)) == -signum(y.compareTo(x)) for
---- all x and y.  (This implies that 
---- x.compareTo(y) must throw an exception if and only if 
+--- all x and y.  (This implies that
+--- x.compareTo(y) must throw an exception if and only if
 --- y.compareTo(x) throws an exception.)
 ---
 --- The implementor must also ensure that the relation is transitive:
 --- (x.compareTo(y) > 0 && y.compareTo(z) > 0) implies
 --- x.compareTo(z) > 0.
 ---
---- Finally, the implementor must ensure that 
+--- Finally, the implementor must ensure that
 --- x.compareTo(y)==0 implies that signum(x.compareTo(z))
 --- == signum(y.compareTo(z)), for all z.
 ---@param o T the object to be compared.

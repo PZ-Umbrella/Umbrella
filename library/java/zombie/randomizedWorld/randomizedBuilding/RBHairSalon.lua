@@ -25,6 +25,6 @@ function RBHairSalon.new() end
 ---@type Class<RBHairSalon>
 RBHairSalon.class = nil
 
-__classmetatables[RBHairSalon.class] = {__index = __RBHairSalon}
+__classmetatables[RBHairSalon.class] = { __index = __RBHairSalon }
 
 zombie.randomizedWorld.randomizedBuilding.RBHairSalon = RBHairSalon

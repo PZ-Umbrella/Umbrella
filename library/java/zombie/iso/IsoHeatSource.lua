@@ -47,6 +47,6 @@ function IsoHeatSource.new(x, y, z, radius, temperature) end
 ---@type Class<IsoHeatSource>
 IsoHeatSource.class = nil
 
-__classmetatables[IsoHeatSource.class] = {__index = __IsoHeatSource}
+__classmetatables[IsoHeatSource.class] = { __index = __IsoHeatSource }
 
 zombie.iso.IsoHeatSource = IsoHeatSource

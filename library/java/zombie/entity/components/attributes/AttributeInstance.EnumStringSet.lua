@@ -61,6 +61,6 @@ function EnumStringSet.new() end
 ---@type Class<AttributeInstance.EnumStringSet>
 EnumStringSet.class = nil
 
-__classmetatables[EnumStringSet.class] = {__index = __EnumStringSet}
+__classmetatables[EnumStringSet.class] = { __index = __EnumStringSet }
 
 zombie.entity.components.attributes.AttributeInstance.EnumStringSet = EnumStringSet

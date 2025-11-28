@@ -79,6 +79,6 @@ function Fitness.new(parent) end
 ---@type Class<Fitness>
 Fitness.class = nil
 
-__classmetatables[Fitness.class] = {__index = __Fitness}
+__classmetatables[Fitness.class] = { __index = __Fitness }
 
 zombie.characters.BodyDamage.Fitness = Fitness

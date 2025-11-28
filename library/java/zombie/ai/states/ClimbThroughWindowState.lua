@@ -124,6 +124,6 @@ function ClimbThroughWindowState.new() end
 ---@type Class<ClimbThroughWindowState>
 ClimbThroughWindowState.class = nil
 
-__classmetatables[ClimbThroughWindowState.class] = {__index = __ClimbThroughWindowState}
+__classmetatables[ClimbThroughWindowState.class] = { __index = __ClimbThroughWindowState }
 
 zombie.ai.states.ClimbThroughWindowState = ClimbThroughWindowState

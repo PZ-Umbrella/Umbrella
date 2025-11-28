@@ -31,6 +31,6 @@ Short = {}
 ---@type Class<AttributeType.Short>
 Short.class = nil
 
-__classmetatables[Short.class] = {__index = __Short}
+__classmetatables[Short.class] = { __index = __Short }
 
 zombie.entity.components.attributes.AttributeType.Short = Short

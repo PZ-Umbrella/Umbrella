@@ -231,6 +231,6 @@ function UIWorldMapV1.new(ui) end
 ---@type Class<UIWorldMapV1>
 UIWorldMapV1.class = nil
 
-__classmetatables[UIWorldMapV1.class] = {__index = __UIWorldMapV1}
+__classmetatables[UIWorldMapV1.class] = { __index = __UIWorldMapV1 }
 
 zombie.worldMap.UIWorldMapV1 = UIWorldMapV1

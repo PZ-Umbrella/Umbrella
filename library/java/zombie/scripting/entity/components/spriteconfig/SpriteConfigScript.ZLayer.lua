@@ -18,6 +18,6 @@ function ZLayer.new() end
 ---@type Class<SpriteConfigScript.ZLayer>
 ZLayer.class = nil
 
-__classmetatables[ZLayer.class] = {__index = __ZLayer}
+__classmetatables[ZLayer.class] = { __index = __ZLayer }
 
 zombie.scripting.entity.components.spriteconfig.SpriteConfigScript.ZLayer = ZLayer

@@ -32,6 +32,6 @@ function DBResult.new() end
 ---@type Class<DBResult>
 DBResult.class = nil
 
-__classmetatables[DBResult.class] = {__index = __DBResult}
+__classmetatables[DBResult.class] = { __index = __DBResult }
 
 zombie.network.DBResult = DBResult

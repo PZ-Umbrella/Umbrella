@@ -329,6 +329,6 @@ function DeviceData.new(parent) end
 ---@type Class<DeviceData>
 DeviceData.class = nil
 
-__classmetatables[DeviceData.class] = {__index = __DeviceData}
+__classmetatables[DeviceData.class] = { __index = __DeviceData }
 
 zombie.radio.devices.DeviceData = DeviceData

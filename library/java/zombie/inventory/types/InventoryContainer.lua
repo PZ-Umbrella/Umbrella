@@ -98,6 +98,6 @@ function InventoryContainer.new(module, name, itemType, texName) end
 ---@type Class<InventoryContainer>
 InventoryContainer.class = nil
 
-__classmetatables[InventoryContainer.class] = {__index = __InventoryContainer}
+__classmetatables[InventoryContainer.class] = { __index = __InventoryContainer }
 
 zombie.inventory.types.InventoryContainer = InventoryContainer

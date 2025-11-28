@@ -31,6 +31,6 @@ function DummySoundBank.new() end
 ---@type Class<DummySoundBank>
 DummySoundBank.class = nil
 
-__classmetatables[DummySoundBank.class] = {__index = __DummySoundBank}
+__classmetatables[DummySoundBank.class] = { __index = __DummySoundBank }
 
 zombie.audio.DummySoundBank = DummySoundBank

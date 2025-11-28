@@ -39,6 +39,6 @@ function IsoZombieGiblets.new(type, cell, x, y, z, xvel, yvel) end
 ---@type Class<IsoZombieGiblets>
 IsoZombieGiblets.class = nil
 
-__classmetatables[IsoZombieGiblets.class] = {__index = __IsoZombieGiblets}
+__classmetatables[IsoZombieGiblets.class] = { __index = __IsoZombieGiblets }
 
 zombie.iso.objects.IsoZombieGiblets = IsoZombieGiblets

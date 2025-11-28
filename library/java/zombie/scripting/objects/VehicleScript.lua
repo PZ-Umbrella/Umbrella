@@ -419,6 +419,6 @@ function VehicleScript.new() end
 ---@type Class<VehicleScript>
 VehicleScript.class = nil
 
-__classmetatables[VehicleScript.class] = {__index = __VehicleScript}
+__classmetatables[VehicleScript.class] = { __index = __VehicleScript }
 
 zombie.scripting.objects.VehicleScript = VehicleScript

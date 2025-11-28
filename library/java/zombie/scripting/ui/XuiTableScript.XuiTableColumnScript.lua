@@ -14,6 +14,6 @@ function XuiTableColumnScript.new(arg0, arg1, arg2) end
 ---@type Class<XuiTableScript.XuiTableColumnScript>
 XuiTableColumnScript.class = nil
 
-__classmetatables[XuiTableColumnScript.class] = {__index = __XuiTableColumnScript}
+__classmetatables[XuiTableColumnScript.class] = { __index = __XuiTableColumnScript }
 
 zombie.scripting.ui.XuiTableScript.XuiTableColumnScript = XuiTableColumnScript

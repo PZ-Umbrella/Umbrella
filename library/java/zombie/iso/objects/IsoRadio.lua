@@ -21,6 +21,6 @@ function IsoRadio.new(cell, sq, spr) end
 ---@type Class<IsoRadio>
 IsoRadio.class = nil
 
-__classmetatables[IsoRadio.class] = {__index = __IsoRadio}
+__classmetatables[IsoRadio.class] = { __index = __IsoRadio }
 
 zombie.iso.objects.IsoRadio = IsoRadio

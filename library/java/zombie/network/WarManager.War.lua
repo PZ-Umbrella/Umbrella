@@ -43,6 +43,6 @@ function War.new(arg0, arg1, arg2, arg3) end
 ---@type Class<WarManager.War>
 War.class = nil
 
-__classmetatables[War.class] = {__index = __War}
+__classmetatables[War.class] = { __index = __War }
 
 zombie.network.WarManager.War = War

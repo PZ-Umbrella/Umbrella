@@ -470,6 +470,6 @@ function Keyboard.new() end
 ---@type Class<Keyboard>
 Keyboard.class = nil
 
-__classmetatables[Keyboard.class] = {__index = __Keyboard}
+__classmetatables[Keyboard.class] = { __index = __Keyboard }
 
 org.lwjglx.input.Keyboard = Keyboard

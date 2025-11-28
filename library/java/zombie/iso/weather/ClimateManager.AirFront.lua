@@ -47,6 +47,6 @@ function AirFront.new() end
 ---@type Class<ClimateManager.AirFront>
 AirFront.class = nil
 
-__classmetatables[AirFront.class] = {__index = __AirFront}
+__classmetatables[AirFront.class] = { __index = __AirFront }
 
 zombie.iso.weather.ClimateManager.AirFront = AirFront

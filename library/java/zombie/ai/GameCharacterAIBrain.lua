@@ -59,6 +59,6 @@ function GameCharacterAIBrain.new(character) end
 ---@type Class<GameCharacterAIBrain>
 GameCharacterAIBrain.class = nil
 
-__classmetatables[GameCharacterAIBrain.class] = {__index = __GameCharacterAIBrain}
+__classmetatables[GameCharacterAIBrain.class] = { __index = __GameCharacterAIBrain }
 
 zombie.ai.GameCharacterAIBrain = GameCharacterAIBrain

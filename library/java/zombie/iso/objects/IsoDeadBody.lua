@@ -416,6 +416,6 @@ function IsoDeadBody.new(cell) end
 ---@type Class<IsoDeadBody>
 IsoDeadBody.class = nil
 
-__classmetatables[IsoDeadBody.class] = {__index = __IsoDeadBody}
+__classmetatables[IsoDeadBody.class] = { __index = __IsoDeadBody }
 
 zombie.iso.objects.IsoDeadBody = IsoDeadBody

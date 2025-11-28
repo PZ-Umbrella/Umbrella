@@ -173,6 +173,6 @@ function DummySoundEmitter.new() end
 ---@type Class<DummySoundEmitter>
 DummySoundEmitter.class = nil
 
-__classmetatables[DummySoundEmitter.class] = {__index = __DummySoundEmitter}
+__classmetatables[DummySoundEmitter.class] = { __index = __DummySoundEmitter }
 
 zombie.audio.DummySoundEmitter = DummySoundEmitter

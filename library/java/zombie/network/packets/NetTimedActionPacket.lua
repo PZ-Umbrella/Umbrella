@@ -18,6 +18,6 @@ function NetTimedActionPacket.new() end
 ---@type Class<NetTimedActionPacket>
 NetTimedActionPacket.class = nil
 
-__classmetatables[NetTimedActionPacket.class] = {__index = __NetTimedActionPacket}
+__classmetatables[NetTimedActionPacket.class] = { __index = __NetTimedActionPacket }
 
 zombie.network.packets.NetTimedActionPacket = NetTimedActionPacket

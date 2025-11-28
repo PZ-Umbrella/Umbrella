@@ -58,6 +58,6 @@ function ResourceChannel.values() end
 ---@type Class<ResourceChannel>
 ResourceChannel.class = nil
 
-__classmetatables[ResourceChannel.class] = {__index = __ResourceChannel}
+__classmetatables[ResourceChannel.class] = { __index = __ResourceChannel }
 
 zombie.entity.components.resources.ResourceChannel = ResourceChannel

@@ -19,6 +19,6 @@ function RuntimeAnimationScript.new() end
 ---@type Class<RuntimeAnimationScript>
 RuntimeAnimationScript.class = nil
 
-__classmetatables[RuntimeAnimationScript.class] = {__index = __RuntimeAnimationScript}
+__classmetatables[RuntimeAnimationScript.class] = { __index = __RuntimeAnimationScript }
 
 zombie.core.skinnedmodel.runtime.RuntimeAnimationScript = RuntimeAnimationScript

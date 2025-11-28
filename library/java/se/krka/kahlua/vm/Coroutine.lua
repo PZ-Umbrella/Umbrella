@@ -130,6 +130,6 @@ function Coroutine.new(arg0, arg1) end
 ---@type Class<Coroutine>
 Coroutine.class = nil
 
-__classmetatables[Coroutine.class] = {__index = __Coroutine}
+__classmetatables[Coroutine.class] = { __index = __Coroutine }
 
 se.krka.kahlua.vm.Coroutine = Coroutine

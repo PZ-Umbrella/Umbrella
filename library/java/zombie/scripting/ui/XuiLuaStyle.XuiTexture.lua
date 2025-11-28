@@ -11,6 +11,6 @@ XuiTexture = {}
 ---@type Class<XuiLuaStyle.XuiTexture>
 XuiTexture.class = nil
 
-__classmetatables[XuiTexture.class] = {__index = __XuiTexture}
+__classmetatables[XuiTexture.class] = { __index = __XuiTexture }
 
 zombie.scripting.ui.XuiLuaStyle.XuiTexture = XuiTexture

@@ -42,6 +42,6 @@ function IsoSpriteManager.new() end
 ---@type Class<IsoSpriteManager>
 IsoSpriteManager.class = nil
 
-__classmetatables[IsoSpriteManager.class] = {__index = __IsoSpriteManager}
+__classmetatables[IsoSpriteManager.class] = { __index = __IsoSpriteManager }
 
 zombie.iso.sprite.IsoSpriteManager = IsoSpriteManager

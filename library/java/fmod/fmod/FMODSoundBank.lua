@@ -31,6 +31,6 @@ function FMODSoundBank.new() end
 ---@type Class<FMODSoundBank>
 FMODSoundBank.class = nil
 
-__classmetatables[FMODSoundBank.class] = {__index = __FMODSoundBank}
+__classmetatables[FMODSoundBank.class] = { __index = __FMODSoundBank }
 
 fmod.fmod.FMODSoundBank = FMODSoundBank

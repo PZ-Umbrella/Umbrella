@@ -125,6 +125,6 @@ function HandcraftLogic.new(arg0, arg1, arg2) end
 ---@type Class<HandcraftLogic>
 HandcraftLogic.class = nil
 
-__classmetatables[HandcraftLogic.class] = {__index = __HandcraftLogic}
+__classmetatables[HandcraftLogic.class] = { __index = __HandcraftLogic }
 
 zombie.entity.components.crafting.recipe.HandcraftLogic = HandcraftLogic

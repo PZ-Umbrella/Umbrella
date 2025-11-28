@@ -176,6 +176,6 @@ function KahluaUtil.new() end
 ---@type Class<KahluaUtil>
 KahluaUtil.class = nil
 
-__classmetatables[KahluaUtil.class] = {__index = __KahluaUtil}
+__classmetatables[KahluaUtil.class] = { __index = __KahluaUtil }
 
 se.krka.kahlua.vm.KahluaUtil = KahluaUtil

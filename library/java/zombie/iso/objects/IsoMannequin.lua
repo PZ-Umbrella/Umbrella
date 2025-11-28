@@ -161,6 +161,6 @@ function IsoMannequin.new(cell, square, sprite) end
 ---@type Class<IsoMannequin>
 IsoMannequin.class = nil
 
-__classmetatables[IsoMannequin.class] = {__index = __IsoMannequin}
+__classmetatables[IsoMannequin.class] = { __index = __IsoMannequin }
 
 zombie.iso.objects.IsoMannequin = IsoMannequin

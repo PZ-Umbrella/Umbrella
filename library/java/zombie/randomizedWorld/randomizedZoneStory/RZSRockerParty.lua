@@ -23,6 +23,6 @@ function RZSRockerParty.new() end
 ---@type Class<RZSRockerParty>
 RZSRockerParty.class = nil
 
-__classmetatables[RZSRockerParty.class] = {__index = __RZSRockerParty}
+__classmetatables[RZSRockerParty.class] = { __index = __RZSRockerParty }
 
 zombie.randomizedWorld.randomizedZoneStory.RZSRockerParty = RZSRockerParty

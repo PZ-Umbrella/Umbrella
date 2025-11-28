@@ -49,7 +49,7 @@ function __Texture:destroy() end
 function __Texture:equals(other) end
 
 ---returns the texture's pixel in a ByteBuffer
---- 
+---
 --- EXAMPLE:
 --- ByteBuffer bb = getData();
 --- byte r, g, b;
@@ -65,9 +65,9 @@ function __Texture:equals(other) end
 --- bb.put((byte)(g+green));
 --- bb.put((byte)(b+blue));
 --- bb.get(); // alpha
---- 
+---
 --- catch (Exception e) {
---- 
+---
 --- setData(bb);
 ---@return WrappedBuffer
 function __Texture:getData() end
@@ -312,7 +312,7 @@ function __Texture:setAlphaForeach(red, green, blue, alpha) end
 function __Texture:setCustomizedTexture() end
 
 ---sets the texture's pixel from a ByteBuffer
---- 
+---
 --- EXAMPLE:
 --- ByteBuffer bb = getData();
 --- byte r, g, b;
@@ -328,9 +328,9 @@ function __Texture:setCustomizedTexture() end
 --- bb.put((byte)(g+green));
 --- bb.put((byte)(b+blue));
 --- bb.get(); // alpha
---- 
+---
 --- catch (Exception e) {
---- 
+---
 --- setData(bb);
 ---@param data ByteBuffer texture's pixel data
 function __Texture:setData(data) end
@@ -606,6 +606,6 @@ function Texture.new() end
 ---@type Class<Texture>
 Texture.class = nil
 
-__classmetatables[Texture.class] = {__index = __Texture}
+__classmetatables[Texture.class] = { __index = __Texture }
 
 zombie.core.textures.Texture = Texture

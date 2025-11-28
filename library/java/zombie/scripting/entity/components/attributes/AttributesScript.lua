@@ -16,6 +16,6 @@ AttributesScript = {}
 ---@type Class<AttributesScript>
 AttributesScript.class = nil
 
-__classmetatables[AttributesScript.class] = {__index = __AttributesScript}
+__classmetatables[AttributesScript.class] = { __index = __AttributesScript }
 
 zombie.scripting.entity.components.attributes.AttributesScript = AttributesScript

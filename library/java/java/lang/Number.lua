@@ -3,7 +3,7 @@
 ---(Not exposed)
 ---The abstract class Number is the superclass of platform
 --- classes representing numeric values that are convertible to the
---- primitive types byte, double, float, 
+--- primitive types byte, double, float,
 --- int, long, and short.
 ---
 --- The specific semantics of the conversion from the numeric value of

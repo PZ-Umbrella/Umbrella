@@ -26,6 +26,6 @@ function DynamicRadioChannel.new(n, freq, c, guid) end
 ---@type Class<DynamicRadioChannel>
 DynamicRadioChannel.class = nil
 
-__classmetatables[DynamicRadioChannel.class] = {__index = __DynamicRadioChannel}
+__classmetatables[DynamicRadioChannel.class] = { __index = __DynamicRadioChannel }
 
 zombie.radio.scripting.DynamicRadioChannel = DynamicRadioChannel

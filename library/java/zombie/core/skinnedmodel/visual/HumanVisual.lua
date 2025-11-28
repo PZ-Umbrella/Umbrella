@@ -225,6 +225,6 @@ function HumanVisual.new(owner) end
 ---@type Class<HumanVisual>
 HumanVisual.class = nil
 
-__classmetatables[HumanVisual.class] = {__index = __HumanVisual}
+__classmetatables[HumanVisual.class] = { __index = __HumanVisual }
 
 zombie.core.skinnedmodel.visual.HumanVisual = HumanVisual

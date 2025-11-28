@@ -89,6 +89,6 @@ function BitSet.new(arg0) end
 ---@type Class<BitSet>
 BitSet.class = nil
 
-__classmetatables[BitSet.class] = {__index = __BitSet}
+__classmetatables[BitSet.class] = { __index = __BitSet }
 
 zombie.entity.util.BitSet = BitSet

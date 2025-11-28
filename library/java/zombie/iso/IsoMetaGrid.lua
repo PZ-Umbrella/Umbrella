@@ -487,6 +487,6 @@ function IsoMetaGrid.new() end
 ---@type Class<IsoMetaGrid>
 IsoMetaGrid.class = nil
 
-__classmetatables[IsoMetaGrid.class] = {__index = __IsoMetaGrid}
+__classmetatables[IsoMetaGrid.class] = { __index = __IsoMetaGrid }
 
 zombie.iso.IsoMetaGrid = IsoMetaGrid

@@ -65,6 +65,6 @@ function SGlobalObjects.new() end
 ---@type Class<SGlobalObjects>
 SGlobalObjects.class = nil
 
-__classmetatables[SGlobalObjects.class] = {__index = __SGlobalObjects}
+__classmetatables[SGlobalObjects.class] = { __index = __SGlobalObjects }
 
 zombie.globalObjects.SGlobalObjects = SGlobalObjects

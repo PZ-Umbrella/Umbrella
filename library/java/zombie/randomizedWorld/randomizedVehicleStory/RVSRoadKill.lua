@@ -28,6 +28,6 @@ function RVSRoadKill.new() end
 ---@type Class<RVSRoadKill>
 RVSRoadKill.class = nil
 
-__classmetatables[RVSRoadKill.class] = {__index = __RVSRoadKill}
+__classmetatables[RVSRoadKill.class] = { __index = __RVSRoadKill }
 
 zombie.randomizedWorld.randomizedVehicleStory.RVSRoadKill = RVSRoadKill

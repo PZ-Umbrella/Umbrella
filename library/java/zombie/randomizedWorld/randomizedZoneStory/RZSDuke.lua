@@ -14,6 +14,6 @@ function RZSDuke.new() end
 ---@type Class<RZSDuke>
 RZSDuke.class = nil
 
-__classmetatables[RZSDuke.class] = {__index = __RZSDuke}
+__classmetatables[RZSDuke.class] = { __index = __RZSDuke }
 
 zombie.randomizedWorld.randomizedZoneStory.RZSDuke = RZSDuke

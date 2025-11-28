@@ -30,17 +30,17 @@
 --- method.  This is best done at creation time, to prevent accidental
 --- unsynchronized access:
 ---
---- 
+---
 ---     Map<EnumKey, V> m
 ---         = Collections.synchronizedMap(new EnumMap<EnumKey, V>(...));
---- 
+---
 ---
 --- Implementation note: All basic operations execute in constant time.
 --- They are likely (though not guaranteed) to be faster than their
 --- HashMap counterparts.
 ---
 --- This class is a member of the
---- 
+---
 --- Java Collections Framework.
 ---@class EnumMap<K: Enum<K>, V>: AbstractMap<K, V>, Serializable, Cloneable
 local __EnumMap = {}
@@ -184,6 +184,6 @@ function EnumMap.new(m) end
 ---@type Class<EnumMap>
 EnumMap.class = nil
 
-__classmetatables[EnumMap.class] = {__index = __EnumMap}
+__classmetatables[EnumMap.class] = { __index = __EnumMap }
 
 java.util.EnumMap = EnumMap

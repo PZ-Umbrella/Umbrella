@@ -66,7 +66,7 @@
 --- provide a convenient way to create unmodifiable lists. The List
 --- instances created by these methods have the following characteristics:
 ---
---- 
+---
 --- They are unmodifiable. Elements cannot
 --- be added, removed, or replaced. Calling any mutator method on the List
 --- will always cause UnsupportedOperationException to be thrown.
@@ -89,10 +89,10 @@
 --- They are serialized as specified on the
 --- Serialized Form
 --- page.
---- 
+---
 ---
 --- This interface is a member of the
---- 
+---
 --- Java Collections Framework.
 ---@class List<E>: Collection<E>
 local __List = {}

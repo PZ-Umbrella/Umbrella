@@ -46,6 +46,6 @@ function CGlobalObjects.new() end
 ---@type Class<CGlobalObjects>
 CGlobalObjects.class = nil
 
-__classmetatables[CGlobalObjects.class] = {__index = __CGlobalObjects}
+__classmetatables[CGlobalObjects.class] = { __index = __CGlobalObjects }
 
 zombie.globalObjects.CGlobalObjects = CGlobalObjects

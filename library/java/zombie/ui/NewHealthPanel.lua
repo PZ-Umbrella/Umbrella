@@ -27,6 +27,6 @@ function NewHealthPanel.new(x, y, ParentCharacter) end
 ---@type Class<NewHealthPanel>
 NewHealthPanel.class = nil
 
-__classmetatables[NewHealthPanel.class] = {__index = __NewHealthPanel}
+__classmetatables[NewHealthPanel.class] = { __index = __NewHealthPanel }
 
 zombie.ui.NewHealthPanel = NewHealthPanel

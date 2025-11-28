@@ -65,6 +65,6 @@ function SeamEditorState.new() end
 ---@type Class<SeamEditorState>
 SeamEditorState.class = nil
 
-__classmetatables[SeamEditorState.class] = {__index = __SeamEditorState}
+__classmetatables[SeamEditorState.class] = { __index = __SeamEditorState }
 
 zombie.gameStates.SeamEditorState = SeamEditorState

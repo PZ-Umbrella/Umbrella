@@ -19,6 +19,6 @@ function RDSRatKing.new() end
 ---@type Class<RDSRatKing>
 RDSRatKing.class = nil
 
-__classmetatables[RDSRatKing.class] = {__index = __RDSRatKing}
+__classmetatables[RDSRatKing.class] = { __index = __RDSRatKing }
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSRatKing = RDSRatKing

@@ -23,6 +23,6 @@ function Fixer.new(arg0, arg1, arg2) end
 ---@type Class<Fixing.Fixer>
 Fixer.class = nil
 
-__classmetatables[Fixer.class] = {__index = __Fixer}
+__classmetatables[Fixer.class] = { __index = __Fixer }
 
 zombie.scripting.objects.Fixing.Fixer = Fixer

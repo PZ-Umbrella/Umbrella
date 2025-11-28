@@ -21,6 +21,6 @@ function EntityDebugTestType.values() end
 ---@type Class<EntityDebugTestType>
 EntityDebugTestType.class = nil
 
-__classmetatables[EntityDebugTestType.class] = {__index = __EntityDebugTestType}
+__classmetatables[EntityDebugTestType.class] = { __index = __EntityDebugTestType }
 
 zombie.entity.debug.EntityDebugTestType = EntityDebugTestType

@@ -20,30 +20,30 @@
 ---
 --- To format a date for the current Locale, use one of the
 --- static factory methods:
---- 
+---
 --- <code>
 --- myString = DateFormat.getDateInstance().format(myDate);
 --- </code>
---- 
+---
 --- If you are formatting multiple dates, it is
 --- more efficient to get the format and use it multiple times so that
 --- the system doesn't have to fetch the information about the local
 --- language and country conventions multiple times.
---- 
+---
 --- <code>
 --- DateFormat df = DateFormat.getDateInstance();
 --- for (int i = 0; i < myDate.length; ++i) {
 ---     output.println(df.format(myDate[i]) + "; ");
 --- }
 --- </code>
---- 
+---
 --- To format a date for a different Locale, specify it in the
 --- call to getDateInstance().
---- 
+---
 --- <code>
 --- DateFormat df = DateFormat.getDateInstance(DateFormat.LONG, Locale.FRANCE);
 --- </code>
---- 
+---
 ---
 --- If the specified locale contains "ca" (calendar), "rg" (region override),
 --- and/or "tz" (timezone) Unicode
@@ -52,11 +52,11 @@
 --- extension supersedes the implicit one from the "rg" extension.
 ---
 --- You can use a DateFormat to parse also.
---- 
+---
 --- <code>
 --- myDate = df.parse(myString);
 --- </code>
---- 
+---
 --- Use getDateInstance to get the normal date format for that country.
 --- There are other static factory methods available.
 --- Use getTimeInstance to get the time format for that country.
@@ -69,7 +69,7 @@
 --- LONG is longer, such as January 12, 1952 or 3:30:32pm
 --- FULL is pretty completely specified, such as
 --- Tuesday, April 12, 1952 AD or 3:30:42pm PST.
---- 
+---
 ---
 --- You can also set the time zone on the format if you wish.
 --- If you want even more control over the format or parsing,
@@ -85,11 +85,11 @@
 --- progressively parse through pieces of a string.
 --- align any particular field, or find out where it is for selection
 --- on the screen.
---- 
+---
 ---
 --- Synchronization
 ---
---- 
+---
 --- Date formats are not synchronized.
 --- It is recommended to create separate format instances for each thread.
 --- If multiple threads access a format concurrently, it must be synchronized
@@ -187,7 +187,7 @@ function __DateFormat:isLenient() end
 
 ---Parses text from the beginning of the given string to produce a date.
 --- The method may not use the entire text of the given string.
---- 
+---
 --- See the parse(String, ParsePosition) method for more information
 --- on date parsing.
 ---@param source string A String whose beginning should be parsed.
@@ -206,7 +206,7 @@ function __DateFormat:parse(source) end
 --- This parsing operation uses the calendar to produce
 --- a Date. As a result, the calendar's date-time
 --- fields and the TimeZone value may have been
---- overwritten, depending on subclass implementations. Any 
+--- overwritten, depending on subclass implementations. Any
 --- TimeZone value that has previously been set by a call to
 --- setTimeZone may need
 --- to be restored for further operations.
@@ -218,7 +218,7 @@ function __DateFormat:parse(source) end
 function __DateFormat:parse(source, pos) end
 
 ---Parses text from a string to produce a Date.
---- 
+---
 --- The method attempts to parse text starting at the index given by
 --- pos.
 --- If parsing succeeds, then the index of pos is updated
@@ -229,7 +229,7 @@ function __DateFormat:parse(source, pos) end
 --- If an error occurs, then the index of pos is not
 --- changed, the error index of pos is set to the index of
 --- the character where the error occurred, and null is returned.
---- 
+---
 --- See the parse(String, ParsePosition) method for more information
 --- on date parsing.
 ---@param source string A String, part of which should be parsed.

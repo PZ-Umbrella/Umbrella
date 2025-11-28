@@ -156,6 +156,6 @@ function GameWindow.new() end
 ---@type Class<GameWindow>
 GameWindow.class = nil
 
-__classmetatables[GameWindow.class] = {__index = __GameWindow}
+__classmetatables[GameWindow.class] = { __index = __GameWindow }
 
 zombie.GameWindow = GameWindow

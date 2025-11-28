@@ -174,6 +174,6 @@ function AngelCodeFont.new(fntFile, imgFile) end
 ---@type Class<AngelCodeFont>
 AngelCodeFont.class = nil
 
-__classmetatables[AngelCodeFont.class] = {__index = __AngelCodeFont}
+__classmetatables[AngelCodeFont.class] = { __index = __AngelCodeFont }
 
 zombie.core.fonts.AngelCodeFont = AngelCodeFont

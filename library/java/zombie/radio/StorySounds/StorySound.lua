@@ -53,6 +53,6 @@ function StorySound.new(name, baseVol) end
 ---@type Class<StorySound>
 StorySound.class = nil
 
-__classmetatables[StorySound.class] = {__index = __StorySound}
+__classmetatables[StorySound.class] = { __index = __StorySound }
 
 zombie.radio.StorySounds.StorySound = StorySound

@@ -60,6 +60,6 @@ WGParams.instance = nil
 ---@type Class<WGParams>
 WGParams.class = nil
 
-__classmetatables[WGParams.class] = {__index = __WGParams}
+__classmetatables[WGParams.class] = { __index = __WGParams }
 
 zombie.iso.worldgen.WGParams = WGParams

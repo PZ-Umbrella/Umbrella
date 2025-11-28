@@ -61,6 +61,6 @@ function SLSoundManager.getInstance() end
 ---@type Class<SLSoundManager>
 SLSoundManager.class = nil
 
-__classmetatables[SLSoundManager.class] = {__index = __SLSoundManager}
+__classmetatables[SLSoundManager.class] = { __index = __SLSoundManager }
 
 zombie.radio.StorySounds.SLSoundManager = SLSoundManager

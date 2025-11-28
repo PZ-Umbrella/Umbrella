@@ -97,6 +97,6 @@ function EvolvedRecipe.new(name) end
 ---@type Class<EvolvedRecipe>
 EvolvedRecipe.class = nil
 
-__classmetatables[EvolvedRecipe.class] = {__index = __EvolvedRecipe}
+__classmetatables[EvolvedRecipe.class] = { __index = __EvolvedRecipe }
 
 zombie.scripting.objects.EvolvedRecipe = EvolvedRecipe

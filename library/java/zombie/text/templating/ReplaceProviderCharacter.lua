@@ -14,6 +14,6 @@ function ReplaceProviderCharacter.new(character) end
 ---@type Class<ReplaceProviderCharacter>
 ReplaceProviderCharacter.class = nil
 
-__classmetatables[ReplaceProviderCharacter.class] = {__index = __ReplaceProviderCharacter}
+__classmetatables[ReplaceProviderCharacter.class] = { __index = __ReplaceProviderCharacter }
 
 zombie.text.templating.ReplaceProviderCharacter = ReplaceProviderCharacter

@@ -64,6 +64,6 @@ BaseAmbientStreamManager = {}
 ---@type Class<BaseAmbientStreamManager>
 BaseAmbientStreamManager.class = nil
 
-__classmetatables[BaseAmbientStreamManager.class] = {__index = __BaseAmbientStreamManager}
+__classmetatables[BaseAmbientStreamManager.class] = { __index = __BaseAmbientStreamManager }
 
 zombie.BaseAmbientStreamManager = BaseAmbientStreamManager

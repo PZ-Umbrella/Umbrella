@@ -14,6 +14,6 @@ function BooleanDebugOption.new(arg0, arg1, arg2) end
 ---@type Class<ZombiePopulationRenderer.BooleanDebugOption>
 BooleanDebugOption.class = nil
 
-__classmetatables[BooleanDebugOption.class] = {__index = __BooleanDebugOption}
+__classmetatables[BooleanDebugOption.class] = { __index = __BooleanDebugOption }
 
 zombie.popman.ZombiePopulationRenderer.BooleanDebugOption = BooleanDebugOption

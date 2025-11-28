@@ -4,7 +4,7 @@
 --- types from an underlying input stream in a machine-independent
 --- way. An application uses a data output stream to write data that
 --- can later be read by a data input stream.
---- 
+---
 --- A DataInputStream is not safe for use by multiple concurrent
 --- threads. If a DataInputStream is to be used by more than one
 --- thread then access to the data input stream should be controlled
@@ -34,7 +34,7 @@ local __DataInputStream = {}
 --- unaffected.
 ---
 --- The read(b) method has the same effect as:
---- 
+---
 --- read(b, 0, b.length)
 ---@param b kahlua.Array<integer> the buffer into which the data is read.
 ---@return integer # the total number of bytes read into the buffer, or
@@ -78,7 +78,7 @@ function __DataInputStream:read(b, off, len) end
 
 ---See the general contract of the readBoolean
 --- method of DataInput.
---- 
+---
 --- Bytes for this operation are read from the contained
 --- input stream.
 ---@return boolean # the boolean value read.
@@ -86,7 +86,7 @@ function __DataInputStream:readBoolean() end
 
 ---See the general contract of the readByte
 --- method of DataInput.
---- 
+---
 --- Bytes
 --- for this operation are read from the contained
 --- input stream.
@@ -96,7 +96,7 @@ function __DataInputStream:readByte() end
 
 ---See the general contract of the readChar
 --- method of DataInput.
---- 
+---
 --- Bytes
 --- for this operation are read from the contained
 --- input stream.
@@ -106,7 +106,7 @@ function __DataInputStream:readChar() end
 
 ---See the general contract of the readDouble
 --- method of DataInput.
---- 
+---
 --- Bytes
 --- for this operation are read from the contained
 --- input stream.
@@ -116,7 +116,7 @@ function __DataInputStream:readDouble() end
 
 ---See the general contract of the readFloat
 --- method of DataInput.
---- 
+---
 --- Bytes
 --- for this operation are read from the contained
 --- input stream.
@@ -126,7 +126,7 @@ function __DataInputStream:readFloat() end
 
 ---See the general contract of the readFully
 --- method of DataInput.
---- 
+---
 --- Bytes
 --- for this operation are read from the contained
 --- input stream.
@@ -135,7 +135,7 @@ function __DataInputStream:readFully(b) end
 
 ---See the general contract of the readFully
 --- method of DataInput.
---- 
+---
 --- Bytes
 --- for this operation are read from the contained
 --- input stream.
@@ -146,7 +146,7 @@ function __DataInputStream:readFully(b, off, len) end
 
 ---See the general contract of the readInt
 --- method of DataInput.
---- 
+---
 --- Bytes
 --- for this operation are read from the contained
 --- input stream.
@@ -157,7 +157,7 @@ function __DataInputStream:readInt() end
 ---@deprecated
 ---See the general contract of the readLine
 --- method of DataInput.
---- 
+---
 --- Bytes
 --- for this operation are read from the contained
 --- input stream.
@@ -166,7 +166,7 @@ function __DataInputStream:readLine() end
 
 ---See the general contract of the readLong
 --- method of DataInput.
---- 
+---
 --- Bytes
 --- for this operation are read from the contained
 --- input stream.
@@ -176,7 +176,7 @@ function __DataInputStream:readLong() end
 
 ---See the general contract of the readShort
 --- method of DataInput.
---- 
+---
 --- Bytes
 --- for this operation are read from the contained
 --- input stream.
@@ -186,7 +186,7 @@ function __DataInputStream:readShort() end
 
 ---See the general contract of the readUTF
 --- method of DataInput.
---- 
+---
 --- Bytes
 --- for this operation are read from the contained
 --- input stream.
@@ -195,7 +195,7 @@ function __DataInputStream:readUTF() end
 
 ---See the general contract of the readUnsignedByte
 --- method of DataInput.
---- 
+---
 --- Bytes
 --- for this operation are read from the contained
 --- input stream.
@@ -205,7 +205,7 @@ function __DataInputStream:readUnsignedByte() end
 
 ---See the general contract of the readUnsignedShort
 --- method of DataInput.
---- 
+---
 --- Bytes
 --- for this operation are read from the contained
 --- input stream.
@@ -215,7 +215,7 @@ function __DataInputStream:readUnsignedShort() end
 
 ---See the general contract of the skipBytes
 --- method of DataInput.
---- 
+---
 --- Bytes for this operation are read from the contained
 --- input stream.
 ---@param n integer the number of bytes to be skipped.
@@ -245,6 +245,6 @@ function DataInputStream.new(_in) end
 ---@type Class<DataInputStream>
 DataInputStream.class = nil
 
-__classmetatables[DataInputStream.class] = {__index = __DataInputStream}
+__classmetatables[DataInputStream.class] = { __index = __DataInputStream }
 
 java.io.DataInputStream = DataInputStream

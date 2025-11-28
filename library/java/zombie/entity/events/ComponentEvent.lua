@@ -21,6 +21,6 @@ function ComponentEvent.Alloc(arg0, arg1) end
 ---@type Class<ComponentEvent>
 ComponentEvent.class = nil
 
-__classmetatables[ComponentEvent.class] = {__index = __ComponentEvent}
+__classmetatables[ComponentEvent.class] = { __index = __ComponentEvent }
 
 zombie.entity.events.ComponentEvent = ComponentEvent

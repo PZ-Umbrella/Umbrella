@@ -27,6 +27,6 @@ function MultiStageBuilding.new() end
 ---@type Class<MultiStageBuilding>
 MultiStageBuilding.class = nil
 
-__classmetatables[MultiStageBuilding.class] = {__index = __MultiStageBuilding}
+__classmetatables[MultiStageBuilding.class] = { __index = __MultiStageBuilding }
 
 zombie.iso.MultiStageBuilding = MultiStageBuilding

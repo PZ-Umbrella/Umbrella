@@ -23,6 +23,6 @@ function RBMayorWestPoint.new() end
 ---@type Class<RBMayorWestPoint>
 RBMayorWestPoint.class = nil
 
-__classmetatables[RBMayorWestPoint.class] = {__index = __RBMayorWestPoint}
+__classmetatables[RBMayorWestPoint.class] = { __index = __RBMayorWestPoint }
 
 zombie.randomizedWorld.randomizedBuilding.RBMayorWestPoint = RBMayorWestPoint

@@ -55,6 +55,6 @@ function BodyLocation.new(group, id) end
 ---@type Class<BodyLocation>
 BodyLocation.class = nil
 
-__classmetatables[BodyLocation.class] = {__index = __BodyLocation}
+__classmetatables[BodyLocation.class] = { __index = __BodyLocation }
 
 zombie.characters.WornItems.BodyLocation = BodyLocation

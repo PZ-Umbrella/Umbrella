@@ -60,6 +60,6 @@ function MovableRecipe.new() end
 ---@type Class<MovableRecipe>
 MovableRecipe.class = nil
 
-__classmetatables[MovableRecipe.class] = {__index = __MovableRecipe}
+__classmetatables[MovableRecipe.class] = { __index = __MovableRecipe }
 
 zombie.scripting.objects.MovableRecipe = MovableRecipe

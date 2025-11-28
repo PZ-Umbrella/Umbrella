@@ -75,6 +75,6 @@ function ServerSettings.new(name) end
 ---@type Class<ServerSettings>
 ServerSettings.class = nil
 
-__classmetatables[ServerSettings.class] = {__index = __ServerSettings}
+__classmetatables[ServerSettings.class] = { __index = __ServerSettings }
 
 zombie.network.ServerSettings = ServerSettings

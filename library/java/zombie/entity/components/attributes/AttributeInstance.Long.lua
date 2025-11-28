@@ -50,6 +50,6 @@ function Long.new() end
 ---@type Class<AttributeInstance.Long>
 Long.class = nil
 
-__classmetatables[Long.class] = {__index = __Long}
+__classmetatables[Long.class] = { __index = __Long }
 
 zombie.entity.components.attributes.AttributeInstance.Long = Long

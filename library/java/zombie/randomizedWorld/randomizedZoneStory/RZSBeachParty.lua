@@ -14,6 +14,6 @@ function RZSBeachParty.new() end
 ---@type Class<RZSBeachParty>
 RZSBeachParty.class = nil
 
-__classmetatables[RZSBeachParty.class] = {__index = __RZSBeachParty}
+__classmetatables[RZSBeachParty.class] = { __index = __RZSBeachParty }
 
 zombie.randomizedWorld.randomizedZoneStory.RZSBeachParty = RZSBeachParty

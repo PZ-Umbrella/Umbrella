@@ -35,6 +35,6 @@ function MusicThreatStatuses.new(arg0) end
 ---@type Class<MusicThreatStatuses>
 MusicThreatStatuses.class = nil
 
-__classmetatables[MusicThreatStatuses.class] = {__index = __MusicThreatStatuses}
+__classmetatables[MusicThreatStatuses.class] = { __index = __MusicThreatStatuses }
 
 zombie.audio.MusicThreatStatuses = MusicThreatStatuses

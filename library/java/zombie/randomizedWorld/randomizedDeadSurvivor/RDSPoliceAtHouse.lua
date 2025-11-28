@@ -15,6 +15,6 @@ function RDSPoliceAtHouse.new() end
 ---@type Class<RDSPoliceAtHouse>
 RDSPoliceAtHouse.class = nil
 
-__classmetatables[RDSPoliceAtHouse.class] = {__index = __RDSPoliceAtHouse}
+__classmetatables[RDSPoliceAtHouse.class] = { __index = __RDSPoliceAtHouse }
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSPoliceAtHouse = RDSPoliceAtHouse

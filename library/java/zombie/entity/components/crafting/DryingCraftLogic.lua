@@ -23,6 +23,6 @@ DryingCraftLogic = {}
 ---@type Class<DryingCraftLogic>
 DryingCraftLogic.class = nil
 
-__classmetatables[DryingCraftLogic.class] = {__index = __DryingCraftLogic}
+__classmetatables[DryingCraftLogic.class] = { __index = __DryingCraftLogic }
 
 zombie.entity.components.crafting.DryingCraftLogic = DryingCraftLogic

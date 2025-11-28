@@ -78,6 +78,6 @@ DataChunk = {}
 ---@type Class<DataChunk>
 DataChunk.class = nil
 
-__classmetatables[DataChunk.class] = {__index = __DataChunk}
+__classmetatables[DataChunk.class] = { __index = __DataChunk }
 
 zombie.iso.areas.isoregion.data.DataChunk = DataChunk

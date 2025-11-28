@@ -14,6 +14,6 @@ function Animal.new() end
 ---@type Class<ItemKey.Animal>
 Animal.class = nil
 
-__classmetatables[Animal.class] = {__index = __Animal}
+__classmetatables[Animal.class] = { __index = __Animal }
 
 zombie.scripting.objects.ItemKey.Animal = Animal

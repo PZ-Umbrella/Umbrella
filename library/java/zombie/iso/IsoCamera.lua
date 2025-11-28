@@ -118,6 +118,6 @@ function IsoCamera.new() end
 ---@type Class<IsoCamera>
 IsoCamera.class = nil
 
-__classmetatables[IsoCamera.class] = {__index = __IsoCamera}
+__classmetatables[IsoCamera.class] = { __index = __IsoCamera }
 
 zombie.iso.IsoCamera = IsoCamera

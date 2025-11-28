@@ -175,6 +175,6 @@ function IsoHutch.new(arg0, arg1, arg2, arg3, arg4) end
 ---@type Class<IsoHutch>
 IsoHutch.class = nil
 
-__classmetatables[IsoHutch.class] = {__index = __IsoHutch}
+__classmetatables[IsoHutch.class] = { __index = __IsoHutch }
 
 zombie.iso.objects.IsoHutch = IsoHutch

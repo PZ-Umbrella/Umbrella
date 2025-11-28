@@ -46,6 +46,6 @@ FurnaceLogicScript = {}
 ---@type Class<FurnaceLogicScript>
 FurnaceLogicScript.class = nil
 
-__classmetatables[FurnaceLogicScript.class] = {__index = __FurnaceLogicScript}
+__classmetatables[FurnaceLogicScript.class] = { __index = __FurnaceLogicScript }
 
 zombie.scripting.entity.components.crafting.FurnaceLogicScript = FurnaceLogicScript

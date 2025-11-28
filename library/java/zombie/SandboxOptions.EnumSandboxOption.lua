@@ -67,6 +67,6 @@ function EnumSandboxOption.new(owner, name, numValues, defaultValue) end
 ---@type Class<SandboxOptions.EnumSandboxOption>
 EnumSandboxOption.class = nil
 
-__classmetatables[EnumSandboxOption.class] = {__index = __EnumSandboxOption}
+__classmetatables[EnumSandboxOption.class] = { __index = __EnumSandboxOption }
 
 zombie.SandboxOptions.EnumSandboxOption = EnumSandboxOption

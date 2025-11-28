@@ -34,6 +34,6 @@ function StartMode.values() end
 ---@type Class<StartMode>
 StartMode.class = nil
 
-__classmetatables[StartMode.class] = {__index = __StartMode}
+__classmetatables[StartMode.class] = { __index = __StartMode }
 
 zombie.entity.components.crafting.StartMode = StartMode

@@ -54,6 +54,6 @@ function WorldMapStyleV1.new(ui) end
 ---@type Class<WorldMapStyleV1>
 WorldMapStyleV1.class = nil
 
-__classmetatables[WorldMapStyleV1.class] = {__index = __WorldMapStyleV1}
+__classmetatables[WorldMapStyleV1.class] = { __index = __WorldMapStyleV1 }
 
 zombie.worldMap.styles.WorldMapStyleV1 = WorldMapStyleV1

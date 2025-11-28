@@ -25,6 +25,6 @@ function RBOffice.new() end
 ---@type Class<RBOffice>
 RBOffice.class = nil
 
-__classmetatables[RBOffice.class] = {__index = __RBOffice}
+__classmetatables[RBOffice.class] = { __index = __RBOffice }
 
 zombie.randomizedWorld.randomizedBuilding.RBOffice = RBOffice

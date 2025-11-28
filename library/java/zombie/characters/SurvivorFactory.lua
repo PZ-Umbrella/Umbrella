@@ -72,6 +72,6 @@ function SurvivorFactory.new() end
 ---@type Class<SurvivorFactory>
 SurvivorFactory.class = nil
 
-__classmetatables[SurvivorFactory.class] = {__index = __SurvivorFactory}
+__classmetatables[SurvivorFactory.class] = { __index = __SurvivorFactory }
 
 zombie.characters.SurvivorFactory = SurvivorFactory

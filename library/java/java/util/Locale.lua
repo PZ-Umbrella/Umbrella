@@ -90,13 +90,13 @@ function __Locale:getDisplayLanguage(inLocale) end
 --- optional Unicode extensions
 --- assembled into a single string. The non-empty values are used in order, with
 --- the second and subsequent names in parentheses.  For example:
---- 
+---
 --- language (script, country, variant(, extension)*)
 --- language (country(, extension)*)
 --- language (variant(, extension)*)
 --- script (country(, extension)*)
 --- country (extension)*
---- 
+---
 --- depending on which fields are specified in the locale. The field
 --- separator in the above parentheses, denoted as a comma character, may
 --- be localized depending on the locale. If the language, script, country,
@@ -107,17 +107,17 @@ function __Locale:getDisplayName() end
 ---Returns a name for the locale that is appropriate for display
 --- to the user.  This will be the values returned by
 --- getDisplayLanguage(), getDisplayScript(),getDisplayCountry()
---- getDisplayVariant(), and optional 
+--- getDisplayVariant(), and optional
 --- Unicode extensions assembled into a single string. The non-empty
 --- values are used in order, with the second and subsequent names in
 --- parentheses.  For example:
---- 
+---
 --- language (script, country, variant(, extension)*)
 --- language (country(, extension)*)
 --- language (variant(, extension)*)
 --- script (country(, extension)*)
 --- country (extension)*
---- 
+---
 --- depending on which fields are specified in the locale. The field
 --- separator in the above parentheses, denoted as a comma character, may
 --- be localized depending on the locale. If the language, script, country,
@@ -232,7 +232,7 @@ function __Locale:getUnicodeLocaleType(key) end
 ---@return string # The variant code, or the empty string if none is defined.
 function __Locale:getVariant() end
 
----Returns true if this Locale has any 
+---Returns true if this Locale has any
 --- extensions.
 ---@return boolean # true if this Locale has any extensions
 function __Locale:hasExtensions() end
@@ -243,7 +243,7 @@ function __Locale:hasExtensions() end
 ---@return integer # a hash code value for this object.
 function __Locale:hashCode() end
 
----Returns a copy of this Locale with no 
+---Returns a copy of this Locale with no
 --- extensions. If this Locale has no extensions, this Locale
 --- is returned.
 ---@return Locale # a copy of this Locale with no extensions, or this
@@ -266,7 +266,7 @@ function __Locale:stripExtensions() end
 ---
 --- Variant: If variant is well-formed, each sub-segment
 --- (delimited by '-' or '_') is emitted as a subtag.  Otherwise:
---- 
+---
 ---
 --- if all sub-segments match [0-9a-zA-Z]{1,8}
 --- (for example "WIN" or "Oracle_JDK_Standard_Edition"), the first
@@ -289,7 +289,7 @@ function __Locale:stripExtensions() end
 --- representations, including deprecated ISO language codes,
 --- for compatibility. This method performs the following
 --- conversions:
---- 
+---
 ---
 --- Deprecated ISO language codes "iw", "ji", and "in" are
 --- converted to "he", "yi", and "id", respectively.
@@ -302,7 +302,7 @@ function __Locale:stripExtensions() end
 --- method is well-formed (satisfies the syntax requirements
 --- defined by the IETF BCP 47 specification), it is not
 --- necessarily a valid BCP 47 language tag.  For example,
---- 
+---
 ---   new Locale("xx", "YY").toLanguageTag();
 ---
 --- will return "xx-YY", but the language subtag "xx" and the
@@ -459,7 +459,7 @@ function Locale.filterTags(arg0, arg1) end
 --- result locale (without case normalization).  If it is then
 --- empty, the private use subtag is discarded:
 ---
---- 
+---
 ---     Locale loc;
 ---     loc = Locale.forLanguageTag("en-US-x-lvariant-POSIX");
 ---     loc.getVariant(); // returns "POSIX"
@@ -468,16 +468,16 @@ function Locale.filterTags(arg0, arg1) end
 ---     loc = Locale.forLanguageTag("de-POSIX-x-URP-lvariant-Abc-Def");
 ---     loc.getVariant(); // returns "POSIX_Abc_Def"
 ---     loc.getExtension('x'); // returns "urp"
---- 
+---
 ---
 --- When the languageTag argument contains an extlang subtag,
 --- the first such subtag is used as the language, and the primary
 --- language subtag and other extlang subtags are ignored:
 ---
---- 
+---
 ---     Locale.forLanguageTag("ar-aao").getLanguage(); // returns "aao"
 ---     Locale.forLanguageTag("en-abc-def-us").toString(); // returns "abc_US"
---- 
+---
 ---
 --- Case is normalized except for variant tags, which are left
 --- unchanged.  Language is normalized to lower case, script to
@@ -488,12 +488,12 @@ function Locale.filterTags(arg0, arg1) end
 --- ja_JP_JP or th_TH_TH with no extensions, the appropriate
 --- extensions are added as though the constructor had been called:
 ---
---- 
+---
 ---    Locale.forLanguageTag("ja-JP-x-lvariant-JP").toLanguageTag();
 ---    // returns "ja-JP-u-ca-japanese-x-lvariant-JP"
 ---    Locale.forLanguageTag("th-TH-x-lvariant-TH").toLanguageTag();
 ---    // returns "th-TH-u-nu-thai-x-lvariant-TH"
---- 
+---
 ---
 --- This implements the 'Language-Tag' production of BCP47, and
 --- so supports legacy (regular and irregular, referred to as
@@ -505,12 +505,12 @@ function Locale.filterTags(arg0, arg1) end
 ---
 --- Legacy tags with canonical replacements are as follows:
 ---
---- 
+---
 --- Legacy tags with canonical replacements
---- 
+---
 --- legacy tagmodern replacement
---- 
---- 
+---
+---
 --- art-lojbanjbo
 --- i-amiami
 --- i-bnnbnn
@@ -531,26 +531,26 @@ function Locale.filterTags(arg0, arg1) end
 --- zh-hakkahak
 --- zh-min-nannan
 --- zh-xianghsn
---- 
---- 
+---
+---
 ---
 --- Legacy tags with no modern replacement will be
 --- converted as follows:
 ---
---- 
+---
 --- Legacy tags with no modern replacement
---- 
+---
 --- legacy tagconverts to
---- 
---- 
+---
+---
 --- cel-gaulishxtg-x-cel-gaulish
 --- en-GB-oeden-GB-x-oed
 --- i-defaulten-x-i-default
 --- i-enochianund-x-i-enochian
 --- i-mingosee-x-i-mingo
 --- zh-minnan-x-zh-min
---- 
---- 
+---
+---
 ---
 --- For a list of all legacy tags, see the
 --- IANA Language Subtag Registry (search for "Type: grandfathered").
@@ -572,7 +572,7 @@ function Locale.getAvailableLocales() end
 
 ---Gets the current value of the default locale for this instance
 --- of the Java Virtual Machine.
---- 
+---
 --- The Java Virtual Machine sets the default locale during startup
 --- based on the host environment. It is used by many locale-sensitive
 --- methods if no locale is explicitly specified.
@@ -583,7 +583,7 @@ function Locale.getDefault() end
 
 ---Gets the current value of the default locale for the specified Category
 --- for this instance of the Java Virtual Machine.
---- 
+---
 --- The Java Virtual Machine sets the default locale during startup based
 --- on the host environment. It is used by many locale-sensitive methods
 --- if no locale is explicitly specified. It can be changed using the
@@ -597,12 +597,12 @@ function Locale.getDefault(category) end
 --- Can be used to create Locales.
 --- This method is equivalent to getISOCountries(Locale.IsoCountryCode type)
 --- with type  Locale.IsoCountryCode.PART1_ALPHA2.
---- 
+---
 --- Note: The Locale class also supports other codes for
 --- country (region), such as 3-letter numeric UN M.49 area codes.
 --- Therefore, the list returned by this method does not contain ALL valid
 --- codes that can be used to create Locales.
---- 
+---
 --- Note that this method does not return obsolete 2-letter country codes.
 --- ISO3166-3 codes which designate country codes for those obsolete codes,
 --- can be retrieved from getISOCountries(Locale.IsoCountryCode type) with
@@ -616,9 +616,9 @@ function Locale.getISOCountries(arg0) end
 
 ---Returns a list of all 2-letter language codes defined in ISO 639.
 --- Can be used to create Locales.
---- 
+---
 --- Note:
---- 
+---
 --- ISO 639 is not a stable standard&mdash; some languages' codes have changed.
 --- The list this function returns includes both the new and the old codes for the
 --- languages whose codes have changed.
@@ -640,20 +640,20 @@ function Locale.lookupTag(arg0, arg1) end
 
 ---Sets the default locale for this instance of the Java Virtual Machine.
 --- This does not affect the host locale.
---- 
+---
 --- If there is a security manager, its checkPermission
 --- method is called with a PropertyPermission("user.language", "write")
 --- permission before the default locale is changed.
---- 
+---
 --- The Java Virtual Machine sets the default locale during startup
 --- based on the host environment. It is used by many locale-sensitive
 --- methods if no locale is explicitly specified.
---- 
+---
 --- Since changing the default locale may affect many different areas
 --- of functionality, this method should only be used if the caller
 --- is prepared to reinitialize locale-sensitive code running
 --- within the same Java Virtual Machine.
---- 
+---
 --- By setting the default locale with this method, all of the default
 --- locales for each Category are also set to the specified default locale.
 ---@param newLocale Locale the new default locale
@@ -661,15 +661,15 @@ function Locale.setDefault(newLocale) end
 
 ---Sets the default locale for the specified Category for this instance
 --- of the Java Virtual Machine. This does not affect the host locale.
---- 
+---
 --- If there is a security manager, its checkPermission method is called
 --- with a PropertyPermission("user.language", "write") permission before
 --- the default locale is changed.
---- 
+---
 --- The Java Virtual Machine sets the default locale during startup based
 --- on the host environment. It is used by many locale-sensitive methods
 --- if no locale is explicitly specified.
---- 
+---
 --- Since changing the default locale may affect many different areas of
 --- functionality, this method should only be used if the caller is
 --- prepared to reinitialize locale-sensitive code running within the
@@ -713,6 +713,6 @@ function Locale.new(language) end
 ---@type Class<Locale>
 Locale.class = nil
 
-__classmetatables[Locale.class] = {__index = __Locale}
+__classmetatables[Locale.class] = { __index = __Locale }
 
 java.util.Locale = Locale

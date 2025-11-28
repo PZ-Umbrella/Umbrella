@@ -4196,6 +4196,6 @@ function Clothing.new() end
 ---@type Class<ItemKey.Clothing>
 Clothing.class = nil
 
-__classmetatables[Clothing.class] = {__index = __Clothing}
+__classmetatables[Clothing.class] = { __index = __Clothing }
 
 zombie.scripting.objects.ItemKey.Clothing = Clothing

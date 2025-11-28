@@ -193,6 +193,6 @@ function ImprovedFog.new() end
 ---@type Class<ImprovedFog>
 ImprovedFog.class = nil
 
-__classmetatables[ImprovedFog.class] = {__index = __ImprovedFog}
+__classmetatables[ImprovedFog.class] = { __index = __ImprovedFog }
 
 zombie.iso.weather.fog.ImprovedFog = ImprovedFog

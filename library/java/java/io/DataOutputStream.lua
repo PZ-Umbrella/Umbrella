@@ -3,7 +3,7 @@
 ---A data output stream lets an application write primitive Java data
 --- types to an output stream in a portable way. An application can
 --- then use a data input stream to read the data back in.
---- 
+---
 --- A DataOutputStream is not safe for use by multiple concurrent
 --- threads. If a DataOutputStream is to be used by more than one
 --- thread then access to the data output stream should be controlled
@@ -13,7 +13,7 @@ local __DataOutputStream = {}
 
 ---Flushes this data output stream. This forces any buffered output
 --- bytes to be written out to the stream.
---- 
+---
 --- The flush method of DataOutputStream
 --- calls the flush method of its underlying output stream.
 function __DataOutputStream:flush() end
@@ -28,7 +28,7 @@ function __DataOutputStream:size() end
 --- b) to the underlying output stream. If no exception
 --- is thrown, the counter written is incremented by
 --- 1.
---- 
+---
 --- Implements the write method of OutputStream.
 ---@param b integer the byte to be written.
 function __DataOutputStream:write(b) end
@@ -118,7 +118,7 @@ function __DataOutputStream:writeShort(v) end
 ---Writes a string to the underlying output stream using
 --- modified UTF-8
 --- encoding in a machine-independent manner.
---- 
+---
 --- First, two bytes are written to the output stream as if by the
 --- writeShort method giving the number of bytes to
 --- follow. This value is the number of bytes actually written out,
@@ -145,6 +145,6 @@ function DataOutputStream.new(out) end
 ---@type Class<DataOutputStream>
 DataOutputStream.class = nil
 
-__classmetatables[DataOutputStream.class] = {__index = __DataOutputStream}
+__classmetatables[DataOutputStream.class] = { __index = __DataOutputStream }
 
 java.io.DataOutputStream = DataOutputStream

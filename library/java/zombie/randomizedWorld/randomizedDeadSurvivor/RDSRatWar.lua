@@ -19,6 +19,6 @@ function RDSRatWar.new() end
 ---@type Class<RDSRatWar>
 RDSRatWar.class = nil
 
-__classmetatables[RDSRatWar.class] = {__index = __RDSRatWar}
+__classmetatables[RDSRatWar.class] = { __index = __RDSRatWar }
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSRatWar = RDSRatWar

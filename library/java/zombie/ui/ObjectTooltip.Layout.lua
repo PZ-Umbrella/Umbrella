@@ -28,6 +28,6 @@ function Layout.new() end
 ---@type Class<ObjectTooltip.Layout>
 Layout.class = nil
 
-__classmetatables[Layout.class] = {__index = __Layout}
+__classmetatables[Layout.class] = { __index = __Layout }
 
 zombie.ui.ObjectTooltip.Layout = Layout

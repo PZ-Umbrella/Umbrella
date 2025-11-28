@@ -27,6 +27,6 @@ function LoadingQueueState.new() end
 ---@type Class<LoadingQueueState>
 LoadingQueueState.class = nil
 
-__classmetatables[LoadingQueueState.class] = {__index = __LoadingQueueState}
+__classmetatables[LoadingQueueState.class] = { __index = __LoadingQueueState }
 
 zombie.gameStates.LoadingQueueState = LoadingQueueState

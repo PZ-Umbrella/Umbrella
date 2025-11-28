@@ -54,6 +54,6 @@ function PoisonEffect.values() end
 ---@type Class<PoisonEffect>
 PoisonEffect.class = nil
 
-__classmetatables[PoisonEffect.class] = {__index = __PoisonEffect}
+__classmetatables[PoisonEffect.class] = { __index = __PoisonEffect }
 
 zombie.entity.components.fluids.PoisonEffect = PoisonEffect

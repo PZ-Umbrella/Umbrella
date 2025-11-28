@@ -144,6 +144,6 @@ function BodyPartType.values() end
 ---@type Class<BodyPartType>
 BodyPartType.class = nil
 
-__classmetatables[BodyPartType.class] = {__index = __BodyPartType}
+__classmetatables[BodyPartType.class] = { __index = __BodyPartType }
 
 zombie.characters.BodyDamage.BodyPartType = BodyPartType

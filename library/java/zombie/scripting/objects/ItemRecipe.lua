@@ -29,6 +29,6 @@ function ItemRecipe.new(name, module, use) end
 ---@type Class<ItemRecipe>
 ItemRecipe.class = nil
 
-__classmetatables[ItemRecipe.class] = {__index = __ItemRecipe}
+__classmetatables[ItemRecipe.class] = { __index = __ItemRecipe }
 
 zombie.scripting.objects.ItemRecipe = ItemRecipe
