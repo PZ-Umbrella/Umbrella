@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AtomUITexture: AtomUI
-
 local __AtomUITexture = {}
 
 function __AtomUITexture:animPause() end
@@ -38,6 +37,6 @@ function AtomUITexture.new(arg0) end
 ---@type Class<AtomUITexture>
 AtomUITexture.class = nil
 
-__classmetatables[AtomUITexture.class] = { __index = __AtomUITexture }
+__classmetatables[AtomUITexture.class] = {__index = __AtomUITexture}
 
 zombie.ui.AtomUITexture = AtomUITexture

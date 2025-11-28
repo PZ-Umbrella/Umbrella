@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class RBTrashed: RandomizedBuildingBase
-
 local __RBTrashed = {}
 
 ---@param arg0 ArrayList<IsoGridSquare>
@@ -30,6 +29,6 @@ function RBTrashed.new() end
 ---@type Class<RBTrashed>
 RBTrashed.class = nil
 
-__classmetatables[RBTrashed.class] = { __index = __RBTrashed }
+__classmetatables[RBTrashed.class] = {__index = __RBTrashed}
 
 zombie.randomizedWorld.randomizedBuilding.RBTrashed = RBTrashed

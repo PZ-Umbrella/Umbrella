@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SpriteConfigManager.FaceInfo
-
 local __FaceInfo = {}
 
 ---@return string
@@ -56,6 +55,6 @@ FaceInfo = {}
 ---@type Class<SpriteConfigManager.FaceInfo>
 FaceInfo.class = nil
 
-__classmetatables[FaceInfo.class] = { __index = __FaceInfo }
+__classmetatables[FaceInfo.class] = {__index = __FaceInfo}
 
 zombie.entity.components.spriteconfig.SpriteConfigManager.FaceInfo = FaceInfo

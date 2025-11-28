@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SandboxOptions.StringSandboxOption: StringConfigOption, SandboxOptions.SandboxOption
-
 local __StringSandboxOption = {}
 
 ---@return ConfigOption
@@ -53,6 +52,6 @@ function StringSandboxOption.new(owner, name, defaultValue, maxLength) end
 ---@type Class<SandboxOptions.StringSandboxOption>
 StringSandboxOption.class = nil
 
-__classmetatables[StringSandboxOption.class] = { __index = __StringSandboxOption }
+__classmetatables[StringSandboxOption.class] = {__index = __StringSandboxOption}
 
 zombie.SandboxOptions.StringSandboxOption = StringSandboxOption

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class VehicleScript.Passenger
-
 local __Passenger = {}
 
 ---@return string
@@ -33,6 +32,6 @@ function Passenger.new() end
 ---@type Class<VehicleScript.Passenger>
 Passenger.class = nil
 
-__classmetatables[Passenger.class] = { __index = __Passenger }
+__classmetatables[Passenger.class] = {__index = __Passenger}
 
 zombie.scripting.objects.VehicleScript.Passenger = Passenger

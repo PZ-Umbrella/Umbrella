@@ -30,7 +30,6 @@
 --- method handles, but not necessarily those produced by method handle
 --- combinators.)
 ---@class Constable
-
 local __Constable = {}
 
 ---Returns an Optional containing the nominal descriptor for this

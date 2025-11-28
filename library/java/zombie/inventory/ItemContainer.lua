@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ItemContainer
-
 local __ItemContainer = {}
 
 ---@param item InventoryItem
@@ -1543,6 +1542,6 @@ function ItemContainer.new() end
 ---@type Class<ItemContainer>
 ItemContainer.class = nil
 
-__classmetatables[ItemContainer.class] = { __index = __ItemContainer }
+__classmetatables[ItemContainer.class] = {__index = __ItemContainer}
 
 zombie.inventory.ItemContainer = ItemContainer

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class EntityScriptInfo: Component
-
 local __EntityScriptInfo = {}
 
 ---@return string
@@ -21,6 +20,6 @@ EntityScriptInfo = {}
 ---@type Class<EntityScriptInfo>
 EntityScriptInfo.class = nil
 
-__classmetatables[EntityScriptInfo.class] = { __index = __EntityScriptInfo }
+__classmetatables[EntityScriptInfo.class] = {__index = __EntityScriptInfo}
 
 zombie.entity.components.script.EntityScriptInfo = EntityScriptInfo

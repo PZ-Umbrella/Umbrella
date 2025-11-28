@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ColorInfo
-
 local __ColorInfo = {}
 
 ---@param s number
@@ -67,6 +66,6 @@ function ColorInfo.new(R, G, B, A) end
 ---@type Class<ColorInfo>
 ColorInfo.class = nil
 
-__classmetatables[ColorInfo.class] = { __index = __ColorInfo }
+__classmetatables[ColorInfo.class] = {__index = __ColorInfo}
 
 zombie.core.textures.ColorInfo = ColorInfo

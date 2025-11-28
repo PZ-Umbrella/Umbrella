@@ -3,7 +3,6 @@
 ---(Not exposed)
 ---TurboTuTone.
 ---@class ICommonSoundEmitter
-
 local __ICommonSoundEmitter = {}
 
 ---@param handle integer

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class CraftRecipeManager
-
 local __CraftRecipeManager = {}
 
 CraftRecipeManager = {}
@@ -137,6 +136,6 @@ function CraftRecipeManager.new() end
 ---@type Class<CraftRecipeManager>
 CraftRecipeManager.class = nil
 
-__classmetatables[CraftRecipeManager.class] = { __index = __CraftRecipeManager }
+__classmetatables[CraftRecipeManager.class] = {__index = __CraftRecipeManager}
 
 zombie.entity.components.crafting.recipe.CraftRecipeManager = CraftRecipeManager

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ContextMenuConfig: Component
-
 local __ContextMenuConfig = {}
 
 ---@return ArrayList<ContextMenuConfigScript.EntryScript>
@@ -18,6 +17,6 @@ ContextMenuConfig = {}
 ---@type Class<ContextMenuConfig>
 ContextMenuConfig.class = nil
 
-__classmetatables[ContextMenuConfig.class] = { __index = __ContextMenuConfig }
+__classmetatables[ContextMenuConfig.class] = {__index = __ContextMenuConfig}
 
 zombie.entity.components.contextmenuconfig.ContextMenuConfig = ContextMenuConfig

@@ -2,7 +2,6 @@
 
 ---Create some zombies in varsity outfit + 2 naked zombies in bedroom
 ---@class RDSPokerNight: RandomizedDeadSurvivorBase
-
 local __RDSPokerNight = {}
 
 ---Description copied from class: RandomizedBuildingBase
@@ -22,6 +21,6 @@ function RDSPokerNight.new() end
 ---@type Class<RDSPokerNight>
 RDSPokerNight.class = nil
 
-__classmetatables[RDSPokerNight.class] = { __index = __RDSPokerNight }
+__classmetatables[RDSPokerNight.class] = {__index = __RDSPokerNight}
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSPokerNight = RDSPokerNight

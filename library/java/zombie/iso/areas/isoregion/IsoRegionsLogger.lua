@@ -2,7 +2,6 @@
 
 ---TurboTuTone.
 ---@class IsoRegionsLogger
-
 local __IsoRegionsLogger = {}
 
 ---@return ArrayList<IsoRegionsLogger.IsoRegionLog>
@@ -22,6 +21,6 @@ function IsoRegionsLogger.new(doConsolePrint) end
 ---@type Class<IsoRegionsLogger>
 IsoRegionsLogger.class = nil
 
-__classmetatables[IsoRegionsLogger.class] = { __index = __IsoRegionsLogger }
+__classmetatables[IsoRegionsLogger.class] = {__index = __IsoRegionsLogger}
 
 zombie.iso.areas.isoregion.IsoRegionsLogger = IsoRegionsLogger

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class BuildLogic: BaseCraftingLogic
-
 local __BuildLogic = {}
 
 ---@return boolean
@@ -84,6 +83,6 @@ function BuildLogic.new(arg0, arg1, arg2) end
 ---@type Class<BuildLogic>
 BuildLogic.class = nil
 
-__classmetatables[BuildLogic.class] = { __index = __BuildLogic }
+__classmetatables[BuildLogic.class] = {__index = __BuildLogic}
 
 zombie.entity.components.build.BuildLogic = BuildLogic

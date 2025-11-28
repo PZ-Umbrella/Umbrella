@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class BeardStyle
-
 local __BeardStyle = {}
 
 ---@return integer
@@ -24,6 +23,6 @@ function BeardStyle.new() end
 ---@type Class<BeardStyle>
 BeardStyle.class = nil
 
-__classmetatables[BeardStyle.class] = { __index = __BeardStyle }
+__classmetatables[BeardStyle.class] = {__index = __BeardStyle}
 
 zombie.core.skinnedmodel.population.BeardStyle = BeardStyle

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ZombiePopulationRenderer
-
 local __ZombiePopulationRenderer = {}
 
 ---@param name string
@@ -42,14 +41,7 @@ function __ZombiePopulationRenderer:render(ui, zoom, xPos, yPos) end
 ---@param effectivePopulation integer
 ---@param targetPopulation integer
 ---@param lastRepopTime number
-function __ZombiePopulationRenderer:renderCellInfo(
-	cellX,
-	cellY,
-	effectivePopulation,
-	targetPopulation,
-	lastRepopTime
-)
-end
+function __ZombiePopulationRenderer:renderCellInfo(cellX, cellY, effectivePopulation, targetPopulation, lastRepopTime) end
 
 ---@param x number
 ---@param y number
@@ -146,6 +138,6 @@ function ZombiePopulationRenderer.new() end
 ---@type Class<ZombiePopulationRenderer>
 ZombiePopulationRenderer.class = nil
 
-__classmetatables[ZombiePopulationRenderer.class] = { __index = __ZombiePopulationRenderer }
+__classmetatables[ZombiePopulationRenderer.class] = {__index = __ZombiePopulationRenderer}
 
 zombie.popman.ZombiePopulationRenderer = ZombiePopulationRenderer

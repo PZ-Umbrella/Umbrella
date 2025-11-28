@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Item.Type: Enum<Item.Type>
-
 local __Type = {}
 
 Type = {}
@@ -66,6 +65,6 @@ function Type.values() end
 ---@type Class<Item.Type>
 Type.class = nil
 
-__classmetatables[Type.class] = { __index = __Type }
+__classmetatables[Type.class] = {__index = __Type}
 
 zombie.scripting.objects.Item.Type = Type

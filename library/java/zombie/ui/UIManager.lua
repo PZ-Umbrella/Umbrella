@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class UIManager
-
 local __UIManager = {}
 
 UIManager = {}
@@ -519,6 +518,6 @@ function UIManager.new() end
 ---@type Class<UIManager>
 UIManager.class = nil
 
-__classmetatables[UIManager.class] = { __index = __UIManager }
+__classmetatables[UIManager.class] = {__index = __UIManager}
 
 zombie.ui.UIManager = UIManager

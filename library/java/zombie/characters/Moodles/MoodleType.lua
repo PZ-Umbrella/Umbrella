@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class MoodleType: Enum<MoodleType>
-
 local __MoodleType = {}
 
 MoodleType = {}
@@ -134,6 +133,6 @@ function MoodleType.values() end
 ---@type Class<MoodleType>
 MoodleType.class = nil
 
-__classmetatables[MoodleType.class] = { __index = __MoodleType }
+__classmetatables[MoodleType.class] = {__index = __MoodleType}
 
 zombie.characters.Moodles.MoodleType = MoodleType

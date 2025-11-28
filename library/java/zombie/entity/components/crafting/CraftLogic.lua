@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class CraftLogic: Component
-
 local __CraftLogic = {}
 
 ---@param arg0 IsoPlayer
@@ -128,6 +127,6 @@ CraftLogic = {}
 ---@type Class<CraftLogic>
 CraftLogic.class = nil
 
-__classmetatables[CraftLogic.class] = { __index = __CraftLogic }
+__classmetatables[CraftLogic.class] = {__index = __CraftLogic}
 
 zombie.entity.components.crafting.CraftLogic = CraftLogic

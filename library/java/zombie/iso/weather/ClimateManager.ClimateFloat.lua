@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ClimateManager.ClimateFloat
-
 local __ClimateFloat = {}
 
 ---@return number
@@ -81,6 +80,6 @@ function ClimateFloat.new() end
 ---@type Class<ClimateManager.ClimateFloat>
 ClimateFloat.class = nil
 
-__classmetatables[ClimateFloat.class] = { __index = __ClimateFloat }
+__classmetatables[ClimateFloat.class] = {__index = __ClimateFloat}
 
 zombie.iso.weather.ClimateManager.ClimateFloat = ClimateFloat

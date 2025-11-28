@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoTelevision: IsoWaveSignal
-
 local __IsoTelevision = {}
 
 ---@param sprite IsoSprite
@@ -47,6 +46,6 @@ function IsoTelevision.new(cell, sq, spr) end
 ---@type Class<IsoTelevision>
 IsoTelevision.class = nil
 
-__classmetatables[IsoTelevision.class] = { __index = __IsoTelevision }
+__classmetatables[IsoTelevision.class] = {__index = __IsoTelevision}
 
 zombie.iso.objects.IsoTelevision = IsoTelevision

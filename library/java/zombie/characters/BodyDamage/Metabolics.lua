@@ -2,7 +2,6 @@
 
 ---TurboTuTone.
 ---@class Metabolics: Enum<Metabolics>
-
 local __Metabolics = {}
 
 ---@return number
@@ -115,6 +114,6 @@ function Metabolics.values() end
 ---@type Class<Metabolics>
 Metabolics.class = nil
 
-__classmetatables[Metabolics.class] = { __index = __Metabolics }
+__classmetatables[Metabolics.class] = {__index = __Metabolics}
 
 zombie.characters.BodyDamage.Metabolics = Metabolics

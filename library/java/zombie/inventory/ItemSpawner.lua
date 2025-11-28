@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ItemSpawner
-
 local __ItemSpawner = {}
 
 ItemSpawner = {}
@@ -88,6 +87,6 @@ function ItemSpawner.spawnItems(arg0, arg1, arg2) end
 ---@type Class<ItemSpawner>
 ItemSpawner.class = nil
 
-__classmetatables[ItemSpawner.class] = { __index = __ItemSpawner }
+__classmetatables[ItemSpawner.class] = {__index = __ItemSpawner}
 
 zombie.inventory.ItemSpawner = ItemSpawner

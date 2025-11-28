@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class MusicIntensityConfig
-
 local __MusicIntensityConfig = {}
 
 ---@param arg0 IsoGameCharacter
@@ -29,6 +28,6 @@ function MusicIntensityConfig.new() end
 ---@type Class<MusicIntensityConfig>
 MusicIntensityConfig.class = nil
 
-__classmetatables[MusicIntensityConfig.class] = { __index = __MusicIntensityConfig }
+__classmetatables[MusicIntensityConfig.class] = {__index = __MusicIntensityConfig}
 
 zombie.audio.MusicIntensityConfig = MusicIntensityConfig

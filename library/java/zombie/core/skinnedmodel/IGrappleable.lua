@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IGrappleable
-
 local __IGrappleable = {}
 
 ---@param arg0 IGrappleable

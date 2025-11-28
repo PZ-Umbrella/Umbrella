@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class MapSymbolDefinitions
-
 local __MapSymbolDefinitions = {}
 
 ---@param arg0 string
@@ -44,6 +43,6 @@ function MapSymbolDefinitions.new() end
 ---@type Class<MapSymbolDefinitions>
 MapSymbolDefinitions.class = nil
 
-__classmetatables[MapSymbolDefinitions.class] = { __index = __MapSymbolDefinitions }
+__classmetatables[MapSymbolDefinitions.class] = {__index = __MapSymbolDefinitions}
 
 zombie.worldMap.symbols.MapSymbolDefinitions = MapSymbolDefinitions

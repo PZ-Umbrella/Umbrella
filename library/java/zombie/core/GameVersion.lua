@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class GameVersion
-
 local __GameVersion = {}
 
 ---@param obj any
@@ -54,6 +53,6 @@ function GameVersion.new(major, minor, suffix) end
 ---@type Class<GameVersion>
 GameVersion.class = nil
 
-__classmetatables[GameVersion.class] = { __index = __GameVersion }
+__classmetatables[GameVersion.class] = {__index = __GameVersion}
 
 zombie.core.GameVersion = GameVersion

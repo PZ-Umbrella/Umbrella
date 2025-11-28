@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Trigger
-
 local __Trigger = {}
 
 ---@return table
@@ -19,6 +18,6 @@ function Trigger.new(arg0, arg1, arg2, arg3) end
 ---@type Class<Trigger>
 Trigger.class = nil
 
-__classmetatables[Trigger.class] = { __index = __Trigger }
+__classmetatables[Trigger.class] = {__index = __Trigger}
 
 zombie.iso.zones.Trigger = Trigger

@@ -5,7 +5,6 @@
 --- a Readable are made available to callers of the read
 --- method via a CharBuffer.
 ---@class Readable
-
 local __Readable = {}
 
 ---Attempts to read characters into the specified character buffer.

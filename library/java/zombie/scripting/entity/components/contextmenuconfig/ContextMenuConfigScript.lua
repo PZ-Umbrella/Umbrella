@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ContextMenuConfigScript: ComponentScript
-
 local __ContextMenuConfigScript = {}
 
 ---@param arg0 ScriptLoadMode
@@ -17,6 +16,6 @@ ContextMenuConfigScript = {}
 ---@type Class<ContextMenuConfigScript>
 ContextMenuConfigScript.class = nil
 
-__classmetatables[ContextMenuConfigScript.class] = { __index = __ContextMenuConfigScript }
+__classmetatables[ContextMenuConfigScript.class] = {__index = __ContextMenuConfigScript}
 
 zombie.scripting.entity.components.contextmenuconfig.ContextMenuConfigScript = ContextMenuConfigScript

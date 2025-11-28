@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class WeatherPeriod.StrLerpVal: Enum<WeatherPeriod.StrLerpVal>
-
 local __StrLerpVal = {}
 
 ---@return integer
@@ -37,6 +36,6 @@ function StrLerpVal.values() end
 ---@type Class<WeatherPeriod.StrLerpVal>
 StrLerpVal.class = nil
 
-__classmetatables[StrLerpVal.class] = { __index = __StrLerpVal }
+__classmetatables[StrLerpVal.class] = {__index = __StrLerpVal}
 
 zombie.iso.weather.WeatherPeriod.StrLerpVal = StrLerpVal

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoDoor: IsoObject, BarricadeAble, Thumpable, IHasHealth, ILockableDoor, ICurtain
-
 local __IsoDoor = {}
 
 ---@return IsoDoor
@@ -391,6 +390,6 @@ function IsoDoor.new(cell, gridSquare, gid, north, table) end
 ---@type Class<IsoDoor>
 IsoDoor.class = nil
 
-__classmetatables[IsoDoor.class] = { __index = __IsoDoor }
+__classmetatables[IsoDoor.class] = {__index = __IsoDoor}
 
 zombie.iso.objects.IsoDoor = IsoDoor

@@ -25,7 +25,7 @@
 --- field whose type is byte.
 ---
 --- In addition, this class provides several methods for converting
---- a byte to a String and a String to a
+--- a byte to a String and a String to a 
 --- byte, as well as other constants and methods useful when dealing
 --- with a byte.
 ---
@@ -57,14 +57,14 @@
 --- type char in an object. An object of class
 --- Character contains a single field whose type is
 --- char.
----
+--- 
 --- In addition, this class provides a large number of static methods for
 --- determining a character's category (lowercase letter, digit, etc.)
 --- and for converting characters from uppercase to lowercase and vice
 --- versa.
 ---
 --- Unicode Conformance
----
+--- 
 --- The fields and methods of class Character are defined in terms
 --- of character information from the Unicode Standard, specifically the
 --- UnicodeData file that is part of the Unicode Character Database.
@@ -72,19 +72,19 @@
 --- assigned Unicode code point or character range. The file is available
 --- from the Unicode Consortium at
 --- http://www.unicode.org.
----
+--- 
 --- Character information is based on the Unicode Standard, version 13.0.
----
+--- 
 --- The Java platform has supported different versions of the Unicode
 --- Standard over time. Upgrades to newer versions of the Unicode Standard
 --- occurred in the following Java releases, each indicating the new version:
----
+--- 
 --- Shows Java releases and supported Unicode versions
----
+--- 
 --- Java release
 ---     Unicode version
----
----
+--- 
+--- 
 --- Java SE 15
 ---     Unicode 13.0
 --- Java SE 13
@@ -107,8 +107,8 @@
 ---     Unicode 2.0
 --- JDK 1.0.2
 ---     Unicode 1.1.5
----
----
+--- 
+--- 
 --- Variations from these base Unicode versions, such as recognized appendixes,
 --- are documented elsewhere.
 --- Unicode Character Representations
@@ -120,7 +120,7 @@
 --- changed to allow for characters whose representation requires more
 --- than 16 bits.  The range of legal code points is now
 --- U+0000 to U+10FFFF, known as Unicode scalar value.
---- (Refer to the
+--- (Refer to the 
 --- definition of the U+n notation in the Unicode
 --- Standard.)
 ---
@@ -146,7 +146,7 @@
 --- supplementary characters and surrogate char values is
 --- as follows:
 ---
----
+--- 
 --- The methods that only accept a char value cannot support
 --- supplementary characters. They treat char values from the
 --- surrogate ranges as undefined characters. For example,
@@ -159,7 +159,7 @@
 --- example, Character.isLetter(0x2F81A) returns
 --- true because the code point value represents a letter
 --- (a CJK ideograph).
----
+--- 
 ---
 --- In the Java SE API documentation, Unicode code point is
 --- used for character values in the range between U+0000 and U+10FFFF,
@@ -182,7 +182,7 @@
 --- interface. Every array also belongs to a class that is reflected as
 --- a Class object that is shared by all arrays with the same
 --- element type and number of dimensions.  The primitive Java types
---- (boolean, byte, char, short,
+--- (boolean, byte, char, short, 
 --- int, long, float, and double), and the
 --- keyword void are also represented as Class objects.
 ---
@@ -190,11 +190,11 @@
 --- object is constructed automatically by the Java Virtual Machine when
 --- a class is derived from the bytes of a class file through
 --- the invocation of one of the following methods:
----
+--- 
 ---  ClassLoader::defineClass
 ---  java.lang.invoke.MethodHandles.Lookup::defineClass
 ---  java.lang.invoke.MethodHandles.Lookup::defineHiddenClass
----
+--- 
 ---
 ---  The methods of class Class expose many characteristics of a
 --- class or interface. Most characteristics are derived from the class
@@ -207,20 +207,20 @@
 ---  The following example uses a Class object to print the
 --- class name of an object:
 ---
----
+--- 
 ---     void printClassName(Object obj) {
 ---         System.out.println("The class of " + obj +
 ---                            " is " + obj.getClass().getName());
 ---     }
----
+--- 
 ---
 --- It is also possible to get the Class object for a named
 --- class or interface (or for void) using a class literal.
 --- For example:
 ---
----
+--- 
 ---     System.out.println("The name of class Foo is: "+Foo.class.getName());
----
+--- 
 ---
 ---  Some methods of class Class expose whether the declaration of
 --- a class or interface in Java source code was enclosed within
@@ -249,7 +249,7 @@
 --- The name of a hidden class or interface is
 --- not a binary name,
 --- which means the following:
----
+--- 
 --- A hidden class or interface cannot be referenced by the constant pools
 ---     of other classes and interfaces.
 --- A hidden class or interface cannot be described in
@@ -259,7 +259,7 @@
 ---     ClassDesc::ofDescriptor.
 --- A hidden class or interface cannot be discovered by Class::forName
 ---     or ClassLoader::loadClass.
----
+--- 
 ---
 --- A hidden class or interface is never an array class, but may be
 --- the element type of an array. In all other respects, the fact that
@@ -289,13 +289,13 @@
 ---The Runnable interface should be implemented by any
 --- class whose instances are intended to be executed by a thread. The
 --- class must define a method of no arguments called run.
----
+--- 
 --- This interface is designed to provide a common protocol for objects that
 --- wish to execute code while they are active. For example,
 --- Runnable is implemented by class Thread.
 --- Being active simply means that a thread has been started and has not
 --- yet been stopped.
----
+--- 
 --- In addition, Runnable provides the means for a class to be
 --- active while not subclassing Thread. A class that implements
 --- Runnable can run without subclassing Thread
@@ -309,7 +309,7 @@
 ---@class Runnable
 
 ---(Not exposed)
----The Short class wraps a value of primitive type
+---The Short class wraps a value of primitive type 
 --- short in an object.  An object of type Short contains a
 --- single field whose type is short.
 ---
@@ -338,34 +338,34 @@
 ---The String class represents character strings. All
 --- string literals in Java programs, such as "abc", are
 --- implemented as instances of this class.
----
+--- 
 --- Strings are constant; their values cannot be changed after they
 --- are created. String buffers support mutable strings.
 --- Because String objects are immutable they can be shared. For example:
----
+--- 
 ---     String str = "abc";
----
+--- 
 --- is equivalent to:
----
+--- 
 ---     char data[] = {'a', 'b', 'c'};
 ---     String str = new String(data);
----
+--- 
 --- Here are some more examples of how strings can be used:
----
+--- 
 ---     System.out.println("abc");
 ---     String cde = "cde";
 ---     System.out.println("abc" + cde);
 ---     String c = "abc".substring(2, 3);
 ---     String d = cde.substring(1, 2);
----
----
+--- 
+--- 
 --- The class String includes methods for examining
 --- individual characters of the sequence, for comparing strings, for
 --- searching strings, for extracting substrings, and for creating a
 --- copy of a string with all characters translated to uppercase or to
 --- lowercase. Case mapping is based on the Unicode Standard version
 --- specified by the Character class.
----
+--- 
 --- The Java language provides special support for the string
 --- concatenation operator ( + ), and for conversion of
 --- other objects to strings. For additional information on string
@@ -397,13 +397,13 @@
 --- point in time it contains some particular sequence of characters, but
 --- the length and content of the sequence can be changed through certain
 --- method calls.
----
+--- 
 --- String buffers are safe for use by multiple threads. The methods
 --- are synchronized where necessary so that all the operations on any
 --- particular instance behave as if they occur in some serial order
 --- that is consistent with the order of the method calls made by each of
 --- the individual threads involved.
----
+--- 
 --- The principal operations on a StringBuffer are the
 --- append and insert methods, which are
 --- overloaded so as to accept data of any type. Each effectively
@@ -412,18 +412,18 @@
 --- append method always adds these characters at the end
 --- of the buffer; the insert method adds the characters at
 --- a specified point.
----
+--- 
 --- For example, if z refers to a string buffer object
 --- whose current contents are "start", then
 --- the method call z.append("le") would cause the string
 --- buffer to contain "startle", whereas
 --- z.insert(4, "le") would alter the string buffer to
 --- contain "starlet".
----
+--- 
 --- In general, if sb refers to an instance of a StringBuffer,
 --- then sb.append(x) has the same effect as
 --- sb.insert(sb.length(), x).
----
+--- 
 --- Whenever an operation occurs involving a source sequence (such as
 --- appending or inserting from a source sequence), this class synchronizes
 --- only on the string buffer performing the operation, not on the source.
@@ -436,17 +436,17 @@
 --- This could be satisfied by the caller holding a lock during the
 --- operation's call, by using an immutable source sequence, or by not
 --- sharing the source sequence across threads.
----
+--- 
 --- Every string buffer has a capacity. As long as the length of the
 --- character sequence contained in the string buffer does not exceed
 --- the capacity, it is not necessary to allocate a new internal
 --- buffer array. If the internal buffer overflows, it is
 --- automatically made larger.
----
+--- 
 --- Unless otherwise noted, passing a null argument to a constructor
 --- or method in this class will cause a NullPointerException to be
 --- thrown.
----
+--- 
 --- As of  release JDK 5, this class has been supplemented with an equivalent
 --- class designed for use by a single thread, StringBuilder.  The
 --- StringBuilder class should generally be used in preference to
@@ -471,18 +471,18 @@
 --- append method always adds these characters at the end
 --- of the builder; the insert method adds the characters at
 --- a specified point.
----
+--- 
 --- For example, if z refers to a string builder object
 --- whose current contents are "start", then
 --- the method call z.append("le") would cause the string
 --- builder to contain "startle", whereas
 --- z.insert(4, "le") would alter the string builder to
 --- contain "starlet".
----
+--- 
 --- In general, if sb refers to an instance of a StringBuilder,
 --- then sb.append(x) has the same effect as
 --- sb.insert(sb.length(), x).
----
+--- 
 --- Every string builder has a capacity. As long as the length of the
 --- character sequence contained in the string builder does not exceed
 --- the capacity, it is not necessary to allocate a new internal
@@ -501,7 +501,7 @@
 ---A thread is a thread of execution in a program. The Java
 --- Virtual Machine allows an application to have multiple threads of
 --- execution running concurrently.
----
+--- 
 --- Every thread has a priority. Threads with higher priority are
 --- executed in preference to threads with lower priority. Each thread
 --- may or may not also be marked as a daemon. When code running in
@@ -509,13 +509,13 @@
 --- thread has its priority initially set equal to the priority of the
 --- creating thread, and is a daemon thread if and only if the
 --- creating thread is a daemon.
----
+--- 
 --- When a Java Virtual Machine starts up, there is usually a single
 --- non-daemon thread (which typically calls the method named
 --- main of some designated class). The Java Virtual
 --- Machine continues to execute threads until either of the following
 --- occurs:
----
+--- 
 --- The exit method of class Runtime has been
 ---     called and the security manager has permitted the exit operation
 ---     to take place.
@@ -523,15 +523,15 @@
 ---     returning from the call to the run method or by
 ---     throwing an exception that propagates beyond the run
 ---     method.
----
----
+--- 
+--- 
 --- There are two ways to create a new thread of execution. One is to
 --- declare a class to be a subclass of Thread. This
 --- subclass should override the run method of class
 --- Thread. An instance of the subclass can then be
 --- allocated and started. For example, a thread that computes primes
 --- larger than a stated value could be written as follows:
----
+--- 
 ---     class PrimeThread extends Thread {
 ---         long minPrime;
 ---         PrimeThread(long minPrime) {
@@ -543,21 +543,21 @@
 ---              . . .
 ---         }
 ---     }
----
----
+--- 
+--- 
 --- The following code would then create a thread and start it running:
----
+--- 
 ---     PrimeThread p = new PrimeThread(143);
 ---     p.start();
----
----
+--- 
+--- 
 --- The other way to create a thread is to declare a class that
 --- implements the Runnable interface. That class then
 --- implements the run method. An instance of the class can
 --- then be allocated, passed as an argument when creating
 --- Thread, and started. The same example in this other
 --- style looks like the following:
----
+--- 
 ---     class PrimeRun implements Runnable {
 ---         long minPrime;
 ---         PrimeRun(long minPrime) {
@@ -569,18 +569,18 @@
 ---              . . .
 ---         }
 ---     }
----
----
+--- 
+--- 
 --- The following code would then create a thread and start it running:
----
+--- 
 ---     PrimeRun p = new PrimeRun(143);
 ---     new Thread(p).start();
----
----
+--- 
+--- 
 --- Every thread has a name for identification purposes. More than
 --- one thread may have the same name. If a name is not specified when
 --- a thread is created, a new name is generated for it.
----
+--- 
 --- Unless otherwise noted, passing a null argument to a constructor
 --- or method in this class will cause a NullPointerException to be
 --- thrown.
@@ -598,7 +598,7 @@
 --- thread.
 --- A thread's id is assigned the first time it invokes ThreadId.get()
 --- and remains unchanged on subsequent calls.
----
+--- 
 --- import java.util.concurrent.atomic.AtomicInteger;
 ---
 --- public class ThreadId {
@@ -618,7 +618,7 @@
 ---         return threadId.get();
 ---     }
 --- }
----
+--- 
 --- Each thread holds an implicit reference to its copy of a thread-local
 --- variable as long as the thread is alive and the ThreadLocal
 --- instance is accessible; after a thread goes away, all of its copies of
@@ -634,7 +634,7 @@
 --- this class or one of its subclasses can be the argument type in a
 --- catch clause.
 ---
---- For the purposes of compile-time checking of exceptions,
+--- For the purposes of compile-time checking of exceptions, 
 --- Throwable and any subclass of Throwable that is not also a
 --- subclass of either RuntimeException or Error are
 --- regarded as checked exceptions.

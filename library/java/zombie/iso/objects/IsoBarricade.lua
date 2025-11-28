@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoBarricade: IsoObject, Thumpable, IHasHealth
-
 local __IsoBarricade = {}
 
 ---@param arg0 number
@@ -205,6 +204,6 @@ function IsoBarricade.new(arg0, arg1) end
 ---@type Class<IsoBarricade>
 IsoBarricade.class = nil
 
-__classmetatables[IsoBarricade.class] = { __index = __IsoBarricade }
+__classmetatables[IsoBarricade.class] = {__index = __IsoBarricade}
 
 zombie.iso.objects.IsoBarricade = IsoBarricade

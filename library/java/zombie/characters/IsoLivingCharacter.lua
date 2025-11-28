@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IsoLivingCharacter: IsoGameCharacter
-
 local __IsoLivingCharacter = {}
 
 ---@param ChargeDelta number

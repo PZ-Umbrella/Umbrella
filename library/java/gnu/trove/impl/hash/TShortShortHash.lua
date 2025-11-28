@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class TShortShortHash: TPrimitiveHash
-
 local __TShortShortHash = {}
 
 ---@param arg0 integer

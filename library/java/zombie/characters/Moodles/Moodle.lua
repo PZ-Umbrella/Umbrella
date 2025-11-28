@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Moodle
-
 local __Moodle = {}
 
 ---@return boolean
@@ -43,6 +42,6 @@ function Moodle.new(ChosenType, parent) end
 ---@type Class<Moodle>
 Moodle.class = nil
 
-__classmetatables[Moodle.class] = { __index = __Moodle }
+__classmetatables[Moodle.class] = {__index = __Moodle}
 
 zombie.characters.Moodles.Moodle = Moodle

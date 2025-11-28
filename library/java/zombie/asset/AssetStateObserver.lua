@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class AssetStateObserver
-
 local __AssetStateObserver = {}
 
 ---@param oldState Asset.State

@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IAlarmClock
-
 local __IAlarmClock = {}
 
 ---@return integer

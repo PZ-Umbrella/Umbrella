@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ResourceEnergy: Resource
-
 local __ResourceEnergy = {}
 
 ---@param arg0 ObjectTooltip
@@ -81,6 +80,6 @@ ResourceEnergy = {}
 ---@type Class<ResourceEnergy>
 ResourceEnergy.class = nil
 
-__classmetatables[ResourceEnergy.class] = { __index = __ResourceEnergy }
+__classmetatables[ResourceEnergy.class] = {__index = __ResourceEnergy}
 
 zombie.entity.components.resources.ResourceEnergy = ResourceEnergy

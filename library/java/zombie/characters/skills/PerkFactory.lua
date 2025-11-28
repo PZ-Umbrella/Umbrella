@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class PerkFactory
-
 local __PerkFactory = {}
 
 PerkFactory = {}
@@ -97,6 +96,6 @@ function PerkFactory.new() end
 ---@type Class<PerkFactory>
 PerkFactory.class = nil
 
-__classmetatables[PerkFactory.class] = { __index = __PerkFactory }
+__classmetatables[PerkFactory.class] = {__index = __PerkFactory}
 
 zombie.characters.skills.PerkFactory = PerkFactory

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ItemKey.Radio
-
 local __Radio = {}
 
 Radio = {}
@@ -63,6 +62,6 @@ function Radio.new() end
 ---@type Class<ItemKey.Radio>
 Radio.class = nil
 
-__classmetatables[Radio.class] = { __index = __Radio }
+__classmetatables[Radio.class] = {__index = __Radio}
 
 zombie.scripting.objects.ItemKey.Radio = Radio

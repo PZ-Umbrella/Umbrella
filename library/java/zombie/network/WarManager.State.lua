@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class WarManager.State: Enum<WarManager.State>
-
 local __State = {}
 
 State = {}
@@ -41,6 +40,6 @@ function State.values() end
 ---@type Class<WarManager.State>
 State.class = nil
 
-__classmetatables[State.class] = { __index = __State }
+__classmetatables[State.class] = {__index = __State}
 
 zombie.network.WarManager.State = State

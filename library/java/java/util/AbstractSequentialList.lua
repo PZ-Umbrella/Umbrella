@@ -29,10 +29,9 @@
 --- specification.
 ---
 --- This class is a member of the
----
+--- 
 --- Java Collections Framework.
 ---@class AbstractSequentialList<E>: AbstractList<E>
-
 local __AbstractSequentialList = {}
 
 ---Inserts the specified element at the specified position in this list

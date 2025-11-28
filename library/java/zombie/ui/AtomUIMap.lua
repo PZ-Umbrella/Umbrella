@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AtomUIMap: AtomUI
-
 local __AtomUIMap = {}
 
 ---@return UIWorldMap
@@ -22,6 +21,6 @@ function AtomUIMap.new(arg0) end
 ---@type Class<AtomUIMap>
 AtomUIMap.class = nil
 
-__classmetatables[AtomUIMap.class] = { __index = __AtomUIMap }
+__classmetatables[AtomUIMap.class] = {__index = __AtomUIMap}
 
 zombie.ui.AtomUIMap = AtomUIMap

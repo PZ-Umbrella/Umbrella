@@ -2,7 +2,6 @@
 
 ---Turbo
 ---@class RadioBroadCast
-
 local __RadioBroadCast = {}
 
 ---@param radioLine RadioLine
@@ -61,6 +60,6 @@ function RadioBroadCast.new(id, startstamp, endstamp) end
 ---@type Class<RadioBroadCast>
 RadioBroadCast.class = nil
 
-__classmetatables[RadioBroadCast.class] = { __index = __RadioBroadCast }
+__classmetatables[RadioBroadCast.class] = {__index = __RadioBroadCast}
 
 zombie.radio.scripting.RadioBroadCast = RadioBroadCast

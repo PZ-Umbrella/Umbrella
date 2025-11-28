@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class DesignationZone
-
 local __DesignationZone = {}
 
 function __DesignationZone:check() end
@@ -131,6 +130,6 @@ function DesignationZone.new(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
 ---@type Class<DesignationZone>
 DesignationZone.class = nil
 
-__classmetatables[DesignationZone.class] = { __index = __DesignationZone }
+__classmetatables[DesignationZone.class] = {__index = __DesignationZone}
 
 zombie.iso.areas.DesignationZone = DesignationZone

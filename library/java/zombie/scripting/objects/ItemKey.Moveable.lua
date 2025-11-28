@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ItemKey.Moveable
-
 local __Moveable = {}
 
 Moveable = {}
@@ -1125,6 +1124,6 @@ function Moveable.new() end
 ---@type Class<ItemKey.Moveable>
 Moveable.class = nil
 
-__classmetatables[Moveable.class] = { __index = __Moveable }
+__classmetatables[Moveable.class] = {__index = __Moveable}
 
 zombie.scripting.objects.ItemKey.Moveable = Moveable

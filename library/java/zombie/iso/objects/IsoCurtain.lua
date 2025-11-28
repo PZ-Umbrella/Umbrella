@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoCurtain: IsoObject, ICurtain
-
 local __IsoCurtain = {}
 
 ---@return boolean
@@ -120,6 +119,6 @@ function IsoCurtain.new(cell) end
 ---@type Class<IsoCurtain>
 IsoCurtain.class = nil
 
-__classmetatables[IsoCurtain.class] = { __index = __IsoCurtain }
+__classmetatables[IsoCurtain.class] = {__index = __IsoCurtain}
 
 zombie.iso.objects.IsoCurtain = IsoCurtain

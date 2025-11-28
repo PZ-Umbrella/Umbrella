@@ -7,7 +7,6 @@
 ---
 --- NOTE: When checking the key String, this should be equaling a lowercase version or equalsIgnoreCase
 ---@class IReplaceProvider
-
 local __IReplaceProvider = {}
 
 ---@param key string

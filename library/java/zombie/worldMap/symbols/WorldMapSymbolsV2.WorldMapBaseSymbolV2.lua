@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class WorldMapSymbolsV2.WorldMapBaseSymbolV2: PooledObject
-
 local __WorldMapBaseSymbolV2 = {}
 
 ---@return boolean

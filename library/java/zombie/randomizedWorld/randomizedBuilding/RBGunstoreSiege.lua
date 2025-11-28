@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class RBGunstoreSiege: RandomizedBuildingBase
-
 local __RBGunstoreSiege = {}
 
 ---@param arg0 BuildingDef
@@ -20,6 +19,6 @@ function RBGunstoreSiege.new() end
 ---@type Class<RBGunstoreSiege>
 RBGunstoreSiege.class = nil
 
-__classmetatables[RBGunstoreSiege.class] = { __index = __RBGunstoreSiege }
+__classmetatables[RBGunstoreSiege.class] = {__index = __RBGunstoreSiege}
 
 zombie.randomizedWorld.randomizedBuilding.RBGunstoreSiege = RBGunstoreSiege

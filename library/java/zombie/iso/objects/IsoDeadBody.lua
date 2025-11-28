@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoDeadBody: IsoMovingObject, Talker, IAnimalVisual, IHumanVisual, IIdentifiable, IGrappleableWrapper, IItemProvider, IPositional
-
 local __IsoDeadBody = {}
 
 function __IsoDeadBody:Burn() end
@@ -417,6 +416,6 @@ function IsoDeadBody.new(cell) end
 ---@type Class<IsoDeadBody>
 IsoDeadBody.class = nil
 
-__classmetatables[IsoDeadBody.class] = { __index = __IsoDeadBody }
+__classmetatables[IsoDeadBody.class] = {__index = __IsoDeadBody}
 
 zombie.iso.objects.IsoDeadBody = IsoDeadBody

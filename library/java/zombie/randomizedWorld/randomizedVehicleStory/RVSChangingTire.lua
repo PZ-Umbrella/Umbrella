@@ -2,7 +2,6 @@
 
 ---Good car with a couple changing its tire
 ---@class RVSChangingTire: RandomizedVehicleStoryBase
-
 local __RVSChangingTire = {}
 
 ---@param arg0 Zone
@@ -27,6 +26,6 @@ function RVSChangingTire.new() end
 ---@type Class<RVSChangingTire>
 RVSChangingTire.class = nil
 
-__classmetatables[RVSChangingTire.class] = { __index = __RVSChangingTire }
+__classmetatables[RVSChangingTire.class] = {__index = __RVSChangingTire}
 
 zombie.randomizedWorld.randomizedVehicleStory.RVSChangingTire = RVSChangingTire

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AttributeValueType: Enum<AttributeValueType>
-
 local __AttributeValueType = {}
 
 ---@return integer
@@ -68,6 +67,6 @@ function AttributeValueType.values() end
 ---@type Class<AttributeValueType>
 AttributeValueType.class = nil
 
-__classmetatables[AttributeValueType.class] = { __index = __AttributeValueType }
+__classmetatables[AttributeValueType.class] = {__index = __AttributeValueType}
 
 zombie.entity.components.attributes.AttributeValueType = AttributeValueType

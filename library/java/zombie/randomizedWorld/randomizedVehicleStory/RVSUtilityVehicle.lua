@@ -2,7 +2,6 @@
 
 ---An utility vehicle (mccoys, fire dept, police, ranger, postal..) with corresponding outfit zeds and sometimes tools
 ---@class RVSUtilityVehicle: RandomizedVehicleStoryBase
-
 local __RVSUtilityVehicle = {}
 
 ---@param arg0 Zone
@@ -39,6 +38,6 @@ function RVSUtilityVehicle.new() end
 ---@type Class<RVSUtilityVehicle>
 RVSUtilityVehicle.class = nil
 
-__classmetatables[RVSUtilityVehicle.class] = { __index = __RVSUtilityVehicle }
+__classmetatables[RVSUtilityVehicle.class] = {__index = __RVSUtilityVehicle}
 
 zombie.randomizedWorld.randomizedVehicleStory.RVSUtilityVehicle = RVSUtilityVehicle

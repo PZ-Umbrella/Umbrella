@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class RVSDeadEnd: RandomizedVehicleStoryBase
-
 local __RVSDeadEnd = {}
 
 ---@param arg0 Zone
@@ -26,6 +25,6 @@ function RVSDeadEnd.new() end
 ---@type Class<RVSDeadEnd>
 RVSDeadEnd.class = nil
 
-__classmetatables[RVSDeadEnd.class] = { __index = __RVSDeadEnd }
+__classmetatables[RVSDeadEnd.class] = {__index = __RVSDeadEnd}
 
 zombie.randomizedWorld.randomizedVehicleStory.RVSDeadEnd = RVSDeadEnd

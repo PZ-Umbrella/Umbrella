@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ItemConfig: BaseScriptObject
-
 local __ItemConfig = {}
 
 function __ItemConfig:BuildBuckets() end
@@ -51,6 +50,6 @@ function ItemConfig.new() end
 ---@type Class<ItemConfig>
 ItemConfig.class = nil
 
-__classmetatables[ItemConfig.class] = { __index = __ItemConfig }
+__classmetatables[ItemConfig.class] = {__index = __ItemConfig}
 
 zombie.scripting.itemConfig.ItemConfig = ItemConfig

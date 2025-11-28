@@ -6,7 +6,6 @@
 ---
 ---  If extending from this class is not possible, implement IPooledObject instead.
 ---@class PooledObject: IPooledObject
-
 local __PooledObject = {}
 
 ---@return Pool.PoolReference

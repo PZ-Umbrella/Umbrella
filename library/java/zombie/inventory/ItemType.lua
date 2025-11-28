@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ItemType: Enum<ItemType>
-
 local __ItemType = {}
 
 ---@return integer
@@ -61,6 +60,6 @@ function ItemType.values() end
 ---@type Class<ItemType>
 ItemType.class = nil
 
-__classmetatables[ItemType.class] = { __index = __ItemType }
+__classmetatables[ItemType.class] = {__index = __ItemType}
 
 zombie.inventory.ItemType = ItemType

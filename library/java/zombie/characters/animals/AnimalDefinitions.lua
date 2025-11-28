@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AnimalDefinitions
-
 local __AnimalDefinitions = {}
 
 ---@return boolean
@@ -74,6 +73,6 @@ function AnimalDefinitions.new() end
 ---@type Class<AnimalDefinitions>
 AnimalDefinitions.class = nil
 
-__classmetatables[AnimalDefinitions.class] = { __index = __AnimalDefinitions }
+__classmetatables[AnimalDefinitions.class] = {__index = __AnimalDefinitions}
 
 zombie.characters.animals.AnimalDefinitions = AnimalDefinitions

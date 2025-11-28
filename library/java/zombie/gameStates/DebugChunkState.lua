@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class DebugChunkState: GameState
-
 local __DebugChunkState = {}
 
 function __DebugChunkState:drawObjectAtCursor() end
@@ -93,6 +92,6 @@ function DebugChunkState.new() end
 ---@type Class<DebugChunkState>
 DebugChunkState.class = nil
 
-__classmetatables[DebugChunkState.class] = { __index = __DebugChunkState }
+__classmetatables[DebugChunkState.class] = {__index = __DebugChunkState}
 
 zombie.gameStates.DebugChunkState = DebugChunkState

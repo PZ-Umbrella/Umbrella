@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class VehicleScript.Wheel
-
 local __Wheel = {}
 
 ---@return string
@@ -18,6 +17,6 @@ function Wheel.new() end
 ---@type Class<VehicleScript.Wheel>
 Wheel.class = nil
 
-__classmetatables[Wheel.class] = { __index = __Wheel }
+__classmetatables[Wheel.class] = {__index = __Wheel}
 
 zombie.scripting.objects.VehicleScript.Wheel = Wheel

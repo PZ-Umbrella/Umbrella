@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class TileOverlays
-
 local __TileOverlays = {}
 
 function __TileOverlays:Reset() end
@@ -34,6 +33,6 @@ function TileOverlays.new() end
 ---@type Class<TileOverlays>
 TileOverlays.class = nil
 
-__classmetatables[TileOverlays.class] = { __index = __TileOverlays }
+__classmetatables[TileOverlays.class] = {__index = __TileOverlays}
 
 zombie.iso.TileOverlays = TileOverlays

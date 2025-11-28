@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoBuilding
-
 local __IsoBuilding = {}
 
 ---@param room IsoRoom
@@ -140,6 +139,6 @@ function IsoBuilding.new(cell) end
 ---@type Class<IsoBuilding>
 IsoBuilding.class = nil
 
-__classmetatables[IsoBuilding.class] = { __index = __IsoBuilding }
+__classmetatables[IsoBuilding.class] = {__index = __IsoBuilding}
 
 zombie.iso.areas.IsoBuilding = IsoBuilding

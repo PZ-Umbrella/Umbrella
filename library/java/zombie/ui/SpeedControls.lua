@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SpeedControls: UIElement
-
 local __SpeedControls = {}
 
 ---@param name string
@@ -61,6 +60,6 @@ function SpeedControls.new() end
 ---@type Class<SpeedControls>
 SpeedControls.class = nil
 
-__classmetatables[SpeedControls.class] = { __index = __SpeedControls }
+__classmetatables[SpeedControls.class] = {__index = __SpeedControls}
 
 zombie.ui.SpeedControls = SpeedControls

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class GameSoundClip
-
 local __GameSoundClip = {}
 
 ---@return GameSoundClip
@@ -65,6 +64,6 @@ function GameSoundClip.new(gameSound) end
 ---@type Class<GameSoundClip>
 GameSoundClip.class = nil
 
-__classmetatables[GameSoundClip.class] = { __index = __GameSoundClip }
+__classmetatables[GameSoundClip.class] = {__index = __GameSoundClip}
 
 zombie.audio.GameSoundClip = GameSoundClip

@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class UIElementInterface
-
 local __UIElementInterface = {}
 
 ---@return number

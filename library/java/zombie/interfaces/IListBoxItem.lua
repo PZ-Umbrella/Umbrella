@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IListBoxItem
-
 local __IListBoxItem = {}
 
 ---@return string

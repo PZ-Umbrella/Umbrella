@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class VideoTexture: Texture
-
 local __VideoTexture = {}
 
 function __VideoTexture:Close() end
@@ -34,6 +33,6 @@ function VideoTexture.getOrCreate(arg0, arg1, arg2) end
 ---@type Class<VideoTexture>
 VideoTexture.class = nil
 
-__classmetatables[VideoTexture.class] = { __index = __VideoTexture }
+__classmetatables[VideoTexture.class] = {__index = __VideoTexture}
 
 zombie.core.textures.VideoTexture = VideoTexture

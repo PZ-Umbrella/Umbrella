@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class TPrimitiveHash: THash
-
 local __TPrimitiveHash = {}
 
 ---@return integer

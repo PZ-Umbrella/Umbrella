@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ItemKey.Normal
-
 local __Normal = {}
 
 Normal = {}
@@ -3357,6 +3356,6 @@ function Normal.new() end
 ---@type Class<ItemKey.Normal>
 Normal.class = nil
 
-__classmetatables[Normal.class] = { __index = __Normal }
+__classmetatables[Normal.class] = {__index = __Normal}
 
 zombie.scripting.objects.ItemKey.Normal = Normal

@@ -20,109 +20,109 @@
 --- The values of nodeName,
 --- nodeValue, and attributes vary according to the
 --- node type as follows:
----
+--- 
 --- Interface table
----
----
+--- 
+--- 
 --- Interface
 --- nodeName
 --- nodeValue
 --- attributes
----
----
----
----
----
+--- 
+--- 
+--- 
+--- 
+--- 
 --- Attr
 --- same as Attr.name
 --- same as
 --- Attr.value
 --- null
----
----
+--- 
+--- 
 --- CDATASection
----
+--- 
 --- "#cdata-section"
 --- same as CharacterData.data, the
 --- content of the CDATA Section
 --- null
----
----
+--- 
+--- 
 --- Comment
----
+--- 
 --- "#comment"
 --- same as CharacterData.data, the
 --- content of the comment
 --- null
----
----
+--- 
+--- 
 --- Document
----
+--- 
 --- "#document"
 --- null
 --- null
----
----
----
+--- 
+--- 
+--- 
 --- DocumentFragment
 --- "#document-fragment"
----
+--- 
 --- null
 --- null
----
----
+--- 
+--- 
 --- DocumentType
 --- same as
 --- DocumentType.name
 --- null
 --- null
----
----
----
+--- 
+--- 
+--- 
 --- Element
 --- same as Element.tagName
 --- null
----
+--- 
 --- NamedNodeMap
----
----
+--- 
+--- 
 --- Entity
 --- entity name
 --- null
----
+--- 
 --- null
----
----
+--- 
+--- 
 --- EntityReference
 --- name of entity referenced
----
+--- 
 --- null
 --- null
----
----
+--- 
+--- 
 --- Notation
 --- notation name
----
+--- 
 --- null
 --- null
----
----
+--- 
+--- 
 --- ProcessingInstruction
 --- same
 --- as ProcessingInstruction.target
 --- same as
 --- ProcessingInstruction.data
 --- null
----
----
+--- 
+--- 
 --- Text
----
+--- 
 --- "#text"
 --- same as CharacterData.data, the content
 --- of the text node
 --- null
----
----
----
+--- 
+--- 
+--- 
 --- See also the Document Object Model (DOM) Level 3 Core Specification.
 ---@class Node

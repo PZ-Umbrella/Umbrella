@@ -9,7 +9,6 @@
 --- parameters, but it throws an IllegalArgumentException if a
 --- narrowing conversion would occur.
 ---@class Method: Executable
-
 local __Method = {}
 
 ---@param arg0 any
@@ -100,6 +99,6 @@ Method = {}
 ---@type Class<Method>
 Method.class = nil
 
-__classmetatables[Method.class] = { __index = __Method }
+__classmetatables[Method.class] = {__index = __Method}
 
 java.lang.reflect.Method = Method

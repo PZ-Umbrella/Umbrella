@@ -3,7 +3,6 @@
 ---(Not exposed)
 ---The base interface of all pooled objects managed by zombie.util.Pool
 ---@class IPooledObject
-
 local __IPooledObject = {}
 
 ---@return Pool.PoolReference

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AttributeType.Float: AttributeType.Numeric<AttributeType.Float, number>
-
 local __Float = {}
 
 ---@return number
@@ -32,6 +31,6 @@ Float = {}
 ---@type Class<AttributeType.Float>
 Float.class = nil
 
-__classmetatables[Float.class] = { __index = __Float }
+__classmetatables[Float.class] = {__index = __Float}
 
 zombie.entity.components.attributes.AttributeType.Float = Float

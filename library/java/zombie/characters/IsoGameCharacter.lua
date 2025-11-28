@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoGameCharacter: IsoMovingObject, Talker, ChatElementOwner, IAnimatable, IAnimationVariableMap, IAnimationVariableRegistry, IClothingItemListener, IActionStateChanged, IAnimEventCallback, IAnimEventWrappedBroadcaster, IFMODParameterUpdater, IGrappleableWrapper, ILuaVariableSource, ILuaGameCharacter
-
 local __IsoGameCharacter = {}
 
 ---@param amount integer
@@ -443,22 +442,7 @@ function __IsoGameCharacter:addLineChatElement(line, r, g, b, font, baseRange, c
 ---@param colors boolean
 ---@param fonts boolean
 ---@param equalizeHeights boolean
-function __IsoGameCharacter:addLineChatElement(
-	line,
-	r,
-	g,
-	b,
-	font,
-	baseRange,
-	customTag,
-	bbcode,
-	img,
-	icons,
-	colors,
-	fonts,
-	equalizeHeights
-)
-end
+function __IsoGameCharacter:addLineChatElement(line, r, g, b, font, baseRange, customTag, bbcode, img, icons, colors, fonts, equalizeHeights) end
 
 ---@param arg0 BloodBodyPartType
 ---@param arg1 integer
@@ -3793,6 +3777,6 @@ function IsoGameCharacter.getWeightAsCorpse() end
 ---@type Class<IsoGameCharacter>
 IsoGameCharacter.class = nil
 
-__classmetatables[IsoGameCharacter.class] = { __index = __IsoGameCharacter }
+__classmetatables[IsoGameCharacter.class] = {__index = __IsoGameCharacter}
 
 zombie.characters.IsoGameCharacter = IsoGameCharacter

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ObjectTooltip: UIElement
-
 local __ObjectTooltip = {}
 
 ---@param x integer
@@ -150,6 +149,6 @@ function ObjectTooltip.new() end
 ---@type Class<ObjectTooltip>
 ObjectTooltip.class = nil
 
-__classmetatables[ObjectTooltip.class] = { __index = __ObjectTooltip }
+__classmetatables[ObjectTooltip.class] = {__index = __ObjectTooltip}
 
 zombie.ui.ObjectTooltip = ObjectTooltip

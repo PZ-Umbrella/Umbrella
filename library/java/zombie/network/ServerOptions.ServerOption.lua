@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class ServerOptions.ServerOption
-
 local __ServerOption = {}
 
 ---@return ConfigOption

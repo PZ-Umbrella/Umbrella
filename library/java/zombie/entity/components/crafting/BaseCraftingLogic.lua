@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class BaseCraftingLogic
-
 local __BaseCraftingLogic = {}
 
 ---@param arg0 string
@@ -243,6 +242,6 @@ function BaseCraftingLogic.getFavouriteModDataString(arg0) end
 ---@type Class<BaseCraftingLogic>
 BaseCraftingLogic.class = nil
 
-__classmetatables[BaseCraftingLogic.class] = { __index = __BaseCraftingLogic }
+__classmetatables[BaseCraftingLogic.class] = {__index = __BaseCraftingLogic}
 
 zombie.entity.components.crafting.BaseCraftingLogic = BaseCraftingLogic

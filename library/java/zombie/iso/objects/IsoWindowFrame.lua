@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoWindowFrame: IsoObject, BarricadeAble
-
 local __IsoWindowFrame = {}
 
 ---@return IsoCurtain
@@ -161,6 +160,6 @@ function IsoWindowFrame.new(arg0, arg1, arg2, arg3) end
 ---@type Class<IsoWindowFrame>
 IsoWindowFrame.class = nil
 
-__classmetatables[IsoWindowFrame.class] = { __index = __IsoWindowFrame }
+__classmetatables[IsoWindowFrame.class] = {__index = __IsoWindowFrame}
 
 zombie.iso.objects.IsoWindowFrame = IsoWindowFrame

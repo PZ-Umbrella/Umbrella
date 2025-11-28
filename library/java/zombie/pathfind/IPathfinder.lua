@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IPathfinder
-
 local __IPathfinder = {}
 
 ---@param arg0 Mover

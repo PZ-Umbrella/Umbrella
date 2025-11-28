@@ -10,13 +10,13 @@
 --- Secure Coding Guidelines for Java SE.
 --- Serialization Filtering describes best
 --- practices for defensive use of serial filters.
----
+--- 
 ---
 --- Classes that do not implement this
 --- interface will not have any of their state serialized or
 --- deserialized.  All subtypes of a serializable class are themselves
 --- serializable.  The serialization interface has no methods or fields
---- and serves only to identify the semantics of being serializable.
+--- and serves only to identify the semantics of being serializable. 
 ---
 --- It is possible for subtypes of non-serializable classes to be serialized
 --- and deserialized. During serialization, no data will be written for the
@@ -27,28 +27,28 @@
 --- the case; the error will be detected at runtime. A serializable subtype may
 --- assume responsibility for saving and restoring the state of a non-serializable
 --- supertype's public, protected, and (if accessible) package-access fields. See
---- the
+--- the 
 --- Java Object Serialization Specification, section 3.1, for
 --- a detailed specification of the deserialization process, including handling of
---- serializable and non-serializable classes.
+--- serializable and non-serializable classes. 
 ---
 --- When traversing a graph, an object may be encountered that does not
 --- support the Serializable interface. In this case the
 --- NotSerializableException will be thrown and will identify the class
---- of the non-serializable object.
+--- of the non-serializable object. 
 ---
 --- Classes that require special handling during the serialization and
 --- deserialization process must implement special methods with these exact
 --- signatures:
 ---
----
+--- 
 --- private void writeObject(java.io.ObjectOutputStream out)
 ---     throws IOException
 --- private void readObject(java.io.ObjectInputStream in)
 ---     throws IOException, ClassNotFoundException;
 --- private void readObjectNoData()
 ---     throws ObjectStreamException;
----
+--- 
 ---
 --- The writeObject method is responsible for writing the state of the
 --- object for its particular class so that the corresponding
@@ -87,35 +87,35 @@
 --- used when writing an object to the stream should implement this
 --- special method with the exact signature:
 ---
----
+--- 
 --- ANY-ACCESS-MODIFIER Object writeReplace() throws ObjectStreamException;
----
+--- 
 ---
 --- This writeReplace method is invoked by serialization if the method
 --- exists and it would be accessible from a method defined within the
 --- class of the object being serialized. Thus, the method can have private,
 --- protected and package-private access. Subclass access to this method
---- follows java accessibility rules.
+--- follows java accessibility rules. 
 ---
 --- Classes that need to designate a replacement when an instance of it
 --- is read from the stream should implement this special method with the
 --- exact signature.
 ---
----
+--- 
 --- ANY-ACCESS-MODIFIER Object readResolve() throws ObjectStreamException;
----
+--- 
 ---
 --- This readResolve method follows the same invocation rules and
 --- accessibility rules as writeReplace.
 ---
 --- Enum types are all serializable and receive treatment defined by
---- the
+--- the 
 --- Java Object Serialization Specification during
 --- serialization and deserialization. Any declarations of the special
 --- handling methods discussed above are ignored for enum types.
 ---
 --- Record classes can implement Serializable and receive treatment defined
---- by the
+--- by the 
 --- Java Object Serialization Specification, Section 1.13,
 --- "Serialization of Records". Any declarations of the special
 --- handling methods discussed above are ignored for record types.
@@ -131,9 +131,9 @@
 --- declaring a field named "serialVersionUID" that must be static,
 --- final, and of type long:
 ---
----
+--- 
 --- ANY-ACCESS-MODIFIER static final long serialVersionUID = 42L;
----
+--- 
 ---
 --- If a serializable class does not explicitly declare a serialVersionUID, then
 --- the serialization runtime will calculate a default serialVersionUID value
@@ -156,5 +156,4 @@
 --- the default computed value, but the requirement for matching
 --- serialVersionUID values is waived for array classes.
 ---@class Serializable
-
 local __Serializable = {}

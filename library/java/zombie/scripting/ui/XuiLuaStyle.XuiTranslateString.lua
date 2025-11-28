@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class XuiLuaStyle.XuiTranslateString: XuiLuaStyle.XuiVar<string, XuiLuaStyle.XuiTranslateString>
-
 local __XuiTranslateString = {}
 
 ---@return string
@@ -18,6 +17,6 @@ XuiTranslateString = {}
 ---@type Class<XuiLuaStyle.XuiTranslateString>
 XuiTranslateString.class = nil
 
-__classmetatables[XuiTranslateString.class] = { __index = __XuiTranslateString }
+__classmetatables[XuiTranslateString.class] = {__index = __XuiTranslateString}
 
 zombie.scripting.ui.XuiLuaStyle.XuiTranslateString = XuiTranslateString

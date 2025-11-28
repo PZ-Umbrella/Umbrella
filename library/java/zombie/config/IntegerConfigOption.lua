@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IntegerConfigOption: ConfigOption
-
 local __IntegerConfigOption = {}
 
 ---@return integer
@@ -60,6 +59,6 @@ function IntegerConfigOption.new(name, min, max, defaultValue) end
 ---@type Class<IntegerConfigOption>
 IntegerConfigOption.class = nil
 
-__classmetatables[IntegerConfigOption.class] = { __index = __IntegerConfigOption }
+__classmetatables[IntegerConfigOption.class] = {__index = __IntegerConfigOption}
 
 zombie.config.IntegerConfigOption = IntegerConfigOption

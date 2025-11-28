@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoChunk
-
 local __IsoChunk = {}
 
 ---@param wx integer
@@ -448,6 +447,6 @@ function IsoChunk.new(arg0) end
 ---@type Class<IsoChunk>
 IsoChunk.class = nil
 
-__classmetatables[IsoChunk.class] = { __index = __IsoChunk }
+__classmetatables[IsoChunk.class] = {__index = __IsoChunk}
 
 zombie.iso.IsoChunk = IsoChunk

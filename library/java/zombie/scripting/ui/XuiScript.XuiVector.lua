@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class XuiScript.XuiVector: XuiScript.XuiVar<number, XuiScript.XuiVector>
-
 local __XuiVector = {}
 
 ---@return number
@@ -54,6 +53,6 @@ function XuiVector.new(arg0, arg1, arg2, arg3, arg4, arg5) end
 ---@type Class<XuiScript.XuiVector>
 XuiVector.class = nil
 
-__classmetatables[XuiVector.class] = { __index = __XuiVector }
+__classmetatables[XuiVector.class] = {__index = __XuiVector}
 
 zombie.scripting.ui.XuiScript.XuiVector = XuiVector

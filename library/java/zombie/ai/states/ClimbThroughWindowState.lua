@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ClimbThroughWindowState: State
-
 local __ClimbThroughWindowState = {}
 
 ---@param arg0 IsoGameCharacter
@@ -125,6 +124,6 @@ function ClimbThroughWindowState.new() end
 ---@type Class<ClimbThroughWindowState>
 ClimbThroughWindowState.class = nil
 
-__classmetatables[ClimbThroughWindowState.class] = { __index = __ClimbThroughWindowState }
+__classmetatables[ClimbThroughWindowState.class] = {__index = __ClimbThroughWindowState}
 
 zombie.ai.states.ClimbThroughWindowState = ClimbThroughWindowState

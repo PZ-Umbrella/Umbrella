@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ContainerOverlays
-
 local __ContainerOverlays = {}
 
 function __ContainerOverlays:Reset() end
@@ -31,6 +30,6 @@ function ContainerOverlays.new() end
 ---@type Class<ContainerOverlays>
 ContainerOverlays.class = nil
 
-__classmetatables[ContainerOverlays.class] = { __index = __ContainerOverlays }
+__classmetatables[ContainerOverlays.class] = {__index = __ContainerOverlays}
 
 zombie.iso.ContainerOverlays = ContainerOverlays

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoMetaCell
-
 local __IsoMetaCell = {}
 
 function __IsoMetaCell:Dispose() end
@@ -142,6 +141,6 @@ function IsoMetaCell.new(wx, wy) end
 ---@type Class<IsoMetaCell>
 IsoMetaCell.class = nil
 
-__classmetatables[IsoMetaCell.class] = { __index = __IsoMetaCell }
+__classmetatables[IsoMetaCell.class] = {__index = __IsoMetaCell}
 
 zombie.iso.IsoMetaCell = IsoMetaCell

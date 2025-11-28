@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class RDSRatInfested: RandomizedDeadSurvivorBase
-
 local __RDSRatInfested = {}
 
 ---@param arg0 BuildingDef
@@ -23,6 +22,6 @@ function RDSRatInfested.new() end
 ---@type Class<RDSRatInfested>
 RDSRatInfested.class = nil
 
-__classmetatables[RDSRatInfested.class] = { __index = __RDSRatInfested }
+__classmetatables[RDSRatInfested.class] = {__index = __RDSRatInfested}
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSRatInfested = RDSRatInfested

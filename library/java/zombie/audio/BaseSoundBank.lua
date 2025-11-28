@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class BaseSoundBank
-
 local __BaseSoundBank = {}
 
 ---@param alias string

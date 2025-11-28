@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class WorldMapClient
-
 local __WorldMapClient = {}
 
 function __WorldMapClient:Reset() end
@@ -45,6 +44,6 @@ function WorldMapClient.new() end
 ---@type Class<WorldMapClient>
 WorldMapClient.class = nil
 
-__classmetatables[WorldMapClient.class] = { __index = __WorldMapClient }
+__classmetatables[WorldMapClient.class] = {__index = __WorldMapClient}
 
 zombie.worldMap.network.WorldMapClient = WorldMapClient

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class FakeDeadAttackState: State
-
 local __FakeDeadAttackState = {}
 
 ---@param arg0 IsoGameCharacter
@@ -42,6 +41,6 @@ function FakeDeadAttackState.new() end
 ---@type Class<FakeDeadAttackState>
 FakeDeadAttackState.class = nil
 
-__classmetatables[FakeDeadAttackState.class] = { __index = __FakeDeadAttackState }
+__classmetatables[FakeDeadAttackState.class] = {__index = __FakeDeadAttackState}
 
 zombie.ai.states.FakeDeadAttackState = FakeDeadAttackState

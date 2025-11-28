@@ -1,11 +1,11 @@
 ---@meta _
 
----The Long class wraps a value of the primitive type
+---The Long class wraps a value of the primitive type 
 --- long in an object. An object of type Long contains a
 --- single field whose type is long.
 ---
 ---  In addition, this class provides several methods for converting
---- a long to a String and a String to a
+--- a long to a String and a String to a 
 --- long, as well as other constants and methods useful when dealing
 --- with a long.
 ---
@@ -21,7 +21,6 @@
 --- based on material from Henry S. Warren, Jr.'s Hacker's
 --- Delight, (Addison Wesley, 2002).
 ---@class Long: Number, Comparable<integer>, Constable, ConstantDesc
-
 local __Long = {}
 
 ---@return integer
@@ -294,6 +293,6 @@ function Long.new(s) end
 ---@type Class<Long>
 Long.class = nil
 
-__classmetatables[Long.class] = { __index = __Long }
+__classmetatables[Long.class] = {__index = __Long}
 
 java.lang.Long = Long

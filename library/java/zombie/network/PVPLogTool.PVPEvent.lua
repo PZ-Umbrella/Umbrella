@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class PVPLogTool.PVPEvent
-
 local __PVPEvent = {}
 
 ---@return string
@@ -47,6 +46,6 @@ function PVPEvent.new(arg0, arg1, arg2, arg3, arg4) end
 ---@type Class<PVPLogTool.PVPEvent>
 PVPEvent.class = nil
 
-__classmetatables[PVPEvent.class] = { __index = __PVPEvent }
+__classmetatables[PVPEvent.class] = {__index = __PVPEvent}
 
 zombie.network.PVPLogTool.PVPEvent = PVPEvent

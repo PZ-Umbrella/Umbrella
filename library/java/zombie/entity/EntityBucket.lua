@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class EntityBucket
-
 local __EntityBucket = {}
 
 ---@param arg0 integer
@@ -25,6 +24,6 @@ EntityBucket = {}
 ---@type Class<EntityBucket>
 EntityBucket.class = nil
 
-__classmetatables[EntityBucket.class] = { __index = __EntityBucket }
+__classmetatables[EntityBucket.class] = {__index = __EntityBucket}
 
 zombie.entity.EntityBucket = EntityBucket

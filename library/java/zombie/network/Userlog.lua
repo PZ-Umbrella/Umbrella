@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Userlog
-
 local __Userlog = {}
 
 ---@return integer
@@ -46,6 +45,6 @@ function Userlog.new(arg0) end
 ---@type Class<Userlog>
 Userlog.class = nil
 
-__classmetatables[Userlog.class] = { __index = __Userlog }
+__classmetatables[Userlog.class] = {__index = __Userlog}
 
 zombie.network.Userlog = Userlog

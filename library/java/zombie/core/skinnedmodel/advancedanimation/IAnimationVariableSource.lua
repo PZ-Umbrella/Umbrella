@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IAnimationVariableSource
-
 local __IAnimationVariableSource = {}
 
 ---@param name string

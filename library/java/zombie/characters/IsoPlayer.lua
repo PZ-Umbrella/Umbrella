@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoPlayer: IsoLivingCharacter, IAnimalVisual, IHumanVisual, IPositional
-
 local __IsoPlayer = {}
 
 ---@return boolean
@@ -1283,6 +1282,6 @@ function IsoPlayer.new(cell, desc, x, y, z) end
 ---@type Class<IsoPlayer>
 IsoPlayer.class = nil
 
-__classmetatables[IsoPlayer.class] = { __index = __IsoPlayer }
+__classmetatables[IsoPlayer.class] = {__index = __IsoPlayer}
 
 zombie.characters.IsoPlayer = IsoPlayer

@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class BaseCharacterSoundEmitter
-
 local __BaseCharacterSoundEmitter = {}
 
 ---@return boolean

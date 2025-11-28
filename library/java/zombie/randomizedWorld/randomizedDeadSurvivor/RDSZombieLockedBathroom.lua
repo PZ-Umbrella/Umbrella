@@ -2,7 +2,6 @@
 
 ---Zombie inside the barricaded bathroom and a dead corpse in front of it with a pistol
 ---@class RDSZombieLockedBathroom: RandomizedDeadSurvivorBase
-
 local __RDSZombieLockedBathroom = {}
 
 ---@param def BuildingDef
@@ -16,6 +15,6 @@ function RDSZombieLockedBathroom.new() end
 ---@type Class<RDSZombieLockedBathroom>
 RDSZombieLockedBathroom.class = nil
 
-__classmetatables[RDSZombieLockedBathroom.class] = { __index = __RDSZombieLockedBathroom }
+__classmetatables[RDSZombieLockedBathroom.class] = {__index = __RDSZombieLockedBathroom}
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSZombieLockedBathroom = RDSZombieLockedBathroom

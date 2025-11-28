@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class CraftUtil
-
 local __CraftUtil = {}
 
 CraftUtil = {}
@@ -167,6 +166,6 @@ function CraftUtil.new() end
 ---@type Class<CraftUtil>
 CraftUtil.class = nil
 
-__classmetatables[CraftUtil.class] = { __index = __CraftUtil }
+__classmetatables[CraftUtil.class] = {__index = __CraftUtil}
 
 zombie.entity.components.crafting.CraftUtil = CraftUtil

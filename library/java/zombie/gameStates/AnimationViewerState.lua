@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AnimationViewerState: GameState
-
 local __AnimationViewerState = {}
 
 function __AnimationViewerState:enter() end
@@ -66,6 +65,6 @@ function AnimationViewerState.new() end
 ---@type Class<AnimationViewerState>
 AnimationViewerState.class = nil
 
-__classmetatables[AnimationViewerState.class] = { __index = __AnimationViewerState }
+__classmetatables[AnimationViewerState.class] = {__index = __AnimationViewerState}
 
 zombie.gameStates.AnimationViewerState = AnimationViewerState

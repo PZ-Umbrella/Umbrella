@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class RecipeManager
-
 local __RecipeManager = {}
 
 RecipeManager = {}
@@ -167,6 +166,6 @@ function RecipeManager.new() end
 ---@type Class<RecipeManager>
 RecipeManager.class = nil
 
-__classmetatables[RecipeManager.class] = { __index = __RecipeManager }
+__classmetatables[RecipeManager.class] = {__index = __RecipeManager}
 
 zombie.inventory.RecipeManager = RecipeManager

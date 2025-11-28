@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class ILuaGameCharacterAttachedItems
-
 local __ILuaGameCharacterAttachedItems = {}
 
 function __ILuaGameCharacterAttachedItems:clearAttachedItems() end

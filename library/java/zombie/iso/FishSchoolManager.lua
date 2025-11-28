@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class FishSchoolManager
-
 local __FishSchoolManager = {}
 
 ---@param arg0 integer
@@ -59,6 +58,6 @@ function FishSchoolManager.new() end
 ---@type Class<FishSchoolManager>
 FishSchoolManager.class = nil
 
-__classmetatables[FishSchoolManager.class] = { __index = __FishSchoolManager }
+__classmetatables[FishSchoolManager.class] = {__index = __FishSchoolManager}
 
 zombie.iso.FishSchoolManager = FishSchoolManager

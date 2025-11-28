@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoWorldInventoryObject: IsoObject, IItemProvider
-
 local __IsoWorldInventoryObject = {}
 
 ---@param tooltipUI ObjectTooltip
@@ -225,6 +224,6 @@ function IsoWorldInventoryObject.new(cell) end
 ---@type Class<IsoWorldInventoryObject>
 IsoWorldInventoryObject.class = nil
 
-__classmetatables[IsoWorldInventoryObject.class] = { __index = __IsoWorldInventoryObject }
+__classmetatables[IsoWorldInventoryObject.class] = {__index = __IsoWorldInventoryObject}
 
 zombie.iso.objects.IsoWorldInventoryObject = IsoWorldInventoryObject

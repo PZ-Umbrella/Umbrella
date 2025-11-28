@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class NetTimedActionPacket: NetTimedAction, INetworkPacket
-
 local __NetTimedActionPacket = {}
 
 ---@param arg0 ByteBuffer
@@ -19,6 +18,6 @@ function NetTimedActionPacket.new() end
 ---@type Class<NetTimedActionPacket>
 NetTimedActionPacket.class = nil
 
-__classmetatables[NetTimedActionPacket.class] = { __index = __NetTimedActionPacket }
+__classmetatables[NetTimedActionPacket.class] = {__index = __NetTimedActionPacket}
 
 zombie.network.packets.NetTimedActionPacket = NetTimedActionPacket

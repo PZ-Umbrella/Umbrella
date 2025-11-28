@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class VehicleGauge: UIElement
-
 local __VehicleGauge = {}
 
 function __VehicleGauge:render() end
@@ -28,6 +27,6 @@ function VehicleGauge.new(texture, needleX, needleY, minAngle, maxAngle) end
 ---@type Class<VehicleGauge>
 VehicleGauge.class = nil
 
-__classmetatables[VehicleGauge.class] = { __index = __VehicleGauge }
+__classmetatables[VehicleGauge.class] = {__index = __VehicleGauge}
 
 zombie.ui.VehicleGauge = VehicleGauge

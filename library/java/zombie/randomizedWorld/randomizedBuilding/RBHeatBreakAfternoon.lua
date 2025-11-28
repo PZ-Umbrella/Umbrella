@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class RBHeatBreakAfternoon: RandomizedBuildingBase
-
 local __RBHeatBreakAfternoon = {}
 
 ---@param arg0 BuildingDef
@@ -20,6 +19,6 @@ function RBHeatBreakAfternoon.new() end
 ---@type Class<RBHeatBreakAfternoon>
 RBHeatBreakAfternoon.class = nil
 
-__classmetatables[RBHeatBreakAfternoon.class] = { __index = __RBHeatBreakAfternoon }
+__classmetatables[RBHeatBreakAfternoon.class] = {__index = __RBHeatBreakAfternoon}
 
 zombie.randomizedWorld.randomizedBuilding.RBHeatBreakAfternoon = RBHeatBreakAfternoon

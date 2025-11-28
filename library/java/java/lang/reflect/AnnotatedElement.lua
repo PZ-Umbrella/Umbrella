@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class AnnotatedElement
-
 local __AnnotatedElement = {}
 
 ---@generic T: Annotation

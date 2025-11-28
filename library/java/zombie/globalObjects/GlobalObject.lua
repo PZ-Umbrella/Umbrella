@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class GlobalObject
-
 local __GlobalObject = {}
 
 function __GlobalObject:Reset() end

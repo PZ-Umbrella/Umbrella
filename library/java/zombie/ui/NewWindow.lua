@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class NewWindow: UIElement
-
 local __NewWindow = {}
 
 ---@param name string

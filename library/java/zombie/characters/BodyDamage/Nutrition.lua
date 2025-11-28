@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Nutrition
-
 local __Nutrition = {}
 
 ---> 100 obese 85 to 100 over weight 75 to 85 normal 65 to 75 underweight 50 to
@@ -85,6 +84,6 @@ function Nutrition.new(parent) end
 ---@type Class<Nutrition>
 Nutrition.class = nil
 
-__classmetatables[Nutrition.class] = { __index = __Nutrition }
+__classmetatables[Nutrition.class] = {__index = __Nutrition}
 
 zombie.characters.BodyDamage.Nutrition = Nutrition

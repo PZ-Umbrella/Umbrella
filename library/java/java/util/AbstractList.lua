@@ -35,10 +35,9 @@
 --- collection being implemented admits a more efficient implementation.
 ---
 --- This class is a member of the
----
+--- 
 --- Java Collections Framework.
 ---@class AbstractList<E>: AbstractCollection<E>, List<E>
-
 local __AbstractList = {}
 
 ---@param arg0 E

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoBrokenGlass: IsoObject
-
 local __IsoBrokenGlass = {}
 
 function __IsoBrokenGlass:addToWorld() end
@@ -44,6 +43,6 @@ function IsoBrokenGlass.new(cell) end
 ---@type Class<IsoBrokenGlass>
 IsoBrokenGlass.class = nil
 
-__classmetatables[IsoBrokenGlass.class] = { __index = __IsoBrokenGlass }
+__classmetatables[IsoBrokenGlass.class] = {__index = __IsoBrokenGlass}
 
 zombie.iso.objects.IsoBrokenGlass = IsoBrokenGlass

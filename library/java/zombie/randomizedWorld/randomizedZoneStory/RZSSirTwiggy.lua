@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class RZSSirTwiggy: RandomizedZoneStoryBase
-
 local __RZSSirTwiggy = {}
 
 ---@param arg0 Zone
@@ -15,6 +14,6 @@ function RZSSirTwiggy.new() end
 ---@type Class<RZSSirTwiggy>
 RZSSirTwiggy.class = nil
 
-__classmetatables[RZSSirTwiggy.class] = { __index = __RZSSirTwiggy }
+__classmetatables[RZSSirTwiggy.class] = {__index = __RZSSirTwiggy}
 
 zombie.randomizedWorld.randomizedZoneStory.RZSSirTwiggy = RZSSirTwiggy

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SpriteConfigManager
-
 local __SpriteConfigManager = {}
 
 SpriteConfigManager = {}
@@ -82,6 +81,6 @@ function SpriteConfigManager.new() end
 ---@type Class<SpriteConfigManager>
 SpriteConfigManager.class = nil
 
-__classmetatables[SpriteConfigManager.class] = { __index = __SpriteConfigManager }
+__classmetatables[SpriteConfigManager.class] = {__index = __SpriteConfigManager}
 
 zombie.entity.components.spriteconfig.SpriteConfigManager = SpriteConfigManager

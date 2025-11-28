@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class XuiVarType: Enum<XuiVarType>
-
 local __XuiVarType = {}
 
 XuiVarType = {}
@@ -61,6 +60,6 @@ function XuiVarType.values() end
 ---@type Class<XuiVarType>
 XuiVarType.class = nil
 
-__classmetatables[XuiVarType.class] = { __index = __XuiVarType }
+__classmetatables[XuiVarType.class] = {__index = __XuiVarType}
 
 zombie.scripting.ui.XuiVarType = XuiVarType

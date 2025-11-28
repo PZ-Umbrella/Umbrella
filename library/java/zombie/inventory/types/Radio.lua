@@ -2,7 +2,6 @@
 
 ---Turbo
 ---@class Radio: Moveable, Talker, IUpdater, WaveSignalDevice
-
 local __Radio = {}
 
 ---@param line string
@@ -110,6 +109,6 @@ function Radio.new(module, name, itemType, texName) end
 ---@type Class<Radio>
 Radio.class = nil
 
-__classmetatables[Radio.class] = { __index = __Radio }
+__classmetatables[Radio.class] = {__index = __Radio}
 
 zombie.inventory.types.Radio = Radio

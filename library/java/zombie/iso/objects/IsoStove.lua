@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoStove: IsoObject, Activatable
-
 local __IsoStove = {}
 
 ---@return boolean
@@ -105,6 +104,6 @@ function IsoStove.new(cell) end
 ---@type Class<IsoStove>
 IsoStove.class = nil
 
-__classmetatables[IsoStove.class] = { __index = __IsoStove }
+__classmetatables[IsoStove.class] = {__index = __IsoStove}
 
 zombie.iso.objects.IsoStove = IsoStove

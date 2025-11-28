@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Userlog.UserlogType: Enum<Userlog.UserlogType>
-
 local __UserlogType = {}
 
 ---@return integer
@@ -53,6 +52,6 @@ function UserlogType.values() end
 ---@type Class<Userlog.UserlogType>
 UserlogType.class = nil
 
-__classmetatables[UserlogType.class] = { __index = __UserlogType }
+__classmetatables[UserlogType.class] = {__index = __UserlogType}
 
 zombie.network.Userlog.UserlogType = UserlogType

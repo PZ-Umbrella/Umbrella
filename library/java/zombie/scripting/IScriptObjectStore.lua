@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IScriptObjectStore
-
 local __IScriptObjectStore = {}
 
 ---@param name string

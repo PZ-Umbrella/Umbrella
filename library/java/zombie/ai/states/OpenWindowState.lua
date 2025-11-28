@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class OpenWindowState: State
-
 local __OpenWindowState = {}
 
 ---@param arg0 IsoGameCharacter
@@ -49,6 +48,6 @@ function OpenWindowState.new() end
 ---@type Class<OpenWindowState>
 OpenWindowState.class = nil
 
-__classmetatables[OpenWindowState.class] = { __index = __OpenWindowState }
+__classmetatables[OpenWindowState.class] = {__index = __OpenWindowState}
 
 zombie.ai.states.OpenWindowState = OpenWindowState

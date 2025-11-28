@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class TileGeometryManager
-
 local __TileGeometryManager = {}
 
 function __TileGeometryManager:Reset() end
@@ -85,6 +84,6 @@ function TileGeometryManager.getInstance() end
 ---@type Class<TileGeometryManager>
 TileGeometryManager.class = nil
 
-__classmetatables[TileGeometryManager.class] = { __index = __TileGeometryManager }
+__classmetatables[TileGeometryManager.class] = {__index = __TileGeometryManager}
 
 zombie.tileDepth.TileGeometryManager = TileGeometryManager

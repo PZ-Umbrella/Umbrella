@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class WorldMapStyleV1.WorldMapLineStyleLayerV1: WorldMapStyleV1.WorldMapStyleLayerV1
-
 local __WorldMapLineStyleLayerV1 = {}
 
 ---@param zoom number
@@ -24,6 +23,6 @@ WorldMapLineStyleLayerV1 = {}
 ---@type Class<WorldMapStyleV1.WorldMapLineStyleLayerV1>
 WorldMapLineStyleLayerV1.class = nil
 
-__classmetatables[WorldMapLineStyleLayerV1.class] = { __index = __WorldMapLineStyleLayerV1 }
+__classmetatables[WorldMapLineStyleLayerV1.class] = {__index = __WorldMapLineStyleLayerV1}
 
 zombie.worldMap.styles.WorldMapStyleV1.WorldMapLineStyleLayerV1 = WorldMapLineStyleLayerV1

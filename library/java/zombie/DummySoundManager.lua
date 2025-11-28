@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class DummySoundManager: BaseSoundManager
-
 local __DummySoundManager = {}
 
 ---@param musicTrack Audio
@@ -337,6 +336,6 @@ function DummySoundManager.new() end
 ---@type Class<DummySoundManager>
 DummySoundManager.class = nil
 
-__classmetatables[DummySoundManager.class] = { __index = __DummySoundManager }
+__classmetatables[DummySoundManager.class] = {__index = __DummySoundManager}
 
 zombie.DummySoundManager = DummySoundManager

@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IOEnum
-
 local __IOEnum = {}
 
 ---@return integer

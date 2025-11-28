@@ -26,10 +26,9 @@
 --- map being implemented admits a more efficient implementation.
 ---
 --- This class is a member of the
----
+--- 
 --- Java Collections Framework.
 ---@class AbstractMap<K, V>: Map<K, V>
-
 local __AbstractMap = {}
 
 function __AbstractMap:clear() end

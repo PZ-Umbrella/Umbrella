@@ -41,10 +41,9 @@
 --- should be used only to detect bugs.
 ---
 --- This class is a member of the
----
+--- 
 --- Java Collections Framework.
 ---@class LinkedList<E>: AbstractSequentialList<E>, List<E>, Deque<E>, Cloneable, Serializable
-
 local __LinkedList = {}
 
 ---Appends the specified element to the end of this list.
@@ -333,7 +332,7 @@ function __LinkedList:toArray() end
 --- The following code can be used to dump the list into a newly
 --- allocated array of String:
 ---
----
+--- 
 ---     String[] y = x.toArray(new String[0]);
 ---
 --- Note that toArray(new Object[0]) is identical in function to
@@ -363,6 +362,6 @@ function LinkedList.new(c) end
 ---@type Class<LinkedList>
 LinkedList.class = nil
 
-__classmetatables[LinkedList.class] = { __index = __LinkedList }
+__classmetatables[LinkedList.class] = {__index = __LinkedList}
 
 java.util.LinkedList = LinkedList

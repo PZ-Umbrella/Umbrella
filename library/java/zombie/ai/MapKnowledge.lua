@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class MapKnowledge
-
 local __MapKnowledge = {}
 
 function __MapKnowledge:forget() end
@@ -57,6 +56,6 @@ function MapKnowledge.new() end
 ---@type Class<MapKnowledge>
 MapKnowledge.class = nil
 
-__classmetatables[MapKnowledge.class] = { __index = __MapKnowledge }
+__classmetatables[MapKnowledge.class] = {__index = __MapKnowledge}
 
 zombie.ai.MapKnowledge = MapKnowledge

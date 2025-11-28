@@ -10,7 +10,6 @@
 --- this entity allows us to determine whether rough ground on a map should effect
 --- the unit's cost for moving through the tile.
 ---@class Mover
-
 local __Mover = {}
 
 ---@return integer

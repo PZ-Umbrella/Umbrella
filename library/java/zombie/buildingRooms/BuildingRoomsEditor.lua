@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class BuildingRoomsEditor
-
 local __BuildingRoomsEditor = {}
 
 ---@param arg0 boolean
@@ -87,6 +86,6 @@ function BuildingRoomsEditor.new() end
 ---@type Class<BuildingRoomsEditor>
 BuildingRoomsEditor.class = nil
 
-__classmetatables[BuildingRoomsEditor.class] = { __index = __BuildingRoomsEditor }
+__classmetatables[BuildingRoomsEditor.class] = {__index = __BuildingRoomsEditor}
 
 zombie.buildingRooms.BuildingRoomsEditor = BuildingRoomsEditor

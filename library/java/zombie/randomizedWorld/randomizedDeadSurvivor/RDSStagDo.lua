@@ -2,7 +2,6 @@
 
 ---Create some zombies male zombies with 1 naked female, some alcohol around
 ---@class RDSStagDo: RandomizedDeadSurvivorBase
-
 local __RDSStagDo = {}
 
 ---Description copied from class: RandomizedBuildingBase
@@ -22,6 +21,6 @@ function RDSStagDo.new() end
 ---@type Class<RDSStagDo>
 RDSStagDo.class = nil
 
-__classmetatables[RDSStagDo.class] = { __index = __RDSStagDo }
+__classmetatables[RDSStagDo.class] = {__index = __RDSStagDo}
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSStagDo = RDSStagDo

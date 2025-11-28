@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class VehicleEngineRPM: BaseScriptObject
-
 local __VehicleEngineRPM = {}
 
 ---@param name string
@@ -24,6 +23,6 @@ function VehicleEngineRPM.new() end
 ---@type Class<VehicleEngineRPM>
 VehicleEngineRPM.class = nil
 
-__classmetatables[VehicleEngineRPM.class] = { __index = __VehicleEngineRPM }
+__classmetatables[VehicleEngineRPM.class] = {__index = __VehicleEngineRPM}
 
 zombie.vehicles.VehicleEngineRPM = VehicleEngineRPM

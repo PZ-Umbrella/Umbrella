@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SmashWindowState: State
-
 local __SmashWindowState = {}
 
 ---@param arg0 IsoGameCharacter
@@ -42,6 +41,6 @@ function SmashWindowState.new() end
 ---@type Class<SmashWindowState>
 SmashWindowState.class = nil
 
-__classmetatables[SmashWindowState.class] = { __index = __SmashWindowState }
+__classmetatables[SmashWindowState.class] = {__index = __SmashWindowState}
 
 zombie.ai.states.SmashWindowState = SmashWindowState

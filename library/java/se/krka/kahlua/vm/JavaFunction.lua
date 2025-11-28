@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class JavaFunction
-
 local __JavaFunction = {}
 
 ---@param arg0 LuaCallFrame

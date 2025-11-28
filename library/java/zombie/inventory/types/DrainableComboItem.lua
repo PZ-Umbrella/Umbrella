@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class DrainableComboItem: InventoryItem, Drainable, IUpdater
-
 local __DrainableComboItem = {}
 
 ---@param item InventoryItem
@@ -164,6 +163,6 @@ function DrainableComboItem.new(module, name, itemType, item) end
 ---@type Class<DrainableComboItem>
 DrainableComboItem.class = nil
 
-__classmetatables[DrainableComboItem.class] = { __index = __DrainableComboItem }
+__classmetatables[DrainableComboItem.class] = {__index = __DrainableComboItem}
 
 zombie.inventory.types.DrainableComboItem = DrainableComboItem

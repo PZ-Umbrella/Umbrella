@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class BaseAnimalBehavior
-
 local __BaseAnimalBehavior = {}
 
 ---@param arg0 IsoHutch
@@ -115,6 +114,6 @@ function BaseAnimalBehavior.new(arg0) end
 ---@type Class<BaseAnimalBehavior>
 BaseAnimalBehavior.class = nil
 
-__classmetatables[BaseAnimalBehavior.class] = { __index = __BaseAnimalBehavior }
+__classmetatables[BaseAnimalBehavior.class] = {__index = __BaseAnimalBehavior}
 
 zombie.characters.animals.behavior.BaseAnimalBehavior = BaseAnimalBehavior

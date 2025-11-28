@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AtomUI: UIElementInterface
-
 local __AtomUI = {}
 
 ---@param arg0 AtomUI
@@ -255,6 +254,6 @@ function AtomUI.new(arg0) end
 ---@type Class<AtomUI>
 AtomUI.class = nil
 
-__classmetatables[AtomUI.class] = { __index = __AtomUI }
+__classmetatables[AtomUI.class] = {__index = __AtomUI}
 
 zombie.ui.AtomUI = AtomUI

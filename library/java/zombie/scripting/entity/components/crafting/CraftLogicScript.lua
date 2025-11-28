@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class CraftLogicScript: ComponentScript
-
 local __CraftLogicScript = {}
 
 ---@param arg0 string
@@ -42,6 +41,6 @@ CraftLogicScript = {}
 ---@type Class<CraftLogicScript>
 CraftLogicScript.class = nil
 
-__classmetatables[CraftLogicScript.class] = { __index = __CraftLogicScript }
+__classmetatables[CraftLogicScript.class] = {__index = __CraftLogicScript}
 
 zombie.scripting.entity.components.crafting.CraftLogicScript = CraftLogicScript

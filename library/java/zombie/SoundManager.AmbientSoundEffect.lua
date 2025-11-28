@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SoundManager.AmbientSoundEffect: Audio
-
 local __AmbientSoundEffect = {}
 
 ---@return string
@@ -33,6 +32,6 @@ function AmbientSoundEffect.new(name) end
 ---@type Class<SoundManager.AmbientSoundEffect>
 AmbientSoundEffect.class = nil
 
-__classmetatables[AmbientSoundEffect.class] = { __index = __AmbientSoundEffect }
+__classmetatables[AmbientSoundEffect.class] = {__index = __AmbientSoundEffect}
 
 zombie.SoundManager.AmbientSoundEffect = AmbientSoundEffect

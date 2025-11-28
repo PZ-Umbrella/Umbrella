@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class WorldFlares.Flare
-
 local __Flare = {}
 
 ---@return ClimateColorInfo
@@ -65,6 +64,6 @@ function Flare.new() end
 ---@type Class<WorldFlares.Flare>
 Flare.class = nil
 
-__classmetatables[Flare.class] = { __index = __Flare }
+__classmetatables[Flare.class] = {__index = __Flare}
 
 zombie.iso.weather.WorldFlares.Flare = Flare

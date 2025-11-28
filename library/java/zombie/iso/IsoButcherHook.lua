@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoButcherHook: IsoObject
-
 local __IsoButcherHook = {}
 
 ---@return IsoAnimal
@@ -74,6 +73,6 @@ function IsoButcherHook.new(arg0) end
 ---@type Class<IsoButcherHook>
 IsoButcherHook.class = nil
 
-__classmetatables[IsoButcherHook.class] = { __index = __IsoButcherHook }
+__classmetatables[IsoButcherHook.class] = {__index = __IsoButcherHook}
 
 zombie.iso.IsoButcherHook = IsoButcherHook

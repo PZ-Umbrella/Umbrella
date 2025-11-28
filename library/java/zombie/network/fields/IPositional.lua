@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IPositional
-
 local __IPositional = {}
 
 ---@return number

@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class ILuaIsoObject
-
 local __ILuaIsoObject = {}
 
 ---@param arg0 IsoDirections

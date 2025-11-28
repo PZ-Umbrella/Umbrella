@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ActionProgressBar: UIElement
-
 local __ActionProgressBar = {}
 
 ---@return number
@@ -25,6 +24,6 @@ function ActionProgressBar.new(x, y) end
 ---@type Class<ActionProgressBar>
 ActionProgressBar.class = nil
 
-__classmetatables[ActionProgressBar.class] = { __index = __ActionProgressBar }
+__classmetatables[ActionProgressBar.class] = {__index = __ActionProgressBar}
 
 zombie.ui.ActionProgressBar = ActionProgressBar

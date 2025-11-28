@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class GameLoadingState: GameState
-
 local __GameLoadingState = {}
 
 function __GameLoadingState:enter() end
@@ -52,6 +51,6 @@ function GameLoadingState.new() end
 ---@type Class<GameLoadingState>
 GameLoadingState.class = nil
 
-__classmetatables[GameLoadingState.class] = { __index = __GameLoadingState }
+__classmetatables[GameLoadingState.class] = {__index = __GameLoadingState}
 
 zombie.gameStates.GameLoadingState = GameLoadingState

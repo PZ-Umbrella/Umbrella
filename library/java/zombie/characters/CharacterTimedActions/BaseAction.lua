@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class BaseAction
-
 local __BaseAction = {}
 
 ---@param event AnimEvent

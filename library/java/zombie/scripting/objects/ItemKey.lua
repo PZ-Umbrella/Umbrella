@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ItemKey: Record
-
 local __ItemKey = {}
 
 ---@param arg0 any
@@ -34,6 +33,6 @@ function ItemKey.new(arg0, arg1) end
 ---@type Class<ItemKey>
 ItemKey.class = nil
 
-__classmetatables[ItemKey.class] = { __index = __ItemKey }
+__classmetatables[ItemKey.class] = {__index = __ItemKey}
 
 zombie.scripting.objects.ItemKey = ItemKey

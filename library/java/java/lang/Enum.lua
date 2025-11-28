@@ -19,7 +19,6 @@
 --- or as the type of the keys in a map, specialized and efficient
 --- set and map implementations are available.
 ---@class Enum<E: Enum<E>>: Constable, Comparable<E>, Serializable
-
 local __Enum = {}
 
 ---Compares this enum with the specified object for order.  Returns a

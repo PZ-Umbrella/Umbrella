@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ItemKey.Drainable
-
 local __Drainable = {}
 
 Drainable = {}
@@ -450,6 +449,6 @@ function Drainable.new() end
 ---@type Class<ItemKey.Drainable>
 Drainable.class = nil
 
-__classmetatables[Drainable.class] = { __index = __Drainable }
+__classmetatables[Drainable.class] = {__index = __Drainable}
 
 zombie.scripting.objects.ItemKey.Drainable = Drainable

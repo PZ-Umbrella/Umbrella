@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class RVSCarCrashDeer: RandomizedVehicleStoryBase
-
 local __RVSCarCrashDeer = {}
 
 ---@param arg0 Zone
@@ -26,6 +25,6 @@ function RVSCarCrashDeer.new() end
 ---@type Class<RVSCarCrashDeer>
 RVSCarCrashDeer.class = nil
 
-__classmetatables[RVSCarCrashDeer.class] = { __index = __RVSCarCrashDeer }
+__classmetatables[RVSCarCrashDeer.class] = {__index = __RVSCarCrashDeer}
 
 zombie.randomizedWorld.randomizedVehicleStory.RVSCarCrashDeer = RVSCarCrashDeer

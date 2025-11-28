@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class RZSTragicPicnic: RandomizedZoneStoryBase
-
 local __RZSTragicPicnic = {}
 
 ---@param arg0 Zone
@@ -15,6 +14,6 @@ function RZSTragicPicnic.new() end
 ---@type Class<RZSTragicPicnic>
 RZSTragicPicnic.class = nil
 
-__classmetatables[RZSTragicPicnic.class] = { __index = __RZSTragicPicnic }
+__classmetatables[RZSTragicPicnic.class] = {__index = __RZSTragicPicnic}
 
 zombie.randomizedWorld.randomizedZoneStory.RZSTragicPicnic = RZSTragicPicnic

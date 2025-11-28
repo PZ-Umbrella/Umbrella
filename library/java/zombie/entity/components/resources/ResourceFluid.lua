@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ResourceFluid: Resource
-
 local __ResourceFluid = {}
 
 ---@param arg0 ObjectTooltip
@@ -77,6 +76,6 @@ ResourceFluid = {}
 ---@type Class<ResourceFluid>
 ResourceFluid.class = nil
 
-__classmetatables[ResourceFluid.class] = { __index = __ResourceFluid }
+__classmetatables[ResourceFluid.class] = {__index = __ResourceFluid}
 
 zombie.entity.components.resources.ResourceFluid = ResourceFluid

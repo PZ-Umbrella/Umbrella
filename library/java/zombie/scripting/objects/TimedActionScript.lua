@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class TimedActionScript: BaseScriptObject
-
 local __TimedActionScript = {}
 
 ---@param arg0 string
@@ -73,6 +72,6 @@ function TimedActionScript.new() end
 ---@type Class<TimedActionScript>
 TimedActionScript.class = nil
 
-__classmetatables[TimedActionScript.class] = { __index = __TimedActionScript }
+__classmetatables[TimedActionScript.class] = {__index = __TimedActionScript}
 
 zombie.scripting.objects.TimedActionScript = TimedActionScript

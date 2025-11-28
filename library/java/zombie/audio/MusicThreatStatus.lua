@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class MusicThreatStatus
-
 local __MusicThreatStatus = {}
 
 ---@return string
@@ -23,6 +22,6 @@ function MusicThreatStatus.new(arg0, arg1) end
 ---@type Class<MusicThreatStatus>
 MusicThreatStatus.class = nil
 
-__classmetatables[MusicThreatStatus.class] = { __index = __MusicThreatStatus }
+__classmetatables[MusicThreatStatus.class] = {__index = __MusicThreatStatus}
 
 zombie.audio.MusicThreatStatus = MusicThreatStatus

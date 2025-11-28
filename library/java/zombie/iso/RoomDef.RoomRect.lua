@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class RoomDef.RoomRect
-
 local __RoomRect = {}
 
 ---@param arg0 number
@@ -55,6 +54,6 @@ function RoomRect.new(x, y, w, h) end
 ---@type Class<RoomDef.RoomRect>
 RoomRect.class = nil
 
-__classmetatables[RoomRect.class] = { __index = __RoomRect }
+__classmetatables[RoomRect.class] = {__index = __RoomRect}
 
 zombie.iso.RoomDef.RoomRect = RoomRect

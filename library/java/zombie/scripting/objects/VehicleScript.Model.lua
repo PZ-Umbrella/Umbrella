@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class VehicleScript.Model
-
 local __Model = {}
 
 ---@return string
@@ -33,6 +32,6 @@ function Model.new() end
 ---@type Class<VehicleScript.Model>
 Model.class = nil
 
-__classmetatables[Model.class] = { __index = __Model }
+__classmetatables[Model.class] = {__index = __Model}
 
 zombie.scripting.objects.VehicleScript.Model = Model

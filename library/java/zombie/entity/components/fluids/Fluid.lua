@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Fluid
-
 local __Fluid = {}
 
 ---@param arg0 Fluid
@@ -173,6 +172,6 @@ function Fluid.saveFluid(arg0, arg1) end
 ---@type Class<Fluid>
 Fluid.class = nil
 
-__classmetatables[Fluid.class] = { __index = __Fluid }
+__classmetatables[Fluid.class] = {__index = __Fluid}
 
 zombie.entity.components.fluids.Fluid = Fluid

@@ -2,7 +2,6 @@
 
 ---Turbo
 ---@class RadioLine
-
 local __RadioLine = {}
 
 ---@return number
@@ -52,6 +51,6 @@ function RadioLine.new(txt, red, green, blue, fx) end
 ---@type Class<RadioLine>
 RadioLine.class = nil
 
-__classmetatables[RadioLine.class] = { __index = __RadioLine }
+__classmetatables[RadioLine.class] = {__index = __RadioLine}
 
 zombie.radio.scripting.RadioLine = RadioLine

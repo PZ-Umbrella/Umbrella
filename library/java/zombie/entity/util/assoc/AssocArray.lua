@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AssocArray<K, V>
-
 local __AssocArray = {}
 
 ---@param arg0 K
@@ -116,6 +115,6 @@ function AssocArray.new() end
 ---@type Class<AssocArray>
 AssocArray.class = nil
 
-__classmetatables[AssocArray.class] = { __index = __AssocArray }
+__classmetatables[AssocArray.class] = {__index = __AssocArray}
 
 zombie.entity.util.assoc.AssocArray = AssocArray

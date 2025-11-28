@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class Action: INetworkPacketField
-
 local __Action = {}
 
 ---@return number

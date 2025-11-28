@@ -4,7 +4,6 @@
 ---ILuaGameCharacterDamage
 ---  Provides the functions expected by LUA when dealing with objects of this type.
 ---@class ILuaGameCharacterDamage
-
 local __ILuaGameCharacterDamage = {}
 
 ---@param vehicle BaseVehicle

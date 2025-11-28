@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class ICurtain
-
 local __ICurtain = {}
 
 ---@return boolean

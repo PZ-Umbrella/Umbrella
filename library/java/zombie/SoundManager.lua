@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SoundManager: BaseSoundManager, IFMODParameterUpdater
-
 local __SoundManager = {}
 
 ---@param musicTrack Audio
@@ -360,6 +359,6 @@ function SoundManager.new() end
 ---@type Class<SoundManager>
 SoundManager.class = nil
 
-__classmetatables[SoundManager.class] = { __index = __SoundManager }
+__classmetatables[SoundManager.class] = {__index = __SoundManager}
 
 zombie.SoundManager = SoundManager

@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class Vector3fc
-
 local __Vector3fc = {}
 
 ---@param arg0 Vector3f

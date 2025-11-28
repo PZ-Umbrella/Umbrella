@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AttributeInstance.EnumSet<E: Enum<E>, IOEnum>: AttributeInstance<AttributeInstance.EnumSet<E>, AttributeType.EnumSet<E>>
-
 local __EnumSet = {}
 
 ---@param arg0 string
@@ -55,6 +54,6 @@ function EnumSet.new() end
 ---@type Class<AttributeInstance.EnumSet>
 EnumSet.class = nil
 
-__classmetatables[EnumSet.class] = { __index = __EnumSet }
+__classmetatables[EnumSet.class] = {__index = __EnumSet}
 
 zombie.entity.components.attributes.AttributeInstance.EnumSet = EnumSet

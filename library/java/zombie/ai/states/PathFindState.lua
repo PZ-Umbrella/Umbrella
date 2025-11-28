@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class PathFindState: State
-
 local __PathFindState = {}
 
 ---@return boolean
@@ -27,6 +26,6 @@ function PathFindState.new() end
 ---@type Class<PathFindState>
 PathFindState.class = nil
 
-__classmetatables[PathFindState.class] = { __index = __PathFindState }
+__classmetatables[PathFindState.class] = {__index = __PathFindState}
 
 zombie.ai.states.PathFindState = PathFindState

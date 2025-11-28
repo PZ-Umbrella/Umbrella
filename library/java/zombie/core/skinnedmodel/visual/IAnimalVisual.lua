@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IAnimalVisual: IHumanVisual
-
 local __IAnimalVisual = {}
 
 ---@return number

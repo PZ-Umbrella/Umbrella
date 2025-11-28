@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IIdentifiable
-
 local __IIdentifiable = {}
 
 ---@return ObjectID

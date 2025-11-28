@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class RecipeCodeOnCooked: RecipeCodeHelper
-
 local __RecipeCodeOnCooked = {}
 
 RecipeCodeOnCooked = {}
@@ -15,6 +14,6 @@ function RecipeCodeOnCooked.new() end
 ---@type Class<RecipeCodeOnCooked>
 RecipeCodeOnCooked.class = nil
 
-__classmetatables[RecipeCodeOnCooked.class] = { __index = __RecipeCodeOnCooked }
+__classmetatables[RecipeCodeOnCooked.class] = {__index = __RecipeCodeOnCooked}
 
 zombie.scripting.logic.RecipeCodeOnCooked = RecipeCodeOnCooked

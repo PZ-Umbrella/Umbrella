@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class TransformMode: Enum<TransformMode>
-
 local __TransformMode = {}
 
 TransformMode = {}
@@ -22,6 +21,6 @@ function TransformMode.values() end
 ---@type Class<TransformMode>
 TransformMode.class = nil
 
-__classmetatables[TransformMode.class] = { __index = __TransformMode }
+__classmetatables[TransformMode.class] = {__index = __TransformMode}
 
 zombie.gizmo.TransformMode = TransformMode

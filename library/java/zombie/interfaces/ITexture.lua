@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class ITexture: IDestroyable, IMaskerable
-
 local __ITexture = {}
 
 ---bind the current texture in the VRAM

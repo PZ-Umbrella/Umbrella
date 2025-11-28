@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class DesignationZoneAnimal: DesignationZone
-
 local __DesignationZoneAnimal = {}
 
 ---@param arg0 IsoAnimal
@@ -179,6 +178,6 @@ function DesignationZoneAnimal.new(arg0, arg1, arg2, arg3, arg4, arg5) end
 ---@type Class<DesignationZoneAnimal>
 DesignationZoneAnimal.class = nil
 
-__classmetatables[DesignationZoneAnimal.class] = { __index = __DesignationZoneAnimal }
+__classmetatables[DesignationZoneAnimal.class] = {__index = __DesignationZoneAnimal}
 
 zombie.iso.areas.DesignationZoneAnimal = DesignationZoneAnimal

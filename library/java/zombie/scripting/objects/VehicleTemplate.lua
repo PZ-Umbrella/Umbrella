@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class VehicleTemplate: BaseScriptObject
-
 local __VehicleTemplate = {}
 
 ---@return VehicleScript
@@ -18,6 +17,6 @@ function VehicleTemplate.new(module, name, body) end
 ---@type Class<VehicleTemplate>
 VehicleTemplate.class = nil
 
-__classmetatables[VehicleTemplate.class] = { __index = __VehicleTemplate }
+__classmetatables[VehicleTemplate.class] = {__index = __VehicleTemplate}
 
 zombie.scripting.objects.VehicleTemplate = VehicleTemplate

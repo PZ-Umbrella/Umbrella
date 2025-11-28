@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoPushableObject: IsoMovingObject
-
 local __IsoPushableObject = {}
 
 function __IsoPushableObject:DoCollideNorS() end
@@ -52,6 +51,6 @@ function IsoPushableObject.new(cell, square, spr) end
 ---@type Class<IsoPushableObject>
 IsoPushableObject.class = nil
 
-__classmetatables[IsoPushableObject.class] = { __index = __IsoPushableObject }
+__classmetatables[IsoPushableObject.class] = {__index = __IsoPushableObject}
 
 zombie.iso.IsoPushableObject = IsoPushableObject

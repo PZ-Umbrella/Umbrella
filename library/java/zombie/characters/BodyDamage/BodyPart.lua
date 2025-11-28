@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class BodyPart
-
 local __BodyPart = {}
 
 ---@param Val number
@@ -410,6 +409,6 @@ function BodyPart.new(ChosenType, PC) end
 ---@type Class<BodyPart>
 BodyPart.class = nil
 
-__classmetatables[BodyPart.class] = { __index = __BodyPart }
+__classmetatables[BodyPart.class] = {__index = __BodyPart}
 
 zombie.characters.BodyDamage.BodyPart = BodyPart

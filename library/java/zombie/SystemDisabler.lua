@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SystemDisabler
-
 local __SystemDisabler = {}
 
 SystemDisabler = {}
@@ -98,6 +97,6 @@ function SystemDisabler.new() end
 ---@type Class<SystemDisabler>
 SystemDisabler.class = nil
 
-__classmetatables[SystemDisabler.class] = { __index = __SystemDisabler }
+__classmetatables[SystemDisabler.class] = {__index = __SystemDisabler}
 
 zombie.SystemDisabler = SystemDisabler

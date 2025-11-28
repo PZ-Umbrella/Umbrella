@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class Font
-
 local __Font = {}
 
 ---Draw a string to the screen

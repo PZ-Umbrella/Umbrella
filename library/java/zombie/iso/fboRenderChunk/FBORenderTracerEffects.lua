@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class FBORenderTracerEffects
-
 local __FBORenderTracerEffects = {}
 
 ---@param arg0 IsoGameCharacter
@@ -40,6 +39,6 @@ function FBORenderTracerEffects.getInstance() end
 ---@type Class<FBORenderTracerEffects>
 FBORenderTracerEffects.class = nil
 
-__classmetatables[FBORenderTracerEffects.class] = { __index = __FBORenderTracerEffects }
+__classmetatables[FBORenderTracerEffects.class] = {__index = __FBORenderTracerEffects}
 
 zombie.iso.fboRenderChunk.FBORenderTracerEffects = FBORenderTracerEffects

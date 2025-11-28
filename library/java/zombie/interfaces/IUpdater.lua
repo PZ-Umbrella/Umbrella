@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IUpdater
-
 local __IUpdater = {}
 
 function __IUpdater:render() end

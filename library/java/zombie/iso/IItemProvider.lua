@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IItemProvider
-
 local __IItemProvider = {}
 
 ---@return InventoryItem

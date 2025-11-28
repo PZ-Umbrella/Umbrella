@@ -5,7 +5,6 @@
 --- The close method is invoked to release resources that the object is
 --- holding (such as open files).
 ---@class Closeable: AutoCloseable
-
 local __Closeable = {}
 
 ---Closes this stream and releases any system resources associated

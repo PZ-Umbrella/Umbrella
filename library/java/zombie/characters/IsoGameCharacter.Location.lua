@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoGameCharacter.Location
-
 local __Location = {}
 
 ---@param arg0 integer
@@ -43,6 +42,6 @@ function Location.new(x, y, z) end
 ---@type Class<IsoGameCharacter.Location>
 Location.class = nil
 
-__classmetatables[Location.class] = { __index = __Location }
+__classmetatables[Location.class] = {__index = __Location}
 
 zombie.characters.IsoGameCharacter.Location = Location

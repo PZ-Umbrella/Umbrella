@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class XuiSkin.EntityUiStyle
-
 local __EntityUiStyle = {}
 
 ---@return string
@@ -44,6 +43,6 @@ function EntityUiStyle.new() end
 ---@type Class<XuiSkin.EntityUiStyle>
 EntityUiStyle.class = nil
 
-__classmetatables[EntityUiStyle.class] = { __index = __EntityUiStyle }
+__classmetatables[EntityUiStyle.class] = {__index = __EntityUiStyle}
 
 zombie.scripting.ui.XuiSkin.EntityUiStyle = EntityUiStyle

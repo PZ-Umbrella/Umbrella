@@ -5,7 +5,6 @@
 --- flush method is invoked to write any buffered output to the underlying
 --- stream.
 ---@class Flushable
-
 local __Flushable = {}
 
 ---Flushes this stream by writing any buffered output to the underlying

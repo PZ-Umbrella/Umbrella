@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Clock: UIElement
-
 local __Clock = {}
 
 ---@return boolean
@@ -29,6 +28,6 @@ function Clock.new(x, y) end
 ---@type Class<Clock>
 Clock.class = nil
 
-__classmetatables[Clock.class] = { __index = __Clock }
+__classmetatables[Clock.class] = {__index = __Clock}
 
 zombie.ui.Clock = Clock

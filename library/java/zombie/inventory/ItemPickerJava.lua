@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ItemPickerJava
-
 local __ItemPickerJava = {}
 
 ItemPickerJava = {}
@@ -223,6 +222,6 @@ function ItemPickerJava.new() end
 ---@type Class<ItemPickerJava>
 ItemPickerJava.class = nil
 
-__classmetatables[ItemPickerJava.class] = { __index = __ItemPickerJava }
+__classmetatables[ItemPickerJava.class] = {__index = __ItemPickerJava}
 
 zombie.inventory.ItemPickerJava = ItemPickerJava

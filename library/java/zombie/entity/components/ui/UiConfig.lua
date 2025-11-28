@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class UiConfig: Component
-
 local __UiConfig = {}
 
 ---@return string
@@ -31,6 +30,6 @@ UiConfig = {}
 ---@type Class<UiConfig>
 UiConfig.class = nil
 
-__classmetatables[UiConfig.class] = { __index = __UiConfig }
+__classmetatables[UiConfig.class] = {__index = __UiConfig}
 
 zombie.entity.components.ui.UiConfig = UiConfig

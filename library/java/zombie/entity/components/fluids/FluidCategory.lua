@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class FluidCategory: Enum<FluidCategory>
-
 local __FluidCategory = {}
 
 ---@return integer
@@ -62,6 +61,6 @@ function FluidCategory.values() end
 ---@type Class<FluidCategory>
 FluidCategory.class = nil
 
-__classmetatables[FluidCategory.class] = { __index = __FluidCategory }
+__classmetatables[FluidCategory.class] = {__index = __FluidCategory}
 
 zombie.entity.components.fluids.FluidCategory = FluidCategory

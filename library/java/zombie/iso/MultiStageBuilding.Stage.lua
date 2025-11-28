@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class MultiStageBuilding.Stage
-
 local __Stage = {}
 
 ---@param name string
@@ -71,6 +70,6 @@ function Stage.new(arg0) end
 ---@type Class<MultiStageBuilding.Stage>
 Stage.class = nil
 
-__classmetatables[Stage.class] = { __index = __Stage }
+__classmetatables[Stage.class] = {__index = __Stage}
 
 zombie.iso.MultiStageBuilding.Stage = Stage

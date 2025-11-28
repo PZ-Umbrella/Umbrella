@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class GameEntityType: Enum<GameEntityType>, IOEnum
-
 local __GameEntityType = {}
 
 ---@return integer
@@ -47,6 +46,6 @@ function GameEntityType.values() end
 ---@type Class<GameEntityType>
 GameEntityType.class = nil
 
-__classmetatables[GameEntityType.class] = { __index = __GameEntityType }
+__classmetatables[GameEntityType.class] = {__index = __GameEntityType}
 
 zombie.entity.GameEntityType = GameEntityType

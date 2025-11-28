@@ -3,7 +3,6 @@
 ---(Not exposed)
 ---A common interface for all entities that declare type variables.
 ---@class GenericDeclaration: AnnotatedElement
-
 local __GenericDeclaration = {}
 
 ---Returns an array of TypeVariable objects that

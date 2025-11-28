@@ -2,7 +2,6 @@
 
 ---Turbo
 ---@class DataPoint
-
 local __DataPoint = {}
 
 ---@return number
@@ -27,6 +26,6 @@ function DataPoint.new(time, intensity) end
 ---@type Class<DataPoint>
 DataPoint.class = nil
 
-__classmetatables[DataPoint.class] = { __index = __DataPoint }
+__classmetatables[DataPoint.class] = {__index = __DataPoint}
 
 zombie.radio.StorySounds.DataPoint = DataPoint

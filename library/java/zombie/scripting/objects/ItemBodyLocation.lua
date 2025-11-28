@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ItemBodyLocation: Enum<ItemBodyLocation>
-
 local __ItemBodyLocation = {}
 
 ---@return string
@@ -358,6 +357,6 @@ function ItemBodyLocation.values() end
 ---@type Class<ItemBodyLocation>
 ItemBodyLocation.class = nil
 
-__classmetatables[ItemBodyLocation.class] = { __index = __ItemBodyLocation }
+__classmetatables[ItemBodyLocation.class] = {__index = __ItemBodyLocation}
 
 zombie.scripting.objects.ItemBodyLocation = ItemBodyLocation

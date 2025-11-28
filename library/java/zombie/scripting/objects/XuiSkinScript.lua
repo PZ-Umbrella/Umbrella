@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class XuiSkinScript: BaseScriptObject
-
 local __XuiSkinScript = {}
 
 ---@param arg0 string
@@ -45,6 +44,6 @@ function XuiSkinScript.new() end
 ---@type Class<XuiSkinScript>
 XuiSkinScript.class = nil
 
-__classmetatables[XuiSkinScript.class] = { __index = __XuiSkinScript }
+__classmetatables[XuiSkinScript.class] = {__index = __XuiSkinScript}
 
 zombie.scripting.objects.XuiSkinScript = XuiSkinScript

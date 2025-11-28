@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class MetaObject
-
 local __MetaObject = {}
 
 ---@return RoomDef
@@ -34,6 +33,6 @@ function MetaObject.new(type, x, y, def) end
 ---@type Class<MetaObject>
 MetaObject.class = nil
 
-__classmetatables[MetaObject.class] = { __index = __MetaObject }
+__classmetatables[MetaObject.class] = {__index = __MetaObject}
 
 zombie.iso.MetaObject = MetaObject

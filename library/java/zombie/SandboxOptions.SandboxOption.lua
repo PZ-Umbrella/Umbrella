@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class SandboxOptions.SandboxOption
-
 local __SandboxOption = {}
 
 ---@return ConfigOption

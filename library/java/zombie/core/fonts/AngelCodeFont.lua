@@ -9,7 +9,6 @@
 --- allowing nicer looking paragraphs of text. Note that this utility only
 --- supports the text BMFont format definition file.
 ---@class AngelCodeFont: Font, AssetStateObserver
-
 local __AngelCodeFont = {}
 
 function __AngelCodeFont:destroy() end
@@ -175,6 +174,6 @@ function AngelCodeFont.new(fntFile, imgFile) end
 ---@type Class<AngelCodeFont>
 AngelCodeFont.class = nil
 
-__classmetatables[AngelCodeFont.class] = { __index = __AngelCodeFont }
+__classmetatables[AngelCodeFont.class] = {__index = __AngelCodeFont}
 
 zombie.core.fonts.AngelCodeFont = AngelCodeFont

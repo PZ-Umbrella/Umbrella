@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class PathFindBehavior2: IPathfinder
-
 local __PathFindBehavior2 = {}
 
 ---@param arg0 Mover
@@ -166,6 +165,6 @@ function PathFindBehavior2.new(arg0) end
 ---@type Class<PathFindBehavior2>
 PathFindBehavior2.class = nil
 
-__classmetatables[PathFindBehavior2.class] = { __index = __PathFindBehavior2 }
+__classmetatables[PathFindBehavior2.class] = {__index = __PathFindBehavior2}
 
 zombie.pathfind.PathFindBehavior2 = PathFindBehavior2

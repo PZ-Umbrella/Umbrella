@@ -21,45 +21,45 @@
 --- The twelve methods described above are summarized in the
 --- following table:
 ---
----
+--- 
 --- Summary of Deque methods
----
----
----
+---  
+---  
+---    
 ---     First Element (Head)
 ---     Last Element (Tail)
----
----
+---  
+---  
 ---    Throws exception
 ---    Special value
 ---    Throws exception
 ---    Special value
----
----
----
----
+---  
+---  
+---  
+---  
 ---    Insert
 ---    addFirst(e)
 ---    offerFirst(e)
 ---    addLast(e)
 ---    offerLast(e)
----
----
+---  
+---  
 ---    Remove
 ---    removeFirst()
 ---    pollFirst()
 ---    removeLast()
 ---    pollLast()
----
----
+---  
+---  
 ---    Examine
 ---    getFirst()
 ---    peekFirst()
 ---    getLast()
 ---    peekLast()
----
----
----
+---  
+---  
+--- 
 ---
 --- This interface extends the Queue interface.  When a deque is
 --- used as a queue, FIFO (First-In-First-Out) behavior results.  Elements are
@@ -67,41 +67,41 @@
 --- inherited from the Queue interface are precisely equivalent to
 --- Deque methods as indicated in the following table:
 ---
----
+--- 
 --- Comparison of Queue and Deque methods
----
----
+---  
+---  
 ---     Queue Method
 ---     Equivalent Deque Method
----
----
----
----
+---  
+---  
+---  
+---  
 ---    add(e)
 ---    addLast(e)
----
----
+---  
+---  
 ---    offer(e)
 ---    offerLast(e)
----
----
+---  
+---  
 ---    remove()
 ---    removeFirst()
----
----
+---  
+---  
 ---    poll()
 ---    pollFirst()
----
----
+---  
+---  
 ---    element()
 ---    getFirst()
----
----
+---  
+---  
 ---    peek()
 ---    peekFirst()
----
----
----
+---  
+---  
+--- 
 ---
 --- Deques can also be used as LIFO (Last-In-First-Out) stacks.  This
 --- interface should be used in preference to the legacy Stack class.
@@ -109,29 +109,29 @@
 --- beginning of the deque.  Stack methods are equivalent to Deque
 --- methods as indicated in the table below:
 ---
----
+--- 
 --- Comparison of Stack and Deque methods
----
----
+---  
+---  
 ---     Stack Method
 ---     Equivalent Deque Method
----
----
----
----
+---  
+---  
+---  
+---  
 ---    push(e)
 ---    addFirst(e)
----
----
+---  
+---  
 ---    pop()
 ---    removeFirst()
----
----
+---  
+---  
 ---    peek()
 ---    getFirst()
----
----
----
+---  
+---  
+--- 
 ---
 --- Note that the peek method works equally well when
 --- a deque is used as a queue or a stack; in either case, elements are
@@ -158,10 +158,9 @@
 --- Object.
 ---
 --- This interface is a member of the
----
+--- 
 --- Java Collections Framework.
 ---@class Deque<E>: Queue<E>
-
 local __Deque = {}
 
 ---Inserts the specified element into the queue represented by this deque

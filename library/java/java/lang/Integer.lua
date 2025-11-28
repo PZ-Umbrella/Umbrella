@@ -21,7 +21,6 @@
 --- based on material from Henry S. Warren, Jr.'s Hacker's
 --- Delight, (Addison Wesley, 2002).
 ---@class Integer: Number, Comparable<integer>, Constable, ConstantDesc
-
 local __Integer = {}
 
 ---@return integer
@@ -297,6 +296,6 @@ function Integer.new(s) end
 ---@type Class<Integer>
 Integer.class = nil
 
-__classmetatables[Integer.class] = { __index = __Integer }
+__classmetatables[Integer.class] = {__index = __Integer}
 
 java.lang.Integer = Integer

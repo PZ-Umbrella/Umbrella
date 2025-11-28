@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoMarkers.IsoMarker
-
 local __IsoMarker = {}
 
 ---@return number
@@ -109,6 +108,6 @@ function IsoMarker.new() end
 ---@type Class<IsoMarkers.IsoMarker>
 IsoMarker.class = nil
 
-__classmetatables[IsoMarker.class] = { __index = __IsoMarker }
+__classmetatables[IsoMarker.class] = {__index = __IsoMarker}
 
 zombie.iso.IsoMarkers.IsoMarker = IsoMarker

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class CraftBench: Component
-
 local __CraftBench = {}
 
 ---@param arg0 ObjectTooltip
@@ -34,6 +33,6 @@ CraftBench = {}
 ---@type Class<CraftBench>
 CraftBench.class = nil
 
-__classmetatables[CraftBench.class] = { __index = __CraftBench }
+__classmetatables[CraftBench.class] = {__index = __CraftBench}
 
 zombie.entity.components.crafting.CraftBench = CraftBench

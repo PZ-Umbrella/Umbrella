@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoHutch.NestBox
-
 local __NestBox = {}
 
 ---@param arg0 Food
@@ -34,6 +33,6 @@ function NestBox.new(arg0, arg1) end
 ---@type Class<IsoHutch.NestBox>
 NestBox.class = nil
 
-__classmetatables[NestBox.class] = { __index = __NestBox }
+__classmetatables[NestBox.class] = {__index = __NestBox}
 
 zombie.iso.objects.IsoHutch.NestBox = NestBox

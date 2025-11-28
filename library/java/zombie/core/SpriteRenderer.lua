@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SpriteRenderer
-
 local __SpriteRenderer = {}
 
 function __SpriteRenderer:EndShader() end
@@ -335,35 +334,7 @@ function __SpriteRenderer:render(tex, x1, y1, x2, y2, x3, y3, x4, y4, r, g, b, a
 ---@param b4 number
 ---@param a4 number
 ---@param texdModifier Consumer<TextureDraw>
-function __SpriteRenderer:render(
-	tex,
-	x1,
-	y1,
-	x2,
-	y2,
-	x3,
-	y3,
-	x4,
-	y4,
-	r1,
-	g1,
-	b1,
-	a1,
-	r2,
-	g2,
-	b2,
-	a2,
-	r3,
-	g3,
-	b3,
-	a3,
-	r4,
-	g4,
-	b4,
-	a4,
-	texdModifier
-)
-end
+function __SpriteRenderer:render(tex, x1, y1, x2, y2, x3, y3, x4, y4, r1, g1, b1, a1, r2, g2, b2, a2, r3, g3, b3, a3, r4, g4, b4, a4, texdModifier) end
 
 ---@param arg0 Texture
 ---@param arg1 number
@@ -386,30 +357,7 @@ end
 ---@param arg18 number
 ---@param arg19 number
 ---@param arg20 number
-function __SpriteRenderer:render(
-	arg0,
-	arg1,
-	arg2,
-	arg3,
-	arg4,
-	arg5,
-	arg6,
-	arg7,
-	arg8,
-	arg9,
-	arg10,
-	arg11,
-	arg12,
-	arg13,
-	arg14,
-	arg15,
-	arg16,
-	arg17,
-	arg18,
-	arg19,
-	arg20
-)
-end
+function __SpriteRenderer:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, arg18, arg19, arg20) end
 
 ---@param tex Texture
 ---@param x1 number
@@ -507,23 +455,7 @@ function __SpriteRenderer:render(arg0) end
 ---@param b number
 ---@param a number
 ---@param texdModifier Consumer<TextureDraw>
-function __SpriteRenderer:renderClamped(
-	tex,
-	x,
-	y,
-	width,
-	height,
-	clampX,
-	clampY,
-	clampW,
-	clampH,
-	r,
-	g,
-	b,
-	a,
-	texdModifier
-)
-end
+function __SpriteRenderer:renderClamped(tex, x, y, width, height, clampX, clampY, clampW, clampH, r, g, b, a, texdModifier) end
 
 ---@param x1 number
 ---@param y1 number
@@ -575,30 +507,7 @@ function __SpriteRenderer:renderPoly(tex, x1, y1, x2, y2, x3, y3, x4, y4, r, g, 
 ---@param v3 number
 ---@param u4 number
 ---@param v4 number
-function __SpriteRenderer:renderPoly(
-	tex,
-	x1,
-	y1,
-	x2,
-	y2,
-	x3,
-	y3,
-	x4,
-	y4,
-	r,
-	g,
-	b,
-	a,
-	u1,
-	v1,
-	u2,
-	v2,
-	u3,
-	v3,
-	u4,
-	v4
-)
-end
+function __SpriteRenderer:renderPoly(tex, x1, y1, x2, y2, x3, y3, x4, y4, r, g, b, a, u1, v1, u2, v2, u3, v3, u4, v4) end
 
 function __SpriteRenderer:renderQueued() end
 
@@ -638,35 +547,7 @@ function __SpriteRenderer:renderRect(x, y, width, height, r, g, b, a) end
 ---@param b4 number
 ---@param a4 number
 ---@param texdModifier Consumer<TextureDraw>
-function __SpriteRenderer:renderdebug(
-	tex,
-	x1,
-	y1,
-	x2,
-	y2,
-	x3,
-	y3,
-	x4,
-	y4,
-	r1,
-	g1,
-	b1,
-	a1,
-	r2,
-	g2,
-	b2,
-	a2,
-	r3,
-	g3,
-	b3,
-	a3,
-	r4,
-	g4,
-	b4,
-	a4,
-	texdModifier
-)
-end
+function __SpriteRenderer:renderdebug(tex, x1, y1, x2, y2, x3, y3, x4, y4, r1, g1, b1, a1, r2, g2, b2, a2, r3, g3, b3, a3, r4, g4, b4, a4, texdModifier) end
 
 ---@param tex Texture
 ---@param x number
@@ -800,6 +681,6 @@ function SpriteRenderer.new() end
 ---@type Class<SpriteRenderer>
 SpriteRenderer.class = nil
 
-__classmetatables[SpriteRenderer.class] = { __index = __SpriteRenderer }
+__classmetatables[SpriteRenderer.class] = {__index = __SpriteRenderer}
 
 zombie.core.SpriteRenderer = SpriteRenderer

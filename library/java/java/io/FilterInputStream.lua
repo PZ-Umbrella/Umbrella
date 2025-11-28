@@ -14,7 +14,6 @@
 --- and may also provide additional methods
 --- and fields.
 ---@class FilterInputStream: InputStream
-
 local __FilterInputStream = {}
 
 ---Returns an estimate of the number of bytes that can be read (or
@@ -22,7 +21,7 @@ local __FilterInputStream = {}
 --- caller of a method for this input stream. The next caller might be
 --- the same thread or another thread.  A single read or skip of this
 --- many bytes will not block, but may read or skip fewer bytes.
----
+--- 
 --- This method returns the result of in.available().
 ---@return integer # an estimate of the number of bytes that can be read (or skipped
 ---             over) from this input stream without blocking.
@@ -37,11 +36,11 @@ function __FilterInputStream:close() end
 ---Marks the current position in this input stream. A subsequent
 --- call to the reset method repositions this stream at
 --- the last marked position so that subsequent reads re-read the same bytes.
----
+--- 
 --- The readlimit argument tells this input stream to
 --- allow that many bytes to be read before the mark position gets
 --- invalidated.
----
+--- 
 --- This method simply performs in.mark(readlimit).
 ---@param readlimit integer the maximum limit of bytes that can be read before
 ---                      the mark position becomes invalid.
@@ -63,7 +62,7 @@ function __FilterInputStream:markSupported() end
 --- -1 is returned. This method blocks until input data
 --- is available, the end of the stream is detected, or an exception
 --- is thrown.
----
+--- 
 --- This method
 --- simply performs in.read() and returns the result.
 ---@return integer # the next byte of data, or -1 if the end of the
@@ -73,7 +72,7 @@ function __FilterInputStream:read() end
 ---Reads up to b.length bytes of data from this
 --- input stream into an array of bytes. This method blocks until some
 --- input is available.
----
+--- 
 --- This method simply performs the call
 --- read(b, 0, b.length) and returns
 --- the  result. It is important that it does
@@ -91,7 +90,7 @@ function __FilterInputStream:read(b) end
 --- into an array of bytes. If len is not zero, the method
 --- blocks until some input is available; otherwise, no
 --- bytes are read and 0 is returned.
----
+--- 
 --- This method simply performs in.read(b, off, len)
 --- and returns the result.
 ---@param b kahlua.Array<integer> the buffer into which the data is read.
@@ -104,10 +103,10 @@ function __FilterInputStream:read(b, off, len) end
 
 ---Repositions this stream to the position at the time the
 --- mark method was last called on this input stream.
----
+--- 
 --- This method
 --- simply performs in.reset().
----
+--- 
 --- Stream marks are intended to be used in
 --- situations where you need to read ahead a little to see what's in
 --- the stream. Often this is most easily done by invoking some
@@ -123,7 +122,7 @@ function __FilterInputStream:reset() end
 --- reasons, end up skipping over some smaller number of bytes,
 --- possibly 0. The actual number of bytes skipped is
 --- returned.
----
+--- 
 --- This method simply performs in.skip(n).
 ---@param n integer the number of bytes to be skipped.
 ---@return integer # the actual number of bytes skipped.

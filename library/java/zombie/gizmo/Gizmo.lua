@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class Gizmo
-
 local __Gizmo = {}
 
 ---@return SceneObject

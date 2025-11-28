@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class AntiCheatXPUpdate.IAntiCheatUpdate
-
 local __IAntiCheatUpdate = {}
 
 ---@return number

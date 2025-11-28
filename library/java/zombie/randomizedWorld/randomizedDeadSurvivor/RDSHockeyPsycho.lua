@@ -2,7 +2,6 @@
 
 ---Well, it's friday the 13th... Basically.
 ---@class RDSHockeyPsycho: RandomizedDeadSurvivorBase
-
 local __RDSHockeyPsycho = {}
 
 ---@param def BuildingDef
@@ -16,6 +15,6 @@ function RDSHockeyPsycho.new() end
 ---@type Class<RDSHockeyPsycho>
 RDSHockeyPsycho.class = nil
 
-__classmetatables[RDSHockeyPsycho.class] = { __index = __RDSHockeyPsycho }
+__classmetatables[RDSHockeyPsycho.class] = {__index = __RDSHockeyPsycho}
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSHockeyPsycho = RDSHockeyPsycho

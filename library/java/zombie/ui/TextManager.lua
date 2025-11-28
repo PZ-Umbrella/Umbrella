@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class TextManager
-
 local __TextManager = {}
 
 ---@param arg0 UIFont
@@ -212,6 +211,6 @@ function TextManager.new() end
 ---@type Class<TextManager>
 TextManager.class = nil
 
-__classmetatables[TextManager.class] = { __index = __TextManager }
+__classmetatables[TextManager.class] = {__index = __TextManager}
 
 zombie.ui.TextManager = TextManager

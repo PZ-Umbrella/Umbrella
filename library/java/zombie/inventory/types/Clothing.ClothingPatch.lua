@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Clothing.ClothingPatch
-
 local __ClothingPatch = {}
 
 ---@return integer
@@ -49,6 +48,6 @@ function ClothingPatch.new(tailorLvl, fabricType, hasHole) end
 ---@type Class<Clothing.ClothingPatch>
 ClothingPatch.class = nil
 
-__classmetatables[ClothingPatch.class] = { __index = __ClothingPatch }
+__classmetatables[ClothingPatch.class] = {__index = __ClothingPatch}
 
 zombie.inventory.types.Clothing.ClothingPatch = ClothingPatch

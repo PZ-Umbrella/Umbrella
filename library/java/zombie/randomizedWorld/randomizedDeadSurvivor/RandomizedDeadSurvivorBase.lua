@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class RandomizedDeadSurvivorBase: RandomizedBuildingBase
-
 local __RandomizedDeadSurvivorBase = {}
 
 ---@param arg0 BuildingDef
@@ -20,6 +19,6 @@ function RandomizedDeadSurvivorBase.new() end
 ---@type Class<RandomizedDeadSurvivorBase>
 RandomizedDeadSurvivorBase.class = nil
 
-__classmetatables[RandomizedDeadSurvivorBase.class] = { __index = __RandomizedDeadSurvivorBase }
+__classmetatables[RandomizedDeadSurvivorBase.class] = {__index = __RandomizedDeadSurvivorBase}
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RandomizedDeadSurvivorBase = RandomizedDeadSurvivorBase

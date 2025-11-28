@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoFlagType: Enum<IsoFlagType>
-
 local __IsoFlagType = {}
 
 ---@return integer
@@ -371,6 +370,6 @@ function IsoFlagType.values() end
 ---@type Class<IsoFlagType>
 IsoFlagType.class = nil
 
-__classmetatables[IsoFlagType.class] = { __index = __IsoFlagType }
+__classmetatables[IsoFlagType.class] = {__index = __IsoFlagType}
 
 zombie.iso.SpriteDetails.IsoFlagType = IsoFlagType

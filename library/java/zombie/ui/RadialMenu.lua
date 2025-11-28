@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class RadialMenu: UIElement
-
 local __RadialMenu = {}
 
 ---@param text string
@@ -46,6 +45,6 @@ function RadialMenu.new(x, y, innerRadius, outerRadius) end
 ---@type Class<RadialMenu>
 RadialMenu.class = nil
 
-__classmetatables[RadialMenu.class] = { __index = __RadialMenu }
+__classmetatables[RadialMenu.class] = {__index = __RadialMenu}
 
 zombie.ui.RadialMenu = RadialMenu

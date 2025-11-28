@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SleepingEvent
-
 local __SleepingEvent = {}
 
 ---@param chr IsoPlayer
@@ -38,6 +37,6 @@ function SleepingEvent.new() end
 ---@type Class<SleepingEvent>
 SleepingEvent.class = nil
 
-__classmetatables[SleepingEvent.class] = { __index = __SleepingEvent }
+__classmetatables[SleepingEvent.class] = {__index = __SleepingEvent}
 
 zombie.ai.sadisticAIDirector.SleepingEvent = SleepingEvent

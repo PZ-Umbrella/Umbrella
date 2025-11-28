@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class WorldMapStyleV2: WorldMapStyleV1
-
 local __WorldMapStyleV2 = {}
 
 ---@param arg0 string
@@ -24,6 +23,6 @@ function WorldMapStyleV2.new(arg0) end
 ---@type Class<WorldMapStyleV2>
 WorldMapStyleV2.class = nil
 
-__classmetatables[WorldMapStyleV2.class] = { __index = __WorldMapStyleV2 }
+__classmetatables[WorldMapStyleV2.class] = {__index = __WorldMapStyleV2}
 
 zombie.worldMap.styles.WorldMapStyleV2 = WorldMapStyleV2

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SandboxOptions.IntegerSandboxOption: IntegerConfigOption, SandboxOptions.SandboxOption
-
 local __IntegerSandboxOption = {}
 
 ---@return ConfigOption
@@ -54,6 +53,6 @@ function IntegerSandboxOption.new(owner, name, min, max, defaultValue) end
 ---@type Class<SandboxOptions.IntegerSandboxOption>
 IntegerSandboxOption.class = nil
 
-__classmetatables[IntegerSandboxOption.class] = { __index = __IntegerSandboxOption }
+__classmetatables[IntegerSandboxOption.class] = {__index = __IntegerSandboxOption}
 
 zombie.SandboxOptions.IntegerSandboxOption = IntegerSandboxOption

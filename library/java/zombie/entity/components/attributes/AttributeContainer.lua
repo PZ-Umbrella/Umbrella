@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AttributeContainer: Component
-
 local __AttributeContainer = {}
 
 ---@param arg0 ObjectTooltip
@@ -281,6 +280,6 @@ function AttributeContainer.Merge(arg0, arg1) end
 ---@type Class<AttributeContainer>
 AttributeContainer.class = nil
 
-__classmetatables[AttributeContainer.class] = { __index = __AttributeContainer }
+__classmetatables[AttributeContainer.class] = {__index = __AttributeContainer}
 
 zombie.entity.components.attributes.AttributeContainer = AttributeContainer

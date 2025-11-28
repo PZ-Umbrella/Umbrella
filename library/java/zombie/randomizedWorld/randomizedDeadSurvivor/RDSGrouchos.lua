@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class RDSGrouchos: RandomizedDeadSurvivorBase
-
 local __RDSGrouchos = {}
 
 ---@param arg0 BuildingDef
@@ -20,6 +19,6 @@ function RDSGrouchos.new() end
 ---@type Class<RDSGrouchos>
 RDSGrouchos.class = nil
 
-__classmetatables[RDSGrouchos.class] = { __index = __RDSGrouchos }
+__classmetatables[RDSGrouchos.class] = {__index = __RDSGrouchos}
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSGrouchos = RDSGrouchos

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class DBBannedIP
-
 local __DBBannedIP = {}
 
 ---@return string
@@ -33,6 +32,6 @@ function DBBannedIP.new(arg0, arg1, arg2) end
 ---@type Class<DBBannedIP>
 DBBannedIP.class = nil
 
-__classmetatables[DBBannedIP.class] = { __index = __DBBannedIP }
+__classmetatables[DBBannedIP.class] = {__index = __DBBannedIP}
 
 zombie.network.DBBannedIP = DBBannedIP

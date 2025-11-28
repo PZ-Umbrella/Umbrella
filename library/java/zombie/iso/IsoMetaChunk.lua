@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoMetaChunk
-
 local __IsoMetaChunk = {}
 
 function __IsoMetaChunk:Dispose() end
@@ -141,6 +140,6 @@ function IsoMetaChunk.new() end
 ---@type Class<IsoMetaChunk>
 IsoMetaChunk.class = nil
 
-__classmetatables[IsoMetaChunk.class] = { __index = __IsoMetaChunk }
+__classmetatables[IsoMetaChunk.class] = {__index = __IsoMetaChunk}
 
 zombie.iso.IsoMetaChunk = IsoMetaChunk

@@ -27,12 +27,12 @@
 --- abstract, system-independent view of hierarchical pathnames.  An
 --- abstract pathname has two components:
 ---
----
+--- 
 ---  An optional system-dependent prefix string,
 ---      such as a disk-drive specifier, "/" for the UNIX root
 ---      directory, or "\\\\" for a Microsoft Windows UNC pathname, and
 ---  A sequence of zero or more string names.
----
+--- 
 ---
 --- The first name in an abstract pathname may be a directory name or, in the
 --- case of Microsoft Windows UNC pathnames, a hostname.  Each subsequent name
@@ -73,7 +73,7 @@
 --- and drive specifiers, root directories and UNC pathnames on Microsoft Windows platforms,
 --- as follows:
 ---
----
+--- 
 ---
 ---  For UNIX platforms, the prefix of an absolute pathname is always
 --- "/".  Relative pathnames have no prefix.  The abstract pathname
@@ -87,7 +87,7 @@
 --- name are the first two names in the name sequence.  A relative pathname that
 --- does not specify a drive has no prefix.
 ---
----
+--- 
 ---
 ---  Instances of this class may or may not denote an actual file-system
 --- object such as a file or a directory.  If it does denote such an object
@@ -128,14 +128,14 @@
 --- or the platform's
 --- default charset.
 ---
----
+--- 
 --- Whether or not a file is available or may be created depends upon the
 --- underlying platform.  Some platforms, in particular, allow a file to be
 --- opened for writing by only one FileWriter (or other file-writing
 --- object) at a time.  In such situations the constructors in this class
 --- will fail if the file involved is already open.
 ---
----
+--- 
 --- The FileWriter is meant for writing streams of characters. For writing
 --- streams of raw bytes, consider using a FileOutputStream.
 ---@class FileWriter
@@ -156,7 +156,7 @@
 --- Secure Coding Guidelines for Java SE.
 --- Serialization Filtering describes best
 --- practices for defensive use of serial filters.
----
+--- 
 ---
 --- The key to disabling deserialization attacks is to prevent instances of
 --- arbitrary classes from being deserialized, thereby preventing the direct or
@@ -169,7 +169,7 @@
 --- and every object read from the stream can be checked.
 --- The ObjectInputStream constructors invoke the filter factory
 --- to select the initial filter which may be updated or replaced by setObjectInputFilter(java.io.ObjectInputFilter).
----
+--- 
 --- If an ObjectInputStream has a filter, the ObjectInputFilter can check that
 --- the classes, array lengths, number of references in the stream, depth, and
 --- number of bytes consumed from the input stream are allowed and
@@ -214,8 +214,8 @@
 ---
 --- For example to read from a stream as written by the example in
 --- ObjectOutputStream:
----
----
+--- 
+--- 
 ---      FileInputStream fis = new FileInputStream("t.tmp");
 ---      ObjectInputStream ois = new ObjectInputStream(fis);
 ---
@@ -224,7 +224,7 @@
 ---      Date date = (Date) ois.readObject();
 ---
 ---      ois.close();
----
+--- 
 ---
 --- Classes control how they are serialized by implementing either the
 --- java.io.Serializable or java.io.Externalizable interfaces.
@@ -239,14 +239,14 @@
 --- serialization and deserialization process should implement the following
 --- methods:
 ---
----
+--- 
 --- private void writeObject(java.io.ObjectOutputStream stream)
 ---     throws IOException;
 --- private void readObject(java.io.ObjectInputStream stream)
 ---     throws IOException, ClassNotFoundException;
 --- private void readObjectNoData()
 ---     throws ObjectStreamException;
----
+--- 
 ---
 --- The readObject method is responsible for reading and restoring the state
 --- of the object for its particular class using data written to the stream by
@@ -323,12 +323,12 @@
 --- Similarly, any serialPersistentFields or serialVersionUID field declarations
 --- are also ignored--all enum types have a fixed serialVersionUID of 0L.
 ---
----
+--- 
 --- Records are serialized differently than ordinary serializable or externalizable
 --- objects. During deserialization the record's canonical constructor is invoked
 --- to construct the record object. Certain serialization-related methods, such
 --- as readObject and writeObject, are ignored for serializable records. See
----
+--- 
 --- Java Object Serialization Specification, Section 1.13,
 --- "Serialization of Records" for additional information.
 ---@class ObjectInputStream
@@ -372,8 +372,8 @@
 ---
 --- For example to write an object that can be read by the example in
 --- ObjectInputStream:
----
----
+--- 
+--- 
 ---      FileOutputStream fos = new FileOutputStream("t.tmp");
 ---      ObjectOutputStream oos = new ObjectOutputStream(fos);
 ---
@@ -382,20 +382,20 @@
 ---      oos.writeObject(new Date());
 ---
 ---      oos.close();
----
+--- 
 ---
 --- Classes that require special handling during the serialization and
 --- deserialization process must implement special methods with these exact
 --- signatures:
----
----
+--- 
+--- 
 --- private void readObject(java.io.ObjectInputStream stream)
 ---     throws IOException, ClassNotFoundException;
 --- private void writeObject(java.io.ObjectOutputStream stream)
 ---     throws IOException
 --- private void readObjectNoData()
 ---     throws ObjectStreamException;
----
+--- 
 ---
 --- The writeObject method is responsible for writing the state of the object
 --- for its particular class so that the corresponding readObject method can
@@ -520,7 +520,7 @@
 --- extended. The file pointer can be read by the
 --- getFilePointer method and set by the seek
 --- method.
----
+--- 
 --- It is generally true of all the reading routines in this class that
 --- if end-of-file is reached before the desired number of bytes has been
 --- read, an EOFException (which is a kind of

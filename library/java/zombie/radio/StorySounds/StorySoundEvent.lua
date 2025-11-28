@@ -2,7 +2,6 @@
 
 ---Turbo
 ---@class StorySoundEvent
-
 local __StorySoundEvent = {}
 
 ---@return ArrayList<EventSound>
@@ -29,6 +28,6 @@ function StorySoundEvent.new(name) end
 ---@type Class<StorySoundEvent>
 StorySoundEvent.class = nil
 
-__classmetatables[StorySoundEvent.class] = { __index = __StorySoundEvent }
+__classmetatables[StorySoundEvent.class] = {__index = __StorySoundEvent}
 
 zombie.radio.StorySounds.StorySoundEvent = StorySoundEvent

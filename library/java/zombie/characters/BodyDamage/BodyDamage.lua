@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class BodyDamage
-
 local __BodyDamage = {}
 
 ---@param BodyPart BodyPartType
@@ -809,6 +808,6 @@ function BodyDamage.new(ParentCharacter) end
 ---@type Class<BodyDamage>
 BodyDamage.class = nil
 
-__classmetatables[BodyDamage.class] = { __index = __BodyDamage }
+__classmetatables[BodyDamage.class] = {__index = __BodyDamage}
 
 zombie.characters.BodyDamage.BodyDamage = BodyDamage

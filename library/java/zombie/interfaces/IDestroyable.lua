@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IDestroyable
-
 local __IDestroyable = {}
 
 ---destory the object

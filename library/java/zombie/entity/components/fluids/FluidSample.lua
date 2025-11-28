@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class FluidSample
-
 local __FluidSample = {}
 
 function __FluidSample:clear() end
@@ -80,6 +79,6 @@ function FluidSample.combine(arg0, arg1) end
 ---@type Class<FluidSample>
 FluidSample.class = nil
 
-__classmetatables[FluidSample.class] = { __index = __FluidSample }
+__classmetatables[FluidSample.class] = {__index = __FluidSample}
 
 zombie.entity.components.fluids.FluidSample = FluidSample

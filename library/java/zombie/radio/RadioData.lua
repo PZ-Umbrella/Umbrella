@@ -2,7 +2,6 @@
 
 ---Turbo
 ---@class RadioData
-
 local __RadioData = {}
 
 ---@return ArrayList<RadioChannel>
@@ -27,6 +26,6 @@ function RadioData.new(xmlFile) end
 ---@type Class<RadioData>
 RadioData.class = nil
 
-__classmetatables[RadioData.class] = { __index = __RadioData }
+__classmetatables[RadioData.class] = {__index = __RadioData}
 
 zombie.radio.RadioData = RadioData

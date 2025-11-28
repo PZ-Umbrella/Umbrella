@@ -2,7 +2,6 @@
 
 ---TurboTuTone.
 ---@class Colors
-
 local __Colors = {}
 
 Colors = {}
@@ -589,6 +588,6 @@ function Colors.new() end
 ---@type Class<Colors>
 Colors.class = nil
 
-__classmetatables[Colors.class] = { __index = __Colors }
+__classmetatables[Colors.class] = {__index = __Colors}
 
 zombie.core.Colors = Colors

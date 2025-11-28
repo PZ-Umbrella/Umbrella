@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class VehiclePart: GameEntity, ChatElementOwner, WaveSignalDevice
-
 local __VehiclePart = {}
 
 ---@param line string
@@ -320,6 +319,6 @@ function VehiclePart.new(vehicle) end
 ---@type Class<VehiclePart>
 VehiclePart.class = nil
 
-__classmetatables[VehiclePart.class] = { __index = __VehiclePart }
+__classmetatables[VehiclePart.class] = {__index = __VehiclePart}
 
 zombie.vehicles.VehiclePart = VehiclePart

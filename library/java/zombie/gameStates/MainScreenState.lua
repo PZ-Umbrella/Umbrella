@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class MainScreenState: GameState
-
 local __MainScreenState = {}
 
 ---@return boolean
@@ -71,6 +70,6 @@ function MainScreenState.new() end
 ---@type Class<MainScreenState>
 MainScreenState.class = nil
 
-__classmetatables[MainScreenState.class] = { __index = __MainScreenState }
+__classmetatables[MainScreenState.class] = {__index = __MainScreenState}
 
 zombie.gameStates.MainScreenState = MainScreenState

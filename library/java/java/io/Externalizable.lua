@@ -27,7 +27,6 @@
 --- the writeReplace and readResolve methods documented in the Serializable
 --- interface.
 ---@class Externalizable: Serializable
-
 local __Externalizable = {}
 
 ---The object implements the readExternal method to restore its

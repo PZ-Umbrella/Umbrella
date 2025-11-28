@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class XuiTableScript.XuiTableCellScript: XuiScript
-
 local __XuiTableCellScript = {}
 
 ---@return boolean
@@ -18,6 +17,6 @@ function XuiTableCellScript.new(arg0, arg1, arg2) end
 ---@type Class<XuiTableScript.XuiTableCellScript>
 XuiTableCellScript.class = nil
 
-__classmetatables[XuiTableCellScript.class] = { __index = __XuiTableCellScript }
+__classmetatables[XuiTableCellScript.class] = {__index = __XuiTableCellScript}
 
 zombie.scripting.ui.XuiTableScript.XuiTableCellScript = XuiTableCellScript

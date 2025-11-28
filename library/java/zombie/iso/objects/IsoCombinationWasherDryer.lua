@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoCombinationWasherDryer: IsoObject
-
 local __IsoCombinationWasherDryer = {}
 
 function __IsoCombinationWasherDryer:addToWorld() end
@@ -72,6 +71,6 @@ function IsoCombinationWasherDryer.new(cell, sq, gid) end
 ---@type Class<IsoCombinationWasherDryer>
 IsoCombinationWasherDryer.class = nil
 
-__classmetatables[IsoCombinationWasherDryer.class] = { __index = __IsoCombinationWasherDryer }
+__classmetatables[IsoCombinationWasherDryer.class] = {__index = __IsoCombinationWasherDryer}
 
 zombie.iso.objects.IsoCombinationWasherDryer = IsoCombinationWasherDryer

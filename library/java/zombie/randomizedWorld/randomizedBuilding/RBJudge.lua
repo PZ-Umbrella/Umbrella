@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class RBJudge: RandomizedBuildingBase
-
 local __RBJudge = {}
 
 ---@param arg0 BuildingDef
@@ -24,6 +23,6 @@ function RBJudge.new() end
 ---@type Class<RBJudge>
 RBJudge.class = nil
 
-__classmetatables[RBJudge.class] = { __index = __RBJudge }
+__classmetatables[RBJudge.class] = {__index = __RBJudge}
 
 zombie.randomizedWorld.randomizedBuilding.RBJudge = RBJudge

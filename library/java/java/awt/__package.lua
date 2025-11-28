@@ -5,13 +5,13 @@
 --- enclosed by the Rectangle object's upper-left point
 --- (x,y)
 --- in the coordinate space, its width, and its height.
----
+--- 
 --- A Rectangle object's width and
 --- height are public fields. The constructors
 --- that create a Rectangle, and the methods that can modify
 --- one, do not prevent setting a negative value for width or height.
----
----
+--- 
+--- 
 --- A Rectangle whose width or height is exactly zero has location
 --- along those axes with zero dimension, but is otherwise considered empty.
 --- The isEmpty() method will return true for such a Rectangle.
@@ -20,8 +20,8 @@
 --- Methods which combine such a Rectangle with a point or rectangle
 --- will include the location of the Rectangle on that axis in the
 --- result as if the add(Point) method were being called.
----
----
+--- 
+--- 
 --- A Rectangle whose width or height is negative has neither
 --- location nor dimension along those axes with negative dimensions.
 --- Such a Rectangle is treated as non-existent along those axes.
@@ -32,12 +32,12 @@
 --- will ignore the Rectangle entirely in generating the result.
 --- If two Rectangle objects are combined and each has a negative
 --- dimension, the result will have at least one negative dimension.
----
----
+--- 
+--- 
 --- Methods which affect only the location of a Rectangle will
 --- operate on its location regardless of whether or not it has a negative
 --- or zero dimension along either axis.
----
+--- 
 --- Note that a Rectangle constructed with the default no-argument
 --- constructor will have dimensions of 0x0 and therefore be empty.
 --- That Rectangle will still have a location of (0,0) and
@@ -60,7 +60,7 @@
 ---         bounds.add(points[i]);
 ---     }
 --- </code>
----
+--- 
 --- This class uses 32-bit integers to store its location and dimensions.
 --- Frequently operations may produce a result that exceeds the range of
 --- a 32-bit integer.

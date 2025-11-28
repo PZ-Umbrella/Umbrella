@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ServerOptions
-
 local __ServerOptions = {}
 
 ---@param option ServerOptions.ServerOption
@@ -107,6 +106,6 @@ function ServerOptions.new() end
 ---@type Class<ServerOptions>
 ServerOptions.class = nil
 
-__classmetatables[ServerOptions.class] = { __index = __ServerOptions }
+__classmetatables[ServerOptions.class] = {__index = __ServerOptions}
 
 zombie.network.ServerOptions = ServerOptions

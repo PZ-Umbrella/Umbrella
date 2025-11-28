@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoGenerator: IsoObject
-
 local __IsoGenerator = {}
 
 function __IsoGenerator:addToWorld() end
@@ -129,6 +128,6 @@ function IsoGenerator.new(item, cell, sq, remote) end
 ---@type Class<IsoGenerator>
 IsoGenerator.class = nil
 
-__classmetatables[IsoGenerator.class] = { __index = __IsoGenerator }
+__classmetatables[IsoGenerator.class] = {__index = __IsoGenerator}
 
 zombie.iso.objects.IsoGenerator = IsoGenerator

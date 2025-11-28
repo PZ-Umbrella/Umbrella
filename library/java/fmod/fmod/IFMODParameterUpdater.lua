@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IFMODParameterUpdater
-
 local __IFMODParameterUpdater = {}
 
 ---@return FMODParameterList

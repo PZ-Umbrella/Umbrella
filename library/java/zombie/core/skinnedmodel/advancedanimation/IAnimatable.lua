@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IAnimatable: IAnimationVariableSource
-
 local __IAnimatable = {}
 
 ---@return string

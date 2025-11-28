@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoPropertyType
-
 local __IsoPropertyType = {}
 
 IsoPropertyType = {}
@@ -118,6 +117,6 @@ function IsoPropertyType.new() end
 ---@type Class<IsoPropertyType>
 IsoPropertyType.class = nil
 
-__classmetatables[IsoPropertyType.class] = { __index = __IsoPropertyType }
+__classmetatables[IsoPropertyType.class] = {__index = __IsoPropertyType}
 
 zombie.core.properties.IsoPropertyType = IsoPropertyType

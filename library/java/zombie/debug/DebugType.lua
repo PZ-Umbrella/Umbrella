@@ -2,7 +2,6 @@
 
 ---Created by LEMMYPC on 31/12/13.
 ---@class DebugType: Enum<DebugType>
-
 local __DebugType = {}
 
 ---@param arg0 any
@@ -348,6 +347,6 @@ function DebugType.values() end
 ---@type Class<DebugType>
 DebugType.class = nil
 
-__classmetatables[DebugType.class] = { __index = __DebugType }
+__classmetatables[DebugType.class] = {__index = __DebugType}
 
 zombie.debug.DebugType = DebugType

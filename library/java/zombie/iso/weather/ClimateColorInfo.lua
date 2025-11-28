@@ -5,7 +5,6 @@
 --- When outside the shader is used to apply global light, when inside a room its using a different method (using the weather mask) to do the coloring of outside parts.
 --- This requires separate balancing of colors as using one and the same for both methods doesn't always look right.
 ---@class ClimateColorInfo
-
 local __ClimateColorInfo = {}
 
 ---@return Color
@@ -93,6 +92,6 @@ function ClimateColorInfo.new(r, g, b, a, r2, g2, b2, a2) end
 ---@type Class<ClimateColorInfo>
 ClimateColorInfo.class = nil
 
-__classmetatables[ClimateColorInfo.class] = { __index = __ClimateColorInfo }
+__classmetatables[ClimateColorInfo.class] = {__index = __ClimateColorInfo}
 
 zombie.iso.weather.ClimateColorInfo = ClimateColorInfo

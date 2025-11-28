@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IHasHealth
-
 local __IHasHealth = {}
 
 ---@return integer

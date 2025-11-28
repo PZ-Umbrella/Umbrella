@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class GlobalObjectSystem
-
 local __GlobalObjectSystem = {}
 
 function __GlobalObjectSystem:Reset() end

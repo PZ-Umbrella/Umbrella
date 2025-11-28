@@ -2,7 +2,6 @@
 
 ---TurboTuTone.
 ---@class IsoWorldRegion: IWorldRegion
-
 local __IsoWorldRegion = {}
 
 ---@param region IsoChunkRegion
@@ -82,6 +81,6 @@ IsoWorldRegion = {}
 ---@type Class<IsoWorldRegion>
 IsoWorldRegion.class = nil
 
-__classmetatables[IsoWorldRegion.class] = { __index = __IsoWorldRegion }
+__classmetatables[IsoWorldRegion.class] = {__index = __IsoWorldRegion}
 
 zombie.iso.areas.isoregion.regions.IsoWorldRegion = IsoWorldRegion

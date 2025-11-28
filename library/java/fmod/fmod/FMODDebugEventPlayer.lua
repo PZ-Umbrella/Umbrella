@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class FMODDebugEventPlayer
-
 local __FMODDebugEventPlayer = {}
 
 ---@param arg0 integer
@@ -73,6 +72,6 @@ function FMODDebugEventPlayer.new() end
 ---@type Class<FMODDebugEventPlayer>
 FMODDebugEventPlayer.class = nil
 
-__classmetatables[FMODDebugEventPlayer.class] = { __index = __FMODDebugEventPlayer }
+__classmetatables[FMODDebugEventPlayer.class] = {__index = __FMODDebugEventPlayer}
 
 fmod.fmod.FMODDebugEventPlayer = FMODDebugEventPlayer

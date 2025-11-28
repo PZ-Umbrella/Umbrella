@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class VectorPosAlign: Enum<VectorPosAlign>
-
 local __VectorPosAlign = {}
 
 ---@param arg0 XuiScript.XuiVector
@@ -60,6 +59,6 @@ function VectorPosAlign.values() end
 ---@type Class<VectorPosAlign>
 VectorPosAlign.class = nil
 
-__classmetatables[VectorPosAlign.class] = { __index = __VectorPosAlign }
+__classmetatables[VectorPosAlign.class] = {__index = __VectorPosAlign}
 
 zombie.scripting.ui.VectorPosAlign = VectorPosAlign

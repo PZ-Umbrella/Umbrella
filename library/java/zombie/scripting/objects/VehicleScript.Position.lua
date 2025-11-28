@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class VehicleScript.Position
-
 local __Position = {}
 
 ---@return string
@@ -24,6 +23,6 @@ function Position.new() end
 ---@type Class<VehicleScript.Position>
 Position.class = nil
 
-__classmetatables[Position.class] = { __index = __Position }
+__classmetatables[Position.class] = {__index = __Position}
 
 zombie.scripting.objects.VehicleScript.Position = Position

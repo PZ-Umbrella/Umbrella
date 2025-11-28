@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class CraftRecipeMonitor
-
 local __CraftRecipeMonitor = {}
 
 ---@return ArrayList<string>
@@ -80,6 +79,6 @@ function CraftRecipeMonitor.Create() end
 ---@type Class<CraftRecipeMonitor>
 CraftRecipeMonitor.class = nil
 
-__classmetatables[CraftRecipeMonitor.class] = { __index = __CraftRecipeMonitor }
+__classmetatables[CraftRecipeMonitor.class] = {__index = __CraftRecipeMonitor}
 
 zombie.entity.components.crafting.CraftRecipeMonitor = CraftRecipeMonitor

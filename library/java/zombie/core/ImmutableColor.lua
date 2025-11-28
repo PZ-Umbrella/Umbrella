@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ImmutableColor
-
 local __ImmutableColor = {}
 
 ---@param c ImmutableColor
@@ -197,6 +196,6 @@ function ImmutableColor.new(value) end
 ---@type Class<ImmutableColor>
 ImmutableColor.class = nil
 
-__classmetatables[ImmutableColor.class] = { __index = __ImmutableColor }
+__classmetatables[ImmutableColor.class] = {__index = __ImmutableColor}
 
 zombie.core.ImmutableColor = ImmutableColor

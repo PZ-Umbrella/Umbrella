@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IDescriptor
-
 local __IDescriptor = {}
 
 ---@param arg0 StringBuilder

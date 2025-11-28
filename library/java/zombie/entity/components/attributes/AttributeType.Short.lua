@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AttributeType.Short: AttributeType.Numeric<AttributeType.Short, integer>
-
 local __Short = {}
 
 ---@return integer
@@ -32,6 +31,6 @@ Short = {}
 ---@type Class<AttributeType.Short>
 Short.class = nil
 
-__classmetatables[Short.class] = { __index = __Short }
+__classmetatables[Short.class] = {__index = __Short}
 
 zombie.entity.components.attributes.AttributeType.Short = Short

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class NetworkAIParams
-
 local __NetworkAIParams = {}
 
 NetworkAIParams = {}
@@ -113,6 +112,6 @@ function NetworkAIParams.new() end
 ---@type Class<NetworkAIParams>
 NetworkAIParams.class = nil
 
-__classmetatables[NetworkAIParams.class] = { __index = __NetworkAIParams }
+__classmetatables[NetworkAIParams.class] = {__index = __NetworkAIParams}
 
 zombie.network.NetworkAIParams = NetworkAIParams

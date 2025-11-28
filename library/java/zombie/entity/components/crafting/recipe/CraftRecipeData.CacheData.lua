@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class CraftRecipeData.CacheData
-
 local __CacheData = {}
 
 ---@param arg0 ArrayList<InventoryItem>
@@ -39,6 +38,6 @@ CacheData = {}
 ---@type Class<CraftRecipeData.CacheData>
 CacheData.class = nil
 
-__classmetatables[CacheData.class] = { __index = __CacheData }
+__classmetatables[CacheData.class] = {__index = __CacheData}
 
 zombie.entity.components.crafting.recipe.CraftRecipeData.CacheData = CacheData

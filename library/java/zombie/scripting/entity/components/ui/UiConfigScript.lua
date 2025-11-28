@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class UiConfigScript: ComponentScript
-
 local __UiConfigScript = {}
 
 ---@param arg0 string
@@ -38,6 +37,6 @@ UiConfigScript = {}
 ---@type Class<UiConfigScript>
 UiConfigScript.class = nil
 
-__classmetatables[UiConfigScript.class] = { __index = __UiConfigScript }
+__classmetatables[UiConfigScript.class] = {__index = __UiConfigScript}
 
 zombie.scripting.entity.components.ui.UiConfigScript = UiConfigScript

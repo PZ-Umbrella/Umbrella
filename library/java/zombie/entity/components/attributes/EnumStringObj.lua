@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class EnumStringObj<E: Enum<E>, IOEnum>
-
 local __EnumStringObj = {}
 
 ---@param arg0 E
@@ -69,6 +68,6 @@ EnumStringObj = {}
 ---@type Class<EnumStringObj>
 EnumStringObj.class = nil
 
-__classmetatables[EnumStringObj.class] = { __index = __EnumStringObj }
+__classmetatables[EnumStringObj.class] = {__index = __EnumStringObj}
 
 zombie.entity.components.attributes.EnumStringObj = EnumStringObj

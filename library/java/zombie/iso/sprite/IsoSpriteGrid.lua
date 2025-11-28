@@ -2,7 +2,6 @@
 
 ---Turbo
 ---@class IsoSpriteGrid
-
 local __IsoSpriteGrid = {}
 
 ---@return IsoSprite
@@ -96,6 +95,6 @@ function IsoSpriteGrid.new(w, h) end
 ---@type Class<IsoSpriteGrid>
 IsoSpriteGrid.class = nil
 
-__classmetatables[IsoSpriteGrid.class] = { __index = __IsoSpriteGrid }
+__classmetatables[IsoSpriteGrid.class] = {__index = __IsoSpriteGrid}
 
 zombie.iso.sprite.IsoSpriteGrid = IsoSpriteGrid

@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IGrappleableWrapper: IGrappleable
-
 local __IGrappleableWrapper = {}
 
 ---@param arg0 IGrappleable

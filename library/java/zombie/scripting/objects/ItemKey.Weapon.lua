@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ItemKey.Weapon
-
 local __Weapon = {}
 
 Weapon = {}
@@ -1221,6 +1220,6 @@ function Weapon.new() end
 ---@type Class<ItemKey.Weapon>
 Weapon.class = nil
 
-__classmetatables[Weapon.class] = { __index = __Weapon }
+__classmetatables[Weapon.class] = {__index = __Weapon}
 
 zombie.scripting.objects.ItemKey.Weapon = Weapon

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class HaloTextHelper.ColorRGB
-
 local __ColorRGB = {}
 
 ColorRGB = {}
@@ -15,6 +14,6 @@ function ColorRGB.new(r, g, b) end
 ---@type Class<HaloTextHelper.ColorRGB>
 ColorRGB.class = nil
 
-__classmetatables[ColorRGB.class] = { __index = __ColorRGB }
+__classmetatables[ColorRGB.class] = {__index = __ColorRGB}
 
 zombie.characters.HaloTextHelper.ColorRGB = ColorRGB

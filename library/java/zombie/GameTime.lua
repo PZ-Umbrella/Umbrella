@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class GameTime
-
 local __GameTime = {}
 
 ---@param start number
@@ -417,6 +416,6 @@ function GameTime.new() end
 ---@type Class<GameTime>
 GameTime.class = nil
 
-__classmetatables[GameTime.class] = { __index = __GameTime }
+__classmetatables[GameTime.class] = {__index = __GameTime}
 
 zombie.GameTime = GameTime

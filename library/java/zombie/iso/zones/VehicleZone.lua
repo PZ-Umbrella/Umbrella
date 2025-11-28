@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class VehicleZone: Zone
-
 local __VehicleZone = {}
 
 ---@return boolean
@@ -26,6 +25,6 @@ function VehicleZone.new(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
 ---@type Class<VehicleZone>
 VehicleZone.class = nil
 
-__classmetatables[VehicleZone.class] = { __index = __VehicleZone }
+__classmetatables[VehicleZone.class] = {__index = __VehicleZone}
 
 zombie.iso.zones.VehicleZone = VehicleZone

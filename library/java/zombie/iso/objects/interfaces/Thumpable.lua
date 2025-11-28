@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class Thumpable
-
 local __Thumpable = {}
 
 ---@param thumper IsoMovingObject

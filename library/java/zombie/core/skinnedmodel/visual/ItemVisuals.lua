@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ItemVisuals: ArrayList<ItemVisual>
-
 local __ItemVisuals = {}
 
 ---@return ItemVisual
@@ -28,6 +27,6 @@ function ItemVisuals.new() end
 ---@type Class<ItemVisuals>
 ItemVisuals.class = nil
 
-__classmetatables[ItemVisuals.class] = { __index = __ItemVisuals }
+__classmetatables[ItemVisuals.class] = {__index = __ItemVisuals}
 
 zombie.core.skinnedmodel.visual.ItemVisuals = ItemVisuals

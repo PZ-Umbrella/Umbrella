@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ChatBase
-
 local __ChatBase = {}
 
 ---@param playerID integer
@@ -130,6 +129,6 @@ ChatBase = {}
 ---@type Class<ChatBase>
 ChatBase.class = nil
 
-__classmetatables[ChatBase.class] = { __index = __ChatBase }
+__classmetatables[ChatBase.class] = {__index = __ChatBase}
 
 zombie.chat.ChatBase = ChatBase

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class CraftRecipeData.InputScriptData: CraftRecipeData.CacheData
-
 local __InputScriptData = {}
 
 ---@param arg0 InventoryItem
@@ -60,6 +59,6 @@ function InputScriptData.new() end
 ---@type Class<CraftRecipeData.InputScriptData>
 InputScriptData.class = nil
 
-__classmetatables[InputScriptData.class] = { __index = __InputScriptData }
+__classmetatables[InputScriptData.class] = {__index = __InputScriptData}
 
 zombie.entity.components.crafting.recipe.CraftRecipeData.InputScriptData = InputScriptData

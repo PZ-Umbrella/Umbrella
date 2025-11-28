@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AnimalData
-
 local __AnimalData = {}
 
 ---@param arg0 IsoFeedingTrough
@@ -315,6 +314,6 @@ function AnimalData.new(arg0, arg1) end
 ---@type Class<AnimalData>
 AnimalData.class = nil
 
-__classmetatables[AnimalData.class] = { __index = __AnimalData }
+__classmetatables[AnimalData.class] = {__index = __AnimalData}
 
 zombie.characters.animals.datas.AnimalData = AnimalData

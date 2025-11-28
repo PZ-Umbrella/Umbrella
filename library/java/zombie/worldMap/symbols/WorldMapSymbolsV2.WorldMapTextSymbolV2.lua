@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class WorldMapSymbolsV2.WorldMapTextSymbolV2: WorldMapSymbolsV2.WorldMapBaseSymbolV2
-
 local __WorldMapTextSymbolV2 = {}
 
 ---@return boolean
@@ -187,6 +186,6 @@ function WorldMapTextSymbolV2.new() end
 ---@type Class<WorldMapSymbolsV2.WorldMapTextSymbolV2>
 WorldMapTextSymbolV2.class = nil
 
-__classmetatables[WorldMapTextSymbolV2.class] = { __index = __WorldMapTextSymbolV2 }
+__classmetatables[WorldMapTextSymbolV2.class] = {__index = __WorldMapTextSymbolV2}
 
 zombie.worldMap.symbols.WorldMapSymbolsV2.WorldMapTextSymbolV2 = WorldMapTextSymbolV2

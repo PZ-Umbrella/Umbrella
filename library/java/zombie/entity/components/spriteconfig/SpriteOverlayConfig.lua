@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SpriteOverlayConfig: Component
-
 local __SpriteOverlayConfig = {}
 
 function __SpriteOverlayConfig:clearStyle() end
@@ -24,6 +23,6 @@ SpriteOverlayConfig = {}
 ---@type Class<SpriteOverlayConfig>
 SpriteOverlayConfig.class = nil
 
-__classmetatables[SpriteOverlayConfig.class] = { __index = __SpriteOverlayConfig }
+__classmetatables[SpriteOverlayConfig.class] = {__index = __SpriteOverlayConfig}
 
 zombie.entity.components.spriteconfig.SpriteOverlayConfig = SpriteOverlayConfig

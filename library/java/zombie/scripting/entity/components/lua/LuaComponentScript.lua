@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class LuaComponentScript: ComponentScript
-
 local __LuaComponentScript = {}
 
 ---@param arg0 string
@@ -26,6 +25,6 @@ LuaComponentScript = {}
 ---@type Class<LuaComponentScript>
 LuaComponentScript.class = nil
 
-__classmetatables[LuaComponentScript.class] = { __index = __LuaComponentScript }
+__classmetatables[LuaComponentScript.class] = {__index = __LuaComponentScript}
 
 zombie.scripting.entity.components.lua.LuaComponentScript = LuaComponentScript

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SandboxOptions
-
 local __SandboxOptions = {}
 
 function __SandboxOptions:applySettings() end
@@ -205,6 +204,6 @@ function SandboxOptions.new() end
 ---@type Class<SandboxOptions>
 SandboxOptions.class = nil
 
-__classmetatables[SandboxOptions.class] = { __index = __SandboxOptions }
+__classmetatables[SandboxOptions.class] = {__index = __SandboxOptions}
 
 zombie.SandboxOptions = SandboxOptions

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Component
-
 local __Component = {}
 
 ---@param arg0 ObjectTooltip
@@ -71,6 +70,6 @@ Component = {}
 ---@type Class<Component>
 Component.class = nil
 
-__classmetatables[Component.class] = { __index = __Component }
+__classmetatables[Component.class] = {__index = __Component}
 
 zombie.entity.Component = Component

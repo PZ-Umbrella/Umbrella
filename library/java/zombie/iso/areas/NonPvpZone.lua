@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class NonPvpZone
-
 local __NonPvpZone = {}
 
 ---@return integer
@@ -92,6 +91,6 @@ function NonPvpZone.new(title, x, y, x2, y2) end
 ---@type Class<NonPvpZone>
 NonPvpZone.class = nil
 
-__classmetatables[NonPvpZone.class] = { __index = __NonPvpZone }
+__classmetatables[NonPvpZone.class] = {__index = __NonPvpZone}
 
 zombie.iso.areas.NonPvpZone = NonPvpZone

@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IAnimEventWrappedBroadcaster: IAnimEventListener
-
 local __IAnimEventWrappedBroadcaster = {}
 
 ---@param arg0 string

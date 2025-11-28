@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class StaggerBackState: State
-
 local __StaggerBackState = {}
 
 ---@param arg0 IsoGameCharacter
@@ -46,6 +45,6 @@ function StaggerBackState.new() end
 ---@type Class<StaggerBackState>
 StaggerBackState.class = nil
 
-__classmetatables[StaggerBackState.class] = { __index = __StaggerBackState }
+__classmetatables[StaggerBackState.class] = {__index = __StaggerBackState}
 
 zombie.ai.states.StaggerBackState = StaggerBackState

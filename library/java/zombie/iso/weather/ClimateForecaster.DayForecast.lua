@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ClimateForecaster.DayForecast
-
 local __DayForecast = {}
 
 ---@return ClimateManager.AirFront
@@ -93,6 +92,6 @@ function DayForecast.new() end
 ---@type Class<ClimateForecaster.DayForecast>
 DayForecast.class = nil
 
-__classmetatables[DayForecast.class] = { __index = __DayForecast }
+__classmetatables[DayForecast.class] = {__index = __DayForecast}
 
 zombie.iso.weather.ClimateForecaster.DayForecast = DayForecast

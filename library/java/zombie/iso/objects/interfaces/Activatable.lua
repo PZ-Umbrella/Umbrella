@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class Activatable
-
 local __Activatable = {}
 
 ---@return boolean

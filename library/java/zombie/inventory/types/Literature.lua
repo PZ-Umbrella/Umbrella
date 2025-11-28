@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Literature: InventoryItem
-
 local __Literature = {}
 
 ---@param tooltipUI ObjectTooltip
@@ -172,6 +171,6 @@ function Literature.new(module, name, itemType, item) end
 ---@type Class<Literature>
 Literature.class = nil
 
-__classmetatables[Literature.class] = { __index = __Literature }
+__classmetatables[Literature.class] = {__index = __Literature}
 
 zombie.inventory.types.Literature = Literature

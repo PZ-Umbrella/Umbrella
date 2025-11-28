@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SGlobalObjectSystem: GlobalObjectSystem
-
 local __SGlobalObjectSystem = {}
 
 ---@param isoObject IsoObject
@@ -71,6 +70,6 @@ function SGlobalObjectSystem.new(name) end
 ---@type Class<SGlobalObjectSystem>
 SGlobalObjectSystem.class = nil
 
-__classmetatables[SGlobalObjectSystem.class] = { __index = __SGlobalObjectSystem }
+__classmetatables[SGlobalObjectSystem.class] = {__index = __SGlobalObjectSystem}
 
 zombie.globalObjects.SGlobalObjectSystem = SGlobalObjectSystem

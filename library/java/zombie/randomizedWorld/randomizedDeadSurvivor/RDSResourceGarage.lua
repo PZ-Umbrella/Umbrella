@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class RDSResourceGarage: RandomizedDeadSurvivorBase
-
 local __RDSResourceGarage = {}
 
 ---@param arg0 BuildingDef
@@ -20,6 +19,6 @@ function RDSResourceGarage.new() end
 ---@type Class<RDSResourceGarage>
 RDSResourceGarage.class = nil
 
-__classmetatables[RDSResourceGarage.class] = { __index = __RDSResourceGarage }
+__classmetatables[RDSResourceGarage.class] = {__index = __RDSResourceGarage}
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSResourceGarage = RDSResourceGarage

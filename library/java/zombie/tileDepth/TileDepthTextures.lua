@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class TileDepthTextures
-
 local __TileDepthTextures = {}
 
 function __TileDepthTextures:Reset() end
@@ -45,6 +44,6 @@ function TileDepthTextures.new(arg0, arg1) end
 ---@type Class<TileDepthTextures>
 TileDepthTextures.class = nil
 
-__classmetatables[TileDepthTextures.class] = { __index = __TileDepthTextures }
+__classmetatables[TileDepthTextures.class] = {__index = __TileDepthTextures}
 
 zombie.tileDepth.TileDepthTextures = TileDepthTextures

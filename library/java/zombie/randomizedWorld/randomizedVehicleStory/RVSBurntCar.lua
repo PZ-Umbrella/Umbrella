@@ -2,7 +2,6 @@
 
 ---Just a burnt car with 0, 1 or 2 burnt corpses near it
 ---@class RVSBurntCar: RandomizedVehicleStoryBase
-
 local __RVSBurntCar = {}
 
 ---@param arg0 Zone
@@ -27,6 +26,6 @@ function RVSBurntCar.new() end
 ---@type Class<RVSBurntCar>
 RVSBurntCar.class = nil
 
-__classmetatables[RVSBurntCar.class] = { __index = __RVSBurntCar }
+__classmetatables[RVSBurntCar.class] = {__index = __RVSBurntCar}
 
 zombie.randomizedWorld.randomizedVehicleStory.RVSBurntCar = RVSBurntCar

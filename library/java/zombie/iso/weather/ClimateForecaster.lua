@@ -2,7 +2,6 @@
 
 ---TurboTuTone.
 ---@class ClimateForecaster
-
 local __ClimateForecaster = {}
 
 ---@return integer
@@ -26,6 +25,6 @@ function ClimateForecaster.new() end
 ---@type Class<ClimateForecaster>
 ClimateForecaster.class = nil
 
-__classmetatables[ClimateForecaster.class] = { __index = __ClimateForecaster }
+__classmetatables[ClimateForecaster.class] = {__index = __ClimateForecaster}
 
 zombie.iso.weather.ClimateForecaster = ClimateForecaster

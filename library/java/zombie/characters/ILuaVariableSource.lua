@@ -4,7 +4,6 @@
 ---ILuaVariableSource
 ---  Provides the functions expected by LUA when dealing with objects of this type.
 ---@class ILuaVariableSource
-
 local __ILuaVariableSource = {}
 
 ---@param key string

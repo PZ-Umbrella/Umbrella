@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class PoisonInfo
-
 local __PoisonInfo = {}
 
 ---@return Fluid
@@ -17,6 +16,6 @@ PoisonInfo = {}
 ---@type Class<PoisonInfo>
 PoisonInfo.class = nil
 
-__classmetatables[PoisonInfo.class] = { __index = __PoisonInfo }
+__classmetatables[PoisonInfo.class] = {__index = __PoisonInfo}
 
 zombie.entity.components.fluids.PoisonInfo = PoisonInfo

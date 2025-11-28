@@ -4,7 +4,6 @@
 ---ILuaGameCharacterHealth
 ---  Provides the functions expected by LUA when dealing with objects of this type.
 ---@class ILuaGameCharacterHealth
-
 local __ILuaGameCharacterHealth = {}
 
 ---@param arg0 InventoryItem

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Vector3f: Externalizable, Vector3fc
-
 local __Vector3f = {}
 
 ---@return Vector3f
@@ -833,6 +832,6 @@ function Vector3f.new(arg0, arg1) end
 ---@type Class<Vector3f>
 Vector3f.class = nil
 
-__classmetatables[Vector3f.class] = { __index = __Vector3f }
+__classmetatables[Vector3f.class] = {__index = __Vector3f}
 
 org.joml.Vector3f = Vector3f

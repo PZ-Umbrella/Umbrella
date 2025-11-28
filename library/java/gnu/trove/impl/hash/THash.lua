@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class THash: Externalizable
-
 local __THash = {}
 
 ---@return integer

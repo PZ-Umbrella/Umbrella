@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SeatingManager
-
 local __SeatingManager = {}
 
 function __SeatingManager:Reset() end
@@ -224,6 +223,6 @@ function SeatingManager.getInstance() end
 ---@type Class<SeatingManager>
 SeatingManager.class = nil
 
-__classmetatables[SeatingManager.class] = { __index = __SeatingManager }
+__classmetatables[SeatingManager.class] = {__index = __SeatingManager}
 
 zombie.seating.SeatingManager = SeatingManager

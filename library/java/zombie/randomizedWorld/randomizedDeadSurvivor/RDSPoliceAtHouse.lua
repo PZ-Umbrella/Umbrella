@@ -2,7 +2,6 @@
 
 ---2-3 zombies Cops in the house too with a police car waiting outside.
 ---@class RDSPoliceAtHouse: RandomizedDeadSurvivorBase
-
 local __RDSPoliceAtHouse = {}
 
 ---@param def BuildingDef
@@ -16,6 +15,6 @@ function RDSPoliceAtHouse.new() end
 ---@type Class<RDSPoliceAtHouse>
 RDSPoliceAtHouse.class = nil
 
-__classmetatables[RDSPoliceAtHouse.class] = { __index = __RDSPoliceAtHouse }
+__classmetatables[RDSPoliceAtHouse.class] = {__index = __RDSPoliceAtHouse}
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSPoliceAtHouse = RDSPoliceAtHouse

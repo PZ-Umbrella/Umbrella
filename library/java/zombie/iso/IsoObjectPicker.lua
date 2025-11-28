@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoObjectPicker
-
 local __IsoObjectPicker = {}
 
 ---@param x integer
@@ -92,6 +91,6 @@ function IsoObjectPicker.new() end
 ---@type Class<IsoObjectPicker>
 IsoObjectPicker.class = nil
 
-__classmetatables[IsoObjectPicker.class] = { __index = __IsoObjectPicker }
+__classmetatables[IsoObjectPicker.class] = {__index = __IsoObjectPicker}
 
 zombie.iso.IsoObjectPicker = IsoObjectPicker

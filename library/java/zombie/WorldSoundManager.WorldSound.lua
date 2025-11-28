@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class WorldSoundManager.WorldSound
-
 local __WorldSound = {}
 
 ---@param source any
@@ -55,6 +54,6 @@ function WorldSound.new() end
 ---@type Class<WorldSoundManager.WorldSound>
 WorldSound.class = nil
 
-__classmetatables[WorldSound.class] = { __index = __WorldSound }
+__classmetatables[WorldSound.class] = {__index = __WorldSound}
 
 zombie.WorldSoundManager.WorldSound = WorldSound

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoMannequin: IsoObject, IHumanVisual
-
 local __IsoMannequin = {}
 
 function __IsoMannequin:addToWorld() end
@@ -162,6 +161,6 @@ function IsoMannequin.new(cell, square, sprite) end
 ---@type Class<IsoMannequin>
 IsoMannequin.class = nil
 
-__classmetatables[IsoMannequin.class] = { __index = __IsoMannequin }
+__classmetatables[IsoMannequin.class] = {__index = __IsoMannequin}
 
 zombie.iso.objects.IsoMannequin = IsoMannequin

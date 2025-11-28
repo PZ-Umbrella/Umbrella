@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Account
-
 local __Account = {}
 
 ---@param arg0 string
@@ -77,6 +76,6 @@ function Account.new() end
 ---@type Class<Account>
 Account.class = nil
 
-__classmetatables[Account.class] = { __index = __Account }
+__classmetatables[Account.class] = {__index = __Account}
 
 zombie.network.Account = Account

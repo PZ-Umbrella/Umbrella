@@ -3,7 +3,6 @@
 ---TurboTuTone.
 --- Thermoregulator for living bodies.
 ---@class Thermoregulator
-
 local __Thermoregulator = {}
 
 ---@return number
@@ -176,6 +175,6 @@ function Thermoregulator.new(parent) end
 ---@type Class<Thermoregulator>
 Thermoregulator.class = nil
 
-__classmetatables[Thermoregulator.class] = { __index = __Thermoregulator }
+__classmetatables[Thermoregulator.class] = {__index = __Thermoregulator}
 
 zombie.characters.BodyDamage.Thermoregulator = Thermoregulator

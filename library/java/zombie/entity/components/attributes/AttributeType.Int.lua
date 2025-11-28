@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AttributeType.Int: AttributeType.Numeric<AttributeType.Int, integer>
-
 local __Int = {}
 
 ---@return integer
@@ -32,6 +31,6 @@ Int = {}
 ---@type Class<AttributeType.Int>
 Int.class = nil
 
-__classmetatables[Int.class] = { __index = __Int }
+__classmetatables[Int.class] = {__index = __Int}
 
 zombie.entity.components.attributes.AttributeType.Int = Int

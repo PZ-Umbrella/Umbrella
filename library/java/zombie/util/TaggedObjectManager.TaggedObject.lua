@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class TaggedObjectManager.TaggedObject
-
 local __TaggedObject = {}
 
 ---@return BitSet

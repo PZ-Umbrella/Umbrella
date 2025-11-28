@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class WorldMapStyleV1.WorldMapStyleLayerV1
-
 local __WorldMapStyleLayerV1 = {}
 
 ---@return string
@@ -27,6 +26,6 @@ WorldMapStyleLayerV1 = {}
 ---@type Class<WorldMapStyleV1.WorldMapStyleLayerV1>
 WorldMapStyleLayerV1.class = nil
 
-__classmetatables[WorldMapStyleLayerV1.class] = { __index = __WorldMapStyleLayerV1 }
+__classmetatables[WorldMapStyleLayerV1.class] = {__index = __WorldMapStyleLayerV1}
 
 zombie.worldMap.styles.WorldMapStyleV1.WorldMapStyleLayerV1 = WorldMapStyleLayerV1

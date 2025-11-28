@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class INetworkPacketField: IDescriptor
-
 local __INetworkPacketField = {}
 
 ---@return integer

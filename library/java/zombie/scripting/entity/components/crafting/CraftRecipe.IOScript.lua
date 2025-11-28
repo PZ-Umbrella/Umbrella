@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class CraftRecipe.IOScript
-
 local __IOScript = {}
 
 ---@return CraftRecipe

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class TileGeometryState: GameState
-
 local __TileGeometryState = {}
 
 function __TileGeometryState:enter() end
@@ -72,6 +71,6 @@ function TileGeometryState.new() end
 ---@type Class<TileGeometryState>
 TileGeometryState.class = nil
 
-__classmetatables[TileGeometryState.class] = { __index = __TileGeometryState }
+__classmetatables[TileGeometryState.class] = {__index = __TileGeometryState}
 
 zombie.gameStates.TileGeometryState = TileGeometryState

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class PlayerSitOnFurnitureState: State
-
 local __PlayerSitOnFurnitureState = {}
 
 ---@param arg0 IsoGameCharacter
@@ -49,6 +48,6 @@ function PlayerSitOnFurnitureState.new() end
 ---@type Class<PlayerSitOnFurnitureState>
 PlayerSitOnFurnitureState.class = nil
 
-__classmetatables[PlayerSitOnFurnitureState.class] = { __index = __PlayerSitOnFurnitureState }
+__classmetatables[PlayerSitOnFurnitureState.class] = {__index = __PlayerSitOnFurnitureState}
 
 zombie.ai.states.PlayerSitOnFurnitureState = PlayerSitOnFurnitureState

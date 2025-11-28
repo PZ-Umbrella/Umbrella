@@ -2,7 +2,6 @@
 
 ---Police barricading a road, 2 police cars, some zombies police
 ---@class RVSPoliceBlockade: RandomizedVehicleStoryBase
-
 local __RVSPoliceBlockade = {}
 
 ---@param arg0 Zone
@@ -27,6 +26,6 @@ function RVSPoliceBlockade.new() end
 ---@type Class<RVSPoliceBlockade>
 RVSPoliceBlockade.class = nil
 
-__classmetatables[RVSPoliceBlockade.class] = { __index = __RVSPoliceBlockade }
+__classmetatables[RVSPoliceBlockade.class] = {__index = __RVSPoliceBlockade}
 
 zombie.randomizedWorld.randomizedVehicleStory.RVSPoliceBlockade = RVSPoliceBlockade

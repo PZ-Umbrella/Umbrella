@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class XuiReference: XuiScript
-
 local __XuiReference = {}
 
 ---@param arg0 ScriptParser.Block
@@ -35,6 +34,6 @@ function XuiReference.new(arg0, arg1) end
 ---@type Class<XuiReference>
 XuiReference.class = nil
 
-__classmetatables[XuiReference.class] = { __index = __XuiReference }
+__classmetatables[XuiReference.class] = {__index = __XuiReference}
 
 zombie.scripting.ui.XuiReference = XuiReference

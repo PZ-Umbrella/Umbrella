@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class Asset
-
 local __Asset = {}
 
 ---@param dependent_asset Asset

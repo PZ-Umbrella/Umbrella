@@ -3,7 +3,6 @@
 ---Turbo
 --- Stores shared data for devices (used in iso and item)
 ---@class DeviceData: Cloneable, IFMODParameterUpdater
-
 local __DeviceData = {}
 
 function __DeviceData:StartPlayMedia() end
@@ -330,6 +329,6 @@ function DeviceData.new(parent) end
 ---@type Class<DeviceData>
 DeviceData.class = nil
 
-__classmetatables[DeviceData.class] = { __index = __DeviceData }
+__classmetatables[DeviceData.class] = {__index = __DeviceData}
 
 zombie.radio.devices.DeviceData = DeviceData

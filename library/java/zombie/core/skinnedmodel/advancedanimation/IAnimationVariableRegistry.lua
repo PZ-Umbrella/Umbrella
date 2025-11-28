@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IAnimationVariableRegistry: IAnimationVariableSourceContainer
-
 local __IAnimationVariableRegistry = {}
 
 ---@return AnimationVariableSource

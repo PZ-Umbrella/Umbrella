@@ -2,7 +2,6 @@
 
 ---This building will be almost empty of loot, and lot of the doors/windows will be broken
 ---@class RBLooted: RandomizedBuildingBase
-
 local __RBLooted = {}
 
 ---@param arg0 BuildingDef
@@ -21,6 +20,6 @@ function RBLooted.new() end
 ---@type Class<RBLooted>
 RBLooted.class = nil
 
-__classmetatables[RBLooted.class] = { __index = __RBLooted }
+__classmetatables[RBLooted.class] = {__index = __RBLooted}
 
 zombie.randomizedWorld.randomizedBuilding.RBLooted = RBLooted

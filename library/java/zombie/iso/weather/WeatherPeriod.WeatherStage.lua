@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class WeatherPeriod.WeatherStage
-
 local __WeatherStage = {}
 
 ---@return boolean
@@ -63,6 +62,6 @@ function WeatherStage.new(id) end
 ---@type Class<WeatherPeriod.WeatherStage>
 WeatherStage.class = nil
 
-__classmetatables[WeatherStage.class] = { __index = __WeatherStage }
+__classmetatables[WeatherStage.class] = {__index = __WeatherStage}
 
 zombie.iso.weather.WeatherPeriod.WeatherStage = WeatherStage

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ItemTag: Enum<ItemTag>
-
 local __ItemTag = {}
 
 ---@return string
@@ -1351,6 +1350,6 @@ function ItemTag.values() end
 ---@type Class<ItemTag>
 ItemTag.class = nil
 
-__classmetatables[ItemTag.class] = { __index = __ItemTag }
+__classmetatables[ItemTag.class] = {__index = __ItemTag}
 
 zombie.scripting.objects.ItemTag = ItemTag

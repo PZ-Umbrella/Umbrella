@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoSprite
-
 local __IsoSprite = {}
 
 ---@param sprite IsoSprite
@@ -273,24 +272,7 @@ function __IsoSprite:renderCurrentAnim(inst, obj, x, y, z, dir, offsetX, offsetY
 ---@param arg12 ColorInfo
 ---@param arg13 boolean
 ---@param arg14 Consumer<TextureDraw>
-function __IsoSprite:renderCurrentAnimDepth(
-	arg0,
-	arg1,
-	arg2,
-	arg3,
-	arg4,
-	arg5,
-	arg6,
-	arg7,
-	arg8,
-	arg9,
-	arg10,
-	arg11,
-	arg12,
-	arg13,
-	arg14
-)
-end
+function __IsoSprite:renderCurrentAnimDepth(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14) end
 
 ---@param arg0 IsoObject
 ---@param arg1 IsoDirections
@@ -306,23 +288,7 @@ end
 ---@param arg11 ColorInfo
 ---@param arg12 boolean
 ---@param arg13 Consumer<TextureDraw>
-function __IsoSprite:renderDepth(
-	arg0,
-	arg1,
-	arg2,
-	arg3,
-	arg4,
-	arg5,
-	arg6,
-	arg7,
-	arg8,
-	arg9,
-	arg10,
-	arg11,
-	arg12,
-	arg13
-)
-end
+function __IsoSprite:renderDepth(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13) end
 
 ---@param arg0 IsoSpriteInstance
 ---@param arg1 IsoObject
@@ -339,24 +305,7 @@ end
 ---@param arg12 ColorInfo
 ---@param arg13 boolean
 ---@param arg14 Consumer<TextureDraw>
-function __IsoSprite:renderDepth(
-	arg0,
-	arg1,
-	arg2,
-	arg3,
-	arg4,
-	arg5,
-	arg6,
-	arg7,
-	arg8,
-	arg9,
-	arg10,
-	arg11,
-	arg12,
-	arg13,
-	arg14
-)
-end
+function __IsoSprite:renderDepth(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14) end
 
 ---@param def IsoSpriteInstance
 ---@param obj IsoObject
@@ -551,6 +500,6 @@ function IsoSprite.new(manager) end
 ---@type Class<IsoSprite>
 IsoSprite.class = nil
 
-__classmetatables[IsoSprite.class] = { __index = __IsoSprite }
+__classmetatables[IsoSprite.class] = {__index = __IsoSprite}
 
 zombie.iso.sprite.IsoSprite = IsoSprite

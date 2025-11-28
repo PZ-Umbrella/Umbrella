@@ -2,7 +2,6 @@
 
 ---TurboTuTone.
 ---@class RadialProgressBar: UIElement
-
 local __RadialProgressBar = {}
 
 ---@return Texture
@@ -31,6 +30,6 @@ function RadialProgressBar.new(table, tex) end
 ---@type Class<RadialProgressBar>
 RadialProgressBar.class = nil
 
-__classmetatables[RadialProgressBar.class] = { __index = __RadialProgressBar }
+__classmetatables[RadialProgressBar.class] = {__index = __RadialProgressBar}
 
 zombie.ui.RadialProgressBar = RadialProgressBar

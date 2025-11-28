@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class GameEntityUtil
-
 local __GameEntityUtil = {}
 
 GameEntityUtil = {}
@@ -18,6 +17,6 @@ function GameEntityUtil.new() end
 ---@type Class<GameEntityUtil>
 GameEntityUtil.class = nil
 
-__classmetatables[GameEntityUtil.class] = { __index = __GameEntityUtil }
+__classmetatables[GameEntityUtil.class] = {__index = __GameEntityUtil}
 
 zombie.entity.util.GameEntityUtil = GameEntityUtil

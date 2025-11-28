@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AttributeType.Double: AttributeType.Numeric<AttributeType.Double, number>
-
 local __Double = {}
 
 ---@return number
@@ -32,6 +31,6 @@ Double = {}
 ---@type Class<AttributeType.Double>
 Double.class = nil
 
-__classmetatables[Double.class] = { __index = __Double }
+__classmetatables[Double.class] = {__index = __Double}
 
 zombie.entity.components.attributes.AttributeType.Double = Double

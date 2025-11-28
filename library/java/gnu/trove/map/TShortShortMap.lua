@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class TShortShortMap
-
 local __TShortShortMap = {}
 
 ---@param arg0 integer

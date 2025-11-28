@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SpriteConfigManager.TileInfo
-
 local __TileInfo = {}
 
 ---@return integer
@@ -43,6 +42,6 @@ TileInfo = {}
 ---@type Class<SpriteConfigManager.TileInfo>
 TileInfo.class = nil
 
-__classmetatables[TileInfo.class] = { __index = __TileInfo }
+__classmetatables[TileInfo.class] = {__index = __TileInfo}
 
 zombie.entity.components.spriteconfig.SpriteConfigManager.TileInfo = TileInfo

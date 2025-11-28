@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoWindow: IsoObject, BarricadeAble, Thumpable
-
 local __IsoWindow = {}
 
 ---@param owner IsoGameCharacter
@@ -324,6 +323,6 @@ function IsoWindow.new(cell, gridSquare, gid, north) end
 ---@type Class<IsoWindow>
 IsoWindow.class = nil
 
-__classmetatables[IsoWindow.class] = { __index = __IsoWindow }
+__classmetatables[IsoWindow.class] = {__index = __IsoWindow}
 
 zombie.iso.objects.IsoWindow = IsoWindow

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AnimalTracks
-
 local __AnimalTracks = {}
 
 ---@return InventoryItem
@@ -119,6 +118,6 @@ function AnimalTracks.new() end
 ---@type Class<AnimalTracks>
 AnimalTracks.class = nil
 
-__classmetatables[AnimalTracks.class] = { __index = __AnimalTracks }
+__classmetatables[AnimalTracks.class] = {__index = __AnimalTracks}
 
 zombie.characters.animals.AnimalTracks = AnimalTracks

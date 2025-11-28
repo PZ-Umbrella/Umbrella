@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ClothingItem: Asset
-
 local __ClothingItem = {}
 
 ---@return string
@@ -87,6 +86,6 @@ function ClothingItem.new(path, assetManager) end
 ---@type Class<ClothingItem>
 ClothingItem.class = nil
 
-__classmetatables[ClothingItem.class] = { __index = __ClothingItem }
+__classmetatables[ClothingItem.class] = {__index = __ClothingItem}
 
 zombie.core.skinnedmodel.population.ClothingItem = ClothingItem

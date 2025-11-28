@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class PropertyContainer: TShortShortHashMap
-
 local __PropertyContainer = {}
 
 ---@param other PropertyContainer
@@ -103,6 +102,6 @@ function PropertyContainer.new() end
 ---@type Class<PropertyContainer>
 PropertyContainer.class = nil
 
-__classmetatables[PropertyContainer.class] = { __index = __PropertyContainer }
+__classmetatables[PropertyContainer.class] = {__index = __PropertyContainer}
 
 zombie.core.properties.PropertyContainer = PropertyContainer

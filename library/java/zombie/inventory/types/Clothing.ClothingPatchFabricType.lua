@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Clothing.ClothingPatchFabricType: Enum<Clothing.ClothingPatchFabricType>
-
 local __ClothingPatchFabricType = {}
 
 ---@return string
@@ -38,6 +37,6 @@ function ClothingPatchFabricType.values() end
 ---@type Class<Clothing.ClothingPatchFabricType>
 ClothingPatchFabricType.class = nil
 
-__classmetatables[ClothingPatchFabricType.class] = { __index = __ClothingPatchFabricType }
+__classmetatables[ClothingPatchFabricType.class] = {__index = __ClothingPatchFabricType}
 
 zombie.inventory.types.Clothing.ClothingPatchFabricType = ClothingPatchFabricType

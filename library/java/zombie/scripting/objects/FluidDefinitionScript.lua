@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class FluidDefinitionScript: BaseScriptObject
-
 local __FluidDefinitionScript = {}
 
 ---@param arg0 string
@@ -111,6 +110,6 @@ FluidDefinitionScript = {}
 ---@type Class<FluidDefinitionScript>
 FluidDefinitionScript.class = nil
 
-__classmetatables[FluidDefinitionScript.class] = { __index = __FluidDefinitionScript }
+__classmetatables[FluidDefinitionScript.class] = {__index = __FluidDefinitionScript}
 
 zombie.scripting.objects.FluidDefinitionScript = FluidDefinitionScript

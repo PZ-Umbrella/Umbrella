@@ -38,12 +38,11 @@
 --- For all record classes, the following invariant must hold: if a record R's
 --- components are c1, c2, ... cn, then if a record instance is copied
 --- as follows:
----
+--- 
 ---     R copy = new R(r.c1(), r.c2(), ..., r.cn());
----
+--- 
 --- then it must be the case that r.equals(copy).
 ---@class Record
-
 local __Record = {}
 
 ---Indicates whether some other object is "equal to" this one.  In addition
@@ -51,9 +50,9 @@ local __Record = {}
 --- record classes must further obey the invariant that when
 --- a record instance is "copied" by passing the result of the record component
 --- accessor methods to the canonical constructor, as follows:
----
+--- 
 ---     R copy = new R(r.c1(), r.c2(), ..., r.cn());
----
+--- 
 --- then it must be the case that r.equals(copy).
 ---@param obj any the reference object with which to compare.
 ---@return boolean # true if this record is equal to the

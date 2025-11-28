@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IDebugOptionGroup: IDebugOption
-
 local __IDebugOptionGroup = {}
 
 ---@param childOption IDebugOption

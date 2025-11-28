@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoSpriteInstance
-
 local __IsoSpriteInstance = {}
 
 function __IsoSpriteInstance:Dispose() end
@@ -133,6 +132,6 @@ function IsoSpriteInstance.new(spr) end
 ---@type Class<IsoSpriteInstance>
 IsoSpriteInstance.class = nil
 
-__classmetatables[IsoSpriteInstance.class] = { __index = __IsoSpriteInstance }
+__classmetatables[IsoSpriteInstance.class] = {__index = __IsoSpriteInstance}
 
 zombie.iso.sprite.IsoSpriteInstance = IsoSpriteInstance

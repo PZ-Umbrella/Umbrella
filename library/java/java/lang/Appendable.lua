@@ -18,7 +18,6 @@
 --- with different styles of error handling there is no guarantee that
 --- errors will be propagated to the invoker.
 ---@class Appendable
-
 local __Appendable = {}
 
 ---Appends the specified character sequence to this Appendable.
@@ -40,7 +39,7 @@ function __Appendable:append(csq) end
 --- when csq is not null, behaves in
 --- exactly the same way as the invocation
 ---
----
+--- 
 ---     out.append(csq.subSequence(start, end))
 ---@param csq CharSequence The character sequence from which a subsequence will be
 ---         appended.  If csq is null, then characters

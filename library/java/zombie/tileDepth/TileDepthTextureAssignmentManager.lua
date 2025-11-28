@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class TileDepthTextureAssignmentManager
-
 local __TileDepthTextureAssignmentManager = {}
 
 ---@param arg0 string
@@ -42,6 +41,6 @@ function TileDepthTextureAssignmentManager.getInstance() end
 ---@type Class<TileDepthTextureAssignmentManager>
 TileDepthTextureAssignmentManager.class = nil
 
-__classmetatables[TileDepthTextureAssignmentManager.class] = { __index = __TileDepthTextureAssignmentManager }
+__classmetatables[TileDepthTextureAssignmentManager.class] = {__index = __TileDepthTextureAssignmentManager}
 
 zombie.tileDepth.TileDepthTextureAssignmentManager = TileDepthTextureAssignmentManager

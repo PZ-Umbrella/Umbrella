@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AnimalChunk
-
 local __AnimalChunk = {}
 
 ---@param arg0 VirtualAnimal
@@ -34,6 +33,6 @@ function AnimalChunk.new() end
 ---@type Class<AnimalChunk>
 AnimalChunk.class = nil
 
-__classmetatables[AnimalChunk.class] = { __index = __AnimalChunk }
+__classmetatables[AnimalChunk.class] = {__index = __AnimalChunk}
 
 zombie.characters.animals.AnimalChunk = AnimalChunk

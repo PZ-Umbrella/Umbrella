@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AttributeInstance.String: AttributeInstance<AttributeInstance.String, AttributeType.String>
-
 local __String = {}
 
 ---@return AttributeInstance.String
@@ -45,6 +44,6 @@ function String.new() end
 ---@type Class<AttributeInstance.String>
 String.class = nil
 
-__classmetatables[String.class] = { __index = __String }
+__classmetatables[String.class] = {__index = __String}
 
 zombie.entity.components.attributes.AttributeInstance.String = String

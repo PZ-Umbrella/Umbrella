@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class MashingLogic: Component
-
 local __MashingLogic = {}
 
 ---@param arg0 ObjectTooltip
@@ -102,6 +101,6 @@ MashingLogic = {}
 ---@type Class<MashingLogic>
 MashingLogic.class = nil
 
-__classmetatables[MashingLogic.class] = { __index = __MashingLogic }
+__classmetatables[MashingLogic.class] = {__index = __MashingLogic}
 
 zombie.entity.components.crafting.MashingLogic = MashingLogic

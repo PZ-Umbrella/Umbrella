@@ -2,7 +2,6 @@
 
 ---Turbo
 ---@class RadioScript
-
 local __RadioScript = {}
 
 ---@param broadcast RadioBroadCast
@@ -86,6 +85,6 @@ function RadioScript.new(n, loopmin, loopmax, guid) end
 ---@type Class<RadioScript>
 RadioScript.class = nil
 
-__classmetatables[RadioScript.class] = { __index = __RadioScript }
+__classmetatables[RadioScript.class] = {__index = __RadioScript}
 
 zombie.radio.scripting.RadioScript = RadioScript

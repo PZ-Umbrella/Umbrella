@@ -1,11 +1,10 @@
 ---@meta _
 
 ---@class BitSet
-
 local __BitSet = {}
 
 ---@param arg0 BitSet
-__BitSet["or"] = function(self, arg0) end
+__BitSet["and"] = function(self, arg0) end
 
 ---@param arg0 BitSet
 function __BitSet:andNot(arg0) end
@@ -90,6 +89,6 @@ function BitSet.new(arg0) end
 ---@type Class<BitSet>
 BitSet.class = nil
 
-__classmetatables[BitSet.class] = { __index = __BitSet }
+__classmetatables[BitSet.class] = {__index = __BitSet}
 
 zombie.entity.util.BitSet = BitSet

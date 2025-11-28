@@ -108,10 +108,9 @@
 --- fail-fast, and additionally report Spliterator.ORDERED.
 ---
 --- This class is a member of the
----
+--- 
 --- Java Collections Framework.
 ---@class LinkedHashMap<K, V>: HashMap<K, V>, Map<K, V>
-
 local __LinkedHashMap = {}
 
 ---Removes all of the mappings from this map.
@@ -240,6 +239,6 @@ function LinkedHashMap.new(initialCapacity, loadFactor, accessOrder) end
 ---@type Class<LinkedHashMap>
 LinkedHashMap.class = nil
 
-__classmetatables[LinkedHashMap.class] = { __index = __LinkedHashMap }
+__classmetatables[LinkedHashMap.class] = {__index = __LinkedHashMap}
 
 java.util.LinkedHashMap = LinkedHashMap

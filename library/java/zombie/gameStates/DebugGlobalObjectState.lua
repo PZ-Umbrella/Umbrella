@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class DebugGlobalObjectState: GameState
-
 local __DebugGlobalObjectState = {}
 
 function __DebugGlobalObjectState:enter() end
@@ -51,6 +50,6 @@ function DebugGlobalObjectState.new() end
 ---@type Class<DebugGlobalObjectState>
 DebugGlobalObjectState.class = nil
 
-__classmetatables[DebugGlobalObjectState.class] = { __index = __DebugGlobalObjectState }
+__classmetatables[DebugGlobalObjectState.class] = {__index = __DebugGlobalObjectState}
 
 zombie.gameStates.DebugGlobalObjectState = DebugGlobalObjectState

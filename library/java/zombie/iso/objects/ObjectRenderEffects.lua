@@ -2,7 +2,6 @@
 
 ---TurboTuTone.
 ---@class ObjectRenderEffects
-
 local __ObjectRenderEffects = {}
 
 ---@param other ObjectRenderEffects
@@ -50,6 +49,6 @@ function ObjectRenderEffects.updateStatic() end
 ---@type Class<ObjectRenderEffects>
 ObjectRenderEffects.class = nil
 
-__classmetatables[ObjectRenderEffects.class] = { __index = __ObjectRenderEffects }
+__classmetatables[ObjectRenderEffects.class] = {__index = __ObjectRenderEffects}
 
 zombie.iso.objects.ObjectRenderEffects = ObjectRenderEffects

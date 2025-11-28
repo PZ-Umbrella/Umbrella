@@ -2,7 +2,6 @@
 
 ---TurboTuTone.
 ---@class MediaData
-
 local __MediaData = {}
 
 ---@param text string
@@ -96,6 +95,6 @@ function MediaData.new(id, itemDisplayName, spawning) end
 ---@type Class<MediaData>
 MediaData.class = nil
 
-__classmetatables[MediaData.class] = { __index = __MediaData }
+__classmetatables[MediaData.class] = {__index = __MediaData}
 
 zombie.radio.media.MediaData = MediaData

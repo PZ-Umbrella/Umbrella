@@ -25,21 +25,21 @@
 --- the startsWith and endsWith methods.
 ---
 ---  This interface extends Watchable interface so that a directory
---- located by a path can be registered with a WatchService and entries in the directory watched.
+--- located by a path can be registered with a WatchService and entries in the directory watched. 
 ---
 ---  WARNING: This interface is only intended to be implemented by
 --- those developing custom file system implementations. Methods may be added to
---- this interface in future releases.
+--- this interface in future releases. 
 ---
 --- Accessing Files
 ---  Paths may be used with the Files class to operate on files,
 --- directories, and other types of files. For example, suppose we want a BufferedReader to read text from a file "access.log". The
 --- file is located in a directory "logs" relative to the current working
 --- directory and is UTF-8 encoded.
----
+--- 
 ---     Path path = FileSystems.getDefault().getPath("logs", "access.log");
 ---     BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8);
----
+--- 
 ---
 --- Interoperability
 ---  Paths associated with the default provider are generally interoperable
@@ -49,7 +49,7 @@
 --- method may be used to obtain a Path from the abstract path name
 --- represented by a java.io.File object. The resulting Path can
 --- be used to operate on the same file as the java.io.File object. In
---- addition, the toFile method is useful to construct a
+--- addition, the toFile method is useful to construct a 
 --- File from the String representation of a Path.
 ---
 --- Concurrency

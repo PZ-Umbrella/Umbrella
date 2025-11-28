@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class InputScript: CraftRecipe.IOScript
-
 local __InputScript = {}
 
 ---@param arg0 ScriptLoadMode
@@ -361,6 +360,6 @@ InputScript = {}
 ---@type Class<InputScript>
 InputScript.class = nil
 
-__classmetatables[InputScript.class] = { __index = __InputScript }
+__classmetatables[InputScript.class] = {__index = __InputScript}
 
 zombie.scripting.entity.components.crafting.InputScript = InputScript

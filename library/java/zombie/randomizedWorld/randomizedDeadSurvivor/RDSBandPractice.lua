@@ -4,7 +4,6 @@
 --- Spawn some rocker zombies & music instruments on ground & shelves
 --- Corpse with a guitar in his hand
 ---@class RDSBandPractice: RandomizedDeadSurvivorBase
-
 local __RDSBandPractice = {}
 
 ---Description copied from class: RandomizedBuildingBase
@@ -24,6 +23,6 @@ function RDSBandPractice.new() end
 ---@type Class<RDSBandPractice>
 RDSBandPractice.class = nil
 
-__classmetatables[RDSBandPractice.class] = { __index = __RDSBandPractice }
+__classmetatables[RDSBandPractice.class] = {__index = __RDSBandPractice}
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSBandPractice = RDSBandPractice

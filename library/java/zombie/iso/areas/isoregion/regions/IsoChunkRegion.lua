@@ -2,7 +2,6 @@
 
 ---TurboTuTone.
 ---@class IsoChunkRegion: IChunkRegion
-
 local __IsoChunkRegion = {}
 
 function __IsoChunkRegion:addChunkBorderSquaresCnt() end
@@ -81,6 +80,6 @@ IsoChunkRegion = {}
 ---@type Class<IsoChunkRegion>
 IsoChunkRegion.class = nil
 
-__classmetatables[IsoChunkRegion.class] = { __index = __IsoChunkRegion }
+__classmetatables[IsoChunkRegion.class] = {__index = __IsoChunkRegion}
 
 zombie.iso.areas.isoregion.regions.IsoChunkRegion = IsoChunkRegion

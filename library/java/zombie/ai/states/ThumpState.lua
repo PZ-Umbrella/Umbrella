@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ThumpState: State
-
 local __ThumpState = {}
 
 ---@param arg0 IsoGameCharacter
@@ -45,6 +44,6 @@ function ThumpState.new() end
 ---@type Class<ThumpState>
 ThumpState.class = nil
 
-__classmetatables[ThumpState.class] = { __index = __ThumpState }
+__classmetatables[ThumpState.class] = {__index = __ThumpState}
 
 zombie.ai.states.ThumpState = ThumpState

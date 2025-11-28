@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class BentFences
-
 local __BentFences = {}
 
 function __BentFences:Reset() end
@@ -109,6 +108,6 @@ function BentFences.new() end
 ---@type Class<BentFences>
 BentFences.class = nil
 
-__classmetatables[BentFences.class] = { __index = __BentFences }
+__classmetatables[BentFences.class] = {__index = __BentFences}
 
 zombie.iso.BentFences = BentFences

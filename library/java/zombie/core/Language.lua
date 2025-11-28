@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class zombie.core.Language
-
 local __Language = {}
 
 ---@return string
@@ -38,6 +37,6 @@ function Language.fromIndex(index) end
 ---@type Class<zombie.core.Language>
 Language.class = nil
 
-__classmetatables[Language.class] = { __index = __Language }
+__classmetatables[Language.class] = {__index = __Language}
 
 zombie.core.Language = Language

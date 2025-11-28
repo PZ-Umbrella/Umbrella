@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SealedFluidProperties
-
 local __SealedFluidProperties = {}
 
 ---@return number
@@ -109,6 +108,6 @@ function SealedFluidProperties.new() end
 ---@type Class<SealedFluidProperties>
 SealedFluidProperties.class = nil
 
-__classmetatables[SealedFluidProperties.class] = { __index = __SealedFluidProperties }
+__classmetatables[SealedFluidProperties.class] = {__index = __SealedFluidProperties}
 
 zombie.entity.components.fluids.SealedFluidProperties = SealedFluidProperties

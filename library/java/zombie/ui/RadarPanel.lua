@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class RadarPanel: UIElement
-
 local __RadarPanel = {}
 
 function __RadarPanel:render() end
@@ -17,6 +16,6 @@ function RadarPanel.new(playerIndex) end
 ---@type Class<RadarPanel>
 RadarPanel.class = nil
 
-__classmetatables[RadarPanel.class] = { __index = __RadarPanel }
+__classmetatables[RadarPanel.class] = {__index = __RadarPanel}
 
 zombie.ui.RadarPanel = RadarPanel

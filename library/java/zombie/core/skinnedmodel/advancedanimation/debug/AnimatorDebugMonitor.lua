@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AnimatorDebugMonitor
-
 local __AnimatorDebugMonitor = {}
 
 ---@return boolean
@@ -85,6 +84,6 @@ function AnimatorDebugMonitor.new(chr) end
 ---@type Class<AnimatorDebugMonitor>
 AnimatorDebugMonitor.class = nil
 
-__classmetatables[AnimatorDebugMonitor.class] = { __index = __AnimatorDebugMonitor }
+__classmetatables[AnimatorDebugMonitor.class] = {__index = __AnimatorDebugMonitor}
 
 zombie.core.skinnedmodel.advancedanimation.debug.AnimatorDebugMonitor = AnimatorDebugMonitor

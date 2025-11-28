@@ -3,7 +3,6 @@
 ---(Not exposed)
 ---Turbo
 ---@class ChatElementOwner
-
 local __ChatElementOwner = {}
 
 ---@return IsoGridSquare

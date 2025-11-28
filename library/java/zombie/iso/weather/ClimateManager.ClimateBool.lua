@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ClimateManager.ClimateBool
-
 local __ClimateBool = {}
 
 ---@return boolean
@@ -62,6 +61,6 @@ function ClimateBool.new() end
 ---@type Class<ClimateManager.ClimateBool>
 ClimateBool.class = nil
 
-__classmetatables[ClimateBool.class] = { __index = __ClimateBool }
+__classmetatables[ClimateBool.class] = {__index = __ClimateBool}
 
 zombie.iso.weather.ClimateManager.ClimateBool = ClimateBool

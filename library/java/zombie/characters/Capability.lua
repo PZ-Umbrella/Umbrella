@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Capability: Enum<Capability>
-
 local __Capability = {}
 
 Capability = {}
@@ -298,6 +297,6 @@ function Capability.values() end
 ---@type Class<Capability>
 Capability.class = nil
 
-__classmetatables[Capability.class] = { __index = __Capability }
+__classmetatables[Capability.class] = {__index = __Capability}
 
 zombie.characters.Capability = Capability

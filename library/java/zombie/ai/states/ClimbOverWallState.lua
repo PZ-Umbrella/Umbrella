@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ClimbOverWallState: State
-
 local __ClimbOverWallState = {}
 
 ---@param arg0 IsoGameCharacter
@@ -57,6 +56,6 @@ function ClimbOverWallState.new() end
 ---@type Class<ClimbOverWallState>
 ClimbOverWallState.class = nil
 
-__classmetatables[ClimbOverWallState.class] = { __index = __ClimbOverWallState }
+__classmetatables[ClimbOverWallState.class] = {__index = __ClimbOverWallState}
 
 zombie.ai.states.ClimbOverWallState = ClimbOverWallState

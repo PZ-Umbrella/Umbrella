@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IMaskerable
-
 local __IMaskerable = {}
 
 ---returns the collision mask

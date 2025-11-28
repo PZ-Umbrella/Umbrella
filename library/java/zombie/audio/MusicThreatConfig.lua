@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class MusicThreatConfig
-
 local __MusicThreatConfig = {}
 
 ---@return integer
@@ -45,6 +44,6 @@ function MusicThreatConfig.new() end
 ---@type Class<MusicThreatConfig>
 MusicThreatConfig.class = nil
 
-__classmetatables[MusicThreatConfig.class] = { __index = __MusicThreatConfig }
+__classmetatables[MusicThreatConfig.class] = {__index = __MusicThreatConfig}
 
 zombie.audio.MusicThreatConfig = MusicThreatConfig

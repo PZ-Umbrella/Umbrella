@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IWorldMapStreetListener
-
 local __IWorldMapStreetListener = {}
 
 ---@param arg0 WorldMapStreet

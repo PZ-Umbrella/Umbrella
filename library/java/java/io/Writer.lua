@@ -6,7 +6,6 @@
 --- Most subclasses, however, will override some of the methods defined here in
 --- order to provide higher efficiency, additional functionality, or both.
 ---@class Writer: Appendable, Closeable, Flushable
-
 local __Writer = {}
 
 ---Appends the specified character sequence to this writer.
@@ -14,8 +13,8 @@ local __Writer = {}
 ---  An invocation of this method of the form out.append(csq)
 --- behaves in exactly the same way as the invocation
 ---
----
----     out.write(csq.toString())
+--- 
+---     out.write(csq.toString()) 
 ---
 ---  Depending on the specification of toString for the
 --- character sequence csq, the entire sequence may not be
@@ -54,7 +53,7 @@ function __Writer:append(csq, start, _end) end
 ---  An invocation of this method of the form out.append(c)
 --- behaves in exactly the same way as the invocation
 ---
----
+--- 
 ---     out.write(c)
 ---@param c integer The 16-bit character to append
 ---@return Writer # This writer

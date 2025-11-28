@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SteamWorkshopItem
-
 local __SteamWorkshopItem = {}
 
 ---@return boolean
@@ -103,6 +102,6 @@ function SteamWorkshopItem.new(workshopFolder) end
 ---@type Class<SteamWorkshopItem>
 SteamWorkshopItem.class = nil
 
-__classmetatables[SteamWorkshopItem.class] = { __index = __SteamWorkshopItem }
+__classmetatables[SteamWorkshopItem.class] = {__index = __SteamWorkshopItem}
 
 zombie.core.znet.SteamWorkshopItem = SteamWorkshopItem

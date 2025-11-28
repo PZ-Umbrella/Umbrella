@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class GameState
-
 local __GameState = {}
 
 function __GameState:enter() end

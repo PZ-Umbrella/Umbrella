@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class RBWoodcraft: RandomizedBuildingBase
-
 local __RBWoodcraft = {}
 
 ---@param arg0 BuildingDef
@@ -24,6 +23,6 @@ function RBWoodcraft.new() end
 ---@type Class<RBWoodcraft>
 RBWoodcraft.class = nil
 
-__classmetatables[RBWoodcraft.class] = { __index = __RBWoodcraft }
+__classmetatables[RBWoodcraft.class] = {__index = __RBWoodcraft}
 
 zombie.randomizedWorld.randomizedBuilding.RBWoodcraft = RBWoodcraft

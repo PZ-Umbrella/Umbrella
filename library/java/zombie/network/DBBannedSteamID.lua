@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class DBBannedSteamID
-
 local __DBBannedSteamID = {}
 
 ---@return string
@@ -26,6 +25,6 @@ function DBBannedSteamID.new(arg0, arg1) end
 ---@type Class<DBBannedSteamID>
 DBBannedSteamID.class = nil
 
-__classmetatables[DBBannedSteamID.class] = { __index = __DBBannedSteamID }
+__classmetatables[DBBannedSteamID.class] = {__index = __DBBannedSteamID}
 
 zombie.network.DBBannedSteamID = DBBannedSteamID

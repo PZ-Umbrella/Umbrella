@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class State: IAnimEventListener, IAnimEventWrappedBroadcaster
-
 local __State = {}
 
 ---@param arg0 IsoGameCharacter

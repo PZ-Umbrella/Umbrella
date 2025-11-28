@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Mouse
-
 local __Mouse = {}
 
 Mouse = {}
@@ -165,6 +164,6 @@ function Mouse.new() end
 ---@type Class<Mouse>
 Mouse.class = nil
 
-__classmetatables[Mouse.class] = { __index = __Mouse }
+__classmetatables[Mouse.class] = {__index = __Mouse}
 
 zombie.input.Mouse = Mouse

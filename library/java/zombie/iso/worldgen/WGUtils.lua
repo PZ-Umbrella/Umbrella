@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class WGUtils
-
 local __WGUtils = {}
 
 ---@param arg0 List<string>
@@ -62,6 +61,6 @@ WGUtils.instance = nil
 ---@type Class<WGUtils>
 WGUtils.class = nil
 
-__classmetatables[WGUtils.class] = { __index = __WGUtils }
+__classmetatables[WGUtils.class] = {__index = __WGUtils}
 
 zombie.iso.worldgen.WGUtils = WGUtils

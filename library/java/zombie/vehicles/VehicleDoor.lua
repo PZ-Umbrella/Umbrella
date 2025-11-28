@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class VehicleDoor
-
 local __VehicleDoor = {}
 
 ---@param scriptDoor VehicleScript.Door
@@ -41,6 +40,6 @@ function VehicleDoor.new(part) end
 ---@type Class<VehicleDoor>
 VehicleDoor.class = nil
 
-__classmetatables[VehicleDoor.class] = { __index = __VehicleDoor }
+__classmetatables[VehicleDoor.class] = {__index = __VehicleDoor}
 
 zombie.vehicles.VehicleDoor = VehicleDoor

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Recipe: BaseScriptObject
-
 local __Recipe = {}
 
 ---@param type string
@@ -83,6 +82,6 @@ function Recipe.new() end
 ---@type Class<Recipe>
 Recipe.class = nil
 
-__classmetatables[Recipe.class] = { __index = __Recipe }
+__classmetatables[Recipe.class] = {__index = __Recipe}
 
 zombie.scripting.objects.Recipe = Recipe

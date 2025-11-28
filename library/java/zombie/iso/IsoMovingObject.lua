@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoMovingObject: IsoObject, Mover
-
 local __IsoMovingObject = {}
 
 function __IsoMovingObject:Despawn() end
@@ -612,6 +611,6 @@ function IsoMovingObject.new() end
 ---@type Class<IsoMovingObject>
 IsoMovingObject.class = nil
 
-__classmetatables[IsoMovingObject.class] = { __index = __IsoMovingObject }
+__classmetatables[IsoMovingObject.class] = {__index = __IsoMovingObject}
 
 zombie.iso.IsoMovingObject = IsoMovingObject

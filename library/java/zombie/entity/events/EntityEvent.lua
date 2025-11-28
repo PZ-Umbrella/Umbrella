@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class EntityEvent
-
 local __EntityEvent = {}
 
 ---@return GameEntity
@@ -22,6 +21,6 @@ function EntityEvent.Alloc(arg0, arg1) end
 ---@type Class<EntityEvent>
 EntityEvent.class = nil
 
-__classmetatables[EntityEvent.class] = { __index = __EntityEvent }
+__classmetatables[EntityEvent.class] = {__index = __EntityEvent}
 
 zombie.entity.events.EntityEvent = EntityEvent

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ItemKey.Container
-
 local __Container = {}
 
 Container = {}
@@ -945,6 +944,6 @@ function Container.new() end
 ---@type Class<ItemKey.Container>
 Container.class = nil
 
-__classmetatables[Container.class] = { __index = __Container }
+__classmetatables[Container.class] = {__index = __Container}
 
 zombie.scripting.objects.ItemKey.Container = Container

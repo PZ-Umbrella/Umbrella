@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoTrap: IsoObject, IItemProvider
-
 local __IsoTrap = {}
 
 function __IsoTrap:addToWorld() end
@@ -174,6 +173,6 @@ function IsoTrap.new(arg0, arg1, arg2, arg3) end
 ---@type Class<IsoTrap>
 IsoTrap.class = nil
 
-__classmetatables[IsoTrap.class] = { __index = __IsoTrap }
+__classmetatables[IsoTrap.class] = {__index = __IsoTrap}
 
 zombie.iso.objects.IsoTrap = IsoTrap

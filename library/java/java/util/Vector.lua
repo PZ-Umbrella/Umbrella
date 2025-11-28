@@ -15,7 +15,7 @@
 --- capacity of a vector before inserting a large number of
 --- components; this reduces the amount of incremental reallocation.
 ---
----
+--- 
 --- The iterators returned by this class's iterator and
 --- listIterator methods are fail-fast:
 --- if the vector is structurally modified at any time after the iterator is
@@ -40,12 +40,11 @@
 ---
 --- As of the Java 2 platform v1.2, this class was retrofitted to
 --- implement the List interface, making it a member of the
----
+--- 
 --- Java Collections Framework.  Unlike the new collection
 --- implementations, Vector is synchronized.  If a thread-safe
 --- implementation is not needed, it is recommended to use ArrayList in place of Vector.
 ---@class Vector<E>: AbstractList<E>, List<E>, RandomAccess, Cloneable, Serializable
-
 local __Vector = {}
 
 ---Appends the specified element to the end of this Vector.
@@ -434,9 +433,9 @@ function __Vector:spliterator() end
 --- a List can be used as a range operation by operating on a subList view
 --- instead of a whole List.  For example, the following idiom
 --- removes a range of elements from a List:
----
+--- 
 ---      list.subList(from, to).clear();
----
+--- 
 --- Similar idioms may be constructed for indexOf and lastIndexOf,
 --- and all of the algorithms in the Collections class can be applied to
 --- a subList.
@@ -524,6 +523,6 @@ function Vector.new(c) end
 ---@type Class<Vector>
 Vector.class = nil
 
-__classmetatables[Vector.class] = { __index = __Vector }
+__classmetatables[Vector.class] = {__index = __Vector}
 
 java.util.Vector = Vector

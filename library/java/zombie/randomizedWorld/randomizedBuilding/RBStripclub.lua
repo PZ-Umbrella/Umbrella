@@ -3,7 +3,6 @@
 ---Add money/alcohol on table
 --- Can also generate a rare male venue
 ---@class RBStripclub: RandomizedBuildingBase
-
 local __RBStripclub = {}
 
 ---Description copied from class: RandomizedBuildingBase
@@ -23,6 +22,6 @@ function RBStripclub.new() end
 ---@type Class<RBStripclub>
 RBStripclub.class = nil
 
-__classmetatables[RBStripclub.class] = { __index = __RBStripclub }
+__classmetatables[RBStripclub.class] = {__index = __RBStripclub}
 
 zombie.randomizedWorld.randomizedBuilding.RBStripclub = RBStripclub

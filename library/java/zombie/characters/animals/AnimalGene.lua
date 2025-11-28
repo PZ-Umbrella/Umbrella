@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AnimalGene
-
 local __AnimalGene = {}
 
 ---@return AnimalAllele
@@ -54,6 +53,6 @@ function AnimalGene.new() end
 ---@type Class<AnimalGene>
 AnimalGene.class = nil
 
-__classmetatables[AnimalGene.class] = { __index = __AnimalGene }
+__classmetatables[AnimalGene.class] = {__index = __AnimalGene}
 
 zombie.characters.animals.AnimalGene = AnimalGene

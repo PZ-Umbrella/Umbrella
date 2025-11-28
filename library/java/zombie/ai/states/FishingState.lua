@@ -2,7 +2,6 @@
 
 ---TurboTuTone.
 ---@class FishingState: State
-
 local __FishingState = {}
 
 ---@param owner IsoGameCharacter
@@ -41,6 +40,6 @@ function FishingState.new() end
 ---@type Class<FishingState>
 FishingState.class = nil
 
-__classmetatables[FishingState.class] = { __index = __FishingState }
+__classmetatables[FishingState.class] = {__index = __FishingState}
 
 zombie.ai.states.FishingState = FishingState

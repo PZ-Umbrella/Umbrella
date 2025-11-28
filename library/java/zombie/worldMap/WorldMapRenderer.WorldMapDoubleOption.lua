@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class WorldMapRenderer.WorldMapDoubleOption: DoubleConfigOption
-
 local __WorldMapDoubleOption = {}
 
 WorldMapDoubleOption = {}
@@ -17,6 +16,6 @@ function WorldMapDoubleOption.new(arg0, arg1, arg2, arg3, arg4) end
 ---@type Class<WorldMapRenderer.WorldMapDoubleOption>
 WorldMapDoubleOption.class = nil
 
-__classmetatables[WorldMapDoubleOption.class] = { __index = __WorldMapDoubleOption }
+__classmetatables[WorldMapDoubleOption.class] = {__index = __WorldMapDoubleOption}
 
 zombie.worldMap.WorldMapRenderer.WorldMapDoubleOption = WorldMapDoubleOption

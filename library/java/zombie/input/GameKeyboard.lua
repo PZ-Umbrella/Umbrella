@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class GameKeyboard
-
 local __GameKeyboard = {}
 
 GameKeyboard = {}
@@ -81,6 +80,6 @@ function GameKeyboard.new() end
 ---@type Class<GameKeyboard>
 GameKeyboard.class = nil
 
-__classmetatables[GameKeyboard.class] = { __index = __GameKeyboard }
+__classmetatables[GameKeyboard.class] = {__index = __GameKeyboard}
 
 zombie.input.GameKeyboard = GameKeyboard

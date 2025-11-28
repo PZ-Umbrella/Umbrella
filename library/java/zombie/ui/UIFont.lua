@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class UIFont: Enum<UIFont>
-
 local __UIFont = {}
 
 UIFont = {}
@@ -124,6 +123,6 @@ function UIFont.values() end
 ---@type Class<UIFont>
 UIFont.class = nil
 
-__classmetatables[UIFont.class] = { __index = __UIFont }
+__classmetatables[UIFont.class] = {__index = __UIFont}
 
 zombie.ui.UIFont = UIFont

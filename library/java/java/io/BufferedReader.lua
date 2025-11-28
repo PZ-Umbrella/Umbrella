@@ -12,10 +12,10 @@
 --- operations may be costly, such as FileReaders and InputStreamReaders.  For
 --- example,
 ---
----
+--- 
 --- BufferedReader in
 ---   = new BufferedReader(new FileReader("foo.in"));
----
+--- 
 ---
 --- will buffer the input from the specified file.  Without buffering, each
 --- invocation of read() or readLine() could cause bytes to be read from the
@@ -25,7 +25,6 @@
 ---  Programs that use DataInputStreams for textual input can be localized by
 --- replacing each DataInputStream with an appropriate BufferedReader.
 ---@class BufferedReader: Reader
-
 local __BufferedReader = {}
 
 ---Description copied from class: Reader
@@ -86,7 +85,7 @@ function __BufferedReader:read() end
 --- the read method of the underlying stream.  This iterated
 --- read continues until one of the following conditions becomes
 --- true:
----
+--- 
 ---
 ---    The specified number of characters have been read,
 ---
@@ -97,7 +96,7 @@ function __BufferedReader:read() end
 ---   returns false, indicating that further input requests
 ---   would block.
 ---
----
+--- 
 --- If the first read on the underlying stream returns
 --- -1 to indicate end-of-file then this method returns
 --- -1.  Otherwise this method returns the number of characters
@@ -162,6 +161,6 @@ function BufferedReader.new(_in) end
 ---@type Class<BufferedReader>
 BufferedReader.class = nil
 
-__classmetatables[BufferedReader.class] = { __index = __BufferedReader }
+__classmetatables[BufferedReader.class] = {__index = __BufferedReader}
 
 java.io.BufferedReader = BufferedReader

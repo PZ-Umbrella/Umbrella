@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class TextAlign: Enum<TextAlign>
-
 local __TextAlign = {}
 
 TextAlign = {}
@@ -25,6 +24,6 @@ function TextAlign.values() end
 ---@type Class<TextAlign>
 TextAlign.class = nil
 
-__classmetatables[TextAlign.class] = { __index = __TextAlign }
+__classmetatables[TextAlign.class] = {__index = __TextAlign}
 
 zombie.scripting.ui.TextAlign = TextAlign

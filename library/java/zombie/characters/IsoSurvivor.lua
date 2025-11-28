@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoSurvivor: IsoLivingCharacter
-
 local __IsoSurvivor = {}
 
 function __IsoSurvivor:Despawn() end
@@ -37,6 +36,6 @@ function IsoSurvivor.new(desc, cell, x, y, z, bSetInstance) end
 ---@type Class<IsoSurvivor>
 IsoSurvivor.class = nil
 
-__classmetatables[IsoSurvivor.class] = { __index = __IsoSurvivor }
+__classmetatables[IsoSurvivor.class] = {__index = __IsoSurvivor}
 
 zombie.characters.IsoSurvivor = IsoSurvivor

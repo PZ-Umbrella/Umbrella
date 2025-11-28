@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class FluidContainer: Component
-
 local __FluidContainer = {}
 
 ---@param arg0 ObjectTooltip
@@ -281,6 +280,6 @@ function FluidContainer.Transfer(arg0, arg1, arg2, arg3) end
 ---@type Class<FluidContainer>
 FluidContainer.class = nil
 
-__classmetatables[FluidContainer.class] = { __index = __FluidContainer }
+__classmetatables[FluidContainer.class] = {__index = __FluidContainer}
 
 zombie.entity.components.fluids.FluidContainer = FluidContainer

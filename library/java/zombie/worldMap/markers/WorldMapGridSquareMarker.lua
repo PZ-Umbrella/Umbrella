@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class WorldMapGridSquareMarker: WorldMapMarker
-
 local __WorldMapGridSquareMarker = {}
 
 ---@param blink boolean
@@ -18,6 +17,6 @@ function WorldMapGridSquareMarker.new() end
 ---@type Class<WorldMapGridSquareMarker>
 WorldMapGridSquareMarker.class = nil
 
-__classmetatables[WorldMapGridSquareMarker.class] = { __index = __WorldMapGridSquareMarker }
+__classmetatables[WorldMapGridSquareMarker.class] = {__index = __WorldMapGridSquareMarker}
 
 zombie.worldMap.markers.WorldMapGridSquareMarker = WorldMapGridSquareMarker

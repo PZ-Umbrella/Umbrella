@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class RainManager
-
 local __RainManager = {}
 
 RainManager = {}
@@ -156,6 +155,6 @@ function RainManager.new() end
 ---@type Class<RainManager>
 RainManager.class = nil
 
-__classmetatables[RainManager.class] = { __index = __RainManager }
+__classmetatables[RainManager.class] = {__index = __RainManager}
 
 zombie.iso.objects.RainManager = RainManager

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class PerformanceSettings
-
 local __PerformanceSettings = {}
 
 ---@return integer
@@ -132,6 +131,6 @@ function PerformanceSettings.new() end
 ---@type Class<PerformanceSettings>
 PerformanceSettings.class = nil
 
-__classmetatables[PerformanceSettings.class] = { __index = __PerformanceSettings }
+__classmetatables[PerformanceSettings.class] = {__index = __PerformanceSettings}
 
 zombie.core.PerformanceSettings = PerformanceSettings

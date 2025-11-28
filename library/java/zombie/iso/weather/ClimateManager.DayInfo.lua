@@ -2,7 +2,6 @@
 
 ---DAY INFO
 ---@class ClimateManager.DayInfo
-
 local __DayInfo = {}
 
 ---@return integer
@@ -39,6 +38,6 @@ function DayInfo.new() end
 ---@type Class<ClimateManager.DayInfo>
 DayInfo.class = nil
 
-__classmetatables[DayInfo.class] = { __index = __DayInfo }
+__classmetatables[DayInfo.class] = {__index = __DayInfo}
 
 zombie.iso.weather.ClimateManager.DayInfo = DayInfo

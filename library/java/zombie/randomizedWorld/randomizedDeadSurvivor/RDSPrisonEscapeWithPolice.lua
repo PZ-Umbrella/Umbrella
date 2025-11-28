@@ -4,7 +4,6 @@
 --- duct tape, etc.
 --- Cops in the house too with a police car waiting outside.
 ---@class RDSPrisonEscapeWithPolice: RandomizedDeadSurvivorBase
-
 local __RDSPrisonEscapeWithPolice = {}
 
 ---@param def BuildingDef
@@ -18,6 +17,6 @@ function RDSPrisonEscapeWithPolice.new() end
 ---@type Class<RDSPrisonEscapeWithPolice>
 RDSPrisonEscapeWithPolice.class = nil
 
-__classmetatables[RDSPrisonEscapeWithPolice.class] = { __index = __RDSPrisonEscapeWithPolice }
+__classmetatables[RDSPrisonEscapeWithPolice.class] = {__index = __RDSPrisonEscapeWithPolice}
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSPrisonEscapeWithPolice = RDSPrisonEscapeWithPolice

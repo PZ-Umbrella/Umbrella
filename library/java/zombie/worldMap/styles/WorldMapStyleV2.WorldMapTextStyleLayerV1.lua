@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class WorldMapStyleV2.WorldMapTextStyleLayerV1: WorldMapStyleV1.WorldMapStyleLayerV1
-
 local __WorldMapTextStyleLayerV1 = {}
 
 ---@param arg0 number
@@ -71,6 +70,6 @@ WorldMapTextStyleLayerV1 = {}
 ---@type Class<WorldMapStyleV2.WorldMapTextStyleLayerV1>
 WorldMapTextStyleLayerV1.class = nil
 
-__classmetatables[WorldMapTextStyleLayerV1.class] = { __index = __WorldMapTextStyleLayerV1 }
+__classmetatables[WorldMapTextStyleLayerV1.class] = {__index = __WorldMapTextStyleLayerV1}
 
 zombie.worldMap.styles.WorldMapStyleV2.WorldMapTextStyleLayerV1 = WorldMapTextStyleLayerV1

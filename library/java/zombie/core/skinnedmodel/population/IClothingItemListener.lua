@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IClothingItemListener
-
 local __IClothingItemListener = {}
 
 ---@param itemGuid string

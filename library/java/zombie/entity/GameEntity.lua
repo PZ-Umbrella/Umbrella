@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class GameEntity
-
 local __GameEntity = {}
 
 function __GameEntity:addToWorld() end
@@ -168,6 +167,6 @@ function GameEntity.getDefaultEntityDisplayName() end
 ---@type Class<GameEntity>
 GameEntity.class = nil
 
-__classmetatables[GameEntity.class] = { __index = __GameEntity }
+__classmetatables[GameEntity.class] = {__index = __GameEntity}
 
 zombie.entity.GameEntity = GameEntity

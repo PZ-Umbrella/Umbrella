@@ -2,7 +2,6 @@
 
 ---This building will be 90% burnt (no fire started tho)
 ---@class RBBurnt: RandomizedBuildingBase
-
 local __RBBurnt = {}
 
 ---Description copied from class: RandomizedBuildingBase
@@ -22,6 +21,6 @@ function RBBurnt.new() end
 ---@type Class<RBBurnt>
 RBBurnt.class = nil
 
-__classmetatables[RBBurnt.class] = { __index = __RBBurnt }
+__classmetatables[RBBurnt.class] = {__index = __RBBurnt}
 
 zombie.randomizedWorld.randomizedBuilding.RBBurnt = RBBurnt

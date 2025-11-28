@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class MapObjects
-
 local __MapObjects = {}
 
 MapObjects = {}
@@ -58,6 +57,6 @@ function MapObjects.new() end
 ---@type Class<MapObjects>
 MapObjects.class = nil
 
-__classmetatables[MapObjects.class] = { __index = __MapObjects }
+__classmetatables[MapObjects.class] = {__index = __MapObjects}
 
 zombie.Lua.MapObjects = MapObjects

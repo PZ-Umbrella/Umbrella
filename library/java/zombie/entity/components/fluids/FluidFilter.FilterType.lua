@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class FluidFilter.FilterType: Enum<FluidFilter.FilterType>
-
 local __FilterType = {}
 
 FilterType = {}
@@ -22,6 +21,6 @@ function FilterType.values() end
 ---@type Class<FluidFilter.FilterType>
 FilterType.class = nil
 
-__classmetatables[FilterType.class] = { __index = __FilterType }
+__classmetatables[FilterType.class] = {__index = __FilterType}
 
 zombie.entity.components.fluids.FluidFilter.FilterType = FilterType

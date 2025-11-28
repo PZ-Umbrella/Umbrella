@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ComponentType: Enum<ComponentType>
-
 local __ComponentType = {}
 
 ---@return Component
@@ -135,6 +134,6 @@ function ComponentType.values() end
 ---@type Class<ComponentType>
 ComponentType.class = nil
 
-__classmetatables[ComponentType.class] = { __index = __ComponentType }
+__classmetatables[ComponentType.class] = {__index = __ComponentType}
 
 zombie.entity.ComponentType = ComponentType

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class VoiceStyles
-
 local __VoiceStyles = {}
 
 ---@param arg0 string
@@ -37,6 +36,6 @@ function VoiceStyles.new() end
 ---@type Class<VoiceStyles>
 VoiceStyles.class = nil
 
-__classmetatables[VoiceStyles.class] = { __index = __VoiceStyles }
+__classmetatables[VoiceStyles.class] = {__index = __VoiceStyles}
 
 zombie.core.skinnedmodel.population.VoiceStyles = VoiceStyles

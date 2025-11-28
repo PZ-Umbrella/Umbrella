@@ -11,33 +11,33 @@
 --- use with capacity-restricted Queue implementations; in most
 --- implementations, insert operations cannot fail.
 ---
----
+--- 
 --- Summary of Queue methods
----
----
----
+---  
+---  
+---    
 ---    Throws exception
 ---    Returns special value
----
----
----
----
+---  
+---  
+---  
+---  
 ---    Insert
 ---    add(e)
 ---    offer(e)
----
----
+---  
+---  
 ---    Remove
 ---    remove()
 ---    poll()
----
----
+---  
+---  
 ---    Examine
 ---    element()
 ---    peek()
----
----
----
+---  
+---  
+--- 
 ---
 --- Queues typically, but do not necessarily, order elements in a
 --- FIFO (first-in-first-out) manner.  Among the exceptions are
@@ -92,10 +92,9 @@
 --- ordering properties.
 ---
 --- This interface is a member of the
----
+--- 
 --- Java Collections Framework.
 ---@class Queue<E>: Collection<E>
-
 local __Queue = {}
 
 ---Inserts the specified element into this queue if it is possible to do so

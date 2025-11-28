@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AttributeInstance.Int: AttributeInstance.Numeric<AttributeInstance.Int, AttributeType.Int>
-
 local __Int = {}
 
 ---@return AttributeInstance.Int
@@ -51,6 +50,6 @@ function Int.new() end
 ---@type Class<AttributeInstance.Int>
 Int.class = nil
 
-__classmetatables[Int.class] = { __index = __Int }
+__classmetatables[Int.class] = {__index = __Int}
 
 zombie.entity.components.attributes.AttributeInstance.Int = Int

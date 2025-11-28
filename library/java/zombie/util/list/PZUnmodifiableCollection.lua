@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class PZUnmodifiableCollection<E>: Collection<E>
-
 local __PZUnmodifiableCollection = {}
 
 ---@param arg0 E

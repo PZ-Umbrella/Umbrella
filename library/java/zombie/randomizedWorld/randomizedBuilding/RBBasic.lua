@@ -4,7 +4,6 @@
 --- have profession specific loots and cold cooked food in stove Also this type
 --- of house can have speicfic dead survivor/zombies/story inside them
 ---@class RBBasic: RandomizedBuildingBase
-
 local __RBBasic = {}
 
 ---@param arg0 BuildingDef
@@ -72,6 +71,6 @@ function RBBasic.new() end
 ---@type Class<RBBasic>
 RBBasic.class = nil
 
-__classmetatables[RBBasic.class] = { __index = __RBBasic }
+__classmetatables[RBBasic.class] = {__index = __RBBasic}
 
 zombie.randomizedWorld.randomizedBuilding.RBBasic = RBBasic

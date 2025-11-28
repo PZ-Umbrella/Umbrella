@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoZombie: IsoGameCharacter, IHumanVisual
-
 local __IsoZombie = {}
 
 function __IsoZombie:DoCorpseInventory() end
@@ -769,6 +768,6 @@ function IsoZombie.new(cell, desc, _palette) end
 ---@type Class<IsoZombie>
 IsoZombie.class = nil
 
-__classmetatables[IsoZombie.class] = { __index = __IsoZombie }
+__classmetatables[IsoZombie.class] = {__index = __IsoZombie}
 
 zombie.characters.IsoZombie = IsoZombie

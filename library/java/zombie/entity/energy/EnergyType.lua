@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class EnergyType: Enum<EnergyType>
-
 local __EnergyType = {}
 
 ---@return integer
@@ -55,6 +54,6 @@ function EnergyType.values() end
 ---@type Class<EnergyType>
 EnergyType.class = nil
 
-__classmetatables[EnergyType.class] = { __index = __EnergyType }
+__classmetatables[EnergyType.class] = {__index = __EnergyType}
 
 zombie.entity.energy.EnergyType = EnergyType

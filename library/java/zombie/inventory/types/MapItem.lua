@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class MapItem: InventoryItem
-
 local __MapItem = {}
 
 ---@return boolean
@@ -66,6 +65,6 @@ function MapItem.new(module, name, type, item) end
 ---@type Class<MapItem>
 MapItem.class = nil
 
-__classmetatables[MapItem.class] = { __index = __MapItem }
+__classmetatables[MapItem.class] = {__index = __MapItem}
 
 zombie.inventory.types.MapItem = MapItem

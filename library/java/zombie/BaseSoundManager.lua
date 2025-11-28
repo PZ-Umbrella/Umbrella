@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class BaseSoundManager
-
 local __BaseSoundManager = {}
 
 ---@param musicTrack Audio

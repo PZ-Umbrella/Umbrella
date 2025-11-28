@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class XuiSkin
-
 local __XuiSkin = {}
 
 ---@param arg0 string
@@ -54,6 +53,6 @@ function XuiSkin.new(arg0, arg1) end
 ---@type Class<XuiSkin>
 XuiSkin.class = nil
 
-__classmetatables[XuiSkin.class] = { __index = __XuiSkin }
+__classmetatables[XuiSkin.class] = {__index = __XuiSkin}
 
 zombie.scripting.ui.XuiSkin = XuiSkin

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ItemKey.Literature
-
 local __Literature = {}
 
 Literature = {}
@@ -1692,6 +1691,6 @@ function Literature.new() end
 ---@type Class<ItemKey.Literature>
 Literature.class = nil
 
-__classmetatables[Literature.class] = { __index = __Literature }
+__classmetatables[Literature.class] = {__index = __Literature}
 
 zombie.scripting.objects.ItemKey.Literature = Literature

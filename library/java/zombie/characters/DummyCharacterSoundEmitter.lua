@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class DummyCharacterSoundEmitter: BaseCharacterSoundEmitter
-
 local __DummyCharacterSoundEmitter = {}
 
 ---@return boolean
@@ -108,6 +107,6 @@ function DummyCharacterSoundEmitter.new(chr) end
 ---@type Class<DummyCharacterSoundEmitter>
 DummyCharacterSoundEmitter.class = nil
 
-__classmetatables[DummyCharacterSoundEmitter.class] = { __index = __DummyCharacterSoundEmitter }
+__classmetatables[DummyCharacterSoundEmitter.class] = {__index = __DummyCharacterSoundEmitter}
 
 zombie.characters.DummyCharacterSoundEmitter = DummyCharacterSoundEmitter

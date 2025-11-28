@@ -38,7 +38,6 @@
 --- Object.equals(Object) method. There is no guarantee that any
 --- particular entity will always be represented by the same descriptor instance.
 ---@class ConstantDesc
-
 local __ConstantDesc = {}
 
 ---Resolves this descriptor reflectively, emulating the resolution behavior

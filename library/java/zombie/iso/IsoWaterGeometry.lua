@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoWaterGeometry
-
 local __IsoWaterGeometry = {}
 
 ---@return number
@@ -37,6 +36,6 @@ function IsoWaterGeometry.new() end
 ---@type Class<IsoWaterGeometry>
 IsoWaterGeometry.class = nil
 
-__classmetatables[IsoWaterGeometry.class] = { __index = __IsoWaterGeometry }
+__classmetatables[IsoWaterGeometry.class] = {__index = __IsoWaterGeometry}
 
 zombie.iso.IsoWaterGeometry = IsoWaterGeometry

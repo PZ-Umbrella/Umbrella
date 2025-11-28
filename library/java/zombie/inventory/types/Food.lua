@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Food: InventoryItem
-
 local __Food = {}
 
 ---@param item InventoryItem
@@ -533,6 +532,6 @@ function Food.new(module, name, itemType, item) end
 ---@type Class<Food>
 Food.class = nil
 
-__classmetatables[Food.class] = { __index = __Food }
+__classmetatables[Food.class] = {__index = __Food}
 
 zombie.inventory.types.Food = Food

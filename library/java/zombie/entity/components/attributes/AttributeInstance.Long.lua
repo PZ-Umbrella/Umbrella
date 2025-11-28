@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AttributeInstance.Long: AttributeInstance.Numeric<AttributeInstance.Long, AttributeType.Long>
-
 local __Long = {}
 
 ---@return AttributeInstance.Long
@@ -51,6 +50,6 @@ function Long.new() end
 ---@type Class<AttributeInstance.Long>
 Long.class = nil
 
-__classmetatables[Long.class] = { __index = __Long }
+__classmetatables[Long.class] = {__index = __Long}
 
 zombie.entity.components.attributes.AttributeInstance.Long = Long

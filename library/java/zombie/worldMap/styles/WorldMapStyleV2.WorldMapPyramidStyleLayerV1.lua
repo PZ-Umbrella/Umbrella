@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class WorldMapStyleV2.WorldMapPyramidStyleLayerV1: WorldMapStyleV1.WorldMapStyleLayerV1
-
 local __WorldMapPyramidStyleLayerV1 = {}
 
 ---@param arg0 number
@@ -65,6 +64,6 @@ WorldMapPyramidStyleLayerV1 = {}
 ---@type Class<WorldMapStyleV2.WorldMapPyramidStyleLayerV1>
 WorldMapPyramidStyleLayerV1.class = nil
 
-__classmetatables[WorldMapPyramidStyleLayerV1.class] = { __index = __WorldMapPyramidStyleLayerV1 }
+__classmetatables[WorldMapPyramidStyleLayerV1.class] = {__index = __WorldMapPyramidStyleLayerV1}
 
 zombie.worldMap.styles.WorldMapStyleV2.WorldMapPyramidStyleLayerV1 = WorldMapPyramidStyleLayerV1

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ObservationFactory
-
 local __ObservationFactory = {}
 
 ObservationFactory = {}
@@ -30,6 +29,6 @@ function ObservationFactory.new() end
 ---@type Class<ObservationFactory>
 ObservationFactory.class = nil
 
-__classmetatables[ObservationFactory.class] = { __index = __ObservationFactory }
+__classmetatables[ObservationFactory.class] = {__index = __ObservationFactory}
 
 zombie.characters.traits.ObservationFactory = ObservationFactory

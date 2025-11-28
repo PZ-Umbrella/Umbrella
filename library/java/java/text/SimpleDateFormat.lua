@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SimpleDateFormat: DateFormat
-
 local __SimpleDateFormat = {}
 
 ---Applies the given localized pattern string to this date format.
@@ -49,7 +48,7 @@ function __SimpleDateFormat:format(date, toAppendTo, pos) end
 --- You can use the returned AttributedCharacterIterator
 --- to build the resulting String, as well as to determine information
 --- about the resulting String.
----
+--- 
 --- Each attribute key of the AttributedCharacterIterator will be of type
 --- DateFormat.Field, with the corresponding attribute value
 --- being the same as the attribute key.
@@ -72,7 +71,7 @@ function __SimpleDateFormat:getDateFormatSymbols() end
 function __SimpleDateFormat:hashCode() end
 
 ---Parses text from a string to produce a Date.
----
+--- 
 --- The method attempts to parse text starting at the index given by
 --- pos.
 --- If parsing succeeds, then the index of pos is updated
@@ -84,14 +83,14 @@ function __SimpleDateFormat:hashCode() end
 --- changed, the error index of pos is set to the index of
 --- the character where the error occurred, and null is returned.
 ---
---- This parsing operation uses the calendar to produce a Date. All of the
+--- This parsing operation uses the calendar to produce a Date. All of the 
 --- calendar's date-time fields are cleared before parsing, and the calendar's default
 --- values of the date-time fields are used for any missing
 --- date-time information. For example, the year value of the
 --- parsed Date is 1970 with GregorianCalendar if
---- no year value is given from the parsing operation.  The
+--- no year value is given from the parsing operation.  The 
 --- TimeZone value may be overwritten, depending on the given
---- pattern and the time zone value in text. Any
+--- pattern and the time zone value in text. Any 
 --- TimeZone value that has previously been set by a call to
 --- setTimeZone may need
 --- to be restored for further operations.
@@ -163,6 +162,6 @@ function SimpleDateFormat.new(pattern, formatSymbols) end
 ---@type Class<SimpleDateFormat>
 SimpleDateFormat.class = nil
 
-__classmetatables[SimpleDateFormat.class] = { __index = __SimpleDateFormat }
+__classmetatables[SimpleDateFormat.class] = {__index = __SimpleDateFormat}
 
 java.text.SimpleDateFormat = SimpleDateFormat

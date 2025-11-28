@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class MoveDeltaModifiers
-
 local __MoveDeltaModifiers = {}
 
 ---@return number
@@ -39,6 +38,6 @@ function MoveDeltaModifiers.new() end
 ---@type Class<MoveDeltaModifiers>
 MoveDeltaModifiers.class = nil
 
-__classmetatables[MoveDeltaModifiers.class] = { __index = __MoveDeltaModifiers }
+__classmetatables[MoveDeltaModifiers.class] = {__index = __MoveDeltaModifiers}
 
 zombie.characters.MoveDeltaModifiers = MoveDeltaModifiers

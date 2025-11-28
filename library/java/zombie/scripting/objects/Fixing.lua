@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Fixing: BaseScriptObject
-
 local __Fixing = {}
 
 ---@param arg0 string
@@ -77,6 +76,6 @@ function Fixing.new() end
 ---@type Class<Fixing>
 Fixing.class = nil
 
-__classmetatables[Fixing.class] = { __index = __Fixing }
+__classmetatables[Fixing.class] = {__index = __Fixing}
 
 zombie.scripting.objects.Fixing = Fixing

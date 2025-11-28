@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SpriteModel: BaseScriptObject
-
 local __SpriteModel = {}
 
 ---@param arg0 string
@@ -68,6 +67,6 @@ function SpriteModel.new() end
 ---@type Class<SpriteModel>
 SpriteModel.class = nil
 
-__classmetatables[SpriteModel.class] = { __index = __SpriteModel }
+__classmetatables[SpriteModel.class] = {__index = __SpriteModel}
 
 zombie.iso.SpriteModel = SpriteModel

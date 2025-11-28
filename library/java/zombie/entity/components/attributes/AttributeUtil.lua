@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AttributeUtil
-
 local __AttributeUtil = {}
 
 AttributeUtil = {}
@@ -72,6 +71,6 @@ function AttributeUtil.new() end
 ---@type Class<AttributeUtil>
 AttributeUtil.class = nil
 
-__classmetatables[AttributeUtil.class] = { __index = __AttributeUtil }
+__classmetatables[AttributeUtil.class] = {__index = __AttributeUtil}
 
 zombie.entity.components.attributes.AttributeUtil = AttributeUtil

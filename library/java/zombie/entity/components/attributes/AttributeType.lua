@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AttributeType
-
 local __AttributeType = {}
 
 ---@return string
@@ -39,6 +38,6 @@ AttributeType = {}
 ---@type Class<AttributeType>
 AttributeType.class = nil
 
-__classmetatables[AttributeType.class] = { __index = __AttributeType }
+__classmetatables[AttributeType.class] = {__index = __AttributeType}
 
 zombie.entity.components.attributes.AttributeType = AttributeType

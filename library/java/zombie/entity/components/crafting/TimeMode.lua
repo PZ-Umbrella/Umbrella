@@ -2,7 +2,6 @@
 
 ---@deprecated
 ---@class TimeMode: Enum<TimeMode>, IOEnum
-
 local __TimeMode = {}
 
 ---@return integer
@@ -33,6 +32,6 @@ function TimeMode.values() end
 ---@type Class<TimeMode>
 TimeMode.class = nil
 
-__classmetatables[TimeMode.class] = { __index = __TimeMode }
+__classmetatables[TimeMode.class] = {__index = __TimeMode}
 
 zombie.entity.components.crafting.TimeMode = TimeMode

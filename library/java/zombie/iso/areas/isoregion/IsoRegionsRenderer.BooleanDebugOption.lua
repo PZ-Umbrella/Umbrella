@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoRegionsRenderer.BooleanDebugOption: BooleanConfigOption
-
 local __BooleanDebugOption = {}
 
 ---@return integer
@@ -25,6 +24,6 @@ function BooleanDebugOption.new(optionList, name, defaultValue) end
 ---@type Class<IsoRegionsRenderer.BooleanDebugOption>
 BooleanDebugOption.class = nil
 
-__classmetatables[BooleanDebugOption.class] = { __index = __BooleanDebugOption }
+__classmetatables[BooleanDebugOption.class] = {__index = __BooleanDebugOption}
 
 zombie.iso.areas.isoregion.IsoRegionsRenderer.BooleanDebugOption = BooleanDebugOption

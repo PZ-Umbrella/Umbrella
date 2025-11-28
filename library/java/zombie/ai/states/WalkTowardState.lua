@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class WalkTowardState: State
-
 local __WalkTowardState = {}
 
 ---@param arg0 IsoGameCharacter
@@ -53,6 +52,6 @@ function WalkTowardState.new() end
 ---@type Class<WalkTowardState>
 WalkTowardState.class = nil
 
-__classmetatables[WalkTowardState.class] = { __index = __WalkTowardState }
+__classmetatables[WalkTowardState.class] = {__index = __WalkTowardState}
 
 zombie.ai.states.WalkTowardState = WalkTowardState

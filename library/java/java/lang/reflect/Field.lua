@@ -8,7 +8,6 @@
 --- set access operation, but throws an IllegalArgumentException if a
 --- narrowing conversion would occur.
 ---@class Field: AccessibleObject, Member
-
 local __Field = {}
 
 ---Compares this Field against the specified object.  Returns
@@ -235,13 +234,13 @@ function __Field:isSynthetic() end
 ---
 --- If the underlying field is final, this Field object has
 --- write access if and only if the following conditions are met:
----
+--- 
 --- setAccessible(true) has succeeded for
 ---     this Field object;
 --- the field is non-static; and
 --- the field's declaring class is not a hidden class; and
 --- the field's declaring class is not a record class.
----
+--- 
 --- If any of the above checks is not met, this method throws an
 --- IllegalAccessException.
 ---
@@ -383,6 +382,6 @@ Field = {}
 ---@type Class<Field>
 Field.class = nil
 
-__classmetatables[Field.class] = { __index = __Field }
+__classmetatables[Field.class] = {__index = __Field}
 
 java.lang.reflect.Field = Field

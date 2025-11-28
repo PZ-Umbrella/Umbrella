@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class FluidContainerScript.FluidScript
-
 local __FluidScript = {}
 
 ---@return Color
@@ -21,6 +20,6 @@ FluidScript = {}
 ---@type Class<FluidContainerScript.FluidScript>
 FluidScript.class = nil
 
-__classmetatables[FluidScript.class] = { __index = __FluidScript }
+__classmetatables[FluidScript.class] = {__index = __FluidScript}
 
 zombie.scripting.entity.components.fluids.FluidContainerScript.FluidScript = FluidScript

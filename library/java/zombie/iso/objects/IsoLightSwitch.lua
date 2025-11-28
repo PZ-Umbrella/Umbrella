@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoLightSwitch: IsoObject
-
 local __IsoLightSwitch = {}
 
 ---@param chr IsoGameCharacter
@@ -195,6 +194,6 @@ function IsoLightSwitch.new(arg0, arg1, arg2, arg3) end
 ---@type Class<IsoLightSwitch>
 IsoLightSwitch.class = nil
 
-__classmetatables[IsoLightSwitch.class] = { __index = __IsoLightSwitch }
+__classmetatables[IsoLightSwitch.class] = {__index = __IsoLightSwitch}
 
 zombie.iso.objects.IsoLightSwitch = IsoLightSwitch

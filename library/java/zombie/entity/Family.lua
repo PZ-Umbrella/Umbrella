@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Family
-
 local __Family = {}
 
 ---@param arg0 any
@@ -35,6 +34,6 @@ function Family.one(arg0) end
 ---@type Class<Family>
 Family.class = nil
 
-__classmetatables[Family.class] = { __index = __Family }
+__classmetatables[Family.class] = {__index = __Family}
 
 zombie.entity.Family = Family

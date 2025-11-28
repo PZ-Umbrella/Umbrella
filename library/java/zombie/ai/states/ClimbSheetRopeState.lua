@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ClimbSheetRopeState: State
-
 local __ClimbSheetRopeState = {}
 
 ---@param arg0 IsoGameCharacter
@@ -64,6 +63,6 @@ function ClimbSheetRopeState.new() end
 ---@type Class<ClimbSheetRopeState>
 ClimbSheetRopeState.class = nil
 
-__classmetatables[ClimbSheetRopeState.class] = { __index = __ClimbSheetRopeState }
+__classmetatables[ClimbSheetRopeState.class] = {__index = __ClimbSheetRopeState}
 
 zombie.ai.states.ClimbSheetRopeState = ClimbSheetRopeState

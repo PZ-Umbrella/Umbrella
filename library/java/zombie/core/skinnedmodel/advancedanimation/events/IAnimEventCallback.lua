@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IAnimEventCallback
-
 local __IAnimEventCallback = {}
 
 ---@param arg0 AnimLayer

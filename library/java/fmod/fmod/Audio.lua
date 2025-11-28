@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class Audio
-
 local __Audio = {}
 
 ---@return string

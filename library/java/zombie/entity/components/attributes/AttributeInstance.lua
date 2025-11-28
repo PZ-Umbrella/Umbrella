@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AttributeInstance<C: AttributeInstance<C, T>, T: AttributeType>
-
 local __AttributeInstance = {}
 
 ---@return C
@@ -62,6 +61,6 @@ AttributeInstance = {}
 ---@type Class<AttributeInstance>
 AttributeInstance.class = nil
 
-__classmetatables[AttributeInstance.class] = { __index = __AttributeInstance }
+__classmetatables[AttributeInstance.class] = {__index = __AttributeInstance}
 
 zombie.entity.components.attributes.AttributeInstance = AttributeInstance

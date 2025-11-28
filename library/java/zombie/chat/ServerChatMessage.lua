@@ -2,7 +2,6 @@
 
 ---Messages which sent by server to any chat stream. This applied stream setting but author always Server
 ---@class ServerChatMessage: ChatMessage
-
 local __ServerChatMessage = {}
 
 ---@return string
@@ -21,6 +20,6 @@ function ServerChatMessage.new(chat, text) end
 ---@type Class<ServerChatMessage>
 ServerChatMessage.class = nil
 
-__classmetatables[ServerChatMessage.class] = { __index = __ServerChatMessage }
+__classmetatables[ServerChatMessage.class] = {__index = __ServerChatMessage}
 
 zombie.chat.ServerChatMessage = ServerChatMessage

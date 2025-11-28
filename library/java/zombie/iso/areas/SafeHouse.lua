@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SafeHouse
-
 local __SafeHouse = {}
 
 ---@param arg0 string
@@ -323,6 +322,6 @@ function SafeHouse.new(x, y, w, h, player) end
 ---@type Class<SafeHouse>
 SafeHouse.class = nil
 
-__classmetatables[SafeHouse.class] = { __index = __SafeHouse }
+__classmetatables[SafeHouse.class] = {__index = __SafeHouse}
 
 zombie.iso.areas.SafeHouse = SafeHouse

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class WornItem
-
 local __WornItem = {}
 
 ---@return InventoryItem
@@ -20,6 +19,6 @@ function WornItem.new(location, item) end
 ---@type Class<WornItem>
 WornItem.class = nil
 
-__classmetatables[WornItem.class] = { __index = __WornItem }
+__classmetatables[WornItem.class] = {__index = __WornItem}
 
 zombie.characters.WornItems.WornItem = WornItem

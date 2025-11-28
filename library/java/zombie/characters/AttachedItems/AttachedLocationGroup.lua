@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AttachedLocationGroup
-
 local __AttachedLocationGroup = {}
 
 ---@param locationId string
@@ -35,6 +34,6 @@ function AttachedLocationGroup.new(id) end
 ---@type Class<AttachedLocationGroup>
 AttachedLocationGroup.class = nil
 
-__classmetatables[AttachedLocationGroup.class] = { __index = __AttachedLocationGroup }
+__classmetatables[AttachedLocationGroup.class] = {__index = __AttachedLocationGroup}
 
 zombie.characters.AttachedItems.AttachedLocationGroup = AttachedLocationGroup

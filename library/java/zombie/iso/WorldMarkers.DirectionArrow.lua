@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class WorldMarkers.DirectionArrow
-
 local __DirectionArrow = {}
 
 ---@return number
@@ -107,6 +106,6 @@ function DirectionArrow.new(arg0, arg1) end
 ---@type Class<WorldMarkers.DirectionArrow>
 DirectionArrow.class = nil
 
-__classmetatables[DirectionArrow.class] = { __index = __DirectionArrow }
+__classmetatables[DirectionArrow.class] = {__index = __DirectionArrow}
 
 zombie.iso.WorldMarkers.DirectionArrow = DirectionArrow

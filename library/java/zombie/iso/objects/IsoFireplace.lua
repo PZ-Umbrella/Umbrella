@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoFireplace: IsoObject
-
 local __IsoFireplace = {}
 
 ---@param units integer
@@ -108,6 +107,6 @@ function IsoFireplace.new(cell, sq, gid) end
 ---@type Class<IsoFireplace>
 IsoFireplace.class = nil
 
-__classmetatables[IsoFireplace.class] = { __index = __IsoFireplace }
+__classmetatables[IsoFireplace.class] = {__index = __IsoFireplace}
 
 zombie.iso.objects.IsoFireplace = IsoFireplace

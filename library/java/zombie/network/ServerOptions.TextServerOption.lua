@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ServerOptions.TextServerOption: StringConfigOption, ServerOptions.ServerOption
-
 local __TextServerOption = {}
 
 ---@return ConfigOption
@@ -25,6 +24,6 @@ function TextServerOption.new(owner, name, defaultValue, maxLength) end
 ---@type Class<ServerOptions.TextServerOption>
 TextServerOption.class = nil
 
-__classmetatables[TextServerOption.class] = { __index = __TextServerOption }
+__classmetatables[TextServerOption.class] = {__index = __TextServerOption}
 
 zombie.network.ServerOptions.TextServerOption = TextServerOption

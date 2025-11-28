@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class FMODAudio: Audio
-
 local __FMODAudio = {}
 
 ---@return string
@@ -31,6 +30,6 @@ function FMODAudio.new(arg0) end
 ---@type Class<FMODAudio>
 FMODAudio.class = nil
 
-__classmetatables[FMODAudio.class] = { __index = __FMODAudio }
+__classmetatables[FMODAudio.class] = {__index = __FMODAudio}
 
 fmod.fmod.FMODAudio = FMODAudio

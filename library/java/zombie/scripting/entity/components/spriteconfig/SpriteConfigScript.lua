@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SpriteConfigScript: ComponentScript
-
 local __SpriteConfigScript = {}
 
 ---@param arg0 ScriptLoadMode
@@ -99,6 +98,6 @@ SpriteConfigScript = {}
 ---@type Class<SpriteConfigScript>
 SpriteConfigScript.class = nil
 
-__classmetatables[SpriteConfigScript.class] = { __index = __SpriteConfigScript }
+__classmetatables[SpriteConfigScript.class] = {__index = __SpriteConfigScript}
 
 zombie.scripting.entity.components.spriteconfig.SpriteConfigScript = SpriteConfigScript

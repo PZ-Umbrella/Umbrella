@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class CharacterTraits: TraitCollection
-
 local __CharacterTraits = {}
 
 ---@return number
@@ -90,6 +89,6 @@ function CharacterTraits.new() end
 ---@type Class<CharacterTraits>
 CharacterTraits.class = nil
 
-__classmetatables[CharacterTraits.class] = { __index = __CharacterTraits }
+__classmetatables[CharacterTraits.class] = {__index = __CharacterTraits}
 
 zombie.characters.traits.CharacterTraits = CharacterTraits

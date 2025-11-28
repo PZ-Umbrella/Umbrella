@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class INetworkPacket: INetworkPacketField
-
 local __INetworkPacket = {}
 
 ---@return boolean

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class MediaData.MediaLineData
-
 local __MediaLineData = {}
 
 ---@return number
@@ -38,6 +37,6 @@ function MediaLineData.new(text, r, g, b, codes) end
 ---@type Class<MediaData.MediaLineData>
 MediaLineData.class = nil
 
-__classmetatables[MediaLineData.class] = { __index = __MediaLineData }
+__classmetatables[MediaLineData.class] = {__index = __MediaLineData}
 
 zombie.radio.media.MediaData.MediaLineData = MediaLineData

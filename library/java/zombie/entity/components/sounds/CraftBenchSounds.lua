@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class CraftBenchSounds: Component
-
 local __CraftBenchSounds = {}
 
 ---@param arg0 string
@@ -14,6 +13,6 @@ CraftBenchSounds = {}
 ---@type Class<CraftBenchSounds>
 CraftBenchSounds.class = nil
 
-__classmetatables[CraftBenchSounds.class] = { __index = __CraftBenchSounds }
+__classmetatables[CraftBenchSounds.class] = {__index = __CraftBenchSounds}
 
 zombie.entity.components.sounds.CraftBenchSounds = CraftBenchSounds

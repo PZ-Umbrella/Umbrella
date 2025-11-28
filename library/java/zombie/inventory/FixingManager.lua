@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class FixingManager
-
 local __FixingManager = {}
 
 FixingManager = {}
@@ -42,6 +41,6 @@ function FixingManager.new() end
 ---@type Class<FixingManager>
 FixingManager.class = nil
 
-__classmetatables[FixingManager.class] = { __index = __FixingManager }
+__classmetatables[FixingManager.class] = {__index = __FixingManager}
 
 zombie.inventory.FixingManager = FixingManager

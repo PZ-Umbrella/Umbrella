@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class UI3DModel: UIElement, IClothingItemListener
-
 local __UI3DModel = {}
 
 ---@param arg0 string
@@ -89,6 +88,6 @@ function UI3DModel.new(table) end
 ---@type Class<UI3DModel>
 UI3DModel.class = nil
 
-__classmetatables[UI3DModel.class] = { __index = __UI3DModel }
+__classmetatables[UI3DModel.class] = {__index = __UI3DModel}
 
 zombie.ui.UI3DModel = UI3DModel

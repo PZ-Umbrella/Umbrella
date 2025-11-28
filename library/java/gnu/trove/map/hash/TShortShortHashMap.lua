@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class TShortShortHashMap: TShortShortHash, TShortShortMap, Externalizable
-
 local __TShortShortHashMap = {}
 
 ---@param arg0 integer

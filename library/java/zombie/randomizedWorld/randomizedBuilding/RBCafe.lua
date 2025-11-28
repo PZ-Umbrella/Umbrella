@@ -2,7 +2,6 @@
 
 ---Add some food on table
 ---@class RBCafe: RandomizedBuildingBase
-
 local __RBCafe = {}
 
 ---Description copied from class: RandomizedBuildingBase
@@ -26,6 +25,6 @@ function RBCafe.new() end
 ---@type Class<RBCafe>
 RBCafe.class = nil
 
-__classmetatables[RBCafe.class] = { __index = __RBCafe }
+__classmetatables[RBCafe.class] = {__index = __RBCafe}
 
 zombie.randomizedWorld.randomizedBuilding.RBCafe = RBCafe

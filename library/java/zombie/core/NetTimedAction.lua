@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class NetTimedAction: Action
-
 local __NetTimedAction = {}
 
 ---@param arg0 string
@@ -47,6 +46,6 @@ function NetTimedAction.new() end
 ---@type Class<NetTimedAction>
 NetTimedAction.class = nil
 
-__classmetatables[NetTimedAction.class] = { __index = __NetTimedAction }
+__classmetatables[NetTimedAction.class] = {__index = __NetTimedAction}
 
 zombie.core.NetTimedAction = NetTimedAction

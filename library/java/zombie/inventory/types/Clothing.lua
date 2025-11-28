@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Clothing: InventoryItem
-
 local __Clothing = {}
 
 ---@param item InventoryItem
@@ -369,6 +368,6 @@ function Clothing.new(module, name, itemType, item, palette, SpriteName) end
 ---@type Class<Clothing>
 Clothing.class = nil
 
-__classmetatables[Clothing.class] = { __index = __Clothing }
+__classmetatables[Clothing.class] = {__index = __Clothing}
 
 zombie.inventory.types.Clothing = Clothing

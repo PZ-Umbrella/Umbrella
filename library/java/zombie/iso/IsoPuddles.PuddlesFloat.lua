@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class IsoPuddles.PuddlesFloat
-
 local __PuddlesFloat = {}
 
 ---@param f number
@@ -57,6 +56,6 @@ function PuddlesFloat.new() end
 ---@type Class<IsoPuddles.PuddlesFloat>
 PuddlesFloat.class = nil
 
-__classmetatables[PuddlesFloat.class] = { __index = __PuddlesFloat }
+__classmetatables[PuddlesFloat.class] = {__index = __PuddlesFloat}
 
 zombie.iso.IsoPuddles.PuddlesFloat = PuddlesFloat

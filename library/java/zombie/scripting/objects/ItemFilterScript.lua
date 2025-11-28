@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ItemFilterScript: BaseScriptObject
-
 local __ItemFilterScript = {}
 
 ---@param arg0 string
@@ -36,6 +35,6 @@ function ItemFilterScript.new() end
 ---@type Class<ItemFilterScript>
 ItemFilterScript.class = nil
 
-__classmetatables[ItemFilterScript.class] = { __index = __ItemFilterScript }
+__classmetatables[ItemFilterScript.class] = {__index = __ItemFilterScript}
 
 zombie.scripting.objects.ItemFilterScript = ItemFilterScript

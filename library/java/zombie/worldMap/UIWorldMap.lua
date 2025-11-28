@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class UIWorldMap: UIElement
-
 local __UIWorldMap = {}
 
 ---@param arg0 Texture
@@ -44,23 +43,7 @@ function __UIWorldMap:DrawTextSdf(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7
 ---@param arg11 number
 ---@param arg12 number
 ---@param arg13 number
-function __UIWorldMap:DrawTextSdfRotated(
-	arg0,
-	arg1,
-	arg2,
-	arg3,
-	arg4,
-	arg5,
-	arg6,
-	arg7,
-	arg8,
-	arg9,
-	arg10,
-	arg11,
-	arg12,
-	arg13
-)
-end
+function __UIWorldMap:DrawTextSdfRotated(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13) end
 
 function __UIWorldMap:checkSymbolsLayout() end
 
@@ -135,6 +118,6 @@ function UIWorldMap.new(table) end
 ---@type Class<UIWorldMap>
 UIWorldMap.class = nil
 
-__classmetatables[UIWorldMap.class] = { __index = __UIWorldMap }
+__classmetatables[UIWorldMap.class] = {__index = __UIWorldMap}
 
 zombie.worldMap.UIWorldMap = UIWorldMap

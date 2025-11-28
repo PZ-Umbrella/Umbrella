@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AttributeInstance.Bool: AttributeInstance<AttributeInstance.Bool, AttributeType.Bool>
-
 local __Bool = {}
 
 ---@return AttributeInstance.Bool
@@ -45,6 +44,6 @@ function Bool.new() end
 ---@type Class<AttributeInstance.Bool>
 Bool.class = nil
 
-__classmetatables[Bool.class] = { __index = __Bool }
+__classmetatables[Bool.class] = {__index = __Bool}
 
 zombie.entity.components.attributes.AttributeInstance.Bool = Bool

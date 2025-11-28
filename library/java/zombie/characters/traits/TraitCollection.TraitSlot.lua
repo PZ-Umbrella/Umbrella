@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class TraitCollection.TraitSlot
-
 local __TraitSlot = {}
 
 ---@param name string
@@ -22,6 +21,6 @@ TraitSlot = {}
 ---@type Class<TraitCollection.TraitSlot>
 TraitSlot.class = nil
 
-__classmetatables[TraitSlot.class] = { __index = __TraitSlot }
+__classmetatables[TraitSlot.class] = {__index = __TraitSlot}
 
 zombie.characters.traits.TraitCollection.TraitSlot = TraitSlot

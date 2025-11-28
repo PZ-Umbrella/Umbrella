@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class PathFindState2: State
-
 local __PathFindState2 = {}
 
 ---@param arg0 IsoGameCharacter
@@ -31,6 +30,6 @@ function PathFindState2.new() end
 ---@type Class<PathFindState2>
 PathFindState2.class = nil
 
-__classmetatables[PathFindState2.class] = { __index = __PathFindState2 }
+__classmetatables[PathFindState2.class] = {__index = __PathFindState2}
 
 zombie.pathfind.PathFindState2 = PathFindState2

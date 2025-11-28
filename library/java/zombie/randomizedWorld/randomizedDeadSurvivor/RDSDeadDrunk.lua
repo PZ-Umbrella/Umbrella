@@ -2,7 +2,6 @@
 
 ---Create a dead survivor with alcohol bottles around him
 ---@class RDSDeadDrunk: RandomizedDeadSurvivorBase
-
 local __RDSDeadDrunk = {}
 
 ---@param def BuildingDef
@@ -16,6 +15,6 @@ function RDSDeadDrunk.new() end
 ---@type Class<RDSDeadDrunk>
 RDSDeadDrunk.class = nil
 
-__classmetatables[RDSDeadDrunk.class] = { __index = __RDSDeadDrunk }
+__classmetatables[RDSDeadDrunk.class] = {__index = __RDSDeadDrunk}
 
 zombie.randomizedWorld.randomizedDeadSurvivor.RDSDeadDrunk = RDSDeadDrunk

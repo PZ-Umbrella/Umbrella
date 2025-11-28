@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class DataInput
-
 local __DataInput = {}
 
 ---Reads one input byte and returns
@@ -71,10 +70,10 @@ function __DataInput:readFloat() end
 --- array b. The number of bytes
 --- read is equal
 --- to the length of b.
----
+--- 
 --- This method blocks until one of the
 --- following conditions occurs:
----
+--- 
 --- b.length
 --- bytes of input data are available, in which
 --- case a normal return is made.
@@ -86,8 +85,8 @@ function __DataInput:readFloat() end
 --- An I/O error occurs, in
 --- which case an IOException other
 --- than EOFException is thrown.
----
----
+--- 
+--- 
 --- If b is null,
 --- a NullPointerException is thrown.
 --- If b.length is zero, then
@@ -105,11 +104,11 @@ function __DataInput:readFully(b) end
 ---Reads len
 --- bytes from
 --- an input stream.
----
+--- 
 --- This method
 --- blocks until one of the following conditions
 --- occurs:
----
+--- 
 --- len bytes
 --- of input data are available, in which case
 --- a normal return is made.
@@ -121,8 +120,8 @@ function __DataInput:readFully(b) end
 --- An I/O error occurs, in
 --- which case an IOException other
 --- than EOFException is thrown.
----
----
+--- 
+--- 
 --- If b is null,
 --- a NullPointerException is thrown.
 --- If off is negative, or len
@@ -165,7 +164,7 @@ function __DataInput:readInt() end
 --- method processes bytes,
 --- it does not support input of the full Unicode
 --- character set.
----
+--- 
 --- If end of file is encountered
 --- before even one byte can be read, then null
 --- is returned. Otherwise, each byte that is
@@ -205,7 +204,7 @@ function __DataInput:readLine() end
 ---  ((long)(g & 0xff) <<  8) |
 ---  ((long)(h & 0xff)))
 --- </code>
----
+--- 
 --- This method is suitable
 --- for reading bytes written by the writeLong
 --- method of interface DataOutput.
@@ -235,7 +234,7 @@ function __DataInput:readShort() end
 --- character string encoded in modified
 --- UTF-8 format; this string of characters
 --- is then returned as a String.
----
+--- 
 --- First, two bytes are read and used to
 --- construct an unsigned 16-bit integer in
 --- exactly the manner of the readUnsignedShort
@@ -248,14 +247,14 @@ function __DataInput:readShort() end
 --- byte of the group. The byte following a
 --- group, if any, is the first byte of the
 --- next group.
----
+--- 
 --- If the first byte of a group
 --- matches the bit pattern 0xxxxxxx
 --- (where x means "may be 0
 --- or 1"), then the group consists
 --- of just that byte. The byte is zero-extended
 --- to form a character.
----
+--- 
 --- If the first byte
 --- of a group matches the bit pattern 110xxxxx,
 --- then the group consists of that byte a
@@ -288,18 +287,18 @@ function __DataInput:readShort() end
 --- pattern 1111xxxx or the pattern
 --- 10xxxxxx, then a UTFDataFormatException
 --- is thrown.
----
+--- 
 --- If end of file is encountered
 --- at any time during this entire process,
 --- then an EOFException is thrown.
----
+--- 
 --- After every group has been converted to
 --- a character by this process, the characters
 --- are gathered, in the same order in which
 --- their corresponding groups were read from
 --- the input stream, to form a String,
 --- which is returned.
----
+--- 
 --- The writeUTF
 --- method of interface DataOutput
 --- may be used to write data that is suitable

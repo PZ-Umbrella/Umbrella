@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SpriteModelEditorState: GameState
-
 local __SpriteModelEditorState = {}
 
 function __SpriteModelEditorState:enter() end
@@ -96,6 +95,6 @@ function SpriteModelEditorState.new() end
 ---@type Class<SpriteModelEditorState>
 SpriteModelEditorState.class = nil
 
-__classmetatables[SpriteModelEditorState.class] = { __index = __SpriteModelEditorState }
+__classmetatables[SpriteModelEditorState.class] = {__index = __SpriteModelEditorState}
 
 zombie.gameStates.SpriteModelEditorState = SpriteModelEditorState

@@ -4,7 +4,6 @@
 ---Member is an interface that reflects identifying information about
 --- a single member (a field or a method) or a constructor.
 ---@class Member
-
 local __Member = {}
 
 ---Returns the Class object representing the class or interface

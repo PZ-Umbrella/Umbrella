@@ -4,7 +4,6 @@
 ---
 --- Exposed class with only allowed functions accessible for modding
 ---@class ModData
-
 local __ModData = {}
 
 ModData = {}
@@ -51,6 +50,6 @@ function ModData.new() end
 ---@type Class<ModData>
 ModData.class = nil
 
-__classmetatables[ModData.class] = { __index = __ModData }
+__classmetatables[ModData.class] = {__index = __ModData}
 
 zombie.world.moddata.ModData = ModData

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class VehicleScript.Area
-
 local __Area = {}
 
 ---@return number
@@ -39,6 +38,6 @@ function Area.new() end
 ---@type Class<VehicleScript.Area>
 Area.class = nil
 
-__classmetatables[Area.class] = { __index = __Area }
+__classmetatables[Area.class] = {__index = __Area}
 
 zombie.scripting.objects.VehicleScript.Area = Area

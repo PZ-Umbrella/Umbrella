@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AttributeInstance.Enum<E: Enum<E>, IOEnum>: AttributeInstance<AttributeInstance.Enum<E>, AttributeType.Enum<E>>
-
 local __Enum = {}
 
 ---@return AttributeInstance.Enum<E>
@@ -46,6 +45,6 @@ function Enum.new() end
 ---@type Class<AttributeInstance.Enum>
 Enum.class = nil
 
-__classmetatables[Enum.class] = { __index = __Enum }
+__classmetatables[Enum.class] = {__index = __Enum}
 
 zombie.entity.components.attributes.AttributeInstance.Enum = Enum

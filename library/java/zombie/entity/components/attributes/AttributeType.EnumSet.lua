@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AttributeType.EnumSet<E: Enum<E>, IOEnum>: AttributeType
-
 local __EnumSet = {}
 
 ---@param arg0 integer
@@ -23,6 +22,6 @@ EnumSet = {}
 ---@type Class<AttributeType.EnumSet>
 EnumSet.class = nil
 
-__classmetatables[EnumSet.class] = { __index = __EnumSet }
+__classmetatables[EnumSet.class] = {__index = __EnumSet}
 
 zombie.entity.components.attributes.AttributeType.EnumSet = EnumSet

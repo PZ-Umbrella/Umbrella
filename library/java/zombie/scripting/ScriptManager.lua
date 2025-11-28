@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ScriptManager: IScriptObjectStore
-
 local __ScriptManager = {}
 
 function __ScriptManager:CheckExitPoints() end
@@ -448,6 +447,6 @@ function ScriptManager.new() end
 ---@type Class<ScriptManager>
 ScriptManager.class = nil
 
-__classmetatables[ScriptManager.class] = { __index = __ScriptManager }
+__classmetatables[ScriptManager.class] = {__index = __ScriptManager}
 
 zombie.scripting.ScriptManager = ScriptManager

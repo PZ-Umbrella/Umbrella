@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class XuiScript.XuiVar<T, C: XuiScript.XuiVar<any, any>>
-
 local __XuiVar = {}
 
 ---@return XuiAutoApply
@@ -61,6 +60,6 @@ XuiVar = {}
 ---@type Class<XuiScript.XuiVar>
 XuiVar.class = nil
 
-__classmetatables[XuiVar.class] = { __index = __XuiVar }
+__classmetatables[XuiVar.class] = {__index = __XuiVar}
 
 zombie.scripting.ui.XuiScript.XuiVar = XuiVar

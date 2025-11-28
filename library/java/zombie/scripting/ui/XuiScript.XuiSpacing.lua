@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class XuiScript.XuiSpacing: XuiScript.XuiVar<number, XuiScript.XuiSpacing>
-
 local __XuiSpacing = {}
 
 ---@return number
@@ -48,6 +47,6 @@ function XuiSpacing.new(arg0, arg1, arg2, arg3, arg4, arg5) end
 ---@type Class<XuiScript.XuiSpacing>
 XuiSpacing.class = nil
 
-__classmetatables[XuiSpacing.class] = { __index = __XuiSpacing }
+__classmetatables[XuiSpacing.class] = {__index = __XuiSpacing}
 
 zombie.scripting.ui.XuiScript.XuiSpacing = XuiSpacing

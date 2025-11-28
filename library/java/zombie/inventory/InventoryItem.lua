@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class InventoryItem: GameEntity
-
 local __InventoryItem = {}
 
 ---@param item InventoryItem
@@ -1920,6 +1919,6 @@ function InventoryItem.new(module, name, type, item) end
 ---@type Class<InventoryItem>
 InventoryItem.class = nil
 
-__classmetatables[InventoryItem.class] = { __index = __InventoryItem }
+__classmetatables[InventoryItem.class] = {__index = __InventoryItem}
 
 zombie.inventory.InventoryItem = InventoryItem

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AtomUITextEntry: AtomUI, UITextEntryInterface
-
 local __AtomUITextEntry = {}
 
 function __AtomUITextEntry:copyToClipboard() end
@@ -159,6 +158,6 @@ function AtomUITextEntry.new(arg0) end
 ---@type Class<AtomUITextEntry>
 AtomUITextEntry.class = nil
 
-__classmetatables[AtomUITextEntry.class] = { __index = __AtomUITextEntry }
+__classmetatables[AtomUITextEntry.class] = {__index = __AtomUITextEntry}
 
 zombie.ui.AtomUITextEntry = AtomUITextEntry

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AttributeInstance.Numeric<C: AttributeInstance.Numeric<C, T>, T: AttributeType.Numeric<T, any>>: AttributeInstance<C, T>
-
 local __Numeric = {}
 
 ---@return number
@@ -30,6 +29,6 @@ Numeric = {}
 ---@type Class<AttributeInstance.Numeric>
 Numeric.class = nil
 
-__classmetatables[Numeric.class] = { __index = __Numeric }
+__classmetatables[Numeric.class] = {__index = __Numeric}
 
 zombie.entity.components.attributes.AttributeInstance.Numeric = Numeric

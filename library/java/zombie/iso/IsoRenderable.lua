@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IsoRenderable
-
 local __IsoRenderable = {}
 
 ---@return boolean

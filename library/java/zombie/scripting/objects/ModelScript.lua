@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ModelScript: BaseScriptObject, IModelAttachmentOwner
-
 local __ModelScript = {}
 
 ---@param arg0 string
@@ -88,6 +87,6 @@ function ModelScript.new() end
 ---@type Class<ModelScript>
 ModelScript.class = nil
 
-__classmetatables[ModelScript.class] = { __index = __ModelScript }
+__classmetatables[ModelScript.class] = {__index = __ModelScript}
 
 zombie.scripting.objects.ModelScript = ModelScript

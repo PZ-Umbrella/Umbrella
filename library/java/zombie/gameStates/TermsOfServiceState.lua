@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class TermsOfServiceState: GameState
-
 local __TermsOfServiceState = {}
 
 function __TermsOfServiceState:enter() end
@@ -25,6 +24,6 @@ function TermsOfServiceState.new() end
 ---@type Class<TermsOfServiceState>
 TermsOfServiceState.class = nil
 
-__classmetatables[TermsOfServiceState.class] = { __index = __TermsOfServiceState }
+__classmetatables[TermsOfServiceState.class] = {__index = __TermsOfServiceState}
 
 zombie.gameStates.TermsOfServiceState = TermsOfServiceState

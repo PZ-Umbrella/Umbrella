@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Drainable
-
 local __Drainable = {}
 
 Drainable = {}
@@ -9,6 +8,6 @@ Drainable = {}
 ---@type Class<Drainable>
 Drainable.class = nil
 
-__classmetatables[Drainable.class] = { __index = __Drainable }
+__classmetatables[Drainable.class] = {__index = __Drainable}
 
 zombie.inventory.types.Drainable = Drainable

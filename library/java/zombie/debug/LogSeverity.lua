@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class LogSeverity: Enum<LogSeverity>
-
 local __LogSeverity = {}
 
 LogSeverity = {}
@@ -45,6 +44,6 @@ function LogSeverity.values() end
 ---@type Class<LogSeverity>
 LogSeverity.class = nil
 
-__classmetatables[LogSeverity.class] = { __index = __LogSeverity }
+__classmetatables[LogSeverity.class] = {__index = __LogSeverity}
 
 zombie.debug.LogSeverity = LogSeverity

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class CraftRecipe: BaseScriptObject, TaggedObjectManager.TaggedObject
-
 local __CraftRecipe = {}
 
 ---@param arg0 string
@@ -427,6 +426,6 @@ function CraftRecipe.new() end
 ---@type Class<CraftRecipe>
 CraftRecipe.class = nil
 
-__classmetatables[CraftRecipe.class] = { __index = __CraftRecipe }
+__classmetatables[CraftRecipe.class] = {__index = __CraftRecipe}
 
 zombie.scripting.entity.components.crafting.CraftRecipe = CraftRecipe

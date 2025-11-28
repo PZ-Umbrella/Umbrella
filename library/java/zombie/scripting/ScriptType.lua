@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ScriptType: Enum<ScriptType>
-
 local __ScriptType = {}
 
 ---@return string
@@ -150,6 +149,6 @@ function ScriptType.values() end
 ---@type Class<ScriptType>
 ScriptType.class = nil
 
-__classmetatables[ScriptType.class] = { __index = __ScriptType }
+__classmetatables[ScriptType.class] = {__index = __ScriptType}
 
 zombie.scripting.ScriptType = ScriptType

@@ -45,10 +45,10 @@
 --- defining an equivalence relation, the semantics of the IEEE 754
 --- == operator were deliberately designed to meet other needs
 --- of numerical computation. There are two exceptions where the
---- properties of an equivalence relation are not satisfied by
+--- properties of an equivalence relation are not satisfied by 
 --- == on floating-point values:
 ---
----
+--- 
 ---
 --- If v1 and v2 are both NaN, then v1
 --- == v2 has the value false. Therefore, for two NaN
@@ -69,7 +69,7 @@
 --- also has a non-substitutable effect on the result of some math
 --- library methods.
 ---
----
+--- 
 ---
 --- For ordered comparisons using the built-in comparison operators
 --- (<, <=, etc.), NaN values have another anomalous
@@ -80,30 +80,29 @@
 --- To provide the appropriate semantics for equals and
 --- compareTo methods, those methods cannot simply be wrappers
 --- around == or ordered comparison operations. Instead, equals defines NaN arguments to be equal to each
---- other and defines +0.0 to not be equal to
---- -0.0, restoring reflexivity. For comparisons, compareTo defines a total order where
+--- other and defines +0.0 to not be equal to 
+--- -0.0, restoring reflexivity. For comparisons, compareTo defines a total order where 
 --- -0.0 is less than +0.0 and where a NaN is equal to itself
 --- and considered greater than positive infinity.
 ---
---- The operational semantics of equals and
+--- The operational semantics of equals and 
 --- compareTo are expressed in terms of bit-wise converting the floating-point values to integral values.
 ---
 --- The natural ordering implemented by compareTo is consistent with equals. That
 --- is, two objects are reported as equal by equals if and only
 --- if compareTo on those objects returns zero.
 ---
---- The adjusted behaviors defined for equals and
+--- The adjusted behaviors defined for equals and 
 --- compareTo allow instances of wrapper classes to work properly with
 --- conventional data structures. For example, defining NaN
 --- values to be equals to one another allows NaN to be used as
 --- an element of a HashSet or as the key of
---- a HashMap. Similarly, defining
---- compareTo as a total ordering, including +0.0,
+--- a HashMap. Similarly, defining 
+--- compareTo as a total ordering, including +0.0, 
 --- -0.0, and NaN, allows instances of wrapper classes to be used as
 --- elements of a SortedSet or as keys of a
 --- SortedMap.
 ---@class Double: Number, Comparable<number>, Constable, ConstantDesc
-
 local __Double = {}
 
 ---@return integer
@@ -315,6 +314,6 @@ function Double.new(s) end
 ---@type Class<Double>
 Double.class = nil
 
-__classmetatables[Double.class] = { __index = __Double }
+__classmetatables[Double.class] = {__index = __Double}
 
 java.lang.Double = Double

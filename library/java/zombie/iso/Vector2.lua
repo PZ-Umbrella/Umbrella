@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Vector2: Cloneable
-
 local __Vector2 = {}
 
 ---Add another vector to this one and return this
@@ -183,6 +182,6 @@ function Vector2.new(x, y) end
 ---@type Class<Vector2>
 Vector2.class = nil
 
-__classmetatables[Vector2.class] = { __index = __Vector2 }
+__classmetatables[Vector2.class] = {__index = __Vector2}
 
 zombie.iso.Vector2 = Vector2

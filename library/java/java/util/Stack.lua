@@ -7,7 +7,7 @@
 --- method to peek at the top item on the stack, a method to test
 --- for whether the stack is empty, and a method to search
 --- the stack for an item and discover how far it is from the top.
----
+--- 
 --- When a stack is first created, it contains no items.
 ---
 --- A more complete and consistent set of LIFO stack operations is
@@ -16,7 +16,6 @@
 ---    <code>
 ---   Deque<Integer> stack = new ArrayDeque<Integer>();</code>
 ---@class Stack<E>: Vector<E>
-
 local __Stack = {}
 
 ---Tests if this stack is empty.
@@ -38,7 +37,7 @@ function __Stack:pop() end
 
 ---Pushes an item onto the top of this stack. This has exactly
 --- the same effect as:
----
+--- 
 --- addElement(item)
 ---@param item E the item to be pushed onto this stack.
 ---@return E # the item argument.
@@ -67,6 +66,6 @@ function Stack.new() end
 ---@type Class<Stack>
 Stack.class = nil
 
-__classmetatables[Stack.class] = { __index = __Stack }
+__classmetatables[Stack.class] = {__index = __Stack}
 
 java.util.Stack = Stack

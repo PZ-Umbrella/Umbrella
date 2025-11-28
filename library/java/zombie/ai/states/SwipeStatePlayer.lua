@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SwipeStatePlayer: State
-
 local __SwipeStatePlayer = {}
 
 ---@param owner IsoGameCharacter
@@ -49,6 +48,6 @@ function SwipeStatePlayer.new() end
 ---@type Class<SwipeStatePlayer>
 SwipeStatePlayer.class = nil
 
-__classmetatables[SwipeStatePlayer.class] = { __index = __SwipeStatePlayer }
+__classmetatables[SwipeStatePlayer.class] = {__index = __SwipeStatePlayer}
 
 zombie.ai.states.SwipeStatePlayer = SwipeStatePlayer

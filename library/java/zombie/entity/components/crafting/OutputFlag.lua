@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class OutputFlag: Enum<OutputFlag>
-
 local __OutputFlag = {}
 
 OutputFlag = {}
@@ -46,6 +45,6 @@ function OutputFlag.values() end
 ---@type Class<OutputFlag>
 OutputFlag.class = nil
 
-__classmetatables[OutputFlag.class] = { __index = __OutputFlag }
+__classmetatables[OutputFlag.class] = {__index = __OutputFlag}
 
 zombie.entity.components.crafting.OutputFlag = OutputFlag

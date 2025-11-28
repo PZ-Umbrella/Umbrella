@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class ILockableDoor
-
 local __ILockableDoor = {}
 
 ---@return ICurtain

@@ -2,7 +2,6 @@
 
 ---Created by LEMMYMAIN on 18/09/2014.
 ---@class CharacterSoundEmitter: BaseCharacterSoundEmitter, ICommonSoundEmitter
-
 local __CharacterSoundEmitter = {}
 
 ---@return boolean
@@ -125,6 +124,6 @@ function CharacterSoundEmitter.new(chr) end
 ---@type Class<CharacterSoundEmitter>
 CharacterSoundEmitter.class = nil
 
-__classmetatables[CharacterSoundEmitter.class] = { __index = __CharacterSoundEmitter }
+__classmetatables[CharacterSoundEmitter.class] = {__index = __CharacterSoundEmitter}
 
 zombie.characters.CharacterSoundEmitter = CharacterSoundEmitter

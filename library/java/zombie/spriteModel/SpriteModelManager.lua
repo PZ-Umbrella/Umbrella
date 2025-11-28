@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class SpriteModelManager
-
 local __SpriteModelManager = {}
 
 function __SpriteModelManager:Reset() end
@@ -64,6 +63,6 @@ function SpriteModelManager.new() end
 ---@type Class<SpriteModelManager>
 SpriteModelManager.class = nil
 
-__classmetatables[SpriteModelManager.class] = { __index = __SpriteModelManager }
+__classmetatables[SpriteModelManager.class] = {__index = __SpriteModelManager}
 
 zombie.spriteModel.SpriteModelManager = SpriteModelManager

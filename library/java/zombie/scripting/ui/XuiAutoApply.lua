@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class XuiAutoApply: Enum<XuiAutoApply>
-
 local __XuiAutoApply = {}
 
 XuiAutoApply = {}
@@ -31,6 +30,6 @@ function XuiAutoApply.values() end
 ---@type Class<XuiAutoApply>
 XuiAutoApply.class = nil
 
-__classmetatables[XuiAutoApply.class] = { __index = __XuiAutoApply }
+__classmetatables[XuiAutoApply.class] = {__index = __XuiAutoApply}
 
 zombie.scripting.ui.XuiAutoApply = XuiAutoApply

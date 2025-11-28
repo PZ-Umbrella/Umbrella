@@ -4,13 +4,13 @@
 ---Format is an abstract base class for formatting locale-sensitive
 --- information such as dates, messages, and numbers.
 ---
----
+--- 
 --- Format defines the programming interface for formatting
 --- locale-sensitive objects into Strings (the
 --- format method) and for parsing Strings back
 --- into objects (the parseObject method).
 ---
----
+--- 
 --- Generally, a format's parseObject method must be able to parse
 --- any string formatted by its format method. However, there may
 --- be exceptional cases where this is not possible. For example, a
@@ -20,18 +20,18 @@
 ---
 --- Subclassing
 ---
----
+--- 
 --- The Java Platform provides three specialized subclasses of Format--
 --- DateFormat, MessageFormat, and
 --- NumberFormat--for formatting dates, messages, and numbers,
 --- respectively.
----
+--- 
 --- Concrete subclasses must implement three methods:
----
+--- 
 ---  format(Object obj, StringBuffer toAppendTo, FieldPosition pos)
 ---  formatToCharacterIterator(Object obj)
 ---  parseObject(String source, ParsePosition pos)
----
+--- 
 --- These general methods allow polymorphic parsing and formatting of objects
 --- and are used, for example, by MessageFormat.
 --- Subclasses often also provide additional format methods for
@@ -40,33 +40,33 @@
 --- ParsePosition argument should throw ParseException
 --- when no text in the required format is at the beginning of the input text.
 ---
----
+--- 
 --- Most subclasses will also implement the following factory methods:
----
----
+--- 
+--- 
 --- getInstance for getting a useful format object appropriate
 --- for the current locale
----
+--- 
 --- getInstance(Locale) for getting a useful format
 --- object appropriate for the specified locale
----
+--- 
 --- In addition, some subclasses may also implement other
 --- getXxxxInstance methods for more specialized control. For
 --- example, the NumberFormat class provides
 --- getPercentInstance and getCurrencyInstance
 --- methods for getting specialized number formatters.
 ---
----
+--- 
 --- Subclasses of Format that allow programmers to create objects
 --- for locales (with getInstance(Locale) for example)
 --- must also implement the following class method:
----
----
+--- 
+--- 
 --- public static Locale[] getAvailableLocales()
+--- 
+--- 
 ---
----
----
----
+--- 
 --- And finally subclasses may define a set of constants to identify the various
 --- fields in the formatted output. These constants are used to create a FieldPosition
 --- object which identifies what information is contained in the field and its
@@ -77,13 +77,12 @@
 ---
 --- Synchronization
 ---
----
+--- 
 --- Formats are generally not synchronized.
 --- It is recommended to create separate format instances for each thread.
 --- If multiple threads access a format concurrently, it must be synchronized
 --- externally.
 ---@class Format: Serializable, Cloneable
-
 local __Format = {}
 
 ---Creates and returns a copy of this object.
@@ -91,7 +90,7 @@ local __Format = {}
 function __Format:clone() end
 
 ---Formats an object to produce a string. This is equivalent to
----
+--- 
 --- format(obj,
 ---         new StringBuffer(), new FieldPosition(0)).toString();
 ---@param obj any The object to format
@@ -115,7 +114,7 @@ function __Format:format(obj, toAppendTo, pos) end
 --- You can use the returned AttributedCharacterIterator
 --- to build the resulting String, as well as to determine information
 --- about the resulting String.
----
+--- 
 --- Each attribute key of the AttributedCharacterIterator will be of type
 --- Field. It is up to each Format implementation
 --- to define what the legal values are for each attribute in the
@@ -130,7 +129,7 @@ function __Format:format(obj, toAppendTo, pos) end
 function __Format:formatToCharacterIterator(obj) end
 
 ---Parses text from a string to produce an object.
----
+--- 
 --- The method attempts to parse text starting at the index given by
 --- pos.
 --- If parsing succeeds, then the index of pos is updated

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class PVPLogTool
-
 local __PVPLogTool = {}
 
 PVPLogTool = {}
@@ -33,6 +32,6 @@ function PVPLogTool.logSafety(arg0, arg1) end
 ---@type Class<PVPLogTool>
 PVPLogTool.class = nil
 
-__classmetatables[PVPLogTool.class] = { __index = __PVPLogTool }
+__classmetatables[PVPLogTool.class] = {__index = __PVPLogTool}
 
 zombie.network.PVPLogTool = PVPLogTool

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class RandomizedVehicleStoryBase: RandomizedWorldBase
-
 local __RandomizedVehicleStoryBase = {}
 
 ---@param v1 BaseVehicle
@@ -138,6 +137,6 @@ function RandomizedVehicleStoryBase.new() end
 ---@type Class<RandomizedVehicleStoryBase>
 RandomizedVehicleStoryBase.class = nil
 
-__classmetatables[RandomizedVehicleStoryBase.class] = { __index = __RandomizedVehicleStoryBase }
+__classmetatables[RandomizedVehicleStoryBase.class] = {__index = __RandomizedVehicleStoryBase}
 
 zombie.randomizedWorld.randomizedVehicleStory.RandomizedVehicleStoryBase = RandomizedVehicleStoryBase

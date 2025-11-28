@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IDebugOption
-
 local __IDebugOption = {}
 
 ---@return string

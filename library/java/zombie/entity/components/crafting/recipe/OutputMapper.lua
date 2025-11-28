@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class OutputMapper
-
 local __OutputMapper = {}
 
 function __OutputMapper:OnPostWorldDictionaryInit() end
@@ -54,6 +53,6 @@ function OutputMapper.new(arg0) end
 ---@type Class<OutputMapper>
 OutputMapper.class = nil
 
-__classmetatables[OutputMapper.class] = { __index = __OutputMapper }
+__classmetatables[OutputMapper.class] = {__index = __OutputMapper}
 
 zombie.entity.components.crafting.recipe.OutputMapper = OutputMapper

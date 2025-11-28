@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class BaseVisual
-
 local __BaseVisual = {}
 
 function __BaseVisual:clear() end

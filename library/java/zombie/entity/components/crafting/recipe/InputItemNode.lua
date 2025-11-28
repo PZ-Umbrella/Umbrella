@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class InputItemNode
-
 local __InputItemNode = {}
 
 ---@return InputScript
@@ -58,6 +57,6 @@ function InputItemNode.new() end
 ---@type Class<InputItemNode>
 InputItemNode.class = nil
 
-__classmetatables[InputItemNode.class] = { __index = __InputItemNode }
+__classmetatables[InputItemNode.class] = {__index = __InputItemNode}
 
 zombie.entity.components.crafting.recipe.InputItemNode = InputItemNode

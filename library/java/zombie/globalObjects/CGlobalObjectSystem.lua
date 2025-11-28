@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class CGlobalObjectSystem: GlobalObjectSystem
-
 local __CGlobalObjectSystem = {}
 
 function __CGlobalObjectSystem:Reset() end
@@ -41,6 +40,6 @@ function CGlobalObjectSystem.new(name) end
 ---@type Class<CGlobalObjectSystem>
 CGlobalObjectSystem.class = nil
 
-__classmetatables[CGlobalObjectSystem.class] = { __index = __CGlobalObjectSystem }
+__classmetatables[CGlobalObjectSystem.class] = {__index = __CGlobalObjectSystem}
 
 zombie.globalObjects.CGlobalObjectSystem = CGlobalObjectSystem

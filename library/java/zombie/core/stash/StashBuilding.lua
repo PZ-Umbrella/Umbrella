@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class StashBuilding
-
 local __StashBuilding = {}
 
 ---@return string
@@ -18,6 +17,6 @@ function StashBuilding.new(stashName, buildingX, buildingY) end
 ---@type Class<StashBuilding>
 StashBuilding.class = nil
 
-__classmetatables[StashBuilding.class] = { __index = __StashBuilding }
+__classmetatables[StashBuilding.class] = {__index = __StashBuilding}
 
 zombie.core.stash.StashBuilding = StashBuilding

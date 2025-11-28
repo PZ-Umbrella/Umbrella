@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class PlayerAimState: State
-
 local __PlayerAimState = {}
 
 ---@param arg0 IsoGameCharacter
@@ -46,6 +45,6 @@ function PlayerAimState.new() end
 ---@type Class<PlayerAimState>
 PlayerAimState.class = nil
 
-__classmetatables[PlayerAimState.class] = { __index = __PlayerAimState }
+__classmetatables[PlayerAimState.class] = {__index = __PlayerAimState}
 
 zombie.ai.states.PlayerAimState = PlayerAimState

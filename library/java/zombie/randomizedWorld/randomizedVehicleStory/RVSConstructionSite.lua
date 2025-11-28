@@ -2,7 +2,6 @@
 
 ---Van with a sewer hole & road cones around it, some construction worker and a foreman + some tools in ground
 ---@class RVSConstructionSite: RandomizedVehicleStoryBase
-
 local __RVSConstructionSite = {}
 
 ---@param arg0 Zone
@@ -27,6 +26,6 @@ function RVSConstructionSite.new() end
 ---@type Class<RVSConstructionSite>
 RVSConstructionSite.class = nil
 
-__classmetatables[RVSConstructionSite.class] = { __index = __RVSConstructionSite }
+__classmetatables[RVSConstructionSite.class] = {__index = __RVSConstructionSite}
 
 zombie.randomizedWorld.randomizedVehicleStory.RVSConstructionSite = RVSConstructionSite

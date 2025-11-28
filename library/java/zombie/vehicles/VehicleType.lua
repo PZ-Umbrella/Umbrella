@@ -2,7 +2,6 @@
 
 ---Contains all car model with their associated skin index
 ---@class VehicleType
-
 local __VehicleType = {}
 
 ---@return number
@@ -53,6 +52,6 @@ function VehicleType.new(name) end
 ---@type Class<VehicleType>
 VehicleType.class = nil
 
-__classmetatables[VehicleType.class] = { __index = __VehicleType }
+__classmetatables[VehicleType.class] = {__index = __VehicleType}
 
 zombie.vehicles.VehicleType = VehicleType

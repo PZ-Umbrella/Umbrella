@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Resources: Component
-
 local __Resources = {}
 
 ---@param arg0 ObjectTooltip
@@ -135,6 +134,6 @@ Resources.defaultGroup = nil
 ---@type Class<Resources>
 Resources.class = nil
 
-__classmetatables[Resources.class] = { __index = __Resources }
+__classmetatables[Resources.class] = {__index = __Resources}
 
 zombie.entity.components.resources.Resources = Resources

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class UI3DScene: UIElement
-
 local __UI3DScene = {}
 
 ---@param func string
@@ -177,6 +176,6 @@ function UI3DScene.new(table) end
 ---@type Class<UI3DScene>
 UI3DScene.class = nil
 
-__classmetatables[UI3DScene.class] = { __index = __UI3DScene }
+__classmetatables[UI3DScene.class] = {__index = __UI3DScene}
 
 zombie.vehicles.UI3DScene = UI3DScene

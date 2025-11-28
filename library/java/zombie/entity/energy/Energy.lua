@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Energy
-
 local __Energy = {}
 
 ---@return Color
@@ -72,6 +71,6 @@ function Energy.saveEnergy(arg0, arg1) end
 ---@type Class<Energy>
 Energy.class = nil
 
-__classmetatables[Energy.class] = { __index = __Energy }
+__classmetatables[Energy.class] = {__index = __Energy}
 
 zombie.entity.energy.Energy = Energy

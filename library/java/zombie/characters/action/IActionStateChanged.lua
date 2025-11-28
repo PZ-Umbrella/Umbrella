@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IActionStateChanged
-
 local __IActionStateChanged = {}
 
 ---@param sender ActionContext

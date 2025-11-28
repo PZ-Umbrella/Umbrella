@@ -2,7 +2,6 @@
 
 ---Flipped car with bodies & blood near it, can be burnt
 ---@class RVSFlippedCrash: RandomizedVehicleStoryBase
-
 local __RVSFlippedCrash = {}
 
 ---@param arg0 Zone
@@ -27,6 +26,6 @@ function RVSFlippedCrash.new() end
 ---@type Class<RVSFlippedCrash>
 RVSFlippedCrash.class = nil
 
-__classmetatables[RVSFlippedCrash.class] = { __index = __RVSFlippedCrash }
+__classmetatables[RVSFlippedCrash.class] = {__index = __RVSFlippedCrash}
 
 zombie.randomizedWorld.randomizedVehicleStory.RVSFlippedCrash = RVSFlippedCrash

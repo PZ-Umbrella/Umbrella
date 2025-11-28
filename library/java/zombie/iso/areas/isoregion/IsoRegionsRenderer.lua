@@ -3,7 +3,6 @@
 ---TurboTuTone.
 --- Base functionality copied from ZombiePopulationRenderer
 ---@class IsoRegionsRenderer
-
 local __IsoRegionsRenderer = {}
 
 function __IsoRegionsRenderer:editRotate() end
@@ -215,6 +214,6 @@ function IsoRegionsRenderer.new() end
 ---@type Class<IsoRegionsRenderer>
 IsoRegionsRenderer.class = nil
 
-__classmetatables[IsoRegionsRenderer.class] = { __index = __IsoRegionsRenderer }
+__classmetatables[IsoRegionsRenderer.class] = {__index = __IsoRegionsRenderer}
 
 zombie.iso.areas.isoregion.IsoRegionsRenderer = IsoRegionsRenderer

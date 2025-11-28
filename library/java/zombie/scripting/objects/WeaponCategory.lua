@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class WeaponCategory: Enum<WeaponCategory>
-
 local __WeaponCategory = {}
 
 ---@return string
@@ -47,6 +46,6 @@ function WeaponCategory.values() end
 ---@type Class<WeaponCategory>
 WeaponCategory.class = nil
 
-__classmetatables[WeaponCategory.class] = { __index = __WeaponCategory }
+__classmetatables[WeaponCategory.class] = {__index = __WeaponCategory}
 
 zombie.scripting.objects.WeaponCategory = WeaponCategory

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class VirtualZombieManager
-
 local __VirtualZombieManager = {}
 
 ---@param nSize integer
@@ -150,6 +149,6 @@ function VirtualZombieManager.new() end
 ---@type Class<VirtualZombieManager>
 VirtualZombieManager.class = nil
 
-__classmetatables[VirtualZombieManager.class] = { __index = __VirtualZombieManager }
+__classmetatables[VirtualZombieManager.class] = {__index = __VirtualZombieManager}
 
 zombie.VirtualZombieManager = VirtualZombieManager

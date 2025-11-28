@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class TraitFactory.Trait: IListBoxItem
-
 local __Trait = {}
 
 ---@param arg0 string
@@ -77,6 +76,6 @@ function Trait.new(tr, name, cost, desc, prof, removeInMP) end
 ---@type Class<TraitFactory.Trait>
 Trait.class = nil
 
-__classmetatables[Trait.class] = { __index = __Trait }
+__classmetatables[Trait.class] = {__index = __Trait}
 
 zombie.characters.traits.TraitFactory.Trait = Trait

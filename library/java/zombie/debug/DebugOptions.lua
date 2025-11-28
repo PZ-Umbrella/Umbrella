@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class DebugOptions: IDebugOptionGroup
-
 local __DebugOptions = {}
 
 ---@param newChild IDebugOption
@@ -76,6 +75,6 @@ function DebugOptions.new() end
 ---@type Class<DebugOptions>
 DebugOptions.class = nil
 
-__classmetatables[DebugOptions.class] = { __index = __DebugOptions }
+__classmetatables[DebugOptions.class] = {__index = __DebugOptions}
 
 zombie.debug.DebugOptions = DebugOptions

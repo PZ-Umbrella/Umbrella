@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ScriptModule: IScriptObjectStore
-
 local __ScriptModule = {}
 
 ---@return boolean
@@ -169,6 +168,6 @@ function ScriptModule.new() end
 ---@type Class<ScriptModule>
 ScriptModule.class = nil
 
-__classmetatables[ScriptModule.class] = { __index = __ScriptModule }
+__classmetatables[ScriptModule.class] = {__index = __ScriptModule}
 
 zombie.scripting.objects.ScriptModule = ScriptModule

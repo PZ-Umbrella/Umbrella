@@ -4,7 +4,6 @@
 ---ILuaGameCharacterClothing
 ---  Provides the functions expected by LUA when dealing with objects of this type.
 ---@class ILuaGameCharacterClothing
-
 local __ILuaGameCharacterClothing = {}
 
 ---@param desc SurvivorDesc

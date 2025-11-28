@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class Talker
-
 local __Talker = {}
 
 ---@return boolean

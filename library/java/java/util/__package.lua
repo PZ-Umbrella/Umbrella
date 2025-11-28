@@ -38,7 +38,7 @@
 --- optional methods of the Collection and Iterator interfaces.
 ---
 --- This class is a member of the
----
+--- 
 --- Java Collections Framework.
 ---@class ArrayDeque<E>
 
@@ -81,17 +81,17 @@
 --- implementing a concrete calendar system outside the package. Those
 --- fields and methods are defined as protected.
 ---
----
+--- 
 --- Like other locale-sensitive classes, Calendar provides a
 --- class method, getInstance, for getting a generally useful
 --- object of this type. Calendar's getInstance method
 --- returns a Calendar object whose
 --- calendar fields have been initialized with the current date and time:
----
----
+--- 
+--- 
 ---     Calendar rightNow = Calendar.getInstance();
----
----
+--- 
+--- 
 ---
 --- A Calendar object can produce all the calendar field values
 --- needed to implement the date-time formatting for a particular language and
@@ -137,7 +137,7 @@
 --- parameters: the first day of the week and the minimal days in first week
 --- (from 1 to 7).  These numbers are taken from the locale resource data or the
 --- locale itself when a Calendar is constructed. If the designated
---- locale contains "fw" and/or "rg"
+--- locale contains "fw" and/or "rg" 
 --- Unicode extensions, the first day of the week will be obtained according to
 --- those extensions. If both "fw" and "rg" are specified, the value from the "fw"
 --- extension supersedes the implicit one from the "rg" extension.
@@ -173,21 +173,21 @@
 --- most recently set single field, will be used.
 ---
 --- For the date fields:
----
----
+--- 
+--- 
 --- YEAR + MONTH + DAY_OF_MONTH
 --- YEAR + MONTH + WEEK_OF_MONTH + DAY_OF_WEEK
 --- YEAR + MONTH + DAY_OF_WEEK_IN_MONTH + DAY_OF_WEEK
 --- YEAR + DAY_OF_YEAR
 --- YEAR + DAY_OF_WEEK + WEEK_OF_YEAR
----
+--- 
 ---
 --- For the time of day fields:
----
----
+--- 
+--- 
 --- HOUR_OF_DAY
 --- AM_PM + HOUR
----
+--- 
 ---
 --- If there are any calendar fields whose values haven't been set in the selected
 --- field combination, Calendar uses their default values. The default
@@ -196,11 +196,11 @@
 --- of the start of the Epoch: i.e., YEAR = 1970, MONTH =
 --- JANUARY, DAY_OF_MONTH = 1, etc.
 ---
----
+--- 
 --- Note: There are certain possible ambiguities in
 --- interpretation of certain singular times, which are resolved in the
 --- following ways:
----
+--- 
 ---      23:59 is the last minute of the day and 00:00 is the first
 ---          minute of the next day. Thus, 23:59 on Dec 31, 1999 < 00:00 on
 ---          Jan 1, 2000 < 00:01 on Jan 1, 2000.
@@ -208,9 +208,9 @@
 ---      Although historically not precise, midnight also belongs to "am",
 ---          and noon belongs to "pm", so on the same day,
 ---          12:00 am (midnight) < 12:01 am, and 12:00 pm (noon) < 12:01 pm
+--- 
 ---
----
----
+--- 
 --- The date or time format strings are not part of the definition of a
 --- calendar, as those must be modifiable or overridable by the user at
 --- runtime. Use DateFormat
@@ -250,7 +250,7 @@
 --- to field f.  This is equivalent to calling set(f,
 --- get(f) + delta) with two adjustments:
 ---
----
+--- 
 ---   Add rule 1. The value of field f
 ---   after the call minus the value of field f before the
 ---   call is delta, modulo any overflow that has occurred in
@@ -268,7 +268,7 @@
 ---   DAY_OF_MONTH. No adjustment is made to smaller fields
 ---   that are not expected to be invariant. The calendar system
 ---   determines what fields are expected to be invariant.
----
+--- 
 ---
 --- In addition, unlike set(), add() forces
 --- an immediate recomputation of the calendar's milliseconds and all
@@ -291,12 +291,12 @@
 --- fields. This is equivalent to calling add(f, delta) with
 --- the following adjustment:
 ---
----
+--- 
 ---   Roll rule. Larger fields are unchanged after the
 ---   call. A larger field represents a larger unit of
 ---   time. DAY_OF_MONTH is a larger field than
 ---   HOUR.
----
+--- 
 ---
 --- Example: See GregorianCalendar.roll(int, int).
 ---
@@ -360,7 +360,7 @@
 ---       {(x, y) such that c.compare(x, y) <= 0}.
 ---  The quotient for this total order is:
 ---       {(x, y) such that c.compare(x, y) == 0}.
----
+--- 
 ---
 --- It follows immediately from the contract for compare that the
 --- quotient is an equivalence relation on S, and that the
@@ -368,7 +368,7 @@
 --- the ordering imposed by c on S is consistent with
 --- equals, we mean that the quotient for the ordering is the equivalence
 --- relation defined by the objects' equals(Object) method(s):
----     {(x, y) such that x.equals(y)}.
+---     {(x, y) such that x.equals(y)}. 
 ---
 --- In other words, when the imposed ordering is consistent with
 --- equals, the equivalence classes defined by the equivalence relation
@@ -380,14 +380,14 @@
 --- an equivalence relation.
 ---
 --- This interface is a member of the
----
+--- 
 --- Java Collections Framework.
 ---@class Comparator<T>
 
 ---(Not exposed)
 ---The class Date represents a specific instant
 --- in time, with millisecond precision.
----
+--- 
 --- Prior to JDK 1.1, the class Date had two additional
 --- functions.  It allowed the interpretation of dates as year, month, day, hour,
 --- minute, and second values.  It also allowed the formatting and parsing
@@ -397,7 +397,7 @@
 --- fields and the DateFormat class should be used to format and
 --- parse date strings.
 --- The corresponding methods in Date are deprecated.
----
+--- 
 --- Although the Date class is intended to reflect
 --- coordinated universal time (UTC), it may not do so exactly,
 --- depending on the host environment of the Java Virtual Machine.
@@ -410,7 +410,7 @@
 --- year 1995 was 61 seconds long, thanks to an added leap second.
 --- Most computer clocks are not accurate enough to be able to reflect
 --- the leap-second distinction.
----
+--- 
 --- Some computer standards are defined in terms of Greenwich mean
 --- time (GMT), which is equivalent to universal time (UT).  GMT is
 --- the "civil" name for the standard; UT is the
@@ -427,22 +427,22 @@
 --- global positioning system (GPS) is synchronized to UTC but is
 --- not adjusted for leap seconds. An interesting source of
 --- further information is the United States Naval Observatory (USNO):
----
+--- 
 ---     <a href="https://www.usno.navy.mil/USNO">https://www.usno.navy.mil/USNO</a>
----
----
+--- 
+--- 
 --- and the material regarding "Systems of Time" at:
----
+--- 
 ---     <a href="https://www.usno.navy.mil/USNO/time/master-clock/systems-of-time">https://www.usno.navy.mil/USNO/time/master-clock/systems-of-time</a>
----
----
+--- 
+--- 
 --- which has descriptions of various different time systems including
 --- UT, UT1, and UTC.
----
+--- 
 --- In all methods of class Date that accept or return
 --- year, month, date, hours, minutes, and seconds values, the
 --- following representations are used:
----
+--- 
 --- A year y is represented by the integer
 ---     y - 1900.
 --- A month is represented by an integer from 0 to 11; 0 is January,
@@ -460,8 +460,8 @@
 ---     extremely unlikely that two leap seconds will occur in the same
 ---     minute, but this specification follows the date and time conventions
 ---     for ISO C.
----
----
+--- 
+--- 
 --- In all cases, arguments given to methods for these purposes need
 --- not fall within the indicated ranges; for example, a date may be
 --- specified as January 32 and is interpreted as meaning February 1.
@@ -474,10 +474,10 @@
 --- object, every key is associated with at most one value. Given a
 --- Dictionary and a key, the associated element can be looked up.
 --- Any non-null object can be used as a key and as a value.
----
+--- 
 --- As a rule, the equals method should be used by
 --- implementations of this class to decide if two keys are the same.
----
+--- 
 --- NOTE: This class is obsolete.  New implementations should
 --- implement the Map interface, rather than extending this class.
 ---@class Dictionary<K, V>
@@ -514,9 +514,9 @@
 --- method.  This is best done at creation time, to prevent accidental
 --- unsynchronized access:
 ---
----
+--- 
 --- Set<MyEnum> s = Collections.synchronizedSet(EnumSet.noneOf(MyEnum.class));
----
+--- 
 ---
 --- Implementation note: All basic operations execute in constant time.
 --- They are likely (though not guaranteed) to be much faster than their
@@ -524,7 +524,7 @@
 --- constant time if their argument is also an enum set.
 ---
 --- This class is a member of the
----
+--- 
 --- Java Collections Framework.
 ---@class EnumSet<E: Enum<E>>
 
@@ -533,12 +533,12 @@
 --- series of elements, one at a time. Successive calls to the
 --- nextElement method return successive elements of the
 --- series.
----
+--- 
 --- For example, to print all elements of a Vector<E> v:
----
+--- 
 ---   for (Enumeration<E> e = v.elements(); e.hasMoreElements();)
 ---       System.out.println(e.nextElement());
----
+--- 
 --- Methods are provided to enumerate through the elements of a
 --- vector, the keys of a hashtable, and the values in a hashtable.
 --- Enumerations are also used to specify the input streams to a
@@ -557,7 +557,7 @@
 --- (October 15, 1582 in some countries, later in others).  The cutover
 --- date may be changed by the caller by calling setGregorianChange().
 ---
----
+--- 
 --- Historically, in those countries which adopted the Gregorian calendar first,
 --- October 4, 1582 (Julian) was thus followed by October 15, 1582 (Gregorian). This calendar models
 --- this correctly.  Before the Gregorian cutover, GregorianCalendar
@@ -566,7 +566,7 @@
 --- leap years every four years, whereas the Gregorian calendar omits century
 --- years which are not divisible by 400.
 ---
----
+--- 
 --- GregorianCalendar implements proleptic Gregorian and
 --- Julian calendars. That is, dates are computed by extrapolating the current
 --- rules indefinitely far backward and forward in time. As a result,
@@ -577,7 +577,7 @@
 --- leap year rules were applied irregularly, and before 45 BC the Julian
 --- calendar did not even exist.
 ---
----
+--- 
 --- Prior to the institution of the Gregorian calendar, New Year's Day was
 --- March 25. To avoid confusion, this calendar always uses January 1. A manual
 --- adjustment may be made if desired for dates that are prior to the Gregorian
@@ -588,18 +588,18 @@
 --- Values calculated for the WEEK_OF_YEAR field range from 1 to 53. The first week of a
 --- calendar year is the earliest seven day period starting on getFirstDayOfWeek() that contains at
 --- least getMinimalDaysInFirstWeek() days from that year. It thus depends
---- on the values of getMinimalDaysInFirstWeek(),
+--- on the values of getMinimalDaysInFirstWeek(), 
 --- getFirstDayOfWeek(), and the day of the week of January 1. Weeks
 --- between week 1 of one year and week 1 of the following year
 --- (exclusive) are numbered sequentially from 2 to 52 or 53 (except
 --- for year(s) involved in the Julian-Gregorian transition).
 ---
---- The getFirstDayOfWeek() and
+--- The getFirstDayOfWeek() and 
 --- getMinimalDaysInFirstWeek() values are initialized using
---- locale-dependent resources when constructing a
+--- locale-dependent resources when constructing a 
 --- GregorianCalendar. The week
---- determination is compatible with the ISO 8601 standard when
---- getFirstDayOfWeek() is MONDAY and
+--- determination is compatible with the ISO 8601 standard when 
+--- getFirstDayOfWeek() is MONDAY and 
 --- getMinimalDaysInFirstWeek() is 4, which values are used in locales
 --- where the standard is preferred. These values can explicitly be set by
 --- calling setFirstDayOfWeek() and
@@ -611,8 +611,8 @@
 --- Therefore, the first and last days of a week year may have
 --- different calendar year values.
 ---
---- For example, January 1, 1998 is a Thursday. If
---- getFirstDayOfWeek() is MONDAY and
+--- For example, January 1, 1998 is a Thursday. If 
+--- getFirstDayOfWeek() is MONDAY and 
 --- getMinimalDaysInFirstWeek() is 4 (ISO 8601 standard compatible
 --- setting), then week 1 of 1998 starts on December 29, 1997, and ends
 --- on January 4, 1998. The week year is 1998 for the last three days
@@ -647,99 +647,99 @@
 --- undefined. GregorianCalendar uses the following
 --- default value for each calendar field if its value is undefined.
 ---
----
+--- 
 --- GregorianCalendar default field values
----
----
----
+---   
+---     
+---       
 ---          Field
----
----
+---       
+---       
 ---          Default Value
----
----
----
----
----
----
+---       
+---     
+---   
+---   
+---     
+---       
 ---              ERA
----
----
+---       
+---       
 ---              AD
----
----
----
----
+---       
+---     
+---     
+---       
 ---              YEAR
----
----
+---       
+---       
 ---              1970
----
----
----
----
+---       
+---     
+---     
+---       
 ---              MONTH
----
----
+---       
+---       
 ---              JANUARY
----
----
----
----
+---       
+---     
+---     
+---       
 ---              DAY_OF_MONTH
----
----
+---       
+---       
 ---              1
----
----
----
----
+---       
+---     
+---     
+---       
 ---              DAY_OF_WEEK
----
----
+---       
+---       
 ---              the first day of week
----
----
----
----
+---       
+---     
+---     
+---       
 ---              WEEK_OF_MONTH
----
----
+---       
+---       
 ---              0
----
----
----
----
+---       
+---     
+---     
+---       
 ---              DAY_OF_WEEK_IN_MONTH
----
----
+---       
+---       
 ---              1
----
----
----
----
+---       
+---     
+---     
+---       
 ---              AM_PM
----
----
+---       
+---       
 ---              AM
----
----
----
----
+---       
+---     
+---     
+---       
 ---              HOUR, HOUR_OF_DAY, MINUTE, SECOND, MILLISECOND
----
----
+---       
+---       
 ---              0
----
----
----
----
+---       
+---     
+---   
+--- 
 --- Default values are not applicable for the fields not listed above.
 ---
----
+--- 
 --- Example:
----
----
+--- 
+--- 
 --- // get the supported ids for GMT-08:00 (Pacific Standard Time)
 --- String[] ids = TimeZone.getAvailableIDs(-8 * 60 * 60 * 1000);
 --- // if no ids were returned, something is wrong. get out.
@@ -861,7 +861,7 @@
 --- should be used only to detect bugs.
 ---
 --- This class is a member of the
----
+--- 
 --- Java Collections Framework.
 ---@class HashSet<E>
 
@@ -882,17 +882,17 @@
 --- returned by a call to next().
 --- An iterator for a list of length n has n+1 possible
 --- cursor positions, as illustrated by the carets (^) below:
----
+--- 
 ---                      Element(0)   Element(1)   Element(2)   ... Element(n-1)
 --- cursor positions:  ^            ^            ^            ^                  ^
----
+--- 
 --- Note that the remove() and set(Object) methods are
 --- not defined in terms of the cursor position;  they are defined to
 --- operate on the last element returned by a call to next() or
 --- previous().
 ---
 --- This interface is a member of the
----
+--- 
 --- Java Collections Framework.
 ---@class ListIterator<E>
 
@@ -910,7 +910,7 @@
 --- As an example, think of two Language Priority Lists each of which
 --- includes only one language range and a set of following language tags:
 ---
----
+--- 
 ---    de (German)
 ---    de-DE (German, Germany)
 ---    de-Deva (German, in Devanagari script)
@@ -918,75 +918,75 @@
 ---    de-DE-1996 (German, Germany, orthography of 1996)
 ---    de-Latn-DE (German, in Latin script, Germany)
 ---    de-Latn-DE-1996 (German, in Latin script, Germany, orthography of 1996)
----
+--- 
 ---
 --- The filtering method will behave as follows:
 ---
----
+--- 
 --- Filtering method behavior
----
----
+--- 
+--- 
 --- Filtering Mode
 --- Language Priority List: "de-DE"
 --- Language Priority List: "de-*-DE"
----
----
----
----
----
+--- 
+--- 
+--- 
+--- 
+--- 
 --- AUTOSELECT_FILTERING
----
----
+--- 
+--- 
 --- Performs basic filtering and returns "de-DE" and
 --- "de-DE-1996".
----
----
+--- 
+--- 
 --- Performs extended filtering and returns "de-DE",
 --- "de-Deva-DE", "de-DE-1996", "de-Latn-DE", and
 --- "de-Latn-DE-1996".
----
----
----
----
+--- 
+--- 
+--- 
+--- 
 --- EXTENDED_FILTERING
----
----
+--- 
+--- 
 --- Performs extended filtering and returns "de-DE",
 --- "de-Deva-DE", "de-DE-1996", "de-Latn-DE", and
 --- "de-Latn-DE-1996".
----
+--- 
 --- Same as above.
----
----
----
+--- 
+--- 
+--- 
 --- IGNORE_EXTENDED_RANGES
----
----
+--- 
+--- 
 --- Performs basic filtering and returns "de-DE" and
 --- "de-DE-1996".
----
----
+--- 
+--- 
 --- Performs basic filtering and returns null because
 --- nothing matches.
----
----
----
----
+--- 
+--- 
+--- 
+--- 
 --- MAP_EXTENDED_RANGES
----
+--- 
 --- Same as above.
----
+--- 
 --- Performs basic filtering and returns "de-DE" and
 --- "de-DE-1996" because "de-*-DE" is mapped to
 --- "de-DE".
----
----
----
----
+--- 
+--- 
+--- 
+--- 
 --- REJECT_EXTENDED_RANGES
----
+--- 
 --- Same as above.
----
+--- 
 --- Throws IllegalArgumentException because "de-*-DE" is
 --- not a valid basic language range.
 ---@class Locale.FilteringMode
@@ -1009,14 +1009,14 @@
 --- There are two types of language ranges: basic and extended. In RFC
 --- 4647, the syntax of language ranges is expressed in
 --- ABNF as follows:
----
----
+--- 
+--- 
 ---     basic-language-range    = (1*8ALPHA *("-" 1*8alphanum)) / "*"
 ---     extended-language-range = (1*8ALPHA / "*")
 ---                               *("-" (1*8alphanum / "*"))
 ---     alphanum                = ALPHA / DIGIT
----
----
+--- 
+--- 
 --- For example, "en" (English), "ja-JP" (Japanese, Japan),
 --- "*" (special language range which matches any language tag) are
 --- basic language ranges, whereas "*-CH" (any languages,
@@ -1030,7 +1030,7 @@
 --- value may be modifiable if the optional setValue method is
 --- implemented. The Entry may be independent of any map, or it may represent
 --- an entry of the entry-set view of a map.
----
+--- 
 --- Instances of the Map.Entry interface may be obtained by iterating
 --- the entry-set view of a map. These instances maintain a connection to the
 --- original, backing map. This connection to the backing map is valid
@@ -1072,7 +1072,7 @@
 --- modified using a linear congruential formula. (See Donald E. Knuth,
 --- The Art of Computer Programming, Volume 2, Third
 --- edition: Seminumerical Algorithms, Section 3.2.1.)
----
+--- 
 --- If two instances of Random are created with the same
 --- seed, and the same sequence of method calls is made for each, they
 --- will generate and return identical sequences of numbers. In order to
@@ -1082,11 +1082,11 @@
 --- portability of Java code. However, subclasses of class Random
 --- are permitted to use other algorithms, so long as they adhere to the
 --- general contracts for all the methods.
----
+--- 
 --- The algorithms implemented by class Random use a
 --- protected utility method that on each invocation can supply
 --- up to 32 pseudorandomly generated bits.
----
+--- 
 --- Many applications will find the method Math.random() simpler to use.
 ---
 --- Instances of java.util.Random are threadsafe.
@@ -1146,7 +1146,7 @@
 --- provide a convenient way to create unmodifiable sets. The Set
 --- instances created by these methods have the following characteristics:
 ---
----
+--- 
 --- They are unmodifiable. Elements cannot
 --- be added or removed. Calling any mutator method on the Set
 --- will always cause UnsupportedOperationException to be thrown.
@@ -1168,10 +1168,10 @@
 --- They are serialized as specified on the
 --- Serialized Form
 --- page.
----
+--- 
 ---
 --- This interface is a member of the
----
+--- 
 --- Java Collections Framework.
 ---@class Set<E>
 
@@ -1182,20 +1182,20 @@
 ---TimeZone represents a time zone offset, and also figures out daylight
 --- savings.
 ---
----
+--- 
 --- Typically, you get a TimeZone using getDefault
 --- which creates a TimeZone based on the time zone where the program
 --- is running. For example, for a program running in Japan, getDefault
 --- creates a TimeZone object based on Japanese Standard Time.
 ---
----
+--- 
 --- You can also get a TimeZone using getTimeZone
 --- along with a time zone ID. For instance, the time zone ID for the
 --- U.S. Pacific Time zone is "America/Los_Angeles". So, you can get a
 --- U.S. Pacific Time TimeZone object with:
----
+--- 
 --- TimeZone tz = TimeZone.getTimeZone("America/Los_Angeles");
----
+--- 
 --- You can use the getAvailableIDs method to iterate through
 --- all the supported time zone IDs. You can then choose a
 --- supported ID to get a TimeZone.
@@ -1203,7 +1203,7 @@
 --- supported IDs, then a custom time zone ID can be specified to
 --- produce a TimeZone. The syntax of a custom time zone ID is:
 ---
----
+--- 
 --- <a id="CustomID"><i>CustomID:</i></a>
 ---         <code>GMT</code> <i>Sign</i> <i>Hours</i> <code>:</code> <i>Minutes</i>
 ---         <code>GMT</code> <i>Sign</i> <i>Hours</i> <i>Minutes</i>
@@ -1217,21 +1217,21 @@
 ---         <i>Digit</i> <i>Digit</i>
 --- <i>Digit:</i> one of
 ---         <code>0 1 2 3 4 5 6 7 8 9</code>
----
+--- 
 ---
 --- Hours must be between 0 to 23 and Minutes must be
 --- between 00 to 59.  For example, "GMT+10" and "GMT+0010" mean ten
 --- hours and ten minutes ahead of GMT, respectively.
----
+--- 
 --- The format is locale independent and digits must be taken from the
 --- Basic Latin block of the Unicode standard. No daylight saving time
 --- transition schedule can be specified with a custom time zone ID. If
 --- the specified string doesn't match the syntax, "GMT"
 --- is used.
----
+--- 
 --- When creating a TimeZone, the specified custom time
 --- zone ID is normalized in the following syntax:
----
+--- 
 --- <a id="NormalizedCustomID"><i>NormalizedCustomID:</i></a>
 ---         <code>GMT</code> <i>Sign</i> <i>TwoDigitHours</i> <code>:</code> <i>Minutes</i>
 --- <i>Sign:</i> one of
@@ -1242,7 +1242,7 @@
 ---         <i>Digit</i> <i>Digit</i>
 --- <i>Digit:</i> one of
 ---         <code>0 1 2 3 4 5 6 7 8 9</code>
----
+--- 
 --- For example, TimeZone.getTimeZone("GMT-8").getID() returns "GMT-08:00".
 ---
 --- Three-letter time zone IDs
@@ -1266,24 +1266,24 @@
 ---  The layout of a variant 2 (Leach-Salz) UUID is as follows:
 ---
 --- The most significant long consists of the following unsigned fields:
----
+--- 
 --- 0xFFFFFFFF00000000 time_low
 --- 0x00000000FFFF0000 time_mid
 --- 0x000000000000F000 version
 --- 0x0000000000000FFF time_hi
----
+--- 
 --- The least significant long consists of the following unsigned fields:
----
+--- 
 --- 0xC000000000000000 variant
 --- 0x3FFF000000000000 clock_seq
 --- 0x0000FFFFFFFFFFFF node
----
+--- 
 ---
 ---  The variant field contains a value which identifies the layout of the
---- UUID.  The bit layout described above is valid only for a
+--- UUID.  The bit layout described above is valid only for a 
 --- UUID with a variant value of 2, which indicates the Leach-Salz variant.
 ---
----  The version field holds a value that describes the type of this
+---  The version field holds a value that describes the type of this 
 --- UUID.  There are four different basic types of UUIDs: time-based, DCE
 --- security, name-based, and randomly generated UUIDs.  These types have a
 --- version value of 1, 2, 3 and 4, respectively.

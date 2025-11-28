@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class WorldMapMarkersV1
-
 local __WorldMapMarkersV1 = {}
 
 ---@param worldX integer
@@ -31,6 +30,6 @@ function WorldMapMarkersV1.new(ui) end
 ---@type Class<WorldMapMarkersV1>
 WorldMapMarkersV1.class = nil
 
-__classmetatables[WorldMapMarkersV1.class] = { __index = __WorldMapMarkersV1 }
+__classmetatables[WorldMapMarkersV1.class] = {__index = __WorldMapMarkersV1}
 
 zombie.worldMap.markers.WorldMapMarkersV1 = WorldMapMarkersV1

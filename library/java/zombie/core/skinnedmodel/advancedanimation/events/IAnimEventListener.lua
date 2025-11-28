@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IAnimEventListener
-
 local __IAnimEventListener = {}
 
 ---@param arg0 IsoGameCharacter

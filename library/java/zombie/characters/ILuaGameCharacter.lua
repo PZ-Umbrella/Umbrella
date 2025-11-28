@@ -4,7 +4,6 @@
 ---ILuaGameCharacter
 --- Provides the functions expected by LUA when dealing with objects of this type.
 ---@class ILuaGameCharacter: ILuaIsoObject, ILuaVariableSource, ILuaGameCharacterAttachedItems, ILuaGameCharacterDamage, ILuaGameCharacterClothing, ILuaGameCharacterHealth
-
 local __ILuaGameCharacter = {}
 
 function __ILuaGameCharacter:Callout() end

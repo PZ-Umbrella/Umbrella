@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ErosionMain
-
 local __ErosionMain = {}
 
 function __ErosionMain:DebugUpdateMapNow() end
@@ -62,6 +61,6 @@ function ErosionMain.new(_sprMngr, _debug) end
 ---@type Class<ErosionMain>
 ErosionMain.class = nil
 
-__classmetatables[ErosionMain.class] = { __index = __ErosionMain }
+__classmetatables[ErosionMain.class] = {__index = __ErosionMain}
 
 zombie.erosion.ErosionMain = ErosionMain

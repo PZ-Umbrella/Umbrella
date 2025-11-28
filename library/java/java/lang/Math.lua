@@ -51,7 +51,7 @@
 --- floating-point approximation.  Not all approximations that have 1
 --- ulp accuracy will automatically meet the monotonicity requirements.
 ---
----
+--- 
 --- The platform uses signed two's complement integer arithmetic with
 --- int and long primitive types.  The developer should choose
 --- the primitive type to ensure that arithmetic operations consistently
@@ -84,7 +84,6 @@
 --- implementation condition than required for most of the methods in
 --- question that are also included in this class.
 ---@class Math
-
 local __Math = {}
 
 Math = {}
@@ -202,7 +201,7 @@ function Math.absExact(a) end
 --- If the argument is NaN or its absolute value is greater
 --- than 1, then the result is NaN.
 --- If the argument is 1.0, the result is positive zero.
----
+--- 
 ---
 --- The computed result must be within 1 ulp of the exact result.
 --- Results must be semi-monotonic.
@@ -245,7 +244,7 @@ function Math.asin(a) end
 --- If the argument is infinite,
 --- then the result is the closest value to pi/2 with the
 --- same sign as the input.
----
+--- 
 ---
 --- The computed result must be within 1 ulp of the exact result.
 --- Results must be semi-monotonic.
@@ -311,7 +310,7 @@ function Math.atan2(y, x) end
 ---
 --- Special cases:
 ---
----
+--- 
 ---
 --- If the argument is NaN, then the result is NaN.
 ---
@@ -321,7 +320,7 @@ function Math.atan2(y, x) end
 --- If the argument is zero, then the result is a zero with the
 --- same sign as the argument.
 ---
----
+--- 
 ---
 --- The computed result must be within 1 ulp of the exact result.
 ---@param a number a value.
@@ -387,7 +386,7 @@ function Math.cos(a) end
 --- where e is Euler's number.
 ---
 --- Special cases:
----
+--- 
 ---
 --- If the argument is NaN, then the result is NaN.
 ---
@@ -396,7 +395,7 @@ function Math.cos(a) end
 ---
 --- If the argument is zero, then the result is 1.0.
 ---
----
+--- 
 ---
 --- The computed result must be within 2.5 ulps of the exact result.
 ---@param x number The number whose hyperbolic cosine is to be returned.
@@ -425,7 +424,7 @@ function Math.decrementExact(a) end
 --- If the argument is negative infinity, then the result is
 --- positive zero.
 --- If the argument is zero, then the result is 1.0.
----
+--- 
 ---
 --- The computed result must be within 1 ulp of the exact result.
 --- Results must be semi-monotonic.
@@ -440,7 +439,7 @@ function Math.exp(a) end
 --- result of ex than exp(x).
 ---
 --- Special cases:
----
+--- 
 --- If the argument is NaN, the result is NaN.
 ---
 --- If the argument is positive infinity, then the result is
@@ -452,7 +451,7 @@ function Math.exp(a) end
 --- If the argument is zero, then the result is a zero with the
 --- same sign as the argument.
 ---
----
+--- 
 ---
 --- The computed result must be within 1 ulp of the exact result.
 --- Results must be semi-monotonic.  The result of
@@ -486,15 +485,15 @@ function Math.floor(a) end
 --- Integer.MIN_VALUE and the divisor is -1,
 --- then integer overflow occurs and
 --- the result is equal to Integer.MIN_VALUE.
----
+--- 
 --- Normal integer division operates under the round to zero rounding mode
 --- (truncation).  This operation instead acts under the round toward
 --- negative infinity (floor) rounding mode.
 --- The floor rounding mode gives different results from truncation
 --- when the exact result is negative.
----
+--- 
 ---   If the signs of the arguments are the same, the results of
----       floorDiv and the / operator are the same.
+---       floorDiv and the / operator are the same.  
 ---       For example, floorDiv(4, 3) == 1 and (4 / 3) == 1.
 ---   If the signs of the arguments are different,  the quotient is negative and
 ---       floorDiv returns the integer less than or equal to the quotient
@@ -513,13 +512,13 @@ function Math.floorDiv(x, y) end
 --- Long.MIN_VALUE and the divisor is -1,
 --- then integer overflow occurs and
 --- the result is equal to Long.MIN_VALUE.
----
+--- 
 --- Normal integer division operates under the round to zero rounding mode
 --- (truncation).  This operation instead acts under the round toward
 --- negative infinity (floor) rounding mode.
 --- The floor rounding mode gives different results from truncation
 --- when the exact result is negative.
----
+--- 
 --- For examples, see floorDiv(int, int).
 ---@param x integer the dividend
 ---@param y integer the divisor
@@ -533,13 +532,13 @@ function Math.floorDiv(x, y) end
 --- Long.MIN_VALUE and the divisor is -1,
 --- then integer overflow occurs and
 --- the result is equal to Long.MIN_VALUE.
----
+--- 
 --- Normal integer division operates under the round to zero rounding mode
 --- (truncation).  This operation instead acts under the round toward
 --- negative infinity (floor) rounding mode.
 --- The floor rounding mode gives different results from truncation
 --- when the exact result is negative.
----
+--- 
 --- For examples, see floorDiv(int, int).
 ---@param x integer the dividend
 ---@param y integer the divisor
@@ -548,39 +547,39 @@ function Math.floorDiv(x, y) end
 function Math.floorDiv(x, y) end
 
 ---Returns the floor modulus of the int arguments.
----
+--- 
 --- The floor modulus is x - (floorDiv(x, y) * y),
 --- has the same sign as the divisor y, and
 --- is in the range of -abs(y) < r < +abs(y).
 ---
----
+--- 
 --- The relationship between floorDiv and floorMod is such that:
----
+--- 
 ---   floorDiv(x, y) * y + floorMod(x, y) == x
----
----
+--- 
+--- 
 --- The difference in values between floorMod and
 --- the % operator is due to the difference between
 --- floorDiv that returns the integer less than or equal to the quotient
 --- and the / operator that returns the integer closest to zero.
----
+--- 
 --- Examples:
----
+--- 
 ---   If the signs of the arguments are the same, the results
 ---       of floorMod and the % operator are the same.
----
+---       
 ---       floorMod(+4, +3) == +1;   and (+4 % +3) == +1
 ---       floorMod(-4, -3) == -1;   and (-4 % -3) == -1
----
+---       
 ---   If the signs of the arguments are different, the results
 ---       differ from the % operator.
----
+---       
 ---       floorMod(+4, -3) == -2;   and (+4 % -3) == +1
 ---       floorMod(-4, +3) == +2;   and (-4 % +3) == -1
----
----
----
----
+---       
+---   
+--- 
+--- 
 --- If the signs of arguments are unknown and a positive modulus
 --- is needed it can be computed as (floorMod(x, y) + abs(y)) % abs(y).
 ---@param x integer the dividend
@@ -589,17 +588,17 @@ function Math.floorDiv(x, y) end
 function Math.floorMod(x, y) end
 
 ---Returns the floor modulus of the long and int arguments.
----
+--- 
 --- The floor modulus is x - (floorDiv(x, y) * y),
 --- has the same sign as the divisor y, and
 --- is in the range of -abs(y) < r < +abs(y).
 ---
----
+--- 
 --- The relationship between floorDiv and floorMod is such that:
----
+--- 
 ---   floorDiv(x, y) * y + floorMod(x, y) == x
----
----
+--- 
+--- 
 --- For examples, see floorMod(int, int).
 ---@param x integer the dividend
 ---@param y integer the divisor
@@ -607,17 +606,17 @@ function Math.floorMod(x, y) end
 function Math.floorMod(x, y) end
 
 ---Returns the floor modulus of the long arguments.
----
+--- 
 --- The floor modulus is x - (floorDiv(x, y) * y),
 --- has the same sign as the divisor y, and
 --- is in the range of -abs(y) < r < +abs(y).
 ---
----
+--- 
 --- The relationship between floorDiv and floorMod is such that:
----
+--- 
 ---   floorDiv(x, y) * y + floorMod(x, y) == x
----
----
+--- 
+--- 
 --- For examples, see floorMod(int, int).
 ---@param x integer the dividend
 ---@param y integer the divisor
@@ -638,7 +637,7 @@ function Math.floorMod(x, y) end
 --- addition operation.
 ---
 --- Special cases:
----
+--- 
 ---  If any argument is NaN, the result is NaN.
 ---
 ---  If one of the first two arguments is infinite and the
@@ -649,7 +648,7 @@ function Math.floorMod(x, y) end
 --- the other is neither zero nor NaN) and the third argument is an
 --- infinity of the opposite sign, the result is NaN.
 ---
----
+--- 
 ---
 --- Note that fma(a, 1.0, c) returns the same
 --- result as (a + c).  However,
@@ -680,7 +679,7 @@ function Math.fma(a, b, c) end
 --- addition operation.
 ---
 --- Special cases:
----
+--- 
 ---  If any argument is NaN, the result is NaN.
 ---
 ---  If one of the first two arguments is infinite and the
@@ -691,7 +690,7 @@ function Math.fma(a, b, c) end
 --- the other is neither zero nor NaN) and the third argument is an
 --- infinity of the opposite sign, the result is NaN.
 ---
----
+--- 
 ---
 --- Note that fma(a, 1.0f, c) returns the same
 --- result as (a + c).  However,
@@ -711,7 +710,7 @@ function Math.fma(a, b, c) end
 ---Returns the unbiased exponent used in the representation of a
 --- float.  Special cases:
 ---
----
+--- 
 --- If the argument is NaN or infinite, then the result is
 --- Float.MAX_EXPONENT + 1.
 --- If the argument is zero or subnormal, then the result is
@@ -723,7 +722,7 @@ function Math.getExponent(f) end
 ---Returns the unbiased exponent used in the representation of a
 --- double.  Special cases:
 ---
----
+--- 
 --- If the argument is NaN or infinite, then the result is
 --- Double.MAX_EXPONENT + 1.
 --- If the argument is zero or subnormal, then the result is
@@ -736,7 +735,7 @@ function Math.getExponent(d) end
 --- without intermediate overflow or underflow.
 ---
 --- Special cases:
----
+--- 
 ---
 ---  If either argument is infinite, then the result
 --- is positive infinity.
@@ -745,7 +744,7 @@ function Math.getExponent(d) end
 --- then the result is NaN.
 ---
 ---  If both arguments are zero, the result is positive zero.
----
+--- 
 ---
 --- The computed result must be within 1 ulp of the exact
 --- result.  If one parameter is held constant, the results must be
@@ -780,7 +779,7 @@ function Math.incrementExact(a) end
 --- result is negative infinity.
 --- If the argument is 1.0, then the result is positive
 --- zero.
----
+--- 
 ---
 --- The computed result must be within 1 ulp of the exact result.
 --- Results must be semi-monotonic.
@@ -802,7 +801,7 @@ function Math.log(a) end
 --- integer n, then the result is n. In particular,
 --- if the argument is 1.0 (100), then the
 --- result is positive zero.
----
+--- 
 ---
 --- The computed result must be within 1 ulp of the exact result.
 --- Results must be semi-monotonic.
@@ -818,7 +817,7 @@ function Math.log10(a) end
 ---
 --- Special cases:
 ---
----
+--- 
 ---
 --- If the argument is NaN or less than -1, then the result is
 --- NaN.
@@ -832,7 +831,7 @@ function Math.log10(a) end
 --- If the argument is zero, then the result is a zero with the
 --- same sign as the argument.
 ---
----
+--- 
 ---
 --- The computed result must be within 1 ulp of the exact result.
 --- Results must be semi-monotonic.
@@ -981,9 +980,9 @@ function Math.negateExact(a) end
 --- argument in the direction of the second argument.  If both
 --- arguments compare as equal the second argument is returned.
 ---
----
+--- 
 --- Special cases:
----
+--- 
 ---  If either argument is a NaN, then NaN is returned.
 ---
 ---  If both arguments are signed zeros, direction
@@ -1019,9 +1018,9 @@ function Math.nextAfter(start, direction) end
 --- arguments compare as equal a value equivalent to the second argument
 --- is returned.
 ---
----
+--- 
 --- Special cases:
----
+--- 
 ---  If either argument is a NaN, then NaN is returned.
 ---
 ---  If both arguments are signed zeros, a value equivalent
@@ -1058,7 +1057,7 @@ function Math.nextAfter(start, direction) end
 --- equivalent nextAfter call.
 ---
 --- Special Cases:
----
+--- 
 ---  If the argument is NaN, the result is NaN.
 ---
 ---  If the argument is negative infinity, the result is
@@ -1079,7 +1078,7 @@ function Math.nextDown(d) end
 --- equivalent nextAfter call.
 ---
 --- Special Cases:
----
+--- 
 ---  If the argument is NaN, the result is NaN.
 ---
 ---  If the argument is negative infinity, the result is
@@ -1100,7 +1099,7 @@ function Math.nextDown(f) end
 --- nextAfter call.
 ---
 --- Special Cases:
----
+--- 
 ---  If the argument is NaN, the result is NaN.
 ---
 ---  If the argument is positive infinity, the result is
@@ -1121,7 +1120,7 @@ function Math.nextUp(d) end
 --- nextAfter call.
 ---
 --- Special Cases:
----
+--- 
 ---  If the argument is NaN, the result is NaN.
 ---
 ---  If the argument is positive infinity, the result is
@@ -1146,83 +1145,83 @@ function Math.nextUp(f) end
 --- then the result is NaN.
 ---
 --- If
----
+--- 
 --- the absolute value of the first argument is greater than 1
 --- and the second argument is positive infinity, or
 --- the absolute value of the first argument is less than 1 and
 --- the second argument is negative infinity,
----
+--- 
 --- then the result is positive infinity.
 ---
 --- If
----
+--- 
 --- the absolute value of the first argument is greater than 1 and
 --- the second argument is negative infinity, or
 --- the absolute value of the
 --- first argument is less than 1 and the second argument is positive
 --- infinity,
----
+--- 
 --- then the result is positive zero.
 ---
 --- If the absolute value of the first argument equals 1 and the
 --- second argument is infinite, then the result is NaN.
 ---
 --- If
----
+--- 
 --- the first argument is positive zero and the second argument
 --- is greater than zero, or
 --- the first argument is positive infinity and the second
 --- argument is less than zero,
----
+--- 
 --- then the result is positive zero.
 ---
 --- If
----
+--- 
 --- the first argument is positive zero and the second argument
 --- is less than zero, or
 --- the first argument is positive infinity and the second
 --- argument is greater than zero,
----
+--- 
 --- then the result is positive infinity.
 ---
 --- If
----
+--- 
 --- the first argument is negative zero and the second argument
 --- is greater than zero but not a finite odd integer, or
 --- the first argument is negative infinity and the second
 --- argument is less than zero but not a finite odd integer,
----
+--- 
 --- then the result is positive zero.
 ---
 --- If
----
+--- 
 --- the first argument is negative zero and the second argument
 --- is a positive finite odd integer, or
 --- the first argument is negative infinity and the second
 --- argument is a negative finite odd integer,
----
+--- 
 --- then the result is negative zero.
 ---
 --- If
----
+--- 
 --- the first argument is negative zero and the second argument
 --- is less than zero but not a finite odd integer, or
 --- the first argument is negative infinity and the second
 --- argument is greater than zero but not a finite odd integer,
----
+--- 
 --- then the result is positive infinity.
 ---
 --- If
----
+--- 
 --- the first argument is negative zero and the second argument
 --- is a negative finite odd integer, or
 --- the first argument is negative infinity and the second
 --- argument is a positive finite odd integer,
----
+--- 
 --- then the result is negative infinity.
 ---
 --- If the first argument is finite and less than zero
----
+--- 
 ---  if the second argument is a finite even integer, the
 --- result is equal to the result of raising the absolute value of
 --- the first argument to the power of the second argument
@@ -1234,7 +1233,7 @@ function Math.nextUp(f) end
 ---
 --- if the second argument is finite and not an integer, then
 --- the result is NaN.
----
+--- 
 ---
 --- If both arguments are integers, then the result is exactly equal
 --- to the mathematical result of raising the first argument to the power
@@ -1293,7 +1292,7 @@ function Math.rint(a) end
 ---Returns the closest int to the argument, with ties
 --- rounding to positive infinity.
 ---
----
+--- 
 --- Special cases:
 --- If the argument is NaN, the result is 0.
 --- If the argument is negative infinity or any value less than or
@@ -1328,7 +1327,7 @@ function Math.round(a) end
 --- rounded as if performed by a single correctly rounded
 --- floating-point multiply.  If the exponent of the result is
 --- between Double.MIN_EXPONENT and Double.MAX_EXPONENT, the answer is calculated exactly.  If the
---- exponent of the result would be larger than
+--- exponent of the result would be larger than 
 --- Double.MAX_EXPONENT, an infinity is returned.  Note that if
 --- the result is subnormal, precision may be lost; that is, when
 --- scalb(x, n) is subnormal, scalb(scalb(x, n),
@@ -1336,7 +1335,7 @@ function Math.round(a) end
 --- result has the same sign as d.
 ---
 --- Special cases:
----
+--- 
 ---  If the first argument is NaN, NaN is returned.
 ---  If the first argument is infinite, then an infinity of the
 --- same sign is returned.
@@ -1351,7 +1350,7 @@ function Math.scalb(d, scaleFactor) end
 --- rounded as if performed by a single correctly rounded
 --- floating-point multiply.  If the exponent of the result is
 --- between Float.MIN_EXPONENT and Float.MAX_EXPONENT, the answer is calculated exactly.  If the
---- exponent of the result would be larger than
+--- exponent of the result would be larger than 
 --- Float.MAX_EXPONENT, an infinity is returned.  Note that if the
 --- result is subnormal, precision may be lost; that is, when
 --- scalb(x, n) is subnormal, scalb(scalb(x, n),
@@ -1359,7 +1358,7 @@ function Math.scalb(d, scaleFactor) end
 --- result has the same sign as f.
 ---
 --- Special cases:
----
+--- 
 ---  If the first argument is NaN, NaN is returned.
 ---  If the first argument is infinite, then an infinity of the
 --- same sign is returned.
@@ -1375,7 +1374,7 @@ function Math.scalb(f, scaleFactor) end
 --- argument is less than zero.
 ---
 --- Special Cases:
----
+--- 
 ---  If the argument is NaN, then the result is NaN.
 ---  If the argument is positive zero or negative zero, then the
 ---      result is the same as the argument.
@@ -1388,7 +1387,7 @@ function Math.signum(d) end
 --- argument is less than zero.
 ---
 --- Special Cases:
----
+--- 
 ---  If the argument is NaN, then the result is NaN.
 ---  If the argument is positive zero or negative zero, then the
 ---      result is the same as the argument.
@@ -1414,7 +1413,7 @@ function Math.sin(a) end
 --- where e is Euler's number.
 ---
 --- Special cases:
----
+--- 
 ---
 --- If the argument is NaN, then the result is NaN.
 ---
@@ -1424,7 +1423,7 @@ function Math.sin(a) end
 --- If the argument is zero, then the result is a zero with the
 --- same sign as the argument.
 ---
----
+--- 
 ---
 --- The computed result must be within 2.5 ulps of the exact result.
 ---@param x number The number whose hyperbolic sine is to be returned.
@@ -1481,7 +1480,7 @@ function Math.tan(a) end
 --- 1.
 ---
 --- Special cases:
----
+--- 
 ---
 --- If the argument is NaN, then the result is NaN.
 ---
@@ -1494,7 +1493,7 @@ function Math.tan(a) end
 --- If the argument is negative infinity, then the result is
 --- -1.0.
 ---
----
+--- 
 ---
 --- The computed result must be within 2.5 ulps of the exact result.
 --- The result of tanh for any finite input must have
@@ -1532,12 +1531,12 @@ function Math.toRadians(angdeg) end
 
 ---Returns the size of an ulp of the argument.  An ulp, unit in
 --- the last place, of a double value is the positive
---- distance between this floating-point value and the
+--- distance between this floating-point value and the 
 --- double value next larger in magnitude.  Note that for non-NaN
 --- x, ulp(-x) == ulp(x).
 ---
 --- Special Cases:
----
+--- 
 ---  If the argument is NaN, then the result is NaN.
 ---  If the argument is positive or negative infinity, then the
 --- result is positive infinity.
@@ -1551,12 +1550,12 @@ function Math.ulp(d) end
 
 ---Returns the size of an ulp of the argument.  An ulp, unit in
 --- the last place, of a float value is the positive
---- distance between this floating-point value and the
+--- distance between this floating-point value and the 
 --- float value next larger in magnitude.  Note that for non-NaN
 --- x, ulp(-x) == ulp(x).
 ---
 --- Special Cases:
----
+--- 
 ---  If the argument is NaN, then the result is NaN.
 ---  If the argument is positive or negative infinity, then the
 --- result is positive infinity.
@@ -1571,6 +1570,6 @@ function Math.ulp(f) end
 ---@type Class<Math>
 Math.class = nil
 
-__classmetatables[Math.class] = { __index = __Math }
+__classmetatables[Math.class] = {__index = __Math}
 
 java.lang.Math = Math

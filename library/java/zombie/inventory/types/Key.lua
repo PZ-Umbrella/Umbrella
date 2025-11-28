@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class Key: InventoryItem
-
 local __Key = {}
 
 ---@return string
@@ -64,6 +63,6 @@ function Key.new(module, name, type, tex) end
 ---@type Class<Key>
 Key.class = nil
 
-__classmetatables[Key.class] = { __index = __Key }
+__classmetatables[Key.class] = {__index = __Key}
 
 zombie.inventory.types.Key = Key

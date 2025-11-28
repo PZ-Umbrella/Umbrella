@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class OutputScript: CraftRecipe.IOScript
-
 local __OutputScript = {}
 
 ---@param arg0 ScriptLoadMode
@@ -136,6 +135,6 @@ OutputScript = {}
 ---@type Class<OutputScript>
 OutputScript.class = nil
 
-__classmetatables[OutputScript.class] = { __index = __OutputScript }
+__classmetatables[OutputScript.class] = {__index = __OutputScript}
 
 zombie.scripting.entity.components.crafting.OutputScript = OutputScript

@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class KeyRing: InventoryItem
-
 local __KeyRing = {}
 
 ---@param key Key
@@ -35,6 +34,6 @@ function KeyRing.new(module, name, type, tex) end
 ---@type Class<KeyRing>
 KeyRing.class = nil
 
-__classmetatables[KeyRing.class] = { __index = __KeyRing }
+__classmetatables[KeyRing.class] = {__index = __KeyRing}
 
 zombie.inventory.types.KeyRing = KeyRing

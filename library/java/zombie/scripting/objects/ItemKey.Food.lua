@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ItemKey.Food
-
 local __Food = {}
 
 Food = {}
@@ -2175,6 +2174,6 @@ function Food.new() end
 ---@type Class<ItemKey.Food>
 Food.class = nil
 
-__classmetatables[Food.class] = { __index = __Food }
+__classmetatables[Food.class] = {__index = __Food}
 
 zombie.scripting.objects.ItemKey.Food = Food

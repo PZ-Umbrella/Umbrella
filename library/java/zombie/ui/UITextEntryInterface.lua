@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class UITextEntryInterface
-
 local __UITextEntryInterface = {}
 
 function __UITextEntryInterface:copyToClipboard() end

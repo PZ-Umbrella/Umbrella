@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class ImmutableArray<T>: Iterable<T>
-
 local __ImmutableArray = {}
 
 ---@param arg0 T
@@ -70,6 +69,6 @@ function ImmutableArray.new(arg0) end
 ---@type Class<ImmutableArray>
 ImmutableArray.class = nil
 
-__classmetatables[ImmutableArray.class] = { __index = __ImmutableArray }
+__classmetatables[ImmutableArray.class] = {__index = __ImmutableArray}
 
 zombie.entity.util.ImmutableArray = ImmutableArray

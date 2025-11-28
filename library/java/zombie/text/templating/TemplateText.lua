@@ -2,7 +2,6 @@
 
 ---TurboTuTone.
 ---@class TemplateText
-
 local __TemplateText = {}
 
 TemplateText = {}
@@ -63,6 +62,6 @@ function TemplateText.new() end
 ---@type Class<TemplateText>
 TemplateText.class = nil
 
-__classmetatables[TemplateText.class] = { __index = __TemplateText }
+__classmetatables[TemplateText.class] = {__index = __TemplateText}
 
 zombie.text.templating.TemplateText = TemplateText

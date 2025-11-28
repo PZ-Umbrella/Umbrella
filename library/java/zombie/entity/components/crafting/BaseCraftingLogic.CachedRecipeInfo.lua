@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class BaseCraftingLogic.CachedRecipeInfo
-
 local __CachedRecipeInfo = {}
 
 ---@return CraftRecipe
@@ -27,6 +26,6 @@ function CachedRecipeInfo.new() end
 ---@type Class<BaseCraftingLogic.CachedRecipeInfo>
 CachedRecipeInfo.class = nil
 
-__classmetatables[CachedRecipeInfo.class] = { __index = __CachedRecipeInfo }
+__classmetatables[CachedRecipeInfo.class] = {__index = __CachedRecipeInfo}
 
 zombie.entity.components.crafting.BaseCraftingLogic.CachedRecipeInfo = CachedRecipeInfo

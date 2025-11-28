@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class LuaEventManager: JavaFunction
-
 local __LuaEventManager = {}
 
 ---Description copied from interface: se.krka.kahlua.vm.JavaFunction
@@ -138,6 +137,6 @@ function LuaEventManager.new() end
 ---@type Class<LuaEventManager>
 LuaEventManager.class = nil
 
-__classmetatables[LuaEventManager.class] = { __index = __LuaEventManager }
+__classmetatables[LuaEventManager.class] = {__index = __LuaEventManager}
 
 zombie.Lua.LuaEventManager = LuaEventManager

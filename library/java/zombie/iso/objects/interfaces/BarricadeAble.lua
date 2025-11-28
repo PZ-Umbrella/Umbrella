@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class BarricadeAble
-
 local __BarricadeAble = {}
 
 ---@param arg0 IsoGameCharacter
@@ -45,6 +44,6 @@ BarricadeAble = {}
 ---@type Class<BarricadeAble>
 BarricadeAble.class = nil
 
-__classmetatables[BarricadeAble.class] = { __index = __BarricadeAble }
+__classmetatables[BarricadeAble.class] = {__index = __BarricadeAble}
 
 zombie.iso.objects.interfaces.BarricadeAble = BarricadeAble

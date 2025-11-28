@@ -1,7 +1,6 @@
 ---@meta _
 
 ---@class AnimalInventoryItem: InventoryItem
-
 local __AnimalInventoryItem = {}
 
 ---@param arg0 ObjectTooltip
@@ -57,6 +56,6 @@ function AnimalInventoryItem.new(arg0, arg1, arg2, arg3) end
 ---@type Class<AnimalInventoryItem>
 AnimalInventoryItem.class = nil
 
-__classmetatables[AnimalInventoryItem.class] = { __index = __AnimalInventoryItem }
+__classmetatables[AnimalInventoryItem.class] = {__index = __AnimalInventoryItem}
 
 zombie.inventory.types.AnimalInventoryItem = AnimalInventoryItem

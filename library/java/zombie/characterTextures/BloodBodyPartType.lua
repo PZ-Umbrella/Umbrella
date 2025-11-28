@@ -2,7 +2,6 @@
 
 ---Created by LEMMY on 7/1/2016.
 ---@class BloodBodyPartType: Enum<BloodBodyPartType>
-
 local __BloodBodyPartType = {}
 
 ---@return kahlua.Array<CharacterMask.Part>
@@ -97,6 +96,6 @@ function BloodBodyPartType.values() end
 ---@type Class<BloodBodyPartType>
 BloodBodyPartType.class = nil
 
-__classmetatables[BloodBodyPartType.class] = { __index = __BloodBodyPartType }
+__classmetatables[BloodBodyPartType.class] = {__index = __BloodBodyPartType}
 
 zombie.characterTextures.BloodBodyPartType = BloodBodyPartType

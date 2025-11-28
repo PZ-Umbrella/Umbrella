@@ -5,7 +5,6 @@
 --- Every class has Object as a superclass. All objects,
 --- including arrays, implement the methods of this class.
 ---@class Object
-
 local __Object = {}
 
 ---@param arg0 any

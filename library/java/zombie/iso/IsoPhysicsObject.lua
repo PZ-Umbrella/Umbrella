@@ -2,7 +2,6 @@
 
 ---(Not exposed)
 ---@class IsoPhysicsObject: IsoMovingObject
-
 local __IsoPhysicsObject = {}
 
 function __IsoPhysicsObject:collideGround() end
