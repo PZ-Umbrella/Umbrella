@@ -1,4 +1,0 @@
----@meta
-
----@class ClutterTables
-ClutterTables = {}
