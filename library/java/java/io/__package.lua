@@ -1,0 +1,533 @@
+---@meta _
+
+---(Not exposed)
+---A BufferedInputStream adds
+--- functionality to another input stream-namely,
+--- the ability to buffer the input and to
+--- support the mark and reset
+--- methods. When  the BufferedInputStream
+--- is created, an internal buffer array is
+--- created. As bytes  from the stream are read
+--- or skipped, the internal buffer is refilled
+--- as necessary  from the contained input stream,
+--- many bytes at a time. The mark
+--- operation  remembers a point in the input
+--- stream and the reset operation
+--- causes all the  bytes read since the most
+--- recent mark operation to be
+--- reread before new bytes are  taken from
+--- the contained input stream.
+---@class BufferedInputStream
+
+---(Not exposed)
+---An abstract representation of file and directory pathnames.
+---
+---  User interfaces and operating systems use system-dependent pathname
+--- strings to name files and directories.  This class presents an
+--- abstract, system-independent view of hierarchical pathnames.  An
+--- abstract pathname has two components:
+---
+---
+---  An optional system-dependent prefix string,
+---      such as a disk-drive specifier, "/" for the UNIX root
+---      directory, or "\\\\" for a Microsoft Windows UNC pathname, and
+---  A sequence of zero or more string names.
+---
+---
+--- The first name in an abstract pathname may be a directory name or, in the
+--- case of Microsoft Windows UNC pathnames, a hostname.  Each subsequent name
+--- in an abstract pathname denotes a directory; the last name may denote
+--- either a directory or a file.  The empty abstract pathname has no
+--- prefix and an empty name sequence.
+---
+---  The conversion of a pathname string to or from an abstract pathname is
+--- inherently system-dependent.  When an abstract pathname is converted into a
+--- pathname string, each name is separated from the next by a single copy of
+--- the default separator character.  The default name-separator
+--- character is defined by the system property file.separator, and
+--- is made available in the public static fields separator and separatorChar of this class.
+--- When a pathname string is converted into an abstract pathname, the names
+--- within it may be separated by the default name-separator character or by any
+--- other name-separator character that is supported by the underlying system.
+---
+---  A pathname, whether abstract or in string form, may be either
+--- absolute or relative.  An absolute pathname is complete in
+--- that no other information is required in order to locate the file that it
+--- denotes.  A relative pathname, in contrast, must be interpreted in terms of
+--- information taken from some other pathname.  By default the classes in the
+--- java.io package always resolve relative pathnames against the
+--- current user directory.  This directory is named by the system property
+--- user.dir, and is typically the directory in which the Java
+--- virtual machine was invoked.
+---
+---  The parent of an abstract pathname may be obtained by invoking
+--- the getParent() method of this class and consists of the pathname's
+--- prefix and each name in the pathname's name sequence except for the last.
+--- Each directory's absolute pathname is an ancestor of any File
+--- object with an absolute abstract pathname which begins with the directory's
+--- absolute pathname.  For example, the directory denoted by the abstract
+--- pathname "/usr" is an ancestor of the directory denoted by the
+--- pathname "/usr/local/bin".
+---
+---  The prefix concept is used to handle root directories on UNIX platforms,
+--- and drive specifiers, root directories and UNC pathnames on Microsoft Windows platforms,
+--- as follows:
+---
+---
+---
+---  For UNIX platforms, the prefix of an absolute pathname is always
+--- "/".  Relative pathnames have no prefix.  The abstract pathname
+--- denoting the root directory has the prefix "/" and an empty
+--- name sequence.
+---
+---  For Microsoft Windows platforms, the prefix of a pathname that contains a drive
+--- specifier consists of the drive letter followed by ":" and
+--- possibly followed by "\\" if the pathname is absolute.  The
+--- prefix of a UNC pathname is "\\\\"; the hostname and the share
+--- name are the first two names in the name sequence.  A relative pathname that
+--- does not specify a drive has no prefix.
+---
+---
+---
+---  Instances of this class may or may not denote an actual file-system
+--- object such as a file or a directory.  If it does denote such an object
+--- then that object resides in a partition.  A partition is an
+--- operating system-specific portion of storage for a file system.  A single
+--- storage device (e.g. a physical disk-drive, flash memory, CD-ROM) may
+--- contain multiple partitions.  The object, if any, will reside on the
+--- partition named by some ancestor of the absolute
+--- form of this pathname.
+---
+---  A file system may implement restrictions to certain operations on the
+--- actual file-system object, such as reading, writing, and executing.  These
+--- restrictions are collectively known as access permissions.  The file
+--- system may have multiple sets of access permissions on a single object.
+--- For example, one set may apply to the object's owner, and another
+--- may apply to all other users.  The access permissions on an object may
+--- cause some methods in this class to fail.
+---
+---  Instances of the File class are immutable; that is, once
+--- created, the abstract pathname represented by a File object
+--- will never change.
+---
+--- Interoperability with java.nio.file package
+---
+---  The java.nio.file
+--- package defines interfaces and classes for the Java virtual machine to access
+--- files, file attributes, and file systems. This API may be used to overcome
+--- many of the limitations of the java.io.File class.
+--- The toPath method may be used to obtain a Path that uses the abstract path represented by a File object to
+--- locate a file. The resulting Path may be used with the Files class to provide more efficient and extensive access to
+--- additional file operations, file attributes, and I/O exceptions to help
+--- diagnose errors when an operation on a file fails.
+---@class File
+
+---(Not exposed)
+---Writes text to character files using a default buffer size. Encoding from characters
+--- to bytes uses either a specified charset
+--- or the platform's
+--- default charset.
+---
+---
+--- Whether or not a file is available or may be created depends upon the
+--- underlying platform.  Some platforms, in particular, allow a file to be
+--- opened for writing by only one FileWriter (or other file-writing
+--- object) at a time.  In such situations the constructors in this class
+--- will fail if the file involved is already open.
+---
+---
+--- The FileWriter is meant for writing streams of characters. For writing
+--- streams of raw bytes, consider using a FileOutputStream.
+---@class FileWriter
+
+---(Not exposed)
+---ObjectInput extends the DataInput interface to include the reading of
+--- objects. DataInput includes methods for the input of primitive types,
+--- ObjectInput extends that interface to include objects, arrays, and Strings.
+---@class ObjectInput
+
+---(Not exposed)
+---An ObjectInputStream deserializes primitive data and objects previously
+--- written using an ObjectOutputStream.
+---
+--- Warning: Deserialization of untrusted data is inherently dangerous
+--- and should be avoided. Untrusted data should be carefully validated according to the
+--- "Serialization and Deserialization" section of the
+--- Secure Coding Guidelines for Java SE.
+--- Serialization Filtering describes best
+--- practices for defensive use of serial filters.
+---
+---
+--- The key to disabling deserialization attacks is to prevent instances of
+--- arbitrary classes from being deserialized, thereby preventing the direct or
+--- indirect execution of their methods.
+--- ObjectInputFilter describes how to use filters and
+--- ObjectInputFilter.Config describes how to configure the filter and filter factory.
+--- Each stream has an optional deserialization filter
+--- to check the classes and resource limits during deserialization.
+--- The JVM-wide filter factory ensures that a filter can be set on every ObjectInputStream
+--- and every object read from the stream can be checked.
+--- The ObjectInputStream constructors invoke the filter factory
+--- to select the initial filter which may be updated or replaced by setObjectInputFilter(java.io.ObjectInputFilter).
+---
+--- If an ObjectInputStream has a filter, the ObjectInputFilter can check that
+--- the classes, array lengths, number of references in the stream, depth, and
+--- number of bytes consumed from the input stream are allowed and
+--- if not, can terminate deserialization.
+---
+--- ObjectOutputStream and ObjectInputStream can provide an application with
+--- persistent storage for graphs of objects when used with a FileOutputStream
+--- and FileInputStream respectively.  ObjectInputStream is used to recover
+--- those objects previously serialized. Other uses include passing objects
+--- between hosts using a socket stream or for marshaling and unmarshaling
+--- arguments and parameters in a remote communication system.
+---
+--- ObjectInputStream ensures that the types of all objects in the graph
+--- created from the stream match the classes present in the Java Virtual
+--- Machine.  Classes are loaded as required using the standard mechanisms.
+---
+--- Only objects that support the java.io.Serializable or
+--- java.io.Externalizable interface can be read from streams.
+---
+--- The method readObject is used to read an object from the
+--- stream.  Java's safe casting should be used to get the desired type.  In
+--- Java, strings and arrays are objects and are treated as objects during
+--- serialization. When read they need to be cast to the expected type.
+---
+--- Primitive data types can be read from the stream using the appropriate
+--- method on DataInput.
+---
+--- The default deserialization mechanism for objects restores the contents
+--- of each field to the value and type it had when it was written.  Fields
+--- declared as transient or static are ignored by the deserialization process.
+--- References to other objects cause those objects to be read from the stream
+--- as necessary.  Graphs of objects are restored correctly using a reference
+--- sharing mechanism.  New objects are always allocated when deserializing,
+--- which prevents existing objects from being overwritten.
+---
+--- Reading an object is analogous to running the constructors of a new
+--- object.  Memory is allocated for the object and initialized to zero (NULL).
+--- No-arg constructors are invoked for the non-serializable classes and then
+--- the fields of the serializable classes are restored from the stream starting
+--- with the serializable class closest to java.lang.object and finishing with
+--- the object's most specific class.
+---
+--- For example to read from a stream as written by the example in
+--- ObjectOutputStream:
+---
+---
+---      FileInputStream fis = new FileInputStream("t.tmp");
+---      ObjectInputStream ois = new ObjectInputStream(fis);
+---
+---      int i = ois.readInt();
+---      String today = (String) ois.readObject();
+---      Date date = (Date) ois.readObject();
+---
+---      ois.close();
+---
+---
+--- Classes control how they are serialized by implementing either the
+--- java.io.Serializable or java.io.Externalizable interfaces.
+---
+--- Implementing the Serializable interface allows object serialization to
+--- save and restore the entire state of the object and it allows classes to
+--- evolve between the time the stream is written and the time it is read.  It
+--- automatically traverses references between objects, saving and restoring
+--- entire graphs.
+---
+--- Serializable classes that require special handling during the
+--- serialization and deserialization process should implement the following
+--- methods:
+---
+---
+--- private void writeObject(java.io.ObjectOutputStream stream)
+---     throws IOException;
+--- private void readObject(java.io.ObjectInputStream stream)
+---     throws IOException, ClassNotFoundException;
+--- private void readObjectNoData()
+---     throws ObjectStreamException;
+---
+---
+--- The readObject method is responsible for reading and restoring the state
+--- of the object for its particular class using data written to the stream by
+--- the corresponding writeObject method.  The method does not need to concern
+--- itself with the state belonging to its superclasses or subclasses.  State is
+--- restored by reading data from the ObjectInputStream for the individual
+--- fields and making assignments to the appropriate fields of the object.
+--- Reading primitive data types is supported by DataInput.
+---
+--- Any attempt to read object data which exceeds the boundaries of the
+--- custom data written by the corresponding writeObject method will cause an
+--- OptionalDataException to be thrown with an eof field value of true.
+--- Non-object reads which exceed the end of the allotted data will reflect the
+--- end of data in the same way that they would indicate the end of the stream:
+--- bytewise reads will return -1 as the byte read or number of bytes read, and
+--- primitive reads will throw EOFExceptions.  If there is no corresponding
+--- writeObject method, then the end of default serialized data marks the end of
+--- the allotted data.
+---
+--- Primitive and object read calls issued from within a readExternal method
+--- behave in the same manner--if the stream is already positioned at the end of
+--- data written by the corresponding writeExternal method, object reads will
+--- throw OptionalDataExceptions with eof set to true, bytewise reads will
+--- return -1, and primitive reads will throw EOFExceptions.  Note that this
+--- behavior does not hold for streams written with the old
+--- ObjectStreamConstants.PROTOCOL_VERSION_1 protocol, in which the
+--- end of data written by writeExternal methods is not demarcated, and hence
+--- cannot be detected.
+---
+--- The readObjectNoData method is responsible for initializing the state of
+--- the object for its particular class in the event that the serialization
+--- stream does not list the given class as a superclass of the object being
+--- deserialized.  This may occur in cases where the receiving party uses a
+--- different version of the deserialized instance's class than the sending
+--- party, and the receiver's version extends classes that are not extended by
+--- the sender's version.  This may also occur if the serialization stream has
+--- been tampered; hence, readObjectNoData is useful for initializing
+--- deserialized objects properly despite a "hostile" or incomplete source
+--- stream.
+---
+--- Serialization does not read or assign values to the fields of any object
+--- that does not implement the java.io.Serializable interface.  Subclasses of
+--- Objects that are not serializable can be serializable. In this case the
+--- non-serializable class must have a no-arg constructor to allow its fields to
+--- be initialized.  In this case it is the responsibility of the subclass to
+--- save and restore the state of the non-serializable class. It is frequently
+--- the case that the fields of that class are accessible (public, package, or
+--- protected) or that there are get and set methods that can be used to restore
+--- the state.
+---
+--- Any exception that occurs while deserializing an object will be caught by
+--- the ObjectInputStream and abort the reading process.
+---
+--- Implementing the Externalizable interface allows the object to assume
+--- complete control over the contents and format of the object's serialized
+--- form.  The methods of the Externalizable interface, writeExternal and
+--- readExternal, are called to save and restore the objects state.  When
+--- implemented by a class they can write and read their own state using all of
+--- the methods of ObjectOutput and ObjectInput.  It is the responsibility of
+--- the objects to handle any versioning that occurs.
+---
+--- Enum constants are deserialized differently than ordinary serializable or
+--- externalizable objects.  The serialized form of an enum constant consists
+--- solely of its name; field values of the constant are not transmitted.  To
+--- deserialize an enum constant, ObjectInputStream reads the constant name from
+--- the stream; the deserialized constant is then obtained by calling the static
+--- method Enum.valueOf(Class, String) with the enum constant's
+--- base type and the received constant name as arguments.  Like other
+--- serializable or externalizable objects, enum constants can function as the
+--- targets of back references appearing subsequently in the serialization
+--- stream.  The process by which enum constants are deserialized cannot be
+--- customized: any class-specific readObject, readObjectNoData, and readResolve
+--- methods defined by enum types are ignored during deserialization.
+--- Similarly, any serialPersistentFields or serialVersionUID field declarations
+--- are also ignored--all enum types have a fixed serialVersionUID of 0L.
+---
+---
+--- Records are serialized differently than ordinary serializable or externalizable
+--- objects. During deserialization the record's canonical constructor is invoked
+--- to construct the record object. Certain serialization-related methods, such
+--- as readObject and writeObject, are ignored for serializable records. See
+---
+--- Java Object Serialization Specification, Section 1.13,
+--- "Serialization of Records" for additional information.
+---@class ObjectInputStream
+
+---(Not exposed)
+---ObjectOutput extends the DataOutput interface to include writing of objects.
+--- DataOutput includes methods for output of primitive types, ObjectOutput
+--- extends that interface to include objects, arrays, and Strings.
+---@class ObjectOutput
+
+---(Not exposed)
+---An ObjectOutputStream writes primitive data types and graphs of Java objects
+--- to an OutputStream.  The objects can be read (reconstituted) using an
+--- ObjectInputStream.  Persistent storage of objects can be accomplished by
+--- using a file for the stream.  If the stream is a network socket stream, the
+--- objects can be reconstituted on another host or in another process.
+---
+--- Only objects that support the java.io.Serializable interface can be
+--- written to streams.  The class of each serializable object is encoded
+--- including the class name and signature of the class, the values of the
+--- object's fields and arrays, and the closure of any other objects referenced
+--- from the initial objects.
+---
+--- The method writeObject is used to write an object to the stream.  Any
+--- object, including Strings and arrays, is written with writeObject. Multiple
+--- objects or primitives can be written to the stream.  The objects must be
+--- read back from the corresponding ObjectInputstream with the same types and
+--- in the same order as they were written.
+---
+--- Primitive data types can also be written to the stream using the
+--- appropriate methods from DataOutput. Strings can also be written using the
+--- writeUTF method.
+---
+--- The default serialization mechanism for an object writes the class of the
+--- object, the class signature, and the values of all non-transient and
+--- non-static fields.  References to other objects (except in transient or
+--- static fields) cause those objects to be written also. Multiple references
+--- to a single object are encoded using a reference sharing mechanism so that
+--- graphs of objects can be restored to the same shape as when the original was
+--- written.
+---
+--- For example to write an object that can be read by the example in
+--- ObjectInputStream:
+---
+---
+---      FileOutputStream fos = new FileOutputStream("t.tmp");
+---      ObjectOutputStream oos = new ObjectOutputStream(fos);
+---
+---      oos.writeInt(12345);
+---      oos.writeObject("Today");
+---      oos.writeObject(new Date());
+---
+---      oos.close();
+---
+---
+--- Classes that require special handling during the serialization and
+--- deserialization process must implement special methods with these exact
+--- signatures:
+---
+---
+--- private void readObject(java.io.ObjectInputStream stream)
+---     throws IOException, ClassNotFoundException;
+--- private void writeObject(java.io.ObjectOutputStream stream)
+---     throws IOException
+--- private void readObjectNoData()
+---     throws ObjectStreamException;
+---
+---
+--- The writeObject method is responsible for writing the state of the object
+--- for its particular class so that the corresponding readObject method can
+--- restore it.  The method does not need to concern itself with the state
+--- belonging to the object's superclasses or subclasses.  State is saved by
+--- writing the individual fields to the ObjectOutputStream using the
+--- writeObject method or by using the methods for primitive data types
+--- supported by DataOutput.
+---
+--- Serialization does not write out the fields of any object that does not
+--- implement the java.io.Serializable interface.  Subclasses of Objects that
+--- are not serializable can be serializable. In this case the non-serializable
+--- class must have a no-arg constructor to allow its fields to be initialized.
+--- In this case it is the responsibility of the subclass to save and restore
+--- the state of the non-serializable class. It is frequently the case that the
+--- fields of that class are accessible (public, package, or protected) or that
+--- there are get and set methods that can be used to restore the state.
+---
+--- Serialization of an object can be prevented by implementing writeObject
+--- and readObject methods that throw the NotSerializableException.  The
+--- exception will be caught by the ObjectOutputStream and abort the
+--- serialization process.
+---
+--- Implementing the Externalizable interface allows the object to assume
+--- complete control over the contents and format of the object's serialized
+--- form.  The methods of the Externalizable interface, writeExternal and
+--- readExternal, are called to save and restore the objects state.  When
+--- implemented by a class they can write and read their own state using all of
+--- the methods of ObjectOutput and ObjectInput.  It is the responsibility of
+--- the objects to handle any versioning that occurs.
+---
+--- Enum constants are serialized differently than ordinary serializable or
+--- externalizable objects.  The serialized form of an enum constant consists
+--- solely of its name; field values of the constant are not transmitted.  To
+--- serialize an enum constant, ObjectOutputStream writes the string returned by
+--- the constant's name method.  Like other serializable or externalizable
+--- objects, enum constants can function as the targets of back references
+--- appearing subsequently in the serialization stream.  The process by which
+--- enum constants are serialized cannot be customized; any class-specific
+--- writeObject and writeReplace methods defined by enum types are ignored
+--- during serialization.  Similarly, any serialPersistentFields or
+--- serialVersionUID field declarations are also ignored--all enum types have a
+--- fixed serialVersionUID of 0L.
+---
+--- Primitive data, excluding serializable fields and externalizable data, is
+--- written to the ObjectOutputStream in block-data records. A block data record
+--- is composed of a header and data. The block data header consists of a marker
+--- and the number of bytes to follow the header.  Consecutive primitive data
+--- writes are merged into one block-data record.  The blocking factor used for
+--- a block-data record will be 1024 bytes.  Each block-data record will be
+--- filled up to 1024 bytes, or be written whenever there is a termination of
+--- block-data mode.  Calls to the ObjectOutputStream methods writeObject,
+--- defaultWriteObject and writeFields initially terminate any existing
+--- block-data record.
+---
+--- Records are serialized differently than ordinary serializable or externalizable
+--- objects, see record serialization.
+---@class ObjectOutputStream
+
+---(Not exposed)
+---A description of a Serializable field from a Serializable class.  An array
+--- of ObjectStreamFields is used to declare the Serializable fields of a class.
+---@class ObjectStreamField
+
+---(Not exposed)
+---A PrintStream adds functionality to another output stream,
+--- namely the ability to print representations of various data values
+--- conveniently.  Two other features are provided as well.  Unlike other output
+--- streams, a PrintStream never throws an
+--- IOException; instead, exceptional situations merely set an
+--- internal flag that can be tested via the checkError method.
+--- Optionally, a PrintStream can be created so as to flush
+--- automatically; this means that the flush method of the underlying
+--- output stream is automatically invoked after a byte array is written, one
+--- of the println methods is invoked, or a newline character or byte
+--- ('\n') is written.
+---
+---  All characters printed by a PrintStream are converted into
+--- bytes using the given encoding or charset, or the platform's default
+--- character encoding if not specified.
+--- The PrintWriter class should be used in situations that require
+--- writing characters rather than bytes.
+---
+---  This class always replaces malformed and unmappable character sequences
+--- with the charset's default replacement string.
+--- The CharsetEncoder class should be used when more
+--- control over the encoding process is required.
+---@class PrintStream
+
+---(Not exposed)
+---Prints formatted representations of objects to a text-output stream.  This
+--- class implements all of the print methods found in PrintStream.  It does not contain methods for writing raw bytes, for which
+--- a program should use unencoded byte streams.
+---
+---  Unlike the PrintStream class, if automatic flushing is enabled
+--- it will be done only when one of the println, printf, or
+--- format methods is invoked, rather than whenever a newline character
+--- happens to be output.  These methods use the platform's own notion of line
+--- separator rather than the newline character.
+---
+---  Methods in this class never throw I/O exceptions, although some of its
+--- constructors may.  The client may inquire as to whether any errors have
+--- occurred by invoking checkError().
+---
+---  This class always replaces malformed and unmappable character sequences with
+--- the charset's default replacement string.
+--- The CharsetEncoder class should be used when more
+--- control over the encoding process is required.
+---@class PrintWriter
+
+---(Not exposed)
+---Instances of this class support both reading and writing to a
+--- random access file. A random access file behaves like a large
+--- array of bytes stored in the file system. There is a kind of cursor,
+--- or index into the implied array, called the file pointer;
+--- input operations read bytes starting at the file pointer and advance
+--- the file pointer past the bytes read. If the random access file is
+--- created in read/write mode, then output operations are also available;
+--- output operations write bytes starting at the file pointer and advance
+--- the file pointer past the bytes written. Output operations that write
+--- past the current end of the implied array cause the array to be
+--- extended. The file pointer can be read by the
+--- getFilePointer method and set by the seek
+--- method.
+---
+--- It is generally true of all the reading routines in this class that
+--- if end-of-file is reached before the desired number of bytes has been
+--- read, an EOFException (which is a kind of
+--- IOException) is thrown. If any byte cannot be read for
+--- any reason other than end-of-file, an IOException other
+--- than EOFException is thrown. In particular, an
+--- IOException may be thrown if the stream has been closed.
+---@class RandomAccessFile
+
+java.io = {}

@@ -1,0 +1,156 @@
+---@meta _
+
+---(Not exposed)
+---An AttributedCharacterIterator allows iteration through both text and
+--- related attribute information.
+---
+---
+--- An attribute is a key/value pair, identified by the key.  No two
+--- attributes on a given character can have the same key.
+---
+--- The values for an attribute are immutable, or must not be mutated
+--- by clients or storage.  They are always passed by reference, and not
+--- cloned.
+---
+--- A run with respect to an attribute is a maximum text range for
+--- which:
+---
+--- the attribute is undefined or null for the entire range, or
+--- the attribute value is defined and has the same non-null value for the
+---     entire range.
+---
+---
+--- A run with respect to a set of attributes is a maximum text range for
+--- which this condition is met for each member attribute.
+---
+--- When getting a run with no explicit attributes specified (i.e.,
+--- calling getRunStart() and getRunLimit()), any
+--- contiguous text segments having the same attributes (the same set
+--- of attribute/value pairs) are treated as separate runs if the
+--- attributes have been given to those text segments separately.
+---
+--- The returned indexes are limited to the range of the iterator.
+---
+--- The returned attribute information is limited to runs that contain
+--- the current character.
+---
+---
+--- Attribute keys are instances of AttributedCharacterIterator.Attribute and its
+--- subclasses, such as TextAttribute.
+---@class AttributedCharacterIterator
+
+---(Not exposed)
+---Defines attribute keys that are used to identify text attributes. These
+--- keys are used in AttributedCharacterIterator and AttributedString.
+---@class AttributedCharacterIterator.Attribute
+
+---(Not exposed)
+---@class CalendarBuilder
+
+---(Not exposed)
+---Defines constants that are used as attribute keys in the
+--- AttributedCharacterIterator returned
+--- from DateFormat.formatToCharacterIterator and as
+--- field identifiers in FieldPosition.
+---
+--- The class also provides two methods to map
+--- between its constants and the corresponding Calendar constants.
+---@class DateFormat.Field
+
+---(Not exposed)
+---DateFormatSymbols is a public class for encapsulating
+--- localizable date-time formatting data, such as the names of the
+--- months, the names of the days of the week, and the time zone data.
+--- SimpleDateFormat uses
+--- DateFormatSymbols to encapsulate this information.
+---
+---
+--- Typically you shouldn't use DateFormatSymbols directly.
+--- Rather, you are encouraged to create a date-time formatter with the
+--- DateFormat class's factory methods: getTimeInstance,
+--- getDateInstance, or getDateTimeInstance.
+--- These methods automatically create a DateFormatSymbols for
+--- the formatter so that you don't have to. After the
+--- formatter is created, you may modify its format pattern using the
+--- setPattern method. For more information about
+--- creating formatters using DateFormat's factory methods,
+--- see DateFormat.
+---
+---
+--- If you decide to create a date-time formatter with a specific
+--- format pattern for a specific locale, you can do so with:
+---
+---
+--- new SimpleDateFormat(aPattern, DateFormatSymbols.getInstance(aLocale)).
+---
+---
+---
+--- If the locale contains "rg" (region override)
+--- Unicode extension,
+--- the symbols are overridden for the designated region.
+---
+---
+--- DateFormatSymbols objects are cloneable. When you obtain
+--- a DateFormatSymbols object, feel free to modify the
+--- date-time formatting data. For instance, you can replace the localized
+--- date-time format pattern characters with the ones that you feel easy
+--- to remember. Or you can change the representative cities
+--- to your favorite ones.
+---
+---
+--- New DateFormatSymbols subclasses may be added to support
+--- SimpleDateFormat for date-time formatting for additional locales.
+---@class DateFormatSymbols
+
+---(Not exposed)
+---@class DecimalFormat
+
+---(Not exposed)
+---FieldPosition is a simple class used by Format
+--- and its subclasses to identify fields in formatted output. Fields can
+--- be identified in two ways:
+---
+---  By an integer constant, whose names typically end with
+---      _FIELD. The constants are defined in the various
+---      subclasses of Format.
+---  By a Format.Field constant, see ERA_FIELD
+---      and its friends in DateFormat for an example.
+---
+---
+--- FieldPosition keeps track of the position of the
+--- field within the formatted output with two indices: the index
+--- of the first character of the field and the index of the last
+--- character of the field.
+---
+---
+--- One version of the format method in the various
+--- Format classes requires a FieldPosition
+--- object as an argument. You use this format method
+--- to perform partial formatting or to get information about the
+--- formatted output (such as the position of a field).
+---
+---
+--- If you are interested in the positions of all attributes in the
+--- formatted string use the Format method
+--- formatToCharacterIterator.
+---@class FieldPosition
+
+---(Not exposed)
+---@class Format.FieldDelegate
+
+---(Not exposed)
+---@class NumberFormat
+
+---(Not exposed)
+---ParsePosition is a simple class used by Format
+--- and its subclasses to keep track of the current position during parsing.
+--- The parseObject method in the various Format
+--- classes requires a ParsePosition object as an argument.
+---
+---
+--- By design, as you parse through a string with different formats,
+--- you can use the same ParsePosition, since the index parameter
+--- records the current position.
+---@class ParsePosition
+
+java.text = {}

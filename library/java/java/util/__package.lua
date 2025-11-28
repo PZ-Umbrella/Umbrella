@@ -1,0 +1,1297 @@
+---@meta _
+
+---(Not exposed)
+---Resizable-array implementation of the Deque interface.  Array
+--- deques have no capacity restrictions; they grow as necessary to support
+--- usage.  They are not thread-safe; in the absence of external
+--- synchronization, they do not support concurrent access by multiple threads.
+--- Null elements are prohibited.  This class is likely to be faster than
+--- Stack when used as a stack, and faster than LinkedList
+--- when used as a queue.
+---
+--- Most ArrayDeque operations run in amortized constant time.
+--- Exceptions include
+--- remove,
+--- removeFirstOccurrence,
+--- removeLastOccurrence,
+--- contains,
+--- iterator.remove(),
+--- and the bulk operations, all of which run in linear time.
+---
+--- The iterators returned by this class's iterator
+--- method are fail-fast: If the deque is modified at any time after
+--- the iterator is created, in any way except through the iterator's own
+--- remove method, the iterator will generally throw a ConcurrentModificationException.  Thus, in the face of concurrent
+--- modification, the iterator fails quickly and cleanly, rather than risking
+--- arbitrary, non-deterministic behavior at an undetermined time in the
+--- future.
+---
+--- Note that the fail-fast behavior of an iterator cannot be guaranteed
+--- as it is, generally speaking, impossible to make any hard guarantees in the
+--- presence of unsynchronized concurrent modification.  Fail-fast iterators
+--- throw ConcurrentModificationException on a best-effort basis.
+--- Therefore, it would be wrong to write a program that depended on this
+--- exception for its correctness: the fail-fast behavior of iterators
+--- should be used only to detect bugs.
+---
+--- This class and its iterator implement all of the
+--- optional methods of the Collection and Iterator interfaces.
+---
+--- This class is a member of the
+---
+--- Java Collections Framework.
+---@class ArrayDeque<E>
+
+---(Not exposed)
+---This class implements a vector of bits that grows as needed. Each
+--- component of the bit set has a boolean value. The
+--- bits of a BitSet are indexed by nonnegative integers.
+--- Individual indexed bits can be examined, set, or cleared. One
+--- BitSet may be used to modify the contents of another
+--- BitSet through logical AND, logical inclusive OR, and
+--- logical exclusive OR operations.
+---
+--- By default, all bits in the set initially have the value
+--- false.
+---
+--- Every bit set has a current size, which is the number of bits
+--- of space currently in use by the bit set. Note that the size is
+--- related to the implementation of a bit set, so it may change with
+--- implementation. The length of a bit set relates to logical length
+--- of a bit set and is defined independently of implementation.
+---
+--- Unless otherwise noted, passing a null parameter to any of the
+--- methods in a BitSet will result in a
+--- NullPointerException.
+---
+--- A BitSet is not safe for multithreaded use without
+--- external synchronization.
+---@class BitSet
+
+---(Not exposed)
+---The Calendar class is an abstract class that provides methods
+--- for converting between a specific instant in time and a set of calendar fields such as YEAR, MONTH,
+--- DAY_OF_MONTH, HOUR, and so on, and for
+--- manipulating the calendar fields, such as getting the date of the next
+--- week. An instant in time can be represented by a millisecond value that is
+--- an offset from the Epoch, January 1, 1970
+--- 00:00:00.000 GMT (Gregorian).
+---
+--- The class also provides additional fields and methods for
+--- implementing a concrete calendar system outside the package. Those
+--- fields and methods are defined as protected.
+---
+---
+--- Like other locale-sensitive classes, Calendar provides a
+--- class method, getInstance, for getting a generally useful
+--- object of this type. Calendar's getInstance method
+--- returns a Calendar object whose
+--- calendar fields have been initialized with the current date and time:
+---
+---
+---     Calendar rightNow = Calendar.getInstance();
+---
+---
+---
+--- A Calendar object can produce all the calendar field values
+--- needed to implement the date-time formatting for a particular language and
+--- calendar style (for example, Japanese-Gregorian, Japanese-Traditional).
+--- Calendar defines the range of values returned by
+--- certain calendar fields, as well as their meaning.  For example,
+--- the first month of the calendar system has value MONTH ==
+--- JANUARY for all calendars.  Other values are defined by the
+--- concrete subclass, such as ERA.  See individual field
+--- documentation and subclass documentation for details.
+---
+--- Getting and Setting Calendar Field Values
+---
+--- The calendar field values can be set by calling the set
+--- methods. Any field values set in a Calendar will not be
+--- interpreted until it needs to calculate its time value (milliseconds from
+--- the Epoch) or values of the calendar fields. Calling the
+--- get, getTimeInMillis, getTime,
+--- add and roll involves such calculation.
+---
+--- Leniency
+---
+--- Calendar has two modes for interpreting the calendar
+--- fields, lenient and non-lenient.  When a
+--- Calendar is in lenient mode, it accepts a wider range of
+--- calendar field values than it produces.  When a Calendar
+--- recomputes calendar field values for return by get(), all of
+--- the calendar fields are normalized. For example, a lenient
+--- GregorianCalendar interprets MONTH == JANUARY,
+--- DAY_OF_MONTH == 32 as February 1.
+---
+--- When a Calendar is in non-lenient mode, it throws an
+--- exception if there is any inconsistency in its calendar fields. For
+--- example, a GregorianCalendar always produces
+--- DAY_OF_MONTH values between 1 and the length of the month. A
+--- non-lenient GregorianCalendar throws an exception upon
+--- calculating its time or calendar field values if any out-of-range field
+--- value has been set.
+---
+--- First Week
+---
+--- Calendar defines a locale-specific seven day week using two
+--- parameters: the first day of the week and the minimal days in first week
+--- (from 1 to 7).  These numbers are taken from the locale resource data or the
+--- locale itself when a Calendar is constructed. If the designated
+--- locale contains "fw" and/or "rg"
+--- Unicode extensions, the first day of the week will be obtained according to
+--- those extensions. If both "fw" and "rg" are specified, the value from the "fw"
+--- extension supersedes the implicit one from the "rg" extension.
+--- They may also be specified explicitly through the methods for setting their
+--- values.
+---
+--- When setting or getting the WEEK_OF_MONTH or
+--- WEEK_OF_YEAR fields, Calendar must determine the
+--- first week of the month or year as a reference point.  The first week of a
+--- month or year is defined as the earliest seven day period beginning on
+--- getFirstDayOfWeek() and containing at least
+--- getMinimalDaysInFirstWeek() days of that month or year.  Weeks
+--- numbered ..., -1, 0 precede the first week; weeks numbered 2, 3,... follow
+--- it.  Note that the normalized numbering returned by get() may be
+--- different.  For example, a specific Calendar subclass may
+--- designate the week before week 1 of a year as week n of
+--- the previous year.
+---
+--- Calendar Fields Resolution
+---
+--- When computing a date and time from the calendar fields, there
+--- may be insufficient information for the computation (such as only
+--- year and month with no day of month), or there may be inconsistent
+--- information (such as Tuesday, July 15, 1996 (Gregorian) -- July 15,
+--- 1996 is actually a Monday). Calendar will resolve
+--- calendar field values to determine the date and time in the
+--- following way.
+---
+--- If there is any conflict in calendar field values,
+--- Calendar gives priorities to calendar fields that have been set
+--- more recently. The following are the default combinations of the
+--- calendar fields. The most recent combination, as determined by the
+--- most recently set single field, will be used.
+---
+--- For the date fields:
+---
+---
+--- YEAR + MONTH + DAY_OF_MONTH
+--- YEAR + MONTH + WEEK_OF_MONTH + DAY_OF_WEEK
+--- YEAR + MONTH + DAY_OF_WEEK_IN_MONTH + DAY_OF_WEEK
+--- YEAR + DAY_OF_YEAR
+--- YEAR + DAY_OF_WEEK + WEEK_OF_YEAR
+---
+---
+--- For the time of day fields:
+---
+---
+--- HOUR_OF_DAY
+--- AM_PM + HOUR
+---
+---
+--- If there are any calendar fields whose values haven't been set in the selected
+--- field combination, Calendar uses their default values. The default
+--- value of each field may vary by concrete calendar systems. For example, in
+--- GregorianCalendar, the default of a field is the same as that
+--- of the start of the Epoch: i.e., YEAR = 1970, MONTH =
+--- JANUARY, DAY_OF_MONTH = 1, etc.
+---
+---
+--- Note: There are certain possible ambiguities in
+--- interpretation of certain singular times, which are resolved in the
+--- following ways:
+---
+---      23:59 is the last minute of the day and 00:00 is the first
+---          minute of the next day. Thus, 23:59 on Dec 31, 1999 < 00:00 on
+---          Jan 1, 2000 < 00:01 on Jan 1, 2000.
+---
+---      Although historically not precise, midnight also belongs to "am",
+---          and noon belongs to "pm", so on the same day,
+---          12:00 am (midnight) < 12:01 am, and 12:00 pm (noon) < 12:01 pm
+---
+---
+---
+--- The date or time format strings are not part of the definition of a
+--- calendar, as those must be modifiable or overridable by the user at
+--- runtime. Use DateFormat
+--- to format dates.
+---
+--- Field Manipulation
+---
+--- The calendar fields can be changed using three methods:
+--- set(), add(), and roll().
+---
+--- set(f, value) changes calendar field
+--- f to value.  In addition, it sets an
+--- internal member variable to indicate that calendar field f has
+--- been changed. Although calendar field f is changed immediately,
+--- the calendar's time value in milliseconds is not recomputed until the next call to
+--- get(), getTime(), getTimeInMillis(),
+--- add(), or roll() is made. Thus, multiple calls to
+--- set() do not trigger multiple, unnecessary
+--- computations. As a result of changing a calendar field using
+--- set(), other calendar fields may also change, depending on the
+--- calendar field, the calendar field value, and the calendar system. In addition,
+--- get(f) will not necessarily return value set by
+--- the call to the set method
+--- after the calendar fields have been recomputed. The specifics are determined by
+--- the concrete calendar class.
+---
+--- Example: Consider a GregorianCalendar
+--- originally set to August 31, 1999. Calling set(Calendar.MONTH,
+--- Calendar.SEPTEMBER) sets the date to September 31,
+--- 1999. This is a temporary internal representation that resolves to
+--- October 1, 1999 if getTime() is then called. However, a
+--- call to set(Calendar.DAY_OF_MONTH, 30) before the call to
+--- getTime() sets the date to September 30, 1999, since
+--- no recomputation occurs after set() itself.
+---
+--- add(f, delta) adds delta
+--- to field f.  This is equivalent to calling set(f,
+--- get(f) + delta) with two adjustments:
+---
+---
+---   Add rule 1. The value of field f
+---   after the call minus the value of field f before the
+---   call is delta, modulo any overflow that has occurred in
+---   field f. Overflow occurs when a field value exceeds its
+---   range and, as a result, the next larger field is incremented or
+---   decremented and the field value is adjusted back into its range.
+---
+---   Add rule 2. If a smaller field is expected to be
+---   invariant, but it is impossible for it to be equal to its
+---   prior value because of changes in its minimum or maximum after field
+---   f is changed or other constraints, such as time zone
+---   offset changes, then its value is adjusted to be as close
+---   as possible to its expected value. A smaller field represents a
+---   smaller unit of time. HOUR is a smaller field than
+---   DAY_OF_MONTH. No adjustment is made to smaller fields
+---   that are not expected to be invariant. The calendar system
+---   determines what fields are expected to be invariant.
+---
+---
+--- In addition, unlike set(), add() forces
+--- an immediate recomputation of the calendar's milliseconds and all
+--- fields.
+---
+--- Example: Consider a GregorianCalendar
+--- originally set to August 31, 1999. Calling add(Calendar.MONTH,
+--- 13) sets the calendar to September 30, 2000. Add rule
+--- 1 sets the MONTH field to September, since
+--- adding 13 months to August gives September of the next year. Since
+--- DAY_OF_MONTH cannot be 31 in September in a
+--- GregorianCalendar, add rule 2 sets the
+--- DAY_OF_MONTH to 30, the closest possible value. Although
+--- it is a smaller field, DAY_OF_WEEK is not adjusted by
+--- rule 2, since it is expected to change when the month changes in a
+--- GregorianCalendar.
+---
+--- roll(f, delta) adds
+--- delta to field f without changing larger
+--- fields. This is equivalent to calling add(f, delta) with
+--- the following adjustment:
+---
+---
+---   Roll rule. Larger fields are unchanged after the
+---   call. A larger field represents a larger unit of
+---   time. DAY_OF_MONTH is a larger field than
+---   HOUR.
+---
+---
+--- Example: See GregorianCalendar.roll(int, int).
+---
+--- Usage model. To motivate the behavior of
+--- add() and roll(), consider a user interface
+--- component with increment and decrement buttons for the month, day, and
+--- year, and an underlying GregorianCalendar. If the
+--- interface reads January 31, 1999 and the user presses the month
+--- increment button, what should it read? If the underlying
+--- implementation uses set(), it might read March 3, 1999. A
+--- better result would be February 28, 1999. Furthermore, if the user
+--- presses the month increment button again, it should read March 31,
+--- 1999, not March 28, 1999. By saving the original date and using either
+--- add() or roll(), depending on whether larger
+--- fields should be affected, the user interface can behave as most users
+--- will intuitively expect.
+---@class Calendar
+
+---(Not exposed)
+---A comparison function, which imposes a total ordering on
+--- some collection of objects.  Comparators can be passed to a sort
+--- method (such as Collections.sort or Arrays.sort) to allow precise control over the sort order.
+--- Comparators can also be used to control the order of certain data
+--- structures (such as sorted sets or
+--- sorted maps), or to provide an ordering for
+--- collections of objects that don't have a natural ordering.
+---
+--- The ordering imposed by a comparator c on a set of elements
+--- S is said to be consistent with equals if and only if
+--- c.compare(e1, e2)==0 has the same boolean value as
+--- e1.equals(e2) for every e1 and e2 in
+--- S.
+---
+--- Caution should be exercised when using a comparator capable of imposing an
+--- ordering inconsistent with equals to order a sorted set (or sorted map).
+--- Suppose a sorted set (or sorted map) with an explicit comparator c
+--- is used with elements (or keys) drawn from a set S.  If the
+--- ordering imposed by c on S is inconsistent with equals,
+--- the sorted set (or sorted map) will behave "strangely."  In particular the
+--- sorted set (or sorted map) will violate the general contract for set (or
+--- map), which is defined in terms of equals.
+---
+--- For example, suppose one adds two elements a and b such that
+--- (a.equals(b) && c.compare(a, b) != 0)
+--- to an empty TreeSet with comparator c.
+--- The second add operation will return
+--- true (and the size of the tree set will increase) because a and
+--- b are not equivalent from the tree set's perspective, even though
+--- this is contrary to the specification of the
+--- Set.add method.
+---
+--- Note: It is generally a good idea for comparators to also implement
+--- java.io.Serializable, as they may be used as ordering methods in
+--- serializable data structures (like TreeSet, TreeMap).  In
+--- order for the data structure to serialize successfully, the comparator (if
+--- provided) must implement Serializable.
+---
+--- For the mathematically inclined, the relation that defines the
+--- imposed ordering that a given comparator c imposes on a
+--- given set of objects S is:
+---       {(x, y) such that c.compare(x, y) <= 0}.
+---  The quotient for this total order is:
+---       {(x, y) such that c.compare(x, y) == 0}.
+---
+---
+--- It follows immediately from the contract for compare that the
+--- quotient is an equivalence relation on S, and that the
+--- imposed ordering is a total order on S.  When we say that
+--- the ordering imposed by c on S is consistent with
+--- equals, we mean that the quotient for the ordering is the equivalence
+--- relation defined by the objects' equals(Object) method(s):
+---     {(x, y) such that x.equals(y)}.
+---
+--- In other words, when the imposed ordering is consistent with
+--- equals, the equivalence classes defined by the equivalence relation
+--- of the equals method and the equivalence classes defined by
+--- the quotient of the compare method are the same.
+---
+--- Unlike Comparable, a comparator may optionally permit
+--- comparison of null arguments, while maintaining the requirements for
+--- an equivalence relation.
+---
+--- This interface is a member of the
+---
+--- Java Collections Framework.
+---@class Comparator<T>
+
+---(Not exposed)
+---The class Date represents a specific instant
+--- in time, with millisecond precision.
+---
+--- Prior to JDK 1.1, the class Date had two additional
+--- functions.  It allowed the interpretation of dates as year, month, day, hour,
+--- minute, and second values.  It also allowed the formatting and parsing
+--- of date strings.  Unfortunately, the API for these functions was not
+--- amenable to internationalization.  As of JDK 1.1, the
+--- Calendar class should be used to convert between dates and time
+--- fields and the DateFormat class should be used to format and
+--- parse date strings.
+--- The corresponding methods in Date are deprecated.
+---
+--- Although the Date class is intended to reflect
+--- coordinated universal time (UTC), it may not do so exactly,
+--- depending on the host environment of the Java Virtual Machine.
+--- Nearly all modern operating systems assume that 1 day =
+--- 24 &times; 60 &times; 60 = 86400 seconds
+--- in all cases. In UTC, however, about once every year or two there
+--- is an extra second, called a "leap second." The leap
+--- second is always added as the last second of the day, and always
+--- on December 31 or June 30. For example, the last minute of the
+--- year 1995 was 61 seconds long, thanks to an added leap second.
+--- Most computer clocks are not accurate enough to be able to reflect
+--- the leap-second distinction.
+---
+--- Some computer standards are defined in terms of Greenwich mean
+--- time (GMT), which is equivalent to universal time (UT).  GMT is
+--- the "civil" name for the standard; UT is the
+--- "scientific" name for the same standard. The
+--- distinction between UTC and UT is that UTC is based on an atomic
+--- clock and UT is based on astronomical observations, which for all
+--- practical purposes is an invisibly fine hair to split. Because the
+--- earth's rotation is not uniform (it slows down and speeds up
+--- in complicated ways), UT does not always flow uniformly. Leap
+--- seconds are introduced as needed into UTC so as to keep UTC within
+--- 0.9 seconds of UT1, which is a version of UT with certain
+--- corrections applied. There are other time and date systems as
+--- well; for example, the time scale used by the satellite-based
+--- global positioning system (GPS) is synchronized to UTC but is
+--- not adjusted for leap seconds. An interesting source of
+--- further information is the United States Naval Observatory (USNO):
+---
+---     <a href="https://www.usno.navy.mil/USNO">https://www.usno.navy.mil/USNO</a>
+---
+---
+--- and the material regarding "Systems of Time" at:
+---
+---     <a href="https://www.usno.navy.mil/USNO/time/master-clock/systems-of-time">https://www.usno.navy.mil/USNO/time/master-clock/systems-of-time</a>
+---
+---
+--- which has descriptions of various different time systems including
+--- UT, UT1, and UTC.
+---
+--- In all methods of class Date that accept or return
+--- year, month, date, hours, minutes, and seconds values, the
+--- following representations are used:
+---
+--- A year y is represented by the integer
+---     y - 1900.
+--- A month is represented by an integer from 0 to 11; 0 is January,
+---     1 is February, and so forth; thus 11 is December.
+--- A date (day of month) is represented by an integer from 1 to 31
+---     in the usual manner.
+--- An hour is represented by an integer from 0 to 23. Thus, the hour
+---     from midnight to 1 a.m. is hour 0, and the hour from noon to 1
+---     p.m. is hour 12.
+--- A minute is represented by an integer from 0 to 59 in the usual manner.
+--- A second is represented by an integer from 0 to 61; the values 60 and
+---     61 occur only for leap seconds and even then only in Java
+---     implementations that actually track leap seconds correctly. Because
+---     of the manner in which leap seconds are currently introduced, it is
+---     extremely unlikely that two leap seconds will occur in the same
+---     minute, but this specification follows the date and time conventions
+---     for ISO C.
+---
+---
+--- In all cases, arguments given to methods for these purposes need
+--- not fall within the indicated ranges; for example, a date may be
+--- specified as January 32 and is interpreted as meaning February 1.
+---@class Date
+
+---(Not exposed)
+---The Dictionary class is the abstract parent of any
+--- class, such as Hashtable, which maps keys to values.
+--- Every key and every value is an object. In any one Dictionary
+--- object, every key is associated with at most one value. Given a
+--- Dictionary and a key, the associated element can be looked up.
+--- Any non-null object can be used as a key and as a value.
+---
+--- As a rule, the equals method should be used by
+--- implementations of this class to decide if two keys are the same.
+---
+--- NOTE: This class is obsolete.  New implementations should
+--- implement the Map interface, rather than extending this class.
+---@class Dictionary<K, V>
+
+---(Not exposed)
+---A specialized Set implementation for use with enum types.  All of
+--- the elements in an enum set must come from a single enum type that is
+--- specified, explicitly or implicitly, when the set is created.  Enum sets
+--- are represented internally as bit vectors.  This representation is
+--- extremely compact and efficient. The space and time performance of this
+--- class should be good enough to allow its use as a high-quality, typesafe
+--- alternative to traditional int-based "bit flags."  Even bulk
+--- operations (such as containsAll and retainAll) should
+--- run very quickly if their argument is also an enum set.
+---
+--- The iterator returned by the iterator method traverses the
+--- elements in their natural order (the order in which the enum
+--- constants are declared).  The returned iterator is weakly
+--- consistent: it will never throw ConcurrentModificationException
+--- and it may or may not show the effects of any modifications to the set that
+--- occur while the iteration is in progress.
+---
+--- Null elements are not permitted.  Attempts to insert a null element
+--- will throw NullPointerException.  Attempts to test for the
+--- presence of a null element or to remove one will, however, function
+--- properly.
+---
+--- Like most collection implementations, EnumSet is not
+--- synchronized.  If multiple threads access an enum set concurrently, and at
+--- least one of the threads modifies the set, it should be synchronized
+--- externally.  This is typically accomplished by synchronizing on some
+--- object that naturally encapsulates the enum set.  If no such object exists,
+--- the set should be "wrapped" using the Collections.synchronizedSet(java.util.Set<T>)
+--- method.  This is best done at creation time, to prevent accidental
+--- unsynchronized access:
+---
+---
+--- Set<MyEnum> s = Collections.synchronizedSet(EnumSet.noneOf(MyEnum.class));
+---
+---
+--- Implementation note: All basic operations execute in constant time.
+--- They are likely (though not guaranteed) to be much faster than their
+--- HashSet counterparts.  Even bulk operations execute in
+--- constant time if their argument is also an enum set.
+---
+--- This class is a member of the
+---
+--- Java Collections Framework.
+---@class EnumSet<E: Enum<E>>
+
+---(Not exposed)
+---An object that implements the Enumeration interface generates a
+--- series of elements, one at a time. Successive calls to the
+--- nextElement method return successive elements of the
+--- series.
+---
+--- For example, to print all elements of a Vector<E> v:
+---
+---   for (Enumeration<E> e = v.elements(); e.hasMoreElements();)
+---       System.out.println(e.nextElement());
+---
+--- Methods are provided to enumerate through the elements of a
+--- vector, the keys of a hashtable, and the values in a hashtable.
+--- Enumerations are also used to specify the input streams to a
+--- SequenceInputStream.
+---@class Enumeration<E>
+
+---(Not exposed)
+---GregorianCalendar is a concrete subclass of
+--- Calendar and provides the standard calendar system
+--- used by most of the world.
+---
+---  GregorianCalendar is a hybrid calendar that
+--- supports both the Julian and Gregorian calendar systems with the
+--- support of a single discontinuity, which corresponds by default to
+--- the Gregorian date when the Gregorian calendar was instituted
+--- (October 15, 1582 in some countries, later in others).  The cutover
+--- date may be changed by the caller by calling setGregorianChange().
+---
+---
+--- Historically, in those countries which adopted the Gregorian calendar first,
+--- October 4, 1582 (Julian) was thus followed by October 15, 1582 (Gregorian). This calendar models
+--- this correctly.  Before the Gregorian cutover, GregorianCalendar
+--- implements the Julian calendar.  The only difference between the Gregorian
+--- and the Julian calendar is the leap year rule. The Julian calendar specifies
+--- leap years every four years, whereas the Gregorian calendar omits century
+--- years which are not divisible by 400.
+---
+---
+--- GregorianCalendar implements proleptic Gregorian and
+--- Julian calendars. That is, dates are computed by extrapolating the current
+--- rules indefinitely far backward and forward in time. As a result,
+--- GregorianCalendar may be used for all years to generate
+--- meaningful and consistent results. However, dates obtained using
+--- GregorianCalendar are historically accurate only from March 1, 4
+--- AD onward, when modern Julian calendar rules were adopted.  Before this date,
+--- leap year rules were applied irregularly, and before 45 BC the Julian
+--- calendar did not even exist.
+---
+---
+--- Prior to the institution of the Gregorian calendar, New Year's Day was
+--- March 25. To avoid confusion, this calendar always uses January 1. A manual
+--- adjustment may be made if desired for dates that are prior to the Gregorian
+--- changeover and which fall between January 1 and March 24.
+---
+--- Week Of Year and Week Year
+---
+--- Values calculated for the WEEK_OF_YEAR field range from 1 to 53. The first week of a
+--- calendar year is the earliest seven day period starting on getFirstDayOfWeek() that contains at
+--- least getMinimalDaysInFirstWeek() days from that year. It thus depends
+--- on the values of getMinimalDaysInFirstWeek(),
+--- getFirstDayOfWeek(), and the day of the week of January 1. Weeks
+--- between week 1 of one year and week 1 of the following year
+--- (exclusive) are numbered sequentially from 2 to 52 or 53 (except
+--- for year(s) involved in the Julian-Gregorian transition).
+---
+--- The getFirstDayOfWeek() and
+--- getMinimalDaysInFirstWeek() values are initialized using
+--- locale-dependent resources when constructing a
+--- GregorianCalendar. The week
+--- determination is compatible with the ISO 8601 standard when
+--- getFirstDayOfWeek() is MONDAY and
+--- getMinimalDaysInFirstWeek() is 4, which values are used in locales
+--- where the standard is preferred. These values can explicitly be set by
+--- calling setFirstDayOfWeek() and
+--- setMinimalDaysInFirstWeek().
+---
+--- A week year is in sync with a
+--- WEEK_OF_YEAR cycle. All weeks between the first and last
+--- weeks (inclusive) have the same week year value.
+--- Therefore, the first and last days of a week year may have
+--- different calendar year values.
+---
+--- For example, January 1, 1998 is a Thursday. If
+--- getFirstDayOfWeek() is MONDAY and
+--- getMinimalDaysInFirstWeek() is 4 (ISO 8601 standard compatible
+--- setting), then week 1 of 1998 starts on December 29, 1997, and ends
+--- on January 4, 1998. The week year is 1998 for the last three days
+--- of calendar year 1997. If, however, getFirstDayOfWeek() is
+--- SUNDAY, then week 1 of 1998 starts on January 4, 1998, and
+--- ends on January 10, 1998; the first three days of 1998 then are
+--- part of week 53 of 1997 and their week year is 1997.
+---
+--- Week Of Month
+---
+--- Values calculated for the WEEK_OF_MONTH field range from 0
+--- to 6.  Week 1 of a month (the days with WEEK_OF_MONTH =
+--- 1) is the earliest set of at least
+--- getMinimalDaysInFirstWeek() contiguous days in that month,
+--- ending on the day before getFirstDayOfWeek().  Unlike
+--- week 1 of a year, week 1 of a month may be shorter than 7 days, need
+--- not start on getFirstDayOfWeek(), and will not include days of
+--- the previous month.  Days of a month before week 1 have a
+--- WEEK_OF_MONTH of 0.
+---
+--- For example, if getFirstDayOfWeek() is SUNDAY
+--- and getMinimalDaysInFirstWeek() is 4, then the first week of
+--- January 1998 is Sunday, January 4 through Saturday, January 10.  These days
+--- have a WEEK_OF_MONTH of 1.  Thursday, January 1 through
+--- Saturday, January 3 have a WEEK_OF_MONTH of 0.  If
+--- getMinimalDaysInFirstWeek() is changed to 3, then January 1
+--- through January 3 have a WEEK_OF_MONTH of 1.
+---
+--- Default Fields Values
+---
+--- The clear method sets calendar field(s)
+--- undefined. GregorianCalendar uses the following
+--- default value for each calendar field if its value is undefined.
+---
+---
+--- GregorianCalendar default field values
+---
+---
+---
+---          Field
+---
+---
+---          Default Value
+---
+---
+---
+---
+---
+---
+---              ERA
+---
+---
+---              AD
+---
+---
+---
+---
+---              YEAR
+---
+---
+---              1970
+---
+---
+---
+---
+---              MONTH
+---
+---
+---              JANUARY
+---
+---
+---
+---
+---              DAY_OF_MONTH
+---
+---
+---              1
+---
+---
+---
+---
+---              DAY_OF_WEEK
+---
+---
+---              the first day of week
+---
+---
+---
+---
+---              WEEK_OF_MONTH
+---
+---
+---              0
+---
+---
+---
+---
+---              DAY_OF_WEEK_IN_MONTH
+---
+---
+---              1
+---
+---
+---
+---
+---              AM_PM
+---
+---
+---              AM
+---
+---
+---
+---
+---              HOUR, HOUR_OF_DAY, MINUTE, SECOND, MILLISECOND
+---
+---
+---              0
+---
+---
+---
+---
+--- Default values are not applicable for the fields not listed above.
+---
+---
+--- Example:
+---
+---
+--- // get the supported ids for GMT-08:00 (Pacific Standard Time)
+--- String[] ids = TimeZone.getAvailableIDs(-8 * 60 * 60 * 1000);
+--- // if no ids were returned, something is wrong. get out.
+--- if (ids.length == 0)
+---     System.exit(0);
+---
+---  // begin output
+--- System.out.println("Current Time");
+---
+--- // create a Pacific Standard Time time zone
+--- SimpleTimeZone pdt = new SimpleTimeZone(-8 * 60 * 60 * 1000, ids[0]);
+---
+--- // set up rules for Daylight Saving Time
+--- pdt.setStartRule(Calendar.APRIL, 1, Calendar.SUNDAY, 2 * 60 * 60 * 1000);
+--- pdt.setEndRule(Calendar.OCTOBER, -1, Calendar.SUNDAY, 2 * 60 * 60 * 1000);
+---
+--- // create a GregorianCalendar with the Pacific Daylight time zone
+--- // and the current date and time
+--- Calendar calendar = new GregorianCalendar(pdt);
+--- Date trialTime = new Date();
+--- calendar.setTime(trialTime);
+---
+--- // print out a bunch of interesting things
+--- System.out.println("ERA: " + calendar.get(Calendar.ERA));
+--- System.out.println("YEAR: " + calendar.get(Calendar.YEAR));
+--- System.out.println("MONTH: " + calendar.get(Calendar.MONTH));
+--- System.out.println("WEEK_OF_YEAR: " + calendar.get(Calendar.WEEK_OF_YEAR));
+--- System.out.println("WEEK_OF_MONTH: " + calendar.get(Calendar.WEEK_OF_MONTH));
+--- System.out.println("DATE: " + calendar.get(Calendar.DATE));
+--- System.out.println("DAY_OF_MONTH: " + calendar.get(Calendar.DAY_OF_MONTH));
+--- System.out.println("DAY_OF_YEAR: " + calendar.get(Calendar.DAY_OF_YEAR));
+--- System.out.println("DAY_OF_WEEK: " + calendar.get(Calendar.DAY_OF_WEEK));
+--- System.out.println("DAY_OF_WEEK_IN_MONTH: "
+---                    + calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH));
+--- System.out.println("AM_PM: " + calendar.get(Calendar.AM_PM));
+--- System.out.println("HOUR: " + calendar.get(Calendar.HOUR));
+--- System.out.println("HOUR_OF_DAY: " + calendar.get(Calendar.HOUR_OF_DAY));
+--- System.out.println("MINUTE: " + calendar.get(Calendar.MINUTE));
+--- System.out.println("SECOND: " + calendar.get(Calendar.SECOND));
+--- System.out.println("MILLISECOND: " + calendar.get(Calendar.MILLISECOND));
+--- System.out.println("ZONE_OFFSET: "
+---                    + (calendar.get(Calendar.ZONE_OFFSET)/(60*60*1000)));
+--- System.out.println("DST_OFFSET: "
+---                    + (calendar.get(Calendar.DST_OFFSET)/(60*60*1000)));
+--- System.out.println("Current Time, with hour reset to 3");
+--- calendar.clear(Calendar.HOUR_OF_DAY); // so doesn't override
+--- calendar.set(Calendar.HOUR, 3);
+--- System.out.println("ERA: " + calendar.get(Calendar.ERA));
+--- System.out.println("YEAR: " + calendar.get(Calendar.YEAR));
+--- System.out.println("MONTH: " + calendar.get(Calendar.MONTH));
+--- System.out.println("WEEK_OF_YEAR: " + calendar.get(Calendar.WEEK_OF_YEAR));
+--- System.out.println("WEEK_OF_MONTH: " + calendar.get(Calendar.WEEK_OF_MONTH));
+--- System.out.println("DATE: " + calendar.get(Calendar.DATE));
+--- System.out.println("DAY_OF_MONTH: " + calendar.get(Calendar.DAY_OF_MONTH));
+--- System.out.println("DAY_OF_YEAR: " + calendar.get(Calendar.DAY_OF_YEAR));
+--- System.out.println("DAY_OF_WEEK: " + calendar.get(Calendar.DAY_OF_WEEK));
+--- System.out.println("DAY_OF_WEEK_IN_MONTH: "
+---                    + calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH));
+--- System.out.println("AM_PM: " + calendar.get(Calendar.AM_PM));
+--- System.out.println("HOUR: " + calendar.get(Calendar.HOUR));
+--- System.out.println("HOUR_OF_DAY: " + calendar.get(Calendar.HOUR_OF_DAY));
+--- System.out.println("MINUTE: " + calendar.get(Calendar.MINUTE));
+--- System.out.println("SECOND: " + calendar.get(Calendar.SECOND));
+--- System.out.println("MILLISECOND: " + calendar.get(Calendar.MILLISECOND));
+--- System.out.println("ZONE_OFFSET: "
+---        + (calendar.get(Calendar.ZONE_OFFSET)/(60*60*1000))); // in hours
+--- System.out.println("DST_OFFSET: "
+---        + (calendar.get(Calendar.DST_OFFSET)/(60*60*1000))); // in hours
+---@class GregorianCalendar
+
+---(Not exposed)
+---@class HashMap.Node<K, V>
+
+---(Not exposed)
+---@class HashMap.TreeNode<K, V>
+
+---(Not exposed)
+---This class implements the Set interface, backed by a hash table
+--- (actually a HashMap instance).  It makes no guarantees as to the
+--- iteration order of the set; in particular, it does not guarantee that the
+--- order will remain constant over time.  This class permits the null
+--- element.
+---
+--- This class offers constant time performance for the basic operations
+--- (add, remove, contains and size),
+--- assuming the hash function disperses the elements properly among the
+--- buckets.  Iterating over this set requires time proportional to the sum of
+--- the HashSet instance's size (the number of elements) plus the
+--- "capacity" of the backing HashMap instance (the number of
+--- buckets).  Thus, it's very important not to set the initial capacity too
+--- high (or the load factor too low) if iteration performance is important.
+---
+--- Note that this implementation is not synchronized.
+--- If multiple threads access a hash set concurrently, and at least one of
+--- the threads modifies the set, it must be synchronized externally.
+--- This is typically accomplished by synchronizing on some object that
+--- naturally encapsulates the set.
+---
+--- If no such object exists, the set should be "wrapped" using the
+--- Collections.synchronizedSet
+--- method.  This is best done at creation time, to prevent accidental
+--- unsynchronized access to the set:
+---   Set s = Collections.synchronizedSet(new HashSet(...));
+---
+--- The iterators returned by this class's iterator method are
+--- fail-fast: if the set is modified at any time after the iterator is
+--- created, in any way except through the iterator's own remove
+--- method, the Iterator throws a ConcurrentModificationException.
+--- Thus, in the face of concurrent modification, the iterator fails quickly
+--- and cleanly, rather than risking arbitrary, non-deterministic behavior at
+--- an undetermined time in the future.
+---
+--- Note that the fail-fast behavior of an iterator cannot be guaranteed
+--- as it is, generally speaking, impossible to make any hard guarantees in the
+--- presence of unsynchronized concurrent modification.  Fail-fast iterators
+--- throw ConcurrentModificationException on a best-effort basis.
+--- Therefore, it would be wrong to write a program that depended on this
+--- exception for its correctness: the fail-fast behavior of iterators
+--- should be used only to detect bugs.
+---
+--- This class is a member of the
+---
+--- Java Collections Framework.
+---@class HashSet<E>
+
+---(Not exposed)
+---@class LinkedHashMap.Entry<K, V>
+
+---(Not exposed)
+---@class LinkedList.Node<E>
+
+---(Not exposed)
+---An iterator for lists that allows the programmer
+--- to traverse the list in either direction, modify
+--- the list during iteration, and obtain the iterator's
+--- current position in the list. A ListIterator
+--- has no current element; its cursor position always
+--- lies between the element that would be returned by a call
+--- to previous() and the element that would be
+--- returned by a call to next().
+--- An iterator for a list of length n has n+1 possible
+--- cursor positions, as illustrated by the carets (^) below:
+---
+---                      Element(0)   Element(1)   Element(2)   ... Element(n-1)
+--- cursor positions:  ^            ^            ^            ^                  ^
+---
+--- Note that the remove() and set(Object) methods are
+--- not defined in terms of the cursor position;  they are defined to
+--- operate on the last element returned by a call to next() or
+--- previous().
+---
+--- This interface is a member of the
+---
+--- Java Collections Framework.
+---@class ListIterator<E>
+
+---(Not exposed)
+---Enum for locale categories.  These locale categories are used to get/set
+--- the default locale for the specific functionality represented by the
+--- category.
+---@class Locale.Category
+
+---(Not exposed)
+---This enum provides constants to select a filtering mode for locale
+--- matching. Refer to RFC 4647
+--- Matching of Language Tags for details.
+---
+--- As an example, think of two Language Priority Lists each of which
+--- includes only one language range and a set of following language tags:
+---
+---
+---    de (German)
+---    de-DE (German, Germany)
+---    de-Deva (German, in Devanagari script)
+---    de-Deva-DE (German, in Devanagari script, Germany)
+---    de-DE-1996 (German, Germany, orthography of 1996)
+---    de-Latn-DE (German, in Latin script, Germany)
+---    de-Latn-DE-1996 (German, in Latin script, Germany, orthography of 1996)
+---
+---
+--- The filtering method will behave as follows:
+---
+---
+--- Filtering method behavior
+---
+---
+--- Filtering Mode
+--- Language Priority List: "de-DE"
+--- Language Priority List: "de-*-DE"
+---
+---
+---
+---
+---
+--- AUTOSELECT_FILTERING
+---
+---
+--- Performs basic filtering and returns "de-DE" and
+--- "de-DE-1996".
+---
+---
+--- Performs extended filtering and returns "de-DE",
+--- "de-Deva-DE", "de-DE-1996", "de-Latn-DE", and
+--- "de-Latn-DE-1996".
+---
+---
+---
+---
+--- EXTENDED_FILTERING
+---
+---
+--- Performs extended filtering and returns "de-DE",
+--- "de-Deva-DE", "de-DE-1996", "de-Latn-DE", and
+--- "de-Latn-DE-1996".
+---
+--- Same as above.
+---
+---
+---
+--- IGNORE_EXTENDED_RANGES
+---
+---
+--- Performs basic filtering and returns "de-DE" and
+--- "de-DE-1996".
+---
+---
+--- Performs basic filtering and returns null because
+--- nothing matches.
+---
+---
+---
+---
+--- MAP_EXTENDED_RANGES
+---
+--- Same as above.
+---
+--- Performs basic filtering and returns "de-DE" and
+--- "de-DE-1996" because "de-*-DE" is mapped to
+--- "de-DE".
+---
+---
+---
+---
+--- REJECT_EXTENDED_RANGES
+---
+--- Same as above.
+---
+--- Throws IllegalArgumentException because "de-*-DE" is
+--- not a valid basic language range.
+---@class Locale.FilteringMode
+
+---(Not exposed)
+---Enum for specifying the type defined in ISO 3166. This enum is used to
+--- retrieve the two-letter ISO3166-1 alpha-2, three-letter ISO3166-1
+--- alpha-3, four-letter ISO3166-3 country codes.
+---@class Locale.IsoCountryCode
+
+---(Not exposed)
+---This class expresses a Language Range defined in
+--- RFC 4647 Matching of
+--- Language Tags. A language range is an identifier which is used to
+--- select language tag(s) meeting specific requirements by using the
+--- mechanisms described in Locale
+--- Matching. A list which represents a user's preferences and consists
+--- of language ranges is called a Language Priority List.
+---
+--- There are two types of language ranges: basic and extended. In RFC
+--- 4647, the syntax of language ranges is expressed in
+--- ABNF as follows:
+---
+---
+---     basic-language-range    = (1*8ALPHA *("-" 1*8alphanum)) / "*"
+---     extended-language-range = (1*8ALPHA / "*")
+---                               *("-" (1*8alphanum / "*"))
+---     alphanum                = ALPHA / DIGIT
+---
+---
+--- For example, "en" (English), "ja-JP" (Japanese, Japan),
+--- "*" (special language range which matches any language tag) are
+--- basic language ranges, whereas "*-CH" (any languages,
+--- Switzerland), "es-*" (Spanish, any regions), and
+--- "zh-Hant-*" (Traditional Chinese, any regions) are extended
+--- language ranges.
+---@class Locale.LanguageRange
+
+---(Not exposed)
+---A map entry (key-value pair). The Entry may be unmodifiable, or the
+--- value may be modifiable if the optional setValue method is
+--- implemented. The Entry may be independent of any map, or it may represent
+--- an entry of the entry-set view of a map.
+---
+--- Instances of the Map.Entry interface may be obtained by iterating
+--- the entry-set view of a map. These instances maintain a connection to the
+--- original, backing map. This connection to the backing map is valid
+--- only for the duration of iteration over the entry-set view.
+--- During iteration of the entry-set view, if supported by the backing map,
+--- a change to a Map.Entry's value via the
+--- setValue method will be visible in the backing map.
+--- The behavior of such a Map.Entry instance is undefined outside of
+--- iteration of the map's entry-set view. It is also undefined if the backing
+--- map has been modified after the Map.Entry was returned by the
+--- iterator, except through the Map.Entry.setValue method. In particular,
+--- a change to the value of a mapping in the backing map might or might not be
+--- visible in the corresponding Map.Entry element of the entry-set view.
+---@class Map.Entry<K, V>
+
+---(Not exposed)
+---A container object which may or may not contain a non-null value.
+--- If a value is present, isPresent() returns true. If no
+--- value is present, the object is considered empty and
+--- isPresent() returns false.
+---
+--- Additional methods that depend on the presence or absence of a contained
+--- value are provided, such as orElse()
+--- (returns a default value if no value is present) and
+--- ifPresent() (performs an
+--- action if a value is present).
+---
+--- This is a value-based
+--- class; programmers should treat instances that are
+--- equal as interchangeable and should not
+--- use instances for synchronization, or unpredictable behavior may
+--- occur. For example, in a future release, synchronization may fail.
+---@class Optional<T>
+
+---(Not exposed)
+---An instance of this class is used to generate a stream of
+--- pseudorandom numbers; its period is only 248.
+--- The class uses a 48-bit seed, which is
+--- modified using a linear congruential formula. (See Donald E. Knuth,
+--- The Art of Computer Programming, Volume 2, Third
+--- edition: Seminumerical Algorithms, Section 3.2.1.)
+---
+--- If two instances of Random are created with the same
+--- seed, and the same sequence of method calls is made for each, they
+--- will generate and return identical sequences of numbers. In order to
+--- guarantee this property, particular algorithms are specified for the
+--- class Random. Java implementations must use all the algorithms
+--- shown here for the class Random, for the sake of absolute
+--- portability of Java code. However, subclasses of class Random
+--- are permitted to use other algorithms, so long as they adhere to the
+--- general contracts for all the methods.
+---
+--- The algorithms implemented by class Random use a
+--- protected utility method that on each invocation can supply
+--- up to 32 pseudorandomly generated bits.
+---
+--- Many applications will find the method Math.random() simpler to use.
+---
+--- Instances of java.util.Random are threadsafe.
+--- However, the concurrent use of the same java.util.Random
+--- instance across threads may encounter contention and consequent
+--- poor performance. Consider instead using
+--- ThreadLocalRandom in multithreaded
+--- designs.
+---
+--- Instances of java.util.Random are not cryptographically
+--- secure.  Consider instead using SecureRandom to
+--- get a cryptographically secure pseudo-random number generator for use
+--- by security-sensitive applications.
+---@class Random
+
+---(Not exposed)
+---A collection that contains no duplicate elements.  More formally, sets
+--- contain no pair of elements e1 and e2 such that
+--- e1.equals(e2), and at most one null element.  As implied by
+--- its name, this interface models the mathematical set abstraction.
+---
+--- The Set interface places additional stipulations, beyond those
+--- inherited from the Collection interface, on the contracts of all
+--- constructors and on the contracts of the add, equals and
+--- hashCode methods.  Declarations for other inherited methods are
+--- also included here for convenience.  (The specifications accompanying these
+--- declarations have been tailored to the Set interface, but they do
+--- not contain any additional stipulations.)
+---
+--- The additional stipulation on constructors is, not surprisingly,
+--- that all constructors must create a set that contains no duplicate elements
+--- (as defined above).
+---
+--- Note: Great care must be exercised if mutable objects are used as set
+--- elements.  The behavior of a set is not specified if the value of an object
+--- is changed in a manner that affects equals comparisons while the
+--- object is an element in the set.  A special case of this prohibition is
+--- that it is not permissible for a set to contain itself as an element.
+---
+--- Some set implementations have restrictions on the elements that
+--- they may contain.  For example, some implementations prohibit null elements,
+--- and some have restrictions on the types of their elements.  Attempting to
+--- add an ineligible element throws an unchecked exception, typically
+--- NullPointerException or ClassCastException.  Attempting
+--- to query the presence of an ineligible element may throw an exception,
+--- or it may simply return false; some implementations will exhibit the former
+--- behavior and some will exhibit the latter.  More generally, attempting an
+--- operation on an ineligible element whose completion would not result in
+--- the insertion of an ineligible element into the set may throw an
+--- exception or it may succeed, at the option of the implementation.
+--- Such exceptions are marked as "optional" in the specification for this
+--- interface.
+---
+--- Unmodifiable Sets
+--- The Set.of and
+--- Set.copyOf static factory methods
+--- provide a convenient way to create unmodifiable sets. The Set
+--- instances created by these methods have the following characteristics:
+---
+---
+--- They are unmodifiable. Elements cannot
+--- be added or removed. Calling any mutator method on the Set
+--- will always cause UnsupportedOperationException to be thrown.
+--- However, if the contained elements are themselves mutable, this may cause the
+--- Set to behave inconsistently or its contents to appear to change.
+--- They disallow null elements. Attempts to create them with
+--- null elements result in NullPointerException.
+--- They are serializable if all elements are serializable.
+--- They reject duplicate elements at creation time. Duplicate elements
+--- passed to a static factory method result in IllegalArgumentException.
+--- The iteration order of set elements is unspecified and is subject to change.
+--- They are value-based.
+--- Programmers should treat instances that are equal
+--- as interchangeable and should not use them for synchronization, or
+--- unpredictable behavior may occur. For example, in a future release,
+--- synchronization may fail. Callers should make no assumptions
+--- about the identity of the returned instances. Factories are free to
+--- create new instances or reuse existing ones.
+--- They are serialized as specified on the
+--- Serialized Form
+--- page.
+---
+---
+--- This interface is a member of the
+---
+--- Java Collections Framework.
+---@class Set<E>
+
+---(Not exposed)
+---@class Spliterator<T>
+
+---(Not exposed)
+---TimeZone represents a time zone offset, and also figures out daylight
+--- savings.
+---
+---
+--- Typically, you get a TimeZone using getDefault
+--- which creates a TimeZone based on the time zone where the program
+--- is running. For example, for a program running in Japan, getDefault
+--- creates a TimeZone object based on Japanese Standard Time.
+---
+---
+--- You can also get a TimeZone using getTimeZone
+--- along with a time zone ID. For instance, the time zone ID for the
+--- U.S. Pacific Time zone is "America/Los_Angeles". So, you can get a
+--- U.S. Pacific Time TimeZone object with:
+---
+--- TimeZone tz = TimeZone.getTimeZone("America/Los_Angeles");
+---
+--- You can use the getAvailableIDs method to iterate through
+--- all the supported time zone IDs. You can then choose a
+--- supported ID to get a TimeZone.
+--- If the time zone you want is not represented by one of the
+--- supported IDs, then a custom time zone ID can be specified to
+--- produce a TimeZone. The syntax of a custom time zone ID is:
+---
+---
+--- <a id="CustomID"><i>CustomID:</i></a>
+---         <code>GMT</code> <i>Sign</i> <i>Hours</i> <code>:</code> <i>Minutes</i>
+---         <code>GMT</code> <i>Sign</i> <i>Hours</i> <i>Minutes</i>
+---         <code>GMT</code> <i>Sign</i> <i>Hours</i>
+--- <i>Sign:</i> one of
+---         <code>+ -</code>
+--- <i>Hours:</i>
+---         <i>Digit</i>
+---         <i>Digit</i> <i>Digit</i>
+--- <i>Minutes:</i>
+---         <i>Digit</i> <i>Digit</i>
+--- <i>Digit:</i> one of
+---         <code>0 1 2 3 4 5 6 7 8 9</code>
+---
+---
+--- Hours must be between 0 to 23 and Minutes must be
+--- between 00 to 59.  For example, "GMT+10" and "GMT+0010" mean ten
+--- hours and ten minutes ahead of GMT, respectively.
+---
+--- The format is locale independent and digits must be taken from the
+--- Basic Latin block of the Unicode standard. No daylight saving time
+--- transition schedule can be specified with a custom time zone ID. If
+--- the specified string doesn't match the syntax, "GMT"
+--- is used.
+---
+--- When creating a TimeZone, the specified custom time
+--- zone ID is normalized in the following syntax:
+---
+--- <a id="NormalizedCustomID"><i>NormalizedCustomID:</i></a>
+---         <code>GMT</code> <i>Sign</i> <i>TwoDigitHours</i> <code>:</code> <i>Minutes</i>
+--- <i>Sign:</i> one of
+---         <code>+ -</code>
+--- <i>TwoDigitHours:</i>
+---         <i>Digit</i> <i>Digit</i>
+--- <i>Minutes:</i>
+---         <i>Digit</i> <i>Digit</i>
+--- <i>Digit:</i> one of
+---         <code>0 1 2 3 4 5 6 7 8 9</code>
+---
+--- For example, TimeZone.getTimeZone("GMT-8").getID() returns "GMT-08:00".
+---
+--- Three-letter time zone IDs
+---
+--- For compatibility with JDK 1.1.x, some other three-letter time zone IDs
+--- (such as "PST", "CTT", "AST") are also supported. However, their
+--- use is deprecated because the same abbreviation is often used
+--- for multiple time zones (for example, "CST" could be U.S. "Central Standard
+--- Time" and "China Standard Time"), and the Java platform can then only
+--- recognize one of them.
+---@class TimeZone
+
+---(Not exposed)
+---A class that represents an immutable universally unique identifier (UUID).
+--- A UUID represents a 128-bit value.
+---
+---  There exist different variants of these global identifiers.  The methods
+--- of this class are for manipulating the Leach-Salz variant, although the
+--- constructors allow the creation of any variant of UUID (described below).
+---
+---  The layout of a variant 2 (Leach-Salz) UUID is as follows:
+---
+--- The most significant long consists of the following unsigned fields:
+---
+--- 0xFFFFFFFF00000000 time_low
+--- 0x00000000FFFF0000 time_mid
+--- 0x000000000000F000 version
+--- 0x0000000000000FFF time_hi
+---
+--- The least significant long consists of the following unsigned fields:
+---
+--- 0xC000000000000000 variant
+--- 0x3FFF000000000000 clock_seq
+--- 0x0000FFFFFFFFFFFF node
+---
+---
+---  The variant field contains a value which identifies the layout of the
+--- UUID.  The bit layout described above is valid only for a
+--- UUID with a variant value of 2, which indicates the Leach-Salz variant.
+---
+---  The version field holds a value that describes the type of this
+--- UUID.  There are four different basic types of UUIDs: time-based, DCE
+--- security, name-based, and randomly generated UUIDs.  These types have a
+--- version value of 1, 2, 3 and 4, respectively.
+---
+---  For more information including algorithms used to create UUIDs,
+--- see  RFC 4122: A
+--- Universally Unique IDentifier (UUID) URN Namespace, section 4.2
+--- &quot;Algorithms for Creating a Time-Based UUID&quot;.
+---@class UUID
+
+java.util = {}

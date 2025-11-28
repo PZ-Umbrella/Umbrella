@@ -1,0 +1,86 @@
+---@meta _
+
+---(Not exposed)
+---A Rectangle specifies an area in a coordinate space that is
+--- enclosed by the Rectangle object's upper-left point
+--- (x,y)
+--- in the coordinate space, its width, and its height.
+---
+--- A Rectangle object's width and
+--- height are public fields. The constructors
+--- that create a Rectangle, and the methods that can modify
+--- one, do not prevent setting a negative value for width or height.
+---
+---
+--- A Rectangle whose width or height is exactly zero has location
+--- along those axes with zero dimension, but is otherwise considered empty.
+--- The isEmpty() method will return true for such a Rectangle.
+--- Methods which test if an empty Rectangle contains or intersects
+--- a point or rectangle will always return false if either dimension is zero.
+--- Methods which combine such a Rectangle with a point or rectangle
+--- will include the location of the Rectangle on that axis in the
+--- result as if the add(Point) method were being called.
+---
+---
+--- A Rectangle whose width or height is negative has neither
+--- location nor dimension along those axes with negative dimensions.
+--- Such a Rectangle is treated as non-existent along those axes.
+--- Such a Rectangle is also empty with respect to containment
+--- calculations and methods which test if it contains or intersects a
+--- point or rectangle will always return false.
+--- Methods which combine such a Rectangle with a point or rectangle
+--- will ignore the Rectangle entirely in generating the result.
+--- If two Rectangle objects are combined and each has a negative
+--- dimension, the result will have at least one negative dimension.
+---
+---
+--- Methods which affect only the location of a Rectangle will
+--- operate on its location regardless of whether or not it has a negative
+--- or zero dimension along either axis.
+---
+--- Note that a Rectangle constructed with the default no-argument
+--- constructor will have dimensions of 0x0 and therefore be empty.
+--- That Rectangle will still have a location of (0,0) and
+--- will contribute that location to the union and add operations.
+--- Code attempting to accumulate the bounds of a set of points should
+--- therefore initially construct the Rectangle with a specifically
+--- negative width and height or it should use the first point in the set
+--- to construct the Rectangle.
+--- For example:
+--- <code>
+---     Rectangle bounds = new Rectangle(0, 0, -1, -1);
+---     for (int i = 0; i < points.length; i++) {
+---         bounds.add(points[i]);
+---     }
+--- </code>
+--- or if we know that the points array contains at least one point:
+--- <code>
+---     Rectangle bounds = new Rectangle(points[0]);
+---     for (int i = 1; i < points.length; i++) {
+---         bounds.add(points[i]);
+---     }
+--- </code>
+---
+--- This class uses 32-bit integers to store its location and dimensions.
+--- Frequently operations may produce a result that exceeds the range of
+--- a 32-bit integer.
+--- The methods will calculate their results in a way that avoids any
+--- 32-bit overflow for intermediate results and then choose the best
+--- representation to store the final results back into the 32-bit fields
+--- which hold the location and dimensions.
+--- The location of the result will be stored into the x and
+--- y fields by clipping the true result to the nearest 32-bit value.
+--- The values stored into the width and height dimension
+--- fields will be chosen as the 32-bit values that encompass the largest
+--- part of the true result as possible.
+--- Generally this means that the dimension will be clipped independently
+--- to the range of 32-bit integers except that if the location had to be
+--- moved to store it into its pair of 32-bit fields then the dimensions
+--- will be adjusted relative to the "best representation" of the location.
+--- If the true result had a negative dimension and was therefore
+--- non-existent along one or both axes, the stored dimensions will be
+--- negative numbers in those axes.
+--- If the true result had a location that could be represented within
+--- the range of 32-bit integers, but zero dimension along one or both
+--- axes, then the stored dimensions will be zero in those axes.
+---@class Rectangle

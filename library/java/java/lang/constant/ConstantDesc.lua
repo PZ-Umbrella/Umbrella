@@ -1,0 +1,51 @@
+---@meta _
+
+---(Not exposed)
+---A nominal descriptor for a loadable
+--- constant value, as defined in JVMS 4.4. Such a descriptor can be resolved via
+--- resolveConstantDesc(MethodHandles.Lookup) to yield the
+--- constant value itself.
+---
+--- Class names in a nominal descriptor, like class names in the constant pool
+--- of a classfile, must be interpreted with respect to a particular class
+--- loader, which is not part of the nominal descriptor.
+---
+--- Static constants that are expressible natively in the constant pool (String,
+--- Integer, Long, Float, and Double) implement
+--- ConstantDesc, and serve as nominal descriptors for themselves.
+--- Native linkable constants (Class, MethodType, and
+--- MethodHandle) have counterpart ConstantDesc types:
+--- ClassDesc, MethodTypeDesc, and MethodHandleDesc.
+--- Other constants are represented by subtypes of DynamicConstantDesc.
+---
+--- APIs that perform generation or parsing of bytecode are encouraged to use
+--- ConstantDesc to describe the operand of an ldc instruction
+--- (including dynamic constants), the static bootstrap arguments of
+--- dynamic constants and invokedynamic instructions, and other
+--- bytecodes or classfile structures that make use of the constant pool.
+---
+--- Constants describing various common constants (such as ClassDesc
+--- instances for platform types) can be found in ConstantDescs.
+---
+--- Implementations of ConstantDesc should be immutable
+--- and their behavior should not rely on object identity.
+---
+--- Non-platform classes should not implement ConstantDesc directly.
+--- Instead, they should extend DynamicConstantDesc (as Enum.EnumDesc
+--- and VarHandle.VarHandleDesc do.)
+---
+--- Nominal descriptors should be compared using the
+--- Object.equals(Object) method. There is no guarantee that any
+--- particular entity will always be represented by the same descriptor instance.
+---@class ConstantDesc
+
+local __ConstantDesc = {}
+
+---Resolves this descriptor reflectively, emulating the resolution behavior
+--- of JVMS 5.4.3 and the access control behavior of JVMS 5.4.4.  The resolution
+--- and access control context is provided by the MethodHandles.Lookup
+--- parameter.  No caching of the resulting value is performed.
+---@param lookup MethodHandles.Lookup The MethodHandles.Lookup to provide name resolution
+---               and access control context
+---@return any # the resolved constant value
+function __ConstantDesc:resolveConstantDesc(lookup) end

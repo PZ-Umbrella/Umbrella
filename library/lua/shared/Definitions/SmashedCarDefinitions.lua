@@ -1,0 +1,151 @@
+---@meta
+
+---@class SmashedCarDefinitions
+SmashedCarDefinitions = {}
+SmashedCarDefinitions.cars = {
+	["Base.CarNormal"] = {
+		front = "Base.CarNormalSmashedFront",
+		rear = "Base.CarNormalSmashedRear",
+		left = "Base.CarNormalSmashedLeft",
+		right = "Base.CarNormalSmashedRight",
+	},
+	["Base.PickUpTruck"] = {
+		rear = "Base.PickUpTruckSmashedRear",
+		front = "Base.PickUpTruckSmashedFront",
+		right = "Base.PickUpTruckSmashedRight",
+		left = "Base.PickUpTruckSmashedLeft",
+		skin = 0,
+	},
+	["Base.PickUpTruckMccoy"] = {
+		rear = "Base.PickUpTruckSmashedRear",
+		front = "Base.PickUpTruckSmashedFront",
+		right = "Base.PickUpTruckSmashedRight",
+		left = "Base.PickUpTruckSmashedLeft",
+		skin = 1,
+	},
+	["Base.ModernCar"] = {
+		rear = "Base.ModernCarSmashedRear",
+		front = "Base.ModernCarSmashedFront",
+		right = "Base.ModernCarSmashedRight",
+		left = "Base.ModernCarSmashedLeft",
+	},
+	["Base.ModernCar02"] = {
+		rear = "Base.ModernCar02SmashedRear",
+		front = "Base.ModernCar02SmashedFront",
+		right = "Base.ModernCar02SmashedRight",
+		left = "Base.ModernCar02SmashedLeft",
+	},
+	["Base.CarLights"] = {
+		rear = "Base.CarLightsSmashedRear",
+		front = "Base.CarLightsSmashedFront",
+		right = "Base.CarLightsSmashedRight",
+		left = "Base.CarLightsSmashedLeft",
+		skin = 0,
+	},
+	["Base.CarLightsPolice"] = {
+		rear = "Base.CarLightsSmashedRear",
+		front = "Base.CarLightsSmashedFront",
+		right = "Base.CarLightsSmashedRight",
+		left = "Base.CarLightsSmashedLeft",
+		skin = 1,
+	},
+	["Base.CarStationWagon"] = {
+		rear = "Base.CarStationWagonSmashedRear",
+		front = "Base.CarStationWagonSmashedFront",
+		right = "Base.CarStationWagonSmashedRight",
+		left = "Base.CarStationWagonSmashedLeft",
+		skin = 0,
+	},
+	["Base.CarStationWagon2"] = {
+		rear = "Base.CarStationWagonSmashedRear",
+		front = "Base.CarStationWagonSmashedFront",
+		right = "Base.CarStationWagonSmashedRight",
+		left = "Base.CarStationWagonSmashedLeft",
+		skin = 1,
+	},
+	["Base.CarLuxury"] = {
+		rear = "Base.CarLuxurySmashedRear",
+		front = "Base.CarLuxurySmashedFront",
+		right = "Base.CarLuxurySmashedRight",
+		left = "Base.CarLuxurySmashedLeft",
+	},
+	["Base.OffRoad"] = {
+		rear = "Base.OffRoadSmashedRear",
+		front = "Base.OffRoadSmashedFront",
+		right = "Base.OffRoadSmashedRight",
+		left = "Base.OffRoadSmashedLeft",
+	},
+	["Base.PickUpTruckLights"] = {
+		rear = "Base.PickUpTruckLightsSmashedRear",
+		front = "Base.PickUpTruckLightsSmashedFront",
+		right = "Base.PickUpTruckLightsSmashedRight",
+		left = "Base.PickUpTruckLightsSmashedLeft",
+		skin = -1,
+	},
+	["Base.PickUpTruckLightsFire"] = {
+		rear = "Base.PickUpTruckLightsSmashedRear",
+		front = "Base.PickUpTruckLightsSmashedFront",
+		right = "Base.PickUpTruckLightsSmashedRight",
+		left = "Base.PickUpTruckLightsSmashedLeft",
+		skin = 2,
+	},
+	["Base.PickUpVan"] = {
+		rear = "Base.PickUpVanSmashedRear",
+		front = "Base.PickUpVanSmashedFront",
+		right = "Base.PickUpVanSmashedRight",
+		left = "Base.PickUpVanSmashedLeft",
+		skin = 0,
+	},
+	["Base.PickUpVanMccoy"] = {
+		rear = "Base.PickUpVanSmashedRear",
+		front = "Base.PickUpVanSmashedFront",
+		right = "Base.PickUpVanSmashedRight",
+		left = "Base.PickUpVanSmashedLeft",
+		skin = 1,
+	},
+	["Base.PickUpVanLights"] = nil, ---@type table
+	["Base.PickUpVanLightsFire"] = {
+		rear = "Base.PickUpVanLightsSmashedRear",
+		front = "Base.PickUpVanLightsSmashedFront",
+		right = "Base.PickUpVanLightsSmashedRight",
+		left = "Base.PickUpVanLightsSmashedLeft",
+		skin = 2,
+	},
+	["Base.PickUpVanLightsPolice"] = {
+		rear = "Base.PickUpVanLightsSmashedRear",
+		front = "Base.PickUpVanLightsSmashedFront",
+		right = "Base.PickUpVanLightsSmashedRight",
+		left = "Base.PickUpVanLightsSmashedLeft",
+		skin = 3,
+	},
+	["Base.SmallCar"] = {
+		rear = "Base.CarSmallSmashedRear",
+		front = "Base.CarSmallSmashedFront",
+		right = "Base.CarSmallSmashedRight",
+		left = "Base.CarSmallSmashedLeft",
+	},
+	["Base.SmallCar02"] = {
+		rear = "Base.CarSmall02SmashedRear",
+		front = "Base.CarSmall02SmashedFront",
+		right = "Base.CarSmall02SmashedRight",
+		left = "Base.CarSmall02SmashedLeft",
+	},
+	["Base.StepVan"] = {
+		rear = "Base.StepVanSmashedRear",
+		front = "Base.StepVanSmashedFront",
+		right = "Base.StepVanSmashedRight",
+		left = "Base.StepVanSmashedLeft",
+	},
+	["Base.StepVanMail"] = {
+		rear = "Base.StepVanMailSmashedRear",
+		front = "Base.StepVanMailSmashedFront",
+		right = "Base.StepVanMailSmashedRight",
+		left = "Base.StepVanMailSmashedLeft",
+	},
+	["Base.SUV"] = {
+		rear = "Base.SUVSmashedRear",
+		front = "Base.SUVSmashedFront",
+		right = "Base.SUVSmashedRight",
+		left = "Base.SUVSmashedLeft",
+	},
+}

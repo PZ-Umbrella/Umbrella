@@ -1,0 +1,207 @@
+---@meta _
+
+---(Not exposed)
+---A Future that may be explicitly completed (setting its
+--- value and status), and may be used as a CompletionStage,
+--- supporting dependent functions and actions that trigger upon its
+--- completion.
+---
+--- When two or more threads attempt to
+--- complete,
+--- completeExceptionally, or
+--- cancel
+--- a CompletableFuture, only one of them succeeds.
+---
+--- In addition to these and related methods for directly
+--- manipulating status and results, CompletableFuture implements
+--- interface CompletionStage with the following policies:
+---
+--- Actions supplied for dependent completions of
+--- non-async methods may be performed by the thread that
+--- completes the current CompletableFuture, or by any other caller of
+--- a completion method.
+---
+--- All async methods without an explicit Executor
+--- argument are performed using the ForkJoinPool.commonPool()
+--- (unless it does not support a parallelism level of at least two, in
+--- which case, a new Thread is created to run each task).  This may be
+--- overridden for non-static methods in subclasses by defining method
+--- defaultExecutor(). To simplify monitoring, debugging,
+--- and tracking, all generated asynchronous tasks are instances of the
+--- marker interface CompletableFuture.AsynchronousCompletionTask.  Operations
+--- with time-delays can use adapter methods defined in this class, for
+--- example: supplyAsync(supplier, delayedExecutor(timeout,
+--- timeUnit)).  To support methods with delays and timeouts, this
+--- class maintains at most one daemon thread for triggering and
+--- cancelling actions, not for running them.
+---
+--- All CompletionStage methods are implemented independently of
+--- other public methods, so the behavior of one method is not impacted
+--- by overrides of others in subclasses.
+---
+--- All CompletionStage methods return CompletableFutures.  To
+--- restrict usages to only those methods defined in interface
+--- CompletionStage, use method minimalCompletionStage(). Or to
+--- ensure only that clients do not themselves modify a future, use
+--- method copy().
+---
+---
+--- CompletableFuture also implements Future with the following
+--- policies:
+---
+--- Since (unlike FutureTask) this class has no direct
+--- control over the computation that causes it to be completed,
+--- cancellation is treated as just another form of exceptional
+--- completion.  Method cancel has the same effect as
+--- completeExceptionally(new CancellationException()). Method
+--- isCompletedExceptionally() can be used to determine if a
+--- CompletableFuture completed in any exceptional fashion.
+---
+--- In case of exceptional completion with a CompletionException,
+--- methods get() and get(long, TimeUnit) throw an
+--- ExecutionException with the same cause as held in the
+--- corresponding CompletionException.  To simplify usage in most
+--- contexts, this class also defines methods join() and
+--- getNow(T) that instead throw the CompletionException directly
+--- in these cases.
+---
+---
+--- Arguments used to pass a completion result (that is, for
+--- parameters of type T) for methods accepting them may be
+--- null, but passing a null value for any other parameter will result
+--- in a NullPointerException being thrown.
+---
+--- Subclasses of this class should normally override the "virtual
+--- constructor" method newIncompleteFuture(), which establishes
+--- the concrete type returned by CompletionStage methods. For example,
+--- here is a class that substitutes a different default Executor and
+--- disables the obtrude methods:
+---
+---  <code>
+--- class MyCompletableFuture<T> extends CompletableFuture<T> {
+---   static final Executor myExecutor = ...;
+---   public MyCompletableFuture() { }
+---   public <U> CompletableFuture<U> newIncompleteFuture() {
+---     return new MyCompletableFuture<U>(); }
+---   public Executor defaultExecutor() {
+---     return myExecutor; }
+---   public void obtrudeValue(T value) {
+---     throw new UnsupportedOperationException(); }
+---   public void obtrudeException(Throwable ex) {
+---     throw new UnsupportedOperationException(); }
+--- }</code>
+---@class CompletableFuture<T>
+
+---(Not exposed)
+---An unbounded concurrent deque based on linked nodes.
+--- Concurrent insertion, removal, and access operations execute safely
+--- across multiple threads.
+--- A ConcurrentLinkedDeque is an appropriate choice when
+--- many threads will share access to a common collection.
+--- Like most other concurrent collection implementations, this class
+--- does not permit the use of null elements.
+---
+--- Iterators and spliterators are
+--- weakly consistent.
+---
+--- Beware that, unlike in most collections, the size method
+--- is NOT a constant-time operation. Because of the
+--- asynchronous nature of these deques, determining the current number
+--- of elements requires a traversal of the elements, and so may report
+--- inaccurate results if this collection is modified during traversal.
+---
+--- Bulk operations that add, remove, or examine multiple elements,
+--- such as addAll(java.util.Collection<? extends E>), removeIf(java.util.function.Predicate<? super E>) or forEach(java.util.function.Consumer<? super E>),
+--- are not guaranteed to be performed atomically.
+--- For example, a forEach traversal concurrent with an
+--- addAll operation might observe only some of the added elements.
+---
+--- This class and its iterator implement all of the optional
+--- methods of the Deque and Iterator interfaces.
+---
+--- Memory consistency effects: As with other concurrent collections,
+--- actions in a thread prior to placing an object into a
+--- ConcurrentLinkedDeque
+--- happen-before
+--- actions subsequent to the access or removal of that element from
+--- the ConcurrentLinkedDeque in another thread.
+---
+--- This class is a member of the
+---
+--- Java Collections Framework.
+---@class ConcurrentLinkedDeque<E>
+
+---(Not exposed)
+---An unbounded thread-safe queue based on linked nodes.
+--- This queue orders elements FIFO (first-in-first-out).
+--- The head of the queue is that element that has been on the
+--- queue the longest time.
+--- The tail of the queue is that element that has been on the
+--- queue the shortest time. New elements
+--- are inserted at the tail of the queue, and the queue retrieval
+--- operations obtain elements at the head of the queue.
+--- A ConcurrentLinkedQueue is an appropriate choice when
+--- many threads will share access to a common collection.
+--- Like most other concurrent collection implementations, this class
+--- does not permit the use of null elements.
+---
+--- This implementation employs an efficient non-blocking
+--- algorithm based on one described in
+---
+--- Simple, Fast, and Practical Non-Blocking and Blocking Concurrent Queue
+--- Algorithms by Maged M. Michael and Michael L. Scott.
+---
+--- Iterators are weakly consistent, returning elements
+--- reflecting the state of the queue at some point at or since the
+--- creation of the iterator.  They do not throw ConcurrentModificationException, and may proceed concurrently
+--- with other operations.  Elements contained in the queue since the creation
+--- of the iterator will be returned exactly once.
+---
+--- Beware that, unlike in most collections, the size method
+--- is NOT a constant-time operation. Because of the
+--- asynchronous nature of these queues, determining the current number
+--- of elements requires a traversal of the elements, and so may report
+--- inaccurate results if this collection is modified during traversal.
+---
+--- Bulk operations that add, remove, or examine multiple elements,
+--- such as addAll(java.util.Collection<? extends E>), removeIf(java.util.function.Predicate<? super E>) or forEach(java.util.function.Consumer<? super E>),
+--- are not guaranteed to be performed atomically.
+--- For example, a forEach traversal concurrent with an
+--- addAll operation might observe only some of the added elements.
+---
+--- This class and its iterator implement all of the optional
+--- methods of the Queue and Iterator interfaces.
+---
+--- Memory consistency effects: As with other concurrent
+--- collections, actions in a thread prior to placing an object into a
+--- ConcurrentLinkedQueue
+--- happen-before
+--- actions subsequent to the access or removal of that element from
+--- the ConcurrentLinkedQueue in another thread.
+---
+--- This class is a member of the
+---
+--- Java Collections Framework.
+---@class ConcurrentLinkedQueue<E>
+
+---(Not exposed)
+---A Map providing thread safety and atomicity guarantees.
+---
+--- To maintain the specified guarantees, default implementations of
+--- methods including putIfAbsent(K, V) inherited from Map
+--- must be overridden by implementations of this interface. Similarly,
+--- implementations of the collections returned by methods Map.keySet(), Map.values(), and Map.entrySet() must override
+--- methods such as removeIf when necessary to
+--- preserve atomicity guarantees.
+---
+--- Memory consistency effects: As with other concurrent
+--- collections, actions in a thread prior to placing an object into a
+--- ConcurrentMap as a key or value
+--- happen-before
+--- actions subsequent to the access or removal of that object from
+--- the ConcurrentMap in another thread.
+---
+--- This interface is a member of the
+---
+--- Java Collections Framework.
+---@class ConcurrentMap<K, V>

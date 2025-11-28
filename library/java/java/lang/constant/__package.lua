@@ -1,0 +1,15 @@
+---@meta _
+
+---(Not exposed)
+---A nominal descriptor for a
+--- Class constant.
+---
+--- For common system types, including all the primitive types, there are
+--- predefined ClassDesc constants in ConstantDescs.
+--- (The java.lang.constant APIs consider void to be a primitive type.)
+--- To create a ClassDesc for a class or interface type, use of(java.lang.String) or
+--- ofDescriptor(String); to create a ClassDesc for an array
+--- type, use ofDescriptor(String), or first obtain a
+--- ClassDesc for the component type and then call the arrayType()
+--- or arrayType(int) methods.
+---@class ClassDesc
