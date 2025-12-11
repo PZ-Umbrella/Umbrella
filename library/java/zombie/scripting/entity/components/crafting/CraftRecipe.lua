@@ -238,6 +238,9 @@ function __CraftRecipe:getProp1() end
 ---@return InputScript
 function __CraftRecipe:getProp2() end
 
+---@return CraftRecipeGroup
+function __CraftRecipe:getRecipeGroup() end
+
 ---@param arg0 integer
 ---@return CraftRecipe.RequiredSkill
 function __CraftRecipe:getRequiredSkill(arg0) end
@@ -320,10 +323,6 @@ function __CraftRecipe:hasRecipeAtHand(arg0) end
 ---@return boolean
 function __CraftRecipe:hasTag(arg0) end
 
----@param arg0 string
----@return boolean
-function __CraftRecipe:hasTag(arg0) end
-
 ---@param arg0 PerkFactory.Perk
 ---@return boolean
 function __CraftRecipe:involvesSkill(arg0) end
@@ -338,6 +337,9 @@ function __CraftRecipe:isAllowBatchCraft() end
 
 ---@return boolean
 function __CraftRecipe:isAnySurfaceCraft() end
+
+---@return boolean
+function __CraftRecipe:isAutoRotate() end
 
 ---@return boolean
 function __CraftRecipe:isBuildableRecipe() end

@@ -28,6 +28,7 @@
 ISFitnessUI = ISPanelJoypad:derive("ISFitnessUI")
 ISFitnessUI.Type = "ISFitnessUI"
 ISFitnessUI.instance = {} ---@type table<integer, ISFitnessUI>
+ISFitnessUI.enduranceLevelThreshold = 2
 ISFitnessUI.enduranceLevelTreshold = 2
 
 ---@param type string

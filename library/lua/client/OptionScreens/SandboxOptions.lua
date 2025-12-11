@@ -91,6 +91,8 @@ function SandboxOptionsScreen:onJoypadNavigateStart(joypadData) end
 ---@param joypadData JoypadData
 function SandboxOptionsScreen:onJoypadNavigateStart_Descendant(descendant, joypadData) end
 
+function SandboxOptionsScreen:onKeyRelease(key) end
+
 ---@param joypadData JoypadData
 function SandboxOptionsScreen:onLoseJoypadFocus(joypadData) end
 

@@ -6,14 +6,7 @@ local __Long = {}
 ---@return AttributeInstance.Long
 function __Long:copy() end
 
----@return AttributeInstance
-function __Long:copy() end
-
 ---@param arg0 AttributeInstance.Long
----@return boolean
-function __Long:equalTo(arg0) end
-
----@param arg0 AttributeInstance
 ---@return boolean
 function __Long:equalTo(arg0) end
 

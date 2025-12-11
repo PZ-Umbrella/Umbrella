@@ -416,16 +416,11 @@ Texture = {}
 ---@type AssetType
 Texture.ASSET_TYPE = nil
 
----indicates if all the texture will auto create the masks on load
---- The auto creation works only with the getTexture() methods
 ---@type integer
-Texture.BindCount = nil
+Texture.bindCount = nil
 
 ---@type boolean
-Texture.WarnFailFindTexture = nil
-
----@type boolean
-Texture.bDoingQuad = nil
+Texture.doingQuad = nil
 
 ---@type number
 Texture.la = nil
@@ -450,6 +445,9 @@ Texture.nullTextures = nil
 
 ---@type integer
 Texture.totalTextureID = nil
+
+---@type boolean
+Texture.warnFailFindTexture = nil
 
 function Texture.bindNone() end
 

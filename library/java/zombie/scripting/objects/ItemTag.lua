@@ -1,7 +1,10 @@
 ---@meta _
 
----@class ItemTag: Enum<ItemTag>
+---@class ItemTag
 local __ItemTag = {}
+
+---@return string
+function __ItemTag:getTranslationName() end
 
 ---@return string
 function __ItemTag:toString() end
@@ -96,10 +99,16 @@ ItemTag.BLOCK = nil
 ItemTag.BLOWER_FAN = nil
 
 ---@type ItemTag
+ItemTag.BLOW_TORCH = nil
+
+---@type ItemTag
 ItemTag.BLUE_PEN = nil
 
 ---@type ItemTag
 ItemTag.BOLT_CUTTERS = nil
+
+---@type ItemTag
+ItemTag.BOOSTS_FLU_RECOVERY = nil
 
 ---@type ItemTag
 ItemTag.BOTTLE_OPENER = nil
@@ -363,6 +372,9 @@ ItemTag.ERASER = nil
 ItemTag.FAKE_SPEAR = nil
 
 ---@type ItemTag
+ItemTag.FAKE_WEAPON = nil
+
+---@type ItemTag
 ItemTag.FANCY_BOOK = nil
 
 ---@type ItemTag
@@ -585,10 +597,10 @@ ItemTag.IS_DISGUISE = nil
 ItemTag.IS_FIRE_FUEL = nil
 
 ---@type ItemTag
-ItemTag.IS_FIRE_TINDER = nil
+ItemTag.IS_FIRE_FUEL_SINGLE_USE = nil
 
 ---@type ItemTag
-ItemTag.IS_HOLLOW_BOOK = nil
+ItemTag.IS_FIRE_TINDER = nil
 
 ---@type ItemTag
 ItemTag.IS_LOWER_DISGUISE = nil
@@ -601,6 +613,9 @@ ItemTag.IS_SEED = nil
 
 ---@type ItemTag
 ItemTag.IS_UPPER_DISGUISE = nil
+
+---@type ItemTag
+ItemTag.JAR = nil
 
 ---@type ItemTag
 ItemTag.KEY_RING = nil
@@ -813,6 +828,9 @@ ItemTag.NEW = nil
 ItemTag.NEWSPAPER = nil
 
 ---@type ItemTag
+ItemTag.NEWSPAPER_NEW = nil
+
+---@type ItemTag
 ItemTag.NEWSPAPER_READ = nil
 
 ---@type ItemTag
@@ -858,6 +876,9 @@ ItemTag.OXYGEN_TANK = nil
 ItemTag.PACKED = nil
 
 ---@type ItemTag
+ItemTag.PAINT = nil
+
+---@type ItemTag
 ItemTag.PAINTBRUSH = nil
 
 ---@type ItemTag
@@ -897,9 +918,6 @@ ItemTag.PIERCED_INGOT = nil
 ItemTag.PILLOW = nil
 
 ---@type ItemTag
-ItemTag.PILLS = nil
-
----@type ItemTag
 ItemTag.PIPE_WRENCH = nil
 
 ---@type ItemTag
@@ -919,6 +937,9 @@ ItemTag.PLASTER_TROWEL = nil
 
 ---@type ItemTag
 ItemTag.PLIERS = nil
+
+---@type ItemTag
+ItemTag.PRESERVED_FOOD = nil
 
 ---@type ItemTag
 ItemTag.PRY_BAR = nil
@@ -981,7 +1002,13 @@ ItemTag.REPAIR_WITH_TAPE = nil
 ItemTag.REPLACE_PRIMARY = nil
 
 ---@type ItemTag
+ItemTag.RESPIRATOR = nil
+
+---@type ItemTag
 ItemTag.RESPIRATOR_FILTER = nil
+
+---@type ItemTag
+ItemTag.RESPIRATOR_NO_FILTER = nil
 
 ---@type ItemTag
 ItemTag.RICE_RECIPE = nil
@@ -1317,6 +1344,9 @@ ItemTag.WEARABLE = nil
 ItemTag.WELDING_MASK = nil
 
 ---@type ItemTag
+ItemTag.WET_BEVERAGE_INGREDIENT = nil
+
+---@type ItemTag
 ItemTag.WHETSTONE = nil
 
 ---@type ItemTag
@@ -1340,12 +1370,13 @@ ItemTag.WRENCH = nil
 ---@type ItemTag
 ItemTag.WRITE = nil
 
----@param arg0 string
+---@param id ResourceLocation
 ---@return ItemTag
-function ItemTag.valueOf(arg0) end
+function ItemTag.get(id) end
 
----@return kahlua.Array<ItemTag>
-function ItemTag.values() end
+---@param id string
+---@return ItemTag
+function ItemTag.register(id) end
 
 ---@type Class<ItemTag>
 ItemTag.class = nil

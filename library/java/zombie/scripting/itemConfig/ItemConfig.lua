@@ -33,16 +33,16 @@ ItemConfig = {}
 ItemConfig.VARIABLE_PREFIX = nil
 
 ---@type string
-ItemConfig.error_bucket = nil
+ItemConfig.errorBucket = nil
 
 ---@type string
-ItemConfig.error_item_config = nil
+ItemConfig.errorItemConfig = nil
 
 ---@type string
-ItemConfig.error_line = nil
+ItemConfig.errorLine = nil
 
 ---@type string
-ItemConfig.error_root = nil
+ItemConfig.errorRoot = nil
 
 ---@return ItemConfig
 function ItemConfig.new() end

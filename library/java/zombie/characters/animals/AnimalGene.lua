@@ -34,15 +34,15 @@ function AnimalGene.checkGeneticDisorder(arg0) end
 ---@param arg0 AnimalAllele
 function AnimalGene.doMutation(arg0) end
 
----@param arg0 AnimalGenomeDefinitions
----@param arg1 HashMap<string, AnimalGene>
----@param arg2 AnimalAllele
-function AnimalGene.doRatio(arg0, arg1, arg2) end
+---@param def AnimalGenomeDefinitions
+---@param fullGenome HashMap<string, AnimalGene>
+---@param allele AnimalAllele
+function AnimalGene.doRatio(def, fullGenome, allele) end
 
----@param arg0 HashMap<string, AnimalGene>
----@param arg1 HashMap<string, AnimalGene>
+---@param femaleGenome HashMap<string, AnimalGene>
+---@param maleGenome HashMap<string, AnimalGene>
 ---@return HashMap<string, AnimalGene>
-function AnimalGene.initGenesFromParents(arg0, arg1) end
+function AnimalGene.initGenesFromParents(femaleGenome, maleGenome) end
 
 ---@param arg0 IsoAnimal
 function AnimalGene.initGenome(arg0) end

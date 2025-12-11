@@ -87,7 +87,7 @@ function __IsoLightSource:wasActive() end
 IsoLightSource = {}
 
 ---@type integer
-IsoLightSource.NextID = nil
+IsoLightSource.nextId = nil
 
 ---@param x integer
 ---@param y integer

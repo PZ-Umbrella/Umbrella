@@ -90,19 +90,19 @@ function __IsoWeatherFX:update() end
 IsoWeatherFX = {}
 
 ---@type integer
-IsoWeatherFX.ID_CLOUD = nil
+IsoWeatherFX.cloudId = nil
 
 ---@type integer
-IsoWeatherFX.ID_FOG = nil
+IsoWeatherFX.fogId = nil
 
 ---@type integer
-IsoWeatherFX.ID_RAIN = nil
+IsoWeatherFX.rainId = nil
 
 ---@type integer
-IsoWeatherFX.ID_SNOW = nil
+IsoWeatherFX.snowId = nil
 
 ---@type number
-IsoWeatherFX.ZoomMod = nil
+IsoWeatherFX.zoomMod = nil
 
 ---@param min number
 ---@param max number

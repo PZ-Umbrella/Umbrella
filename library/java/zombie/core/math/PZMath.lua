@@ -451,16 +451,16 @@ function PZMath.min(arg0, arg1, arg2, arg3, arg4) end
 function PZMath.nextPowerOfTwo(arg0) end
 
 ---@generic E
----@param arg0 List<E>
----@param arg1 PZMath.FloatGet<E>
----@param arg2 PZMath.FloatSet<E>
-function PZMath.normalize(arg0, arg1, arg2) end
+---@param list List<E>
+---@param floatGet PZMath.FloatGet<E>
+---@param floatSet PZMath.FloatSet<E>
+function PZMath.normalize(list, floatGet, floatSet) end
 
 ---@generic E
----@param arg0 E
----@param arg1 PZMath.FloatGet<E>
----@param arg2 PZMath.FloatSet<E>
-function PZMath.normalize(arg0, arg1, arg2) end
+---@param list E
+---@param floatGet PZMath.FloatGet<E>
+---@param floatSet PZMath.FloatSet<E>
+function PZMath.normalize(list, floatGet, floatSet) end
 
 ---@param arg0 kahlua.Array<number>
 ---@return kahlua.Array<number>

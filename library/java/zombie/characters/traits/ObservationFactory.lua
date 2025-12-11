@@ -6,7 +6,7 @@ local __ObservationFactory = {}
 ObservationFactory = {}
 
 ---@type HashMap<string, ObservationFactory.Observation>
-ObservationFactory.ObservationMap = nil
+ObservationFactory.observationMap = nil
 
 ---@param type string
 ---@param name string

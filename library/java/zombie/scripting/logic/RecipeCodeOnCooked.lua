@@ -8,6 +8,9 @@ RecipeCodeOnCooked = {}
 ---@param arg0 Food
 function RecipeCodeOnCooked.cannedFood(arg0) end
 
+---@param cake Food
+function RecipeCodeOnCooked.nameCakePrep(cake) end
+
 ---@return RecipeCodeOnCooked
 function RecipeCodeOnCooked.new() end
 

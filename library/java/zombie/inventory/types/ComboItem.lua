@@ -3,9 +3,6 @@
 ---@class ComboItem: InventoryItem
 local __ComboItem = {}
 
----@return integer
-function __ComboItem:getSaveType() end
-
 ComboItem = {}
 
 ---@param module string

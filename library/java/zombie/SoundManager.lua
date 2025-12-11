@@ -250,6 +250,9 @@ function __SoundManager:isPlayingUISound(eventInstance) end
 ---@return boolean
 function __SoundManager:isRemastered() end
 
+---@return boolean
+function __SoundManager:isUiSoundMuted() end
+
 function __SoundManager:pauseSoundAndMusic() end
 
 ---@param arg0 boolean
@@ -266,14 +269,14 @@ function __SoundManager:playDamageSound(arg0, arg1) end
 ---@param arg1 MaterialType
 function __SoundManager:playDestructionSound(arg0, arg1) end
 
----@param arg0 IsoGridSquare
----@param arg1 string
-function __SoundManager:playImpactSound(arg0, arg1) end
+---@param isoGridSquare IsoGridSquare
+---@param ammoType AmmoType
+function __SoundManager:playImpactSound(isoGridSquare, ammoType) end
 
----@param arg0 IsoGridSquare
----@param arg1 string
----@param arg2 MaterialType
-function __SoundManager:playImpactSound(arg0, arg1, arg2) end
+---@param isoGridSquare IsoGridSquare
+---@param ammoType AmmoType
+---@param materialType MaterialType
+function __SoundManager:playImpactSound(isoGridSquare, ammoType, materialType) end
 
 ---@param name string
 function __SoundManager:playMusic(name) end
@@ -309,6 +312,9 @@ function __SoundManager:setMusicWakeState(player, stateName) end
 
 ---@param volume number
 function __SoundManager:setSoundVolume(volume) end
+
+---@param uiSoundMuted boolean
+function __SoundManager:setUiSoundMuted(uiSoundMuted) end
 
 ---@param volume number
 function __SoundManager:setVehicleEngineVolume(volume) end

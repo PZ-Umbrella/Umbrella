@@ -192,9 +192,6 @@ function __IsoZombie:getFootstepVolume() end
 ---@return IsoGridSquare
 function __IsoZombie:getHeadSquare(arg0) end
 
----@return Vector2
-function __IsoZombie:getHitAngle() end
-
 ---@return integer
 function __IsoZombie:getHitHeadWhileOnFloor() end
 
@@ -538,9 +535,6 @@ function __IsoZombie:setForceEatingAnimation(forceEatingAnimation) end
 ---@param bForceFakeDead boolean
 function __IsoZombie:setForceFakeDead(bForceFakeDead) end
 
----@param hitAngle Vector2
-function __IsoZombie:setHitAngle(hitAngle) end
-
 ---@param hitHeadWhileOnFloor integer
 function __IsoZombie:setHitHeadWhileOnFloor(hitHeadWhileOnFloor) end
 
@@ -710,6 +704,15 @@ IsoZombie.HEARING_POOR = nil
 ---@type integer
 IsoZombie.HEARING_RANDOM = nil
 
+---@type integer
+IsoZombie.HEARING_UNSEEN_OFFSET_HEAVY_RAIN = nil
+
+---@type integer
+IsoZombie.HEARING_UNSEEN_OFFSET_MAX = nil
+
+---@type integer
+IsoZombie.HEARING_UNSEEN_OFFSET_MIN = nil
+
 ---@type number
 IsoZombie.LUNGE_TIME = nil
 
@@ -754,6 +757,21 @@ IsoZombie.THUMP_FLAG_WINDOW_EXTRA = nil
 
 ---@type integer
 IsoZombie.THUMP_FLAG_WOOD = nil
+
+---@type number
+IsoZombie.VISION_DARKNESS_PENALTY_MAX = nil
+
+---@type number
+IsoZombie.VISION_FOG_PENALTY_MAX = nil
+
+---@type number
+IsoZombie.VISION_RADIUS_MAX = nil
+
+---@type number
+IsoZombie.VISION_RADIUS_MIN = nil
+
+---@type number
+IsoZombie.VISION_RAIN_PENALTY_MAX = nil
 
 ---@param cell IsoCell
 ---@return IsoZombie

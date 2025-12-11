@@ -213,11 +213,11 @@ function __XuiScript:getToolTipTextLocked() end
 ---@return XuiScript.XuiTranslateString
 function __XuiScript:getTooltip() end
 
----@param arg0 string
----@return XuiScript.XuiVar
-function __XuiScript:getVar(arg0) end
+---@param key string
+---@return XuiScript.XuiVar<any, any>
+function __XuiScript:getVar(key) end
 
----@return ArrayList<XuiScript.XuiVar>
+---@return ArrayList<XuiScript.XuiVar<any, any>>
 function __XuiScript:getVars() end
 
 ---@return XuiScript.XuiVector

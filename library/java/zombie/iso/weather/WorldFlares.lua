@@ -7,13 +7,13 @@ local __WorldFlares = {}
 WorldFlares = {}
 
 ---@type boolean
-WorldFlares.DEBUG_DRAW = nil
-
----@type boolean
 WorldFlares.ENABLED = nil
 
+---@type boolean
+WorldFlares.debugDraw = nil
+
 ---@type integer
-WorldFlares.NEXT_ID = nil
+WorldFlares.nextId = nil
 
 function WorldFlares.Clear() end
 

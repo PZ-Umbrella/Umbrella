@@ -62,9 +62,6 @@ function __RecordedMedia:sendRequestData(bb) end
 
 RecordedMedia = {}
 
----@type boolean
-RecordedMedia.DISABLE_LINE_LEARNING = nil
-
 ---@type string
 RecordedMedia.SAVE_FILE = nil
 
@@ -76,6 +73,9 @@ RecordedMedia.VERSION1 = nil
 
 ---@type integer
 RecordedMedia.VERSION2 = nil
+
+---@type boolean
+RecordedMedia.disableLineLearning = nil
 
 ---@param category string
 ---@return integer

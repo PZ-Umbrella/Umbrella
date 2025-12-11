@@ -5,74 +5,74 @@ local __IsoFireManager = {}
 
 IsoFireManager = {}
 
----@type number
-IsoFireManager.Blue_Oscilator = nil
-
----@type number
-IsoFireManager.Blue_Oscilator_Rate = nil
-
----@type number
-IsoFireManager.Blue_Oscilator_Val = nil
-
 ---@type ArrayList<IsoGameCharacter>
 IsoFireManager.CharactersOnFire_Stack = nil
 
 ---@type number
-IsoFireManager.FireAlpha = nil
+IsoFireManager.FIRE_ANIM_DELAY = nil
 
----@type number
-IsoFireManager.FireAnimDelay = nil
-
----@type integer
-IsoFireManager.FireRecalc = nil
-
----@type integer
-IsoFireManager.FireRecalcDelay = nil
+---@type ColorInfo
+IsoFireManager.FIRE_TINT_MOD = nil
 
 ---@type ArrayList<IsoFire>
 IsoFireManager.FireStack = nil
 
----@type ColorInfo
-IsoFireManager.FireTintMod = nil
+---@type number
+IsoFireManager.blueOscilator = nil
 
 ---@type number
-IsoFireManager.Green_Oscilator = nil
+IsoFireManager.blueOscilatorRate = nil
 
 ---@type number
-IsoFireManager.Green_Oscilator_Rate = nil
+IsoFireManager.blueOscilatorVal = nil
 
 ---@type number
-IsoFireManager.Green_Oscilator_Val = nil
-
----@type boolean
-IsoFireManager.LightCalcFromBurningCharacters = nil
+IsoFireManager.fireAlpha = nil
 
 ---@type integer
-IsoFireManager.MaxFireObjects = nil
+IsoFireManager.fireRecalc = nil
+
+---@type integer
+IsoFireManager.fireRecalcDelay = nil
 
 ---@type number
-IsoFireManager.OscilatorEffectScalar = nil
+IsoFireManager.greenOscilator = nil
 
 ---@type number
-IsoFireManager.OscilatorSpeedScalar = nil
+IsoFireManager.greenOscilatorRate = nil
 
 ---@type number
-IsoFireManager.Red_Oscilator = nil
+IsoFireManager.greenOscilatorVal = nil
+
+---@type boolean
+IsoFireManager.lightCalcFromBurningCharacters = nil
+
+---@type integer
+IsoFireManager.maxFireObjects = nil
 
 ---@type number
-IsoFireManager.Red_Oscilator_Rate = nil
+IsoFireManager.oscilatorEffectScalar = nil
 
 ---@type number
-IsoFireManager.Red_Oscilator_Val = nil
+IsoFireManager.oscilatorSpeedScalar = nil
 
 ---@type number
-IsoFireManager.SmokeAlpha = nil
+IsoFireManager.redOscilator = nil
 
 ---@type number
-IsoFireManager.SmokeAnimDelay = nil
+IsoFireManager.redOscilatorRate = nil
+
+---@type number
+IsoFireManager.redOscilatorVal = nil
+
+---@type number
+IsoFireManager.smokeAlpha = nil
+
+---@type number
+IsoFireManager.smokeAnimDelay = nil
 
 ---@type ColorInfo
-IsoFireManager.SmokeTintMod = nil
+IsoFireManager.smokeTintMod = nil
 
 ---@param NewFire IsoFire
 function IsoFireManager.Add(NewFire) end

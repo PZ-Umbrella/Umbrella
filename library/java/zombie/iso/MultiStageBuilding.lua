@@ -15,11 +15,11 @@ function MultiStageBuilding.addStage(stage) end
 ---@return MultiStageBuilding.Stage
 function MultiStageBuilding.getStage(arg0) end
 
----@param arg0 IsoGameCharacter
----@param arg1 IsoObject
----@param arg2 boolean
+---@param chr IsoGameCharacter
+---@param itemClicked IsoObject
+---@param cheat boolean
 ---@return ArrayList<MultiStageBuilding.Stage>
-function MultiStageBuilding.getStages(arg0, arg1, arg2) end
+function MultiStageBuilding.getStages(chr, itemClicked, cheat) end
 
 ---@return MultiStageBuilding
 function MultiStageBuilding.new() end

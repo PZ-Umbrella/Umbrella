@@ -17,9 +17,9 @@ LoadingQueueState = {}
 
 function LoadingQueueState.onConnectionImmediate() end
 
----@param arg0 integer
----@param arg1 HashMap<string, any>
-function LoadingQueueState.onPlaceInQueue(arg0, arg1) end
+---@param place integer
+---@param serverInformation HashMap<string, any>
+function LoadingQueueState.onPlaceInQueue(place, serverInformation) end
 
 ---@return LoadingQueueState
 function LoadingQueueState.new() end

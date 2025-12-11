@@ -1,6 +1,8 @@
 ---@meta
 
 ---@class ISItemSlotRemoveAction : ISBaseTimedAction
+---@field actionAnim string
+---@field actionAnimVariables table
 ---@field entity IsoObject
 ---@field item InventoryItem?
 ---@field itemSlot ISItemSlot?

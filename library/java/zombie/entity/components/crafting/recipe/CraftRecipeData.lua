@@ -7,9 +7,9 @@ local __CraftRecipeData = {}
 ---@return boolean
 function __CraftRecipeData:OnTestItem(arg0) end
 
----@param arg0 InputScript
----@param arg1 HashMap<Resource, ArrayList<InventoryItem>>
-function __CraftRecipeData:addOverfilledResource(arg0, arg1) end
+---@param input InputScript
+---@param resources HashMap<Resource, ArrayList<InventoryItem>>
+function __CraftRecipeData:addOverfilledResource(input, resources) end
 
 ---@return boolean
 function __CraftRecipeData:areAllInputItemsSatisfied() end
@@ -206,9 +206,9 @@ function __CraftRecipeData:getFirstInputItemWithFlag(arg0) end
 ---@return InventoryItem
 function __CraftRecipeData:getFirstInputItemWithFlag(arg0) end
 
----@param arg0 string
+---@param itemTag ItemTag
 ---@return InventoryItem
-function __CraftRecipeData:getFirstInputItemWithTag(arg0) end
+function __CraftRecipeData:getFirstInputItemWithTag(itemTag) end
 
 ---@param arg0 InputScript
 ---@return InventoryItem
@@ -330,6 +330,9 @@ function __CraftRecipeData:perform(arg0, arg1, arg2, arg3) end
 ---@param arg1 List<Resource>
 ---@param arg2 boolean
 function __CraftRecipeData:populateInputs(arg0, arg1, arg2) end
+
+---@param arg0 IsoGameCharacter
+function __CraftRecipeData:processDestroyAndUsedItems(arg0) end
 
 ---@param arg0 InventoryItem
 ---@return boolean

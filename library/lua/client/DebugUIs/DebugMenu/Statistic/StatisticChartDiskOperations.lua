@@ -1,7 +1,7 @@
 ---@meta
 
 ---@class StatisticChartDiskOperations : StatisticChart
-StatisticChartDiskOperations = StatisticChart:derive("StatisticChartDiskOperations")
+StatisticChartDiskOperations = {}
 StatisticChartDiskOperations.Type = "StatisticChartDiskOperations"
 StatisticChartDiskOperations.instance = nil ---@type StatisticChartDiskOperations?
 StatisticChartDiskOperations.shiftDown = 0

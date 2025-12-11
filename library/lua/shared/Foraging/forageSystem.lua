@@ -635,6 +635,11 @@ forageSystem = {
 			amount = 10,
 			chance = 75,
 		},
+		["Base.Hops"] = {
+			type = "Base.HopsSeed",
+			amount = 10,
+			chance = 75,
+		},
 		["Base.Kale"] = {
 			type = "Base.KaleSeed",
 			amount = 10,
@@ -1133,6 +1138,8 @@ function forageSystem.getZoneRandomCoordNearPoint(_zoneData, _minDist, _x, _y) e
 ---@param _itemDef umbrella.Foraging.ItemDefinition
 ---@param _amount number
 function forageSystem.giveItemXP(_character, _itemDef, _amount) end
+
+function forageSystem.giveXP(_character, _itemDef, _distanceTravelled) end
 
 ---@param _character IsoPlayer
 ---@param _itemDef umbrella.Foraging.ItemDefinition

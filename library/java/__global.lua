@@ -20,6 +20,10 @@ function InvMngGetItem(arg0, arg1, arg2, arg3) end
 ---@param arg2 string
 function InvMngRemoveItem(arg0, arg1, arg2) end
 
+---@param item InventoryItem
+---@param playerID integer
+function InvMngUpdateItem(item, playerID) end
+
 ---@param arg0 string
 function NewMapBinaryFile(arg0) end
 
@@ -32,12 +36,13 @@ function processAdminChatMessage(message) end
 ---@param message string
 function processSafehouseMessage(message) end
 
----@param item InventoryItem
----@param sq IsoGridSquare
----@param xoffset number
----@param yoffset number
----@param zoffset number
----@param rotation number
+---Draws an item's model in the world. Only works when certain render state is set.
+---@param item InventoryItem The item to render.
+---@param sq IsoGridSquare The square to draw the item on.
+---@param xoffset number Offset on the x axis to draw the model.
+---@param yoffset number Offset on the y axis to draw the model.
+---@param zoffset number Offset on the z axis to draw the model.
+---@param rotation number Yaw rotation of the model in degrees.
 function Render3DItem(item, sq, xoffset, yoffset, zoffset, rotation) end
 
 ---@param command string
@@ -46,23 +51,27 @@ function SendCommandToServer(command) end
 ---@param player IsoPlayer
 function SyncXp(player) end
 
----@param max number
----@return number
+---Returns a pseudorandom integer between 0 and max - 1.
+---@param max number Exclusive upper bound of the integer value.
+---@return number # Random integer.
 function ZombRand(max) end
 
----@param min number
----@param max number
----@return number
+---Returns a pseudorandom integer between min and max - 1.
+---@param min number Inclusive lower bound of the random integer.
+---@param max number Exclusive upper bound of the random integer.
+---@return number # Random integer.
 function ZombRand(min, max) end
 
----@param min number
----@param max number
----@return number
+---Returns a pseudorandom integer between min and max - 1. No difference from ZombRand(min, max).
+---@param min number Inclusive lower bound of the random integer.
+---@param max number Exclusive upper bound of the random integer.
+---@return number # The random integer.
 function ZombRandBetween(min, max) end
 
----@param min number
----@param max number
----@return number
+---Returns a pseudorandom float between min and max.
+---@param min number Lower bound of the random float.
+---@param max number The upper bound of the random float.
+---@return number # The random float.
 function ZombRandFloat(min, max) end
 
 ---@param faction Faction
@@ -424,11 +433,6 @@ function checkStringPattern(pattern) end
 
 function clearPVPEvents() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function clearPacketCounts(arg0, arg1, arg2) end
-
 ---@param newName string
 ---@param oldName string
 ---@return Item
@@ -669,6 +673,7 @@ function getAccessLevel() end
 ---@return integer
 function getActionDuration(arg0) end
 
+---Gets the list of currently activated mods. Remember that in B42+, mod ids are prefixed with a \ character.
 ---@return ArrayList<string>
 function getActivatedMods() end
 
@@ -813,6 +818,10 @@ function getClassFieldVal(o, field) end
 ---@return Method
 function getClassFunction(o, i) end
 
+---@param object any
+---@return string
+function getClassSimpleName(object) end
+
 ---@return string
 function getClientUsername() end
 
@@ -821,6 +830,9 @@ function getClimateManager() end
 
 ---@return ClimateMoon
 function getClimateMoon() end
+
+---@return CombatConfig
+function getCombatConfig() end
 
 ---@return ArrayList<IsoPlayer>
 function getConnectedPlayers() end
@@ -937,26 +949,31 @@ function getFMODSoundBank() end
 ---@return IsoGameCharacter
 function getFakeAttacker() end
 
----@param filename string
----@return DataInputStream
+---Gets an input stream for a file in the Lua cache.
+---@param filename string Path, relative to the Lua cache root, to write to. '..' is not allowed.
+---@return DataInputStream? # Input stream, or null if the path was not valid.
 function getFileInput(filename) end
 
----@param filename string
----@return DataOutputStream
+---Gets an output stream for a file in the Lua cache.
+---@param filename string Path, relative to the Lua cache root, to write to. '..' is not allowed.
+---@return DataOutputStream? # Output stream, or null if the path was not valid.
 function getFileOutput(filename) end
 
----@param filename string
----@param createIfNull boolean
----@return BufferedReader
+---Gets a file reader for a file in the Lua cache.
+---@param filename string Path, relative to the Lua cache root, to read from. '..' is not allowed.
+---@param createIfNull boolean Whether to create the file if it does not exist. The created file will be empty.
+---@return BufferedReader? # File reader, or null if the path was not valid.
 function getFileReader(filename, createIfNull) end
 
----@return string
+---Returns the OS-defined file separator. It is not generally needed to use this, as most functions that expect a filepath string will parse them in an OS-independent way.
+---@return string # File separator.
 function getFileSeparator() end
 
----@param filename string
----@param createIfNull boolean
----@param append boolean
----@return LuaManager.GlobalObject.LuaFileWriter
+---Gets a file writer for a file in the Lua cache.
+---@param filename string Path, relative to the Lua cache root, to write to. '..' is not allowed.
+---@param createIfNull boolean Whether to create the file if it does not exist.
+---@param append boolean Whether to open the file in append mode. If true, the writer will write after the file's current contents. If false, the current contents of the file will be erased.
+---@return LuaManager.GlobalObject.LuaFileWriter? # File writer, or null if the path was not valid.
 function getFileWriter(filename, createIfNull, append) end
 
 ---@param c LuaCallFrame
@@ -993,6 +1010,12 @@ function getGameFilesInput(filename) end
 ---@param filename string
 ---@return BufferedReader
 function getGameFilesTextInput(filename) end
+
+---@return table
+function getGameLocal() end
+
+---@return table
+function getGameRemote() end
 
 ---@return integer
 function getGameSpeed() end
@@ -1180,29 +1203,29 @@ function getLoadedLuaCount() end
 ---@return integer
 function getLocalVarCount(c) end
 
----@param arg0 LuaCallFrame
+---@param c LuaCallFrame
 ---@return integer
-function getLocalVarCount(arg0) end
+function getLocalVarCount(c) end
 
 ---@param c Coroutine
 ---@param n integer
 ---@return string
 function getLocalVarName(c, n) end
 
----@param arg0 LuaCallFrame
----@param arg1 integer
+---@param c LuaCallFrame
+---@param n integer
 ---@return string
-function getLocalVarName(arg0, arg1) end
+function getLocalVarName(c, n) end
 
 ---@param c Coroutine
 ---@param n integer
 ---@return integer
 function getLocalVarStack(c, n) end
 
----@param arg0 LuaCallFrame
----@param arg1 integer
+---@param c LuaCallFrame
+---@param n integer
 ---@return integer
-function getLocalVarStackIndex(arg0, arg1) end
+function getLocalVarStackIndex(c, n) end
 
 ---@return ArrayList<string>
 function getLotDirectories() end
@@ -1254,17 +1277,19 @@ function getMinimumWorldLevel() end
 ---@return table
 function getModDirectoryTable() end
 
----@param modId string
----@param filename string
----@param createIfNull boolean
----@return BufferedReader
+---Gets a file reader for a file in a mod's directory.
+---@param modId string? ID of the target mod. If null, the path will be relative to the local mods directory.
+---@param filename string Path, relative to the mod's common folder, to read from. '..' is not allowed.
+---@param createIfNull boolean Whether to create the file if it does not exist. The created file will be empty.
+---@return BufferedReader? # File reader, or null if the path or mod was not valid.
 function getModFileReader(modId, filename, createIfNull) end
 
----@param modId string
----@param filename string
----@param createIfNull boolean
----@param append boolean
----@return LuaManager.GlobalObject.LuaFileWriter
+---Gets a file writer for a file in a mod's directory. Note: it is generally unwise to write to a mod's lua or scripts directories, as this will change the checksum.
+---@param modId string? ID of the target mod. If null, the path will be relative to the local mods directory.
+---@param filename string Path, relative to the mod's common folder, to write to. '..' is not allowed.
+---@param createIfNull boolean Whether to create the file if it does not exist. The created file will be empty.
+---@param append boolean Whether to open the file in append mode. If true, the writer will write after the file's current contents. If false, the current contents of the file will be erased.
+---@return LuaManager.GlobalObject.LuaFileWriter? # The file writer, or null if the path or mod was not valid.
 function getModFileWriter(modId, filename, createIfNull, append) end
 
 ---@param modDir string
@@ -1290,6 +1315,12 @@ function getMouseYScaled() end
 ---@return string
 function getMyDocumentFolder() end
 
+---@return table
+function getNetworkLocal() end
+
+---@return table
+function getNetworkRemote() end
+
 ---@return integer
 function getNumActivePlayers() end
 
@@ -1307,23 +1338,21 @@ function getOnlinePlayers() end
 ---@return string
 function getOnlineUsername() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@return table
-function getPacketCounts(arg0, arg1, arg2, arg3, arg4, arg5) end
-
 ---@return PerformanceSettings
 function getPerformance() end
+
+---@return table
+function getPerformanceLocal() end
+
+---@return table
+function getPerformanceRemote() end
 
 ---@param arg0 IsoPlayer
 ---@return InventoryItem
 function getPickedUpFish(arg0) end
 
----@return IsoPlayer
+---Gets the current player. To support splitscreen, getSpecificPlayer() should be preferred instead.
+---@return IsoPlayer # The current player.
 function getPlayer() end
 
 ---@param id integer
@@ -1465,12 +1494,6 @@ function getServerSettingsManager() end
 ---@return table
 function getServerSpawnRegions() end
 
----@return table
-function getServerStatistic() end
-
----@return boolean
-function getServerStatisticEnable() end
-
 ---@param str string
 ---@return string
 function getShortenedFilename(str) end
@@ -1502,9 +1525,6 @@ function getSpriteModelEditorState() end
 ---@return IsoGridSquare
 function getSquare(x, y, z) end
 
----@return table
-function getMPStatistics() end
-
 ---@param steamID string
 ---@return Texture
 function getSteamAvatarFromSteamID(steamID) end
@@ -1534,9 +1554,9 @@ function getSteamScoreboard() end
 ---@return ArrayList<string>
 function getSteamWorkshopItemIDs() end
 
----@param arg0 string
+---@param itemIDStr string
 ---@return ArrayList<ChooseGameInfo.Mod>
-function getSteamWorkshopItemMods(arg0) end
+function getSteamWorkshopItemMods(itemIDStr) end
 
 ---@return ArrayList<SteamWorkshopItem>
 function getSteamWorkshopStagedItems() end
@@ -1632,6 +1652,10 @@ function getTileOverlays() end
 ---@return integer
 function getTimeInMillis() end
 
+---@param clazzStr string
+---@param field string
+function timerGetKept(clazzStr, field) end
+
 ---@return integer
 function getTimestamp() end
 
@@ -1721,10 +1745,10 @@ function hasDataBreakpoint(table, key) end
 ---@return boolean
 function hasDataReadBreakpoint(table, key) end
 
----@param arg0 string
----@param arg1 string
+---@param itemType string
+---@param itemTag ItemTag
 ---@return boolean
-function hasItemTag(arg0, arg1) end
+function hasItemTag(itemType, itemTag) end
 
 ---@deprecated
 ---@param arg0 string
@@ -1746,6 +1770,10 @@ function instanceItem(item) end
 ---@return InventoryItem
 function instanceItem(arg0, arg1) end
 
+---@param item ItemKey
+---@return InventoryItem
+function instanceItem(item) end
+
 ---@param obj any
 ---@param name string
 ---@return boolean
@@ -1755,9 +1783,6 @@ function invalidateLighting() end
 
 ---@param steamID string
 function inviteFriend(steamID) end
-
----@return boolean
-function is64bit() end
 
 ---@deprecated
 ---@param accessLevel string
@@ -2257,9 +2282,14 @@ function require(f) end
 
 function resetRegionFile() end
 
+---@param clazzStr string
+function timersReset(clazzStr) end
+
 function resumeSoundAndMusic() end
 
 function revertToKeyboardAndMouse() end
+
+function revertToKeyboardAndMouseFromMainMenu() end
 
 ---@param worldName string
 ---@return string
@@ -2353,15 +2383,17 @@ function sendAttachedItem(arg0, arg1, arg2) end
 ---@param arg1 IsoPlayer
 function sendButcherAnimal(arg0, arg1) end
 
----@param module string
----@param command string
----@param args table
+---Sends a command to the server, triggering the OnClientCommand event on the server. Does nothing if called on the server.
+---@param module string Module of the command. It is conventional to use the name of your mod as the module for all of your commands.
+---@param command string Name of the command.
+---@param args table Arguments to pass to the server. Non-POD elements of the table will be lost.
 function sendClientCommand(module, command, args) end
 
----@param player IsoPlayer
----@param module string
----@param command string
----@param args table
+---Sends a command to the server, triggering the OnClientCommand event on the server. Does nothing if called on the server.
+---@param player IsoPlayer The local player to associate the command with. If the player is not local, no command will be sent.
+---@param module string Module of the command. It is conventional to use the name of your mod as the module for all of your commands.
+---@param command string Name of the command.
+---@param args table Arguments to pass to the server. Non-POD elements of the table will be lost.
 function sendClientCommand(player, module, command, args) end
 
 ---@param arg0 IsoPlayer
@@ -2370,10 +2402,10 @@ function sendClientCommand(player, module, command, args) end
 ---@param arg3 kahlua.Array<any>
 function sendClientCommandV(arg0, arg1, arg2, arg3) end
 
----@param arg0 IsoPlayer
----@param arg1 string
----@param arg2 InventoryItem
-function sendClothing(arg0, arg1, arg2) end
+---@param player IsoPlayer
+---@param location ItemBodyLocation
+---@param item InventoryItem
+function sendClothing(player, location, item) end
 
 ---@param arg0 IsoDeadBody
 function sendCorpse(arg0) end
@@ -2473,6 +2505,13 @@ function sendPlayerEffects(arg0) end
 function sendPlayerExtraInfo(p) end
 
 ---@param player IsoPlayer
+function sendPlayerNutrition(player) end
+
+---@param player IsoPlayer
+---@param stat CharacterStat
+function sendPlayerStat(player, stat) end
+
+---@param player IsoPlayer
 function sendPlayerStatsChange(player) end
 
 ---@param arg0 IsoAnimal
@@ -2557,15 +2596,17 @@ function sendSafezoneClaim(arg0, arg1, arg2, arg3, arg4, arg5) end
 ---@param arg7 string
 function sendSecretKey(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
 
----@param module string
----@param command string
----@param args table
+---Sends a command to all clients, triggering the OnServerCommand event on every client. Does nothing if called on the client.
+---@param module string Module of the command. It is conventional to use the name of your mod as the module for all of your commands.
+---@param command string Name of the command.
+---@param args table Arguments to pass to the clients. Non-POD elements of the table will be lost.
 function sendServerCommand(module, command, args) end
 
----@param player IsoPlayer
----@param module string
----@param command string
----@param args table
+---Sends a command to a specific client, triggering the OnServerCommand event on the client. Does nothing if called on the client.
+---@param player IsoPlayer The player to send the command to. Only that player's client will receive the command.
+---@param module string Module of the command. It is conventional to use the name of your mod as the module for all of your commands.
+---@param command string Name of the command.
+---@param args table Arguments to pass to the client. Non-POD elements of the table will be lost.
 function sendServerCommand(player, module, command, args) end
 
 ---@param arg0 string
@@ -2679,9 +2720,6 @@ function setPuddles(initialPuddles) end
 ---@param sqlID integer
 function setSavefilePlayer1(gameMode, saveDir, sqlID) end
 
----@param enable boolean
-function setServerStatisticEnable(enable) end
-
 ---@param enabled boolean
 function setShowConnectionInfo(enabled) end
 
@@ -2737,6 +2775,12 @@ function showSteamFloatingGamepadTextInput(multiLine, x, y, width, height) end
 ---@return boolean
 function showSteamGamepadTextInput(password, multiLine, description, maxChars, existingText) end
 
+---@param clazzStr string
+function timersShowMean(clazzStr) end
+
+---@param clazzStr string
+function timersShowTotal(clazzStr) end
+
 ---@param scriptName string
 function showVehicleEditor(scriptName) end
 
@@ -2751,11 +2795,12 @@ function showWrongChatTabMessage(actualTabID, rightTabID, chatCommand) end
 ---@param object IsoObject
 function sledgeDestroy(object) end
 
----@param arg0 table
----@param arg1 string
----@param arg2 boolean
+---@param table table
+---@param sortType string
+---@param sortDown boolean
+---@param filterTable table
 ---@return table
-function sortBrowserList(arg0, arg1, arg2) end
+function sortBrowserList(table, sortType, sortDown, filterTable) end
 
 ---@param x number
 ---@param y number

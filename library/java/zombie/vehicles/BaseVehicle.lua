@@ -538,6 +538,9 @@ function __BaseVehicle:getColorValue() end
 ---@return CarController
 function __BaseVehicle:getController() end
 
+---@return number
+function __BaseVehicle:getCurrentAbsoluteSpeedKmHour() end
+
 ---@return InventoryItem
 function __BaseVehicle:getCurrentKey() end
 
@@ -625,10 +628,11 @@ function __BaseVehicle:getInitialMass() end
 ---@return number
 function __BaseVehicle:getInsideTemperature() end
 
----@param arg0 Vector3
----@param arg1 Vector3
----@return Vector3
-function __BaseVehicle:getIntersectPoint(arg0, arg1) end
+---@param start Vector3f
+---@param _end Vector3f
+---@param result Vector3f
+---@return Vector3f
+function __BaseVehicle:getIntersectPoint(start, _end, result) end
 
 ---@return integer
 function __BaseVehicle:getJoypad() end
@@ -952,17 +956,17 @@ function __BaseVehicle:getUseablePart(chr, checkDir) end
 function __BaseVehicle:getVehicleEngineRPM() end
 
 ---@generic T
----@param arg0 T
----@param arg1 Invokers.Params2.Boolean.ICallback<T, ItemContainer>
+---@param in_paramToCompare T
+---@param in_isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
 ---@return PZArrayList<ItemContainer>
-function __BaseVehicle:getVehicleItemContainers(arg0, arg1) end
+function __BaseVehicle:getVehicleItemContainers(in_paramToCompare, in_isValidPredicate) end
 
 ---@generic T
----@param arg0 T
----@param arg1 Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@param arg2 PZArrayList<ItemContainer>
+---@param in_paramToCompare T
+---@param in_isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
+---@param inout_containerList PZArrayList<ItemContainer>
 ---@return PZArrayList<ItemContainer>
-function __BaseVehicle:getVehicleItemContainers(arg0, arg1, arg2) end
+function __BaseVehicle:getVehicleItemContainers(in_paramToCompare, in_isValidPredicate, inout_containerList) end
 
 ---@return BaseVehicle
 function __BaseVehicle:getVehicleTowedBy() end
@@ -1337,9 +1341,6 @@ function __BaseVehicle:needPartsUpdate() end
 ---@param authorizationPlayer integer
 function __BaseVehicle:netPlayerFromServerUpdate(authorization, authorizationPlayer) end
 
----@param bb ByteBuffer
-function __BaseVehicle:netPlayerServerSendAuthorisation(bb) end
-
 ---@return boolean
 function __BaseVehicle:notKillCrops() end
 
@@ -1354,6 +1355,8 @@ function __BaseVehicle:onBackMoveSignalStop() end
 function __BaseVehicle:onHornStart() end
 
 function __BaseVehicle:onHornStop() end
+
+function __BaseVehicle:partsClear() end
 
 function __BaseVehicle:permanentlyRemove() end
 
@@ -1604,6 +1607,12 @@ function __BaseVehicle:setMechanicUIOpen(mechanicUIOpen) end
 ---@param mechanicalID integer
 function __BaseVehicle:setMechanicalID(mechanicalID) end
 
+---@param arg0 VehiclePart
+---@param arg1 VehicleScript.Model
+---@param arg2 boolean
+---@return BaseVehicle.ModelInfo
+function __BaseVehicle:setModelVisible(arg0, arg1, arg2) end
+
 ---@param needPartsUpdate boolean
 function __BaseVehicle:setNeedPartsUpdate(needPartsUpdate) end
 
@@ -1657,6 +1666,9 @@ function __BaseVehicle:setSmashed(location) end
 ---@param flipped boolean
 ---@return BaseVehicle
 function __BaseVehicle:setSmashed(location, flipped) end
+
+---@param speedKmHour number
+function __BaseVehicle:setSpeedKmHour(speedKmHour) end
 
 ---@param on boolean
 function __BaseVehicle:setStoplightsOn(on) end
@@ -1889,9 +1901,6 @@ function __BaseVehicle:windowsOpen() end
 
 BaseVehicle = {}
 
----@type number
-BaseVehicle.CENTER_OF_MASS_MAGIC = nil
-
 ---@type integer
 BaseVehicle.FADE_DISTANCE = nil
 
@@ -1988,17 +1997,11 @@ BaseVehicle.PHYSICS_Z_SCALE = nil
 ---@type number
 BaseVehicle.PLUS_RADIUS = nil
 
----@type integer
-BaseVehicle.POSITION_ORIENTATION_PACKET_SIZE = nil
-
 ---@type number
 BaseVehicle.RADIUS = nil
 
 ---@type integer
 BaseVehicle.RANDOMIZE_CONTAINER_CHANCE = nil
-
----@type boolean
-BaseVehicle.RENDER_TO_TEXTURE = nil
 
 ---@type ThreadLocal<BaseVehicle.Matrix4fObjectPool>
 BaseVehicle.TL_matrix4f_pool = nil
@@ -2024,8 +2027,14 @@ BaseVehicle.TL_vector4f_pool = nil
 ---@type boolean
 BaseVehicle.YURI_FORCE_FIELD = nil
 
+---@type number
+BaseVehicle.centerOfMassMagic = nil
+
 ---@type integer
 BaseVehicle.noAuthorization = nil
+
+---@type boolean
+BaseVehicle.renderToTexture = nil
 
 ---@type Texture
 BaseVehicle.vehicleShadow = nil

@@ -539,6 +539,6 @@ function ISContextMenu:new(x, y, width, height, zoom) end
 ---@field param7 unknown?
 ---@field param8 unknown?
 ---@field param9 unknown?
----@field subOption number?
+---@field subOption integer?
 ---@field target unknown?
 ---@field toolTip ISToolTip?

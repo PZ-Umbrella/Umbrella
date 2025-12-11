@@ -6,14 +6,7 @@ local __Double = {}
 ---@return AttributeInstance.Double
 function __Double:copy() end
 
----@return AttributeInstance
-function __Double:copy() end
-
 ---@param arg0 AttributeInstance.Double
----@return boolean
-function __Double:equalTo(arg0) end
-
----@param arg0 AttributeInstance
 ---@return boolean
 function __Double:equalTo(arg0) end
 

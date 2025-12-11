@@ -15,7 +15,4 @@
 ---(Not exposed)
 ---@class Transaction.TransactionState
 
----(Not exposed)
----@class Translator.News
-
 zombie.core = {}

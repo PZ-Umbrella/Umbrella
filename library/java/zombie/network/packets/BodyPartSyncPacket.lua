@@ -7,6 +7,9 @@ local __BodyPartSyncPacket = {}
 ---@param arg1 UdpConnection
 function __BodyPartSyncPacket:parse(arg0, arg1) end
 
+---@param values kahlua.Array<any>
+function __BodyPartSyncPacket:setData(values) end
+
 ---@param arg0 ByteBufferWriter
 function __BodyPartSyncPacket:write(arg0) end
 

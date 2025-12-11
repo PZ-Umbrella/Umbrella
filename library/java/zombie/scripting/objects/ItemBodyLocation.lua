@@ -1,7 +1,10 @@
 ---@meta _
 
----@class ItemBodyLocation: Enum<ItemBodyLocation>
+---@class ItemBodyLocation
 local __ItemBodyLocation = {}
+
+---@return string
+function __ItemBodyLocation:getTranslationName() end
 
 ---@return string
 function __ItemBodyLocation:toString() end
@@ -240,6 +243,9 @@ ItemBodyLocation.RIGHT_RING_FINGER = nil
 ItemBodyLocation.RIGHT_WRIST = nil
 
 ---@type ItemBodyLocation
+ItemBodyLocation.SATCHEL = nil
+
+---@type ItemBodyLocation
 ItemBodyLocation.SCARF = nil
 
 ---@type ItemBodyLocation
@@ -347,12 +353,13 @@ ItemBodyLocation.WOUND = nil
 ---@type ItemBodyLocation
 ItemBodyLocation.ZED_DMG = nil
 
----@param arg0 string
+---@param id ResourceLocation
 ---@return ItemBodyLocation
-function ItemBodyLocation.valueOf(arg0) end
+function ItemBodyLocation.get(id) end
 
----@return kahlua.Array<ItemBodyLocation>
-function ItemBodyLocation.values() end
+---@param id string
+---@return ItemBodyLocation
+function ItemBodyLocation.register(id) end
 
 ---@type Class<ItemBodyLocation>
 ItemBodyLocation.class = nil

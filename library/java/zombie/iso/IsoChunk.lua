@@ -37,6 +37,9 @@ function __IsoChunk:LoadFromDisk() end
 ---@param bb ByteBuffer
 function __IsoChunk:LoadFromDiskOrBuffer(bb) end
 
+---@param bb ByteBuffer
+function __IsoChunk:LoadFromDiskOrBufferInternal(bb) end
+
 ---@param wx integer
 ---@param wy integer
 ---@param fromServer ByteBuffer
@@ -157,10 +160,6 @@ function __IsoChunk:getErosionData() end
 ---@return IsoGridSquare
 function __IsoChunk:getGridSquare(x, y, z) end
 
----@deprecated
----@return integer
-function __IsoChunk:getHashCodeObjects() end
-
 ---@param arg0 integer
 ---@return IsoChunkLevel
 function __IsoChunk:getLevelData(arg0) end
@@ -216,10 +215,6 @@ function __IsoChunk:hasObjectAmbientEmitter(object) end
 
 ---@return boolean
 function __IsoChunk:hasWaterSquare() end
-
----@deprecated
----@return integer
-function __IsoChunk:hashCodeNoOverride() end
 
 function __IsoChunk:ignorePathfind() end
 
@@ -282,9 +277,6 @@ function __IsoChunk:loadInWorldStreamerThread() end
 
 ---@param bb ByteBuffer
 function __IsoChunk:loadObjectState(bb) end
-
----@deprecated
-function __IsoChunk:recalcHashCodeObjects() end
 
 ---@deprecated
 function __IsoChunk:recalcNeighboursNow() end
@@ -379,7 +371,16 @@ IsoChunk.LB_PATHFIND = nil
 IsoChunk.WriteLock = nil
 
 ---@type boolean
-IsoChunk.bDoServerRequests = nil
+IsoChunk.doAttachments = nil
+
+---@type boolean
+IsoChunk.doForaging = nil
+
+---@type boolean
+IsoChunk.doServerRequests = nil
+
+---@type boolean
+IsoChunk.doWorldgen = nil
 
 ---@type ConcurrentLinkedQueue<IsoChunk>
 IsoChunk.loadGridSquare = nil
@@ -406,23 +407,16 @@ function IsoChunk.IsDebugSave() end
 
 function IsoChunk.Reset() end
 
----@param prefix string
 ---@param wx integer
 ---@param wy integer
 ---@param bb ByteBuffer
 ---@return ByteBuffer
-function IsoChunk.SafeRead(prefix, wx, wy, bb) end
+function IsoChunk.SafeRead(wx, wy, bb) end
 
 ---@param arg0 integer
 ---@param arg1 integer
 ---@param arg2 ByteBuffer
 function IsoChunk.SafeWrite(arg0, arg1, arg2) end
-
----@param prefix string
----@param wx integer
----@param wy integer
----@param bb ByteBuffer
-function IsoChunk.SafeWrite(prefix, wx, wy, bb) end
 
 ---@param v BaseVehicle
 function IsoChunk.addFromCheckedVehicles(v) end

@@ -16,9 +16,6 @@ function __KeyRing:getCategory() end
 ---@return ArrayList<Key>
 function __KeyRing:getKeys() end
 
----@return integer
-function __KeyRing:getSaveType() end
-
 ---@param keys ArrayList<Key>
 function __KeyRing:setKeys(keys) end
 

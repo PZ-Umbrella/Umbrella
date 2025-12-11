@@ -21,8 +21,8 @@ function __SealedFluidProperties:getFatigueChange() end
 ---@return number
 function __SealedFluidProperties:getFluReduction() end
 
----@return number
-function __SealedFluidProperties:getFoodSicknessReduction() end
+---@return integer
+function __SealedFluidProperties:getFoodSicknessChange() end
 
 ---@return number
 function __SealedFluidProperties:getHungerChange() end

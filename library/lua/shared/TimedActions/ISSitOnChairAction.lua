@@ -2,7 +2,7 @@
 
 ---@class ISSitOnChairAction : ISBaseTimedAction
 ---@field item unknown
-ISSitOnChairAction = ISBaseTimedAction:derive("ISSitOnChairAction")
+ISSitOnChairAction = {}
 ISSitOnChairAction.Type = "ISSitOnChairAction"
 
 ---@return boolean

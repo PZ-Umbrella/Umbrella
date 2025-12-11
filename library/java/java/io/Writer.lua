@@ -59,20 +59,6 @@ function __Writer:append(csq, start, _end) end
 ---@return Writer # This writer
 function __Writer:append(c) end
 
----@param arg0 integer
----@return Appendable
-function __Writer:append(arg0) end
-
----@param arg0 CharSequence
----@param arg1 integer
----@param arg2 integer
----@return Appendable
-function __Writer:append(arg0, arg1, arg2) end
-
----@param arg0 CharSequence
----@return Appendable
-function __Writer:append(arg0) end
-
 ---Closes the stream, flushing it first. Once the stream has been closed,
 --- further write() or flush() invocations will cause an IOException to be
 --- thrown. Closing a previously closed stream has no effect.

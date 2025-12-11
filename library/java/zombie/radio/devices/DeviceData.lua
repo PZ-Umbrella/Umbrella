@@ -15,6 +15,8 @@ function __DeviceData:TriggerPlayerListening(listening) end
 ---@param bat DrainableComboItem
 function __DeviceData:addBattery(bat) end
 
+function __DeviceData:addEmergencyChannel() end
+
 ---@param headphones InventoryItem
 function __DeviceData:addHeadphones(headphones) end
 

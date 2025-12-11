@@ -131,6 +131,9 @@ function __IsoRoom:useWater() end
 
 IsoRoom = {}
 
+---@type integer
+IsoRoom.MAXIMUM_DAYS = nil
+
 ---@return IsoRoom
 function IsoRoom.new() end
 

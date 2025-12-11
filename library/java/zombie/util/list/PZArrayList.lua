@@ -14,9 +14,9 @@ function __PZArrayList:add(index, e) end
 ---@param arg0 E
 function __PZArrayList:addUnique(arg0) end
 
----@param arg0 E
----@param arg1 Invokers.Params2.Boolean.ICallback<E, E>
-function __PZArrayList:addUnique(arg0, arg1) end
+---@param newItem E
+---@param in_comparator Invokers.Params2.Boolean.ICallback<E, E>
+function __PZArrayList:addUnique(newItem, in_comparator) end
 
 ---@param arg0 E
 function __PZArrayList:addUniqueReference(arg0) end
@@ -28,10 +28,10 @@ function __PZArrayList:clear() end
 function __PZArrayList:contains(o) end
 
 ---@generic E1
----@param arg0 E1
----@param arg1 Invokers.Params2.Boolean.ICallback<E1, E>
+---@param o E1
+---@param in_comparator Invokers.Params2.Boolean.ICallback<E1, E>
 ---@return boolean
-function __PZArrayList:contains(arg0, arg1) end
+function __PZArrayList:contains(o, in_comparator) end
 
 ---@param arg0 E
 ---@return boolean
@@ -52,10 +52,10 @@ function __PZArrayList:getElements() end
 function __PZArrayList:indexOf(o) end
 
 ---@generic E1
----@param arg0 E1
----@param arg1 Invokers.Params2.Boolean.ICallback<E1, E>
+---@param o E1
+---@param in_comparator Invokers.Params2.Boolean.ICallback<E1, E>
 ---@return integer
-function __PZArrayList:indexOf(arg0, arg1) end
+function __PZArrayList:indexOf(o, in_comparator) end
 
 ---@return boolean
 function __PZArrayList:isEmpty() end

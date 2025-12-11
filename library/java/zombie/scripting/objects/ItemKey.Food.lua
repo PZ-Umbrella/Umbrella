@@ -486,6 +486,9 @@ Food.CHANNEL_CATFISH = nil
 Food.CHEESE = nil
 
 ---@type ItemKey
+Food.CHEESE_POWDERED = nil
+
+---@type ItemKey
 Food.CHERRY = nil
 
 ---@type ItemKey

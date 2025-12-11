@@ -47,7 +47,7 @@
 ---@field usedMemory ISLabel
 ---@field variableColor umbrella.RGBA
 ---@field zOffsetSmallFont number
-ISGameStatisticPanel = ISPanel:derive("ISGameStatisticPanel")
+ISGameStatisticPanel = {}
 ISGameStatisticPanel.Type = "ISGameStatisticPanel"
 ISGameStatisticPanel.instance = nil ---@type ISGameStatisticPanel?
 

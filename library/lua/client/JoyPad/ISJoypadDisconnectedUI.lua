@@ -7,6 +7,8 @@
 ISJoypadDisconnectedUI = ISUIElement:derive("ISJoypadDisconnectedUI")
 ISJoypadDisconnectedUI.Type = "ISJoypadDisconnectedUI"
 
+function ISJoypadDisconnectedUI.setKeyboardMouseActivated() end
+
 function ISJoypadDisconnectedUI:createChildren() end
 
 function ISJoypadDisconnectedUI:prerender() end

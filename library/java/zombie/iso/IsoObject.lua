@@ -289,11 +289,11 @@ function __IsoObject:getContainerCount() end
 function __IsoObject:getContainerIndex(container) end
 
 ---@generic T
----@param arg0 T
----@param arg1 Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@param arg2 PZArrayList<ItemContainer>
+---@param in_paramToCompare T
+---@param in_isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
+---@param inout_containerList PZArrayList<ItemContainer>
 ---@return PZArrayList<ItemContainer>
-function __IsoObject:getContainers(arg0, arg1, arg2) end
+function __IsoObject:getContainers(in_paramToCompare, in_isValidPredicate, inout_containerList) end
 
 ---@return Texture
 function __IsoObject:getCurrentFrameTex() end
@@ -430,6 +430,10 @@ function __IsoObject:getPosition(arg0) end
 ---@return PropertyContainer
 function __IsoObject:getProperties() end
 
+---@param p string
+---@return string
+function __IsoObject:getProperty(p) end
+
 ---@return IsoObject
 function __IsoObject:getRenderEffectMaster() end
 
@@ -553,6 +557,9 @@ function __IsoObject:getY() end
 function __IsoObject:getZ() end
 
 ---@return boolean
+function __IsoObject:hasAdjacentCanStandSquare() end
+
+---@return boolean
 function __IsoObject:hasAnimatedAttachments() end
 
 ---@return boolean
@@ -575,6 +582,14 @@ function __IsoObject:hasOverlaySprite() end
 
 ---@return boolean
 function __IsoObject:hasPropaneTank() end
+
+---@param flag IsoFlagType
+---@return boolean
+function __IsoObject:hasProperty(flag) end
+
+---@param p string
+---@return boolean
+function __IsoObject:hasProperty(p) end
 
 ---@return boolean
 function __IsoObject:hasSpriteGrid() end
@@ -702,6 +717,9 @@ function __IsoObject:isMovedThumpable() end
 function __IsoObject:isNoPicking() end
 
 ---@return boolean
+function __IsoObject:isNorthBlocked() end
+
+---@return boolean
 function __IsoObject:isNorthHoppable() end
 
 ---@return boolean
@@ -709,6 +727,9 @@ function __IsoObject:isObjectNoContainerOrEmpty() end
 
 ---@return boolean
 function __IsoObject:isOnScreen() end
+
+---@return boolean
+function __IsoObject:isOre() end
 
 ---@return boolean
 function __IsoObject:isOutlineHighlight() end
@@ -789,7 +810,13 @@ function __IsoObject:isWall() end
 function __IsoObject:isWallN() end
 
 ---@return boolean
+function __IsoObject:isWallSE() end
+
+---@return boolean
 function __IsoObject:isWallW() end
+
+---@return boolean
+function __IsoObject:isWindow() end
 
 ---@return boolean
 function __IsoObject:isZombie() end
@@ -833,6 +860,16 @@ function __IsoObject:onMouseLeftClick(x, y) end
 function __IsoObject:onMouseRightClick(lx, ly) end
 
 function __IsoObject:onMouseRightReleased() end
+
+---@param key string
+---@param value string
+---@return boolean
+function __IsoObject:propertyEquals(key, value) end
+
+---@param key string
+---@param value string
+---@return boolean
+function __IsoObject:propertyEqualsIgnoreCase(key, value) end
 
 function __IsoObject:removeAllContainers() end
 
@@ -1266,6 +1303,12 @@ function __IsoObject:spawnItemToObjectSurface(arg0) end
 ---@return InventoryItem
 function __IsoObject:spawnItemToObjectSurface(arg0, arg1) end
 
+---@param item string
+---@param randomRotation boolean
+---@param checkForAdjacentCanStandSquare boolean
+---@return InventoryItem
+function __IsoObject:spawnItemToObjectSurface(item, randomRotation, checkForAdjacentCanStandSquare) end
+
 function __IsoObject:sync() end
 
 ---@param arg0 ByteBuffer
@@ -1337,9 +1380,6 @@ function __IsoObject:writeToRemoteBuffer(b) end
 
 IsoObject = {}
 
----@type boolean
-IsoObject.LowLightingQualityHack = nil
-
 ---@type integer
 IsoObject.MAX_WALL_SPLATS = nil
 
@@ -1357,6 +1397,9 @@ IsoObject.lastRendered = nil
 
 ---@type IsoObject
 IsoObject.lastRenderedRendered = nil
+
+---@type boolean
+IsoObject.lowLightingQualityHack = nil
 
 ---@type number
 IsoObject.rmod = nil
@@ -1378,7 +1421,7 @@ function IsoObject.FindWaterSourceOnSquare(square) end
 ---@deprecated
 ---@param cell IsoCell
 ---@param classID integer
----@return Class
+---@return Class<any>
 function IsoObject.factoryClassFromFileInput(cell, classID) end
 
 ---@param cell IsoCell

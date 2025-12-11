@@ -20,29 +20,29 @@ function __AttributeContainer:contains(arg0) end
 ---@return AttributeContainer
 function __AttributeContainer:copy() end
 
----@param arg0 BiConsumer<AttributeType, AttributeInstance>
-function __AttributeContainer:forEach(arg0) end
+---@param action BiConsumer<AttributeType, AttributeInstance>
+function __AttributeContainer:forEach(action) end
 
 ---@generic E: Enum<E>, IOEnum
----@param arg0 AttributeType.Enum<E>
+---@param type AttributeType.Enum<E>
 ---@return E
-function __AttributeContainer:get(arg0) end
+function __AttributeContainer:get(type) end
 
 ---@generic E: Enum<E>, IOEnum
----@param arg0 AttributeType.Enum<E>
----@param arg1 E
+---@param type AttributeType.Enum<E>
+---@param defaultTo E
 ---@return E
-function __AttributeContainer:get(arg0, arg1) end
+function __AttributeContainer:get(type, defaultTo) end
 
 ---@generic E: Enum<E>, IOEnum
----@param arg0 AttributeType.EnumSet<E>
+---@param type AttributeType.EnumSet<E>
 ---@return EnumSet<E>
-function __AttributeContainer:get(arg0) end
+function __AttributeContainer:get(type) end
 
 ---@generic E: Enum<E>, IOEnum
----@param arg0 AttributeType.EnumStringSet<E>
+---@param type AttributeType.EnumStringSet<E>
 ---@return EnumStringObj<E>
-function __AttributeContainer:get(arg0) end
+function __AttributeContainer:get(type) end
 
 ---@param arg0 AttributeType.String
 ---@return string
@@ -146,19 +146,19 @@ function __AttributeContainer:isIdenticalTo(arg0) end
 function __AttributeContainer:load(arg0, arg1) end
 
 ---@generic E: Enum<E>, IOEnum
----@param arg0 AttributeType.Enum<E>
----@param arg1 E
-function __AttributeContainer:put(arg0, arg1) end
+---@param type AttributeType.Enum<E>
+---@param value E
+function __AttributeContainer:put(type, value) end
 
 ---@generic E: Enum<E>, IOEnum
----@param arg0 AttributeType.EnumSet<E>
----@param arg1 EnumSet<E>
-function __AttributeContainer:put(arg0, arg1) end
+---@param type AttributeType.EnumSet<E>
+---@param value EnumSet<E>
+function __AttributeContainer:put(type, value) end
 
 ---@generic E: Enum<E>, IOEnum
----@param arg0 AttributeType.EnumStringSet<E>
----@param arg1 EnumStringObj<E>
-function __AttributeContainer:put(arg0, arg1) end
+---@param type AttributeType.EnumStringSet<E>
+---@param value EnumStringObj<E>
+function __AttributeContainer:put(type, value) end
 
 ---@param arg0 AttributeType.String
 ---@param arg1 string
@@ -208,19 +208,19 @@ function __AttributeContainer:remove(arg0) end
 function __AttributeContainer:save(arg0) end
 
 ---@generic E: Enum<E>, IOEnum
----@param arg0 AttributeType.Enum<E>
----@param arg1 E
-function __AttributeContainer:set(arg0, arg1) end
+---@param type AttributeType.Enum<E>
+---@param value E
+function __AttributeContainer:set(type, value) end
 
 ---@generic E: Enum<E>, IOEnum
----@param arg0 AttributeType.EnumSet<E>
----@param arg1 EnumSet<E>
-function __AttributeContainer:set(arg0, arg1) end
+---@param type AttributeType.EnumSet<E>
+---@param value EnumSet<E>
+function __AttributeContainer:set(type, value) end
 
 ---@generic E: Enum<E>, IOEnum
----@param arg0 AttributeType.EnumStringSet<E>
----@param arg1 EnumStringObj<E>
-function __AttributeContainer:set(arg0, arg1) end
+---@param type AttributeType.EnumStringSet<E>
+---@param value EnumStringObj<E>
+function __AttributeContainer:set(type, value) end
 
 ---@param arg0 AttributeType.String
 ---@param arg1 string

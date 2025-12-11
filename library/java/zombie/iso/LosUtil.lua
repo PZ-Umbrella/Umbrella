@@ -5,20 +5,20 @@ local __LosUtil = {}
 
 LosUtil = {}
 
----@type integer
-LosUtil.XSIZE = nil
-
----@type integer
-LosUtil.YSIZE = nil
-
----@type integer
-LosUtil.ZSIZE = nil
-
 ---@type kahlua.Array<boolean>
 LosUtil.cachecleared = nil
 
 ---@type kahlua.Array<LosUtil.PerPlayerData>
 LosUtil.cachedresults = nil
+
+---@type integer
+LosUtil.sizeX = nil
+
+---@type integer
+LosUtil.sizeY = nil
+
+---@type integer
+LosUtil.sizeZ = nil
 
 ---@param arg0 IsoCell
 ---@param arg1 integer

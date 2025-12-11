@@ -1,7 +1,17 @@
 ---@meta _
 
----@class CharacterTraits: TraitCollection
+---@class CharacterTraits
 local __CharacterTraits = {}
+
+---@param characterTrait CharacterTrait
+function __CharacterTraits:add(characterTrait) end
+
+---@param characterTrait CharacterTrait
+---@return boolean
+function __CharacterTraits:get(characterTrait) end
+
+---@return List<CharacterTrait>
+function __CharacterTraits:getKnownTraits() end
 
 ---@return number
 function __CharacterTraits:getTraitDamageDealtReductionModifier() end
@@ -12,8 +22,28 @@ function __CharacterTraits:getTraitEnduranceLossModifier() end
 ---@return number
 function __CharacterTraits:getTraitWeatherPenaltyModifier() end
 
+---@return Map<CharacterTrait, boolean>
+function __CharacterTraits:getTraits() end
+
+---@param input ByteBuffer
+function __CharacterTraits:load(input) end
+
+---@param input ByteBuffer
+function __CharacterTraits:read(input) end
+
+---@param characterTrait CharacterTrait
+function __CharacterTraits:remove(characterTrait) end
+
+---@param output ByteBuffer
+function __CharacterTraits:save(output) end
+
+---@param characterTrait CharacterTrait
+---@param value boolean
 ---@return boolean
-function __CharacterTraits:isIlliterate() end
+function __CharacterTraits:set(characterTrait, value) end
+
+---@param output ByteBufferWriter
+function __CharacterTraits:write(output) end
 
 CharacterTraits = {}
 

@@ -86,7 +86,7 @@ function __CraftLogicUILogic:getRecipe() end
 ---@return CraftRecipeData
 function __CraftLogicUILogic:getRecipeData() end
 
----@return List<CraftRecipe>
+---@return CraftRecipeListNodeCollection
 function __CraftLogicUILogic:getRecipeList() end
 
 ---@return string

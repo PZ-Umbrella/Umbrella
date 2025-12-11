@@ -64,6 +64,8 @@ function LastStandPlayerSelect:onJoypadBeforeDeactivate(joypadData) end
 ---@param joypadData JoypadData
 function LastStandPlayerSelect:onJoypadBeforeDeactivate_child(joypadData) end
 
+function LastStandPlayerSelect:onKeyRelease(key) end
+
 ---@param joypadData JoypadData
 function LastStandPlayerSelect:onLoseJoypadFocus_child(joypadData) end
 

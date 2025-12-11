@@ -37,7 +37,7 @@ farming_vegetableconf.props.Basil = {
 	bestMonth = {
 		3,
 	},
-	seasonRecipe = "Basil Growing Season",
+	seasonRecipe = "base:basil growing season",
 	harvestLevel = 3,
 	mature = 3,
 	fullGrown = 4,
@@ -79,7 +79,7 @@ farming_vegetableconf.props.BlackSage = {
 		4,
 		5,
 	},
-	seasonRecipe = "Black Sage Growing Season",
+	seasonRecipe = "base:black sage growing season",
 	harvestLevel = 3,
 	mature = 3,
 	fullGrown = 4,
@@ -118,7 +118,7 @@ farming_vegetableconf.props.BroadleafPlantain = {
 		6,
 		7,
 	},
-	seasonRecipe = "Broadleaf Plantain Growing Season",
+	seasonRecipe = "base:broadleaf plantain growing season",
 	harvestLevel = 3,
 	mature = 3,
 	fullGrown = 4,
@@ -155,7 +155,7 @@ farming_vegetableconf.props.Chamomile = {
 	bestMonth = {
 		4,
 	},
-	seasonRecipe = "Chamomile Growing Season",
+	seasonRecipe = "base:chamomile growing season",
 	harvestLevel = 3,
 	mature = 3,
 	fullGrown = 4,
@@ -200,7 +200,7 @@ farming_vegetableconf.props.Chives = {
 		6,
 		7,
 	},
-	seasonRecipe = "Chives Growing Season",
+	seasonRecipe = "base:chives growing season",
 	harvestLevel = 3,
 	mature = 3,
 	fullGrown = 4,
@@ -244,7 +244,7 @@ farming_vegetableconf.props.Cilantro = {
 	riskMonth = {
 		5,
 	},
-	seasonRecipe = "Cilantro Growing Season",
+	seasonRecipe = "base:cilantro growing season",
 	harvestLevel = 3,
 	mature = 3,
 	fullGrown = 4,
@@ -286,7 +286,7 @@ farming_vegetableconf.props.Comfrey = {
 		6,
 		7,
 	},
-	seasonRecipe = "Comfrey Growing Season",
+	seasonRecipe = "base:comfrey growing season",
 	harvestLevel = 3,
 	mature = 3,
 	fullGrown = 4,
@@ -326,7 +326,7 @@ farming_vegetableconf.props.CommonMallow = {
 		6,
 		7,
 	},
-	seasonRecipe = "Common Mallow Growing Season",
+	seasonRecipe = "base:common mallow growing season",
 	harvestLevel = 3,
 	mature = 3,
 	fullGrown = 4,
@@ -368,7 +368,7 @@ farming_vegetableconf.props.Habanero = {
 	riskMonth = {
 		6,
 	},
-	seasonRecipe = "Habanero Growing Season",
+	seasonRecipe = "base:habanero growing season",
 }
 farming_vegetableconf.props.Jalapeno = {
 	icon = "Item_PepperJalapeno",
@@ -407,7 +407,7 @@ farming_vegetableconf.props.Jalapeno = {
 	riskMonth = {
 		6,
 	},
-	seasonRecipe = "Jalapeno Growing Season",
+	seasonRecipe = "base:jalapeno growing season",
 }
 farming_vegetableconf.props.Lavender = {
 	texture = "vegetation_gardening_01_20",
@@ -443,7 +443,7 @@ farming_vegetableconf.props.Lavender = {
 	riskMonth = {
 		5,
 	},
-	seasonRecipe = "Lavender Growing Season",
+	seasonRecipe = "base:lavender growing season",
 	harvestLevel = 3,
 	mature = 3,
 	fullGrown = 4,
@@ -477,7 +477,7 @@ farming_vegetableconf.props.Leek = {
 		8,
 		9,
 	},
-	seasonRecipe = "Leek Growing Season",
+	seasonRecipe = "base:leek growing season",
 	harvestLevel = 3,
 	mature = 3,
 	fullGrown = 4,
@@ -517,7 +517,7 @@ farming_vegetableconf.props.LemonGrass = {
 		8,
 		9,
 	},
-	seasonRecipe = "Lemongrass Growing Season",
+	seasonRecipe = "base:lemongrass growing season",
 	harvestLevel = 3,
 	mature = 3,
 	fullGrown = 4,
@@ -563,7 +563,7 @@ farming_vegetableconf.props.Marigold = {
 	riskMonth = {
 		5,
 	},
-	seasonRecipe = "Marigold Growing Season",
+	seasonRecipe = "base:marigold growing season",
 	harvestLevel = 3,
 	mature = 3,
 	fullGrown = 4,
@@ -606,7 +606,7 @@ farming_vegetableconf.props.Mint = {
 	bestMonth = {
 		3,
 	},
-	seasonRecipe = "Mint Growing Season",
+	seasonRecipe = "base:mint growing season",
 	harvestLevel = 3,
 	mature = 3,
 	fullGrown = 4,
@@ -648,7 +648,7 @@ farming_vegetableconf.props.Oregano = {
 	riskMonth = {
 		4,
 	},
-	seasonRecipe = "Oregano Growing Season",
+	seasonRecipe = "base:oregano growing season",
 	harvestLevel = 3,
 	mature = 3,
 	fullGrown = 4,
@@ -694,7 +694,7 @@ farming_vegetableconf.props.Parsley = {
 	riskMonth = {
 		4,
 	},
-	seasonRecipe = "Parsley Growing Season",
+	seasonRecipe = "base:parsley growing season",
 	harvestLevel = 3,
 	mature = 3,
 	fullGrown = 4,
@@ -735,7 +735,7 @@ farming_vegetableconf.props.Poppies = {
 	riskMonth = {
 		5,
 	},
-	seasonRecipe = "Poppy Growing Season",
+	seasonRecipe = "base:poppy growing season",
 	harvestLevel = 3,
 	mature = 3,
 	fullGrown = 4,
@@ -772,7 +772,7 @@ farming_vegetableconf.props.Rosemary = {
 		8,
 		9,
 	},
-	seasonRecipe = "Rosemary Growing Season",
+	seasonRecipe = "base:rosemary growing season",
 	harvestLevel = 3,
 	mature = 3,
 	fullGrown = 4,
@@ -817,7 +817,7 @@ farming_vegetableconf.props.Roses = {
 	riskMonth = {
 		5,
 	},
-	seasonRecipe = "Rose Growing Season",
+	seasonRecipe = "base:rose growing season",
 	harvestLevel = 3,
 	mature = 3,
 	fullGrown = 4,
@@ -859,7 +859,7 @@ farming_vegetableconf.props.Sage = {
 	riskMonth = {
 		4,
 	},
-	seasonRecipe = "Sage Growing Season",
+	seasonRecipe = "base:sage growing season",
 	harvestLevel = 3,
 	mature = 3,
 	fullGrown = 4,
@@ -902,7 +902,7 @@ farming_vegetableconf.props.Thyme = {
 	riskMonth = {
 		4,
 	},
-	seasonRecipe = "Thyme Growing Season",
+	seasonRecipe = "base:thyme growing season",
 	harvestLevel = 3,
 	mature = 3,
 	fullGrown = 4,
@@ -939,7 +939,7 @@ farming_vegetableconf.props.WildGarlic = {
 	riskMonth = {
 		9,
 	},
-	seasonRecipe = "Wild Garlic Growing Season",
+	seasonRecipe = "base:wild garlic growing season",
 	seedTypes = {
 		"Base.WildGarlicSeed",
 		"Base.WildGarlic2",

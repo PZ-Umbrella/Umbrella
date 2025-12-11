@@ -6,10 +6,10 @@ local __GameKeyboard = {}
 GameKeyboard = {}
 
 ---@type boolean
-GameKeyboard.bNoEventsWhileLoading = nil
+GameKeyboard.doLuaKeyPressed = nil
 
 ---@type boolean
-GameKeyboard.doLuaKeyPressed = nil
+GameKeyboard.noEventsWhileLoading = nil
 
 ---@param key integer
 function GameKeyboard.eatKeyPress(key) end
@@ -65,6 +65,10 @@ function GameKeyboard.wasKeyDownRaw(arg0) end
 ---@param arg0 string
 ---@return integer
 function GameKeyboard.whichKeyDown(arg0) end
+
+---@param keyName string
+---@return integer
+function GameKeyboard.whichKeyDownIgnoreMouse(keyName) end
 
 ---@param arg0 string
 ---@return integer

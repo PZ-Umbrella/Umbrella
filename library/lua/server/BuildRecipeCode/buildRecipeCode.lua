@@ -20,6 +20,7 @@ BuildRecipeCode.barrelOven = nil ---@type BuildRecipeCode.barrelOven
 local __buildRecipeCode_barricade = {}
 
 ---@param params umbrella.BuildRecipeCode.OnCreateParams
+---@return table?
 function __buildRecipeCode_barricade.OnCreate(params) end
 
 ---@param params umbrella.BuildRecipeCode.IsValidParams

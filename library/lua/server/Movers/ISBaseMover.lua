@@ -4,7 +4,7 @@
 ---@field javaObject IsoLuaMover
 ---@field sprite IsoSprite
 ---@field states ISMoverStateMachine
-ISBaseMover = ISBaseObject:derive("ISBaseMover")
+ISBaseMover = {}
 ISBaseMover.Type = "ISBaseMover"
 ISBaseMover.IDMax = 1
 

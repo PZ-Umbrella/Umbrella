@@ -12,9 +12,6 @@ function __Key:getKeyId() end
 ---@return integer
 function __Key:getNumberOfKey() end
 
----@return integer
-function __Key:getSaveType() end
-
 ---@return boolean
 function __Key:isDigitalPadlock() end
 

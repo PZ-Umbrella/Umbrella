@@ -2,6 +2,7 @@
 
 ---@class ISEatFoodAction : ISBaseTimedAction
 ---@field carLighter boolean?
+---@field container unknown
 ---@field eatAudio number
 ---@field eatSound string
 ---@field fork InventoryItem?

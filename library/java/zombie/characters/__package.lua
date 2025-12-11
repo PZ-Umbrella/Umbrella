@@ -79,9 +79,6 @@
 ---@class NetworkPlayerAI
 
 ---(Not exposed)
----@class NetworkTeleport
-
----(Not exposed)
 ---@class NetworkUser.AuthType
 
 ---(Not exposed)
@@ -111,6 +108,9 @@
 ---  A serialized representation of a Trigger_SetClothing.xml file.
 ---  Used by AnimZed to message a character to change its outfit.
 ---@class TriggerXmlFile
+
+---(Not exposed)
+---@class VisibilityData
 
 ---(Not exposed)
 ---@class ZombieGroup

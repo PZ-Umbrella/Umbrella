@@ -96,6 +96,10 @@ function ISScrollingListBox:insertItem(index, name, item) end
 
 function ISScrollingListBox:instantiate() end
 
+function ISScrollingListBox:invokeOnMouseDoubleClick() end
+
+function ISScrollingListBox:invokeOnMouseDownFunction() end
+
 ---@return boolean
 function ISScrollingListBox:isMouseOverScrollBar() end
 

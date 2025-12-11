@@ -65,34 +65,36 @@ function __WorldSoundManager:addSound(
 )
 end
 
----@param arg0 any
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 boolean
----@param arg7 number
----@param arg8 number
----@param arg9 boolean
----@param arg10 boolean
----@param arg11 boolean
----@param arg12 boolean
+---@param source any
+---@param x integer
+---@param y integer
+---@param z integer
+---@param radius integer
+---@param volume integer
+---@param stressHumans boolean
+---@param zombieIgnoreDist number
+---@param stressMod number
+---@param sourceIsZombie boolean
+---@param doSend boolean
+---@param remote boolean
+---@param repeating boolean
+---@param stressAnimals boolean
 ---@return WorldSoundManager.WorldSound
 function __WorldSoundManager:addSound(
-	arg0,
-	arg1,
-	arg2,
-	arg3,
-	arg4,
-	arg5,
-	arg6,
-	arg7,
-	arg8,
-	arg9,
-	arg10,
-	arg11,
-	arg12
+	source,
+	x,
+	y,
+	z,
+	radius,
+	volume,
+	stressHumans,
+	zombieIgnoreDist,
+	stressMod,
+	sourceIsZombie,
+	doSend,
+	remote,
+	repeating,
+	stressAnimals
 )
 end
 
@@ -107,6 +109,17 @@ end
 ---@param arg8 number
 ---@return WorldSoundManager.WorldSound
 function __WorldSoundManager:addSoundRepeating(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+
+---@param source any
+---@param x integer
+---@param y integer
+---@param z integer
+---@param radius integer
+---@param volume integer
+---@param stressHumans boolean
+---@param stressAnimals boolean
+---@return WorldSoundManager.WorldSound
+function __WorldSoundManager:addSoundRepeating(source, x, y, z, radius, volume, stressHumans, stressAnimals) end
 
 ---@param source any
 ---@param x integer

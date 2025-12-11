@@ -6,13 +6,7 @@ local __Double = {}
 ---@return number
 function __Double:getMax() end
 
----@return Number
-function __Double:getMax() end
-
 ---@return number
-function __Double:getMin() end
-
----@return Number
 function __Double:getMin() end
 
 ---@return AttributeValueType
@@ -20,10 +14,6 @@ function __Double:getValueType() end
 
 ---@param arg0 number
 ---@return number
-function __Double:validate(arg0) end
-
----@param arg0 Number
----@return Number
 function __Double:validate(arg0) end
 
 Double = {}

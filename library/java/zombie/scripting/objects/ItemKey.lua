@@ -13,22 +13,26 @@ function __ItemKey:hashCode() end
 ---@return string
 function __ItemKey:id() end
 
+---@return ItemType
+function __ItemKey:itemType() end
+
 ---@return string
 function __ItemKey:toString() end
 
----@return Item.Type
-function __ItemKey:type() end
-
 ItemKey = {}
+
+---@param name string
+---@return ItemKey
+function ItemKey.getByItemKeyValue(name) end
 
 ---@param arg0 string
 ---@return Optional<ItemKey>
 function ItemKey.getByName(arg0) end
 
----@param arg0 string
----@param arg1 Item.Type
+---@param id string
+---@param itemType ItemType
 ---@return ItemKey
-function ItemKey.new(arg0, arg1) end
+function ItemKey.new(id, itemType) end
 
 ---@type Class<ItemKey>
 ItemKey.class = nil

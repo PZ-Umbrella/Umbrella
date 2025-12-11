@@ -124,6 +124,11 @@ function __GameEntity:isValidEngineEntity() end
 ---@param arg1 integer
 function __GameEntity:loadEntity(arg0, arg1) end
 
+---@param input ByteBuffer
+---@param WorldVersion integer
+---@param loaded List<Component>
+function __GameEntity:loadEntity(input, WorldVersion, loaded) end
+
 function __GameEntity:onEquip() end
 
 ---@param arg0 boolean

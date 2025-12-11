@@ -33,8 +33,8 @@ function __FluidProperties:setFatigueChange(arg0) end
 ---@param arg0 number
 function __FluidProperties:setFluReduction(arg0) end
 
----@param arg0 number
-function __FluidProperties:setFoodSicknessReduction(arg0) end
+---@param foodSicknessChange integer
+function __FluidProperties:setFoodSicknessChange(foodSicknessChange) end
 
 ---@param arg0 number
 function __FluidProperties:setHungerChange(arg0) end
@@ -54,11 +54,11 @@ function __FluidProperties:setPainReduction(arg0) end
 ---@param arg0 number
 function __FluidProperties:setProteins(arg0) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
-function __FluidProperties:setReductions(arg0, arg1, arg2, arg3) end
+---@param fluReduction number
+---@param painReduction number
+---@param enduranceChange number
+---@param foodSicknessChange integer
+function __FluidProperties:setReductions(fluReduction, painReduction, enduranceChange, foodSicknessChange) end
 
 ---@param arg0 number
 function __FluidProperties:setStressChange(arg0) end

@@ -42,16 +42,16 @@ Mouse.MMB = nil
 Mouse.RMB = nil
 
 ---@type kahlua.Array<boolean>
-Mouse.UICaptured = nil
+Mouse.buttonDownStates = nil
+
+---@type kahlua.Array<boolean>
+Mouse.buttonPrevStates = nil
 
 ---@type integer
 Mouse.lastActivity = nil
 
 ---@type kahlua.Array<boolean>
-Mouse.m_buttonDownStates = nil
-
----@type kahlua.Array<boolean>
-Mouse.m_buttonPrevStates = nil
+Mouse.uiCaptured = nil
 
 ---@type integer
 Mouse.wheelDelta = nil

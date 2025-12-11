@@ -1,7 +1,7 @@
 ---@meta
 
 ---@class ISBaseState : ISBaseObject
-ISBaseState = ISBaseObject:derive("ISBaseState")
+ISBaseState = {}
 ISBaseState.Type = "ISBaseState"
 
 function ISBaseState:during() end

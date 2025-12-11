@@ -241,8 +241,8 @@ function __AnimalData:setFertilizedTime(arg0) end
 ---@param arg0 integer
 function __AnimalData:setHutchPosition(arg0) end
 
----@param arg0 HashMap<string, AnimalGene>
-function __AnimalData:setMaleGenome(arg0) end
+---@param maleGenome HashMap<string, AnimalGene>
+function __AnimalData:setMaleGenome(maleGenome) end
 
 ---@param arg0 number
 function __AnimalData:setMaxMilkActual(arg0) end

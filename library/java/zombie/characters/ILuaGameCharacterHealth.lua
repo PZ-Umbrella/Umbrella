@@ -59,9 +59,6 @@ function __ILuaGameCharacterHealth:getReduceInfectionPower() end
 ---@return number
 function __ILuaGameCharacterHealth:getSleepingTabletEffect() end
 
----@return number
-function __ILuaGameCharacterHealth:getTemperature() end
-
 ---@param lastHourSleeped integer
 function __ILuaGameCharacterHealth:setLastHourSleeped(lastHourSleeped) end
 
@@ -70,9 +67,6 @@ function __ILuaGameCharacterHealth:setReduceInfectionPower(reduceInfectionPower)
 
 ---@param SleepingTabletEffect number
 function __ILuaGameCharacterHealth:setSleepingTabletEffect(SleepingTabletEffect) end
-
----@param t number
-function __ILuaGameCharacterHealth:setTemperature(t) end
 
 ---@param timeOfSleep number
 function __ILuaGameCharacterHealth:setTimeOfSleep(timeOfSleep) end

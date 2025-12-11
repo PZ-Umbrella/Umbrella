@@ -1,6 +1,8 @@
 ---@meta
 
 ---@class ISItemSlotAddAction : ISBaseTimedAction
+---@field actionAnim string
+---@field actionAnimVariables table
 ---@field canAddItem (fun(self: ISItemSlotAddAction): boolean)?
 ---@field entity IsoObject
 ---@field item InventoryItem

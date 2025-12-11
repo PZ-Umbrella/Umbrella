@@ -33,9 +33,6 @@ function __State:getDeltaModifiers(owner, modifiers) end
 ---@return string
 function __State:getName() end
 
----@return IStatePermissions
-function __State:getStatePermissions() end
-
 ---Return TRUE if the owner is currently attacking.
 ---  Defaults to FALSE
 ---@param owner IsoGameCharacter
@@ -64,6 +61,12 @@ function __State:isIgnoreCollide(owner, fromX, fromY, fromZ, toX, toY, toZ) end
 function __State:isMoving(owner) end
 
 ---@return boolean
+function __State:isProcessedOnEnter() end
+
+---@return boolean
+function __State:isProcessedOnExit() end
+
+---@return boolean
 function __State:isSyncInIdle() end
 
 ---@return boolean
@@ -74,6 +77,14 @@ function __State:isSyncOnExit() end
 
 ---@return boolean
 function __State:isSyncOnSquare() end
+
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __State:processOnEnter(owner, delegate) end
+
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __State:processOnExit(owner, delegate) end
 
 ---@param arg0 IsoGameCharacter
 ---@param arg1 State.Stage

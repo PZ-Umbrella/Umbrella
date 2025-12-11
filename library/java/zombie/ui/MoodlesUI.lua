@@ -19,8 +19,8 @@ function __MoodlesUI:setCharacter(chr) end
 
 function __MoodlesUI:update() end
 
----@param Moodle MoodleType
-function __MoodlesUI:wiggle(Moodle) end
+---@param moodleType MoodleType
+function __MoodlesUI:wiggle(moodleType) end
 
 MoodlesUI = {}
 

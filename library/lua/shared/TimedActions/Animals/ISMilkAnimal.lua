@@ -33,6 +33,8 @@ function ISMilkAnimal:perform() end
 
 function ISMilkAnimal:serverStart() end
 
+function ISMilkAnimal:serverStop() end
+
 function ISMilkAnimal:start() end
 
 function ISMilkAnimal:stop() end

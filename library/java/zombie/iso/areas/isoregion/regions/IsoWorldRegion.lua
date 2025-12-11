@@ -7,8 +7,8 @@ local __IsoWorldRegion = {}
 ---@param region IsoChunkRegion
 function __IsoWorldRegion:addIsoChunkRegion(region) end
 
----@param arg0 ArrayList<IsoGameCharacter.Location>
-function __IsoWorldRegion:clearBuildingDef(arg0) end
+---@param changedCells ArrayList<IsoGameCharacter.Location>
+function __IsoWorldRegion:clearBuildingDef(changedCells) end
 
 ---@param region IsoChunkRegion
 ---@return boolean

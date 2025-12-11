@@ -1,8 +1,10 @@
 ---@meta
 
 ---@class SourceWindow : ISCollapsableWindow
+---@field bottomPanel ISPanel
 ---@field filename string
 ---@field keepOnScreen boolean
+---@field lineNumberEntry ISTextEntryBox
 ---@field reloadBtn ISButton
 ---@field sourceView ISScrollingListBox
 ---@field title string
@@ -22,6 +24,8 @@ function SourceWindow:doDrawItem(y, item) end
 function SourceWindow:fill() end
 
 function SourceWindow:initialise() end
+
+function SourceWindow:onLineNumberEntered() end
 
 ---@param item string
 function SourceWindow:onMouseDoubleClickBreakpointToggle(item) end

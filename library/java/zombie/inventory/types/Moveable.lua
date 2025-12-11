@@ -48,9 +48,6 @@ function __Moveable:getName() end
 ---@return string
 function __Moveable:getName(arg0) end
 
----@return integer
-function __Moveable:getSaveType() end
-
 ---@return IsoSpriteGrid
 function __Moveable:getSpriteGrid() end
 

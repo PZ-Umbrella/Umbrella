@@ -22,9 +22,6 @@ function __RandomizedWorldBase:addCharcoalBurner(arg0) end
 ---@param arg0 IsoGridSquare
 function __RandomizedWorldBase:addCookingPit(arg0) end
 
----@param arg0 IsoGridSquare
-function __RandomizedWorldBase:addGrindstone(arg0) end
-
 ---@param square IsoGridSquare
 ---@param type string
 ---@return InventoryItem
@@ -139,9 +136,6 @@ function __RandomizedWorldBase:addSleepingBagOrTentWestEast(arg0, arg1, arg2) en
 ---@param arg1 integer
 ---@param arg2 integer
 function __RandomizedWorldBase:addSleepingBagWestEast(arg0, arg1, arg2) end
-
----@param arg0 IsoGridSquare
-function __RandomizedWorldBase:addStoneAnvil(arg0) end
 
 ---@param arg0 integer
 ---@param arg1 integer

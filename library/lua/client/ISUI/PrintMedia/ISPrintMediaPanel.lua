@@ -8,7 +8,7 @@
 ---@field tutorialSetInfo ISPrintMediaSetInfo
 ---@field visibleFunction function
 ---@field visibleTarget ISPrintMediaPanel
-ISPrintMediaPanel = ISCollapsableWindowJoypad:derive("ISPrintMediaPanel")
+ISPrintMediaPanel = {}
 ISPrintMediaPanel.Type = "ISPrintMediaPanel"
 
 function ISPrintMediaPanel:close() end
@@ -54,7 +54,7 @@ function ISPrintMediaPanel:new(x, y, width, height) end
 
 ---@class ISPrintMediaListBox : ISScrollingListBox
 ---@field selected number
-ISPrintMediaListBox = ISScrollingListBox:derive("ISPrintMediaListBox")
+ISPrintMediaListBox = {}
 ISPrintMediaListBox.Type = "ISPrintMediaListBox"
 
 ---@param y number

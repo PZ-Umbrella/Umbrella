@@ -10,43 +10,9 @@ function __PropertyContainer:Clear() end
 
 function __PropertyContainer:CreateKeySet() end
 
----@param flag IsoFlagType
----@return boolean
-function __PropertyContainer:Is(flag) end
-
----@param flag number
----@return boolean
-function __PropertyContainer:Is(flag) end
-
----@param isoPropertyType string
----@return boolean
-function __PropertyContainer:Is(isoPropertyType) end
-
----@param propName string
----@param propName2 string
-function __PropertyContainer:Set(propName, propName2) end
-
----@param propName string
----@param propName2 string
----@param checkIsoFlagType boolean
-function __PropertyContainer:Set(propName, propName2, checkIsoFlagType) end
-
----@param flag IsoFlagType
-function __PropertyContainer:Set(flag) end
-
----@param flag IsoFlagType
----@param ignored string
-function __PropertyContainer:Set(flag, ignored) end
-
----@param propName string
-function __PropertyContainer:UnSet(propName) end
-
----@param flag IsoFlagType
-function __PropertyContainer:UnSet(flag) end
-
 ---@param property string
 ---@return string
-function __PropertyContainer:Val(property) end
+function __PropertyContainer:get(property) end
 
 ---@return ArrayList<IsoFlagType>
 function __PropertyContainer:getFlagsList() end
@@ -72,6 +38,18 @@ function __PropertyContainer:getStackReplaceTileOffset() end
 ---@return integer
 function __PropertyContainer:getSurface() end
 
+---@param flag IsoFlagType
+---@return boolean
+function __PropertyContainer:has(flag) end
+
+---@param flag number
+---@return boolean
+function __PropertyContainer:has(flag) end
+
+---@param isoPropertyType string
+---@return boolean
+function __PropertyContainer:has(isoPropertyType) end
+
 ---@return boolean
 function __PropertyContainer:isSurfaceOffset() end
 
@@ -81,15 +59,32 @@ function __PropertyContainer:isTable() end
 ---@return boolean
 function __PropertyContainer:isTableTop() end
 
----@param arg0 string
----@param arg1 string
+---@param key string
+---@param value string
 ---@return boolean
-function __PropertyContainer:valueEquals(arg0, arg1) end
+function __PropertyContainer:propertyEquals(key, value) end
 
----@param arg0 string
----@param arg1 string
----@return boolean
-function __PropertyContainer:valueEqualsIgnoreCase(arg0, arg1) end
+---@param propName string
+---@param propName2 string
+function __PropertyContainer:set(propName, propName2) end
+
+---@param propName string
+---@param propName2 string
+---@param checkIsoFlagType boolean
+function __PropertyContainer:set(propName, propName2, checkIsoFlagType) end
+
+---@param flag IsoFlagType
+function __PropertyContainer:set(flag) end
+
+---@param flag IsoFlagType
+---@param ignored string
+function __PropertyContainer:set(flag, ignored) end
+
+---@param propName string
+function __PropertyContainer:unset(propName) end
+
+---@param flag IsoFlagType
+function __PropertyContainer:unset(flag) end
 
 PropertyContainer = {}
 

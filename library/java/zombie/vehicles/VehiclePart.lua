@@ -18,6 +18,8 @@ function __VehiclePart:HasPlayerInRange() end
 ---@param child VehiclePart
 function __VehiclePart:addChild(child) end
 
+function __VehiclePart:clearFlags() end
+
 ---@return DeviceData
 function __VehiclePart:createSignalDevice() end
 
@@ -102,6 +104,10 @@ function __VehiclePart:getEngineLoudness() end
 ---@return integer
 function __VehiclePart:getEntityNetID() end
 
+---@param flag integer
+---@return boolean
+function __VehiclePart:getFlag(flag) end
+
 ---@return GameEntityType
 function __VehiclePart:getGameEntityType() end
 
@@ -111,7 +117,8 @@ function __VehiclePart:getId() end
 ---@return integer
 function __VehiclePart:getIndex() end
 
----@return InventoryItem
+---@generic T: InventoryItem
+---@return T
 function __VehiclePart:getInventoryItem() end
 
 ---@return ItemContainer
@@ -255,6 +262,9 @@ function __VehiclePart:setDurability(arg0) end
 
 ---@param engineLoudness number
 function __VehiclePart:setEngineLoudness(engineLoudness) end
+
+---@param flag integer
+function __VehiclePart:setFlag(flag) end
 
 ---@param item InventoryItem
 ---@param baseQuality number

@@ -6,22 +6,22 @@ local __KeyNamer = {}
 KeyNamer = {}
 
 ---@type ArrayList<string>
-KeyNamer.BigBuildingRooms = nil
-
----@type ArrayList<string>
-KeyNamer.RestaurantSubstrings = nil
-
----@type ArrayList<string>
-KeyNamer.Restaurants = nil
-
----@type ArrayList<string>
-KeyNamer.RoomSubstrings = nil
-
----@type ArrayList<string>
-KeyNamer.Rooms = nil
-
----@type ArrayList<string>
 KeyNamer.badZones = nil
+
+---@type ArrayList<string>
+KeyNamer.bigBuildingRooms = nil
+
+---@type ArrayList<string>
+KeyNamer.restaurantSubstrings = nil
+
+---@type ArrayList<string>
+KeyNamer.restaurants = nil
+
+---@type ArrayList<string>
+KeyNamer.roomSubstrings = nil
+
+---@type ArrayList<string>
+KeyNamer.rooms = nil
 
 function KeyNamer.clear() end
 

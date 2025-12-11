@@ -25,7 +25,7 @@ function __WornItems:get(index) end
 ---@return BodyLocationGroup
 function __WornItems:getBodyLocationGroup() end
 
----@param location string
+---@param location ItemBodyLocation
 ---@return InventoryItem
 function __WornItems:getItem(location) end
 
@@ -37,7 +37,7 @@ function __WornItems:getItemByIndex(index) end
 function __WornItems:getItemVisuals(itemVisuals) end
 
 ---@param item InventoryItem
----@return string
+---@return ItemBodyLocation
 function __WornItems:getLocation(item) end
 
 ---@return boolean
@@ -56,7 +56,7 @@ function __WornItems:save(arg0) end
 ---@param itemVisuals ItemVisuals
 function __WornItems:setFromItemVisuals(itemVisuals) end
 
----@param location string
+---@param location ItemBodyLocation
 ---@param item InventoryItem
 function __WornItems:setItem(location, item) end
 

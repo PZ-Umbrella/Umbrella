@@ -15,6 +15,8 @@
 ISDrinkFluidAction = ISBaseTimedAction:derive("ISDrinkFluidAction")
 ISDrinkFluidAction.Type = "ISDrinkFluidAction"
 
+function ISDrinkFluidAction:animEvent(event, parameter) end
+
 ---@return boolean
 function ISDrinkFluidAction:complete() end
 
@@ -28,6 +30,8 @@ function ISDrinkFluidAction:isValid() end
 function ISDrinkFluidAction:isValidStart() end
 
 function ISDrinkFluidAction:perform() end
+
+function ISDrinkFluidAction:serverStart() end
 
 function ISDrinkFluidAction:start() end
 

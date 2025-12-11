@@ -29,6 +29,8 @@ function ISShearAnimal:perform() end
 
 function ISShearAnimal:serverStart() end
 
+function ISShearAnimal:serverStop() end
+
 function ISShearAnimal:start() end
 
 function ISShearAnimal:stop() end

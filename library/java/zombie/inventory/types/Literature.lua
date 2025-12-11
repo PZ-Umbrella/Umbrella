@@ -62,6 +62,9 @@ function __Literature:getKnownMiscRecipes(arg0) end
 ---@return List<string>
 function __Literature:getKnownRecipes(arg0) end
 
+---@return List<string>
+function __Literature:getLearnedRecipes() end
+
 ---@return string
 function __Literature:getLockedBy() end
 
@@ -83,17 +86,11 @@ function __Literature:getPageToWrite() end
 ---@return string
 function __Literature:getReadType() end
 
----@return integer
-function __Literature:getSaveType() end
-
 ---@return string
 function __Literature:getSkillTrained() end
 
 ---@return number # the stressChange
 function __Literature:getStressChange() end
-
----@return List<string>
-function __Literature:getTeachedRecipes() end
 
 ---@return number # the unhappyChange
 function __Literature:getUnhappyChange() end
@@ -129,6 +126,9 @@ function __Literature:setCanBeWrite(canBeWrite) end
 ---@param customPages HashMap<integer, string>
 function __Literature:setCustomPages(customPages) end
 
+---@param learnedRecipes List<string>
+function __Literature:setLearnedRecipes(learnedRecipes) end
+
 ---@param lockedBy string
 function __Literature:setLockedBy(lockedBy) end
 
@@ -146,9 +146,6 @@ function __Literature:setPageToWrite(pageToWrite) end
 
 ---@param skillTrained string
 function __Literature:setSkillTrained(skillTrained) end
-
----@param teachedRecipes List<string>
-function __Literature:setTeachedRecipes(teachedRecipes) end
 
 function __Literature:update() end
 

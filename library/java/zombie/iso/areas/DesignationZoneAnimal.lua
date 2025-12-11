@@ -85,22 +85,22 @@ DesignationZoneAnimal.FENCE_NORTHCORNER = nil
 DesignationZoneAnimal.FENCE_WEST = nil
 
 ---@type number
-DesignationZoneAnimal.ZONECOLORB = nil
+DesignationZoneAnimal.ZONE_COLOR_B = nil
 
 ---@type number
-DesignationZoneAnimal.ZONECOLORG = nil
+DesignationZoneAnimal.ZONE_COLOR_G = nil
 
 ---@type number
-DesignationZoneAnimal.ZONECOLORR = nil
+DesignationZoneAnimal.ZONE_COLOR_R = nil
 
 ---@type number
-DesignationZoneAnimal.ZONESELECTEDCOLORB = nil
+DesignationZoneAnimal.ZONE_SELECTED_COLOR_B = nil
 
 ---@type number
-DesignationZoneAnimal.ZONESELECTEDCOLORG = nil
+DesignationZoneAnimal.ZONE_SELECTED_COLOR_G = nil
 
 ---@type number
-DesignationZoneAnimal.ZONESELECTEDCOLORR = nil
+DesignationZoneAnimal.ZONE_SELECTED_COLOR_R = nil
 
 ---@type string
 DesignationZoneAnimal.ZONE_TYPE = nil
@@ -142,6 +142,10 @@ function DesignationZoneAnimal.getZone(arg0, arg1, arg2) end
 ---@return DesignationZoneAnimal
 function DesignationZoneAnimal.getZone(arg0, arg1) end
 
+---@param zoneID number
+---@return DesignationZoneAnimal
+function DesignationZoneAnimal.getZoneById(zoneID) end
+
 ---@param arg0 number
 ---@param arg1 number
 ---@param arg2 number
@@ -163,17 +167,19 @@ function DesignationZoneAnimal.isItemFood(arg0) end
 ---@param arg0 IsoWorldInventoryObject
 function DesignationZoneAnimal.removeItemFromGround(arg0) end
 
----@param arg0 DesignationZoneAnimal
-function DesignationZoneAnimal.removeZone(arg0) end
+---@param zone DesignationZoneAnimal
+---@param doSync boolean
+function DesignationZoneAnimal.removeZone(zone, doSync) end
 
----@param arg0 string
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
+---@param name string
+---@param x integer
+---@param y integer
+---@param z integer
+---@param x2 integer
+---@param y2 integer
+---@param doSync boolean
 ---@return DesignationZoneAnimal
-function DesignationZoneAnimal.new(arg0, arg1, arg2, arg3, arg4, arg5) end
+function DesignationZoneAnimal.new(name, x, y, z, x2, y2, doSync) end
 
 ---@type Class<DesignationZoneAnimal>
 DesignationZoneAnimal.class = nil

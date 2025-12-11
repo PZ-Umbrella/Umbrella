@@ -7,9 +7,9 @@ local __XuiTableScript = {}
 function __XuiTableScript:Load(arg0) end
 
 ---@generic T: XuiScript
----@param arg0 ScriptParser.Block
----@param arg1 ArrayList<T>
-function __XuiTableScript:LoadColumnsRows(arg0, arg1) end
+---@param block ScriptParser.Block
+---@param list ArrayList<T>
+function __XuiTableScript:LoadColumnsRows(block, list) end
 
 ---@param arg0 integer
 ---@param arg1 integer

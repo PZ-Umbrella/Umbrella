@@ -95,78 +95,20 @@ function __HashMap:clear() end
 ---@return any # a shallow copy of this map
 function __HashMap:clone() end
 
----Attempts to compute a mapping for the specified key and its current
---- mapped value (or null if there is no current mapping). For
---- example, to either create or append a String msg to a value
---- mapping:
----
----  <code>
---- map.compute(key, (k, v) -> (v == null) ? msg : v.concat(msg))</code>
---- (Method merge() is often simpler to use for such purposes.)
----
---- If the remapping function returns null, the mapping is removed
---- (or remains absent if initially absent).  If the remapping function
---- itself throws an (unchecked) exception, the exception is rethrown, and
---- the current mapping is left unchanged.
----
---- The remapping function should not modify this map during computation.
----
---- This method will, on a best-effort basis, throw a
---- ConcurrentModificationException if it is detected that the
---- remapping function modifies this map during computation.
----@param key K key with which the specified value is to be associated
----@param remappingFunction BiFunction<any, any, V> the remapping function to compute a value
----@return V # the new value associated with the specified key, or null if none
-function __HashMap:compute(key, remappingFunction) end
+---@param arg0 K
+---@param arg1 BiFunction<any, any, V>
+---@return V
+function __HashMap:compute(arg0, arg1) end
 
----If the specified key is not already associated with a value (or is mapped
---- to null), attempts to compute its value using the given mapping
---- function and enters it into this map unless null.
----
---- If the mapping function returns null, no mapping is recorded.
---- If the mapping function itself throws an (unchecked) exception, the
---- exception is rethrown, and no mapping is recorded.  The most
---- common usage is to construct a new object serving as an initial
---- mapped value or memoized result, as in:
----
----  <code>
---- map.computeIfAbsent(key, k -> new Value(f(k)));
---- </code>
----
---- Or to implement a multi-value map, Map<K,Collection<V>>,
---- supporting multiple values per key:
----
----  <code>
---- map.computeIfAbsent(key, k -> new HashSet<V>()).add(v);
---- </code>
----
---- The mapping function should not modify this map during computation.
----
---- This method will, on a best-effort basis, throw a
---- ConcurrentModificationException if it is detected that the
---- mapping function modifies this map during computation.
----@param key K key with which the specified value is to be associated
----@param mappingFunction Function<any, V> the mapping function to compute a value
----@return V # the current (existing or computed) value associated with
----         the specified key, or null if the computed value is null
-function __HashMap:computeIfAbsent(key, mappingFunction) end
+---@param arg0 K
+---@param arg1 Function<any, V>
+---@return V
+function __HashMap:computeIfAbsent(arg0, arg1) end
 
----If the value for the specified key is present and non-null, attempts to
---- compute a new mapping given the key and its current mapped value.
----
---- If the remapping function returns null, the mapping is removed.
---- If the remapping function itself throws an (unchecked) exception, the
---- exception is rethrown, and the current mapping is left unchanged.
----
---- The remapping function should not modify this map during computation.
----
---- This method will, on a best-effort basis, throw a
---- ConcurrentModificationException if it is detected that the
---- remapping function modifies this map during computation.
----@param key K key with which the specified value is to be associated
----@param remappingFunction BiFunction<any, any, V> the remapping function to compute a value
----@return V # the new value associated with the specified key, or null if none
-function __HashMap:computeIfPresent(key, remappingFunction) end
+---@param arg0 K
+---@param arg1 BiFunction<any, any, V>
+---@return V
+function __HashMap:computeIfPresent(arg0, arg1) end
 
 ---Returns true if this map contains a mapping for the
 --- specified key.
@@ -229,36 +171,11 @@ function __HashMap:isEmpty() end
 ---@return Set<K> # a set view of the keys contained in this map
 function __HashMap:keySet() end
 
----If the specified key is not already associated with a value or is
---- associated with null, associates it with the given non-null value.
---- Otherwise, replaces the associated value with the results of the given
---- remapping function, or removes if the result is null. This
---- method may be of use when combining multiple mapped values for a key.
---- For example, to either create or append a String msg to a
---- value mapping:
----
----  <code>
---- map.merge(key, msg, String::concat)
---- </code>
----
---- If the remapping function returns null, the mapping is removed.
---- If the remapping function itself throws an (unchecked) exception, the
---- exception is rethrown, and the current mapping is left unchanged.
----
---- The remapping function should not modify this map during computation.
----
---- This method will, on a best-effort basis, throw a
---- ConcurrentModificationException if it is detected that the
---- remapping function modifies this map during computation.
----@param key K key with which the resulting value is to be associated
----@param value V the non-null value to be merged with the existing value
----        associated with the key or, if no existing value or a null value
----        is associated with the key, to be associated with the key
----@param remappingFunction BiFunction<any, any, V> the remapping function to recompute a value if
----        present
----@return V # the new value associated with the specified key, or null if no
----         value is associated with the key
-function __HashMap:merge(key, value, remappingFunction) end
+---@param arg0 K
+---@param arg1 V
+---@param arg2 BiFunction<any, any, V>
+---@return V
+function __HashMap:merge(arg0, arg1, arg2) end
 
 ---Associates the specified value with the specified key in this map.
 --- If the map previously contained a mapping for the key, the old
@@ -271,11 +188,8 @@ function __HashMap:merge(key, value, remappingFunction) end
 ---         previously associated null with key.)
 function __HashMap:put(key, value) end
 
----Copies all of the mappings from the specified map to this map.
---- These mappings will replace any mappings that this map had for
---- any of the keys currently in the specified map.
----@param m Map<K, V> mappings to be stored in this map
-function __HashMap:putAll(m) end
+---@param arg0 Map<K, V>
+function __HashMap:putAll(arg0) end
 
 ---@param arg0 K
 ---@param arg1 V
@@ -355,13 +269,9 @@ function HashMap.new() end
 
 ---@generic K
 ---@generic V
----Constructs a new HashMap with the same mappings as the
---- specified Map.  The HashMap is created with
---- default load factor (0.75) and an initial capacity sufficient to
---- hold the mappings in the specified Map.
----@param m Map<K, V> the map whose mappings are to be placed in this map
+---@param arg0 Map<K, V>
 ---@return HashMap<K, V>
-function HashMap.new(m) end
+function HashMap.new(arg0) end
 
 ---@type Class<HashMap>
 HashMap.class = nil

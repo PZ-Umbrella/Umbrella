@@ -121,13 +121,13 @@ function __IsoBuilding:update() end
 IsoBuilding = {}
 
 ---@type number
-IsoBuilding.GoodBuildingScore = nil
+IsoBuilding.goodBuildingScore = nil
 
 ---@type integer
-IsoBuilding.IDMax = nil
+IsoBuilding.idCount = nil
 
 ---@type number
-IsoBuilding.PoorBuildingScore = nil
+IsoBuilding.poorBuildingScore = nil
 
 ---@return IsoBuilding
 function IsoBuilding.new() end

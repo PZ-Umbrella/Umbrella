@@ -1,9 +1,9 @@
 ---@meta _
 
 ---(Not exposed)
----@class WGChunk
+---@class WorldGenChunk
 
 ---(Not exposed)
----@class WGParams.Result
+---@class WorldGenParams.Result
 
 zombie.iso.worldgen = {}

@@ -1,6 +1,5 @@
 ---@meta _
 
----(Not exposed)
 ---An ordered collection (also known as a sequence).  The user of this
 --- interface has precise control over where in the list each element is
 --- inserted.  The user can access elements by their integer index (position in
@@ -201,3 +200,121 @@ function __List:toArray() end
 ---@param arg0 T
 ---@return T
 function __List:toArray(arg0) end
+
+List = {}
+
+---@generic E
+---@param arg0 Collection<E>
+---@return List<E>
+function List.copyOf(arg0) end
+
+---@generic E
+---@return List<E>
+function List.of() end
+
+---@generic E
+---@param arg0 E
+---@return List<E>
+function List.of(arg0) end
+
+---@generic E
+---@param arg0 E
+---@param arg1 E
+---@return List<E>
+function List.of(arg0, arg1) end
+
+---@generic E
+---@param arg0 E
+---@param arg1 E
+---@param arg2 E
+---@return List<E>
+function List.of(arg0, arg1, arg2) end
+
+---@generic E
+---@param arg0 E
+---@param arg1 E
+---@param arg2 E
+---@param arg3 E
+---@return List<E>
+function List.of(arg0, arg1, arg2, arg3) end
+
+---@generic E
+---@param arg0 E
+---@param arg1 E
+---@param arg2 E
+---@param arg3 E
+---@param arg4 E
+---@return List<E>
+function List.of(arg0, arg1, arg2, arg3, arg4) end
+
+---@generic E
+---@param arg0 E
+---@param arg1 E
+---@param arg2 E
+---@param arg3 E
+---@param arg4 E
+---@param arg5 E
+---@return List<E>
+function List.of(arg0, arg1, arg2, arg3, arg4, arg5) end
+
+---@generic E
+---@param arg0 E
+---@param arg1 E
+---@param arg2 E
+---@param arg3 E
+---@param arg4 E
+---@param arg5 E
+---@param arg6 E
+---@return List<E>
+function List.of(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+
+---@generic E
+---@param arg0 E
+---@param arg1 E
+---@param arg2 E
+---@param arg3 E
+---@param arg4 E
+---@param arg5 E
+---@param arg6 E
+---@param arg7 E
+---@return List<E>
+function List.of(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+
+---@generic E
+---@param arg0 E
+---@param arg1 E
+---@param arg2 E
+---@param arg3 E
+---@param arg4 E
+---@param arg5 E
+---@param arg6 E
+---@param arg7 E
+---@param arg8 E
+---@return List<E>
+function List.of(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+
+---@generic E
+---@param arg0 E
+---@param arg1 E
+---@param arg2 E
+---@param arg3 E
+---@param arg4 E
+---@param arg5 E
+---@param arg6 E
+---@param arg7 E
+---@param arg8 E
+---@param arg9 E
+---@return List<E>
+function List.of(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+
+---@generic E
+---@param arg0 E
+---@return List<E>
+function List.of(arg0) end
+
+---@type Class<List>
+List.class = nil
+
+__classmetatables[List.class] = { __index = __List }
+
+java.util.List = List

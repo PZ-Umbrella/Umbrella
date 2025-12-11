@@ -22,6 +22,9 @@ function __SmashWindowState:exit(owner) end
 function __SmashWindowState:isDoingActionThatCanBeCancelled() end
 
 ---@return boolean
+function __SmashWindowState:isProcessedOnEnter() end
+
+---@return boolean
 function __SmashWindowState:isSyncOnEnter() end
 
 ---@return boolean
@@ -29,6 +32,10 @@ function __SmashWindowState:isSyncOnExit() end
 
 ---@return boolean
 function __SmashWindowState:isSyncOnSquare() end
+
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __SmashWindowState:processOnEnter(owner, delegate) end
 
 SmashWindowState = {}
 

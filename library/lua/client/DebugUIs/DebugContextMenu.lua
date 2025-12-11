@@ -34,6 +34,8 @@ function DebugContextMenu.do3DItem() end
 ---@param playerObj IsoPlayer
 function DebugContextMenu.doCheatMenu(context, playerObj) end
 
+function DebugContextMenu.doCSV() end
+
 ---@param playerObj IsoPlayer
 ---@param context ISContextMenu
 ---@param worldobjects IsoObject[]
@@ -170,6 +172,8 @@ function DebugContextMenu.OnDoorLock(worldobjects, door) end
 
 ---@param playerObj IsoPlayer
 function DebugContextMenu.onExtList(playerObj) end
+
+function DebugContextMenu.onFilmingToolsUI(playerObj) end
 
 ---@param obj IsoObject
 function DebugContextMenu.OnFireplaceSetFuel(obj) end

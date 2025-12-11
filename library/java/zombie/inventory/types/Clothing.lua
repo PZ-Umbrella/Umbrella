@@ -160,9 +160,6 @@ function __Clothing:getPatchesNumber() end
 ---@return number
 function __Clothing:getRunSpeedModifier() end
 
----@return integer
-function __Clothing:getSaveType() end
-
 ---@return number
 function __Clothing:getScratchDefense() end
 

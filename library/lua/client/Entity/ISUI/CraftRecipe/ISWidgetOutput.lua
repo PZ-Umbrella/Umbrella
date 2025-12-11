@@ -47,6 +47,14 @@ function ISWidgetOutput:createScriptValues(_script) end
 
 function ISWidgetOutput:initialise() end
 
+---@param x number
+---@param y number
+function ISWidgetOutput:onMouseDown(x, y) end
+
+---@param x number
+---@param y number
+function ISWidgetOutput:onMouseDownOutside(x, y) end
+
 function ISWidgetOutput:onResize() end
 
 function ISWidgetOutput:prerender() end

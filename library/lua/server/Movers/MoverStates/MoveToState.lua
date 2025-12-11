@@ -5,7 +5,7 @@
 ---@field x number
 ---@field y number
 ---@field z number
-MoveToState = ISBaseState:derive("MoveToState")
+MoveToState = {}
 MoveToState.Type = "MoveToState"
 
 function MoveToState:during() end

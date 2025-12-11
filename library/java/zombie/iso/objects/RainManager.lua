@@ -6,91 +6,88 @@ local __RainManager = {}
 RainManager = {}
 
 ---@type integer
-RainManager.AddNewSplashesDelay = nil
+RainManager.addNewSplashesDelay = nil
 
 ---@type integer
-RainManager.AddNewSplashesTimer = nil
+RainManager.addNewSplashesTimer = nil
 
 ---@type ColorInfo
-RainManager.DarkRaindropTintMod = nil
+RainManager.darkRaindropTintMod = nil
 
 ---@type number
-RainManager.GravModMax = nil
+RainManager.gravModMax = nil
 
 ---@type number
-RainManager.GravModMin = nil
-
----@type boolean
-RainManager.IsRaining = nil
+RainManager.gravModMin = nil
 
 ---@type integer
-RainManager.MaxRainSplashObjects = nil
+RainManager.maxRainSplashObjects = nil
 
 ---@type integer
-RainManager.MaxRaindropObjects = nil
+RainManager.maxRaindropObjects = nil
 
 ---@type integer
-RainManager.NumActiveRainSplashes = nil
+RainManager.numActiveRainSplashes = nil
 
 ---@type integer
-RainManager.NumActiveRaindrops = nil
+RainManager.numActiveRaindrops = nil
 
 ---@type kahlua.Array<IsoGridSquare>
-RainManager.PlayerLocation = nil
+RainManager.playerLocation = nil
 
 ---@type boolean
-RainManager.PlayerMoved = nil
+RainManager.playerMoved = nil
 
 ---@type kahlua.Array<IsoGridSquare>
-RainManager.PlayerOldLocation = nil
+RainManager.playerOldLocation = nil
 
 ---@type Audio
-RainManager.RainAmbient = nil
+RainManager.rainAmbient = nil
 
 ---@type number
-RainManager.RainDesiredIntensity = nil
+RainManager.rainDesiredIntensity = nil
 
 ---@type number
-RainManager.RainIntensity = nil
+RainManager.rainIntensity = nil
 
 ---@type integer
-RainManager.RainRadius = nil
+RainManager.rainRadius = nil
 
 ---@type number
-RainManager.RainSplashAnimDelay = nil
+RainManager.rainSplashAnimDelay = nil
 
 ---@type Stack<IsoRainSplash>
-RainManager.RainSplashReuseStack = nil
+RainManager.rainSplashReuseStack = nil
 
 ---@type ArrayList<IsoRainSplash>
-RainManager.RainSplashStack = nil
+RainManager.rainSplashStack = nil
 
 ---@type ColorInfo
-RainManager.RainSplashTintMod = nil
+RainManager.rainSplashTintMod = nil
 
 ---@type number
-RainManager.RaindropGravity = nil
+RainManager.raindropGravity = nil
 
 ---@type Stack<IsoRaindrop>
-RainManager.RaindropReuseStack = nil
+RainManager.raindropReuseStack = nil
 
 ---@type ArrayList<IsoRaindrop>
-RainManager.RaindropStack = nil
+RainManager.raindropStack = nil
 
 ---@type number
-RainManager.RaindropStartDistance = nil
+RainManager.raindropStartDistance = nil
 
 ---@type ColorInfo
-RainManager.RaindropTintMod = nil
-
----@type Audio
-RainManager.ThunderAmbient = nil
+RainManager.raindropTintMod = nil
 
 ---@type integer
 RainManager.randRainMax = nil
 
 ---@type integer
 RainManager.randRainMin = nil
+
+---@type Audio
+RainManager.thunderAmbient = nil
 
 ---@param NewRainSplash IsoRainSplash
 function RainManager.AddRainSplash(NewRainSplash) end

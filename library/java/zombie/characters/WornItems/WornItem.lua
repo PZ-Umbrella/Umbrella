@@ -6,15 +6,15 @@ local __WornItem = {}
 ---@return InventoryItem
 function __WornItem:getItem() end
 
----@return string
+---@return ItemBodyLocation
 function __WornItem:getLocation() end
 
 WornItem = {}
 
----@param location string
+---@param itemBodyLocation ItemBodyLocation
 ---@param item InventoryItem
 ---@return WornItem
-function WornItem.new(location, item) end
+function WornItem.new(itemBodyLocation, item) end
 
 ---@type Class<WornItem>
 WornItem.class = nil

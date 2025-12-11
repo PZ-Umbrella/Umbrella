@@ -13,16 +13,6 @@ function __AssocEnumArray:add(arg0, arg1) end
 ---@param arg2 V
 function __AssocEnumArray:add(arg0, arg1, arg2) end
 
----@param arg0 integer
----@param arg1 any
----@param arg2 any
-function __AssocEnumArray:add(arg0, arg1, arg2) end
-
----@param arg0 any
----@param arg1 any
----@return boolean
-function __AssocEnumArray:add(arg0, arg1) end
-
 function __AssocEnumArray:clear() end
 
 ---@param arg0 K
@@ -31,15 +21,11 @@ function __AssocEnumArray:containsKey(arg0) end
 
 ---@param arg0 any
 ---@return boolean
-function __AssocEnumArray:containsKey(arg0) end
-
----@param arg0 any
----@return boolean
 function __AssocEnumArray:equals(arg0) end
 
----@param arg0 AssocEnumArray<K, V>
+---@param other AssocEnumArray<K, V>
 ---@return boolean
-function __AssocEnumArray:equalsKeys(arg0) end
+function __AssocEnumArray:equalsKeys(other) end
 
 ---@return Iterator<K>
 function __AssocEnumArray:keys() end
@@ -49,17 +35,8 @@ function __AssocEnumArray:keys() end
 ---@return V
 function __AssocEnumArray:put(arg0, arg1) end
 
----@param arg0 any
----@param arg1 any
----@return any
-function __AssocEnumArray:put(arg0, arg1) end
-
 ---@param arg0 K
 ---@return V
-function __AssocEnumArray:remove(arg0) end
-
----@param arg0 any
----@return any
 function __AssocEnumArray:remove(arg0) end
 
 ---@param arg0 integer

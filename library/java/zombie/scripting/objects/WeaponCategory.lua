@@ -1,7 +1,10 @@
 ---@meta _
 
----@class WeaponCategory: Enum<WeaponCategory>
+---@class WeaponCategory
 local __WeaponCategory = {}
+
+---@return string
+function __WeaponCategory:getTranslationName() end
 
 ---@return string
 function __WeaponCategory:toString() end
@@ -32,16 +35,13 @@ WeaponCategory.SPEAR = nil
 ---@type WeaponCategory
 WeaponCategory.UNARMED = nil
 
----@param arg0 string
+---@param id ResourceLocation
 ---@return WeaponCategory
-function WeaponCategory.fromString(arg0) end
+function WeaponCategory.get(id) end
 
----@param arg0 string
+---@param id string
 ---@return WeaponCategory
-function WeaponCategory.valueOf(arg0) end
-
----@return kahlua.Array<WeaponCategory>
-function WeaponCategory.values() end
+function WeaponCategory.register(id) end
 
 ---@type Class<WeaponCategory>
 WeaponCategory.class = nil

@@ -25,6 +25,9 @@
 ---@class ParameterCharacterVoiceType
 
 ---(Not exposed)
+---@class ParameterClosestExteriorWallDistance
+
+---(Not exposed)
 ---@class ParameterClosestWallDistance
 
 ---(Not exposed)
@@ -113,6 +116,9 @@
 
 ---(Not exposed)
 ---@class ParameterOcclusion
+
+---(Not exposed)
+---@class ParameterOverlapFoliageType
 
 ---(Not exposed)
 ---@class ParameterPlayerDistance

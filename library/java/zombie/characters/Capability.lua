@@ -42,6 +42,9 @@ Capability.CanHearAll = nil
 Capability.CanMedicalCheat = nil
 
 ---@type Capability
+Capability.CanModifyBodyStats = nil
+
+---@type Capability
 Capability.CanModifyPlayerStatsInThePlayerStatsUI = nil
 
 ---@type Capability
@@ -256,6 +259,9 @@ Capability.UseBrushToolManager = nil
 
 ---@type Capability
 Capability.UseBuildCheat = nil
+
+---@type Capability
+Capability.UseDebugContextMenu = nil
 
 ---@type Capability
 Capability.UseFarmingCheat = nil

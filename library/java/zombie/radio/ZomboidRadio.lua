@@ -202,17 +202,17 @@ ZomboidRadio.DEBUG_SOUND = nil
 ---@type boolean
 ZomboidRadio.DEBUG_XML = nil
 
----@type boolean
-ZomboidRadio.DISABLE_BROADCASTING = nil
-
----@type boolean
-ZomboidRadio.LOUISVILLE_OBFUSCATION = nil
-
----@type boolean
-ZomboidRadio.POST_RADIO_SILENCE = nil
-
 ---@type string
 ZomboidRadio.SAVE_FILE = nil
+
+---@type boolean
+ZomboidRadio.disableBroadcasting = nil
+
+---@type boolean
+ZomboidRadio.louisvilleObfuscation = nil
+
+---@type boolean
+ZomboidRadio.postRadioSilence = nil
 
 ---@param channel RadioChannel
 function ZomboidRadio.ObfuscateChannelCheck(channel) end

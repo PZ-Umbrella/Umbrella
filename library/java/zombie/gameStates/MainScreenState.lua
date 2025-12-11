@@ -26,7 +26,7 @@ function __MainScreenState:update() end
 MainScreenState = {}
 
 ---@type string
-MainScreenState.Version = nil
+MainScreenState.VERSION = nil
 
 ---@type Audio
 MainScreenState.ambient = nil

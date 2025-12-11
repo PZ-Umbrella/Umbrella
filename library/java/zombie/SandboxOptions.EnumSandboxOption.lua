@@ -3,7 +3,7 @@
 ---@class SandboxOptions.EnumSandboxOption: EnumConfigOption, SandboxOptions.SandboxOption
 local __EnumSandboxOption = {}
 
----@return ConfigOption
+---@return EnumConfigOption
 function __EnumSandboxOption:asConfigOption() end
 
 ---@param table table
@@ -41,11 +41,11 @@ function __EnumSandboxOption:isCustom() end
 function __EnumSandboxOption:setCustom() end
 
 ---@param pageName string
----@return SandboxOptions.SandboxOption
+---@return SandboxOptions.EnumSandboxOption
 function __EnumSandboxOption:setPageName(pageName) end
 
 ---@param translation string
----@return SandboxOptions.SandboxOption
+---@return SandboxOptions.EnumSandboxOption
 function __EnumSandboxOption:setTranslation(translation) end
 
 ---@param translation string

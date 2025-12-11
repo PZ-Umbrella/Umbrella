@@ -5,41 +5,27 @@ local __RecipeCodeOnEat = {}
 
 RecipeCodeOnEat = {}
 
----@param arg0 DrainableComboItem
----@param arg1 IsoGameCharacter
-function RecipeCodeOnEat.chewingTobacco(arg0, arg1) end
+---@param item DrainableComboItem
+---@param character IsoGameCharacter
+function RecipeCodeOnEat.consumeCorrectionFluid(item, character) end
 
----@param arg0 Food
----@param arg1 IsoGameCharacter
----@param arg2 number
-function RecipeCodeOnEat.cigar(arg0, arg1, arg2) end
+---@param item DrainableComboItem
+---@param character IsoGameCharacter
+function RecipeCodeOnEat.consumeNicotine(item, character) end
 
----@param arg0 Food
----@param arg1 IsoGameCharacter
----@param arg2 number
-function RecipeCodeOnEat.cigarettes(arg0, arg1, arg2) end
+---@param item Food
+---@param character IsoGameCharacter
+---@param percent number
+function RecipeCodeOnEat.consumeNicotine(item, character, percent) end
 
----@param arg0 DrainableComboItem
----@param arg1 IsoGameCharacter
-function RecipeCodeOnEat.cigarettes(arg0, arg1) end
+---@param item DrainableComboItem
+---@param character IsoGameCharacter
+function RecipeCodeOnEat.consumeRatPoison(item, character) end
 
----@param arg0 Food
----@param arg1 IsoGameCharacter
----@param arg2 number
-function RecipeCodeOnEat.cigarillo(arg0, arg1, arg2) end
-
----@param arg0 DrainableComboItem
----@param arg1 IsoGameCharacter
-function RecipeCodeOnEat.correctionFluid(arg0, arg1) end
-
----@param arg0 DrainableComboItem
----@param arg1 IsoGameCharacter
-function RecipeCodeOnEat.ratPoison(arg0, arg1) end
-
----@param arg0 Food
----@param arg1 IsoGameCharacter
----@param arg2 number
-function RecipeCodeOnEat.wildFoodGeneric(arg0, arg1, arg2) end
+---@param item Food
+---@param character IsoGameCharacter
+---@param percent number
+function RecipeCodeOnEat.consumeWildFoodGeneric(item, character, percent) end
 
 ---@return RecipeCodeOnEat
 function RecipeCodeOnEat.new() end

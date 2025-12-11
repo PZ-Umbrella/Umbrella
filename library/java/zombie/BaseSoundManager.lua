@@ -262,11 +262,11 @@ function __BaseSoundManager:playDamageSound(arg0, arg1) end
 function __BaseSoundManager:playDestructionSound(arg0, arg1) end
 
 ---@param arg0 IsoGridSquare
----@param arg1 string
+---@param arg1 AmmoType
 function __BaseSoundManager:playImpactSound(arg0, arg1) end
 
 ---@param arg0 IsoGridSquare
----@param arg1 string
+---@param arg1 AmmoType
 ---@param arg2 MaterialType
 function __BaseSoundManager:playImpactSound(arg0, arg1, arg2) end
 

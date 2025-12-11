@@ -106,6 +106,9 @@ ComponentType.UiConfig = nil
 ---@type ComponentType
 ComponentType.Undefined = nil
 
+---@type ComponentType
+ComponentType.WallCoveringConfig = nil
+
 ---@param arg0 Class<Component>
 ---@return ComponentType
 function ComponentType.FromClass(arg0) end

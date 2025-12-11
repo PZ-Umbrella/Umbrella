@@ -61,8 +61,8 @@ function __FluidDefinitionScript:getFluidType() end
 ---@return string
 function __FluidDefinitionScript:getFluidTypeString() end
 
----@return number
-function __FluidDefinitionScript:getFoodSicknessReduction() end
+---@return integer
+function __FluidDefinitionScript:getFoodSicknessChange() end
 
 ---@return number
 function __FluidDefinitionScript:getHungerChange() end

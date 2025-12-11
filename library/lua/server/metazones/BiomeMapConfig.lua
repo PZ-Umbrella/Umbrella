@@ -27,6 +27,7 @@ biome_map_config = {
 	},
 	{
 		pixel = 102,
+		biome = "townhouse",
 		zone = "TrailerPark",
 	},
 	{

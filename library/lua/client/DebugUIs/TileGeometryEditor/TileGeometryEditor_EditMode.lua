@@ -316,6 +316,16 @@ function TileGeometryEditor_EditMode:new(editor) end
 ---@field button6 ISButton
 ---@field button7 ISButton
 ---@field button8 ISButton
+---@field buttonAddBox ISButton
+---@field buttonAddCylinder ISButton
+---@field buttonAddXY ISButton
+---@field buttonAddXZ ISButton
+---@field buttonAddYZ ISButton
+---@field buttonEditPoints ISButton
+---@field buttonHideGeom ISButton
+---@field buttonRecalcShadows ISButton
+---@field buttonRemove ISButton
+---@field buttonTranslate ISButton
 ---@field cylinderPanel TileGeometryEditor_CylinderPanel
 ---@field depthTexturePanel TileGeometryEditor_DepthTexturePanel
 ---@field listBox TileGeometryEditor_GeometryListBox
@@ -474,7 +484,10 @@ function TileGeometryEditor_SeatingListBox:new(x, y, width, height, editor) end
 ---@field button1 ISButton
 ---@field button2 ISButton
 ---@field button4 ISButton
+---@field buttonAddXZ ISButton
+---@field buttonHideGeom ISButton
 ---@field buttonPanel ISPanel
+---@field buttonTranslate ISButton
 ---@field previousGeometryVisible boolean
 ---@field previousTool TileGeometryEditor_Tool
 ---@field textColorDisabled umbrella.RGBA
@@ -559,6 +572,7 @@ function TileGeometryEditor_CurtainPropertiesPanel:new(x, y, width, height, edit
 ---@class TileGeometryEditor_EditMode_Curtain : TileGeometryEditor_EditMode
 ---@field button1 ISButton
 ---@field buttonPanel ISPanel
+---@field buttonTranslate ISButton
 ---@field previousAnimation string
 ---@field previousTool TileGeometryEditor_Tool
 ---@field propertiesPanel TileGeometryEditor_CurtainPropertiesPanel
@@ -616,7 +630,14 @@ function TileGeometryEditor_EditMode_Curtain:new(editor) end
 ---@field button5 ISButton
 ---@field button6 ISButton
 ---@field button7 ISButton
+---@field buttonAddXY ISButton
+---@field buttonAddXZ ISButton
+---@field buttonAddYZ ISButton
+---@field buttonEditPoints ISButton
+---@field buttonHideGeom ISButton
 ---@field buttonPanel ISPanel
+---@field buttonRemove ISButton
+---@field buttonTranslate ISButton
 ---@field listBox TileGeometryEditor_SeatingListBox
 ---@field previousAnimation string
 ---@field previousTool TileGeometryEditor_Tool

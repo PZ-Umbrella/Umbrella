@@ -4,6 +4,7 @@
 ---@field add ISButton
 ---@field addMakeupLbl ISLabel
 ---@field avatarBackgroundTexture Texture
+---@field avatarBorderSize number
 ---@field avatarHeight number
 ---@field avatarPanel ISUI3DModel
 ---@field avatarWidth number

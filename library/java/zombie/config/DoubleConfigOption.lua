@@ -39,6 +39,9 @@ function __DoubleConfigOption:parse(s) end
 
 function __DoubleConfigOption:resetToDefault() end
 
+---@param value number
+function __DoubleConfigOption:setDefault(value) end
+
 function __DoubleConfigOption:setDefaultToCurrentValue() end
 
 ---@param value number

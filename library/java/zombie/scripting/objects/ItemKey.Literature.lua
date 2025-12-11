@@ -876,9 +876,6 @@ Literature.HOTTIE_Z = nil
 Literature.HOTTIE_Z_NEW = nil
 
 ---@type ItemKey
-Literature.HUNK_Z = nil
-
----@type ItemKey
 Literature.HUNTING_MAG_1 = nil
 
 ---@type ItemKey

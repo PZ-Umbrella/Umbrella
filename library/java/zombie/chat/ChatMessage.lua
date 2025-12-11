@@ -6,9 +6,6 @@ local __ChatMessage = {}
 ---@return ChatMessage
 function __ChatMessage:clone() end
 
----@return any
-function __ChatMessage:clone() end
-
 ---@return string
 function __ChatMessage:getAuthor() end
 

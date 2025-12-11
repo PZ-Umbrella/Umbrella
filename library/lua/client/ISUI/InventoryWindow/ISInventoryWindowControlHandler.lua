@@ -17,6 +17,9 @@ function ISInventoryWindowControlHandler:getButtonControl(title) end
 ---@return unknown
 function ISInventoryWindowControlHandler:getControl() end
 
+---@return unknown
+function ISInventoryWindowControlHandler:getImageButtonControl(imagePath) end
+
 ---@param context ISContextMenu
 function ISInventoryWindowControlHandler:handleJoypadContextMenu(context) end
 

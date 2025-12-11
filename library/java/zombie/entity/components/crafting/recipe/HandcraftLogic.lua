@@ -39,7 +39,7 @@ function __HandcraftLogic:getPlayer() end
 ---@return CraftRecipeData
 function __HandcraftLogic:getRecipeData() end
 
----@return ArrayList<CraftRecipe>
+---@return CraftRecipeListNodeCollection
 function __HandcraftLogic:getRecipeList() end
 
 ---@return string

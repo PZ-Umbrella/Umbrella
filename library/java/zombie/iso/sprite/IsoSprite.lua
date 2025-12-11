@@ -166,6 +166,10 @@ function __IsoSprite:hasAnimation() end
 ---@return boolean
 function __IsoSprite:hasNoTextures() end
 
+---@param flag IsoFlagType
+---@return boolean
+function __IsoSprite:is(flag) end
+
 ---@param dir IsoDirections
 ---@param x integer
 ---@param y integer
@@ -181,6 +185,9 @@ function __IsoSprite:isMaskClicked(dir, x, y, flip) end
 
 ---@return boolean
 function __IsoSprite:isMoveWithWind() end
+
+---@return boolean
+function __IsoSprite:isWallSE() end
 
 ---@param input DataInputStream
 function __IsoSprite:load(input) end
@@ -460,12 +467,6 @@ IsoSprite.SDF_TRANSLUCENT = nil
 IsoSprite.SDF_USE_OBJECT_DEPTH_TEXTURE = nil
 
 ---@type boolean
-IsoSprite.SEAM_EAST = nil
-
----@type TileSeamManager.Tiles
-IsoSprite.SEAM_FIX2 = nil
-
----@type boolean
 IsoSprite.SEAM_SOUTH = nil
 
 ---@type number
@@ -479,6 +480,12 @@ IsoSprite.globalOffsetY = nil
 
 ---@type integer
 IsoSprite.maxCount = nil
+
+---@type boolean
+IsoSprite.seamEast = nil
+
+---@type TileSeamManager.Tiles
+IsoSprite.seamFix2 = nil
 
 ---@param manager IsoSpriteManager
 ---@return IsoSprite

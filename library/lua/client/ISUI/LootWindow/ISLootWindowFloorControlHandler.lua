@@ -16,6 +16,9 @@ function ISLootWindowFloorControlHandler:getButtonControl(title) end
 ---@return unknown
 function ISLootWindowFloorControlHandler:getControl() end
 
+---@return unknown
+function ISLootWindowFloorControlHandler:getImageButtonControl(imagePath) end
+
 ---@param context ISContextMenu
 function ISLootWindowFloorControlHandler:handleJoypadContextMenu(context) end
 

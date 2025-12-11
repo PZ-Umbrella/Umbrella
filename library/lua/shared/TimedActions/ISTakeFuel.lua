@@ -11,6 +11,8 @@
 ISTakeFuel = ISBaseTimedAction:derive("ISTakeFuel")
 ISTakeFuel.Type = "ISTakeFuel"
 
+function ISTakeFuel:animEvent(event, parameter) end
+
 ---@return boolean
 function ISTakeFuel:complete() end
 
@@ -31,6 +33,8 @@ function ISTakeFuel:start() end
 function ISTakeFuel:stop() end
 
 function ISTakeFuel:update() end
+
+function ISTakeFuel:updateUse(delta) end
 
 ---@return boolean
 function ISTakeFuel:waitToStart() end

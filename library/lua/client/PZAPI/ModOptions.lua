@@ -65,7 +65,7 @@ function __PZAPI_ModOptions_Options:addDescription(text) end
 ---Add a key bind option
 ---@param id string Unique identifier for this option
 ---@param name string Display name for this option
----@param key integer Initial key code
+---@param key integer? Initial key code
 ---@param _tooltip string? Optional tooltip text
 ---@return umbrella.ModOptions.Keybind option Object representing the key bind
 function __PZAPI_ModOptions_Options:addKeyBind(id, name, key, _tooltip) end

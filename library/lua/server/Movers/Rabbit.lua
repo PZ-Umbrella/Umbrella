@@ -1,7 +1,7 @@
 ---@meta
 
 ---@class Rabbit : ISBaseMover
-Rabbit = ISBaseMover:derive("Rabbit")
+Rabbit = {}
 Rabbit.Type = "Rabbit"
 
 function Rabbit:init() end

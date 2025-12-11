@@ -3,40 +3,49 @@
 ---@class WeaponType: Enum<WeaponType>
 local __WeaponType = {}
 
+---@return List<AttackType>
+function __WeaponType:getPossibleAttack() end
+
 ---@return string
 function __WeaponType:getType() end
+
+---@return boolean
+function __WeaponType:isCanMiss() end
+
+---@return boolean
+function __WeaponType:isRanged() end
 
 WeaponType = {}
 
 ---@type WeaponType
-WeaponType.barehand = nil
+WeaponType.CHAINSAW = nil
 
 ---@type WeaponType
-WeaponType.chainsaw = nil
+WeaponType.FIREARM = nil
 
 ---@type WeaponType
-WeaponType.firearm = nil
+WeaponType.HANDGUN = nil
 
 ---@type WeaponType
-WeaponType.handgun = nil
+WeaponType.HEAVY = nil
 
 ---@type WeaponType
-WeaponType.heavy = nil
+WeaponType.KNIFE = nil
 
 ---@type WeaponType
-WeaponType.knife = nil
+WeaponType.ONE_HANDED = nil
 
 ---@type WeaponType
-WeaponType.onehanded = nil
+WeaponType.SPEAR = nil
 
 ---@type WeaponType
-WeaponType.spear = nil
+WeaponType.THROWING = nil
 
 ---@type WeaponType
-WeaponType.throwing = nil
+WeaponType.TWO_HANDED = nil
 
 ---@type WeaponType
-WeaponType.twohanded = nil
+WeaponType.UNARMED = nil
 
 ---@param weapon HandWeapon
 ---@return WeaponType

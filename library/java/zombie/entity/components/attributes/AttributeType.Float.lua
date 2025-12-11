@@ -6,13 +6,7 @@ local __Float = {}
 ---@return number
 function __Float:getMax() end
 
----@return Number
-function __Float:getMax() end
-
 ---@return number
-function __Float:getMin() end
-
----@return Number
 function __Float:getMin() end
 
 ---@return AttributeValueType
@@ -20,10 +14,6 @@ function __Float:getValueType() end
 
 ---@param arg0 number
 ---@return number
-function __Float:validate(arg0) end
-
----@param arg0 Number
----@return Number
 function __Float:validate(arg0) end
 
 Float = {}

@@ -47,12 +47,6 @@ function SystemDisabler.getDoMainLoopDealWithNetData() end
 function SystemDisabler.getEnableAdvancedSoundOptions() end
 
 ---@return boolean
-function SystemDisabler.getKickInDebug() end
-
----@return boolean
-function SystemDisabler.getOverrideServerConnectDebugCheck() end
-
----@return boolean
 function SystemDisabler.getUncappedFPS() end
 
 ---@return boolean

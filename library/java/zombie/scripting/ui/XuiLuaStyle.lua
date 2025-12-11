@@ -6,9 +6,9 @@ local __XuiLuaStyle = {}
 ---@param arg0 XuiLuaStyle
 function __XuiLuaStyle:copyVarsFrom(arg0) end
 
----@param arg0 string
+---@param key string
 ---@return XuiLuaStyle.XuiVar<any, any>
-function __XuiLuaStyle:getVar(arg0) end
+function __XuiLuaStyle:getVar(key) end
 
 ---@return ArrayList<XuiLuaStyle.XuiVar<any, any>>
 function __XuiLuaStyle:getVars() end
@@ -30,7 +30,7 @@ function __XuiLuaStyle:toString() end
 XuiLuaStyle = {}
 
 ---@type EnumSet<XuiVarType>
-XuiLuaStyle.AllowedVarTypes = nil
+XuiLuaStyle.ALLOWED_VAR_TYPES = nil
 
 ---@param arg0 ArrayList<XuiConfigScript>
 function XuiLuaStyle.ReadConfigs(arg0) end

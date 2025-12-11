@@ -218,13 +218,9 @@ function LinkedHashMap.new() end
 
 ---@generic K
 ---@generic V
----Constructs an insertion-ordered LinkedHashMap instance with
---- the same mappings as the specified map.  The LinkedHashMap
---- instance is created with a default load factor (0.75) and an initial
---- capacity sufficient to hold the mappings in the specified map.
----@param m Map<K, V> the map whose mappings are to be placed in this map
+---@param arg0 Map<K, V>
 ---@return LinkedHashMap<K, V>
-function LinkedHashMap.new(m) end
+function LinkedHashMap.new(arg0) end
 
 ---@generic K
 ---@generic V

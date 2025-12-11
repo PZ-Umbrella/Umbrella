@@ -223,13 +223,22 @@ function BaseCraftingLogic.callLuaBool(arg0, arg1) end
 ---@return table
 function BaseCraftingLogic.callLuaObject(arg0, arg1) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 List<CraftRecipe>
----@param arg3 List<CraftRecipe>
----@param arg4 IsoPlayer
----@return List<CraftRecipe>
-function BaseCraftingLogic.filterRecipeList(arg0, arg1, arg2, arg3, arg4) end
+---@param filterString string
+---@param categoryFilterString string
+---@param listToPopulate CraftRecipeListNodeCollection
+---@param sourceList List<CraftRecipe>
+---@param player IsoPlayer
+---@param sortComparator Comparator<CraftRecipe>
+---@return CraftRecipeListNodeCollection
+function BaseCraftingLogic.filterAndSortRecipeList(
+	filterString,
+	categoryFilterString,
+	listToPopulate,
+	sourceList,
+	player,
+	sortComparator
+)
+end
 
 ---@param arg0 CraftRecipe
 ---@return string

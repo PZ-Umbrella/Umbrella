@@ -4,7 +4,7 @@
 ---@field mover ISBaseMover
 ---@field moverInst unknown
 ---@field state unknown?
-ISMoverStateMachine = ISBaseObject:derive("ISMoverStateMachine")
+ISMoverStateMachine = {}
 ISMoverStateMachine.Type = "ISMoverStateMachine"
 ISMoverStateMachine.IDMax = 1
 

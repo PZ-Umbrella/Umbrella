@@ -6,7 +6,7 @@ local __XuiManager = {}
 XuiManager = {}
 
 ---@type EnumSet<ScriptType>
-XuiManager.XuiScriptTypes = nil
+XuiManager.XUI_SCRIPT_TYPES = nil
 
 ---@return ArrayList<XuiScript>
 function XuiManager.GetAllDefaultStyles() end

@@ -9,9 +9,6 @@ function __XuiTranslateString:getValueString() end
 ---@return string
 function __XuiTranslateString:value() end
 
----@return any
-function __XuiTranslateString:value() end
-
 XuiTranslateString = {}
 
 ---@type Class<XuiLuaStyle.XuiTranslateString>

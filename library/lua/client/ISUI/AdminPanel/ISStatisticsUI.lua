@@ -5,11 +5,13 @@
 ---@field player IsoPlayer
 ---@field playerNum integer
 ---@field showAnimals boolean
+---@field showCharacters boolean
 ---@field showChunks boolean
 ---@field showCPU boolean
 ---@field showFPS boolean
 ---@field showMemory boolean
 ---@field showNetwork boolean
+---@field showPerformance boolean
 ---@field showPing boolean
 ---@field showPlayers boolean
 ---@field showTime boolean

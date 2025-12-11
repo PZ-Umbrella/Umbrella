@@ -10,6 +10,8 @@
 ISAddFluidFromItemAction = ISBaseTimedAction:derive("ISAddFluidFromItemAction")
 ISAddFluidFromItemAction.Type = "ISAddFluidFromItemAction"
 
+function ISAddFluidFromItemAction:animEvent(event, parameter) end
+
 ---@return boolean
 function ISAddFluidFromItemAction:complete() end
 
@@ -21,6 +23,8 @@ function ISAddFluidFromItemAction:isValid() end
 
 function ISAddFluidFromItemAction:perform() end
 
+function ISAddFluidFromItemAction:serverStart() end
+
 function ISAddFluidFromItemAction:start() end
 
 function ISAddFluidFromItemAction:stop() end
@@ -28,6 +32,8 @@ function ISAddFluidFromItemAction:stop() end
 function ISAddFluidFromItemAction:stopSound() end
 
 function ISAddFluidFromItemAction:update() end
+
+function ISAddFluidFromItemAction:updateAdd(delta) end
 
 ---@return boolean
 function ISAddFluidFromItemAction:waitToStart() end

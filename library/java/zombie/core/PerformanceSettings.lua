@@ -63,61 +63,61 @@ function __PerformanceSettings:setWaterQuality(water) end
 PerformanceSettings = {}
 
 ---@type integer
-PerformanceSettings.AnimationSkip = nil
-
----@type integer
-PerformanceSettings.BaseStaticAnimFramerate = nil
-
----@type boolean
-PerformanceSettings.FBORenderChunk = nil
-
----@type integer
-PerformanceSettings.FogQuality = nil
-
----@type boolean
-PerformanceSettings.InterpolateAnims = nil
-
----@type integer
-PerformanceSettings.LightingFPS = nil
-
----@type boolean
-PerformanceSettings.LightingThread = nil
-
----@type integer
-PerformanceSettings.ManualFrameSkips = nil
-
----@type boolean
-PerformanceSettings.ModelLighting = nil
-
----@type boolean
-PerformanceSettings.NewRoofHiding = nil
-
----@type integer
-PerformanceSettings.PuddlesQuality = nil
-
----@type boolean
-PerformanceSettings.UseFBOs = nil
-
----@type integer
-PerformanceSettings.ViewConeOpacity = nil
-
----@type integer
-PerformanceSettings.WaterQuality = nil
-
----@type integer
-PerformanceSettings.ZombieAnimationSpeedFalloffCount = nil
-
----@type integer
-PerformanceSettings.ZombieBonusFullspeedFalloff = nil
+PerformanceSettings.animationSkip = nil
 
 ---@type boolean
 PerformanceSettings.auto3DZombies = nil
 
+---@type integer
+PerformanceSettings.baseStaticAnimFramerate = nil
+
+---@type boolean
+PerformanceSettings.fboRenderChunk = nil
+
+---@type integer
+PerformanceSettings.fogQuality = nil
+
 ---@type PerformanceSettings
 PerformanceSettings.instance = nil
 
+---@type boolean
+PerformanceSettings.interpolateAnims = nil
+
+---@type integer
+PerformanceSettings.lightingFps = nil
+
+---@type boolean
+PerformanceSettings.lightingThread = nil
+
+---@type integer
+PerformanceSettings.manualFrameSkips = nil
+
+---@type boolean
+PerformanceSettings.modelLighting = nil
+
+---@type boolean
+PerformanceSettings.newRoofHiding = nil
+
 ---@type integer
 PerformanceSettings.numberZombiesBlended = nil
+
+---@type integer
+PerformanceSettings.puddlesQuality = nil
+
+---@type boolean
+PerformanceSettings.useFbos = nil
+
+---@type integer
+PerformanceSettings.viewConeOpacity = nil
+
+---@type integer
+PerformanceSettings.waterQuality = nil
+
+---@type integer
+PerformanceSettings.zombieAnimationSpeedFalloffCount = nil
+
+---@type integer
+PerformanceSettings.zombieBonusFullspeedFalloff = nil
 
 ---@return integer
 function PerformanceSettings.getLockFPS() end

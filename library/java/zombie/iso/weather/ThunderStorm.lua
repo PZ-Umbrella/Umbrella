@@ -89,16 +89,16 @@ function __ThunderStorm:writeNetThunderEvent(output) end
 ThunderStorm = {}
 
 ---@type integer
-ThunderStorm.MAP_MAX_X = nil
+ThunderStorm.mapMaxX = nil
 
 ---@type integer
-ThunderStorm.MAP_MAX_Y = nil
+ThunderStorm.mapMaxY = nil
 
 ---@type integer
-ThunderStorm.MAP_MIN_X = nil
+ThunderStorm.mapMinX = nil
 
 ---@type integer
-ThunderStorm.MAP_MIN_Y = nil
+ThunderStorm.mapMinY = nil
 
 ---@return integer
 function ThunderStorm.getMapDiagonal() end

@@ -32,6 +32,9 @@ function __ClimbOverFenceState:getDeltaModifiers(owner, modifiers) end
 function __ClimbOverFenceState:isIgnoreCollide(owner, fromX, fromY, fromZ, toX, toY, toZ) end
 
 ---@return boolean
+function __ClimbOverFenceState:isProcessedOnEnter() end
+
+---@return boolean
 function __ClimbOverFenceState:isSyncInIdle() end
 
 ---@return boolean
@@ -42,6 +45,10 @@ function __ClimbOverFenceState:isSyncOnExit() end
 
 ---@return boolean
 function __ClimbOverFenceState:isSyncOnSquare() end
+
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __ClimbOverFenceState:processOnEnter(owner, delegate) end
 
 ---@param owner IsoGameCharacter
 ---@param dir IsoDirections

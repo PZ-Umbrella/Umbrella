@@ -10,9 +10,6 @@
 ---@class Gizmos.SceneDrawer
 
 ---(Not exposed)
----@class IGizmoHandler
-
----(Not exposed)
 ---@class Scene
 
 ---(Not exposed)

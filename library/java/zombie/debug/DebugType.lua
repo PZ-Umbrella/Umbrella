@@ -174,6 +174,9 @@ DebugType.Basement = nil
 DebugType.BodyDamage = nil
 
 ---@type DebugType
+DebugType.CharacterTrait = nil
+
+---@type DebugType
 DebugType.Checksum = nil
 
 ---@type DebugType
@@ -181,9 +184,6 @@ DebugType.Clothing = nil
 
 ---@type DebugType
 DebugType.Combat = nil
-
----@type DebugType
-DebugType.Corpse = nil
 
 ---@type DebugType
 DebugType.CraftLogic = nil
@@ -234,6 +234,9 @@ DebugType.General = nil
 DebugType.Grapple = nil
 
 ---@type DebugType
+DebugType.ImGui = nil
+
+---@type DebugType
 DebugType.Input = nil
 
 ---@type DebugType
@@ -274,9 +277,6 @@ DebugType.NetworkFileDebug = nil
 
 ---@type DebugType
 DebugType.Objects = nil
-
----@type DebugType
-DebugType.Ownership = nil
 
 ---@type DebugType
 DebugType.PZBullet = nil

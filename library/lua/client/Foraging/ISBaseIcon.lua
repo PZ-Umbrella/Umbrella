@@ -16,6 +16,7 @@
 ---@field character IsoPlayer
 ---@field currentTimestamp number
 ---@field darkVisionRadius number
+---@field distanceSnapshot number
 ---@field distanceToPlayer number
 ---@field expandView number
 ---@field expandViewStep number

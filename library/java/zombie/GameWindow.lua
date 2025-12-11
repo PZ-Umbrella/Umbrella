@@ -5,23 +5,14 @@ local __GameWindow = {}
 
 GameWindow = {}
 
----@type JoypadManager.Joypad
-GameWindow.ActivatedJoyPad = nil
-
 ---@type boolean
 GameWindow.DEBUG_SAVE = nil
-
----@type boolean
-GameWindow.DrawReloadingLua = nil
 
 ---@type Input
 GameWindow.GameInput = nil
 
----@type Thread
-GameWindow.GameThread = nil
-
----@type boolean
-GameWindow.OkToSaveOnExit = nil
+---@type JoypadManager.Joypad
+GameWindow.activatedJoyPad = nil
 
 ---@type AssetManagers
 GameWindow.assetManagers = nil
@@ -30,28 +21,37 @@ GameWindow.assetManagers = nil
 GameWindow.averageFPS = nil
 
 ---@type boolean
-GameWindow.bGameThreadExited = nil
-
----@type boolean
-GameWindow.bLoadedAsClient = nil
-
----@type boolean
-GameWindow.bLuaDebuggerKeyDown = nil
-
----@type boolean
-GameWindow.bServerDisconnected = nil
-
----@type boolean
 GameWindow.closeRequested = nil
+
+---@type boolean
+GameWindow.drawReloadingLua = nil
 
 ---@type FileSystem
 GameWindow.fileSystem = nil
+
+---@type Thread
+GameWindow.gameThread = nil
+
+---@type boolean
+GameWindow.gameThreadExited = nil
 
 ---@type string
 GameWindow.kickReason = nil
 
 ---@type string
 GameWindow.lastP = nil
+
+---@type boolean
+GameWindow.loadedAsClient = nil
+
+---@type boolean
+GameWindow.luaDebuggerKeyDown = nil
+
+---@type boolean
+GameWindow.okToSaveOnExit = nil
+
+---@type boolean
+GameWindow.serverDisconnected = nil
 
 ---@type GameStateMachine
 GameWindow.states = nil

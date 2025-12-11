@@ -3,7 +3,7 @@
 ---@class SandboxOptions.DoubleSandboxOption: DoubleConfigOption, SandboxOptions.SandboxOption
 local __DoubleSandboxOption = {}
 
----@return ConfigOption
+---@return DoubleConfigOption
 function __DoubleSandboxOption:asConfigOption() end
 
 ---@param table table
@@ -30,11 +30,11 @@ function __DoubleSandboxOption:isCustom() end
 function __DoubleSandboxOption:setCustom() end
 
 ---@param pageName string
----@return SandboxOptions.SandboxOption
+---@return SandboxOptions.DoubleSandboxOption
 function __DoubleSandboxOption:setPageName(pageName) end
 
 ---@param translation string
----@return SandboxOptions.SandboxOption
+---@return SandboxOptions.DoubleSandboxOption
 function __DoubleSandboxOption:setTranslation(translation) end
 
 ---@param table table

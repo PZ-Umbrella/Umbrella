@@ -5,11 +5,14 @@ local __BodyLocations = {}
 
 BodyLocations = {}
 
-function BodyLocations.Reset() end
+---@return List<BodyLocationGroup>
+function BodyLocations.getAllGroups() end
 
 ---@param id string
 ---@return BodyLocationGroup
 function BodyLocations.getGroup(id) end
+
+function BodyLocations.reset() end
 
 ---@return BodyLocations
 function BodyLocations.new() end

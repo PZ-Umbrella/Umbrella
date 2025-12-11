@@ -277,18 +277,18 @@ function __IsoMetaGrid:load() end
 ---@param input ByteBuffer
 function __IsoMetaGrid:load(input) end
 
----@param arg0 string
----@param arg1 BiConsumer<ByteBuffer, integer>
-function __IsoMetaGrid:load(arg0, arg1) end
+---@param inFilePath string
+---@param loadMethod BiConsumer<ByteBuffer, integer>
+function __IsoMetaGrid:load(inFilePath, loadMethod) end
 
 ---@param arg0 ByteBuffer
 ---@param arg1 integer
 function __IsoMetaGrid:loadAnimalZones(arg0, arg1) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 QuadConsumer<IsoMetaCell, IsoMetaGrid, ByteBuffer, integer>
-function __IsoMetaGrid:loadCells(arg0, arg1, arg2) end
+---@param path string
+---@param filter string
+---@param loadMethod QuadConsumer<IsoMetaCell, IsoMetaGrid, ByteBuffer, integer>
+function __IsoMetaGrid:loadCells(path, filter, loadMethod) end
 
 ---@param input ByteBuffer
 ---@param WorldVersion integer
@@ -435,11 +435,11 @@ function __IsoMetaGrid:save() end
 ---@param arg0 ByteBuffer
 function __IsoMetaGrid:saveAnimalZones(arg0) end
 
----@param arg0 SaveBufferMap
----@param arg1 string
----@param arg2 string
----@param arg3 BiConsumer<IsoMetaCell, ByteBuffer>
-function __IsoMetaGrid:saveCellsToSaveBufferMap(arg0, arg1, arg2, arg3) end
+---@param bufferMap SaveBufferMap
+---@param path string
+---@param filter string
+---@param saveMethod BiConsumer<IsoMetaCell, ByteBuffer>
+function __IsoMetaGrid:saveCellsToSaveBufferMap(bufferMap, path, filter, saveMethod) end
 
 ---@param output ByteBuffer
 ---@param part integer
@@ -476,10 +476,10 @@ IsoMetaGrid = {}
 IsoMetaGrid.TL_Location = nil
 
 ---@type ByteBuffer
-IsoMetaGrid.s_clipperBuffer = nil
+IsoMetaGrid.clipperBuffer = nil
 
 ---@type ClipperOffset
-IsoMetaGrid.s_clipperOffset = nil
+IsoMetaGrid.clipperOffset = nil
 
 ---@return IsoMetaGrid
 function IsoMetaGrid.new() end

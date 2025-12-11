@@ -35,7 +35,7 @@ WeaponUpgrades = {
 		"RecoilPad",
 	},
 	Shotgun = {
-		"Sling",
+		"AmmoStraps",
 		"ChokeTubeFull",
 		"ChokeTubeImproved",
 	},

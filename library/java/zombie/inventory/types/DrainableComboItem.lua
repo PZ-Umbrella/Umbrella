@@ -53,9 +53,6 @@ function __DrainableComboItem:getReplaceOnDeplete() end
 ---@return string
 function __DrainableComboItem:getReplaceOnDepleteFullType() end
 
----@return integer
-function __DrainableComboItem:getSaveType() end
-
 ---@return number # the ticks
 function __DrainableComboItem:getTicks() end
 

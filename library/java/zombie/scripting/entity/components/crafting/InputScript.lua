@@ -64,6 +64,9 @@ function __InputScript:doesItemPassRoutineStatusTests(arg0, arg1) end
 function __InputScript:doesItemPassSharpnessStatusTests(arg0) end
 
 ---@return boolean
+function __InputScript:dontAllowFrozenItem() end
+
+---@return boolean
 function __InputScript:dontPutBack() end
 
 ---@return number
@@ -117,6 +120,9 @@ function __InputScript:getIntMaxAmount(arg0) end
 ---@return ItemApplyMode
 function __InputScript:getItemApplyMode() end
 
+---@return Set<ItemTag>
+function __InputScript:getItemTags() end
+
 ---@return number
 function __InputScript:getMaxAmount() end
 
@@ -158,9 +164,6 @@ function __InputScript:getResourceType() end
 ---@return integer
 function __InputScript:getShapedIndex() end
 
----@return ArrayList<string>
-function __InputScript:getTags() end
-
 ---@return boolean
 function __InputScript:hasConsumeFromItem() end
 
@@ -173,6 +176,9 @@ function __InputScript:hasFlag(arg0) end
 
 ---@return boolean
 function __InputScript:hasParentScript() end
+
+---@return boolean
+function __InputScript:hasPossibleFrozenFoodInputItems() end
 
 ---@return boolean
 function __InputScript:inheritColor() end

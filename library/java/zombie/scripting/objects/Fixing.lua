@@ -28,21 +28,21 @@ function __Fixing:getGlobalItem() end
 ---@return string
 function __Fixing:getName() end
 
----@param arg0 IsoGameCharacter
----@param arg1 Fixing.Fixer
----@param arg2 InventoryItem
----@param arg3 ArrayList<InventoryItem>
+---@param chr IsoGameCharacter
+---@param fixer Fixing.Fixer
+---@param brokenItem InventoryItem
+---@param items ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __Fixing:getRequiredFixerItems(arg0, arg1, arg2, arg3) end
+function __Fixing:getRequiredFixerItems(chr, fixer, brokenItem, items) end
 
 ---@return ArrayList<string>
 function __Fixing:getRequiredItem() end
 
----@param arg0 IsoGameCharacter
----@param arg1 Fixing.Fixer
----@param arg2 InventoryItem
+---@param chr IsoGameCharacter
+---@param fixer Fixing.Fixer
+---@param brokenItem InventoryItem
 ---@return ArrayList<InventoryItem>
-function __Fixing:getRequiredItems(arg0, arg1, arg2) end
+function __Fixing:getRequiredItems(chr, fixer, brokenItem) end
 
 ---@param chr IsoGameCharacter
 ---@return InventoryItem

@@ -132,6 +132,9 @@ function __Food:getEnduranceChangeUnmodified() end
 ---@return integer
 function __Food:getFluReduction() end
 
+---@return integer
+function __Food:getFoodSicknessChange() end
+
 ---@return string
 function __Food:getFoodType() end
 
@@ -196,9 +199,6 @@ function __Food:getPoisonPower() end
 ---@return number
 function __Food:getProteins() end
 
----@return integer
-function __Food:getReduceFoodSickness() end
-
 ---@return List<string>
 function __Food:getReplaceOnCooked() end
 
@@ -207,9 +207,6 @@ function __Food:getReplaceOnRotten() end
 
 ---@return number
 function __Food:getRottenTime() end
-
----@return integer
-function __Food:getSaveType() end
 
 ---@param desc SurvivorDesc
 ---@return number
@@ -396,6 +393,9 @@ function __Food:setFertilizedTime(arg0) end
 ---@param fluReduction integer
 function __Food:setFluReduction(fluReduction) end
 
+---@param foodSicknessChange integer
+function __Food:setFoodSicknessChange(foodSicknessChange) end
+
 ---@param foodType string
 function __Food:setFoodType(foodType) end
 
@@ -452,9 +452,6 @@ function __Food:setPoisonPower(poisonPower) end
 
 ---@param proteins number
 function __Food:setProteins(proteins) end
-
----@param ReduceFoodSickness integer
-function __Food:setReduceFoodSickness(ReduceFoodSickness) end
 
 ---@param removeNegativeEffectOnCooked boolean
 function __Food:setRemoveNegativeEffectOnCooked(removeNegativeEffectOnCooked) end

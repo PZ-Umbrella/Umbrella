@@ -25,7 +25,6 @@ ZomboidGlobals = {
 	StressFromBiteOrScratch = 0.00005,
 	StressFromHemophobic = 0.0000003333,
 	AngerDecrease = 0.0001,
-	BroodingAngerDecreaseMultiplier = 0.3,
 	SleepFatigueReduction = 0.000003,
 	DistanceFromContainersToPickup = 1.3,
 	WetnessIncrease = 0.015,
@@ -35,6 +34,7 @@ ZomboidGlobals = {
 	PoisonLevelDecrease = 0.0010,
 	PoisonHealthReduction = 0.0465,
 	FoodSicknessDecrease = 0.0015,
+	SicknessDecrease = 0.0015,
 	BurnCorpsePetrolAmount = 0.1,
 	CleanBloodBleachAmount = 0.24999,
 	CleanGraffitiPetrolAmount = 1.24999,
@@ -44,6 +44,7 @@ ZomboidGlobals = {
 	IdleIncrease = 0.0005,
 	IdleDecrease = 0.0060,
 }
+ZomboidGlobals.BroodingAngerDecreaseMultiplier = 0.3
 
 ---@class ZombiePopulationMultiplier
 ZombiePopulationMultiplier = {}

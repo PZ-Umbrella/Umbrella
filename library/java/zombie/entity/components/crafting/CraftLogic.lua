@@ -21,6 +21,9 @@ function __CraftLogic:dumpContentsInSquare() end
 ---@param arg0 CraftRecipeData
 function __CraftLogic:finaliseRecipe(arg0) end
 
+---@return string
+function __CraftLogic:getActionAnimOverride() end
+
 ---@return integer
 function __CraftLogic:getActiveCraftCount() end
 

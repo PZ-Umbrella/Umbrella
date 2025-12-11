@@ -15,7 +15,7 @@
 ---@field tickBoxPriority ISTickBox
 ---@field tickBoxReliability ISTickBox
 ---@field type ISComboBox
-ISPacketCounts = ISPanel:derive("ISPacketCounts")
+ISPacketCounts = {}
 ISPacketCounts.Type = "ISPacketCounts"
 ISPacketCounts.instance = nil ---@type ISPacketCounts?
 
@@ -47,7 +47,7 @@ function ISPacketCounts:render() end
 function ISPacketCounts:new(x, y, width, height) end
 
 ---@class ISPacketCountsList : ISPanel
-ISPacketCountsList = ISPanel:derive("ISPacketCountsPanel")
+ISPacketCountsList = {}
 ISPacketCountsList.Type = "ISPacketCountsPanel"
 
 ---@param del number

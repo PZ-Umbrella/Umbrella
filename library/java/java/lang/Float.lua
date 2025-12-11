@@ -33,10 +33,6 @@ function __Float:byteValue() end
 ---@return integer
 function __Float:compareTo(arg0) end
 
----@param arg0 any
----@return integer
-function __Float:compareTo(arg0) end
-
 ---@return Optional<number>
 function __Float:describeConstable() end
 
@@ -67,10 +63,6 @@ function __Float:longValue() end
 
 ---@param arg0 MethodHandles.Lookup
 ---@return number
-function __Float:resolveConstantDesc(arg0) end
-
----@param arg0 MethodHandles.Lookup
----@return any
 function __Float:resolveConstantDesc(arg0) end
 
 ---@return integer

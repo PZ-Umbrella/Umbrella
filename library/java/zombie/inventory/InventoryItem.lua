@@ -99,7 +99,7 @@ function __InventoryItem:applyMaxSharpness() end
 ---@return boolean
 function __InventoryItem:canBeActivated() end
 
----@return string
+---@return ItemBodyLocation
 function __InventoryItem:canBeEquipped() end
 
 ---@return boolean
@@ -113,6 +113,9 @@ function __InventoryItem:canHaveOrigin() end
 
 ---@return boolean
 function __InventoryItem:canStoreWater() end
+
+---@param b boolean
+function __InventoryItem:checkSyncItemFields(b) end
 
 ---@param arg0 InventoryItem
 function __InventoryItem:copyBloodLevelFrom(arg0) end
@@ -211,7 +214,7 @@ function __InventoryItem:getAlcoholPower() end
 ---@return string
 function __InventoryItem:getAlternateModelName() end
 
----@return string
+---@return AmmoType
 function __InventoryItem:getAmmoType() end
 
 ---@return string
@@ -260,8 +263,11 @@ function __InventoryItem:getBloodLevelAdjustedHigh() end
 ---@return number
 function __InventoryItem:getBloodLevelAdjustedLow() end
 
----@return string
+---@return ItemBodyLocation
 function __InventoryItem:getBodyLocation() end
+
+---@return List<BookSubject>
+function __InventoryItem:getBookSubjects() end
 
 ---@return number # the boredomChange
 function __InventoryItem:getBoredomChange() end
@@ -283,9 +289,6 @@ function __InventoryItem:getBurntString() end
 
 ---@return ByteBuffer
 function __InventoryItem:getByteData() end
-
----@return ItemType # the cat
-function __InventoryItem:getCat() end
 
 ---@return string
 function __InventoryItem:getCategory() end
@@ -366,6 +369,9 @@ function __InventoryItem:getCount() end
 ---@return string
 function __InventoryItem:getCountDownSound() end
 
+---@return CoverType
+function __InventoryItem:getCoverType() end
+
 ---@return integer
 function __InventoryItem:getCurrentAmmoCount() end
 
@@ -409,6 +415,9 @@ function __InventoryItem:getDisplayCategory() end
 function __InventoryItem:getDisplayName() end
 
 ---@return string
+function __InventoryItem:getDoubleClickRecipe() end
+
+---@return string
 function __InventoryItem:getDropSound() end
 
 ---@return number
@@ -440,6 +449,9 @@ function __InventoryItem:getEvolvedRecipeName() end
 
 ---@return string
 function __InventoryItem:getExplosionSound() end
+
+---@return InventoryItem
+function __InventoryItem:getExtinguishedItem() end
 
 ---@return ArrayList<string>
 function __InventoryItem:getExtraItems() end
@@ -473,6 +485,9 @@ function __InventoryItem:getFireFuelRatio() end
 
 ---@return FluidContainer
 function __InventoryItem:getFluidContainerFromSelfOrWorldItem() end
+
+---@return integer
+function __InventoryItem:getFoodSicknessChange() end
 
 ---@return string
 function __InventoryItem:getFullType() end
@@ -519,6 +534,12 @@ function __InventoryItem:getIconsForTexture() end
 ---@return number
 function __InventoryItem:getInvHeat() end
 
+---@return integer
+function __InventoryItem:getInverseCoughProbability() end
+
+---@return integer
+function __InventoryItem:getInverseCoughProbabilitySmoker() end
+
 ---@return boolean
 function __InventoryItem:getIsCraftingConsumed() end
 
@@ -563,6 +584,9 @@ function __InventoryItem:getLootType() end
 
 ---@return string
 function __InventoryItem:getLuaCreate() end
+
+---@return List<MagazineSubject>
+function __InventoryItem:getMagazineSubjects() end
 
 ---@return integer
 function __InventoryItem:getMaintenanceMod() end
@@ -719,6 +743,9 @@ function __InventoryItem:getRemoteControlID() end
 ---@return integer
 function __InventoryItem:getRemoteRange() end
 
+---@return string
+function __InventoryItem:getReplaceOnExtinguish() end
+
 ---@return string # the replaceOnUse
 function __InventoryItem:getReplaceOnUse() end
 
@@ -753,9 +780,6 @@ function __InventoryItem:getResearchableRecipes(arg0) end
 
 ---@return ItemContainer # the rightClickContainer
 function __InventoryItem:getRightClickContainer() end
-
----@return integer
-function __InventoryItem:getSaveType() end
 
 ---@param desc SurvivorDesc
 ---@return number
@@ -823,7 +847,7 @@ function __InventoryItem:getSuspensionDamping() end
 ---@return string # the swingAnim
 function __InventoryItem:getSwingAnim() end
 
----@return ArrayList<string>
+---@return Set<ItemTag>
 function __InventoryItem:getTags() end
 
 ---@return ArrayList<IsoObject> # the Taken
@@ -876,6 +900,9 @@ function __InventoryItem:getUnequippedWeight() end
 
 ---@return number # the unhappyChange
 function __InventoryItem:getUnhappyChange() end
+
+---@return number
+function __InventoryItem:getUseDelta() end
 
 ---@return IsoGameCharacter
 function __InventoryItem:getUser() end
@@ -999,9 +1026,9 @@ function __InventoryItem:hasSharpness() end
 ---@return boolean
 function __InventoryItem:hasTag(arg0) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@return boolean
-function __InventoryItem:hasTag(tag) end
+function __InventoryItem:hasTag(itemTag) end
 
 ---@return boolean
 function __InventoryItem:hasTimesHeadRepaired() end
@@ -1069,6 +1096,10 @@ function __InventoryItem:isBeingFilled() end
 
 ---@return boolean
 function __InventoryItem:isBloody() end
+
+---@param itemBodyLocation ItemBodyLocation
+---@return boolean
+function __InventoryItem:isBodyLocation(itemBodyLocation) end
 
 ---@return boolean
 function __InventoryItem:isBroken() end
@@ -1174,6 +1205,10 @@ function __InventoryItem:isInitialised() end
 ---@return boolean # the IsCookable
 function __InventoryItem:isIsCookable() end
 
+---@param itemType ItemType
+---@return boolean
+function __InventoryItem:isItemType(itemType) end
+
 ---@return boolean
 function __InventoryItem:isKeepOnDeplete() end
 
@@ -1205,6 +1240,9 @@ function __InventoryItem:isRequiresEquippedBothHands() end
 
 ---@return boolean
 function __InventoryItem:isSealed() end
+
+---@return boolean
+function __InventoryItem:isSharpenable() end
 
 ---@return boolean
 function __InventoryItem:isSpice() end
@@ -1307,7 +1345,7 @@ function __InventoryItem:setAlcoholPower(alcoholPower) end
 ---@param alcoholic boolean
 function __InventoryItem:setAlcoholic(alcoholic) end
 
----@param ammoType string
+---@param ammoType AmmoType
 function __InventoryItem:setAmmoType(ammoType) end
 
 ---@param arg0 AnimalTracks
@@ -1372,9 +1410,6 @@ function __InventoryItem:setCanBeActivated(activatedItem) end
 
 ---@param canBeRemote boolean
 function __InventoryItem:setCanBeRemote(canBeRemote) end
-
----@param cat ItemType the cat to set
-function __InventoryItem:setCat(cat) end
 
 ---@param chanceToSpawnDamaged integer
 function __InventoryItem:setChanceToSpawnDamaged(chanceToSpawnDamaged) end
@@ -1455,6 +1490,9 @@ function __InventoryItem:setCurrentAmmoCount(ammo) end
 ---@param arg0 integer
 function __InventoryItem:setCurrentUses(arg0) end
 
+---@param newUses number
+function __InventoryItem:setCurrentUsesFloat(newUses) end
+
 ---@param arg0 InventoryItem
 function __InventoryItem:setCurrentUsesFrom(arg0) end
 
@@ -1508,6 +1546,9 @@ function __InventoryItem:setFatigueChange(fatigueChange) end
 ---@param favorite boolean
 function __InventoryItem:setFavorite(favorite) end
 
+---@param foodSicknessChange integer
+function __InventoryItem:setFoodSicknessChange(foodSicknessChange) end
+
 ---@param gunType string
 function __InventoryItem:setGunType(gunType) end
 
@@ -1535,6 +1576,12 @@ function __InventoryItem:setInfected(infected) end
 ---@param initialised boolean
 function __InventoryItem:setInitialised(initialised) end
 
+---@param inverseCoughProbability integer
+function __InventoryItem:setInverseCoughProbability(inverseCoughProbability) end
+
+---@param inverseCoughProbabilitySmoker integer
+function __InventoryItem:setInverseCoughProbabilitySmoker(inverseCoughProbabilitySmoker) end
+
 ---@param IsCookable boolean the IsCookable to set
 function __InventoryItem:setIsCookable(IsCookable) end
 
@@ -1546,6 +1593,9 @@ function __InventoryItem:setItemCapacity(capacity) end
 
 ---@param itemHeat number
 function __InventoryItem:setItemHeat(itemHeat) end
+
+---@param itemType ItemType
+function __InventoryItem:setItemType(itemType) end
 
 ---@param itemWhenDry string
 function __InventoryItem:setItemWhenDry(itemWhenDry) end
@@ -1761,6 +1811,9 @@ function __InventoryItem:setUnhappyChange(unhappyChange) end
 ---@param arg0 IsoPlayer
 ---@param arg1 boolean
 function __InventoryItem:setUnwanted(arg0, arg1) end
+
+---@param useDelta number
+function __InventoryItem:setUseDelta(useDelta) end
 
 ---@deprecated
 ---@param uses integer the uses to set

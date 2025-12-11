@@ -26,9 +26,9 @@ function LuaEventManager.RunQueuedEvents() end
 
 function LuaEventManager.clear() end
 
----@param arg0 ArrayList<Event>
----@param arg1 HashMap<string, Event>
-function LuaEventManager.getEvents(arg0, arg1) end
+---@param eventList ArrayList<Event>
+---@param eventMap HashMap<string, Event>
+function LuaEventManager.getEvents(eventList, eventMap) end
 
 ---@param platform Platform
 ---@param environment table
@@ -38,9 +38,9 @@ function LuaEventManager.register(platform, environment) end
 ---@param luaClosure function
 function LuaEventManager.reroute(prototype, luaClosure) end
 
----@param arg0 ArrayList<Event>
----@param arg1 HashMap<string, Event>
-function LuaEventManager.setEvents(arg0, arg1) end
+---@param eventList ArrayList<Event>
+---@param eventMap HashMap<string, Event>
+function LuaEventManager.setEvents(eventList, eventMap) end
 
 ---@param event string
 function LuaEventManager.triggerEvent(event) end

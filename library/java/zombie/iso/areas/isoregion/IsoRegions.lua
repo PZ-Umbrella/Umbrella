@@ -87,11 +87,11 @@ IsoRegions.FILE_PRE = nil
 ---@type string
 IsoRegions.FILE_SEP = nil
 
----@type boolean
-IsoRegions.PRINT_D = nil
-
 ---@type integer
 IsoRegions.SINGLE_CHUNK_PACKET_SIZE = nil
+
+---@type boolean
+IsoRegions.printD = nil
 
 ---@param dir integer
 ---@return integer

@@ -17,8 +17,8 @@ function __GameLoadingState:update() end
 
 GameLoadingState = {}
 
----@type string
-GameLoadingState.GameLoadingString = nil
+---@type integer
+GameLoadingState.QUICK_TIP_MAX_TIMER = nil
 
 ---@type integer
 GameLoadingState.convertingFileCount = nil
@@ -28,6 +28,9 @@ GameLoadingState.convertingFileMax = nil
 
 ---@type boolean
 GameLoadingState.convertingWorld = nil
+
+---@type string
+GameLoadingState.gameLoadingString = nil
 
 ---@type Thread
 GameLoadingState.loader = nil

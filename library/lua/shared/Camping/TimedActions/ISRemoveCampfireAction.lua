@@ -3,6 +3,7 @@
 ---@class ISRemoveCampfireAction : ISBaseTimedAction
 ---@field campfire SCampfireGlobalObject
 ---@field character IsoPlayer
+---@field sound unknown
 ISRemoveCampfireAction = ISBaseTimedAction:derive("ISRemoveCampfireAction")
 ISRemoveCampfireAction.Type = "ISRemoveCampfireAction"
 
@@ -20,6 +21,8 @@ function ISRemoveCampfireAction:perform() end
 function ISRemoveCampfireAction:start() end
 
 function ISRemoveCampfireAction:stop() end
+
+function ISRemoveCampfireAction:stopSound() end
 
 function ISRemoveCampfireAction:update() end
 

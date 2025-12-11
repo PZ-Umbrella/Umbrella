@@ -165,6 +165,9 @@ function __IsoMovingObject:getMasterRegion() end
 ---@return Vector2 # the movementLastFrame
 function __IsoMovingObject:getMovementLastFrame() end
 
+---@return IsoGridSquare
+function __IsoMovingObject:getMovingSquare() end
+
 ---@return number
 function __IsoMovingObject:getNextX() end
 

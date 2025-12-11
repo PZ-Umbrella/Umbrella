@@ -1,7 +1,7 @@
 ---@meta
 
 ---@class StatisticChartPackets : StatisticChart
-StatisticChartPackets = StatisticChart:derive("StatisticChartPackets")
+StatisticChartPackets = {}
 StatisticChartPackets.Type = "StatisticChartPackets"
 StatisticChartPackets.instance = nil ---@type StatisticChartPackets?
 StatisticChartPackets.shiftDown = 0

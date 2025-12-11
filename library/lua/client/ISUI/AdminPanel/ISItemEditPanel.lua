@@ -11,8 +11,10 @@
 ---@field buttonBorderColor umbrella.RGBA
 ---@field elems umbrella.ISItemEditPanel.Element[]
 ---@field isClothing unknown
+---@field isContainer unknown
 ---@field isDrainable boolean
 ---@field isFood boolean
+---@field isKey unknown
 ---@field isWeapon boolean
 ---@field item InventoryItem
 ---@field usedElems umbrella.ISItemEditPanel.Element[]
@@ -103,6 +105,9 @@ function ISItemEditPanel:saveAll() end
 ---@return unknown
 function ISItemEditPanel:validateClothing() end
 
+---@return unknown
+function ISItemEditPanel:validateClothingOrContainer() end
+
 ---@return boolean
 function ISItemEditPanel:validateColor() end
 
@@ -111,6 +116,12 @@ function ISItemEditPanel:validateDrainable() end
 
 ---@return boolean
 function ISItemEditPanel:validateFood() end
+
+---@return unknown
+function ISItemEditPanel:validateHeadCondition() end
+
+---@return unknown
+function ISItemEditPanel:validateKey() end
 
 ---@return boolean
 function ISItemEditPanel:validateMinRange() end

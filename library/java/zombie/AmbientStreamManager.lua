@@ -66,26 +66,25 @@ function __AmbientStreamManager:update() end
 
 AmbientStreamManager = {}
 
----@type integer
-AmbientStreamManager.MaxAmbientCount = nil
-
----@type number
-AmbientStreamManager.MaxRange = nil
-
----@type integer
-AmbientStreamManager.OneInAmbienceChance = nil
-
 ---@type BaseAmbientStreamManager
 AmbientStreamManager.instance = nil
+
+---@type integer
+AmbientStreamManager.maxAmbientCount = nil
+
+---@type number
+AmbientStreamManager.maxRange = nil
+
+---@type integer
+AmbientStreamManager.oneInAmbienceChance = nil
 
 ---@return BaseAmbientStreamManager
 function AmbientStreamManager.getInstance() end
 
----@param arg0 number
----@param arg1 number
----@param arg2 Vector2f
+---@param px number
+---@param py number
 ---@return BuildingDef
-function AmbientStreamManager.getNearestBuilding(arg0, arg1, arg2) end
+function AmbientStreamManager.getNearestBuilding(px, py) end
 
 ---@return AmbientStreamManager
 function AmbientStreamManager.new() end

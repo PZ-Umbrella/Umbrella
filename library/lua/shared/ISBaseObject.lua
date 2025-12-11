@@ -11,7 +11,7 @@ function ISBaseObject:addEventListener(_event, _callback, _target) end
 
 function ISBaseObject:clearEventListeners() end
 
----@param type string
+---@param type string The Type of the derived class will be set to this value.
 ---@return ISBaseObject
 function ISBaseObject:derive(type) end
 

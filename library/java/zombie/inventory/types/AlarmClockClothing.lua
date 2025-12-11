@@ -26,9 +26,6 @@ function __AlarmClockClothing:getHour() end
 function __AlarmClockClothing:getMinute() end
 
 ---@return integer
-function __AlarmClockClothing:getSaveType() end
-
----@return integer
 function __AlarmClockClothing:getSoundRadius() end
 
 ---@return boolean
@@ -88,10 +85,10 @@ function __AlarmClockClothing:updateSound(emitter) end
 AlarmClockClothing = {}
 
 ---@type integer
-AlarmClockClothing.PacketPlayer = nil
+AlarmClockClothing.packetPlayer = nil
 
 ---@type integer
-AlarmClockClothing.PacketWorld = nil
+AlarmClockClothing.packetWorld = nil
 
 ---@param module string
 ---@param name string

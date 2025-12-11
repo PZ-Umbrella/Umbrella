@@ -3,7 +3,7 @@
 ---@class SandboxOptions.StringSandboxOption: StringConfigOption, SandboxOptions.SandboxOption
 local __StringSandboxOption = {}
 
----@return ConfigOption
+---@return StringConfigOption
 function __StringSandboxOption:asConfigOption() end
 
 ---@param table table
@@ -30,11 +30,11 @@ function __StringSandboxOption:isCustom() end
 function __StringSandboxOption:setCustom() end
 
 ---@param pageName string
----@return SandboxOptions.SandboxOption
+---@return SandboxOptions.StringSandboxOption
 function __StringSandboxOption:setPageName(pageName) end
 
 ---@param translation string
----@return SandboxOptions.SandboxOption
+---@return SandboxOptions.StringSandboxOption
 function __StringSandboxOption:setTranslation(translation) end
 
 ---@param table table

@@ -16,6 +16,8 @@ ISDesignationZonePanel = ISCollapsableWindowJoypad:derive("ISDesignationZonePane
 ISDesignationZonePanel.Type = "ISDesignationZonePanel"
 ISDesignationZonePanel.instance = nil ---@type ISDesignationZonePanel?
 
+function ISDesignationZonePanel.OnDesignationZoneUpdatedNetwork() end
+
 ---@param playerNum number
 function ISDesignationZonePanel.toggleZoneUI(playerNum) end
 

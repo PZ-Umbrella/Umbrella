@@ -22,11 +22,15 @@
 ---@field paddingLeft number
 ---@field paddingRight number
 ---@field paddingTop number
+---@field searchEntryBox ISTextEntryBox
 ---@field searchInfoText string
+---@field showAllRecipeTickBox ISTickBox
 ---@field showFilterByOutputItem boolean
 ---@field sortCombo ISComboBox?
 ---@field sortComboLabel ISLabel?
 ---@field tickbox ISTickBox?
+---@field tickBoxShowAllVersion ISTickBox
+---@field viewModeButton ISButton
 ISWidgetRecipeFilterPanel = ISPanelJoypad:derive("ISWidgetRecipeFilterPanel")
 ISWidgetRecipeFilterPanel.Type = "ISWidgetRecipeFilterPanel"
 
@@ -38,6 +42,8 @@ function ISWidgetRecipeFilterPanel.onTextChange(box) end
 function ISWidgetRecipeFilterPanel:calculateLayout(_preferredWidth, _preferredHeight) end
 
 function ISWidgetRecipeFilterPanel:createChildren() end
+
+function ISWidgetRecipeFilterPanel:filter(textFilter, selectedCombo) end
 
 function ISWidgetRecipeFilterPanel:initialise() end
 
@@ -61,6 +67,10 @@ function ISWidgetRecipeFilterPanel:onResize() end
 ---@param clickedOption integer
 ---@param enabled boolean
 function ISWidgetRecipeFilterPanel:OnShowAllClick(clickedOption, enabled) end
+
+function ISWidgetRecipeFilterPanel:onShowAllRecipeClick(clickedOption, enabled) end
+
+function ISWidgetRecipeFilterPanel:onShowAllVersionClick(clickedOption, enabled) end
 
 function ISWidgetRecipeFilterPanel:populateComboList() end
 

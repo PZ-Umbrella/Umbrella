@@ -61,6 +61,9 @@ function __IsoBarricade:getFacingPosition(pos) end
 ---@return integer
 function __IsoBarricade:getHealth() end
 
+---@return number
+function __IsoBarricade:getLightTransmission() end
+
 ---@return integer
 function __IsoBarricade:getMaxHealth() end
 

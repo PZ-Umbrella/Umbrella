@@ -166,6 +166,10 @@ function ItemPickerJava.itemSpawnSanityCheck(arg0, arg1) end
 ---@param arg1 IsoGridSquare
 function ItemPickerJava.keyNamerBuilding(arg0, arg1) end
 
+---@param item InventoryItem
+---@param region string
+function ItemPickerJava.onCreateRegion(item, region) end
+
 ---@param bag InventoryContainer
 ---@param character IsoGameCharacter
 ---@param containerDist ItemPickerJava.ItemPickerContainer

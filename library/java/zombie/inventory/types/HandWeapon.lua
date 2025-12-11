@@ -337,7 +337,7 @@ function __HandWeapon:getOriginalWeaponSprite() end
 ---@return number # the otherBoost
 function __HandWeapon:getOtherBoost() end
 
----@return string # the otherHandRequire
+---@return ItemTag
 function __HandWeapon:getOtherHandRequire() end
 
 ---@return PerkFactory.Perk
@@ -380,9 +380,6 @@ function __HandWeapon:getReloadTime() end
 
 ---@return string
 function __HandWeapon:getRunAnim() end
-
----@return integer
-function __HandWeapon:getSaveType() end
 
 ---@param desc SurvivorDesc
 ---@return number
@@ -457,9 +454,6 @@ function __HandWeapon:getTreeDamage() end
 
 ---@return integer
 function __HandWeapon:getTriggerExplosionTimer() end
-
----@return ArrayList<WeaponCategory>
-function __HandWeapon:getWeaponCategories() end
 
 ---@param arg0 WeaponPart
 ---@return WeaponPart
@@ -555,6 +549,10 @@ function __HandWeapon:isMelee() end
 
 ---@return boolean # the MultipleHitConditionAffected
 function __HandWeapon:isMultipleHitConditionAffected() end
+
+---@param weaponCategory WeaponCategory
+---@return boolean
+function __HandWeapon:isOfWeaponCategory(weaponCategory) end
 
 ---@return boolean # the otherHandUse
 function __HandWeapon:isOtherHandUse() end
@@ -834,7 +832,7 @@ function __HandWeapon:setOriginalWeaponSprite(originalWeaponSprite) end
 ---@param otherBoost number the otherBoost to set
 function __HandWeapon:setOtherBoost(otherBoost) end
 
----@param otherHandRequire string the otherHandRequire to set
+---@param otherHandRequire ItemTag
 function __HandWeapon:setOtherHandRequire(otherHandRequire) end
 
 ---@param otherHandUse boolean the otherHandUse to set
@@ -942,8 +940,8 @@ function __HandWeapon:setUseEndurance(useEndurance) end
 ---@param useSelf boolean the useSelf to set
 function __HandWeapon:setUseSelf(useSelf) end
 
----@param arg0 ArrayList<WeaponCategory>
-function __HandWeapon:setWeaponCategories(arg0) end
+---@param weaponCategories Set<WeaponCategory>
+function __HandWeapon:setWeaponCategories(weaponCategories) end
 
 ---@param weaponLength number
 function __HandWeapon:setWeaponLength(weaponLength) end

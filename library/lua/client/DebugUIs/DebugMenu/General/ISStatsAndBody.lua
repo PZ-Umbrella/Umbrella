@@ -21,6 +21,10 @@ function ISStatsAndBody:addBoolOption(_java, _var, _get, _set) end
 ---@return table
 function ISStatsAndBody:addSliderOption(_java, _var, _min, _max, _step, _get, _set) end
 
+---@param _enum number
+---@return table
+function ISStatsAndBody:addSliderOptionEnum(_enum, _step) end
+
 function ISStatsAndBody:createChildren() end
 
 function ISStatsAndBody:initialise() end

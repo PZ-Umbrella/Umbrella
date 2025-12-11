@@ -19,6 +19,7 @@
 ---@field recipeQuery string?
 ---@field recipesPanel ISWidgetRecipesPanel?
 ---@field rootTable ISTableLayout?
+---@field seeAllRecipe boolean
 ---@field tooltipCounter number
 ---@field tooltipCounterTime number
 ---@field tooltipLogic HandcraftLogic
@@ -92,6 +93,8 @@ function ISHandCraftPanel:setRecipeList(_recipeList) end
 function ISHandCraftPanel:setRecipeListMode(_useListMode) end
 
 function ISHandCraftPanel:setRecipes(_recipeQuery) end
+
+function ISHandCraftPanel:setSeeAllRecipe(enabled) end
 
 ---@param _sortMode string
 function ISHandCraftPanel:setSortMode(_sortMode) end

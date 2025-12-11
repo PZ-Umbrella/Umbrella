@@ -121,6 +121,8 @@ function OnBreak.HammerStone(item, player) end
 ---@param player IsoPlayer
 function OnBreak.HandAxe(item, player) end
 
+function OnBreak.HandAxe_Old(item, player) end
+
 ---@param item InventoryItem
 ---@param player IsoPlayer
 ---@param newItemString string

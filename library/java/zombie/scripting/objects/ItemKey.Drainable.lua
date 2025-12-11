@@ -39,6 +39,12 @@ Drainable.BUCKET_CARVED_CLAY_CEMENT = nil
 Drainable.BUCKET_CARVED_CONCRETE_FULL = nil
 
 ---@type ItemKey
+Drainable.BUCKET_CARVED_PLASTER_FULL = nil
+
+---@type ItemKey
+Drainable.BUCKET_CARVED_WALLPAPER_PASTE = nil
+
+---@type ItemKey
 Drainable.BUCKET_CLAY_CEMENT = nil
 
 ---@type ItemKey

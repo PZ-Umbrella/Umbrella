@@ -13,6 +13,7 @@ Fishing.Fish = nil ---@type Fishing.Fish
 ---@field fishItem InventoryItem?
 ---@field fishSize number
 ---@field fishSizeLen number
+---@field isReel boolean
 ---@field isRiver boolean
 ---@field isTrash boolean
 ---@field lure string

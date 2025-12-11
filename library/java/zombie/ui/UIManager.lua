@@ -5,41 +5,11 @@ local __UIManager = {}
 
 UIManager = {}
 
----@type UIDebugConsole
-UIManager.DebugConsole = nil
-
 ---@type ArrayList<string>
 UIManager.DoneTutorials = nil
 
----@type number
-UIManager.FadeAlpha = nil
-
----@type integer
-UIManager.FadeInTime = nil
-
----@type integer
-UIManager.FadeInTimeMax = nil
-
----@type boolean
-UIManager.FadingOut = nil
-
----@type boolean
-UIManager.KeyDownZoomIn = nil
-
----@type boolean
-UIManager.KeyDownZoomOut = nil
-
----@type IsoObject
-UIManager.LastPicked = nil
-
----@type ModalDialog
-UIManager.Modal = nil
-
 ---@type kahlua.Array<MoodlesUI>
 UIManager.MoodleUI = nil
-
----@type IsoObjectPicker.ClickObject
-UIManager.Picked = nil
 
 ---@type Vector2
 UIManager.PickedTile = nil
@@ -50,26 +20,8 @@ UIManager.PickedTileLocal = nil
 ---@type kahlua.Array<ActionProgressBar>
 UIManager.ProgressBar = nil
 
----@type IsoObject
-UIManager.RightDownObject = nil
-
 ---@type ArrayList<UIElementInterface>
 UIManager.UI = nil
-
----@type TextureFBO
-UIManager.UIFBO = nil
-
----@type boolean
-UIManager.UITextureContentsValid = nil
-
----@type boolean
-UIManager.VisibleAllUI = nil
-
----@type boolean
-UIManager.bFadeBeforeUI = nil
-
----@type boolean
-UIManager.bSuspend = nil
 
 ---@type Texture
 UIManager.black = nil
@@ -77,11 +29,35 @@ UIManager.black = nil
 ---@type Clock
 UIManager.clock = nil
 
+---@type UIDebugConsole
+UIManager.debugConsole = nil
+
 ---@type KahluaThread
 UIManager.defaultthread = nil
 
 ---@type boolean
 UIManager.doTick = nil
+
+---@type number
+UIManager.fadeAlpha = nil
+
+---@type boolean
+UIManager.fadeBeforeUi = nil
+
+---@type integer
+UIManager.fadeInTime = nil
+
+---@type integer
+UIManager.fadeInTimeMax = nil
+
+---@type boolean
+UIManager.fadingOut = nil
+
+---@type boolean
+UIManager.keyDownZoomIn = nil
+
+---@type boolean
+UIManager.keyDownZoomOut = nil
 
 ---@type number
 UIManager.lastAlpha = nil
@@ -101,8 +77,14 @@ UIManager.lastOffX = nil
 ---@type number
 UIManager.lastOffY = nil
 
+---@type IsoObject
+UIManager.lastPicked = nil
+
 ---@type string
 UIManager.luaDebuggerAction = nil
+
+---@type ModalDialog
+UIManager.modal = nil
 
 ---@type Texture
 UIManager.mouseArrow = nil
@@ -116,11 +98,20 @@ UIManager.mouseExamine = nil
 ---@type Texture
 UIManager.mouseGrab = nil
 
+---@type IsoObjectPicker.ClickObject
+UIManager.picked = nil
+
 ---@type KahluaThread
 UIManager.previousThread = nil
 
+---@type IsoObject
+UIManager.rightDownObject = nil
+
 ---@type SpeedControls
 UIManager.speedControls = nil
+
+---@type boolean
+UIManager.suspend = nil
 
 ---@type ArrayList<UIElementInterface>
 UIManager.toTop = nil
@@ -128,11 +119,17 @@ UIManager.toTop = nil
 ---@type ObjectTooltip
 UIManager.toolTip = nil
 
+---@type TextureFBO
+UIManager.uiFbo = nil
+
 ---@type integer
 UIManager.uiRenderIntervalMS = nil
 
 ---@type integer
 UIManager.uiRenderTimeMS = nil
+
+---@type boolean
+UIManager.uiTextureContentsValid = nil
 
 ---@type integer
 UIManager.uiUpdateIntervalMS = nil
@@ -141,7 +138,10 @@ UIManager.uiUpdateIntervalMS = nil
 UIManager.uiUpdateTimeMS = nil
 
 ---@type boolean
-UIManager.useUIFBO = nil
+UIManager.useUiFbo = nil
+
+---@type boolean
+UIManager.visibleAllUi = nil
 
 ---@param arg0 UIElementInterface
 function UIManager.AddUI(arg0) end

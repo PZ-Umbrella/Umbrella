@@ -24,7 +24,7 @@ function __BuildLogic:getRecipeData() end
 ---@return CraftRecipeData
 function __BuildLogic:getRecipeDataInProgress() end
 
----@return ArrayList<CraftRecipe>
+---@return CraftRecipeListNodeCollection
 function __BuildLogic:getRecipeList() end
 
 ---@return string
@@ -39,6 +39,9 @@ function __BuildLogic:getSelectedBuildObject() end
 
 ---@return string
 function __BuildLogic:getSelectedRecipeStyle() end
+
+---@return table
+function __BuildLogic:getWallCoveringParams() end
 
 ---@return boolean
 function __BuildLogic:isCraftActionInProgress() end

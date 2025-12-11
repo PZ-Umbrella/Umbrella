@@ -30,10 +30,6 @@ function __Integer:byteValue() end
 ---@return integer
 function __Integer:compareTo(arg0) end
 
----@param arg0 any
----@return integer
-function __Integer:compareTo(arg0) end
-
 ---@return Optional<integer>
 function __Integer:describeConstable() end
 
@@ -58,10 +54,6 @@ function __Integer:longValue() end
 
 ---@param arg0 MethodHandles.Lookup
 ---@return integer
-function __Integer:resolveConstantDesc(arg0) end
-
----@param arg0 MethodHandles.Lookup
----@return any
 function __Integer:resolveConstantDesc(arg0) end
 
 ---@return integer

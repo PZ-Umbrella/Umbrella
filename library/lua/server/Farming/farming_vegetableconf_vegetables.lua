@@ -32,7 +32,7 @@ farming_vegetableconf.props.Barley = {
 	riskMonth = {
 		10,
 	},
-	seasonRecipe = "Barley Growing Season",
+	seasonRecipe = "base:barley growing season",
 	harvestLevel = 6,
 	mature = 5,
 	fullGrown = 6,
@@ -77,7 +77,7 @@ farming_vegetableconf.props.BellPepper = {
 	riskMonth = {
 		6,
 	},
-	seasonRecipe = "Bell Pepper Growing Season",
+	seasonRecipe = "base:bell pepper growing season",
 }
 farming_vegetableconf.props.Broccoli = {
 	icon = "Item_Broccoli",
@@ -117,7 +117,7 @@ farming_vegetableconf.props.Broccoli = {
 	riskMonth = {
 		7,
 	},
-	seasonRecipe = "Broccoli Growing Season",
+	seasonRecipe = "base:broccoli growing season",
 	mothFood = true,
 }
 farming_vegetableconf.props.Cabbages = {
@@ -156,7 +156,7 @@ farming_vegetableconf.props.Cabbages = {
 	riskMonth = {
 		7,
 	},
-	seasonRecipe = "Cabbage Growing Season",
+	seasonRecipe = "base:cabbage growing season",
 	coldHardy = true,
 	mothFood = true,
 }
@@ -197,7 +197,7 @@ farming_vegetableconf.props.Carrots = {
 	riskMonth = {
 		7,
 	},
-	seasonRecipe = "Carrot Growing Season",
+	seasonRecipe = "base:carrot growing season",
 }
 farming_vegetableconf.props.Cauliflower = {
 	icon = "Item_Cauliflower",
@@ -233,7 +233,7 @@ farming_vegetableconf.props.Cauliflower = {
 	bestMonth = {
 		3,
 	},
-	seasonRecipe = "Cauliflower Growing Season",
+	seasonRecipe = "base:cauliflower growing season",
 	mothFood = true,
 }
 farming_vegetableconf.props.Corn = {
@@ -275,7 +275,7 @@ farming_vegetableconf.props.Corn = {
 	riskMonth = {
 		5,
 	},
-	seasonRecipe = "Corn Growing Season",
+	seasonRecipe = "base:corn growing season",
 	harvestPosition = "High",
 }
 farming_vegetableconf.props.Cucumber = {
@@ -316,7 +316,7 @@ farming_vegetableconf.props.Cucumber = {
 	riskMonth = {
 		5,
 	},
-	seasonRecipe = "Cucumber Growing Season",
+	seasonRecipe = "base:cucumber growing season",
 }
 farming_vegetableconf.props.Flax = {
 	icon = "Item_Flax_Harvested",
@@ -348,7 +348,7 @@ farming_vegetableconf.props.Flax = {
 	riskMonth = {
 		10,
 	},
-	seasonRecipe = "Flax Growing Season",
+	seasonRecipe = "base:flax growing season",
 	harvestLevel = 6,
 	mature = 5,
 	fullGrown = 6,
@@ -385,7 +385,7 @@ farming_vegetableconf.props.Garlic = {
 	riskMonth = {
 		9,
 	},
-	seasonRecipe = "Garlic Growing Season",
+	seasonRecipe = "base:garlic growing season",
 	seedTypes = {
 		"Base.GarlicSeed",
 		"Base.Garlic",
@@ -432,7 +432,7 @@ farming_vegetableconf.props.Greenpeas = {
 	riskMonth = {
 		4,
 	},
-	seasonRecipe = "Green Pea Growing Season",
+	seasonRecipe = "base:green pea growing season",
 	harvestPosition = "Mid",
 	slugsProof = true,
 	mothFood = true,
@@ -467,7 +467,7 @@ farming_vegetableconf.props.Hemp = {
 	riskMonth = {
 		10,
 	},
-	seasonRecipe = "Hemp Growing Season",
+	seasonRecipe = "base:hemp growing season",
 	harvestLevel = 6,
 	mature = 5,
 	fullGrown = 6,
@@ -503,7 +503,7 @@ farming_vegetableconf.props.Hops = {
 	riskMonth = {
 		10,
 	},
-	seasonRecipe = "Hops Growing Season",
+	seasonRecipe = "base:hops growing season",
 	harvestLevel = 6,
 	mature = 5,
 	fullGrown = 6,
@@ -542,7 +542,7 @@ farming_vegetableconf.props.Kale = {
 	riskMonth = {
 		8,
 	},
-	seasonRecipe = "Kale Growing Season",
+	seasonRecipe = "base:kale growing season",
 	harvestLevel = 5,
 	mature = 5,
 	fullGrown = 6,
@@ -586,7 +586,7 @@ farming_vegetableconf.props.Lettuce = {
 	riskMonth = {
 		9,
 	},
-	seasonRecipe = "Lettuce Growing Season",
+	seasonRecipe = "base:lettuce growing season",
 }
 farming_vegetableconf.props.Onion = {
 	icon = "Item_Onion",
@@ -623,7 +623,7 @@ farming_vegetableconf.props.Onion = {
 	riskMonth = {
 		3,
 	},
-	seasonRecipe = "Onion Growing Season",
+	seasonRecipe = "base:onion growing season",
 	harvestLevel = 5,
 	mature = 5,
 	fullGrown = 6,
@@ -671,7 +671,7 @@ farming_vegetableconf.props.Potatoes = {
 	riskMonth = {
 		4,
 	},
-	seasonRecipe = "Potato Growing Season",
+	seasonRecipe = "base:potato growing season",
 	slugsProof = true,
 	mothFood = true,
 }
@@ -713,7 +713,7 @@ farming_vegetableconf.props.Pumpkin = {
 	riskMonth = {
 		5,
 	},
-	seasonRecipe = "Pumpkin Growing Season",
+	seasonRecipe = "base:pumpkin growing season",
 }
 farming_vegetableconf.props.Radishes = {
 	icon = "Item_Radish",
@@ -754,7 +754,7 @@ farming_vegetableconf.props.Radishes = {
 	riskMonth = {
 		8,
 	},
-	seasonRecipe = "Radish Growing Season",
+	seasonRecipe = "base:radish growing season",
 	slugsProof = true,
 	mothFood = true,
 }
@@ -788,7 +788,7 @@ farming_vegetableconf.props.Rye = {
 	riskMonth = {
 		10,
 	},
-	seasonRecipe = "Rye Growing Season",
+	seasonRecipe = "base:rye growing season",
 	harvestLevel = 6,
 	mature = 5,
 	fullGrown = 6,
@@ -832,7 +832,7 @@ farming_vegetableconf.props.Soybeans = {
 	riskMonth = {
 		5,
 	},
-	seasonRecipe = "Soybean Growing Season",
+	seasonRecipe = "base:soybean growing season",
 	harvestLevel = 5,
 	mature = 5,
 	fullGrown = 6,
@@ -875,7 +875,7 @@ farming_vegetableconf.props.Spinach = {
 	riskMonth = {
 		7,
 	},
-	seasonRecipe = "Spinach Growing Season",
+	seasonRecipe = "base:spinach growing season",
 	mothFood = true,
 }
 farming_vegetableconf.props.Strawberryplant = {
@@ -914,7 +914,7 @@ farming_vegetableconf.props.Strawberryplant = {
 	riskMonth = {
 		4,
 	},
-	seasonRecipe = "Strawberry Growing Season",
+	seasonRecipe = "base:strawberry growing season",
 	seedTypes = {
 		"Base.StrewberrieSeed",
 	},
@@ -958,7 +958,7 @@ farming_vegetableconf.props.SugarBeets = {
 	riskMonth = {
 		7,
 	},
-	seasonRecipe = "Sugar Beet Growing Season",
+	seasonRecipe = "base:sugar beet growing season",
 	mothFood = true,
 }
 farming_vegetableconf.props.Sunflower = {
@@ -996,7 +996,7 @@ farming_vegetableconf.props.Sunflower = {
 	riskMonth = {
 		5,
 	},
-	seasonRecipe = "Sunflower Growing Season",
+	seasonRecipe = "base:sunflower growing season",
 	harvestPosition = "High",
 }
 farming_vegetableconf.props.SweetPotato = {
@@ -1033,7 +1033,7 @@ farming_vegetableconf.props.SweetPotato = {
 	riskMonth = {
 		7,
 	},
-	seasonRecipe = "Sweet Potato Growing Season",
+	seasonRecipe = "base:sweet potato growing season",
 	harvestLevel = 5,
 	mature = 5,
 	fullGrown = 6,
@@ -1075,7 +1075,7 @@ farming_vegetableconf.props.Tobacco = {
 	riskMonth = {
 		7,
 	},
-	seasonRecipe = "Tobacco Growing Season",
+	seasonRecipe = "base:tobacco growing season",
 	mothFood = true,
 }
 farming_vegetableconf.props.Tomato = {
@@ -1113,7 +1113,7 @@ farming_vegetableconf.props.Tomato = {
 	riskMonth = {
 		6,
 	},
-	seasonRecipe = "Tomato Growing Season",
+	seasonRecipe = "base:tomato growing season",
 	seedTypes = {
 		"Base.TomatoSeed",
 	},
@@ -1158,7 +1158,7 @@ farming_vegetableconf.props.Turnip = {
 		7,
 		10,
 	},
-	seasonRecipe = "Turnip Growing Season",
+	seasonRecipe = "base:turnip growing season",
 	harvestLevel = 5,
 	mature = 5,
 	fullGrown = 6,
@@ -1199,7 +1199,7 @@ farming_vegetableconf.props.Watermelon = {
 	riskMonth = {
 		5,
 	},
-	seasonRecipe = "Watermelon Growing Season",
+	seasonRecipe = "base:watermelon growing season",
 }
 farming_vegetableconf.props.Wheat = {
 	icon = "Item_WheatBundle",
@@ -1231,7 +1231,7 @@ farming_vegetableconf.props.Wheat = {
 	riskMonth = {
 		10,
 	},
-	seasonRecipe = "Wheat Growing Season",
+	seasonRecipe = "base:wheat growing season",
 	harvestLevel = 6,
 	mature = 5,
 	fullGrown = 6,
@@ -1277,5 +1277,5 @@ farming_vegetableconf.props.Zucchini = {
 	riskMonth = {
 		5,
 	},
-	seasonRecipe = "Zucchini Growing Season",
+	seasonRecipe = "base:zucchini growing season",
 }

@@ -9,9 +9,6 @@ function __IsoThumpable:Damage(arg0) end
 ---@return IsoCurtain
 function __IsoThumpable:HasCurtains() end
 
----@return ICurtain
-function __IsoThumpable:HasCurtains() end
-
 ---@return boolean
 function __IsoThumpable:IsOpen() end
 

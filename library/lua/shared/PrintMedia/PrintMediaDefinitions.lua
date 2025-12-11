@@ -2,146 +2,8 @@
 
 ---@class PrintMediaDefinitions
 PrintMediaDefinitions = {}
-PrintMediaDefinitions.Brochures = {
-	"Airport",
-	"ArtGalleryofLouisville",
-	"CardinalPlaza",
-	"Coalfield",
-	"ColdWarBunker",
-	"CrossRoadsMall",
-	"DarkwallowGuestHouse",
-	"DinerInTheWoods",
-	"FossoilField",
-	"GrandOhioMall",
-	"HavishamSuites",
-	"IrvingtonSpeedway",
-	"LSU",
-	"Pondview",
-	"QuillManor",
-	"Sanatorium",
-	"ScarletOakDistillery",
-	"SleepEazzzeInn",
-	"SunstarMotel",
-	"WellingtonHeightsGolfClub",
-	"WestMapleCountryClub",
-	"Delilah",
-}
-PrintMediaDefinitions.Fliers = {
-	"A1Hay",
-	"AMZSteel",
-	"AlsAutoShop",
-	"AmericanTire",
-	"BeefChunk",
-	"BensCabin",
-	"BrandenburgFD",
-	"BrooksLibrary",
-	"BrottAuction",
-	"CabinforRentDixie",
-	"CarFixation",
-	"CatonaHotTinGrill",
-	"CircuitalHealing",
-	"DragRacingTrack",
-	"DuCaseApartments",
-	"EPToolsLV",
-	"EkronCollege",
-	"ElveeArena",
-	"FallasLakeChurch",
-	"FarmersMarket",
-	"FarmingAndRuralSupplyDoeValley",
-	"FashionaBelle",
-	"FiveAlarmChili",
-	"Fossoil1",
-	"Fossoil2",
-	"Fossoil3",
-	"Fossoil4",
-	"Fossoil5",
-	"Fossoil6",
-	"Fossoil7",
-	"Fossoil8",
-	"FourthofJulyCelebrationDixieMobilePark",
-	"GnomeSweetGnome",
-	"GoldenSunset",
-	"GreenesJobAdEkron",
-	"GunsUnlimitedEchoCreek",
-	"HighStreetApartments",
-	"HitVidsJobAdMarchRidge",
-	"HobbsandPerkinsHardware",
-	"HouseforSale787",
-	"HouseforSale799",
-	"HouseforSale818",
-	"HouseforSale845",
-	"HouseforSale851",
-	"HouseforSale855",
-	"HouseforSale860",
-	"HouseforSale867",
-	"HouseforSale895",
-	"HouseforSale903",
-	"HouseforSale907",
-	"HouseforSale912",
-	"HouseforSale915",
-	"HouseforSale919",
-	"HouseforSale922",
-	"HouseforSale929",
-	"HouseforSale930",
-	"HouseforSale934",
-	"HouseforSale943",
-	"IrvingtonGunClub",
-	"KnoxBankJobAdRosewood",
-	"KnoxGunOwnersClubGetTogether",
-	"KnoxPackKitchens",
-	"LVFD",
-	"LVPDHQ",
-	"LeafhillHeights",
-	"LectromaxManufacturingJobAd",
-	"LennysCarRepair",
-	"LouisvilleBruiser",
-	"LoveDuet",
-	"LowryCourt",
-	"MadDansDen",
-	"MailCarrierAdEkron",
-	"MarchRidgeSchoolJobAd",
-	"McCoyLoggingCorp",
-	"MeadshireEstate",
-	"MuldraughBakeSale",
-	"MuldraughPD",
-	"MusicFest93",
-	"NailsAndNuts",
-	"NolansUsedCars",
-	"OldCGECorpBuilding",
-	"OnyxDriveinTheater",
-	"OvoFarms",
-	"PileoCrepeJobAdCrossRoadsMall",
-	"PizzaWhirledJobAdRosewood",
-	"PremisesforLease863",
-	"PremiseswithApartmentsforLeaselistingno891",
-	"ReadyPrep",
-	"RedOakApartments",
-	"RiversideIndependenceDayPartyAllWelcome",
-	"RiversidePD",
-	"RosewoodFD",
-	"RoxysRollerRink",
-	"RustyRifle",
-	"Sammies",
-	"SpiffosHiringDixie",
-	"SpiffosHiringLouisville",
-	"SpiffosHiringWestPoint",
-	"StuartandLogScrapyard",
-	"SunsetPinesFuneralHome",
-	"SureFitnessBoxingClub",
-	"TacodelPancho",
-	"TheSeaShanty",
-	"TheWizardsKeep",
-	"Twiggys",
-	"UStoreItLouisville",
-	"UStoreItMuldraugh",
-	"UStoreItRiverside",
-	"UpscaleMobility",
-	"WPDIY",
-	"WPTownHall",
-	"YourLocalShelterBrandenburg",
-}
 PrintMediaDefinitions.MiscDetails = {
-	McCoyLoggingCorp = {
+	mccoyloggingcorp = {
 		location1 = {
 			{
 				x1 = 10260,
@@ -151,7 +13,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	NolansUsedCars = {
+	nolansusedcars = {
 		location1 = {
 			{
 				x1 = 11650,
@@ -161,7 +23,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	WestMapleCountryClub = {
+	westmaplecountryclub = {
 		location1 = {
 			{
 				x1 = 5470,
@@ -177,7 +39,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	FashionaBelle = {
+	fashionabelle = {
 		location1 = {
 			{
 				x1 = 8050,
@@ -187,7 +49,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	TacodelPancho = {
+	tacodelpancho = {
 		location1 = {
 			{
 				x1 = 13850,
@@ -197,7 +59,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	CrossRoadsMall = {
+	crossroadsmall = {
 		location1 = {
 			{
 				x1 = 13850,
@@ -207,7 +69,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	UStoreItRiverside = {
+	ustoreitriverside = {
 		location1 = {
 			{
 				x1 = 5496,
@@ -217,7 +79,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	UStoreItLouisville = {
+	ustoreitlouisville = {
 		location1 = {
 			{
 				x1 = 13640,
@@ -227,7 +89,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	UStoreItMuldraugh = {
+	ustoreitmuldraugh = {
 		location1 = {
 			{
 				x1 = 10664,
@@ -237,7 +99,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	Fossoil1 = {
+	fossoil1 = {
 		location1 = {
 			{
 				x1 = 10600,
@@ -247,7 +109,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	Fossoil2 = {
+	fossoil2 = {
 		location1 = {
 			{
 				x1 = 12060,
@@ -257,7 +119,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	Fossoil3 = {
+	fossoil3 = {
 		location1 = {
 			{
 				x1 = 8270,
@@ -267,7 +129,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	Fossoil4 = {
+	fossoil4 = {
 		location1 = {
 			{
 				x1 = 640,
@@ -277,7 +139,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	Fossoil5 = {
+	fossoil5 = {
 		location1 = {
 			{
 				x1 = 6050,
@@ -287,7 +149,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	Fossoil6 = {
+	fossoil6 = {
 		location1 = {
 			{
 				x1 = 2030,
@@ -297,7 +159,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	Fossoil7 = {
+	fossoil7 = {
 		location1 = {
 			{
 				x1 = 12410,
@@ -307,7 +169,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	Fossoil8 = {
+	fossoil8 = {
 		location1 = {
 			{
 				x1 = 12870,
@@ -317,7 +179,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	Delilah = {
+	delilah = {
 		location1 = {
 			{
 				x1 = 2020,
@@ -327,7 +189,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	BensCabin = {
+	benscabin = {
 		location1 = {
 			{
 				x1 = 10160,
@@ -337,7 +199,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	GrandOhioMall = {
+	grandohiomall = {
 		location1 = {
 			{
 				x1 = 13510,
@@ -347,7 +209,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	DragRacingTrack = {
+	dragracingtrack = {
 		location1 = {
 			{
 				x1 = 12790,
@@ -357,7 +219,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	ArtGalleryofLouisville = {
+	artgalleryoflouisville = {
 		location1 = {
 			{
 				x1 = 12510,
@@ -367,7 +229,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	FossoilField = {
+	fossoilfield = {
 		location1 = {
 			{
 				x1 = 12940,
@@ -377,7 +239,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	SunstarMotel = {
+	sunstarmotel = {
 		location1 = {
 			{
 				x1 = 10600,
@@ -387,7 +249,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HavishamSuites = {
+	havishamsuites = {
 		location1 = {
 			{
 				x1 = 12610,
@@ -397,7 +259,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	LouisvilleBruiser = {
+	louisvillebruiser = {
 		location1 = {
 			{
 				x1 = 13220,
@@ -407,7 +269,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	TheSeaShanty = {
+	theseashanty = {
 		location1 = {
 			{
 				x1 = 12840,
@@ -417,7 +279,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	ScarletOakDistillery = {
+	scarletoakdistillery = {
 		location1 = {
 			{
 				x1 = 12000,
@@ -427,7 +289,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	ReadyPrep = {
+	readyprep = {
 		location1 = {
 			{
 				x1 = 12198,
@@ -437,7 +299,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	WellingtonHeightsGolfClub = {
+	wellingtonheightsgolfclub = {
 		location1 = {
 			{
 				x1 = 12940,
@@ -453,7 +315,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	LSU = {
+	lsu = {
 		location1 = {
 			{
 				x1 = 12310,
@@ -463,7 +325,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	LectromaxManufacturingJobAd = {
+	lectromaxmanufacturingjobad = {
 		location1 = {
 			{
 				x1 = 5510,
@@ -473,7 +335,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	SpiffosHiringDixie = {
+	spiffoshiringdixie = {
 		location1 = {
 			{
 				x1 = 11650,
@@ -483,7 +345,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	SpiffosHiringLouisville = {
+	spiffoshiringlouisville = {
 		location1 = {
 			{
 				x1 = 12420,
@@ -493,7 +355,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	SpiffosHiringWestPoint = {
+	spiffoshiringwestpoint = {
 		location1 = {
 			{
 				x1 = 11960,
@@ -503,7 +365,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	PizzaWhirledJobAdRosewood = {
+	pizzawhirledjobadrosewood = {
 		location1 = {
 			{
 				x1 = 8060,
@@ -513,7 +375,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	PileoCrepeJobAdCrossRoadsMall = {
+	pileocrepejobadcrossroadsmall = {
 		location1 = {
 			{
 				x1 = 13587,
@@ -523,7 +385,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HitVidsJobAdMarchRidge = {
+	hitvidsjobadmarchridge = {
 		location1 = {
 			{
 				x1 = 10150,
@@ -533,7 +395,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	MarchRidgeSchoolJobAd = {
+	marchridgeschooljobad = {
 		location1 = {
 			{
 				x1 = 9980,
@@ -543,7 +405,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	KnoxBankJobAdRosewood = {
+	knoxbankjobadrosewood = {
 		location1 = {
 			{
 				x1 = 8070,
@@ -553,7 +415,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	FarmersMarket = {
+	farmersmarket = {
 		location1 = {
 			{
 				x1 = 9030,
@@ -563,7 +425,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	MuldraughBakeSale = {
+	muldraughbakesale = {
 		location1 = {
 			{
 				x1 = 10760,
@@ -573,7 +435,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	KnoxGunOwnersClubGetTogether = {
+	knoxgunownersclubgettogether = {
 		location1 = {
 			{
 				x1 = 12300,
@@ -583,7 +445,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HouseforSale895 = {
+	houseforsale895 = {
 		location1 = {
 			{
 				x1 = 11610,
@@ -593,7 +455,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HouseforSale903 = {
+	houseforsale903 = {
 		location1 = {
 			{
 				x1 = 10816,
@@ -603,7 +465,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HouseforSale922 = {
+	houseforsale922 = {
 		location1 = {
 			{
 				x1 = 8350,
@@ -613,7 +475,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HouseforSale934 = {
+	houseforsale934 = {
 		location1 = {
 			{
 				x1 = 4200,
@@ -623,7 +485,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	OnyxDriveinTheater = {
+	onyxdriveintheater = {
 		location1 = {
 			{
 				x1 = 8360,
@@ -633,7 +495,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	RedOakApartments = {
+	redoakapartments = {
 		location1 = {
 			{
 				x1 = 13500,
@@ -643,7 +505,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	DuCaseApartments = {
+	ducaseapartments = {
 		location1 = {
 			{
 				x1 = 12250,
@@ -653,7 +515,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HighStreetApartments = {
+	highstreetapartments = {
 		location1 = {
 			{
 				x1 = 12800,
@@ -663,7 +525,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	LowryCourt = {
+	lowrycourt = {
 		location1 = {
 			{
 				x1 = 12960,
@@ -673,7 +535,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	UpscaleMobility = {
+	upscalemobility = {
 		location1 = {
 			{
 				x1 = 13140,
@@ -683,7 +545,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	RoxysRollerRink = {
+	roxysrollerrink = {
 		location1 = {
 			{
 				x1 = 12950,
@@ -693,7 +555,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	ElveeArena = {
+	elveearena = {
 		location1 = {
 			{
 				x1 = 13000,
@@ -713,7 +575,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	RiversideIndependenceDayPartyAllWelcome = {
+	riversideindependencedaypartyallwelcome = {
 		location1 = {
 			{
 				x1 = 6770,
@@ -723,7 +585,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	FourthofJulyCelebrationDixieMobilePark = {
+	fourthofjulycelebrationdixiemobilepark = {
 		location1 = {
 			{
 				x1 = 11460,
@@ -733,7 +595,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	SureFitnessBoxingClub = {
+	surefitnessboxingclub = {
 		location1 = {
 			{
 				x1 = 12300,
@@ -743,7 +605,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	BrooksLibrary = {
+	brookslibrary = {
 		location1 = {
 			{
 				x1 = 12540,
@@ -753,7 +615,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	KnoxPackKitchens = {
+	knoxpackkitchens = {
 		location1 = {
 			{
 				x1 = 12900,
@@ -763,7 +625,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	SunsetPinesFuneralHome = {
+	sunsetpinesfuneralhome = {
 		location1 = {
 			{
 				x1 = 13130,
@@ -773,7 +635,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	CardinalPlaza = {
+	cardinalplaza = {
 		location1 = {
 			{
 				x1 = 12800,
@@ -783,7 +645,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	CircuitalHealing = {
+	circuitalhealing = {
 		location1 = {
 			{
 				x1 = 424,
@@ -793,7 +655,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	GnomeSweetGnome = {
+	gnomesweetgnome = {
 		location1 = {
 			{
 				x1 = 600,
@@ -803,7 +665,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	MeadshireEstate = {
+	meadshireestate = {
 		location1 = {
 			{
 				x1 = 4054,
@@ -813,7 +675,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	IrvingtonSpeedway = {
+	irvingtonspeedway = {
 		location1 = {
 			{
 				x1 = 850,
@@ -833,7 +695,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	GreenesJobAdEkron = {
+	greenesjobadekron = {
 		location1 = {
 			{
 				x1 = 390,
@@ -843,7 +705,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	MailCarrierAdEkron = {
+	mailcarrieradekron = {
 		location1 = {
 			{
 				x1 = 680,
@@ -853,7 +715,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	PremiseswithApartmentsforLeaselistingno891 = {
+	premiseswithapartmentsforleaselistingno891 = {
 		location1 = {
 			{
 				x1 = 2500,
@@ -863,7 +725,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HouseforSale907 = {
+	houseforsale907 = {
 		location1 = {
 			{
 				x1 = 10721,
@@ -873,7 +735,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	YourLocalShelterBrandenburg = {
+	yourlocalshelterbrandenburg = {
 		location1 = {
 			{
 				x1 = 1930,
@@ -883,7 +745,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HouseforSale912 = {
+	houseforsale912 = {
 		location1 = {
 			{
 				x1 = 10930,
@@ -893,7 +755,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HouseforSale915 = {
+	houseforsale915 = {
 		location1 = {
 			{
 				x1 = 10139,
@@ -903,7 +765,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HouseforSale943 = {
+	houseforsale943 = {
 		location1 = {
 			{
 				x1 = 7864,
@@ -913,7 +775,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HouseforSale930 = {
+	houseforsale930 = {
 		location1 = {
 			{
 				x1 = 5654,
@@ -923,7 +785,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HouseforSale929 = {
+	houseforsale929 = {
 		location1 = {
 			{
 				x1 = 8028,
@@ -933,7 +795,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HouseforSale919 = {
+	houseforsale919 = {
 		location1 = {
 			{
 				x1 = 430,
@@ -943,7 +805,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	LennysCarRepair = {
+	lennyscarrepair = {
 		location1 = {
 			{
 				x1 = 5460,
@@ -953,7 +815,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	CarFixation = {
+	carfixation = {
 		location1 = {
 			{
 				x1 = 12640,
@@ -963,7 +825,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	AlsAutoShop = {
+	alsautoshop = {
 		location1 = {
 			{
 				x1 = 5420,
@@ -973,7 +835,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	NailsAndNuts = {
+	nailsandnuts = {
 		location1 = {
 			{
 				x1 = 6335,
@@ -983,7 +845,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	WPDIY = {
+	wpdiy = {
 		location1 = {
 			{
 				x1 = 11965,
@@ -993,7 +855,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	EPToolsLV = {
+	eptoolslv = {
 		location1 = {
 			{
 				x1 = 13940,
@@ -1003,7 +865,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	RosewoodFD = {
+	rosewoodfd = {
 		location1 = {
 			{
 				x1 = 8116,
@@ -1013,7 +875,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	BrandenburgFD = {
+	brandenburgfd = {
 		location1 = {
 			{
 				x1 = 2053,
@@ -1023,7 +885,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	LVFD = {
+	lvfd = {
 		location1 = {
 			{
 				x1 = 13685,
@@ -1033,7 +895,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	MuldraughPD = {
+	muldraughpd = {
 		location1 = {
 			{
 				x1 = 10621,
@@ -1043,7 +905,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	LVPDHQ = {
+	lvpdhq = {
 		location1 = {
 			{
 				x1 = 12513,
@@ -1053,7 +915,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	RiversidePD = {
+	riversidepd = {
 		location1 = {
 			{
 				x1 = 6066,
@@ -1063,7 +925,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HouseforSale845 = {
+	houseforsale845 = {
 		location1 = {
 			{
 				x1 = 8433,
@@ -1073,7 +935,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HouseforSale851 = {
+	houseforsale851 = {
 		location1 = {
 			{
 				x1 = 8758,
@@ -1083,7 +945,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HouseforSale855 = {
+	houseforsale855 = {
 		location1 = {
 			{
 				x1 = 5150,
@@ -1093,7 +955,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HouseforSale860 = {
+	houseforsale860 = {
 		location1 = {
 			{
 				x1 = 10857,
@@ -1103,7 +965,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	PremisesforLease863 = {
+	premisesforlease863 = {
 		location1 = {
 			{
 				x1 = 11964,
@@ -1113,7 +975,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HouseforSale867 = {
+	houseforsale867 = {
 		location1 = {
 			{
 				x1 = 9802,
@@ -1123,7 +985,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	CabinforRentDixie = {
+	cabinforrentdixie = {
 		location1 = {
 			{
 				x1 = 11534,
@@ -1133,7 +995,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	WPTownHall = {
+	wptownhall = {
 		location1 = {
 			{
 				x1 = 11921,
@@ -1143,7 +1005,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	DinerInTheWoods = {
+	dinerinthewoods = {
 		location1 = {
 			{
 				x1 = 11846,
@@ -1153,7 +1015,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	FallasLakeChurch = {
+	fallaslakechurch = {
 		location1 = {
 			{
 				x1 = 7338,
@@ -1163,7 +1025,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	OldCGECorpBuilding = {
+	oldcgecorpbuilding = {
 		location1 = {
 			{
 				x1 = 3812,
@@ -1173,7 +1035,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	RustyRifle = {
+	rustyrifle = {
 		location1 = {
 			{
 				x1 = 10736,
@@ -1183,7 +1045,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	LeafhillHeights = {
+	leafhillheights = {
 		location1 = {
 			{
 				x1 = 12231,
@@ -1193,7 +1055,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	AmericanTire = {
+	americantire = {
 		location1 = {
 			{
 				x1 = 13259,
@@ -1203,7 +1065,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	FarmingAndRuralSupplyDoeValley = {
+	farmingandruralsupplydoevalley = {
 		location1 = {
 			{
 				x1 = 7236,
@@ -1213,7 +1075,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	GoldenSunset = {
+	goldensunset = {
 		location1 = {
 			{
 				x1 = 2160,
@@ -1223,7 +1085,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	FiveAlarmChili = {
+	fivealarmchili = {
 		location1 = {
 			{
 				x1 = 2056,
@@ -1233,7 +1095,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	Pondview = {
+	pondview = {
 		location1 = {
 			{
 				x1 = 1848,
@@ -1243,7 +1105,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	CatonaHotTinGrill = {
+	catonahottingrill = {
 		location1 = {
 			{
 				x1 = 1864,
@@ -1253,7 +1115,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	QuillManor = {
+	quillmanor = {
 		location1 = {
 			{
 				x1 = 1056,
@@ -1263,7 +1125,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	Sanatorium = {
+	sanatorium = {
 		location1 = {
 			{
 				x1 = 3952,
@@ -1273,7 +1135,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	EkronCollege = {
+	ekroncollege = {
 		location1 = {
 			{
 				x1 = 704,
@@ -1283,7 +1145,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	GunsUnlimitedEchoCreek = {
+	gunsunlimitedechocreek = {
 		location1 = {
 			{
 				x1 = 2472,
@@ -1293,7 +1155,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	StuartandLogScrapyard = {
+	stuartandlogscrapyard = {
 		location1 = {
 			{
 				x1 = 1752,
@@ -1303,7 +1165,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	IrvingtonGunClub = {
+	irvingtongunclub = {
 		location1 = {
 			{
 				x1 = 1808,
@@ -1313,7 +1175,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HobbsandPerkinsHardware = {
+	hobbsandperkinshardware = {
 		location1 = {
 			{
 				x1 = 2120,
@@ -1323,7 +1185,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	LoveDuet = {
+	loveduet = {
 		location1 = {
 			{
 				x1 = 1784,
@@ -1333,7 +1195,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	TheWizardsKeep = {
+	thewizardskeep = {
 		location1 = {
 			{
 				x1 = 1728,
@@ -1343,7 +1205,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	A1Hay = {
+	a1hay = {
 		location1 = {
 			{
 				x1 = 2856,
@@ -1353,7 +1215,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	BrottAuction = {
+	brottauction = {
 		location1 = {
 			{
 				x1 = 3760,
@@ -1363,7 +1225,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	DarkwallowGuestHouse = {
+	darkwallowguesthouse = {
 		location1 = {
 			{
 				x1 = 8208,
@@ -1373,7 +1235,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	ColdWarBunker = {
+	coldwarbunker = {
 		location1 = {
 			{
 				x1 = 9872,
@@ -1383,7 +1245,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	Twiggys = {
+	twiggys = {
 		location1 = {
 			{
 				x1 = 12048,
@@ -1393,7 +1255,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	MusicFest93 = {
+	musicfest93 = {
 		location1 = {
 			{
 				x1 = 13656,
@@ -1403,7 +1265,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	Airport = {
+	airport = {
 		location1 = {
 			{
 				x1 = 14976,
@@ -1413,7 +1275,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	Sammies = {
+	sammies = {
 		location1 = {
 			{
 				x1 = 2008,
@@ -1423,7 +1285,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HouseforSale799 = {
+	houseforsale799 = {
 		location1 = {
 			{
 				x1 = 2016,
@@ -1433,7 +1295,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HouseforSale818 = {
+	houseforsale818 = {
 		location1 = {
 			{
 				x1 = 3496,
@@ -1443,7 +1305,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	OvoFarms = {
+	ovofarms = {
 		location1 = {
 			{
 				x1 = 3912,
@@ -1453,7 +1315,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	MadDansDen = {
+	maddansden = {
 		location1 = {
 			{
 				x1 = 4136,
@@ -1463,7 +1325,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	BeefChunk = {
+	beefchunk = {
 		location1 = {
 			{
 				x1 = 3008,
@@ -1473,7 +1335,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	HouseforSale787 = {
+	houseforsale787 = {
 		location1 = {
 			{
 				x1 = 2320,
@@ -1483,7 +1345,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	AMZSteel = {
+	amzsteel = {
 		location1 = {
 			{
 				x1 = 1680,
@@ -1493,7 +1355,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	SleepEazzzeInn = {
+	sleepeazzzeinn = {
 		location1 = {
 			{
 				x1 = 15256,
@@ -1503,7 +1365,7 @@ PrintMediaDefinitions.MiscDetails = {
 			},
 		},
 	},
-	Coalfield = {
+	coalfield = {
 		location1 = {
 			{
 				x1 = 3352,
@@ -1514,105 +1376,9 @@ PrintMediaDefinitions.MiscDetails = {
 		},
 	},
 }
-PrintMediaDefinitions.Newspapers = {
-	"KnoxKnews",
-	"LouisvilleSunTimes",
-	"NationalDispatch",
-	"KentuckyHerald",
-}
-PrintMediaDefinitions.NewspaperDetails = {
-	KnoxKnews = {
-		issues = {
-			"July1",
-			"July2",
-			"July3",
-			"July4",
-			"July5",
-			"July6",
-		},
-	},
-	LouisvilleSunTimes = {
-		issues = {
-			"July6",
-			"July13",
-			"July14",
-			"July15",
-			"July16",
-		},
-	},
-	NationalDispatch = {
-		issues = {
-			"July6",
-			"July7",
-			"July12",
-			"July13",
-			"July14",
-			"July15",
-		},
-	},
-	KentuckyHerald = {
-		issues = {
-			"July6",
-			"July13",
-			"July14",
-			"July15",
-			"July16",
-		},
-	},
-}
-PrintMediaDefinitions.OldNewspapers = {
-	"ChristianBulletin",
-	"ChristianBulletin",
-	"KnoxKnews",
-	"KnoxKnews",
-	"KnoxKnews",
-	"KentuckyHerald",
-	"KentuckyHerald",
-	"KentuckyHerald",
-	"NationalDispatch",
-	"NationalDispatch",
-	"NationalDispatch",
-	"MuldraughMessenger",
-	"MuldraughMessenger",
-	"LouisvilleSunTimes",
-	"LouisvilleSunTimes",
-	"LouisvilleSunTimes",
-	"LouisvilleStudent",
-	"KnoxFrontline",
-	"KnoxFrontline",
-	"BrandenburgBugle",
-	"LouisvilleSun",
-	"TheCincinnatiTimes",
-	"BowlingGreenPost",
-	"OwensboroOutsider",
-	"TheLexingtonVoice",
-	"PaducahPost",
-	"KentuckyObserver",
-	"NationalFinance",
-	"WashingtonHerald",
-	"WallStreetInsider",
-	"TheLondonPost",
-	"TheKentuckyDefender",
-	"EvansvillePost",
-}
-PrintMediaDefinitions.RegionalPapers = {
-	Louisville = {
-		"LouisvilleSunTimes",
-		"LouisvilleSunTimes",
-		"KentuckyHerald",
-		"KentuckyHerald",
-	},
-	MarchRidge = {
-		"KnoxKnews",
-		"KnoxKnews",
-		"LouisvilleSunTimes",
-		"KentuckyHerald",
-	},
-	Muldraugh = {
-		"KentuckyHerald",
-	},
-	General = {
-		"KnoxKnews",
-		"KentuckyHerald",
-	},
-}
+PrintMediaDefinitions.Brochures = nil ---@type unknown
+PrintMediaDefinitions.Fliers = nil ---@type unknown
+PrintMediaDefinitions.Newspapers = nil ---@type unknown
+PrintMediaDefinitions.NewspaperDetails = nil ---@type unknown
+PrintMediaDefinitions.OldNewspapers = nil ---@type unknown
+PrintMediaDefinitions.RegionalPapers = nil ---@type unknown

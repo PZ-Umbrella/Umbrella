@@ -34,10 +34,10 @@ function __Moodle:setChevron(count, isup, col) end
 
 Moodle = {}
 
----@param ChosenType MoodleType
----@param parent IsoGameCharacter
+---@param moodleType MoodleType
+---@param isoGameCharacter IsoGameCharacter
 ---@return Moodle
-function Moodle.new(ChosenType, parent) end
+function Moodle.new(moodleType, isoGameCharacter) end
 
 ---@type Class<Moodle>
 Moodle.class = nil

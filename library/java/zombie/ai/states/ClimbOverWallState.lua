@@ -30,6 +30,9 @@ function __ClimbOverWallState:exit(owner) end
 function __ClimbOverWallState:isIgnoreCollide(owner, fromX, fromY, fromZ, toX, toY, toZ) end
 
 ---@return boolean
+function __ClimbOverWallState:isProcessedOnEnter() end
+
+---@return boolean
 function __ClimbOverWallState:isSyncInIdle() end
 
 ---@return boolean
@@ -40,6 +43,10 @@ function __ClimbOverWallState:isSyncOnExit() end
 
 ---@return boolean
 function __ClimbOverWallState:isSyncOnSquare() end
+
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __ClimbOverWallState:processOnEnter(owner, delegate) end
 
 ---@param owner IsoGameCharacter
 ---@param dir IsoDirections

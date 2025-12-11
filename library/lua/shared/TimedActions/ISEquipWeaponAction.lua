@@ -1,6 +1,7 @@
 ---@meta
 
 ---@class ISEquipWeaponAction : ISBaseTimedAction
+---@field alwaysTurnOn unknown?
 ---@field animSpeed number
 ---@field fromHotbar boolean?
 ---@field hotbar ISHotbar?

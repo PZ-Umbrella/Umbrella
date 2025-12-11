@@ -31,9 +31,6 @@ function __ServerOptions:getInteger(key) end
 function __ServerOptions:getMaxPlayers() end
 
 ---@return integer
-function __ServerOptions:getMaxPlayersForEstablishingConnection() end
-
----@return integer
 function __ServerOptions:getNumOptions() end
 
 ---@param key string

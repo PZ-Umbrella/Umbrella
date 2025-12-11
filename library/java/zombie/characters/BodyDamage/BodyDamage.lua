@@ -302,6 +302,8 @@ function __BodyDamage:applyDamageFromWeapon(arg0, arg1, arg2, arg3) end
 ---@return boolean
 function __BodyDamage:areBodyPartsBleeding(partA, partB) end
 
+function __BodyDamage:calculateOverallHealth() end
+
 ---@param amount number
 function __BodyDamage:decreaseBodyWetness(amount) end
 
@@ -348,9 +350,6 @@ function __BodyDamage:getBodyPartsLastState(type) end
 ---@return number # the BoredomDecreaseFromReading
 function __BodyDamage:getBoredomDecreaseFromReading() end
 
----@return number
-function __BodyDamage:getBoredomLevel() end
-
 ---@return number # the CatchACold
 function __BodyDamage:getCatchACold() end
 
@@ -381,20 +380,11 @@ function __BodyDamage:getCurrentNumZombiesVisible() end
 ---@return integer # the DamageModCount
 function __BodyDamage:getDamageModCount() end
 
----@return number
-function __BodyDamage:getDiscomfortLevel() end
-
 ---@return number # the DrunkIncreaseValue
 function __BodyDamage:getDrunkIncreaseValue() end
 
 ---@return number # the DrunkReductionValue
 function __BodyDamage:getDrunkReductionValue() end
-
----@return number # the FakeInfectionLevel
-function __BodyDamage:getFakeInfectionLevel() end
-
----@return number
-function __BodyDamage:getFoodSicknessLevel() end
 
 ---@return number
 function __BodyDamage:getGeneralWoundInfectionLevel() end
@@ -413,9 +403,6 @@ function __BodyDamage:getHealthReductionFromSevereBadMoodles() end
 
 ---@return number # the InfectionGrowthRate
 function __BodyDamage:getInfectionGrowthRate() end
-
----@return number
-function __BodyDamage:getInfectionLevel() end
 
 ---@return number
 function __BodyDamage:getInfectionMortalityDuration() end
@@ -480,9 +467,6 @@ function __BodyDamage:getPanicReductionValue() end
 ---@return IsoGameCharacter # the ParentChar
 function __BodyDamage:getParentChar() end
 
----@return number
-function __BodyDamage:getPoisonLevel() end
-
 ---@return number # the ReducedHealthAddition
 function __BodyDamage:getReducedHealthAddition() end
 
@@ -519,26 +503,14 @@ function __BodyDamage:getStandardHealthFromFoodTime() end
 ---@return number # the StandardPainReductionWhenWell
 function __BodyDamage:getStandardPainReductionWhenWell() end
 
----@return number # the body temperature (updated by lua)
-function __BodyDamage:getTemperature() end
-
----@return number
-function __BodyDamage:getTemperatureChangeTick() end
-
 ---@return Thermoregulator
 function __BodyDamage:getThermoregulator() end
 
 ---@return number
 function __BodyDamage:getTimeToSneezeOrCough() end
 
----@return number
-function __BodyDamage:getUnhappynessLevel() end
-
 ---@return boolean
 function __BodyDamage:getWasDraggingCorpse() end
-
----@return number
-function __BodyDamage:getWetness() end
 
 ---@param amount number
 function __BodyDamage:increaseBodyWetness(amount) end
@@ -595,9 +567,6 @@ function __BodyDamage:setBodyPartsLastState() end
 ---@param BoredomDecreaseFromReading number the BoredomDecreaseFromReading to set
 function __BodyDamage:setBoredomDecreaseFromReading(BoredomDecreaseFromReading) end
 
----@param BoredomLevel number the BoredomLevel to set
-function __BodyDamage:setBoredomLevel(BoredomLevel) end
-
 ---@param BurntToDeath boolean the BurntToDeath to set
 function __BodyDamage:setBurntToDeath(BurntToDeath) end
 
@@ -631,20 +600,11 @@ function __BodyDamage:setCurrentNumZombiesVisible(CurrentNumZombiesVisible) end
 ---@param DamageModCount integer the DamageModCount to set
 function __BodyDamage:setDamageModCount(DamageModCount) end
 
----@param arg0 number
-function __BodyDamage:setDiscomfortLevel(arg0) end
-
 ---@param DrunkIncreaseValue number the DrunkIncreaseValue to set
 function __BodyDamage:setDrunkIncreaseValue(DrunkIncreaseValue) end
 
 ---@param DrunkReductionValue number the DrunkReductionValue to set
 function __BodyDamage:setDrunkReductionValue(DrunkReductionValue) end
-
----@param FakeInfectionLevel number the FakeInfectionLevel to set
-function __BodyDamage:setFakeInfectionLevel(FakeInfectionLevel) end
-
----@param foodSicknessLevel number
-function __BodyDamage:setFoodSicknessLevel(foodSicknessLevel) end
 
 ---@param HasACold boolean the HasACold to set
 function __BodyDamage:setHasACold(HasACold) end
@@ -667,9 +627,6 @@ function __BodyDamage:setInfected(infected) end
 
 ---@param InfectionGrowthRate number the InfectionGrowthRate to set
 function __BodyDamage:setInfectionGrowthRate(InfectionGrowthRate) end
-
----@param InfectionLevel number the InfectionLevel to set
-function __BodyDamage:setInfectionLevel(InfectionLevel) end
 
 ---@param worldHours number
 function __BodyDamage:setInfectionMortalityDuration(worldHours) end
@@ -725,12 +682,6 @@ function __BodyDamage:setPanicIncreaseValue(PanicIncreaseValue) end
 ---@param PanicReductionValue number the PanicReductionValue to set
 function __BodyDamage:setPanicReductionValue(PanicReductionValue) end
 
----@param ParentChar IsoGameCharacter the ParentChar to set
-function __BodyDamage:setParentChar(ParentChar) end
-
----@param poisonLevel number
-function __BodyDamage:setPoisonLevel(poisonLevel) end
-
 ---@param reduceFakeInfection boolean
 function __BodyDamage:setReduceFakeInfection(reduceFakeInfection) end
 
@@ -767,22 +718,11 @@ function __BodyDamage:setStandardHealthFromFoodTime(StandardHealthFromFoodTime) 
 ---@param StandardPainReductionWhenWell number the StandardPainReductionWhenWell to set
 function __BodyDamage:setStandardPainReductionWhenWell(StandardPainReductionWhenWell) end
 
----@param t number
-function __BodyDamage:setTemperature(t) end
-
 ---@param arg0 number
 function __BodyDamage:setTimeToSneezeOrCough(arg0) end
 
----@param UnhappynessLevel number the UnhappynessLevel to set
-function __BodyDamage:setUnhappynessLevel(UnhappynessLevel) end
-
 ---@param arg0 boolean
 function __BodyDamage:setWasDraggingCorpse(arg0) end
-
----@param Wetness number the Wetness to set
-function __BodyDamage:setWetness(Wetness) end
-
-function __BodyDamage:splatBloodFloor() end
 
 function __BodyDamage:splatBloodFloorBig() end
 

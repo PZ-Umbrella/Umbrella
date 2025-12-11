@@ -26,6 +26,9 @@ function ISFarmingMenu.canDigHereSquare(square) end
 ---@param playerObj IsoPlayer
 function ISFarmingMenu.canPlow(seedAvailable, typeOfSeed, option, seedName, playerObj) end
 
+---@return boolean?
+function ISFarmingMenu.doDigMenu(playerObj, context, worldobjects, test) end
+
 ---@param player integer
 ---@param context ISContextMenu
 ---@param worldobjects IsoObject[]

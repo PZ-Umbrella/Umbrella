@@ -9,7 +9,7 @@
 ---@field title string?
 ---@field visibleFunction function
 ---@field visibleTarget ISPrintMediaPage
-ISPrintMediaPage = ISCollapsableWindowJoypad:derive("ISPrintMediaPage")
+ISPrintMediaPage = {}
 ISPrintMediaPage.Type = "ISPrintMediaPage"
 
 function ISPrintMediaPage:close() end
@@ -47,7 +47,7 @@ function ISPrintMediaPage:new(x, y, index, player, item) end
 ---@field smoothScrollTargetY number?
 ---@field smoothScrollY number?
 ---@field yScrollDelta number
-ISPrintMediaRichText = ISPrintMediaTextPanel:derive("ISPrintMediaRichText")
+ISPrintMediaRichText = {}
 ISPrintMediaRichText.Type = "ISPrintMediaRichText"
 ISPrintMediaRichText.doRightJoystickScrolling = ISPanelJoypad.doRightJoystickScrolling
 

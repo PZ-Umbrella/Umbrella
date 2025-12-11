@@ -22,9 +22,9 @@ function WarManager.getWarDuration() end
 ---@return WarManager.War
 function WarManager.getWarNearest(arg0) end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return ArrayList<WarManager.War>
-function WarManager.getWarRelevent(arg0) end
+function WarManager.getWarRelevent(player) end
 
 ---@param arg0 integer
 ---@return boolean

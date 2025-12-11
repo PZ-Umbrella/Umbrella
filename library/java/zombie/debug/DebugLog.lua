@@ -73,6 +73,9 @@ DebugLog.General = nil
 DebugLog.Grapple = nil
 
 ---@type DebugLogStream
+DebugLog.ImGui = nil
+
+---@type DebugLogStream
 DebugLog.Input = nil
 
 ---@type DebugLogStream
@@ -171,13 +174,9 @@ DebugLog.Zone = nil
 ---@type boolean
 DebugLog.printServerTime = nil
 
-function DebugLog.enableDebugLogs() end
-
 ---@param type DebugType
 ---@param severity LogSeverity
 function DebugLog.enableLog(type, severity) end
-
-function DebugLog.enableServerLogs() end
 
 ---@param arg0 DebugType
 ---@param arg1 LogSeverity
@@ -205,9 +204,6 @@ function DebugLog.formatString(arg0, arg1, arg2, arg3, arg4, arg5) end
 ---@return string
 function DebugLog.formatStringVarArgs(arg0, arg1, arg2, arg3, arg4, arg5) end
 
----@return DebugType
-function DebugLog.getAnimalLog() end
-
 ---@return ArrayList<DebugType>
 function DebugLog.getDebugTypes() end
 
@@ -218,9 +214,6 @@ function DebugLog.getLogLevel(type) end
 ---@param arg0 DebugType
 ---@return LogSeverity
 function DebugLog.getLogSeverity(arg0) end
-
----@return LogSeverity
-function DebugLog.getMinimumLogSeverity() end
 
 ---@param arg0 DebugType
 ---@return DebugLogStream
@@ -260,6 +253,8 @@ function DebugLog.nativeLog(arg0, arg1, arg2) end
 function DebugLog.printLogLevels() end
 
 function DebugLog.save() end
+
+function DebugLog.setDefaultLogSeverity() end
 
 ---@param type DebugType
 ---@param bEnabled boolean

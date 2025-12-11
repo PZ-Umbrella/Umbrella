@@ -21,6 +21,8 @@ function Translator.debugItemNames() end
 
 function Translator.debugMultiStageBuildNames() end
 
+function Translator.debugRecipeGroupNames() end
+
 function Translator.debugRecipeNames() end
 
 ---@param arg0 string
@@ -82,12 +84,13 @@ function Translator.getMoveableDisplayNameOrNull(name) end
 ---@return string
 function Translator.getMultiStageBuild(name) end
 
----@return ArrayList<string>
-function Translator.getNewsVersions() end
-
 ---@param s string
 ---@return string
 function Translator.getRadioText(s) end
+
+---@param name string
+---@return string
+function Translator.getRecipeGroupName(name) end
 
 ---@param name string
 ---@return string
@@ -158,6 +161,9 @@ function Translator.getTextOrNull(desc, arg1, arg2, arg3) end
 ---@param arg4 any
 ---@return string
 function Translator.getTextOrNull(desc, arg1, arg2, arg3, arg4) end
+
+---@return Map<string, string>
+function Translator.getUI() end
 
 function Translator.loadFiles() end
 

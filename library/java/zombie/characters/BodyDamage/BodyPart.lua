@@ -110,6 +110,9 @@ function __BodyPart:getAlcoholLevel() end
 ---@return number
 function __BodyPart:getBandageLife() end
 
+---@return number
+function __BodyPart:getBandageNeededDamageLevel() end
+
 ---@return string
 function __BodyPart:getBandageType() end
 
@@ -133,6 +136,9 @@ function __BodyPart:getCutSpeedModifier() end
 
 ---@return number
 function __BodyPart:getCutTime() end
+
+---@return number
+function __BodyPart:getDamageScaler() end
 
 ---@return number
 function __BodyPart:getDeepWoundSpeedModifier() end

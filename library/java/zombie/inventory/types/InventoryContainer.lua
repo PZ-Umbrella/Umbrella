@@ -13,7 +13,7 @@ function __InventoryContainer:DoTooltip(tooltipUI, layout) end
 ---@return boolean
 function __InventoryContainer:IsInventoryContainer() end
 
----@return string
+---@return ItemBodyLocation
 function __InventoryContainer:canBeEquipped() end
 
 ---@return number
@@ -51,9 +51,6 @@ function __InventoryContainer:getItemContainer() end
 function __InventoryContainer:getMaxItemSize() end
 
 ---@return integer
-function __InventoryContainer:getSaveType() end
-
----@return integer
 function __InventoryContainer:getWeightReduction() end
 
 ---@return boolean
@@ -72,7 +69,7 @@ function __InventoryContainer:save(output, net) end
 ---@param delta number
 function __InventoryContainer:setBloodLevel(delta) end
 
----@param canBeEquipped string
+---@param canBeEquipped ItemBodyLocation
 function __InventoryContainer:setCanBeEquipped(canBeEquipped) end
 
 ---@param capacity integer

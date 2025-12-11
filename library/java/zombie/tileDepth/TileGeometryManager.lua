@@ -5,19 +5,19 @@ local __TileGeometryManager = {}
 
 function __TileGeometryManager:Reset() end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 ArrayList<TileGeometryFile.Geometry>
-function __TileGeometryManager:copyGeometry(arg0, arg1, arg2, arg3, arg4) end
+---@param modID string
+---@param tilesetName string
+---@param col integer
+---@param row integer
+---@param geometries ArrayList<TileGeometryFile.Geometry>
+function __TileGeometryManager:copyGeometry(modID, tilesetName, col, row, geometries) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
+---@param modID string
+---@param tilesetName string
+---@param col integer
+---@param row integer
 ---@return ArrayList<TileGeometryFile.Geometry>
-function __TileGeometryManager:getGeometry(arg0, arg1, arg2, arg3) end
+function __TileGeometryManager:getGeometry(modID, tilesetName, col, row) end
 
 ---@return ArrayList<string>
 function __TileGeometryManager:getModIDs() end
@@ -55,12 +55,12 @@ function __TileGeometryManager:initSpriteProperties() end
 
 function __TileGeometryManager:loadedTileDefinitions() end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 ArrayList<TileGeometryFile.Geometry>
-function __TileGeometryManager:setGeometry(arg0, arg1, arg2, arg3, arg4) end
+---@param modID string
+---@param tilesetName string
+---@param col integer
+---@param row integer
+---@param geometry ArrayList<TileGeometryFile.Geometry>
+function __TileGeometryManager:setGeometry(modID, tilesetName, col, row, geometry) end
 
 ---@param arg0 string
 ---@param arg1 string

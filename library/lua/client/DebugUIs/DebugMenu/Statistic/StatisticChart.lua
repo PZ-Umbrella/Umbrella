@@ -22,7 +22,7 @@
 ---@field title string
 ---@field varInfo table[]
 ---@field year number
-StatisticChart = ISCollapsableWindow:derive("StatisticChart")
+StatisticChart = {}
 StatisticChart.Type = "StatisticChart"
 StatisticChart.instance = nil ---@type StatisticChart?
 StatisticChart.shiftDown = 0

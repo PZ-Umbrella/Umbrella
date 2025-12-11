@@ -19,6 +19,9 @@
 ---@class MoodleTextureSet
 
 ---(Not exposed)
+---@class MoodlesUI.MoodleUIData
+
+---(Not exposed)
 ---@class RadarPanel.ZombiePos
 
 ---(Not exposed)

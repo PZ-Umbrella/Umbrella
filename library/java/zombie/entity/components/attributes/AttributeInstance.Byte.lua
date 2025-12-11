@@ -6,14 +6,7 @@ local __Byte = {}
 ---@return AttributeInstance.Byte
 function __Byte:copy() end
 
----@return AttributeInstance
-function __Byte:copy() end
-
 ---@param arg0 AttributeInstance.Byte
----@return boolean
-function __Byte:equalTo(arg0) end
-
----@param arg0 AttributeInstance
 ---@return boolean
 function __Byte:equalTo(arg0) end
 

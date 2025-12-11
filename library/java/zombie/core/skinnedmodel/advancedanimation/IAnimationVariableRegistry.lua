@@ -7,9 +7,6 @@ local __IAnimationVariableRegistry = {}
 ---@return AnimationVariableSource
 function __IAnimationVariableRegistry:getGameVariablesInternal() end
 
----@return IAnimationVariableSource
-function __IAnimationVariableRegistry:getGameVariablesInternal() end
-
 ---@param arg0 string
 ---@param arg1 AnimationVariableSlotCallbackBool.CallbackGetStrongTyped
 ---@param arg2 IAnimationVariableSlotDescriptor

@@ -6,13 +6,7 @@ local __Int = {}
 ---@return integer
 function __Int:getMax() end
 
----@return Number
-function __Int:getMax() end
-
 ---@return integer
-function __Int:getMin() end
-
----@return Number
 function __Int:getMin() end
 
 ---@return AttributeValueType
@@ -20,10 +14,6 @@ function __Int:getValueType() end
 
 ---@param arg0 integer
 ---@return integer
-function __Int:validate(arg0) end
-
----@param arg0 Number
----@return Number
 function __Int:validate(arg0) end
 
 Int = {}

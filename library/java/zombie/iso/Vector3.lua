@@ -31,9 +31,6 @@ function __Vector3:angleTo(other) end
 ---@return Vector3
 function __Vector3:clone() end
 
----@return any
-function __Vector3:clone() end
-
 ---Calculate the distance between this point and another
 ---@param other Vector2 The second point as vector
 ---@return number # The distance between them

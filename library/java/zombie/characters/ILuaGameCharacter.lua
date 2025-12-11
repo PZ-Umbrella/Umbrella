@@ -8,10 +8,6 @@ local __ILuaGameCharacter = {}
 
 function __ILuaGameCharacter:Callout() end
 
----@param trait string
----@return boolean
-function __ILuaGameCharacter:HasTrait(trait) end
-
 ---@return boolean
 function __ILuaGameCharacter:IsSpeaking() end
 
@@ -73,6 +69,9 @@ function __ILuaGameCharacter:addReadLiterature(arg0) end
 ---@param arg0 string
 ---@param arg1 integer
 function __ILuaGameCharacter:addReadLiterature(arg0, arg1) end
+
+---@param arg0 InventoryItem
+function __ILuaGameCharacter:addReadMap(arg0) end
 
 ---@param arg0 string
 function __ILuaGameCharacter:addReadPrintMedia(arg0) end
@@ -150,6 +149,9 @@ function __ILuaGameCharacter:getBedType() end
 
 ---@return Stack<BaseAction>
 function __ILuaGameCharacter:getCharacterActions() end
+
+---@return CharacterTraits
+function __ILuaGameCharacter:getCharacterTraits() end
 
 ---@return State
 function __ILuaGameCharacter:getCurrentState() end
@@ -238,9 +240,6 @@ function __ILuaGameCharacter:getStats() end
 ---@return number
 function __ILuaGameCharacter:getTimeSinceLastSmoke() end
 
----@return TraitCollection
-function __ILuaGameCharacter:getTraits() end
-
 ---@return BaseVehicle
 function __ILuaGameCharacter:getVehicle() end
 
@@ -271,16 +270,24 @@ function __ILuaGameCharacter:getZombieKills() end
 ---@return boolean
 function __ILuaGameCharacter:hasEquipped(String) end
 
----@param tag string
+---@param arg0 ItemTag
 ---@return boolean
-function __ILuaGameCharacter:hasEquippedTag(tag) end
+function __ILuaGameCharacter:hasEquippedTag(arg0) end
 
 ---@param type string
 ---@param count integer
 ---@return boolean
 function __ILuaGameCharacter:hasItems(type, count) end
 
----@param arg0 string
+---@param arg0 InventoryItem
+---@return boolean
+function __ILuaGameCharacter:hasReadMap(arg0) end
+
+---@param arg0 CharacterTrait
+---@return boolean
+function __ILuaGameCharacter:hasTrait(arg0) end
+
+---@param arg0 ItemTag
 ---@return boolean
 function __ILuaGameCharacter:hasWornTag(arg0) end
 
@@ -291,6 +298,9 @@ function __ILuaGameCharacter:isAboveTopOfStairs() end
 
 ---@return boolean
 function __ILuaGameCharacter:isAiming() end
+
+---@return boolean
+function __ILuaGameCharacter:isAnimalCheat() end
 
 ---@return boolean
 function __ILuaGameCharacter:isAsleep() end
@@ -424,6 +434,14 @@ function __ILuaGameCharacter:isUnlimitedCarry() end
 ---@return boolean
 function __ILuaGameCharacter:isZombie() end
 
+---@param arg0 CharacterTrait
+---@param arg1 boolean
+function __ILuaGameCharacter:modifyTraitXPBoost(arg0, arg1) end
+
+---@param arg0 CharacterTraitDefinition
+---@param arg1 boolean
+function __ILuaGameCharacter:modifyTraitXPBoost(arg0, arg1) end
+
 ---@param w IsoWindow
 function __ILuaGameCharacter:openWindow(w) end
 
@@ -466,6 +484,9 @@ function __ILuaGameCharacter:resetModelNextFrame() end
 ---@param fullType string
 ---@param pages integer
 function __ILuaGameCharacter:setAlreadyReadPages(fullType, pages) end
+
+---@param arg0 boolean
+function __ILuaGameCharacter:setAnimalCheat(arg0) end
 
 ---@param Asleep boolean
 function __ILuaGameCharacter:setAsleep(Asleep) end

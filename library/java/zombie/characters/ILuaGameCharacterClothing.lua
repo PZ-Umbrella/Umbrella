@@ -26,9 +26,9 @@ function __ILuaGameCharacterClothing:getBodyLocationGroup() end
 ---@return string
 function __ILuaGameCharacterClothing:getOutfitName() end
 
----@param location string
+---@param arg0 ItemBodyLocation
 ---@return InventoryItem
-function __ILuaGameCharacterClothing:getWornItem(location) end
+function __ILuaGameCharacterClothing:getWornItem(arg0) end
 
 ---@return WornItems
 function __ILuaGameCharacterClothing:getWornItems() end
@@ -54,9 +54,9 @@ function __ILuaGameCharacterClothing:setClothingItem_Legs(item) end
 ---@param item InventoryItem
 function __ILuaGameCharacterClothing:setClothingItem_Torso(item) end
 
----@param location string
----@param item InventoryItem
-function __ILuaGameCharacterClothing:setWornItem(location, item) end
+---@param arg0 ItemBodyLocation
+---@param arg1 InventoryItem
+function __ILuaGameCharacterClothing:setWornItem(arg0, arg1) end
 
 ---@param other WornItems
 function __ILuaGameCharacterClothing:setWornItems(other) end

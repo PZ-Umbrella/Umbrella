@@ -18,6 +18,9 @@ function __SurvivorDesc:getBravery() end
 ---@return integer
 function __SurvivorDesc:getCalculatedToughness() end
 
+---@return CharacterProfession
+function __SurvivorDesc:getCharacterProfession() end
+
 ---@return ArrayList<ImmutableColor>
 function __SurvivorDesc:getCommonHairColor() end
 
@@ -71,7 +74,7 @@ function __SurvivorDesc:getLoyalty() end
 ---@return integer
 function __SurvivorDesc:getMetCount(descriptor) end
 
----@return HashMap<integer, integer> # the MetCount
+---@return HashMap<integer, integer>
 function __SurvivorDesc:getMetCount() end
 
 ---@return table
@@ -79,9 +82,6 @@ function __SurvivorDesc:getMeta() end
 
 ---@return ArrayList<ObservationFactory.Observation>
 function __SurvivorDesc:getObservations() end
-
----@return string # the Profession
-function __SurvivorDesc:getProfession() end
 
 ---@return string # the surname
 function __SurvivorDesc:getSurname() end
@@ -104,9 +104,9 @@ function __SurvivorDesc:getVoicePrefix() end
 ---@return integer
 function __SurvivorDesc:getVoiceType() end
 
----@param bodyLocation string
+---@param itemBodyLocation ItemBodyLocation
 ---@return InventoryItem
-function __SurvivorDesc:getWornItem(bodyLocation) end
+function __SurvivorDesc:getWornItem(itemBodyLocation) end
 
 ---@return WornItems
 function __SurvivorDesc:getWornItems() end
@@ -120,6 +120,10 @@ function __SurvivorDesc:hasObservation(o) end
 
 ---@return boolean
 function __SurvivorDesc:isAggressive() end
+
+---@param characterProfession CharacterProfession
+---@return boolean
+function __SurvivorDesc:isCharacterProfession(characterProfession) end
 
 ---@return boolean
 function __SurvivorDesc:isDead() end
@@ -156,8 +160,14 @@ function __SurvivorDesc:setAggressiveness(aggressiveness) end
 ---@param bravery number the bravery to set
 function __SurvivorDesc:setBravery(bravery) end
 
+---@param characterProfession CharacterProfession
+function __SurvivorDesc:setCharacterProfession(characterProfession) end
+
 ---@param compassion number the compassion to set
 function __SurvivorDesc:setCompassion(compassion) end
+
+---@param dead boolean
+function __SurvivorDesc:setDead(dead) end
 
 ---@param favourindoors number the favourindoors to set
 function __SurvivorDesc:setFavourindoors(favourindoors) end
@@ -186,11 +196,8 @@ function __SurvivorDesc:setLoner(loner) end
 ---@param loyalty number the loyalty to set
 function __SurvivorDesc:setLoyalty(loyalty) end
 
----@param Profession string the Profession to set
-function __SurvivorDesc:setProfession(Profession) end
-
----@param profession ProfessionFactory.Profession
-function __SurvivorDesc:setProfessionSkills(profession) end
+---@param characterProfessionDefinition CharacterProfessionDefinition
+function __SurvivorDesc:setProfessionSkills(characterProfessionDefinition) end
 
 ---@param surname string the surname to set
 function __SurvivorDesc:setSurname(surname) end
@@ -213,9 +220,9 @@ function __SurvivorDesc:setVoicePrefix(arg0) end
 ---@param arg0 integer
 function __SurvivorDesc:setVoiceType(arg0) end
 
----@param bodyLocation string
+---@param itemBodyLocation ItemBodyLocation
 ---@param item InventoryItem
-function __SurvivorDesc:setWornItem(bodyLocation, item) end
+function __SurvivorDesc:setWornItem(itemBodyLocation, item) end
 
 SurvivorDesc = {}
 

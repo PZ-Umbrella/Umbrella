@@ -25,6 +25,14 @@ function __ScriptModule:getAnimation(arg0) end
 ---@return AnimationsMesh
 function __ScriptModule:getAnimationsMesh(arg0) end
 
+---@param name string
+---@return CharacterProfessionDefinitionScript
+function __ScriptModule:getCharacterProfessionScript(name) end
+
+---@param name string
+---@return CharacterTraitDefinitionScript
+function __ScriptModule:getCharacterTraitScript(name) end
+
 ---@param arg0 string
 ---@return ClockScript
 function __ScriptModule:getClockScript(arg0) end

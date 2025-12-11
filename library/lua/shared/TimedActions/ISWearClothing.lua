@@ -9,6 +9,37 @@
 ---@field soundNoTrigger boolean
 ISWearClothing = ISBaseTimedAction:derive("ISWearClothing")
 ISWearClothing.Type = "ISWearClothing"
+ISWearClothing.WalkBodyLocations = {
+	ItemBodyLocation.AMMO_STRAP,
+	ItemBodyLocation.BACK,
+	ItemBodyLocation.ELBOW_LEFT,
+	ItemBodyLocation.ELBOW_RIGHT,
+	ItemBodyLocation.EYES,
+	ItemBodyLocation.FULL_HAT,
+	ItemBodyLocation.HANDS,
+	ItemBodyLocation.HANDS_LEFT,
+	ItemBodyLocation.HANDS_RIGHT,
+	ItemBodyLocation.HAT,
+	ItemBodyLocation.LEFT_MIDDLE_FINGER,
+	ItemBodyLocation.LEFT_RING_FINGER,
+	ItemBodyLocation.LEFT_EYE,
+	ItemBodyLocation.LEFT_WRIST,
+	ItemBodyLocation.MASK,
+	ItemBodyLocation.MASK_EYES,
+	ItemBodyLocation.MASK_FULL,
+	ItemBodyLocation.NECKLACE,
+	ItemBodyLocation.NECKLACE_LONG,
+	ItemBodyLocation.NECK,
+	ItemBodyLocation.RIGHT_MIDDLE_FINGER,
+	ItemBodyLocation.RIGHT_RING_FINGER,
+	ItemBodyLocation.RIGHT_EYE,
+	ItemBodyLocation.RIGHT_WRIST,
+	ItemBodyLocation.SATCHEL,
+	ItemBodyLocation.SCARF,
+}
+
+---@return boolean
+function ISWearClothing.isStopOnWalk(item) end
 
 ---@return boolean
 function ISWearClothing:complete() end

@@ -472,9 +472,6 @@ ClimateManager = {}
 ---@type number
 ClimateManager.AVG_FAV_AIR_TEMPERATURE = nil
 
----@type boolean
-ClimateManager.A_STORM_IS_COMING = nil
-
 ---@type integer
 ClimateManager.BOOL_IS_SNOW = nil
 
@@ -572,10 +569,13 @@ ClimateManager.PacketUpdateClimateVars = nil
 ClimateManager.PacketWeatherUpdate = nil
 
 ---@type boolean
-ClimateManager.THE_DESCENDING_FOG = nil
+ClimateManager.aStormIsComing = nil
 
 ---@type boolean
-ClimateManager.WINTER_IS_COMING = nil
+ClimateManager.theDescendingFog = nil
+
+---@type boolean
+ClimateManager.winterIsComing = nil
 
 ---@param val number
 ---@return number

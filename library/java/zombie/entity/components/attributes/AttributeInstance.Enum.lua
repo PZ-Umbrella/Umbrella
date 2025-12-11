@@ -6,16 +6,9 @@ local __Enum = {}
 ---@return AttributeInstance.Enum<E>
 function __Enum:copy() end
 
----@return AttributeInstance
-function __Enum:copy() end
-
----@param arg0 AttributeInstance.Enum<E>
+---@param other AttributeInstance.Enum<E>
 ---@return boolean
-function __Enum:equalTo(arg0) end
-
----@param arg0 AttributeInstance
----@return boolean
-function __Enum:equalTo(arg0) end
+function __Enum:equalTo(other) end
 
 ---@return E
 function __Enum:getValue() end

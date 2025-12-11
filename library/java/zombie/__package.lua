@@ -77,9 +77,6 @@
 ---@class WorldSoundManager.ResultBiggestSound
 
 ---(Not exposed)
----@class ZomboidBitFlag
-
----(Not exposed)
 ---@class ZomboidFileSystem.PZModFolder
 
 zombie = {}

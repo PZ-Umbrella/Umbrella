@@ -55,9 +55,9 @@ function __Item:canSpawnAsLoot() end
 
 function __Item:clearForageFocusCategories() end
 
----@param arg0 string
+---@param weaponCategory WeaponCategory
 ---@return boolean
-function __Item:containsWeaponCategory(arg0) end
+function __Item:containsWeaponCategory(weaponCategory) end
 
 ---@return string
 function __Item:getAcceptItemFunction() end
@@ -68,7 +68,7 @@ function __Item:getActualWeight() end
 ---@return string
 function __Item:getAimReleaseSound() end
 
----@return string # the AmmoType
+---@return AmmoType
 function __Item:getAmmoType() end
 
 ---@return number
@@ -77,7 +77,7 @@ function __Item:getB() end
 ---@return ArrayList<BloodClothingType>
 function __Item:getBloodClothingType() end
 
----@return string # the bodyLocation
+---@return ItemBodyLocation
 function __Item:getBodyLocation() end
 
 ---@return number # the BoredomChange
@@ -172,6 +172,9 @@ function __Item:getDoorDamage() end
 function __Item:getDoorHitSound() end
 
 ---@return string
+function __Item:getDoubleClickRecipe() end
+
+---@return string
 function __Item:getDropSound() end
 
 ---@return integer
@@ -225,6 +228,9 @@ function __Item:getFillFromToiletSound() end
 ---@return number
 function __Item:getFireFuelRatio() end
 
+---@return integer
+function __Item:getFoodSicknessChange() end
+
 ---@return HashSet<string>
 function __Item:getForageFocusCategories() end
 
@@ -276,8 +282,14 @@ function __Item:getItemConfig() end
 ---@return string
 function __Item:getItemConfigKey() end
 
+---@return ItemType
+function __Item:getItemType() end
+
 ---@return number # the KnockdownMod
 function __Item:getKnockdownMod() end
+
+---@return List<string>
+function __Item:getLearnedRecipes() end
 
 ---@return integer
 function __Item:getLevelSkillTrained() end
@@ -363,7 +375,7 @@ function __Item:getOpeningRecipe() end
 ---@return number # the OtherCharacterVolumeBoost
 function __Item:getOtherCharacterVolumeBoost() end
 
----@return string # the OtherHandRequire
+---@return ItemTag
 function __Item:getOtherHandRequire() end
 
 ---@return Stack<string> # the PaletteChoices
@@ -408,6 +420,9 @@ function __Item:getRecordedMediaCat() end
 ---@return string
 function __Item:getReplaceOnDeplete() end
 
+---@return string
+function __Item:getReplaceOnExtinguish() end
+
 ---@return string # the ReplaceOnUse
 function __Item:getReplaceOnUse() end
 
@@ -449,6 +464,10 @@ function __Item:getShoutType() end
 function __Item:getSkillTrained() end
 
 ---@param ID string
+---@return string
+function __Item:getSoundByID(ID) end
+
+---@param ID SoundMapKey
 ---@return string
 function __Item:getSoundByID(ID) end
 
@@ -498,11 +517,8 @@ function __Item:getSwingSound() end
 ---@return number # the SwingTime
 function __Item:getSwingTime() end
 
----@return ArrayList<string>
+---@return Set<ItemTag>
 function __Item:getTags() end
-
----@return List<string>
-function __Item:getTeachedRecipes() end
 
 ---@return number
 function __Item:getTemperature() end
@@ -515,12 +531,6 @@ function __Item:getTicksPerEquipUse() end
 
 ---@return number # the ToHitModifier
 function __Item:getToHitModifier() end
-
----@return Item.Type # the type
-function __Item:getType() end
-
----@return string
-function __Item:getTypeString() end
 
 ---@return string
 function __Item:getUnequipSound() end
@@ -556,7 +566,7 @@ function __Item:getVisionModifier() end
 ---@return number
 function __Item:getWaterresist() end
 
----@return ArrayList<WeaponCategory>
+---@return Set<WeaponCategory>
 function __Item:getWeaponCategories() end
 
 ---@return string
@@ -602,11 +612,11 @@ function __Item:hasReplaceType(key) end
 ---@return boolean
 function __Item:hasResearchableRecipes() end
 
----@param arg0 ItemTag
+---@param tags kahlua.Array<ItemTag>
 ---@return boolean
-function __Item:hasTag(arg0) end
+function __Item:hasTag(tags) end
 
----@param arg0 string
+---@param arg0 ItemTag
 ---@return boolean
 function __Item:hasTag(arg0) end
 
@@ -625,6 +635,10 @@ function __Item:isAlwaysWelcomeGift() end
 ---@return boolean # the AngleFalloff
 function __Item:isAngleFalloff() end
 
+---@param bodyLocation ItemBodyLocation
+---@return boolean
+function __Item:isBodyLocation(bodyLocation) end
+
 ---@return boolean # the CanBandage
 function __Item:isCanBandage() end
 
@@ -633,6 +647,9 @@ function __Item:isCanBarricade() end
 
 ---@return boolean # the CantAttackWithLowestEndurance
 function __Item:isCantAttackWithLowestEndurance() end
+
+---@return boolean
+function __Item:isCantBeFrozen() end
 
 ---@return boolean
 function __Item:isCantEat() end
@@ -667,6 +684,10 @@ function __Item:isHidden() end
 
 ---@return boolean # the IsCookable
 function __Item:isIsCookable() end
+
+---@param itemType ItemType
+---@return boolean
+function __Item:isItemType(itemType) end
 
 ---@return boolean
 function __Item:isKeepOnDeplete() end
@@ -773,13 +794,13 @@ function __Item:setAlwaysKnockdown(AlwaysKnockdown) end
 ---@param AlwaysWelcomeGift boolean the AlwaysWelcomeGift to set
 function __Item:setAlwaysWelcomeGift(AlwaysWelcomeGift) end
 
----@param AmmoType string the AmmoType to set
-function __Item:setAmmoType(AmmoType) end
+---@param ammoType AmmoType
+function __Item:setAmmoType(ammoType) end
 
 ---@param AngleFalloff boolean the AngleFalloff to set
 function __Item:setAngleFalloff(AngleFalloff) end
 
----@param bodyLocation string the bodyLocation to set
+---@param bodyLocation ItemBodyLocation
 function __Item:setBodyLocation(bodyLocation) end
 
 ---@param BoredomChange number the BoredomChange to set
@@ -833,6 +854,9 @@ function __Item:setDoorDamage(DoorDamage) end
 ---@param DoorHitSound string the DoorHitSound to set
 function __Item:setDoorHitSound(DoorHitSound) end
 
+---@param recipeName string
+function __Item:setDoubleClickRecipe(recipeName) end
+
 ---@param EnduranceChange number the EnduranceChange to set
 function __Item:setEnduranceChange(EnduranceChange) end
 
@@ -861,6 +885,9 @@ function __Item:setIsCraftRecipeProduct() end
 
 ---@param arg0 ItemConfig
 function __Item:setItemConfig(arg0) end
+
+---@param itemType ItemType
+function __Item:setItemType(itemType) end
 
 ---@param arg0 boolean
 function __Item:setKeepOnDeplete(arg0) end
@@ -913,7 +940,7 @@ function __Item:setOpeningRecipe(arg0) end
 ---@param OtherCharacterVolumeBoost number the OtherCharacterVolumeBoost to set
 function __Item:setOtherCharacterVolumeBoost(OtherCharacterVolumeBoost) end
 
----@param OtherHandRequire string the OtherHandRequire to set
+---@param OtherHandRequire ItemTag
 function __Item:setOtherHandRequire(OtherHandRequire) end
 
 ---@param OtherHandUse boolean the OtherHandUse to set
@@ -939,6 +966,9 @@ function __Item:setRanged(Ranged) end
 
 ---@param ReplaceOnDeplete string
 function __Item:setReplaceOnDeplete(ReplaceOnDeplete) end
+
+---@param ReplaceOnExtinguish string
+function __Item:setReplaceOnExtinguish(ReplaceOnExtinguish) end
 
 ---@param ReplaceOnUse string the ReplaceOnUse to set
 function __Item:setReplaceOnUse(ReplaceOnUse) end
@@ -988,9 +1018,6 @@ function __Item:setTicksPerEquipUse(TicksPerEquipUse) end
 ---@param ToHitModifier number the ToHitModifier to set
 function __Item:setToHitModifier(ToHitModifier) end
 
----@param type Item.Type the type to set
-function __Item:setType(type) end
-
 ---@param UnhappyChange number the UnhappyChange to set
 function __Item:setUnhappyChange(UnhappyChange) end
 
@@ -1022,8 +1049,8 @@ function __Item:setWanted(arg0) end
 ---@param w number
 function __Item:setWaterresist(w) end
 
----@param arg0 ArrayList<WeaponCategory>
-function __Item:setWeaponCategories(arg0) end
+---@param categories Set<WeaponCategory>
+function __Item:setWeaponCategories(categories) end
 
 ---@param WeaponSprite string the WeaponSprite to set
 function __Item:setWeaponSprite(WeaponSprite) end
@@ -1045,11 +1072,14 @@ function __Item:toString() end
 
 Item = {}
 
+---@type integer
+Item.MAXIMUM_FOOD_AGE = nil
+
 ---@type HashMap<integer, string>
-Item.NetIDToItem = nil
+Item.netIdToItem = nil
 
 ---@type HashMap<string, integer>
-Item.NetItemToID = nil
+Item.netItemToId = nil
 
 ---@return Item
 function Item.new() end

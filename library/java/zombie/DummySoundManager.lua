@@ -260,14 +260,14 @@ function __DummySoundManager:playDamageSound(arg0, arg1) end
 ---@param arg1 MaterialType
 function __DummySoundManager:playDestructionSound(arg0, arg1) end
 
----@param arg0 IsoGridSquare
----@param arg1 string
-function __DummySoundManager:playImpactSound(arg0, arg1) end
+---@param isoGridSquare IsoGridSquare
+---@param ammoType AmmoType
+function __DummySoundManager:playImpactSound(isoGridSquare, ammoType) end
 
----@param arg0 IsoGridSquare
----@param arg1 string
----@param arg2 MaterialType
-function __DummySoundManager:playImpactSound(arg0, arg1, arg2) end
+---@param isoGridSquare IsoGridSquare
+---@param ammoType AmmoType
+---@param materialType MaterialType
+function __DummySoundManager:playImpactSound(isoGridSquare, ammoType, materialType) end
 
 ---@param name string
 function __DummySoundManager:playMusic(name) end

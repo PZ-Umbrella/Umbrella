@@ -6,7 +6,7 @@ local __StringConfigOption = {}
 ---@return string
 function __StringConfigOption:getDefaultValue() end
 
----@return ArrayList<string>
+---@return Set<string>
 function __StringConfigOption:getSplitCSVList() end
 
 ---@return string

@@ -6,9 +6,6 @@ local __IsoDoor = {}
 ---@return IsoDoor
 function __IsoDoor:HasCurtains() end
 
----@return ICurtain
-function __IsoDoor:HasCurtains() end
-
 ---@return boolean
 function __IsoDoor:IsOpen() end
 

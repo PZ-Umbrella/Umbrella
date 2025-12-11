@@ -73,8 +73,8 @@ function __TShortShortHashMap:keys(arg0) end
 ---@return integer
 function __TShortShortHashMap:put(arg0, arg1) end
 
----@param arg0 Map<integer, integer>
-function __TShortShortHashMap:putAll(arg0) end
+---@param map Map<integer, integer>
+function __TShortShortHashMap:putAll(map) end
 
 ---@param arg0 TShortShortMap
 function __TShortShortHashMap:putAll(arg0) end

@@ -33,7 +33,7 @@ function __IsoChunkRegion:getColor() end
 ---@return IsoChunkRegion
 function __IsoChunkRegion:getConnectedNeighborWithLargestIsoWorldRegion() end
 
----@return ArrayList<IsoChunkRegion>
+---@return List<IsoChunkRegion>
 function __IsoChunkRegion:getConnectedNeighbors() end
 
 ---@return DataChunk

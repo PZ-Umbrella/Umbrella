@@ -33,6 +33,8 @@ function ISHandcraftAction.FromLogic(handcraftLogic, eatPercentage) end
 ---@return ISHandcraftAction
 function ISHandcraftAction.FromLogicMultiple(handcraftLogic) end
 
+function ISHandcraftAction:animEvent(event, parameter) end
+
 ---@param bSetJobType boolean
 function ISHandcraftAction:clearItemsProgressBar(bSetJobType) end
 
@@ -66,6 +68,8 @@ function ISHandcraftAction:setOnStart(_func, _target) end
 function ISHandcraftAction:start() end
 
 function ISHandcraftAction:stop() end
+
+function ISHandcraftAction:stopSound() end
 
 function ISHandcraftAction:update() end
 

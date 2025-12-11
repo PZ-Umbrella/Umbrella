@@ -132,9 +132,6 @@
 ---@class MapFiles
 
 ---(Not exposed)
----@class NearestWalls.ChunkData
-
----(Not exposed)
 ---@class PlayerCamera
 
 ---(Not exposed)

@@ -39,6 +39,9 @@ InputFlag.DontRecordInput = nil
 InputFlag.DontReplace = nil
 
 ---@type InputFlag
+InputFlag.EquipSecondary = nil
+
+---@type InputFlag
 InputFlag.FakeOutput = nil
 
 ---@type InputFlag
@@ -61,6 +64,9 @@ InputFlag.InheritCondition = nil
 
 ---@type InputFlag
 InputFlag.InheritCooked = nil
+
+---@type InputFlag
+InputFlag.InheritEquipped = nil
 
 ---@type InputFlag
 InputFlag.InheritFavorite = nil
@@ -192,6 +198,9 @@ InputFlag.RecordInput = nil
 InputFlag.ResearchInput = nil
 
 ---@type InputFlag
+InputFlag.SetActivated = nil
+
+---@type InputFlag
 InputFlag.SharpnessCheck = nil
 
 ---@type InputFlag
@@ -199,6 +208,9 @@ InputFlag.ToolLeft = nil
 
 ---@type InputFlag
 InputFlag.ToolRight = nil
+
+---@type InputFlag
+InputFlag.Unseal = nil
 
 ---@param arg0 string
 ---@return InputFlag

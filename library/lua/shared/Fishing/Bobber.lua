@@ -7,6 +7,7 @@ Fishing.ServerBobberManager = {} ---@type table<integer, Fishing.Bobber>
 
 ---@class Fishing.Bobber
 ---@field attractTimer integer
+---@field catchFishStarted boolean
 ---@field dx number
 ---@field dy number
 ---@field fish Fishing.Fish?
@@ -17,7 +18,10 @@ Fishing.ServerBobberManager = {} ---@type table<integer, Fishing.Bobber>
 ---@field lure string
 ---@field nibbleTimer integer
 ---@field player IsoPlayer
+---@field renderFunc function
 ---@field sq IsoGridSquare
+---@field x number
+---@field y number
 ---@field z number
 local __fishing_Bobber = {}
 

@@ -30,7 +30,7 @@ function __RadioScriptManager:UpdateScripts(day, hour, mins) end
 ---@return Map<integer, RadioChannel>
 function __RadioScriptManager:getChannels() end
 
----@return ArrayList
+---@return ArrayList<RadioChannel>
 function __RadioScriptManager:getChannelsList() end
 
 ---@return integer

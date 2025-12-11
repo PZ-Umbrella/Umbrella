@@ -94,6 +94,8 @@ function __vehicles_Create.GasTank(vehicle, part) end
 ---@param part VehiclePart
 function __vehicles_Create.Headlight(vehicle, part) end
 
+function __vehicles_Create.Headlight_Racecar(vehicle, part) end
+
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
 function __vehicles_Create.Radio(vehicle, part) end
@@ -101,6 +103,10 @@ function __vehicles_Create.Radio(vehicle, part) end
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
 function __vehicles_Create.Radio_HAM(vehicle, part) end
+
+function __vehicles_Create.Radio_Racecar(vehicle, part) end
+
+function __vehicles_Create.Seat_Racecar(vehicle, part) end
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart

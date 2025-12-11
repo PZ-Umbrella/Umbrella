@@ -48,12 +48,7 @@ local __EnumMap = {}
 ---Removes all mappings from this map.
 function __EnumMap:clear() end
 
----Returns a shallow copy of this enum map. The values themselves
---- are not cloned.
----@return EnumMap<K, V> # a shallow copy of this enum map
-function __EnumMap:clone() end
-
----@return any
+---@return EnumMap<K, V>
 function __EnumMap:clone() end
 
 ---Returns true if this map contains a mapping for the specified
@@ -121,16 +116,8 @@ function __EnumMap:keySet() end
 ---     null with the specified key.)
 function __EnumMap:put(key, value) end
 
----@param arg0 any
----@param arg1 any
----@return any
-function __EnumMap:put(arg0, arg1) end
-
----Copies all of the mappings from the specified map to this map.
---- These mappings will replace any mappings that this map had for
---- any of the keys currently in the specified map.
----@param m Map<K, V> the mappings to be stored in this map
-function __EnumMap:putAll(m) end
+---@param arg0 Map<K, V>
+function __EnumMap:putAll(arg0) end
 
 ---Removes the mapping for this key from this map if present.
 ---@param key any the key whose mapping is to be removed from the map
@@ -164,22 +151,15 @@ function EnumMap.new(keyType) end
 
 ---@generic K: Enum<K>
 ---@generic V
----Creates an enum map with the same key type as the specified enum
---- map, initially containing the same mappings (if any).
----@param m EnumMap<K, V> the enum map from which to initialize this enum map
+---@param arg0 EnumMap<K, V>
 ---@return EnumMap<K: Enum<K>, V>
-function EnumMap.new(m) end
+function EnumMap.new(arg0) end
 
 ---@generic K: Enum<K>
 ---@generic V
----Creates an enum map initialized from the specified map.  If the
---- specified map is an EnumMap instance, this constructor behaves
---- identically to EnumMap(EnumMap).  Otherwise, the specified map
---- must contain at least one mapping (in order to determine the new
---- enum map's key type).
----@param m Map<K, V> the map from which to initialize this enum map
+---@param arg0 Map<K, V>
 ---@return EnumMap<K: Enum<K>, V>
-function EnumMap.new(m) end
+function EnumMap.new(arg0) end
 
 ---@type Class<EnumMap>
 EnumMap.class = nil

@@ -3,7 +3,7 @@
 ---@class SandboxOptions.BooleanSandboxOption: BooleanConfigOption, SandboxOptions.SandboxOption
 local __BooleanSandboxOption = {}
 
----@return ConfigOption
+---@return BooleanConfigOption
 function __BooleanSandboxOption:asConfigOption() end
 
 ---@param table table
@@ -30,11 +30,11 @@ function __BooleanSandboxOption:isCustom() end
 function __BooleanSandboxOption:setCustom() end
 
 ---@param pageName string
----@return SandboxOptions.SandboxOption
+---@return SandboxOptions.BooleanSandboxOption
 function __BooleanSandboxOption:setPageName(pageName) end
 
 ---@param translation string
----@return SandboxOptions.SandboxOption
+---@return SandboxOptions.BooleanSandboxOption
 function __BooleanSandboxOption:setTranslation(translation) end
 
 ---@param table table

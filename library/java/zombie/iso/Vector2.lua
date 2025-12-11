@@ -27,9 +27,6 @@ function __Vector2:angleTo(other) end
 ---@return Vector2
 function __Vector2:clone() end
 
----@return any
-function __Vector2:clone() end
-
 ---Calculate the distance between this point and another
 ---@param other Vector2 The second point as vector
 ---@return number # The distance between them

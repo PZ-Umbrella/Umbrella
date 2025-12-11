@@ -96,7 +96,9 @@ function __IsoGridSquare:BurnWalls(explode) end
 function __IsoGridSquare:BurnWallsTCOnly() end
 
 ---@param playerIndex integer
-function __IsoGridSquare:CalcVisibility(playerIndex) end
+---@param isoGameCharacter IsoGameCharacter
+---@param visibilityData VisibilityData
+function __IsoGridSquare:CalcVisibility(playerIndex, isoGameCharacter, visibilityData) end
 
 ---@param gridSquare IsoGridSquare
 ---@param bVision boolean
@@ -271,10 +273,6 @@ function __IsoGridSquare:GetGLightLevel() end
 ---@return integer
 function __IsoGridSquare:GetRLightLevel() end
 
----@param type IsoObjectType
----@return boolean
-function __IsoGridSquare:Has(type) end
-
 ---@return boolean
 function __IsoGridSquare:HasEave() end
 
@@ -294,6 +292,15 @@ function __IsoGridSquare:HasSlopedRoofNorth() end
 function __IsoGridSquare:HasSlopedRoofWest() end
 
 ---@return boolean
+function __IsoGridSquare:HasStairTop() end
+
+---@return boolean
+function __IsoGridSquare:HasStairTopNorth() end
+
+---@return boolean
+function __IsoGridSquare:HasStairTopWest() end
+
+---@return boolean
 function __IsoGridSquare:HasStairs() end
 
 ---@return boolean
@@ -309,14 +316,6 @@ function __IsoGridSquare:HasStairsWest() end
 function __IsoGridSquare:HasTree() end
 
 function __IsoGridSquare:InvalidateSpecialObjectPaths() end
-
----@param flag IsoFlagType
----@return boolean
-function __IsoGridSquare:Is(flag) end
-
----@param flag string
----@return boolean
-function __IsoGridSquare:Is(flag) end
 
 ---@return boolean
 function __IsoGridSquare:IsOnScreen() end
@@ -502,6 +501,9 @@ function __IsoGridSquare:canReachTo(arg0) end
 ---@return boolean
 function __IsoGridSquare:canSpawnVermin() end
 
+---@return boolean
+function __IsoGridSquare:canStand() end
+
 ---@param arg0 BaseVehicle
 function __IsoGridSquare:checkForIntersectingCrops(arg0) end
 
@@ -573,19 +575,25 @@ function __IsoGridSquare:getAdjacentPathSquare(dir) end
 function __IsoGridSquare:getAdjacentSquare(dir) end
 
 ---@generic T
----@param arg0 T
----@param arg1 Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@param arg2 PZArrayList<ItemContainer>
+---@param in_paramToCompare T
+---@param in_isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
+---@param inout_containerList PZArrayList<ItemContainer>
 ---@return PZArrayList<ItemContainer>
-function __IsoGridSquare:getAllContainers(arg0, arg1, arg2) end
+function __IsoGridSquare:getAllContainers(in_paramToCompare, in_isValidPredicate, inout_containerList) end
 
 ---@generic T
----@param arg0 IsoDirections
----@param arg1 T
----@param arg2 Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@param arg3 PZArrayList<ItemContainer>
+---@param in_dir IsoDirections
+---@param in_paramToCompare T
+---@param in_isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
+---@param inout_containerList PZArrayList<ItemContainer>
 ---@return PZArrayList<ItemContainer>
-function __IsoGridSquare:getAllContainersFromAdjacentSquare(arg0, arg1, arg2, arg3) end
+function __IsoGridSquare:getAllContainersFromAdjacentSquare(
+	in_dir,
+	in_paramToCompare,
+	in_isValidPredicate,
+	inout_containerList
+)
+end
 
 ---@return IsoAnimalTrack
 function __IsoGridSquare:getAnimalTrack() end
@@ -745,9 +753,6 @@ function __IsoGridSquare:getGrassLike() end
 ---@return number
 function __IsoGridSquare:getGridSneakModifier(onlySolidTrans) end
 
----@return ZomboidBitFlag
-function __IsoGridSquare:getHasTypes() end
-
 ---@deprecated
 ---@return integer
 function __IsoGridSquare:getHashCodeObjects() end
@@ -857,11 +862,11 @@ function __IsoGridSquare:getN() end
 function __IsoGridSquare:getNextNonItemObjectIndex(arg0) end
 
 ---@generic T
----@param arg0 T
----@param arg1 Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@param arg2 PZArrayList<ItemContainer>
+---@param in_paramToCompare T
+---@param in_isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
+---@param inout_containerList PZArrayList<ItemContainer>
 ---@return PZArrayList<ItemContainer>
-function __IsoGridSquare:getObjectContainers(arg0, arg1, arg2) end
+function __IsoGridSquare:getObjectContainers(in_paramToCompare, in_isValidPredicate, inout_containerList) end
 
 ---@return PZArrayList<IsoObject> # the Objects
 function __IsoGridSquare:getObjects() end
@@ -878,6 +883,9 @@ function __IsoGridSquare:getOpenDoor(dir) end
 
 ---@return IsoGridOcclusionData
 function __IsoGridSquare:getOrCreateOcclusionData() end
+
+---@return IsoObject
+function __IsoGridSquare:getOre() end
 
 ---@param dx integer
 ---@param dy integer
@@ -976,6 +984,9 @@ function __IsoGridSquare:getSpecialObjects() end
 ---@return IsoGridSquare
 function __IsoGridSquare:getSquareAbove() end
 
+---@return IsoGridSquare
+function __IsoGridSquare:getSquareBelow() end
+
 ---@return string
 function __IsoGridSquare:getSquareRegion() end
 
@@ -997,6 +1008,9 @@ function __IsoGridSquare:getStairsHeightMin() end
 
 ---@return ArrayList<IsoMovingObject> # the StaticMovingObjects
 function __IsoGridSquare:getStaticMovingObjects() end
+
+---@return IsoObject
+function __IsoGridSquare:getStump() end
 
 ---@return kahlua.Array<IsoGridSquare>
 function __IsoGridSquare:getSurroundingSquares() end
@@ -1051,17 +1065,17 @@ function __IsoGridSquare:getTree() end
 function __IsoGridSquare:getVehicleContainer() end
 
 ---@generic T
----@param arg0 T
----@param arg1 Invokers.Params2.Boolean.ICallback<T, ItemContainer>
+---@param in_paramToCompare T
+---@param in_isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
 ---@return PZArrayList<ItemContainer>
-function __IsoGridSquare:getVehicleItemContainers(arg0, arg1) end
+function __IsoGridSquare:getVehicleItemContainers(in_paramToCompare, in_isValidPredicate) end
 
 ---@generic T
----@param arg0 T
----@param arg1 Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@param arg2 PZArrayList<ItemContainer>
+---@param in_paramToCompare T
+---@param in_isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
+---@param inout_containerList PZArrayList<ItemContainer>
 ---@return PZArrayList<ItemContainer>
-function __IsoGridSquare:getVehicleItemContainers(arg0, arg1, arg2) end
+function __IsoGridSquare:getVehicleItemContainers(in_paramToCompare, in_isValidPredicate, inout_containerList) end
 
 ---@param i integer
 ---@param playerIndex integer
@@ -1166,6 +1180,25 @@ function __IsoGridSquare:getZone() end
 
 ---@return string
 function __IsoGridSquare:getZoneType() end
+
+---@param flag IsoFlagType
+---@return boolean
+function __IsoGridSquare:has(flag) end
+
+---@param flag string
+---@return boolean
+function __IsoGridSquare:has(flag) end
+
+---@param type IsoObjectType
+---@return boolean
+function __IsoGridSquare:has(type) end
+
+---@param type integer
+---@return boolean
+function __IsoGridSquare:has(type) end
+
+---@return boolean
+function __IsoGridSquare:hasAdjacentCanStandSquare() end
 
 ---@return boolean
 function __IsoGridSquare:hasAdjacentFireObject() end
@@ -1506,6 +1539,10 @@ function __IsoGridSquare:isSomethingTo(other) end
 ---@param arg0 IsoObject
 ---@return boolean
 function __IsoGridSquare:isSpriteOnSouthOrEastWall(arg0) end
+
+---@param other IsoGridSquare
+---@return boolean
+function __IsoGridSquare:isStairBlockedTo(other) end
 
 ---@param arg0 IsoDirections
 ---@return boolean
@@ -1918,12 +1955,6 @@ function __IsoGridSquare:tryAddCorpseToWorld(arg0, arg1, arg2, arg3) end
 
 IsoGridSquare = {}
 
----@type boolean
-IsoGridSquare.CircleStencil = nil
-
----@type integer
-IsoGridSquare.IDMax = nil
-
 ---@type integer
 IsoGridSquare.PCF_NONE = nil
 
@@ -1933,14 +1964,8 @@ IsoGridSquare.PCF_NORTH = nil
 ---@type integer
 IsoGridSquare.PCF_WEST = nil
 
----@type number
-IsoGridSquare.RecalcLightTime = nil
-
 ---@type boolean
 IsoGridSquare.USE_WALL_SHADER = nil
-
----@type boolean
-IsoGridSquare.UseSlowCollision = nil
 
 ---@type integer
 IsoGridSquare.WALL_TYPE_E = nil
@@ -1963,11 +1988,17 @@ IsoGridSquare.cellGetSquare = nil
 ---@type ArrayList<IsoGridSquare>
 IsoGridSquare.choices = nil
 
+---@type boolean
+IsoGridSquare.circleStencil = nil
+
 ---@type number
 IsoGridSquare.gmod = nil
 
 ---@type integer
 IsoGridSquare.gridSquareCacheEmptyTimer = nil
+
+---@type integer
+IsoGridSquare.idMax = nil
 
 ---@type ArrayList<string>
 IsoGridSquare.ignoreBlockingSprites = nil
@@ -1982,7 +2013,13 @@ IsoGridSquare.isoGridSquareCache = nil
 IsoGridSquare.loadGridSquareCache = nil
 
 ---@type number
+IsoGridSquare.recalcLightTime = nil
+
+---@type number
 IsoGridSquare.rmod = nil
+
+---@type boolean
+IsoGridSquare.useSlowCollision = nil
 
 ---@return number # the darkStep
 function IsoGridSquare.getDarkStep() end

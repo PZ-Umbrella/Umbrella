@@ -1,5 +1,6 @@
 ---@meta _
 
+---Loaded area 'reality bubble' around the player(s). Don't confuse this with map cells - the name is a relic from when it did actually represent these. Only one instance should ever exist. Instantiating this class during gameplay will likely immediately crash.
 ---@class IsoCell
 local __IsoCell = {}
 
@@ -62,10 +63,10 @@ function __IsoCell:EnsureSurroundNotNull(xx, yy, zz) end
 ---@param arg2 boolean
 function __IsoCell:GetBuildingsInFrontOfCharacter(arg0, arg1, arg2) end
 
----@param arg0 IsoGridSquare
----@param arg1 IsoGridOcclusionData.OcclusionFilter
+---@param square IsoGridSquare
+---@param filter IsoGridOcclusionData.OcclusionFilter
 ---@return ArrayList<IsoBuilding>
-function __IsoCell:GetBuildingsInFrontOfMustSeeSquare(arg0, arg1) end
+function __IsoCell:GetBuildingsInFrontOfMustSeeSquare(square, filter) end
 
 ---@return integer
 function __IsoCell:GetEffectivePlayerRoomId() end
@@ -235,15 +236,16 @@ function __IsoCell:flattenAnyFoliage(arg0, arg1) end
 ---@return ArrayList<IsoMovingObject> # the addList
 function __IsoCell:getAddList() end
 
----@param arg0 IsoCell.BuildingSearchCriteria
----@param arg1 integer
+---@param criteria IsoCell.BuildingSearchCriteria
+---@param count integer
 ---@return Stack<BuildingScore>
-function __IsoCell:getBestBuildings(arg0, arg1) end
+function __IsoCell:getBestBuildings(criteria, count) end
 
+---@deprecated
 ---@return ArrayList<IsoBuilding> # the BuildingList
 function __IsoCell:getBuildingList() end
 
----@return HashMap<integer, BuildingScore> # the BuildingScores
+---@return HashMap<integer, BuildingScore>
 function __IsoCell:getBuildingScores() end
 
 ---@param wx integer
@@ -407,7 +409,7 @@ function __IsoCell:getProcessIsoObjects() end
 ---@return ArrayList<InventoryItem> # the ProcessItems
 function __IsoCell:getProcessItems() end
 
----@return ArrayList<InventoryItem> # the ProcessItemsRemove
+---@return Set<InventoryItem>
 function __IsoCell:getProcessItemsRemove() end
 
 ---@return ArrayList<IsoWorldInventoryObject>
@@ -431,6 +433,7 @@ function __IsoCell:getRandomOutdoorTile() end
 ---@return IsoGridSquare
 function __IsoCell:getRelativeGridSquare(x, y, z) end
 
+---@deprecated
 ---@return ArrayList<IsoGameCharacter> # the RemoteSurvivorList
 function __IsoCell:getRemoteSurvivorList() end
 
@@ -477,6 +480,7 @@ function __IsoCell:getWorldX() end
 ---@return integer # the worldY
 function __IsoCell:getWorldY() end
 
+---List of every zombie currently in the world.
 ---@return ArrayList<IsoZombie> # the ZombieList
 function __IsoCell:getZombieList() end
 
@@ -639,22 +643,16 @@ function __IsoCell:updateHeatSources() end
 IsoCell = {}
 
 ---@type integer
-IsoCell.CellSizeInChunks = nil
+IsoCell.CELL_SIZE_IN_CHUNKS = nil
 
 ---@type integer
-IsoCell.CellSizeInSquares = nil
+IsoCell.CELL_SIZE_IN_SQUARES = nil
 
 ---@type boolean
 IsoCell.ENABLE_SQUARE_CACHE = nil
 
----@type ArrayList<IsoGridSquare>
-IsoCell.GridStack = nil
-
 ---@type integer
 IsoCell.ISOANGLEFACTOR = nil
-
----@type integer
-IsoCell.MaxHeight = nil
 
 ---@type ArrayList<IsoGridSquare>
 IsoCell.MinusFloorCharacters = nil
@@ -693,13 +691,19 @@ IsoCell.VegetationCorpses = nil
 IsoCell.ZOMBIESCANBUDGET = nil
 
 ---@type Shader
-IsoCell.m_floorRenderShader = nil
+IsoCell.floorRenderShader = nil
 
----@type Shader
-IsoCell.m_wallRenderShader = nil
+---@type ArrayList<IsoGridSquare>
+IsoCell.gridStack = nil
+
+---@type integer
+IsoCell.maxHeight = nil
 
 ---@type kahlua.Array<IsoCell.PerPlayerRender>
 IsoCell.perPlayerRender = nil
+
+---@type Shader
+IsoCell.wallRenderShader = nil
 
 ---@return IsoDirections
 function IsoCell.FromMouseTile() end

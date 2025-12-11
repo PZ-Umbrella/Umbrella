@@ -44,16 +44,16 @@ function __SLSoundManager:updateKeys() end
 SLSoundManager = {}
 
 ---@type boolean
-SLSoundManager.DEBUG = nil
-
----@type boolean
-SLSoundManager.ENABLED = nil
+SLSoundManager.debug = nil
 
 ---@type StoryEmitter
-SLSoundManager.Emitter = nil
+SLSoundManager.emitter = nil
 
 ---@type boolean
-SLSoundManager.LUA_DEBUG = nil
+SLSoundManager.enabled = nil
+
+---@type boolean
+SLSoundManager.luaDebug = nil
 
 ---@return SLSoundManager
 function SLSoundManager.getInstance() end

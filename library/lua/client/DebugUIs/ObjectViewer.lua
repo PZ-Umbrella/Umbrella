@@ -1,6 +1,9 @@
 ---@meta
 
 ---@class ObjectViewer : ISCollapsableWindow
+---@field filter ISTextEntryBox
+---@field history table
+---@field historyPrev ISButton
 ---@field obj unknown
 ---@field objectView ISScrollingListBox
 ---@field sc number
@@ -31,7 +34,17 @@ function ObjectViewer:doDrawItem(y, item, alt) end
 
 function ObjectViewer:fill() end
 
+function ObjectViewer:fillJavaList(list) end
+
+function ObjectViewer:historyPop() end
+
+function ObjectViewer:historyPush() end
+
 function ObjectViewer:initialise() end
+
+function ObjectViewer:onFilterTextChange() end
+
+function ObjectViewer:onMouseDoubleClickListItem(item) end
 
 function ObjectViewer:onMouseDoubleClickOpenObject(item) end
 

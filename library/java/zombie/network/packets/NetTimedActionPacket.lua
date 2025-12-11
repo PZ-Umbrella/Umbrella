@@ -3,14 +3,22 @@
 ---@class NetTimedActionPacket: NetTimedAction, INetworkPacket
 local __NetTimedActionPacket = {}
 
----@param arg0 ByteBuffer
----@param arg1 UdpConnection
-function __NetTimedActionPacket:parse(arg0, arg1) end
+---@param connection UdpConnection
+function __NetTimedActionPacket:processClient(connection) end
 
----@param arg0 ByteBufferWriter
-function __NetTimedActionPacket:write(arg0) end
+---@param packetType PacketTypes.PacketType
+---@param connection UdpConnection
+function __NetTimedActionPacket:processServer(packetType, connection) end
+
+---@param values kahlua.Array<any>
+function __NetTimedActionPacket:setData(values) end
 
 NetTimedActionPacket = {}
+
+---@param actionName string
+---@param owner IsoPlayer
+---@param values kahlua.Array<any>
+function NetTimedActionPacket.createNewAndSend(actionName, owner, values) end
 
 ---@return NetTimedActionPacket
 function NetTimedActionPacket.new() end

@@ -112,10 +112,6 @@ function __Double:byteValue() end
 ---@return integer
 function __Double:compareTo(arg0) end
 
----@param arg0 any
----@return integer
-function __Double:compareTo(arg0) end
-
 ---@return Optional<number>
 function __Double:describeConstable() end
 
@@ -146,10 +142,6 @@ function __Double:longValue() end
 
 ---@param arg0 MethodHandles.Lookup
 ---@return number
-function __Double:resolveConstantDesc(arg0) end
-
----@param arg0 MethodHandles.Lookup
----@return any
 function __Double:resolveConstantDesc(arg0) end
 
 ---@return integer

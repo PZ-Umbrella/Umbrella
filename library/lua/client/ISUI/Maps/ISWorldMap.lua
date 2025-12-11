@@ -179,6 +179,9 @@ function ISWorldMap:createChildren() end
 
 function ISWorldMap:drawMapRect(bounds) end
 
+---@return unknown
+function ISWorldMap:getPrintMediaIconSize() end
+
 ---@param stashName string
 ---@return table
 function ISWorldMap:getStashMapBounds(stashName) end

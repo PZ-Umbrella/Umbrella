@@ -155,7 +155,8 @@ function __WorldMarkers:renderDirectionArrow(worldDraw) end
 ---@param playerIndex integer
 function __WorldMarkers:renderGridSquareMarkers(perPlayerRender, zLayer, playerIndex) end
 
-function __WorldMarkers:renderGridSquareMarkers() end
+---@param z integer
+function __WorldMarkers:renderGridSquareMarkers(z) end
 
 function __WorldMarkers:renderHomingPoint() end
 

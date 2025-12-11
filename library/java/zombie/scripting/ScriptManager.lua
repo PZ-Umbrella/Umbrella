@@ -106,10 +106,6 @@ function __ScriptManager:getAllItemFilters() end
 ---@return ArrayList<Item>
 function __ScriptManager:getAllItems() end
 
----@param arg0 string
----@return ArrayList<Item>
-function __ScriptManager:getAllItemsWithTag(arg0) end
-
 ---@return ArrayList<MannequinScript>
 function __ScriptManager:getAllMannequinScripts() end
 
@@ -179,6 +175,14 @@ function __ScriptManager:getAnimationsMesh(name) end
 ---@return CraftRecipe
 function __ScriptManager:getBuildableRecipe(arg0) end
 
+---@param name string
+---@return CharacterProfessionDefinitionScript
+function __ScriptManager:getCharacterProfessionScript(name) end
+
+---@param name string
+---@return CharacterTraitDefinitionScript
+function __ScriptManager:getCharacterTraitScript(name) end
+
 ---@return string
 function __ScriptManager:getChecksum() end
 
@@ -246,9 +250,9 @@ function __ScriptManager:getItemTypeForClothingItem(clothingItem) end
 ---@return ArrayList<Item>
 function __ScriptManager:getItemsByType(type) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@return ArrayList<Item>
-function __ScriptManager:getItemsTag(tag) end
+function __ScriptManager:getItemsTag(itemTag) end
 
 ---@param name string
 ---@return MannequinScript

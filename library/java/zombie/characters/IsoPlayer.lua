@@ -189,8 +189,11 @@ function __IsoPlayer:getAsleepTime() end
 ---@return ArrayList<IsoAnimal>
 function __IsoPlayer:getAttachedAnimals() end
 
----@return string
+---@return AttackType
 function __IsoPlayer:getAttackType() end
+
+---@return boolean
+function __IsoPlayer:getAutoDrink() end
 
 ---@return IsoCell # the cell
 function __IsoPlayer:getCell() end
@@ -198,13 +201,9 @@ function __IsoPlayer:getCell() end
 ---@return integer
 function __IsoPlayer:getClearSpottedTimer() end
 
----@deprecated
+---@param closestTo IsoGameCharacter
 ---@return IsoGameCharacter
-function __IsoPlayer:getClosestZombieDist() end
-
----@param closestTo IsoZombie
----@return IsoZombie
-function __IsoPlayer:getClosestZombieToOtherZombie(closestTo) end
+function __IsoPlayer:getClosestTo(closestTo) end
 
 ---@return number
 function __IsoPlayer:getCombatSpeed() end
@@ -285,6 +284,9 @@ function __IsoPlayer:getJoypadBind() end
 
 ---@return Vector2
 function __IsoPlayer:getLastAngle() end
+
+---@return integer
+function __IsoPlayer:getLastRemoteUpdate() end
 
 ---@return number
 function __IsoPlayer:getLastSeenZomboidTime() end
@@ -407,6 +409,9 @@ function __IsoPlayer:getTagPrefix() end
 ---@return integer
 function __IsoPlayer:getTicksSinceSeenZombie() end
 
+---@return integer
+function __IsoPlayer:getTimeSinceLastNetData() end
+
 ---@return number
 function __IsoPlayer:getTimeSinceLastStab() end
 
@@ -482,6 +487,9 @@ function __IsoPlayer:isAimControlActive() end
 function __IsoPlayer:isAimKeyDown() end
 
 ---@return boolean
+function __IsoPlayer:isAimKeyDownIgnoreMouse() end
+
+---@return boolean
 function __IsoPlayer:isAiming() end
 
 ---@return boolean
@@ -501,6 +509,10 @@ function __IsoPlayer:isAttackFromBehind() end
 
 ---@return boolean
 function __IsoPlayer:isAttackStarted() end
+
+---@param attackType AttackType
+---@return boolean
+function __IsoPlayer:isAttackType(attackType) end
 
 ---@return boolean
 function __IsoPlayer:isAttacking() end
@@ -534,9 +546,6 @@ function __IsoPlayer:isClimbOverWallStruggle() end
 
 ---@return boolean
 function __IsoPlayer:isClimbOverWallSuccess() end
-
----@return boolean
-function __IsoPlayer:isDeaf() end
 
 ---@return boolean
 function __IsoPlayer:isDoingActionThatCanBeCancelled() end
@@ -625,9 +634,6 @@ function __IsoPlayer:isMeleePressed() end
 
 ---@return boolean
 function __IsoPlayer:isNearVehicle() end
-
----@return boolean
-function __IsoPlayer:isNetworkTeleportEnabled() end
 
 ---@return boolean
 function __IsoPlayer:isNoClip() end
@@ -775,6 +781,8 @@ function __IsoPlayer:pressedMovement(ignoreBlock) end
 
 function __IsoPlayer:preupdate() end
 
+function __IsoPlayer:processWakingUp() end
+
 function __IsoPlayer:removeAllAttachedAnimals() end
 
 ---@param arg0 IsoAnimal
@@ -835,7 +843,7 @@ function __IsoPlayer:setAttackFromBehind(attackFromBehind) end
 ---@param arg0 boolean
 function __IsoPlayer:setAttackStarted(arg0) end
 
----@param attackType string
+---@param attackType AttackType
 function __IsoPlayer:setAttackType(attackType) end
 
 ---@param arg0 number
@@ -855,6 +863,9 @@ function __IsoPlayer:setAuthorizedHandToHand(arg0) end
 
 ---@param arg0 boolean
 function __IsoPlayer:setAuthorizedHandToHandAction(arg0) end
+
+---@param autoDrink boolean
+function __IsoPlayer:setAutoDrink(autoDrink) end
 
 ---@param b boolean
 function __IsoPlayer:setBannedAttacking(b) end
@@ -892,8 +903,9 @@ function __IsoPlayer:setDragCharacter(DragCharacter) end
 ---@param DragObject IsoMovingObject
 function __IsoPlayer:setDragObject(DragObject) end
 
----@param arg0 integer
-function __IsoPlayer:setExtraInfoFlags(arg0) end
+---@param flags integer
+---@param isForced boolean
+function __IsoPlayer:setExtraInfoFlags(flags, isForced) end
 
 ---@param pvp boolean
 function __IsoPlayer:setFactionPvp(pvp) end
@@ -917,6 +929,10 @@ function __IsoPlayer:setForceRun(forceRun) end
 
 ---@param forceSprint boolean
 function __IsoPlayer:setForceSprint(forceSprint) end
+
+---@param aGhostMode boolean
+---@param isForced boolean
+function __IsoPlayer:setGhostMode(aGhostMode, isForced) end
 
 ---@param aGhostMode boolean
 function __IsoPlayer:setGhostMode(aGhostMode) end
@@ -966,6 +982,9 @@ function __IsoPlayer:setLastAngle(lastAngle) end
 ---@param arg0 boolean
 function __IsoPlayer:setLastAttackWasHandToHand(arg0) end
 
+---@param lastRemoteUpdate integer
+function __IsoPlayer:setLastRemoteUpdate(lastRemoteUpdate) end
+
 ---@param LastSpotted Stack<IsoMovingObject>
 function __IsoPlayer:setLastSpotted(LastSpotted) end
 
@@ -984,8 +1003,9 @@ function __IsoPlayer:setMoodleCantSprint(b) end
 ---@param moveSpeed number
 function __IsoPlayer:setMoveSpeed(moveSpeed) end
 
----@param b boolean
-function __IsoPlayer:setNetworkTeleportEnabled(b) end
+---@param noClip boolean
+---@param isForced boolean
+function __IsoPlayer:setNoClip(noClip, isForced) end
 
 ---@param noClip boolean
 function __IsoPlayer:setNoClip(noClip) end
@@ -1053,6 +1073,9 @@ function __IsoPlayer:setTagPrefix(newTag) end
 
 ---@param TicksSinceSeenZombie integer
 function __IsoPlayer:setTicksSinceSeenZombie(TicksSinceSeenZombie) end
+
+---@param timeSinceLastNetData integer
+function __IsoPlayer:setTimeSinceLastNetData(timeSinceLastNetData) end
 
 ---@param timeSinceLastStab number
 function __IsoPlayer:setTimeSinceLastStab(timeSinceLastStab) end
@@ -1134,11 +1157,15 @@ function __IsoPlayer:triggerMusicIntensityEvent(arg0) end
 
 function __IsoPlayer:update() end
 
+function __IsoPlayer:updateEnduranceWhileInVehicle() end
+
 function __IsoPlayer:updateEnduranceWhileSitting() end
 
 function __IsoPlayer:updateLOS() end
 
 function __IsoPlayer:updateMovementRates() end
+
+function __IsoPlayer:updateRemotePlayerInVehicle() end
 
 function __IsoPlayer:updateUsername() end
 
@@ -1204,9 +1231,6 @@ function IsoPlayer.getPlayerIndex() end
 
 ---@return ArrayList<IsoPlayer>
 function IsoPlayer.getPlayers() end
-
----@return Stack<string>
-function IsoPlayer.getStaticTraits() end
 
 ---@return string
 function IsoPlayer.getUniqueFileName() end

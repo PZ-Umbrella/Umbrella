@@ -14,11 +14,11 @@ function __Fixer:getNumberOfUse() end
 
 Fixer = {}
 
----@param arg0 string
----@param arg1 LinkedList<Fixing.FixerSkill>
----@param arg2 integer
+---@param name string
+---@param skills LinkedList<Fixing.FixerSkill>
+---@param numberOfUse integer
 ---@return Fixing.Fixer
-function Fixer.new(arg0, arg1, arg2) end
+function Fixer.new(name, skills, numberOfUse) end
 
 ---@type Class<Fixing.Fixer>
 Fixer.class = nil

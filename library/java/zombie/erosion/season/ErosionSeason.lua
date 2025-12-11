@@ -6,9 +6,6 @@ local __ErosionSeason = {}
 ---@return ErosionSeason
 function __ErosionSeason:clone() end
 
----@return any
-function __ErosionSeason:clone() end
-
 ---@return number
 function __ErosionSeason:getCurDayPercent() end
 

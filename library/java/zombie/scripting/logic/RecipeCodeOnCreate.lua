@@ -25,6 +25,10 @@ function RecipeCodeOnCreate.applyLidCondition(arg0, arg1) end
 ---@param arg1 IsoGameCharacter
 function RecipeCodeOnCreate.carveSpear(arg0, arg1) end
 
+---@param data CraftRecipeData
+---@param character IsoGameCharacter
+function RecipeCodeOnCreate.copyKey(data, character) end
+
 ---@param arg0 CraftRecipeData
 ---@param arg1 IsoGameCharacter
 function RecipeCodeOnCreate.createLogStack(arg0, arg1) end
@@ -81,6 +85,18 @@ function RecipeCodeOnCreate.fireHardenSpear(arg0, arg1) end
 ---@param arg1 IsoGameCharacter
 function RecipeCodeOnCreate.fixFishingRope(arg0, arg1) end
 
+---@param data CraftRecipeData
+---@param character IsoGameCharacter
+function RecipeCodeOnCreate.genericBetterFixing(data, character) end
+
+---@param data CraftRecipeData
+---@param character IsoGameCharacter
+function RecipeCodeOnCreate.genericEvenBetterFixing(data, character) end
+
+---@param data CraftRecipeData
+---@param character IsoGameCharacter
+function RecipeCodeOnCreate.genericFixing(data, character) end
+
 ---@param arg0 CraftRecipeData
 ---@param arg1 IsoGameCharacter
 function RecipeCodeOnCreate.inheritColorFromMaterial(arg0, arg1) end
@@ -96,10 +112,6 @@ function RecipeCodeOnCreate.inheritFoodNameBowl(arg0, arg1) end
 ---@param arg0 CraftRecipeData
 ---@param arg1 IsoGameCharacter
 function RecipeCodeOnCreate.knappFlake(arg0, arg1) end
-
----@param arg0 CraftRecipeData
----@param arg1 IsoGameCharacter
-function RecipeCodeOnCreate.lightHurricaneLantern(arg0, arg1) end
 
 ---@param arg0 CraftRecipeData
 ---@param arg1 IsoGameCharacter
@@ -125,9 +137,13 @@ function RecipeCodeOnCreate.makeSushi(arg0, arg1) end
 ---@param arg1 IsoGameCharacter
 function RecipeCodeOnCreate.minorCondition(arg0, arg1) end
 
----@param arg0 CraftRecipeData
----@param arg1 IsoGameCharacter
-function RecipeCodeOnCreate.openBeer(arg0, arg1) end
+---@param data CraftRecipeData
+---@param character IsoGameCharacter
+function RecipeCodeOnCreate.name_muffins(data, character) end
+
+---@param data CraftRecipeData
+---@param character IsoGameCharacter
+function RecipeCodeOnCreate.openAndEat(data, character) end
 
 ---@param arg0 CraftRecipeData
 ---@param arg1 IsoGameCharacter
@@ -140,6 +156,10 @@ function RecipeCodeOnCreate.openDentedCan(arg0, arg1) end
 ---@param arg0 CraftRecipeData
 ---@param arg1 IsoGameCharacter
 function RecipeCodeOnCreate.openDentedCanKnife(arg0, arg1) end
+
+---@param data CraftRecipeData
+---@param isoGameCharacter IsoGameCharacter
+function RecipeCodeOnCreate.openMacAndCheese(data, isoGameCharacter) end
 
 ---@param arg0 CraftRecipeData
 ---@param arg1 IsoGameCharacter
@@ -164,6 +184,10 @@ function RecipeCodeOnCreate.pickAramidThread(arg0, arg1) end
 ---@param arg0 CraftRecipeData
 ---@param arg1 IsoGameCharacter
 function RecipeCodeOnCreate.placeInBox(arg0, arg1) end
+
+---@param data CraftRecipeData
+---@param character IsoGameCharacter
+function RecipeCodeOnCreate.placeItemTypeInBox(data, character) end
 
 ---@param arg0 CraftRecipeData
 ---@param arg1 IsoGameCharacter
@@ -272,6 +296,10 @@ function RecipeCodeOnCreate.torchBatteryInsert(arg0, arg1) end
 ---@param arg0 CraftRecipeData
 ---@param arg1 IsoGameCharacter
 function RecipeCodeOnCreate.unpackBox(arg0, arg1) end
+
+---@param data CraftRecipeData
+---@param character IsoGameCharacter
+function RecipeCodeOnCreate.unpackItemTypeFromBox(data, character) end
 
 ---@param arg0 CraftRecipeData
 ---@param arg1 IsoGameCharacter

@@ -16,9 +16,6 @@
 ---@class AnimalZone
 
 ---(Not exposed)
----@class AnimalZoneJunction
-
----(Not exposed)
 ---@class VirtualAnimalState
 
 zombie.characters.animals = {}

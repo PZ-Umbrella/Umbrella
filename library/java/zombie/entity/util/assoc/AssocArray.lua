@@ -13,8 +13,8 @@ function __AssocArray:add(arg0, arg1) end
 ---@param arg2 V
 function __AssocArray:add(arg0, arg1, arg2) end
 
----@param arg0 AssocArray<K, V>
-function __AssocArray:addAll(arg0) end
+---@param other AssocArray<K, V>
+function __AssocArray:addAll(other) end
 
 function __AssocArray:clear() end
 
@@ -33,8 +33,8 @@ function __AssocArray:ensureCapacity(arg0) end
 ---@return boolean
 function __AssocArray:equals(arg0) end
 
----@param arg0 BiConsumer<any, any>
-function __AssocArray:forEach(arg0) end
+---@param action BiConsumer<any, any>
+function __AssocArray:forEach(action) end
 
 ---@param arg0 K
 ---@return V
@@ -75,8 +75,8 @@ function __AssocArray:lastIndexOfValue(arg0) end
 ---@return V
 function __AssocArray:put(arg0, arg1) end
 
----@param arg0 AssocArray<K, V>
-function __AssocArray:putAll(arg0) end
+---@param other AssocArray<K, V>
+function __AssocArray:putAll(other) end
 
 ---@param arg0 K
 ---@return V
@@ -91,8 +91,8 @@ function __AssocArray:removeIndex(arg0) end
 ---@return V
 function __AssocArray:set(arg0, arg1) end
 
----@param arg0 AssocArray<K, V>
-function __AssocArray:setAll(arg0) end
+---@param other AssocArray<K, V>
+function __AssocArray:setAll(other) end
 
 ---@return integer
 function __AssocArray:size() end

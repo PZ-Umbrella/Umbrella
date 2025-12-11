@@ -14,8 +14,8 @@ function __MapItem:clearDefaultAnnotations() end
 ---@return string
 function __MapItem:getMapID() end
 
----@return integer
-function __MapItem:getSaveType() end
+---@return string
+function __MapItem:getMediaId() end
 
 ---@return WorldMapSymbols
 function __MapItem:getSymbols() end
@@ -34,7 +34,7 @@ function __MapItem:setMapID(mapID) end
 MapItem = {}
 
 ---@type MapItem
-MapItem.WORLD_MAP_INSTANCE = nil
+MapItem.worldMapInstance = nil
 
 function MapItem.LoadWorldMap() end
 

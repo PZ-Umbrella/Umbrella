@@ -184,17 +184,17 @@ function __ItemContainer:contains(item) end
 ---@return boolean
 function __ItemContainer:contains(itemToFind, doInv) end
 
----@param arg0 Invokers.Params2.Boolean.IParam2<InventoryItem>
----@param arg1 boolean
+---@param in_predicate Invokers.Params2.Boolean.IParam2<InventoryItem>
+---@param doInv boolean
 ---@return boolean
-function __ItemContainer:contains(arg0, arg1) end
+function __ItemContainer:contains(in_predicate, doInv) end
 
 ---@generic T
----@param arg0 T
----@param arg1 Invokers.Params2.Boolean.ICallback<T, InventoryItem>
----@param arg2 boolean
+---@param in_itemToCompare T
+---@param in_predicate Invokers.Params2.Boolean.ICallback<T, InventoryItem>
+---@param doInv boolean
 ---@return boolean
-function __ItemContainer:contains(arg0, arg1, arg2) end
+function __ItemContainer:contains(in_itemToCompare, in_predicate, doInv) end
 
 ---@param type string
 ---@param doInv boolean
@@ -240,29 +240,29 @@ function __ItemContainer:containsID(id) end
 ---@return boolean
 function __ItemContainer:containsRecursive(item) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@return boolean
-function __ItemContainer:containsTag(tag) end
+function __ItemContainer:containsTag(itemTag) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@param functionObj function
 ---@return boolean
-function __ItemContainer:containsTagEval(tag, functionObj) end
+function __ItemContainer:containsTagEval(itemTag, functionObj) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@param functionObj function
 ---@param arg any
 ---@return boolean
-function __ItemContainer:containsTagEvalArgRecurse(tag, functionObj, arg) end
+function __ItemContainer:containsTagEvalArgRecurse(itemTag, functionObj, arg) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@param functionObj function
 ---@return boolean
-function __ItemContainer:containsTagEvalRecurse(tag, functionObj) end
+function __ItemContainer:containsTagEvalRecurse(itemTag, functionObj) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@return boolean
-function __ItemContainer:containsTagRecurse(tag) end
+function __ItemContainer:containsTagRecurse(itemTag) end
 
 ---@param type string
 ---@return boolean
@@ -303,17 +303,17 @@ function __ItemContainer:emptyIt() end
 ---@return InventoryItem
 function __ItemContainer:findHumanCorpseItem() end
 
----@param arg0 Invokers.Params2.Boolean.IParam2<InventoryItem>
----@param arg1 boolean
+---@param in_predicate Invokers.Params2.Boolean.IParam2<InventoryItem>
+---@param doInv boolean
 ---@return InventoryItem
-function __ItemContainer:findItem(arg0, arg1) end
+function __ItemContainer:findItem(in_predicate, doInv) end
 
 ---@generic T
----@param arg0 T
----@param arg1 Invokers.Params2.Boolean.ICallback<T, InventoryItem>
----@param arg2 boolean
+---@param in_itemToCompare T
+---@param in_predicate Invokers.Params2.Boolean.ICallback<T, InventoryItem>
+---@param doInv boolean
 ---@return InventoryItem
-function __ItemContainer:findItem(arg0, arg1, arg2) end
+function __ItemContainer:findItem(in_itemToCompare, in_predicate, doInv) end
 
 ---@param arg0 string
 ---@param arg1 boolean
@@ -406,52 +406,56 @@ function __ItemContainer:getAllItems(items, inInv) end
 ---@return ArrayList<InventoryItem>
 function __ItemContainer:getAllRecurse(predicate, result) end
 
----@param tag string
+---@param itemTag ItemTag
+---@return ArrayList<InventoryItem>
+function __ItemContainer:getAllTag(itemTag) end
+
+---@param itemTag ItemTag
 ---@param result ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:getAllTag(tag, result) end
+function __ItemContainer:getAllTag(itemTag, result) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@param functionObj function
 ---@param result ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:getAllTagEval(tag, functionObj, result) end
+function __ItemContainer:getAllTagEval(itemTag, functionObj, result) end
 
----@param type string
+---@param itemTag ItemTag
 ---@param functionObj function
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:getAllTagEval(type, functionObj) end
+function __ItemContainer:getAllTagEval(itemTag, functionObj) end
 
----@param tag string
----@param functionObj function
----@param arg any
----@param result ArrayList<InventoryItem>
----@return ArrayList<InventoryItem>
-function __ItemContainer:getAllTagEvalArg(tag, functionObj, arg, result) end
-
----@param type string
----@param functionObj function
----@param arg any
----@return ArrayList<InventoryItem>
-function __ItemContainer:getAllTagEvalArg(type, functionObj, arg) end
-
----@param tag string
+---@param itemTag ItemTag
 ---@param functionObj function
 ---@param arg any
 ---@param result ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:getAllTagEvalArgRecurse(tag, functionObj, arg, result) end
+function __ItemContainer:getAllTagEvalArg(itemTag, functionObj, arg, result) end
 
----@param tag string
+---@param itemTag ItemTag
+---@param functionObj function
+---@param arg any
+---@return ArrayList<InventoryItem>
+function __ItemContainer:getAllTagEvalArg(itemTag, functionObj, arg) end
+
+---@param itemTag ItemTag
+---@param functionObj function
+---@param arg any
+---@param result ArrayList<InventoryItem>
+---@return ArrayList<InventoryItem>
+function __ItemContainer:getAllTagEvalArgRecurse(itemTag, functionObj, arg, result) end
+
+---@param itemTag ItemTag
 ---@param functionObj function
 ---@param result ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:getAllTagEvalRecurse(tag, functionObj, result) end
+function __ItemContainer:getAllTagEvalRecurse(itemTag, functionObj, result) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@param result ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:getAllTagRecurse(tag, result) end
+function __ItemContainer:getAllTagRecurse(itemTag, result) end
 
 ---@param type string
 ---@param result ArrayList<InventoryItem>
@@ -704,35 +708,35 @@ function __ItemContainer:getCountEvalRecurse(functionObj) end
 ---@return integer
 function __ItemContainer:getCountRecurse(predicate) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@return integer
-function __ItemContainer:getCountTag(tag) end
+function __ItemContainer:getCountTag(itemTag) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@param functionObj function
 ---@return integer
-function __ItemContainer:getCountTagEval(tag, functionObj) end
+function __ItemContainer:getCountTagEval(itemTag, functionObj) end
 
----@param tag string
----@param functionObj function
----@param arg any
----@return integer
-function __ItemContainer:getCountTagEvalArg(tag, functionObj, arg) end
-
----@param tag string
+---@param itemTag ItemTag
 ---@param functionObj function
 ---@param arg any
 ---@return integer
-function __ItemContainer:getCountTagEvalArgRecurse(tag, functionObj, arg) end
+function __ItemContainer:getCountTagEvalArg(itemTag, functionObj, arg) end
 
----@param tag string
+---@param itemTag ItemTag
+---@param functionObj function
+---@param arg any
+---@return integer
+function __ItemContainer:getCountTagEvalArgRecurse(itemTag, functionObj, arg) end
+
+---@param itemTag ItemTag
 ---@param functionObj function
 ---@return integer
-function __ItemContainer:getCountTagEvalRecurse(tag, functionObj) end
+function __ItemContainer:getCountTagEvalRecurse(itemTag, functionObj) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@return integer
-function __ItemContainer:getCountTagRecurse(tag) end
+function __ItemContainer:getCountTagRecurse(itemTag) end
 
 ---@param type string
 ---@return integer
@@ -819,29 +823,29 @@ function __ItemContainer:getFirstFluidContainer(arg0) end
 ---@return InventoryItem
 function __ItemContainer:getFirstRecurse(predicate) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@return InventoryItem
-function __ItemContainer:getFirstTag(tag) end
+function __ItemContainer:getFirstTag(itemTag) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@param functionObj function
 ---@return InventoryItem
-function __ItemContainer:getFirstTagEval(tag, functionObj) end
+function __ItemContainer:getFirstTagEval(itemTag, functionObj) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@param functionObj function
 ---@param arg any
 ---@return InventoryItem
-function __ItemContainer:getFirstTagEvalArgRecurse(tag, functionObj, arg) end
+function __ItemContainer:getFirstTagEvalArgRecurse(itemTag, functionObj, arg) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@param functionObj function
 ---@return InventoryItem
-function __ItemContainer:getFirstTagEvalRecurse(tag, functionObj) end
+function __ItemContainer:getFirstTagEvalRecurse(itemTag, functionObj) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@return InventoryItem
-function __ItemContainer:getFirstTagRecurse(tag) end
+function __ItemContainer:getFirstTagRecurse(itemTag) end
 
 ---@param type string
 ---@return InventoryItem
@@ -858,10 +862,19 @@ function __ItemContainer:getFirstTypeEval(type, functionObj) end
 ---@return InventoryItem
 function __ItemContainer:getFirstTypeEvalArgRecurse(type, functionObj, arg) end
 
+---@param key ItemKey
+---@param functionObj function
+---@return InventoryItem
+function __ItemContainer:getFirstTypeEvalRecurse(key, functionObj) end
+
 ---@param type string
 ---@param functionObj function
 ---@return InventoryItem
 function __ItemContainer:getFirstTypeEvalRecurse(type, functionObj) end
+
+---@param key ItemKey
+---@return InventoryItem
+function __ItemContainer:getFirstTypeRecurse(key) end
 
 ---@param type string
 ---@return InventoryItem
@@ -901,19 +914,19 @@ function __ItemContainer:getItemCountFromTypeRecurse(type) end
 ---@return integer
 function __ItemContainer:getItemCountRecurse(type) end
 
----@param arg0 string
----@param arg1 IsoGameCharacter
----@param arg2 boolean
----@param arg3 boolean
----@param arg4 boolean
+---@param itemTag ItemTag
+---@param chr IsoGameCharacter
+---@param notEquipped boolean
+---@param ignoreBroken boolean
+---@param includeInv boolean
 ---@return InventoryItem
-function __ItemContainer:getItemFromTag(arg0, arg1, arg2, arg3, arg4) end
+function __ItemContainer:getItemFromTag(itemTag, chr, notEquipped, ignoreBroken, includeInv) end
 
----@param arg0 string
----@param arg1 boolean
----@param arg2 boolean
+---@param itemTag ItemTag
+---@param ignoreBroken boolean
+---@param includeInv boolean
 ---@return InventoryItem
-function __ItemContainer:getItemFromTag(arg0, arg1, arg2) end
+function __ItemContainer:getItemFromTag(itemTag, ignoreBroken, includeInv) end
 
 ---@param type string
 ---@param chr IsoGameCharacter
@@ -1099,70 +1112,70 @@ function __ItemContainer:getSomeEvalRecurse(functionObj, count) end
 ---@return ArrayList<InventoryItem>
 function __ItemContainer:getSomeRecurse(predicate, count, result) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@param count integer
 ---@param result ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:getSomeTag(tag, count, result) end
+function __ItemContainer:getSomeTag(itemTag, count, result) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@param count integer
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:getSomeTag(tag, count) end
+function __ItemContainer:getSomeTag(itemTag, count) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@param functionObj function
 ---@param count integer
 ---@param result ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:getSomeTagEval(tag, functionObj, count, result) end
+function __ItemContainer:getSomeTagEval(itemTag, functionObj, count, result) end
 
----@param tag string
----@param functionObj function
----@param arg any
----@param count integer
----@param result ArrayList<InventoryItem>
----@return ArrayList<InventoryItem>
-function __ItemContainer:getSomeTagEvalArg(tag, functionObj, arg, count, result) end
-
----@param tag string
+---@param itemTag ItemTag
 ---@param functionObj function
 ---@param arg any
 ---@param count integer
 ---@param result ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:getSomeTagEvalArgRecurse(tag, functionObj, arg, count, result) end
+function __ItemContainer:getSomeTagEvalArg(itemTag, functionObj, arg, count, result) end
 
----@param tag string
+---@param itemTag ItemTag
+---@param functionObj function
+---@param arg any
+---@param count integer
+---@param result ArrayList<InventoryItem>
+---@return ArrayList<InventoryItem>
+function __ItemContainer:getSomeTagEvalArgRecurse(itemTag, functionObj, arg, count, result) end
+
+---@param itemTag ItemTag
 ---@param functionObj function
 ---@param arg any
 ---@param count integer
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:getSomeTagEvalArgRecurse(tag, functionObj, arg, count) end
+function __ItemContainer:getSomeTagEvalArgRecurse(itemTag, functionObj, arg, count) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@param functionObj function
 ---@param count integer
 ---@param result ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:getSomeTagEvalRecurse(tag, functionObj, count, result) end
+function __ItemContainer:getSomeTagEvalRecurse(itemTag, functionObj, count, result) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@param functionObj function
 ---@param count integer
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:getSomeTagEvalRecurse(tag, functionObj, count) end
+function __ItemContainer:getSomeTagEvalRecurse(itemTag, functionObj, count) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@param count integer
 ---@param result ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:getSomeTagRecurse(tag, count, result) end
+function __ItemContainer:getSomeTagRecurse(itemTag, count, result) end
 
----@param tag string
+---@param itemTag ItemTag
 ---@param count integer
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:getSomeTagRecurse(tag, count) end
+function __ItemContainer:getSomeTagRecurse(itemTag, count) end
 
 ---@param type string
 ---@param count integer
@@ -1377,6 +1390,9 @@ function __ItemContainer:isItemAllowed(item) end
 function __ItemContainer:isMicrowave() end
 
 ---@return boolean
+function __ItemContainer:isOccupiedVehicleSeat() end
+
+---@return boolean
 function __ItemContainer:isPowered() end
 
 ---@param item InventoryItem
@@ -1505,6 +1521,9 @@ function __ItemContainer:setType(type) end
 
 ---@param weightReduction integer
 function __ItemContainer:setWeightReduction(weightReduction) end
+
+---@param other ItemContainer
+function __ItemContainer:takeItemsFrom(other) end
 
 ---@return string
 function __ItemContainer:toString() end

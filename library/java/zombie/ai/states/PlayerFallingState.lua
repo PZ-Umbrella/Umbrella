@@ -13,6 +13,9 @@ function __PlayerFallingState:execute(owner) end
 function __PlayerFallingState:exit(owner) end
 
 ---@return boolean
+function __PlayerFallingState:isProcessedOnExit() end
+
+---@return boolean
 function __PlayerFallingState:isSyncInIdle() end
 
 ---@return boolean
@@ -23,6 +26,10 @@ function __PlayerFallingState:isSyncOnExit() end
 
 ---@return boolean
 function __PlayerFallingState:isSyncOnSquare() end
+
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __PlayerFallingState:processOnExit(owner, delegate) end
 
 ---@param arg0 IsoGameCharacter
 ---@param arg1 State.Stage

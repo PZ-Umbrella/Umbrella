@@ -15,6 +15,9 @@ function __CraftLogicScript:OnScriptsLoaded(arg0) end
 
 function __CraftLogicScript:PreReload() end
 
+---@return string
+function __CraftLogicScript:getActionAnim() end
+
 ---@deprecated
 ---@return ArrayList<any>
 function __CraftLogicScript:getCraftProcessorScripts() end

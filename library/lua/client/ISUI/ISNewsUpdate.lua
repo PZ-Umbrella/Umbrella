@@ -13,7 +13,7 @@
 ---@field versionCombo ISComboBox
 ---@field yes ISButton?
 ---@field yesno boolean
-ISNewsUpdate = ISPanelJoypad:derive("ISNewsUpdate")
+ISNewsUpdate = {}
 ISNewsUpdate.Type = "ISNewsUpdate"
 
 function ISNewsUpdate:destroy() end

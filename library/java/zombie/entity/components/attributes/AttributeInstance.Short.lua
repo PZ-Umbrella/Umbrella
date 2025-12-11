@@ -6,14 +6,7 @@ local __Short = {}
 ---@return AttributeInstance.Short
 function __Short:copy() end
 
----@return AttributeInstance
-function __Short:copy() end
-
 ---@param arg0 AttributeInstance.Short
----@return boolean
-function __Short:equalTo(arg0) end
-
----@param arg0 AttributeInstance
 ---@return boolean
 function __Short:equalTo(arg0) end
 

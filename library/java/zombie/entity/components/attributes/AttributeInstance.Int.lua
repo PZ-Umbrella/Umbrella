@@ -6,14 +6,7 @@ local __Int = {}
 ---@return AttributeInstance.Int
 function __Int:copy() end
 
----@return AttributeInstance
-function __Int:copy() end
-
 ---@param arg0 AttributeInstance.Int
----@return boolean
-function __Int:equalTo(arg0) end
-
----@param arg0 AttributeInstance
 ---@return boolean
 function __Int:equalTo(arg0) end
 

@@ -15,6 +15,9 @@ OutputFlag.AutomationOnly = nil
 OutputFlag.DontInheritCondition = nil
 
 ---@type OutputFlag
+OutputFlag.EquipSecondary = nil
+
+---@type OutputFlag
 OutputFlag.ForceEmpty = nil
 
 ---@type OutputFlag
@@ -34,6 +37,9 @@ OutputFlag.IsEmpty = nil
 
 ---@type OutputFlag
 OutputFlag.RespectCapacity = nil
+
+---@type OutputFlag
+OutputFlag.SetActivated = nil
 
 ---@param arg0 string
 ---@return OutputFlag

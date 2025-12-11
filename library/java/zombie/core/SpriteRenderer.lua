@@ -778,11 +778,11 @@ function __SpriteRenderer:stopOffscreenUI() end
 
 SpriteRenderer = {}
 
----@type boolean
-SpriteRenderer.GL_BLENDFUNC_ENABLED = nil
-
 ---@type integer
 SpriteRenderer.NUM_RENDER_STATES = nil
+
+---@type boolean
+SpriteRenderer.glBlendfuncEnabled = nil
 
 ---@type SpriteRenderer
 SpriteRenderer.instance = nil

@@ -2,6 +2,7 @@
 
 ---@class BaseGameCharacterDetails
 BaseGameCharacterDetails = {}
+BaseGameCharacterDetails.professionsDone = nil ---@type boolean?
 
 ---@param s IsoSurvivor
 function BaseGameCharacterDetails.CreateCharacterInstance(s) end

@@ -39,7 +39,7 @@ function __IsoWorld:LoadTileDefinitions(sprMan, filename, fileNumber) end
 ---@param fileNumber integer
 function __IsoWorld:LoadTileDefinitionsPropertyStrings(sprMan, filename, fileNumber) end
 
----@param trait string
+---@param trait CharacterTrait
 function __IsoWorld:addLuaTrait(trait) end
 
 function __IsoWorld:checkVehiclesZones() end
@@ -109,7 +109,7 @@ function __IsoWorld:getLuaSpawnCellX() end
 ---@return integer
 function __IsoWorld:getLuaSpawnCellY() end
 
----@return ArrayList<string>
+---@return List<CharacterTrait>
 function __IsoWorld:getLuaTraits() end
 
 ---@return string
@@ -175,7 +175,7 @@ function __IsoWorld:getTimeSinceLastSurvivorInHorde() end
 ---@return string
 function __IsoWorld:getWeather() end
 
----@return WGChunk
+---@return WorldGenChunk
 function __IsoWorld:getWgChunk() end
 
 ---@return string
@@ -358,8 +358,8 @@ function __IsoWorld:setTimeSinceLastSurvivorInHorde(timeSinceLastSurvivorInHorde
 ---@param weather string
 function __IsoWorld:setWeather(weather) end
 
----@param arg0 WGChunk
-function __IsoWorld:setWgChunk(arg0) end
+---@param wgChunk WorldGenChunk
+function __IsoWorld:setWgChunk(wgChunk) end
 
 ---@param world string
 function __IsoWorld:setWorld(world) end
@@ -379,20 +379,14 @@ function __IsoWorld:update() end
 
 IsoWorld = {}
 
----@type boolean
-IsoWorld.NoZombies = nil
-
 ---@type HashMap<string, ArrayList<string>>
 IsoWorld.PropertyValueMap = nil
 
 ---@type integer
-IsoWorld.SavedWorldVersion = nil
-
----@type integer
-IsoWorld.TotalWorldVersion = nil
-
----@type integer
 IsoWorld.WorldVersion = nil
+
+---@type integer
+IsoWorld.WorldVersion_42_13 = nil
 
 ---@type integer
 IsoWorld.WorldVersion_AlarmClock = nil
@@ -464,10 +458,16 @@ IsoWorld.WorldVersion_IsoCompostHealthValues = nil
 IsoWorld.WorldVersion_ItemWorldRotationFloats = nil
 
 ---@type integer
+IsoWorld.WorldVersion_LearnedRecipes = nil
+
+---@type integer
 IsoWorld.WorldVersion_MetaEntityOutsideAware = nil
 
 ---@type integer
 IsoWorld.WorldVersion_ObjectID = nil
+
+---@type integer
+IsoWorld.WorldVersion_PlayerAutoDrink = nil
 
 ---@type integer
 IsoWorld.WorldVersion_PlayerExtraInfoFlags = nil
@@ -503,9 +503,6 @@ IsoWorld.WorldVersion_SquareSeen = nil
 IsoWorld.WorldVersion_Stats_Idleness = nil
 
 ---@type integer
-IsoWorld.WorldVersion_TeachedRecipes = nil
-
----@type integer
 IsoWorld.WorldVersion_TrapExplosionDuration = nil
 
 ---@type integer
@@ -535,11 +532,20 @@ IsoWorld.mapPath = nil
 ---@type boolean
 IsoWorld.mapUseJar = nil
 
+---@type boolean
+IsoWorld.noZombies = nil
+
+---@type integer
+IsoWorld.savedWorldVersion = nil
+
 ---@type integer
 IsoWorld.saveoffsetx = nil
 
 ---@type integer
 IsoWorld.saveoffsety = nil
+
+---@type integer
+IsoWorld.totalWorldVersion = nil
 
 ---@return integer
 function IsoWorld.getWorldVersion() end

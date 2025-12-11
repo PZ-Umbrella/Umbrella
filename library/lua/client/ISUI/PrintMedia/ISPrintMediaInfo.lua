@@ -6,7 +6,7 @@
 ---@field nextcondition (fun(): boolean)?
 ---@field text string?
 ---@field title string
-ISPrintMediaInfo = ISBaseObject:derive("ISPrintMediaInfo")
+ISPrintMediaInfo = {}
 ISPrintMediaInfo.Type = "ISPrintMediaInfo"
 
 function ISPrintMediaInfo:initialise() end
@@ -22,7 +22,7 @@ function ISPrintMediaInfo:new(title, text, moreTextInfo, nextcondition) end
 ---@field currentPage number
 ---@field pageCount integer
 ---@field pages ISPrintMediaInfo[]
-ISPrintMediaSetInfo = ISBaseObject:derive("ISPrintMediaSetInfo")
+ISPrintMediaSetInfo = {}
 ISPrintMediaSetInfo.Type = "ISPrintMediaSetInfo"
 
 ---@param pagetitle string

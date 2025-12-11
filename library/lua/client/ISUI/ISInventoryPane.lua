@@ -52,6 +52,8 @@
 ---@field mode string
 ---@field mouseOverOption number
 ---@field nameHeader ISResizableButton
+---@field noFavoriteRecipeInputStar unknown
+---@field player integer
 ---@field poisonIcon Texture
 ---@field previousMouseUp number?
 ---@field refreshContainerCount number

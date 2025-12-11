@@ -52,6 +52,9 @@ function __TimedActionScript:getProp2() end
 ---@return string
 function __TimedActionScript:getSound() end
 
+---@return ActionSoundTime
+function __TimedActionScript:getSoundTime() end
+
 ---@return integer
 function __TimedActionScript:getTime() end
 

@@ -6,6 +6,11 @@
 ClothingSelectionDefinitions = {}
 ClothingSelectionDefinitions.default = {
 	Female = {
+		Belt = {
+			items = {
+				"Base.Belt2",
+			},
+		},
 		Hat = {
 			chance = 10,
 			items = {
@@ -102,6 +107,11 @@ ClothingSelectionDefinitions.default = {
 		},
 	},
 	Male = {
+		Belt = {
+			items = {
+				"Base.Belt2",
+			},
+		},
 		Hat = {
 			chance = 10,
 			items = {

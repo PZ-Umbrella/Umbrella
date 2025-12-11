@@ -143,8 +143,13 @@ function ISPanelJoypad:onMouseUpOutside(x, y) end
 
 function ISPanelJoypad:prerender() end
 
+---@return table
+function ISPanelJoypad:recordJoypadState() end
+
 ---@param joypadData JoypadData
 function ISPanelJoypad:restoreJoypadFocus(joypadData) end
+
+function ISPanelJoypad:restoreJoypadState(state) end
 
 ---@param button ISButton
 function ISPanelJoypad:setISButtonForA(button) end

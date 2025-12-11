@@ -6,14 +6,7 @@ local __Float = {}
 ---@return AttributeInstance.Float
 function __Float:copy() end
 
----@return AttributeInstance
-function __Float:copy() end
-
 ---@param arg0 AttributeInstance.Float
----@return boolean
-function __Float:equalTo(arg0) end
-
----@param arg0 AttributeInstance
 ---@return boolean
 function __Float:equalTo(arg0) end
 

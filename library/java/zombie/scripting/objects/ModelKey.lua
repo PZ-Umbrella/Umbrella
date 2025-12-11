@@ -157,9 +157,6 @@ ModelKey.ASSAULT_RIFLE = nil
 ModelKey.ASSAULT_RIFLE_02 = nil
 
 ---@type ModelKey
-ModelKey.ASSAULT_RIFLE_02_NO_MAG = nil
-
----@type ModelKey
 ModelKey.ASSAULT_RIFLE_NO_MAG = nil
 
 ---@type ModelKey
@@ -254,12 +251,6 @@ ModelKey.BAGUETTE_GROUND = nil
 
 ---@type ModelKey
 ModelKey.BAGUETTE_SANDWICH = nil
-
----@type ModelKey
-ModelKey.BAG_ALICEPACK = nil
-
----@type ModelKey
-ModelKey.BAG_ALICEPACK_ARMY = nil
 
 ---@type ModelKey
 ModelKey.BAG_GUNNY_GROUND = nil
@@ -568,9 +559,6 @@ ModelKey.BERRY_WHITE = nil
 ModelKey.BIG_GAS_TANK = nil
 
 ---@type ModelKey
-ModelKey.BIG_HIKING_BAG = nil
-
----@type ModelKey
 ModelKey.BIG_HIKING_BAG_GROUND = nil
 
 ---@type ModelKey
@@ -626,9 +614,6 @@ ModelKey.BLACK_SAGE_SEED_BAG_GROUND = nil
 
 ---@type ModelKey
 ModelKey.BLEACH_BOTTLE = nil
-
----@type ModelKey
-ModelKey.BLENDER_TEST = nil
 
 ---@type ModelKey
 ModelKey.BLOCK_ANVIL = nil
@@ -802,9 +787,6 @@ ModelKey.BOOK_CLOSED_LIGHT_BLUE_GROUND = nil
 ModelKey.BOOK_CLOSED_LIGHT_GREEN_GROUND = nil
 
 ---@type ModelKey
-ModelKey.BOOK_CLOSED_NEW = nil
-
----@type ModelKey
 ModelKey.BOOK_CLOSED_PURPLE_GROUND = nil
 
 ---@type ModelKey
@@ -863,12 +845,6 @@ ModelKey.BOOK_LIGHT_GREEN = nil
 
 ---@type ModelKey
 ModelKey.BOOK_LIGHT_GREEN_GROUND = nil
-
----@type ModelKey
-ModelKey.BOOK_NEW = nil
-
----@type ModelKey
-ModelKey.BOOK_OPEN_NEW = nil
 
 ---@type ModelKey
 ModelKey.BOOK_OPEN_TINT = nil
@@ -1178,6 +1154,12 @@ ModelKey.BUCKET_CARVED_HAND = nil
 
 ---@type ModelKey
 ModelKey.BUCKET_CARVED_HAND_FLUID = nil
+
+---@type ModelKey
+ModelKey.BUCKET_CARVED_PLASTER = nil
+
+---@type ModelKey
+ModelKey.BUCKET_CARVED_PLASTER_HAND = nil
 
 ---@type ModelKey
 ModelKey.BUCKET_FORGED = nil
@@ -3202,9 +3184,6 @@ ModelKey.DIP_SALSA_GROUND = nil
 ModelKey.DIRT_BAG_GROUND = nil
 
 ---@type ModelKey
-ModelKey.DISH_CLOTH = nil
-
----@type ModelKey
 ModelKey.DISH_CLOTH_HAND = nil
 
 ---@type ModelKey
@@ -3245,12 +3224,6 @@ ModelKey.DOILY = nil
 
 ---@type ModelKey
 ModelKey.DOLL = nil
-
----@type ModelKey
-ModelKey.DOOR_1_STATIC = nil
-
----@type ModelKey
-ModelKey.DOOR_1_TEST = nil
 
 ---@type ModelKey
 ModelKey.DOOR_HINGE = nil
@@ -3376,13 +3349,7 @@ ModelKey.DRY_RAMEN_NOODLES = nil
 ModelKey.DUCT_TAPE = nil
 
 ---@type ModelKey
-ModelKey.DUFFEL_BAG = nil
-
----@type ModelKey
 ModelKey.DUFFEL_BAG_GROUND = nil
-
----@type ModelKey
-ModelKey.DUFFEL_BAG_L = nil
 
 ---@type ModelKey
 ModelKey.DUMB_BELL = nil
@@ -3514,12 +3481,6 @@ ModelKey.ELECTRONICS_SCRAP = nil
 ModelKey.EMERALD = nil
 
 ---@type ModelKey
-ModelKey.EMPTY_FERTILIZER = nil
-
----@type ModelKey
-ModelKey.EMPTY_JAR = nil
-
----@type ModelKey
 ModelKey.EMPTY_NOTEBOOK = nil
 
 ---@type ModelKey
@@ -3638,12 +3599,6 @@ ModelKey.FEMALE_BODY = nil
 
 ---@type ModelKey
 ModelKey.FEMALE_SKELETON = nil
-
----@type ModelKey
-ModelKey.FERTIIZER = nil
-
----@type ModelKey
-ModelKey.FERTIIZER_EMPTY = nil
 
 ---@type ModelKey
 ModelKey.FERTILIZER_GROUND = nil
@@ -4220,9 +4175,6 @@ ModelKey.GAME_PIECES_WHITE_GROUND = nil
 
 ---@type ModelKey
 ModelKey.GARBAGEBAG_BOX = nil
-
----@type ModelKey
-ModelKey.GARBAGE_BAG = nil
 
 ---@type ModelKey
 ModelKey.GARBAGE_BAG_GROUND = nil
@@ -5260,6 +5212,12 @@ ModelKey.JAR_GLASS_GROUND = nil
 ModelKey.JAR_GLASS_GROUND_FLUID = nil
 
 ---@type ModelKey
+ModelKey.JAR_ROE_GROUND = nil
+
+---@type ModelKey
+ModelKey.JAR_ROE_OPEN = nil
+
+---@type ModelKey
 ModelKey.JAWBONE_BOVIDE = nil
 
 ---@type ModelKey
@@ -5788,9 +5746,6 @@ ModelKey.LEATHER_PINK_MEDIUM = nil
 ModelKey.LEATHER_PINK_SMALL = nil
 
 ---@type ModelKey
-ModelKey.LEATHER_STRING_GROUND = nil
-
----@type ModelKey
 ModelKey.LEATHER_STRIPS = nil
 
 ---@type ModelKey
@@ -6029,9 +5984,6 @@ ModelKey.LOUPE = nil
 
 ---@type ModelKey
 ModelKey.LUG_WRENCH = nil
-
----@type ModelKey
-ModelKey.LUNCHBOX = nil
 
 ---@type ModelKey
 ModelKey.LUNCH_BOX_2_GROUND = nil
@@ -6370,9 +6322,6 @@ ModelKey.MATCHBOX = nil
 ModelKey.MATCHES = nil
 
 ---@type ModelKey
-ModelKey.MATTRESS = nil
-
----@type ModelKey
 ModelKey.MAYO_JAR = nil
 
 ---@type ModelKey
@@ -6469,9 +6418,6 @@ ModelKey.MEGAPHONE_HAND = nil
 ModelKey.MELON_SLICE = nil
 
 ---@type ModelKey
-ModelKey.MELTED_ICE_CREAM = nil
-
----@type ModelKey
 ModelKey.MENU_CARD = nil
 
 ---@type ModelKey
@@ -6487,9 +6433,6 @@ ModelKey.METALWORKING_PLIERS = nil
 ModelKey.METALWORKING_PUNCH = nil
 
 ---@type ModelKey
-ModelKey.METAL_BAR = nil
-
----@type ModelKey
 ModelKey.METAL_BAR_HAND = nil
 
 ---@type ModelKey
@@ -6497,9 +6440,6 @@ ModelKey.METAL_BITS = nil
 
 ---@type ModelKey
 ModelKey.METAL_PIECES = nil
-
----@type ModelKey
-ModelKey.METAL_PIPE = nil
 
 ---@type ModelKey
 ModelKey.METAL_PIPE_BROKEN = nil
@@ -7037,9 +6977,6 @@ ModelKey.NOODLE_SOUP_GROUND = nil
 
 ---@type ModelKey
 ModelKey.NOODLE_SOUP_GROUND_ROTTEN = nil
-
----@type ModelKey
-ModelKey.NORMAL_HIKING_BAG = nil
 
 ---@type ModelKey
 ModelKey.NOSERING_GROUND = nil
@@ -7699,13 +7636,7 @@ ModelKey.PLANK_SAW = nil
 ModelKey.PLANK_SAWBLADE = nil
 
 ---@type ModelKey
-ModelKey.PLASTER_POWDER = nil
-
----@type ModelKey
 ModelKey.PLASTER_TROWEL = nil
-
----@type ModelKey
-ModelKey.PLASTIC_BAG = nil
 
 ---@type ModelKey
 ModelKey.PLASTIC_BAG_GROUND = nil
@@ -7768,6 +7699,9 @@ ModelKey.PLUSHIE_BADGER_GROUND = nil
 ModelKey.PLUSHIE_BEAVER_GROUND = nil
 
 ---@type ModelKey
+ModelKey.PLUSHIE_EYE_OF_CTHULHU_GROUND = nil
+
+---@type ModelKey
 ModelKey.PLUSHIE_FOX_GROUND = nil
 
 ---@type ModelKey
@@ -7781,6 +7715,9 @@ ModelKey.PLUSHIE_RABBIT_GROUND = nil
 
 ---@type ModelKey
 ModelKey.PLUSHIE_SQUIRREL_GROUND = nil
+
+---@type ModelKey
+ModelKey.PLUSHIE_TRASH_GOBLIN_GROUND = nil
 
 ---@type ModelKey
 ModelKey.POCKETWATCH = nil
@@ -7820,9 +7757,6 @@ ModelKey.POPSICLE_MELTED = nil
 
 ---@type ModelKey
 ModelKey.POP_BOTTLE = nil
-
----@type ModelKey
-ModelKey.POP_BOTTLE_EMPTY = nil
 
 ---@type ModelKey
 ModelKey.POP_BOTTLE_FULL_GASOLINE = nil
@@ -8062,9 +7996,6 @@ ModelKey.PUMPKIN_SMASHED = nil
 ModelKey.PUMPKIN_SMASHED_ROTTEN = nil
 
 ---@type ModelKey
-ModelKey.PURSE = nil
-
----@type ModelKey
 ModelKey.PURSE_GROUND = nil
 
 ---@type ModelKey
@@ -8216,9 +8147,6 @@ ModelKey.RAKE = nil
 
 ---@type ModelKey
 ModelKey.RAKE_HEAD = nil
-
----@type ModelKey
-ModelKey.RAMEN = nil
 
 ---@type ModelKey
 ModelKey.RAMP_10SEGMENT_1 = nil
@@ -8794,9 +8722,6 @@ ModelKey.SCBA_NOTANK_GROUND = nil
 ModelKey.SCHEMATIC = nil
 
 ---@type ModelKey
-ModelKey.SCHOOL_BAG = nil
-
----@type ModelKey
 ModelKey.SCHOOL_BAG_GROUND = nil
 
 ---@type ModelKey
@@ -9155,9 +9080,6 @@ ModelKey.SHOTGUN_SAWN_OFF = nil
 
 ---@type ModelKey
 ModelKey.SHOT_GUN_SHELLS = nil
-
----@type ModelKey
-ModelKey.SHOT_GUN_SHELLST_MOLD = nil
 
 ---@type ModelKey
 ModelKey.SHOT_GUN_SHELLS_MOLD_GROUND = nil
@@ -10243,6 +10165,9 @@ ModelKey.THYME_SEED_BAG_GROUND = nil
 ModelKey.TIE_GROUND = nil
 
 ---@type ModelKey
+ModelKey.TIE_NO_NECK_GROUND = nil
+
+---@type ModelKey
 ModelKey.TIGHTS_BLACK_GROUND = nil
 
 ---@type ModelKey
@@ -10378,9 +10303,6 @@ ModelKey.TORTILLA_GROUND = nil
 ModelKey.TOTES_BAG_GROUND = nil
 
 ---@type ModelKey
-ModelKey.TOTE_BAG = nil
-
----@type ModelKey
 ModelKey.TOY_BADGE = nil
 
 ---@type ModelKey
@@ -10394,6 +10316,9 @@ ModelKey.TOY_BEAR_CRAFTED_DENIM = nil
 
 ---@type ModelKey
 ModelKey.TOY_CAR = nil
+
+---@type ModelKey
+ModelKey.TOY_PLANE = nil
 
 ---@type ModelKey
 ModelKey.TRAP_BOX = nil
@@ -11330,9 +11255,6 @@ ModelKey.WHEAT_SHEAF_ROTTEN = nil
 
 ---@type ModelKey
 ModelKey.WHEEL = nil
-
----@type ModelKey
-ModelKey.WHEEL_HUB = nil
 
 ---@type ModelKey
 ModelKey.WHETSTONE = nil

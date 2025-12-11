@@ -1,7 +1,5 @@
 ---@meta _
 
-__classmetatables = {}
-
 ---@param str string
 ---@return string
 function string.trim(str) end
@@ -30,22 +28,18 @@ function table.isempty(table) end
 ---@param table table
 function table.wipe(table) end
 
----@param ... unknown
+---@param ... any
 ---@return table
 ---@overload fun(table: table): table
 function table.newarray(...) end
 
----@class Reader
-
----@class InputStream
-
 ---@class Random
 local __random = {}
 
----@param m integer?
----@param n integer?
 ---@return number
-function __random:random(m, n) end
+---@overload fun(m: integer): integer
+---@overload fun(m: integer, n: integer): integer
+function __random:random() end
 
 ---@param value unknown?
 function __random:seed(value) end

@@ -7,58 +7,17 @@ local __SyncPlayerStatsPacket = {}
 ---@param arg1 UdpConnection
 function __SyncPlayerStatsPacket:parse(arg0, arg1) end
 
+---@param values kahlua.Array<any>
+function __SyncPlayerStatsPacket:setData(values) end
+
 ---@param arg0 ByteBufferWriter
 function __SyncPlayerStatsPacket:write(arg0) end
 
 SyncPlayerStatsPacket = {}
 
----@type integer
-SyncPlayerStatsPacket.Stat_Anger = nil
-
----@type integer
-SyncPlayerStatsPacket.Stat_Boredom = nil
-
----@type integer
-SyncPlayerStatsPacket.Stat_Drunkennes = nil
-
----@type integer
-SyncPlayerStatsPacket.Stat_Endurance = nil
-
----@type integer
-SyncPlayerStatsPacket.Stat_Fatigue = nil
-
----@type integer
-SyncPlayerStatsPacket.Stat_Fear = nil
-
----@type integer
-SyncPlayerStatsPacket.Stat_Fitness = nil
-
----@type integer
-SyncPlayerStatsPacket.Stat_Hunger = nil
-
----@type integer
-SyncPlayerStatsPacket.Stat_Morale = nil
-
----@type integer
-SyncPlayerStatsPacket.Stat_Pain = nil
-
----@type integer
-SyncPlayerStatsPacket.Stat_Panic = nil
-
----@type integer
-SyncPlayerStatsPacket.Stat_Sanity = nil
-
----@type integer
-SyncPlayerStatsPacket.Stat_Sickness = nil
-
----@type integer
-SyncPlayerStatsPacket.Stat_Stress = nil
-
----@type integer
-SyncPlayerStatsPacket.Stat_StressFromCigarettes = nil
-
----@type integer
-SyncPlayerStatsPacket.Stat_Thirst = nil
+---@param stat CharacterStat
+---@return integer
+function SyncPlayerStatsPacket.getBitMaskForStat(stat) end
 
 ---@return SyncPlayerStatsPacket
 function SyncPlayerStatsPacket.new() end

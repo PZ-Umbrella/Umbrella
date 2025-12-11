@@ -1,7 +1,7 @@
 ---@meta
 
 ---@class StatisticChartMemory : StatisticChart
-StatisticChartMemory = StatisticChart:derive("StatisticChartMemory")
+StatisticChartMemory = {}
 StatisticChartMemory.Type = "StatisticChartMemory"
 StatisticChartMemory.instance = nil ---@type StatisticChartMemory?
 StatisticChartMemory.shiftDown = 0

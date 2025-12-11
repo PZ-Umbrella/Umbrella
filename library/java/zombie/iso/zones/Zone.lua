@@ -114,12 +114,12 @@ function __Zone:isPolyline() end
 ---@return boolean
 function __Zone:isRectangle() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
----@param arg2 Map<integer, string>
----@param arg3 SharedStrings
+---@param input ByteBuffer
+---@param WorldVersion integer
+---@param stringMap Map<integer, string>
+---@param sharedStrings SharedStrings
 ---@return Zone
-function __Zone:load(arg0, arg1, arg2, arg3) end
+function __Zone:load(input, WorldVersion, stringMap, sharedStrings) end
 
 ---@param arg0 ByteBuffer
 ---@param arg1 integer
@@ -133,9 +133,9 @@ function __Zone:pickRandomLocation(arg0) end
 ---@param arg0 IsoGridSquare
 function __Zone:removeSquare(arg0) end
 
----@param arg0 ByteBuffer
----@param arg1 Map<string, integer>
-function __Zone:save(arg0, arg1) end
+---@param output ByteBuffer
+---@param stringMap Map<string, integer>
+function __Zone:save(output, stringMap) end
 
 ---@param arg0 ByteBuffer
 function __Zone:save(arg0) end
@@ -183,7 +183,7 @@ function __Zone:toString() end
 Zone = {}
 
 ---@type Clipper
-Zone.s_clipper = nil
+Zone.clipper = nil
 
 ---@param arg0 string
 ---@return boolean

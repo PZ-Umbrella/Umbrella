@@ -49,6 +49,8 @@ function ISSkillProgressBar:onMouseMoveOutside(dx, dy) end
 ---@param y number
 function ISSkillProgressBar:onMouseUp(x, y) end
 
+function ISSkillProgressBar:removeTooltip() end
+
 function ISSkillProgressBar:render() end
 
 function ISSkillProgressBar:renderPerkRect() end

@@ -72,6 +72,9 @@ Normal.BAKING_PAN = nil
 Normal.BAKING_TRAY = nil
 
 ---@type ItemKey
+Normal.BALL = nil
+
+---@type ItemKey
 Normal.BALL_PEEN_HAMMER_HEAD = nil
 
 ---@type ItemKey
@@ -1195,6 +1198,9 @@ Normal.ENGINE_PARTS = nil
 
 ---@type ItemKey
 Normal.ERASER = nil
+
+---@type ItemKey
+Normal.EYE_OF_CTHULHU = nil
 
 ---@type ItemKey
 Normal.FAWN_LEATHER_FULL = nil
@@ -3087,6 +3093,9 @@ Normal.TOY_BEAR_CRAFTED_COTTON = nil
 Normal.TOY_CAR = nil
 
 ---@type ItemKey
+Normal.TOY_PLANE = nil
+
+---@type ItemKey
 Normal.TRAILER_TRUNK_1 = nil
 
 ---@type ItemKey
@@ -3112,6 +3121,9 @@ Normal.TRAP_SNARE = nil
 
 ---@type ItemKey
 Normal.TRAP_STICK = nil
+
+---@type ItemKey
+Normal.TRASH_GOBLIN = nil
 
 ---@type ItemKey
 Normal.TRIGGER_CRAFTED = nil

@@ -41,10 +41,6 @@ function __INetworkPacket:sendToClients(arg0, arg1) end
 
 ---@param arg0 PacketTypes.PacketType
 ---@param arg1 UdpConnection
-function __INetworkPacket:sendToConnection(arg0, arg1) end
-
----@param arg0 PacketTypes.PacketType
----@param arg1 UdpConnection
 ---@param arg2 number
 ---@param arg3 number
 function __INetworkPacket:sendToRelativeClients(arg0, arg1, arg2, arg3) end

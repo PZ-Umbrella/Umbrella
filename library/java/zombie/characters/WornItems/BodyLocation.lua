@@ -3,43 +3,39 @@
 ---@class BodyLocation
 local __BodyLocation = {}
 
----@param alias string
----@return BodyLocation
-function __BodyLocation:addAlias(alias) end
-
----@return string
+---@return ItemBodyLocation
 function __BodyLocation:getId() end
 
----@param arg0 string
+---@param itemBodyLocation ItemBodyLocation
 ---@return boolean
-function __BodyLocation:isAltModel(arg0) end
+function __BodyLocation:isAltModel(itemBodyLocation) end
 
----@param id string
+---@param itemBodyLocation ItemBodyLocation
 ---@return boolean
-function __BodyLocation:isExclusive(id) end
+function __BodyLocation:isExclusive(itemBodyLocation) end
 
----@param otherId string
+---@param itemBodyLocation ItemBodyLocation
 ---@return boolean
-function __BodyLocation:isHideModel(otherId) end
+function __BodyLocation:isHideModel(itemBodyLocation) end
 
----@param id string
+---@param itemBodyLocation ItemBodyLocation
 ---@return boolean
-function __BodyLocation:isID(id) end
+function __BodyLocation:isId(itemBodyLocation) end
 
 ---@return boolean
 function __BodyLocation:isMultiItem() end
 
----@param arg0 string
+---@param itemBodyLocation ItemBodyLocation
 ---@return BodyLocation
-function __BodyLocation:setAltModel(arg0) end
+function __BodyLocation:setAltModel(itemBodyLocation) end
 
----@param otherId string
+---@param itemBodyLocation ItemBodyLocation
 ---@return BodyLocation
-function __BodyLocation:setExclusive(otherId) end
+function __BodyLocation:setExclusive(itemBodyLocation) end
 
----@param otherId string
+---@param itemBodyLocation ItemBodyLocation
 ---@return BodyLocation
-function __BodyLocation:setHideModel(otherId) end
+function __BodyLocation:setHideModel(itemBodyLocation) end
 
 ---@param bMultiItem boolean
 ---@return BodyLocation
@@ -48,7 +44,7 @@ function __BodyLocation:setMultiItem(bMultiItem) end
 BodyLocation = {}
 
 ---@param group BodyLocationGroup
----@param id string
+---@param id ItemBodyLocation
 ---@return BodyLocation
 function BodyLocation.new(group, id) end
 

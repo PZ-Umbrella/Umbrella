@@ -1,7 +1,7 @@
 ---@meta
 
 ---@class StatisticChartUpdatePeriod : StatisticChart
-StatisticChartUpdatePeriod = StatisticChart:derive("StatisticChartUpdatePeriod")
+StatisticChartUpdatePeriod = {}
 StatisticChartUpdatePeriod.Type = "StatisticChartUpdatePeriod"
 StatisticChartUpdatePeriod.instance = nil ---@type StatisticChartUpdatePeriod?
 StatisticChartUpdatePeriod.shiftDown = 0

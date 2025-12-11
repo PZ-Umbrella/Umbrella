@@ -13,6 +13,10 @@ function RecipeCodeOnTest.breakGlass(arg0) end
 ---@return boolean
 function RecipeCodeOnTest.canAddToPack(arg0) end
 
+---@param item InventoryItem
+---@return boolean
+function RecipeCodeOnTest.copyKey(item) end
+
 ---@param arg0 InventoryItem
 ---@return boolean
 function RecipeCodeOnTest.cutFillet(arg0) end
@@ -56,10 +60,6 @@ function RecipeCodeOnTest.purifyWater(arg0) end
 ---@param arg0 InventoryItem
 ---@return boolean
 function RecipeCodeOnTest.scratchTicket(arg0) end
-
----@param arg0 InventoryItem
----@return boolean
-function RecipeCodeOnTest.tainted(arg0) end
 
 ---@return RecipeCodeOnTest
 function RecipeCodeOnTest.new() end

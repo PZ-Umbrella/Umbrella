@@ -17,6 +17,9 @@ function ISLootWindowObjectControlHandler:getButtonControl(title) end
 ---@return unknown
 function ISLootWindowObjectControlHandler:getControl() end
 
+---@return unknown
+function ISLootWindowObjectControlHandler:getImageButtonControl(imagePath) end
+
 ---@param context ISContextMenu
 function ISLootWindowObjectControlHandler:handleJoypadContextMenu(context) end
 

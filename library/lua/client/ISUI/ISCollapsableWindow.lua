@@ -52,6 +52,9 @@ function ISCollapsableWindow:getViews() end
 
 function ISCollapsableWindow:initialise() end
 
+---@return number
+function ISCollapsableWindow:minTitleBarWidth() end
+
 function ISCollapsableWindow:onInfo() end
 
 ---@param x number

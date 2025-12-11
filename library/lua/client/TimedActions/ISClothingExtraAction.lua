@@ -6,7 +6,7 @@
 ---@field item InventoryItem
 ---@field started boolean
 ---@field transactionId number
-ISClothingExtraAction = ISBaseTimedAction:derive("ISClothingExtraAction")
+ISClothingExtraAction = {}
 ISClothingExtraAction.Type = "ISClothingExtraAction"
 
 ---@param item InventoryItem

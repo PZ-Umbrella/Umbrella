@@ -73,10 +73,4 @@
 ---(Not exposed)
 ---@class IAnimationVariableSlotDescriptor
 
----(Not exposed)
----The Live version of an AnimNode
---- The AnimNode represents the data.
---- The LiveAnimNode represents the playback of said data, its blend weights, timing, transitions etc.
----@class LiveAnimNode
-
 zombie.core.skinnedmodel.advancedanimation = {}

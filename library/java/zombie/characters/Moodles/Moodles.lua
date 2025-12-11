@@ -8,53 +8,39 @@ function __Moodles:UI_RefreshNeeded() end
 
 function __Moodles:Update() end
 
----@param MoodleIndex integer
+---@param moodleType MoodleType
 ---@return integer
-function __Moodles:getGoodBadNeutral(MoodleIndex) end
+function __Moodles:getGoodBadNeutral(moodleType) end
 
----@param moodleIndex integer
----@return Color
-function __Moodles:getMoodleChevronColor(moodleIndex) end
-
----@param moodleIndex integer
----@return integer
-function __Moodles:getMoodleChevronCount(moodleIndex) end
-
----@param moodleIndex integer
----@return boolean
-function __Moodles:getMoodleChevronIsUp(moodleIndex) end
-
----@param MoodleIndex integer
+---@param moodleType MoodleType
 ---@return string
-function __Moodles:getMoodleDescriptionString(MoodleIndex) end
+function __Moodles:getMoodleDescriptionString(moodleType) end
 
----@param MoodleIndex integer
+---@param moodleType MoodleType
 ---@return string
-function __Moodles:getMoodleDisplayString(MoodleIndex) end
+function __Moodles:getMoodleDisplayString(moodleType) end
 
----@param MoodleIndex integer
+---@param moodleType MoodleType
 ---@return integer
-function __Moodles:getMoodleLevel(MoodleIndex) end
+function __Moodles:getMoodleLevel(moodleType) end
 
----@param MType MoodleType
----@return integer
-function __Moodles:getMoodleLevel(MType) end
-
----@param MoodleIndex integer
----@return MoodleType
-function __Moodles:getMoodleType(MoodleIndex) end
-
----@return integer
-function __Moodles:getNumMoodles() end
-
----@param arg0 MoodleType
+---@param moodleType MoodleType
 ---@return boolean
-function __Moodles:isMaxMoodleLevel(arg0) end
+function __Moodles:isMaxMoodleLevel(moodleType) end
 
 ---@param refresh boolean
 function __Moodles:setMoodlesStateChanged(refresh) end
 
 Moodles = {}
+
+---@type integer
+Moodles.BadMoodleType = nil
+
+---@type integer
+Moodles.GoodMoodleType = nil
+
+---@type integer
+Moodles.NeutralMoodleType = nil
 
 ---@param parent IsoGameCharacter
 ---@return Moodles

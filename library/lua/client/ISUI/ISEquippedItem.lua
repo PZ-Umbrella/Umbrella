@@ -9,6 +9,7 @@
 ---@field clientBtn ISButton
 ---@field clientIconOff unknown
 ---@field clientIconOn Texture
+---@field clockTexture unknown
 ---@field craftingBtn ISButton
 ---@field craftingIconOff unknown
 ---@field craftingIconOn Texture

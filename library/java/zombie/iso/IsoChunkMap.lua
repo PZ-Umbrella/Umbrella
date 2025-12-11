@@ -121,16 +121,10 @@ IsoChunkMap = {}
 IsoChunkMap.BOTTOM_LEVEL = nil
 
 ---@type integer
-IsoChunkMap.ChunkGridWidth = nil
+IsoChunkMap.CHUNKS_PER_WIDTH = nil
 
 ---@type integer
-IsoChunkMap.ChunkSizeInSquares = nil
-
----@type integer
-IsoChunkMap.ChunkWidthInTiles = nil
-
----@type integer
-IsoChunkMap.ChunksPerWidth = nil
+IsoChunkMap.CHUNK_SIZE_IN_SQUARES = nil
 
 ---@type integer
 IsoChunkMap.GROUND_LEVEL = nil
@@ -139,16 +133,7 @@ IsoChunkMap.GROUND_LEVEL = nil
 IsoChunkMap.LEVELS = nil
 
 ---@type integer
-IsoChunkMap.MPWorldXA = nil
-
----@type integer
-IsoChunkMap.MPWorldYA = nil
-
----@type integer
-IsoChunkMap.MPWorldZA = nil
-
----@type integer
-IsoChunkMap.OldChunksPerWidth = nil
+IsoChunkMap.OLD_CHUNKS_PER_WIDTH = nil
 
 ---@type kahlua.Array<integer>
 IsoChunkMap.SWorldX = nil
@@ -162,25 +147,44 @@ IsoChunkMap.SharedChunks = nil
 ---@type integer
 IsoChunkMap.TOP_LEVEL = nil
 
----@type integer
-IsoChunkMap.WorldXA = nil
-
----@type integer
-IsoChunkMap.WorldYA = nil
-
----@type integer
-IsoChunkMap.WorldZA = nil
-
 ---@type ReentrantLock
 IsoChunkMap.bSettingChunk = nil
+
+---@type integer
+IsoChunkMap.chunkGridWidth = nil
 
 ---@type ConcurrentLinkedQueue<IsoChunk>
 IsoChunkMap.chunkStore = nil
 
+---@type integer
+IsoChunkMap.chunkWidthInTiles = nil
+
+---@type integer
+IsoChunkMap.mpWorldXa = nil
+
+---@type integer
+IsoChunkMap.mpWorldYa = nil
+
+---@type integer
+IsoChunkMap.mpWorldZa = nil
+
 ---@type PerformanceProfileProbe
 IsoChunkMap.ppp_update = nil
 
+---@type integer
+IsoChunkMap.worldXa = nil
+
+---@type integer
+IsoChunkMap.worldYa = nil
+
+---@type integer
+IsoChunkMap.worldZa = nil
+
 function IsoChunkMap.CalcChunkWidth() end
+
+---@param tileZ integer
+---@return boolean
+function IsoChunkMap.isGridSquareOutOfRangeZ(tileZ) end
 
 ---@param x integer
 ---@param y integer

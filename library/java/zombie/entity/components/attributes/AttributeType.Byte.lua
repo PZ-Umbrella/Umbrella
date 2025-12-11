@@ -6,13 +6,7 @@ local __Byte = {}
 ---@return integer
 function __Byte:getMax() end
 
----@return Number
-function __Byte:getMax() end
-
 ---@return integer
-function __Byte:getMin() end
-
----@return Number
 function __Byte:getMin() end
 
 ---@return AttributeValueType
@@ -20,10 +14,6 @@ function __Byte:getValueType() end
 
 ---@param arg0 integer
 ---@return integer
-function __Byte:validate(arg0) end
-
----@param arg0 Number
----@return Number
 function __Byte:validate(arg0) end
 
 Byte = {}

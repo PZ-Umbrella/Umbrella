@@ -6,14 +6,7 @@ local __Bool = {}
 ---@return AttributeInstance.Bool
 function __Bool:copy() end
 
----@return AttributeInstance
-function __Bool:copy() end
-
 ---@param arg0 AttributeInstance.Bool
----@return boolean
-function __Bool:equalTo(arg0) end
-
----@param arg0 AttributeInstance
 ---@return boolean
 function __Bool:equalTo(arg0) end
 

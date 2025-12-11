@@ -186,6 +186,9 @@ function __SandboxOptions:worldItemRemovalListContains(arg0) end
 
 SandboxOptions = {}
 
+---@type integer
+SandboxOptions.FIRST_YEAR = nil
+
 ---@type SandboxOptions
 SandboxOptions.instance = nil
 

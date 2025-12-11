@@ -1,6 +1,6 @@
 ---@meta _
 
----@class WeaponPart: InventoryItem, IUpdater
+---@class WeaponPart: InventoryItem, Drainable, IUpdater
 local __WeaponPart = {}
 
 ---@param arg0 ObjectTooltip
@@ -71,9 +71,6 @@ function __WeaponPart:getRecoilDelay() end
 
 ---@return integer
 function __WeaponPart:getReloadTime() end
-
----@return integer
-function __WeaponPart:getSaveType() end
 
 ---@return number
 function __WeaponPart:getSpreadModifier() end

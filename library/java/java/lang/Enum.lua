@@ -33,10 +33,6 @@ local __Enum = {}
 ---          is less than, equal to, or greater than the specified object.
 function __Enum:compareTo(o) end
 
----@param arg0 any
----@return integer
-function __Enum:compareTo(arg0) end
-
 ---@return Optional<Enum.EnumDesc<E>>
 function __Enum:describeConstable() end
 

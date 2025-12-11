@@ -18,6 +18,7 @@ TrapBO.Type = "TrapBO"
 ---@param z number
 ---@param north boolean
 ---@param sprite string
+---@return boolean?
 function TrapBO:create(x, y, z, north, sprite) end
 
 ---@return string?
@@ -29,6 +30,7 @@ function TrapBO:getAPrompt() end
 function TrapBO:isValid(square, north) end
 
 ---@param action ISBaseTimedAction
+---@return boolean?
 function TrapBO:onTimedActionStart(action) end
 
 ---@param x number

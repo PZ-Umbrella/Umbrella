@@ -95,9 +95,6 @@ function __Array:isEmpty() end
 ---@return Array.ArrayIterator<T>
 function __Array:iterator() end
 
----@return Iterator
-function __Array:iterator() end
-
 ---@param arg0 T
 ---@param arg1 boolean
 ---@return integer
@@ -224,16 +221,16 @@ function Array.new(arg0) end
 function Array.new(arg0, arg1) end
 
 ---@generic T
----@param arg0 boolean
----@param arg1 integer
----@param arg2 Class
+---@param ordered boolean
+---@param capacity integer
+---@param arrayType Class<any>
 ---@return Array<T>
-function Array.new(arg0, arg1, arg2) end
+function Array.new(ordered, capacity, arrayType) end
 
 ---@generic T
----@param arg0 Class
+---@param arrayType Class<any>
 ---@return Array<T>
-function Array.new(arg0) end
+function Array.new(arrayType) end
 
 ---@generic T
 ---@param arg0 Array<T>

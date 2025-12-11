@@ -370,12 +370,6 @@ function __IsoAnimal:getNextStageAnimalType() end
 ---@return string
 function __IsoAnimal:getObjectName() end
 
----@return UdpConnection
-function __IsoAnimal:getOwner() end
-
----@return IsoPlayer
-function __IsoAnimal:getOwnerPlayer() end
-
 ---@return number
 function __IsoAnimal:getPetTimer() end
 
@@ -459,6 +453,9 @@ function __IsoAnimal:isAnimalEating() end
 
 ---@return boolean
 function __IsoAnimal:isAnimalMoving() end
+
+---@return boolean
+function __IsoAnimal:isAnimalRunningToDeathPosition() end
 
 ---@return boolean
 function __IsoAnimal:isAnimalSitting() end
@@ -602,6 +599,9 @@ function __IsoAnimal:save(arg0, arg1, arg2) end
 ---@param arg0 integer
 function __IsoAnimal:setAgeDebug(arg0) end
 
+---@param value boolean
+function __IsoAnimal:setAnimalAttackingOnClient(value) end
+
 ---@param arg0 integer
 function __IsoAnimal:setAnimalID(arg0) end
 
@@ -742,11 +742,11 @@ function __IsoAnimal:updateWalkLoopingSound() end
 
 IsoAnimal = {}
 
----@type boolean
-IsoAnimal.DISPLAY_EXTRA_VALUES = nil
-
 ---@type integer
 IsoAnimal.INVALID_SQUARE_XY = nil
+
+---@type boolean
+IsoAnimal.displayExtraValues = nil
 
 ---@type Vector2
 IsoAnimal.tempVector2 = nil

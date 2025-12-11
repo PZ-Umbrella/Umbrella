@@ -19,9 +19,6 @@
 ---@class WorldMapStyleLayer
 
 ---(Not exposed)
----@class WorldMapStyleLayer.FilterArgs
-
----(Not exposed)
 ---@class WorldMapStyleLayer.RGBAf
 
 ---(Not exposed)

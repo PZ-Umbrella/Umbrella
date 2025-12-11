@@ -2,6 +2,7 @@
 
 ---@class ISToolTipInv : ISPanel
 ---@field anchorBottomLeft { x: number, y: number }?
+---@field contextMenu unknown
 ---@field followMouse boolean
 ---@field item InventoryItem?
 ---@field owner ISUIElement?
@@ -65,6 +66,8 @@ function ISToolTipInv:render() end
 
 ---@param chr IsoGameCharacter
 function ISToolTipInv:setCharacter(chr) end
+
+function ISToolTipInv:setContextMenu(contextMenu) end
 
 ---@param item InventoryItem?
 function ISToolTipInv:setItem(item) end

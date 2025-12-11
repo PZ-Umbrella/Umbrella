@@ -26,9 +26,6 @@ function __AlarmClock:getHour() end
 function __AlarmClock:getMinute() end
 
 ---@return integer
-function __AlarmClock:getSaveType() end
-
----@return integer
 function __AlarmClock:getSoundRadius() end
 
 ---@return boolean

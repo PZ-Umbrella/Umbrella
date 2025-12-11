@@ -5,17 +5,17 @@ local __IsoCamera = {}
 
 IsoCamera = {}
 
----@type integer
-IsoCamera.PLAYER_OFFSET_X = nil
-
----@type integer
-IsoCamera.PLAYER_OFFSET_Y = nil
-
 ---@type kahlua.Array<PlayerCamera>
 IsoCamera.cameras = nil
 
 ---@type IsoCamera.FrameState
 IsoCamera.frameState = nil
+
+---@type integer
+IsoCamera.playerOffsetX = nil
+
+---@type integer
+IsoCamera.playerOffsetY = nil
 
 ---@param GameChar IsoGameCharacter
 function IsoCamera.SetCharacterToFollow(GameChar) end

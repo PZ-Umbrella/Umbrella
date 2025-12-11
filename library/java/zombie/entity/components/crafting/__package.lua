@@ -7,6 +7,9 @@
 ---@class BaseCraftingLogic.CraftEventHandler
 
 ---(Not exposed)
+---@class BaseCraftingLogic.FilterStringMatchType
+
+---(Not exposed)
 ---@class CraftLogicUILogic.RecipeComparator
 
 ---(Not exposed)

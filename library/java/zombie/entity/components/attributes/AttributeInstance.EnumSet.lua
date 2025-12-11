@@ -11,16 +11,9 @@ function __EnumSet:clear() end
 ---@return AttributeInstance.EnumSet<E>
 function __EnumSet:copy() end
 
----@return AttributeInstance
-function __EnumSet:copy() end
-
----@param arg0 AttributeInstance.EnumSet<E>
+---@param other AttributeInstance.EnumSet<E>
 ---@return boolean
-function __EnumSet:equalTo(arg0) end
-
----@param arg0 AttributeInstance
----@return boolean
-function __EnumSet:equalTo(arg0) end
+function __EnumSet:equalTo(other) end
 
 ---@return EnumSet<E>
 function __EnumSet:getValue() end

@@ -205,6 +205,12 @@ function __Core:getGameMode() end
 ---@return GameVersion
 function __Core:getGameVersion() end
 
+---@return string
+function __Core:getGitRevision() end
+
+---@return string
+function __Core:getGitSha() end
+
 ---@return ColorInfo
 function __Core:getGoodHighlitedColor() end
 
@@ -308,6 +314,9 @@ function __Core:getOptionAmbientVolume() end
 
 ---@return boolean
 function __Core:getOptionAutoDrink() end
+
+---@return boolean
+function __Core:getOptionAutoRevealPrintMediaMapLocations() end
 
 ---@return boolean
 function __Core:getOptionAutoWalkContainer() end
@@ -478,9 +487,6 @@ function __Core:getOptionPanCameraWhileAiming() end
 
 ---@return boolean
 function __Core:getOptionPanCameraWhileDriving() end
-
----@return boolean
-function __Core:getOptionPlayMusicWhenPaused() end
 
 ---@return number
 function __Core:getOptionPrecipitationSpeedMultiplier() end
@@ -961,6 +967,9 @@ function __Core:setForceSnow(forceSnow) end
 ---@param index integer
 function __Core:setFramerate(index) end
 
+---@param gameMode string
+function __Core:setGameMode(gameMode) end
+
 ---@param arg0 ColorInfo
 function __Core:setGoodHighlitedColor(arg0) end
 
@@ -1018,6 +1027,9 @@ function __Core:setOptionAutoDrink(enable) end
 
 ---@param optionAutoProneAtk boolean
 function __Core:setOptionAutoProneAtk(optionAutoProneAtk) end
+
+---@param enable boolean
+function __Core:setOptionAutoRevealPrintMediaMapLocations(enable) end
 
 ---@param arg0 boolean
 function __Core:setOptionAutoWalkContainer(arg0) end
@@ -1178,9 +1190,6 @@ function __Core:setOptionPanCameraWhileAiming(enable) end
 
 ---@param enable boolean
 function __Core:setOptionPanCameraWhileDriving(enable) end
-
----@param arg0 boolean
-function __Core:setOptionPlayMusicWhenPaused(arg0) end
 
 ---@param arg0 number
 function __Core:setOptionPrecipitationSpeedMultiplier(arg0) end
@@ -1473,56 +1482,17 @@ function __Core:zoomOptionChanged(inGame) end
 
 Core = {}
 
----@type string
-Core.ChallengeID = nil
-
----@type UITextEntryInterface
-Core.CurrentTextEntryBox = nil
-
----@type string
-Core.GameMap = nil
-
----@type string
-Core.GameMode = nil
-
----@type string
-Core.GameSaveWorld = nil
-
 ---@type boolean
 Core.IS_DEV = nil
 
 ---@type Core.KeyBinding
 Core.KEYBINDING_EMPTY = nil
 
----@type integer
-Core.MaxJukeBoxesActive = nil
-
 ---@type number
 Core.ModelScale = nil
 
----@type integer
-Core.NumJukeBoxesActive = nil
-
----@type boolean
-Core.OptionModsEnabled = nil
-
 ---@type number
 Core.PZWorldToBulletZScale = nil
-
----@type string
-Core.Preset = nil
-
----@type boolean
-Core.SafeMode = nil
-
----@type boolean
-Core.SafeModeForced = nil
-
----@type boolean
-Core.SoundDisabled = nil
-
----@type integer
-Core.TileScale = nil
 
 ---@type Vector3f
 Core.UnitVector3f = nil
@@ -1531,31 +1501,13 @@ Core.UnitVector3f = nil
 Core._UNIT_Z = nil
 
 ---@type boolean
-Core.bAltMoveMethod = nil
+Core.addZombieOnCellLoad = nil
 
 ---@type boolean
-Core.bDebug = nil
+Core.altMoveMethod = nil
 
 ---@type boolean
 Core.bDemo = nil
-
----@type boolean
-Core.bExiting = nil
-
----@type boolean
-Core.bImGui = nil
-
----@type boolean
-Core.bLastStand = nil
-
----@type boolean
-Core.bTutorial = nil
-
----@type boolean
-Core.bUseGameViewport = nil
-
----@type boolean
-Core.bUseViewports = nil
 
 ---@type number
 Core.blinkAlpha = nil
@@ -1563,11 +1515,32 @@ Core.blinkAlpha = nil
 ---@type boolean
 Core.blinkAlphaIncrease = nil
 
+---@type string
+Core.challengeId = nil
+
 ---@type number
 Core.characterHeight = nil
 
+---@type UITextEntryInterface
+Core.currentTextEntryBox = nil
+
+---@type boolean
+Core.debug = nil
+
 ---@type integer
 Core.dirtyGlobalLightsCount = nil
+
+---@type boolean
+Core.exiting = nil
+
+---@type string
+Core.gameMap = nil
+
+---@type string
+Core.gameMode = nil
+
+---@type string
+Core.gameSaveWorld = nil
 
 ---@type integer
 Core.height = nil
@@ -1593,14 +1566,53 @@ Core.iPerfSkybox_Medium = nil
 ---@type integer
 Core.iPerfSkybox_Static = nil
 
+---@type boolean
+Core.imGui = nil
+
 ---@type number
 Core.initialHeight = nil
 
 ---@type number
 Core.initialWidth = nil
 
+---@type boolean
+Core.lastStand = nil
+
+---@type integer
+Core.maxJukeBoxesActive = nil
+
+---@type integer
+Core.numJukeBoxesActive = nil
+
+---@type boolean
+Core.optionModsEnabled = nil
+
+---@type string
+Core.preset = nil
+
+---@type boolean
+Core.safeMode = nil
+
+---@type boolean
+Core.safeModeForced = nil
+
 ---@type number
 Core.scale = nil
+
+---@type boolean
+Core.soundDisabled = nil
+
+---@type integer
+Core.tileScale = nil
+
+---@type boolean
+Core.tutorial = nil
+
+---@type boolean
+Core.useGameViewport = nil
+
+---@type boolean
+Core.useViewports = nil
 
 ---@type integer
 Core.width = nil
@@ -1631,6 +1643,9 @@ function Core.getGLMajorVersion() end
 ---@return string
 function Core.getGLVersion() end
 
+---@return string
+function Core.getGitRevisionString() end
+
 ---@return Core
 function Core.getInstance() end
 
@@ -1639,11 +1654,11 @@ function Core.getMyDocumentFolder() end
 
 function Core.getOpenGLVersions() end
 
----@return string
-function Core.getSVNRevisionString() end
-
 ---@return integer
 function Core.getTileScale() end
+
+---@return boolean
+function Core.isDevMode() end
 
 ---@return boolean
 function Core.isImGui() end

@@ -208,6 +208,9 @@ function __FluidContainer:setContainerName(arg0) end
 ---@param arg0 boolean
 function __FluidContainer:setInputLocked(arg0) end
 
+---@param item InventoryItem
+function __FluidContainer:setNonSavedFieldsFromItemScript(item) end
+
 ---@param arg0 number
 function __FluidContainer:setRainCatcher(arg0) end
 

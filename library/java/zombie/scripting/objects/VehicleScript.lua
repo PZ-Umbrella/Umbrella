@@ -173,10 +173,10 @@ function __VehicleScript:getMechanicType() end
 ---@return VehicleScript.Model
 function __VehicleScript:getModel() end
 
----@param arg0 string
----@param arg1 ArrayList<VehicleScript.Model>
+---@param id string
+---@param models ArrayList<VehicleScript.Model>
 ---@return VehicleScript.Model
-function __VehicleScript:getModelById(arg0, arg1) end
+function __VehicleScript:getModelById(id, models) end
 
 ---@param id string
 ---@return VehicleScript.Model

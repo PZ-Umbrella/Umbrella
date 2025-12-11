@@ -106,6 +106,11 @@ function __Coroutine:stackClear(arg0, arg1) end
 ---@param arg2 integer
 function __Coroutine:stackCopy(arg0, arg1, arg2) end
 
+---@param startIndex integer
+---@param destIndex integer
+---@param len integer
+function __Coroutine:stackCopyNoDebugStuff(startIndex, destIndex, len) end
+
 Coroutine = {}
 
 ---@param arg0 LuaCallFrame

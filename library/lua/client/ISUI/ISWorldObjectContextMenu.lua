@@ -8,6 +8,8 @@ ISWorldObjectContextMenu.fetchVars = {}
 ISWorldObjectContextMenu.fetchSquares = {} ---@type table<IsoGridSquare, boolean>
 ISWorldObjectContextMenu.tooltipPool = {} ---@type ISToolTip[]
 ISWorldObjectContextMenu.tooltipsUsed = {} ---@type ISToolTip[]
+ISWorldObjectContextMenu.tooltipInvPool = {}
+ISWorldObjectContextMenu.tooltipInvUsed = {}
 ISWorldObjectContextMenu.Test = nil ---@type boolean?
 ISWorldObjectContextMenu.sleepDialog = nil ---@type ISModalDialog?
 ISWorldObjectContextMenu.chairCheckList = {
@@ -57,6 +59,9 @@ function ISWorldObjectContextMenu.addTileDebugInfo(context, fetch) end
 
 ---@return ISToolTip
 function ISWorldObjectContextMenu.addToolTip() end
+
+---@return unknown
+function ISWorldObjectContextMenu.addToolTipInv(item) end
 
 ---@param washList InventoryItem[]
 ---@return number

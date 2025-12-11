@@ -60,6 +60,9 @@ function __ClimbThroughWindowState:isPastInnerEdgeOfSquare(owner, x, y, moveDir)
 function __ClimbThroughWindowState:isPastOuterEdgeOfSquare(owner, x, y, moveDir) end
 
 ---@return boolean
+function __ClimbThroughWindowState:isProcessedOnEnter() end
+
+---@return boolean
 function __ClimbThroughWindowState:isSyncInIdle() end
 
 ---@return boolean
@@ -74,6 +77,10 @@ function __ClimbThroughWindowState:isSyncOnSquare() end
 ---@param owner IsoGameCharacter
 ---@return boolean
 function __ClimbThroughWindowState:isWindowClosing(owner) end
+
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __ClimbThroughWindowState:processOnEnter(owner, delegate) end
 
 ---@param owner IsoGameCharacter
 ---@param obj IsoObject

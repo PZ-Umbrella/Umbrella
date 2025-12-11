@@ -77,6 +77,10 @@ function KahluaUtil.getStringArg(arg0, arg1, arg2) end
 ---@return KahluaThread
 function KahluaUtil.getWorkerThread(arg0, arg1) end
 
+---@param o any
+---@return string
+function KahluaUtil.identityHashCode(o) end
+
 ---@param arg0 integer
 ---@param arg1 integer
 ---@return integer

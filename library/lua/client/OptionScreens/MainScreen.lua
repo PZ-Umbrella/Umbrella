@@ -42,7 +42,10 @@
 ---@field modSelect ModSelector
 ---@field modsOption ISLabel
 ---@field MouseEnterMainMenuItem integer?
+---@field multiplayer MultiplayerUI
+---@field onlineCoopOption ISLabel
 ---@field onlineCoopScreen CoopOptionsScreen
+---@field onlineOption ISLabel
 ---@field optionsOption ISLabel
 ---@field overBottomPanelButton ISUIElement?
 ---@field quitToDesktop ISLabel
@@ -65,6 +68,8 @@
 ---@field time number
 ---@field tutorialButton ISButton?
 ---@field tutorialOption ISLabel
+---@field version unknown
+---@field versionBtn ISButton
 ---@field versionDetail ISButton
 ---@field versionLabel ISLabel
 ---@field warningFade number
@@ -139,6 +144,8 @@ function MainScreen.onTutorialControllerWarn() end
 
 function MainScreen.resetLuaIfNeeded() end
 
+function MainScreen.setKeyboardMouseActivated() end
+
 function MainScreen.startTutorial() end
 
 ---@param credit string
@@ -147,6 +154,8 @@ function MainScreen:addCredit(credit, number) end
 
 ---@return number
 function MainScreen:calcLogoHeight() end
+
+function MainScreen:copyRev() end
 
 function MainScreen:doArtCredits() end
 

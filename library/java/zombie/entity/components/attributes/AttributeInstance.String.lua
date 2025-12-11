@@ -6,14 +6,7 @@ local __String = {}
 ---@return AttributeInstance.String
 function __String:copy() end
 
----@return AttributeInstance
-function __String:copy() end
-
 ---@param arg0 AttributeInstance.String
----@return boolean
-function __String:equalTo(arg0) end
-
----@param arg0 AttributeInstance
 ---@return boolean
 function __String:equalTo(arg0) end
 

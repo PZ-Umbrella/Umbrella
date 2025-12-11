@@ -16,9 +16,6 @@ function __AnimalInventoryItem:getAnimal() end
 ---@return string
 function __AnimalInventoryItem:getCategory() end
 
----@return integer
-function __AnimalInventoryItem:getSaveType() end
-
 function __AnimalInventoryItem:initAnimalData() end
 
 ---@param arg0 ByteBuffer

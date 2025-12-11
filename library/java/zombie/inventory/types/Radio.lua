@@ -35,7 +35,7 @@ function __Radio:ReadFromWorldSprite(sprite) end
 ---@param line string
 function __Radio:Say(line) end
 
----@return string
+---@return ItemBodyLocation
 function __Radio:canBeEquipped() end
 
 ---@param distance integer
@@ -52,9 +52,6 @@ function __Radio:getDeviceData() end
 
 ---@return IsoPlayer
 function __Radio:getPlayer() end
-
----@return integer
-function __Radio:getSaveType() end
 
 ---@return string
 function __Radio:getSayLine() end
@@ -86,8 +83,8 @@ function __Radio:renderlast() end
 ---@param net boolean
 function __Radio:save(output, net) end
 
----@param arg0 string
-function __Radio:setCanBeEquipped(arg0) end
+---@param canBeEquipped ItemBodyLocation
+function __Radio:setCanBeEquipped(canBeEquipped) end
 
 ---@param delta number
 function __Radio:setDelta(delta) end

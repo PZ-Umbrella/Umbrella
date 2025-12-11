@@ -10,9 +10,9 @@ function __ScriptType:getScriptTag() end
 ---@return boolean
 function __ScriptType:hasFlag(arg0) end
 
----@param arg0 EnumSet<ScriptType.Flags>
+---@param flags EnumSet<ScriptType.Flags>
 ---@return boolean
-function __ScriptType:hasFlags(arg0) end
+function __ScriptType:hasFlags(flags) end
 
 ---@return boolean
 function __ScriptType:isCritical() end
@@ -30,6 +30,12 @@ ScriptType = {}
 
 ---@type ScriptType
 ScriptType.AnimationMesh = nil
+
+---@type ScriptType
+ScriptType.CharacterProfessionDefinition = nil
+
+---@type ScriptType
+ScriptType.CharacterTraitDefinition = nil
 
 ---@type ScriptType
 ScriptType.Clock = nil

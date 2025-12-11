@@ -66,8 +66,8 @@ function RecipeMonitor.LogItem(arg0, arg1) end
 ---@param arg1 ArrayList<T>
 function RecipeMonitor.LogList(arg0, arg1) end
 
----@param arg0 List<Recipe.Source>
-function RecipeMonitor.LogSources(arg0) end
+---@param sources List<Recipe.Source>
+function RecipeMonitor.LogSources(sources) end
 
 function RecipeMonitor.ResetTabs() end
 

@@ -9,6 +9,7 @@ ISInventoryPaneContextMenu.bhs = "<BHC>"
 ISInventoryPaneContextMenu.toolRender = nil ---@type ISToolTipInv?
 ISInventoryPaneContextMenu.ItemInstances = nil ---@type table<string, InventoryItem>?
 ISInventoryPaneContextMenu.placeItemCursor = nil ---@type ISPlace3DItemCursor?
+ISInventoryPaneContextMenu.debugContextNum = nil
 
 ---@param selectedItem InventoryItem
 ---@param context ISContextMenu
@@ -55,6 +56,8 @@ function ISInventoryPaneContextMenu.addFixerSubOption(
 	vehiclePart
 )
 end
+
+function ISInventoryPaneContextMenu.addFluidDebug(cont, fluid) end
 
 ---@param subMenuRecipe ISContextMenu
 ---@param baseItem InventoryItem
@@ -218,6 +221,18 @@ function ISInventoryPaneContextMenu.doClothingPatchMenu(player, clothing, contex
 ---@return unknown?
 function ISInventoryPaneContextMenu.doContextConfigOptions(context, item, playerObj) end
 
+function ISInventoryPaneContextMenu.doDebugContextMenu(
+	context,
+	items,
+	editItem,
+	testItem,
+	player,
+	playerObj,
+	tests,
+	c
+)
+end
+
 ---@param playerObj IsoPlayer
 ---@param fluidContainer InventoryItem
 ---@param context ISContextMenu
@@ -270,6 +285,8 @@ function ISInventoryPaneContextMenu.doMagazineMenu(playerObj, magazine, context)
 ---@param makeup InventoryItem
 ---@param playerObj IsoPlayer
 function ISInventoryPaneContextMenu.doMakeUpMenu(context, makeup, playerObj) end
+
+function ISInventoryPaneContextMenu.doMoreContextMenu(context, tests, moveItems, playerObj, items, c) end
 
 ---@param context ISContextMenu
 function ISInventoryPaneContextMenu.doPillsMenu(context, items, player, cmd) end

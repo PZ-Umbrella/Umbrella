@@ -11,6 +11,8 @@ xpUpdate.lastY = 0
 ---@param amount number
 function xpUpdate.addXp(owner, type, amount) end
 
+function xpUpdate.checkForLearningRecipe(playerObj, recipe) end
+
 ---@param playerObj IsoPlayer
 ---@param perk PerkFactory.Perk
 function xpUpdate.checkForLosingLevel(playerObj, perk) end
