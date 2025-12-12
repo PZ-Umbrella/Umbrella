@@ -93,7 +93,7 @@
 --- This interface is a member of the
 ---
 --- Java Collections Framework.
----@class List<E>: Collection<E>
+---@class List<E>: SequencedCollection<E>
 local __List = {}
 
 ---@param arg0 E
@@ -113,6 +113,12 @@ function __List:addAll(arg0) end
 ---@return boolean
 function __List:addAll(arg0, arg1) end
 
+---@param arg0 E
+function __List:addFirst(arg0) end
+
+---@param arg0 E
+function __List:addLast(arg0) end
+
 function __List:clear() end
 
 ---@param arg0 any
@@ -130,6 +136,12 @@ function __List:equals(arg0) end
 ---@param arg0 integer
 ---@return E
 function __List:get(arg0) end
+
+---@return E
+function __List:getFirst() end
+
+---@return E
+function __List:getLast() end
 
 ---@return integer
 function __List:hashCode() end
@@ -167,12 +179,21 @@ function __List:remove(arg0) end
 ---@return boolean
 function __List:removeAll(arg0) end
 
+---@return E
+function __List:removeFirst() end
+
+---@return E
+function __List:removeLast() end
+
 ---@param arg0 UnaryOperator<E>
 function __List:replaceAll(arg0) end
 
 ---@param arg0 Collection<any>
 ---@return boolean
 function __List:retainAll(arg0) end
+
+---@return List<E>
+function __List:reversed() end
 
 ---@param arg0 integer
 ---@param arg1 E

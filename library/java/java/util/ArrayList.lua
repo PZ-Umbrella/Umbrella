@@ -101,6 +101,12 @@ function __ArrayList:addAll(c) end
 ---@return boolean # true if this list changed as a result of the call
 function __ArrayList:addAll(index, c) end
 
+---@param arg0 E
+function __ArrayList:addFirst(arg0) end
+
+---@param arg0 E
+function __ArrayList:addLast(arg0) end
+
 ---Removes all of the elements from this list.  The list will
 --- be empty after this call returns.
 function __ArrayList:clear() end
@@ -143,6 +149,12 @@ function __ArrayList:forEach(action) end
 ---@param index integer index of the element to return
 ---@return E # the element at the specified position in this list
 function __ArrayList:get(index) end
+
+---@return E
+function __ArrayList:getFirst() end
+
+---@return E
+function __ArrayList:getLast() end
 
 ---Returns the hash code value for this list.
 ---@return integer # the hash code value for this list
@@ -225,11 +237,17 @@ function __ArrayList:remove(o) end
 ---@return boolean # true if this list changed as a result of the call
 function __ArrayList:removeAll(c) end
 
+---@return E
+function __ArrayList:removeFirst() end
+
 ---Description copied from interface: Collection
 ---@param filter Predicate<any> a predicate which returns true for elements to be
 ---        removed
 ---@return boolean # true if any elements were removed
 function __ArrayList:removeIf(filter) end
+
+---@return E
+function __ArrayList:removeLast() end
 
 ---@param arg0 UnaryOperator<E>
 function __ArrayList:replaceAll(arg0) end

@@ -139,6 +139,9 @@
 ---@class Format.FieldDelegate
 
 ---(Not exposed)
+---@class Format.StringBuf
+
+---(Not exposed)
 ---@class NumberFormat
 
 ---(Not exposed)

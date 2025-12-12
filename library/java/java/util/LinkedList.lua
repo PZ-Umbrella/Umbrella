@@ -276,6 +276,9 @@ function __LinkedList:removeLast() end
 ---@return boolean # true if the list contained the specified element
 function __LinkedList:removeLastOccurrence(o) end
 
+---@return LinkedList<E>
+function __LinkedList:reversed() end
+
 ---Replaces the element at the specified position in this list with the
 --- specified element.
 ---@param index integer index of the element to replace

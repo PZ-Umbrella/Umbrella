@@ -210,6 +210,9 @@ Double.NaN = nil
 ---@type number
 Double.POSITIVE_INFINITY = nil
 
+---@type integer
+Double.PRECISION = nil
+
 ---The number of bits used to represent a double value.
 ---@type integer
 Double.SIZE = nil

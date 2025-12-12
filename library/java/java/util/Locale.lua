@@ -415,6 +415,13 @@ Locale.UNICODE_LOCALE_EXTENSION = nil
 ---@type Locale
 Locale.US = nil
 
+---@return Stream<Locale>
+function Locale.availableLocales() end
+
+---@param arg0 string
+---@return string
+function Locale.caseFoldLanguageTag(arg0) end
+
 ---@param arg0 List<Locale.LanguageRange>
 ---@param arg1 Collection<Locale>
 ---@param arg2 Locale.FilteringMode
@@ -638,6 +645,21 @@ function Locale.lookup(arg0, arg1) end
 ---@return string
 function Locale.lookupTag(arg0, arg1) end
 
+---@param arg0 string
+---@param arg1 string
+---@param arg2 string
+---@return Locale
+function Locale.of(arg0, arg1, arg2) end
+
+---@param arg0 string
+---@param arg1 string
+---@return Locale
+function Locale.of(arg0, arg1) end
+
+---@param arg0 string
+---@return Locale
+function Locale.of(arg0) end
+
 ---Sets the default locale for this instance of the Java Virtual Machine.
 --- This does not affect the host locale.
 ---
@@ -678,6 +700,7 @@ function Locale.setDefault(newLocale) end
 ---@param newLocale Locale the new default locale
 function Locale.setDefault(category, newLocale) end
 
+---@deprecated
 ---Construct a locale from language, country and variant.
 --- This constructor normalizes the language value to lowercase and
 --- the country value to uppercase.
@@ -691,6 +714,7 @@ function Locale.setDefault(category, newLocale) end
 ---@return Locale
 function Locale.new(language, country, variant) end
 
+---@deprecated
 ---Construct a locale from language and country.
 --- This constructor normalizes the language value to lowercase and
 --- the country value to uppercase.
@@ -702,6 +726,7 @@ function Locale.new(language, country, variant) end
 ---@return Locale
 function Locale.new(language, country) end
 
+---@deprecated
 ---Construct a locale from a language code.
 --- This constructor normalizes the language value to lowercase.
 ---@param language string An ISO 639 alpha-2 or alpha-3 language code, or a language subtag

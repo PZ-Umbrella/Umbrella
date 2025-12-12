@@ -78,6 +78,12 @@ function __Reader:read(cbuf) end
 ---             stream has been reached
 function __Reader:read(cbuf, off, len) end
 
+---@return string
+function __Reader:readAllAsString() end
+
+---@return List<string>
+function __Reader:readAllLines() end
+
 ---Tells whether this stream is ready to be read.
 ---@return boolean # True if the next read() is guaranteed not to block for input,
 --- false otherwise.  Note that returning false does not guarantee that the

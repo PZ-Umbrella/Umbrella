@@ -160,7 +160,7 @@
 --- This interface is a member of the
 ---
 --- Java Collections Framework.
----@class Deque<E>: Queue<E>
+---@class Deque<E>: Queue<E>, SequencedCollection<E>
 local __Deque = {}
 
 ---Inserts the specified element into the queue represented by this deque
@@ -388,6 +388,9 @@ function __Deque:removeLast() end
 ---@param o any element to be removed from this deque, if present
 ---@return boolean # true if an element was removed as a result of this call
 function __Deque:removeLastOccurrence(o) end
+
+---@return Deque<E>
+function __Deque:reversed() end
 
 ---Returns the number of elements in this deque.
 ---@return integer # the number of elements in this deque

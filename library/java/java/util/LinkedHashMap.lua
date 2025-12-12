@@ -110,7 +110,7 @@
 --- This class is a member of the
 ---
 --- Java Collections Framework.
----@class LinkedHashMap<K, V>: HashMap<K, V>, Map<K, V>
+---@class LinkedHashMap<K, V>: HashMap<K, V>, SequencedMap<K, V>
 local __LinkedHashMap = {}
 
 ---Removes all of the mappings from this map.
@@ -170,8 +170,30 @@ function __LinkedHashMap:getOrDefault(arg0, arg1) end
 ---@return Set<K> # a set view of the keys contained in this map
 function __LinkedHashMap:keySet() end
 
+---@param arg0 K
+---@param arg1 V
+---@return V
+function __LinkedHashMap:putFirst(arg0, arg1) end
+
+---@param arg0 K
+---@param arg1 V
+---@return V
+function __LinkedHashMap:putLast(arg0, arg1) end
+
 ---@param arg0 BiFunction<any, any, V>
 function __LinkedHashMap:replaceAll(arg0) end
+
+---@return SequencedMap<K, V>
+function __LinkedHashMap:reversed() end
+
+---@return SequencedSet<Map.Entry<K, V>>
+function __LinkedHashMap:sequencedEntrySet() end
+
+---@return SequencedSet<K>
+function __LinkedHashMap:sequencedKeySet() end
+
+---@return SequencedCollection<V>
+function __LinkedHashMap:sequencedValues() end
 
 ---Returns a Collection view of the values contained in this map.
 --- The collection is backed by the map, so changes to the map are
@@ -191,6 +213,12 @@ function __LinkedHashMap:replaceAll(arg0) end
 function __LinkedHashMap:values() end
 
 LinkedHashMap = {}
+
+---@generic K
+---@generic V
+---@param arg0 integer
+---@return LinkedHashMap<K, V>
+function LinkedHashMap.newLinkedHashMap(arg0) end
 
 ---@generic K
 ---@generic V

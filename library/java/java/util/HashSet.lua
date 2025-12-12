@@ -126,6 +126,11 @@ function __HashSet:toArray(a) end
 
 HashSet = {}
 
+---@generic T
+---@param arg0 integer
+---@return HashSet<T>
+function HashSet.newHashSet(arg0) end
+
 ---@generic E
 ---Constructs a new, empty set; the backing HashMap instance has
 --- default initial capacity (16) and load factor (0.75).

@@ -1054,6 +1054,9 @@
 ---@class Random
 
 ---(Not exposed)
+---@class SequencedSet<E>
+
+---(Not exposed)
 ---@class Spliterator<T>
 
 ---(Not exposed)

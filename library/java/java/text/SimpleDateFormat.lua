@@ -119,6 +119,9 @@ function __SimpleDateFormat:toLocalizedPattern() end
 ---@return string # a pattern string describing this date format.
 function __SimpleDateFormat:toPattern() end
 
+---@return string
+function __SimpleDateFormat:toString() end
+
 SimpleDateFormat = {}
 
 ---Constructs a SimpleDateFormat using the default pattern and

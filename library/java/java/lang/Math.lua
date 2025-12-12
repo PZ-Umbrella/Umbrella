@@ -99,6 +99,9 @@ Math.E = nil
 ---@type number
 Math.PI = nil
 
+---@type number
+Math.TAU = nil
+
 ---Computes the remainder operation on two arguments as prescribed
 --- by the IEEE 754 standard.
 --- The remainder value is mathematically equal to
@@ -344,6 +347,70 @@ function Math.cbrt(a) end
 ---          the argument and is equal to a mathematical integer.
 function Math.ceil(a) end
 
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Math.ceilDiv(arg0, arg1) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Math.ceilDiv(arg0, arg1) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Math.ceilDiv(arg0, arg1) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Math.ceilDivExact(arg0, arg1) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Math.ceilDivExact(arg0, arg1) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Math.ceilMod(arg0, arg1) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Math.ceilMod(arg0, arg1) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Math.ceilMod(arg0, arg1) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@param arg2 integer
+---@return integer
+function Math.clamp(arg0, arg1, arg2) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@param arg2 integer
+---@return integer
+function Math.clamp(arg0, arg1, arg2) end
+
+---@param arg0 number
+---@param arg1 number
+---@param arg2 number
+---@return number
+function Math.clamp(arg0, arg1, arg2) end
+
+---@param arg0 number
+---@param arg1 number
+---@param arg2 number
+---@return number
+function Math.clamp(arg0, arg1, arg2) end
+
 ---Returns the first floating-point argument with the sign of the
 --- second floating-point argument.  Note that unlike the StrictMath.copySign
 --- method, this method does not require NaN sign
@@ -415,6 +482,16 @@ function Math.decrementExact(a) end
 ---@param a integer the value to decrement
 ---@return integer # the result
 function Math.decrementExact(a) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Math.divideExact(arg0, arg1) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Math.divideExact(arg0, arg1) end
 
 ---Returns Euler's number e raised to the power of a
 --- double value.  Special cases:
@@ -545,6 +622,16 @@ function Math.floorDiv(x, y) end
 ---@return integer # the largest (closest to positive infinity)
 --- long value that is less than or equal to the algebraic quotient.
 function Math.floorDiv(x, y) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Math.floorDivExact(arg0, arg1) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Math.floorDivExact(arg0, arg1) end
 
 ---Returns the floor modulus of the int arguments.
 ---
@@ -1254,6 +1341,16 @@ function Math.nextUp(f) end
 ---@return number # the value ab.
 function Math.pow(a, b) end
 
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Math.powExact(arg0, arg1) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Math.powExact(arg0, arg1) end
+
 ---Returns a double value with a positive sign, greater
 --- than or equal to 0.0 and less than 1.0.
 --- Returned values are chosen pseudorandomly with (approximately)
@@ -1566,6 +1663,36 @@ function Math.ulp(d) end
 ---@param f number the floating-point value whose ulp is to be returned
 ---@return number # the size of an ulp of the argument
 function Math.ulp(f) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Math.unsignedMultiplyExact(arg0, arg1) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Math.unsignedMultiplyExact(arg0, arg1) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Math.unsignedMultiplyExact(arg0, arg1) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Math.unsignedMultiplyHigh(arg0, arg1) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Math.unsignedPowExact(arg0, arg1) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Math.unsignedPowExact(arg0, arg1) end
 
 ---@type Class<Math>
 Math.class = nil

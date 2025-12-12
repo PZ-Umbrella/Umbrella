@@ -245,6 +245,12 @@ HashMap = {}
 
 ---@generic K
 ---@generic V
+---@param arg0 integer
+---@return HashMap<K, V>
+function HashMap.newHashMap(arg0) end
+
+---@generic K
+---@generic V
 ---Constructs an empty HashMap with the specified initial
 --- capacity and load factor.
 ---@param initialCapacity integer the initial capacity

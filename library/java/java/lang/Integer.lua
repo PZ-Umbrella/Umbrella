@@ -103,6 +103,11 @@ function Integer.compare(arg0, arg1) end
 ---@return integer
 function Integer.compareUnsigned(arg0, arg1) end
 
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Integer.compress(arg0, arg1) end
+
 ---@param arg0 string
 ---@return integer
 function Integer.decode(arg0) end
@@ -111,6 +116,11 @@ function Integer.decode(arg0) end
 ---@param arg1 integer
 ---@return integer
 function Integer.divideUnsigned(arg0, arg1) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Integer.expand(arg0, arg1) end
 
 ---@param arg0 string
 ---@return integer

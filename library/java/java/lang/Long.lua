@@ -103,6 +103,11 @@ function Long.compare(arg0, arg1) end
 ---@return integer
 function Long.compareUnsigned(arg0, arg1) end
 
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Long.compress(arg0, arg1) end
+
 ---@param arg0 string
 ---@return integer
 function Long.decode(arg0) end
@@ -111,6 +116,11 @@ function Long.decode(arg0) end
 ---@param arg1 integer
 ---@return integer
 function Long.divideUnsigned(arg0, arg1) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function Long.expand(arg0, arg1) end
 
 ---@param arg0 string
 ---@return integer

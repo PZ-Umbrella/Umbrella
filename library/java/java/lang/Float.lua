@@ -129,6 +129,9 @@ Float.NaN = nil
 ---@type number
 Float.POSITIVE_INFINITY = nil
 
+---@type integer
+Float.PRECISION = nil
+
 ---The number of bits used to represent a float value.
 ---@type integer
 Float.SIZE = nil
@@ -142,6 +145,14 @@ Float.TYPE = nil
 ---@param arg1 number
 ---@return integer
 function Float.compare(arg0, arg1) end
+
+---@param arg0 integer
+---@return number
+function Float.float16ToFloat(arg0) end
+
+---@param arg0 number
+---@return integer
+function Float.floatToFloat16(arg0) end
 
 ---@param arg0 number
 ---@return integer
