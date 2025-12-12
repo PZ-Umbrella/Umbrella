@@ -21,15 +21,15 @@ function __FaceInfo:getMasterY() end
 ---@return integer
 function __FaceInfo:getMasterZ() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return SpriteConfigManager.TileInfo
-function __FaceInfo:getTileInfo(arg0, arg1, arg2) end
+function __FaceInfo:getTileInfo(x, y, z) end
 
----@param arg0 string
+---@param tile string
 ---@return SpriteConfigManager.TileInfo
-function __FaceInfo:getTileInfoForSprite(arg0) end
+function __FaceInfo:getTileInfoForSprite(tile) end
 
 ---@return integer
 function __FaceInfo:getWidth() end
@@ -43,12 +43,12 @@ function __FaceInfo:isMasterSet() end
 ---@return boolean
 function __FaceInfo:isMultiSquare() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 IsoObject
+---@param x integer
+---@param y integer
+---@param z integer
+---@param object IsoObject
 ---@return boolean
-function __FaceInfo:verifyObject(arg0, arg1, arg2, arg3) end
+function __FaceInfo:verifyObject(x, y, z, object) end
 
 FaceInfo = {}
 

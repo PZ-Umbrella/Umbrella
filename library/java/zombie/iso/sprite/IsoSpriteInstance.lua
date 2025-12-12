@@ -72,28 +72,28 @@ function __IsoSpriteInstance:isMultiplyObjectAlpha() end
 ---@param info2 ColorInfo
 function __IsoSpriteInstance:render(obj, x, y, z, dir, offsetX, offsetY, info2) end
 
----@param arg0 IsoObject
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 IsoDirections
----@param arg5 number
----@param arg6 number
----@param arg7 ColorInfo
----@param arg8 boolean
-function __IsoSpriteInstance:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+---@param obj IsoObject
+---@param x number
+---@param y number
+---@param z number
+---@param dir IsoDirections
+---@param offsetX number
+---@param offsetY number
+---@param info2 ColorInfo
+---@param bDoRenderPrep boolean
+function __IsoSpriteInstance:render(obj, x, y, z, dir, offsetX, offsetY, info2, bDoRenderPrep) end
 
----@param arg0 IsoObject
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 IsoDirections
----@param arg5 number
----@param arg6 number
----@param arg7 ColorInfo
----@param arg8 boolean
----@param arg9 Consumer<TextureDraw>
-function __IsoSpriteInstance:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+---@param obj IsoObject
+---@param x number
+---@param y number
+---@param z number
+---@param dir IsoDirections
+---@param offsetX number
+---@param offsetY number
+---@param info2 ColorInfo
+---@param bDoRenderPrep boolean
+---@param texdModifier Consumer<TextureDraw>
+function __IsoSpriteInstance:render(obj, x, y, z, dir, offsetX, offsetY, info2, bDoRenderPrep, texdModifier) end
 
 ---@param texW number
 ---@param texH number

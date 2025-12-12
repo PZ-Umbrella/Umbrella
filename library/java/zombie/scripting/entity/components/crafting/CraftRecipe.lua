@@ -3,40 +3,40 @@
 ---@class CraftRecipe: BaseScriptObject, TaggedObjectManager.TaggedObject
 local __CraftRecipe = {}
 
----@param arg0 string
-function __CraftRecipe:InitLoadPP(arg0) end
+---@param name string
+function __CraftRecipe:InitLoadPP(name) end
 
----@param arg0 string
----@param arg1 string
-function __CraftRecipe:Load(arg0, arg1) end
+---@param name string
+---@param body string
+function __CraftRecipe:Load(name, body) end
 
----@param arg0 string
----@param arg1 ScriptParser.Block
-function __CraftRecipe:Load(arg0, arg1) end
+---@param name string
+---@param block ScriptParser.Block
+function __CraftRecipe:Load(name, block) end
 
 function __CraftRecipe:OnLoadedAfterLua() end
 
 function __CraftRecipe:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __CraftRecipe:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __CraftRecipe:OnScriptsLoaded(loadMode) end
 
----@param arg0 InventoryItem
+---@param inventoryItem InventoryItem
 ---@return boolean
-function __CraftRecipe:OnTestItem(arg0) end
+function __CraftRecipe:OnTestItem(inventoryItem) end
 
 function __CraftRecipe:PreReload() end
 
----@param arg0 PerkFactory.Perk
----@param arg1 integer
-function __CraftRecipe:addRequiredSkill(arg0, arg1) end
+---@param perk PerkFactory.Perk
+---@param level integer
+function __CraftRecipe:addRequiredSkill(perk, level) end
 
----@param arg0 IsoGameCharacter
-function __CraftRecipe:addXP(arg0) end
+---@param character IsoGameCharacter
+function __CraftRecipe:addXP(character) end
 
----@param arg0 IsoGameCharacter
----@param arg1 boolean
-function __CraftRecipe:addXP(arg0, arg1) end
+---@param character IsoGameCharacter
+---@param showXP boolean
+function __CraftRecipe:addXP(character, showXP) end
 
 ---@return boolean
 function __CraftRecipe:canAlwaysBeResearched() end
@@ -47,86 +47,86 @@ function __CraftRecipe:canBeDoneInDark() end
 ---@return boolean
 function __CraftRecipe:canBeResearched() end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return boolean
-function __CraftRecipe:canBenefitFromRecipeAtHand(arg0) end
+function __CraftRecipe:canBenefitFromRecipeAtHand(chr) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __CraftRecipe:canOutputItem(arg0) end
+function __CraftRecipe:canOutputItem(item) end
 
----@param arg0 Item
+---@param item Item
 ---@return boolean
-function __CraftRecipe:canOutputItem(arg0) end
+function __CraftRecipe:canOutputItem(item) end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return boolean
-function __CraftRecipe:canResearch(arg0) end
+function __CraftRecipe:canResearch(chr) end
 
----@param arg0 IsoGameCharacter
----@param arg1 boolean
+---@param chr IsoGameCharacter
+---@param blacklistKnown boolean
 ---@return boolean
-function __CraftRecipe:canResearch(arg0, arg1) end
+function __CraftRecipe:canResearch(chr, blacklistKnown) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __CraftRecipe:canUseItem(arg0) end
+function __CraftRecipe:canUseItem(item) end
 
----@param arg0 string
+---@param item string
 ---@return boolean
-function __CraftRecipe:canUseItem(arg0) end
+function __CraftRecipe:canUseItem(item) end
 
 ---@return boolean
 function __CraftRecipe:cannotBeResearched() end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return boolean
-function __CraftRecipe:characterHasRequiredSkills(arg0) end
+function __CraftRecipe:characterHasRequiredSkills(chr) end
 
----@param arg0 IsoGameCharacter
-function __CraftRecipe:checkAutoLearnAllSkills(arg0) end
+---@param chr IsoGameCharacter
+function __CraftRecipe:checkAutoLearnAllSkills(chr) end
 
----@param arg0 IsoGameCharacter
----@param arg1 boolean
-function __CraftRecipe:checkAutoLearnAllSkills(arg0, arg1) end
+---@param chr IsoGameCharacter
+---@param textSpam boolean
+function __CraftRecipe:checkAutoLearnAllSkills(chr, textSpam) end
 
----@param arg0 IsoGameCharacter
-function __CraftRecipe:checkAutoLearnAnySkills(arg0) end
+---@param chr IsoGameCharacter
+function __CraftRecipe:checkAutoLearnAnySkills(chr) end
 
----@param arg0 IsoGameCharacter
----@param arg1 boolean
-function __CraftRecipe:checkAutoLearnAnySkills(arg0, arg1) end
+---@param chr IsoGameCharacter
+---@param textSpam boolean
+function __CraftRecipe:checkAutoLearnAnySkills(chr, textSpam) end
 
----@param arg0 IsoGameCharacter
----@param arg1 string
-function __CraftRecipe:checkMetaRecipe(arg0, arg1) end
+---@param chr IsoGameCharacter
+---@param checkedRecipe string
+function __CraftRecipe:checkMetaRecipe(chr, checkedRecipe) end
 
----@param arg0 IsoGameCharacter
-function __CraftRecipe:checkMetaRecipe(arg0) end
+---@param chr IsoGameCharacter
+function __CraftRecipe:checkMetaRecipe(chr) end
 
 function __CraftRecipe:clearRequiredSkills() end
 
----@param arg0 CraftRecipe.IOScript
+---@param script CraftRecipe.IOScript
 ---@return boolean
-function __CraftRecipe:containsIO(arg0) end
+function __CraftRecipe:containsIO(script) end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return boolean
-function __CraftRecipe:couldBenefitFromRecipeAtHand(arg0) end
+function __CraftRecipe:couldBenefitFromRecipeAtHand(chr) end
 
 ---@return string
 function __CraftRecipe:generateDebugText() end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return string
-function __CraftRecipe:generateDebugText(arg0) end
+function __CraftRecipe:generateDebugText(chr) end
 
 ---@return string
 function __CraftRecipe:getAnimation() end
 
----@param arg0 integer
+---@param index integer
 ---@return CraftRecipe.RequiredSkill
-function __CraftRecipe:getAutoLearnAllSkill(arg0) end
+function __CraftRecipe:getAutoLearnAllSkill(index) end
 
 ---@return integer
 function __CraftRecipe:getAutoLearnAllSkillCount() end
@@ -134,9 +134,9 @@ function __CraftRecipe:getAutoLearnAllSkillCount() end
 ---@return ArrayList<string>
 function __CraftRecipe:getAutoLearnAllSkills() end
 
----@param arg0 integer
+---@param index integer
 ---@return CraftRecipe.RequiredSkill
-function __CraftRecipe:getAutoLearnAnySkill(arg0) end
+function __CraftRecipe:getAutoLearnAnySkill(index) end
 
 ---@return integer
 function __CraftRecipe:getAutoLearnAnySkillCount() end
@@ -150,40 +150,40 @@ function __CraftRecipe:getCategory() end
 ---@return boolean
 function __CraftRecipe:getExistsAsVanilla() end
 
----@param arg0 CraftRecipe
+---@param recipe CraftRecipe
 ---@return string
-function __CraftRecipe:getFavouriteModDataString(arg0) end
+function __CraftRecipe:getFavouriteModDataString(recipe) end
 
 ---@return PerkFactory.Perk
 function __CraftRecipe:getHighestPerkRequirement() end
 
----@param arg0 IsoGameCharacter
+---@param character IsoGameCharacter
 ---@return PerkFactory.Perk
-function __CraftRecipe:getHighestRelevantSkill(arg0) end
+function __CraftRecipe:getHighestRelevantSkill(character) end
 
----@param arg0 IsoGameCharacter
+---@param character IsoGameCharacter
 ---@return PerkFactory.Perk
-function __CraftRecipe:getHighestRelevantSkillFromXpAward(arg0) end
+function __CraftRecipe:getHighestRelevantSkillFromXpAward(character) end
 
----@param arg0 IsoGameCharacter
+---@param character IsoGameCharacter
 ---@return integer
-function __CraftRecipe:getHighestRelevantSkillLevel(arg0) end
+function __CraftRecipe:getHighestRelevantSkillLevel(character) end
 
----@param arg0 IsoGameCharacter
----@param arg1 boolean
+---@param character IsoGameCharacter
+---@param includeAutoLearn boolean
 ---@return integer
-function __CraftRecipe:getHighestRelevantSkillLevel(arg0, arg1) end
+function __CraftRecipe:getHighestRelevantSkillLevel(character, includeAutoLearn) end
 
 ---@return integer
 function __CraftRecipe:getHighestSkillRequirement() end
 
----@param arg0 boolean
+---@param includeAutoLearn boolean
 ---@return integer
-function __CraftRecipe:getHighestSkillRequirement(arg0) end
+function __CraftRecipe:getHighestSkillRequirement(includeAutoLearn) end
 
----@param arg0 integer
+---@param index integer
 ---@return CraftRecipe.IOScript
-function __CraftRecipe:getIOForIndex(arg0) end
+function __CraftRecipe:getIOForIndex(index) end
 
 ---@return string
 function __CraftRecipe:getIconName() end
@@ -191,9 +191,9 @@ function __CraftRecipe:getIconName() end
 ---@return Texture
 function __CraftRecipe:getIconTexture() end
 
----@param arg0 CraftRecipe.IOScript
+---@param script CraftRecipe.IOScript
 ---@return integer
-function __CraftRecipe:getIndexForIO(arg0) end
+function __CraftRecipe:getIndexForIO(script) end
 
 ---@return integer
 function __CraftRecipe:getInputCount() end
@@ -204,9 +204,9 @@ function __CraftRecipe:getInputs() end
 ---@return ArrayList<CraftRecipe.IOScript>
 function __CraftRecipe:getIoLines() end
 
----@param arg0 CraftRecipe.LuaCall
+---@param luaCall CraftRecipe.LuaCall
 ---@return string
-function __CraftRecipe:getLuaCallString(arg0) end
+function __CraftRecipe:getLuaCallString(luaCall) end
 
 ---@return string
 function __CraftRecipe:getMetaRecipe() end
@@ -241,9 +241,9 @@ function __CraftRecipe:getProp2() end
 ---@return CraftRecipeGroup
 function __CraftRecipe:getRecipeGroup() end
 
----@param arg0 integer
+---@param index integer
 ---@return CraftRecipe.RequiredSkill
-function __CraftRecipe:getRequiredSkill(arg0) end
+function __CraftRecipe:getRequiredSkill(index) end
 
 ---@return integer
 function __CraftRecipe:getRequiredSkillCount() end
@@ -254,9 +254,9 @@ function __CraftRecipe:getRequiredSkills() end
 ---@return integer
 function __CraftRecipe:getResearchSkillLevel() end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return integer
-function __CraftRecipe:getResearchSkillLevel(arg0) end
+function __CraftRecipe:getResearchSkillLevel(chr) end
 
 ---@return BitSet
 function __CraftRecipe:getTagBits() end
@@ -267,9 +267,9 @@ function __CraftRecipe:getTags() end
 ---@return integer
 function __CraftRecipe:getTime() end
 
----@param arg0 IsoGameCharacter
+---@param character IsoGameCharacter
 ---@return integer
-function __CraftRecipe:getTime(arg0) end
+function __CraftRecipe:getTime(character) end
 
 ---@return TimedActionScript
 function __CraftRecipe:getTimedActionScript() end
@@ -289,16 +289,16 @@ function __CraftRecipe:getTooltip() end
 ---@return string
 function __CraftRecipe:getTranslationName() end
 
----@param arg0 integer
+---@param index integer
 ---@return CraftRecipe.xp_Award
-function __CraftRecipe:getXPAward(arg0) end
+function __CraftRecipe:getXPAward(index) end
 
 ---@return integer
 function __CraftRecipe:getXPAwardCount() end
 
----@param arg0 CraftRecipe.LuaCall
+---@param luaCall CraftRecipe.LuaCall
 ---@return boolean
-function __CraftRecipe:hasLuaCall(arg0) end
+function __CraftRecipe:hasLuaCall(luaCall) end
 
 ---@return boolean
 function __CraftRecipe:hasOnTickInputs() end
@@ -306,31 +306,31 @@ function __CraftRecipe:hasOnTickInputs() end
 ---@return boolean
 function __CraftRecipe:hasOnTickOutputs() end
 
----@param arg0 IsoGameCharacter
+---@param character IsoGameCharacter
 ---@return boolean
-function __CraftRecipe:hasPlayerLearned(arg0) end
+function __CraftRecipe:hasPlayerLearned(character) end
 
----@param arg0 IsoGameCharacter
----@param arg1 ArrayList<ItemContainer>
+---@param chr IsoGameCharacter
+---@param containers ArrayList<ItemContainer>
 ---@return boolean
-function __CraftRecipe:hasRecipeAtHand(arg0, arg1) end
+function __CraftRecipe:hasRecipeAtHand(chr, containers) end
 
----@param arg0 HandcraftLogic
+---@param logic HandcraftLogic
 ---@return boolean
-function __CraftRecipe:hasRecipeAtHand(arg0) end
+function __CraftRecipe:hasRecipeAtHand(logic) end
 
----@param arg0 CraftRecipeTag
+---@param craftRecipeTag CraftRecipeTag
 ---@return boolean
-function __CraftRecipe:hasTag(arg0) end
+function __CraftRecipe:hasTag(craftRecipeTag) end
 
----@param arg0 PerkFactory.Perk
+---@param skill PerkFactory.Perk
 ---@return boolean
-function __CraftRecipe:involvesSkill(arg0) end
+function __CraftRecipe:involvesSkill(skill) end
 
----@param arg0 PerkFactory.Perk
----@param arg1 boolean
+---@param skill PerkFactory.Perk
+---@param includeAutoLearn boolean
 ---@return boolean
-function __CraftRecipe:involvesSkill(arg0, arg1) end
+function __CraftRecipe:involvesSkill(skill, includeAutoLearn) end
 
 ---@return boolean
 function __CraftRecipe:isAllowBatchCraft() end
@@ -354,9 +354,9 @@ function __CraftRecipe:isCanWalk() end
 ---@return boolean
 function __CraftRecipe:isConsumeOnFinish() end
 
----@param arg0 IsoGameCharacter
+---@param character IsoGameCharacter
 ---@return boolean
-function __CraftRecipe:isFavourite(arg0) end
+function __CraftRecipe:isFavourite(character) end
 
 ---@return boolean
 function __CraftRecipe:isInHandCraftCraft() end
@@ -384,39 +384,39 @@ function __CraftRecipe:isVanilla() end
 ---@return boolean
 function __CraftRecipe:needToBeLearn() end
 
----@param arg0 integer
+---@param level integer
 ---@return integer
-function __CraftRecipe:normalizeSkillLevel(arg0) end
+function __CraftRecipe:normalizeSkillLevel(level) end
 
----@param arg0 Texture
-function __CraftRecipe:overrideIconTexture(arg0) end
+---@param icon Texture
+function __CraftRecipe:overrideIconTexture(icon) end
 
----@param arg0 string
-function __CraftRecipe:overrideTranslationName(arg0) end
+---@param name string
+function __CraftRecipe:overrideTranslationName(name) end
 
 ---@return boolean
 function __CraftRecipe:requiresSpecificWorkstation() end
 
----@param arg0 string
-function __CraftRecipe:setAnimation(arg0) end
+---@param animationString string
+function __CraftRecipe:setAnimation(animationString) end
 
----@param arg0 InputScript
-function __CraftRecipe:setProp1(arg0) end
+---@param prop InputScript
+function __CraftRecipe:setProp1(prop) end
 
----@param arg0 InputScript
-function __CraftRecipe:setProp2(arg0) end
+---@param prop InputScript
+function __CraftRecipe:setProp2(prop) end
 
----@param arg0 integer
-function __CraftRecipe:setResearchSkillLevel(arg0) end
+---@param level integer
+function __CraftRecipe:setResearchSkillLevel(level) end
 
----@param arg0 IsoGameCharacter
----@param arg1 ArrayList<ItemContainer>
+---@param chr IsoGameCharacter
+---@param containers ArrayList<ItemContainer>
 ---@return boolean
-function __CraftRecipe:validateBenefitFromRecipeAtHand(arg0, arg1) end
+function __CraftRecipe:validateBenefitFromRecipeAtHand(chr, containers) end
 
----@param arg0 HandcraftLogic
+---@param logic HandcraftLogic
 ---@return boolean
-function __CraftRecipe:validateBenefitFromRecipeAtHand(arg0) end
+function __CraftRecipe:validateBenefitFromRecipeAtHand(logic) end
 
 CraftRecipe = {}
 

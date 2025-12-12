@@ -13,11 +13,11 @@ function __IsoSpriteGrid:getHeight() end
 ---@return integer
 function __IsoSpriteGrid:getLevels() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return IsoSprite
-function __IsoSpriteGrid:getSprite(arg0, arg1, arg2) end
+function __IsoSpriteGrid:getSprite(x, y, z) end
 
 ---@param x integer
 ---@param y integer
@@ -39,19 +39,19 @@ function __IsoSpriteGrid:getSpriteGridPosX(sprite) end
 ---@return integer
 function __IsoSpriteGrid:getSpriteGridPosY(sprite) end
 
----@param arg0 IsoSprite
+---@param sprite IsoSprite
 ---@return integer
-function __IsoSpriteGrid:getSpriteGridPosZ(arg0) end
+function __IsoSpriteGrid:getSpriteGridPosZ(sprite) end
 
 ---@param sprite IsoSprite
 ---@return integer
 function __IsoSpriteGrid:getSpriteIndex(sprite) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return integer
-function __IsoSpriteGrid:getSpriteIndex(arg0, arg1, arg2) end
+function __IsoSpriteGrid:getSpriteIndex(x, y, z) end
 
 ---@return kahlua.Array<IsoSprite>
 function __IsoSpriteGrid:getSprites() end
@@ -59,17 +59,17 @@ function __IsoSpriteGrid:getSprites() end
 ---@return integer
 function __IsoSpriteGrid:getWidth() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return boolean
-function __IsoSpriteGrid:isValidXYZ(arg0, arg1, arg2) end
+function __IsoSpriteGrid:isValidXYZ(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 IsoSprite
-function __IsoSpriteGrid:setSprite(arg0, arg1, arg2, arg3) end
+---@param x integer
+---@param y integer
+---@param z integer
+---@param sprite IsoSprite
+function __IsoSpriteGrid:setSprite(x, y, z, sprite) end
 
 ---@param x integer
 ---@param y integer
@@ -81,11 +81,11 @@ function __IsoSpriteGrid:validate() end
 
 IsoSpriteGrid = {}
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param width integer
+---@param height integer
+---@param levels integer
 ---@return IsoSpriteGrid
-function IsoSpriteGrid.new(arg0, arg1, arg2) end
+function IsoSpriteGrid.new(width, height, levels) end
 
 ---@param w integer
 ---@param h integer

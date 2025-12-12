@@ -8,15 +8,15 @@ function __SpriteOverlayConfig:clearStyle() end
 ---@return ArrayList<string>
 function __SpriteOverlayConfig:getAvailableStyles() end
 
----@param arg0 string
+---@param style string
 ---@return boolean
-function __SpriteOverlayConfig:hasStyle(arg0) end
+function __SpriteOverlayConfig:hasStyle(style) end
 
 ---@return boolean
 function __SpriteOverlayConfig:isValid() end
 
----@param arg0 string
-function __SpriteOverlayConfig:setStyle(arg0) end
+---@param style string
+function __SpriteOverlayConfig:setStyle(style) end
 
 SpriteOverlayConfig = {}
 

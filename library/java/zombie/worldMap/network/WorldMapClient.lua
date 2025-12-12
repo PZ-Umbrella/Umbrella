@@ -5,28 +5,28 @@ local __WorldMapClient = {}
 
 function __WorldMapClient:Reset() end
 
----@param arg0 ByteBuffer
-function __WorldMapClient:receive(arg0) end
+---@param bb ByteBuffer
+function __WorldMapClient:receive(bb) end
 
----@param arg0 ByteBuffer
-function __WorldMapClient:receiveRequestData(arg0) end
+---@param bb ByteBuffer
+function __WorldMapClient:receiveRequestData(bb) end
 
----@param arg0 WorldMapBaseSymbol
----@param arg1 WorldMapSymbolNetworkInfo
-function __WorldMapClient:sendAddSymbol(arg0, arg1) end
+---@param symbol WorldMapBaseSymbol
+---@param networkInfo WorldMapSymbolNetworkInfo
+function __WorldMapClient:sendAddSymbol(symbol, networkInfo) end
 
----@param arg0 WorldMapBaseSymbol
-function __WorldMapClient:sendModifySymbol(arg0) end
+---@param symbol WorldMapBaseSymbol
+function __WorldMapClient:sendModifySymbol(symbol) end
 
----@param arg0 WorldMapBaseSymbol
-function __WorldMapClient:sendRemoveSymbol(arg0) end
+---@param symbol WorldMapBaseSymbol
+function __WorldMapClient:sendRemoveSymbol(symbol) end
 
----@param arg0 WorldMapBaseSymbol
-function __WorldMapClient:sendSetPrivateSymbol(arg0) end
+---@param symbol WorldMapBaseSymbol
+function __WorldMapClient:sendSetPrivateSymbol(symbol) end
 
----@param arg0 WorldMapBaseSymbol
----@param arg1 WorldMapSymbolNetworkInfo
-function __WorldMapClient:sendShareSymbol(arg0, arg1) end
+---@param symbol WorldMapBaseSymbol
+---@param networkInfo WorldMapSymbolNetworkInfo
+function __WorldMapClient:sendShareSymbol(symbol, networkInfo) end
 
 function __WorldMapClient:worldMapLoaded() end
 

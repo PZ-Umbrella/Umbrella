@@ -29,9 +29,9 @@ function __GlobalObject:getY() end
 ---@return integer
 function __GlobalObject:getZ() end
 
----@param arg0 IsoObject
+---@param obj IsoObject
 ---@return boolean
-function __GlobalObject:isValidIsoObject(arg0) end
+function __GlobalObject:isValidIsoObject(obj) end
 
 ---@param x integer
 ---@param y integer

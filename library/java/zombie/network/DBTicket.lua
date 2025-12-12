@@ -47,12 +47,12 @@ DBTicket = {}
 ---@return DBTicket
 function DBTicket.new(author, message, ticketID) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 boolean
+---@param author string
+---@param message string
+---@param ticketId integer
+---@param viewed boolean
 ---@return DBTicket
-function DBTicket.new(arg0, arg1, arg2, arg3) end
+function DBTicket.new(author, message, ticketId, viewed) end
 
 ---@type Class<DBTicket>
 DBTicket.class = nil

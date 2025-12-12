@@ -39,11 +39,11 @@ function __IsoCarBatteryCharger:removeFromWorld() end
 ---@param shader Shader
 function __IsoCarBatteryCharger:render(x, y, z, col, bDoChild, bWallLightingPass, shader) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 ColorInfo
-function __IsoCarBatteryCharger:renderAnimatedAttachments(arg0, arg1, arg2, arg3) end
+---@param x number
+---@param y number
+---@param z number
+---@param col ColorInfo
+function __IsoCarBatteryCharger:renderAnimatedAttachments(x, y, z, col) end
 
 ---@param x number
 ---@param y number
@@ -64,8 +64,8 @@ function __IsoCarBatteryCharger:setBattery(battery) end
 ---@param chargeRate number
 function __IsoCarBatteryCharger:setChargeRate(chargeRate) end
 
----@param arg0 ByteBuffer
-function __IsoCarBatteryCharger:syncIsoObjectReceive(arg0) end
+---@param bb ByteBuffer
+function __IsoCarBatteryCharger:syncIsoObjectReceive(bb) end
 
 ---@param b ByteBufferWriter
 function __IsoCarBatteryCharger:syncIsoObjectSend(b) end

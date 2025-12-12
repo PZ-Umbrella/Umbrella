@@ -6,17 +6,17 @@ local __ObjectInfo = {}
 ---@return boolean
 function __ObjectInfo:canRotate() end
 
----@param arg0 string
+---@param face string
 ---@return SpriteConfigManager.FaceInfo
-function __ObjectInfo:getFace(arg0) end
+function __ObjectInfo:getFace(face) end
 
----@param arg0 integer
+---@param faceID integer
 ---@return SpriteConfigManager.FaceInfo
-function __ObjectInfo:getFace(arg0) end
+function __ObjectInfo:getFace(faceID) end
 
----@param arg0 string
+---@param spriteName string
 ---@return SpriteConfigManager.FaceInfo
-function __ObjectInfo:getFaceForSprite(arg0) end
+function __ObjectInfo:getFaceForSprite(spriteName) end
 
 ---@return Texture
 function __ObjectInfo:getIconTexture() end

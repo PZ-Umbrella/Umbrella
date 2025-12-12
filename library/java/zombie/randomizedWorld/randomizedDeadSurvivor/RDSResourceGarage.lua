@@ -3,13 +3,13 @@
 ---@class RDSResourceGarage: RandomizedDeadSurvivorBase
 local __RDSResourceGarage = {}
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param def BuildingDef
+---@param force boolean
 ---@return boolean
-function __RDSResourceGarage:isValid(arg0, arg1) end
+function __RDSResourceGarage:isValid(def, force) end
 
----@param arg0 BuildingDef
-function __RDSResourceGarage:randomizeDeadSurvivor(arg0) end
+---@param def BuildingDef
+function __RDSResourceGarage:randomizeDeadSurvivor(def) end
 
 RDSResourceGarage = {}
 

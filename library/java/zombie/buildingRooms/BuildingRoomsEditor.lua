@@ -3,37 +3,37 @@
 ---@class BuildingRoomsEditor
 local __BuildingRoomsEditor = {}
 
----@param arg0 boolean
-function __BuildingRoomsEditor:applyChanges(arg0) end
+---@param bLoading boolean
+function __BuildingRoomsEditor:applyChanges(bLoading) end
 
----@param arg0 string
----@param arg1 kahlua.Array<any>
-function __BuildingRoomsEditor:callLua(arg0, arg1) end
+---@param event string
+---@param args kahlua.Array<any>
+function __BuildingRoomsEditor:callLua(event, args) end
 
----@param arg0 BRERoom
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
+---@param room BRERoom
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
+---@param z integer
 ---@return boolean
-function __BuildingRoomsEditor:canAddRoomRectangle(arg0, arg1, arg2, arg3, arg4, arg5) end
+function __BuildingRoomsEditor:canAddRoomRectangle(room, x, y, w, h, z) end
 
 function __BuildingRoomsEditor:checkBuildingAndRoomIDs() end
 
----@param arg0 IsoMetaCell
-function __BuildingRoomsEditor:checkBuildingAndRoomIDs(arg0) end
+---@param metaCell IsoMetaCell
+function __BuildingRoomsEditor:checkBuildingAndRoomIDs(metaCell) end
 
----@param arg0 BuildingDef
+---@param buildingDef2 BuildingDef
 ---@return BREBuilding
-function __BuildingRoomsEditor:copyExistingBuilding(arg0) end
+function __BuildingRoomsEditor:copyExistingBuilding(buildingDef2) end
 
 ---@return BREBuilding
 function __BuildingRoomsEditor:createBuilding() end
 
----@param arg0 integer
+---@param index integer
 ---@return BREBuilding
-function __BuildingRoomsEditor:getBuildingByIndex(arg0) end
+function __BuildingRoomsEditor:getBuildingByIndex(index) end
 
 ---@return integer
 function __BuildingRoomsEditor:getBuildingCount() end
@@ -41,34 +41,34 @@ function __BuildingRoomsEditor:getBuildingCount() end
 ---@return string
 function __BuildingRoomsEditor:getInvalidString() end
 
----@param arg0 integer
----@param arg1 integer
-function __BuildingRoomsEditor:init(arg0, arg1) end
+---@param worldX integer
+---@param worldY integer
+function __BuildingRoomsEditor:init(worldX, worldY) end
 
 ---@return boolean
 function __BuildingRoomsEditor:isValid() end
 
 function __BuildingRoomsEditor:load() end
 
----@param arg0 BREBuilding
-function __BuildingRoomsEditor:removeBuilding(arg0) end
+---@param building BREBuilding
+function __BuildingRoomsEditor:removeBuilding(building) end
 
 function __BuildingRoomsEditor:renderMain() end
 
----@param arg0 BREBuilding
-function __BuildingRoomsEditor:setCurrentBuilding(arg0) end
+---@param building BREBuilding
+function __BuildingRoomsEditor:setCurrentBuilding(building) end
 
----@param arg0 integer
-function __BuildingRoomsEditor:setCurrentLevel(arg0) end
+---@param level integer
+function __BuildingRoomsEditor:setCurrentLevel(level) end
 
----@param arg0 BRERoom
-function __BuildingRoomsEditor:setCurrentRoom(arg0) end
+---@param room BRERoom
+function __BuildingRoomsEditor:setCurrentRoom(room) end
 
----@param arg0 integer
-function __BuildingRoomsEditor:setHighlightRectForDeletion(arg0) end
+---@param rectIndex integer
+function __BuildingRoomsEditor:setHighlightRectForDeletion(rectIndex) end
 
----@param arg0 table
-function __BuildingRoomsEditor:setLuaEditor(arg0) end
+---@param table table
+function __BuildingRoomsEditor:setLuaEditor(table) end
 
 BuildingRoomsEditor = {}
 
@@ -77,8 +77,8 @@ function BuildingRoomsEditor.Reset() end
 ---@return BuildingRoomsEditor
 function BuildingRoomsEditor.getInstance() end
 
----@param arg0 LuaManager.Exposer
-function BuildingRoomsEditor.setExposed(arg0) end
+---@param exposer LuaManager.Exposer
+function BuildingRoomsEditor.setExposed(exposer) end
 
 ---@return BuildingRoomsEditor
 function BuildingRoomsEditor.new() end

@@ -24,9 +24,9 @@ StrLerpVal.Target = nil
 ---@return WeatherPeriod.StrLerpVal
 function StrLerpVal.fromValue(id) end
 
----@param arg0 string
+---@param name string
 ---@return WeatherPeriod.StrLerpVal
-function StrLerpVal.valueOf(arg0) end
+function StrLerpVal.valueOf(name) end
 
 ---Returns an array containing the constants of this enum class, in
 ---the order they are declared.

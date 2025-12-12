@@ -51,8 +51,8 @@ function __AlarmClock:setAlarmSet(alarmSet) end
 ---@param alarmSound string
 function __AlarmClock:setAlarmSound(alarmSound) end
 
----@param arg0 integer
-function __AlarmClock:setForceDontRing(arg0) end
+---@param min integer
+function __AlarmClock:setForceDontRing(min) end
 
 ---@param hour integer
 function __AlarmClock:setHour(hour) end

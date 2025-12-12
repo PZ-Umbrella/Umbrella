@@ -3,11 +3,11 @@
 ---@class PlayerShearAnimalState: State
 local __PlayerShearAnimalState = {}
 
----@param arg0 IsoGameCharacter
-function __PlayerShearAnimalState:enter(arg0) end
+---@param owner IsoGameCharacter
+function __PlayerShearAnimalState:enter(owner) end
 
----@param arg0 IsoGameCharacter
-function __PlayerShearAnimalState:exit(arg0) end
+---@param owner IsoGameCharacter
+function __PlayerShearAnimalState:exit(owner) end
 
 ---@return boolean
 function __PlayerShearAnimalState:isSyncInIdle() end
@@ -21,9 +21,9 @@ function __PlayerShearAnimalState:isSyncOnExit() end
 ---@return boolean
 function __PlayerShearAnimalState:isSyncOnSquare() end
 
----@param arg0 IsoGameCharacter
----@param arg1 State.Stage
-function __PlayerShearAnimalState:setParams(arg0, arg1) end
+---@param owner IsoGameCharacter
+---@param stage State.Stage
+function __PlayerShearAnimalState:setParams(owner, stage) end
 
 PlayerShearAnimalState = {}
 

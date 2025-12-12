@@ -6,25 +6,25 @@ local __String = {}
 ---@return AttributeInstance.String
 function __String:copy() end
 
----@param arg0 AttributeInstance.String
+---@param other AttributeInstance.String
 ---@return boolean
-function __String:equalTo(arg0) end
+function __String:equalTo(other) end
 
 ---@return string
 function __String:getValue() end
 
----@param arg0 ByteBuffer
-function __String:load(arg0) end
+---@param input ByteBuffer
+function __String:load(input) end
 
----@param arg0 ByteBuffer
-function __String:save(arg0) end
+---@param output ByteBuffer
+function __String:save(output) end
 
----@param arg0 string
-function __String:setValue(arg0) end
+---@param value string
+function __String:setValue(value) end
 
----@param arg0 string
+---@param val string
 ---@return boolean
-function __String:setValueFromScriptString(arg0) end
+function __String:setValueFromScriptString(val) end
 
 ---@return string
 function __String:stringValue() end

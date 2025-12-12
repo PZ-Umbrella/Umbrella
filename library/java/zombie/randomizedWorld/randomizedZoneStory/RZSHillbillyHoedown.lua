@@ -3,8 +3,8 @@
 ---@class RZSHillbillyHoedown: RandomizedZoneStoryBase
 local __RZSHillbillyHoedown = {}
 
----@param arg0 Zone
-function __RZSHillbillyHoedown:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSHillbillyHoedown:randomizeZoneStory(zone) end
 
 RZSHillbillyHoedown = {}
 

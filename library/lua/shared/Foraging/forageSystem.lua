@@ -830,9 +830,8 @@ function forageSystem.addItemDef(_itemDef) end
 ---@param _character IsoPlayer
 ---@param _inventory ItemContainer
 ---@param _items ArrayList<InventoryItem>
----@param _discardItems boolean?
 ---@return ArrayList<InventoryItem>
-function forageSystem.addOrDropItems(_character, _inventory, _items, _discardItems) end
+function forageSystem.addOrDropItems(_character, _inventory, _items) end
 
 ---@param _skillDef table
 ---@param _overwrite boolean?
@@ -1136,9 +1135,7 @@ function forageSystem.getZoneRandomCoordNearPoint(_zoneData, _minDist, _x, _y) e
 
 ---@param _character IsoPlayer
 ---@param _itemDef umbrella.Foraging.ItemDefinition
----@param _amount number
-function forageSystem.giveItemXP(_character, _itemDef, _amount) end
-
+---@param _distanceTravelled number
 function forageSystem.giveXP(_character, _itemDef, _distanceTravelled) end
 
 ---@param _character IsoPlayer
@@ -1226,8 +1223,8 @@ function forageSystem.isValidSquare(_square, _itemDef, _catDef) end
 
 ---@param _character IsoPlayer
 ---@param _itemType string
----@param _amount number
-function forageSystem.itemFound(_character, _itemType, _amount) end
+---@param _distanceTravelled number
+function forageSystem.itemFound(_character, _itemType, _distanceTravelled) end
 
 function forageSystem.lootTableUpdate() end
 

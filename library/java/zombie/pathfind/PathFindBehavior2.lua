@@ -3,12 +3,12 @@
 ---@class PathFindBehavior2: IPathfinder
 local __PathFindBehavior2 = {}
 
----@param arg0 Mover
-function __PathFindBehavior2:Failed(arg0) end
+---@param mover Mover
+function __PathFindBehavior2:Failed(mover) end
 
----@param arg0 Path
----@param arg1 Mover
-function __PathFindBehavior2:Succeeded(arg0, arg1) end
+---@param path Path
+---@param mover Mover
+function __PathFindBehavior2:Succeeded(path, mover) end
 
 ---@return boolean
 function __PathFindBehavior2:allowTurnAnimation() end
@@ -69,71 +69,71 @@ function __PathFindBehavior2:isMovingUsingPathFind() end
 ---@return boolean
 function __PathFindBehavior2:isStrafing() end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return boolean
-function __PathFindBehavior2:isTargetLocation(arg0, arg1, arg2) end
+function __PathFindBehavior2:isTargetLocation(x, y, z) end
 
 ---@return boolean
 function __PathFindBehavior2:isTurningToObstacle() end
 
----@param arg0 IsoMovingObject
----@param arg1 number
-function __PathFindBehavior2:moveToDir(arg0, arg1) end
+---@param target IsoMovingObject
+---@param speedMul number
+function __PathFindBehavior2:moveToDir(target, speedMul) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
-function __PathFindBehavior2:moveToPoint(arg0, arg1, arg2) end
+---@param x number
+---@param y number
+---@param speedMul number
+function __PathFindBehavior2:moveToPoint(x, y, speedMul) end
 
----@param arg0 IsoGameCharacter
-function __PathFindBehavior2:pathToCharacter(arg0) end
+---@param target IsoGameCharacter
+function __PathFindBehavior2:pathToCharacter(target) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __PathFindBehavior2:pathToLocation(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param z integer
+function __PathFindBehavior2:pathToLocation(x, y, z) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
-function __PathFindBehavior2:pathToLocationF(arg0, arg1, arg2) end
+---@param x number
+---@param y number
+---@param z number
+function __PathFindBehavior2:pathToLocationF(x, y, z) end
 
----@param arg0 TFloatArrayList
-function __PathFindBehavior2:pathToNearest(arg0) end
+---@param locations TFloatArrayList
+function __PathFindBehavior2:pathToNearest(locations) end
 
----@param arg0 table
-function __PathFindBehavior2:pathToNearestTable(arg0) end
+---@param locationsTable table
+function __PathFindBehavior2:pathToNearestTable(locationsTable) end
 
----@param arg0 IsoObject
----@param arg1 boolean
-function __PathFindBehavior2:pathToSitOnFurniture(arg0, arg1) end
+---@param furniture IsoObject
+---@param bAnySpriteGridObject boolean
+function __PathFindBehavior2:pathToSitOnFurniture(furniture, bAnySpriteGridObject) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __PathFindBehavior2:pathToSound(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param z integer
+function __PathFindBehavior2:pathToSound(x, y, z) end
 
----@param arg0 BaseVehicle
-function __PathFindBehavior2:pathToVehicleAdjacent(arg0) end
+---@param vehicle BaseVehicle
+function __PathFindBehavior2:pathToVehicleAdjacent(vehicle) end
 
----@param arg0 BaseVehicle
----@param arg1 string
-function __PathFindBehavior2:pathToVehicleArea(arg0, arg1) end
+---@param vehicle BaseVehicle
+---@param areaId string
+function __PathFindBehavior2:pathToVehicleArea(vehicle, areaId) end
 
----@param arg0 BaseVehicle
----@param arg1 integer
-function __PathFindBehavior2:pathToVehicleSeat(arg0, arg1) end
+---@param vehicle BaseVehicle
+---@param seat integer
+function __PathFindBehavior2:pathToVehicleSeat(vehicle, seat) end
 
 function __PathFindBehavior2:render() end
 
 function __PathFindBehavior2:reset() end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
-function __PathFindBehavior2:setData(arg0, arg1, arg2) end
+---@param targetX number
+---@param targetY number
+---@param targetZ number
+function __PathFindBehavior2:setData(targetX, targetY, targetZ) end
 
 ---@return boolean
 function __PathFindBehavior2:shouldBeMoving() end
@@ -141,26 +141,26 @@ function __PathFindBehavior2:shouldBeMoving() end
 ---@return boolean
 function __PathFindBehavior2:shouldGetUpFromCrawl() end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return boolean
-function __PathFindBehavior2:shouldIgnoreCollisionWithSquare(arg0) end
+function __PathFindBehavior2:shouldIgnoreCollisionWithSquare(square) end
 
 ---@return PathFindBehavior2.BehaviorResult
 function __PathFindBehavior2:update() end
 
 PathFindBehavior2 = {}
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 IsoMovingObject
----@param arg4 Path
----@param arg5 PathFindBehavior2.PointOnPath
-function PathFindBehavior2.closestPointOnPath(arg0, arg1, arg2, arg3, arg4, arg5) end
+---@param x3 number
+---@param y3 number
+---@param z number
+---@param mover IsoMovingObject
+---@param path Path
+---@param pop PathFindBehavior2.PointOnPath
+function PathFindBehavior2.closestPointOnPath(x3, y3, z, mover, path, pop) end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return PathFindBehavior2
-function PathFindBehavior2.new(arg0) end
+function PathFindBehavior2.new(chr) end
 
 ---@type Class<PathFindBehavior2>
 PathFindBehavior2.class = nil

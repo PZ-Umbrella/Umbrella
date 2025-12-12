@@ -45,6 +45,7 @@ function ISReadABook:isValid() end
 
 function ISReadABook:perform() end
 
+---@param mediaID string
 function ISReadABook:revealPrintMediaLocationsOnMap(mediaID) end
 
 function ISReadABook:serverStart() end

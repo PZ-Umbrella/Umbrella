@@ -10,9 +10,9 @@ function __EntityDebugTest:update() end
 
 EntityDebugTest = {}
 
----@param arg0 EntityDebugTestType
----@param arg1 IsoGridSquare
-function EntityDebugTest.CreateTest(arg0, arg1) end
+---@param type EntityDebugTestType
+---@param square IsoGridSquare
+function EntityDebugTest.CreateTest(type, square) end
 
 function EntityDebugTest.Reset() end
 

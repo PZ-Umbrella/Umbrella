@@ -3,8 +3,8 @@
 ---@class RZSMurderScene: RandomizedZoneStoryBase
 local __RZSMurderScene = {}
 
----@param arg0 Zone
-function __RZSMurderScene:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSMurderScene:randomizeZoneStory(zone) end
 
 RZSMurderScene = {}
 

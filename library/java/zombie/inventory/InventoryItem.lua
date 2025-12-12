@@ -17,10 +17,10 @@ function __InventoryItem:DoTooltip(tooltipUI) end
 ---@param layout ObjectTooltip.Layout
 function __InventoryItem:DoTooltip(tooltipUI, layout) end
 
----@param arg0 ObjectTooltip
----@param arg1 ObjectTooltip.Layout
----@param arg2 integer
-function __InventoryItem:DoTooltipEmbedded(arg0, arg1, arg2) end
+---@param tooltipUI ObjectTooltip
+---@param layoutOverride ObjectTooltip.Layout
+---@param offsetY integer
+function __InventoryItem:DoTooltipEmbedded(tooltipUI, layoutOverride, offsetY) end
 
 ---@return number
 function __InventoryItem:HowRotten() end
@@ -53,11 +53,11 @@ function __InventoryItem:IsWeapon() end
 ---@return boolean
 function __InventoryItem:ModDataMatches(item) end
 
----@param arg0 ItemContainer
-function __InventoryItem:OnAddedToContainer(arg0) end
+---@param container ItemContainer
+function __InventoryItem:OnAddedToContainer(container) end
 
----@param arg0 ItemContainer
-function __InventoryItem:OnBeforeRemoveFromContainer(arg0) end
+---@param container ItemContainer
+function __InventoryItem:OnBeforeRemoveFromContainer(container) end
 
 function __InventoryItem:Remove() end
 
@@ -72,21 +72,21 @@ function __InventoryItem:Use() end
 ---@param bCrafting boolean
 function __InventoryItem:Use(bCrafting) end
 
----@param arg0 boolean
----@param arg1 boolean
----@param arg2 boolean
-function __InventoryItem:Use(arg0, arg1, arg2) end
+---@param bCrafting boolean
+---@param bInContainer boolean
+---@param bNeedSync boolean
+function __InventoryItem:Use(bCrafting, bInContainer, bNeedSync) end
 
 function __InventoryItem:UseAndSync() end
 
----@param arg0 integer
+---@param uses integer
 ---@return boolean
-function __InventoryItem:UseForCrafting(arg0) end
+function __InventoryItem:UseForCrafting(uses) end
 
 function __InventoryItem:UseItem() end
 
----@param arg0 ItemKey
-function __InventoryItem:addExtraItem(arg0) end
+---@param key ItemKey
+function __InventoryItem:addExtraItem(key) end
 
 ---@param type string
 function __InventoryItem:addExtraItem(type) end
@@ -117,36 +117,36 @@ function __InventoryItem:canStoreWater() end
 ---@param b boolean
 function __InventoryItem:checkSyncItemFields(b) end
 
----@param arg0 InventoryItem
-function __InventoryItem:copyBloodLevelFrom(arg0) end
+---@param item InventoryItem
+function __InventoryItem:copyBloodLevelFrom(item) end
 
----@param arg0 InventoryItem
-function __InventoryItem:copyClothing(arg0) end
+---@param otherItem InventoryItem
+function __InventoryItem:copyClothing(otherItem) end
 
 ---@param other InventoryItem
 function __InventoryItem:copyConditionModData(other) end
 
----@param arg0 InventoryItem
-function __InventoryItem:copyConditionStatesFrom(arg0) end
+---@param otherItem InventoryItem
+function __InventoryItem:copyConditionStatesFrom(otherItem) end
 
 ---@param modData table
 function __InventoryItem:copyModData(modData) end
 
----@param arg0 InventoryItem
-function __InventoryItem:copyTimesHeadRepairedFrom(arg0) end
+---@param item InventoryItem
+function __InventoryItem:copyTimesHeadRepairedFrom(item) end
 
----@param arg0 InventoryItem
-function __InventoryItem:copyTimesHeadRepairedTo(arg0) end
+---@param item InventoryItem
+function __InventoryItem:copyTimesHeadRepairedTo(item) end
 
----@param arg0 InventoryItem
-function __InventoryItem:copyTimesRepairedFrom(arg0) end
+---@param item InventoryItem
+function __InventoryItem:copyTimesRepairedFrom(item) end
 
----@param arg0 InventoryItem
-function __InventoryItem:copyTimesRepairedTo(arg0) end
+---@param item InventoryItem
+function __InventoryItem:copyTimesRepairedTo(item) end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return IsoDeadBody
-function __InventoryItem:createAndStoreDefaultDeadBody(arg0) end
+function __InventoryItem:createAndStoreDefaultDeadBody(square) end
 
 ---@return InventoryItem
 function __InventoryItem:createCloneItem() end
@@ -154,35 +154,35 @@ function __InventoryItem:createCloneItem() end
 ---@return boolean
 function __InventoryItem:damageCheck() end
 
----@param arg0 integer
+---@param skill integer
 ---@return boolean
-function __InventoryItem:damageCheck(arg0) end
+function __InventoryItem:damageCheck(skill) end
 
----@param arg0 integer
----@param arg1 number
+---@param skill integer
+---@param multiplier number
 ---@return boolean
-function __InventoryItem:damageCheck(arg0, arg1) end
+function __InventoryItem:damageCheck(skill, multiplier) end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 boolean
+---@param skill integer
+---@param multiplier number
+---@param maintenance boolean
 ---@return boolean
-function __InventoryItem:damageCheck(arg0, arg1, arg2) end
+function __InventoryItem:damageCheck(skill, multiplier, maintenance) end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 boolean
----@param arg3 boolean
+---@param skill integer
+---@param multiplier number
+---@param maintenance boolean
+---@param isEquipped boolean
 ---@return boolean
-function __InventoryItem:damageCheck(arg0, arg1, arg2, arg3) end
+function __InventoryItem:damageCheck(skill, multiplier, maintenance, isEquipped) end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 boolean
----@param arg3 boolean
----@param arg4 IsoGameCharacter
+---@param skill integer
+---@param multiplier number
+---@param maintenance boolean
+---@param isEquipped boolean
+---@param character IsoGameCharacter
 ---@return boolean
-function __InventoryItem:damageCheck(arg0, arg1, arg2, arg3, arg4) end
+function __InventoryItem:damageCheck(skill, multiplier, maintenance, isEquipped, character) end
 
 function __InventoryItem:doBreakSound() end
 
@@ -591,18 +591,18 @@ function __InventoryItem:getMagazineSubjects() end
 ---@return integer
 function __InventoryItem:getMaintenanceMod() end
 
----@param arg0 boolean
+---@param isEquipped boolean
 ---@return integer
-function __InventoryItem:getMaintenanceMod(arg0) end
+function __InventoryItem:getMaintenanceMod(isEquipped) end
 
----@param arg0 IsoGameCharacter
+---@param character IsoGameCharacter
 ---@return integer
-function __InventoryItem:getMaintenanceMod(arg0) end
+function __InventoryItem:getMaintenanceMod(character) end
 
----@param arg0 boolean
----@param arg1 IsoGameCharacter
+---@param isEquipped boolean
+---@param character IsoGameCharacter
 ---@return integer
-function __InventoryItem:getMaintenanceMod(arg0, arg1) end
+function __InventoryItem:getMaintenanceMod(isEquipped, character) end
 
 ---@return string
 function __InventoryItem:getMakeUpType() end
@@ -664,9 +664,9 @@ function __InventoryItem:getModule() end
 ---@return string # the name
 function __InventoryItem:getName() end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return string
-function __InventoryItem:getName(arg0) end
+function __InventoryItem:getName(player) end
 
 ---@return IsoDirections # the newPlaceDir
 function __InventoryItem:getNewPlaceDir() end
@@ -774,9 +774,9 @@ function __InventoryItem:getRequireInHandOrInventory() end
 ---@return ArrayList<string>
 function __InventoryItem:getResearchableRecipes() end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return ArrayList<string>
-function __InventoryItem:getResearchableRecipes(arg0) end
+function __InventoryItem:getResearchableRecipes(chr) end
 
 ---@return ItemContainer # the rightClickContainer
 function __InventoryItem:getRightClickContainer() end
@@ -983,13 +983,13 @@ function __InventoryItem:getY() end
 ---@return number
 function __InventoryItem:getZ() end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return boolean
-function __InventoryItem:hasBeenHeard(arg0) end
+function __InventoryItem:hasBeenHeard(player) end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return boolean
-function __InventoryItem:hasBeenSeen(arg0) end
+function __InventoryItem:hasBeenSeen(player) end
 
 ---@return boolean
 function __InventoryItem:hasBlood() end
@@ -1022,9 +1022,9 @@ function __InventoryItem:hasResearchableRecipes() end
 ---@return boolean
 function __InventoryItem:hasSharpness() end
 
----@param arg0 kahlua.Array<ItemTag>
+---@param tags kahlua.Array<ItemTag>
 ---@return boolean
-function __InventoryItem:hasTag(arg0) end
+function __InventoryItem:hasTag(tags) end
 
 ---@param itemTag ItemTag
 ---@return boolean
@@ -1039,42 +1039,42 @@ function __InventoryItem:haveExtraItems() end
 ---@return boolean
 function __InventoryItem:headConditionCheck() end
 
----@param arg0 integer
+---@param skill integer
 ---@return boolean
-function __InventoryItem:headConditionCheck(arg0) end
+function __InventoryItem:headConditionCheck(skill) end
 
----@param arg0 integer
----@param arg1 number
+---@param skill integer
+---@param multiplier number
 ---@return boolean
-function __InventoryItem:headConditionCheck(arg0, arg1) end
+function __InventoryItem:headConditionCheck(skill, multiplier) end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 boolean
+---@param skill integer
+---@param multiplier number
+---@param maintenance boolean
 ---@return boolean
-function __InventoryItem:headConditionCheck(arg0, arg1, arg2) end
+function __InventoryItem:headConditionCheck(skill, multiplier, maintenance) end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 boolean
----@param arg3 boolean
+---@param skill integer
+---@param multiplier number
+---@param maintenance boolean
+---@param isEquipped boolean
 ---@return boolean
-function __InventoryItem:headConditionCheck(arg0, arg1, arg2, arg3) end
+function __InventoryItem:headConditionCheck(skill, multiplier, maintenance, isEquipped) end
 
----@param arg0 integer
-function __InventoryItem:incrementCondition(arg0) end
+---@param increment integer
+function __InventoryItem:incrementCondition(increment) end
 
----@param arg0 InventoryItem
-function __InventoryItem:inheritFoodAgeFrom(arg0) end
+---@param otherFood InventoryItem
+function __InventoryItem:inheritFoodAgeFrom(otherFood) end
 
----@param arg0 InventoryItem
-function __InventoryItem:inheritOlderFoodAge(arg0) end
+---@param otherFood InventoryItem
+function __InventoryItem:inheritOlderFoodAge(otherFood) end
 
 function __InventoryItem:initialiseItem() end
 
----@param arg0 kahlua.Array<ItemKey>
+---@param item kahlua.Array<ItemKey>
 ---@return boolean
-function __InventoryItem:is(arg0) end
+function __InventoryItem:is(item) end
 
 ---@return boolean
 function __InventoryItem:isActivated() end
@@ -1155,9 +1155,9 @@ function __InventoryItem:isEquipped() end
 ---@return boolean
 function __InventoryItem:isEquippedNoSprint() end
 
----@param arg0 IsoGameCharacter
+---@param character IsoGameCharacter
 ---@return boolean
-function __InventoryItem:isFakeEquipped(arg0) end
+function __InventoryItem:isFakeEquipped(character) end
 
 ---@return boolean
 function __InventoryItem:isFakeEquipped() end
@@ -1165,9 +1165,9 @@ function __InventoryItem:isFakeEquipped() end
 ---@return boolean
 function __InventoryItem:isFavorite() end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return boolean
-function __InventoryItem:isFavouriteRecipeInput(arg0) end
+function __InventoryItem:isFavouriteRecipeInput(player) end
 
 ---@return boolean
 function __InventoryItem:isFishingLure() end
@@ -1218,16 +1218,16 @@ function __InventoryItem:isKeyRing() end
 ---@return boolean
 function __InventoryItem:isMemento() end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return boolean
-function __InventoryItem:isNoRecipes(arg0) end
+function __InventoryItem:isNoRecipes(player) end
 
 ---@return boolean
 function __InventoryItem:isProtectFromRainWhileEquipped() end
 
----@param arg0 boolean
+---@param includeTainted boolean
 ---@return boolean
-function __InventoryItem:isPureWater(arg0) end
+function __InventoryItem:isPureWater(includeTainted) end
 
 ---@return boolean
 function __InventoryItem:isRecordedMedia() end
@@ -1256,9 +1256,9 @@ function __InventoryItem:isTrap() end
 ---@return boolean
 function __InventoryItem:isTwoHandWeapon() end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return boolean
-function __InventoryItem:isUnwanted(arg0) end
+function __InventoryItem:isUnwanted(player) end
 
 ---@return boolean
 function __InventoryItem:isUseWorldItem() end
@@ -1282,15 +1282,15 @@ function __InventoryItem:isWorn() end
 ---@param WorldVersion integer
 function __InventoryItem:load(input, WorldVersion) end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return IsoDeadBody
-function __InventoryItem:loadCorpseFromByteData(arg0) end
+function __InventoryItem:loadCorpseFromByteData(square) end
 
----@param arg0 SurvivorDesc
-function __InventoryItem:monogramAfterDescriptor(arg0) end
+---@param desc SurvivorDesc
+function __InventoryItem:monogramAfterDescriptor(desc) end
 
----@param arg0 SurvivorDesc
-function __InventoryItem:nameAfterDescriptor(arg0) end
+---@param desc SurvivorDesc
+function __InventoryItem:nameAfterDescriptor(desc) end
 
 function __InventoryItem:onBreak() end
 
@@ -1314,8 +1314,8 @@ function __InventoryItem:reduceCondition() end
 
 function __InventoryItem:reduceHeadCondition() end
 
----@param arg0 IsoGameCharacter
-function __InventoryItem:researchRecipes(arg0) end
+---@param character IsoGameCharacter
+function __InventoryItem:researchRecipes(character) end
 
 function __InventoryItem:reset() end
 
@@ -1348,8 +1348,8 @@ function __InventoryItem:setAlcoholic(alcoholic) end
 ---@param ammoType AmmoType
 function __InventoryItem:setAmmoType(ammoType) end
 
----@param arg0 AnimalTracks
-function __InventoryItem:setAnimalTracks(arg0) end
+---@param animalTracks AnimalTracks
+function __InventoryItem:setAnimalTracks(animalTracks) end
 
 ---@param attachedSlot integer
 function __InventoryItem:setAttachedSlot(attachedSlot) end
@@ -1384,8 +1384,8 @@ function __InventoryItem:setBlood(bodyPartType, amount) end
 ---@param bloodClothingType ArrayList<BloodClothingType>
 function __InventoryItem:setBloodClothingType(bloodClothingType) end
 
----@param arg0 number
-function __InventoryItem:setBloodLevel(arg0) end
+---@param level number
+function __InventoryItem:setBloodLevel(level) end
 
 ---@param boredomChange number the boredomChange to set
 function __InventoryItem:setBoredomChange(boredomChange) end
@@ -1433,11 +1433,11 @@ function __InventoryItem:setCondition(Condition, doSound) end
 ---@param Condition integer the Condition to set
 function __InventoryItem:setCondition(Condition) end
 
----@param arg0 InventoryItem
-function __InventoryItem:setConditionFrom(arg0) end
+---@param item InventoryItem
+function __InventoryItem:setConditionFrom(item) end
 
----@param arg0 InventoryItem
-function __InventoryItem:setConditionFromHeadCondition(arg0) end
+---@param item InventoryItem
+function __InventoryItem:setConditionFromHeadCondition(item) end
 
 ---@param other InventoryItem
 function __InventoryItem:setConditionFromModData(other) end
@@ -1451,14 +1451,14 @@ function __InventoryItem:setConditionLowerOffroad(conditionLowerOffroad) end
 ---@param ConditionMax integer the ConditionMax to set
 function __InventoryItem:setConditionMax(ConditionMax) end
 
----@param arg0 integer
-function __InventoryItem:setConditionNoSound(arg0) end
+---@param Condition integer
+function __InventoryItem:setConditionNoSound(Condition) end
 
----@param arg0 InventoryItem
-function __InventoryItem:setConditionTo(arg0) end
+---@param item InventoryItem
+function __InventoryItem:setConditionTo(item) end
 
----@param arg0 integer
-function __InventoryItem:setConditionWhileLoading(arg0) end
+---@param Condition integer
+function __InventoryItem:setConditionWhileLoading(Condition) end
 
 ---@param container ItemContainer the container to set
 function __InventoryItem:setContainer(container) end
@@ -1487,14 +1487,14 @@ function __InventoryItem:setCountDownSound(sound) end
 ---@param ammo integer
 function __InventoryItem:setCurrentAmmoCount(ammo) end
 
----@param arg0 integer
-function __InventoryItem:setCurrentUses(arg0) end
+---@param newuses integer
+function __InventoryItem:setCurrentUses(newuses) end
 
 ---@param newUses number
 function __InventoryItem:setCurrentUsesFloat(newUses) end
 
----@param arg0 InventoryItem
-function __InventoryItem:setCurrentUsesFrom(arg0) end
+---@param other InventoryItem
+function __InventoryItem:setCurrentUsesFrom(other) end
 
 ---@param customColor boolean
 function __InventoryItem:setCustomColor(customColor) end
@@ -1518,11 +1518,11 @@ function __InventoryItem:setDirt(bodyPartType, amount) end
 ---@param displayCategory string
 function __InventoryItem:setDisplayCategory(displayCategory) end
 
----@param arg0 boolean
-function __InventoryItem:setDoingExtendedPlacement(arg0) end
+---@param enable boolean
+function __InventoryItem:setDoingExtendedPlacement(enable) end
 
----@param arg0 number
-function __InventoryItem:setDurability(arg0) end
+---@param durability number
+function __InventoryItem:setDurability(durability) end
 
 ---@param engineLoudness number
 function __InventoryItem:setEngineLoudness(engineLoudness) end
@@ -1530,9 +1530,9 @@ function __InventoryItem:setEngineLoudness(engineLoudness) end
 ---@param parent IsoGameCharacter
 function __InventoryItem:setEquipParent(parent) end
 
----@param arg0 IsoGameCharacter
----@param arg1 boolean
-function __InventoryItem:setEquipParent(arg0, arg1) end
+---@param parent IsoGameCharacter
+---@param register boolean
+function __InventoryItem:setEquipParent(parent, register) end
 
 ---@param evolvedRecipeName string
 function __InventoryItem:setEvolvedRecipeName(evolvedRecipeName) end
@@ -1555,17 +1555,17 @@ function __InventoryItem:setGunType(gunType) end
 ---@param haveBeenRepaired integer
 function __InventoryItem:setHaveBeenRepaired(haveBeenRepaired) end
 
----@param arg0 integer
-function __InventoryItem:setHeadCondition(arg0) end
+---@param value integer
+function __InventoryItem:setHeadCondition(value) end
 
----@param arg0 InventoryItem
-function __InventoryItem:setHeadConditionFromCondition(arg0) end
+---@param item InventoryItem
+function __InventoryItem:setHeadConditionFromCondition(item) end
 
 ---@param itemId integer
 function __InventoryItem:setID(itemId) end
 
----@param arg0 Texture
-function __InventoryItem:setIcon(arg0) end
+---@param texture Texture
+function __InventoryItem:setIcon(texture) end
 
 ---@param iconsForTexture ArrayList<string>
 function __InventoryItem:setIconsForTexture(iconsForTexture) end
@@ -1585,8 +1585,8 @@ function __InventoryItem:setInverseCoughProbabilitySmoker(inverseCoughProbabilit
 ---@param IsCookable boolean the IsCookable to set
 function __InventoryItem:setIsCookable(IsCookable) end
 
----@param arg0 boolean
-function __InventoryItem:setIsCraftingConsumed(arg0) end
+---@param craftingConsumed boolean
+function __InventoryItem:setIsCraftingConsumed(craftingConsumed) end
 
 ---@param capacity number
 function __InventoryItem:setItemCapacity(capacity) end
@@ -1639,8 +1639,8 @@ function __InventoryItem:setMinutesToBurn(MinutesToBurn) end
 ---@param MinutesToCook number the MinutesToCook to set
 function __InventoryItem:setMinutesToCook(MinutesToCook) end
 
----@param arg0 integer
-function __InventoryItem:setModelIndex(arg0) end
+---@param index integer
+function __InventoryItem:setModelIndex(index) end
 
 ---@param module string the module to set
 function __InventoryItem:setModule(module) end
@@ -1651,9 +1651,9 @@ function __InventoryItem:setName(name) end
 ---@param newPlaceDir IsoDirections the newPlaceDir to set
 function __InventoryItem:setNewPlaceDir(newPlaceDir) end
 
----@param arg0 IsoPlayer
----@param arg1 boolean
-function __InventoryItem:setNoRecipes(arg0, arg1) end
+---@param player IsoPlayer
+---@param noCrafting boolean
+function __InventoryItem:setNoRecipes(player, noCrafting) end
 
 ---@param OffAge integer the OffAge to set
 function __InventoryItem:setOffAge(OffAge) end
@@ -1664,29 +1664,29 @@ function __InventoryItem:setOffAgeMax(OffAgeMax) end
 ---@param OffString string the OffString to set
 function __InventoryItem:setOffString(OffString) end
 
----@param arg0 IsoGridSquare
+---@param sq IsoGridSquare
 ---@return boolean
-function __InventoryItem:setOrigin(arg0) end
+function __InventoryItem:setOrigin(sq) end
 
----@param arg0 integer
----@param arg1 integer
+---@param x integer
+---@param y integer
 ---@return boolean
-function __InventoryItem:setOrigin(arg0, arg1) end
+function __InventoryItem:setOrigin(x, y) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return boolean
-function __InventoryItem:setOrigin(arg0, arg1, arg2) end
+function __InventoryItem:setOrigin(x, y, z) end
 
----@param arg0 integer
-function __InventoryItem:setOriginX(arg0) end
+---@param value integer
+function __InventoryItem:setOriginX(value) end
 
----@param arg0 integer
-function __InventoryItem:setOriginY(arg0) end
+---@param value integer
+function __InventoryItem:setOriginY(value) end
 
----@param arg0 integer
-function __InventoryItem:setOriginZ(arg0) end
+---@param value integer
+function __InventoryItem:setOriginZ(value) end
 
 ---@param placeDir IsoDirections the placeDir to set
 function __InventoryItem:setPlaceDir(placeDir) end
@@ -1694,8 +1694,8 @@ function __InventoryItem:setPlaceDir(placeDir) end
 ---@param previousOwner IsoGameCharacter the previousOwner to set
 function __InventoryItem:setPreviousOwner(previousOwner) end
 
----@param arg0 integer
-function __InventoryItem:setQuality(arg0) end
+---@param value integer
+function __InventoryItem:setQuality(value) end
 
 ---@param data MediaData
 function __InventoryItem:setRecordedMediaData(data) end
@@ -1736,11 +1736,11 @@ function __InventoryItem:setRightClickContainer(rightClickContainer) end
 ---@param ScriptItem Item the ScriptItem to set
 function __InventoryItem:setScriptItem(ScriptItem) end
 
----@param arg0 number
-function __InventoryItem:setSharpness(arg0) end
+---@param value number
+function __InventoryItem:setSharpness(value) end
 
----@param arg0 InventoryItem
-function __InventoryItem:setSharpnessFrom(arg0) end
+---@param item InventoryItem
+function __InventoryItem:setSharpnessFrom(item) end
 
 ---@param stashChance integer
 function __InventoryItem:setStashChance(stashChance) end
@@ -1748,14 +1748,14 @@ function __InventoryItem:setStashChance(stashChance) end
 ---@param stashMap string
 function __InventoryItem:setStashMap(stashMap) end
 
----@param arg0 string
-function __InventoryItem:setStaticModel(arg0) end
+---@param model string
+function __InventoryItem:setStaticModel(model) end
 
----@param arg0 ModelKey
-function __InventoryItem:setStaticModel(arg0) end
+---@param model ModelKey
+function __InventoryItem:setStaticModel(model) end
 
----@param arg0 ArrayList<string>
-function __InventoryItem:setStaticModelsByIndex(arg0) end
+---@param staticModelsByIndex ArrayList<string>
+function __InventoryItem:setStaticModelsByIndex(staticModelsByIndex) end
 
 ---@param stressChange number the stressChange to set
 function __InventoryItem:setStressChange(stressChange) end
@@ -1775,23 +1775,23 @@ function __InventoryItem:setTexture(texture) end
 ---@param textureBurnt Texture the textureBurnt to set
 function __InventoryItem:setTextureBurnt(textureBurnt) end
 
----@param arg0 string
-function __InventoryItem:setTextureColorMask(arg0) end
+---@param tex string
+function __InventoryItem:setTextureColorMask(tex) end
 
 ---@param textureCooked Texture the textureCooked to set
 function __InventoryItem:setTextureCooked(textureCooked) end
 
----@param arg0 string
-function __InventoryItem:setTextureFluidMask(arg0) end
+---@param tex string
+function __InventoryItem:setTextureFluidMask(tex) end
 
 ---@param texturerotten Texture the texturerotten to set
 function __InventoryItem:setTexturerotten(texturerotten) end
 
----@param arg0 integer
-function __InventoryItem:setTimesHeadRepaired(arg0) end
+---@param haveBeenRepaired integer
+function __InventoryItem:setTimesHeadRepaired(haveBeenRepaired) end
 
----@param arg0 integer
-function __InventoryItem:setTimesRepaired(arg0) end
+---@param haveBeenRepaired integer
+function __InventoryItem:setTimesRepaired(haveBeenRepaired) end
 
 ---@param tooltip string
 function __InventoryItem:setTooltip(tooltip) end
@@ -1808,9 +1808,9 @@ function __InventoryItem:setUnCookedString(UnCookedString) end
 ---@param unhappyChange number the unhappyChange to set
 function __InventoryItem:setUnhappyChange(unhappyChange) end
 
----@param arg0 IsoPlayer
----@param arg1 boolean
-function __InventoryItem:setUnwanted(arg0, arg1) end
+---@param player IsoPlayer
+---@param unwanted boolean
+function __InventoryItem:setUnwanted(player, unwanted) end
 
 ---@param useDelta number
 function __InventoryItem:setUseDelta(useDelta) end
@@ -1819,8 +1819,8 @@ function __InventoryItem:setUseDelta(useDelta) end
 ---@param uses integer the uses to set
 function __InventoryItem:setUses(uses) end
 
----@param arg0 InventoryItem
-function __InventoryItem:setUsesFrom(arg0) end
+---@param other InventoryItem
+function __InventoryItem:setUsesFrom(other) end
 
 ---@param Weight number the Weight to set
 function __InventoryItem:setWeight(Weight) end
@@ -1837,8 +1837,8 @@ function __InventoryItem:setWheelFriction(wheelFriction) end
 ---@param worker string
 function __InventoryItem:setWorker(worker) end
 
----@param arg0 number
-function __InventoryItem:setWorldAlpha(arg0) end
+---@param worldAlpha number
+function __InventoryItem:setWorldAlpha(worldAlpha) end
 
 ---@param w IsoWorldInventoryObject
 function __InventoryItem:setWorldItem(w) end
@@ -1846,54 +1846,54 @@ function __InventoryItem:setWorldItem(w) end
 ---@param scale number
 function __InventoryItem:setWorldScale(scale) end
 
----@param arg0 string
-function __InventoryItem:setWorldStaticItem(arg0) end
+---@param model string
+function __InventoryItem:setWorldStaticItem(model) end
 
----@param arg0 string
-function __InventoryItem:setWorldStaticModel(arg0) end
+---@param model string
+function __InventoryItem:setWorldStaticModel(model) end
 
----@param arg0 ModelKey
-function __InventoryItem:setWorldStaticModel(arg0) end
+---@param model ModelKey
+function __InventoryItem:setWorldStaticModel(model) end
 
----@param arg0 ArrayList<string>
-function __InventoryItem:setWorldStaticModelsByIndex(arg0) end
+---@param staticModelsByIndex ArrayList<string>
+function __InventoryItem:setWorldStaticModelsByIndex(staticModelsByIndex) end
 
 ---@param WorldTexture string the WorldTexture to set
 function __InventoryItem:setWorldTexture(WorldTexture) end
 
----@param arg0 number
-function __InventoryItem:setWorldXRotation(arg0) end
+---@param rot number
+function __InventoryItem:setWorldXRotation(rot) end
 
----@param arg0 number
-function __InventoryItem:setWorldYRotation(arg0) end
+---@param rot number
+function __InventoryItem:setWorldYRotation(rot) end
 
----@param arg0 number
-function __InventoryItem:setWorldZRotation(arg0) end
+---@param rot number
+function __InventoryItem:setWorldZRotation(rot) end
 
 ---@return boolean
 function __InventoryItem:sharpnessCheck() end
 
----@param arg0 integer
+---@param skill integer
 ---@return boolean
-function __InventoryItem:sharpnessCheck(arg0) end
+function __InventoryItem:sharpnessCheck(skill) end
 
----@param arg0 integer
----@param arg1 number
+---@param skill integer
+---@param multiplier number
 ---@return boolean
-function __InventoryItem:sharpnessCheck(arg0, arg1) end
+function __InventoryItem:sharpnessCheck(skill, multiplier) end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 boolean
+---@param skill integer
+---@param multiplier number
+---@param maintenance boolean
 ---@return boolean
-function __InventoryItem:sharpnessCheck(arg0, arg1, arg2) end
+function __InventoryItem:sharpnessCheck(skill, multiplier, maintenance) end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 boolean
----@param arg3 boolean
+---@param skill integer
+---@param multiplier number
+---@param maintenance boolean
+---@param isEquipped boolean
 ---@return boolean
-function __InventoryItem:sharpnessCheck(arg0, arg1, arg2, arg3) end
+function __InventoryItem:sharpnessCheck(skill, multiplier, maintenance, isEquipped) end
 
 ---@return boolean
 function __InventoryItem:shouldUpdateInWorld() end
@@ -1908,9 +1908,9 @@ function __InventoryItem:synchWithVisual() end
 ---@return string
 function __InventoryItem:toString() end
 
----@param arg0 integer
+---@param index integer
 ---@return string
-function __InventoryItem:tryGetWorldStaticModelByIndex(arg0) end
+function __InventoryItem:tryGetWorldStaticModelByIndex(index) end
 
 function __InventoryItem:unsealIfNotFull() end
 
@@ -1918,8 +1918,8 @@ function __InventoryItem:update() end
 
 function __InventoryItem:updateAge() end
 
----@param arg0 BaseSoundEmitter
-function __InventoryItem:updateEquippedAndActivatedSound(arg0) end
+---@param emitter BaseSoundEmitter
+function __InventoryItem:updateEquippedAndActivatedSound(emitter) end
 
 function __InventoryItem:updateEquippedAndActivatedSound() end
 
@@ -1928,9 +1928,9 @@ function __InventoryItem:updateSound(emitter) end
 
 InventoryItem = {}
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function InventoryItem.RemoveFromContainer(arg0) end
+function InventoryItem.RemoveFromContainer(item) end
 
 ---@return string
 function InventoryItem.getNoRecipesModDataString() end
@@ -1948,12 +1948,12 @@ function InventoryItem.loadItem(input, WorldVersion) end
 ---@return InventoryItem # InventoryItem, or null if the item failed loading or if Creating the item failed due to being obsolete etc.
 function InventoryItem.loadItem(input, WorldVersion, doSaveTypeCheck) end
 
----@param arg0 ByteBuffer
----@param arg1 integer
----@param arg2 boolean
----@param arg3 InventoryItem
+---@param input ByteBuffer
+---@param WorldVersion integer
+---@param doSaveTypeCheck boolean
+---@param i InventoryItem
 ---@return InventoryItem
-function InventoryItem.loadItem(arg0, arg1, arg2, arg3) end
+function InventoryItem.loadItem(input, WorldVersion, doSaveTypeCheck, i) end
 
 ---@param module string
 ---@param name string

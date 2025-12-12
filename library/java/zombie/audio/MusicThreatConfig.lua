@@ -6,32 +6,32 @@ local __MusicThreatConfig = {}
 ---@return integer
 function __MusicThreatConfig:getStatusCount() end
 
----@param arg0 integer
+---@param index integer
 ---@return string
-function __MusicThreatConfig:getStatusIdByIndex(arg0) end
+function __MusicThreatConfig:getStatusIdByIndex(index) end
 
----@param arg0 string
+---@param id string
 ---@return number
-function __MusicThreatConfig:getStatusIntensity(arg0) end
+function __MusicThreatConfig:getStatusIntensity(id) end
 
----@param arg0 integer
+---@param index integer
 ---@return number
-function __MusicThreatConfig:getStatusIntensityByIndex(arg0) end
+function __MusicThreatConfig:getStatusIntensityByIndex(index) end
 
----@param arg0 string
+---@param id string
 ---@return number
-function __MusicThreatConfig:getStatusIntensityOverride(arg0) end
+function __MusicThreatConfig:getStatusIntensityOverride(id) end
 
----@param arg0 table
-function __MusicThreatConfig:initStatuses(arg0) end
+---@param statusesTable table
+function __MusicThreatConfig:initStatuses(statusesTable) end
 
----@param arg0 string
+---@param id string
 ---@return boolean
-function __MusicThreatConfig:isStatusIntensityOverridden(arg0) end
+function __MusicThreatConfig:isStatusIntensityOverridden(id) end
 
----@param arg0 string
----@param arg1 number
-function __MusicThreatConfig:setStatusIntensityOverride(arg0, arg1) end
+---@param id string
+---@param intensity number
+function __MusicThreatConfig:setStatusIntensityOverride(id, intensity) end
 
 MusicThreatConfig = {}
 

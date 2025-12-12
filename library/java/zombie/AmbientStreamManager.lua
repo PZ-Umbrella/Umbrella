@@ -32,8 +32,8 @@ function __AmbientStreamManager:addDaytimeAmbientEmitter(x, y, z, name) end
 
 function __AmbientStreamManager:addRandomAmbient() end
 
----@param arg0 boolean
-function __AmbientStreamManager:addRandomAmbient(arg0) end
+---@param force boolean
+function __AmbientStreamManager:addRandomAmbient(force) end
 
 function __AmbientStreamManager:checkHaveElectricity() end
 
@@ -44,21 +44,21 @@ function __AmbientStreamManager:doGunEvent() end
 
 function __AmbientStreamManager:doOneShotAmbients() end
 
----@param arg0 integer
----@param arg1 integer
-function __AmbientStreamManager:handleThunderEvent(arg0, arg1) end
+---@param x integer
+---@param y integer
+function __AmbientStreamManager:handleThunderEvent(x, y) end
 
 function __AmbientStreamManager:init() end
 
 ---@return boolean
 function __AmbientStreamManager:isParameterInsideTrue() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __AmbientStreamManager:load(arg0, arg1) end
+---@param bb ByteBuffer
+---@param worldVersion integer
+function __AmbientStreamManager:load(bb, worldVersion) end
 
----@param arg0 ByteBuffer
-function __AmbientStreamManager:save(arg0) end
+---@param bb ByteBuffer
+function __AmbientStreamManager:save(bb) end
 
 function __AmbientStreamManager:stop() end
 

@@ -5,109 +5,109 @@ local __SeamManager = {}
 
 function __SeamManager:Reset() end
 
----@param arg0 string
----@param arg1 integer
----@param arg2 integer
+---@param tilesetName string
+---@param col integer
+---@param row integer
 ---@return SeamFile.Tile
-function __SeamManager:getHighestPriorityTile(arg0, arg1, arg2) end
+function __SeamManager:getHighestPriorityTile(tilesetName, col, row) end
 
----@param arg0 string
+---@param tileName string
 ---@return SeamFile.Tile
-function __SeamManager:getHighestPriorityTileFromName(arg0) end
+function __SeamManager:getHighestPriorityTileFromName(tileName) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
+---@param modID string
+---@param tilesetName string
+---@param col integer
+---@param row integer
 ---@return string
-function __SeamManager:getMasterTileName(arg0, arg1, arg2, arg3) end
+function __SeamManager:getMasterTileName(modID, tilesetName, col, row) end
 
 ---@return ArrayList<string>
 function __SeamManager:getModIDs() end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
+---@param modID string
+---@param tilesetName string
+---@param col integer
+---@param row integer
 ---@return SeamFile.Tile
-function __SeamManager:getOrCreateTile(arg0, arg1, arg2, arg3) end
+function __SeamManager:getOrCreateTile(modID, tilesetName, col, row) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
+---@param modID string
+---@param tilesetName string
+---@param col integer
+---@param row integer
 ---@return SeamFile.Tile
-function __SeamManager:getTile(arg0, arg1, arg2, arg3) end
+function __SeamManager:getTile(modID, tilesetName, col, row) end
 
----@param arg0 string
----@param arg1 string
+---@param modID string
+---@param tileName string
 ---@return SeamFile.Tile
-function __SeamManager:getTileFromName(arg0, arg1) end
+function __SeamManager:getTileFromName(modID, tileName) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 boolean
+---@param modID string
+---@param tilesetName string
+---@param col integer
+---@param row integer
+---@param bAllocate boolean
 ---@return ArrayList<string>
-function __SeamManager:getTileJoinBelowE(arg0, arg1, arg2, arg3, arg4) end
+function __SeamManager:getTileJoinBelowE(modID, tilesetName, col, row, bAllocate) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 boolean
+---@param modID string
+---@param tilesetName string
+---@param col integer
+---@param row integer
+---@param bAllocate boolean
 ---@return ArrayList<string>
-function __SeamManager:getTileJoinBelowS(arg0, arg1, arg2, arg3, arg4) end
+function __SeamManager:getTileJoinBelowS(modID, tilesetName, col, row, bAllocate) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 boolean
+---@param modID string
+---@param tilesetName string
+---@param col integer
+---@param row integer
+---@param bAllocate boolean
 ---@return ArrayList<string>
-function __SeamManager:getTileJoinE(arg0, arg1, arg2, arg3, arg4) end
+function __SeamManager:getTileJoinE(modID, tilesetName, col, row, bAllocate) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 boolean
+---@param modID string
+---@param tilesetName string
+---@param col integer
+---@param row integer
+---@param bAllocate boolean
 ---@return ArrayList<string>
-function __SeamManager:getTileJoinS(arg0, arg1, arg2, arg3, arg4) end
+function __SeamManager:getTileJoinS(modID, tilesetName, col, row, bAllocate) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 string
+---@param modID string
+---@param tilesetName string
+---@param col integer
+---@param row integer
+---@param key string
 ---@return string
-function __SeamManager:getTileProperty(arg0, arg1, arg2, arg3, arg4) end
+function __SeamManager:getTileProperty(modID, tilesetName, col, row, key) end
 
 function __SeamManager:init() end
 
 function __SeamManager:initGameData() end
 
----@param arg0 ChooseGameInfo.Mod
-function __SeamManager:initModData(arg0) end
+---@param mod ChooseGameInfo.Mod
+function __SeamManager:initModData(mod) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
+---@param modID string
+---@param tilesetName string
+---@param col integer
+---@param row integer
 ---@return boolean
-function __SeamManager:isMasterTile(arg0, arg1, arg2, arg3) end
+function __SeamManager:isMasterTile(modID, tilesetName, col, row) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 string
----@param arg5 string
-function __SeamManager:setTileProperty(arg0, arg1, arg2, arg3, arg4, arg5) end
+---@param modID string
+---@param tilesetName string
+---@param col integer
+---@param row integer
+---@param key string
+---@param value string
+function __SeamManager:setTileProperty(modID, tilesetName, col, row, key, value) end
 
----@param arg0 string
-function __SeamManager:write(arg0) end
+---@param modID string
+function __SeamManager:write(modID) end
 
 SeamManager = {}
 

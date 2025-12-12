@@ -15,6 +15,8 @@
 ISDrinkFluidAction = ISBaseTimedAction:derive("ISDrinkFluidAction")
 ISDrinkFluidAction.Type = "ISDrinkFluidAction"
 
+---@param event string
+---@param parameter string
 function ISDrinkFluidAction:animEvent(event, parameter) end
 
 ---@return boolean

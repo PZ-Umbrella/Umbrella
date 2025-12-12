@@ -519,26 +519,26 @@ Colors.Yellow = nil
 ---@type Color
 Colors.YellowGreen = nil
 
----@param arg0 string
----@param arg1 Color
+---@param name string
+---@param color Color
 ---@return Color
-function Colors.AddGameColor(arg0, arg1) end
+function Colors.AddGameColor(name, color) end
 
----@param arg0 string
+---@param name string
 ---@return boolean
-function Colors.CB_ColorExists(arg0) end
+function Colors.CB_ColorExists(name) end
 
----@param arg0 string
+---@param name string
 ---@return Color
-function Colors.CB_GetColorByName(arg0) end
+function Colors.CB_GetColorByName(name) end
 
----@param arg0 integer
+---@param index integer
 ---@return Color
-function Colors.CB_GetColorFromIndex(arg0) end
+function Colors.CB_GetColorFromIndex(index) end
 
----@param arg0 integer
+---@param index integer
 ---@return string
-function Colors.CB_GetColorNameFromIndex(arg0) end
+function Colors.CB_GetColorNameFromIndex(index) end
 
 ---@return ArrayList<string>
 function Colors.CB_GetColorNames() end
@@ -561,13 +561,13 @@ function Colors.GetColorByName(name) end
 ---@return Color
 function Colors.GetColorFromIndex(index) end
 
----@param arg0 string
+---@param name string
 ---@return Colors.ColNfo
-function Colors.GetColorInfo(arg0) end
+function Colors.GetColorInfo(name) end
 
----@param arg0 integer
+---@param index integer
 ---@return string
-function Colors.GetColorNameFromIndex(arg0) end
+function Colors.GetColorNameFromIndex(index) end
 
 ---@return ArrayList<string>
 function Colors.GetColorNames() end
@@ -578,9 +578,9 @@ function Colors.GetColorsCount() end
 ---@return Color
 function Colors.GetRandomColor() end
 
----@param arg0 Color
+---@param color Color
 ---@return string
-function Colors.getNameFromColor(arg0) end
+function Colors.getNameFromColor(color) end
 
 ---@return Colors
 function Colors.new() end

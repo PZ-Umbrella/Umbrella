@@ -3,10 +3,10 @@
 ---@class RoomDef.RoomRect
 local __RoomRect = {}
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return boolean
-function __RoomRect:contains(arg0, arg1) end
+function __RoomRect:contains(x, y) end
 
 ---@param x number
 ---@param y number
@@ -32,12 +32,12 @@ function __RoomRect:getY() end
 ---@return integer
 function __RoomRect:getY2() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
 ---@return RoomDef.RoomRect
-function __RoomRect:set(arg0, arg1, arg2, arg3) end
+function __RoomRect:set(x, y, w, h) end
 
 RoomRect = {}
 

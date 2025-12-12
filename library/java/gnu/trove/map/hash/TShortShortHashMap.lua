@@ -4,53 +4,53 @@
 ---@class TShortShortHashMap: TShortShortHash, TShortShortMap, Externalizable
 local __TShortShortHashMap = {}
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param key integer
+---@param adjust_amount integer
+---@param put_amount integer
 ---@return integer
-function __TShortShortHashMap:adjustOrPutValue(arg0, arg1, arg2) end
+function __TShortShortHashMap:adjustOrPutValue(key, adjust_amount, put_amount) end
 
----@param arg0 integer
----@param arg1 integer
+---@param key integer
+---@param amount integer
 ---@return boolean
-function __TShortShortHashMap:adjustValue(arg0, arg1) end
+function __TShortShortHashMap:adjustValue(key, amount) end
 
 function __TShortShortHashMap:clear() end
 
----@param arg0 integer
+---@param key integer
 ---@return boolean
-function __TShortShortHashMap:containsKey(arg0) end
+function __TShortShortHashMap:containsKey(key) end
 
----@param arg0 integer
+---@param val integer
 ---@return boolean
-function __TShortShortHashMap:containsValue(arg0) end
+function __TShortShortHashMap:containsValue(val) end
 
----@param arg0 any
+---@param other any
 ---@return boolean
-function __TShortShortHashMap:equals(arg0) end
+function __TShortShortHashMap:equals(other) end
 
----@param arg0 TShortShortProcedure
+---@param procedure TShortShortProcedure
 ---@return boolean
-function __TShortShortHashMap:forEachEntry(arg0) end
+function __TShortShortHashMap:forEachEntry(procedure) end
 
----@param arg0 TShortProcedure
+---@param procedure TShortProcedure
 ---@return boolean
-function __TShortShortHashMap:forEachKey(arg0) end
+function __TShortShortHashMap:forEachKey(procedure) end
 
----@param arg0 TShortProcedure
+---@param procedure TShortProcedure
 ---@return boolean
-function __TShortShortHashMap:forEachValue(arg0) end
+function __TShortShortHashMap:forEachValue(procedure) end
 
----@param arg0 integer
+---@param key integer
 ---@return integer
-function __TShortShortHashMap:get(arg0) end
+function __TShortShortHashMap:get(key) end
 
 ---@return integer
 function __TShortShortHashMap:hashCode() end
 
----@param arg0 integer
+---@param key integer
 ---@return boolean
-function __TShortShortHashMap:increment(arg0) end
+function __TShortShortHashMap:increment(key) end
 
 ---@return boolean
 function __TShortShortHashMap:isEmpty() end
@@ -64,42 +64,42 @@ function __TShortShortHashMap:keySet() end
 ---@return kahlua.Array<integer>
 function __TShortShortHashMap:keys() end
 
----@param arg0 kahlua.Array<integer>
+---@param array kahlua.Array<integer>
 ---@return kahlua.Array<integer>
-function __TShortShortHashMap:keys(arg0) end
+function __TShortShortHashMap:keys(array) end
 
----@param arg0 integer
----@param arg1 integer
+---@param key integer
+---@param value integer
 ---@return integer
-function __TShortShortHashMap:put(arg0, arg1) end
+function __TShortShortHashMap:put(key, value) end
 
 ---@param map Map<integer, integer>
 function __TShortShortHashMap:putAll(map) end
 
----@param arg0 TShortShortMap
-function __TShortShortHashMap:putAll(arg0) end
+---@param map TShortShortMap
+function __TShortShortHashMap:putAll(map) end
 
----@param arg0 integer
----@param arg1 integer
+---@param key integer
+---@param value integer
 ---@return integer
-function __TShortShortHashMap:putIfAbsent(arg0, arg1) end
+function __TShortShortHashMap:putIfAbsent(key, value) end
 
----@param arg0 ObjectInput
-function __TShortShortHashMap:readExternal(arg0) end
+---@param _in ObjectInput
+function __TShortShortHashMap:readExternal(_in) end
 
----@param arg0 integer
+---@param key integer
 ---@return integer
-function __TShortShortHashMap:remove(arg0) end
+function __TShortShortHashMap:remove(key) end
 
----@param arg0 TShortShortProcedure
+---@param procedure TShortShortProcedure
 ---@return boolean
-function __TShortShortHashMap:retainEntries(arg0) end
+function __TShortShortHashMap:retainEntries(procedure) end
 
 ---@return string
 function __TShortShortHashMap:toString() end
 
----@param arg0 TShortFunction
-function __TShortShortHashMap:transformValues(arg0) end
+---@param _function TShortFunction
+function __TShortShortHashMap:transformValues(_function) end
 
 ---@return TShortCollection
 function __TShortShortHashMap:valueCollection() end
@@ -107,9 +107,9 @@ function __TShortShortHashMap:valueCollection() end
 ---@return kahlua.Array<integer>
 function __TShortShortHashMap:values() end
 
----@param arg0 kahlua.Array<integer>
+---@param array kahlua.Array<integer>
 ---@return kahlua.Array<integer>
-function __TShortShortHashMap:values(arg0) end
+function __TShortShortHashMap:values(array) end
 
----@param arg0 ObjectOutput
-function __TShortShortHashMap:writeExternal(arg0) end
+---@param out ObjectOutput
+function __TShortShortHashMap:writeExternal(out) end

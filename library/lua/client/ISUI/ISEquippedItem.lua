@@ -9,7 +9,7 @@
 ---@field clientBtn ISButton
 ---@field clientIconOff unknown
 ---@field clientIconOn Texture
----@field clockTexture unknown
+---@field clockTexture Texture
 ---@field craftingBtn ISButton
 ---@field craftingIconOff unknown
 ---@field craftingIconOn Texture
@@ -34,7 +34,6 @@
 ---@field inventory unknown?
 ---@field inventoryTextureOff unknown
 ---@field inventoryTextureOn Texture
----@field lockTexture Texture
 ---@field loot unknown?
 ---@field mainHand ISImage
 ---@field mapBtn ISButton

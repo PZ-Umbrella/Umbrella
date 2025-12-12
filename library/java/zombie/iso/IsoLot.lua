@@ -3,20 +3,20 @@
 ---@class IsoLot
 local __IsoLot = {}
 
----@param arg0 MapFiles
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 IsoChunk
-function __IsoLot:load(arg0, arg1, arg2, arg3, arg4, arg5) end
+---@param mapFiles MapFiles
+---@param cX integer
+---@param cY integer
+---@param wX integer
+---@param wY integer
+---@param ch IsoChunk
+function __IsoLot:load(mapFiles, cX, cY, wX, wY, ch) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 IsoChunk
-function __IsoLot:loadNew(arg0, arg1, arg2, arg3, arg4) end
+---@param cX integer
+---@param cY integer
+---@param wX integer
+---@param wY integer
+---@param ch IsoChunk
+function __IsoLot:loadNew(cX, cY, wX, wY, ch) end
 
 IsoLot = {}
 
@@ -40,28 +40,28 @@ IsoLot.pool = nil
 
 function IsoLot.Dispose() end
 
----@param arg0 MapFiles
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 IsoChunk
+---@param mapFiles MapFiles
+---@param cX integer
+---@param cY integer
+---@param wX integer
+---@param wY integer
+---@param ch IsoChunk
 ---@return IsoLot
-function IsoLot.get(arg0, arg1, arg2, arg3, arg4, arg5) end
+function IsoLot.get(mapFiles, cX, cY, wX, wY, ch) end
 
----@param arg0 MapFiles
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 IsoChunk
+---@param mapFiles MapFiles
+---@param cX integer
+---@param cY integer
+---@param wX integer
+---@param wY integer
+---@param ch IsoChunk
 ---@return IsoLot
-function IsoLot.get(arg0, arg1, arg2, arg3, arg4, arg5) end
+function IsoLot.get(mapFiles, cX, cY, wX, wY, ch) end
 
----@param arg0 integer
----@param arg1 integer
+---@param cellX integer
+---@param cellY integer
 ---@return LotHeader
-function IsoLot.getHeader(arg0, arg1) end
+function IsoLot.getHeader(cellX, cellY) end
 
 ---@param lot IsoLot
 function IsoLot.put(lot) end

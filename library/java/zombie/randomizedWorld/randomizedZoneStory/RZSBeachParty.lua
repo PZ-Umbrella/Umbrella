@@ -3,8 +3,8 @@
 ---@class RZSBeachParty: RandomizedZoneStoryBase
 local __RZSBeachParty = {}
 
----@param arg0 Zone
-function __RZSBeachParty:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSBeachParty:randomizeZoneStory(zone) end
 
 RZSBeachParty = {}
 

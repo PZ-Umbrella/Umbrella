@@ -7,56 +7,56 @@ function __SpriteModelEditorState:enter() end
 
 function __SpriteModelEditorState:exit() end
 
----@param arg0 string
+---@param func string
 ---@return any
-function __SpriteModelEditorState:fromLua0(arg0) end
+function __SpriteModelEditorState:fromLua0(func) end
 
----@param arg0 string
+---@param func string
+---@param arg0 any
+---@return any
+function __SpriteModelEditorState:fromLua1(func, arg0) end
+
+---@param func string
+---@param arg0 any
 ---@param arg1 any
 ---@return any
-function __SpriteModelEditorState:fromLua1(arg0, arg1) end
+function __SpriteModelEditorState:fromLua2(func, arg0, arg1) end
 
----@param arg0 string
+---@param func string
+---@param arg0 any
 ---@param arg1 any
 ---@param arg2 any
 ---@return any
-function __SpriteModelEditorState:fromLua2(arg0, arg1, arg2) end
+function __SpriteModelEditorState:fromLua3(func, arg0, arg1, arg2) end
 
----@param arg0 string
+---@param func string
+---@param arg0 any
 ---@param arg1 any
 ---@param arg2 any
 ---@param arg3 any
 ---@return any
-function __SpriteModelEditorState:fromLua3(arg0, arg1, arg2, arg3) end
+function __SpriteModelEditorState:fromLua4(func, arg0, arg1, arg2, arg3) end
 
----@param arg0 string
+---@param func string
+---@param arg0 any
 ---@param arg1 any
 ---@param arg2 any
 ---@param arg3 any
 ---@param arg4 any
 ---@return any
-function __SpriteModelEditorState:fromLua4(arg0, arg1, arg2, arg3, arg4) end
+function __SpriteModelEditorState:fromLua5(func, arg0, arg1, arg2, arg3, arg4) end
 
----@param arg0 string
----@param arg1 any
----@param arg2 any
----@param arg3 any
----@param arg4 any
----@param arg5 any
----@return any
-function __SpriteModelEditorState:fromLua5(arg0, arg1, arg2, arg3, arg4, arg5) end
-
----@param arg0 string
+---@param name string
 ---@return boolean
-function __SpriteModelEditorState:getBoolean(arg0) end
+function __SpriteModelEditorState:getBoolean(name) end
 
----@param arg0 integer
+---@param index integer
 ---@return ConfigOption
-function __SpriteModelEditorState:getOptionByIndex(arg0) end
+function __SpriteModelEditorState:getOptionByIndex(index) end
 
----@param arg0 string
+---@param name string
 ---@return ConfigOption
-function __SpriteModelEditorState:getOptionByName(arg0) end
+function __SpriteModelEditorState:getOptionByName(name) end
 
 ---@return integer
 function __SpriteModelEditorState:getOptionCount() end
@@ -69,12 +69,12 @@ function __SpriteModelEditorState:render() end
 
 function __SpriteModelEditorState:save() end
 
----@param arg0 string
----@param arg1 boolean
-function __SpriteModelEditorState:setBoolean(arg0, arg1) end
+---@param name string
+---@param value boolean
+function __SpriteModelEditorState:setBoolean(name, value) end
 
----@param arg0 table
-function __SpriteModelEditorState:setTable(arg0) end
+---@param table table
+function __SpriteModelEditorState:setTable(table) end
 
 ---@return GameStateMachine.StateAction
 function __SpriteModelEditorState:update() end

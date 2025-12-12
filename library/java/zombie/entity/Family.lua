@@ -3,9 +3,9 @@
 ---@class Family
 local __Family = {}
 
----@param arg0 any
+---@param obj any
 ---@return boolean
-function __Family:equals(arg0) end
+function __Family:equals(obj) end
 
 ---@return integer
 function __Family:getIndex() end
@@ -13,23 +13,23 @@ function __Family:getIndex() end
 ---@return integer
 function __Family:hashCode() end
 
----@param arg0 GameEntity
+---@param entity GameEntity
 ---@return boolean
-function __Family:matches(arg0) end
+function __Family:matches(entity) end
 
 Family = {}
 
----@param arg0 kahlua.Array<ComponentType>
+---@param componentTypes kahlua.Array<ComponentType>
 ---@return Family.Builder
-function Family.all(arg0) end
+function Family.all(componentTypes) end
 
----@param arg0 kahlua.Array<ComponentType>
+---@param componentTypes kahlua.Array<ComponentType>
 ---@return Family.Builder
-function Family.exclude(arg0) end
+function Family.exclude(componentTypes) end
 
----@param arg0 kahlua.Array<ComponentType>
+---@param componentTypes kahlua.Array<ComponentType>
 ---@return Family.Builder
-function Family.one(arg0) end
+function Family.one(componentTypes) end
 
 ---@type Class<Family>
 Family.class = nil

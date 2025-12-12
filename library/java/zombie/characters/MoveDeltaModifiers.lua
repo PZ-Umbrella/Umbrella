@@ -12,23 +12,23 @@ function __MoveDeltaModifiers:getTurnDelta() end
 ---@return number
 function __MoveDeltaModifiers:getTwistDelta() end
 
----@param arg0 number
-function __MoveDeltaModifiers:setMaxMoveDelta(arg0) end
+---@param delta number
+function __MoveDeltaModifiers:setMaxMoveDelta(delta) end
 
----@param arg0 number
-function __MoveDeltaModifiers:setMaxTurnDelta(arg0) end
+---@param delta number
+function __MoveDeltaModifiers:setMaxTurnDelta(delta) end
 
----@param arg0 number
-function __MoveDeltaModifiers:setMaxTwistDelta(arg0) end
+---@param delta number
+function __MoveDeltaModifiers:setMaxTwistDelta(delta) end
 
----@param arg0 number
-function __MoveDeltaModifiers:setMoveDelta(arg0) end
+---@param delta number
+function __MoveDeltaModifiers:setMoveDelta(delta) end
 
----@param arg0 number
-function __MoveDeltaModifiers:setTurnDelta(arg0) end
+---@param delta number
+function __MoveDeltaModifiers:setTurnDelta(delta) end
 
----@param arg0 number
-function __MoveDeltaModifiers:setTwistDelta(arg0) end
+---@param delta number
+function __MoveDeltaModifiers:setTwistDelta(delta) end
 
 MoveDeltaModifiers = {}
 

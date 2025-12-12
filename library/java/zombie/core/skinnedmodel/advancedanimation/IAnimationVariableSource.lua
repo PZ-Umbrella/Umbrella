@@ -12,9 +12,9 @@ function __IAnimationVariableSource:containsVariable(name) end
 ---@return Iterable<IAnimationVariableSlot>
 function __IAnimationVariableSource:getGameVariables() end
 
----@param arg0 string
+---@param in_subVariableSourceName string
 ---@return IAnimationVariableSource
-function __IAnimationVariableSource:getSubVariableSource(arg0) end
+function __IAnimationVariableSource:getSubVariableSource(in_subVariableSourceName) end
 
 ---Returns the specified variable slot. Or NULL if not found.
 ---@param handle AnimationVariableHandle
@@ -41,15 +41,15 @@ function __IAnimationVariableSource:getVariableBoolean(name) end
 ---@return boolean
 function __IAnimationVariableSource:getVariableBoolean(key, defaultVal) end
 
----@param arg0 AnimationVariableHandle
+---@param handle AnimationVariableHandle
 ---@return boolean
-function __IAnimationVariableSource:getVariableBoolean(arg0) end
+function __IAnimationVariableSource:getVariableBoolean(handle) end
 
 ---@generic EnumType: Enum<EnumType>
----@param arg0 string
----@param arg1 EnumType
+---@param in_key string
+---@param in_defaultVal EnumType
 ---@return EnumType
-function __IAnimationVariableSource:getVariableEnum(arg0, arg1) end
+function __IAnimationVariableSource:getVariableEnum(in_key, in_defaultVal) end
 
 ---Returns the specified variable, as a float.
 ---  Attempts to convert the string variable to a float.

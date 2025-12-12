@@ -3,11 +3,11 @@
 ---@class PlayerMovementState: State
 local __PlayerMovementState = {}
 
----@param arg0 IsoGameCharacter
-function __PlayerMovementState:enter(arg0) end
+---@param owner IsoGameCharacter
+function __PlayerMovementState:enter(owner) end
 
----@param arg0 IsoGameCharacter
-function __PlayerMovementState:exit(arg0) end
+---@param owner IsoGameCharacter
+function __PlayerMovementState:exit(owner) end
 
 ---@return boolean
 function __PlayerMovementState:isSyncInIdle() end
@@ -21,9 +21,9 @@ function __PlayerMovementState:isSyncOnExit() end
 ---@return boolean
 function __PlayerMovementState:isSyncOnSquare() end
 
----@param arg0 IsoGameCharacter
----@param arg1 State.Stage
-function __PlayerMovementState:setParams(arg0, arg1) end
+---@param owner IsoGameCharacter
+---@param stage State.Stage
+function __PlayerMovementState:setParams(owner, stage) end
 
 PlayerMovementState = {}
 

@@ -59,13 +59,13 @@ Attribute.TimesHeadRepaired = nil
 ---@return ArrayList<AttributeType>
 function Attribute.GetAllTypes() end
 
----@param arg0 integer
+---@param value integer
 ---@return AttributeType
-function Attribute.TypeFromId(arg0) end
+function Attribute.TypeFromId(value) end
 
----@param arg0 string
+---@param name string
 ---@return AttributeType
-function Attribute.TypeFromName(arg0) end
+function Attribute.TypeFromName(name) end
 
 function Attribute.init() end
 

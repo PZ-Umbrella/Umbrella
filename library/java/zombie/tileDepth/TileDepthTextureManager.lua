@@ -15,70 +15,70 @@ function __TileDepthTextureManager:getBillboardDepthTexture() end
 ---@return TileDepthTexture
 function __TileDepthTextureManager:getDefaultDepthTexture() end
 
----@param arg0 integer
----@param arg1 integer
+---@param width integer
+---@param height integer
 ---@return Texture
-function __TileDepthTextureManager:getEmptyDepthTexture(arg0, arg1) end
+function __TileDepthTextureManager:getEmptyDepthTexture(width, height) end
 
----@param arg0 integer
----@param arg1 integer
+---@param col integer
+---@param row integer
 ---@return TileDepthTexture
-function __TileDepthTextureManager:getPresetDepthTexture(arg0, arg1) end
+function __TileDepthTextureManager:getPresetDepthTexture(col, row) end
 
 ---@return TilesetDepthTexture
 function __TileDepthTextureManager:getPresetTilesetDepthTexture() end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
+---@param modID string
+---@param tilesetName string
+---@param tileIndex integer
 ---@return TileDepthTexture
-function __TileDepthTextureManager:getTexture(arg0, arg1, arg2) end
+function __TileDepthTextureManager:getTexture(modID, tilesetName, tileIndex) end
 
----@param arg0 string
----@param arg1 integer
+---@param tilesetName string
+---@param tileIndex integer
 ---@return TileDepthTexture
-function __TileDepthTextureManager:getTexture(arg0, arg1) end
+function __TileDepthTextureManager:getTexture(tilesetName, tileIndex) end
 
----@param arg0 string
----@param arg1 string
+---@param modID string
+---@param tileName string
 ---@return TileDepthTexture
-function __TileDepthTextureManager:getTextureFromTileName(arg0, arg1) end
+function __TileDepthTextureManager:getTextureFromTileName(modID, tileName) end
 
----@param arg0 string
+---@param tileName string
 ---@return TileDepthTexture
-function __TileDepthTextureManager:getTextureFromTileName(arg0) end
+function __TileDepthTextureManager:getTextureFromTileName(tileName) end
 
 function __TileDepthTextureManager:init() end
 
 function __TileDepthTextureManager:initGameData() end
 
----@param arg0 ChooseGameInfo.Mod
-function __TileDepthTextureManager:initModData(arg0) end
+---@param mod ChooseGameInfo.Mod
+function __TileDepthTextureManager:initModData(mod) end
 
 function __TileDepthTextureManager:initSprites() end
 
----@param arg0 string
-function __TileDepthTextureManager:initSprites(arg0) end
+---@param tilesetName string
+function __TileDepthTextureManager:initSprites(tilesetName) end
 
 ---@return boolean
 function __TileDepthTextureManager:isLoadingFinished() end
 
----@param arg0 string
----@param arg1 string
-function __TileDepthTextureManager:loadTilesetPixelsIfNeeded(arg0, arg1) end
+---@param modID string
+---@param tilesetName string
+function __TileDepthTextureManager:loadTilesetPixelsIfNeeded(modID, tilesetName) end
 
 function __TileDepthTextureManager:loadedTileDefinitions() end
 
----@param arg0 string
-function __TileDepthTextureManager:mergeAfterEditing(arg0) end
+---@param tilesetName string
+function __TileDepthTextureManager:mergeAfterEditing(tilesetName) end
 
----@param arg0 string
----@param arg1 string
-function __TileDepthTextureManager:reloadTileset(arg0, arg1) end
+---@param modID string
+---@param tilesetName string
+function __TileDepthTextureManager:reloadTileset(modID, tilesetName) end
 
----@param arg0 string
----@param arg1 string
-function __TileDepthTextureManager:saveTileset(arg0, arg1) end
+---@param modID string
+---@param tilesetName string
+function __TileDepthTextureManager:saveTileset(modID, tilesetName) end
 
 TileDepthTextureManager = {}
 

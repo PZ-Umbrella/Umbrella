@@ -18,14 +18,14 @@ function __WorldMapTextSymbolV2:getUntranslatedText() end
 ---@return boolean
 function __WorldMapTextSymbolV2:isText() end
 
----@param arg0 string
-function __WorldMapTextSymbolV2:setLayerID(arg0) end
+---@param layerID string
+function __WorldMapTextSymbolV2:setLayerID(layerID) end
 
----@param arg0 string
-function __WorldMapTextSymbolV2:setTranslatedText(arg0) end
+---@param text string
+function __WorldMapTextSymbolV2:setTranslatedText(text) end
 
----@param arg0 string
-function __WorldMapTextSymbolV2:setUntranslatedText(arg0) end
+---@param text string
+function __WorldMapTextSymbolV2:setUntranslatedText(text) end
 
 WorldMapTextSymbolV2 = {}
 

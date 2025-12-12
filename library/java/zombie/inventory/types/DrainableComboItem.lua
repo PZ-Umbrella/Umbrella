@@ -12,10 +12,10 @@ function __DrainableComboItem:IsDrainable() end
 
 function __DrainableComboItem:Use() end
 
----@param arg0 boolean
----@param arg1 boolean
----@param arg2 boolean
-function __DrainableComboItem:Use(arg0, arg1, arg2) end
+---@param bCrafting boolean
+---@param bInContainer boolean
+---@param bNeedSync boolean
+function __DrainableComboItem:Use(bCrafting, bInContainer, bNeedSync) end
 
 ---@return boolean
 function __DrainableComboItem:canConsolidate() end
@@ -89,11 +89,11 @@ function __DrainableComboItem:renderlast() end
 ---@param canConsolidate boolean
 function __DrainableComboItem:setCanConsolidate(canConsolidate) end
 
----@param arg0 integer
-function __DrainableComboItem:setCurrentUses(arg0) end
+---@param newuses integer
+function __DrainableComboItem:setCurrentUses(newuses) end
 
----@param arg0 number
-function __DrainableComboItem:setCurrentUsesFloat(arg0) end
+---@param newUses number
+function __DrainableComboItem:setCurrentUsesFloat(newUses) end
 
 ---@param heat number
 function __DrainableComboItem:setHeat(heat) end
@@ -101,8 +101,8 @@ function __DrainableComboItem:setHeat(heat) end
 ---@param onCooked string the onCooked to set
 function __DrainableComboItem:setOnCooked(onCooked) end
 
----@param arg0 string
-function __DrainableComboItem:setOnEat(arg0) end
+---@param onEat string
+function __DrainableComboItem:setOnEat(onEat) end
 
 ---@param replaceOnCooked List<string> the ReplaceOnCooked to set
 function __DrainableComboItem:setReplaceOnCooked(replaceOnCooked) end

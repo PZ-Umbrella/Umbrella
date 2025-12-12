@@ -2,22 +2,24 @@
 
 ---@class ISInventoryWindowControlHandler : ISBaseObject
 ---@field altColor boolean
----@field control ISButton
+---@field control ISUIElement
 ISInventoryWindowControlHandler = ISBaseObject:derive("ISInventoryWindowControlHandler")
 ISInventoryWindowControlHandler.Type = "ISInventoryWindowControlHandler"
 
 ---@param context ISContextMenu
----@return unknown
+---@param text string
+---@return umbrella.ISContextMenu.Option
 function ISInventoryWindowControlHandler:addJoypadContextMenuOption(context, text) end
 
 ---@param title string
 ---@return ISButton
 function ISInventoryWindowControlHandler:getButtonControl(title) end
 
----@return unknown
+---@return ISUIElement
 function ISInventoryWindowControlHandler:getControl() end
 
----@return unknown
+---@param imagePath string
+---@return ISButton
 function ISInventoryWindowControlHandler:getImageButtonControl(imagePath) end
 
 ---@param context ISContextMenu

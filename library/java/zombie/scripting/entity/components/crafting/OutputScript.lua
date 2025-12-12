@@ -3,28 +3,28 @@
 ---@class OutputScript: CraftRecipe.IOScript
 local __OutputScript = {}
 
----@param arg0 ScriptLoadMode
-function __OutputScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __OutputScript:OnScriptsLoaded(loadMode) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __OutputScript:canOutputItem(arg0) end
+function __OutputScript:canOutputItem(item) end
 
----@param arg0 Item
+---@param item Item
 ---@return boolean
-function __OutputScript:canOutputItem(arg0) end
+function __OutputScript:canOutputItem(item) end
 
----@param arg0 Energy
+---@param energy Energy
 ---@return boolean
-function __OutputScript:containsEnergy(arg0) end
+function __OutputScript:containsEnergy(energy) end
 
----@param arg0 Fluid
+---@param fluid Fluid
 ---@return boolean
-function __OutputScript:containsFluid(arg0) end
+function __OutputScript:containsFluid(fluid) end
 
----@param arg0 Item
+---@param item Item
 ---@return boolean
-function __OutputScript:containsItem(arg0) end
+function __OutputScript:containsItem(item) end
 
 ---@return number
 function __OutputScript:getAmount() end
@@ -50,9 +50,9 @@ function __OutputScript:getIntAmount() end
 ---@return integer
 function __OutputScript:getIntMaxAmount() end
 
----@param arg0 CraftRecipeData
+---@param recipeData CraftRecipeData
 ---@return Item
-function __OutputScript:getItem(arg0) end
+function __OutputScript:getItem(recipeData) end
 
 ---@return ItemApplyMode
 function __OutputScript:getItemApplyMode() end
@@ -85,9 +85,9 @@ function __OutputScript:getShapedIndex() end
 ---@return boolean
 function __OutputScript:hasCreateToItem() end
 
----@param arg0 OutputFlag
+---@param flag OutputFlag
 ---@return boolean
-function __OutputScript:hasFlag(arg0) end
+function __OutputScript:hasFlag(flag) end
 
 ---@return boolean
 function __OutputScript:isApplyOnTick() end
@@ -99,13 +99,13 @@ function __OutputScript:isAutomationOnly() end
 ---@return boolean
 function __OutputScript:isCreateUses() end
 
----@param arg0 DrainableComboItem
+---@param item DrainableComboItem
 ---@return boolean
-function __OutputScript:isEnergyMatch(arg0) end
+function __OutputScript:isEnergyMatch(item) end
 
----@param arg0 Energy
+---@param energy Energy
 ---@return boolean
-function __OutputScript:isEnergyMatch(arg0) end
+function __OutputScript:isEnergyMatch(energy) end
 
 ---@return boolean
 function __OutputScript:isFluidAnything() end
@@ -113,9 +113,9 @@ function __OutputScript:isFluidAnything() end
 ---@return boolean
 function __OutputScript:isFluidExact() end
 
----@param arg0 FluidContainer
+---@param container FluidContainer
 ---@return boolean
-function __OutputScript:isFluidMatch(arg0) end
+function __OutputScript:isFluidMatch(container) end
 
 ---@return boolean
 function __OutputScript:isFluidPrimary() end

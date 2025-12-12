@@ -4,15 +4,15 @@
 ---@class RVSFlippedCrash: RandomizedVehicleStoryBase
 local __RVSFlippedCrash = {}
 
----@param arg0 Zone
----@param arg1 IsoChunk
----@param arg2 boolean
+---@param zone Zone
+---@param chunk IsoChunk
+---@param debug boolean
 ---@return boolean
-function __RVSFlippedCrash:initVehicleStorySpawner(arg0, arg1, arg2) end
+function __RVSFlippedCrash:initVehicleStorySpawner(zone, chunk, debug) end
 
----@param arg0 Zone
----@param arg1 IsoChunk
-function __RVSFlippedCrash:randomizeVehicleStory(arg0, arg1) end
+---@param zone Zone
+---@param chunk IsoChunk
+function __RVSFlippedCrash:randomizeVehicleStory(zone, chunk) end
 
 ---@param spawner VehicleStorySpawner
 ---@param element VehicleStorySpawner.Element

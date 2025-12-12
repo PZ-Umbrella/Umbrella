@@ -3,11 +3,11 @@
 ---@class AttributeInstance.EnumStringSet<E: Enum<E>, IOEnum>: AttributeInstance<AttributeInstance.EnumStringSet<E>, AttributeType.EnumStringSet<E>>
 local __EnumStringSet = {}
 
----@param arg0 string
-function __EnumStringSet:addEnumValueFromString(arg0) end
+---@param val string
+function __EnumStringSet:addEnumValueFromString(val) end
 
----@param arg0 string
-function __EnumStringSet:addStringValue(arg0) end
+---@param val string
+function __EnumStringSet:addStringValue(val) end
 
 function __EnumStringSet:clear() end
 
@@ -21,26 +21,26 @@ function __EnumStringSet:equalTo(other) end
 ---@return EnumStringObj<E>
 function __EnumStringSet:getValue() end
 
----@param arg0 ByteBuffer
-function __EnumStringSet:load(arg0) end
+---@param input ByteBuffer
+function __EnumStringSet:load(input) end
 
----@param arg0 string
+---@param val string
 ---@return boolean
-function __EnumStringSet:removeEnumValueFromString(arg0) end
+function __EnumStringSet:removeEnumValueFromString(val) end
 
----@param arg0 string
+---@param val string
 ---@return boolean
-function __EnumStringSet:removeStringValue(arg0) end
+function __EnumStringSet:removeStringValue(val) end
 
----@param arg0 ByteBuffer
-function __EnumStringSet:save(arg0) end
+---@param output ByteBuffer
+function __EnumStringSet:save(output) end
 
----@param arg0 EnumStringObj<E>
-function __EnumStringSet:setValue(arg0) end
+---@param value EnumStringObj<E>
+function __EnumStringSet:setValue(value) end
 
----@param arg0 string
+---@param val string
 ---@return boolean
-function __EnumStringSet:setValueFromScriptString(arg0) end
+function __EnumStringSet:setValueFromScriptString(val) end
 
 ---@return string
 function __EnumStringSet:stringValue() end

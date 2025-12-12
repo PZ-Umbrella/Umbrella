@@ -51,8 +51,8 @@ function __AlarmClockClothing:setAlarmSet(alarmSet) end
 ---@param alarmSound string
 function __AlarmClockClothing:setAlarmSound(alarmSound) end
 
----@param arg0 integer
-function __AlarmClockClothing:setForceDontRing(arg0) end
+---@param min integer
+function __AlarmClockClothing:setForceDontRing(min) end
 
 ---@param hour integer
 function __AlarmClockClothing:setHour(hour) end

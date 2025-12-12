@@ -5,8 +5,8 @@
 ---@class RZSBuryingCamp: RandomizedZoneStoryBase
 local __RZSBuryingCamp = {}
 
----@param arg0 Zone
-function __RZSBuryingCamp:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSBuryingCamp:randomizeZoneStory(zone) end
 
 RZSBuryingCamp = {}
 

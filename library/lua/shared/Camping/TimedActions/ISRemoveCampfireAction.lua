@@ -3,7 +3,7 @@
 ---@class ISRemoveCampfireAction : ISBaseTimedAction
 ---@field campfire SCampfireGlobalObject
 ---@field character IsoPlayer
----@field sound unknown
+---@field sound integer?
 ISRemoveCampfireAction = ISBaseTimedAction:derive("ISRemoveCampfireAction")
 ISRemoveCampfireAction.Type = "ISRemoveCampfireAction"
 

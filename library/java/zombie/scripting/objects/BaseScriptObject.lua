@@ -3,45 +3,45 @@
 ---@class BaseScriptObject
 local __BaseScriptObject = {}
 
----@param arg0 string
-function __BaseScriptObject:InitLoadPP(arg0) end
+---@param name string
+function __BaseScriptObject:InitLoadPP(name) end
 
----@param arg0 string
----@param arg1 string
-function __BaseScriptObject:Load(arg0, arg1) end
+---@param name string
+---@param body string
+function __BaseScriptObject:Load(name, body) end
 
----@param arg0 string
-function __BaseScriptObject:LoadCommonBlock(arg0) end
+---@param body string
+function __BaseScriptObject:LoadCommonBlock(body) end
 
----@param arg0 ScriptParser.Block
-function __BaseScriptObject:LoadCommonBlock(arg0) end
+---@param block ScriptParser.Block
+function __BaseScriptObject:LoadCommonBlock(block) end
 
 function __BaseScriptObject:OnLoadedAfterLua() end
 
 function __BaseScriptObject:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __BaseScriptObject:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __BaseScriptObject:OnScriptsLoaded(loadMode) end
 
 function __BaseScriptObject:PreReload() end
 
----@param arg0 string
----@param arg1 string
-function __BaseScriptObject:addLoadedScriptBody(arg0, arg1) end
+---@param modId string
+---@param body string
+function __BaseScriptObject:addLoadedScriptBody(modId, body) end
 
 function __BaseScriptObject:calculateScriptVersion() end
 
 ---@return string
 function __BaseScriptObject:debugString() end
 
----@param arg0 ArrayList<string>
+---@param list ArrayList<string>
 ---@return ArrayList<string>
-function __BaseScriptObject:getAllScriptLines(arg0) end
+function __BaseScriptObject:getAllScriptLines(list) end
 
----@param arg0 integer
----@param arg1 ArrayList<string>
+---@param bodyIndex integer
+---@param list ArrayList<string>
 ---@return ArrayList<string>
-function __BaseScriptObject:getBodyScriptLines(arg0, arg1) end
+function __BaseScriptObject:getBodyScriptLines(bodyIndex, list) end
 
 ---@return ArrayList<string>
 function __BaseScriptObject:getLoadedScriptBodies() end
@@ -74,8 +74,8 @@ function __BaseScriptObject:getScriptObjectType() end
 function __BaseScriptObject:getScriptVersion() end
 
 ---@deprecated
----@param arg0 IVersionHash
-function __BaseScriptObject:getVersion(arg0) end
+---@param hash IVersionHash
+function __BaseScriptObject:getVersion(hash) end
 
 ---@return boolean
 function __BaseScriptObject:isDebugOnly() end
@@ -87,11 +87,11 @@ function __BaseScriptObject:reset() end
 
 function __BaseScriptObject:resetLoadedScriptBodies() end
 
----@param arg0 ScriptModule
-function __BaseScriptObject:setModule(arg0) end
+---@param module ScriptModule
+function __BaseScriptObject:setModule(module) end
 
----@param arg0 BaseScriptObject
-function __BaseScriptObject:setParent(arg0) end
+---@param parent BaseScriptObject
+function __BaseScriptObject:setParent(parent) end
 
 BaseScriptObject = {}
 

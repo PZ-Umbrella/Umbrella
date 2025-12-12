@@ -22,17 +22,17 @@ function __BooleanDebugOption:setParent(parent) end
 
 BooleanDebugOption = {}
 
----@param arg0 IDebugOptionGroup
----@param arg1 string
----@param arg2 boolean
+---@param parentGroup IDebugOptionGroup
+---@param name string
+---@param defaultValue boolean
 ---@return BooleanDebugOption
-function BooleanDebugOption.newDebugOnlyOption(arg0, arg1, arg2) end
+function BooleanDebugOption.newDebugOnlyOption(parentGroup, name, defaultValue) end
 
----@param arg0 IDebugOptionGroup
----@param arg1 string
----@param arg2 boolean
+---@param parentGroup IDebugOptionGroup
+---@param name string
+---@param defaultValue boolean
 ---@return BooleanDebugOption
-function BooleanDebugOption.newOption(arg0, arg1, arg2) end
+function BooleanDebugOption.newOption(parentGroup, name, defaultValue) end
 
 ---@param name string
 ---@param debugOnly boolean

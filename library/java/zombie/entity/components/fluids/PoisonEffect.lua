@@ -32,21 +32,21 @@ PoisonEffect.None = nil
 ---@type PoisonEffect
 PoisonEffect.Severe = nil
 
----@param arg0 integer
+---@param level integer
 ---@return PoisonEffect
-function PoisonEffect.FromLevel(arg0) end
+function PoisonEffect.FromLevel(level) end
 
----@param arg0 string
+---@param name string
 ---@return PoisonEffect
-function PoisonEffect.FromNameLower(arg0) end
+function PoisonEffect.FromNameLower(name) end
 
----@param arg0 string
+---@param name string
 ---@return boolean
-function PoisonEffect.containsNameLowercase(arg0) end
+function PoisonEffect.containsNameLowercase(name) end
 
----@param arg0 string
+---@param name string
 ---@return PoisonEffect
-function PoisonEffect.valueOf(arg0) end
+function PoisonEffect.valueOf(name) end
 
 ---@return kahlua.Array<PoisonEffect>
 function PoisonEffect.values() end

@@ -6,31 +6,31 @@ local __Byte = {}
 ---@return AttributeInstance.Byte
 function __Byte:copy() end
 
----@param arg0 AttributeInstance.Byte
+---@param other AttributeInstance.Byte
 ---@return boolean
-function __Byte:equalTo(arg0) end
+function __Byte:equalTo(other) end
 
 ---@return number
 function __Byte:floatValue() end
 
----@param arg0 number
-function __Byte:fromFloat(arg0) end
+---@param f number
+function __Byte:fromFloat(f) end
 
 ---@return integer
 function __Byte:getValue() end
 
----@param arg0 ByteBuffer
-function __Byte:load(arg0) end
+---@param input ByteBuffer
+function __Byte:load(input) end
 
----@param arg0 ByteBuffer
-function __Byte:save(arg0) end
+---@param output ByteBuffer
+function __Byte:save(output) end
 
----@param arg0 integer
-function __Byte:setValue(arg0) end
+---@param value integer
+function __Byte:setValue(value) end
 
----@param arg0 string
+---@param val string
 ---@return boolean
-function __Byte:setValueFromScriptString(arg0) end
+function __Byte:setValueFromScriptString(val) end
 
 ---@return string
 function __Byte:stringValue() end

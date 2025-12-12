@@ -4,14 +4,14 @@
 ---@class IDescriptor
 local __IDescriptor = {}
 
----@param arg0 StringBuilder
----@param arg1 Class<any>
----@param arg2 HashSet<any>
-function __IDescriptor:getClassDescription(arg0, arg1, arg2) end
+---@param s StringBuilder
+---@param cls Class<any>
+---@param excludedObjects HashSet<any>
+function __IDescriptor:getClassDescription(s, cls, excludedObjects) end
 
----@param arg0 HashSet<any>
+---@param excludedObjects HashSet<any>
 ---@return string
-function __IDescriptor:getDescription(arg0) end
+function __IDescriptor:getDescription(excludedObjects) end
 
 ---@return string
 function __IDescriptor:getDescription() end

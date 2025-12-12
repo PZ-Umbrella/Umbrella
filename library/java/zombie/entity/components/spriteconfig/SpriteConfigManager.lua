@@ -53,13 +53,13 @@ SpriteConfigManager.FACE_W = nil
 ---@type string
 SpriteConfigManager.FACE_W_OPEN = nil
 
----@param arg0 string
+---@param face string
 ---@return integer
-function SpriteConfigManager.GetFaceIdForString(arg0) end
+function SpriteConfigManager.GetFaceIdForString(face) end
 
----@param arg0 string
+---@param name string
 ---@return SpriteConfigManager.ObjectInfo
-function SpriteConfigManager.GetObjectInfo(arg0) end
+function SpriteConfigManager.GetObjectInfo(name) end
 
 ---@return ArrayList<SpriteConfigManager.ObjectInfo>
 function SpriteConfigManager.GetObjectInfoList() end
@@ -71,9 +71,9 @@ function SpriteConfigManager.InitScriptsPostTileDef() end
 
 function SpriteConfigManager.Reset() end
 
----@param arg0 string
+---@param spriteName string
 ---@return SpriteConfigManager.ObjectInfo
-function SpriteConfigManager.getObjectInfoFromSprite(arg0) end
+function SpriteConfigManager.getObjectInfoFromSprite(spriteName) end
 
 ---@return SpriteConfigManager
 function SpriteConfigManager.new() end

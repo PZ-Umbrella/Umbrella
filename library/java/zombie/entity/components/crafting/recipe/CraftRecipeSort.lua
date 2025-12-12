@@ -5,22 +5,22 @@ local __CraftRecipeSort = {}
 
 CraftRecipeSort = {}
 
----@param arg0 List<CraftRecipe>
+---@param listToSort List<CraftRecipe>
 ---@return List<CraftRecipe>
-function CraftRecipeSort.alphaNumeric(arg0) end
+function CraftRecipeSort.alphaNumeric(listToSort) end
 
----@param arg0 List<CraftRecipe>
----@param arg1 IsoGameCharacter
----@param arg2 ArrayList<Resource>
----@param arg3 ArrayList<InventoryItem>
----@param arg4 ArrayList<ItemContainer>
+---@param listToSort List<CraftRecipe>
+---@param character IsoGameCharacter
+---@param sourceResources ArrayList<Resource>
+---@param sourceItems ArrayList<InventoryItem>
+---@param containers ArrayList<ItemContainer>
 ---@return List<CraftRecipe>
-function CraftRecipeSort.canPerformAndValidRecipes(arg0, arg1, arg2, arg3, arg4) end
+function CraftRecipeSort.canPerformAndValidRecipes(listToSort, character, sourceResources, sourceItems, containers) end
 
----@param arg0 List<CraftRecipe>
----@param arg1 IsoGameCharacter
+---@param listToSort List<CraftRecipe>
+---@param character IsoGameCharacter
 ---@return List<CraftRecipe>
-function CraftRecipeSort.validRecipes(arg0, arg1) end
+function CraftRecipeSort.validRecipes(listToSort, character) end
 
 ---@return CraftRecipeSort
 function CraftRecipeSort.new() end

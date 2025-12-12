@@ -12,13 +12,13 @@ function __RoomDef:Dispose() end
 ---@return integer
 function __RoomDef:calculateMetaID(cellX, cellY) end
 
----@param arg0 integer
----@param arg1 integer
+---@param x integer
+---@param y integer
 ---@return boolean
-function __RoomDef:contains(arg0, arg1) end
+function __RoomDef:contains(x, y) end
 
----@param arg0 RoomDef
-function __RoomDef:copyFrom(arg0) end
+---@param other RoomDef
+function __RoomDef:copyFrom(other) end
 
 ---@param consumer BiConsumer<RoomDef, IsoChunk>
 function __RoomDef:forEachChunk(consumer) end
@@ -86,11 +86,11 @@ function __RoomDef:getRandomSquare(predicate) end
 ---@return ArrayList<RoomDef.RoomRect>
 function __RoomDef:getRects() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return RoomDef.RoomRect
-function __RoomDef:getRoomRect(arg0, arg1, arg2) end
+function __RoomDef:getRoomRect(x, y, z) end
 
 ---@return integer
 function __RoomDef:getW() end
@@ -117,16 +117,16 @@ function __RoomDef:getZ() end
 ---@return boolean
 function __RoomDef:intersects(x, y, w, h) end
 
----@param arg0 RoomDef
+---@param other RoomDef
 ---@return boolean
-function __RoomDef:isAdjacent(arg0) end
+function __RoomDef:isAdjacent(other) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
 ---@return boolean
-function __RoomDef:isAdjacent(arg0, arg1, arg2, arg3) end
+function __RoomDef:isAdjacent(x, y, w, h) end
 
 ---@return boolean
 function __RoomDef:isEmptyOutside() end
@@ -149,13 +149,13 @@ function __RoomDef:isRoofFixed() end
 ---@return boolean
 function __RoomDef:isShop() end
 
----@param arg0 integer
----@param arg1 integer
-function __RoomDef:offset(arg0, arg1) end
+---@param dx integer
+---@param dy integer
+function __RoomDef:offset(dx, dy) end
 
----@param arg0 RoomDef
+---@param other RoomDef
 ---@return boolean
-function __RoomDef:overlaps(arg0) end
+function __RoomDef:overlaps(other) end
 
 function __RoomDef:refreshSquares() end
 
@@ -165,22 +165,22 @@ function __RoomDef:setBuilding(def) end
 ---@param explored boolean
 function __RoomDef:setExplored(explored) end
 
----@param arg0 integer
----@param arg1 integer
-function __RoomDef:setInvalidateCacheForAllChunks(arg0, arg1) end
+---@param playerIndex integer
+---@param dirtyFlags integer
+function __RoomDef:setInvalidateCacheForAllChunks(playerIndex, dirtyFlags) end
 
----@param arg0 string
-function __RoomDef:setName(arg0) end
+---@param newName string
+function __RoomDef:setName(newName) end
 
 ---@param b boolean
 function __RoomDef:setRoofFixed(b) end
 
 RoomDef = {}
 
----@param arg0 integer
----@param arg1 string
+---@param id integer
+---@param name string
 ---@return RoomDef
-function RoomDef.new(arg0, arg1) end
+function RoomDef.new(id, name) end
 
 ---@return RoomDef
 function RoomDef.new() end

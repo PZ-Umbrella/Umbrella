@@ -3,15 +3,15 @@
 ---@class CraftLogicScript: ComponentScript
 local __CraftLogicScript = {}
 
----@param arg0 string
-function __CraftLogicScript:InitLoadPP(arg0) end
+---@param name string
+function __CraftLogicScript:InitLoadPP(name) end
 
 function __CraftLogicScript:OnLoadedAfterLua() end
 
 function __CraftLogicScript:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __CraftLogicScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __CraftLogicScript:OnScriptsLoaded(loadMode) end
 
 function __CraftLogicScript:PreReload() end
 

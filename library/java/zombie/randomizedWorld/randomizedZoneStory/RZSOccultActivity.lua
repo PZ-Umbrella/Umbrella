@@ -3,8 +3,8 @@
 ---@class RZSOccultActivity: RandomizedZoneStoryBase
 local __RZSOccultActivity = {}
 
----@param arg0 Zone
-function __RZSOccultActivity:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSOccultActivity:randomizeZoneStory(zone) end
 
 RZSOccultActivity = {}
 

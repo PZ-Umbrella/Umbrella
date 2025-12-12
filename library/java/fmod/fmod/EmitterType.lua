@@ -14,9 +14,9 @@ EmitterType.Footstep = nil
 ---@type EmitterType
 EmitterType.Voice = nil
 
----@param arg0 string
+---@param name string
 ---@return EmitterType
-function EmitterType.valueOf(arg0) end
+function EmitterType.valueOf(name) end
 
 ---@return kahlua.Array<EmitterType>
 function EmitterType.values() end

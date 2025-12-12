@@ -14,9 +14,9 @@ function __IsoTree:HitByVehicle(vehicle, amount) end
 ---@param weapon HandWeapon
 function __IsoTree:WeaponHit(owner, weapon) end
 
----@param arg0 IsoGameCharacter
----@param arg1 HandWeapon
-function __IsoTree:WeaponHitEffects(arg0, arg1) end
+---@param owner IsoGameCharacter
+---@param weapon HandWeapon
+function __IsoTree:WeaponHitEffects(owner, weapon) end
 
 function __IsoTree:checkChopTreeIndicator() end
 
@@ -80,13 +80,13 @@ function __IsoTree:setSprite(sprite) end
 
 function __IsoTree:toppleTree() end
 
----@param arg0 IsoGameCharacter
-function __IsoTree:toppleTree(arg0) end
+---@param owner IsoGameCharacter
+function __IsoTree:toppleTree(owner) end
 
 IsoTree = {}
 
----@param arg0 integer
-function IsoTree.checkChopTreeIndicators(arg0) end
+---@param playerIndex integer
+function IsoTree.checkChopTreeIndicators(playerIndex) end
 
 ---@return IsoTree
 function IsoTree.getNew() end

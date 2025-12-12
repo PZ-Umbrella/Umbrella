@@ -19,12 +19,12 @@ RecipeMonitor.colPos = nil
 
 function RecipeMonitor.DecTab() end
 
----@param arg0 boolean
-function RecipeMonitor.Enable(arg0) end
+---@param b boolean
+function RecipeMonitor.Enable(b) end
 
----@param arg0 integer
+---@param i integer
 ---@return Color
-function RecipeMonitor.GetColorForLine(arg0) end
+function RecipeMonitor.GetColorForLine(i) end
 
 ---@return ArrayList<Color>
 function RecipeMonitor.GetColors() end
@@ -40,31 +40,31 @@ function RecipeMonitor.IncTab() end
 ---@return boolean
 function RecipeMonitor.IsEnabled() end
 
----@param arg0 string
-function RecipeMonitor.Log(arg0) end
+---@param s string
+function RecipeMonitor.Log(s) end
 
----@param arg0 string
----@param arg1 Color
-function RecipeMonitor.Log(arg0, arg1) end
+---@param s string
+---@param c Color
+function RecipeMonitor.Log(s, c) end
 
 function RecipeMonitor.LogBlanc() end
 
----@param arg0 Recipe
----@param arg1 IsoGameCharacter
----@param arg2 ArrayList<ItemContainer>
----@param arg3 InventoryItem
----@param arg4 ArrayList<InventoryItem>
----@param arg5 boolean
-function RecipeMonitor.LogInit(arg0, arg1, arg2, arg3, arg4, arg5) end
+---@param recipe Recipe
+---@param character IsoGameCharacter
+---@param containers ArrayList<ItemContainer>
+---@param selectedItem InventoryItem
+---@param ignoreItems ArrayList<InventoryItem>
+---@param allItems boolean
+function RecipeMonitor.LogInit(recipe, character, containers, selectedItem, ignoreItems, allItems) end
 
----@param arg0 string
----@param arg1 InventoryItem
-function RecipeMonitor.LogItem(arg0, arg1) end
+---@param tag string
+---@param item InventoryItem
+function RecipeMonitor.LogItem(tag, item) end
 
 ---@generic T
----@param arg0 string
----@param arg1 ArrayList<T>
-function RecipeMonitor.LogList(arg0, arg1) end
+---@param tag string
+---@param sourceTypes ArrayList<T>
+function RecipeMonitor.LogList(tag, sourceTypes) end
 
 ---@param sources List<Recipe.Source>
 function RecipeMonitor.LogSources(sources) end
@@ -73,8 +73,8 @@ function RecipeMonitor.ResetTabs() end
 
 function RecipeMonitor.SaveToFile() end
 
----@param arg0 integer
-function RecipeMonitor.SetTab(arg0) end
+---@param i integer
+function RecipeMonitor.SetTab(i) end
 
 function RecipeMonitor.StartMonitor() end
 
@@ -87,9 +87,9 @@ function RecipeMonitor.getColBlack() end
 ---@return Color
 function RecipeMonitor.getColGray() end
 
----@param arg0 ItemContainer
+---@param container ItemContainer
 ---@return string
-function RecipeMonitor.getContainerString(arg0) end
+function RecipeMonitor.getContainerString(container) end
 
 ---@return integer
 function RecipeMonitor.getMonitorID() end
@@ -104,14 +104,14 @@ function RecipeMonitor.getRecipeLines() end
 ---@return string
 function RecipeMonitor.getRecipeName() end
 
----@param arg0 Recipe.Result
+---@param result Recipe.Result
 ---@return string
-function RecipeMonitor.getResultString(arg0) end
+function RecipeMonitor.getResultString(result) end
 
 function RecipeMonitor.resume() end
 
----@param arg0 Recipe
-function RecipeMonitor.setRecipe(arg0) end
+---@param recipe Recipe
+function RecipeMonitor.setRecipe(recipe) end
 
 function RecipeMonitor.suspend() end
 

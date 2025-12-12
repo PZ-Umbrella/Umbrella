@@ -9,9 +9,9 @@ SGlobalObjects = {}
 ---@param isoObject IsoObject
 function SGlobalObjects.OnIsoObjectChangedItself(systemName, isoObject) end
 
----@param arg0 string
----@param arg1 IsoObject
-function SGlobalObjects.OnModDataChangeItself(arg0, arg1) end
+---@param systemName string
+---@param isoObject IsoObject
+function SGlobalObjects.OnModDataChangeItself(systemName, isoObject) end
 
 function SGlobalObjects.Reset() end
 

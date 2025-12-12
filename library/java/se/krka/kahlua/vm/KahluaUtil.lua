@@ -5,174 +5,174 @@ local __KahluaUtil = {}
 
 KahluaUtil = {}
 
----@param arg0 any
----@param arg1 integer
----@param arg2 string
----@param arg3 string
-function KahluaUtil.assertArgNotNull(arg0, arg1, arg2, arg3) end
+---@param o any
+---@param n integer
+---@param type string
+---@param _function string
+function KahluaUtil.assertArgNotNull(o, n, type, _function) end
 
----@param arg0 any
+---@param o any
 ---@return boolean
-function KahluaUtil.boolEval(arg0) end
+function KahluaUtil.boolEval(o) end
 
----@param arg0 string
-function KahluaUtil.fail(arg0) end
+---@param msg string
+function KahluaUtil.fail(msg) end
 
----@param arg0 any
+---@param o any
 ---@return number
-function KahluaUtil.fromDouble(arg0) end
+function KahluaUtil.fromDouble(o) end
 
----@param arg0 LuaCallFrame
----@param arg1 integer
----@param arg2 string
+---@param callFrame LuaCallFrame
+---@param n integer
+---@param _function string
 ---@return any
-function KahluaUtil.getArg(arg0, arg1, arg2) end
+function KahluaUtil.getArg(callFrame, n, _function) end
 
----@param arg0 Platform
----@param arg1 table
+---@param platform Platform
+---@param env table
 ---@return table
-function KahluaUtil.getClassMetatables(arg0, arg1) end
+function KahluaUtil.getClassMetatables(platform, env) end
 
----@param arg0 LuaCallFrame
----@param arg1 integer
----@param arg2 string
+---@param callFrame LuaCallFrame
+---@param i integer
+---@param name string
 ---@return number
-function KahluaUtil.getDoubleArg(arg0, arg1, arg2) end
+function KahluaUtil.getDoubleArg(callFrame, i, name) end
 
----@param arg0 LuaCallFrame
----@param arg1 integer
----@param arg2 string
+---@param callFrame LuaCallFrame
+---@param n integer
+---@param _function string
 ---@return number
-function KahluaUtil.getNumberArg(arg0, arg1, arg2) end
+function KahluaUtil.getNumberArg(callFrame, n, _function) end
 
----@param arg0 LuaCallFrame
----@param arg1 integer
+---@param callFrame LuaCallFrame
+---@param n integer
 ---@return any
-function KahluaUtil.getOptionalArg(arg0, arg1) end
+function KahluaUtil.getOptionalArg(callFrame, n) end
 
----@param arg0 LuaCallFrame
----@param arg1 integer
+---@param callFrame LuaCallFrame
+---@param n integer
 ---@return number
-function KahluaUtil.getOptionalNumberArg(arg0, arg1) end
+function KahluaUtil.getOptionalNumberArg(callFrame, n) end
 
----@param arg0 LuaCallFrame
----@param arg1 integer
+---@param callFrame LuaCallFrame
+---@param n integer
 ---@return string
-function KahluaUtil.getOptionalStringArg(arg0, arg1) end
+function KahluaUtil.getOptionalStringArg(callFrame, n) end
 
----@param arg0 Platform
----@param arg1 table
----@param arg2 string
+---@param platform Platform
+---@param env table
+---@param name string
 ---@return table
-function KahluaUtil.getOrCreateTable(arg0, arg1, arg2) end
+function KahluaUtil.getOrCreateTable(platform, env, name) end
 
----@param arg0 LuaCallFrame
----@param arg1 integer
----@param arg2 string
+---@param callFrame LuaCallFrame
+---@param n integer
+---@param _function string
 ---@return string
-function KahluaUtil.getStringArg(arg0, arg1, arg2) end
+function KahluaUtil.getStringArg(callFrame, n, _function) end
 
----@param arg0 Platform
----@param arg1 table
+---@param platform Platform
+---@param env table
 ---@return KahluaThread
-function KahluaUtil.getWorkerThread(arg0, arg1) end
+function KahluaUtil.getWorkerThread(platform, env) end
 
 ---@param o any
 ---@return string
 function KahluaUtil.identityHashCode(o) end
 
----@param arg0 integer
----@param arg1 integer
+---@param base integer
+---@param exponent integer
 ---@return integer
-function KahluaUtil.ipow(arg0, arg1) end
+function KahluaUtil.ipow(base, exponent) end
 
----@param arg0 number
+---@param vDouble number
 ---@return boolean
-function KahluaUtil.isNegative(arg0) end
+function KahluaUtil.isNegative(vDouble) end
 
----@param arg0 table
----@param arg1 integer
----@param arg2 integer
+---@param kahluaTable table
+---@param low integer
+---@param high integer
 ---@return integer
-function KahluaUtil.len(arg0, arg1, arg2) end
+function KahluaUtil.len(kahluaTable, low, high) end
 
----@param arg0 File
----@param arg1 table
+---@param file File
+---@param environment table
 ---@return function
-function KahluaUtil.loadByteCodeFromFile(arg0, arg1) end
+function KahluaUtil.loadByteCodeFromFile(file, environment) end
 
----@param arg0 string
----@param arg1 table
+---@param name string
+---@param environment table
 ---@return function
-function KahluaUtil.loadByteCodeFromResource(arg0, arg1) end
+function KahluaUtil.loadByteCodeFromResource(name, environment) end
 
----@param arg0 boolean
----@param arg1 string
-function KahluaUtil.luaAssert(arg0, arg1) end
+---@param b boolean
+---@param msg string
+function KahluaUtil.luaAssert(b, msg) end
 
----@param arg0 number
+---@param num number
 ---@return string
-function KahluaUtil.numberToString(arg0) end
+function KahluaUtil.numberToString(num) end
 
----@param arg0 any
+---@param o any
 ---@return number
-function KahluaUtil.rawTonumber(arg0) end
+function KahluaUtil.rawTonumber(o) end
 
----@param arg0 any
+---@param o any
 ---@return string
-function KahluaUtil.rawTostring(arg0) end
+function KahluaUtil.rawTostring(o) end
 
----@param arg0 any
+---@param o any
 ---@return string
-function KahluaUtil.rawTostring2(arg0) end
+function KahluaUtil.rawTostring2(o) end
 
----@param arg0 number
+---@param x number
 ---@return number
-function KahluaUtil.round(arg0) end
+function KahluaUtil.round(x) end
 
----@param arg0 table
----@param arg1 KahluaThread
-function KahluaUtil.setWorkerThread(arg0, arg1) end
+---@param env table
+---@param thread KahluaThread
+function KahluaUtil.setWorkerThread(env, thread) end
 
----@param arg0 table
----@param arg1 KahluaThread
----@param arg2 File
-function KahluaUtil.setupLibrary(arg0, arg1, arg2) end
+---@param env table
+---@param workerThread KahluaThread
+---@param library File
+function KahluaUtil.setupLibrary(env, workerThread, library) end
 
----@param arg0 table
----@param arg1 KahluaThread
----@param arg2 File
-function KahluaUtil.setupLibraryText(arg0, arg1, arg2) end
+---@param env table
+---@param workerThread KahluaThread
+---@param library File
+function KahluaUtil.setupLibraryText(env, workerThread, library) end
 
----@param arg0 boolean
+---@param b boolean
 ---@return boolean
-function KahluaUtil.toBoolean(arg0) end
+function KahluaUtil.toBoolean(b) end
 
----@param arg0 number
+---@param d number
 ---@return number
-function KahluaUtil.toDouble(arg0) end
+function KahluaUtil.toDouble(d) end
 
----@param arg0 integer
+---@param d integer
 ---@return number
-function KahluaUtil.toDouble(arg0) end
+function KahluaUtil.toDouble(d) end
 
----@param arg0 string
+---@param s string
 ---@return number
-function KahluaUtil.tonumber(arg0) end
+function KahluaUtil.tonumber(s) end
 
----@param arg0 string
----@param arg1 integer
+---@param s string
+---@param radix integer
 ---@return number
-function KahluaUtil.tonumber(arg0, arg1) end
+function KahluaUtil.tonumber(s, radix) end
 
----@param arg0 any
----@param arg1 KahluaThread
+---@param o any
+---@param thread KahluaThread
 ---@return string
-function KahluaUtil.tostring(arg0, arg1) end
+function KahluaUtil.tostring(o, thread) end
 
----@param arg0 any
+---@param o any
 ---@return string
-function KahluaUtil.type(arg0) end
+function KahluaUtil.type(o) end
 
 ---@return KahluaUtil
 function KahluaUtil.new() end

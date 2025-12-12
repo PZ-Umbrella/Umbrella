@@ -5,11 +5,11 @@ local __WorldMapBooleanOption = {}
 
 WorldMapBooleanOption = {}
 
----@param arg0 WorldMapRenderer
----@param arg1 string
----@param arg2 boolean
+---@param this_0 WorldMapRenderer
+---@param name string
+---@param defaultValue boolean
 ---@return WorldMapRenderer.WorldMapBooleanOption
-function WorldMapBooleanOption.new(arg0, arg1, arg2) end
+function WorldMapBooleanOption.new(this_0, name, defaultValue) end
 
 ---@type Class<WorldMapRenderer.WorldMapBooleanOption>
 WorldMapBooleanOption.class = nil

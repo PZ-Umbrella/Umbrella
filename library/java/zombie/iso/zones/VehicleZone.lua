@@ -11,16 +11,16 @@ VehicleZone = {}
 ---@type integer
 VehicleZone.VZF_FaceDirection = nil
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
----@param arg7 table
+---@param name string
+---@param type string
+---@param x integer
+---@param y integer
+---@param z integer
+---@param w integer
+---@param h integer
+---@param properties table
 ---@return VehicleZone
-function VehicleZone.new(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+function VehicleZone.new(name, type, x, y, z, w, h, properties) end
 
 ---@type Class<VehicleZone>
 VehicleZone.class = nil

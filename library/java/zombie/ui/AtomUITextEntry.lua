@@ -50,30 +50,30 @@ function __AtomUITextEntry:isOnlyText() end
 ---@return boolean
 function __AtomUITextEntry:isTextLimit() end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 number
+---@param btn integer
+---@param x number
+---@param y number
 ---@return boolean
-function __AtomUITextEntry:onConsumeMouseButtonDown(arg0, arg1, arg2) end
+function __AtomUITextEntry:onConsumeMouseButtonDown(btn, x, y) end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 number
+---@param btn integer
+---@param x number
+---@param y number
 ---@return boolean
-function __AtomUITextEntry:onConsumeMouseButtonUp(arg0, arg1, arg2) end
+function __AtomUITextEntry:onConsumeMouseButtonUp(btn, x, y) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
+---@param dx number
+---@param dy number
+---@param x number
+---@param y number
 ---@return boolean
-function __AtomUITextEntry:onConsumeMouseMove(arg0, arg1, arg2, arg3) end
+function __AtomUITextEntry:onConsumeMouseMove(dx, dy, x, y) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
-function __AtomUITextEntry:onExtendMouseMoveOutside(arg0, arg1, arg2, arg3) end
+---@param dx number
+---@param dy number
+---@param x number
+---@param y number
+function __AtomUITextEntry:onExtendMouseMoveOutside(dx, dy, x, y) end
 
 function __AtomUITextEntry:onKeyBack() end
 
@@ -93,18 +93,18 @@ function __AtomUITextEntry:onKeyRight() end
 
 function __AtomUITextEntry:onKeyUp() end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 number
-function __AtomUITextEntry:onMouseButtonUpOutside(arg0, arg1, arg2) end
+---@param btn integer
+---@param x number
+---@param y number
+function __AtomUITextEntry:onMouseButtonUpOutside(btn, x, y) end
 
----@param arg0 integer
-function __AtomUITextEntry:onOtherKey(arg0) end
+---@param eventKey integer
+function __AtomUITextEntry:onOtherKey(eventKey) end
 
 function __AtomUITextEntry:pasteFromClipboard() end
 
----@param arg0 integer
-function __AtomUITextEntry:putCharacter(arg0) end
+---@param eventChar integer
+function __AtomUITextEntry:putCharacter(eventChar) end
 
 function __AtomUITextEntry:render() end
 
@@ -112,38 +112,38 @@ function __AtomUITextEntry:resetBlink() end
 
 function __AtomUITextEntry:selectAll() end
 
----@param arg0 boolean
-function __AtomUITextEntry:setDoingTextEntry(arg0) end
+---@param value boolean
+function __AtomUITextEntry:setDoingTextEntry(value) end
 
----@param arg0 UIFont
-function __AtomUITextEntry:setFont(arg0) end
+---@param font UIFont
+function __AtomUITextEntry:setFont(font) end
 
----@param arg0 boolean
-function __AtomUITextEntry:setForceUpperCase(arg0) end
+---@param forceUpperCase boolean
+function __AtomUITextEntry:setForceUpperCase(forceUpperCase) end
 
----@param arg0 boolean
-function __AtomUITextEntry:setIgnoreFirst(arg0) end
+---@param value boolean
+function __AtomUITextEntry:setIgnoreFirst(value) end
 
----@param arg0 boolean
-function __AtomUITextEntry:setMask(arg0) end
+---@param b boolean
+function __AtomUITextEntry:setMask(b) end
 
----@param arg0 integer
-function __AtomUITextEntry:setMaxTextLength(arg0) end
+---@param maxtextLength integer
+function __AtomUITextEntry:setMaxTextLength(maxtextLength) end
 
----@param arg0 boolean
-function __AtomUITextEntry:setMultiline(arg0) end
+---@param value boolean
+function __AtomUITextEntry:setMultiline(value) end
 
----@param arg0 boolean
-function __AtomUITextEntry:setOnlyNumbers(arg0) end
+---@param onlyNumbers boolean
+function __AtomUITextEntry:setOnlyNumbers(onlyNumbers) end
 
----@param arg0 boolean
-function __AtomUITextEntry:setOnlyText(arg0) end
+---@param onlyText boolean
+function __AtomUITextEntry:setOnlyText(onlyText) end
 
----@param arg0 boolean
-function __AtomUITextEntry:setSelectingRange(arg0) end
+---@param value boolean
+function __AtomUITextEntry:setSelectingRange(value) end
 
----@param arg0 string
-function __AtomUITextEntry:setText(arg0) end
+---@param text string
+function __AtomUITextEntry:setText(text) end
 
 function __AtomUITextEntry:unfocus() end
 
@@ -151,9 +151,9 @@ function __AtomUITextEntry:update() end
 
 AtomUITextEntry = {}
 
----@param arg0 table
+---@param table table
 ---@return AtomUITextEntry
-function AtomUITextEntry.new(arg0) end
+function AtomUITextEntry.new(table) end
 
 ---@type Class<AtomUITextEntry>
 AtomUITextEntry.class = nil

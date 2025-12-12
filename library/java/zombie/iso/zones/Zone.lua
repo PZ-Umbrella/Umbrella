@@ -5,31 +5,31 @@ local __Zone = {}
 
 function __Zone:Dispose() end
 
----@param arg0 IsoGridSquare
-function __Zone:addSquare(arg0) end
+---@param sq IsoGridSquare
+function __Zone:addSquare(sq) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return boolean
-function __Zone:contains(arg0, arg1, arg2) end
+function __Zone:contains(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 ArrayList<Zone>
+---@param x integer
+---@param y integer
+---@param z integer
+---@param w integer
+---@param h integer
+---@param result ArrayList<Zone>
 ---@return boolean
-function __Zone:difference(arg0, arg1, arg2, arg3, arg4, arg5) end
+function __Zone:difference(x, y, z, w, h, result) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 kahlua.Array<number>
+---@param clipX1 integer
+---@param clipY1 integer
+---@param clipX2 integer
+---@param clipY2 integer
+---@param t1t2 kahlua.Array<number>
 ---@return integer
-function __Zone:getClippedSegmentOfPolyline(arg0, arg1, arg2, arg3, arg4) end
+function __Zone:getClippedSegmentOfPolyline(clipX1, clipY1, clipX2, clipY2, t1t2) end
 
 ---@return integer
 function __Zone:getHeight() end
@@ -91,13 +91,13 @@ function __Zone:getZombieDensity() end
 ---@return boolean
 function __Zone:haveCons() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
+---@param x integer
+---@param y integer
+---@param z integer
+---@param w integer
+---@param h integer
 ---@return boolean
-function __Zone:intersects(arg0, arg1, arg2, arg3, arg4) end
+function __Zone:intersects(x, y, z, w, h) end
 
 ---@return boolean
 function __Zone:isFullyStreamed() end
@@ -121,61 +121,61 @@ function __Zone:isRectangle() end
 ---@return Zone
 function __Zone:load(input, WorldVersion, stringMap, sharedStrings) end
 
----@param arg0 ByteBuffer
----@param arg1 integer
+---@param input ByteBuffer
+---@param WorldVersion integer
 ---@return Zone
-function __Zone:load(arg0, arg1) end
+function __Zone:load(input, WorldVersion) end
 
----@param arg0 IsoGameCharacter.Location
+---@param location IsoGameCharacter.Location
 ---@return IsoGameCharacter.Location
-function __Zone:pickRandomLocation(arg0) end
+function __Zone:pickRandomLocation(location) end
 
----@param arg0 IsoGridSquare
-function __Zone:removeSquare(arg0) end
+---@param sq IsoGridSquare
+function __Zone:removeSquare(sq) end
 
 ---@param output ByteBuffer
 ---@param stringMap Map<string, integer>
 function __Zone:save(output, stringMap) end
 
----@param arg0 ByteBuffer
-function __Zone:save(arg0) end
+---@param output ByteBuffer
+function __Zone:save(output) end
 
 function __Zone:sendToServer() end
 
----@param arg0 integer
-function __Zone:setH(arg0) end
+---@param h integer
+function __Zone:setH(h) end
 
----@param arg0 boolean
-function __Zone:setHaveConstruction(arg0) end
+---@param have boolean
+function __Zone:setHaveConstruction(have) end
 
 function __Zone:setHourSeenToCurrent() end
 
----@param arg0 integer
-function __Zone:setLastActionTimestamp(arg0) end
+---@param lastActionTimestamp integer
+function __Zone:setLastActionTimestamp(lastActionTimestamp) end
 
----@param arg0 string
-function __Zone:setName(arg0) end
+---@param name string
+function __Zone:setName(name) end
 
----@param arg0 string
-function __Zone:setOriginalName(arg0) end
+---@param originalName string
+function __Zone:setOriginalName(originalName) end
 
----@param arg0 integer
-function __Zone:setPickedXForZoneStory(arg0) end
+---@param pickedXForZoneStory integer
+function __Zone:setPickedXForZoneStory(pickedXForZoneStory) end
 
----@param arg0 integer
-function __Zone:setPickedYForZoneStory(arg0) end
+---@param pickedYForZoneStory integer
+function __Zone:setPickedYForZoneStory(pickedYForZoneStory) end
 
----@param arg0 string
-function __Zone:setType(arg0) end
+---@param type string
+function __Zone:setType(type) end
 
----@param arg0 integer
-function __Zone:setW(arg0) end
+---@param w integer
+function __Zone:setW(w) end
 
----@param arg0 integer
-function __Zone:setX(arg0) end
+---@param x integer
+function __Zone:setX(x) end
 
----@param arg0 integer
-function __Zone:setY(arg0) end
+---@param y integer
+function __Zone:setY(y) end
 
 ---@return string
 function __Zone:toString() end
@@ -185,35 +185,35 @@ Zone = {}
 ---@type Clipper
 Zone.clipper = nil
 
----@param arg0 string
+---@param type string
 ---@return boolean
-function Zone.isPreferredZoneForSquare(arg0) end
+function Zone.isPreferredZoneForSquare(type) end
 
 ---@return Zone
 function Zone.new() end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
+---@param name string
+---@param type string
+---@param x integer
+---@param y integer
+---@param z integer
+---@param w integer
+---@param h integer
 ---@return Zone
-function Zone.new(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+function Zone.new(name, type, x, y, z, w, h) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
----@param arg7 ZoneGeometryType
----@param arg8 TIntArrayList
----@param arg9 integer
+---@param name string
+---@param type string
+---@param x integer
+---@param y integer
+---@param z integer
+---@param w integer
+---@param h integer
+---@param geometryType ZoneGeometryType
+---@param points TIntArrayList
+---@param polylineWidth integer
 ---@return Zone
-function Zone.new(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+function Zone.new(name, type, x, y, z, w, h, geometryType, points, polylineWidth) end
 
 ---@type Class<Zone>
 Zone.class = nil

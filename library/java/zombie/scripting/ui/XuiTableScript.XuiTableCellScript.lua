@@ -8,11 +8,11 @@ function __XuiTableCellScript:isCellHasLoaded() end
 
 XuiTableCellScript = {}
 
----@param arg0 string
----@param arg1 boolean
----@param arg2 XuiScript
+---@param xuiLayoutName string
+---@param readAltKeys boolean
+---@param style XuiScript
 ---@return XuiTableScript.XuiTableCellScript
-function XuiTableCellScript.new(arg0, arg1, arg2) end
+function XuiTableCellScript.new(xuiLayoutName, readAltKeys, style) end
 
 ---@type Class<XuiTableScript.XuiTableCellScript>
 XuiTableCellScript.class = nil

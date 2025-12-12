@@ -3,11 +3,11 @@
 ---@class PlayerExtState: State
 local __PlayerExtState = {}
 
----@param arg0 IsoGameCharacter
----@param arg1 AnimLayer
----@param arg2 AnimationTrack
----@param arg3 AnimEvent
-function __PlayerExtState:animEvent(arg0, arg1, arg2, arg3) end
+---@param owner IsoGameCharacter
+---@param layer AnimLayer
+---@param track AnimationTrack
+---@param event AnimEvent
+function __PlayerExtState:animEvent(owner, layer, track, event) end
 
 ---@param owner IsoGameCharacter
 function __PlayerExtState:enter(owner) end
@@ -30,9 +30,9 @@ function __PlayerExtState:isSyncOnExit() end
 ---@return boolean
 function __PlayerExtState:isSyncOnSquare() end
 
----@param arg0 IsoGameCharacter
----@param arg1 State.Stage
-function __PlayerExtState:setParams(arg0, arg1) end
+---@param owner IsoGameCharacter
+---@param stage State.Stage
+function __PlayerExtState:setParams(owner, stage) end
 
 PlayerExtState = {}
 

@@ -12,9 +12,9 @@ function __Float:getMin() end
 ---@return AttributeValueType
 function __Float:getValueType() end
 
----@param arg0 number
+---@param value number
 ---@return number
-function __Float:validate(arg0) end
+function __Float:validate(value) end
 
 Float = {}
 

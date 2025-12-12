@@ -6,8 +6,8 @@ local __SGlobalObjectSystem = {}
 ---@param isoObject IsoObject
 function __SGlobalObjectSystem:OnIsoObjectChangedItself(isoObject) end
 
----@param arg0 IsoObject
-function __SGlobalObjectSystem:OnModDataChangeItself(arg0) end
+---@param isoObject IsoObject
+function __SGlobalObjectSystem:OnModDataChangeItself(isoObject) end
 
 function __SGlobalObjectSystem:Reset() end
 

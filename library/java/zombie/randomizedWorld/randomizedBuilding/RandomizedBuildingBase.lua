@@ -22,14 +22,14 @@ function __RandomizedBuildingBase:addRandomRangedWeapon(container, addBulletsInG
 ---@return InventoryItem
 function __RandomizedBuildingBase:addWorldItem(item, sq, xoffset, yoffset, zoffset) end
 
----@param arg0 string
----@param arg1 IsoGridSquare
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 boolean
+---@param item string
+---@param sq IsoGridSquare
+---@param xoffset number
+---@param yoffset number
+---@param zoffset number
+---@param randomRotation boolean
 ---@return InventoryItem
-function __RandomizedBuildingBase:addWorldItem(arg0, arg1, arg2, arg3, arg4, arg5) end
+function __RandomizedBuildingBase:addWorldItem(item, sq, xoffset, yoffset, zoffset, randomRotation) end
 
 ---@param item string
 ---@param sq IsoGridSquare
@@ -46,12 +46,12 @@ function __RandomizedBuildingBase:addWorldItem(item, sq, xoffset, yoffset, zoffs
 ---@return InventoryItem
 function __RandomizedBuildingBase:addWorldItem(item, sq, obj) end
 
----@param arg0 string
----@param arg1 IsoGridSquare
----@param arg2 IsoObject
----@param arg3 boolean
+---@param item string
+---@param sq IsoGridSquare
+---@param obj IsoObject
+---@param randomRotation boolean
 ---@return InventoryItem
-function __RandomizedBuildingBase:addWorldItem(arg0, arg1, arg2, arg3) end
+function __RandomizedBuildingBase:addWorldItem(item, sq, obj, randomRotation) end
 
 ---If you specify a outfit, make sure it works for both gender! (or force
 --- femaleChance to 0 or 1 if it's gender-specific)
@@ -75,9 +75,9 @@ function __RandomizedBuildingBase:addZombiesOnSquare(totalZombies, outfit, femal
 ---@return integer
 function __RandomizedBuildingBase:getChance() end
 
----@param arg0 IsoGridSquare
+---@param sq IsoGridSquare
 ---@return integer
-function __RandomizedBuildingBase:getChance(arg0) end
+function __RandomizedBuildingBase:getChance(sq) end
 
 ---@param sq IsoGridSquare
 ---@return IsoDoor

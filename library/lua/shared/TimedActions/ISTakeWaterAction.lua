@@ -12,6 +12,8 @@
 ISTakeWaterAction = ISBaseTimedAction:derive("ISTakeWaterAction")
 ISTakeWaterAction.Type = "ISTakeWaterAction"
 
+---@param event string
+---@param parameter string
 function ISTakeWaterAction:animEvent(event, parameter) end
 
 ---@return boolean
@@ -26,8 +28,6 @@ function ISTakeWaterAction:isValid() end
 function ISTakeWaterAction:perform() end
 
 function ISTakeWaterAction:serverStart() end
-
-function ISTakeWaterAction:serverStop() end
 
 function ISTakeWaterAction:start() end
 

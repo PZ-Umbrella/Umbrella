@@ -11,10 +11,10 @@ function __RequiredSkill:getPerk() end
 
 RequiredSkill = {}
 
----@param arg0 PerkFactory.Perk
----@param arg1 integer
+---@param perk PerkFactory.Perk
+---@param level integer
 ---@return CraftRecipe.RequiredSkill
-function RequiredSkill.new(arg0, arg1) end
+function RequiredSkill.new(perk, level) end
 
 ---@type Class<CraftRecipe.RequiredSkill>
 RequiredSkill.class = nil

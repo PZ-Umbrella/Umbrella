@@ -58,14 +58,14 @@ function __Stage:getThumpSound() end
 ---@return integer
 function __Stage:getTimeNeeded(chr) end
 
----@param arg0 IsoGameCharacter
-function __Stage:playCompletionSound(arg0) end
+---@param chr IsoGameCharacter
+function __Stage:playCompletionSound(chr) end
 
 Stage = {}
 
----@param arg0 MultiStageBuilding
+---@param this_0 MultiStageBuilding
 ---@return MultiStageBuilding.Stage
-function Stage.new(arg0) end
+function Stage.new(this_0) end
 
 ---@type Class<MultiStageBuilding.Stage>
 Stage.class = nil

@@ -3,13 +3,13 @@
 ---@class RDSRatWar: RandomizedDeadSurvivorBase
 local __RDSRatWar = {}
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param def BuildingDef
+---@param force boolean
 ---@return boolean
-function __RDSRatWar:isValid(arg0, arg1) end
+function __RDSRatWar:isValid(def, force) end
 
----@param arg0 BuildingDef
-function __RDSRatWar:randomizeDeadSurvivor(arg0) end
+---@param def BuildingDef
+function __RDSRatWar:randomizeDeadSurvivor(def) end
 
 RDSRatWar = {}
 

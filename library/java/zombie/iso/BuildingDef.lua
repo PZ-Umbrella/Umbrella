@@ -8,12 +8,12 @@ function __BuildingDef:CalculateBounds(tempRooms) end
 
 function __BuildingDef:Dispose() end
 
----@param arg0 RoomDef
-function __BuildingDef:addRoomToCollapseRect(arg0) end
+---@param room RoomDef
+function __BuildingDef:addRoomToCollapseRect(room) end
 
----@param arg0 BuildingDef
----@param arg1 ArrayList<RoomDef>
-function __BuildingDef:addRoomsOf(arg0, arg1) end
+---@param sourceDef BuildingDef
+---@param tempRooms ArrayList<RoomDef>
+function __BuildingDef:addRoomsOf(sourceDef, tempRooms) end
 
 function __BuildingDef:calculateCollapseRect() end
 
@@ -26,11 +26,11 @@ function __BuildingDef:calculateMetaID(cellX, cellY) end
 ---@return boolean
 function __BuildingDef:containsRoom(name) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return boolean
-function __BuildingDef:containsXYZ(arg0, arg1, arg2) end
+function __BuildingDef:containsXYZ(x, y, z) end
 
 ---@return integer
 function __BuildingDef:getArea() end
@@ -96,23 +96,23 @@ function __BuildingDef:getRandomRoom() end
 ---@return RoomDef
 function __BuildingDef:getRandomRoom(minArea) end
 
----@param arg0 integer
----@param arg1 boolean
+---@param minArea integer
+---@param noKids boolean
 ---@return RoomDef
-function __BuildingDef:getRandomRoom(arg0, arg1) end
+function __BuildingDef:getRandomRoom(minArea, noKids) end
 
----@param arg0 integer
+---@param level integer
 ---@return integer
-function __BuildingDef:getRoofRoomID(arg0) end
+function __BuildingDef:getRoofRoomID(level) end
 
 ---@param roomName string
 ---@return RoomDef
 function __BuildingDef:getRoom(roomName) end
 
----@param arg0 string
----@param arg1 boolean
+---@param roomName string
+---@param noKids boolean
 ---@return RoomDef
-function __BuildingDef:getRoom(arg0, arg1) end
+function __BuildingDef:getRoom(roomName, noKids) end
 
 ---@return ArrayList<RoomDef>
 function __BuildingDef:getRooms() end
@@ -141,35 +141,35 @@ function __BuildingDef:getY2() end
 ---@return Zone
 function __BuildingDef:getZone() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
+---@param z integer
 ---@return boolean
-function __BuildingDef:intersects(arg0, arg1, arg2, arg3, arg4) end
+function __BuildingDef:intersects(x, y, w, h, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __BuildingDef:invalidateOverlappedChunkLevelsAbove(arg0, arg1, arg2) end
+---@param playerIndex integer
+---@param minLevel integer
+---@param dirtyFlags integer
+function __BuildingDef:invalidateOverlappedChunkLevelsAbove(playerIndex, minLevel, dirtyFlags) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
+---@param z integer
 ---@return boolean
-function __BuildingDef:isAdjacent(arg0, arg1, arg2, arg3, arg4) end
+function __BuildingDef:isAdjacent(x, y, w, h, z) end
 
----@param arg0 BuildingDef
+---@param other BuildingDef
 ---@return boolean
-function __BuildingDef:isAdjacent(arg0) end
+function __BuildingDef:isAdjacent(other) end
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param other BuildingDef
+---@param bIgnoreZ boolean
 ---@return boolean
-function __BuildingDef:isAdjacent(arg0, arg1) end
+function __BuildingDef:isAdjacent(other, bIgnoreZ) end
 
 ---@return boolean
 function __BuildingDef:isAlarmed() end
@@ -201,10 +201,10 @@ function __BuildingDef:isShop() end
 ---@return boolean
 function __BuildingDef:isUserDefined() end
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param other BuildingDef
+---@param bIgnoreZ boolean
 ---@return boolean
-function __BuildingDef:overlaps(arg0, arg1) end
+function __BuildingDef:overlaps(other, bIgnoreZ) end
 
 ---@param wx integer
 ---@param wy integer
@@ -226,9 +226,9 @@ function __BuildingDef:setAllExplored(b) end
 ---@param hasBeenVisited boolean
 function __BuildingDef:setHasBeenVisited(hasBeenVisited) end
 
----@param arg0 integer
----@param arg1 integer
-function __BuildingDef:setInvalidateCacheForAllChunks(arg0, arg1) end
+---@param playerIndex integer
+---@param dirtyFlags integer
+function __BuildingDef:setInvalidateCacheForAllChunks(playerIndex, dirtyFlags) end
 
 ---@param keyId integer
 function __BuildingDef:setKeyId(keyId) end
@@ -236,17 +236,17 @@ function __BuildingDef:setKeyId(keyId) end
 ---@param keySpawned integer
 function __BuildingDef:setKeySpawned(keySpawned) end
 
----@param arg0 boolean
-function __BuildingDef:setUserDefined(arg0) end
+---@param b boolean
+function __BuildingDef:setUserDefined(b) end
 
 BuildingDef = {}
 
 ---@return BuildingDef
 function BuildingDef.new() end
 
----@param arg0 boolean
+---@param userDefined boolean
 ---@return BuildingDef
-function BuildingDef.new(arg0) end
+function BuildingDef.new(userDefined) end
 
 ---@type Class<BuildingDef>
 BuildingDef.class = nil

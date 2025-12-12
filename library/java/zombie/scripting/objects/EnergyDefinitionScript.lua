@@ -3,19 +3,19 @@
 ---@class EnergyDefinitionScript: BaseScriptObject
 local __EnergyDefinitionScript = {}
 
----@param arg0 string
-function __EnergyDefinitionScript:InitLoadPP(arg0) end
+---@param name string
+function __EnergyDefinitionScript:InitLoadPP(name) end
 
----@param arg0 string
----@param arg1 string
-function __EnergyDefinitionScript:Load(arg0, arg1) end
+---@param name string
+---@param body string
+function __EnergyDefinitionScript:Load(name, body) end
 
 function __EnergyDefinitionScript:OnLoadedAfterLua() end
 
 function __EnergyDefinitionScript:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __EnergyDefinitionScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __EnergyDefinitionScript:OnScriptsLoaded(loadMode) end
 
 function __EnergyDefinitionScript:PreReload() end
 

@@ -169,11 +169,11 @@ WorldMarkers = {}
 ---@type WorldMarkers
 WorldMarkers.instance = nil
 
----@param arg0 WorldMarkers.Line
----@param arg1 WorldMarkers.Line
----@param arg2 WorldMarkers.Point
+---@param l1 WorldMarkers.Line
+---@param l2 WorldMarkers.Line
+---@param intersection WorldMarkers.Point
 ---@return boolean
-function WorldMarkers.intersectLineSegments(arg0, arg1, arg2) end
+function WorldMarkers.intersectLineSegments(l1, l2, intersection) end
 
 ---@type Class<WorldMarkers>
 WorldMarkers.class = nil

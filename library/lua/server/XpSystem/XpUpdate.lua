@@ -11,6 +11,8 @@ xpUpdate.lastY = 0
 ---@param amount number
 function xpUpdate.addXp(owner, type, amount) end
 
+---@param playerObj IsoPlayer
+---@param recipe string
 function xpUpdate.checkForLearningRecipe(playerObj, recipe) end
 
 ---@param playerObj IsoPlayer

@@ -7,20 +7,20 @@ local __RandomizedWorldBase = {}
 ---@param nbr integer
 function __RandomizedWorldBase:addBloodSplat(sq, nbr) end
 
----@param arg0 IsoGridSquare
-function __RandomizedWorldBase:addBrazier(arg0) end
+---@param sq IsoGridSquare
+function __RandomizedWorldBase:addBrazier(sq) end
 
----@param arg0 IsoGridSquare
-function __RandomizedWorldBase:addCampfire(arg0) end
+---@param sq IsoGridSquare
+function __RandomizedWorldBase:addCampfire(sq) end
 
----@param arg0 IsoGridSquare
-function __RandomizedWorldBase:addCampfireOrPit(arg0) end
+---@param sq IsoGridSquare
+function __RandomizedWorldBase:addCampfireOrPit(sq) end
 
----@param arg0 IsoGridSquare
-function __RandomizedWorldBase:addCharcoalBurner(arg0) end
+---@param sq IsoGridSquare
+function __RandomizedWorldBase:addCharcoalBurner(sq) end
 
----@param arg0 IsoGridSquare
-function __RandomizedWorldBase:addCookingPit(arg0) end
+---@param sq IsoGridSquare
+function __RandomizedWorldBase:addCookingPit(sq) end
 
 ---@param square IsoGridSquare
 ---@param type string
@@ -32,39 +32,39 @@ function __RandomizedWorldBase:addItemOnGround(square, type) end
 ---@return InventoryItem
 function __RandomizedWorldBase:addItemOnGround(square, item) end
 
----@param arg0 IsoGridSquare
----@param arg1 InventoryItem
----@param arg2 boolean
+---@param square IsoGridSquare
+---@param item InventoryItem
+---@param fill boolean
 ---@return InventoryItem
-function __RandomizedWorldBase:addItemOnGround(arg0, arg1, arg2) end
+function __RandomizedWorldBase:addItemOnGround(square, item, fill) end
 
----@param arg0 IsoGridSquare
----@param arg1 string
+---@param square IsoGridSquare
+---@param type string
 ---@return InventoryItem
-function __RandomizedWorldBase:addItemOnGroundNoLoot(arg0, arg1) end
+function __RandomizedWorldBase:addItemOnGroundNoLoot(square, type) end
 
----@param arg0 IsoGridSquare
----@param arg1 InventoryItem
+---@param square IsoGridSquare
+---@param item InventoryItem
 ---@return InventoryItem
-function __RandomizedWorldBase:addItemOnGroundNoLoot(arg0, arg1) end
+function __RandomizedWorldBase:addItemOnGroundNoLoot(square, item) end
 
----@param arg0 string
----@param arg1 IsoObject
+---@param item string
+---@param object IsoObject
 ---@return InventoryItem
-function __RandomizedWorldBase:addItemToObjectSurface(arg0, arg1) end
+function __RandomizedWorldBase:addItemToObjectSurface(item, object) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __RandomizedWorldBase:addMattressNorthSouth(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param z integer
+function __RandomizedWorldBase:addMattressNorthSouth(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __RandomizedWorldBase:addMattressWestEast(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param z integer
+function __RandomizedWorldBase:addMattressWestEast(x, y, z) end
 
----@param arg0 IsoGridSquare
-function __RandomizedWorldBase:addRandomFirepit(arg0) end
+---@param sq IsoGridSquare
+function __RandomizedWorldBase:addRandomFirepit(sq) end
 
 ---@param square IsoGridSquare
 ---@param types ArrayList<string>
@@ -81,81 +81,81 @@ function __RandomizedWorldBase:addRandomItemsOnGround(room, type, count) end
 ---@param count integer
 function __RandomizedWorldBase:addRandomItemsOnGround(room, types, count) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __RandomizedWorldBase:addRandomShelterNorthSouth(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param z integer
+function __RandomizedWorldBase:addRandomShelterNorthSouth(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __RandomizedWorldBase:addRandomShelterWestEast(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param z integer
+function __RandomizedWorldBase:addRandomShelterWestEast(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __RandomizedWorldBase:addRandomTentNorthSouth(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param z integer
+function __RandomizedWorldBase:addRandomTentNorthSouth(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __RandomizedWorldBase:addRandomTentWestEast(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param z integer
+function __RandomizedWorldBase:addRandomTentWestEast(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __RandomizedWorldBase:addShelterNorthSouth(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param z integer
+function __RandomizedWorldBase:addShelterNorthSouth(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __RandomizedWorldBase:addShelterWestEast(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param z integer
+function __RandomizedWorldBase:addShelterWestEast(x, y, z) end
 
----@param arg0 IsoGridSquare
-function __RandomizedWorldBase:addSimpleCookingPit(arg0) end
+---@param sq IsoGridSquare
+function __RandomizedWorldBase:addSimpleCookingPit(sq) end
 
----@param arg0 IsoGridSquare
-function __RandomizedWorldBase:addSimpleFire(arg0) end
+---@param sq IsoGridSquare
+function __RandomizedWorldBase:addSimpleFire(sq) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __RandomizedWorldBase:addSleepingBagNorthSouth(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param z integer
+function __RandomizedWorldBase:addSleepingBagNorthSouth(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __RandomizedWorldBase:addSleepingBagOrTentNorthSouth(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param z integer
+function __RandomizedWorldBase:addSleepingBagOrTentNorthSouth(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __RandomizedWorldBase:addSleepingBagOrTentWestEast(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param z integer
+function __RandomizedWorldBase:addSleepingBagOrTentWestEast(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __RandomizedWorldBase:addSleepingBagWestEast(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param z integer
+function __RandomizedWorldBase:addSleepingBagWestEast(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __RandomizedWorldBase:addTentNorthSouth(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param z integer
+function __RandomizedWorldBase:addTentNorthSouth(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __RandomizedWorldBase:addTentNorthSouthNew(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param z integer
+function __RandomizedWorldBase:addTentNorthSouthNew(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __RandomizedWorldBase:addTentWestEast(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param z integer
+function __RandomizedWorldBase:addTentWestEast(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __RandomizedWorldBase:addTentWestEastNew(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param z integer
+function __RandomizedWorldBase:addTentWestEastNew(x, y, z) end
 
 ---@param x integer
 ---@param y integer
@@ -164,35 +164,35 @@ function __RandomizedWorldBase:addTentWestEastNew(arg0, arg1, arg2) end
 ---@return IsoObject
 function __RandomizedWorldBase:addTileObject(x, y, z, spriteName) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 string
----@param arg4 boolean
+---@param x integer
+---@param y integer
+---@param z integer
+---@param spriteName string
+---@param dirt boolean
 ---@return IsoObject
-function __RandomizedWorldBase:addTileObject(arg0, arg1, arg2, arg3, arg4) end
+function __RandomizedWorldBase:addTileObject(x, y, z, spriteName, dirt) end
 
 ---@param sq IsoGridSquare
 ---@param spriteName string
 ---@return IsoObject
 function __RandomizedWorldBase:addTileObject(sq, spriteName) end
 
----@param arg0 IsoGridSquare
----@param arg1 string
----@param arg2 boolean
+---@param sq IsoGridSquare
+---@param spriteName string
+---@param dirt boolean
 ---@return IsoObject
-function __RandomizedWorldBase:addTileObject(arg0, arg1, arg2) end
+function __RandomizedWorldBase:addTileObject(sq, spriteName, dirt) end
 
----@param arg0 IsoGridSquare
----@param arg1 IsoObject
+---@param sq IsoGridSquare
+---@param obj IsoObject
 ---@return IsoObject
-function __RandomizedWorldBase:addTileObject(arg0, arg1) end
+function __RandomizedWorldBase:addTileObject(sq, obj) end
 
----@param arg0 IsoGridSquare
----@param arg1 IsoObject
----@param arg2 boolean
+---@param sq IsoGridSquare
+---@param obj IsoObject
+---@param dirt boolean
 ---@return IsoObject
-function __RandomizedWorldBase:addTileObject(arg0, arg1, arg2) end
+function __RandomizedWorldBase:addTileObject(sq, obj, dirt) end
 
 ---@param x number
 ---@param y number
@@ -201,14 +201,14 @@ function __RandomizedWorldBase:addTileObject(arg0, arg1, arg2) end
 ---@param count integer
 function __RandomizedWorldBase:addTrailOfBlood(x, y, z, direction, count) end
 
----@param arg0 BaseVehicle
----@param arg1 Zone
----@param arg2 IsoChunk
----@param arg3 string
----@param arg4 string
----@param arg5 string
+---@param v BaseVehicle
+---@param zone Zone
+---@param chunk IsoChunk
+---@param zoneName string
+---@param vehicleDistrib string
+---@param trailerName string
 ---@return BaseVehicle
-function __RandomizedWorldBase:addTrailer(arg0, arg1, arg2, arg3, arg4, arg5) end
+function __RandomizedWorldBase:addTrailer(v, zone, chunk, zoneName, vehicleDistrib, trailerName) end
 
 ---@param dir IsoDirections
 ---@param time integer
@@ -217,118 +217,194 @@ function __RandomizedWorldBase:addTrailer(arg0, arg1, arg2, arg3, arg4, arg5) en
 ---@param z integer
 function __RandomizedWorldBase:addTraitOfBlood(dir, time, x, y, z) end
 
----@param arg0 Zone
----@param arg1 IsoGridSquare
----@param arg2 IsoChunk
----@param arg3 string
----@param arg4 string
----@param arg5 IsoDirections
+---@param zone Zone
+---@param sq IsoGridSquare
+---@param chunk IsoChunk
+---@param zoneName string
+---@param scriptName string
+---@param dir IsoDirections
 ---@return BaseVehicle
-function __RandomizedWorldBase:addVehicle(arg0, arg1, arg2, arg3, arg4, arg5) end
+function __RandomizedWorldBase:addVehicle(zone, sq, chunk, zoneName, scriptName, dir) end
 
----@param arg0 Zone
----@param arg1 IsoGridSquare
----@param arg2 IsoChunk
----@param arg3 string
----@param arg4 string
----@param arg5 integer
----@param arg6 IsoDirections
----@param arg7 string
+---@param zone Zone
+---@param sq IsoGridSquare
+---@param chunk IsoChunk
+---@param zoneName string
+---@param scriptName string
+---@param skinIndex integer
+---@param dir IsoDirections
+---@param specificContainer string
 ---@return BaseVehicle
-function __RandomizedWorldBase:addVehicle(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+function __RandomizedWorldBase:addVehicle(zone, sq, chunk, zoneName, scriptName, skinIndex, dir, specificContainer) end
 
----@param arg0 Zone
----@param arg1 IsoGridSquare
----@param arg2 IsoChunk
----@param arg3 string
----@param arg4 string
----@param arg5 integer
----@param arg6 IsoDirections
----@param arg7 string
----@param arg8 boolean
+---@param zone Zone
+---@param sq IsoGridSquare
+---@param chunk IsoChunk
+---@param zoneName string
+---@param scriptName string
+---@param skinIndex integer
+---@param dir IsoDirections
+---@param specificContainer string
+---@param crashed boolean
 ---@return BaseVehicle
-function __RandomizedWorldBase:addVehicle(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+function __RandomizedWorldBase:addVehicle(
+	zone,
+	sq,
+	chunk,
+	zoneName,
+	scriptName,
+	skinIndex,
+	dir,
+	specificContainer,
+	crashed
+)
+end
 
----@param arg0 IsoGridSquare
----@param arg1 IsoChunk
----@param arg2 string
----@param arg3 string
----@param arg4 integer
----@param arg5 IsoDirections
----@param arg6 string
+---@param sq IsoGridSquare
+---@param chunk IsoChunk
+---@param zoneName string
+---@param scriptName string
+---@param skinIndex integer
+---@param dir IsoDirections
+---@param specificContainer string
 ---@return BaseVehicle
-function __RandomizedWorldBase:addVehicle(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+function __RandomizedWorldBase:addVehicle(sq, chunk, zoneName, scriptName, skinIndex, dir, specificContainer) end
 
----@param arg0 Zone
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 string
----@param arg6 string
----@param arg7 integer
----@param arg8 string
+---@param zone Zone
+---@param vehicleX number
+---@param vehicleY number
+---@param vehicleZ number
+---@param direction number
+---@param zoneName string
+---@param scriptName string
+---@param skinIndex integer
+---@param specificContainer string
 ---@return BaseVehicle
-function __RandomizedWorldBase:addVehicle(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+function __RandomizedWorldBase:addVehicle(
+	zone,
+	vehicleX,
+	vehicleY,
+	vehicleZ,
+	direction,
+	zoneName,
+	scriptName,
+	skinIndex,
+	specificContainer
+)
+end
 
----@param arg0 Zone
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 string
----@param arg6 string
----@param arg7 integer
----@param arg8 string
----@param arg9 boolean
+---@param zone Zone
+---@param vehicleX number
+---@param vehicleY number
+---@param vehicleZ number
+---@param direction number
+---@param zoneName string
+---@param scriptName string
+---@param skinIndex integer
+---@param specificContainer string
+---@param crashed boolean
 ---@return BaseVehicle
-function __RandomizedWorldBase:addVehicle(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+function __RandomizedWorldBase:addVehicle(
+	zone,
+	vehicleX,
+	vehicleY,
+	vehicleZ,
+	direction,
+	zoneName,
+	scriptName,
+	skinIndex,
+	specificContainer,
+	crashed
+)
+end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 string
----@param arg5 string
----@param arg6 integer
----@param arg7 string
+---@param vehicleX number
+---@param vehicleY number
+---@param vehicleZ number
+---@param direction number
+---@param zoneName string
+---@param scriptName string
+---@param skinIndex integer
+---@param specificContainer string
 ---@return BaseVehicle
-function __RandomizedWorldBase:addVehicle(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+function __RandomizedWorldBase:addVehicle(
+	vehicleX,
+	vehicleY,
+	vehicleZ,
+	direction,
+	zoneName,
+	scriptName,
+	skinIndex,
+	specificContainer
+)
+end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 string
----@param arg5 string
----@param arg6 integer
----@param arg7 string
----@param arg8 boolean
+---@param vehicleX number
+---@param vehicleY number
+---@param vehicleZ number
+---@param direction number
+---@param zoneName string
+---@param scriptName string
+---@param skinIndex integer
+---@param specificContainer string
+---@param crashed boolean
 ---@return BaseVehicle
-function __RandomizedWorldBase:addVehicle(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+function __RandomizedWorldBase:addVehicle(
+	vehicleX,
+	vehicleY,
+	vehicleZ,
+	direction,
+	zoneName,
+	scriptName,
+	skinIndex,
+	specificContainer,
+	crashed
+)
+end
 
----@param arg0 Zone
----@param arg1 IsoGridSquare
----@param arg2 IsoChunk
----@param arg3 string
----@param arg4 string
----@param arg5 integer
----@param arg6 IsoDirections
----@param arg7 string
+---@param zone Zone
+---@param sq IsoGridSquare
+---@param chunk IsoChunk
+---@param zoneName string
+---@param scriptName string
+---@param skinIndex integer
+---@param dir IsoDirections
+---@param specificContainer string
 ---@return BaseVehicle
-function __RandomizedWorldBase:addVehicleFlipped(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+function __RandomizedWorldBase:addVehicleFlipped(
+	zone,
+	sq,
+	chunk,
+	zoneName,
+	scriptName,
+	skinIndex,
+	dir,
+	specificContainer
+)
+end
 
----@param arg0 Zone
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 string
----@param arg6 string
----@param arg7 integer
----@param arg8 string
+---@param zone Zone
+---@param vehicleX number
+---@param vehicleY number
+---@param vehicleZ number
+---@param direction number
+---@param zoneName string
+---@param scriptName string
+---@param skinIndex integer
+---@param specificContainer string
 ---@return BaseVehicle
-function __RandomizedWorldBase:addVehicleFlipped(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+function __RandomizedWorldBase:addVehicleFlipped(
+	zone,
+	vehicleX,
+	vehicleY,
+	vehicleZ,
+	direction,
+	zoneName,
+	scriptName,
+	skinIndex,
+	specificContainer
+)
+end
 
 ---Create and return a weapon, if it's ranged you can ask for some bullets in it
 ---@param type string
@@ -336,16 +412,16 @@ function __RandomizedWorldBase:addVehicleFlipped(arg0, arg1, arg2, arg3, arg4, a
 ---@return HandWeapon
 function __RandomizedWorldBase:addWeapon(type, addRandomBullets) end
 
----@param arg0 IsoGridSquare
----@param arg1 GameEntityScript
----@param arg2 string
-function __RandomizedWorldBase:addWorkstationEntity(arg0, arg1, arg2) end
+---@param sq IsoGridSquare
+---@param script GameEntityScript
+---@param sprite string
+function __RandomizedWorldBase:addWorkstationEntity(sq, script, sprite) end
 
----@param arg0 IsoThumpable
----@param arg1 IsoGridSquare
----@param arg2 GameEntityScript
----@param arg3 string
-function __RandomizedWorldBase:addWorkstationEntity(arg0, arg1, arg2, arg3) end
+---@param thumpable IsoThumpable
+---@param sq IsoGridSquare
+---@param script GameEntityScript
+---@param sprite string
+function __RandomizedWorldBase:addWorkstationEntity(thumpable, sq, script, sprite) end
 
 ---@param totalZombies integer
 ---@param outfit string
@@ -363,47 +439,47 @@ function __RandomizedWorldBase:addZombiesOnSquare(totalZombies, outfit, femaleCh
 ---@return ArrayList<IsoZombie>
 function __RandomizedWorldBase:addZombiesOnVehicle(totalZombies, outfit, femaleChance, vehicle) end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return boolean
-function __RandomizedWorldBase:checkAreaForCarsSpawn(arg0) end
+function __RandomizedWorldBase:checkAreaForCarsSpawn(square) end
 
----@param arg0 IsoGridSquare
----@param arg1 integer
+---@param square IsoGridSquare
+---@param radius integer
 ---@return boolean
-function __RandomizedWorldBase:checkRadiusForCarSpawn(arg0, arg1) end
+function __RandomizedWorldBase:checkRadiusForCarSpawn(square, radius) end
 
----@param arg0 IsoGridSquare
-function __RandomizedWorldBase:cleanSquareAndNeighbors(arg0) end
+---@param sq IsoGridSquare
+function __RandomizedWorldBase:cleanSquareAndNeighbors(sq) end
 
----@param arg0 RoomDef
+---@param room RoomDef
 ---@return IsoDeadBody
-function __RandomizedWorldBase:createCorpse(arg0) end
+function __RandomizedWorldBase:createCorpse(room) end
 
----@param arg0 RoomDef
----@param arg1 boolean
+---@param room RoomDef
+---@param skeleton boolean
 ---@return IsoDeadBody
-function __RandomizedWorldBase:createCorpse(arg0, arg1) end
+function __RandomizedWorldBase:createCorpse(room, skeleton) end
 
----@param arg0 IsoGridSquare
----@param arg1 boolean
+---@param freeSQ IsoGridSquare
+---@param skeleton boolean
 ---@return IsoDeadBody
-function __RandomizedWorldBase:createCorpse(arg0, arg1) end
+function __RandomizedWorldBase:createCorpse(freeSQ, skeleton) end
 
----@param arg0 IsoGridSquare
----@param arg1 IsoZombie
+---@param freeSQ IsoGridSquare
+---@param zombie IsoZombie
 ---@return IsoDeadBody
-function __RandomizedWorldBase:createCorpse(arg0, arg1) end
+function __RandomizedWorldBase:createCorpse(freeSQ, zombie) end
 
 ---@param room RoomDef
 ---@return IsoDeadBody
 function __RandomizedWorldBase:createSkeletonCorpse(room) end
 
----@param arg0 IsoGridSquare
+---@param freeSQ IsoGridSquare
 ---@return IsoDeadBody
-function __RandomizedWorldBase:createSkeletonCorpse(arg0) end
+function __RandomizedWorldBase:createSkeletonCorpse(freeSQ) end
 
----@param arg0 IsoGridSquare
-function __RandomizedWorldBase:dirtBomb(arg0) end
+---@param sq IsoGridSquare
+function __RandomizedWorldBase:dirtBomb(sq) end
 
 ---@return ArrayList<string>
 function __RandomizedWorldBase:getBBQClutter() end
@@ -441,14 +517,14 @@ function __RandomizedWorldBase:getCarpentryToolClutter() end
 ---@return string
 function __RandomizedWorldBase:getCarpentryToolClutterItem() end
 
----@param arg0 ArrayList<string>
+---@param clutter ArrayList<string>
 ---@return TIntObjectHashMap<string>
-function __RandomizedWorldBase:getClutterCopy(arg0) end
+function __RandomizedWorldBase:getClutterCopy(clutter) end
 
----@param arg0 ArrayList<string>
----@param arg1 TIntObjectHashMap<string>
+---@param clutter ArrayList<string>
+---@param copy TIntObjectHashMap<string>
 ---@return TIntObjectHashMap<string>
-function __RandomizedWorldBase:getClutterCopy(arg0, arg1) end
+function __RandomizedWorldBase:getClutterCopy(clutter, copy) end
 
 ---@return ArrayList<string>
 function __RandomizedWorldBase:getDeadEndClutter() end
@@ -602,10 +678,10 @@ function __RandomizedWorldBase:getPokerNightClutterItem() end
 ---@return RoomDef
 function __RandomizedWorldBase:getRandomRoom(bDef, minArea) end
 
----@param arg0 BuildingDef
----@param arg1 integer
+---@param bDef BuildingDef
+---@param minArea integer
 ---@return RoomDef
-function __RandomizedWorldBase:getRandomRoomNoKids(arg0, arg1) end
+function __RandomizedWorldBase:getRandomRoomNoKids(bDef, minArea) end
 
 ---@return ArrayList<string>
 function __RandomizedWorldBase:getRichJerkClutter() end
@@ -619,10 +695,10 @@ function __RandomizedWorldBase:getRichJerkClutterItem() end
 ---@return RoomDef
 function __RandomizedWorldBase:getRoom(bDef, roomName) end
 
----@param arg0 BuildingDef
----@param arg1 string
+---@param bDef BuildingDef
+---@param roomName string
 ---@return RoomDef
-function __RandomizedWorldBase:getRoomNoKids(arg0, arg1) end
+function __RandomizedWorldBase:getRoomNoKids(bDef, roomName) end
 
 ---@return ArrayList<string>
 function __RandomizedWorldBase:getSadCampsiteClutter() end
@@ -666,14 +742,14 @@ function __RandomizedWorldBase:getWatchClutterItem() end
 ---@return ArrayList<string>
 function __RandomizedWorldBase:getWoodcraftClutter() end
 
----@param arg0 IsoGridSquare
----@param arg1 boolean
-function __RandomizedWorldBase:graffSquare(arg0, arg1) end
+---@param sq IsoGridSquare
+---@param north boolean
+function __RandomizedWorldBase:graffSquare(sq, north) end
 
----@param arg0 IsoGridSquare
----@param arg1 string
----@param arg2 boolean
-function __RandomizedWorldBase:graffSquare(arg0, arg1, arg2) end
+---@param sq IsoGridSquare
+---@param sprite string
+---@param north boolean
+function __RandomizedWorldBase:graffSquare(sq, sprite, north) end
 
 ---@return boolean
 function __RandomizedWorldBase:isRat() end
@@ -686,11 +762,11 @@ function __RandomizedWorldBase:isTimeValid(force) end
 ---@return boolean
 function __RandomizedWorldBase:isUnique() end
 
----@param arg0 IsoGridSquare
----@param arg1 boolean
----@param arg2 boolean
+---@param sq IsoGridSquare
+---@param north boolean
+---@param recursive boolean
 ---@return boolean
-function __RandomizedWorldBase:isValidGraffSquare(arg0, arg1, arg2) end
+function __RandomizedWorldBase:isValidGraffSquare(sq, north, recursive) end
 
 ---@param zombie IsoZombie
 ---@param location string
@@ -712,26 +788,26 @@ function __RandomizedWorldBase:setUnique(unique) end
 ---@return BaseVehicle
 function __RandomizedWorldBase:spawnCarOnNearestNav(carName, def) end
 
----@param arg0 string
----@param arg1 BuildingDef
----@param arg2 string
+---@param carName string
+---@param def BuildingDef
+---@param distribution string
 ---@return BaseVehicle
-function __RandomizedWorldBase:spawnCarOnNearestNav(arg0, arg1, arg2) end
+function __RandomizedWorldBase:spawnCarOnNearestNav(carName, def, distribution) end
 
----@param arg0 IsoGridSquare
-function __RandomizedWorldBase:trashSquare(arg0) end
+---@param sq IsoGridSquare
+function __RandomizedWorldBase:trashSquare(sq) end
 
 RandomizedWorldBase = {}
 
----@param arg0 IsoGridSquare
----@param arg1 string
+---@param square IsoGridSquare
+---@param type string
 ---@return InventoryItem
-function RandomizedWorldBase.addItemOnGroundStatic(arg0, arg1) end
+function RandomizedWorldBase.addItemOnGroundStatic(square, type) end
 
----@param arg0 IsoGridSquare
----@param arg1 InventoryItem
+---@param square IsoGridSquare
+---@param item InventoryItem
 ---@return InventoryItem
-function RandomizedWorldBase.addItemOnGroundStatic(arg0, arg1) end
+function RandomizedWorldBase.addItemOnGroundStatic(square, item) end
 
 ---@param chr IsoGameCharacter
 ---@param square IsoGridSquare
@@ -782,15 +858,24 @@ function RandomizedWorldBase.createRandomDeadBody(sq, dir, blood, crawlerChance,
 ---@return IsoDeadBody
 function RandomizedWorldBase.createRandomDeadBody(x, y, z, direction, alignToSquare, blood, crawlerChance, outfit) end
 
----@param arg0 IsoGridSquare
----@param arg1 IsoDirections
----@param arg2 boolean
----@param arg3 integer
----@param arg4 integer
----@param arg5 string
----@param arg6 integer
+---@param sq IsoGridSquare
+---@param dir2 IsoDirections
+---@param alignToSquare boolean
+---@param blood integer
+---@param crawlerChance integer
+---@param outfit string
+---@param femaleChance integer
 ---@return IsoDeadBody
-function RandomizedWorldBase.createRandomDeadBody(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+function RandomizedWorldBase.createRandomDeadBody(
+	sq,
+	dir2,
+	alignToSquare,
+	blood,
+	crawlerChance,
+	outfit,
+	femaleChance
+)
+end
 
 ---@param room RoomDef
 ---@return IsoGameCharacter
@@ -812,9 +897,9 @@ function RandomizedWorldBase.getBarnClutterItem() end
 ---@return string
 function RandomizedWorldBase.getCafeClutterItem() end
 
----@param arg0 ArrayList<string>
+---@param clutterArray ArrayList<string>
 ---@return string
-function RandomizedWorldBase.getClutterItem(arg0) end
+function RandomizedWorldBase.getClutterItem(clutterArray) end
 
 ---@return string
 function RandomizedWorldBase.getDeadEndClutterItem() end
@@ -890,11 +975,11 @@ function RandomizedWorldBase.getRandomSpawnSquare(roomDef) end
 ---@return IsoGridSquare
 function RandomizedWorldBase.getRandomSquareForCorpse(roomDef) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return IsoGridSquare
-function RandomizedWorldBase.getSq(arg0, arg1, arg2) end
+function RandomizedWorldBase.getSq(x, y, z) end
 
 ---@return string
 function RandomizedWorldBase.getTwiggyClutterItem() end
@@ -902,9 +987,9 @@ function RandomizedWorldBase.getTwiggyClutterItem() end
 ---@return string
 function RandomizedWorldBase.getWoodcraftClutterItem() end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return boolean
-function RandomizedWorldBase.is1x1AreaClear(arg0) end
+function RandomizedWorldBase.is1x1AreaClear(square) end
 
 ---@param square IsoGridSquare
 ---@return boolean
@@ -922,8 +1007,8 @@ function RandomizedWorldBase.is2x1or1x2AreaClear(square) end
 ---@return boolean
 function RandomizedWorldBase.is2x2AreaClear(square) end
 
----@param arg0 Zone
-function RandomizedWorldBase.removeAllVehiclesOnZone(arg0) end
+---@param zone Zone
+function RandomizedWorldBase.removeAllVehiclesOnZone(zone) end
 
 ---@return RandomizedWorldBase
 function RandomizedWorldBase.new() end

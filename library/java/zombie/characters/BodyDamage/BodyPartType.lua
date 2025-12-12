@@ -132,9 +132,9 @@ function BodyPartType.getPainModifyer(index) end
 ---@return BodyPartType
 function BodyPartType.getRandom() end
 
----@param arg0 string
+---@param name string
 ---@return BodyPartType
-function BodyPartType.valueOf(arg0) end
+function BodyPartType.valueOf(name) end
 
 ---Returns an array containing the constants of this enum class, in
 ---the order they are declared.

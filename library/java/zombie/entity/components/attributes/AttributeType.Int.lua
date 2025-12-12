@@ -12,9 +12,9 @@ function __Int:getMin() end
 ---@return AttributeValueType
 function __Int:getValueType() end
 
----@param arg0 integer
+---@param value integer
 ---@return integer
-function __Int:validate(arg0) end
+function __Int:validate(value) end
 
 Int = {}
 

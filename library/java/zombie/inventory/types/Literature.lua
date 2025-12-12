@@ -29,9 +29,9 @@ function __Literature:containsCraftRecipe() end
 ---@return boolean
 function __Literature:containsGrowingSeason() end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return boolean
-function __Literature:containsKnownRecipe(arg0) end
+function __Literature:containsKnownRecipe(chr) end
 
 ---@return boolean
 function __Literature:containsMiscRecipe() end
@@ -54,13 +54,13 @@ function __Literature:getCategory() end
 ---@return HashMap<integer, string>
 function __Literature:getCustomPages() end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return List<string>
-function __Literature:getKnownMiscRecipes(arg0) end
+function __Literature:getKnownMiscRecipes(chr) end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return List<string>
-function __Literature:getKnownRecipes(arg0) end
+function __Literature:getKnownRecipes(chr) end
 
 ---@return List<string>
 function __Literature:getLearnedRecipes() end
@@ -95,9 +95,9 @@ function __Literature:getStressChange() end
 ---@return number # the unhappyChange
 function __Literature:getUnhappyChange() end
 
----@param arg0 string
+---@param recipe string
 ---@return boolean
-function __Literature:hasRecipe(arg0) end
+function __Literature:hasRecipe(recipe) end
 
 ---@return boolean
 function __Literature:isEmptyPages() end

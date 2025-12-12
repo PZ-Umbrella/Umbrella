@@ -3,22 +3,22 @@
 ---@class FluidFilterScript: BaseScriptObject
 local __FluidFilterScript = {}
 
----@param arg0 string
----@param arg1 string
-function __FluidFilterScript:Load(arg0, arg1) end
+---@param name string
+---@param totalFile string
+function __FluidFilterScript:Load(name, totalFile) end
 
----@param arg0 ScriptParser.Block
-function __FluidFilterScript:LoadAnonymousFromBlock(arg0) end
+---@param block ScriptParser.Block
+function __FluidFilterScript:LoadAnonymousFromBlock(block) end
 
----@param arg0 string
-function __FluidFilterScript:LoadAnonymousSingleFluid(arg0) end
+---@param fluidName string
+function __FluidFilterScript:LoadAnonymousSingleFluid(fluidName) end
 
 function __FluidFilterScript:OnLoadedAfterLua() end
 
 function __FluidFilterScript:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __FluidFilterScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __FluidFilterScript:OnScriptsLoaded(loadMode) end
 
 function __FluidFilterScript:PreReload() end
 
@@ -31,8 +31,8 @@ function __FluidFilterScript:createFilter() end
 ---@return FluidFilter
 function __FluidFilterScript:getFilter() end
 
----@param arg0 IVersionHash
-function __FluidFilterScript:getVersion(arg0) end
+---@param hash IVersionHash
+function __FluidFilterScript:getVersion(hash) end
 
 ---@return boolean
 function __FluidFilterScript:isSingleFluid() end
@@ -42,9 +42,9 @@ FluidFilterScript = {}
 ---@return FluidFilterScript
 function FluidFilterScript.GetAnonymous() end
 
----@param arg0 boolean
+---@param isWhitelist boolean
 ---@return FluidFilterScript
-function FluidFilterScript.GetAnonymous(arg0) end
+function FluidFilterScript.GetAnonymous(isWhitelist) end
 
 ---@return FluidFilterScript
 function FluidFilterScript.new() end

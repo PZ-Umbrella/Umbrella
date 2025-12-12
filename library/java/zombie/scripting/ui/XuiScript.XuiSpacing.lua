@@ -35,14 +35,14 @@ function __XuiSpacing:isValueSet() end
 
 XuiSpacing = {}
 
----@param arg0 XuiScript
----@param arg1 string
----@param arg2 XuiScript.XuiUnit
----@param arg3 XuiScript.XuiUnit
----@param arg4 XuiScript.XuiUnit
----@param arg5 XuiScript.XuiUnit
+---@param parent XuiScript
+---@param key string
+---@param top XuiScript.XuiUnit
+---@param right XuiScript.XuiUnit
+---@param bottom XuiScript.XuiUnit
+---@param left XuiScript.XuiUnit
 ---@return XuiScript.XuiSpacing
-function XuiSpacing.new(arg0, arg1, arg2, arg3, arg4, arg5) end
+function XuiSpacing.new(parent, key, top, right, bottom, left) end
 
 ---@type Class<XuiScript.XuiSpacing>
 XuiSpacing.class = nil

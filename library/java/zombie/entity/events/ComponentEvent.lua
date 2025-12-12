@@ -13,10 +13,10 @@ function __ComponentEvent:release() end
 
 ComponentEvent = {}
 
----@param arg0 ComponentEventType
----@param arg1 Component
+---@param type ComponentEventType
+---@param sender Component
 ---@return ComponentEvent
-function ComponentEvent.Alloc(arg0, arg1) end
+function ComponentEvent.Alloc(type, sender) end
 
 ---@type Class<ComponentEvent>
 ComponentEvent.class = nil

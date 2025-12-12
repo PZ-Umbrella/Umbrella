@@ -7,9 +7,9 @@ local __INetworkPacketField = {}
 ---@return integer
 function __INetworkPacketField:getPacketSizeBytes() end
 
----@param arg0 UdpConnection
+---@param connection UdpConnection
 ---@return boolean
-function __INetworkPacketField:isConsistent(arg0) end
+function __INetworkPacketField:isConsistent(connection) end
 
 ---@param arg0 ByteBuffer
 ---@param arg1 UdpConnection

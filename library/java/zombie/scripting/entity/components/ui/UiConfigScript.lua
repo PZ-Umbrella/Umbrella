@@ -3,15 +3,15 @@
 ---@class UiConfigScript: ComponentScript
 local __UiConfigScript = {}
 
----@param arg0 string
-function __UiConfigScript:InitLoadPP(arg0) end
+---@param name string
+function __UiConfigScript:InitLoadPP(name) end
 
 function __UiConfigScript:OnLoadedAfterLua() end
 
 function __UiConfigScript:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __UiConfigScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __UiConfigScript:OnScriptsLoaded(loadMode) end
 
 function __UiConfigScript:PreReload() end
 

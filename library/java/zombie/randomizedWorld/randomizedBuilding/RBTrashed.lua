@@ -3,23 +3,23 @@
 ---@class RBTrashed: RandomizedBuildingBase
 local __RBTrashed = {}
 
----@param arg0 ArrayList<IsoGridSquare>
----@param arg1 IsoGridSquare
----@param arg2 RoomDef
----@param arg3 IsoBuilding
+---@param squares ArrayList<IsoGridSquare>
+---@param square IsoGridSquare
+---@param room RoomDef
+---@param building IsoBuilding
 ---@return IsoGridSquare
-function __RBTrashed:getFloorSquare(arg0, arg1, arg2, arg3) end
+function __RBTrashed:getFloorSquare(squares, square, room, building) end
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param def BuildingDef
+---@param force boolean
 ---@return boolean
-function __RBTrashed:isValid(arg0, arg1) end
+function __RBTrashed:isValid(def, force) end
 
----@param arg0 BuildingDef
-function __RBTrashed:randomizeBuilding(arg0) end
+---@param def BuildingDef
+function __RBTrashed:randomizeBuilding(def) end
 
----@param arg0 BuildingDef
-function __RBTrashed:trashHouse(arg0) end
+---@param def BuildingDef
+function __RBTrashed:trashHouse(def) end
 
 RBTrashed = {}
 

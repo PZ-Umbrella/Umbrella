@@ -3,23 +3,23 @@
 ---@class PlayerSitOnFurnitureState: State
 local __PlayerSitOnFurnitureState = {}
 
----@param arg0 IsoGameCharacter
-function __PlayerSitOnFurnitureState:abortSitting(arg0) end
+---@param owner IsoGameCharacter
+function __PlayerSitOnFurnitureState:abortSitting(owner) end
 
----@param arg0 IsoGameCharacter
----@param arg1 AnimLayer
----@param arg2 AnimationTrack
----@param arg3 AnimEvent
-function __PlayerSitOnFurnitureState:animEvent(arg0, arg1, arg2, arg3) end
+---@param owner IsoGameCharacter
+---@param layer AnimLayer
+---@param track AnimationTrack
+---@param event AnimEvent
+function __PlayerSitOnFurnitureState:animEvent(owner, layer, track, event) end
 
----@param arg0 IsoGameCharacter
-function __PlayerSitOnFurnitureState:enter(arg0) end
+---@param owner IsoGameCharacter
+function __PlayerSitOnFurnitureState:enter(owner) end
 
----@param arg0 IsoGameCharacter
-function __PlayerSitOnFurnitureState:execute(arg0) end
+---@param owner IsoGameCharacter
+function __PlayerSitOnFurnitureState:execute(owner) end
 
----@param arg0 IsoGameCharacter
-function __PlayerSitOnFurnitureState:exit(arg0) end
+---@param owner IsoGameCharacter
+function __PlayerSitOnFurnitureState:exit(owner) end
 
 ---@return boolean
 function __PlayerSitOnFurnitureState:isSyncInIdle() end
@@ -33,9 +33,9 @@ function __PlayerSitOnFurnitureState:isSyncOnExit() end
 ---@return boolean
 function __PlayerSitOnFurnitureState:isSyncOnSquare() end
 
----@param arg0 IsoGameCharacter
----@param arg1 State.Stage
-function __PlayerSitOnFurnitureState:setParams(arg0, arg1) end
+---@param owner IsoGameCharacter
+---@param stage State.Stage
+function __PlayerSitOnFurnitureState:setParams(owner, stage) end
 
 PlayerSitOnFurnitureState = {}
 

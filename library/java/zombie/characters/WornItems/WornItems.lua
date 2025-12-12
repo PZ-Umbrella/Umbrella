@@ -43,15 +43,15 @@ function __WornItems:getLocation(item) end
 ---@return boolean
 function __WornItems:isEmpty() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __WornItems:load(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __WornItems:load(input, WorldVersion) end
 
 ---@param item InventoryItem
 function __WornItems:remove(item) end
 
----@param arg0 ByteBuffer
-function __WornItems:save(arg0) end
+---@param output ByteBuffer
+function __WornItems:save(output) end
 
 ---@param itemVisuals ItemVisuals
 function __WornItems:setFromItemVisuals(itemVisuals) end

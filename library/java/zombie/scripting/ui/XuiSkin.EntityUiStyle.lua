@@ -6,9 +6,9 @@ local __EntityUiStyle = {}
 ---@return string
 function __EntityUiStyle:getBuildDescription() end
 
----@param arg0 ComponentType
+---@param componentType ComponentType
 ---@return XuiSkin.ComponentUiStyle
-function __EntityUiStyle:getComponentUiStyle(arg0) end
+function __EntityUiStyle:getComponentUiStyle(componentType) end
 
 ---@return string
 function __EntityUiStyle:getDescription() end
@@ -31,9 +31,9 @@ function __EntityUiStyle:getLuaWindowClass() end
 ---@return string
 function __EntityUiStyle:getXuiStyle() end
 
----@param arg0 ComponentType
+---@param componentType ComponentType
 ---@return boolean
-function __EntityUiStyle:isComponentEnabled(arg0) end
+function __EntityUiStyle:isComponentEnabled(componentType) end
 
 EntityUiStyle = {}
 

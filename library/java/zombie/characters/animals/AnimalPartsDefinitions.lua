@@ -5,26 +5,26 @@ local __AnimalPartsDefinitions = {}
 
 AnimalPartsDefinitions = {}
 
----@param arg0 string
+---@param animalType string
 ---@return ArrayList<AnimalPart>
-function AnimalPartsDefinitions.getAllBonesDef(arg0) end
+function AnimalPartsDefinitions.getAllBonesDef(animalType) end
 
----@param arg0 string
+---@param animalType string
 ---@return ArrayList<AnimalPart>
-function AnimalPartsDefinitions.getAllPartsDef(arg0) end
+function AnimalPartsDefinitions.getAllPartsDef(animalType) end
 
----@param arg0 string
+---@param animalType string
 ---@return table
-function AnimalPartsDefinitions.getAnimalDef(arg0) end
+function AnimalPartsDefinitions.getAnimalDef(animalType) end
 
----@param arg0 table
----@param arg1 string
+---@param def table
+---@param type string
 ---@return ArrayList<AnimalPart>
-function AnimalPartsDefinitions.getDef(arg0, arg1) end
+function AnimalPartsDefinitions.getDef(def, type) end
 
----@param arg0 string
+---@param animalType string
 ---@return string
-function AnimalPartsDefinitions.getLeather(arg0) end
+function AnimalPartsDefinitions.getLeather(animalType) end
 
 ---@return AnimalPartsDefinitions
 function AnimalPartsDefinitions.new() end

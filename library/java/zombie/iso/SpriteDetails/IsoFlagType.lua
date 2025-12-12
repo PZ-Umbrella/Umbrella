@@ -358,9 +358,9 @@ function IsoFlagType.FromString(str) end
 ---@return IsoFlagType
 function IsoFlagType.fromIndex(value) end
 
----@param arg0 string
+---@param name string
 ---@return IsoFlagType
-function IsoFlagType.valueOf(arg0) end
+function IsoFlagType.valueOf(name) end
 
 ---Returns an array containing the constants of this enum class, in
 ---the order they are declared.

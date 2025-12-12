@@ -3,15 +3,15 @@
 ---@class RVSCarCrashCorpse: RandomizedVehicleStoryBase
 local __RVSCarCrashCorpse = {}
 
----@param arg0 Zone
----@param arg1 IsoChunk
----@param arg2 boolean
+---@param zone Zone
+---@param chunk IsoChunk
+---@param debug boolean
 ---@return boolean
-function __RVSCarCrashCorpse:initVehicleStorySpawner(arg0, arg1, arg2) end
+function __RVSCarCrashCorpse:initVehicleStorySpawner(zone, chunk, debug) end
 
----@param arg0 Zone
----@param arg1 IsoChunk
-function __RVSCarCrashCorpse:randomizeVehicleStory(arg0, arg1) end
+---@param zone Zone
+---@param chunk IsoChunk
+function __RVSCarCrashCorpse:randomizeVehicleStory(zone, chunk) end
 
 ---@param spawner VehicleStorySpawner
 ---@param element VehicleStorySpawner.Element

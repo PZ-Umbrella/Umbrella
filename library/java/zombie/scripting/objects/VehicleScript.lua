@@ -3,8 +3,8 @@
 ---@class VehicleScript: BaseScriptObject, IModelAttachmentOwner
 local __VehicleScript = {}
 
----@param arg0 string
-function __VehicleScript:InitLoadPP(arg0) end
+---@param name string
+function __VehicleScript:InitLoadPP(name) end
 
 ---@param name string
 ---@param totalFile string
@@ -21,15 +21,15 @@ function __VehicleScript:addAttachment(attach) end
 ---@return ModelAttachment
 function __VehicleScript:addAttachmentAt(index, attach) end
 
----@param arg0 string
+---@param type string
 ---@return VehicleScript.PhysicsShape
-function __VehicleScript:addPhysicsShape(arg0) end
+function __VehicleScript:addPhysicsShape(type) end
 
----@param arg0 ModelAttachment
-function __VehicleScript:afterRenameAttachment(arg0) end
+---@param attachment ModelAttachment
+function __VehicleScript:afterRenameAttachment(attachment) end
 
----@param arg0 ModelAttachment
-function __VehicleScript:beforeRenameAttachment(arg0) end
+---@param attachment ModelAttachment
+function __VehicleScript:beforeRenameAttachment(attachment) end
 
 ---@param other VehicleScript
 ---@param spec string
@@ -43,13 +43,13 @@ function __VehicleScript:copyPartsFrom(other, spec) end
 ---@param spec string
 function __VehicleScript:copyPassengersFrom(other, spec) end
 
----@param arg0 VehicleScript
----@param arg1 string
-function __VehicleScript:copyPhysicsFrom(arg0, arg1) end
+---@param other VehicleScript
+---@param spec string
+function __VehicleScript:copyPhysicsFrom(other, spec) end
 
----@param arg0 VehicleScript
----@param arg1 string
-function __VehicleScript:copySoundFrom(arg0, arg1) end
+---@param other VehicleScript
+---@param spec string
+function __VehicleScript:copySoundFrom(other, spec) end
 
 ---@param other VehicleScript
 ---@param spec string
@@ -339,9 +339,9 @@ function __VehicleScript:hasPhysicsChassisShape() end
 ---@return boolean
 function __VehicleScript:hasSpecialKeyRing() end
 
----@param arg0 string
+---@param outfit string
 ---@return boolean
-function __VehicleScript:hasZombieType(arg0) end
+function __VehicleScript:hasZombieType(outfit) end
 
 ---@return boolean
 function __VehicleScript:neverSpawnKey() end
@@ -357,15 +357,15 @@ function __VehicleScript:removeAttachment(attach) end
 ---@return ModelAttachment
 function __VehicleScript:removeAttachment(index) end
 
----@param arg0 integer
+---@param index integer
 ---@return VehicleScript.PhysicsShape
-function __VehicleScript:removePhysicsShape(arg0) end
+function __VehicleScript:removePhysicsShape(index) end
 
----@param arg0 string
-function __VehicleScript:setCarMechanicsOverlay(arg0) end
+---@param overlay string
+function __VehicleScript:setCarMechanicsOverlay(overlay) end
 
----@param arg0 string
-function __VehicleScript:setCarModelName(arg0) end
+---@param overlay string
+function __VehicleScript:setCarModelName(overlay) end
 
 ---@param engineRPMType string
 function __VehicleScript:setEngineRPMType(engineRPMType) end

@@ -3,15 +3,15 @@
 ---@class FurnaceLogicScript: ComponentScript
 local __FurnaceLogicScript = {}
 
----@param arg0 string
-function __FurnaceLogicScript:InitLoadPP(arg0) end
+---@param name string
+function __FurnaceLogicScript:InitLoadPP(name) end
 
 function __FurnaceLogicScript:OnLoadedAfterLua() end
 
 function __FurnaceLogicScript:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __FurnaceLogicScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __FurnaceLogicScript:OnScriptsLoaded(loadMode) end
 
 function __FurnaceLogicScript:PreReload() end
 

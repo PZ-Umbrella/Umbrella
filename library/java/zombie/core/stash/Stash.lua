@@ -3,8 +3,8 @@
 ---@class Stash
 local __Stash = {}
 
----@param arg0 UIWorldMap
-function __Stash:applyAnnotations(arg0) end
+---@param ui UIWorldMap
+function __Stash:applyAnnotations(ui) end
 
 ---@return integer
 function __Stash:getBuildingX() end

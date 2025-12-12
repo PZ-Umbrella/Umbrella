@@ -3,11 +3,11 @@
 ---@class XuiScript
 local __XuiScript = {}
 
----@param arg0 ScriptParser.Block
-function __XuiScript:Load(arg0) end
+---@param block ScriptParser.Block
+function __XuiScript:Load(block) end
 
----@param arg0 XuiScript
-function __XuiScript:addChild(arg0) end
+---@param child XuiScript
+function __XuiScript:addChild(child) end
 
 ---@return XuiScript.XuiBoolean
 function __XuiScript:getAllowDropAlways() end
@@ -253,63 +253,63 @@ function __XuiScript:isLayout() end
 ---@return boolean
 function __XuiScript:isStyle() end
 
----@param arg0 string
----@param arg1 string
+---@param key string
+---@param val string
 ---@return boolean
-function __XuiScript:loadVar(arg0, arg1) end
+function __XuiScript:loadVar(key, val) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 boolean
+---@param key string
+---@param val string
+---@param allowNull boolean
 ---@return boolean
-function __XuiScript:loadVar(arg0, arg1, arg2) end
+function __XuiScript:loadVar(key, val, allowNull) end
 
----@param arg0 XuiScript
-function __XuiScript:setDefaultStyle(arg0) end
+---@param defaultStyle XuiScript
+function __XuiScript:setDefaultStyle(defaultStyle) end
 
----@param arg0 XuiScript
-function __XuiScript:setStyle(arg0) end
+---@param style XuiScript
+function __XuiScript:setStyle(style) end
 
----@param arg0 string
+---@param xuiKey string
 ---@return XuiScript
-function __XuiScript:setXuiKey(arg0) end
+function __XuiScript:setXuiKey(xuiKey) end
 
----@param arg0 string
+---@param xuiLuaClass string
 ---@return XuiScript
-function __XuiScript:setXuiLuaClass(arg0) end
+function __XuiScript:setXuiLuaClass(xuiLuaClass) end
 
----@param arg0 string
+---@param xuiStyle string
 ---@return XuiScript
-function __XuiScript:setXuiStyle(arg0) end
+function __XuiScript:setXuiStyle(xuiStyle) end
 
 ---@return string
 function __XuiScript:toString() end
 
 XuiScript = {}
 
----@param arg0 string
----@param arg1 string
----@param arg2 boolean
----@param arg3 XuiScriptType
+---@param xuiLayoutName string
+---@param luaClass string
+---@param readAltKeys boolean
+---@param scriptType XuiScriptType
 ---@return XuiScript
-function XuiScript.CreateScriptForClass(arg0, arg1, arg2, arg3) end
+function XuiScript.CreateScriptForClass(xuiLayoutName, luaClass, readAltKeys, scriptType) end
 
----@param arg0 ScriptParser.Block
+---@param block ScriptParser.Block
 ---@return string
-function XuiScript.ReadLuaClassValue(arg0) end
+function XuiScript.ReadLuaClassValue(block) end
 
----@param arg0 string
----@param arg1 boolean
----@param arg2 string
+---@param xuiLayoutName string
+---@param readAltKeys boolean
+---@param xuiLuaClass string
 ---@return XuiScript
-function XuiScript.new(arg0, arg1, arg2) end
+function XuiScript.new(xuiLayoutName, readAltKeys, xuiLuaClass) end
 
----@param arg0 string
----@param arg1 boolean
----@param arg2 string
----@param arg3 XuiScriptType
+---@param xuiLayoutName string
+---@param readAltKeys boolean
+---@param xuiLuaClass string
+---@param type XuiScriptType
 ---@return XuiScript
-function XuiScript.new(arg0, arg1, arg2, arg3) end
+function XuiScript.new(xuiLayoutName, readAltKeys, xuiLuaClass, type) end
 
 ---@type Class<XuiScript>
 XuiScript.class = nil

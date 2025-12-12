@@ -36,9 +36,9 @@ function __Color:darker() end
 ---@return Color # The darker version of this colour
 function __Color:darker(scale) end
 
----@param arg0 Color
+---@param other Color
 ---@return boolean
-function __Color:equalBytes(arg0) end
+function __Color:equalBytes(other) end
 
 ---@param other any
 ---@return boolean
@@ -112,29 +112,29 @@ function __Color:hashCode() end
 ---@param dest Color
 function __Color:interp(to, delta, dest) end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __Color:load(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __Color:load(input, WorldVersion) end
 
----@param arg0 ByteBuffer
-function __Color:loadCompact(arg0) end
+---@param input ByteBuffer
+function __Color:loadCompact(input) end
 
----@param arg0 ByteBuffer
-function __Color:loadCompactNoAlpha(arg0) end
+---@param input ByteBuffer
+function __Color:loadCompactNoAlpha(input) end
 
 ---Multiply this color by another
 ---@param c Color the other color
 ---@return Color # product of the two colors
 function __Color:multiply(c) end
 
----@param arg0 ByteBuffer
-function __Color:save(arg0) end
+---@param output ByteBuffer
+function __Color:save(output) end
 
----@param arg0 ByteBuffer
-function __Color:saveCompact(arg0) end
+---@param output ByteBuffer
+function __Color:saveCompact(output) end
 
----@param arg0 ByteBuffer
-function __Color:saveCompactNoAlpha(arg0) end
+---@param output ByteBuffer
+function __Color:saveCompactNoAlpha(output) end
 
 ---Scale the components of the colour by the given value
 ---@param value number The value to scale by
@@ -276,9 +276,9 @@ function Color.blendBGR(valueABGR, targetABGR) end
 ---@return integer
 function Color.colorToABGR(val) end
 
----@param arg0 ColorInfo
+---@param val ColorInfo
 ---@return integer
-function Color.colorToABGR(arg0) end
+function Color.colorToABGR(val) end
 
 ---@param r number
 ---@param g number

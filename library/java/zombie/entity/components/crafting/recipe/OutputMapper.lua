@@ -5,32 +5,32 @@ local __OutputMapper = {}
 
 function __OutputMapper:OnPostWorldDictionaryInit() end
 
----@param arg0 string
-function __OutputMapper:OnPostWorldDictionaryInit(arg0) end
+---@param recipe string
+function __OutputMapper:OnPostWorldDictionaryInit(recipe) end
 
----@param arg0 string
----@param arg1 kahlua.Array<string>
-function __OutputMapper:addOutputEntree(arg0, arg1) end
+---@param result string
+---@param items kahlua.Array<string>
+function __OutputMapper:addOutputEntree(result, items) end
 
----@param arg0 string
----@param arg1 ArrayList<string>
-function __OutputMapper:addOutputEntree(arg0, arg1) end
+---@param result string
+---@param items ArrayList<string>
+function __OutputMapper:addOutputEntree(result, items) end
 
 ---@return ArrayList<OutputMapper.OutputEntree>
 function __OutputMapper:getEntrees() end
 
----@param arg0 CraftRecipeData
+---@param recipeData CraftRecipeData
 ---@return Item
-function __OutputMapper:getOutputItem(arg0) end
+function __OutputMapper:getOutputItem(recipeData) end
 
----@param arg0 CraftRecipeData
----@param arg1 boolean
+---@param recipeData CraftRecipeData
+---@param testManualInputs boolean
 ---@return Item
-function __OutputMapper:getOutputItem(arg0, arg1) end
+function __OutputMapper:getOutputItem(recipeData, testManualInputs) end
 
----@param arg0 Item
+---@param result Item
 ---@return ArrayList<Item>
-function __OutputMapper:getPatternForResult(arg0) end
+function __OutputMapper:getPatternForResult(result) end
 
 ---@return ArrayList<Item>
 function __OutputMapper:getResultItems() end
@@ -38,17 +38,17 @@ function __OutputMapper:getResultItems() end
 ---@return boolean
 function __OutputMapper:isEmpty() end
 
----@param arg0 InputScript
-function __OutputMapper:registerInputScript(arg0) end
+---@param inputScript InputScript
+function __OutputMapper:registerInputScript(inputScript) end
 
----@param arg0 string
-function __OutputMapper:setDefaultOutputEntree(arg0) end
+---@param item string
+function __OutputMapper:setDefaultOutputEntree(item) end
 
 OutputMapper = {}
 
----@param arg0 string
+---@param name string
 ---@return OutputMapper
-function OutputMapper.new(arg0) end
+function OutputMapper.new(name) end
 
 ---@type Class<OutputMapper>
 OutputMapper.class = nil

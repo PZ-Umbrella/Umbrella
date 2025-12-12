@@ -10,10 +10,10 @@ function __IsoPlayer:AttemptAttack() end
 ---@return boolean
 function __IsoPlayer:DoAttack(chargeDelta) end
 
----@param arg0 number
----@param arg1 string
+---@param chargeDelta number
+---@param clickSound string
 ---@return boolean
-function __IsoPlayer:DoAttack(arg0, arg1) end
+function __IsoPlayer:DoAttack(chargeDelta, clickSound) end
 
 ---@param type string
 function __IsoPlayer:DoFootstepSound(type) end
@@ -43,21 +43,21 @@ function __IsoPlayer:IsUsingAimWeapon() end
 ---@param killer IsoGameCharacter
 function __IsoPlayer:Kill(killer) end
 
----@param arg0 Vector2
-function __IsoPlayer:Move(arg0) end
+---@param dir Vector2
+function __IsoPlayer:Move(dir) end
 
 ---@param dir Vector2
 function __IsoPlayer:MoveUnmodded(dir) end
 
----@param arg0 AnimLayer
----@param arg1 AnimationTrack
----@param arg2 AnimEvent
-function __IsoPlayer:OnAnimEvent(arg0, arg1, arg2) end
+---@param sender AnimLayer
+---@param track AnimationTrack
+---@param event AnimEvent
+function __IsoPlayer:OnAnimEvent(sender, track, event) end
 
 function __IsoPlayer:OnDeath() end
 
----@param arg0 IsoAnimal
-function __IsoPlayer:TestAnimalSpotPlayer(arg0) end
+---@param chr IsoAnimal
+function __IsoPlayer:TestAnimalSpotPlayer(chr) end
 
 ---@param chr IsoMovingObject
 function __IsoPlayer:TestZombieSpotPlayer(chr) end
@@ -65,16 +65,16 @@ function __IsoPlayer:TestZombieSpotPlayer(chr) end
 ---@param sender ActionContext
 function __IsoPlayer:actionStateChanged(sender) end
 
----@param arg0 IsoAnimal
-function __IsoPlayer:addAttachedAnimal(arg0) end
+---@param anim IsoAnimal
+function __IsoPlayer:addAttachedAnimal(anim) end
 
 ---@param itemid string
 ---@param part VehiclePart
 ---@param milli integer
 function __IsoPlayer:addMechanicsItem(itemid, part, milli) end
 
----@param arg0 number
-function __IsoPlayer:addSelectedZoneForHighlight(arg0) end
+---@param id number
+function __IsoPlayer:addSelectedZoneForHighlight(id) end
 
 ---@param radius integer
 ---@param volume integer
@@ -119,12 +119,12 @@ function __IsoPlayer:checkCanSeeClient(remoteChr) end
 ---@return boolean
 function __IsoPlayer:checkWalkTo() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
+---@param x1 integer
+---@param x2 integer
+---@param y1 integer
+---@param y2 integer
 ---@return boolean
-function __IsoPlayer:checkZonesInterception(arg0, arg1, arg2, arg3) end
+function __IsoPlayer:checkZonesInterception(x1, x2, y1, y2) end
 
 function __IsoPlayer:clearHandToHandAttack() end
 
@@ -144,9 +144,9 @@ function __IsoPlayer:doBeatenVehicle(vehicleSpeed) end
 ---@return boolean
 function __IsoPlayer:doContext() end
 
----@param arg0 IsoDirections
+---@param dir IsoDirections
 ---@return boolean
-function __IsoPlayer:doContextClimbOverWall(arg0) end
+function __IsoPlayer:doContextClimbOverWall(dir) end
 
 ---@param itemGUID string
 function __IsoPlayer:dressInClothingItem(itemGUID) end
@@ -220,9 +220,9 @@ function __IsoPlayer:getControllerAimDir(vec) end
 ---@return number
 function __IsoPlayer:getDamageFromHitByACar(vehicleSpeed) end
 
----@param arg0 string
+---@param in_separatorStr string
 ---@return string
-function __IsoPlayer:getDescription(arg0) end
+function __IsoPlayer:getDescription(in_separatorStr) end
 
 ---@return integer
 function __IsoPlayer:getDialogMood() end
@@ -446,10 +446,10 @@ function __IsoPlayer:getUsername() end
 ---@return string
 function __IsoPlayer:getUsername(canShowFirstname) end
 
----@param arg0 boolean
----@param arg1 boolean
+---@param canShowFirstname boolean
+---@param canShowDisguisedName boolean
 ---@return string
-function __IsoPlayer:getUsername(arg0, arg1) end
+function __IsoPlayer:getUsername(canShowFirstname, canShowDisguisedName) end
 
 ---@return BaseVisual
 function __IsoPlayer:getVisual() end
@@ -550,9 +550,9 @@ function __IsoPlayer:isClimbOverWallSuccess() end
 ---@return boolean
 function __IsoPlayer:isDoingActionThatCanBeCancelled() end
 
----@param arg0 string
+---@param stateName string
 ---@return boolean
-function __IsoPlayer:isDraggingCorpseStateName(arg0) end
+function __IsoPlayer:isDraggingCorpseStateName(stateName) end
 
 ---@return boolean
 function __IsoPlayer:isFactionPvp() end
@@ -560,13 +560,13 @@ function __IsoPlayer:isFactionPvp() end
 ---@return boolean
 function __IsoPlayer:isFarming() end
 
----@param arg0 string
+---@param recipe string
 ---@return boolean
-function __IsoPlayer:isFavouriteRecipe(arg0) end
+function __IsoPlayer:isFavouriteRecipe(recipe) end
 
----@param arg0 CraftRecipe
+---@param recipe CraftRecipe
 ---@return boolean
-function __IsoPlayer:isFavouriteRecipe(arg0) end
+function __IsoPlayer:isFavouriteRecipe(recipe) end
 
 ---@return boolean
 function __IsoPlayer:isForceAim() end
@@ -656,9 +656,9 @@ function __IsoPlayer:isPickingUpBody() end
 ---@return boolean
 function __IsoPlayer:isPlayerMoving() end
 
----@param arg0 string
+---@param soundName string
 ---@return boolean
-function __IsoPlayer:isPlayingAttackLoopSound(arg0) end
+function __IsoPlayer:isPlayingAttackLoopSound(soundName) end
 
 ---@return boolean
 function __IsoPlayer:isPushableForSeparate() end
@@ -716,9 +716,9 @@ function __IsoPlayer:isTimedActionInstant() end
 ---@return boolean
 function __IsoPlayer:isTorchCone() end
 
----@param arg0 string
+---@param item string
 ---@return boolean
-function __IsoPlayer:isUnwanted(arg0) end
+function __IsoPlayer:isUnwanted(item) end
 
 ---@param testVehicle BaseVehicle
 ---@return boolean
@@ -750,8 +750,8 @@ function __IsoPlayer:load(input, WorldVersion, IS_DEBUG_SAVE) end
 ---@param fileName string
 function __IsoPlayer:load(fileName) end
 
----@param arg0 InventoryItem
-function __IsoPlayer:lureAnimal(arg0) end
+---@param item InventoryItem
+function __IsoPlayer:lureAnimal(item) end
 
 function __IsoPlayer:nullifyAiming() end
 
@@ -761,9 +761,9 @@ function __IsoPlayer:petAnimal() end
 
 function __IsoPlayer:playBloodSplatterSound() end
 
----@param arg0 string
+---@param suffix string
 ---@return integer
-function __IsoPlayer:playerVoiceSound(arg0) end
+function __IsoPlayer:playerVoiceSound(suffix) end
 
 function __IsoPlayer:postupdate() end
 
@@ -785,8 +785,8 @@ function __IsoPlayer:processWakingUp() end
 
 function __IsoPlayer:removeAllAttachedAnimals() end
 
----@param arg0 IsoAnimal
-function __IsoPlayer:removeAttachedAnimal(arg0) end
+---@param animal IsoAnimal
+function __IsoPlayer:removeAttachedAnimal(animal) end
 
 function __IsoPlayer:removeFromWorld() end
 
@@ -816,9 +816,9 @@ function __IsoPlayer:save() end
 ---@param fileName string
 function __IsoPlayer:save(fileName) end
 
----@param arg0 ModelManager
----@param arg1 boolean
-function __IsoPlayer:setAddedToModelManager(arg0, arg1) end
+---@param modelManager ModelManager
+---@param isAdded boolean
+function __IsoPlayer:setAddedToModelManager(modelManager, isAdded) end
 
 ---@param allChatMuted boolean
 function __IsoPlayer:setAllChatMuted(allChatMuted) end
@@ -840,17 +840,17 @@ function __IsoPlayer:setAttackAnimThrowTimer(dt) end
 ---@param attackFromBehind boolean
 function __IsoPlayer:setAttackFromBehind(attackFromBehind) end
 
----@param arg0 boolean
-function __IsoPlayer:setAttackStarted(arg0) end
+---@param attackStarted boolean
+function __IsoPlayer:setAttackStarted(attackStarted) end
 
 ---@param attackType AttackType
 function __IsoPlayer:setAttackType(attackType) end
 
----@param arg0 number
-function __IsoPlayer:setAttackVariationX(arg0) end
+---@param in_attackVariationX number
+function __IsoPlayer:setAttackVariationX(in_attackVariationX) end
 
----@param arg0 number
-function __IsoPlayer:setAttackVariationY(arg0) end
+---@param in_attackVariationY number
+function __IsoPlayer:setAttackVariationY(in_attackVariationY) end
 
 ---@param enabled boolean
 function __IsoPlayer:setAuthorizeMeleeAction(enabled) end
@@ -858,11 +858,11 @@ function __IsoPlayer:setAuthorizeMeleeAction(enabled) end
 ---@param enabled boolean
 function __IsoPlayer:setAuthorizeShoveStomp(enabled) end
 
----@param arg0 boolean
-function __IsoPlayer:setAuthorizedHandToHand(arg0) end
+---@param enabled boolean
+function __IsoPlayer:setAuthorizedHandToHand(enabled) end
 
----@param arg0 boolean
-function __IsoPlayer:setAuthorizedHandToHandAction(arg0) end
+---@param enabled boolean
+function __IsoPlayer:setAuthorizedHandToHandAction(enabled) end
 
 ---@param autoDrink boolean
 function __IsoPlayer:setAutoDrink(autoDrink) end
@@ -888,8 +888,8 @@ function __IsoPlayer:setClimbOverWallStruggle(climbOverWallStruggle) end
 ---@param climbOverWallSuccess boolean
 function __IsoPlayer:setClimbOverWallSuccess(climbOverWallSuccess) end
 
----@param arg0 number
-function __IsoPlayer:setCombatSpeed(arg0) end
+---@param combatSpeed number
+function __IsoPlayer:setCombatSpeed(combatSpeed) end
 
 ---@param DialogMood integer
 function __IsoPlayer:setDialogMood(DialogMood) end
@@ -910,8 +910,8 @@ function __IsoPlayer:setExtraInfoFlags(flags, isForced) end
 ---@param pvp boolean
 function __IsoPlayer:setFactionPvp(pvp) end
 
----@param arg0 string
-function __IsoPlayer:setFishingStage(arg0) end
+---@param stage string
+function __IsoPlayer:setFishingStage(stage) end
 
 function __IsoPlayer:setFitnessSpeed() end
 
@@ -937,8 +937,8 @@ function __IsoPlayer:setGhostMode(aGhostMode, isForced) end
 ---@param aGhostMode boolean
 function __IsoPlayer:setGhostMode(aGhostMode) end
 
----@param arg0 boolean
-function __IsoPlayer:setHasObstacleOnPath(arg0) end
+---@param value boolean
+function __IsoPlayer:setHasObstacleOnPath(value) end
 
 ---@param heartDelay number
 function __IsoPlayer:setHeartDelay(heartDelay) end
@@ -961,14 +961,14 @@ function __IsoPlayer:setIgnoreInputsForDirection(ignoreInputsForDirection) end
 ---@param initiate boolean
 function __IsoPlayer:setInitiateAttack(initiate) end
 
----@param arg0 boolean
-function __IsoPlayer:setInvPageDirty(arg0) end
+---@param b boolean
+function __IsoPlayer:setInvPageDirty(b) end
 
----@param arg0 boolean
-function __IsoPlayer:setIsFarming(arg0) end
+---@param isFarmingBool boolean
+function __IsoPlayer:setIsFarming(isFarmingBool) end
 
----@param arg0 boolean
-function __IsoPlayer:setIsLuringAnimals(arg0) end
+---@param luring boolean
+function __IsoPlayer:setIsLuringAnimals(luring) end
 
 ---@param ignore boolean
 function __IsoPlayer:setJoypadIgnoreAimUntilCentered(ignore) end
@@ -979,8 +979,8 @@ function __IsoPlayer:setJustMoved(val) end
 ---@param lastAngle Vector2
 function __IsoPlayer:setLastAngle(lastAngle) end
 
----@param arg0 boolean
-function __IsoPlayer:setLastAttackWasHandToHand(arg0) end
+---@param lastAttackWasHandToHand boolean
+function __IsoPlayer:setLastAttackWasHandToHand(lastAttackWasHandToHand) end
 
 ---@param lastRemoteUpdate integer
 function __IsoPlayer:setLastRemoteUpdate(lastRemoteUpdate) end
@@ -1036,20 +1036,20 @@ function __IsoPlayer:setPlayerMoveDir(aPlayerMoveDir) end
 ---@return string
 function __IsoPlayer:setPlayerStats(bb, adminUsername) end
 
----@param arg0 string
-function __IsoPlayer:setRole(arg0) end
+---@param newLvl string
+function __IsoPlayer:setRole(newLvl) end
 
----@param arg0 Role
-function __IsoPlayer:setRole(arg0) end
+---@param newRole Role
+function __IsoPlayer:setRole(newRole) end
 
----@param arg0 boolean
-function __IsoPlayer:setSeeDesignationZone(arg0) end
+---@param seeMetaAnimalZone boolean
+function __IsoPlayer:setSeeDesignationZone(seeMetaAnimalZone) end
 
 ---@param seeNonPvpZone boolean
 function __IsoPlayer:setSeeNonPvpZone(seeNonPvpZone) end
 
----@param arg0 number
-function __IsoPlayer:setSelectedZoneForHighlight(arg0) end
+---@param id number
+function __IsoPlayer:setSelectedZoneForHighlight(id) end
 
 ---@param b boolean
 function __IsoPlayer:setShowMPInfos(b) end
@@ -1080,12 +1080,12 @@ function __IsoPlayer:setTimeSinceLastNetData(timeSinceLastNetData) end
 ---@param timeSinceLastStab number
 function __IsoPlayer:setTimeSinceLastStab(timeSinceLastStab) end
 
----@param arg0 LuaTimedActionNew
-function __IsoPlayer:setTimedActionToRetrigger(arg0) end
+---@param timedActionToRetrigger LuaTimedActionNew
+function __IsoPlayer:setTimedActionToRetrigger(timedActionToRetrigger) end
 
----@param arg0 string
----@param arg1 boolean
-function __IsoPlayer:setUnwanted(arg0, arg1) end
+---@param item string
+---@param unwanted boolean
+function __IsoPlayer:setUnwanted(item, unwanted) end
 
 ---@param newUsername string
 function __IsoPlayer:setUsername(newUsername) end
@@ -1096,11 +1096,11 @@ function __IsoPlayer:setVehicle4TestCollision(vehicle) end
 ---@param vehicle BaseVehicle
 function __IsoPlayer:setVehicleHitLocation(vehicle) end
 
----@param arg0 number
-function __IsoPlayer:setVoicePitch(arg0) end
+---@param voicePitch number
+function __IsoPlayer:setVoicePitch(voicePitch) end
 
----@param arg0 integer
-function __IsoPlayer:setVoiceType(arg0) end
+---@param voiceType integer
+function __IsoPlayer:setVoiceType(voiceType) end
 
 ---@param Waiting boolean
 function __IsoPlayer:setWaiting(Waiting) end
@@ -1120,18 +1120,18 @@ function __IsoPlayer:setbSeenThisFrame(bSeenThisFrame) end
 ---@return boolean
 function __IsoPlayer:shouldBeTurning() end
 
----@param arg0 string
-function __IsoPlayer:startAttackLoopSound(arg0) end
+---@param soundName string
+function __IsoPlayer:startAttackLoopSound(soundName) end
 
 ---@param other IsoPlayer
 function __IsoPlayer:startReceivingBodyDamageUpdates(other) end
 
----@param arg0 boolean
-function __IsoPlayer:stopLuringAnimals(arg0) end
+---@param eatFood boolean
+function __IsoPlayer:stopLuringAnimals(eatFood) end
 
----@param arg0 string
+---@param suffix string
 ---@return integer
-function __IsoPlayer:stopPlayerVoiceSound(arg0) end
+function __IsoPlayer:stopPlayerVoiceSound(suffix) end
 
 ---@param other IsoPlayer
 function __IsoPlayer:stopReceivingBodyDamageUpdates(other) end
@@ -1148,12 +1148,12 @@ function __IsoPlayer:toggleForceSprint() end
 ---@return boolean
 function __IsoPlayer:tooDarkToRead() end
 
----@param arg0 string
+---@param suffix string
 ---@return integer
-function __IsoPlayer:transmitPlayerVoiceSound(arg0) end
+function __IsoPlayer:transmitPlayerVoiceSound(suffix) end
 
----@param arg0 string
-function __IsoPlayer:triggerMusicIntensityEvent(arg0) end
+---@param id string
+function __IsoPlayer:triggerMusicIntensityEvent(id) end
 
 function __IsoPlayer:update() end
 
@@ -1235,9 +1235,9 @@ function IsoPlayer.getPlayers() end
 ---@return string
 function IsoPlayer.getUniqueFileName() end
 
----@param arg0 string
+---@param item string
 ---@return string
-function IsoPlayer.getUnwantedModDataString(arg0) end
+function IsoPlayer.getUnwantedModDataString(item) end
 
 ---@return boolean
 function IsoPlayer.hasInstance() end
@@ -1257,13 +1257,13 @@ function IsoPlayer.hasInstance() end
 ---@param callback Runnable
 function IsoPlayer.invokeOnPlayerInstance(callback) end
 
----@param arg0 IsoGameCharacter
+---@param in_character IsoGameCharacter
 ---@return boolean
-function IsoPlayer.isLocalPlayer(arg0) end
+function IsoPlayer.isLocalPlayer(in_character) end
 
----@param arg0 any
+---@param in_characterObject any
 ---@return boolean
-function IsoPlayer.isLocalPlayer(arg0) end
+function IsoPlayer.isLocalPlayer(in_characterObject) end
 
 ---@param id string
 ---@return boolean
@@ -1286,14 +1286,14 @@ function IsoPlayer.setLocalPlayer(index, newPlayerObj) end
 ---@return IsoPlayer
 function IsoPlayer.new(cell) end
 
----@param arg0 IsoCell
----@param arg1 SurvivorDesc
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 boolean
+---@param cell IsoCell
+---@param desc SurvivorDesc
+---@param x integer
+---@param y integer
+---@param z integer
+---@param isAnimal boolean
 ---@return IsoPlayer
-function IsoPlayer.new(arg0, arg1, arg2, arg3, arg4, arg5) end
+function IsoPlayer.new(cell, desc, x, y, z, isAnimal) end
 
 ---@param cell IsoCell
 ---@param desc SurvivorDesc

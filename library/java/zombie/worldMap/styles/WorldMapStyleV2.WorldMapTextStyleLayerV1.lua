@@ -3,35 +3,35 @@
 ---@class WorldMapStyleV2.WorldMapTextStyleLayerV1: WorldMapStyleV1.WorldMapStyleLayerV1
 local __WorldMapTextStyleLayerV1 = {}
 
----@param arg0 number
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
-function __WorldMapTextStyleLayerV1:addFill(arg0, arg1, arg2, arg3, arg4) end
+---@param zoom number
+---@param r integer
+---@param g integer
+---@param b integer
+---@param a integer
+function __WorldMapTextStyleLayerV1:addFill(zoom, r, g, b, a) end
 
----@param arg0 integer
+---@param index integer
 ---@return integer
-function __WorldMapTextStyleLayerV1:getFillAlpha(arg0) end
+function __WorldMapTextStyleLayerV1:getFillAlpha(index) end
 
----@param arg0 integer
+---@param index integer
 ---@return integer
-function __WorldMapTextStyleLayerV1:getFillBlue(arg0) end
+function __WorldMapTextStyleLayerV1:getFillBlue(index) end
 
----@param arg0 integer
+---@param index integer
 ---@return integer
-function __WorldMapTextStyleLayerV1:getFillGreen(arg0) end
+function __WorldMapTextStyleLayerV1:getFillGreen(index) end
 
----@param arg0 integer
+---@param index integer
 ---@return integer
-function __WorldMapTextStyleLayerV1:getFillRed(arg0) end
+function __WorldMapTextStyleLayerV1:getFillRed(index) end
 
 ---@return integer
 function __WorldMapTextStyleLayerV1:getFillStops() end
 
----@param arg0 integer
+---@param index integer
 ---@return number
-function __WorldMapTextStyleLayerV1:getFillZoom(arg0) end
+function __WorldMapTextStyleLayerV1:getFillZoom(index) end
 
 ---@return UIFont
 function __WorldMapTextStyleLayerV1:getFont() end
@@ -39,31 +39,31 @@ function __WorldMapTextStyleLayerV1:getFont() end
 ---@return integer
 function __WorldMapTextStyleLayerV1:getLineHeight() end
 
----@param arg0 integer
----@param arg1 integer
-function __WorldMapTextStyleLayerV1:moveFill(arg0, arg1) end
+---@param indexFrom integer
+---@param indexTo integer
+function __WorldMapTextStyleLayerV1:moveFill(indexFrom, indexTo) end
 
 function __WorldMapTextStyleLayerV1:removeAllFill() end
 
----@param arg0 integer
-function __WorldMapTextStyleLayerV1:removeFill(arg0) end
+---@param index integer
+function __WorldMapTextStyleLayerV1:removeFill(index) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
-function __WorldMapTextStyleLayerV1:setFillRGBA(arg0, arg1, arg2, arg3, arg4) end
+---@param index integer
+---@param r integer
+---@param g integer
+---@param b integer
+---@param a integer
+function __WorldMapTextStyleLayerV1:setFillRGBA(index, r, g, b, a) end
 
----@param arg0 integer
----@param arg1 number
-function __WorldMapTextStyleLayerV1:setFillZoom(arg0, arg1) end
+---@param index integer
+---@param zoom number
+function __WorldMapTextStyleLayerV1:setFillZoom(index, zoom) end
 
----@param arg0 UIFont
-function __WorldMapTextStyleLayerV1:setFont(arg0) end
+---@param font UIFont
+function __WorldMapTextStyleLayerV1:setFont(font) end
 
----@param arg0 integer
-function __WorldMapTextStyleLayerV1:setLineHeight(arg0) end
+---@param lineHeight integer
+function __WorldMapTextStyleLayerV1:setLineHeight(lineHeight) end
 
 WorldMapTextStyleLayerV1 = {}
 

@@ -257,8 +257,8 @@ function __VehiclePart:setDelta(d) end
 ---@param data DeviceData
 function __VehiclePart:setDeviceData(data) end
 
----@param arg0 number
-function __VehiclePart:setDurability(arg0) end
+---@param durability number
+function __VehiclePart:setDurability(durability) end
 
 ---@param engineLoudness number
 function __VehiclePart:setEngineLoudness(engineLoudness) end

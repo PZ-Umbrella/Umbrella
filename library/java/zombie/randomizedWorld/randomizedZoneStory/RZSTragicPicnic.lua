@@ -3,8 +3,8 @@
 ---@class RZSTragicPicnic: RandomizedZoneStoryBase
 local __RZSTragicPicnic = {}
 
----@param arg0 Zone
-function __RZSTragicPicnic:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSTragicPicnic:randomizeZoneStory(zone) end
 
 RZSTragicPicnic = {}
 

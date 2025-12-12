@@ -3,65 +3,65 @@
 ---@class FluidContainer: Component
 local __FluidContainer = {}
 
----@param arg0 ObjectTooltip
-function __FluidContainer:DoTooltip(arg0) end
+---@param tooltipUI ObjectTooltip
+function __FluidContainer:DoTooltip(tooltipUI) end
 
----@param arg0 ObjectTooltip
----@param arg1 ObjectTooltip.Layout
-function __FluidContainer:DoTooltip(arg0, arg1) end
+---@param tooltipUI ObjectTooltip
+---@param layout ObjectTooltip.Layout
+function __FluidContainer:DoTooltip(tooltipUI, layout) end
 
 function __FluidContainer:Empty() end
 
----@param arg0 boolean
-function __FluidContainer:Empty(arg0) end
+---@param bRecalculate boolean
+function __FluidContainer:Empty(bRecalculate) end
 
----@param arg0 string
----@param arg1 number
-function __FluidContainer:addFluid(arg0, arg1) end
+---@param fluidType string
+---@param amount number
+function __FluidContainer:addFluid(fluidType, amount) end
 
----@param arg0 FluidType
----@param arg1 number
-function __FluidContainer:addFluid(arg0, arg1) end
+---@param fluidType FluidType
+---@param amount number
+function __FluidContainer:addFluid(fluidType, amount) end
 
----@param arg0 Fluid
----@param arg1 number
-function __FluidContainer:addFluid(arg0, arg1) end
+---@param fluid Fluid
+---@param amount number
+function __FluidContainer:addFluid(fluid, amount) end
 
----@param arg0 number
-function __FluidContainer:adjustAmount(arg0) end
+---@param newAmount number
+function __FluidContainer:adjustAmount(newAmount) end
 
----@param arg0 Fluid
----@param arg1 number
-function __FluidContainer:adjustSpecificFluidAmount(arg0, arg1) end
+---@param fluid Fluid
+---@param newAmount number
+function __FluidContainer:adjustSpecificFluidAmount(fluid, newAmount) end
 
----@param arg0 Fluid
+---@param fluid Fluid
 ---@return boolean
-function __FluidContainer:canAddFluid(arg0) end
+function __FluidContainer:canAddFluid(fluid) end
 
 ---@return boolean
 function __FluidContainer:canPlayerEmpty() end
 
----@param arg0 Fluid
+---@param fluid Fluid
 ---@return boolean
-function __FluidContainer:contains(arg0) end
+function __FluidContainer:contains(fluid) end
 
 ---@return FluidContainer
 function __FluidContainer:copy() end
 
----@param arg0 FluidContainer
-function __FluidContainer:copyFluidsFrom(arg0) end
+---@param other FluidContainer
+function __FluidContainer:copyFluidsFrom(other) end
 
 ---@return FluidSample
 function __FluidContainer:createFluidSample() end
 
----@param arg0 number
+---@param scaleAmount number
 ---@return FluidSample
-function __FluidContainer:createFluidSample(arg0) end
+function __FluidContainer:createFluidSample(scaleAmount) end
 
----@param arg0 FluidSample
----@param arg1 number
+---@param sample FluidSample
+---@param scaleAmount number
 ---@return FluidSample
-function __FluidContainer:createFluidSample(arg0, arg1) end
+function __FluidContainer:createFluidSample(sample, scaleAmount) end
 
 ---@return number
 function __FluidContainer:getAmount() end
@@ -105,13 +105,13 @@ function __FluidContainer:getProperties() end
 ---@return number
 function __FluidContainer:getRainCatcher() end
 
----@param arg0 Fluid
+---@param fluid Fluid
 ---@return number
-function __FluidContainer:getRatioForFluid(arg0) end
+function __FluidContainer:getRatioForFluid(fluid) end
 
----@param arg0 Fluid
+---@param fluid Fluid
 ---@return number
-function __FluidContainer:getSpecificFluidAmount(arg0) end
+function __FluidContainer:getSpecificFluidAmount(fluid) end
 
 ---@return string
 function __FluidContainer:getTranslatedContainerName() end
@@ -122,13 +122,13 @@ function __FluidContainer:getUiName() end
 ---@return FluidFilter
 function __FluidContainer:getWhitelist() end
 
----@param arg0 FluidCategory
+---@param category FluidCategory
 ---@return boolean
-function __FluidContainer:isAllCategory(arg0) end
+function __FluidContainer:isAllCategory(category) end
 
----@param arg0 FluidCategory
+---@param category FluidCategory
 ---@return boolean
-function __FluidContainer:isCategory(arg0) end
+function __FluidContainer:isCategory(category) end
 
 ---@return boolean
 function __FluidContainer:isEmpty() end
@@ -148,17 +148,17 @@ function __FluidContainer:isInputLocked() end
 ---@return boolean
 function __FluidContainer:isMixture() end
 
----@param arg0 Fluid
----@param arg1 IsoGameCharacter
+---@param fluid Fluid
+---@param character IsoGameCharacter
 ---@return boolean
-function __FluidContainer:isPerceivedFluidToPlayer(arg0, arg1) end
+function __FluidContainer:isPerceivedFluidToPlayer(fluid, character) end
 
 ---@return boolean
 function __FluidContainer:isPoisonous() end
 
----@param arg0 Fluid
+---@param fluid Fluid
 ---@return boolean
-function __FluidContainer:isPureFluid(arg0) end
+function __FluidContainer:isPureFluid(fluid) end
 
 ---@return boolean
 function __FluidContainer:isQualifiesForMetaStorage() end
@@ -169,67 +169,67 @@ function __FluidContainer:isTainted() end
 ---@return boolean
 function __FluidContainer:isTaintedStatusKnown() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __FluidContainer:load(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __FluidContainer:load(input, WorldVersion) end
 
 function __FluidContainer:removeFluid() end
 
----@param arg0 boolean
+---@param createFluidConsume boolean
 ---@return FluidConsume
-function __FluidContainer:removeFluid(arg0) end
+function __FluidContainer:removeFluid(createFluidConsume) end
 
----@param arg0 number
-function __FluidContainer:removeFluid(arg0) end
+---@param remove number
+function __FluidContainer:removeFluid(remove) end
 
----@param arg0 number
----@param arg1 boolean
+---@param remove number
+---@param createFluidConsume boolean
 ---@return FluidConsume
-function __FluidContainer:removeFluid(arg0, arg1) end
+function __FluidContainer:removeFluid(remove, createFluidConsume) end
 
----@param arg0 number
----@param arg1 boolean
----@param arg2 FluidConsume
+---@param remove number
+---@param createFluidConsume boolean
+---@param fluidConsume FluidConsume
 ---@return FluidConsume
-function __FluidContainer:removeFluid(arg0, arg1, arg2) end
+function __FluidContainer:removeFluid(remove, createFluidConsume, fluidConsume) end
 
----@param arg0 ByteBuffer
-function __FluidContainer:save(arg0) end
+---@param output ByteBuffer
+function __FluidContainer:save(output) end
 
----@param arg0 boolean
-function __FluidContainer:setCanPlayerEmpty(arg0) end
+---@param b boolean
+function __FluidContainer:setCanPlayerEmpty(b) end
 
----@param arg0 number
-function __FluidContainer:setCapacity(arg0) end
+---@param capacity number
+function __FluidContainer:setCapacity(capacity) end
 
----@param arg0 string
-function __FluidContainer:setContainerName(arg0) end
+---@param name string
+function __FluidContainer:setContainerName(name) end
 
----@param arg0 boolean
-function __FluidContainer:setInputLocked(arg0) end
+---@param b boolean
+function __FluidContainer:setInputLocked(b) end
 
 ---@param item InventoryItem
 function __FluidContainer:setNonSavedFieldsFromItemScript(item) end
 
----@param arg0 number
-function __FluidContainer:setRainCatcher(arg0) end
+---@param rainCatcher number
+function __FluidContainer:setRainCatcher(rainCatcher) end
 
----@param arg0 FluidFilter
-function __FluidContainer:setWhitelist(arg0) end
+---@param ff FluidFilter
+function __FluidContainer:setWhitelist(ff) end
 
----@param arg0 FluidContainer
-function __FluidContainer:transferFrom(arg0) end
+---@param other FluidContainer
+function __FluidContainer:transferFrom(other) end
 
----@param arg0 FluidContainer
----@param arg1 number
-function __FluidContainer:transferFrom(arg0, arg1) end
+---@param other FluidContainer
+---@param amount number
+function __FluidContainer:transferFrom(other, amount) end
 
----@param arg0 FluidContainer
-function __FluidContainer:transferTo(arg0) end
+---@param other FluidContainer
+function __FluidContainer:transferTo(other) end
 
----@param arg0 FluidContainer
----@param arg1 number
-function __FluidContainer:transferTo(arg0, arg1) end
+---@param other FluidContainer
+---@param amount number
+function __FluidContainer:transferTo(other, amount) end
 
 function __FluidContainer:unseal() end
 
@@ -243,42 +243,42 @@ FluidContainer.DEF_CONTAINER_NAME = nil
 ---@type integer
 FluidContainer.MAX_FLUIDS = nil
 
----@param arg0 FluidContainer
----@param arg1 FluidContainer
+---@param source FluidContainer
+---@param target FluidContainer
 ---@return boolean
-function FluidContainer.CanTransfer(arg0, arg1) end
+function FluidContainer.CanTransfer(source, target) end
 
 ---@return FluidContainer
 function FluidContainer.CreateContainer() end
 
----@param arg0 FluidContainer
-function FluidContainer.DisposeContainer(arg0) end
+---@param container FluidContainer
+function FluidContainer.DisposeContainer(container) end
 
----@param arg0 FluidContainer
----@param arg1 FluidContainer
+---@param source FluidContainer
+---@param target FluidContainer
 ---@return string
-function FluidContainer.GetTransferReason(arg0, arg1) end
+function FluidContainer.GetTransferReason(source, target) end
 
----@param arg0 FluidContainer
----@param arg1 FluidContainer
----@param arg2 boolean
+---@param source FluidContainer
+---@param target FluidContainer
+---@param testFirst boolean
 ---@return string
-function FluidContainer.GetTransferReason(arg0, arg1, arg2) end
+function FluidContainer.GetTransferReason(source, target, testFirst) end
 
----@param arg0 FluidContainer
----@param arg1 FluidContainer
-function FluidContainer.Transfer(arg0, arg1) end
+---@param source FluidContainer
+---@param target FluidContainer
+function FluidContainer.Transfer(source, target) end
 
----@param arg0 FluidContainer
----@param arg1 FluidContainer
----@param arg2 number
-function FluidContainer.Transfer(arg0, arg1, arg2) end
+---@param source FluidContainer
+---@param target FluidContainer
+---@param amount number
+function FluidContainer.Transfer(source, target, amount) end
 
----@param arg0 FluidContainer
----@param arg1 FluidContainer
----@param arg2 number
----@param arg3 boolean
-function FluidContainer.Transfer(arg0, arg1, arg2, arg3) end
+---@param source FluidContainer
+---@param target FluidContainer
+---@param amount number
+---@param keepSource boolean
+function FluidContainer.Transfer(source, target, amount, keepSource) end
 
 ---@type Class<FluidContainer>
 FluidContainer.class = nil

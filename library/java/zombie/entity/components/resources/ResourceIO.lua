@@ -17,13 +17,13 @@ ResourceIO.Input = nil
 ---@type ResourceIO
 ResourceIO.Output = nil
 
----@param arg0 integer
+---@param id integer
 ---@return ResourceIO
-function ResourceIO.fromId(arg0) end
+function ResourceIO.fromId(id) end
 
----@param arg0 string
+---@param name string
 ---@return ResourceIO
-function ResourceIO.valueOf(arg0) end
+function ResourceIO.valueOf(name) end
 
 ---@return kahlua.Array<ResourceIO>
 function ResourceIO.values() end

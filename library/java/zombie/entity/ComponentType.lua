@@ -6,9 +6,9 @@ local __ComponentType = {}
 ---@return Component
 function __ComponentType:CreateComponent() end
 
----@param arg0 ComponentScript
+---@param script ComponentScript
 ---@return Component
-function __ComponentType:CreateComponentFromScript(arg0) end
+function __ComponentType:CreateComponentFromScript(script) end
 
 ---@return ComponentScript
 function __ComponentType:CreateComponentScript() end
@@ -28,9 +28,9 @@ function __ComponentType:isRenderLast() end
 ---@return boolean
 function __ComponentType:isRunInMeta() end
 
----@param arg0 GameEntityType
+---@param type GameEntityType
 ---@return boolean
-function __ComponentType:isValidGameEntityType(arg0) end
+function __ComponentType:isValidGameEntityType(type) end
 
 ComponentType = {}
 
@@ -109,27 +109,27 @@ ComponentType.Undefined = nil
 ---@type ComponentType
 ComponentType.WallCoveringConfig = nil
 
----@param arg0 Class<Component>
+---@param clazz Class<Component>
 ---@return ComponentType
-function ComponentType.FromClass(arg0) end
+function ComponentType.FromClass(clazz) end
 
----@param arg0 integer
+---@param id integer
 ---@return ComponentType
-function ComponentType.FromId(arg0) end
+function ComponentType.FromId(id) end
 
 ---@return ArrayList<ComponentType>
 function ComponentType.GetList() end
 
----@param arg0 Component
-function ComponentType.ReleaseComponent(arg0) end
+---@param component Component
+function ComponentType.ReleaseComponent(component) end
 
----@param arg0 kahlua.Array<ComponentType>
+---@param componentTypes kahlua.Array<ComponentType>
 ---@return BitSet
-function ComponentType.getBitsFor(arg0) end
+function ComponentType.getBitsFor(componentTypes) end
 
----@param arg0 string
+---@param name string
 ---@return ComponentType
-function ComponentType.valueOf(arg0) end
+function ComponentType.valueOf(name) end
 
 ---@return kahlua.Array<ComponentType>
 function ComponentType.values() end

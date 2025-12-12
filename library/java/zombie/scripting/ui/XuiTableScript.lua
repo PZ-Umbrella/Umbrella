@@ -3,25 +3,25 @@
 ---@class XuiTableScript: XuiScript
 local __XuiTableScript = {}
 
----@param arg0 ScriptParser.Block
-function __XuiTableScript:Load(arg0) end
+---@param block ScriptParser.Block
+function __XuiTableScript:Load(block) end
 
 ---@generic T: XuiScript
 ---@param block ScriptParser.Block
 ---@param list ArrayList<T>
 function __XuiTableScript:LoadColumnsRows(block, list) end
 
----@param arg0 integer
----@param arg1 integer
+---@param column integer
+---@param row integer
 ---@return XuiScript
-function __XuiTableScript:getCell(arg0, arg1) end
+function __XuiTableScript:getCell(column, row) end
 
 ---@return XuiScript.XuiString
 function __XuiTableScript:getCellStyle() end
 
----@param arg0 integer
+---@param index integer
 ---@return XuiScript
-function __XuiTableScript:getColumn(arg0) end
+function __XuiTableScript:getColumn(index) end
 
 ---@return integer
 function __XuiTableScript:getColumnCount() end
@@ -29,9 +29,9 @@ function __XuiTableScript:getColumnCount() end
 ---@return XuiScript.XuiString
 function __XuiTableScript:getColumnStyle() end
 
----@param arg0 integer
+---@param index integer
 ---@return XuiScript
-function __XuiTableScript:getRow(arg0) end
+function __XuiTableScript:getRow(index) end
 
 ---@return integer
 function __XuiTableScript:getRowCount() end
@@ -41,11 +41,11 @@ function __XuiTableScript:getRowStyle() end
 
 XuiTableScript = {}
 
----@param arg0 string
----@param arg1 boolean
----@param arg2 XuiScriptType
+---@param xuiLayoutName string
+---@param readAltKeys boolean
+---@param type XuiScriptType
 ---@return XuiTableScript
-function XuiTableScript.new(arg0, arg1, arg2) end
+function XuiTableScript.new(xuiLayoutName, readAltKeys, type) end
 
 ---@type Class<XuiTableScript>
 XuiTableScript.class = nil

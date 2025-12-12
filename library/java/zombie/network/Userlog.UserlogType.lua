@@ -40,9 +40,9 @@ function UserlogType.FromString(str) end
 ---@return Userlog.UserlogType
 function UserlogType.fromIndex(value) end
 
----@param arg0 string
+---@param name string
 ---@return Userlog.UserlogType
-function UserlogType.valueOf(arg0) end
+function UserlogType.valueOf(name) end
 
 ---Returns an array containing the constants of this enum class, in
 ---the order they are declared.

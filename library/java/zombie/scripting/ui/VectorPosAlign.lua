@@ -3,16 +3,16 @@
 ---@class VectorPosAlign: Enum<VectorPosAlign>
 local __VectorPosAlign = {}
 
----@param arg0 XuiScript.XuiVector
+---@param v XuiScript.XuiVector
 ---@return number
-function __VectorPosAlign:getX(arg0) end
+function __VectorPosAlign:getX(v) end
 
 ---@return number
 function __VectorPosAlign:getXmod() end
 
----@param arg0 XuiScript.XuiVector
+---@param v XuiScript.XuiVector
 ---@return number
-function __VectorPosAlign:getY(arg0) end
+function __VectorPosAlign:getY(v) end
 
 ---@return number
 function __VectorPosAlign:getYmod() end
@@ -49,9 +49,9 @@ VectorPosAlign.TopMiddle = nil
 ---@type VectorPosAlign
 VectorPosAlign.TopRight = nil
 
----@param arg0 string
+---@param name string
 ---@return VectorPosAlign
-function VectorPosAlign.valueOf(arg0) end
+function VectorPosAlign.valueOf(name) end
 
 ---@return kahlua.Array<VectorPosAlign>
 function VectorPosAlign.values() end

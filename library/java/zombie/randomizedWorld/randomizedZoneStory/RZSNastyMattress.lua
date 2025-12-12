@@ -3,8 +3,8 @@
 ---@class RZSNastyMattress: RandomizedZoneStoryBase
 local __RZSNastyMattress = {}
 
----@param arg0 Zone
-function __RZSNastyMattress:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSNastyMattress:randomizeZoneStory(zone) end
 
 RZSNastyMattress = {}
 

@@ -69,8 +69,8 @@ function __ClimateFloat:setModdedValue(f) end
 ---@param inter number
 function __ClimateFloat:setOverride(targ, inter) end
 
----@param arg0 boolean
-function __ClimateFloat:setOverrideValue(arg0) end
+---@param overrideValue boolean
+function __ClimateFloat:setOverrideValue(overrideValue) end
 
 ClimateFloat = {}
 

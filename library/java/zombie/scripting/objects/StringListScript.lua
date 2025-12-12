@@ -3,19 +3,19 @@
 ---@class StringListScript: BaseScriptObject
 local __StringListScript = {}
 
----@param arg0 string
-function __StringListScript:InitLoadPP(arg0) end
+---@param name string
+function __StringListScript:InitLoadPP(name) end
 
----@param arg0 string
----@param arg1 string
-function __StringListScript:Load(arg0, arg1) end
+---@param name string
+---@param body string
+function __StringListScript:Load(name, body) end
 
 function __StringListScript:OnLoadedAfterLua() end
 
 function __StringListScript:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __StringListScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __StringListScript:OnScriptsLoaded(loadMode) end
 
 function __StringListScript:PreReload() end
 

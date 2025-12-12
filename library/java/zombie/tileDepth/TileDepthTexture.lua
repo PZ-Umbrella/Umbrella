@@ -20,10 +20,10 @@ function __TileDepthTexture:getIndex() end
 ---@return string
 function __TileDepthTexture:getName() end
 
----@param arg0 integer
----@param arg1 integer
+---@param x integer
+---@param y integer
 ---@return number
-function __TileDepthTexture:getPixel(arg0, arg1) end
+function __TileDepthTexture:getPixel(x, y) end
 
 ---@return kahlua.Array<number>
 function __TileDepthTexture:getPixels() end
@@ -40,51 +40,51 @@ function __TileDepthTexture:getTileset() end
 ---@return integer
 function __TileDepthTexture:getWidth() end
 
----@param arg0 integer
----@param arg1 integer
+---@param x integer
+---@param y integer
 ---@return integer
-function __TileDepthTexture:index(arg0, arg1) end
+function __TileDepthTexture:index(x, y) end
 
 ---@return boolean
 function __TileDepthTexture:isEmpty() end
 
 function __TileDepthTexture:reload() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 number
----@param arg5 number
-function __TileDepthTexture:replacePixels(arg0, arg1, arg2, arg3, arg4, arg5) end
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
+---@param oldPixel number
+---@param newPixel number
+function __TileDepthTexture:replacePixels(x, y, w, h, oldPixel, newPixel) end
 
 function __TileDepthTexture:save() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 number
-function __TileDepthTexture:setMinPixel(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param pixel number
+function __TileDepthTexture:setMinPixel(x, y, pixel) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 number
-function __TileDepthTexture:setPixel(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param pixel number
+function __TileDepthTexture:setPixel(x, y, pixel) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 number
-function __TileDepthTexture:setPixels(arg0, arg1, arg2, arg3, arg4) end
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
+---@param pixel number
+function __TileDepthTexture:setPixels(x, y, w, h, pixel) end
 
 function __TileDepthTexture:updateGPUTexture() end
 
 TileDepthTexture = {}
 
----@param arg0 TilesetDepthTexture
----@param arg1 integer
+---@param tileset TilesetDepthTexture
+---@param tileIndex integer
 ---@return TileDepthTexture
-function TileDepthTexture.new(arg0, arg1) end
+function TileDepthTexture.new(tileset, tileIndex) end
 
 ---@type Class<TileDepthTexture>
 TileDepthTexture.class = nil

@@ -15,8 +15,8 @@ function __CachedRecipeInfo:isCanPerform() end
 ---@return boolean
 function __CachedRecipeInfo:isValid() end
 
----@param arg0 boolean
-function __CachedRecipeInfo:overrideCanPerform(arg0) end
+---@param value boolean
+function __CachedRecipeInfo:overrideCanPerform(value) end
 
 CachedRecipeInfo = {}
 

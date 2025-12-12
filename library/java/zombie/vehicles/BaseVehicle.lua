@@ -28,22 +28,22 @@ function __BaseVehicle:Thump(thumper) end
 ---@param weapon HandWeapon
 function __BaseVehicle:WeaponHit(chr, weapon) end
 
----@param arg0 IsoAnimal
----@param arg1 IsoPlayer
-function __BaseVehicle:addAnimalFromHandsInTrailer(arg0, arg1) end
+---@param animal IsoAnimal
+---@param player IsoPlayer
+function __BaseVehicle:addAnimalFromHandsInTrailer(animal, player) end
 
----@param arg0 IsoDeadBody
----@param arg1 IsoPlayer
-function __BaseVehicle:addAnimalFromHandsInTrailer(arg0, arg1) end
+---@param body IsoDeadBody
+---@param player IsoPlayer
+function __BaseVehicle:addAnimalFromHandsInTrailer(body, player) end
 
----@param arg0 IsoDeadBody
-function __BaseVehicle:addAnimalInTrailer(arg0) end
+---@param body IsoDeadBody
+function __BaseVehicle:addAnimalInTrailer(body) end
 
----@param arg0 IsoAnimal
-function __BaseVehicle:addAnimalInTrailer(arg0) end
+---@param animal IsoAnimal
+function __BaseVehicle:addAnimalInTrailer(animal) end
 
----@param arg0 IsoGridSquare
-function __BaseVehicle:addBuildingKeyToGloveBox(arg0) end
+---@param square IsoGridSquare
+function __BaseVehicle:addBuildingKeyToGloveBox(square) end
 
 ---When hitting a character (zombie or player) damage aren't the same as hitting a wall.
 --- damaged will be mainly focus on windshield/hood, not on doors/windows like when hitting a wall.
@@ -65,26 +65,26 @@ function __BaseVehicle:addKeyToGloveBox() end
 ---@return boolean
 function __BaseVehicle:addKeyToSquare(sq) end
 
----@param arg0 IsoGridSquare
----@param arg1 boolean
+---@param sq IsoGridSquare
+---@param crashed boolean
 ---@return boolean
-function __BaseVehicle:addKeyToSquare(arg0, arg1) end
+function __BaseVehicle:addKeyToSquare(sq, crashed) end
 
----@param arg0 IsoGridSquare
----@param arg1 integer
+---@param sq IsoGridSquare
+---@param x2 integer
 ---@return boolean
-function __BaseVehicle:addKeyToSquare2(arg0, arg1) end
+function __BaseVehicle:addKeyToSquare2(sq, x2) end
 
----@param arg0 IsoGridSquare
----@param arg1 integer
----@param arg2 boolean
+---@param sq IsoGridSquare
+---@param x2 integer
+---@param crashed boolean
 ---@return boolean
-function __BaseVehicle:addKeyToSquare2(arg0, arg1, arg2) end
+function __BaseVehicle:addKeyToSquare2(sq, x2, crashed) end
 
 function __BaseVehicle:addKeyToWorld() end
 
----@param arg0 boolean
-function __BaseVehicle:addKeyToWorld(arg0) end
+---@param crashed boolean
+function __BaseVehicle:addKeyToWorld(crashed) end
 
 ---@param player IsoPlayer
 ---@param vehicleB BaseVehicle
@@ -105,8 +105,8 @@ function __BaseVehicle:addRandomDamageFromCrash(chr, damage) end
 
 function __BaseVehicle:addToWorld() end
 
----@param arg0 boolean
-function __BaseVehicle:addToWorld(arg0) end
+---@param crashed boolean
+function __BaseVehicle:addToWorld(crashed) end
 
 function __BaseVehicle:applyImpulseFromHitZombies() end
 
@@ -172,13 +172,13 @@ function __BaseVehicle:calculateDamageWithCharacter(chr) end
 ---@return boolean
 function __BaseVehicle:canAccessContainer(partIndex, chr) end
 
----@param arg0 IsoAnimal
+---@param animal IsoAnimal
 ---@return boolean
-function __BaseVehicle:canAddAnimalInTrailer(arg0) end
+function __BaseVehicle:canAddAnimalInTrailer(animal) end
 
----@param arg0 IsoDeadBody
+---@param animal IsoDeadBody
 ---@return boolean
-function __BaseVehicle:canAddAnimalInTrailer(arg0) end
+function __BaseVehicle:canAddAnimalInTrailer(animal) end
 
 ---@param vehicleB BaseVehicle
 ---@param attachmentA string
@@ -198,19 +198,19 @@ function __BaseVehicle:canAttachTrailer(vehicleB, attachmentA, attachmentB, reco
 ---@return boolean
 function __BaseVehicle:canInstallPart(chr, part) end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return boolean
-function __BaseVehicle:canLightSmoke(arg0) end
+function __BaseVehicle:canLightSmoke(chr) end
 
 ---@param part VehiclePart
 ---@param chr IsoGameCharacter
 ---@return boolean
 function __BaseVehicle:canLockDoor(part, chr) end
 
----@param arg0 VehiclePart
----@param arg1 IsoGameCharacter
+---@param part VehiclePart
+---@param chr IsoGameCharacter
 ---@return boolean
-function __BaseVehicle:canOpenDoor(arg0, arg1) end
+function __BaseVehicle:canOpenDoor(part, chr) end
 
 ---@param seatFrom integer
 ---@param seatTo integer
@@ -239,48 +239,48 @@ function __BaseVehicle:cheatHotwire(hotwired, broken) end
 ---@return BaseVehicle.HitVars
 function __BaseVehicle:checkCollision(target) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
+---@param one string
+---@param two string
+---@param three string
 ---@return boolean
-function __BaseVehicle:checkForSpecialMatchOne(arg0, arg1, arg2) end
+function __BaseVehicle:checkForSpecialMatchOne(one, two, three) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
+---@param one string
+---@param two string
+---@param three string
 ---@return boolean
-function __BaseVehicle:checkForSpecialMatchTwo(arg0, arg1, arg2) end
+function __BaseVehicle:checkForSpecialMatchTwo(one, two, three) end
 
 ---@return boolean
 function __BaseVehicle:checkIfGoodVehicleForKey() end
 
 function __BaseVehicle:checkPhysicsValidWithServer() end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return boolean
-function __BaseVehicle:checkSquareForVehicleKeySpot(arg0) end
+function __BaseVehicle:checkSquareForVehicleKeySpot(square) end
 
----@param arg0 IsoGridSquare
----@param arg1 boolean
+---@param square IsoGridSquare
+---@param crashed boolean
 ---@return boolean
-function __BaseVehicle:checkSquareForVehicleKeySpot(arg0, arg1) end
+function __BaseVehicle:checkSquareForVehicleKeySpot(square, crashed) end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return boolean
-function __BaseVehicle:checkSquareForVehicleKeySpotContainer(arg0) end
+function __BaseVehicle:checkSquareForVehicleKeySpotContainer(square) end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return boolean
-function __BaseVehicle:checkSquareForVehicleKeySpotZombie(arg0) end
+function __BaseVehicle:checkSquareForVehicleKeySpotZombie(square) end
 
----@param arg0 IsoZombie
+---@param zombie IsoZombie
 ---@return boolean
-function __BaseVehicle:checkZombieKeyForVehicle(arg0) end
+function __BaseVehicle:checkZombieKeyForVehicle(zombie) end
 
----@param arg0 IsoZombie
----@param arg1 string
+---@param zombie IsoZombie
+---@param vehicleType string
 ---@return boolean
-function __BaseVehicle:checkZombieKeyForVehicle(arg0, arg1) end
+function __BaseVehicle:checkZombieKeyForVehicle(zombie, vehicleType) end
 
 function __BaseVehicle:chooseAlarmSound() end
 
@@ -311,13 +311,13 @@ function __BaseVehicle:couldCrawlerAttackPassenger(chr) end
 ---@param front boolean
 function __BaseVehicle:crash(delta, front) end
 
----@param arg0 Vector3f
-function __BaseVehicle:createImpulse(arg0) end
+---@param vec Vector3f
+function __BaseVehicle:createImpulse(vec) end
 
 function __BaseVehicle:createPhysics() end
 
----@param arg0 boolean
-function __BaseVehicle:createPhysics(arg0) end
+---@param spawnSwap boolean
+function __BaseVehicle:createPhysics(spawnSwap) end
 
 ---@return InventoryItem
 function __BaseVehicle:createVehicleKey() end
@@ -328,10 +328,10 @@ function __BaseVehicle:damageObjects(damage) end
 ---@param damage number
 function __BaseVehicle:damagePlayers(damage) end
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return number
-function __BaseVehicle:distanceToManhatten(arg0, arg1) end
+function __BaseVehicle:distanceToManhatten(x, y) end
 
 function __BaseVehicle:doBloodOverlay() end
 
@@ -357,8 +357,8 @@ function __BaseVehicle:engineDoRunning() end
 
 function __BaseVehicle:engineDoShuttingDown() end
 
----@param arg0 string
-function __BaseVehicle:engineDoShuttingDown(arg0) end
+---@param sound string
+function __BaseVehicle:engineDoShuttingDown(sound) end
 
 function __BaseVehicle:engineDoStalling() end
 
@@ -366,8 +366,8 @@ function __BaseVehicle:engineDoStarting() end
 
 function __BaseVehicle:engineDoStartingFailed() end
 
----@param arg0 string
-function __BaseVehicle:engineDoStartingFailed(arg0) end
+---@param sound string
+function __BaseVehicle:engineDoStartingFailed(sound) end
 
 function __BaseVehicle:engineDoStartingFailedNoPower() end
 
@@ -404,15 +404,15 @@ function __BaseVehicle:fixLightbarModelLighting(ls, lightPos) end
 
 function __BaseVehicle:flipUpright() end
 
----@param arg0 string
-function __BaseVehicle:forceVehicleDistribution(arg0) end
+---@param distribution string
+function __BaseVehicle:forceVehicleDistribution(distribution) end
 
 ---@return ArrayList<VehiclePart>
 function __BaseVehicle:getAllSeatParts() end
 
----@param arg0 ArrayList<VehiclePart>
+---@param results ArrayList<VehiclePart>
 ---@return ArrayList<VehiclePart>
-function __BaseVehicle:getAllSeatParts(arg0) end
+function __BaseVehicle:getAllSeatParts(results) end
 
 ---@return number
 function __BaseVehicle:getAngleX() end
@@ -441,22 +441,22 @@ function __BaseVehicle:getAreaCenter(areaId) end
 ---@return Vector2
 function __BaseVehicle:getAreaCenter(areaId, out) end
 
----@param arg0 string
----@param arg1 number
----@param arg2 number
----@param arg3 number
+---@param areaId string
+---@param x number
+---@param y number
+---@param z number
 ---@return number
-function __BaseVehicle:getAreaDist(arg0, arg1, arg2, arg3) end
+function __BaseVehicle:getAreaDist(areaId, x, y, z) end
 
 ---@param areaId string
 ---@param chr IsoGameCharacter
 ---@return number
 function __BaseVehicle:getAreaDist(areaId, chr) end
 
----@param arg0 string
----@param arg1 Vector2
+---@param areaId string
+---@param out Vector2
 ---@return Vector2
-function __BaseVehicle:getAreaFacingPosition(arg0, arg1) end
+function __BaseVehicle:getAreaFacingPosition(areaId, out) end
 
 ---@param attachmentName string
 ---@param v Vector3f
@@ -504,23 +504,23 @@ function __BaseVehicle:getChoosenParts() end
 ---@return number
 function __BaseVehicle:getClientForce() end
 
----@param arg0 number
----@param arg1 number
----@param arg2 Vector2f
+---@param x number
+---@param y number
+---@param closest Vector2f
 ---@return number
-function __BaseVehicle:getClosestPointOnExtents(arg0, arg1, arg2) end
+function __BaseVehicle:getClosestPointOnExtents(x, y, closest) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 Vector2f
+---@param x number
+---@param y number
+---@param closest Vector2f
 ---@return number
-function __BaseVehicle:getClosestPointOnPoly(arg0, arg1, arg2) end
+function __BaseVehicle:getClosestPointOnPoly(x, y, closest) end
 
----@param arg0 BaseVehicle
----@param arg1 Vector2f
----@param arg2 Vector2f
+---@param other BaseVehicle
+---@param pointSelf Vector2f
+---@param pointOther Vector2f
 ---@return number
-function __BaseVehicle:getClosestPointOnPoly(arg0, arg1, arg2) end
+function __BaseVehicle:getClosestPointOnPoly(other, pointSelf, pointOther) end
 
 ---@param chr IsoGameCharacter
 ---@return VehiclePart
@@ -583,19 +583,19 @@ function __BaseVehicle:getEngineQuality() end
 ---@return number
 function __BaseVehicle:getEngineSpeed() end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 number
+---@param seat integer
+---@param x number
+---@param y number
 ---@return number
-function __BaseVehicle:getEnterSeatDistance(arg0, arg1, arg2) end
+function __BaseVehicle:getEnterSeatDistance(seat, x, y) end
 
 ---@return FMODParameterList
 function __BaseVehicle:getFMODParameters() end
 
----@param arg0 IsoGameCharacter
----@param arg1 Vector2
+---@param chr IsoGameCharacter
+---@param out Vector2
 ---@return Vector2
-function __BaseVehicle:getFacingPosition(arg0, arg1) end
+function __BaseVehicle:getFacingPosition(chr, out) end
 
 ---@return string
 function __BaseVehicle:getFirstZombieType() end
@@ -691,12 +691,12 @@ function __BaseVehicle:getMinMaxPosition() end
 ---@return VehiclePart
 function __BaseVehicle:getNearestBodyworkPart(chr) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 boolean
+---@param x number
+---@param y number
+---@param z number
+---@param useDestroyed boolean
 ---@return VehiclePart
-function __BaseVehicle:getNearestVehiclePart(arg0, arg1, arg2, arg3) end
+function __BaseVehicle:getNearestVehiclePart(x, y, z, useDestroyed) end
 
 ---@return integer
 function __BaseVehicle:getNetPlayerId() end
@@ -721,9 +721,9 @@ function __BaseVehicle:getPartById(id) end
 ---@return VehiclePart
 function __BaseVehicle:getPartByIndex(index) end
 
----@param arg0 VehiclePart
+---@param id VehiclePart
 ---@return VehiclePart
-function __BaseVehicle:getPartByPartId(arg0) end
+function __BaseVehicle:getPartByPartId(id) end
 
 ---@return integer
 function __BaseVehicle:getPartCount() end
@@ -732,9 +732,9 @@ function __BaseVehicle:getPartCount() end
 ---@return VehiclePart
 function __BaseVehicle:getPartForSeatContainer(seat) end
 
----@param arg0 string
+---@param id string
 ---@return integer
-function __BaseVehicle:getPartIndex(arg0) end
+function __BaseVehicle:getPartIndex(id) end
 
 ---@param seat integer
 ---@return BaseVehicle.Passenger
@@ -860,9 +860,9 @@ function __BaseVehicle:getSqlId() end
 ---@return IsoGridSquare
 function __BaseVehicle:getSquare() end
 
----@param arg0 string
+---@param areaId string
 ---@return IsoGridSquare
-function __BaseVehicle:getSquareForArea(arg0) end
+function __BaseVehicle:getSquareForArea(areaId) end
 
 ---@return boolean
 function __BaseVehicle:getStoplightsOn() end
@@ -1052,9 +1052,9 @@ function __BaseVehicle:hasPassenger() end
 ---@return boolean
 function __BaseVehicle:hasRoof(seat) end
 
----@param arg0 string
+---@param outfit string
 ---@return boolean
-function __BaseVehicle:hasZombieType(arg0) end
+function __BaseVehicle:hasZombieType(outfit) end
 
 ---Check if one of the seat door is unlocked
 ---@return boolean
@@ -1063,29 +1063,29 @@ function __BaseVehicle:haveOneDoorUnlocked() end
 ---@param chr IsoZombie
 function __BaseVehicle:hitCharacter(chr) end
 
----@param arg0 IsoAnimal
-function __BaseVehicle:hitCharacter(arg0) end
+---@param chr IsoAnimal
+function __BaseVehicle:hitCharacter(chr) end
 
 ---@param character IsoGameCharacter
 ---@param vars BaseVehicle.HitVars
 function __BaseVehicle:hitCharacter(character, vars) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 Vector2f
+---@param x1 number
+---@param y1 number
+---@param x2 number
+---@param y2 number
+---@param adjust number
+---@param intersection Vector2f
 ---@return boolean
-function __BaseVehicle:intersectLineWithExtents(arg0, arg1, arg2, arg3, arg4, arg5) end
+function __BaseVehicle:intersectLineWithExtents(x1, y1, x2, y2, adjust, intersection) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 Vector2f
+---@param x1 number
+---@param y1 number
+---@param x2 number
+---@param y2 number
+---@param intersection Vector2f
 ---@return boolean
-function __BaseVehicle:intersectLineWithPoly(arg0, arg1, arg2, arg3, arg4) end
+function __BaseVehicle:intersectLineWithPoly(x1, y1, x2, y2, intersection) end
 
 ---@return boolean
 function __BaseVehicle:isAlarmed() end
@@ -1181,10 +1181,10 @@ function __BaseVehicle:isHotwiredBroken() end
 ---@return boolean
 function __BaseVehicle:isInArea(areaId, chr) end
 
----@param arg0 string
----@param arg1 Vector3f
+---@param areaId string
+---@param chr Vector3f
 ---@return boolean
-function __BaseVehicle:isInArea(arg0, arg1) end
+function __BaseVehicle:isInArea(areaId, chr) end
 
 ---@param worldX number
 ---@param worldY number
@@ -1203,9 +1203,9 @@ function __BaseVehicle:isInTrafficJam() end
 ---@return boolean
 function __BaseVehicle:isIntersectingSquare(x, y, z) end
 
----@param arg0 IsoGridSquare
+---@param sq IsoGridSquare
 ---@return boolean
-function __BaseVehicle:isIntersectingSquare(arg0) end
+function __BaseVehicle:isIntersectingSquare(sq) end
 
 ---@param x integer
 ---@param y integer
@@ -1263,10 +1263,10 @@ function __BaseVehicle:isOperational() end
 ---@return boolean
 function __BaseVehicle:isPassengerUseDoor2(chr, seat) end
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return boolean
-function __BaseVehicle:isPointLeftOfCenter(arg0, arg1) end
+function __BaseVehicle:isPointLeftOfCenter(x, y) end
 
 ---@param x number
 ---@param y number
@@ -1285,13 +1285,13 @@ function __BaseVehicle:isRegulator() end
 ---@return boolean
 function __BaseVehicle:isRemovedFromWorld() end
 
----@param arg0 integer
+---@param seat integer
 ---@return boolean
-function __BaseVehicle:isSeatHoldingItems(arg0) end
+function __BaseVehicle:isSeatHoldingItems(seat) end
 
----@param arg0 VehiclePart
+---@param seat VehiclePart
 ---@return boolean
-function __BaseVehicle:isSeatHoldingItems(arg0) end
+function __BaseVehicle:isSeatHoldingItems(seat) end
 
 ---@param seat integer
 ---@return boolean
@@ -1316,8 +1316,8 @@ function __BaseVehicle:isStopped() end
 ---@return boolean
 function __BaseVehicle:isTrunkLocked() end
 
----@param arg0 InventoryItem
-function __BaseVehicle:keyNamerVehicle(arg0) end
+---@param item InventoryItem
+function __BaseVehicle:keyNamerVehicle(item) end
 
 ---@return boolean
 function __BaseVehicle:leftSideFuel() end
@@ -1404,15 +1404,15 @@ function __BaseVehicle:positionTrailer(trailer) end
 
 function __BaseVehicle:postupdate() end
 
----@param arg0 IsoGameCharacter
----@param arg1 HandWeapon
----@param arg2 number
+---@param isoGameCharacter IsoGameCharacter
+---@param weapon HandWeapon
+---@param damage number
 ---@return boolean
-function __BaseVehicle:processHit(arg0, arg1, arg2) end
+function __BaseVehicle:processHit(isoGameCharacter, weapon, damage) end
 
----@param arg0 InventoryItem
----@param arg1 integer
-function __BaseVehicle:putKeyInIgnition(arg0, arg1) end
+---@param key InventoryItem
+---@param containerID integer
+function __BaseVehicle:putKeyInIgnition(key, containerID) end
 
 ---@param key InventoryItem
 function __BaseVehicle:putKeyOnDoor(key) end
@@ -1422,10 +1422,10 @@ function __BaseVehicle:putKeyOnDoor(key) end
 ---@param obj IsoObject
 function __BaseVehicle:putKeyToContainer(container, sq, obj) end
 
----@param arg0 InventoryItem
----@param arg1 IsoGridSquare
----@param arg2 IsoObject
-function __BaseVehicle:putKeyToContainerServer(arg0, arg1, arg2) end
+---@param item InventoryItem
+---@param sq IsoGridSquare
+---@param obj IsoObject
+function __BaseVehicle:putKeyToContainerServer(item, sq, obj) end
 
 ---@param sq IsoGridSquare
 function __BaseVehicle:putKeyToWorld(sq) end
@@ -1435,9 +1435,9 @@ function __BaseVehicle:putKeyToZombie(zombie) end
 
 function __BaseVehicle:releaseAnimationPlayers() end
 
----@param arg0 IsoAnimal
+---@param animal IsoAnimal
 ---@return IsoObject
-function __BaseVehicle:removeAnimalFromTrailer(arg0) end
+function __BaseVehicle:removeAnimalFromTrailer(animal) end
 
 function __BaseVehicle:removeFromWorld() end
 
@@ -1460,9 +1460,9 @@ function __BaseVehicle:renderlast() end
 
 function __BaseVehicle:repair() end
 
----@param arg0 IsoAnimal
----@param arg1 IsoAnimal
-function __BaseVehicle:replaceGrownAnimalInTrailer(arg0, arg1) end
+---@param current IsoAnimal
+---@param grown IsoAnimal
+function __BaseVehicle:replaceGrownAnimalInTrailer(current, grown) end
 
 function __BaseVehicle:resumeRunningAfterLoad() end
 
@@ -1480,8 +1480,8 @@ function __BaseVehicle:saveChange(change, tbl, bb) end
 
 function __BaseVehicle:scriptReloaded() end
 
----@param arg0 boolean
-function __BaseVehicle:scriptReloaded(arg0) end
+---@param spawnSwap boolean
+function __BaseVehicle:scriptReloaded(spawnSwap) end
 
 ---Used in mechanics UI, we enable the vehicle in Bullet when starting mechanics so physic will be updated. When
 --- we close the UI, we should
@@ -1523,8 +1523,8 @@ function __BaseVehicle:setCharacterPosition(chr, seat, positionId) end
 ---@param animId string
 function __BaseVehicle:setCharacterPositionToAnim(chr, seat, animId) end
 
----@param arg0 string
-function __BaseVehicle:setChosenAlarmSound(arg0) end
+---@param soundName string
+function __BaseVehicle:setChosenAlarmSound(soundName) end
 
 ---@param force number
 function __BaseVehicle:setClientForce(force) end
@@ -1545,11 +1545,11 @@ function __BaseVehicle:setCurrentKey(currentKey) end
 ---@param currentSteering number
 function __BaseVehicle:setCurrentSteering(currentSteering) end
 
----@param arg0 number
-function __BaseVehicle:setCurrentTotalAnimalSize(arg0) end
+---@param totalAnimalSize number
+function __BaseVehicle:setCurrentTotalAnimalSize(totalAnimalSize) end
 
----@param arg0 boolean
-function __BaseVehicle:setDebugPhysicsRender(arg0) end
+---@param addedToWorld boolean
+function __BaseVehicle:setDebugPhysicsRender(addedToWorld) end
 
 ---@param z number
 function __BaseVehicle:setDebugZ(z) end
@@ -1607,11 +1607,11 @@ function __BaseVehicle:setMechanicUIOpen(mechanicUIOpen) end
 ---@param mechanicalID integer
 function __BaseVehicle:setMechanicalID(mechanicalID) end
 
----@param arg0 VehiclePart
----@param arg1 VehicleScript.Model
----@param arg2 boolean
+---@param part VehiclePart
+---@param scriptModel VehicleScript.Model
+---@param visible boolean
 ---@return BaseVehicle.ModelInfo
-function __BaseVehicle:setModelVisible(arg0, arg1, arg2) end
+function __BaseVehicle:setModelVisible(part, scriptModel, visible) end
 
 ---@param needPartsUpdate boolean
 function __BaseVehicle:setNeedPartsUpdate(needPartsUpdate) end
@@ -1629,11 +1629,11 @@ function __BaseVehicle:setPassenger(seat, chr, offset) end
 ---@param active boolean
 function __BaseVehicle:setPhysicsActive(active) end
 
----@param arg0 boolean
-function __BaseVehicle:setPreviouslyEntered(arg0) end
+---@param bool boolean
+function __BaseVehicle:setPreviouslyEntered(bool) end
 
----@param arg0 boolean
-function __BaseVehicle:setPreviouslyMoved(arg0) end
+---@param bool boolean
+function __BaseVehicle:setPreviouslyMoved(bool) end
 
 ---@param regulator boolean
 function __BaseVehicle:setRegulator(regulator) end
@@ -1725,8 +1725,8 @@ function __BaseVehicle:showPassenger(chr) end
 
 function __BaseVehicle:shutOff() end
 
----@param arg0 string
-function __BaseVehicle:shutOff(arg0) end
+---@param sound string
+function __BaseVehicle:shutOff(sound) end
 
 ---@return boolean
 function __BaseVehicle:sirenShutoffTimeExpired() end
@@ -1789,10 +1789,10 @@ function __BaseVehicle:testCollisionWithProneCharacter(chr, angleX, angleY, doSo
 ---@return boolean
 function __BaseVehicle:testCollisionWithVehicle(obj) end
 
----@param arg0 IsoGameCharacter
----@param arg1 RagdollController
+---@param isoGameCharacter IsoGameCharacter
+---@param ragdollController RagdollController
 ---@return boolean
-function __BaseVehicle:testTouchingVehicle(arg0, arg1) end
+function __BaseVehicle:testTouchingVehicle(isoGameCharacter, ragdollController) end
 
 ---@param part VehiclePart
 ---@param chr IsoGameCharacter
@@ -1840,16 +1840,16 @@ function __BaseVehicle:tryHotwire(electricityLevel) end
 
 function __BaseVehicle:trySpawnKey() end
 
----@param arg0 boolean
-function __BaseVehicle:trySpawnKey(arg0) end
+---@param crashed boolean
+function __BaseVehicle:trySpawnKey(crashed) end
 
----@param arg0 IsoObject
+---@param obj IsoObject
 ---@return boolean
-function __BaseVehicle:trySpawnVehicleKeyInObject(arg0) end
+function __BaseVehicle:trySpawnVehicleKeyInObject(obj) end
 
----@param arg0 IsoZombie
+---@param zombie IsoZombie
 ---@return boolean
-function __BaseVehicle:trySpawnVehicleKeyOnZombie(arg0) end
+function __BaseVehicle:trySpawnVehicleKeyOnZombie(zombie) end
 
 ---@param haveKey boolean
 function __BaseVehicle:tryStartEngine(haveKey) end
@@ -2080,33 +2080,33 @@ function BaseVehicle.allocVector4f() end
 ---@return number
 function BaseVehicle.getFakeSpeedModifier() end
 
----@param arg0 InventoryItem
----@param arg1 BaseVehicle
-function BaseVehicle.keyNamerVehicle(arg0, arg1) end
+---@param item InventoryItem
+---@param vehicle BaseVehicle
+function BaseVehicle.keyNamerVehicle(item, vehicle) end
 
----@param arg0 Matrix4f
-function BaseVehicle.releaseMatrix4f(arg0) end
+---@param v Matrix4f
+function BaseVehicle.releaseMatrix4f(v) end
 
----@param arg0 Quaternionf
-function BaseVehicle.releaseQuaternionf(arg0) end
+---@param q Quaternionf
+function BaseVehicle.releaseQuaternionf(q) end
 
----@param arg0 Transform
-function BaseVehicle.releaseTransform(arg0) end
+---@param t Transform
+function BaseVehicle.releaseTransform(t) end
 
 ---@param v Vector2
 function BaseVehicle.releaseVector2(v) end
 
----@param arg0 Vector2f
-function BaseVehicle.releaseVector2f(arg0) end
+---@param vector2f Vector2f
+function BaseVehicle.releaseVector2f(vector2f) end
 
----@param arg0 Vector3
-function BaseVehicle.releaseVector3(arg0) end
+---@param v Vector3
+function BaseVehicle.releaseVector3(v) end
 
 ---@param vector3f Vector3f
 function BaseVehicle.releaseVector3f(vector3f) end
 
----@param arg0 Vector4f
-function BaseVehicle.releaseVector4f(arg0) end
+---@param vector4f Vector4f
+function BaseVehicle.releaseVector4f(vector4f) end
 
 ---@param cell IsoCell
 ---@return BaseVehicle

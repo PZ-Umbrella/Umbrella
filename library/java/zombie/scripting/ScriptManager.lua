@@ -16,46 +16,46 @@ function __ScriptManager:FindItem(name, moduleDefaultsToBase) end
 
 function __ScriptManager:Load() end
 
----@param arg0 ScriptLoadMode
----@param arg1 string
----@param arg2 boolean
-function __ScriptManager:LoadFile(arg0, arg1, arg2) end
+---@param loadMode ScriptLoadMode
+---@param filename string
+---@param bLoadJar boolean
+function __ScriptManager:LoadFile(loadMode, filename, bLoadJar) end
 
 function __ScriptManager:LoadedAfterLua() end
 
----@param arg0 ScriptLoadMode
----@param arg1 string
-function __ScriptManager:ParseScript(arg0, arg1) end
+---@param loadMode ScriptLoadMode
+---@param totalFile string
+function __ScriptManager:ParseScript(loadMode, totalFile) end
 
 function __ScriptManager:PostTileDefinitions() end
 
 function __ScriptManager:PostWorldDictionaryInit() end
 
----@param arg0 ScriptType
-function __ScriptManager:ReloadScripts(arg0) end
+---@param type ScriptType
+function __ScriptManager:ReloadScripts(type) end
 
----@param arg0 EnumSet<ScriptType>
-function __ScriptManager:ReloadScripts(arg0) end
+---@param types EnumSet<ScriptType>
+function __ScriptManager:ReloadScripts(types) end
 
 function __ScriptManager:Reset() end
 
 function __ScriptManager:VerifyAllCraftRecipesAreLearnable() end
 
----@param arg0 ModelScript
-function __ScriptManager:addModelScript(arg0) end
+---@param modelScript ModelScript
+function __ScriptManager:addModelScript(modelScript) end
 
----@param arg0 SpriteModel
-function __ScriptManager:addSpriteModel(arg0) end
+---@param spriteModel SpriteModel
+function __ScriptManager:addSpriteModel(spriteModel) end
 
----@param arg0 IsoGameCharacter
-function __ScriptManager:checkAutoLearn(arg0) end
+---@param chr IsoGameCharacter
+function __ScriptManager:checkAutoLearn(chr) end
 
----@param arg0 IsoGameCharacter
----@param arg1 string
-function __ScriptManager:checkMetaRecipe(arg0, arg1) end
+---@param chr IsoGameCharacter
+---@param checkRecipe string
+function __ScriptManager:checkMetaRecipe(chr, checkRecipe) end
 
----@param arg0 IsoGameCharacter
-function __ScriptManager:checkMetaRecipes(arg0) end
+---@param chr IsoGameCharacter
+function __ScriptManager:checkMetaRecipes(chr) end
 
 ---@return ArrayList<AnimationsMesh>
 function __ScriptManager:getAllAnimationsMeshes() end
@@ -78,9 +78,9 @@ function __ScriptManager:getAllEvolvedRecipes() end
 ---@return ArrayList<EvolvedRecipe>
 function __ScriptManager:getAllEvolvedRecipesList() end
 
----@param arg0 ArrayList<Fixing>
+---@param result ArrayList<Fixing>
 ---@return ArrayList<Fixing>
-function __ScriptManager:getAllFixing(arg0) end
+function __ScriptManager:getAllFixing(result) end
 
 ---@return ArrayList<FluidDefinitionScript>
 function __ScriptManager:getAllFluidDefinitionScripts() end
@@ -171,9 +171,9 @@ function __ScriptManager:getAllXuiStyles() end
 ---@return AnimationsMesh
 function __ScriptManager:getAnimationsMesh(name) end
 
----@param arg0 string
+---@param recipe string
 ---@return CraftRecipe
-function __ScriptManager:getBuildableRecipe(arg0) end
+function __ScriptManager:getBuildableRecipe(recipe) end
 
 ---@param name string
 ---@return CharacterProfessionDefinitionScript
@@ -186,57 +186,57 @@ function __ScriptManager:getCharacterTraitScript(name) end
 ---@return string
 function __ScriptManager:getChecksum() end
 
----@param arg0 string
+---@param name string
 ---@return ClockScript
-function __ScriptManager:getClockScript(arg0) end
+function __ScriptManager:getClockScript(name) end
 
----@param arg0 string
+---@param name string
 ---@return CraftRecipe
-function __ScriptManager:getCraftRecipe(arg0) end
+function __ScriptManager:getCraftRecipe(name) end
 
----@param arg0 string
+---@param name string
 ---@return EnergyDefinitionScript
-function __ScriptManager:getEnergyDefinitionScript(arg0) end
+function __ScriptManager:getEnergyDefinitionScript(name) end
 
----@param arg0 string
+---@param name string
 ---@return EvolvedRecipe
-function __ScriptManager:getEvolvedRecipe(arg0) end
+function __ScriptManager:getEvolvedRecipe(name) end
 
----@param arg0 string
+---@param name string
 ---@return Fixing
-function __ScriptManager:getFixing(arg0) end
+function __ScriptManager:getFixing(name) end
 
----@param arg0 string
+---@param name string
 ---@return FluidDefinitionScript
-function __ScriptManager:getFluidDefinitionScript(arg0) end
+function __ScriptManager:getFluidDefinitionScript(name) end
 
----@param arg0 string
+---@param name string
 ---@return FluidFilterScript
-function __ScriptManager:getFluidFilter(arg0) end
+function __ScriptManager:getFluidFilter(name) end
 
----@param arg0 string
+---@param name string
 ---@return GameEntityScript
-function __ScriptManager:getGameEntityScript(arg0) end
+function __ScriptManager:getGameEntityScript(name) end
 
----@param arg0 string
+---@param name string
 ---@return GameEntityTemplate
-function __ScriptManager:getGameEntityTemplate(arg0) end
+function __ScriptManager:getGameEntityTemplate(name) end
 
----@param arg0 string
+---@param name string
 ---@return GameSoundScript
-function __ScriptManager:getGameSound(arg0) end
+function __ScriptManager:getGameSound(name) end
 
 ---@param name string
 ---@return Item
 function __ScriptManager:getItem(name) end
 
----@param arg0 string
+---@param name string
 ---@return ItemConfig
-function __ScriptManager:getItemConfig(arg0) end
+function __ScriptManager:getItemConfig(name) end
 
----@param arg0 string
+---@param name string
 ---@return ItemFilterScript
-function __ScriptManager:getItemFilter(arg0) end
+function __ScriptManager:getItemFilter(name) end
 
 ---@param clothingName string
 ---@return Item
@@ -275,17 +275,17 @@ function __ScriptManager:getModule(name, defaultToBase) end
 ---@return ScriptModule
 function __ScriptManager:getModuleNoDisableCheck(name) end
 
----@param arg0 string
+---@param name string
 ---@return PhysicsHitReactionScript
-function __ScriptManager:getPhysicsHitReactionScript(arg0) end
+function __ScriptManager:getPhysicsHitReactionScript(name) end
 
----@param arg0 string
+---@param name string
 ---@return PhysicsShapeScript
-function __ScriptManager:getPhysicsShape(arg0) end
+function __ScriptManager:getPhysicsShape(name) end
 
----@param arg0 string
+---@param name string
 ---@return RagdollScript
-function __ScriptManager:getRagdollScript(arg0) end
+function __ScriptManager:getRagdollScript(name) end
 
 ---@return VehicleScript
 function __ScriptManager:getRandomVehicleScript() end
@@ -294,42 +294,42 @@ function __ScriptManager:getRandomVehicleScript() end
 ---@return Recipe
 function __ScriptManager:getRecipe(name) end
 
----@param arg0 string
+---@param name string
 ---@return RuntimeAnimationScript
-function __ScriptManager:getRuntimeAnimationScript(arg0) end
+function __ScriptManager:getRuntimeAnimationScript(name) end
 
----@param arg0 ScriptType
+---@param type ScriptType
 ---@return ArrayList<any>
-function __ScriptManager:getScriptsForType(arg0) end
+function __ScriptManager:getScriptsForType(type) end
 
 ---@param eventName string
 ---@return SoundTimelineScript
 function __ScriptManager:getSoundTimeline(eventName) end
 
----@param arg0 string
+---@param name string
 ---@return GameEntityScript
-function __ScriptManager:getSpecificEntity(arg0) end
+function __ScriptManager:getSpecificEntity(name) end
 
 ---Attempts to get the specific item of "module.type" without defaulting to module "Base".
 ---@param name string
 ---@return Item
 function __ScriptManager:getSpecificItem(name) end
 
----@param arg0 string
+---@param name string
 ---@return SpriteModel
-function __ScriptManager:getSpriteModel(arg0) end
+function __ScriptManager:getSpriteModel(name) end
 
----@param arg0 string
+---@param name string
 ---@return StringListScript
-function __ScriptManager:getStringList(arg0) end
+function __ScriptManager:getStringList(name) end
 
----@param arg0 string
+---@param name string
 ---@return TimedActionScript
-function __ScriptManager:getTimedActionScript(arg0) end
+function __ScriptManager:getTimedActionScript(name) end
 
----@param arg0 string
+---@param name string
 ---@return UniqueRecipe
-function __ScriptManager:getUniqueRecipe(arg0) end
+function __ScriptManager:getUniqueRecipe(name) end
 
 ---@param name string
 ---@return VehicleScript
@@ -343,29 +343,29 @@ function __ScriptManager:getVehicleEngineRPM(name) end
 ---@return VehicleTemplate
 function __ScriptManager:getVehicleTemplate(name) end
 
----@param arg0 string
+---@param name string
 ---@return XuiColorsScript
-function __ScriptManager:getXuiColor(arg0) end
+function __ScriptManager:getXuiColor(name) end
 
----@param arg0 string
+---@param name string
 ---@return XuiConfigScript
-function __ScriptManager:getXuiConfigScript(arg0) end
+function __ScriptManager:getXuiConfigScript(name) end
 
----@param arg0 string
+---@param name string
 ---@return XuiLayoutScript
-function __ScriptManager:getXuiDefaultStyle(arg0) end
+function __ScriptManager:getXuiDefaultStyle(name) end
 
----@param arg0 string
+---@param name string
 ---@return XuiLayoutScript
-function __ScriptManager:getXuiLayout(arg0) end
+function __ScriptManager:getXuiLayout(name) end
 
----@param arg0 string
+---@param name string
 ---@return XuiSkinScript
-function __ScriptManager:getXuiSkinScript(arg0) end
+function __ScriptManager:getXuiSkinScript(name) end
 
----@param arg0 string
+---@param name string
 ---@return XuiLayoutScript
-function __ScriptManager:getXuiStyle(arg0) end
+function __ScriptManager:getXuiStyle(name) end
 
 ---@return ArrayList<string>
 function __ScriptManager:getZedDmgMap() end
@@ -373,9 +373,9 @@ function __ScriptManager:getZedDmgMap() end
 ---@return boolean
 function __ScriptManager:hasLoadErrors() end
 
----@param arg0 boolean
+---@param onlyCritical boolean
 ---@return boolean
-function __ScriptManager:hasLoadErrors(arg0) end
+function __ScriptManager:hasLoadErrors(onlyCritical) end
 
 ---@param itemType string
 ---@return boolean
@@ -412,9 +412,9 @@ ScriptManager.VanillaID = nil
 ---@type ScriptManager
 ScriptManager.instance = nil
 
----@param arg0 ScriptType
----@param arg1 boolean
-function ScriptManager.EnableDebug(arg0, arg1) end
+---@param type ScriptType
+---@param enable boolean
+function ScriptManager.EnableDebug(type, enable) end
 
 ---@return string
 function ScriptManager.getCurrentLoadFileAbsPath() end
@@ -429,21 +429,21 @@ function ScriptManager.getCurrentLoadFileName() end
 ---@return string
 function ScriptManager.getItemName(name) end
 
----@param arg0 ScriptType
+---@param type ScriptType
 ---@return boolean
-function ScriptManager.isDebugEnabled(arg0) end
+function ScriptManager.isDebugEnabled(type) end
 
----@param arg0 ScriptType
----@param arg1 string
-function ScriptManager.println(arg0, arg1) end
+---@param type ScriptType
+---@param msg string
+function ScriptManager.println(type, msg) end
 
----@param arg0 BaseScriptObject
----@param arg1 string
-function ScriptManager.println(arg0, arg1) end
+---@param scriptObject BaseScriptObject
+---@param msg string
+function ScriptManager.println(scriptObject, msg) end
 
----@param arg0 ArrayList<string>
----@param arg1 ArrayList<Item>
-function ScriptManager.resolveGetItemTypes(arg0, arg1) end
+---@param sourceItems ArrayList<string>
+---@param scriptItems ArrayList<Item>
+function ScriptManager.resolveGetItemTypes(sourceItems, scriptItems) end
 
 ---@return ScriptManager
 function ScriptManager.new() end

@@ -79,8 +79,8 @@ function __IsoGenerator:setSurroundingElectricity() end
 ---@param totalPowerUsing number
 function __IsoGenerator:setTotalPowerUsing(totalPowerUsing) end
 
----@param arg0 ByteBuffer
-function __IsoGenerator:syncIsoObjectReceive(arg0) end
+---@param bb ByteBuffer
+function __IsoGenerator:syncIsoObjectReceive(bb) end
 
 ---@param b ByteBufferWriter
 function __IsoGenerator:syncIsoObjectSend(b) end

@@ -3,17 +3,17 @@
 ---@class HandcraftLogic: BaseCraftingLogic
 local __HandcraftLogic = {}
 
----@param arg0 CraftRecipe
+---@param recipe CraftRecipe
 ---@return boolean
-function __HandcraftLogic:canCharacterPerformRecipe(arg0) end
+function __HandcraftLogic:canCharacterPerformRecipe(recipe) end
 
 function __HandcraftLogic:checkValidRecipeSelected() end
 
----@param arg0 string
----@param arg1 string
----@param arg2 boolean
----@param arg3 IsoPlayer
-function __HandcraftLogic:filterRecipeList(arg0, arg1, arg2, arg3) end
+---@param filter string
+---@param categoryFilter string
+---@param force boolean
+---@param player IsoPlayer
+function __HandcraftLogic:filterRecipeList(filter, categoryFilter, force, player) end
 
 ---@return ArrayList<InventoryItem>
 function __HandcraftLogic:getAllItems() end
@@ -24,8 +24,8 @@ function __HandcraftLogic:getCraftActionTable() end
 ---@return CraftBench
 function __HandcraftLogic:getCraftBench() end
 
----@param arg0 ArrayList<InventoryItem>
-function __HandcraftLogic:getCreatedOutputItems(arg0) end
+---@param list ArrayList<InventoryItem>
+function __HandcraftLogic:getCreatedOutputItems(list) end
 
 ---@return IsoObject
 function __HandcraftLogic:getIsoObject() end
@@ -45,9 +45,9 @@ function __HandcraftLogic:getRecipeList() end
 ---@return string
 function __HandcraftLogic:getRecipeSortMode() end
 
----@param arg0 InputScript
+---@param inputScript InputScript
 ---@return number
-function __HandcraftLogic:getResidualFluidFromInput(arg0) end
+function __HandcraftLogic:getResidualFluidFromInput(inputScript) end
 
 ---@return Texture
 function __HandcraftLogic:getResultTexture() end
@@ -70,57 +70,57 @@ function __HandcraftLogic:isCraftActionInProgress() end
 ---@return boolean
 function __HandcraftLogic:isRecipeAtHand() end
 
----@param arg0 CraftRecipe
+---@param recipe CraftRecipe
 ---@return boolean
-function __HandcraftLogic:isRecipeAvailableForCharacter(arg0) end
+function __HandcraftLogic:isRecipeAvailableForCharacter(recipe) end
 
 ---@return boolean
 function __HandcraftLogic:isUsingRecipeAtHandBenefit() end
 
----@param arg0 CraftRecipe
+---@param recipe CraftRecipe
 ---@return boolean
-function __HandcraftLogic:isValidRecipeForCharacter(arg0) end
+function __HandcraftLogic:isValidRecipeForCharacter(recipe) end
 
 ---@return boolean
 function __HandcraftLogic:performCurrentRecipe() end
 
----@param arg0 IsoObject
-function __HandcraftLogic:setIsoObject(arg0) end
+---@param isoObj IsoObject
+function __HandcraftLogic:setIsoObject(isoObj) end
 
----@param arg0 boolean
-function __HandcraftLogic:setLastManualInputMode(arg0) end
+---@param b boolean
+function __HandcraftLogic:setLastManualInputMode(b) end
 
----@param arg0 CraftRecipe
-function __HandcraftLogic:setLastSelectedRecipe(arg0) end
+---@param recipe CraftRecipe
+function __HandcraftLogic:setLastSelectedRecipe(recipe) end
 
----@param arg0 CraftRecipe
-function __HandcraftLogic:setRecipe(arg0) end
+---@param recipe CraftRecipe
+function __HandcraftLogic:setRecipe(recipe) end
 
----@param arg0 CraftRecipe
----@param arg1 InventoryItem
-function __HandcraftLogic:setRecipeFromContextClick(arg0, arg1) end
+---@param recipe CraftRecipe
+---@param inventoryItem InventoryItem
+function __HandcraftLogic:setRecipeFromContextClick(recipe, inventoryItem) end
 
----@param arg0 string
-function __HandcraftLogic:setRecipeSortMode(arg0) end
+---@param sortMode string
+function __HandcraftLogic:setRecipeSortMode(sortMode) end
 
----@param arg0 List<CraftRecipe>
-function __HandcraftLogic:setRecipes(arg0) end
+---@param recipes List<CraftRecipe>
+function __HandcraftLogic:setRecipes(recipes) end
 
----@param arg0 string
-function __HandcraftLogic:setSelectedRecipeStyle(arg0) end
+---@param style string
+function __HandcraftLogic:setSelectedRecipeStyle(style) end
 
----@param arg0 table
-function __HandcraftLogic:startCraftAction(arg0) end
+---@param actionTable table
+function __HandcraftLogic:startCraftAction(actionTable) end
 
 function __HandcraftLogic:stopCraftAction() end
 
 HandcraftLogic = {}
 
----@param arg0 IsoGameCharacter
----@param arg1 CraftBench
----@param arg2 IsoObject
+---@param player IsoGameCharacter
+---@param craftBench CraftBench
+---@param isoObject IsoObject
 ---@return HandcraftLogic
-function HandcraftLogic.new(arg0, arg1, arg2) end
+function HandcraftLogic.new(player, craftBench, isoObject) end
 
 ---@type Class<HandcraftLogic>
 HandcraftLogic.class = nil

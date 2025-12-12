@@ -12,9 +12,9 @@ function __Double:getMin() end
 ---@return AttributeValueType
 function __Double:getValueType() end
 
----@param arg0 number
+---@param value number
 ---@return number
-function __Double:validate(arg0) end
+function __Double:validate(value) end
 
 Double = {}
 

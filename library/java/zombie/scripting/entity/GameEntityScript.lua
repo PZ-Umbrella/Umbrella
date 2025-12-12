@@ -3,41 +3,41 @@
 ---@class GameEntityScript: BaseScriptObject
 local __GameEntityScript = {}
 
----@param arg0 string
-function __GameEntityScript:InitLoadPP(arg0) end
+---@param name string
+function __GameEntityScript:InitLoadPP(name) end
 
----@param arg0 string
----@param arg1 string
-function __GameEntityScript:Load(arg0, arg1) end
+---@param name string
+---@param body string
+function __GameEntityScript:Load(name, body) end
 
----@param arg0 string
----@param arg1 string
+---@param k string
+---@param v string
 ---@return boolean
-function __GameEntityScript:LoadAttribute(arg0, arg1) end
+function __GameEntityScript:LoadAttribute(k, v) end
 
----@param arg0 ScriptParser.Block
-function __GameEntityScript:LoadComponentBlock(arg0) end
+---@param block ScriptParser.Block
+function __GameEntityScript:LoadComponentBlock(block) end
 
 function __GameEntityScript:OnLoadedAfterLua() end
 
 function __GameEntityScript:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __GameEntityScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __GameEntityScript:OnScriptsLoaded(loadMode) end
 
 function __GameEntityScript:PreReload() end
 
----@param arg0 ComponentType
+---@param componentType ComponentType
 ---@return boolean
-function __GameEntityScript:containsComponent(arg0) end
+function __GameEntityScript:containsComponent(componentType) end
 
----@param arg0 GameEntityScript
-function __GameEntityScript:copyFrom(arg0) end
+---@param other GameEntityScript
+function __GameEntityScript:copyFrom(other) end
 
 ---@generic T: ComponentScript
----@param arg0 ComponentType
+---@param componentType ComponentType
 ---@return T
-function __GameEntityScript:getComponentScriptFor(arg0) end
+function __GameEntityScript:getComponentScriptFor(componentType) end
 
 ---@return ArrayList<ComponentScript>
 function __GameEntityScript:getComponentScripts() end
@@ -72,11 +72,11 @@ function __GameEntityScript:getRegistry_id() end
 ---@return boolean
 function __GameEntityScript:hasComponents() end
 
----@param arg0 string
-function __GameEntityScript:setModID(arg0) end
+---@param modid string
+function __GameEntityScript:setModID(modid) end
 
----@param arg0 integer
-function __GameEntityScript:setRegistry_id(arg0) end
+---@param id integer
+function __GameEntityScript:setRegistry_id(id) end
 
 GameEntityScript = {}
 

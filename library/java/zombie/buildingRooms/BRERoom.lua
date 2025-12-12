@@ -3,21 +3,21 @@
 ---@class BRERoom
 local __BRERoom = {}
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
-function __BRERoom:addRectangle(arg0, arg1, arg2, arg3) end
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
+function __BRERoom:addRectangle(x, y, w, h) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return boolean
-function __BRERoom:contains(arg0, arg1, arg2) end
+function __BRERoom:contains(x, y, z) end
 
----@param arg0 RoomDef
+---@param roomDef2 RoomDef
 ---@return BRERoom
-function __BRERoom:copyFrom(arg0) end
+function __BRERoom:copyFrom(roomDef2) end
 
 ---@return integer
 function __BRERoom:getLevel() end
@@ -25,40 +25,40 @@ function __BRERoom:getLevel() end
 ---@return string
 function __BRERoom:getName() end
 
----@param arg0 integer
+---@param index integer
 ---@return RoomDef.RoomRect
-function __BRERoom:getRectangle(arg0) end
+function __BRERoom:getRectangle(index) end
 
 ---@return integer
 function __BRERoom:getRectangleCount() end
 
----@param arg0 integer
----@param arg1 integer
+---@param squareX integer
+---@param squareY integer
 ---@return integer
-function __BRERoom:hitTest(arg0, arg1) end
+function __BRERoom:hitTest(squareX, squareY) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
 ---@return boolean
-function __BRERoom:intersects(arg0, arg1, arg2, arg3) end
+function __BRERoom:intersects(x, y, w, h) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
 ---@return boolean
-function __BRERoom:isAdjacent(arg0, arg1, arg2, arg3) end
+function __BRERoom:isAdjacent(x, y, w, h) end
 
 ---@return boolean
 function __BRERoom:isValid() end
 
----@param arg0 integer
-function __BRERoom:removeRectangle(arg0) end
+---@param index integer
+function __BRERoom:removeRectangle(index) end
 
----@param arg0 string
-function __BRERoom:setName(arg0) end
+---@param name string
+function __BRERoom:setName(name) end
 
 BRERoom = {}
 

@@ -113,24 +113,24 @@ FluidType.Whiskey = nil
 ---@type FluidType
 FluidType.Wine = nil
 
----@param arg0 integer
+---@param id integer
 ---@return FluidType
-function FluidType.FromId(arg0) end
+function FluidType.FromId(id) end
 
----@param arg0 string
+---@param name string
 ---@return FluidType
-function FluidType.FromNameLower(arg0) end
+function FluidType.FromNameLower(name) end
 
----@param arg0 string
+---@param name string
 ---@return boolean
-function FluidType.containsNameLowercase(arg0) end
+function FluidType.containsNameLowercase(name) end
 
 ---@return ArrayList<string>
 function FluidType.getAllFluidName() end
 
----@param arg0 string
+---@param name string
 ---@return FluidType
-function FluidType.valueOf(arg0) end
+function FluidType.valueOf(name) end
 
 ---@return kahlua.Array<FluidType>
 function FluidType.values() end

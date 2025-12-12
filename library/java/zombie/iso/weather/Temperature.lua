@@ -104,9 +104,9 @@ function Temperature.getFahrenheitPostfix() end
 ---@return number
 function Temperature.getFractionForRealTimeRatePerMin(rate) end
 
----@param arg0 number
+---@param celsius number
 ---@return integer
-function Temperature.getRoundedDisplayTemperature(arg0) end
+function Temperature.getRoundedDisplayTemperature(celsius) end
 
 ---@return string
 function Temperature.getTemperaturePostfix() end

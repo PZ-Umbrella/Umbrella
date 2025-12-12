@@ -19,14 +19,19 @@ function ISMPEditServer:destroy() end
 
 function ISMPEditServer:initialise() end
 
+---@param button ISButton
 function ISMPEditServer:onClick(button) end
 
+---@param joypadData JoypadData
 function ISMPEditServer:onGainJoypadFocus(joypadData) end
 
+---@param joypadData JoypadData
 function ISMPEditServer:onJoypadBeforeDeactivate(joypadData) end
 
+---@param button integer
 function ISMPEditServer:onJoypadDown(button) end
 
+---@param joypadData JoypadData
 function ISMPEditServer:onLoseJoypadFocus(joypadData) end
 
 ---@param x number
@@ -49,6 +54,7 @@ function ISMPEditServer:onMouseUp(x, y) end
 ---@param y number
 function ISMPEditServer:onMouseUpOutside(x, y) end
 
+---@param key integer
 function ISMPEditServer:onOtherKey(key) end
 
 function ISMPEditServer:onResolutionChange(oldw, oldh, neww, newh) end

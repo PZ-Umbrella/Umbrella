@@ -14,56 +14,56 @@ function AttributeUtil.allocDoubleList() end
 ---@return ArrayList<InventoryItem>
 function AttributeUtil.allocItemList() end
 
----@param arg0 InventoryItem
----@param arg1 AttributeType
----@param arg2 AttributeType
+---@param item InventoryItem
+---@param attribute AttributeType
+---@param target AttributeType
 ---@return number
-function AttributeUtil.convertAttribute(arg0, arg1, arg2) end
+function AttributeUtil.convertAttribute(item, attribute, target) end
 
----@param arg0 InventoryItem
----@param arg1 AttributeType
----@param arg2 number
----@param arg3 number
+---@param item InventoryItem
+---@param attribute AttributeType
+---@param rangeMin number
+---@param rangeMax number
 ---@return number
-function AttributeUtil.convertAttributeToRange(arg0, arg1, arg2, arg3) end
+function AttributeUtil.convertAttributeToRange(item, attribute, rangeMin, rangeMax) end
 
----@param arg0 InventoryItem
----@param arg1 AttributeType
+---@param item InventoryItem
+---@param attribute AttributeType
 ---@return number
-function AttributeUtil.convertAttributeToUnit(arg0, arg1) end
+function AttributeUtil.convertAttributeToUnit(item, attribute) end
 
 ---@generic E: Enum<E>, IOEnum
----@param arg0 Class<E>
----@param arg1 string
+---@param enumClass Class<E>
+---@param s string
 ---@return E
-function AttributeUtil.enumValueFromScriptString(arg0, arg1) end
+function AttributeUtil.enumValueFromScriptString(enumClass, s) end
 
----@param arg0 ArrayList<InventoryItem>
----@param arg1 AttributeType
+---@param items ArrayList<InventoryItem>
+---@param attribute AttributeType
 ---@return number
-function AttributeUtil.getAttributeAverage(arg0, arg1) end
+function AttributeUtil.getAttributeAverage(items, attribute) end
 
----@param arg0 string
----@param arg1 ArrayList<InventoryItem>
----@param arg2 ArrayList<InventoryItem>
+---@param itemString string
+---@param sources ArrayList<InventoryItem>
+---@param outputlist ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function AttributeUtil.getItemsFromList(arg0, arg1, arg2) end
+function AttributeUtil.getItemsFromList(itemString, sources, outputlist) end
 
----@param arg0 string
+---@param s string
 ---@return boolean
-function AttributeUtil.isEnumString(arg0) end
+function AttributeUtil.isEnumString(s) end
 
----@param arg0 ArrayList<number>
-function AttributeUtil.releaseDoubleList(arg0) end
+---@param list ArrayList<number>
+function AttributeUtil.releaseDoubleList(list) end
 
----@param arg0 ArrayList<InventoryItem>
-function AttributeUtil.releaseItemList(arg0) end
+---@param list ArrayList<InventoryItem>
+function AttributeUtil.releaseItemList(list) end
 
 ---@generic E: Enum<E>, IOEnum
----@param arg0 Class<E>
----@param arg1 string
+---@param enumClass Class<E>
+---@param s string
 ---@return E
-function AttributeUtil.tryEnumValueFromScriptString(arg0, arg1) end
+function AttributeUtil.tryEnumValueFromScriptString(enumClass, s) end
 
 ---@return AttributeUtil
 function AttributeUtil.new() end

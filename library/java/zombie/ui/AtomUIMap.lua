@@ -14,9 +14,9 @@ function __AtomUIMap:revealOnMap() end
 
 AtomUIMap = {}
 
----@param arg0 table
+---@param table table
 ---@return AtomUIMap
-function AtomUIMap.new(arg0) end
+function AtomUIMap.new(table) end
 
 ---@type Class<AtomUIMap>
 AtomUIMap.class = nil

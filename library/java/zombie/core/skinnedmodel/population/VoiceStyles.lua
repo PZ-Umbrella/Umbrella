@@ -3,9 +3,9 @@
 ---@class VoiceStyles
 local __VoiceStyles = {}
 
----@param arg0 string
+---@param name string
 ---@return VoiceStyle
-function __VoiceStyles:FindStyle(arg0) end
+function __VoiceStyles:FindStyle(name) end
 
 ---@return ArrayList<VoiceStyle>
 function __VoiceStyles:getAllStyles() end
@@ -18,17 +18,17 @@ VoiceStyles = {}
 ---@type VoiceStyles
 VoiceStyles.instance = nil
 
----@param arg0 string
+---@param filename string
 ---@return VoiceStyles
-function VoiceStyles.Parse(arg0) end
+function VoiceStyles.Parse(filename) end
 
 function VoiceStyles.Reset() end
 
 function VoiceStyles.init() end
 
----@param arg0 string
+---@param filename string
 ---@return VoiceStyles
-function VoiceStyles.parse(arg0) end
+function VoiceStyles.parse(filename) end
 
 ---@return VoiceStyles
 function VoiceStyles.new() end

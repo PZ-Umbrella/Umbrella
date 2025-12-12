@@ -67,9 +67,9 @@ function __Stats:load(input) end
 ---@param WorldVersion integer
 function __Stats:load(input, WorldVersion) end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __Stats:parse(arg0, arg1) end
+---@param b ByteBuffer
+---@param field integer
+function __Stats:parse(b, field) end
 
 ---@param stat CharacterStat
 ---@param amount number
@@ -111,9 +111,9 @@ function __Stats:setTrippingRotAngle(TrippingRotAngle) end
 ---@return string
 function __Stats:toString() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __Stats:write(arg0, arg1) end
+---@param b ByteBuffer
+---@param field integer
+function __Stats:write(b, field) end
 
 Stats = {}
 

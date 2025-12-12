@@ -3,9 +3,9 @@
 ---@class Fluid
 local __Fluid = {}
 
----@param arg0 Fluid
+---@param fluid Fluid
 ---@return boolean
-function __Fluid:canBlendWith(arg0) end
+function __Fluid:canBlendWith(fluid) end
 
 ---@return ImmutableSet<FluidCategory>
 function __Fluid:getCategories() end
@@ -40,9 +40,9 @@ function __Fluid:getTranslatedName() end
 ---@return string
 function __Fluid:getTranslatedNameLower() end
 
----@param arg0 FluidCategory
+---@param category FluidCategory
 ---@return boolean
-function __Fluid:isCategory(arg0) end
+function __Fluid:isCategory(category) end
 
 ---@return boolean
 function __Fluid:isPoisonous() end
@@ -139,16 +139,16 @@ Fluid.Wine = nil
 ---@return boolean
 function Fluid.FluidsInitialized() end
 
----@param arg0 FluidType
+---@param type FluidType
 ---@return Fluid
-function Fluid.Get(arg0) end
+function Fluid.Get(type) end
 
----@param arg0 string
+---@param name string
 ---@return Fluid
-function Fluid.Get(arg0) end
+function Fluid.Get(name) end
 
----@param arg0 ScriptLoadMode
-function Fluid.Init(arg0) end
+---@param loadMode ScriptLoadMode
+function Fluid.Init(loadMode) end
 
 function Fluid.PreReloadScripts() end
 
@@ -160,14 +160,14 @@ function Fluid.getAllFluidItemsDebug() end
 ---@return ArrayList<Fluid>
 function Fluid.getAllFluids() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
+---@param input ByteBuffer
+---@param WorldVersion integer
 ---@return Fluid
-function Fluid.loadFluid(arg0, arg1) end
+function Fluid.loadFluid(input, WorldVersion) end
 
----@param arg0 Fluid
----@param arg1 ByteBuffer
-function Fluid.saveFluid(arg0, arg1) end
+---@param fluid Fluid
+---@param output ByteBuffer
+function Fluid.saveFluid(fluid, output) end
 
 ---@type Class<Fluid>
 Fluid.class = nil

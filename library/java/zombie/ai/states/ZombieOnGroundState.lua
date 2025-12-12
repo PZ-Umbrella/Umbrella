@@ -34,8 +34,8 @@ function ZombieOnGroundState.instance() end
 ---@return boolean
 function ZombieOnGroundState.isCharacterStandingOnOther(chrStanding, chrProne) end
 
----@param arg0 IsoZombie
-function ZombieOnGroundState.startReanimateTimer(arg0) end
+---@param ownerZombie IsoZombie
+function ZombieOnGroundState.startReanimateTimer(ownerZombie) end
 
 ---@return ZombieOnGroundState
 function ZombieOnGroundState.new() end

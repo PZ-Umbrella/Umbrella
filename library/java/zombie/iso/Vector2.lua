@@ -36,10 +36,10 @@ function __Vector2:distanceTo(other) end
 ---@return number
 function __Vector2:dot(other) end
 
----@param arg0 number
----@param arg1 number
+---@param otherX number
+---@param otherY number
 ---@return number
-function __Vector2:dot(arg0, arg1) end
+function __Vector2:dot(otherX, otherY) end
 
 ---See if this vector is equal to another
 ---@param other any A Vector2 to compare this one to
@@ -150,11 +150,11 @@ function Vector2.fromLengthDirection(length, direction) end
 ---@return number
 function Vector2.getDirection(x, y) end
 
----@param arg0 Vector2
----@param arg1 Vector2
----@param arg2 number
+---@param currentVector Vector2
+---@param targetVector Vector2
+---@param maxDistanceDelta number
 ---@return Vector2
-function Vector2.moveTowards(arg0, arg1, arg2) end
+function Vector2.moveTowards(currentVector, targetVector, maxDistanceDelta) end
 
 ---@param val Vector2
 ---@param scale number

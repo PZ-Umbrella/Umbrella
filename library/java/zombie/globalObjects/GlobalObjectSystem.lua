@@ -24,9 +24,9 @@ function __GlobalObjectSystem:getName() end
 ---@return GlobalObject
 function __GlobalObjectSystem:getObjectAt(x, y, z) end
 
----@param arg0 IsoGridSquare
+---@param sq IsoGridSquare
 ---@return GlobalObject
-function __GlobalObjectSystem:getObjectAt(arg0) end
+function __GlobalObjectSystem:getObjectAt(sq) end
 
 ---@param index integer
 ---@return GlobalObject

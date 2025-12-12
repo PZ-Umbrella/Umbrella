@@ -63,11 +63,11 @@ function __IsoBarbecue:removePropaneTank() end
 ---@param shader Shader
 function __IsoBarbecue:render(x, y, z, col, bDoChild, bWallLightingPass, shader) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 ColorInfo
-function __IsoBarbecue:renderAnimatedAttachments(arg0, arg1, arg2, arg3) end
+---@param x number
+---@param y number
+---@param z number
+---@param colorInfo ColorInfo
+function __IsoBarbecue:renderAnimatedAttachments(x, y, z, colorInfo) end
 
 ---@param output ByteBuffer
 ---@param IS_DEBUG_SAVE boolean

@@ -3,26 +3,26 @@
 ---@class ItemFilterScript: BaseScriptObject
 local __ItemFilterScript = {}
 
----@param arg0 string
----@param arg1 string
-function __ItemFilterScript:Load(arg0, arg1) end
+---@param name string
+---@param totalFile string
+function __ItemFilterScript:Load(name, totalFile) end
 
 function __ItemFilterScript:OnLoadedAfterLua() end
 
 function __ItemFilterScript:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __ItemFilterScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __ItemFilterScript:OnScriptsLoaded(loadMode) end
 
 function __ItemFilterScript:PreReload() end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __ItemFilterScript:allowsItem(arg0) end
+function __ItemFilterScript:allowsItem(item) end
 
----@param arg0 Item
+---@param item Item
 ---@return boolean
-function __ItemFilterScript:allowsItem(arg0) end
+function __ItemFilterScript:allowsItem(item) end
 
 ---@return string
 function __ItemFilterScript:getName() end

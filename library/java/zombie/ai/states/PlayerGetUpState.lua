@@ -24,9 +24,9 @@ function __PlayerGetUpState:isSyncOnExit() end
 ---@return boolean
 function __PlayerGetUpState:isSyncOnSquare() end
 
----@param arg0 IsoGameCharacter
----@param arg1 State.Stage
-function __PlayerGetUpState:setParams(arg0, arg1) end
+---@param owner IsoGameCharacter
+---@param stage State.Stage
+function __PlayerGetUpState:setParams(owner, stage) end
 
 PlayerGetUpState = {}
 

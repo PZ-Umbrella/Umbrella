@@ -3,54 +3,54 @@
 ---@class Resource
 local __Resource = {}
 
----@param arg0 ObjectTooltip
-function __Resource:DoTooltip(arg0) end
+---@param tooltipUI ObjectTooltip
+function __Resource:DoTooltip(tooltipUI) end
 
----@param arg0 ObjectTooltip
----@param arg1 ObjectTooltip.Layout
-function __Resource:DoTooltip(arg0, arg1) end
+---@param tooltipUI ObjectTooltip
+---@param layout ObjectTooltip.Layout
+function __Resource:DoTooltip(tooltipUI, layout) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __Resource:acceptsItem(arg0) end
+function __Resource:acceptsItem(item) end
 
----@param arg0 InventoryItem
----@param arg1 boolean
+---@param item InventoryItem
+---@param ignoreFilters boolean
 ---@return boolean
-function __Resource:acceptsItem(arg0, arg1) end
+function __Resource:acceptsItem(item, ignoreFilters) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __Resource:canDrainFromItem(arg0) end
+function __Resource:canDrainFromItem(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __Resource:canDrainToItem(arg0) end
+function __Resource:canDrainToItem(item) end
 
 ---@return boolean
 function __Resource:canMoveItemsToOutput() end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __Resource:canStackItem(arg0) end
+function __Resource:canStackItem(item) end
 
----@param arg0 Item
+---@param item Item
 ---@return boolean
-function __Resource:canStackItem(arg0) end
+function __Resource:canStackItem(item) end
 
 function __Resource:clear() end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __Resource:containsItem(arg0) end
+function __Resource:containsItem(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __Resource:drainFromItem(arg0) end
+function __Resource:drainFromItem(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __Resource:drainToItem(arg0) end
+function __Resource:drainToItem(item) end
 
 ---@return ResourceChannel
 function __Resource:getChannel() end
@@ -100,9 +100,9 @@ function __Resource:getItemAmount() end
 ---@return integer
 function __Resource:getItemCapacity() end
 
----@param arg0 InputScript
+---@param inputScript InputScript
 ---@return number
-function __Resource:getItemUses(arg0) end
+function __Resource:getItemUses(inputScript) end
 
 ---@return number
 function __Resource:getItemUsesAmount() end
@@ -119,9 +119,9 @@ function __Resource:getResourcesComponent() end
 ---@return ResourceType
 function __Resource:getType() end
 
----@param arg0 ResourceFlag
+---@param flag ResourceFlag
 ---@return boolean
-function __Resource:hasFlag(arg0) end
+function __Resource:hasFlag(flag) end
 
 ---@return boolean
 function __Resource:isAutoDecay() end
@@ -138,65 +138,65 @@ function __Resource:isFull() end
 ---@return boolean
 function __Resource:isLocked() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __Resource:load(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __Resource:load(input, WorldVersion) end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __Resource:loadSync(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __Resource:loadSync(input, WorldVersion) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return InventoryItem
-function __Resource:offerItem(arg0) end
+function __Resource:offerItem(item) end
 
----@param arg0 InventoryItem
----@param arg1 boolean
+---@param item InventoryItem
+---@param ignoreFilters boolean
 ---@return InventoryItem
-function __Resource:offerItem(arg0, arg1) end
+function __Resource:offerItem(item, ignoreFilters) end
 
----@param arg0 InventoryItem
----@param arg1 boolean
----@param arg2 boolean
----@param arg3 boolean
+---@param item InventoryItem
+---@param ignoreFilters boolean
+---@param force boolean
+---@param syncEntity boolean
 ---@return InventoryItem
-function __Resource:offerItem(arg0, arg1, arg2, arg3) end
+function __Resource:offerItem(item, ignoreFilters, force, syncEntity) end
 
 ---@return InventoryItem
 function __Resource:peekItem() end
 
----@param arg0 integer
+---@param offset integer
 ---@return InventoryItem
-function __Resource:peekItem(arg0) end
+function __Resource:peekItem(offset) end
 
 ---@return InventoryItem
 function __Resource:pollItem() end
 
----@param arg0 boolean
----@param arg1 boolean
+---@param force boolean
+---@param syncEntity boolean
 ---@return InventoryItem
-function __Resource:pollItem(arg0, arg1) end
+function __Resource:pollItem(force, syncEntity) end
 
----@param arg0 ByteBuffer
-function __Resource:save(arg0) end
+---@param output ByteBuffer
+function __Resource:save(output) end
 
----@param arg0 ByteBuffer
-function __Resource:saveSync(arg0) end
+---@param output ByteBuffer
+function __Resource:saveSync(output) end
 
 function __Resource:setDirty() end
 
----@param arg0 boolean
-function __Resource:setLocked(arg0) end
+---@param locked boolean
+function __Resource:setLocked(locked) end
 
----@param arg0 number
-function __Resource:setProgress(arg0) end
+---@param progress number
+function __Resource:setProgress(progress) end
 
----@param arg0 Resource
-function __Resource:tryTransferTo(arg0) end
+---@param target Resource
+function __Resource:tryTransferTo(target) end
 
----@param arg0 Resource
----@param arg1 number
-function __Resource:tryTransferTo(arg0, arg1) end
+---@param target Resource
+---@param amount number
+function __Resource:tryTransferTo(target, amount) end
 
 Resource = {}
 

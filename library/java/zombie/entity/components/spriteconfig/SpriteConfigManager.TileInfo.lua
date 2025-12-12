@@ -33,9 +33,9 @@ function __TileInfo:isEmpty() end
 ---@return boolean
 function __TileInfo:isMaster() end
 
----@param arg0 IsoObject
+---@param object IsoObject
 ---@return boolean
-function __TileInfo:verifyObject(arg0) end
+function __TileInfo:verifyObject(object) end
 
 TileInfo = {}
 

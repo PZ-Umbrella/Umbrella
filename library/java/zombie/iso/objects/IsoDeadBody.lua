@@ -9,11 +9,11 @@ function __IsoDeadBody:Burn() end
 ---@param object IsoObject
 function __IsoDeadBody:Collision(collision, object) end
 
----@param arg0 IGrappleable
----@param arg1 HandWeapon
----@param arg2 number
----@param arg3 string
-function __IsoDeadBody:Grappled(arg0, arg1, arg2, arg3) end
+---@param in_grappler IGrappleable
+---@param in_grapplersWeapon HandWeapon
+---@param in_grappleEffectiveness number
+---@param in_grappleType string
+function __IsoDeadBody:Grappled(in_grappler, in_grapplersWeapon, in_grappleEffectiveness, in_grappleType) end
 
 ---@return boolean
 function __IsoDeadBody:IsSpeaking() end
@@ -26,8 +26,8 @@ function __IsoDeadBody:addToWorld() end
 ---@return InventoryItem
 function __IsoDeadBody:becomeCorpseItem() end
 
----@param arg0 integer
-function __IsoDeadBody:changeRotStage(arg0) end
+---@param newStage integer
+function __IsoDeadBody:changeRotStage(newStage) end
 
 ---@param removedItem InventoryItem
 function __IsoDeadBody:checkClothing(removedItem) end
@@ -35,9 +35,9 @@ function __IsoDeadBody:checkClothing(removedItem) end
 ---@return number
 function __IsoDeadBody:getAngle() end
 
----@param arg0 Vector2
+---@param out_forwardDirection Vector2
 ---@return Vector2
-function __IsoDeadBody:getAnimForwardDirection(arg0) end
+function __IsoDeadBody:getAnimForwardDirection(out_forwardDirection) end
 
 ---@return number
 function __IsoDeadBody:getAnimalSize() end
@@ -84,20 +84,20 @@ function __IsoDeadBody:getDescriptor() end
 ---@return kahlua.Array<TwistableBoneTransform>
 function __IsoDeadBody:getDiedBoneTransforms() end
 
----@param arg0 Vector2f
+---@param out Vector2f
 ---@return Vector2f
-function __IsoDeadBody:getGrabHeadPosition(arg0) end
+function __IsoDeadBody:getGrabHeadPosition(out) end
 
----@param arg0 Vector2f
+---@param out Vector2f
 ---@return Vector2f
-function __IsoDeadBody:getGrabLegsPosition(arg0) end
+function __IsoDeadBody:getGrabLegsPosition(out) end
 
 ---@return HumanVisual
 function __IsoDeadBody:getHumanVisual() end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return number
-function __IsoDeadBody:getInitialItemAge(arg0) end
+function __IsoDeadBody:getInitialItemAge(item) end
 
 ---@return string
 function __IsoDeadBody:getInvIcon() end
@@ -170,20 +170,20 @@ function __IsoDeadBody:isAnimal() end
 ---@return boolean
 function __IsoDeadBody:isAnimalSkeleton() end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __IsoDeadBody:isAttachedItem(arg0) end
+function __IsoDeadBody:isAttachedItem(item) end
 
 ---@return boolean
 function __IsoDeadBody:isCrawling() end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __IsoDeadBody:isEquipped(arg0) end
+function __IsoDeadBody:isEquipped(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __IsoDeadBody:isEquippedClothing(arg0) end
+function __IsoDeadBody:isEquippedClothing(item) end
 
 ---@return boolean
 function __IsoDeadBody:isFakeDead() end
@@ -194,9 +194,9 @@ function __IsoDeadBody:isFallOnFront() end
 ---@return boolean
 function __IsoDeadBody:isFemale() end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __IsoDeadBody:isHandItem(arg0) end
+function __IsoDeadBody:isHandItem(item) end
 
 ---@return boolean
 function __IsoDeadBody:isKilledByFall() end
@@ -215,13 +215,13 @@ function __IsoDeadBody:isPerformingGrappleAnimation() end
 ---@return boolean
 function __IsoDeadBody:isPlayer() end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __IsoDeadBody:isPrimaryHandItem(arg0) end
+function __IsoDeadBody:isPrimaryHandItem(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __IsoDeadBody:isSecondaryHandItem(arg0) end
+function __IsoDeadBody:isSecondaryHandItem(item) end
 
 ---@return boolean
 function __IsoDeadBody:isSkeleton() end
@@ -281,14 +281,14 @@ function __IsoDeadBody:save(output, IS_DEBUG_SAVE) end
 ---@param bb ByteBuffer
 function __IsoDeadBody:saveChange(change, tbl, bb) end
 
----@param arg0 IsoAnimal
-function __IsoDeadBody:setAnimalData(arg0) end
+---@param died IsoAnimal
+function __IsoDeadBody:setAnimalData(died) end
 
 ---@param other AttachedItems
 function __IsoDeadBody:setAttachedItems(other) end
 
----@param arg0 integer
-function __IsoDeadBody:setCharacterOnlineID(arg0) end
+---@param onlineID integer
+function __IsoDeadBody:setCharacterOnlineID(onlineID) end
 
 ---@param container ItemContainer the container to set
 function __IsoDeadBody:setContainer(container) end
@@ -296,11 +296,11 @@ function __IsoDeadBody:setContainer(container) end
 ---@param crawling boolean
 function __IsoDeadBody:setCrawling(crawling) end
 
----@param arg0 number
-function __IsoDeadBody:setDeathTime(arg0) end
+---@param worldAgeHours number
+function __IsoDeadBody:setDeathTime(worldAgeHours) end
 
----@param arg0 boolean
-function __IsoDeadBody:setDoRender(arg0) end
+---@param doRender boolean
+function __IsoDeadBody:setDoRender(doRender) end
 
 ---@param fakeDead boolean
 function __IsoDeadBody:setFakeDead(fakeDead) end
@@ -308,24 +308,24 @@ function __IsoDeadBody:setFakeDead(fakeDead) end
 ---@param fallOnFront boolean
 function __IsoDeadBody:setFallOnFront(fallOnFront) end
 
----@param arg0 number
----@param arg1 number
-function __IsoDeadBody:setForwardDirection(arg0, arg1) end
+---@param in_directionX number
+---@param in_directionY number
+function __IsoDeadBody:setForwardDirection(in_directionX, in_directionY) end
 
----@param arg0 number
-function __IsoDeadBody:setForwardDirectionAngle(arg0) end
+---@param in_angle number
+function __IsoDeadBody:setForwardDirectionAngle(in_angle) end
 
----@param arg0 boolean
-function __IsoDeadBody:setInvalidateNextRender(arg0) end
+---@param invalidate boolean
+function __IsoDeadBody:setInvalidateNextRender(invalidate) end
 
----@param arg0 IsoGameCharacter
-function __IsoDeadBody:setKilledBy(arg0) end
+---@param killedBy IsoGameCharacter
+function __IsoDeadBody:setKilledBy(killedBy) end
 
----@param arg0 boolean
-function __IsoDeadBody:setKilledByFall(arg0) end
+---@param bKilledByFall boolean
+function __IsoDeadBody:setKilledByFall(bKilledByFall) end
 
----@param arg0 boolean
-function __IsoDeadBody:setOnHook(arg0) end
+---@param value boolean
+function __IsoDeadBody:setOnHook(value) end
 
 ---@param item InventoryItem
 function __IsoDeadBody:setPrimaryHandItem(item) end
@@ -346,8 +346,8 @@ function __IsoDeadBody:toString() end
 
 function __IsoDeadBody:update() end
 
----@param arg0 ByteBuffer
-function __IsoDeadBody:writeInventory(arg0) end
+---@param b ByteBuffer
+function __IsoDeadBody:writeInventory(b) end
 
 IsoDeadBody = {}
 
@@ -363,11 +363,11 @@ function IsoDeadBody.Reset() end
 ---@return boolean
 function IsoDeadBody.isDead(id) end
 
----@param arg0 UdpConnection
-function IsoDeadBody.removeDeadBodies(arg0) end
+---@param removeCorpsesConnection UdpConnection
+function IsoDeadBody.removeDeadBodies(removeCorpsesConnection) end
 
----@param arg0 ObjectID
-function IsoDeadBody.removeDeadBody(arg0) end
+---@param id ObjectID
+function IsoDeadBody.removeDeadBody(id) end
 
 ---@param x number
 ---@param y number
@@ -380,17 +380,17 @@ function IsoDeadBody.removeDeadBody(arg0) end
 ---@param alpha number
 function IsoDeadBody.renderShadow(x, y, z, forward, w, fm, bm, lightInfo, alpha) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 Vector3f
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 ColorInfo
----@param arg8 number
----@param arg9 boolean
-function IsoDeadBody.renderShadow(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+---@param x number
+---@param y number
+---@param z number
+---@param forward Vector3f
+---@param w number
+---@param fm number
+---@param bm number
+---@param lightInfo ColorInfo
+---@param alpha number
+---@param isAnimal boolean
+function IsoDeadBody.renderShadow(x, y, z, forward, w, fm, bm, lightInfo, alpha, isAnimal) end
 
 function IsoDeadBody.updateBodies() end
 
@@ -403,11 +403,11 @@ function IsoDeadBody.new(died) end
 ---@return IsoDeadBody
 function IsoDeadBody.new(died, wasCorpseAlready) end
 
----@param arg0 IsoGameCharacter
----@param arg1 boolean
----@param arg2 boolean
+---@param died IsoGameCharacter
+---@param wasCorpseAlready boolean
+---@param bAddToSquareAndWorld boolean
 ---@return IsoDeadBody
-function IsoDeadBody.new(arg0, arg1, arg2) end
+function IsoDeadBody.new(died, wasCorpseAlready, bAddToSquareAndWorld) end
 
 ---@param cell IsoCell
 ---@return IsoDeadBody

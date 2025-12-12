@@ -246,19 +246,19 @@ function __DummySoundManager:isRemastered() end
 
 function __DummySoundManager:pauseSoundAndMusic() end
 
----@param arg0 boolean
-function __DummySoundManager:pauseSoundAndMusic(arg0) end
+---@param bOptionallyKeepMusicPlaying boolean
+function __DummySoundManager:pauseSoundAndMusic(bOptionallyKeepMusicPlaying) end
 
 ---@param name string
 function __DummySoundManager:playAmbient(name) end
 
----@param arg0 IsoGridSquare
----@param arg1 MaterialType
-function __DummySoundManager:playDamageSound(arg0, arg1) end
+---@param isoGridSquare IsoGridSquare
+---@param materialType MaterialType
+function __DummySoundManager:playDamageSound(isoGridSquare, materialType) end
 
----@param arg0 IsoGridSquare
----@param arg1 MaterialType
-function __DummySoundManager:playDestructionSound(arg0, arg1) end
+---@param isoGridSquare IsoGridSquare
+---@param materialType MaterialType
+function __DummySoundManager:playDestructionSound(isoGridSquare, materialType) end
 
 ---@param isoGridSquare IsoGridSquare
 ---@param ammoType AmmoType

@@ -11,11 +11,11 @@ function __WorldMapEditorState:exit() end
 ---@return any
 function __WorldMapEditorState:fromLua0(func) end
 
----@param arg0 string
+---@param func string
+---@param arg0 any
 ---@param arg1 any
----@param arg2 any
 ---@return any
-function __WorldMapEditorState:fromLua2(arg0, arg1, arg2) end
+function __WorldMapEditorState:fromLua2(func, arg0, arg1) end
 
 function __WorldMapEditorState:load() end
 

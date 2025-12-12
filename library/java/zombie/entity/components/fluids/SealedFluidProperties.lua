@@ -51,12 +51,12 @@ function __SealedFluidProperties:getUnhappyChange() end
 ---@return boolean
 function __SealedFluidProperties:hasProperties() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __SealedFluidProperties:load(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __SealedFluidProperties:load(input, WorldVersion) end
 
----@param arg0 ByteBuffer
-function __SealedFluidProperties:save(arg0) end
+---@param output ByteBuffer
+function __SealedFluidProperties:save(output) end
 
 SealedFluidProperties = {}
 

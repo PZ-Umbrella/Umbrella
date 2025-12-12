@@ -5,61 +5,61 @@ local __RecipeCodeOnTest = {}
 
 RecipeCodeOnTest = {}
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function RecipeCodeOnTest.breakGlass(arg0) end
+function RecipeCodeOnTest.breakGlass(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function RecipeCodeOnTest.canAddToPack(arg0) end
+function RecipeCodeOnTest.canAddToPack(item) end
 
 ---@param item InventoryItem
 ---@return boolean
 function RecipeCodeOnTest.copyKey(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function RecipeCodeOnTest.cutFillet(arg0) end
+function RecipeCodeOnTest.cutFillet(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function RecipeCodeOnTest.cutFish(arg0) end
+function RecipeCodeOnTest.cutFish(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function RecipeCodeOnTest.genericPacking(arg0) end
+function RecipeCodeOnTest.genericPacking(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function RecipeCodeOnTest.haveFilter(arg0) end
+function RecipeCodeOnTest.haveFilter(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function RecipeCodeOnTest.haveOxygenTank(arg0) end
+function RecipeCodeOnTest.haveOxygenTank(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function RecipeCodeOnTest.hotFluidContainer(arg0) end
+function RecipeCodeOnTest.hotFluidContainer(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function RecipeCodeOnTest.noFilter(arg0) end
+function RecipeCodeOnTest.noFilter(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function RecipeCodeOnTest.noOxygenTank(arg0) end
+function RecipeCodeOnTest.noOxygenTank(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function RecipeCodeOnTest.openFire(arg0) end
+function RecipeCodeOnTest.openFire(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function RecipeCodeOnTest.purifyWater(arg0) end
+function RecipeCodeOnTest.purifyWater(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function RecipeCodeOnTest.scratchTicket(arg0) end
+function RecipeCodeOnTest.scratchTicket(item) end
 
 ---@return RecipeCodeOnTest
 function RecipeCodeOnTest.new() end

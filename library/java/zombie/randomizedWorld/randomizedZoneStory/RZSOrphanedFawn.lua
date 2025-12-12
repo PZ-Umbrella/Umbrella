@@ -3,8 +3,8 @@
 ---@class RZSOrphanedFawn: RandomizedZoneStoryBase
 local __RZSOrphanedFawn = {}
 
----@param arg0 Zone
-function __RZSOrphanedFawn:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSOrphanedFawn:randomizeZoneStory(zone) end
 
 RZSOrphanedFawn = {}
 

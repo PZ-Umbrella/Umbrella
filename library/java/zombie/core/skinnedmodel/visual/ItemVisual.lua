@@ -20,8 +20,8 @@ function __ItemVisual:copyHoles(other) end
 ---@param other ItemVisual
 function __ItemVisual:copyPatches(other) end
 
----@param arg0 ItemVisual
-function __ItemVisual:copyVisualFrom(arg0) end
+---@param visual ItemVisual
+function __ItemVisual:copyVisualFrom(visual) end
 
 ---@return string
 function __ItemVisual:getAlternateModelName() end

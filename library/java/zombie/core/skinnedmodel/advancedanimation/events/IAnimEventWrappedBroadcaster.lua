@@ -4,54 +4,54 @@
 ---@class IAnimEventWrappedBroadcaster: IAnimEventListener
 local __IAnimEventWrappedBroadcaster = {}
 
----@param arg0 string
----@param arg1 IAnimEventListener
-function __IAnimEventWrappedBroadcaster:addAnimEventListener(arg0, arg1) end
+---@param in_animEventName string
+---@param in_listener IAnimEventListener
+function __IAnimEventWrappedBroadcaster:addAnimEventListener(in_animEventName, in_listener) end
 
----@param arg0 string
----@param arg1 IAnimEventListenerNoTrack
-function __IAnimEventWrappedBroadcaster:addAnimEventListener(arg0, arg1) end
+---@param in_animEventName string
+---@param in_listener IAnimEventListenerNoTrack
+function __IAnimEventWrappedBroadcaster:addAnimEventListener(in_animEventName, in_listener) end
 
----@param arg0 string
----@param arg1 IAnimEventListenerNoTrackString
-function __IAnimEventWrappedBroadcaster:addAnimEventListener(arg0, arg1) end
+---@param in_animEventName string
+---@param in_listener IAnimEventListenerNoTrackString
+function __IAnimEventWrappedBroadcaster:addAnimEventListener(in_animEventName, in_listener) end
 
----@param arg0 string
----@param arg1 IAnimEventListenerBoolean
-function __IAnimEventWrappedBroadcaster:addAnimEventListener(arg0, arg1) end
+---@param in_animEventName string
+---@param in_listener IAnimEventListenerBoolean
+function __IAnimEventWrappedBroadcaster:addAnimEventListener(in_animEventName, in_listener) end
 
----@param arg0 string
----@param arg1 IAnimEventListenerString
-function __IAnimEventWrappedBroadcaster:addAnimEventListener(arg0, arg1) end
+---@param in_animEventName string
+---@param in_listener IAnimEventListenerString
+function __IAnimEventWrappedBroadcaster:addAnimEventListener(in_animEventName, in_listener) end
 
----@param arg0 string
----@param arg1 IAnimEventListenerNoParam
-function __IAnimEventWrappedBroadcaster:addAnimEventListener(arg0, arg1) end
+---@param in_animEventName string
+---@param in_listener IAnimEventListenerNoParam
+function __IAnimEventWrappedBroadcaster:addAnimEventListener(in_animEventName, in_listener) end
 
----@param arg0 string
----@param arg1 IAnimEventListenerFloat
-function __IAnimEventWrappedBroadcaster:addAnimEventListener(arg0, arg1) end
+---@param in_animEventName string
+---@param in_listener IAnimEventListenerFloat
+function __IAnimEventWrappedBroadcaster:addAnimEventListener(in_animEventName, in_listener) end
 
----@param arg0 IAnimEventListenerSetVariableString
-function __IAnimEventWrappedBroadcaster:addAnimEventListener(arg0) end
-
----@generic E: Enum<E>
----@param arg0 string
----@param arg1 IAnimEventListenerEnum<E>
----@param arg2 E
-function __IAnimEventWrappedBroadcaster:addAnimEventListener(arg0, arg1, arg2) end
+---@param in_listener IAnimEventListenerSetVariableString
+function __IAnimEventWrappedBroadcaster:addAnimEventListener(in_listener) end
 
 ---@generic E: Enum<E>
----@param arg0 string
----@param arg1 IAnimEventListenerNoTrackEnum<E>
----@param arg2 E
-function __IAnimEventWrappedBroadcaster:addAnimEventListener(arg0, arg1, arg2) end
+---@param in_animEventName string
+---@param in_listener IAnimEventListenerEnum<E>
+---@param in_default E
+function __IAnimEventWrappedBroadcaster:addAnimEventListener(in_animEventName, in_listener, in_default) end
 
----@param arg0 IsoGameCharacter
----@param arg1 AnimLayer
----@param arg2 AnimationTrack
----@param arg3 AnimEvent
-function __IAnimEventWrappedBroadcaster:animEvent(arg0, arg1, arg2, arg3) end
+---@generic E: Enum<E>
+---@param in_animEventName string
+---@param in_listener IAnimEventListenerNoTrackEnum<E>
+---@param in_default E
+function __IAnimEventWrappedBroadcaster:addAnimEventListener(in_animEventName, in_listener, in_default) end
+
+---@param owner IsoGameCharacter
+---@param layer AnimLayer
+---@param track AnimationTrack
+---@param event AnimEvent
+function __IAnimEventWrappedBroadcaster:animEvent(owner, layer, track, event) end
 
 ---@return AnimEventBroadcaster
 function __IAnimEventWrappedBroadcaster:getAnimEventBroadcaster() end

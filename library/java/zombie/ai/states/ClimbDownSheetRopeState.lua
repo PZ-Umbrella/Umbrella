@@ -24,9 +24,9 @@ function __ClimbDownSheetRopeState:isSyncOnExit() end
 ---@return boolean
 function __ClimbDownSheetRopeState:isSyncOnSquare() end
 
----@param arg0 IsoGameCharacter
----@param arg1 State.Stage
-function __ClimbDownSheetRopeState:setParams(arg0, arg1) end
+---@param isoGameCharacter IsoGameCharacter
+---@param stage State.Stage
+function __ClimbDownSheetRopeState:setParams(isoGameCharacter, stage) end
 
 ClimbDownSheetRopeState = {}
 

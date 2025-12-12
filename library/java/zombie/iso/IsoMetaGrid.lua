@@ -17,18 +17,18 @@ function __IsoMetaGrid:Dispose() end
 ---@param isoPlayer IsoPlayer
 function __IsoMetaGrid:RemoveFromMeta(isoPlayer) end
 
----@param arg0 IsoMetaCell
-function __IsoMetaGrid:addCellToSave(arg0) end
+---@param cell IsoMetaCell
+function __IsoMetaGrid:addCellToSave(cell) end
 
----@param arg0 BuildingDef
-function __IsoMetaGrid:addRoomsToAdjacentCells(arg0) end
+---@param buildingDef BuildingDef
+function __IsoMetaGrid:addRoomsToAdjacentCells(buildingDef) end
 
----@param arg0 BuildingDef
----@param arg1 ArrayList<RoomDef>
-function __IsoMetaGrid:addRoomsToAdjacentCells(arg0, arg1) end
+---@param buildingDef BuildingDef
+---@param roomDefs ArrayList<RoomDef>
+function __IsoMetaGrid:addRoomsToAdjacentCells(buildingDef, roomDefs) end
 
----@param arg0 Zone
-function __IsoMetaGrid:addZone(arg0) end
+---@param zone Zone
+function __IsoMetaGrid:addZone(zone) end
 
 function __IsoMetaGrid:checkVehiclesZones() end
 
@@ -43,21 +43,21 @@ function __IsoMetaGrid:countNearbyBuildingsRooms(isoPlayer) end
 ---@return integer
 function __IsoMetaGrid:countRoomsIntersecting(x, y, w, h) end
 
----@param arg0 integer
----@param arg1 integer
+---@param x integer
+---@param y integer
 ---@return BuildingDef
-function __IsoMetaGrid:getAssociatedBuildingAt(arg0, arg1) end
+function __IsoMetaGrid:getAssociatedBuildingAt(x, y) end
 
 ---@param x integer
 ---@param y integer
 ---@return BuildingDef
 function __IsoMetaGrid:getBuildingAt(x, y) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return BuildingDef
-function __IsoMetaGrid:getBuildingAt(arg0, arg1, arg2) end
+function __IsoMetaGrid:getBuildingAt(x, y, z) end
 
 ---@param x integer
 ---@param y integer
@@ -67,17 +67,17 @@ function __IsoMetaGrid:getBuildingAtRelax(x, y) end
 ---@return ArrayList<BuildingDef>
 function __IsoMetaGrid:getBuildings() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 ArrayList<BuildingDef>
-function __IsoMetaGrid:getBuildingsIntersecting(arg0, arg1, arg2, arg3, arg4) end
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
+---@param result ArrayList<BuildingDef>
+function __IsoMetaGrid:getBuildingsIntersecting(x, y, w, h, result) end
 
----@param arg0 integer
----@param arg1 integer
+---@param x integer
+---@param y integer
 ---@return IsoMetaCell
-function __IsoMetaGrid:getCell(arg0, arg1) end
+function __IsoMetaGrid:getCell(x, y) end
 
 ---@param x integer
 ---@param y integer
@@ -89,10 +89,10 @@ function __IsoMetaGrid:getCellData(x, y) end
 ---@return IsoMetaCell
 function __IsoMetaGrid:getCellDataAbs(x, y) end
 
----@param arg0 integer
----@param arg1 integer
+---@param x integer
+---@param y integer
 ---@return IsoMetaCell
-function __IsoMetaGrid:getCellOrCreate(arg0, arg1) end
+function __IsoMetaGrid:getCellOrCreate(x, y) end
 
 ---@param cx integer
 ---@param cy integer
@@ -164,13 +164,13 @@ function __IsoMetaGrid:getRemovedBuildings() end
 ---@return RoomDef
 function __IsoMetaGrid:getRoomAt(x, y, z) end
 
----@param arg0 integer
+---@param roomID integer
 ---@return IsoRoom
-function __IsoMetaGrid:getRoomByID(arg0) end
+function __IsoMetaGrid:getRoomByID(roomID) end
 
----@param arg0 integer
+---@param roomID integer
 ---@return RoomDef
-function __IsoMetaGrid:getRoomDefByID(arg0) end
+function __IsoMetaGrid:getRoomDefByID(roomID) end
 
 ---@param x integer
 ---@param y integer
@@ -179,59 +179,59 @@ function __IsoMetaGrid:getRoomDefByID(arg0) end
 ---@param roomDefs ArrayList<RoomDef>
 function __IsoMetaGrid:getRoomsIntersecting(x, y, w, h, roomDefs) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return VehicleZone
-function __IsoMetaGrid:getVehicleZoneAt(arg0, arg1, arg2) end
+function __IsoMetaGrid:getVehicleZoneAt(x, y, z) end
 
 ---@return integer
 function __IsoMetaGrid:getWidth() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return Zone
-function __IsoMetaGrid:getZoneAt(arg0, arg1, arg2) end
+function __IsoMetaGrid:getZoneAt(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 string
+---@param x integer
+---@param y integer
+---@param z integer
+---@param w integer
+---@param h integer
+---@param type string
 ---@return Zone
-function __IsoMetaGrid:getZoneWithBoundsAndType(arg0, arg1, arg2, arg3, arg4, arg5) end
+function __IsoMetaGrid:getZoneWithBoundsAndType(x, y, z, w, h, type) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return ArrayList<Zone>
-function __IsoMetaGrid:getZonesAt(arg0, arg1, arg2) end
+function __IsoMetaGrid:getZonesAt(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 ArrayList<Zone>
+---@param x integer
+---@param y integer
+---@param z integer
+---@param result ArrayList<Zone>
 ---@return ArrayList<Zone>
-function __IsoMetaGrid:getZonesAt(arg0, arg1, arg2, arg3) end
+function __IsoMetaGrid:getZonesAt(x, y, z, result) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
+---@param x integer
+---@param y integer
+---@param z integer
+---@param w integer
+---@param h integer
 ---@return ArrayList<Zone>
-function __IsoMetaGrid:getZonesIntersecting(arg0, arg1, arg2, arg3, arg4) end
+function __IsoMetaGrid:getZonesIntersecting(x, y, z, w, h) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 ArrayList<Zone>
+---@param x integer
+---@param y integer
+---@param z integer
+---@param w integer
+---@param h integer
+---@param result ArrayList<Zone>
 ---@return ArrayList<Zone>
-function __IsoMetaGrid:getZonesIntersecting(arg0, arg1, arg2, arg3, arg4, arg5) end
+function __IsoMetaGrid:getZonesIntersecting(x, y, z, w, h, result) end
 
 ---@return integer
 function __IsoMetaGrid:gridX() end
@@ -239,20 +239,20 @@ function __IsoMetaGrid:gridX() end
 ---@return integer
 function __IsoMetaGrid:gridY() end
 
----@param arg0 integer
----@param arg1 integer
+---@param x integer
+---@param y integer
 ---@return boolean
-function __IsoMetaGrid:hasCell(arg0, arg1) end
+function __IsoMetaGrid:hasCell(x, y) end
 
----@param arg0 integer
----@param arg1 integer
+---@param x integer
+---@param y integer
 ---@return MetaCellPresence
-function __IsoMetaGrid:hasCellData(arg0, arg1) end
+function __IsoMetaGrid:hasCellData(x, y) end
 
----@param arg0 integer
----@param arg1 integer
+---@param wx integer
+---@param wy integer
 ---@return boolean
-function __IsoMetaGrid:isChunkLoaded(arg0, arg1) end
+function __IsoMetaGrid:isChunkLoaded(wx, wy) end
 
 ---@param wx integer
 ---@param wy integer
@@ -264,13 +264,13 @@ function __IsoMetaGrid:isValidChunk(wx, wy) end
 ---@return boolean
 function __IsoMetaGrid:isValidSquare(x, y) end
 
----@param arg0 Zone
----@param arg1 Zone
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
+---@param zone1 Zone
+---@param zone2 Zone
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return boolean
-function __IsoMetaGrid:isZoneAbove(arg0, arg1, arg2, arg3, arg4) end
+function __IsoMetaGrid:isZoneAbove(zone1, zone2, x, y, z) end
 
 function __IsoMetaGrid:load() end
 
@@ -281,9 +281,9 @@ function __IsoMetaGrid:load(input) end
 ---@param loadMethod BiConsumer<ByteBuffer, integer>
 function __IsoMetaGrid:load(inFilePath, loadMethod) end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __IsoMetaGrid:loadAnimalZones(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __IsoMetaGrid:loadAnimalZones(input, WorldVersion) end
 
 ---@param path string
 ---@param filter string
@@ -296,45 +296,45 @@ function __IsoMetaGrid:loadZone(input, WorldVersion) end
 
 function __IsoMetaGrid:processZones() end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
----@param arg7 table
+---@param name string
+---@param type string
+---@param x integer
+---@param y integer
+---@param z integer
+---@param width integer
+---@param height integer
+---@param properties table
 ---@return Zone
-function __IsoMetaGrid:registerAnimalZone(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+function __IsoMetaGrid:registerAnimalZone(name, type, x, y, z, width, height, properties) end
 
----@param arg0 AnimalZone
+---@param animalZone AnimalZone
 ---@return Zone
-function __IsoMetaGrid:registerAnimalZone(arg0) end
+function __IsoMetaGrid:registerAnimalZone(animalZone) end
 
----@param arg0 AnimalZone
----@param arg1 boolean
+---@param animalZone AnimalZone
+---@param bHotSave boolean
 ---@return Zone
-function __IsoMetaGrid:registerAnimalZone(arg0, arg1) end
+function __IsoMetaGrid:registerAnimalZone(animalZone, bHotSave) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 string
----@param arg4 table
----@param arg5 table
+---@param name string
+---@param type string
+---@param z integer
+---@param geometry string
+---@param pointsTable table
+---@param properties table
 ---@return Zone
-function __IsoMetaGrid:registerGeometryZone(arg0, arg1, arg2, arg3, arg4, arg5) end
+function __IsoMetaGrid:registerGeometryZone(name, type, z, geometry, pointsTable, properties) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
----@param arg7 table
+---@param name string
+---@param type string
+---@param x integer
+---@param y integer
+---@param z integer
+---@param width integer
+---@param height integer
+---@param properties table
 ---@return Zone
-function __IsoMetaGrid:registerMannequinZone(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+function __IsoMetaGrid:registerMannequinZone(name, type, x, y, z, width, height, properties) end
 
 ---@param name string
 ---@param type string
@@ -346,79 +346,79 @@ function __IsoMetaGrid:registerMannequinZone(arg0, arg1, arg2, arg3, arg4, arg5,
 ---@param properties table
 function __IsoMetaGrid:registerRoomTone(name, type, x, y, z, width, height, properties) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
----@param arg7 table
+---@param name string
+---@param type string
+---@param x integer
+---@param y integer
+---@param z integer
+---@param width integer
+---@param height integer
+---@param properties table
 ---@return Zone
-function __IsoMetaGrid:registerVehiclesZone(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+function __IsoMetaGrid:registerVehiclesZone(name, type, x, y, z, width, height, properties) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
----@param arg7 table
+---@param name string
+---@param type string
+---@param x integer
+---@param y integer
+---@param z integer
+---@param width integer
+---@param height integer
+---@param properties table
 ---@return Zone
-function __IsoMetaGrid:registerWorldGenZone(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+function __IsoMetaGrid:registerWorldGenZone(name, type, x, y, z, width, height, properties) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
+---@param name string
+---@param type string
+---@param x integer
+---@param y integer
+---@param z integer
+---@param width integer
+---@param height integer
 ---@return Zone
-function __IsoMetaGrid:registerZone(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+function __IsoMetaGrid:registerZone(name, type, x, y, z, width, height) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
----@param arg7 ZoneGeometryType
----@param arg8 TIntArrayList
----@param arg9 integer
+---@param name string
+---@param type string
+---@param x integer
+---@param y integer
+---@param z integer
+---@param width integer
+---@param height integer
+---@param geometryType ZoneGeometryType
+---@param points TIntArrayList
+---@param polylineWidth integer
 ---@return Zone
-function __IsoMetaGrid:registerZone(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+function __IsoMetaGrid:registerZone(name, type, x, y, z, width, height, geometryType, points, polylineWidth) end
 
----@param arg0 Zone
+---@param zone Zone
 ---@return Zone
-function __IsoMetaGrid:registerZone(arg0) end
+function __IsoMetaGrid:registerZone(zone) end
 
 ---@deprecated
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
+---@param name string
+---@param type string
+---@param x integer
+---@param y integer
+---@param z integer
+---@param width integer
+---@param height integer
 ---@return Zone
-function __IsoMetaGrid:registerZoneNoOverlap(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+function __IsoMetaGrid:registerZoneNoOverlap(name, type, x, y, z, width, height) end
 
----@param arg0 BuildingDef
-function __IsoMetaGrid:removeRoomsFromAdjacentCells(arg0) end
+---@param buildingDef BuildingDef
+function __IsoMetaGrid:removeRoomsFromAdjacentCells(buildingDef) end
 
----@param arg0 ArrayList<RoomDef>
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
-function __IsoMetaGrid:removeRoomsFromAdjacentCells(arg0, arg1, arg2, arg3, arg4, arg5) end
+---@param rooms ArrayList<RoomDef>
+---@param cellX1 integer
+---@param cellY1 integer
+---@param cellX2 integer
+---@param cellY2 integer
+---@param userDefined integer
+function __IsoMetaGrid:removeRoomsFromAdjacentCells(rooms, cellX1, cellY1, cellX2, cellY2, userDefined) end
 
----@param arg0 Zone
-function __IsoMetaGrid:removeZone(arg0) end
+---@param zone Zone
+function __IsoMetaGrid:removeZone(zone) end
 
 ---@param cellX integer
 ---@param cellY integer
@@ -432,8 +432,8 @@ function __IsoMetaGrid:save(output) end
 
 function __IsoMetaGrid:save() end
 
----@param arg0 ByteBuffer
-function __IsoMetaGrid:saveAnimalZones(arg0) end
+---@param output ByteBuffer
+function __IsoMetaGrid:saveAnimalZones(output) end
 
 ---@param bufferMap SaveBufferMap
 ---@param path string
@@ -446,26 +446,26 @@ function __IsoMetaGrid:saveCellsToSaveBufferMap(bufferMap, path, filter, saveMet
 ---@param fromServer boolean
 function __IsoMetaGrid:savePart(output, part, fromServer) end
 
----@param arg0 SaveBufferMap
-function __IsoMetaGrid:saveToBufferMap(arg0) end
+---@param bufferMap SaveBufferMap
+function __IsoMetaGrid:saveToBufferMap(bufferMap) end
 
----@param arg0 SaveBufferMap
----@param arg1 string
----@param arg2 Consumer<ByteBuffer>
-function __IsoMetaGrid:saveToSaveBufferMap(arg0, arg1, arg2) end
+---@param bufferMap SaveBufferMap
+---@param fileName string
+---@param saveMethod Consumer<ByteBuffer>
+function __IsoMetaGrid:saveToSaveBufferMap(bufferMap, fileName, saveMethod) end
 
 ---@param output ByteBuffer
 function __IsoMetaGrid:saveZone(output) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 IsoMetaCell
-function __IsoMetaGrid:setCell(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param cell IsoMetaCell
+function __IsoMetaGrid:setCell(x, y, cell) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 IsoMetaCell
-function __IsoMetaGrid:setCellData(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param cell IsoMetaCell
+function __IsoMetaGrid:setCellData(x, y, cell) end
 
 ---@return boolean
 function __IsoMetaGrid:wasLoaded() end

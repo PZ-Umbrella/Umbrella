@@ -3,8 +3,8 @@
 ---@class RZSEscapedHerd: RandomizedZoneStoryBase
 local __RZSEscapedHerd = {}
 
----@param arg0 Zone
-function __RZSEscapedHerd:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSEscapedHerd:randomizeZoneStory(zone) end
 
 RZSEscapedHerd = {}
 

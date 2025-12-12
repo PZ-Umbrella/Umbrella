@@ -8,9 +8,9 @@ function __PerkInfo:getLevel() end
 
 PerkInfo = {}
 
----@param arg0 IsoGameCharacter
+---@param this_0 IsoGameCharacter
 ---@return IsoGameCharacter.PerkInfo
-function PerkInfo.new(arg0) end
+function PerkInfo.new(this_0) end
 
 ---@type Class<IsoGameCharacter.PerkInfo>
 PerkInfo.class = nil

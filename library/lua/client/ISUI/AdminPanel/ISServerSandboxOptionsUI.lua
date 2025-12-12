@@ -14,9 +14,6 @@ ISServerSandboxOptionsUI = ISPanelJoypad:derive("ISServerSandboxOptionsUI")
 ISServerSandboxOptionsUI.Type = "ISServerSandboxOptionsUI"
 ISServerSandboxOptionsUI.instance = nil ---@type ISServerSandboxOptionsUI?
 
----@param self ISTextEntryBox
-function ISServerSandboxOptionsUI.searchPrerender(self) end
-
 function ISServerSandboxOptionsUI:createChildren() end
 
 ---@param page umbrella.ServerSettingsScreen.SettingsPage

@@ -6,31 +6,31 @@ local __IsoWindowFrame = {}
 ---@return IsoCurtain
 function __IsoWindowFrame:HasCurtains() end
 
----@param arg0 IsoGameCharacter
-function __IsoWindowFrame:addSheet(arg0) end
+---@param chr IsoGameCharacter
+function __IsoWindowFrame:addSheet(chr) end
 
----@param arg0 IsoPlayer
----@param arg1 string
+---@param player IsoPlayer
+---@param itemType string
 ---@return boolean
-function __IsoWindowFrame:addSheetRope(arg0, arg1) end
+function __IsoWindowFrame:addSheetRope(player, itemType) end
 
 ---@return boolean
 function __IsoWindowFrame:canAddSheetRope() end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return boolean
-function __IsoWindowFrame:canClimbThrough(arg0) end
+function __IsoWindowFrame:canClimbThrough(chr) end
 
 ---@return integer
 function __IsoWindowFrame:countAddSheetRope() end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return IsoGridSquare
-function __IsoWindowFrame:getAddSheetSquare(arg0) end
+function __IsoWindowFrame:getAddSheetSquare(chr) end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return IsoBarricade
-function __IsoWindowFrame:getBarricadeForCharacter(arg0) end
+function __IsoWindowFrame:getBarricadeForCharacter(chr) end
 
 ---@return IsoBarricade
 function __IsoWindowFrame:getBarricadeOnOppositeSquare() end
@@ -38,9 +38,9 @@ function __IsoWindowFrame:getBarricadeOnOppositeSquare() end
 ---@return IsoBarricade
 function __IsoWindowFrame:getBarricadeOnSameSquare() end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return IsoBarricade
-function __IsoWindowFrame:getBarricadeOppositeCharacter(arg0) end
+function __IsoWindowFrame:getBarricadeOppositeCharacter(chr) end
 
 ---@return IsoCurtain
 function __IsoWindowFrame:getCurtain() end
@@ -54,9 +54,9 @@ function __IsoWindowFrame:getObjectName() end
 ---@return IsoGridSquare
 function __IsoWindowFrame:getOppositeSquare() end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return Thumpable
-function __IsoWindowFrame:getThumpableFor(arg0) end
+function __IsoWindowFrame:getThumpableFor(chr) end
 
 ---@return IsoWindow
 function __IsoWindowFrame:getWindow() end
@@ -73,18 +73,18 @@ function __IsoWindowFrame:isBarricadeAllowed() end
 ---@return boolean
 function __IsoWindowFrame:isBarricaded() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
----@param arg2 boolean
-function __IsoWindowFrame:load(arg0, arg1, arg2) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+---@param IS_DEBUG_SAVE boolean
+function __IsoWindowFrame:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return boolean
-function __IsoWindowFrame:removeSheetRope(arg0) end
+function __IsoWindowFrame:removeSheetRope(player) end
 
----@param arg0 ByteBuffer
----@param arg1 boolean
-function __IsoWindowFrame:save(arg0, arg1) end
+---@param output ByteBuffer
+---@param IS_DEBUG_SAVE boolean
+function __IsoWindowFrame:save(output, IS_DEBUG_SAVE) end
 
 IsoWindowFrame = {}
 
@@ -146,16 +146,16 @@ function IsoWindowFrame.isWindowFrame(o, north) end
 ---@return boolean
 function IsoWindowFrame.removeSheetRope(o, player) end
 
----@param arg0 IsoCell
+---@param cell IsoCell
 ---@return IsoWindowFrame
-function IsoWindowFrame.new(arg0) end
+function IsoWindowFrame.new(cell) end
 
----@param arg0 IsoCell
----@param arg1 IsoGridSquare
----@param arg2 IsoSprite
----@param arg3 boolean
+---@param cell IsoCell
+---@param gridSquare IsoGridSquare
+---@param gid IsoSprite
+---@param north boolean
 ---@return IsoWindowFrame
-function IsoWindowFrame.new(arg0, arg1, arg2, arg3) end
+function IsoWindowFrame.new(cell, gridSquare, gid, north) end
 
 ---@type Class<IsoWindowFrame>
 IsoWindowFrame.class = nil

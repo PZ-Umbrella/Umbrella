@@ -3,10 +3,10 @@
 ---@class RandomizedDeadSurvivorBase: RandomizedBuildingBase
 local __RandomizedDeadSurvivorBase = {}
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param def BuildingDef
+---@param force boolean
 ---@return boolean
-function __RandomizedDeadSurvivorBase:isValid(arg0, arg1) end
+function __RandomizedDeadSurvivorBase:isValid(def, force) end
 
 ---@param def BuildingDef
 function __RandomizedDeadSurvivorBase:randomizeDeadSurvivor(def) end

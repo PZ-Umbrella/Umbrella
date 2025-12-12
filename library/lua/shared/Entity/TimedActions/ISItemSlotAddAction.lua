@@ -2,7 +2,7 @@
 
 ---@class ISItemSlotAddAction : ISBaseTimedAction
 ---@field actionAnim string
----@field actionAnimVariables table
+---@field actionAnimVariables table<string, string>
 ---@field canAddItem (fun(self: ISItemSlotAddAction): boolean)?
 ---@field entity IsoObject
 ---@field item InventoryItem
@@ -37,6 +37,6 @@ function ISItemSlotAddAction:update() end
 ---@param character IsoPlayer
 ---@param entity IsoObject
 ---@param item InventoryItem
----@param resource Resource
+---@param itemSlot ISItemSlot
 ---@return ISItemSlotAddAction
-function ISItemSlotAddAction:new(character, entity, item, resource) end
+function ISItemSlotAddAction:new(character, entity, item, itemSlot) end

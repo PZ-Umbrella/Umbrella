@@ -3,13 +3,13 @@
 ---@class RBHeatBreakAfternoon: RandomizedBuildingBase
 local __RBHeatBreakAfternoon = {}
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param def BuildingDef
+---@param force boolean
 ---@return boolean
-function __RBHeatBreakAfternoon:isValid(arg0, arg1) end
+function __RBHeatBreakAfternoon:isValid(def, force) end
 
----@param arg0 BuildingDef
-function __RBHeatBreakAfternoon:randomizeBuilding(arg0) end
+---@param def BuildingDef
+function __RBHeatBreakAfternoon:randomizeBuilding(def) end
 
 RBHeatBreakAfternoon = {}
 

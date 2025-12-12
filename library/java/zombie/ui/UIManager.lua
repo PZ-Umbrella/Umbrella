@@ -143,8 +143,8 @@ UIManager.useUiFbo = nil
 ---@type boolean
 UIManager.visibleAllUi = nil
 
----@param arg0 UIElementInterface
-function UIManager.AddUI(arg0) end
+---@param el UIElementInterface
+function UIManager.AddUI(el) end
 
 function UIManager.CloseContainers() end
 
@@ -179,8 +179,8 @@ function UIManager.FadeOut(seconds) end
 ---@param seconds number
 function UIManager.FadeOut(playerIndex, seconds) end
 
----@param arg0 UIElementInterface
-function UIManager.RemoveElement(arg0) end
+---@param el UIElementInterface
+function UIManager.RemoveElement(el) end
 
 function UIManager.clearArrays() end
 
@@ -199,9 +199,9 @@ function UIManager.debugBreakpoint(filename, pc) end
 ---@return Texture # the black
 function UIManager.getBlack() end
 
----@param arg0 integer
+---@param playerIndex integer
 ---@return number
-function UIManager.getBlinkAlpha(arg0) end
+function UIManager.getBlinkAlpha(playerIndex) end
 
 ---@return Clock # the clock
 function UIManager.getClock() end
@@ -305,10 +305,10 @@ function UIManager.getSecondsSinceLastUpdate() end
 ---@return SpeedControls # the speedControls
 function UIManager.getSpeedControls() end
 
----@param arg0 integer
----@param arg1 integer
+---@param playerIndex integer
+---@param maxIndex integer
 ---@return integer
-function UIManager.getSyncedIconIndex(arg0, arg1) end
+function UIManager.getSyncedIconIndex(playerIndex, maxIndex) end
 
 ---@param mx number
 ---@param my number
@@ -378,9 +378,9 @@ function UIManager.render() end
 
 function UIManager.renderFadeOverlay() end
 
----@param arg0 integer
+---@param playerIndex integer
 ---@return integer
-function UIManager.resetSyncedIconIndex(arg0) end
+function UIManager.resetSyncedIconIndex(playerIndex) end
 
 function UIManager.resize() end
 
@@ -465,15 +465,15 @@ function UIManager.setPickedTile(aPickedTile) end
 ---@param aPickedTileLocal Vector2 the PickedTileLocal to set
 function UIManager.setPickedTileLocal(aPickedTileLocal) end
 
----@param arg0 integer
----@param arg1 UIElementInterface
----@param arg2 UIElementInterface
-function UIManager.setPlayerInventory(arg0, arg1, arg2) end
+---@param playerIndex integer
+---@param inventory UIElementInterface
+---@param loot UIElementInterface
+function UIManager.setPlayerInventory(playerIndex, inventory, loot) end
 
----@param arg0 integer
----@param arg1 UIElementInterface
----@param arg2 UIElementInterface
-function UIManager.setPlayerInventoryTooltip(arg0, arg1, arg2) end
+---@param playerIndex integer
+---@param inventory UIElementInterface
+---@param loot UIElementInterface
+function UIManager.setPlayerInventoryTooltip(playerIndex, inventory, loot) end
 
 ---@param index number
 ---@param aProgressBar ActionProgressBar the ProgressBar to set
@@ -494,8 +494,8 @@ function UIManager.setSpeedControls(aSpeedControls) end
 ---@param aToolTip ObjectTooltip the toolTip to set
 function UIManager.setToolTip(aToolTip) end
 
----@param arg0 ArrayList<UIElementInterface>
-function UIManager.setUI(arg0) end
+---@param aUI ArrayList<UIElementInterface>
+function UIManager.setUI(aUI) end
 
 ---@param visible boolean
 function UIManager.setVisibleAllUI(visible) end
@@ -503,10 +503,10 @@ function UIManager.setVisibleAllUI(visible) end
 ---@param abFadeBeforeUI boolean the bFadeBeforeUI to set
 function UIManager.setbFadeBeforeUI(abFadeBeforeUI) end
 
----@param arg0 table
----@param arg1 any
+---@param table table
+---@param key any
 ---@return any
-function UIManager.tableget(arg0, arg1) end
+function UIManager.tableget(table, key) end
 
 function UIManager.update() end
 

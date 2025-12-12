@@ -11,11 +11,11 @@ function __FMODAudio:isPlaying() end
 
 function __FMODAudio:pause() end
 
----@param arg0 string
-function __FMODAudio:setName(arg0) end
+---@param name string
+function __FMODAudio:setName(name) end
 
----@param arg0 number
-function __FMODAudio:setVolume(arg0) end
+---@param volume number
+function __FMODAudio:setVolume(volume) end
 
 function __FMODAudio:start() end
 
@@ -23,9 +23,9 @@ function __FMODAudio:stop() end
 
 FMODAudio = {}
 
----@param arg0 BaseSoundEmitter
+---@param emitter BaseSoundEmitter
 ---@return FMODAudio
-function FMODAudio.new(arg0) end
+function FMODAudio.new(emitter) end
 
 ---@type Class<FMODAudio>
 FMODAudio.class = nil

@@ -16,8 +16,8 @@ function __Clothing:IsClothing() end
 
 function __Clothing:Unwear() end
 
----@param arg0 boolean
-function __Clothing:Unwear(arg0) end
+---@param drop boolean
+function __Clothing:Unwear(drop) end
 
 ---@param bCrafting boolean
 ---@param bInContainer boolean
@@ -28,11 +28,11 @@ function __Clothing:Use(bCrafting, bInContainer) end
 ---@param fabric InventoryItem
 function __Clothing:addPatch(chr, part, fabric) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 boolean
-function __Clothing:addPatchForClient(arg0, arg1, arg2, arg3) end
+---@param partIdx integer
+---@param tailorLvl integer
+---@param fabricType integer
+---@param hasHole boolean
+function __Clothing:addPatchForClient(partIdx, tailorLvl, fabricType, hasHole) end
 
 function __Clothing:addRandomBlood() end
 
@@ -54,8 +54,8 @@ function __Clothing:copyPatchesTo(newClothing) end
 
 function __Clothing:drainGasMask() end
 
----@param arg0 number
-function __Clothing:drainGasMask(arg0) end
+---@param rate number
+function __Clothing:drainGasMask(rate) end
 
 function __Clothing:drainSCBA() end
 
@@ -137,9 +137,9 @@ function __Clothing:getInsulation() end
 ---@return string # the name
 function __Clothing:getName() end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return string
-function __Clothing:getName(arg0) end
+function __Clothing:getName(player) end
 
 ---@return integer
 function __Clothing:getNbrOfCoveredParts() end
@@ -221,11 +221,11 @@ function __Clothing:isWorn() end
 ---@param WorldVersion integer
 function __Clothing:load(input, WorldVersion) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
-function __Clothing:randomizeCondition(arg0, arg1, arg2, arg3) end
+---@param wetChance integer
+---@param dirtChance integer
+---@param bloodChance integer
+---@param holeChance integer
+function __Clothing:randomizeCondition(wetChance, dirtChance, bloodChance, holeChance) end
 
 ---@param part BloodBodyPartType
 function __Clothing:removePatch(part) end
@@ -261,8 +261,8 @@ function __Clothing:setConditionLowerChance(conditionLowerChance) end
 ---@param delta number
 function __Clothing:setDirtyness(delta) end
 
----@param arg0 string
-function __Clothing:setFilterType(arg0) end
+---@param filterType string
+function __Clothing:setFilterType(filterType) end
 
 ---@param insulation number
 function __Clothing:setInsulation(insulation) end
@@ -292,14 +292,14 @@ function __Clothing:setSpriteName(SpriteName) end
 ---@param stompPower number
 function __Clothing:setStompPower(stompPower) end
 
----@param arg0 string
-function __Clothing:setTankType(arg0) end
+---@param tankType string
+function __Clothing:setTankType(tankType) end
 
 ---@param temperature number
 function __Clothing:setTemperature(temperature) end
 
----@param arg0 number
-function __Clothing:setUsedDelta(arg0) end
+---@param usedDelta number
+function __Clothing:setUsedDelta(usedDelta) end
 
 ---@param waterResistance number
 function __Clothing:setWaterResistance(waterResistance) end

@@ -3,13 +3,13 @@
 ---@class AttributeType.EnumSet<E: Enum<E>, IOEnum>: AttributeType
 local __EnumSet = {}
 
----@param arg0 integer
+---@param id integer
 ---@return E
-function __EnumSet:enumValueFromByteID(arg0) end
+function __EnumSet:enumValueFromByteID(id) end
 
----@param arg0 string
+---@param s string
 ---@return E
-function __EnumSet:enumValueFromString(arg0) end
+function __EnumSet:enumValueFromString(s) end
 
 ---@return EnumSet<E>
 function __EnumSet:getInitialValue() end

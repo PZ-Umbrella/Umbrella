@@ -3,8 +3,8 @@
 ---@class RZSFishingTrip: RandomizedZoneStoryBase
 local __RZSFishingTrip = {}
 
----@param arg0 Zone
-function __RZSFishingTrip:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSFishingTrip:randomizeZoneStory(zone) end
 
 RZSFishingTrip = {}
 

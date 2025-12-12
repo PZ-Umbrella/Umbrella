@@ -3,9 +3,9 @@
 ---@class Parts: Component
 local __Parts = {}
 
----@param arg0 ObjectTooltip
----@param arg1 ObjectTooltip.Layout
-function __Parts:DoTooltip(arg0, arg1) end
+---@param tooltipUI ObjectTooltip
+---@param layout ObjectTooltip.Layout
+function __Parts:DoTooltip(tooltipUI, layout) end
 
 ---@return boolean
 function __Parts:isValid() end

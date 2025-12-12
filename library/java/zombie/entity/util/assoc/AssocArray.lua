@@ -3,93 +3,93 @@
 ---@class AssocArray<K, V>
 local __AssocArray = {}
 
----@param arg0 K
----@param arg1 V
+---@param k K
+---@param v V
 ---@return boolean
-function __AssocArray:add(arg0, arg1) end
+function __AssocArray:add(k, v) end
 
----@param arg0 integer
----@param arg1 K
----@param arg2 V
-function __AssocArray:add(arg0, arg1, arg2) end
+---@param frontIndex integer
+---@param k K
+---@param v V
+function __AssocArray:add(frontIndex, k, v) end
 
 ---@param other AssocArray<K, V>
 function __AssocArray:addAll(other) end
 
 function __AssocArray:clear() end
 
----@param arg0 K
+---@param o K
 ---@return boolean
-function __AssocArray:containsKey(arg0) end
+function __AssocArray:containsKey(o) end
 
----@param arg0 V
+---@param o V
 ---@return boolean
-function __AssocArray:containsValue(arg0) end
+function __AssocArray:containsValue(o) end
 
----@param arg0 integer
-function __AssocArray:ensureCapacity(arg0) end
+---@param minCapacity integer
+function __AssocArray:ensureCapacity(minCapacity) end
 
----@param arg0 any
+---@param o any
 ---@return boolean
-function __AssocArray:equals(arg0) end
+function __AssocArray:equals(o) end
 
 ---@param action BiConsumer<any, any>
 function __AssocArray:forEach(action) end
 
----@param arg0 K
+---@param k K
 ---@return V
-function __AssocArray:get(arg0) end
+function __AssocArray:get(k) end
 
----@param arg0 integer
+---@param frontIndex integer
 ---@return K
-function __AssocArray:getKey(arg0) end
+function __AssocArray:getKey(frontIndex) end
 
----@param arg0 integer
+---@param frontIndex integer
 ---@return V
-function __AssocArray:getValue(arg0) end
+function __AssocArray:getValue(frontIndex) end
 
 ---@return integer
 function __AssocArray:hashCode() end
 
----@param arg0 K
+---@param o K
 ---@return integer
-function __AssocArray:indexOfKey(arg0) end
+function __AssocArray:indexOfKey(o) end
 
----@param arg0 V
+---@param o V
 ---@return integer
-function __AssocArray:indexOfValue(arg0) end
+function __AssocArray:indexOfValue(o) end
 
 ---@return boolean
 function __AssocArray:isEmpty() end
 
----@param arg0 K
+---@param o K
 ---@return integer
-function __AssocArray:lastIndexOfKey(arg0) end
+function __AssocArray:lastIndexOfKey(o) end
 
----@param arg0 V
+---@param o V
 ---@return integer
-function __AssocArray:lastIndexOfValue(arg0) end
+function __AssocArray:lastIndexOfValue(o) end
 
----@param arg0 K
----@param arg1 V
+---@param k K
+---@param v V
 ---@return V
-function __AssocArray:put(arg0, arg1) end
+function __AssocArray:put(k, v) end
 
 ---@param other AssocArray<K, V>
 function __AssocArray:putAll(other) end
 
----@param arg0 K
+---@param o K
 ---@return V
-function __AssocArray:remove(arg0) end
+function __AssocArray:remove(o) end
 
----@param arg0 integer
+---@param frontIndex integer
 ---@return V
-function __AssocArray:removeIndex(arg0) end
+function __AssocArray:removeIndex(frontIndex) end
 
----@param arg0 K
----@param arg1 V
+---@param k K
+---@param v V
 ---@return V
-function __AssocArray:set(arg0, arg1) end
+function __AssocArray:set(k, v) end
 
 ---@param other AssocArray<K, V>
 function __AssocArray:setAll(other) end
@@ -103,9 +103,9 @@ AssocArray = {}
 
 ---@generic K
 ---@generic V
----@param arg0 integer
+---@param initialCapacity integer
 ---@return AssocArray<K, V>
-function AssocArray.new(arg0) end
+function AssocArray.new(initialCapacity) end
 
 ---@generic K
 ---@generic V

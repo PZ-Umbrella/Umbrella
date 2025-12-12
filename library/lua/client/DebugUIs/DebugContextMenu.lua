@@ -173,6 +173,7 @@ function DebugContextMenu.OnDoorLock(worldobjects, door) end
 ---@param playerObj IsoPlayer
 function DebugContextMenu.onExtList(playerObj) end
 
+---@param playerObj IsoPlayer
 function DebugContextMenu.onFilmingToolsUI(playerObj) end
 
 ---@param obj IsoObject

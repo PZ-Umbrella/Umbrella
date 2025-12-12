@@ -3,8 +3,8 @@
 ---@class RZJackieJaye: RandomizedZoneStoryBase
 local __RZJackieJaye = {}
 
----@param arg0 Zone
-function __RZJackieJaye:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZJackieJaye:randomizeZoneStory(zone) end
 
 RZJackieJaye = {}
 

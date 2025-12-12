@@ -3,9 +3,9 @@
 ---@class VehicleScript.Part
 local __Part = {}
 
----@param arg0 string
+---@param id string
 ---@return VehicleScript.Anim
-function __Part:getAnimById(arg0) end
+function __Part:getAnimById(id) end
 
 ---@return number
 function __Part:getDurability() end
@@ -16,13 +16,13 @@ function __Part:getId() end
 ---@return string
 function __Part:getMechanicArea() end
 
----@param arg0 integer
+---@param index integer
 ---@return VehicleScript.Model
-function __Part:getModel(arg0) end
+function __Part:getModel(index) end
 
----@param arg0 string
+---@param id string
 ---@return VehicleScript.Model
-function __Part:getModelById(arg0) end
+function __Part:getModelById(id) end
 
 ---@return integer
 function __Part:getModelCount() end

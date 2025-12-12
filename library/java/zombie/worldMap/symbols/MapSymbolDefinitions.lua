@@ -3,21 +3,21 @@
 ---@class MapSymbolDefinitions
 local __MapSymbolDefinitions = {}
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 string
-function __MapSymbolDefinitions:addTexture(arg0, arg1, arg2, arg3, arg4) end
+---@param id string
+---@param path string
+---@param width integer
+---@param height integer
+---@param tab string
+function __MapSymbolDefinitions:addTexture(id, path, width, height, tab) end
 
 ---@param id string
 ---@param path string
 function __MapSymbolDefinitions:addTexture(id, path) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
-function __MapSymbolDefinitions:addTexture(arg0, arg1, arg2) end
+---@param id string
+---@param path string
+---@param tab string
+function __MapSymbolDefinitions:addTexture(id, path, tab) end
 
 ---@param id string
 ---@return MapSymbolDefinitions.MapSymbolDefinition

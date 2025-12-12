@@ -6,9 +6,9 @@ local __FaceScript = {}
 ---@return string
 function __FaceScript:getFaceName() end
 
----@param arg0 integer
+---@param z integer
 ---@return SpriteConfigScript.ZLayer
-function __FaceScript:getLayer(arg0) end
+function __FaceScript:getLayer(z) end
 
 ---@return integer
 function __FaceScript:getLightsourceOffsetX() end

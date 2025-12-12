@@ -5,10 +5,10 @@
 ---@class RBBurntFireman: RandomizedBuildingBase
 local __RBBurntFireman = {}
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param def BuildingDef
+---@param force boolean
 ---@return boolean
-function __RBBurntFireman:isValid(arg0, arg1) end
+function __RBBurntFireman:isValid(def, force) end
 
 ---@param def BuildingDef
 function __RBBurntFireman:randomizeBuilding(def) end

@@ -3,8 +3,8 @@
 ---@class ContextMenuConfigScript: ComponentScript
 local __ContextMenuConfigScript = {}
 
----@param arg0 ScriptLoadMode
-function __ContextMenuConfigScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __ContextMenuConfigScript:OnScriptsLoaded(loadMode) end
 
 function __ContextMenuConfigScript:PreReload() end
 

@@ -36,11 +36,6 @@ function ISForageIcon:getNewCategoryItem(_catDef, _zoneData) end
 
 function ISForageIcon:initialise() end
 
----@param _x number
----@param _y number
----@param _contextOption ISContextMenu?
-function ISForageIcon:onClickDiscard(_x, _y, _contextOption) end
-
 ---@return boolean
 function ISForageIcon:onRightMouseDown() end
 

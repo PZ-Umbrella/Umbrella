@@ -29,9 +29,9 @@ ChannelCategory.Television = nil
 ---@type ChannelCategory
 ChannelCategory.Undefined = nil
 
----@param arg0 string
+---@param name string
 ---@return ChannelCategory
-function ChannelCategory.valueOf(arg0) end
+function ChannelCategory.valueOf(name) end
 
 ---Returns an array containing the constants of this enum class, in
 ---the order they are declared.

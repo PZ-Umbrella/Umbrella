@@ -14,8 +14,8 @@ GameSounds.VERSION = nil
 ---@type boolean
 GameSounds.soundIsPaused = nil
 
----@param arg0 GameSoundScript
-function GameSounds.OnReloadSound(arg0) end
+---@param scriptSound GameSoundScript
+function GameSounds.OnReloadSound(scriptSound) end
 
 function GameSounds.Reset() end
 

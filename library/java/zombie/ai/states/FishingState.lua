@@ -25,9 +25,9 @@ function __FishingState:isSyncOnExit() end
 ---@return boolean
 function __FishingState:isSyncOnSquare() end
 
----@param arg0 IsoGameCharacter
----@param arg1 State.Stage
-function __FishingState:setParams(arg0, arg1) end
+---@param owner IsoGameCharacter
+---@param stage State.Stage
+function __FishingState:setParams(owner, stage) end
 
 FishingState = {}
 

@@ -5,11 +5,11 @@ local __BooleanDebugOption = {}
 
 BooleanDebugOption = {}
 
----@param arg0 SpriteModelEditorState
----@param arg1 string
----@param arg2 boolean
+---@param this_0 SpriteModelEditorState
+---@param name string
+---@param defaultValue boolean
 ---@return SpriteModelEditorState.BooleanDebugOption
-function BooleanDebugOption.new(arg0, arg1, arg2) end
+function BooleanDebugOption.new(this_0, name, defaultValue) end
 
 ---@type Class<SpriteModelEditorState.BooleanDebugOption>
 BooleanDebugOption.class = nil

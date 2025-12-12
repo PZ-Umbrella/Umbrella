@@ -19,5 +19,5 @@ function __PooledObject:release() end
 ---@param isFree boolean
 function __PooledObject:setFree(isFree) end
 
----@param arg0 Pool.PoolReference
-function __PooledObject:setPool(arg0) end
+---@param pool Pool.PoolReference
+function __PooledObject:setPool(pool) end

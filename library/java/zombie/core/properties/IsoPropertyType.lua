@@ -107,9 +107,9 @@ IsoPropertyType.doorTrans = nil
 ---@type string
 IsoPropertyType.streetlight = nil
 
----@param arg0 string
+---@param name string
 ---@return string
-function IsoPropertyType.lookup(arg0) end
+function IsoPropertyType.lookup(name) end
 
 ---@return IsoPropertyType
 function IsoPropertyType.new() end

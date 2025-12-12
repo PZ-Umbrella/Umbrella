@@ -102,9 +102,9 @@ function Metabolics.MetToW(met) end
 ---@return number
 function Metabolics.MetToWm2(met) end
 
----@param arg0 string
+---@param name string
 ---@return Metabolics
-function Metabolics.valueOf(arg0) end
+function Metabolics.valueOf(name) end
 
 ---Returns an array containing the constants of this enum class, in
 ---the order they are declared.

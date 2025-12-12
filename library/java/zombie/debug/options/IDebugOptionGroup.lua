@@ -10,24 +10,24 @@ function __IDebugOptionGroup:addChild(childOption) end
 ---@return Iterable<IDebugOption>
 function __IDebugOptionGroup:getChildren() end
 
----@param arg0 string
+---@param childName string
 ---@return string
-function __IDebugOptionGroup:getCombinedName(arg0) end
+function __IDebugOptionGroup:getCombinedName(childName) end
 
----@param arg0 string
----@param arg1 boolean
+---@param name string
+---@param defaultValue boolean
 ---@return BooleanDebugOption
-function __IDebugOptionGroup:newDebugOnlyOption(arg0, arg1) end
+function __IDebugOptionGroup:newDebugOnlyOption(name, defaultValue) end
 
----@param arg0 string
----@param arg1 boolean
+---@param name string
+---@param defaultValue boolean
 ---@return BooleanDebugOption
-function __IDebugOptionGroup:newOption(arg0, arg1) end
+function __IDebugOptionGroup:newOption(name, defaultValue) end
 
 ---@generic E: IDebugOptionGroup
----@param arg0 E
+---@param newGroup E
 ---@return E
-function __IDebugOptionGroup:newOptionGroup(arg0) end
+function __IDebugOptionGroup:newOptionGroup(newGroup) end
 
 ---@param newChild IDebugOption
 function __IDebugOptionGroup:onChildAdded(newChild) end

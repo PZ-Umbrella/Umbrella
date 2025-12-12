@@ -3,8 +3,8 @@
 ---@class RZSDean: RandomizedZoneStoryBase
 local __RZSDean = {}
 
----@param arg0 Zone
-function __RZSDean:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSDean:randomizeZoneStory(zone) end
 
 RZSDean = {}
 

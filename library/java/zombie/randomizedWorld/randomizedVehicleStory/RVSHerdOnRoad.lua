@@ -3,9 +3,9 @@
 ---@class RVSHerdOnRoad: RandomizedVehicleStoryBase
 local __RVSHerdOnRoad = {}
 
----@param arg0 Zone
----@param arg1 IsoChunk
-function __RVSHerdOnRoad:randomizeVehicleStory(arg0, arg1) end
+---@param zone Zone
+---@param chunk IsoChunk
+function __RVSHerdOnRoad:randomizeVehicleStory(zone, chunk) end
 
 RVSHerdOnRoad = {}
 

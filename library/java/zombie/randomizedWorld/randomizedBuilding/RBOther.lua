@@ -4,10 +4,10 @@
 ---@class RBOther: RandomizedBuildingBase
 local __RBOther = {}
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param def BuildingDef
+---@param force boolean
 ---@return boolean
-function __RBOther:isValid(arg0, arg1) end
+function __RBOther:isValid(def, force) end
 
 ---@param def BuildingDef
 function __RBOther:randomizeBuilding(def) end

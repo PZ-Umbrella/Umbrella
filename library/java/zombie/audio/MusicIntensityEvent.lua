@@ -15,16 +15,16 @@ function __MusicIntensityEvent:getId() end
 ---@return number
 function __MusicIntensityEvent:getIntensity() end
 
----@param arg0 integer
-function __MusicIntensityEvent:setElapsedTime(arg0) end
+---@param milliseconds integer
+function __MusicIntensityEvent:setElapsedTime(milliseconds) end
 
 MusicIntensityEvent = {}
 
----@param arg0 string
----@param arg1 number
----@param arg2 integer
+---@param label string
+---@param intensity number
+---@param durationMs integer
 ---@return MusicIntensityEvent
-function MusicIntensityEvent.new(arg0, arg1, arg2) end
+function MusicIntensityEvent.new(label, intensity, durationMs) end
 
 ---@type Class<MusicIntensityEvent>
 MusicIntensityEvent.class = nil

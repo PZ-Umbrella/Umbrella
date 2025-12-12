@@ -106,9 +106,9 @@ function IsoObjectType.FromString(str) end
 ---@return IsoObjectType
 function IsoObjectType.fromIndex(value) end
 
----@param arg0 string
+---@param name string
 ---@return IsoObjectType
-function IsoObjectType.valueOf(arg0) end
+function IsoObjectType.valueOf(name) end
 
 ---Returns an array containing the constants of this enum class, in
 ---the order they are declared.

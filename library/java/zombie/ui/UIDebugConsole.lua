@@ -15,24 +15,24 @@ function __UIDebugConsole:addOutput(b, off, len) end
 ---@return integer
 function __UIDebugConsole:levenshteinDistance(lhs, rhs) end
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return boolean
-function __UIDebugConsole:onMouseDown(arg0, arg1) end
+function __UIDebugConsole:onMouseDown(x, y) end
 
----@param arg0 number
----@param arg1 number
+---@param dx number
+---@param dy number
 ---@return boolean
-function __UIDebugConsole:onMouseMove(arg0, arg1) end
+function __UIDebugConsole:onMouseMove(dx, dy) end
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return boolean
-function __UIDebugConsole:onMouseUp(arg0, arg1) end
+function __UIDebugConsole:onMouseUp(x, y) end
 
----@param arg0 number
----@param arg1 number
-function __UIDebugConsole:onMouseUpOutside(arg0, arg1) end
+---@param x number
+---@param y number
+function __UIDebugConsole:onMouseUpOutside(x, y) end
 
 ---@param key integer
 function __UIDebugConsole:onOtherKey(key) end

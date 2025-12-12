@@ -1,15 +1,15 @@
 ---@meta
 
----@alias umbrella.ISPlayerStatsChooseTraitUI.OnClick fun(target: unknown?, button: ISButton, trait: TraitFactory.Trait)
+---@alias umbrella.ISPlayerStatsChooseTraitUI.OnClick fun(target: unknown?, button: ISButton, trait: CharacterTraitDefinition)
 
 ---@class ISPlayerStatsChooseTraitUI : ISPanel
----@field badTraits TraitFactory.Trait[]
+---@field badTraits CharacterTraitDefinition[]
 ---@field cancel ISButton
 ---@field chr IsoPlayer
 ---@field combo ISComboBox
 ---@field comboList table
 ---@field goodTrait table
----@field goodTraits TraitFactory.Trait[]
+---@field goodTraits CharacterTraitDefinition[]
 ---@field ok ISButton
 ---@field onclick umbrella.ISPlayerStatsChooseTraitUI.OnClick?
 ---@field target unknown?

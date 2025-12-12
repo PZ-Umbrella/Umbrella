@@ -26,9 +26,9 @@ function __IsoGameCharacter:CanAttack() end
 ---@return boolean
 function __IsoGameCharacter:CanSee(obj) end
 
----@param arg0 IsoObject
+---@param obj IsoObject
 ---@return boolean
-function __IsoGameCharacter:CanSee(arg0) end
+function __IsoGameCharacter:CanSee(obj) end
 
 function __IsoGameCharacter:ClearEquippedCache() end
 
@@ -60,8 +60,8 @@ function __IsoGameCharacter:DoFootstepSound(type) end
 ---@param volume number
 function __IsoGameCharacter:DoFootstepSound(volume) end
 
----@param arg0 number
-function __IsoGameCharacter:DoLand(arg0) end
+---@param in_impactIsoSpeed number
+function __IsoGameCharacter:DoLand(in_impactIsoSpeed) end
 
 function __IsoGameCharacter:DoSneezeText() end
 
@@ -77,51 +77,51 @@ function __IsoGameCharacter:DrawSneezeText() end
 ---@param desc SurvivorDesc
 function __IsoGameCharacter:Dressup(desc) end
 
----@param arg0 InventoryItem
----@param arg1 number
+---@param info InventoryItem
+---@param percentage number
 ---@return boolean
-function __IsoGameCharacter:DrinkFluid(arg0, arg1) end
+function __IsoGameCharacter:DrinkFluid(info, percentage) end
 
----@param arg0 InventoryItem
----@param arg1 number
----@param arg2 boolean
+---@param info InventoryItem
+---@param percentage number
+---@param useUtensil boolean
 ---@return boolean
-function __IsoGameCharacter:DrinkFluid(arg0, arg1, arg2) end
+function __IsoGameCharacter:DrinkFluid(info, percentage, useUtensil) end
 
----@param arg0 FluidContainer
----@param arg1 number
+---@param fluidCont FluidContainer
+---@param percentage number
 ---@return boolean
-function __IsoGameCharacter:DrinkFluid(arg0, arg1) end
+function __IsoGameCharacter:DrinkFluid(fluidCont, percentage) end
 
----@param arg0 FluidContainer
----@param arg1 number
----@param arg2 boolean
+---@param fluidCont FluidContainer
+---@param percentage number
+---@param useUtensil boolean
 ---@return boolean
-function __IsoGameCharacter:DrinkFluid(arg0, arg1, arg2) end
+function __IsoGameCharacter:DrinkFluid(fluidCont, percentage, useUtensil) end
 
----@param arg0 InventoryItem
+---@param info InventoryItem
 ---@return boolean
-function __IsoGameCharacter:DrinkFluid(arg0) end
+function __IsoGameCharacter:DrinkFluid(info) end
 
 ---@param info InventoryItem
 ---@param percentage number
 ---@return boolean
 function __IsoGameCharacter:Eat(info, percentage) end
 
----@param arg0 InventoryItem
----@param arg1 number
----@param arg2 boolean
+---@param info InventoryItem
+---@param percentage number
+---@param useUtensil boolean
 ---@return boolean
-function __IsoGameCharacter:Eat(arg0, arg1, arg2) end
+function __IsoGameCharacter:Eat(info, percentage, useUtensil) end
 
 ---@param info InventoryItem
 ---@return boolean
 function __IsoGameCharacter:Eat(info) end
 
----@param arg0 InventoryItem
----@param arg1 number
+---@param info InventoryItem
+---@param percentage number
 ---@return boolean
-function __IsoGameCharacter:EatOnClient(arg0, arg1) end
+function __IsoGameCharacter:EatOnClient(info, percentage) end
 
 function __IsoGameCharacter:FireCheck() end
 
@@ -182,9 +182,9 @@ function __IsoGameCharacter:IsSpeaking() end
 ---@return boolean
 function __IsoGameCharacter:IsSpeakingNPC() end
 
----@param arg0 HandWeapon
----@param arg1 IsoGameCharacter
-function __IsoGameCharacter:Kill(arg0, arg1) end
+---@param handWeapon HandWeapon
+---@param killer IsoGameCharacter
+function __IsoGameCharacter:Kill(handWeapon, killer) end
 
 ---@param killer IsoGameCharacter
 function __IsoGameCharacter:Kill(killer) end
@@ -229,10 +229,10 @@ function __IsoGameCharacter:NPCSetMelee(newvalue) end
 ---@param newvalue boolean
 function __IsoGameCharacter:NPCSetRunning(newvalue) end
 
----@param arg0 AnimLayer
----@param arg1 AnimationTrack
----@param arg2 AnimEvent
-function __IsoGameCharacter:OnAnimEvent(arg0, arg1, arg2) end
+---@param sender AnimLayer
+---@param track AnimationTrack
+---@param event AnimEvent
+function __IsoGameCharacter:OnAnimEvent(sender, track, event) end
 
 function __IsoGameCharacter:OnClothingUpdated() end
 
@@ -341,11 +341,11 @@ function __IsoGameCharacter:Throw(weapon) end
 ---@param sender ActionContext
 function __IsoGameCharacter:actionStateChanged(sender) end
 
----@param arg0 number
-function __IsoGameCharacter:addArmMuscleStrain(arg0) end
+---@param painfactor number
+function __IsoGameCharacter:addArmMuscleStrain(painfactor) end
 
----@param arg0 number
-function __IsoGameCharacter:addBackMuscleStrain(arg0) end
+---@param painfactor number
+function __IsoGameCharacter:addBackMuscleStrain(painfactor) end
 
 ---@param part BloodBodyPartType
 function __IsoGameCharacter:addBasicPatch(part) end
@@ -359,24 +359,24 @@ function __IsoGameCharacter:addBlood(part, scratched, bitten, allLayers) end
 ---@param speed number
 function __IsoGameCharacter:addBlood(speed) end
 
----@param arg0 string
+---@param itemType string
 ---@return ItemVisual
-function __IsoGameCharacter:addBodyVisualFromItemType(arg0) end
+function __IsoGameCharacter:addBodyVisualFromItemType(itemType) end
 
----@param arg0 number
-function __IsoGameCharacter:addBothArmMuscleStrain(arg0) end
+---@param painfactor number
+function __IsoGameCharacter:addBothArmMuscleStrain(painfactor) end
 
----@param arg0 InventoryItem
-function __IsoGameCharacter:addCombatMuscleStrain(arg0) end
+---@param weapon InventoryItem
+function __IsoGameCharacter:addCombatMuscleStrain(weapon) end
 
----@param arg0 InventoryItem
----@param arg1 integer
-function __IsoGameCharacter:addCombatMuscleStrain(arg0, arg1) end
+---@param weapon InventoryItem
+---@param hitCount integer
+function __IsoGameCharacter:addCombatMuscleStrain(weapon, hitCount) end
 
----@param arg0 InventoryItem
----@param arg1 integer
----@param arg2 number
-function __IsoGameCharacter:addCombatMuscleStrain(arg0, arg1, arg2) end
+---@param item InventoryItem
+---@param hitCount integer
+---@param multiplier number
+function __IsoGameCharacter:addCombatMuscleStrain(item, hitCount, multiplier) end
 
 ---@param part BloodBodyPartType
 ---@param nbr integer
@@ -400,8 +400,8 @@ function __IsoGameCharacter:addHoleFromZombieAttacks(part, scratch) end
 ---@param guid string
 function __IsoGameCharacter:addKnownMediaLine(guid) end
 
----@param arg0 number
-function __IsoGameCharacter:addLeftArmMuscleStrain(arg0) end
+---@param painfactor number
+function __IsoGameCharacter:addLeftArmMuscleStrain(painfactor) end
 
 ---@param line string
 function __IsoGameCharacter:addLineChatElement(line) end
@@ -451,33 +451,33 @@ function __IsoGameCharacter:addLineChatElement(
 )
 end
 
----@param arg0 BloodBodyPartType
----@param arg1 integer
----@param arg2 boolean
-function __IsoGameCharacter:addLotsOfDirt(arg0, arg1, arg2) end
+---@param part BloodBodyPartType
+---@param nbr integer
+---@param allLayers boolean
+function __IsoGameCharacter:addLotsOfDirt(part, nbr, allLayers) end
 
----@param arg0 number
-function __IsoGameCharacter:addNeckMuscleStrain(arg0) end
+---@param painfactor number
+function __IsoGameCharacter:addNeckMuscleStrain(painfactor) end
 
----@param arg0 string
-function __IsoGameCharacter:addReadLiterature(arg0) end
+---@param name string
+function __IsoGameCharacter:addReadLiterature(name) end
 
----@param arg0 string
----@param arg1 integer
-function __IsoGameCharacter:addReadLiterature(arg0, arg1) end
+---@param name string
+---@param day integer
+function __IsoGameCharacter:addReadLiterature(name, day) end
 
 ---@param item InventoryItem
 function __IsoGameCharacter:addReadMap(item) end
 
----@param arg0 string
-function __IsoGameCharacter:addReadPrintMedia(arg0) end
+---@param media_id string
+function __IsoGameCharacter:addReadPrintMedia(media_id) end
 
----@param arg0 number
-function __IsoGameCharacter:addRightLegMuscleStrain(arg0) end
+---@param painfactor number
+function __IsoGameCharacter:addRightLegMuscleStrain(painfactor) end
 
----@param arg0 BodyPartType
----@param arg1 number
-function __IsoGameCharacter:addStiffness(arg0, arg1) end
+---@param partType BodyPartType
+---@param stiffness number
+function __IsoGameCharacter:addStiffness(partType, stiffness) end
 
 ---@param itemType string
 function __IsoGameCharacter:addVisualDamage(itemType) end
@@ -495,8 +495,8 @@ function __IsoGameCharacter:allowsTwist() end
 
 function __IsoGameCharacter:applyCharacterTraitsRecipes() end
 
----@param arg0 number
-function __IsoGameCharacter:applyDamage(arg0) end
+---@param damageAmount number
+function __IsoGameCharacter:applyDamage(damageAmount) end
 
 function __IsoGameCharacter:applyProfessionRecipes() end
 
@@ -514,17 +514,17 @@ function __IsoGameCharacter:avoidDamage() end
 ---@return IsoDeadBody
 function __IsoGameCharacter:becomeCorpse() end
 
----@param arg0 ItemContainer
+---@param in_placeInContainer ItemContainer
 ---@return InventoryItem
-function __IsoGameCharacter:becomeCorpseItem(arg0) end
+function __IsoGameCharacter:becomeCorpseItem(in_placeInContainer) end
 
----@param arg0 integer
+---@param part integer
 ---@return boolean
-function __IsoGameCharacter:bodyPartIsSpiked(arg0) end
+function __IsoGameCharacter:bodyPartIsSpiked(part) end
 
----@param arg0 integer
+---@param part integer
 ---@return boolean
-function __IsoGameCharacter:bodyPartIsSpikedBehind(arg0) end
+function __IsoGameCharacter:bodyPartIsSpikedBehind(part) end
 
 ---@param corpse IsoDeadBody
 function __IsoGameCharacter:burnCorpse(corpse) end
@@ -532,35 +532,35 @@ function __IsoGameCharacter:burnCorpse(corpse) end
 ---@return Vector2
 function __IsoGameCharacter:calcCarForwardVector() end
 
----@param arg0 boolean
+---@param movingBackward boolean
 ---@return Vector2
-function __IsoGameCharacter:calcCarPositionOffset(arg0) end
+function __IsoGameCharacter:calcCarPositionOffset(movingBackward) end
 
----@param arg0 Vector2
+---@param offset Vector2
 ---@return Vector2
-function __IsoGameCharacter:calcCarSpeedVector(arg0) end
+function __IsoGameCharacter:calcCarSpeedVector(offset) end
 
 ---@return Vector2
 function __IsoGameCharacter:calcCarSpeedVector() end
 
----@param arg0 IsoGameCharacter
----@param arg1 Vector2
+---@param target IsoGameCharacter
+---@param offset Vector2
 ---@return Vector2
-function __IsoGameCharacter:calcCarToPlayerVector(arg0, arg1) end
+function __IsoGameCharacter:calcCarToPlayerVector(target, offset) end
 
----@param arg0 IsoGameCharacter
+---@param target IsoGameCharacter
 ---@return Vector2
-function __IsoGameCharacter:calcCarToPlayerVector(arg0) end
+function __IsoGameCharacter:calcCarToPlayerVector(target) end
 
----@param arg0 IsoGameCharacter
----@param arg1 boolean
+---@param target IsoGameCharacter
+---@param movingBackward boolean
 ---@return number
-function __IsoGameCharacter:calcConeAngleMultiplier(arg0, arg1) end
+function __IsoGameCharacter:calcConeAngleMultiplier(target, movingBackward) end
 
----@param arg0 IsoGameCharacter
----@param arg1 boolean
+---@param target IsoGameCharacter
+---@param movingBackward boolean
 ---@return number
-function __IsoGameCharacter:calcConeAngleOffset(arg0, arg1) end
+function __IsoGameCharacter:calcConeAngleOffset(target, movingBackward) end
 
 ---@param wielder IsoGameCharacter
 ---@param weapon HandWeapon
@@ -571,10 +571,10 @@ function __IsoGameCharacter:calcHitDir(wielder, weapon, out) end
 ---@param out Vector2
 function __IsoGameCharacter:calcHitDir(out) end
 
----@param arg0 Vector2
----@param arg1 boolean
+---@param carSpeed Vector2
+---@param movingBackward boolean
 ---@return number
-function __IsoGameCharacter:calcLengthMultiplier(arg0, arg1) end
+function __IsoGameCharacter:calcLengthMultiplier(carSpeed, movingBackward) end
 
 ---@return number
 function __IsoGameCharacter:calculateBaseSpeed() end
@@ -585,16 +585,16 @@ function __IsoGameCharacter:calculateCombatSpeed() end
 ---@return number
 function __IsoGameCharacter:calculateGrappleEffectivenessFromTraits() end
 
----@param arg0 ShadowParams
+---@param sp ShadowParams
 ---@return ShadowParams
-function __IsoGameCharacter:calculateShadowParams(arg0) end
+function __IsoGameCharacter:calculateShadowParams(sp) end
 
 ---@return VisibilityData
 function __IsoGameCharacter:calculateVisibilityData() end
 
----@param arg0 ItemContainer
+---@param in_container ItemContainer
 ---@return boolean
-function __IsoGameCharacter:canAccessContainer(arg0) end
+function __IsoGameCharacter:canAccessContainer(in_container) end
 
 ---@return boolean
 function __IsoGameCharacter:canBeGrappled() end
@@ -613,22 +613,22 @@ function __IsoGameCharacter:canClimbSheetRope(sq) end
 ---@return boolean
 function __IsoGameCharacter:canRagdoll() end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return boolean
-function __IsoGameCharacter:canReachTo(arg0) end
+function __IsoGameCharacter:canReachTo(square) end
 
 ---@return boolean
 function __IsoGameCharacter:canSprint() end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return boolean
-function __IsoGameCharacter:canStandAt(arg0, arg1, arg2) end
+function __IsoGameCharacter:canStandAt(x, y, z) end
 
----@param arg0 IsoObject
+---@param object IsoObject
 ---@return boolean
-function __IsoGameCharacter:canUseAsGenericCraftingSurface(arg0) end
+function __IsoGameCharacter:canUseAsGenericCraftingSurface(object) end
 
 ---@return boolean
 function __IsoGameCharacter:canUseDebugContextMenu() end
@@ -636,9 +636,9 @@ function __IsoGameCharacter:canUseDebugContextMenu() end
 ---@return boolean
 function __IsoGameCharacter:canUseLootTool() end
 
----@param arg0 Vector2
+---@param carSpeed Vector2
 ---@return boolean
-function __IsoGameCharacter:carMovingBackward(arg0) end
+function __IsoGameCharacter:carMovingBackward(carSpeed) end
 
 ---@param state State
 function __IsoGameCharacter:changeState(state) end
@@ -689,11 +689,11 @@ function __IsoGameCharacter:climbThroughWindow(w) end
 ---@param startingFrame integer
 function __IsoGameCharacter:climbThroughWindow(w, startingFrame) end
 
----@param arg0 IsoObject
-function __IsoGameCharacter:climbThroughWindow(arg0) end
+---@param isoObject IsoObject
+function __IsoGameCharacter:climbThroughWindow(isoObject) end
 
----@param arg0 IsoWindowFrame
-function __IsoGameCharacter:climbThroughWindowFrame(arg0) end
+---@param windowFrame IsoWindowFrame
+function __IsoGameCharacter:climbThroughWindowFrame(windowFrame) end
 
 ---@param w IsoWindow
 function __IsoGameCharacter:closeWindow(w) end
@@ -738,8 +738,8 @@ function __IsoGameCharacter:dbgGetAnimTrackWeight(layerIdx, trackIdx) end
 
 function __IsoGameCharacter:die() end
 
----@param arg0 Vector2
-function __IsoGameCharacter:doDeferredMovementFromRagdoll(arg0) end
+---@param dMovement Vector2
+function __IsoGameCharacter:doDeferredMovementFromRagdoll(dMovement) end
 
 ---@param baseVehicle BaseVehicle
 ---@param hitVars BaseVehicle.HitVars
@@ -755,13 +755,13 @@ function __IsoGameCharacter:drawDebugTextBelow(text) end
 ---@param b number
 function __IsoGameCharacter:drawDirectionLine(dir, length, r, g, b) end
 
----@param arg0 Vector2
----@param arg1 Vector2
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
-function __IsoGameCharacter:drawLine(arg0, arg1, arg2, arg3, arg4, arg5) end
+---@param startPos Vector2
+---@param dir Vector2
+---@param length number
+---@param r number
+---@param g number
+---@param b number
+function __IsoGameCharacter:drawLine(startPos, dir, length, r, g, b) end
 
 ---@param itemGUID string
 function __IsoGameCharacter:dressInClothingItem(itemGUID) end
@@ -793,9 +793,9 @@ function __IsoGameCharacter:dropHeldItems(x, y, z, heavy) end
 ---@param playbackVars AnimationVariableSource
 function __IsoGameCharacter:endPlaybackGameVariables(playbackVars) end
 
----@param arg0 IsoGameCharacter
+---@param isoGameCharacter IsoGameCharacter
 ---@return BallisticsTarget
-function __IsoGameCharacter:ensureExistsBallisticsTarget(arg0) end
+function __IsoGameCharacter:ensureExistsBallisticsTarget(isoGameCharacter) end
 
 function __IsoGameCharacter:ensureNotInVehicle() end
 
@@ -807,8 +807,8 @@ function __IsoGameCharacter:enterVehicle(v, seat, offset) end
 ---@param f number
 function __IsoGameCharacter:exert(f) end
 
----@param arg0 IsoDirections
-function __IsoGameCharacter:faceDirection(arg0) end
+---@param dir IsoDirections
+function __IsoGameCharacter:faceDirection(dir) end
 
 ---@param x number
 ---@param y number
@@ -832,8 +832,8 @@ function __IsoGameCharacter:fallFromRope() end
 
 function __IsoGameCharacter:fallenOnKnees() end
 
----@param arg0 boolean
-function __IsoGameCharacter:fallenOnKnees(arg0) end
+---@param hardFall boolean
+function __IsoGameCharacter:fallenOnKnees(hardFall) end
 
 function __IsoGameCharacter:flagForHotSave() end
 
@@ -885,9 +885,9 @@ function __IsoGameCharacter:getAnimAngleTwistDelta() end
 ---@return AnimEventBroadcaster
 function __IsoGameCharacter:getAnimEventBroadcaster() end
 
----@param arg0 Vector2
+---@param out_animForwardDirection Vector2
 ---@return Vector2
-function __IsoGameCharacter:getAnimForwardDirection(arg0) end
+function __IsoGameCharacter:getAnimForwardDirection(out_animForwardDirection) end
 
 ---@deprecated
 ---@param out Vector2
@@ -1027,9 +1027,9 @@ function __IsoGameCharacter:getClickSound() end
 ---@return ClimbSheetRopeState.ClimbData
 function __IsoGameCharacter:getClimbData() end
 
----@param arg0 boolean
+---@param down boolean
 ---@return number
-function __IsoGameCharacter:getClimbRopeSpeed(arg0) end
+function __IsoGameCharacter:getClimbRopeSpeed(down) end
 
 ---@return number
 function __IsoGameCharacter:getClimbRopeTime() end
@@ -1064,9 +1064,9 @@ function __IsoGameCharacter:getClothingItem_Torso() end
 ---@return ClothingWetness
 function __IsoGameCharacter:getClothingWetness() end
 
----@param arg0 ItemContainer
+---@param in_container ItemContainer
 ---@return string
-function __IsoGameCharacter:getContainerToolTip(arg0) end
+function __IsoGameCharacter:getContainerToolTip(in_container) end
 
 ---@return ArrayList<ItemContainer>
 function __IsoGameCharacter:getContainers() end
@@ -1098,25 +1098,25 @@ function __IsoGameCharacter:getContextWorldContainersInObjects(
 )
 end
 
----@param arg0 kahlua.Array<IsoObject>
+---@param in_contextObjects kahlua.Array<IsoObject>
 ---@return PZArrayList<ItemContainer>
-function __IsoGameCharacter:getContextWorldContainersWithHumanCorpse(arg0) end
+function __IsoGameCharacter:getContextWorldContainersWithHumanCorpse(in_contextObjects) end
 
----@param arg0 kahlua.Array<IsoObject>
+---@param in_contextObjects kahlua.Array<IsoObject>
 ---@return PZArrayList<ItemContainer>
-function __IsoGameCharacter:getContextWorldSuitableContainersToDropCorpseInObjects(arg0) end
+function __IsoGameCharacter:getContextWorldSuitableContainersToDropCorpseInObjects(in_contextObjects) end
 
 ---@return number
 function __IsoGameCharacter:getCorpseSicknessDefense() end
 
----@param arg0 number
+---@param rate number
 ---@return number
-function __IsoGameCharacter:getCorpseSicknessDefense(arg0) end
+function __IsoGameCharacter:getCorpseSicknessDefense(rate) end
 
----@param arg0 number
----@param arg1 boolean
+---@param rate number
+---@param drain boolean
 ---@return number
-function __IsoGameCharacter:getCorpseSicknessDefense(arg0, arg1) end
+function __IsoGameCharacter:getCorpseSicknessDefense(rate, drain) end
 
 ---@return number
 function __IsoGameCharacter:getCorpseSicknessRate() end
@@ -1158,9 +1158,9 @@ function __IsoGameCharacter:getDeferredAngleDelta() end
 ---@return Vector2
 function __IsoGameCharacter:getDeferredMovement(out_result) end
 
----@param arg0 Vector2
+---@param out_result Vector2
 ---@return Vector2
-function __IsoGameCharacter:getDeferredMovementFromRagdoll(arg0) end
+function __IsoGameCharacter:getDeferredMovementFromRagdoll(out_result) end
 
 ---@return number
 function __IsoGameCharacter:getDeferredRotationWeight() end
@@ -1171,9 +1171,9 @@ function __IsoGameCharacter:getDepressDelta() end
 ---@return number # the DepressEffect
 function __IsoGameCharacter:getDepressEffect() end
 
----@param arg0 string
+---@param in_separatorStr string
 ---@return string
-function __IsoGameCharacter:getDescription(arg0) end
+function __IsoGameCharacter:getDescription(in_separatorStr) end
 
 ---@return SurvivorDesc # the descriptor
 function __IsoGameCharacter:getDescriptor() end
@@ -1254,9 +1254,9 @@ function __IsoGameCharacter:getForceWakeUpTime() end
 ---@return Vector2 # the character's forward direction vector
 function __IsoGameCharacter:getForwardDirection() end
 
----@param arg0 Vector2
+---@param out_forwardDirection Vector2
 ---@return Vector2
-function __IsoGameCharacter:getForwardDirection(arg0) end
+function __IsoGameCharacter:getForwardDirection(out_forwardDirection) end
 
 ---@return number
 function __IsoGameCharacter:getForwardDirectionX() end
@@ -1518,9 +1518,9 @@ function __IsoGameCharacter:getMoveForwardVec() end
 ---@return number
 function __IsoGameCharacter:getMovementSpeed() end
 
----@param arg0 string
+---@param key string
 ---@return any
-function __IsoGameCharacter:getMusicIntensityEventModData(arg0) end
+function __IsoGameCharacter:getMusicIntensityEventModData(key) end
 
 ---@return BaseVehicle
 function __IsoGameCharacter:getNearVehicle() end
@@ -1603,9 +1603,9 @@ function __IsoGameCharacter:getPerkLevel(perks) end
 ---@return ArrayList<IsoGameCharacter.PerkInfo>
 function __IsoGameCharacter:getPerkList() end
 
----@param arg0 PerkFactory.Perk
+---@param perk PerkFactory.Perk
 ---@return number
-function __IsoGameCharacter:getPerkToUnit(arg0) end
+function __IsoGameCharacter:getPerkToUnit(perk) end
 
 ---@return integer
 function __IsoGameCharacter:getPersistentOutfitID() end
@@ -1756,41 +1756,41 @@ function __IsoGameCharacter:getStatisticsDebug() end
 ---@return Stats # the stats
 function __IsoGameCharacter:getStats() end
 
----@param arg0 string
+---@param in_subVariableSourceName string
 ---@return IAnimationVariableSource
-function __IsoGameCharacter:getSubVariableSource(arg0) end
+function __IsoGameCharacter:getSubVariableSource(in_subVariableSourceName) end
 
 ---@return PZArrayList<ItemContainer>
 function __IsoGameCharacter:getSuitableContainersToDropCorpse() end
 
----@param arg0 PZArrayList<ItemContainer>
+---@param inout_foundContainers PZArrayList<ItemContainer>
 ---@return PZArrayList<ItemContainer>
-function __IsoGameCharacter:getSuitableContainersToDropCorpse(arg0) end
+function __IsoGameCharacter:getSuitableContainersToDropCorpse(inout_foundContainers) end
 
----@param arg0 IsoGridSquare
+---@param in_square IsoGridSquare
 ---@return PZArrayList<ItemContainer>
-function __IsoGameCharacter:getSuitableContainersToDropCorpseInSquare(arg0) end
+function __IsoGameCharacter:getSuitableContainersToDropCorpseInSquare(in_square) end
 
----@param arg0 IsoGridSquare
----@param arg1 PZArrayList<ItemContainer>
+---@param in_square IsoGridSquare
+---@param inout_foundContainers PZArrayList<ItemContainer>
 ---@return PZArrayList<ItemContainer>
-function __IsoGameCharacter:getSuitableContainersToDropCorpseInSquare(arg0, arg1) end
+function __IsoGameCharacter:getSuitableContainersToDropCorpseInSquare(in_square, inout_foundContainers) end
 
----@param arg0 IsoGridSquare
+---@param in_square IsoGridSquare
 ---@return PZArrayList<ItemContainer>
-function __IsoGameCharacter:getSuitableContainersWithHumanCorpseInSquare(arg0) end
+function __IsoGameCharacter:getSuitableContainersWithHumanCorpseInSquare(in_square) end
 
----@param arg0 IsoGridSquare
----@param arg1 PZArrayList<ItemContainer>
+---@param in_square IsoGridSquare
+---@param inout_foundContainers PZArrayList<ItemContainer>
 ---@return PZArrayList<ItemContainer>
-function __IsoGameCharacter:getSuitableContainersWithHumanCorpseInSquare(arg0, arg1) end
+function __IsoGameCharacter:getSuitableContainersWithHumanCorpseInSquare(in_square, inout_foundContainers) end
 
 ---@return integer
 function __IsoGameCharacter:getSurroundingAttackingZombies() end
 
----@param arg0 boolean
+---@param includeCrawlers boolean
 ---@return integer
-function __IsoGameCharacter:getSurroundingAttackingZombies(arg0) end
+function __IsoGameCharacter:getSurroundingAttackingZombies(includeCrawlers) end
 
 ---@return integer
 function __IsoGameCharacter:getSurvivorKills() end
@@ -1798,17 +1798,17 @@ function __IsoGameCharacter:getSurvivorKills() end
 ---@return string
 function __IsoGameCharacter:getTalkerType() end
 
----@param arg0 Vector3f
+---@param out_result Vector3f
 ---@return Vector3f
-function __IsoGameCharacter:getTargetGrapplePos(arg0) end
+function __IsoGameCharacter:getTargetGrapplePos(out_result) end
 
----@param arg0 Vector3
+---@param out_result Vector3
 ---@return Vector3
-function __IsoGameCharacter:getTargetGrapplePos(arg0) end
+function __IsoGameCharacter:getTargetGrapplePos(out_result) end
 
----@param arg0 Vector2
+---@param out_result Vector2
 ---@return Vector2
-function __IsoGameCharacter:getTargetGrappleRotation(arg0) end
+function __IsoGameCharacter:getTargetGrappleRotation(out_result) end
 
 ---The desired twist, unclamped, in degrees.
 ---@return number
@@ -1881,9 +1881,9 @@ function __IsoGameCharacter:getWaterSource(items) end
 ---@return integer
 function __IsoGameCharacter:getWeaponLevel() end
 
----@param arg0 HandWeapon
+---@param weapon HandWeapon
 ---@return integer
-function __IsoGameCharacter:getWeaponLevel(arg0) end
+function __IsoGameCharacter:getWeaponLevel(weapon) end
 
 ---@return number
 function __IsoGameCharacter:getWeatherHearingMultiplier() end
@@ -1935,13 +1935,13 @@ function __IsoGameCharacter:hasAnimationPlayer() end
 ---@return boolean
 function __IsoGameCharacter:hasAwkwardHands() end
 
----@param arg0 integer
+---@param part integer
 ---@return boolean
-function __IsoGameCharacter:hasBloodyClothing(arg0) end
+function __IsoGameCharacter:hasBloodyClothing(part) end
 
----@param arg0 integer
+---@param part integer
 ---@return boolean
-function __IsoGameCharacter:hasDirtyClothing(arg0) end
+function __IsoGameCharacter:hasDirtyClothing(part) end
 
 ---@param itemType string
 ---@return boolean
@@ -1969,9 +1969,9 @@ function __IsoGameCharacter:hasPath() end
 ---@return boolean
 function __IsoGameCharacter:hasReadMap(item) end
 
----@param arg0 CraftRecipe
+---@param recipe CraftRecipe
 ---@return boolean
-function __IsoGameCharacter:hasRecipeAtHand(arg0) end
+function __IsoGameCharacter:hasRecipeAtHand(recipe) end
 
 ---@return boolean
 function __IsoGameCharacter:hasTimedActions() end
@@ -2118,9 +2118,9 @@ function __IsoGameCharacter:isCurrentActionAllowedWhileDraggingCorpses() end
 ---@return boolean
 function __IsoGameCharacter:isCurrentActionPathfinding() end
 
----@param arg0 State
+---@param state State
 ---@return boolean
-function __IsoGameCharacter:isCurrentGameClientState(arg0) end
+function __IsoGameCharacter:isCurrentGameClientState(state) end
 
 ---@param state State
 ---@return boolean
@@ -2293,9 +2293,9 @@ function __IsoGameCharacter:isKnownMediaLine(guid) end
 ---@return boolean
 function __IsoGameCharacter:isKnownPoison(item) end
 
----@param arg0 Item
+---@param item Item
 ---@return boolean
-function __IsoGameCharacter:isKnownPoison(arg0) end
+function __IsoGameCharacter:isKnownPoison(item) end
 
 ---@return boolean # the lastCollidedN
 function __IsoGameCharacter:isLastCollidedN() end
@@ -2303,9 +2303,9 @@ function __IsoGameCharacter:isLastCollidedN() end
 ---@return boolean # the lastCollidedW
 function __IsoGameCharacter:isLastCollidedW() end
 
----@param arg0 string
+---@param name string
 ---@return boolean
-function __IsoGameCharacter:isLiteratureRead(arg0) end
+function __IsoGameCharacter:isLiteratureRead(name) end
 
 ---@return boolean
 function __IsoGameCharacter:isLocal() end
@@ -2319,11 +2319,11 @@ function __IsoGameCharacter:isMaskClicked(x, y, flip) end
 ---@return boolean
 function __IsoGameCharacter:isMechanicsCheat() end
 
----@param arg0 HandWeapon
----@param arg1 IsoMovingObject
----@param arg2 Vector3
+---@param handWeapon HandWeapon
+---@param isoMovingObject IsoMovingObject
+---@param bonePos Vector3
 ---@return boolean
-function __IsoGameCharacter:isMeleeAttackRange(arg0, arg1, arg2) end
+function __IsoGameCharacter:isMeleeAttackRange(handWeapon, isoMovingObject, bonePos) end
 
 ---@return boolean
 function __IsoGameCharacter:isMovablesCheat() end
@@ -2337,9 +2337,9 @@ function __IsoGameCharacter:isNPC() end
 ---@return boolean
 function __IsoGameCharacter:isNearSirenVehicle() end
 
----@param arg0 IsoObject
+---@param obj IsoObject
 ---@return boolean
-function __IsoGameCharacter:isObjectBehind(arg0) end
+function __IsoGameCharacter:isObjectBehind(obj) end
 
 ---@return boolean
 function __IsoGameCharacter:isOnBack() end
@@ -2397,20 +2397,20 @@ function __IsoGameCharacter:isPrimaryEquipped(item) end
 ---@return boolean
 function __IsoGameCharacter:isPrimaryHandItem(item) end
 
----@param arg0 string
+---@param media_id string
 ---@return boolean
-function __IsoGameCharacter:isPrintMediaRead(arg0) end
+function __IsoGameCharacter:isPrintMediaRead(media_id) end
 
 ---@return boolean
 function __IsoGameCharacter:isProtectedFromToxic() end
 
----@param arg0 boolean
+---@param drain boolean
 ---@return boolean
-function __IsoGameCharacter:isProtectedFromToxic(arg0) end
+function __IsoGameCharacter:isProtectedFromToxic(drain) end
 
----@param arg0 IsoMovingObject
+---@param other IsoMovingObject
 ---@return boolean
-function __IsoGameCharacter:isPushedByForSeparate(arg0) end
+function __IsoGameCharacter:isPushedByForSeparate(other) end
 
 ---@return boolean
 function __IsoGameCharacter:isRagdoll() end
@@ -2430,35 +2430,35 @@ function __IsoGameCharacter:isReading() end
 ---@return boolean # the Reanim
 function __IsoGameCharacter:isReanim() end
 
----@param arg0 CraftRecipe
+---@param recipe CraftRecipe
 ---@return boolean
-function __IsoGameCharacter:isRecipeActuallyKnown(arg0) end
+function __IsoGameCharacter:isRecipeActuallyKnown(recipe) end
 
----@param arg0 string
+---@param name string
 ---@return boolean
-function __IsoGameCharacter:isRecipeActuallyKnown(arg0) end
+function __IsoGameCharacter:isRecipeActuallyKnown(name) end
 
 ---@param recipe Recipe
 ---@return boolean
 function __IsoGameCharacter:isRecipeKnown(recipe) end
 
----@param arg0 CraftRecipe
+---@param recipe CraftRecipe
 ---@return boolean
-function __IsoGameCharacter:isRecipeKnown(arg0) end
+function __IsoGameCharacter:isRecipeKnown(recipe) end
 
----@param arg0 CraftRecipe
----@param arg1 boolean
+---@param recipe CraftRecipe
+---@param ignoreSandbox boolean
 ---@return boolean
-function __IsoGameCharacter:isRecipeKnown(arg0, arg1) end
+function __IsoGameCharacter:isRecipeKnown(recipe, ignoreSandbox) end
 
 ---@param name string
 ---@return boolean
 function __IsoGameCharacter:isRecipeKnown(name) end
 
----@param arg0 string
----@param arg1 boolean
+---@param name string
+---@param ignoreSandbox boolean
 ---@return boolean
-function __IsoGameCharacter:isRecipeKnown(arg0, arg1) end
+function __IsoGameCharacter:isRecipeKnown(name, ignoreSandbox) end
 
 ---@return boolean
 function __IsoGameCharacter:isResting() end
@@ -2482,9 +2482,9 @@ function __IsoGameCharacter:isShoving() end
 ---@return boolean
 function __IsoGameCharacter:isShowAdminTag() end
 
----@param arg0 IsoObject
+---@param object IsoObject
 ---@return boolean
-function __IsoGameCharacter:isSitOnFurnitureObject(arg0) end
+function __IsoGameCharacter:isSitOnFurnitureObject(object) end
 
 ---@return boolean
 function __IsoGameCharacter:isSitOnGround() end
@@ -2528,9 +2528,9 @@ function __IsoGameCharacter:isTwisting() end
 ---@return boolean
 function __IsoGameCharacter:isUnderVehicle() end
 
----@param arg0 number
+---@param radius number
 ---@return boolean
-function __IsoGameCharacter:isUnderVehicleRadius(arg0) end
+function __IsoGameCharacter:isUnderVehicleRadius(radius) end
 
 ---@return boolean
 function __IsoGameCharacter:isUnlimitedAmmo() end
@@ -2606,10 +2606,10 @@ function __IsoGameCharacter:isbUseParts() end
 ---@return boolean
 function __IsoGameCharacter:learnRecipe(name) end
 
----@param arg0 string
----@param arg1 boolean
+---@param name string
+---@param checkMetaRecipe boolean
 ---@return boolean
-function __IsoGameCharacter:learnRecipe(arg0, arg1) end
+function __IsoGameCharacter:learnRecipe(name, checkMetaRecipe) end
 
 ---@param perk PerkFactory.Perk
 function __IsoGameCharacter:level0(perk) end
@@ -2634,11 +2634,11 @@ function __IsoGameCharacter:modifyTraitXPBoost(trait, isRemovingTrait) end
 ---@return number
 function __IsoGameCharacter:nearbyZombieClimbPenalty() end
 
----@param arg0 HandWeapon
----@param arg1 IsoGameCharacter
----@param arg2 boolean
+---@param in_weapon HandWeapon
+---@param in_wielder IsoGameCharacter
+---@param in_isGory boolean
 ---@return boolean
-function __IsoGameCharacter:onDeath_ShouldDoSplatterAndSounds(arg0, arg1, arg2) end
+function __IsoGameCharacter:onDeath_ShouldDoSplatterAndSounds(in_weapon, in_wielder, in_isGory) end
 
 ---@param x integer
 ---@param y integer
@@ -2670,20 +2670,20 @@ function __IsoGameCharacter:pathToLocationF(x, y, z) end
 ---@param z integer
 function __IsoGameCharacter:pathToSound(x, y, z) end
 
----@param arg0 IsoDeadBody
----@param arg1 string
-function __IsoGameCharacter:pickUpCorpse(arg0, arg1) end
+---@param in_body IsoDeadBody
+---@param in_dragType string
+function __IsoGameCharacter:pickUpCorpse(in_body, in_dragType) end
 
----@param arg0 InventoryItem
-function __IsoGameCharacter:pickUpCorpseItem(arg0) end
+---@param item InventoryItem
+function __IsoGameCharacter:pickUpCorpseItem(item) end
 
 function __IsoGameCharacter:playBloodSplatterSound() end
 
 function __IsoGameCharacter:playDeadSound() end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return integer
-function __IsoGameCharacter:playDropItemSound(arg0) end
+function __IsoGameCharacter:playDropItemSound(item) end
 
 ---@param emote string
 function __IsoGameCharacter:playEmote(emote) end
@@ -2699,10 +2699,10 @@ function __IsoGameCharacter:playSound(file) end
 ---@return integer
 function __IsoGameCharacter:playSoundLocal(file) end
 
----@param arg0 integer
----@param arg1 boolean
+---@param partIndex integer
+---@param bullet boolean
 ---@return integer
-function __IsoGameCharacter:playWeaponHitArmourSound(arg0, arg1) end
+function __IsoGameCharacter:playWeaponHitArmourSound(partIndex, bullet) end
 
 ---@return ActionStateSnapshot
 function __IsoGameCharacter:playbackRecordCurrentStateSnapshot() end
@@ -2726,8 +2726,8 @@ function __IsoGameCharacter:preupdate() end
 ---@return number
 function __IsoGameCharacter:processHitDamage(weapon, wielder, damageSplit, bIgnoreDamage, modDelta) end
 
----@param arg0 ByteBuffer
-function __IsoGameCharacter:readInventory(arg0) end
+---@param b ByteBuffer
+function __IsoGameCharacter:readInventory(b) end
 
 function __IsoGameCharacter:releaseAnimationPlayer() end
 
@@ -2808,9 +2808,9 @@ function __IsoGameCharacter:save(output, IS_DEBUG_SAVE) end
 ---@param bb ByteBuffer
 function __IsoGameCharacter:saveChange(change, tbl, bb) end
 
----@param arg0 ModelManager
----@param arg1 boolean
-function __IsoGameCharacter:setAddedToModelManager(arg0, arg1) end
+---@param modelManager ModelManager
+---@param isAdded boolean
+function __IsoGameCharacter:setAddedToModelManager(modelManager, isAdded) end
 
 ---@param age integer
 function __IsoGameCharacter:setAge(age) end
@@ -2818,12 +2818,12 @@ function __IsoGameCharacter:setAge(age) end
 ---@param b boolean
 function __IsoGameCharacter:setAimAtFloor(b) end
 
----@param arg0 boolean
----@param arg1 number
-function __IsoGameCharacter:setAimAtFloor(arg0, arg1) end
+---@param in_aimAtFloor boolean
+---@param in_targetDistance number
+function __IsoGameCharacter:setAimAtFloor(in_aimAtFloor, in_targetDistance) end
 
----@param arg0 number
-function __IsoGameCharacter:setAimingDelay(arg0) end
+---@param aimingDelay number
+function __IsoGameCharacter:setAimingDelay(aimingDelay) end
 
 ---@param AllowConversation boolean the AllowConversation to set
 function __IsoGameCharacter:setAllowConversation(AllowConversation) end
@@ -2835,9 +2835,9 @@ function __IsoGameCharacter:setAlreadyReadPages(fullType, pages) end
 ---@param timeMs integer
 function __IsoGameCharacter:setAnimForecasted(timeMs) end
 
----@param arg0 boolean
----@param arg1 boolean
-function __IsoGameCharacter:setAnimRecorderActive(arg0, arg1) end
+---@param in_isActive boolean
+---@param in_isExclusive boolean
+function __IsoGameCharacter:setAnimRecorderActive(in_isActive, in_isExclusive) end
 
 ---@param b boolean
 function __IsoGameCharacter:setAnimalCheat(b) end
@@ -2845,8 +2845,8 @@ function __IsoGameCharacter:setAnimalCheat(b) end
 ---@param b boolean
 function __IsoGameCharacter:setAnimated(b) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setAnimatingBackwards(arg0) end
+---@param m_isAnimatingBackwards boolean
+function __IsoGameCharacter:setAnimatingBackwards(m_isAnimatingBackwards) end
 
 ---@param Asleep boolean the Asleep to set
 function __IsoGameCharacter:setAsleep(Asleep) end
@@ -2927,23 +2927,23 @@ function __IsoGameCharacter:setBumpedChr(bumpedChr) end
 ---@param canShout boolean
 function __IsoGameCharacter:setCanShout(canShout) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setCanUseBrushTool(arg0) end
+---@param b boolean
+function __IsoGameCharacter:setCanUseBrushTool(b) end
 
 ---@param b boolean
 function __IsoGameCharacter:setCanUseDebugContextMenu(b) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setCanUseLootTool(arg0) end
+---@param b boolean
+function __IsoGameCharacter:setCanUseLootTool(b) end
 
 ---@param clickSound string
 function __IsoGameCharacter:setClickSound(clickSound) end
 
----@param arg0 ClimbSheetRopeState.ClimbData
-function __IsoGameCharacter:setClimbData(arg0) end
+---@param climbData ClimbSheetRopeState.ClimbData
+function __IsoGameCharacter:setClimbData(climbData) end
 
----@param arg0 number
-function __IsoGameCharacter:setClimbRopeTime(arg0) end
+---@param time number
+function __IsoGameCharacter:setClimbRopeTime(time) end
 
 ---@param item InventoryItem
 function __IsoGameCharacter:setClothingItem_Back(item) end
@@ -2963,14 +2963,14 @@ function __IsoGameCharacter:setClothingItem_Legs(item) end
 ---@param item InventoryItem
 function __IsoGameCharacter:setClothingItem_Torso(item) end
 
----@param arg0 number
-function __IsoGameCharacter:setCorpseSicknessRate(arg0) end
+---@param rate number
+function __IsoGameCharacter:setCorpseSicknessRate(rate) end
 
 ---@param isCrit boolean
 function __IsoGameCharacter:setCriticalHit(isCrit) end
 
----@param arg0 number
-function __IsoGameCharacter:setCurrentVerticalAimAngle(arg0) end
+---@param in_verticalAimAngleDegrees number
+function __IsoGameCharacter:setCurrentVerticalAimAngle(in_verticalAimAngleDegrees) end
 
 ---@param dangerLevels number the dangerLevels to set
 function __IsoGameCharacter:setDangerLevels(dangerLevels) end
@@ -2986,8 +2986,8 @@ function __IsoGameCharacter:setDefaultState(defaultState) end
 
 function __IsoGameCharacter:setDefaultState() end
 
----@param arg0 boolean
-function __IsoGameCharacter:setDeferredMovementEnabled(arg0) end
+---@param deferredMovementEnabled boolean
+function __IsoGameCharacter:setDeferredMovementEnabled(deferredMovementEnabled) end
 
 ---@param delay number
 function __IsoGameCharacter:setDelayToSleep(delay) end
@@ -3010,8 +3010,8 @@ function __IsoGameCharacter:setDirectionAngle(angleDegrees) end
 ---@param doDeathSound boolean
 function __IsoGameCharacter:setDoDeathSound(doDeathSound) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setEditingRagdoll(arg0) end
+---@param value boolean
+function __IsoGameCharacter:setEditingRagdoll(value) end
 
 ---@param fallOnFront boolean
 function __IsoGameCharacter:setFallOnFront(fallOnFront) end
@@ -3022,8 +3022,8 @@ function __IsoGameCharacter:setFallTime(fallTime) end
 ---@param b boolean
 function __IsoGameCharacter:setFarmingCheat(b) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setFastMoveCheat(arg0) end
+---@param b boolean
+function __IsoGameCharacter:setFastMoveCheat(b) end
 
 ---@param isFemale boolean
 function __IsoGameCharacter:setFemale(isFemale) end
@@ -3031,14 +3031,14 @@ function __IsoGameCharacter:setFemale(isFemale) end
 ---@param FireKillRate number the FireKillRate to set
 function __IsoGameCharacter:setFireKillRate(FireKillRate) end
 
----@param arg0 string
-function __IsoGameCharacter:setFireMode(arg0) end
+---@param in_fireMode string
+function __IsoGameCharacter:setFireMode(in_fireMode) end
 
 ---@param FireSpreadProbability integer the FireSpreadProbability to set
 function __IsoGameCharacter:setFireSpreadProbability(FireSpreadProbability) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setFishingCheat(arg0) end
+---@param b boolean
+function __IsoGameCharacter:setFishingCheat(b) end
 
 ---@param FollowingTarget IsoGameCharacter the FollowingTarget to set
 function __IsoGameCharacter:setFollowingTarget(FollowingTarget) end
@@ -3057,8 +3057,8 @@ function __IsoGameCharacter:setForwardDirectionFromAnimAngle() end
 
 function __IsoGameCharacter:setForwardDirectionFromIsoDirection() end
 
----@param arg0 IsoDirections
-function __IsoGameCharacter:setForwardIsoDirection(arg0) end
+---@param directions IsoDirections
+function __IsoGameCharacter:setForwardIsoDirection(directions) end
 
 ---@param b boolean
 ---@param isForced boolean
@@ -3067,14 +3067,14 @@ function __IsoGameCharacter:setGodMod(b, isForced) end
 ---@param b boolean
 function __IsoGameCharacter:setGodMod(b) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setGrappleThrowIntoContainer(arg0) end
+---@param in_newValue boolean
+function __IsoGameCharacter:setGrappleThrowIntoContainer(in_newValue) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setGrappleThrowOutWindow(arg0) end
+---@param in_newValue boolean
+function __IsoGameCharacter:setGrappleThrowOutWindow(in_newValue) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setGrappleThrowOverFence(arg0) end
+---@param in_newValue boolean
+function __IsoGameCharacter:setGrappleThrowOverFence(in_newValue) end
 
 ---@param str string
 function __IsoGameCharacter:setHaloNote(str) end
@@ -3090,12 +3090,12 @@ function __IsoGameCharacter:setHaloNote(str, dispTime) end
 ---@param dispTime number
 function __IsoGameCharacter:setHaloNote(str, r, g, b, dispTime) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setHeadLookAround(arg0) end
+---@param b boolean
+function __IsoGameCharacter:setHeadLookAround(b) end
 
----@param arg0 number
----@param arg1 number
-function __IsoGameCharacter:setHeadLookAroundDirection(arg0, arg1) end
+---@param lookHorizontal number
+---@param lookVertical number
+function __IsoGameCharacter:setHeadLookAroundDirection(lookHorizontal, lookVertical) end
 
 ---@param Health number the Health to set
 function __IsoGameCharacter:setHealth(Health) end
@@ -3112,8 +3112,8 @@ function __IsoGameCharacter:setHideEquippedHandR(hideEquippedHandR) end
 ---@param hideWeaponModel boolean
 function __IsoGameCharacter:setHideWeaponModel(hideWeaponModel) end
 
----@param arg0 Vector2
-function __IsoGameCharacter:setHitDir(arg0) end
+---@param hitDir Vector2
+function __IsoGameCharacter:setHitDir(hitDir) end
 
 ---@param hitFromBehind boolean
 function __IsoGameCharacter:setHitFromBehind(hitFromBehind) end
@@ -3146,29 +3146,29 @@ function __IsoGameCharacter:setInvisible(b) end
 ---@param isForced boolean
 function __IsoGameCharacter:setInvisible(b, isForced) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setInvulnerable(arg0) end
+---@param invulnerable boolean
+function __IsoGameCharacter:setInvulnerable(invulnerable) end
 
 ---@param aIsAiming boolean
 function __IsoGameCharacter:setIsAiming(aIsAiming) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setIsAnimal(arg0) end
+---@param v boolean
+function __IsoGameCharacter:setIsAnimal(v) end
 
 ---@param isAI boolean
 function __IsoGameCharacter:setIsNPC(isAI) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setIsResting(arg0) end
+---@param isResting boolean
+function __IsoGameCharacter:setIsResting(isResting) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setKilledByFall(arg0) end
+---@param bKilledByFall boolean
+function __IsoGameCharacter:setKilledByFall(bKilledByFall) end
 
 ---@param bKnockedDown boolean
 function __IsoGameCharacter:setKnockedDown(bKnockedDown) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setKnowAllRecipes(arg0) end
+---@param knowAllRecipes boolean
+function __IsoGameCharacter:setKnowAllRecipes(knowAllRecipes) end
 
 ---@param lastBump integer
 function __IsoGameCharacter:setLastBump(lastBump) end
@@ -3190,8 +3190,8 @@ function __IsoGameCharacter:setLastFallSpeed(lastFallSpeed) end
 ---@param z integer
 function __IsoGameCharacter:setLastHeardSound(x, y, z) end
 
----@param arg0 IsoGameCharacter
-function __IsoGameCharacter:setLastHitCharacter(arg0) end
+---@param character IsoGameCharacter
+function __IsoGameCharacter:setLastHitCharacter(character) end
 
 ---@param hitCount integer
 function __IsoGameCharacter:setLastHitCount(hitCount) end
@@ -3263,9 +3263,9 @@ function __IsoGameCharacter:setMoveForwardVec(moveForwardVec) end
 ---@param val boolean
 function __IsoGameCharacter:setMoving(val) end
 
----@param arg0 string
----@param arg1 any
-function __IsoGameCharacter:setMusicIntensityEventModData(arg0, arg1) end
+---@param key string
+---@param value any
+function __IsoGameCharacter:setMusicIntensityEventModData(key, value) end
 
 ---@param newvalue boolean
 function __IsoGameCharacter:setNPC(newvalue) end
@@ -3276,8 +3276,8 @@ function __IsoGameCharacter:setNextWander(NextWander) end
 ---@param NumSurvivorsInVicinity integer the NumSurvivorsInVicinity to set
 function __IsoGameCharacter:setNumSurvivorsInVicinity(NumSurvivorsInVicinity) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setOnBed(arg0) end
+---@param bOnBed boolean
+function __IsoGameCharacter:setOnBed(bOnBed) end
 
 ---@param done boolean
 function __IsoGameCharacter:setOnDeathDone(done) end
@@ -3288,11 +3288,11 @@ function __IsoGameCharacter:setOnFire(OnFire) end
 ---@param done boolean
 function __IsoGameCharacter:setOnKillDone(done) end
 
----@param arg0 UdpConnection
-function __IsoGameCharacter:setOwner(arg0) end
+---@param connection UdpConnection
+function __IsoGameCharacter:setOwner(connection) end
 
----@param arg0 IsoPlayer
-function __IsoGameCharacter:setOwnerPlayer(arg0) end
+---@param player IsoPlayer
+function __IsoGameCharacter:setOwnerPlayer(player) end
 
 ---@param PainDelta number the PainDelta to set
 function __IsoGameCharacter:setPainDelta(PainDelta) end
@@ -3300,14 +3300,14 @@ function __IsoGameCharacter:setPainDelta(PainDelta) end
 ---@param PainEffect number the PainEffect to set
 function __IsoGameCharacter:setPainEffect(PainEffect) end
 
----@param arg0 Path
-function __IsoGameCharacter:setPath2(arg0) end
+---@param path Path
+function __IsoGameCharacter:setPath2(path) end
 
 ---@param pathIndex integer the pathIndex to set
 function __IsoGameCharacter:setPathIndex(pathIndex) end
 
----@param arg0 number
-function __IsoGameCharacter:setPathSpeed(arg0) end
+---@param speed number
+function __IsoGameCharacter:setPathSpeed(speed) end
 
 ---@param pathing boolean the pathing to set
 function __IsoGameCharacter:setPathing(pathing) end
@@ -3321,14 +3321,14 @@ function __IsoGameCharacter:setPatienceMax(PatienceMax) end
 ---@param PatienceMin integer the PatienceMin to set
 function __IsoGameCharacter:setPatienceMin(PatienceMin) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setPerformingAttackAnimation(arg0) end
+---@param attackAnim boolean
+function __IsoGameCharacter:setPerformingAttackAnimation(attackAnim) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setPerformingShoveAnimation(arg0) end
+---@param shoveAnim boolean
+function __IsoGameCharacter:setPerformingShoveAnimation(shoveAnim) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setPerformingStompAnimation(arg0) end
+---@param stompAnim boolean
+function __IsoGameCharacter:setPerformingStompAnimation(stompAnim) end
 
 ---@param perks PerkFactory.Perk
 ---@param level integer
@@ -3347,8 +3347,8 @@ function __IsoGameCharacter:setPlayingDeathSound(playing) end
 ---@param leftHandItem InventoryItem the leftHandItem to set
 function __IsoGameCharacter:setPrimaryHandItem(leftHandItem) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setRagdollFall(arg0) end
+---@param value boolean
+function __IsoGameCharacter:setRagdollFall(value) end
 
 ---@param val boolean
 function __IsoGameCharacter:setRangedWeaponEmpty(val) end
@@ -3371,11 +3371,11 @@ function __IsoGameCharacter:setReanimateTimer(ReanimateTimer) end
 ---@param recoilDelay number
 function __IsoGameCharacter:setRecoilDelay(recoilDelay) end
 
----@param arg0 number
-function __IsoGameCharacter:setRecoilVarX(arg0) end
+---@param in_recoilVarX number
+function __IsoGameCharacter:setRecoilVarX(in_recoilVarX) end
 
----@param arg0 number
-function __IsoGameCharacter:setRecoilVarY(arg0) end
+---@param in_recoilVarY number
+function __IsoGameCharacter:setRecoilVarY(in_recoilVarY) end
 
 ---@param reduceInfectionPower number
 function __IsoGameCharacter:setReduceInfectionPower(reduceInfectionPower) end
@@ -3400,23 +3400,23 @@ function __IsoGameCharacter:setSceneCulled(isCulled) end
 ---@param rightHandItem InventoryItem the rightHandItem to set
 function __IsoGameCharacter:setSecondaryHandItem(rightHandItem) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setShoveStompAnim(arg0) end
+---@param in_val boolean
+function __IsoGameCharacter:setShoveStompAnim(in_val) end
 
 ---@param showAdminTag boolean
 function __IsoGameCharacter:setShowAdminTag(showAdminTag) end
 
----@param arg0 IsoDirections
-function __IsoGameCharacter:setSitOnFurnitureDirection(arg0) end
+---@param dir IsoDirections
+function __IsoGameCharacter:setSitOnFurnitureDirection(dir) end
 
----@param arg0 IsoObject
-function __IsoGameCharacter:setSitOnFurnitureObject(arg0) end
+---@param object IsoObject
+function __IsoGameCharacter:setSitOnFurnitureObject(object) end
 
 ---@param sitOnGround boolean
 function __IsoGameCharacter:setSitOnGround(sitOnGround) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setSittingOnFurniture(arg0) end
+---@param isSittingOnFurniture boolean
+function __IsoGameCharacter:setSittingOnFurniture(isSittingOnFurniture) end
 
 ---@param SleepingTabletDelta number the SleepingTabletDelta to set
 function __IsoGameCharacter:setSleepingTabletDelta(SleepingTabletDelta) end
@@ -3430,8 +3430,8 @@ function __IsoGameCharacter:setSlowFactor(slowFactor) end
 ---@param slowTimer number the slowTimer to set
 function __IsoGameCharacter:setSlowTimer(slowTimer) end
 
----@param arg0 number
-function __IsoGameCharacter:setSneakLimpSpeedScale(arg0) end
+---@param sneakLimpSpeedScale number
+function __IsoGameCharacter:setSneakLimpSpeedScale(sneakLimpSpeedScale) end
 
 ---@param bSneaking boolean
 function __IsoGameCharacter:setSneaking(bSneaking) end
@@ -3463,17 +3463,17 @@ function __IsoGameCharacter:setStateMachineLocked(val) end
 ---@param survivorKills integer
 function __IsoGameCharacter:setSurvivorKills(survivorKills) end
 
----@param arg0 number
----@param arg1 number
-function __IsoGameCharacter:setTargetAndCurrentDirection(arg0, arg1) end
+---@param in_directionX number
+---@param in_directionY number
+function __IsoGameCharacter:setTargetAndCurrentDirection(in_directionX, in_directionY) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
-function __IsoGameCharacter:setTargetGrapplePos(arg0, arg1, arg2) end
+---@param x number
+---@param y number
+---@param z number
+function __IsoGameCharacter:setTargetGrapplePos(x, y, z) end
 
----@param arg0 number
-function __IsoGameCharacter:setTargetVerticalAimAngle(arg0) end
+---@param in_verticalAimAngleDegrees number
+function __IsoGameCharacter:setTargetVerticalAimAngle(in_verticalAimAngleDegrees) end
 
 ---@param textureCreator ModelInstanceTextureCreator
 function __IsoGameCharacter:setTextureCreator(textureCreator) end
@@ -3493,8 +3493,8 @@ function __IsoGameCharacter:setTimedActionInstantCheat(b) end
 ---@param m_turnDelta number
 function __IsoGameCharacter:setTurnDelta(m_turnDelta) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setUnlimitedAmmo(arg0) end
+---@param unlimitedAmmo boolean
+function __IsoGameCharacter:setUnlimitedAmmo(unlimitedAmmo) end
 
 ---@param unlimitedCarry boolean
 function __IsoGameCharacter:setUnlimitedCarry(unlimitedCarry) end
@@ -3505,44 +3505,44 @@ function __IsoGameCharacter:setUnlimitedEndurance(unlimitedEndurance) end
 ---@param useHandWeapon HandWeapon the useHandWeapon to set
 function __IsoGameCharacter:setUseHandWeapon(useHandWeapon) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setUsePhysicHitReaction(arg0) end
+---@param usePhysicHitReaction boolean
+function __IsoGameCharacter:setUsePhysicHitReaction(usePhysicHitReaction) end
 
 ---Description copied from interface: IAnimationVariableMap
 ---@param var IAnimationVariableSlot
 function __IsoGameCharacter:setVariable(var) end
 
----@param arg0 string
----@param arg1 string
+---@param key string
+---@param value string
 ---@return IAnimationVariableSlot
-function __IsoGameCharacter:setVariable(arg0, arg1) end
+function __IsoGameCharacter:setVariable(key, value) end
 
----@param arg0 string
----@param arg1 boolean
+---@param key string
+---@param value boolean
 ---@return IAnimationVariableSlot
-function __IsoGameCharacter:setVariable(arg0, arg1) end
+function __IsoGameCharacter:setVariable(key, value) end
 
----@param arg0 string
----@param arg1 number
+---@param key string
+---@param value number
 ---@return IAnimationVariableSlot
-function __IsoGameCharacter:setVariable(arg0, arg1) end
+function __IsoGameCharacter:setVariable(key, value) end
 
----@param arg0 AnimationVariableHandle
----@param arg1 boolean
+---@param handle AnimationVariableHandle
+---@param value boolean
 ---@return IAnimationVariableSlot
-function __IsoGameCharacter:setVariable(arg0, arg1) end
+function __IsoGameCharacter:setVariable(handle, value) end
 
 ---@generic EnumType: Enum<EnumType>
----@param arg0 string
----@param arg1 EnumType
+---@param in_key string
+---@param in_val EnumType
 ---@return IAnimationVariableSlot
-function __IsoGameCharacter:setVariableEnum(arg0, arg1) end
+function __IsoGameCharacter:setVariableEnum(in_key, in_val) end
 
 ---@param v BaseVehicle
 function __IsoGameCharacter:setVehicle(v) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setVehicleCollision(arg0) end
+---@param value boolean
+function __IsoGameCharacter:setVehicleCollision(value) end
 
 ---@param VisibleToNPCs boolean the VisibleToNPCs to set
 function __IsoGameCharacter:setVisibleToNPCs(VisibleToNPCs) end
@@ -3566,8 +3566,8 @@ function __IsoGameCharacter:setXp(xp) end
 ---@param ZombieKills integer the ZombieKills to set
 function __IsoGameCharacter:setZombieKills(ZombieKills) end
 
----@param arg0 boolean
-function __IsoGameCharacter:setZombiesDontAttack(arg0) end
+---@param b boolean
+function __IsoGameCharacter:setZombiesDontAttack(b) end
 
 ---@param bClimbing boolean the bClimbing to set
 function __IsoGameCharacter:setbClimbing(bClimbing) end
@@ -3600,9 +3600,9 @@ function __IsoGameCharacter:shouldBeTurningAround() end
 ---@return boolean
 function __IsoGameCharacter:shouldBecomeZombieAfterDeath() end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return boolean
-function __IsoGameCharacter:shouldIgnoreCollisionWithSquare(arg0) end
+function __IsoGameCharacter:shouldIgnoreCollisionWithSquare(square) end
 
 ---@return boolean
 function __IsoGameCharacter:shouldWaitToStartTimedAction() end
@@ -3613,11 +3613,11 @@ function __IsoGameCharacter:smashCarWindow(part) end
 ---@param w IsoWindow
 function __IsoGameCharacter:smashWindow(w) end
 
----@param arg0 BodyPartType
-function __IsoGameCharacter:spikePart(arg0) end
+---@param partType BodyPartType
+function __IsoGameCharacter:spikePart(partType) end
 
----@param arg0 integer
-function __IsoGameCharacter:spikePartIndex(arg0) end
+---@param bodyPartIndex integer
+function __IsoGameCharacter:spikePartIndex(bodyPartIndex) end
 
 function __IsoGameCharacter:spinToZeroAllAnimNodes() end
 
@@ -3645,23 +3645,23 @@ function __IsoGameCharacter:stopEvent(eventInstance, clip, parameterSet) end
 ---@param eventInstance integer
 function __IsoGameCharacter:stopOrTriggerSound(eventInstance) end
 
----@param arg0 integer
----@param arg1 integer
-function __IsoGameCharacter:teleportTo(arg0, arg1) end
+---@param newX integer
+---@param newY integer
+function __IsoGameCharacter:teleportTo(newX, newY) end
 
----@param arg0 number
----@param arg1 number
-function __IsoGameCharacter:teleportTo(arg0, arg1) end
+---@param newX number
+---@param newY number
+function __IsoGameCharacter:teleportTo(newX, newY) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 integer
-function __IsoGameCharacter:teleportTo(arg0, arg1, arg2) end
+---@param newX number
+---@param newY number
+---@param newZ integer
+function __IsoGameCharacter:teleportTo(newX, newY, newZ) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __IsoGameCharacter:teleportTo(arg0, arg1, arg2) end
+---@param newX integer
+---@param newY integer
+---@param newZ integer
+function __IsoGameCharacter:teleportTo(newX, newY, newZ) end
 
 ---Test if we're able to defend a zombie bite
 --- Can only happen if zombie is attacking from front
@@ -3674,46 +3674,46 @@ function __IsoGameCharacter:testDefense(zomb) end
 ---@return string
 function __IsoGameCharacter:testDotSide(target) end
 
----@param arg0 ItemContainer
-function __IsoGameCharacter:throwGrappledIntoInventory(arg0) end
+---@param in_targetContainer ItemContainer
+function __IsoGameCharacter:throwGrappledIntoInventory(in_targetContainer) end
 
----@param arg0 IsoObject
----@param arg1 IsoDirections
-function __IsoGameCharacter:throwGrappledOverFence(arg0, arg1) end
+---@param hoppableObject IsoObject
+---@param dir IsoDirections
+function __IsoGameCharacter:throwGrappledOverFence(hoppableObject, dir) end
 
----@param arg0 IsoObject
-function __IsoGameCharacter:throwGrappledTargetOutWindow(arg0) end
+---@param windowObject IsoObject
+function __IsoGameCharacter:throwGrappledTargetOutWindow(windowObject) end
 
----@param arg0 string
-function __IsoGameCharacter:triggerContextualAction(arg0) end
+---@param action string
+function __IsoGameCharacter:triggerContextualAction(action) end
 
----@param arg0 string
----@param arg1 any
-function __IsoGameCharacter:triggerContextualAction(arg0, arg1) end
+---@param action string
+---@param param1 any
+function __IsoGameCharacter:triggerContextualAction(action, param1) end
 
----@param arg0 string
----@param arg1 any
----@param arg2 any
-function __IsoGameCharacter:triggerContextualAction(arg0, arg1, arg2) end
+---@param action string
+---@param param1 any
+---@param param2 any
+function __IsoGameCharacter:triggerContextualAction(action, param1, param2) end
 
----@param arg0 string
----@param arg1 any
----@param arg2 any
----@param arg3 any
-function __IsoGameCharacter:triggerContextualAction(arg0, arg1, arg2, arg3) end
+---@param action string
+---@param param1 any
+---@param param2 any
+---@param param3 any
+function __IsoGameCharacter:triggerContextualAction(action, param1, param2, param3) end
 
----@param arg0 string
----@param arg1 any
----@param arg2 any
----@param arg3 any
----@param arg4 any
-function __IsoGameCharacter:triggerContextualAction(arg0, arg1, arg2, arg3, arg4) end
+---@param action string
+---@param param1 any
+---@param param2 any
+---@param param3 any
+---@param param4 any
+function __IsoGameCharacter:triggerContextualAction(action, param1, param2, param3, param4) end
 
 function __IsoGameCharacter:triggerCough() end
 
----@param arg0 string
+---@param in_stateName string
 ---@return State
-function __IsoGameCharacter:tryGetAIState(arg0) end
+function __IsoGameCharacter:tryGetAIState(in_stateName) end
 
 function __IsoGameCharacter:update() end
 
@@ -3785,22 +3785,22 @@ IsoGameCharacter.RENDER_OFFSET_Y = nil
 ---@type number
 IsoGameCharacter.s_maxPossibleTwist = nil
 
----@param arg0 AnimationPlayer
----@param arg1 number
----@param arg2 boolean
----@param arg3 ShadowParams
+---@param animationPlayer AnimationPlayer
+---@param animalSize number
+---@param bRagdoll boolean
+---@param sp ShadowParams
 ---@return ShadowParams
-function IsoGameCharacter.calculateShadowParams(arg0, arg1, arg2, arg3) end
+function IsoGameCharacter.calculateShadowParams(animationPlayer, animalSize, bRagdoll, sp) end
 
----@param arg0 IsoGameCharacter
----@param arg1 ItemContainer
+---@param in_chr IsoGameCharacter
+---@param in_container ItemContainer
 ---@return boolean
-function IsoGameCharacter.canDropCorpseInto(arg0, arg1) end
+function IsoGameCharacter.canDropCorpseInto(in_chr, in_container) end
 
----@param arg0 IsoGameCharacter
----@param arg1 ItemContainer
+---@param in_chr IsoGameCharacter
+---@param in_container ItemContainer
 ---@return boolean
-function IsoGameCharacter.canGrabCorpseFrom(arg0, arg1) end
+function IsoGameCharacter.canGrabCorpseFrom(in_chr, in_container) end
 
 ---@return ColorInfo # the inf
 function IsoGameCharacter.getInf() end

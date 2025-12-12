@@ -63,11 +63,11 @@ function __IsoFireplace:removeFromWorld() end
 ---@param shader Shader
 function __IsoFireplace:render(x, y, z, col, bDoChild, bWallLightingPass, shader) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 ColorInfo
-function __IsoFireplace:renderAnimatedAttachments(arg0, arg1, arg2, arg3) end
+---@param x number
+---@param y number
+---@param z number
+---@param col ColorInfo
+function __IsoFireplace:renderAnimatedAttachments(x, y, z, col) end
 
 ---@param output ByteBuffer
 ---@param IS_DEBUG_SAVE boolean

@@ -3,8 +3,8 @@
 ---@class RZSDuke: RandomizedZoneStoryBase
 local __RZSDuke = {}
 
----@param arg0 Zone
-function __RZSDuke:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSDuke:randomizeZoneStory(zone) end
 
 RZSDuke = {}
 

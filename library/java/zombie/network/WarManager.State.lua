@@ -26,13 +26,13 @@ State.Refused = nil
 ---@type WarManager.State
 State.Started = nil
 
----@param arg0 string
+---@param name string
 ---@return WarManager.State
-function State.valueOf(arg0) end
+function State.valueOf(name) end
 
----@param arg0 integer
+---@param ordinal integer
 ---@return WarManager.State
-function State.valueOf(arg0) end
+function State.valueOf(ordinal) end
 
 ---@return kahlua.Array<WarManager.State>
 function State.values() end

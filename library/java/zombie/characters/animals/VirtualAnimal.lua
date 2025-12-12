@@ -3,9 +3,9 @@
 ---@class VirtualAnimal
 local __VirtualAnimal = {}
 
----@param arg0 integer
+---@param animalID integer
 ---@return IsoAnimal
-function __VirtualAnimal:findAnimalById(arg0) end
+function __VirtualAnimal:findAnimalById(animalID) end
 
 function __VirtualAnimal:forceEat() end
 
@@ -54,20 +54,20 @@ function __VirtualAnimal:isTimeToEat() end
 ---@return boolean
 function __VirtualAnimal:isTimeToSleep() end
 
----@param arg0 boolean
-function __VirtualAnimal:setRemoved(arg0) end
+---@param bRemoved boolean
+function __VirtualAnimal:setRemoved(bRemoved) end
 
----@param arg0 VirtualAnimalState
-function __VirtualAnimal:setState(arg0) end
+---@param state VirtualAnimalState
+function __VirtualAnimal:setState(state) end
 
----@param arg0 number
-function __VirtualAnimal:setX(arg0) end
+---@param x number
+function __VirtualAnimal:setX(x) end
 
----@param arg0 number
-function __VirtualAnimal:setY(arg0) end
+---@param y number
+function __VirtualAnimal:setY(y) end
 
----@param arg0 number
-function __VirtualAnimal:setZ(arg0) end
+---@param z number
+function __VirtualAnimal:setZ(z) end
 
 VirtualAnimal = {}
 

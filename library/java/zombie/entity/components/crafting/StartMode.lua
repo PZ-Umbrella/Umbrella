@@ -20,13 +20,13 @@ StartMode.Manual = nil
 ---@type StartMode
 StartMode.Passive = nil
 
----@param arg0 integer
+---@param id integer
 ---@return StartMode
-function StartMode.fromByteId(arg0) end
+function StartMode.fromByteId(id) end
 
----@param arg0 string
+---@param name string
 ---@return StartMode
-function StartMode.valueOf(arg0) end
+function StartMode.valueOf(name) end
 
 ---@return kahlua.Array<StartMode>
 function StartMode.values() end

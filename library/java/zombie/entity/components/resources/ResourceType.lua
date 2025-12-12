@@ -20,13 +20,13 @@ ResourceType.Fluid = nil
 ---@type ResourceType
 ResourceType.Item = nil
 
----@param arg0 integer
+---@param id integer
 ---@return ResourceType
-function ResourceType.fromId(arg0) end
+function ResourceType.fromId(id) end
 
----@param arg0 string
+---@param name string
 ---@return ResourceType
-function ResourceType.valueOf(arg0) end
+function ResourceType.valueOf(name) end
 
 ---@return kahlua.Array<ResourceType>
 function ResourceType.values() end

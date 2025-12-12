@@ -3,15 +3,15 @@
 ---@class CraftRecipeComponentScript: ComponentScript
 local __CraftRecipeComponentScript = {}
 
----@param arg0 string
-function __CraftRecipeComponentScript:InitLoadPP(arg0) end
+---@param name string
+function __CraftRecipeComponentScript:InitLoadPP(name) end
 
 function __CraftRecipeComponentScript:OnLoadedAfterLua() end
 
 function __CraftRecipeComponentScript:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __CraftRecipeComponentScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __CraftRecipeComponentScript:OnScriptsLoaded(loadMode) end
 
 function __CraftRecipeComponentScript:PreReload() end
 

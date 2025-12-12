@@ -6,7 +6,7 @@
 ---@field activeIcons table<string, ISBaseIcon>
 ---@field activeZoneRadius number
 ---@field activeZones table<string, umbrella.Foraging.ZoneData>
----@field affinityAddedChunks table
+---@field affinityAddedChunks table<IsoChunk, boolean>
 ---@field aimBonusTick number
 ---@field aimBonusTickMax number
 ---@field aimMulti number
@@ -43,8 +43,8 @@
 ---@field isSpotting boolean
 ---@field lastFoundX number
 ---@field lastFoundY number
----@field lastSpottedX unknown
----@field lastSpottedY unknown
+---@field lastSpottedX number
+---@field lastSpottedY number
 ---@field lastTimestamp number
 ---@field lastUpdateX number
 ---@field lastUpdateY number
@@ -355,8 +355,6 @@ function ISSearchManager:update() end
 function ISSearchManager:updateAlpha() end
 
 function ISSearchManager:updateCurrentZone() end
-
-function ISSearchManager:updateForceFindSystem() end
 
 function ISSearchManager:updateLocationTracking() end
 

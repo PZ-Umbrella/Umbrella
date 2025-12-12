@@ -8,8 +8,8 @@ function __IsoMetaChunk:Dispose() end
 ---@param room RoomDef
 function __IsoMetaChunk:addRoom(room) end
 
----@param arg0 Zone
-function __IsoMetaChunk:addZone(arg0) end
+---@param zone Zone
+function __IsoMetaChunk:addZone(zone) end
 
 function __IsoMetaChunk:clearRooms() end
 
@@ -22,21 +22,21 @@ function __IsoMetaChunk:compactZoneArray() end
 ---@return boolean
 function __IsoMetaChunk:doesHaveForaging() end
 
----@param arg0 string
+---@param zone string
 ---@return boolean
-function __IsoMetaChunk:doesHaveZone(arg0) end
+function __IsoMetaChunk:doesHaveZone(zone) end
 
----@param arg0 integer
----@param arg1 integer
+---@param x integer
+---@param y integer
 ---@return BuildingDef
-function __IsoMetaChunk:getAssociatedBuildingAt(arg0, arg1) end
+function __IsoMetaChunk:getAssociatedBuildingAt(x, y) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 ArrayList<BuildingDef>
-function __IsoMetaChunk:getBuildingsIntersecting(arg0, arg1, arg2, arg3, arg4) end
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
+---@param result ArrayList<BuildingDef>
+function __IsoMetaChunk:getBuildingsIntersecting(x, y, w, h, result) end
 
 ---@param x integer
 ---@param y integer
@@ -73,58 +73,58 @@ function __IsoMetaChunk:getZombieIntensity(bRandom) end
 ---@return number
 function __IsoMetaChunk:getZombieIntensity() end
 
----@param arg0 integer
+---@param index integer
 ---@return Zone
-function __IsoMetaChunk:getZone(arg0) end
+function __IsoMetaChunk:getZone(index) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return Zone
-function __IsoMetaChunk:getZoneAt(arg0, arg1, arg2) end
+function __IsoMetaChunk:getZoneAt(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 string
+---@param x integer
+---@param y integer
+---@param z integer
+---@param zone string
 ---@return Zone
-function __IsoMetaChunk:getZoneAt(arg0, arg1, arg2, arg3) end
+function __IsoMetaChunk:getZoneAt(x, y, z, zone) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 ArrayList<Zone>
+---@param x integer
+---@param y integer
+---@param z integer
+---@param result ArrayList<Zone>
 ---@return ArrayList<Zone>
-function __IsoMetaChunk:getZonesAt(arg0, arg1, arg2, arg3) end
+function __IsoMetaChunk:getZonesAt(x, y, z, result) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return ArrayList<Zone>
-function __IsoMetaChunk:getZonesAt(arg0, arg1, arg2) end
+function __IsoMetaChunk:getZonesAt(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 ArrayList<Zone>
-function __IsoMetaChunk:getZonesIntersecting(arg0, arg1, arg2, arg3, arg4, arg5) end
+---@param x integer
+---@param y integer
+---@param z integer
+---@param w integer
+---@param h integer
+---@param result ArrayList<Zone>
+function __IsoMetaChunk:getZonesIntersecting(x, y, z, w, h, result) end
 
 ---@return integer
 function __IsoMetaChunk:getZonesSize() end
 
----@param arg0 Set<Zone>
-function __IsoMetaChunk:getZonesUnique(arg0) end
+---@param result Set<Zone>
+function __IsoMetaChunk:getZonesUnique(result) end
 
----@param arg0 RoomDef
-function __IsoMetaChunk:removeRoom(arg0) end
+---@param room RoomDef
+function __IsoMetaChunk:removeRoom(room) end
 
----@param arg0 Zone
-function __IsoMetaChunk:removeZone(arg0) end
+---@param zone Zone
+function __IsoMetaChunk:removeZone(zone) end
 
----@param arg0 integer
-function __IsoMetaChunk:setZombieIntensity(arg0) end
+---@param zombieIntensity integer
+function __IsoMetaChunk:setZombieIntensity(zombieIntensity) end
 
 IsoMetaChunk = {}
 

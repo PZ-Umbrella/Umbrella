@@ -3,8 +3,8 @@
 ---@class RZSBurntWreck: RandomizedZoneStoryBase
 local __RZSBurntWreck = {}
 
----@param arg0 Zone
-function __RZSBurntWreck:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSBurntWreck:randomizeZoneStory(zone) end
 
 RZSBurntWreck = {}
 

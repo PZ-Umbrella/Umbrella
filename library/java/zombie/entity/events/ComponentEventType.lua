@@ -8,9 +8,9 @@ ComponentEventType = {}
 ---@type ComponentEventType
 ComponentEventType.OnContentsChanged = nil
 
----@param arg0 string
+---@param name string
 ---@return ComponentEventType
-function ComponentEventType.valueOf(arg0) end
+function ComponentEventType.valueOf(name) end
 
 ---@return kahlua.Array<ComponentEventType>
 function ComponentEventType.values() end

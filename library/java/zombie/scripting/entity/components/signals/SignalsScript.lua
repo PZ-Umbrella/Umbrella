@@ -3,15 +3,15 @@
 ---@class SignalsScript: ComponentScript
 local __SignalsScript = {}
 
----@param arg0 string
-function __SignalsScript:InitLoadPP(arg0) end
+---@param name string
+function __SignalsScript:InitLoadPP(name) end
 
 function __SignalsScript:OnLoadedAfterLua() end
 
 function __SignalsScript:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __SignalsScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __SignalsScript:OnScriptsLoaded(loadMode) end
 
 function __SignalsScript:PreReload() end
 

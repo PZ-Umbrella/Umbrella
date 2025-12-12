@@ -9,7 +9,6 @@
 ---@field itemListBtn ISButton
 ---@field miniScoreboardBtn ISButton
 ---@field nonpvpzoneBtn ISButton
----@field packetCountsBtn ISButton
 ---@field pvpLogTool ISButton
 ---@field safezoneBtn ISButton
 ---@field sandboxOptionsBtn ISButton

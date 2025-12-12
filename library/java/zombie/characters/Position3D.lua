@@ -3,11 +3,11 @@
 ---@class Position3D
 local __Position3D = {}
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return Position3D
-function __Position3D:set(arg0, arg1, arg2) end
+function __Position3D:set(x, y, z) end
 
 ---@return number
 function __Position3D:x() end
@@ -23,11 +23,11 @@ Position3D = {}
 ---@return Position3D
 function Position3D.new() end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return Position3D
-function Position3D.new(arg0, arg1, arg2) end
+function Position3D.new(x, y, z) end
 
 ---@type Class<Position3D>
 Position3D.class = nil

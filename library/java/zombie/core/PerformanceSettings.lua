@@ -54,8 +54,8 @@ function __PerformanceSettings:setNewRoofHiding(enabled) end
 ---@param puddles integer
 function __PerformanceSettings:setPuddlesQuality(puddles) end
 
----@param arg0 integer
-function __PerformanceSettings:setViewConeOpacity(arg0) end
+---@param viewConeOpacity integer
+function __PerformanceSettings:setViewConeOpacity(viewConeOpacity) end
 
 ---@param water integer
 function __PerformanceSettings:setWaterQuality(water) end

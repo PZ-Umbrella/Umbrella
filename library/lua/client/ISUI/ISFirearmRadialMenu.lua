@@ -40,6 +40,8 @@ function ISFirearmRadialMenu.onKeyRepeat(key) end
 ---@return boolean?
 function ISFirearmRadialMenu.onRepeatRBumper(buttonPrompt) end
 
+---@param item InventoryItem
+---@param playerObj IsoPlayer
 function ISFirearmRadialMenu.sharpenWeapon(item, playerObj) end
 
 function ISFirearmRadialMenu:center() end

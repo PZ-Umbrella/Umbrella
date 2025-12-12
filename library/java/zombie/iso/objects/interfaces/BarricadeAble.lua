@@ -3,12 +3,12 @@
 ---@class BarricadeAble
 local __BarricadeAble = {}
 
----@param arg0 IsoGameCharacter
----@param arg1 ArrayList<InventoryItem>
----@param arg2 CraftRecipeData
----@param arg3 boolean
+---@param chr IsoGameCharacter
+---@param items ArrayList<InventoryItem>
+---@param craftRecipeData CraftRecipeData
+---@param opposite boolean
 ---@return IsoBarricade
-function __BarricadeAble:addBarricadesFromCraftRecipe(arg0, arg1, arg2, arg3) end
+function __BarricadeAble:addBarricadesFromCraftRecipe(chr, items, craftRecipeData, opposite) end
 
 ---@param chr IsoGameCharacter
 ---@return IsoBarricade

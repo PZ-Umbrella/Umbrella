@@ -3,15 +3,15 @@
 ---@class TestComponentScript: ComponentScript
 local __TestComponentScript = {}
 
----@param arg0 string
-function __TestComponentScript:InitLoadPP(arg0) end
+---@param name string
+function __TestComponentScript:InitLoadPP(name) end
 
 function __TestComponentScript:OnLoadedAfterLua() end
 
 function __TestComponentScript:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __TestComponentScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __TestComponentScript:OnScriptsLoaded(loadMode) end
 
 function __TestComponentScript:PreReload() end
 

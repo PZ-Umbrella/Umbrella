@@ -17,18 +17,18 @@ function __VideoTexture:isValid() end
 
 VideoTexture = {}
 
----@param arg0 string
----@param arg1 integer
----@param arg2 integer
----@param arg3 boolean
+---@param filename string
+---@param width integer
+---@param height integer
+---@param useAsync boolean
 ---@return VideoTexture
-function VideoTexture.getOrCreate(arg0, arg1, arg2, arg3) end
+function VideoTexture.getOrCreate(filename, width, height, useAsync) end
 
----@param arg0 string
----@param arg1 integer
----@param arg2 integer
+---@param filename string
+---@param width integer
+---@param height integer
 ---@return VideoTexture
-function VideoTexture.getOrCreate(arg0, arg1, arg2) end
+function VideoTexture.getOrCreate(filename, width, height) end
 
 ---@type Class<VideoTexture>
 VideoTexture.class = nil

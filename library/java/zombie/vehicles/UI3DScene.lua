@@ -33,14 +33,14 @@ function __UI3DScene:fromLua3(func, arg0, arg1, arg2) end
 ---@return any
 function __UI3DScene:fromLua4(func, arg0, arg1, arg2, arg3) end
 
----@param arg0 string
+---@param func string
+---@param arg0 any
 ---@param arg1 any
 ---@param arg2 any
 ---@param arg3 any
 ---@param arg4 any
----@param arg5 any
 ---@return any
-function __UI3DScene:fromLua5(arg0, arg1, arg2, arg3, arg4, arg5) end
+function __UI3DScene:fromLua5(func, arg0, arg1, arg2, arg3, arg4) end
 
 ---@param func string
 ---@param arg0 any
@@ -52,16 +52,16 @@ function __UI3DScene:fromLua5(arg0, arg1, arg2, arg3, arg4, arg5) end
 ---@return any
 function __UI3DScene:fromLua6(func, arg0, arg1, arg2, arg3, arg4, arg5) end
 
----@param arg0 string
+---@param func string
+---@param arg0 any
 ---@param arg1 any
 ---@param arg2 any
 ---@param arg3 any
 ---@param arg4 any
 ---@param arg5 any
 ---@param arg6 any
----@param arg7 any
 ---@return any
-function __UI3DScene:fromLua7(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+function __UI3DScene:fromLua7(func, arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
 
 ---@param func string
 ---@param arg0 any
@@ -84,9 +84,9 @@ function __UI3DScene:render() end
 ---@return number
 function __UI3DScene:sceneToUIX(sceneX, sceneY, sceneZ) end
 
----@param arg0 Vector3f
+---@param scenePos Vector3f
 ---@return number
-function __UI3DScene:sceneToUIX(arg0) end
+function __UI3DScene:sceneToUIX(scenePos) end
 
 ---@param sceneX number
 ---@param sceneY number
@@ -94,16 +94,16 @@ function __UI3DScene:sceneToUIX(arg0) end
 ---@return number
 function __UI3DScene:sceneToUIY(sceneX, sceneY, sceneZ) end
 
----@param arg0 Vector3f
+---@param scenePos Vector3f
 ---@return number
-function __UI3DScene:sceneToUIY(arg0) end
+function __UI3DScene:sceneToUIY(scenePos) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 UI3DScene.GridPlane
----@param arg3 Vector3f
+---@param uiX number
+---@param uiY number
+---@param gridPlane UI3DScene.GridPlane
+---@param outScenePos Vector3f
 ---@return boolean
-function __UI3DScene:uiToGrid(arg0, arg1, arg2, arg3) end
+function __UI3DScene:uiToGrid(uiX, uiY, gridPlane, outScenePos) end
 
 ---@param uiX number
 ---@param uiY number
@@ -141,21 +141,21 @@ function UI3DScene.allocPlane() end
 ---@return UI3DScene.Ray
 function UI3DScene.allocRay() end
 
----@param arg0 UI3DScene.Ray
----@param arg1 UI3DScene.Ray
+---@param l1 UI3DScene.Ray
+---@param l2 UI3DScene.Ray
 ---@return number
-function UI3DScene.closest_distance_between_lines(arg0, arg1) end
+function UI3DScene.closest_distance_between_lines(l1, l2) end
 
----@param arg0 UI3DScene.Ray
----@param arg1 UI3DScene.Circle
----@param arg2 Vector3f
+---@param ray UI3DScene.Ray
+---@param c UI3DScene.Circle
+---@param point Vector3f
 ---@return number
-function UI3DScene.closest_distance_line_circle(arg0, arg1, arg2) end
+function UI3DScene.closest_distance_line_circle(ray, c, point) end
 
----@param arg0 Vector3f
----@param arg1 UI3DScene.Ray
+---@param P Vector3f
+---@param L UI3DScene.Ray
 ---@return number
-function UI3DScene.distance_between_point_ray(arg0, arg1) end
+function UI3DScene.distance_between_point_ray(P, L) end
 
 ---@param Pn UI3DScene.Plane
 ---@param S UI3DScene.Ray
@@ -163,11 +163,11 @@ function UI3DScene.distance_between_point_ray(arg0, arg1) end
 ---@return integer
 function UI3DScene.intersect_ray_plane(Pn, S, out) end
 
----@param arg0 UI3DScene.Plane
-function UI3DScene.releasePlane(arg0) end
+---@param Plane UI3DScene.Plane
+function UI3DScene.releasePlane(Plane) end
 
----@param arg0 UI3DScene.Ray
-function UI3DScene.releaseRay(arg0) end
+---@param ray UI3DScene.Ray
+function UI3DScene.releaseRay(ray) end
 
 ---@param table table
 ---@return UI3DScene

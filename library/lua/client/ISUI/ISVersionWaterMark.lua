@@ -6,10 +6,10 @@ ISVersionWaterMark = {}
 function ISVersionWaterMark.doMsg() end
 
 ---@class WaterMarkUI : ISPanel
----@field chr unknown
+---@field chr IsoPlayer
 ---@field refreshNeeded boolean
 ---@field revButton ISButton
----@field version unknown
+---@field version string
 WaterMarkUI = ISPanel:derive("WaterMarkUI")
 WaterMarkUI.Type = "WaterMarkUI"
 

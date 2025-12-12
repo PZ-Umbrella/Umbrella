@@ -14,18 +14,27 @@
 ---@field dock string
 ---@field enabled boolean?
 ---@field forceCursorVisible boolean?
+---@field getAPrompt (fun(self: ISUIElement): string?)?
+---@field getBPrompt (fun(self: ISUIElement): string?)?
+---@field getLBPrompt (fun(self: ISUIElement): string?)?
+---@field getRBPrompt (fun(self: ISUIElement): string?)?
+---@field getXPrompt (fun(self: ISUIElement): string?)?
+---@field getYPrompt (fun(self: ISUIElement): string?)?
 ---@field height number
 ---@field hscroll ISScrollBar?
 ---@field ID integer
 ---@field internal string?
+---@field isValidPrompt (fun(self: ISUIElement): boolean)?
 ---@field javaObject UIElement
 ---@field joyfocus unknown?
 ---@field joypadFocused boolean
+---@field joypadNavigate table?
 ---@field joypadNavigatePrevRect table?
 ---@field joypadNavigateTransition table?
 ---@field minimumHeight number
 ---@field minimumWidth number
 ---@field onMouseDoubleClick umbrella.ISUIElement.MouseDoubleClick
+---@field overrideBPrompt boolean?
 ---@field parent ISUIElement?
 ---@field removed boolean
 ---@field scrollwidth number
@@ -103,6 +112,15 @@ function ISUIElement:drawItemIcon(item, x, y, a, w, h) end
 ---@param b number
 function ISUIElement:drawLine2(x, y, x2, y2, a, r, g, b) end
 
+---@param tex Texture
+---@param x1 number
+---@param y1 number
+---@param x2 number
+---@param y2 number
+---@param x3 number
+---@param y3 number
+---@param x4 number
+---@param y4 number
 ---@param r number
 ---@param g number
 ---@param b number

@@ -6,46 +6,46 @@ local __Item = {}
 ---@param str string
 function __Item:DoParam(str) end
 
----@param arg0 string
----@param arg1 string
-function __Item:DoParam(arg0, arg1) end
+---@param param string
+---@param val string
+function __Item:DoParam(param, val) end
 
----@param arg0 string
-function __Item:InitLoadPP(arg0) end
+---@param name string
+function __Item:InitLoadPP(name) end
 
 ---@param param string
 ---@return InventoryItem
 function __Item:InstanceItem(param) end
 
----@param arg0 string
----@param arg1 boolean
+---@param param string
+---@param isFirstTimeCreated boolean
 ---@return InventoryItem
-function __Item:InstanceItem(arg0, arg1) end
+function __Item:InstanceItem(param, isFirstTimeCreated) end
 
----@param arg0 string
----@param arg1 string
-function __Item:Load(arg0, arg1) end
+---@param name string
+---@param totalFile string
+function __Item:Load(name, totalFile) end
 
 function __Item:OnLoadedAfterLua() end
 
 function __Item:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __Item:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __Item:OnScriptsLoaded(loadMode) end
 
 function __Item:PreReload() end
 
----@param arg0 string
-function __Item:addForageFocusCategory(arg0) end
+---@param categoryName string
+function __Item:addForageFocusCategory(categoryName) end
 
----@param arg0 string
-function __Item:addResearchableRecipe(arg0) end
+---@param recipeName string
+function __Item:addResearchableRecipe(recipeName) end
 
----@param arg0 CraftRecipe
-function __Item:addResearchableRecipe(arg0) end
+---@param craftRecipe CraftRecipe
+function __Item:addResearchableRecipe(craftRecipe) end
 
----@param arg0 ArrayList<string>
-function __Item:addResearchableRecipes(arg0) end
+---@param recipeNames ArrayList<string>
+function __Item:addResearchableRecipes(recipeNames) end
 
 ---@return boolean
 function __Item:canBeForaged() end
@@ -442,14 +442,14 @@ function __Item:getReplaceWhenUnequip() end
 ---@return ArrayList<string>
 function __Item:getResearchableRecipes() end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return ArrayList<string>
-function __Item:getResearchableRecipes(arg0) end
+function __Item:getResearchableRecipes(chr) end
 
----@param arg0 IsoGameCharacter
----@param arg1 boolean
+---@param chr IsoGameCharacter
+---@param blacklistKnown boolean
 ---@return ArrayList<string>
-function __Item:getResearchableRecipes(arg0, arg1) end
+function __Item:getResearchableRecipes(chr, blacklistKnown) end
 
 ---@return string
 function __Item:getShellFallSound() end
@@ -541,21 +541,21 @@ function __Item:getUnhappyChange() end
 ---@return number # the UseDelta
 function __Item:getUseDelta() end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return ArrayList<string>
-function __Item:getUsedInFavouriteRecipes(arg0) end
+function __Item:getUsedInFavouriteRecipes(player) end
 
 ---@return ArrayList<string>
 function __Item:getUsedInRecipes() end
 
----@param arg0 IsoGameCharacter
+---@param character IsoGameCharacter
 ---@return ArrayList<string>
-function __Item:getUsedInRecipes(arg0) end
+function __Item:getUsedInRecipes(character) end
 
----@param arg0 IsoGameCharacter
----@param arg1 ArrayList<string>
+---@param character IsoGameCharacter
+---@param recipesList ArrayList<string>
 ---@return ArrayList<string>
-function __Item:getUsedInRecipes(arg0, arg1) end
+function __Item:getUsedInRecipes(character, recipesList) end
 
 ---@return ArrayList<VehiclePartModel>
 function __Item:getVehiclePartModels() end
@@ -616,9 +616,9 @@ function __Item:hasResearchableRecipes() end
 ---@return boolean
 function __Item:hasTag(tags) end
 
----@param arg0 ItemTag
+---@param itemTag ItemTag
 ---@return boolean
-function __Item:hasTag(arg0) end
+function __Item:hasTag(itemTag) end
 
 ---@return boolean
 function __Item:ignoreZombieDensity() end
@@ -675,9 +675,9 @@ function __Item:isDisappearOnUse() end
 ---@return boolean
 function __Item:isFarmingLoot() end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return boolean
-function __Item:isFavouriteRecipeInput(arg0) end
+function __Item:isFavouriteRecipeInput(player) end
 
 ---@return boolean
 function __Item:isHidden() end
@@ -737,9 +737,9 @@ function __Item:isSurvivalGearLoot() end
 ---@return boolean
 function __Item:isToolLoot() end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return boolean
-function __Item:isUnwanted(arg0) end
+function __Item:isUnwanted(player) end
 
 ---@return boolean # the UseEndurance
 function __Item:isUseEndurance() end
@@ -756,16 +756,16 @@ function __Item:isUseWhileUnequipped() end
 ---@return boolean
 function __Item:isUsedInBuildRecipes() end
 
----@param arg0 IsoGameCharacter
+---@param character IsoGameCharacter
 ---@return boolean
-function __Item:isUsedInBuildRecipes(arg0) end
+function __Item:isUsedInBuildRecipes(character) end
 
 ---@return boolean
 function __Item:isUsedInRecipes() end
 
----@param arg0 IsoGameCharacter
+---@param character IsoGameCharacter
 ---@return boolean
-function __Item:isUsedInRecipes(arg0) end
+function __Item:isUsedInRecipes(character) end
 
 ---@return boolean
 function __Item:isVisualAid() end
@@ -773,8 +773,8 @@ function __Item:isVisualAid() end
 ---@return boolean
 function __Item:isWorldRender() end
 
----@param arg0 IsoGameCharacter
-function __Item:researchRecipes(arg0) end
+---@param character IsoGameCharacter
+function __Item:researchRecipes(character) end
 
 function __Item:reset() end
 
@@ -812,11 +812,11 @@ function __Item:setCanBandage(CanBandage) end
 ---@param CanBarricade boolean the CanBarricade to set
 function __Item:setCanBarricade(CanBarricade) end
 
----@param arg0 boolean
-function __Item:setCanBeForaged(arg0) end
+---@param canBe boolean
+function __Item:setCanBeForaged(canBe) end
 
----@param arg0 boolean
-function __Item:setCanSpawnAsLoot(arg0) end
+---@param canSpawn boolean
+function __Item:setCanSpawnAsLoot(canSpawn) end
 
 ---@param CantAttackWithLowestEndurance boolean the CantAttackWithLowestEndurance to set
 function __Item:setCantAttackWithLowestEndurance(CantAttackWithLowestEndurance) end
@@ -878,19 +878,19 @@ function __Item:setInsulation(f) end
 ---@param IsCookable boolean the IsCookable to set
 function __Item:setIsCookable(IsCookable) end
 
----@param arg0 boolean
-function __Item:setIsCraftRecipeProduct(arg0) end
+---@param isProduct boolean
+function __Item:setIsCraftRecipeProduct(isProduct) end
 
 function __Item:setIsCraftRecipeProduct() end
 
----@param arg0 ItemConfig
-function __Item:setItemConfig(arg0) end
+---@param itemConfig ItemConfig
+function __Item:setItemConfig(itemConfig) end
 
 ---@param itemType ItemType
 function __Item:setItemType(itemType) end
 
----@param arg0 boolean
-function __Item:setKeepOnDeplete(arg0) end
+---@param KeepOnDeplete boolean
+function __Item:setKeepOnDeplete(KeepOnDeplete) end
 
 ---@param KnockBackOnNoDeath boolean the KnockBackOnNoDeath to set
 function __Item:setKnockBackOnNoDeath(KnockBackOnNoDeath) end
@@ -934,8 +934,8 @@ function __Item:setNPCSoundBoost(NPCSoundBoost) end
 ---@param name string the name to set
 function __Item:setName(name) end
 
----@param arg0 string
-function __Item:setOpeningRecipe(arg0) end
+---@param recipeName string
+function __Item:setOpeningRecipe(recipeName) end
 
 ---@param OtherCharacterVolumeBoost number the OtherCharacterVolumeBoost to set
 function __Item:setOtherCharacterVolumeBoost(OtherCharacterVolumeBoost) end
@@ -1021,12 +1021,12 @@ function __Item:setToHitModifier(ToHitModifier) end
 ---@param UnhappyChange number the UnhappyChange to set
 function __Item:setUnhappyChange(UnhappyChange) end
 
----@param arg0 IsoPlayer
----@param arg1 boolean
-function __Item:setUnwanted(arg0, arg1) end
+---@param player IsoPlayer
+---@param unwanted boolean
+function __Item:setUnwanted(player, unwanted) end
 
----@param arg0 IsoPlayer
-function __Item:setUnwanted(arg0) end
+---@param player IsoPlayer
+function __Item:setUnwanted(player) end
 
 ---@param UseDelta number the UseDelta to set
 function __Item:setUseDelta(UseDelta) end
@@ -1043,8 +1043,8 @@ function __Item:setUseWhileEquipped(UseWhileEquipped) end
 ---@param UseWhileUnequipped boolean the UseWhileUnequipped to set
 function __Item:setUseWhileUnequipped(UseWhileUnequipped) end
 
----@param arg0 IsoPlayer
-function __Item:setWanted(arg0) end
+---@param player IsoPlayer
+function __Item:setWanted(player) end
 
 ---@param w number
 function __Item:setWaterresist(w) end

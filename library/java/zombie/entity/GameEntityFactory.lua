@@ -5,66 +5,66 @@ local __GameEntityFactory = {}
 
 GameEntityFactory = {}
 
----@param arg0 GameEntity
----@param arg1 Component
-function GameEntityFactory.AddComponent(arg0, arg1) end
+---@param entity GameEntity
+---@param component Component
+function GameEntityFactory.AddComponent(entity, component) end
 
----@param arg0 GameEntity
----@param arg1 boolean
----@param arg2 Component
-function GameEntityFactory.AddComponent(arg0, arg1, arg2) end
+---@param entity GameEntity
+---@param replace boolean
+---@param component Component
+function GameEntityFactory.AddComponent(entity, replace, component) end
 
----@param arg0 GameEntity
----@param arg1 kahlua.Array<Component>
-function GameEntityFactory.AddComponents(arg0, arg1) end
+---@param entity GameEntity
+---@param components kahlua.Array<Component>
+function GameEntityFactory.AddComponents(entity, components) end
 
----@param arg0 GameEntity
----@param arg1 boolean
----@param arg2 kahlua.Array<Component>
-function GameEntityFactory.AddComponents(arg0, arg1, arg2) end
+---@param entity GameEntity
+---@param replace boolean
+---@param components kahlua.Array<Component>
+function GameEntityFactory.AddComponents(entity, replace, components) end
 
----@param arg0 GameEntity
----@param arg1 GameEntityScript
----@param arg2 boolean
-function GameEntityFactory.CreateEntityDebugReload(arg0, arg1, arg2) end
+---@param entity GameEntity
+---@param script GameEntityScript
+---@param isFirstTimeCreated boolean
+function GameEntityFactory.CreateEntityDebugReload(entity, script, isFirstTimeCreated) end
 
----@param arg0 InventoryItem
----@param arg1 Item
----@param arg2 boolean
-function GameEntityFactory.CreateInventoryItemEntity(arg0, arg1, arg2) end
+---@param inventoryItem InventoryItem
+---@param itemScript Item
+---@param isFirstTimeCreated boolean
+function GameEntityFactory.CreateInventoryItemEntity(inventoryItem, itemScript, isFirstTimeCreated) end
 
----@param arg0 IsoObject
-function GameEntityFactory.CreateIsoEntityFromCellLoading(arg0) end
+---@param isoObject IsoObject
+function GameEntityFactory.CreateIsoEntityFromCellLoading(isoObject) end
 
----@param arg0 IsoObject
----@param arg1 GameEntityScript
----@param arg2 boolean
-function GameEntityFactory.CreateIsoObjectEntity(arg0, arg1, arg2) end
+---@param isoObject IsoObject
+---@param script GameEntityScript
+---@param isFirstTimeCreated boolean
+function GameEntityFactory.CreateIsoObjectEntity(isoObject, script, isFirstTimeCreated) end
 
----@param arg0 GameEntity
----@param arg1 Component
-function GameEntityFactory.RemoveComponent(arg0, arg1) end
+---@param entity GameEntity
+---@param component Component
+function GameEntityFactory.RemoveComponent(entity, component) end
 
----@param arg0 GameEntity
----@param arg1 ComponentType
-function GameEntityFactory.RemoveComponentType(arg0, arg1) end
+---@param entity GameEntity
+---@param componentType ComponentType
+function GameEntityFactory.RemoveComponentType(entity, componentType) end
 
----@param arg0 GameEntity
----@param arg1 EnumSet<ComponentType>
-function GameEntityFactory.RemoveComponentTypes(arg0, arg1) end
+---@param entity GameEntity
+---@param componentTypes EnumSet<ComponentType>
+function GameEntityFactory.RemoveComponentTypes(entity, componentTypes) end
 
----@param arg0 GameEntity
----@param arg1 kahlua.Array<Component>
-function GameEntityFactory.RemoveComponents(arg0, arg1) end
+---@param entity GameEntity
+---@param components kahlua.Array<Component>
+function GameEntityFactory.RemoveComponents(entity, components) end
 
----@param arg0 GameEntity
----@param arg1 GameEntity
----@param arg2 ComponentType
-function GameEntityFactory.TransferComponent(arg0, arg1, arg2) end
+---@param source GameEntity
+---@param target GameEntity
+---@param componentType ComponentType
+function GameEntityFactory.TransferComponent(source, target, componentType) end
 
----@param arg0 GameEntity
----@param arg1 GameEntity
-function GameEntityFactory.TransferComponents(arg0, arg1) end
+---@param source GameEntity
+---@param target GameEntity
+function GameEntityFactory.TransferComponents(source, target) end
 
 ---@return GameEntityFactory
 function GameEntityFactory.new() end

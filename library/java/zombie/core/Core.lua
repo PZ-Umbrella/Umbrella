@@ -3,10 +3,10 @@
 ---@class Core
 local __Core = {}
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __Core:ChangeWorldViewport(arg0, arg1, arg2) end
+---@param w integer
+---@param h integer
+---@param player integer
+function __Core:ChangeWorldViewport(w, h, player) end
 
 function __Core:CheckDelayResetLua() end
 
@@ -39,21 +39,21 @@ function __Core:DoPushIsoParticleStuff(ox, oy, oz) end
 ---@param vehicle boolean
 function __Core:DoPushIsoStuff(ox, oy, oz, useangle, vehicle) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 boolean
-function __Core:DoPushIsoStuff2D(arg0, arg1, arg2, arg3, arg4) end
+---@param ox number
+---@param oy number
+---@param oz number
+---@param useangle number
+---@param vehicle boolean
+function __Core:DoPushIsoStuff2D(ox, oy, oz, useangle, vehicle) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 number
----@param arg3 integer
----@param arg4 boolean
----@param arg5 boolean
----@param arg6 boolean
-function __Core:DoStartFrameNoZoom(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+---@param w integer
+---@param h integer
+---@param zoom number
+---@param player integer
+---@param isTextFrame boolean
+---@param isFx boolean
+---@param isSmartTexture boolean
+function __Core:DoStartFrameNoZoom(w, h, zoom, player, isTextFrame, isFx, isSmartTexture) end
 
 ---@param w integer
 ---@param h integer
@@ -102,11 +102,11 @@ function __Core:StartFrame() end
 ---@param clear boolean
 function __Core:StartFrame(nPlayer, clear) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 number
----@param arg3 integer
-function __Core:StartFrameFlipY(arg0, arg1, arg2, arg3) end
+---@param w integer
+---@param h integer
+---@param zoom number
+---@param player integer
+function __Core:StartFrameFlipY(w, h, zoom, player) end
 
 ---@param nPlayer integer
 function __Core:StartFrameText(nPlayer) end
@@ -131,13 +131,13 @@ function __Core:TakeScreenshot(width, height, readBuffer) end
 ---@param readBuffer integer
 function __Core:TakeScreenshot(x, y, width, height, readBuffer) end
 
----@param arg0 string
----@param arg1 integer
----@param arg2 integer
----@param arg3 boolean
----@param arg4 boolean
----@param arg5 boolean
-function __Core:addKeyBinding(arg0, arg1, arg2, arg3, arg4, arg5) end
+---@param keyName string
+---@param key integer
+---@param altKey integer
+---@param shift boolean
+---@param ctrl boolean
+---@param alt boolean
+function __Core:addKeyBinding(keyName, key, altKey, shift, ctrl, alt) end
 
 ---@return boolean
 function __Core:allowOptionTextureCompression() end
@@ -150,10 +150,10 @@ function __Core:debugOutputMissingCLothingSpawn() end
 ---@return string
 function __Core:debugOutputMissingItemSpawn() end
 
----@param arg0 string
----@param arg1 string
+---@param directory string
+---@param category string
 ---@return string
-function __Core:debugOutputMissingSpawn(arg0, arg1) end
+function __Core:debugOutputMissingSpawn(directory, category) end
 
 ---@param playerIndex integer
 ---@param del integer
@@ -164,9 +164,9 @@ function __Core:exitToMenu() end
 ---@return Account
 function __Core:getAccountUsed() end
 
----@param arg0 string
+---@param keyName string
 ---@return integer
-function __Core:getAltKey(arg0) end
+function __Core:getAltKey(keyName) end
 
 ---@param playerIndex integer
 ---@return boolean
@@ -227,13 +227,13 @@ function __Core:getIsoCursorVisibility() end
 ---@return integer
 function __Core:getKey(keyName) end
 
----@param arg0 string
+---@param keyName string
 ---@return Core.KeyBinding
-function __Core:getKeyBinding(arg0) end
+function __Core:getKeyBinding(keyName) end
 
----@param arg0 integer
+---@param keyId integer
 ---@return Core.KeyBinding
-function __Core:getKeyBinding(arg0) end
+function __Core:getKeyBinding(keyId) end
 
 ---@return integer
 function __Core:getMaxActiveRagdolls() end
@@ -241,13 +241,13 @@ function __Core:getMaxActiveRagdolls() end
 ---@return integer
 function __Core:getMaxTextureSize() end
 
----@param arg0 integer
+---@param flags integer
 ---@return integer
-function __Core:getMaxTextureSizeFromFlags(arg0) end
+function __Core:getMaxTextureSizeFromFlags(flags) end
 
----@param arg0 integer
+---@param option integer
 ---@return integer
-function __Core:getMaxTextureSizeFromOption(arg0) end
+function __Core:getMaxTextureSizeFromOption(option) end
 
 ---@return integer
 function __Core:getMaxVehicleTextureSize() end
@@ -327,9 +327,9 @@ function __Core:getOptionBloodDecals() end
 ---@return boolean
 function __Core:getOptionBorderlessWindow() end
 
----@param arg0 integer
+---@param index integer
 ---@return ConfigOption
-function __Core:getOptionByIndex(arg0) end
+function __Core:getOptionByIndex(index) end
 
 ---@return number
 function __Core:getOptionChatFadeTime() end
@@ -757,9 +757,9 @@ function __Core:initPoisonousMushroom() end
 
 function __Core:initShaders() end
 
----@param arg0 Core.KeyBinding
+---@param keyB Core.KeyBinding
 ---@return boolean
-function __Core:invalidBindingShiftCtrl(arg0) end
+function __Core:invalidBindingShiftCtrl(keyB) end
 
 ---@return boolean
 function __Core:isAnimPopupDone() end
@@ -806,10 +806,10 @@ function __Core:isFullScreen() end
 ---@return boolean
 function __Core:isInDebug() end
 
----@param arg0 string
----@param arg1 integer
+---@param keyName string
+---@param key integer
 ---@return boolean
-function __Core:isKey(arg0, arg1) end
+function __Core:isKey(keyName, key) end
 
 ---@return boolean
 function __Core:isModsPopupDone() end
@@ -909,14 +909,14 @@ function __Core:saveOptions() end
 
 function __Core:saveOptions_OLD() end
 
----@param arg0 Account
-function __Core:setAccountUsed(arg0) end
+---@param accountUsed Account
+function __Core:setAccountUsed(accountUsed) end
 
 ---@param done boolean
 function __Core:setAnimPopupDone(done) end
 
----@param arg0 boolean
-function __Core:setAnimalCheat(arg0) end
+---@param cheat boolean
+function __Core:setAnimalCheat(cheat) end
 
 ---@param playerIndex integer
 ---@param auto boolean
@@ -925,8 +925,8 @@ function __Core:setAutoZoom(playerIndex, auto) end
 ---@param isAzerty boolean
 function __Core:setAzerty(isAzerty) end
 
----@param arg0 ColorInfo
-function __Core:setBadHighlitedColor(arg0) end
+---@param BadHighlitedColor ColorInfo
+function __Core:setBadHighlitedColor(BadHighlitedColor) end
 
 ---@param blinkingMoodle string
 function __Core:setBlinkingMoodle(blinkingMoodle) end
@@ -940,20 +940,20 @@ function __Core:setChallenge(bChallenge) end
 ---@param collideZombies boolean
 function __Core:setCollideZombies(collideZombies) end
 
----@param arg0 integer
-function __Core:setConsoleDotTxtSizeKB(arg0) end
+---@param kilobytes integer
+function __Core:setConsoleDotTxtSizeKB(kilobytes) end
 
----@param arg0 string
-function __Core:setConsoleDotTxtSizeKB(arg0) end
+---@param kilobytesString string
+function __Core:setConsoleDotTxtSizeKB(kilobytesString) end
 
 ---@param b boolean
 function __Core:setContentTranslationsEnabled(b) end
 
----@param arg0 boolean
-function __Core:setDisplayCursor(arg0) end
+---@param display boolean
+function __Core:setDisplayCursor(display) end
 
----@param arg0 boolean
-function __Core:setDisplayPlayerModel(arg0) end
+---@param display boolean
+function __Core:setDisplayPlayerModel(display) end
 
 ---@param doneNewSaveFolder boolean
 function __Core:setDoneNewSaveFolder(doneNewSaveFolder) end
@@ -970,8 +970,8 @@ function __Core:setFramerate(index) end
 ---@param gameMode string
 function __Core:setGameMode(gameMode) end
 
----@param arg0 ColorInfo
-function __Core:setGoodHighlitedColor(arg0) end
+---@param GoodHighlitedColor ColorInfo
+function __Core:setGoodHighlitedColor(GoodHighlitedColor) end
 
 ---@param gotit boolean
 function __Core:setGotNewBelt(gotit) end
@@ -985,8 +985,8 @@ function __Core:setIsoCursorVisibility(isoCursorVisibility) end
 ---@param fbo TextureFBO
 function __Core:setLastRenderedFBO(fbo) end
 
----@param arg0 integer
-function __Core:setMaxActiveRagdolls(arg0) end
+---@param maxActiveRagdolls integer
+function __Core:setMaxActiveRagdolls(maxActiveRagdolls) end
 
 ---@param done boolean
 function __Core:setModsPopupDone(done) end
@@ -1000,8 +1000,8 @@ function __Core:setMultiThread(val) end
 ---@param noSave boolean
 function __Core:setNoSave(noSave) end
 
----@param arg0 ColorInfo
-function __Core:setNoTargetColor(arg0) end
+---@param colorInfo ColorInfo
+function __Core:setNoTargetColor(colorInfo) end
 
 ---@param objectHighlitedColor ColorInfo
 function __Core:setObjectHighlitedColor(objectHighlitedColor) end
@@ -1009,15 +1009,15 @@ function __Core:setObjectHighlitedColor(objectHighlitedColor) end
 ---@param option3Dgrounditem boolean
 function __Core:setOption3DGroundItem(option3Dgrounditem) end
 
----@param arg0 integer
-function __Core:setOptionActionProgressBarSize(arg0) end
+---@param size integer
+function __Core:setOptionActionProgressBarSize(size) end
 
 ---@param controllerIndex integer
 ---@param active boolean
 function __Core:setOptionActiveController(controllerIndex, active) end
 
----@param arg0 integer
-function __Core:setOptionAimTextureIndex(arg0) end
+---@param index integer
+function __Core:setOptionAimTextureIndex(index) end
 
 ---@param volume integer
 function __Core:setOptionAmbientVolume(volume) end
@@ -1031,8 +1031,8 @@ function __Core:setOptionAutoProneAtk(optionAutoProneAtk) end
 ---@param enable boolean
 function __Core:setOptionAutoRevealPrintMediaMapLocations(enable) end
 
----@param arg0 boolean
-function __Core:setOptionAutoWalkContainer(arg0) end
+---@param enable boolean
+function __Core:setOptionAutoWalkContainer(enable) end
 
 ---@param n integer
 function __Core:setOptionBloodDecals(n) end
@@ -1058,23 +1058,23 @@ function __Core:setOptionClockFormat(fmt) end
 ---@param size integer
 function __Core:setOptionClockSize(size) end
 
----@param arg0 string
-function __Core:setOptionCodeFontSize(arg0) end
+---@param font string
+function __Core:setOptionCodeFontSize(font) end
 
----@param arg0 boolean
-function __Core:setOptionColorblindPatterns(arg0) end
+---@param enable boolean
+function __Core:setOptionColorblindPatterns(enable) end
 
 ---@param font string
 function __Core:setOptionContextMenuFont(font) end
 
----@param arg0 integer
-function __Core:setOptionControllerButtonStyle(arg0) end
+---@param v integer
+function __Core:setOptionControllerButtonStyle(v) end
 
 ---@param enable boolean
 function __Core:setOptionCorpseShadows(enable) end
 
----@param arg0 integer
-function __Core:setOptionCrosshairTextureIndex(arg0) end
+---@param index integer
+function __Core:setOptionCrosshairTextureIndex(index) end
 
 ---@param s string
 function __Core:setOptionCycleContainerKey(s) end
@@ -1082,14 +1082,14 @@ function __Core:setOptionCycleContainerKey(s) end
 ---@param b boolean
 function __Core:setOptionDisplayAsCelsius(b) end
 
----@param arg0 boolean
-function __Core:setOptionDoContainerOutline(arg0) end
+---@param b boolean
+function __Core:setOptionDoContainerOutline(b) end
 
 ---@param b boolean
 function __Core:setOptionDoDoorSpriteEffects(b) end
 
----@param arg0 boolean
-function __Core:setOptionDoVideoEffects(arg0) end
+---@param b boolean
+function __Core:setOptionDoVideoEffects(b) end
 
 ---@param b boolean
 function __Core:setOptionDoWindSpriteEffects(b) end
@@ -1097,20 +1097,20 @@ function __Core:setOptionDoWindSpriteEffects(b) end
 ---@param b boolean
 function __Core:setOptionDropItemsOnSquareCenter(b) end
 
----@param arg0 boolean
-function __Core:setOptionEnableDyslexicFont(arg0) end
+---@param enable boolean
+function __Core:setOptionEnableDyslexicFont(enable) end
 
 ---@param b boolean
 function __Core:setOptionEnableLeftJoystickRadialMenu(b) end
 
----@param arg0 boolean
-function __Core:setOptionFocusloss(arg0) end
+---@param pause boolean
+function __Core:setOptionFocusloss(pause) end
 
 ---@param size integer
 function __Core:setOptionFontSize(size) end
 
----@param arg0 boolean
-function __Core:setOptionHighResPlacedItems(arg0) end
+---@param b boolean
+function __Core:setOptionHighResPlacedItems(b) end
 
 ---@param i integer
 function __Core:setOptionIgnoreProneZombieRange(i) end
@@ -1130,35 +1130,35 @@ function __Core:setOptionLanguageName(name) end
 ---@param enable boolean
 function __Core:setOptionLeaveKeyInIgnition(enable) end
 
----@param arg0 boolean
-function __Core:setOptionLightSensitivity(arg0) end
+---@param enable boolean
+function __Core:setOptionLightSensitivity(enable) end
 
 ---@param b boolean
 function __Core:setOptionLockCursorToWindow(b) end
 
----@param arg0 boolean
-function __Core:setOptionMacOSIgnoreMouseWheelAcceleration(arg0) end
+---@param b boolean
+function __Core:setOptionMacOSIgnoreMouseWheelAcceleration(b) end
 
----@param arg0 boolean
-function __Core:setOptionMacOSMapHorizontalMouseWheelToVertical(arg0) end
+---@param b boolean
+function __Core:setOptionMacOSMapHorizontalMouseWheelToVertical(b) end
 
 ---@param optionMaxChatOpaque number
 function __Core:setOptionMaxChatOpaque(optionMaxChatOpaque) end
 
----@param arg0 integer
-function __Core:setOptionMaxCrosshairOffset(arg0) end
+---@param maxCrosshairOffset integer
+function __Core:setOptionMaxCrosshairOffset(maxCrosshairOffset) end
 
----@param arg0 integer
-function __Core:setOptionMaxTextureSize(arg0) end
+---@param v integer
+function __Core:setOptionMaxTextureSize(v) end
 
----@param arg0 integer
-function __Core:setOptionMaxVehicleTextureSize(arg0) end
+---@param v integer
+function __Core:setOptionMaxVehicleTextureSize(v) end
 
 ---@param format string
 function __Core:setOptionMeasurementFormat(format) end
 
----@param arg0 boolean
-function __Core:setOptionMeleeOutline(arg0) end
+---@param toggle boolean
+function __Core:setOptionMeleeOutline(toggle) end
 
 ---@param optionMinChatOpaque number
 function __Core:setOptionMinChatOpaque(optionMinChatOpaque) end
@@ -1169,8 +1169,8 @@ function __Core:setOptionModelTextureMipmaps(b) end
 ---@param enabled boolean
 function __Core:setOptionModsEnabled(enabled) end
 
----@param arg0 integer
-function __Core:setOptionMoodleSize(arg0) end
+---@param size integer
+function __Core:setOptionMoodleSize(size) end
 
 ---@param v integer
 function __Core:setOptionMusicActionStyle(v) end
@@ -1191,8 +1191,8 @@ function __Core:setOptionPanCameraWhileAiming(enable) end
 ---@param enable boolean
 function __Core:setOptionPanCameraWhileDriving(enable) end
 
----@param arg0 number
-function __Core:setOptionPrecipitationSpeedMultiplier(arg0) end
+---@param f number
+function __Core:setOptionPrecipitationSpeedMultiplier(f) end
 
 ---@param optionProgressBar boolean
 function __Core:setOptionProgressBar(optionProgressBar) end
@@ -1212,17 +1212,17 @@ function __Core:setOptionReloadRadialInstant(enable) end
 ---@param optionRenderPrecipitation integer
 function __Core:setOptionRenderPrecipitation(optionRenderPrecipitation) end
 
----@param arg0 boolean
-function __Core:setOptionReticleCameraZoom(arg0) end
+---@param optionReticleCameraZoom boolean
+function __Core:setOptionReticleCameraZoom(optionReticleCameraZoom) end
 
----@param arg0 integer
-function __Core:setOptionReticleMode(arg0) end
+---@param mode integer
+function __Core:setOptionReticleMode(mode) end
 
----@param arg0 integer
-function __Core:setOptionReticleTextureIndex(arg0) end
+---@param index integer
+function __Core:setOptionReticleTextureIndex(index) end
 
----@param arg0 string
-function __Core:setOptionScreenFilter(arg0) end
+---@param value string
+function __Core:setOptionScreenFilter(value) end
 
 ---@param v integer
 function __Core:setOptionSearchModeOverlayEffect(v) end
@@ -1230,8 +1230,8 @@ function __Core:setOptionSearchModeOverlayEffect(v) end
 ---@param v integer
 function __Core:setOptionShoulderButtonContainerSwitch(v) end
 
----@param arg0 boolean
-function __Core:setOptionShowAimTexture(arg0) end
+---@param show boolean
+function __Core:setOptionShowAimTexture(show) end
 
 ---@param optionShowChatTimestamp boolean
 function __Core:setOptionShowChatTimestamp(optionShowChatTimestamp) end
@@ -1239,32 +1239,32 @@ function __Core:setOptionShowChatTimestamp(optionShowChatTimestamp) end
 ---@param optionShowChatTitle boolean
 function __Core:setOptionShowChatTitle(optionShowChatTitle) end
 
----@param arg0 boolean
-function __Core:setOptionShowCraftingXP(arg0) end
+---@param b boolean
+function __Core:setOptionShowCraftingXP(b) end
 
 ---@param show boolean
 function __Core:setOptionShowCursorWhileAiming(show) end
 
----@param arg0 boolean
-function __Core:setOptionShowFirstAnimalZoneInfo(arg0) end
+---@param b boolean
+function __Core:setOptionShowFirstAnimalZoneInfo(b) end
 
 ---@param b boolean
 function __Core:setOptionShowItemModInfo(b) end
 
----@param arg0 boolean
-function __Core:setOptionShowReticleTexture(arg0) end
+---@param show boolean
+function __Core:setOptionShowReticleTexture(show) end
 
 ---@param b boolean
 function __Core:setOptionShowSurvivalGuide(b) end
 
----@param arg0 boolean
-function __Core:setOptionShowValidTargetReticleTexture(arg0) end
+---@param show boolean
+function __Core:setOptionShowValidTargetReticleTexture(show) end
 
----@param arg0 boolean
-function __Core:setOptionShowWelcomeMessage(arg0) end
+---@param showWelcomeMessage boolean
+function __Core:setOptionShowWelcomeMessage(showWelcomeMessage) end
 
----@param arg0 integer
-function __Core:setOptionSidebarSize(arg0) end
+---@param size integer
+function __Core:setOptionSidebarSize(size) end
 
 ---@param v integer
 function __Core:setOptionSimpleClothingTextures(v) end
@@ -1279,8 +1279,8 @@ function __Core:setOptionSingleContextMenu(playerIndex, b) end
 ---@param volume integer
 function __Core:setOptionSoundVolume(volume) end
 
----@param arg0 boolean
-function __Core:setOptionStreamerMode(arg0) end
+---@param b boolean
+function __Core:setOptionStreamerMode(b) end
 
 ---@param b boolean
 function __Core:setOptionTexture2x(b) end
@@ -1306,14 +1306,14 @@ function __Core:setOptionUIRenderFPS(fps) end
 ---@param b boolean
 function __Core:setOptionUpdateSneakButton(b) end
 
----@param arg0 boolean
-function __Core:setOptionUsePhysicsHitReaction(arg0) end
+---@param usePhysicsHitReaction boolean
+function __Core:setOptionUsePhysicsHitReaction(usePhysicsHitReaction) end
 
 ---@param sync boolean
 function __Core:setOptionVSync(sync) end
 
----@param arg0 integer
-function __Core:setOptionValidTargetReticleTextureIndex(arg0) end
+---@param index integer
+function __Core:setOptionValidTargetReticleTextureIndex(index) end
 
 ---@param volume integer
 function __Core:setOptionVehicleEngineVolume(volume) end
@@ -1324,9 +1324,9 @@ function __Core:setOptionVoiceAGCMode(option) end
 ---@param option boolean
 function __Core:setOptionVoiceEnable(option) end
 
----@param arg0 boolean
----@param arg1 boolean
-function __Core:setOptionVoiceEnable(arg0, arg1) end
+---@param option boolean
+---@param bRestartClient boolean
+function __Core:setOptionVoiceEnable(option, bRestartClient) end
 
 ---@param option integer
 function __Core:setOptionVoiceMode(option) end
@@ -1346,8 +1346,8 @@ function __Core:setOptionVoiceVolumeMic(option) end
 ---@param option integer
 function __Core:setOptionVoiceVolumePlayers(option) end
 
----@param arg0 number
-function __Core:setOptionWorldMapBrightness(arg0) end
+---@param d number
+function __Core:setOptionWorldMapBrightness(d) end
 
 ---@param zoom boolean
 function __Core:setOptionZoom(zoom) end
@@ -1397,8 +1397,8 @@ function __Core:setScreenSize(width, height) end
 ---@param seenUpdateText string
 function __Core:setSeenUpdateText(seenUpdateText) end
 
----@param arg0 string
-function __Core:setSelectedMap(arg0) end
+---@param selectedMap string
+function __Core:setSelectedMap(selectedMap) end
 
 ---@param showFirstTimeSearchTutorial boolean
 function __Core:setShowFirstTimeSearchTutorial(showFirstTimeSearchTutorial) end
@@ -1418,14 +1418,14 @@ function __Core:setShowPing(showPing) end
 ---@param showYourUsername boolean
 function __Core:setShowYourUsername(showYourUsername) end
 
----@param arg0 number
-function __Core:setShownWelcomeMessageVersion(arg0) end
+---@param value number
+function __Core:setShownWelcomeMessageVersion(value) end
 
----@param arg0 ColorInfo
-function __Core:setTargetColor(arg0) end
+---@param colorInfo ColorInfo
+function __Core:setTargetColor(colorInfo) end
 
----@param arg0 integer
-function __Core:setTermsOfServiceVersion(arg0) end
+---@param v integer
+function __Core:setTermsOfServiceVersion(v) end
 
 ---@param testing boolean
 function __Core:setTestingMicrophone(testing) end
@@ -1454,14 +1454,14 @@ function __Core:setVidMem(mem) end
 ---@param b boolean
 function __Core:setWindowed(b) end
 
----@param arg0 ColorInfo
-function __Core:setWorldItemHighlightColor(arg0) end
+---@param colorInfo ColorInfo
+function __Core:setWorldItemHighlightColor(colorInfo) end
 
 ---@param zombieGroupSound boolean
 function __Core:setZombieGroupSound(zombieGroupSound) end
 
----@param arg0 boolean
-function __Core:setZoomEnalbed(arg0) end
+---@param val boolean
+function __Core:setZoomEnalbed(val) end
 
 function __Core:shadersOptionChanged() end
 

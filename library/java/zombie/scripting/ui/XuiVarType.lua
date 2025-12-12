@@ -50,9 +50,9 @@ XuiVarType.Vector = nil
 ---@type XuiVarType
 XuiVarType.VectorPosAlign = nil
 
----@param arg0 string
+---@param name string
 ---@return XuiVarType
-function XuiVarType.valueOf(arg0) end
+function XuiVarType.valueOf(name) end
 
 ---@return kahlua.Array<XuiVarType>
 function XuiVarType.values() end

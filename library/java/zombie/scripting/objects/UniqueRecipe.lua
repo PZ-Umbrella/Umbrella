@@ -3,9 +3,9 @@
 ---@class UniqueRecipe: BaseScriptObject
 local __UniqueRecipe = {}
 
----@param arg0 string
----@param arg1 string
-function __UniqueRecipe:Load(arg0, arg1) end
+---@param name string
+---@param token string
+function __UniqueRecipe:Load(name, token) end
 
 ---@param name string
 ---@param strArray kahlua.Array<string>

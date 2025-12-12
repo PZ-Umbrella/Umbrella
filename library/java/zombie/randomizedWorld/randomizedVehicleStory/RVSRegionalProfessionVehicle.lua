@@ -3,19 +3,19 @@
 ---@class RVSRegionalProfessionVehicle: RandomizedVehicleStoryBase
 local __RVSRegionalProfessionVehicle = {}
 
----@param arg0 Zone
----@param arg1 IsoChunk
----@param arg2 boolean
+---@param zone Zone
+---@param chunk IsoChunk
+---@param debug boolean
 ---@return boolean
-function __RVSRegionalProfessionVehicle:initVehicleStorySpawner(arg0, arg1, arg2) end
+function __RVSRegionalProfessionVehicle:initVehicleStorySpawner(zone, chunk, debug) end
 
----@param arg0 Zone
----@param arg1 IsoChunk
-function __RVSRegionalProfessionVehicle:randomizeVehicleStory(arg0, arg1) end
+---@param zone Zone
+---@param chunk IsoChunk
+function __RVSRegionalProfessionVehicle:randomizeVehicleStory(zone, chunk) end
 
----@param arg0 VehicleStorySpawner
----@param arg1 VehicleStorySpawner.Element
-function __RVSRegionalProfessionVehicle:spawnElement(arg0, arg1) end
+---@param spawner VehicleStorySpawner
+---@param element VehicleStorySpawner.Element
+function __RVSRegionalProfessionVehicle:spawnElement(spawner, element) end
 
 RVSRegionalProfessionVehicle = {}
 

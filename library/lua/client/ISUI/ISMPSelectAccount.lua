@@ -17,14 +17,19 @@ function ISMPSelectAccount:destroy() end
 
 function ISMPSelectAccount:initialise() end
 
+---@param button ISButton
 function ISMPSelectAccount:onClick(button) end
 
+---@param joypadData JoypadData
 function ISMPSelectAccount:onGainJoypadFocus(joypadData) end
 
+---@param joypadData JoypadData
 function ISMPSelectAccount:onJoypadBeforeDeactivate(joypadData) end
 
+---@param button integer
 function ISMPSelectAccount:onJoypadDown(button) end
 
+---@param joypadData JoypadData
 function ISMPSelectAccount:onLoseJoypadFocus(joypadData) end
 
 ---@param x number

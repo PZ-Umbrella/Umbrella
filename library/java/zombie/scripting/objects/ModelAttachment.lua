@@ -36,11 +36,11 @@ function __ModelAttachment:setCanAttach(canAttach) end
 ---@param id string
 function __ModelAttachment:setId(id) end
 
----@param arg0 IModelAttachmentOwner
-function __ModelAttachment:setOwner(arg0) end
+---@param owner IModelAttachmentOwner
+function __ModelAttachment:setOwner(owner) end
 
----@param arg0 number
-function __ModelAttachment:setScale(arg0) end
+---@param scale number
+function __ModelAttachment:setScale(scale) end
 
 ---@param updateConstraint boolean
 function __ModelAttachment:setUpdateConstraint(updateConstraint) end

@@ -7,32 +7,32 @@ function __TileGeometryState:enter() end
 
 function __TileGeometryState:exit() end
 
----@param arg0 string
+---@param func string
 ---@return any
-function __TileGeometryState:fromLua0(arg0) end
+function __TileGeometryState:fromLua0(func) end
 
----@param arg0 string
+---@param func string
+---@param arg0 any
+---@return any
+function __TileGeometryState:fromLua1(func, arg0) end
+
+---@param func string
+---@param arg0 any
 ---@param arg1 any
 ---@return any
-function __TileGeometryState:fromLua1(arg0, arg1) end
+function __TileGeometryState:fromLua2(func, arg0, arg1) end
 
----@param arg0 string
----@param arg1 any
----@param arg2 any
----@return any
-function __TileGeometryState:fromLua2(arg0, arg1, arg2) end
-
----@param arg0 string
+---@param name string
 ---@return boolean
-function __TileGeometryState:getBoolean(arg0) end
+function __TileGeometryState:getBoolean(name) end
 
----@param arg0 integer
+---@param index integer
 ---@return ConfigOption
-function __TileGeometryState:getOptionByIndex(arg0) end
+function __TileGeometryState:getOptionByIndex(index) end
 
----@param arg0 string
+---@param name string
 ---@return ConfigOption
-function __TileGeometryState:getOptionByName(arg0) end
+function __TileGeometryState:getOptionByName(name) end
 
 ---@return integer
 function __TileGeometryState:getOptionCount() end
@@ -45,12 +45,12 @@ function __TileGeometryState:render() end
 
 function __TileGeometryState:save() end
 
----@param arg0 string
----@param arg1 boolean
-function __TileGeometryState:setBoolean(arg0, arg1) end
+---@param name string
+---@param value boolean
+function __TileGeometryState:setBoolean(name, value) end
 
----@param arg0 table
-function __TileGeometryState:setTable(arg0) end
+---@param table table
+function __TileGeometryState:setTable(table) end
 
 ---@return GameStateMachine.StateAction
 function __TileGeometryState:update() end

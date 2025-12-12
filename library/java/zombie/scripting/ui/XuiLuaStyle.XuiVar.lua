@@ -21,15 +21,15 @@ function __XuiVar:getValueString() end
 ---@return boolean
 function __XuiVar:isValueSet() end
 
----@param arg0 XuiAutoApply
-function __XuiVar:setAutoApplyMode(arg0) end
+---@param autoApplyMode XuiAutoApply
+function __XuiVar:setAutoApplyMode(autoApplyMode) end
 
----@param arg0 integer
+---@param order integer
 ---@return integer
-function __XuiVar:setUiOrder(arg0) end
+function __XuiVar:setUiOrder(order) end
 
----@param arg0 T
-function __XuiVar:setValue(arg0) end
+---@param value T
+function __XuiVar:setValue(value) end
 
 ---@return T
 function __XuiVar:value() end

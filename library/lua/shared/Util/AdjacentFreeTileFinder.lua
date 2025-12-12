@@ -43,10 +43,6 @@ function AdjacentFreeTileFinder.isTileOrAdjacent(a, b) end
 ---@return boolean
 function AdjacentFreeTileFinder.isTileOrAdjacent8(a, b) end
 
----@param test IsoGridSquare
----@return boolean
-function AdjacentFreeTileFinder.privCanStand(test) end
-
 ---@param gridSquare IsoGridSquare
 ---@param object IsoObject
 ---@return boolean

@@ -6,39 +6,39 @@ local __IsoAnimal = {}
 ---@return string
 function __IsoAnimal:GetAnimSetName() end
 
----@param arg0 BaseVehicle
----@param arg1 number
----@param arg2 boolean
----@param arg3 Vector2
+---@param vehicle BaseVehicle
+---@param speed number
+---@param isHitFromBehind boolean
+---@param hitDir Vector2
 ---@return number
-function __IsoAnimal:Hit(arg0, arg1, arg2, arg3) end
+function __IsoAnimal:Hit(vehicle, speed, isHitFromBehind, hitDir) end
 
----@param arg0 IsoAnimal
----@param arg1 boolean
-function __IsoAnimal:HitByAnimal(arg0, arg1) end
+---@param animal IsoAnimal
+---@param bIgnoreDamage boolean
+function __IsoAnimal:HitByAnimal(animal, bIgnoreDamage) end
 
 function __IsoAnimal:OnDeath() end
 
----@param arg0 IsoPlayer
----@param arg1 number
-function __IsoAnimal:addAcceptance(arg0, arg1) end
+---@param chr IsoPlayer
+---@param acceptance number
+function __IsoAnimal:addAcceptance(chr, acceptance) end
 
 ---@return IsoAnimal
 function __IsoAnimal:addBaby() end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return InventoryItem
-function __IsoAnimal:addDebugBucketOfMilk(arg0) end
+function __IsoAnimal:addDebugBucketOfMilk(chr) end
 
----@param arg0 boolean
+---@param meta boolean
 ---@return boolean
-function __IsoAnimal:addEgg(arg0) end
+function __IsoAnimal:addEgg(meta) end
 
 function __IsoAnimal:addToWorld() end
 
----@param arg0 IsoMovingObject
----@param arg1 boolean
-function __IsoAnimal:alertOtherAnimals(arg0, arg1) end
+---@param chr IsoMovingObject
+---@param alert boolean
+function __IsoAnimal:alertOtherAnimals(chr, alert) end
 
 ---@return boolean
 function __IsoAnimal:allowsTwist() end
@@ -46,9 +46,9 @@ function __IsoAnimal:allowsTwist() end
 ---@return boolean
 function __IsoAnimal:animalShouldThump() end
 
----@param arg0 number
----@param arg1 number
-function __IsoAnimal:applyDamageFromVehicle(arg0, arg1) end
+---@param vehicleSpeed number
+---@param damage number
+function __IsoAnimal:applyDamageFromVehicle(vehicleSpeed, damage) end
 
 ---@return boolean
 function __IsoAnimal:attackOtherMales() end
@@ -71,13 +71,13 @@ function __IsoAnimal:canBeMilked() end
 ---@return boolean
 function __IsoAnimal:canBePet() end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return boolean
-function __IsoAnimal:canBePicked(arg0) end
+function __IsoAnimal:canBePicked(chr) end
 
----@param arg0 IsoHutch
+---@param hutch IsoHutch
 ---@return boolean
-function __IsoAnimal:canBePutInHutch(arg0) end
+function __IsoAnimal:canBePutInHutch(hutch) end
 
 ---@return boolean
 function __IsoAnimal:canBeSheared() end
@@ -91,13 +91,13 @@ function __IsoAnimal:canClimbStairs() end
 ---@return boolean
 function __IsoAnimal:canDoAction() end
 
----@param arg0 IsoFeedingTrough
+---@param trough IsoFeedingTrough
 ---@return InventoryItem
-function __IsoAnimal:canEatFromTrough(arg0) end
+function __IsoAnimal:canEatFromTrough(trough) end
 
----@param arg0 IsoGridSquare
+---@param sq IsoGridSquare
 ---@return boolean
-function __IsoAnimal:canGoThere(arg0) end
+function __IsoAnimal:canGoThere(sq) end
 
 ---@return boolean
 function __IsoAnimal:canHaveEggs() end
@@ -110,34 +110,34 @@ function __IsoAnimal:canRagdoll() end
 
 function __IsoAnimal:cancelLuring() end
 
----@param arg0 number
----@param arg1 boolean
-function __IsoAnimal:carCrash(arg0, arg1) end
+---@param delta number
+---@param front boolean
+function __IsoAnimal:carCrash(delta, front) end
 
----@param arg0 number
-function __IsoAnimal:changeStress(arg0) end
+---@param inc number
+function __IsoAnimal:changeStress(inc) end
 
----@param arg0 IsoPlayer
-function __IsoAnimal:checkAlphaAndTargetAlpha(arg0) end
+---@param other IsoPlayer
+function __IsoAnimal:checkAlphaAndTargetAlpha(other) end
 
 ---@return boolean
 function __IsoAnimal:checkForChickenpocalypse() end
 
----@param arg0 integer
+---@param hour integer
 ---@return boolean
-function __IsoAnimal:checkKilledByMetaPredator(arg0) end
+function __IsoAnimal:checkKilledByMetaPredator(hour) end
 
----@param arg0 IsoDirections
-function __IsoAnimal:climbOverFence(arg0) end
+---@param dir IsoDirections
+function __IsoAnimal:climbOverFence(dir) end
 
----@param arg0 IsoAnimal
-function __IsoAnimal:copyFrom(arg0) end
+---@param animal IsoAnimal
+function __IsoAnimal:copyFrom(animal) end
 
 ---@return Food
 function __IsoAnimal:createEgg() end
 
----@param arg0 integer
-function __IsoAnimal:debugAgeAway(arg0) end
+---@param hour integer
+function __IsoAnimal:debugAgeAway(hour) end
 
 function __IsoAnimal:debugForceEgg() end
 
@@ -149,36 +149,36 @@ function __IsoAnimal:debugRandomIdleAnim() end
 
 function __IsoAnimal:delete() end
 
----@param arg0 Vector2
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
-function __IsoAnimal:drawDirectionLine(arg0, arg1, arg2, arg3, arg4) end
+---@param dir Vector2
+---@param length number
+---@param r number
+---@param g number
+---@param b number
+function __IsoAnimal:drawDirectionLine(dir, length, r, g, b) end
 
----@param arg0 IsoGameCharacter
-function __IsoAnimal:drawRope(arg0) end
+---@param chr IsoGameCharacter
+function __IsoAnimal:drawRope(chr) end
 
----@param arg0 IsoPlayer
----@param arg1 InventoryItem
-function __IsoAnimal:eatFromLured(arg0, arg1) end
+---@param chr IsoPlayer
+---@param item InventoryItem
+function __IsoAnimal:eatFromLured(chr, item) end
 
----@param arg0 IsoPlayer
----@param arg1 InventoryItem
-function __IsoAnimal:feedFromHand(arg0, arg1) end
+---@param chr IsoPlayer
+---@param food InventoryItem
+function __IsoAnimal:feedFromHand(chr, food) end
 
----@param arg0 IsoAnimal
----@param arg1 boolean
-function __IsoAnimal:fertilize(arg0, arg1) end
+---@param male IsoAnimal
+---@param force boolean
+function __IsoAnimal:fertilize(male, force) end
 
----@param arg0 IsoGridSquare
-function __IsoAnimal:fleeTo(arg0) end
+---@param sq IsoGridSquare
+function __IsoAnimal:fleeTo(sq) end
 
 function __IsoAnimal:forceWanderNow() end
 
----@param arg0 IsoPlayer
+---@param chr IsoPlayer
 ---@return number
-function __IsoAnimal:getAcceptanceLevel(arg0) end
+function __IsoAnimal:getAcceptanceLevel(chr) end
 
 ---@return AnimalDefinitions
 function __IsoAnimal:getAdef() end
@@ -186,14 +186,14 @@ function __IsoAnimal:getAdef() end
 ---@return integer
 function __IsoAnimal:getAge() end
 
----@param arg0 boolean
----@param arg1 integer
+---@param cheat boolean
+---@param skillLvl integer
 ---@return string
-function __IsoAnimal:getAgeText(arg0, arg1) end
+function __IsoAnimal:getAgeText(cheat, skillLvl) end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return ArrayList<InventoryItem>
-function __IsoAnimal:getAllPossibleFoodFromInv(arg0) end
+function __IsoAnimal:getAllPossibleFoodFromInv(chr) end
 
 ---@return integer
 function __IsoAnimal:getAnimalID() end
@@ -204,9 +204,9 @@ function __IsoAnimal:getAnimalOriginalSize() end
 ---@return number
 function __IsoAnimal:getAnimalSize() end
 
----@param arg0 string
+---@param slot string
 ---@return AnimalSoundState
-function __IsoAnimal:getAnimalSoundState(arg0) end
+function __IsoAnimal:getAnimalSoundState(slot) end
 
 ---@return number
 function __IsoAnimal:getAnimalTrailerSize() end
@@ -220,18 +220,18 @@ function __IsoAnimal:getAnimalVisual() end
 ---@return AnimalZone
 function __IsoAnimal:getAnimalZone() end
 
----@param arg0 boolean
+---@param cheat boolean
 ---@return string
-function __IsoAnimal:getAppearanceText(arg0) end
+function __IsoAnimal:getAppearanceText(cheat) end
 
----@param arg0 string
----@param arg1 Position3D
+---@param attachmentName string
+---@param pos Position3D
 ---@return Position3D
-function __IsoAnimal:getAttachmentWorldPos(arg0, arg1) end
+function __IsoAnimal:getAttachmentWorldPos(attachmentName, pos) end
 
----@param arg0 string
+---@param attachmentName string
 ---@return Position3D
-function __IsoAnimal:getAttachmentWorldPos(arg0) end
+function __IsoAnimal:getAttachmentWorldPos(attachmentName) end
 
 ---@return IsoGameCharacter
 function __IsoAnimal:getAttackedBy() end
@@ -305,10 +305,10 @@ function __IsoAnimal:getFullName() end
 ---@return ArrayList<string>
 function __IsoAnimal:getGeneticDisorder() end
 
----@param arg0 boolean
----@param arg1 integer
+---@param cheat boolean
+---@param skillLvl integer
 ---@return string
-function __IsoAnimal:getHealthText(arg0, arg1) end
+function __IsoAnimal:getHealthText(cheat, skillLvl) end
 
 ---@return IsoButcherHook
 function __IsoAnimal:getHook() end
@@ -373,13 +373,13 @@ function __IsoAnimal:getObjectName() end
 ---@return number
 function __IsoAnimal:getPetTimer() end
 
----@param arg0 IsoPlayer
+---@param chr IsoPlayer
 ---@return number
-function __IsoAnimal:getPlayerAcceptance(arg0) end
+function __IsoAnimal:getPlayerAcceptance(chr) end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return ArrayList<InventoryItem>
-function __IsoAnimal:getPossibleLuringItems(arg0) end
+function __IsoAnimal:getPossibleLuringItems(chr) end
 
 ---@return IsoGridSquare
 function __IsoAnimal:getRandomSquareInZone() end
@@ -387,10 +387,10 @@ function __IsoAnimal:getRandomSquareInZone() end
 ---@return number
 function __IsoAnimal:getStress() end
 
----@param arg0 boolean
----@param arg1 integer
+---@param cheat boolean
+---@param skillLvl integer
 ---@return string
-function __IsoAnimal:getStressTxt(arg0, arg1) end
+function __IsoAnimal:getStressTxt(cheat, skillLvl) end
 
 ---@return number
 function __IsoAnimal:getThirst() end
@@ -404,9 +404,9 @@ function __IsoAnimal:getThumpDelay() end
 ---@return string
 function __IsoAnimal:getTypeAndBreed() end
 
----@param arg0 string
+---@param name string
 ---@return AnimalAllele
-function __IsoAnimal:getUsedGene(arg0) end
+function __IsoAnimal:getUsedGene(name) end
 
 ---@return number
 function __IsoAnimal:getZoneAcceptance() end
@@ -414,9 +414,9 @@ function __IsoAnimal:getZoneAcceptance() end
 ---@return boolean
 function __IsoAnimal:hasAnimalZone() end
 
----@param arg0 string
+---@param gd string
 ---@return boolean
-function __IsoAnimal:hasGeneticDisorder(arg0) end
+function __IsoAnimal:hasGeneticDisorder(gd) end
 
 ---@return boolean
 function __IsoAnimal:hasUdder() end
@@ -430,15 +430,15 @@ function __IsoAnimal:haveHappyAnim() end
 ---@return boolean
 function __IsoAnimal:haveMatingSeason() end
 
----@param arg0 HandWeapon
----@param arg1 IsoGameCharacter
----@param arg2 boolean
----@param arg3 number
----@param arg4 boolean
-function __IsoAnimal:hitConsequences(arg0, arg1, arg2, arg3, arg4) end
+---@param weapon HandWeapon
+---@param wielder IsoGameCharacter
+---@param bIgnoreDamage boolean
+---@param damage number
+---@param bRemote boolean
+function __IsoAnimal:hitConsequences(weapon, wielder, bIgnoreDamage, damage, bRemote) end
 
----@param arg0 AnimalBreed
-function __IsoAnimal:init(arg0) end
+---@param breed AnimalBreed
+function __IsoAnimal:init(breed) end
 
 function __IsoAnimal:initializeStates() end
 
@@ -499,18 +499,18 @@ function __IsoAnimal:isRoadKill() end
 ---@return boolean
 function __IsoAnimal:isWild() end
 
----@param arg0 IsoPlayer
-function __IsoAnimal:killed(arg0) end
+---@param chr IsoPlayer
+function __IsoAnimal:killed(chr) end
 
----@param arg0 ByteBuffer
----@param arg1 integer
----@param arg2 boolean
-function __IsoAnimal:load(arg0, arg1, arg2) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+---@param IS_DEBUG_SAVE boolean
+function __IsoAnimal:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
----@param arg0 IsoGameCharacter
----@param arg1 InventoryItem
+---@param chr IsoGameCharacter
+---@param bucket InventoryItem
 ---@return InventoryItem
-function __IsoAnimal:milkAnimal(arg0, arg1) end
+function __IsoAnimal:milkAnimal(chr, bucket) end
 
 ---@return boolean
 function __IsoAnimal:needHutch() end
@@ -518,31 +518,31 @@ function __IsoAnimal:needHutch() end
 ---@return boolean
 function __IsoAnimal:needMom() end
 
----@param arg0 string
-function __IsoAnimal:onPlayBreedSoundEvent(arg0) end
+---@param id string
+function __IsoAnimal:onPlayBreedSoundEvent(id) end
 
 function __IsoAnimal:pathFailed() end
 
----@param arg0 IsoGameCharacter
-function __IsoAnimal:pathToCharacter(arg0) end
+---@param target IsoGameCharacter
+function __IsoAnimal:pathToCharacter(target) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __IsoAnimal:pathToLocation(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param z integer
+function __IsoAnimal:pathToLocation(x, y, z) end
 
----@param arg0 IsoFeedingTrough
-function __IsoAnimal:pathToTrough(arg0) end
+---@param trough IsoFeedingTrough
+function __IsoAnimal:pathToTrough(trough) end
 
----@param arg0 IsoPlayer
-function __IsoAnimal:petAnimal(arg0) end
+---@param chr IsoPlayer
+function __IsoAnimal:petAnimal(chr) end
 
 ---@return boolean
 function __IsoAnimal:petTimerDone() end
 
----@param arg0 string
+---@param id string
 ---@return integer
-function __IsoAnimal:playBreedSound(arg0) end
+function __IsoAnimal:playBreedSound(id) end
 
 function __IsoAnimal:playDeadSound() end
 
@@ -564,118 +564,118 @@ function __IsoAnimal:reattachBackToHook() end
 
 function __IsoAnimal:remove() end
 
----@param arg0 IsoAnimal
-function __IsoAnimal:removeBaby(arg0) end
+---@param baby IsoAnimal
+function __IsoAnimal:removeBaby(baby) end
 
 function __IsoAnimal:removeFromWorld() end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 ColorInfo
----@param arg4 boolean
----@param arg5 boolean
----@param arg6 Shader
-function __IsoAnimal:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+---@param x number
+---@param y number
+---@param z number
+---@param col ColorInfo
+---@param bDoChild boolean
+---@param bWallLightingPass boolean
+---@param shader Shader
+function __IsoAnimal:render(x, y, z, col, bDoChild, bWallLightingPass, shader) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
-function __IsoAnimal:renderShadow(arg0, arg1, arg2) end
+---@param x number
+---@param y number
+---@param z number
+function __IsoAnimal:renderShadow(x, y, z) end
 
 function __IsoAnimal:renderlast() end
 
 function __IsoAnimal:respondToSound() end
 
----@param arg0 ByteBuffer
----@param arg1 boolean
-function __IsoAnimal:save(arg0, arg1) end
+---@param output ByteBuffer
+---@param IS_DEBUG_SAVE boolean
+function __IsoAnimal:save(output, IS_DEBUG_SAVE) end
 
----@param arg0 ByteBuffer
----@param arg1 boolean
----@param arg2 boolean
-function __IsoAnimal:save(arg0, arg1, arg2) end
+---@param output ByteBuffer
+---@param IS_DEBUG_SAVE boolean
+---@param serialize boolean
+function __IsoAnimal:save(output, IS_DEBUG_SAVE, serialize) end
 
----@param arg0 integer
-function __IsoAnimal:setAgeDebug(arg0) end
+---@param newAge integer
+function __IsoAnimal:setAgeDebug(newAge) end
 
 ---@param value boolean
 function __IsoAnimal:setAnimalAttackingOnClient(value) end
 
----@param arg0 integer
-function __IsoAnimal:setAnimalID(arg0) end
+---@param id integer
+function __IsoAnimal:setAnimalID(id) end
 
----@param arg0 AnimalZone
-function __IsoAnimal:setAnimalZone(arg0) end
+---@param zone AnimalZone
+function __IsoAnimal:setAnimalZone(zone) end
 
----@param arg0 IsoGameCharacter
-function __IsoAnimal:setAttackedBy(arg0) end
+---@param character IsoGameCharacter
+function __IsoAnimal:setAttackedBy(character) end
 
----@param arg0 string
-function __IsoAnimal:setCustomName(arg0) end
+---@param customName string
+function __IsoAnimal:setCustomName(customName) end
 
----@param arg0 DesignationZoneAnimal
-function __IsoAnimal:setDZone(arg0) end
+---@param dZone DesignationZoneAnimal
+function __IsoAnimal:setDZone(dZone) end
 
----@param arg0 AnimalData
-function __IsoAnimal:setData(arg0) end
+---@param newData AnimalData
+function __IsoAnimal:setData(newData) end
 
----@param arg0 IsoPlayer
----@param arg1 number
-function __IsoAnimal:setDebugAcceptance(arg0, arg1) end
+---@param chr IsoPlayer
+---@param acceptance number
+function __IsoAnimal:setDebugAcceptance(chr, acceptance) end
 
----@param arg0 number
-function __IsoAnimal:setDebugStress(arg0) end
+---@param stress number
+function __IsoAnimal:setDebugStress(stress) end
 
----@param arg0 boolean
-function __IsoAnimal:setFemale(arg0) end
+---@param female boolean
+function __IsoAnimal:setFemale(female) end
 
----@param arg0 number
-function __IsoAnimal:setHealth(arg0) end
+---@param Health number
+function __IsoAnimal:setHealth(Health) end
 
----@param arg0 IsoButcherHook
-function __IsoAnimal:setHook(arg0) end
+---@param hook IsoButcherHook
+function __IsoAnimal:setHook(hook) end
 
----@param arg0 boolean
-function __IsoAnimal:setIsAlerted(arg0) end
+---@param b boolean
+function __IsoAnimal:setIsAlerted(b) end
 
----@param arg0 boolean
-function __IsoAnimal:setIsInvincible(arg0) end
+---@param b boolean
+function __IsoAnimal:setIsInvincible(b) end
 
----@param arg0 boolean
-function __IsoAnimal:setIsRoadKill(arg0) end
+---@param roadKill boolean
+function __IsoAnimal:setIsRoadKill(roadKill) end
 
----@param arg0 integer
-function __IsoAnimal:setItemID(arg0) end
+---@param itemId integer
+function __IsoAnimal:setItemID(itemId) end
 
----@param arg0 integer
----@param arg1 integer
-function __IsoAnimal:setLastCellSavedTo(arg0, arg1) end
+---@param x integer
+---@param y integer
+function __IsoAnimal:setLastCellSavedTo(x, y) end
 
 function __IsoAnimal:setMaxSizeDebug() end
 
----@param arg0 IsoAnimal
-function __IsoAnimal:setMother(arg0) end
+---@param mom IsoAnimal
+function __IsoAnimal:setMother(mom) end
 
----@param arg0 boolean
-function __IsoAnimal:setMoveForwardOnZone(arg0) end
+---@param b boolean
+function __IsoAnimal:setMoveForwardOnZone(b) end
 
----@param arg0 boolean
-function __IsoAnimal:setOnHook(arg0) end
+---@param onhook boolean
+function __IsoAnimal:setOnHook(onhook) end
 
----@param arg0 boolean
-function __IsoAnimal:setShouldBeSkeleton(arg0) end
+---@param shouldBeSkeleton boolean
+function __IsoAnimal:setShouldBeSkeleton(shouldBeSkeleton) end
 
----@param arg0 boolean
-function __IsoAnimal:setShouldFollowWall(arg0) end
+---@param b boolean
+function __IsoAnimal:setShouldFollowWall(b) end
 
----@param arg0 boolean
-function __IsoAnimal:setWild(arg0) end
+---@param b boolean
+function __IsoAnimal:setWild(b) end
 
----@param arg0 IsoGameCharacter
----@param arg1 InventoryItem
+---@param chr IsoGameCharacter
+---@param shear InventoryItem
 ---@return boolean
-function __IsoAnimal:shearAnimal(arg0, arg1) end
+function __IsoAnimal:shearAnimal(chr, shear) end
 
 ---@return boolean
 function __IsoAnimal:shouldAnimalStressAboveGround() end
@@ -698,26 +698,26 @@ function __IsoAnimal:shouldFollowWall() end
 ---@return boolean
 function __IsoAnimal:shouldStartFollowWall() end
 
----@param arg0 IsoMovingObject
----@param arg1 boolean
----@param arg2 number
-function __IsoAnimal:spotted(arg0, arg1, arg2) end
+---@param other IsoMovingObject
+---@param bForced boolean
+---@param dist number
+function __IsoAnimal:spotted(other, bForced, dist) end
 
 function __IsoAnimal:stopAllMovementNow() end
 
 function __IsoAnimal:test() end
 
----@param arg0 BaseVehicle
+---@param vehicle BaseVehicle
 ---@return boolean
-function __IsoAnimal:testCollideWithVehicles(arg0) end
+function __IsoAnimal:testCollideWithVehicles(vehicle) end
 
----@param arg0 IsoPlayer
----@param arg1 InventoryItem
-function __IsoAnimal:tryLure(arg0, arg1) end
+---@param chr IsoPlayer
+---@param item InventoryItem
+function __IsoAnimal:tryLure(chr, item) end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return boolean
-function __IsoAnimal:tryThump(arg0) end
+function __IsoAnimal:tryThump(square) end
 
 function __IsoAnimal:unloaded() end
 
@@ -731,8 +731,8 @@ function __IsoAnimal:updateLoopingSounds() end
 
 function __IsoAnimal:updateRunLoopingSound() end
 
----@param arg0 integer
-function __IsoAnimal:updateStatsAway(arg0) end
+---@param hours integer
+function __IsoAnimal:updateStatsAway(hours) end
 
 function __IsoAnimal:updateStress() end
 
@@ -751,69 +751,69 @@ IsoAnimal.displayExtraValues = nil
 ---@type Vector2
 IsoAnimal.tempVector2 = nil
 
----@param arg0 AnimalPart
----@param arg1 IsoPlayer
----@param arg2 IsoDeadBody
-function IsoAnimal.addAnimalPart(arg0, arg1, arg2) end
+---@param part AnimalPart
+---@param player IsoPlayer
+---@param carcass IsoDeadBody
+function IsoAnimal.addAnimalPart(part, player, carcass) end
 
----@param arg0 IsoDeadBody
+---@param body IsoDeadBody
 ---@return IsoAnimal
-function IsoAnimal.createAnimalFromCorpse(arg0) end
+function IsoAnimal.createAnimalFromCorpse(body) end
 
 ---@return boolean
 function IsoAnimal.isExtraValues() end
 
----@param arg0 Food
----@param arg1 number
----@param arg2 number
-function IsoAnimal.modifyMeat(arg0, arg1, arg2) end
+---@param item Food
+---@param size number
+---@param meatRatio number
+function IsoAnimal.modifyMeat(item, size, meatRatio) end
 
----@param arg0 boolean
-function IsoAnimal.setExtraValues(arg0) end
+---@param doit boolean
+function IsoAnimal.setExtraValues(doit) end
 
 function IsoAnimal.toggleExtraValues() end
 
----@param arg0 IsoCell
+---@param cell IsoCell
 ---@return IsoAnimal
-function IsoAnimal.new(arg0) end
+function IsoAnimal.new(cell) end
 
----@param arg0 IsoCell
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 string
----@param arg5 string
+---@param cell IsoCell
+---@param x integer
+---@param y integer
+---@param z integer
+---@param type string
+---@param breedName string
 ---@return IsoAnimal
-function IsoAnimal.new(arg0, arg1, arg2, arg3, arg4, arg5) end
+function IsoAnimal.new(cell, x, y, z, type, breedName) end
 
----@param arg0 IsoCell
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 string
----@param arg5 string
----@param arg6 boolean
+---@param cell IsoCell
+---@param x integer
+---@param y integer
+---@param z integer
+---@param type string
+---@param breedName string
+---@param skeleton boolean
 ---@return IsoAnimal
-function IsoAnimal.new(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+function IsoAnimal.new(cell, x, y, z, type, breedName, skeleton) end
 
----@param arg0 IsoCell
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 string
----@param arg5 AnimalBreed
+---@param cell IsoCell
+---@param x integer
+---@param y integer
+---@param z integer
+---@param type string
+---@param breed AnimalBreed
 ---@return IsoAnimal
-function IsoAnimal.new(arg0, arg1, arg2, arg3, arg4, arg5) end
+function IsoAnimal.new(cell, x, y, z, type, breed) end
 
----@param arg0 IsoCell
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 string
----@param arg5 AnimalBreed
----@param arg6 boolean
+---@param cell IsoCell
+---@param x integer
+---@param y integer
+---@param z integer
+---@param type string
+---@param breed AnimalBreed
+---@param skeleton boolean
 ---@return IsoAnimal
-function IsoAnimal.new(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+function IsoAnimal.new(cell, x, y, z, type, breed, skeleton) end
 
 ---@type Class<IsoAnimal>
 IsoAnimal.class = nil

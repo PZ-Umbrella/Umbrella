@@ -64,8 +64,8 @@ function __IsoWorldRegion:linkNeighbors() end
 ---@param other IsoWorldRegion
 function __IsoWorldRegion:merge(other) end
 
----@param arg0 BuildingDef
-function __IsoWorldRegion:setBuildingDef(arg0) end
+---@param buildingDef BuildingDef
+function __IsoWorldRegion:setBuildingDef(buildingDef) end
 
 ---@return integer
 function __IsoWorldRegion:size() end

@@ -126,6 +126,7 @@ function ISComboBox:select(option) end
 
 function ISComboBox:selectData(data) end
 
+---@param text string
 function ISComboBox:selectOptionFromText(text) end
 
 ---@param editable boolean

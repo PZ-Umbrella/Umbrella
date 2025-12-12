@@ -76,8 +76,8 @@ function SystemDisabler.setEnableAdvancedSoundOptions(enable) end
 ---@param bDo boolean
 function SystemDisabler.setOverridePOVCharacters(bDo) end
 
----@param arg0 boolean
-function SystemDisabler.setUncappedFPS(arg0) end
+---@param b boolean
+function SystemDisabler.setUncappedFPS(b) end
 
 ---@param bDo boolean
 function SystemDisabler.setVehiclesEverywhere(bDo) end

@@ -3,23 +3,23 @@
 ---@class CraftLogic: Component
 local __CraftLogic = {}
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return boolean
-function __CraftLogic:canStart(arg0) end
+function __CraftLogic:canStart(player) end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return CraftRecipeMonitor
-function __CraftLogic:debugCanStart(arg0) end
+function __CraftLogic:debugCanStart(player) end
 
----@param arg0 ObjectTooltip.Layout
----@param arg1 Resource
----@param arg2 CraftRecipeData
-function __CraftLogic:doProgressTooltip(arg0, arg1, arg2) end
+---@param layout ObjectTooltip.Layout
+---@param resource Resource
+---@param craftRecipeData CraftRecipeData
+function __CraftLogic:doProgressTooltip(layout, resource, craftRecipeData) end
 
 function __CraftLogic:dumpContentsInSquare() end
 
----@param arg0 CraftRecipeData
-function __CraftLogic:finaliseRecipe(arg0) end
+---@param craftRecipeData CraftRecipeData
+function __CraftLogic:finaliseRecipe(craftRecipeData) end
 
 ---@return string
 function __CraftLogic:getActionAnimOverride() end
@@ -48,16 +48,16 @@ function __CraftLogic:getOutputsGroupName() end
 ---@return CraftRecipe
 function __CraftLogic:getPossibleRecipe() end
 
----@param arg0 CraftRecipeData
+---@param craftRecipeData CraftRecipeData
 ---@return number
-function __CraftLogic:getProgress(arg0) end
+function __CraftLogic:getProgress(craftRecipeData) end
 
 ---@return string
 function __CraftLogic:getRecipeTagQuery() end
 
----@param arg0 ArrayList<CraftRecipe>
+---@param list ArrayList<CraftRecipe>
 ---@return ArrayList<CraftRecipe>
-function __CraftLogic:getRecipes(arg0) end
+function __CraftLogic:getRecipes(list) end
 
 ---@return List<CraftRecipe>
 function __CraftLogic:getRecipes() end
@@ -68,10 +68,10 @@ function __CraftLogic:getRequestingPlayer() end
 ---@return StartMode
 function __CraftLogic:getStartMode() end
 
----@param arg0 InventoryItem
----@param arg1 CraftRecipeData
+---@param item InventoryItem
+---@param craftRecipeData CraftRecipeData
 ---@return ArrayList<Texture>
-function __CraftLogic:getStatusIconsForInputItem(arg0, arg1) end
+function __CraftLogic:getStatusIconsForInputItem(item, craftRecipeData) end
 
 ---@return boolean
 function __CraftLogic:isDoAutomaticCraftCheck() end
@@ -93,37 +93,37 @@ function __CraftLogic:isValid() end
 
 function __CraftLogic:onStart() end
 
----@param arg0 CraftRecipeData
----@param arg1 boolean
-function __CraftLogic:onStop(arg0, arg1) end
+---@param craftRecipeData CraftRecipeData
+---@param isCancelled boolean
+function __CraftLogic:onStop(craftRecipeData, isCancelled) end
 
----@param arg0 CraftRecipeData
-function __CraftLogic:onUpdate(arg0) end
+---@param craftRecipeData CraftRecipeData
+function __CraftLogic:onUpdate(craftRecipeData) end
 
----@param arg0 CraftRecipeData
-function __CraftLogic:returnConsumedItemsToResourcesOrSquare(arg0) end
+---@param craftRecipeData CraftRecipeData
+function __CraftLogic:returnConsumedItemsToResourcesOrSquare(craftRecipeData) end
 
----@param arg0 IsoPlayer
-function __CraftLogic:sendStartRequest(arg0) end
+---@param player IsoPlayer
+function __CraftLogic:sendStartRequest(player) end
 
----@param arg0 IsoPlayer
-function __CraftLogic:sendStopRequest(arg0) end
+---@param player IsoPlayer
+function __CraftLogic:sendStopRequest(player) end
 
----@param arg0 CraftRecipe
-function __CraftLogic:setRecipe(arg0) end
+---@param recipe CraftRecipe
+function __CraftLogic:setRecipe(recipe) end
 
----@param arg0 string
-function __CraftLogic:setRecipeTagQuery(arg0) end
+---@param recipeTagQuery string
+function __CraftLogic:setRecipeTagQuery(recipeTagQuery) end
 
----@param arg0 IsoPlayer
-function __CraftLogic:start(arg0) end
+---@param player IsoPlayer
+function __CraftLogic:start(player) end
 
----@param arg0 IsoPlayer
-function __CraftLogic:stop(arg0) end
+---@param player IsoPlayer
+function __CraftLogic:stop(player) end
 
----@param arg0 IsoPlayer
----@param arg1 boolean
-function __CraftLogic:stop(arg0, arg1) end
+---@param player IsoPlayer
+---@param force boolean
+function __CraftLogic:stop(player, force) end
 
 CraftLogic = {}
 

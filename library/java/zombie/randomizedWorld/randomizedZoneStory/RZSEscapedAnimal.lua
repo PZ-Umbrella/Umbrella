@@ -3,8 +3,8 @@
 ---@class RZSEscapedAnimal: RandomizedZoneStoryBase
 local __RZSEscapedAnimal = {}
 
----@param arg0 Zone
-function __RZSEscapedAnimal:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSEscapedAnimal:randomizeZoneStory(zone) end
 
 RZSEscapedAnimal = {}
 

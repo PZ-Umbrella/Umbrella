@@ -18,10 +18,10 @@ function __WorldMapPolygonStyleLayerV1:addScale(zoom, scale) end
 ---@param texturePath string
 function __WorldMapPolygonStyleLayerV1:addTexture(zoom, texturePath) end
 
----@param arg0 number
----@param arg1 string
----@param arg2 string
-function __WorldMapPolygonStyleLayerV1:addTexture(arg0, arg1, arg2) end
+---@param zoom number
+---@param texturePath string
+---@param scalingStr string
+function __WorldMapPolygonStyleLayerV1:addTexture(zoom, texturePath, scalingStr) end
 
 ---@param index integer
 ---@return integer
@@ -63,9 +63,9 @@ function __WorldMapPolygonStyleLayerV1:getTexture(index) end
 ---@return string
 function __WorldMapPolygonStyleLayerV1:getTexturePath(index) end
 
----@param arg0 integer
+---@param index integer
 ---@return string
-function __WorldMapPolygonStyleLayerV1:getTextureScaling(arg0) end
+function __WorldMapPolygonStyleLayerV1:getTextureScaling(index) end
 
 ---@return integer
 function __WorldMapPolygonStyleLayerV1:getTextureStops() end
@@ -78,9 +78,9 @@ function __WorldMapPolygonStyleLayerV1:getTextureZoom(index) end
 ---@param indexTo integer
 function __WorldMapPolygonStyleLayerV1:moveFill(indexFrom, indexTo) end
 
----@param arg0 integer
----@param arg1 integer
-function __WorldMapPolygonStyleLayerV1:moveScale(arg0, arg1) end
+---@param indexFrom integer
+---@param indexTo integer
+function __WorldMapPolygonStyleLayerV1:moveScale(indexFrom, indexTo) end
 
 ---@param indexFrom integer
 ---@param indexTo integer
@@ -89,8 +89,8 @@ function __WorldMapPolygonStyleLayerV1:moveTexture(indexFrom, indexTo) end
 ---@param index integer
 function __WorldMapPolygonStyleLayerV1:removeFill(index) end
 
----@param arg0 integer
-function __WorldMapPolygonStyleLayerV1:removeScale(arg0) end
+---@param index integer
+function __WorldMapPolygonStyleLayerV1:removeScale(index) end
 
 ---@param index integer
 function __WorldMapPolygonStyleLayerV1:removeTexture(index) end
@@ -110,21 +110,21 @@ function __WorldMapPolygonStyleLayerV1:setFillZoom(index, zoom) end
 ---@param value string
 function __WorldMapPolygonStyleLayerV1:setFilter(key, value) end
 
----@param arg0 integer
----@param arg1 integer
-function __WorldMapPolygonStyleLayerV1:setScaleValue(arg0, arg1) end
+---@param index integer
+---@param scale integer
+function __WorldMapPolygonStyleLayerV1:setScaleValue(index, scale) end
 
----@param arg0 integer
----@param arg1 number
-function __WorldMapPolygonStyleLayerV1:setScaleZoom(arg0, arg1) end
+---@param index integer
+---@param zoom number
+function __WorldMapPolygonStyleLayerV1:setScaleZoom(index, zoom) end
 
 ---@param index integer
 ---@param texturePath string
 function __WorldMapPolygonStyleLayerV1:setTexturePath(index, texturePath) end
 
----@param arg0 integer
----@param arg1 string
-function __WorldMapPolygonStyleLayerV1:setTextureScaling(arg0, arg1) end
+---@param index integer
+---@param scalingStr string
+function __WorldMapPolygonStyleLayerV1:setTextureScaling(index, scalingStr) end
 
 ---@param index integer
 ---@param zoom number

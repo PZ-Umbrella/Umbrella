@@ -7,9 +7,9 @@ function __TermsOfServiceState:enter() end
 
 function __TermsOfServiceState:exit() end
 
----@param arg0 string
+---@param func string
 ---@return any
-function __TermsOfServiceState:fromLua0(arg0) end
+function __TermsOfServiceState:fromLua0(func) end
 
 function __TermsOfServiceState:render() end
 

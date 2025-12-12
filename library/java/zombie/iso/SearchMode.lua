@@ -39,9 +39,9 @@ function __SearchMode:isEnabled(plrIdx) end
 ---@return boolean
 function __SearchMode:isOverride(plrIdx) end
 
----@param arg0 integer
+---@param plrIdx integer
 ---@return boolean
-function __SearchMode:isOverrideSearchManager(arg0) end
+function __SearchMode:isOverrideSearchManager(plrIdx) end
 
 ---@param plrIdx integer
 ---@param b boolean
@@ -54,9 +54,9 @@ function __SearchMode:setFadeTime(fadeTime) end
 ---@param enabled boolean
 function __SearchMode:setOverride(plrIdx, enabled) end
 
----@param arg0 integer
----@param arg1 boolean
-function __SearchMode:setOverrideSearchManager(arg0, arg1) end
+---@param plrIdx integer
+---@param enabled boolean
+function __SearchMode:setOverrideSearchManager(plrIdx, enabled) end
 
 function __SearchMode:update() end
 

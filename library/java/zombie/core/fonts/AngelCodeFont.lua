@@ -82,11 +82,11 @@ function __AngelCodeFont:drawString(x, y, scale, text, r, g, b, a, startIndex, e
 ---@return integer # The width of the given string
 function __AngelCodeFont:getHeight(text) end
 
----@param arg0 string
----@param arg1 boolean
----@param arg2 boolean
+---@param text string
+---@param returnActualHeight boolean
+---@param returnOffset boolean
 ---@return integer
-function __AngelCodeFont:getHeight(arg0, arg1, arg2) end
+function __AngelCodeFont:getHeight(text, returnActualHeight, returnOffset) end
 
 ---Description copied from interface: Font
 ---@return integer # The maxium height of any line drawn by this font
@@ -131,8 +131,8 @@ function __AngelCodeFont:isSdf() end
 ---@param asset Asset
 function __AngelCodeFont:onStateChanged(oldState, newState, asset) end
 
----@param arg0 boolean
-function __AngelCodeFont:setSdf(arg0) end
+---@param b boolean
+function __AngelCodeFont:setSdf(b) end
 
 AngelCodeFont = {}
 

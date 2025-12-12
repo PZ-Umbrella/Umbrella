@@ -3,15 +3,15 @@
 ---@class ClimbThroughWindowState: State
 local __ClimbThroughWindowState = {}
 
----@param arg0 IsoGameCharacter
----@param arg1 AnimLayer
----@param arg2 AnimationTrack
----@param arg3 AnimEvent
-function __ClimbThroughWindowState:animEvent(arg0, arg1, arg2, arg3) end
+---@param owner IsoGameCharacter
+---@param layer AnimLayer
+---@param track AnimationTrack
+---@param event AnimEvent
+function __ClimbThroughWindowState:animEvent(owner, layer, track, event) end
 
----@param arg0 IsoGameCharacter
+---@param owner IsoGameCharacter
 ---@return boolean
-function __ClimbThroughWindowState:canRagdoll(arg0) end
+function __ClimbThroughWindowState:canRagdoll(owner) end
 
 ---@param owner IsoGameCharacter
 function __ClimbThroughWindowState:enter(owner) end
@@ -26,9 +26,9 @@ function __ClimbThroughWindowState:exit(owner) end
 ---@param modifiers MoveDeltaModifiers
 function __ClimbThroughWindowState:getDeltaModifiers(owner, modifiers) end
 
----@param arg0 IsoGameCharacter
+---@param owner IsoGameCharacter
 ---@return ClimbThroughWindowPositioningParams
-function __ClimbThroughWindowState:getPositioningParams(arg0) end
+function __ClimbThroughWindowState:getPositioningParams(owner) end
 
 ---@param owner IsoGameCharacter
 ---@return IsoObject
@@ -86,44 +86,49 @@ function __ClimbThroughWindowState:processOnEnter(owner, delegate) end
 ---@param obj IsoObject
 function __ClimbThroughWindowState:setParams(owner, obj) end
 
----@param arg0 IsoGameCharacter
----@param arg1 State.Stage
-function __ClimbThroughWindowState:setParams(arg0, arg1) end
+---@param owner IsoGameCharacter
+---@param stage State.Stage
+function __ClimbThroughWindowState:setParams(owner, stage) end
 
 ClimbThroughWindowState = {}
 
----@param arg0 IsoGameCharacter
----@param arg1 IsoObject
----@param arg2 ClimbThroughWindowPositioningParams
-function ClimbThroughWindowState.getClimbThroughWindowPositioningParams(arg0, arg1, arg2) end
+---@param in_climbingCharacter IsoGameCharacter
+---@param in_windowObject IsoObject
+---@param out_climbParams ClimbThroughWindowPositioningParams
+function ClimbThroughWindowState.getClimbThroughWindowPositioningParams(
+	in_climbingCharacter,
+	in_windowObject,
+	out_climbParams
+)
+end
 
----@param arg0 IsoGridSquare
----@param arg1 IsoDirections
+---@param square IsoGridSquare
+---@param dir IsoDirections
 ---@return IsoGridSquare
-function ClimbThroughWindowState.getFreeSquareAfterObstacles(arg0, arg1) end
+function ClimbThroughWindowState.getFreeSquareAfterObstacles(square, dir) end
 
 ---@return ClimbThroughWindowState
 function ClimbThroughWindowState.instance() end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return boolean
-function ClimbThroughWindowState.isFreeSquare(arg0) end
+function ClimbThroughWindowState.isFreeSquare(square) end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return boolean
-function ClimbThroughWindowState.isObstacleSquare(arg0) end
+function ClimbThroughWindowState.isObstacleSquare(square) end
 
----@param arg0 IsoGameCharacter
----@param arg1 ClimbThroughWindowPositioningParams
-function ClimbThroughWindowState.slideCharacterToWindowOpening(arg0, arg1) end
+---@param in_character IsoGameCharacter
+---@param in_positioningParams ClimbThroughWindowPositioningParams
+function ClimbThroughWindowState.slideCharacterToWindowOpening(in_character, in_positioningParams) end
 
----@param arg0 IsoGameCharacter
----@param arg1 number
-function ClimbThroughWindowState.slideX(arg0, arg1) end
+---@param owner IsoGameCharacter
+---@param x number
+function ClimbThroughWindowState.slideX(owner, x) end
 
----@param arg0 IsoGameCharacter
----@param arg1 number
-function ClimbThroughWindowState.slideY(arg0, arg1) end
+---@param owner IsoGameCharacter
+---@param y number
+function ClimbThroughWindowState.slideY(owner, y) end
 
 ---@return ClimbThroughWindowState
 function ClimbThroughWindowState.new() end

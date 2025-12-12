@@ -11,9 +11,9 @@ CraftMode.Automation = nil
 ---@type CraftMode
 CraftMode.Handcraft = nil
 
----@param arg0 string
+---@param name string
 ---@return CraftMode
-function CraftMode.valueOf(arg0) end
+function CraftMode.valueOf(name) end
 
 ---@return kahlua.Array<CraftMode>
 function CraftMode.values() end

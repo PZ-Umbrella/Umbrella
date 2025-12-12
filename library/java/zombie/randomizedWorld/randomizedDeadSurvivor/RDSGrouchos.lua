@@ -3,13 +3,13 @@
 ---@class RDSGrouchos: RandomizedDeadSurvivorBase
 local __RDSGrouchos = {}
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param def BuildingDef
+---@param force boolean
 ---@return boolean
-function __RDSGrouchos:isValid(arg0, arg1) end
+function __RDSGrouchos:isValid(def, force) end
 
----@param arg0 BuildingDef
-function __RDSGrouchos:randomizeDeadSurvivor(arg0) end
+---@param def BuildingDef
+function __RDSGrouchos:randomizeDeadSurvivor(def) end
 
 RDSGrouchos = {}
 

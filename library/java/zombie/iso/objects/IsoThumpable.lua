@@ -3,8 +3,8 @@
 ---@class IsoThumpable: IsoObject, BarricadeAble, Thumpable, IHasHealth, ILockableDoor
 local __IsoThumpable = {}
 
----@param arg0 number
-function __IsoThumpable:Damage(arg0) end
+---@param amount number
+function __IsoThumpable:Damage(amount) end
 
 ---@return IsoCurtain
 function __IsoThumpable:HasCurtains() end
@@ -59,8 +59,8 @@ function __IsoThumpable:addToWorld() end
 
 function __IsoThumpable:afterRotated() end
 
----@param arg0 IsoAnimal
-function __IsoThumpable:animalHit(arg0) end
+---@param animal IsoAnimal
+function __IsoThumpable:animalHit(animal) end
 
 ---@return boolean
 function __IsoThumpable:canAddCurtain() end
@@ -82,15 +82,15 @@ function __IsoThumpable:canClimbOver(chr) end
 ---@return boolean
 function __IsoThumpable:canClimbThrough(chr) end
 
----@param arg0 IsoThumpable
-function __IsoThumpable:changeSprite(arg0) end
+---@param thumpable IsoThumpable
+function __IsoThumpable:changeSprite(thumpable) end
 
----@param arg0 integer
-function __IsoThumpable:checkKeyHighlight(arg0) end
+---@param playerIndex integer
+function __IsoThumpable:checkKeyHighlight(playerIndex) end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return boolean
-function __IsoThumpable:couldBeOpen(arg0) end
+function __IsoThumpable:couldBeOpen(chr) end
 
 ---@return integer
 function __IsoThumpable:countAddSheetRope() end
@@ -348,25 +348,25 @@ function __IsoThumpable:removeFromWorld() end
 ---@return boolean
 function __IsoThumpable:removeSheetRope(player) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 ColorInfo
----@param arg4 boolean
----@param arg5 boolean
----@param arg6 Shader
-function __IsoThumpable:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+---@param x number
+---@param y number
+---@param z number
+---@param col ColorInfo
+---@param bDoAttached boolean
+---@param bWallLightingPass boolean
+---@param shader Shader
+function __IsoThumpable:render(x, y, z, col, bDoAttached, bWallLightingPass, shader) end
 
----@param arg0 IsoDirections
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 ColorInfo
----@param arg5 boolean
----@param arg6 boolean
----@param arg7 Shader
----@param arg8 Consumer<TextureDraw>
-function __IsoThumpable:renderWallTile(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+---@param dir IsoDirections
+---@param x number
+---@param y number
+---@param z number
+---@param col ColorInfo
+---@param bDoAttached boolean
+---@param bWallLightingPass boolean
+---@param shader Shader
+---@param texdModifier Consumer<TextureDraw>
+function __IsoThumpable:renderWallTile(dir, x, y, z, col, bDoAttached, bWallLightingPass, shader, texdModifier) end
 
 ---@param output ByteBuffer
 ---@param IS_DEBUG_SAVE boolean
@@ -516,8 +516,8 @@ function __IsoThumpable:setThumpDmg(pThumpDmg) end
 ---@param thumpSound string
 function __IsoThumpable:setThumpSound(thumpSound) end
 
----@param arg0 ByteBuffer
-function __IsoThumpable:syncIsoObjectReceive(arg0) end
+---@param bb ByteBuffer
+function __IsoThumpable:syncIsoObjectReceive(bb) end
 
 ---@param b ByteBufferWriter
 function __IsoThumpable:syncIsoObjectSend(b) end
@@ -534,13 +534,13 @@ IsoThumpable = {}
 ---@type Vector2
 IsoThumpable.tempo = nil
 
----@param arg0 IsoSprite
+---@param sprite IsoSprite
 ---@return string
-function IsoThumpable.GetBreakFurnitureSound(arg0) end
+function IsoThumpable.GetBreakFurnitureSound(sprite) end
 
----@param arg0 string
+---@param spriteName string
 ---@return string
-function IsoThumpable.GetBreakFurnitureSound(arg0) end
+function IsoThumpable.GetBreakFurnitureSound(spriteName) end
 
 ---@param cell IsoCell
 ---@return IsoThumpable
@@ -566,12 +566,12 @@ function IsoThumpable.new(cell, gridSquare, closedSprite, openSprite, north, tab
 ---@return IsoThumpable
 function IsoThumpable.new(cell, gridSquare, sprite, north, table) end
 
----@param arg0 IsoCell
----@param arg1 IsoGridSquare
----@param arg2 string
----@param arg3 boolean
+---@param cell IsoCell
+---@param gridSquare IsoGridSquare
+---@param sprite string
+---@param north boolean
 ---@return IsoThumpable
-function IsoThumpable.new(arg0, arg1, arg2, arg3) end
+function IsoThumpable.new(cell, gridSquare, sprite, north) end
 
 ---@type Class<IsoThumpable>
 IsoThumpable.class = nil

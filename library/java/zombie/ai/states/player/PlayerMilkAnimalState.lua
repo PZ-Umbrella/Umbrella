@@ -3,11 +3,11 @@
 ---@class PlayerMilkAnimalState: State
 local __PlayerMilkAnimalState = {}
 
----@param arg0 IsoGameCharacter
-function __PlayerMilkAnimalState:enter(arg0) end
+---@param owner IsoGameCharacter
+function __PlayerMilkAnimalState:enter(owner) end
 
----@param arg0 IsoGameCharacter
-function __PlayerMilkAnimalState:exit(arg0) end
+---@param owner IsoGameCharacter
+function __PlayerMilkAnimalState:exit(owner) end
 
 ---@return boolean
 function __PlayerMilkAnimalState:isSyncInIdle() end
@@ -21,9 +21,9 @@ function __PlayerMilkAnimalState:isSyncOnExit() end
 ---@return boolean
 function __PlayerMilkAnimalState:isSyncOnSquare() end
 
----@param arg0 IsoGameCharacter
----@param arg1 State.Stage
-function __PlayerMilkAnimalState:setParams(arg0, arg1) end
+---@param owner IsoGameCharacter
+---@param stage State.Stage
+function __PlayerMilkAnimalState:setParams(owner, stage) end
 
 PlayerMilkAnimalState = {}
 

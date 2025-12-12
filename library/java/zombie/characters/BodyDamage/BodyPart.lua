@@ -43,8 +43,8 @@ function __BodyPart:SetBitten(Bitten, Infected) end
 ---@param BleedingStemmed boolean
 function __BodyPart:SetBleedingStemmed(BleedingStemmed) end
 
----@param arg0 boolean
-function __BodyPart:SetCauterized(arg0) end
+---@param Cauterized boolean
+function __BodyPart:SetCauterized(Cauterized) end
 
 ---@param inf boolean
 function __BodyPart:SetFakeInfected(inf) end
@@ -61,8 +61,8 @@ function __BodyPart:SetScratchedWeapon(Scratched) end
 ---@param Scratched boolean
 function __BodyPart:SetScratchedWindow(Scratched) end
 
----@param arg0 number
-function __BodyPart:addStiffness(arg0) end
+---@param stiffness number
+function __BodyPart:addStiffness(stiffness) end
 
 ---@return boolean
 function __BodyPart:bandaged() end
@@ -88,11 +88,11 @@ function __BodyPart:generateDeepShardWound() end
 
 function __BodyPart:generateDeepWound() end
 
----@param arg0 number
-function __BodyPart:generateFracture(arg0) end
+---@param fractureTime number
+function __BodyPart:generateFracture(fractureTime) end
 
----@param arg0 number
-function __BodyPart:generateFractureNew(arg0) end
+---@param fractureTime number
+function __BodyPart:generateFractureNew(fractureTime) end
 
 ---@param baseChance integer
 function __BodyPart:generateZombieInfection(baseChance) end
@@ -401,9 +401,9 @@ function __BodyPart:sync(other, updater) end
 ---@param id integer
 function __BodyPart:sync(bb, id) end
 
----@param arg0 ByteBufferWriter
----@param arg1 integer
-function __BodyPart:syncWrite(arg0, arg1) end
+---@param bb ByteBufferWriter
+---@param id integer
+function __BodyPart:syncWrite(bb, id) end
 
 BodyPart = {}
 

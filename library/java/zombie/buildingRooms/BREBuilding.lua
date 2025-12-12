@@ -3,49 +3,49 @@
 ---@class BREBuilding
 local __BREBuilding = {}
 
----@param arg0 boolean
-function __BREBuilding:applyChanges(arg0) end
+---@param bLoading boolean
+function __BREBuilding:applyChanges(bLoading) end
 
----@param arg0 BuildingDef
+---@param buildingDef2 BuildingDef
 ---@return BREBuilding
-function __BREBuilding:copyFrom(arg0) end
+function __BREBuilding:copyFrom(buildingDef2) end
 
----@param arg0 integer
+---@param level integer
 ---@return BRERoom
-function __BREBuilding:createRoom(arg0) end
+function __BREBuilding:createRoom(level) end
 
----@param arg0 integer
+---@param index integer
 ---@return BRERoom
-function __BREBuilding:getRoomByIndex(arg0) end
+function __BREBuilding:getRoomByIndex(index) end
 
 ---@return integer
 function __BREBuilding:getRoomCount() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return integer
-function __BREBuilding:getRoomIndexAt(arg0, arg1, arg2) end
+function __BREBuilding:getRoomIndexAt(x, y, z) end
 
----@param arg0 integer
+---@param z integer
 ---@return boolean
-function __BREBuilding:hasNonEmptyRoomsOnLevel(arg0) end
+function __BREBuilding:hasNonEmptyRoomsOnLevel(z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
+---@param z integer
 ---@return boolean
-function __BREBuilding:intersects(arg0, arg1, arg2, arg3, arg4) end
+function __BREBuilding:intersects(x, y, w, h, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
+---@param z integer
 ---@return boolean
-function __BREBuilding:isAdjacent(arg0, arg1, arg2, arg3, arg4) end
+function __BREBuilding:isAdjacent(x, y, w, h, z) end
 
 ---@return boolean
 function __BREBuilding:isEdited() end
@@ -53,11 +53,11 @@ function __BREBuilding:isEdited() end
 ---@return boolean
 function __BREBuilding:isValid() end
 
----@param arg0 BRERoom
-function __BREBuilding:removeRoom(arg0) end
+---@param room BRERoom
+function __BREBuilding:removeRoom(room) end
 
----@param arg0 boolean
-function __BREBuilding:setEdited(arg0) end
+---@param b boolean
+function __BREBuilding:setEdited(b) end
 
 BREBuilding = {}
 

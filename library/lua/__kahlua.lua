@@ -36,10 +36,12 @@ function table.newarray(...) end
 ---@class Random
 local __random = {}
 
+---@param m number?
+---@param n number?
 ---@return number
 ---@overload fun(m: integer): integer
 ---@overload fun(m: integer, n: integer): integer
-function __random:random() end
+function __random:random(m, n) end
 
 ---@param value unknown?
 function __random:seed(value) end

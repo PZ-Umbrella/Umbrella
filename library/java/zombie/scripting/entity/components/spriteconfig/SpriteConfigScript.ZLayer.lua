@@ -6,9 +6,9 @@ local __ZLayer = {}
 ---@return integer
 function __ZLayer:getHeight() end
 
----@param arg0 integer
+---@param y integer
 ---@return SpriteConfigScript.XRow
-function __ZLayer:getRow(arg0) end
+function __ZLayer:getRow(y) end
 
 ZLayer = {}
 

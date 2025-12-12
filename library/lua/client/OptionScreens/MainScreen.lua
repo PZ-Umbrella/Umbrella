@@ -24,7 +24,6 @@
 ---@field exitOption ISLabel
 ---@field firstFrame boolean
 ---@field infoModList ISPauseModListUI?
----@field infoRichText ISNewsUpdate
 ---@field inGame boolean
 ---@field inviteFriends InviteFriends
 ---@field inviteOption ISLabel
@@ -68,10 +67,8 @@
 ---@field time number
 ---@field tutorialButton ISButton?
 ---@field tutorialOption ISLabel
----@field version unknown
+---@field version string
 ---@field versionBtn ISButton
----@field versionDetail ISButton
----@field versionLabel ISLabel
 ---@field warningFade number
 ---@field warningFadeMax number
 ---@field workshopOption ISLabel
@@ -103,7 +100,8 @@ function MainScreen.checkTutorial(button) end
 function MainScreen.continueLatestSave(gameMode, saveName) end
 
 ---@param fromResetLua boolean
-function MainScreen.continueLatestSaveAux(fromResetLua) end
+---@param checkWorldVersion boolean?
+function MainScreen.continueLatestSaveAux(fromResetLua, checkWorldVersion) end
 
 ---@param text string
 ---@param fatal boolean
@@ -181,15 +179,11 @@ function MainScreen:instantiate() end
 
 function MainScreen:onClickModList() end
 
-function MainScreen:OnClickNews() end
-
 ---@param button ISButton
 function MainScreen:onClickReportBug(button) end
 
 ---@param button ISButton
 function MainScreen:onClickTermsOfService(button) end
-
-function MainScreen:onClickVersionDetail() end
 
 ---@param button ISButton
 function MainScreen:onConfirmQuitToDesktop(button) end

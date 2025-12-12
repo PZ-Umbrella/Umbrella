@@ -3,9 +3,9 @@
 ---@class PhysicsShapeScript: BaseScriptObject
 local __PhysicsShapeScript = {}
 
----@param arg0 string
----@param arg1 string
-function __PhysicsShapeScript:Load(arg0, arg1) end
+---@param name string
+---@param totalFile string
+function __PhysicsShapeScript:Load(name, totalFile) end
 
 PhysicsShapeScript = {}
 

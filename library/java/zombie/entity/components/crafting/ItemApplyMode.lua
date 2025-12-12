@@ -14,9 +14,9 @@ ItemApplyMode.Keep = nil
 ---@type ItemApplyMode
 ItemApplyMode.Normal = nil
 
----@param arg0 string
+---@param name string
 ---@return ItemApplyMode
-function ItemApplyMode.valueOf(arg0) end
+function ItemApplyMode.valueOf(name) end
 
 ---@return kahlua.Array<ItemApplyMode>
 function ItemApplyMode.values() end

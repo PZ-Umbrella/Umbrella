@@ -14,9 +14,9 @@ function __UIWorldMapV2:isDimUnsharedSymbols() end
 
 UIWorldMapV2 = {}
 
----@param arg0 UIWorldMap
+---@param ui UIWorldMap
 ---@return UIWorldMapV2
-function UIWorldMapV2.new(arg0) end
+function UIWorldMapV2.new(ui) end
 
 ---@type Class<UIWorldMapV2>
 UIWorldMapV2.class = nil

@@ -3,50 +3,50 @@
 ---@class IsoHutch: IsoObject
 local __IsoHutch = {}
 
----@param arg0 IsoAnimal
+---@param animal IsoAnimal
 ---@return boolean
-function __IsoHutch:addAnimalInNestBox(arg0) end
+function __IsoHutch:addAnimalInNestBox(animal) end
 
----@param arg0 IsoAnimal
+---@param animal IsoAnimal
 ---@return boolean
-function __IsoHutch:addAnimalInside(arg0) end
+function __IsoHutch:addAnimalInside(animal) end
 
----@param arg0 IsoAnimal
----@param arg1 boolean
+---@param animal IsoAnimal
+---@param bSync boolean
 ---@return boolean
-function __IsoHutch:addAnimalInside(arg0, arg1) end
+function __IsoHutch:addAnimalInside(animal, bSync) end
 
----@param arg0 IsoAnimal
-function __IsoHutch:addAnimalOutside(arg0) end
+---@param animal IsoAnimal
+function __IsoHutch:addAnimalOutside(animal) end
 
----@param arg0 IsoAnimal
-function __IsoHutch:addEgg(arg0) end
+---@param animal IsoAnimal
+function __IsoHutch:addEgg(animal) end
 
----@param arg0 IsoAnimal
+---@param animal IsoAnimal
 ---@return boolean
-function __IsoHutch:addMetaEgg(arg0) end
+function __IsoHutch:addMetaEgg(animal) end
 
 function __IsoHutch:addToWorld() end
 
----@param arg0 integer
-function __IsoHutch:doMeta(arg0) end
+---@param hours integer
+function __IsoHutch:doMeta(hours) end
 
 function __IsoHutch:dropAllEggs() end
 
----@param arg0 integer
+---@param index integer
 ---@return IsoAnimal
-function __IsoHutch:getAnimal(arg0) end
+function __IsoHutch:getAnimal(index) end
 
----@param arg0 integer
+---@param index integer
 ---@return IsoAnimal
-function __IsoHutch:getAnimalInNestBox(arg0) end
+function __IsoHutch:getAnimalInNestBox(index) end
 
 ---@return HashMap<integer, IsoAnimal>
 function __IsoHutch:getAnimalInside() end
 
----@param arg0 integer
+---@param index integer
 ---@return IsoDeadBody
-function __IsoHutch:getDeadBody(arg0) end
+function __IsoHutch:getDeadBody(index) end
 
 ---@return integer
 function __IsoHutch:getEnterSpotX() end
@@ -69,9 +69,9 @@ function __IsoHutch:getMaxAnimals() end
 ---@return integer
 function __IsoHutch:getMaxNestBox() end
 
----@param arg0 integer
+---@param index integer
 ---@return IsoHutch.NestBox
-function __IsoHutch:getNestBox(arg0) end
+function __IsoHutch:getNestBox(index) end
 
 ---@return number
 function __IsoHutch:getNestBoxDirt() end
@@ -106,40 +106,40 @@ function __IsoHutch:isOwner() end
 ---@return boolean
 function __IsoHutch:isSlave() end
 
----@param arg0 IsoAnimal
-function __IsoHutch:killAnimal(arg0) end
+---@param animal IsoAnimal
+function __IsoHutch:killAnimal(animal) end
 
----@param arg0 ByteBuffer
----@param arg1 integer
----@param arg2 boolean
-function __IsoHutch:load(arg0, arg1, arg2) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+---@param IS_DEBUG_SAVE boolean
+function __IsoHutch:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 function __IsoHutch:reforceUpdate() end
 
 function __IsoHutch:releaseAllAnimals() end
 
----@param arg0 IsoAnimal
-function __IsoHutch:removeAnimal(arg0) end
+---@param animal IsoAnimal
+function __IsoHutch:removeAnimal(animal) end
 
 function __IsoHutch:removeFromWorld() end
 
 function __IsoHutch:removeHutch() end
 
----@param arg0 ByteBuffer
----@param arg1 boolean
-function __IsoHutch:save(arg0, arg1) end
+---@param output ByteBuffer
+---@param IS_DEBUG_SAVE boolean
+function __IsoHutch:save(output, IS_DEBUG_SAVE) end
 
----@param arg0 number
-function __IsoHutch:setHutchDirt(arg0) end
+---@param hutchDirt number
+function __IsoHutch:setHutchDirt(hutchDirt) end
 
----@param arg0 number
-function __IsoHutch:setNestBoxDirt(arg0) end
+---@param nestBoxDirt number
+function __IsoHutch:setNestBoxDirt(nestBoxDirt) end
 
----@param arg0 ByteBuffer
-function __IsoHutch:syncIsoObjectReceive(arg0) end
+---@param bb ByteBuffer
+function __IsoHutch:syncIsoObjectReceive(bb) end
 
----@param arg0 ByteBufferWriter
-function __IsoHutch:syncIsoObjectSend(arg0) end
+---@param b ByteBufferWriter
+function __IsoHutch:syncIsoObjectSend(b) end
 
 function __IsoHutch:toggleDoor() end
 
@@ -147,30 +147,30 @@ function __IsoHutch:toggleEggHatchDoor() end
 
 function __IsoHutch:transmitCompleteItemToClients() end
 
----@param arg0 IsoAnimal
-function __IsoHutch:tryFindAndRemoveAnimalFromNestBox(arg0) end
+---@param animal IsoAnimal
+function __IsoHutch:tryFindAndRemoveAnimalFromNestBox(animal) end
 
 function __IsoHutch:update() end
 
 IsoHutch = {}
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return IsoHutch
-function IsoHutch.getHutch(arg0, arg1, arg2) end
+function IsoHutch.getHutch(x, y, z) end
 
----@param arg0 IsoCell
+---@param cell IsoCell
 ---@return IsoHutch
-function IsoHutch.new(arg0) end
+function IsoHutch.new(cell) end
 
----@param arg0 IsoGridSquare
----@param arg1 boolean
----@param arg2 string
----@param arg3 table
----@param arg4 IsoGridSquare
+---@param sq IsoGridSquare
+---@param north boolean
+---@param mainSprite string
+---@param def table
+---@param linkedSq IsoGridSquare
 ---@return IsoHutch
-function IsoHutch.new(arg0, arg1, arg2, arg3, arg4) end
+function IsoHutch.new(sq, north, mainSprite, def, linkedSq) end
 
 ---@type Class<IsoHutch>
 IsoHutch.class = nil

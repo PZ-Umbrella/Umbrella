@@ -6,53 +6,62 @@ local __FluidProperties = {}
 ---@return SealedFluidProperties
 function __FluidProperties:getSealedFluidProperties() end
 
----@param arg0 number
-function __FluidProperties:setAlcohol(arg0) end
+---@param alcohol number
+function __FluidProperties:setAlcohol(alcohol) end
 
----@param arg0 number
-function __FluidProperties:setCalories(arg0) end
+---@param calories number
+function __FluidProperties:setCalories(calories) end
 
----@param arg0 number
-function __FluidProperties:setCarbohydrates(arg0) end
+---@param carbohydrates number
+function __FluidProperties:setCarbohydrates(carbohydrates) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
-function __FluidProperties:setEffects(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+---@param fatigueChange number
+---@param hungerChange number
+---@param stressChange number
+---@param thirstChange number
+---@param unhappyChange number
+---@param alcoholChange number
+---@param poisonChange number
+function __FluidProperties:setEffects(
+	fatigueChange,
+	hungerChange,
+	stressChange,
+	thirstChange,
+	unhappyChange,
+	alcoholChange,
+	poisonChange
+)
+end
 
----@param arg0 number
-function __FluidProperties:setEnduranceChange(arg0) end
+---@param enduranceChange number
+function __FluidProperties:setEnduranceChange(enduranceChange) end
 
----@param arg0 number
-function __FluidProperties:setFatigueChange(arg0) end
+---@param fatigueChange number
+function __FluidProperties:setFatigueChange(fatigueChange) end
 
----@param arg0 number
-function __FluidProperties:setFluReduction(arg0) end
+---@param fluReduction number
+function __FluidProperties:setFluReduction(fluReduction) end
 
 ---@param foodSicknessChange integer
 function __FluidProperties:setFoodSicknessChange(foodSicknessChange) end
 
----@param arg0 number
-function __FluidProperties:setHungerChange(arg0) end
+---@param hungerChange number
+function __FluidProperties:setHungerChange(hungerChange) end
 
----@param arg0 number
-function __FluidProperties:setLipids(arg0) end
+---@param lipids number
+function __FluidProperties:setLipids(lipids) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
-function __FluidProperties:setNutrients(arg0, arg1, arg2, arg3) end
+---@param calories number
+---@param carbohydrates number
+---@param lipids number
+---@param proteins number
+function __FluidProperties:setNutrients(calories, carbohydrates, lipids, proteins) end
 
----@param arg0 number
-function __FluidProperties:setPainReduction(arg0) end
+---@param painReduction number
+function __FluidProperties:setPainReduction(painReduction) end
 
----@param arg0 number
-function __FluidProperties:setProteins(arg0) end
+---@param proteins number
+function __FluidProperties:setProteins(proteins) end
 
 ---@param fluReduction number
 ---@param painReduction number
@@ -60,14 +69,14 @@ function __FluidProperties:setProteins(arg0) end
 ---@param foodSicknessChange integer
 function __FluidProperties:setReductions(fluReduction, painReduction, enduranceChange, foodSicknessChange) end
 
----@param arg0 number
-function __FluidProperties:setStressChange(arg0) end
+---@param stressChange number
+function __FluidProperties:setStressChange(stressChange) end
 
----@param arg0 number
-function __FluidProperties:setThirstChange(arg0) end
+---@param thirstChange number
+function __FluidProperties:setThirstChange(thirstChange) end
 
----@param arg0 number
-function __FluidProperties:setUnhappyChange(arg0) end
+---@param unhappyChange number
+function __FluidProperties:setUnhappyChange(unhappyChange) end
 
 FluidProperties = {}
 

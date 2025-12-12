@@ -3,61 +3,61 @@
 ---@class WorldMapStyleV2.WorldMapPyramidStyleLayerV1: WorldMapStyleV1.WorldMapStyleLayerV1
 local __WorldMapPyramidStyleLayerV1 = {}
 
----@param arg0 number
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
-function __WorldMapPyramidStyleLayerV1:addFill(arg0, arg1, arg2, arg3, arg4) end
+---@param zoom number
+---@param r integer
+---@param g integer
+---@param b integer
+---@param a integer
+function __WorldMapPyramidStyleLayerV1:addFill(zoom, r, g, b, a) end
 
----@param arg0 integer
+---@param index integer
 ---@return integer
-function __WorldMapPyramidStyleLayerV1:getFillAlpha(arg0) end
+function __WorldMapPyramidStyleLayerV1:getFillAlpha(index) end
 
----@param arg0 integer
+---@param index integer
 ---@return integer
-function __WorldMapPyramidStyleLayerV1:getFillBlue(arg0) end
+function __WorldMapPyramidStyleLayerV1:getFillBlue(index) end
 
----@param arg0 integer
+---@param index integer
 ---@return integer
-function __WorldMapPyramidStyleLayerV1:getFillGreen(arg0) end
+function __WorldMapPyramidStyleLayerV1:getFillGreen(index) end
 
----@param arg0 integer
+---@param index integer
 ---@return integer
-function __WorldMapPyramidStyleLayerV1:getFillRed(arg0) end
+function __WorldMapPyramidStyleLayerV1:getFillRed(index) end
 
 ---@return integer
 function __WorldMapPyramidStyleLayerV1:getFillStops() end
 
----@param arg0 integer
+---@param index integer
 ---@return number
-function __WorldMapPyramidStyleLayerV1:getFillZoom(arg0) end
+function __WorldMapPyramidStyleLayerV1:getFillZoom(index) end
 
 ---@return string
 function __WorldMapPyramidStyleLayerV1:getPyramidFileName() end
 
----@param arg0 integer
----@param arg1 integer
-function __WorldMapPyramidStyleLayerV1:moveFill(arg0, arg1) end
+---@param indexFrom integer
+---@param indexTo integer
+function __WorldMapPyramidStyleLayerV1:moveFill(indexFrom, indexTo) end
 
 function __WorldMapPyramidStyleLayerV1:removeAllFill() end
 
----@param arg0 integer
-function __WorldMapPyramidStyleLayerV1:removeFill(arg0) end
+---@param index integer
+function __WorldMapPyramidStyleLayerV1:removeFill(index) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
-function __WorldMapPyramidStyleLayerV1:setFillRGBA(arg0, arg1, arg2, arg3, arg4) end
+---@param index integer
+---@param r integer
+---@param g integer
+---@param b integer
+---@param a integer
+function __WorldMapPyramidStyleLayerV1:setFillRGBA(index, r, g, b, a) end
 
----@param arg0 integer
----@param arg1 number
-function __WorldMapPyramidStyleLayerV1:setFillZoom(arg0, arg1) end
+---@param index integer
+---@param zoom number
+function __WorldMapPyramidStyleLayerV1:setFillZoom(index, zoom) end
 
----@param arg0 string
-function __WorldMapPyramidStyleLayerV1:setPyramidFileName(arg0) end
+---@param fileName string
+function __WorldMapPyramidStyleLayerV1:setPyramidFileName(fileName) end
 
 WorldMapPyramidStyleLayerV1 = {}
 

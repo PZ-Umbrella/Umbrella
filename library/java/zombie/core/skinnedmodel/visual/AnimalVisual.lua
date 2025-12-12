@@ -5,12 +5,12 @@ local __AnimalVisual = {}
 
 function __AnimalVisual:clear() end
 
----@param arg0 BaseVisual
-function __AnimalVisual:copyFrom(arg0) end
+---@param other_ BaseVisual
+function __AnimalVisual:copyFrom(other_) end
 
----@param arg0 string
----@param arg1 ItemVisuals
-function __AnimalVisual:dressInNamedOutfit(arg0, arg1) end
+---@param outfitName string
+---@param itemVisuals ItemVisuals
+function __AnimalVisual:dressInNamedOutfit(outfitName, itemVisuals) end
 
 ---@return number
 function __AnimalVisual:getAnimalSize() end
@@ -27,9 +27,9 @@ function __AnimalVisual:getModel() end
 ---@return ModelScript
 function __AnimalVisual:getModelScript() end
 
----@param arg0 IsoAnimal
+---@param animal IsoAnimal
 ---@return Model
-function __AnimalVisual:getModelTest(arg0) end
+function __AnimalVisual:getModelTest(animal) end
 
 ---@return string
 function __AnimalVisual:getSkinTexture() end
@@ -37,21 +37,21 @@ function __AnimalVisual:getSkinTexture() end
 ---@return boolean
 function __AnimalVisual:isSkeleton() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __AnimalVisual:load(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __AnimalVisual:load(input, WorldVersion) end
 
----@param arg0 ByteBuffer
-function __AnimalVisual:save(arg0) end
+---@param output ByteBuffer
+function __AnimalVisual:save(output) end
 
----@param arg0 string
-function __AnimalVisual:setSkinTextureName(arg0) end
+---@param textureName string
+function __AnimalVisual:setSkinTextureName(textureName) end
 
 AnimalVisual = {}
 
----@param arg0 IAnimalVisual
+---@param owner IAnimalVisual
 ---@return AnimalVisual
-function AnimalVisual.new(arg0) end
+function AnimalVisual.new(owner) end
 
 ---@type Class<AnimalVisual>
 AnimalVisual.class = nil

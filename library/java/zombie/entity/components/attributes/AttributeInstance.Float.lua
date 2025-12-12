@@ -6,31 +6,31 @@ local __Float = {}
 ---@return AttributeInstance.Float
 function __Float:copy() end
 
----@param arg0 AttributeInstance.Float
+---@param other AttributeInstance.Float
 ---@return boolean
-function __Float:equalTo(arg0) end
+function __Float:equalTo(other) end
 
 ---@return number
 function __Float:floatValue() end
 
----@param arg0 number
-function __Float:fromFloat(arg0) end
+---@param f number
+function __Float:fromFloat(f) end
 
 ---@return number
 function __Float:getValue() end
 
----@param arg0 ByteBuffer
-function __Float:load(arg0) end
+---@param input ByteBuffer
+function __Float:load(input) end
 
----@param arg0 ByteBuffer
-function __Float:save(arg0) end
+---@param output ByteBuffer
+function __Float:save(output) end
 
----@param arg0 number
-function __Float:setValue(arg0) end
+---@param value number
+function __Float:setValue(value) end
 
----@param arg0 string
+---@param val string
 ---@return boolean
-function __Float:setValueFromScriptString(arg0) end
+function __Float:setValueFromScriptString(val) end
 
 ---@return string
 function __Float:stringValue() end

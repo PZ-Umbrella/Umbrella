@@ -33,6 +33,8 @@ function ISHandcraftAction.FromLogic(handcraftLogic, eatPercentage) end
 ---@return ISHandcraftAction
 function ISHandcraftAction.FromLogicMultiple(handcraftLogic) end
 
+---@param event string
+---@param parameter string
 function ISHandcraftAction:animEvent(event, parameter) end
 
 ---@param bSetJobType boolean

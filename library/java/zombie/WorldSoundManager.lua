@@ -98,17 +98,28 @@ function __WorldSoundManager:addSound(
 )
 end
 
----@param arg0 any
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 boolean
----@param arg7 number
----@param arg8 number
+---@param source any
+---@param x integer
+---@param y integer
+---@param z integer
+---@param radius integer
+---@param volume integer
+---@param stressHumans boolean
+---@param zombieIgnoreDist number
+---@param stressMod number
 ---@return WorldSoundManager.WorldSound
-function __WorldSoundManager:addSoundRepeating(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+function __WorldSoundManager:addSoundRepeating(
+	source,
+	x,
+	y,
+	z,
+	radius,
+	volume,
+	stressHumans,
+	zombieIgnoreDist,
+	stressMod
+)
+end
 
 ---@param source any
 ---@param x integer
@@ -139,30 +150,30 @@ function __WorldSoundManager:addSoundRepeating(source, x, y, z, radius, volume, 
 ---@return WorldSoundManager.ResultBiggestSound
 function __WorldSoundManager:getBiggestSoundZomb(x, y, z, ignoreBySameType, zom) end
 
----@param arg0 IsoZombie
+---@param zombie IsoZombie
 ---@return number
-function __WorldSoundManager:getHearingMultiplier(arg0) end
+function __WorldSoundManager:getHearingMultiplier(zombie) end
 
----@param arg0 integer
+---@param hearing integer
 ---@return number
-function __WorldSoundManager:getHearingMultiplier(arg0) end
+function __WorldSoundManager:getHearingMultiplier(hearing) end
 
 ---@return WorldSoundManager.WorldSound
 function __WorldSoundManager:getNew() end
 
----@param arg0 IsoAnimal
+---@param animal IsoAnimal
 ---@return WorldSoundManager.WorldSound
-function __WorldSoundManager:getSoundAnimal(arg0) end
+function __WorldSoundManager:getSoundAnimal(animal) end
 
 ---@param sound WorldSoundManager.WorldSound
 ---@param zom IsoZombie
 ---@return number
 function __WorldSoundManager:getSoundAttract(sound, zom) end
 
----@param arg0 WorldSoundManager.WorldSound
----@param arg1 IsoAnimal
+---@param sound WorldSoundManager.WorldSound
+---@param animal IsoAnimal
 ---@return number
-function __WorldSoundManager:getSoundAttractAnimal(arg0, arg1) end
+function __WorldSoundManager:getSoundAttractAnimal(sound, animal) end
 
 ---@param zom IsoZombie
 ---@return WorldSoundManager.WorldSound

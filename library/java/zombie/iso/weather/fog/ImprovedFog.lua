@@ -175,13 +175,13 @@ function ImprovedFog.setSecondLayerAlpha(secondLayerAlpha) end
 ---@param topAlphaHeight number
 function ImprovedFog.setTopAlphaHeight(topAlphaHeight) end
 
----@param arg0 ImprovedFogDrawer
-function ImprovedFog.startFrame(arg0) end
+---@param drawer ImprovedFogDrawer
+function ImprovedFog.startFrame(drawer) end
 
----@param arg0 integer
----@param arg1 integer
+---@param nPlayer integer
+---@param z integer
 ---@return boolean
-function ImprovedFog.startRender(arg0, arg1) end
+function ImprovedFog.startRender(nPlayer, z) end
 
 function ImprovedFog.update() end
 

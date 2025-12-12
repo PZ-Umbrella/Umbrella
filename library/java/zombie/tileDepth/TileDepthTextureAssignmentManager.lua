@@ -3,35 +3,35 @@
 ---@class TileDepthTextureAssignmentManager
 local __TileDepthTextureAssignmentManager = {}
 
----@param arg0 string
----@param arg1 string
-function __TileDepthTextureAssignmentManager:assignDepthTextureToSprite(arg0, arg1) end
+---@param modID string
+---@param tileName string
+function __TileDepthTextureAssignmentManager:assignDepthTextureToSprite(modID, tileName) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
-function __TileDepthTextureAssignmentManager:assignTileName(arg0, arg1, arg2) end
+---@param modID string
+---@param assignTo string
+---@param otherTile string
+function __TileDepthTextureAssignmentManager:assignTileName(modID, assignTo, otherTile) end
 
----@param arg0 string
----@param arg1 string
-function __TileDepthTextureAssignmentManager:clearAssignedTileName(arg0, arg1) end
+---@param modID string
+---@param assignTo string
+function __TileDepthTextureAssignmentManager:clearAssignedTileName(modID, assignTo) end
 
----@param arg0 string
----@param arg1 string
+---@param modID string
+---@param tileName string
 ---@return string
-function __TileDepthTextureAssignmentManager:getAssignedTileName(arg0, arg1) end
+function __TileDepthTextureAssignmentManager:getAssignedTileName(modID, tileName) end
 
 function __TileDepthTextureAssignmentManager:init() end
 
 function __TileDepthTextureAssignmentManager:initGameData() end
 
----@param arg0 ChooseGameInfo.Mod
-function __TileDepthTextureAssignmentManager:initModData(arg0) end
+---@param mod ChooseGameInfo.Mod
+function __TileDepthTextureAssignmentManager:initModData(mod) end
 
 function __TileDepthTextureAssignmentManager:initSprites() end
 
----@param arg0 string
-function __TileDepthTextureAssignmentManager:save(arg0) end
+---@param modID string
+function __TileDepthTextureAssignmentManager:save(modID) end
 
 TileDepthTextureAssignmentManager = {}
 

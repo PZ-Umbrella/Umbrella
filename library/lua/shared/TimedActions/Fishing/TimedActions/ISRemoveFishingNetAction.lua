@@ -1,7 +1,7 @@
 ---@meta
 
 ---@class ISRemoveFishingNetAction : ISBaseTimedAction
----@field trap unknown
+---@field trap IsoObject?
 ISRemoveFishingNetAction = ISBaseTimedAction:derive("ISRemoveFishingNetAction")
 ISRemoveFishingNetAction.Type = "ISRemoveFishingNetAction"
 
@@ -22,5 +22,7 @@ function ISRemoveFishingNetAction:stop() end
 
 function ISRemoveFishingNetAction:update() end
 
+---@param character IsoPlayer
+---@param trap IsoObject?
 ---@return ISRemoveFishingNetAction
 function ISRemoveFishingNetAction:new(character, trap) end

@@ -3,17 +3,17 @@
 ---@class MashingLogic: Component
 local __MashingLogic = {}
 
----@param arg0 ObjectTooltip
----@param arg1 ObjectTooltip.Layout
-function __MashingLogic:DoTooltip(arg0, arg1) end
+---@param tooltipUI ObjectTooltip
+---@param layout ObjectTooltip.Layout
+function __MashingLogic:DoTooltip(tooltipUI, layout) end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return boolean
-function __MashingLogic:canStart(arg0) end
+function __MashingLogic:canStart(player) end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return CraftRecipeMonitor
-function __MashingLogic:debugCanStart(arg0) end
+function __MashingLogic:debugCanStart(player) end
 
 ---@return number
 function __MashingLogic:getBarrelConsumedAmount() end
@@ -27,9 +27,9 @@ function __MashingLogic:getElapsedTime() end
 ---@return ResourceFluid
 function __MashingLogic:getFluidBarrel() end
 
----@param arg0 List<Resource>
+---@param list List<Resource>
 ---@return List<Resource>
-function __MashingLogic:getInputResources(arg0) end
+function __MashingLogic:getInputResources(list) end
 
 ---@return string
 function __MashingLogic:getInputsGroupName() end
@@ -46,9 +46,9 @@ function __MashingLogic:getProgress() end
 ---@return string
 function __MashingLogic:getRecipeTagQuery() end
 
----@param arg0 List<CraftRecipe>
+---@param list List<CraftRecipe>
 ---@return List<CraftRecipe>
-function __MashingLogic:getRecipes(arg0) end
+function __MashingLogic:getRecipes(list) end
 
 ---@return IsoPlayer
 function __MashingLogic:getRequestingPlayer() end
@@ -71,30 +71,30 @@ function __MashingLogic:isStopRequested() end
 ---@return boolean
 function __MashingLogic:isValid() end
 
----@param arg0 IsoPlayer
-function __MashingLogic:sendStartRequest(arg0) end
+---@param player IsoPlayer
+function __MashingLogic:sendStartRequest(player) end
 
----@param arg0 IsoPlayer
-function __MashingLogic:sendStopRequest(arg0) end
+---@param player IsoPlayer
+function __MashingLogic:sendStopRequest(player) end
 
----@param arg0 number
-function __MashingLogic:setElapsedTime(arg0) end
+---@param time number
+function __MashingLogic:setElapsedTime(time) end
 
----@param arg0 number
-function __MashingLogic:setLastWorldAge(arg0) end
+---@param time number
+function __MashingLogic:setLastWorldAge(time) end
 
----@param arg0 string
-function __MashingLogic:setRecipeTagQuery(arg0) end
+---@param recipeTagQuery string
+function __MashingLogic:setRecipeTagQuery(recipeTagQuery) end
 
----@param arg0 IsoPlayer
-function __MashingLogic:start(arg0) end
+---@param player IsoPlayer
+function __MashingLogic:start(player) end
 
----@param arg0 IsoPlayer
-function __MashingLogic:stop(arg0) end
+---@param player IsoPlayer
+function __MashingLogic:stop(player) end
 
----@param arg0 IsoPlayer
----@param arg1 boolean
-function __MashingLogic:stop(arg0, arg1) end
+---@param player IsoPlayer
+---@param force boolean
+function __MashingLogic:stop(player, force) end
 
 MashingLogic = {}
 

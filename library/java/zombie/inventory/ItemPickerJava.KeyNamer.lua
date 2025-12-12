@@ -25,13 +25,13 @@ KeyNamer.rooms = nil
 
 function KeyNamer.clear() end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return string
-function KeyNamer.getName(arg0) end
+function KeyNamer.getName(square) end
 
----@param arg0 InventoryItem
----@param arg1 IsoGridSquare
-function KeyNamer.nameKey(arg0, arg1) end
+---@param item InventoryItem
+---@param square IsoGridSquare
+function KeyNamer.nameKey(item, square) end
 
 ---@return ItemPickerJava.KeyNamer
 function KeyNamer.new() end

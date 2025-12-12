@@ -25,9 +25,9 @@ function ClothingPatchFabricType.fromIndex(index) end
 ---@return Clothing.ClothingPatchFabricType
 function ClothingPatchFabricType.fromType(type) end
 
----@param arg0 string
+---@param name string
 ---@return Clothing.ClothingPatchFabricType
-function ClothingPatchFabricType.valueOf(arg0) end
+function ClothingPatchFabricType.valueOf(name) end
 
 ---Returns an array containing the constants of this enum class, in
 ---the order they are declared.

@@ -5,9 +5,9 @@ local __CraftRecipeManager = {}
 
 CraftRecipeManager = {}
 
----@param arg0 string
+---@param tagQueryString string
 ---@return string
-function CraftRecipeManager.FormatAndRegisterRecipeTagsQuery(arg0) end
+function CraftRecipeManager.FormatAndRegisterRecipeTagsQuery(tagQueryString) end
 
 function CraftRecipeManager.Init() end
 
@@ -20,115 +20,115 @@ function CraftRecipeManager.debugPrintTagManager() end
 ---@return ArrayList<string>
 function CraftRecipeManager.debugPrintTagManagerLines() end
 
----@param arg0 string
----@param arg1 List<CraftRecipe>
+---@param filterString string
+---@param listToPopulate List<CraftRecipe>
 ---@return List<CraftRecipe>
-function CraftRecipeManager.filterRecipeList(arg0, arg1) end
+function CraftRecipeManager.filterRecipeList(filterString, listToPopulate) end
 
----@param arg0 string
----@param arg1 List<CraftRecipe>
----@param arg2 List<CraftRecipe>
+---@param filterString string
+---@param listToPopulate List<CraftRecipe>
+---@param sourceList List<CraftRecipe>
 ---@return List<CraftRecipe>
-function CraftRecipeManager.filterRecipeList(arg0, arg1, arg2) end
+function CraftRecipeManager.filterRecipeList(filterString, listToPopulate, sourceList) end
 
----@param arg0 ArrayList<ItemContainer>
----@param arg1 ArrayList<InventoryItem>
+---@param containers ArrayList<ItemContainer>
+---@param items ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function CraftRecipeManager.getAllItemsFromContainers(arg0, arg1) end
+function CraftRecipeManager.getAllItemsFromContainers(containers, items) end
 
 ---@return List<string>
 function CraftRecipeManager.getAllRecipeTags() end
 
----@param arg0 CraftRecipe
----@param arg1 InventoryItem
+---@param recipe CraftRecipe
+---@param inventoryItem InventoryItem
 ---@return ArrayList<InputScript>
-function CraftRecipeManager.getAllValidInputScriptsForItem(arg0, arg1) end
+function CraftRecipeManager.getAllValidInputScriptsForItem(recipe, inventoryItem) end
 
----@param arg0 CraftRecipe
----@param arg1 ArrayList<InventoryItem>
----@param arg2 ArrayList<InventoryItem>
+---@param recipe CraftRecipe
+---@param sourceItems ArrayList<InventoryItem>
+---@param filteredItems ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function CraftRecipeManager.getAllValidItemsForRecipe(arg0, arg1, arg2) end
+function CraftRecipeManager.getAllValidItemsForRecipe(recipe, sourceItems, filteredItems) end
 
----@param arg0 CraftRecipe
----@param arg1 ArrayList<InventoryItem>
+---@param recipe CraftRecipe
+---@param allItems ArrayList<InventoryItem>
 ---@return integer
-function CraftRecipeManager.getAutoCraftCountItems(arg0, arg1) end
+function CraftRecipeManager.getAutoCraftCountItems(recipe, allItems) end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return CraftRecipeData
-function CraftRecipeManager.getCraftDataForPlayer(arg0) end
+function CraftRecipeManager.getCraftDataForPlayer(player) end
 
----@param arg0 string
+---@param category string
 ---@return List<CraftRecipe>
-function CraftRecipeManager.getRecipesForTag(arg0) end
+function CraftRecipeManager.getRecipesForTag(category) end
 
 ---@return List<string>
 function CraftRecipeManager.getTagGroups() end
 
----@param arg0 InventoryItem
----@param arg1 IsoGameCharacter
----@param arg2 ArrayList<ItemContainer>
+---@param item InventoryItem
+---@param chr IsoGameCharacter
+---@param containers ArrayList<ItemContainer>
 ---@return ArrayList<CraftRecipe>
-function CraftRecipeManager.getUniqueRecipeItems(arg0, arg1, arg2) end
+function CraftRecipeManager.getUniqueRecipeItems(item, chr, containers) end
 
----@param arg0 CraftRecipe
----@param arg1 InventoryItem
+---@param recipe CraftRecipe
+---@param inventoryItem InventoryItem
 ---@return InputScript
-function CraftRecipeManager.getValidInputScriptForItem(arg0, arg1) end
+function CraftRecipeManager.getValidInputScriptForItem(recipe, inventoryItem) end
 
----@param arg0 CraftRecipe
----@param arg1 IsoGameCharacter
+---@param recipe CraftRecipe
+---@param character IsoGameCharacter
 ---@return boolean
-function CraftRecipeManager.hasPlayerLearnedRecipe(arg0, arg1) end
+function CraftRecipeManager.hasPlayerLearnedRecipe(recipe, character) end
 
----@param arg0 CraftRecipe.RequiredSkill
----@param arg1 IsoGameCharacter
+---@param requiredSkill CraftRecipe.RequiredSkill
+---@param character IsoGameCharacter
 ---@return boolean
-function CraftRecipeManager.hasPlayerRequiredSkill(arg0, arg1) end
+function CraftRecipeManager.hasPlayerRequiredSkill(requiredSkill, character) end
 
----@param arg0 CraftRecipe
----@param arg1 InventoryItem
+---@param recipe CraftRecipe
+---@param inventoryItem InventoryItem
 ---@return boolean
-function CraftRecipeManager.isItemToolForRecipe(arg0, arg1) end
+function CraftRecipeManager.isItemToolForRecipe(recipe, inventoryItem) end
 
----@param arg0 InputScript
----@param arg1 InventoryItem
+---@param input InputScript
+---@param inventoryItem InventoryItem
 ---@return boolean
-function CraftRecipeManager.isItemValidForInputScript(arg0, arg1) end
+function CraftRecipeManager.isItemValidForInputScript(input, inventoryItem) end
 
----@param arg0 CraftRecipe
----@param arg1 InventoryItem
+---@param recipe CraftRecipe
+---@param inventoryItem InventoryItem
 ---@return boolean
-function CraftRecipeManager.isItemValidForRecipe(arg0, arg1) end
+function CraftRecipeManager.isItemValidForRecipe(recipe, inventoryItem) end
 
----@param arg0 CraftRecipe
----@param arg1 IsoGameCharacter
----@param arg2 CraftRecipeMonitor
----@param arg3 ArrayList<ItemContainer>
+---@param recipe CraftRecipe
+---@param character IsoGameCharacter
+---@param _m CraftRecipeMonitor
+---@param containers ArrayList<ItemContainer>
 ---@return boolean
-function CraftRecipeManager.isValidRecipeForCharacter(arg0, arg1, arg2, arg3) end
+function CraftRecipeManager.isValidRecipeForCharacter(recipe, character, _m, containers) end
 
----@param arg0 string
----@param arg1 List<CraftRecipe>
----@param arg2 boolean
+---@param tagQueryString string
+---@param listToPopulate List<CraftRecipe>
+---@param clearList boolean
 ---@return List<CraftRecipe>
-function CraftRecipeManager.populateRecipeList(arg0, arg1, arg2) end
+function CraftRecipeManager.populateRecipeList(tagQueryString, listToPopulate, clearList) end
 
----@param arg0 string
----@param arg1 List<CraftRecipe>
----@param arg2 List<CraftRecipe>
----@param arg3 boolean
+---@param tagQueryString string
+---@param listToPopulate List<CraftRecipe>
+---@param sourceList List<CraftRecipe>
+---@param clearList boolean
 ---@return List<CraftRecipe>
-function CraftRecipeManager.populateRecipeList(arg0, arg1, arg2, arg3) end
+function CraftRecipeManager.populateRecipeList(tagQueryString, listToPopulate, sourceList, clearList) end
 
----@param arg0 string
+---@param tagQueryString string
 ---@return List<CraftRecipe>
-function CraftRecipeManager.queryRecipes(arg0) end
+function CraftRecipeManager.queryRecipes(tagQueryString) end
 
----@param arg0 string
+---@param tagQueryString string
 ---@return string
-function CraftRecipeManager.sanitizeTagQuery(arg0) end
+function CraftRecipeManager.sanitizeTagQuery(tagQueryString) end
 
 ---@return CraftRecipeManager
 function CraftRecipeManager.new() end

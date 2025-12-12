@@ -3,19 +3,19 @@
 ---@class RVSPlonkies: RandomizedVehicleStoryBase
 local __RVSPlonkies = {}
 
----@param arg0 Zone
----@param arg1 IsoChunk
----@param arg2 boolean
+---@param zone Zone
+---@param chunk IsoChunk
+---@param debug boolean
 ---@return boolean
-function __RVSPlonkies:initVehicleStorySpawner(arg0, arg1, arg2) end
+function __RVSPlonkies:initVehicleStorySpawner(zone, chunk, debug) end
 
----@param arg0 Zone
----@param arg1 IsoChunk
-function __RVSPlonkies:randomizeVehicleStory(arg0, arg1) end
+---@param zone Zone
+---@param chunk IsoChunk
+function __RVSPlonkies:randomizeVehicleStory(zone, chunk) end
 
----@param arg0 VehicleStorySpawner
----@param arg1 VehicleStorySpawner.Element
-function __RVSPlonkies:spawnElement(arg0, arg1) end
+---@param spawner VehicleStorySpawner
+---@param element VehicleStorySpawner.Element
+function __RVSPlonkies:spawnElement(spawner, element) end
 
 RVSPlonkies = {}
 

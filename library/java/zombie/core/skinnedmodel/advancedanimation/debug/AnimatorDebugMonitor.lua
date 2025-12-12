@@ -56,8 +56,8 @@ function __AnimatorDebugMonitor:setFilter(index, b) end
 ---@param key string
 function __AnimatorDebugMonitor:setSelectedVariable(key) end
 
----@param arg0 IsoGameCharacter
-function __AnimatorDebugMonitor:setTarget(arg0) end
+---@param isoGameCharacter IsoGameCharacter
+function __AnimatorDebugMonitor:setTarget(isoGameCharacter) end
 
 ---@param chr IsoGameCharacter
 ---@param Layers kahlua.Array<AnimLayer>

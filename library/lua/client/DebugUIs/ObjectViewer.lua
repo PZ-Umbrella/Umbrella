@@ -2,7 +2,7 @@
 
 ---@class ObjectViewer : ISCollapsableWindow
 ---@field filter ISTextEntryBox
----@field history table
+---@field history table[]
 ---@field historyPrev ISButton
 ---@field obj unknown
 ---@field objectView ISScrollingListBox
@@ -34,6 +34,7 @@ function ObjectViewer:doDrawItem(y, item, alt) end
 
 function ObjectViewer:fill() end
 
+---@param list ArrayList
 function ObjectViewer:fillJavaList(list) end
 
 function ObjectViewer:historyPop() end

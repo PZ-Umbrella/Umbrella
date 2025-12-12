@@ -27,9 +27,9 @@ function __PlayerEmoteState:isSyncOnExit() end
 ---@return boolean
 function __PlayerEmoteState:isSyncOnSquare() end
 
----@param arg0 IsoGameCharacter
----@param arg1 State.Stage
-function __PlayerEmoteState:setParams(arg0, arg1) end
+---@param owner IsoGameCharacter
+---@param stage State.Stage
+function __PlayerEmoteState:setParams(owner, stage) end
 
 PlayerEmoteState = {}
 

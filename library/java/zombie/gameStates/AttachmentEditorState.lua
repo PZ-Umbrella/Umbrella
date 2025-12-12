@@ -36,23 +36,23 @@ AttachmentEditorState.instance = nil
 ---@return AttachmentEditorState
 function AttachmentEditorState.checkInstance() end
 
----@param arg0 string
+---@param fileName string
 ---@return ArrayList<string>
-function AttachmentEditorState.readScript(arg0) end
+function AttachmentEditorState.readScript(fileName) end
 
----@param arg0 ModelScript
-function AttachmentEditorState.readScriptNew(arg0) end
+---@param script ModelScript
+function AttachmentEditorState.readScriptNew(script) end
 
----@param arg0 string
----@param arg1 ArrayList<string>
----@param arg2 ModelScript
+---@param fileName string
+---@param tokens ArrayList<string>
+---@param modelScript ModelScript
 ---@return boolean
-function AttachmentEditorState.updateScript(arg0, arg1, arg2) end
+function AttachmentEditorState.updateScript(fileName, tokens, modelScript) end
 
----@param arg0 string
----@param arg1 ArrayList<string>
+---@param fileName string
+---@param tokens ArrayList<string>
 ---@return boolean
-function AttachmentEditorState.writeScript(arg0, arg1) end
+function AttachmentEditorState.writeScript(fileName, tokens) end
 
 ---@return AttachmentEditorState
 function AttachmentEditorState.new() end

@@ -3,8 +3,8 @@
 ---@class AnimalData
 local __AnimalData = {}
 
----@param arg0 IsoFeedingTrough
-function __AnimalData:callToTrough(arg0) end
+---@param trough IsoFeedingTrough
+function __AnimalData:callToTrough(trough) end
 
 ---@return boolean
 function __AnimalData:canBePregnant() end
@@ -15,16 +15,16 @@ function __AnimalData:canHaveBaby() end
 ---@return boolean
 function __AnimalData:canHaveMilk() end
 
----@param arg0 PZCalendar
----@param arg1 boolean
-function __AnimalData:checkEggs(arg0, arg1) end
+---@param realCal PZCalendar
+---@param meta boolean
+function __AnimalData:checkEggs(realCal, meta) end
 
 function __AnimalData:checkFertilizedTime() end
 
----@param arg0 boolean
----@param arg1 boolean
+---@param meta boolean
+---@param bForce boolean
 ---@return InventoryItem
-function __AnimalData:checkPoop(arg0, arg1) end
+function __AnimalData:checkPoop(meta, bForce) end
 
 function __AnimalData:checkStages() end
 
@@ -32,21 +32,21 @@ function __AnimalData:drink() end
 
 function __AnimalData:drinkFromGround() end
 
----@param arg0 boolean
+---@param meta boolean
 ---@return InventoryItem
-function __AnimalData:dropFeather(arg0) end
+function __AnimalData:dropFeather(meta) end
 
 function __AnimalData:eat() end
 
----@param arg0 InventoryItem
-function __AnimalData:eatFood(arg0) end
+---@param item InventoryItem
+function __AnimalData:eatFood(item) end
 
----@param arg0 InventoryItem
----@param arg1 boolean
-function __AnimalData:eatItem(arg0, arg1) end
+---@param item InventoryItem
+---@param onground boolean
+function __AnimalData:eatItem(item, onground) end
 
----@param arg0 PZCalendar
-function __AnimalData:findFemaleToInseminate(arg0) end
+---@param realCal PZCalendar
+function __AnimalData:findFemaleToInseminate(realCal) end
 
 ---@return integer
 function __AnimalData:getAge() end
@@ -54,9 +54,9 @@ function __AnimalData:getAge() end
 ---@return number
 function __AnimalData:getAgeGrowModifier() end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return string
-function __AnimalData:getAgeString(arg0) end
+function __AnimalData:getAgeString(chr) end
 
 ---@return IsoPlayer
 function __AnimalData:getAttachedPlayer() end
@@ -91,9 +91,9 @@ function __AnimalData:getGeriatricPercentage() end
 ---@return ArrayList<AnimalGrowStage>
 function __AnimalData:getGrowStage() end
 
----@param arg0 number
+---@param divide number
 ---@return number
-function __AnimalData:getHealthLoss(arg0) end
+function __AnimalData:getHealthLoss(divide) end
 
 ---@return integer
 function __AnimalData:getHutchPosition() end
@@ -101,9 +101,9 @@ function __AnimalData:getHutchPosition() end
 ---@return string
 function __AnimalData:getInventoryIconTextureName() end
 
----@param arg0 PZCalendar
+---@param realCal PZCalendar
 ---@return integer
-function __AnimalData:getLastImpregnatePeriod(arg0) end
+function __AnimalData:getLastImpregnatePeriod(realCal) end
 
 ---@return string
 function __AnimalData:getLastPregnancyPeriod() end
@@ -178,17 +178,17 @@ function __AnimalData:getWoolInc() end
 ---@return number
 function __AnimalData:getWoolQuantity() end
 
----@param arg0 string
-function __AnimalData:grow(arg0) end
+---@param newtype string
+function __AnimalData:grow(newtype) end
 
----@param arg0 boolean
-function __AnimalData:growUp(arg0) end
+---@param meta boolean
+function __AnimalData:growUp(meta) end
 
 ---@return boolean
 function __AnimalData:haveLayingEggPeriod() end
 
----@param arg0 boolean
-function __AnimalData:hourGrow(arg0) end
+---@param meta boolean
+function __AnimalData:hourGrow(meta) end
 
 function __AnimalData:init() end
 
@@ -204,9 +204,9 @@ function __AnimalData:isFemale() end
 ---@return boolean
 function __AnimalData:isFertilized() end
 
----@param arg0 PZCalendar
+---@param cal PZCalendar
 ---@return boolean
-function __AnimalData:isInLayingEggPeriod(arg0) end
+function __AnimalData:isInLayingEggPeriod(cal) end
 
 ---@return boolean
 function __AnimalData:isPregnant() end
@@ -216,74 +216,74 @@ function __AnimalData:reduceHealthDueToMilk() end
 
 function __AnimalData:resetEatingCheck() end
 
----@param arg0 integer
-function __AnimalData:setAge(arg0) end
+---@param age integer
+function __AnimalData:setAge(age) end
 
----@param arg0 IsoPlayer
-function __AnimalData:setAttachedPlayer(arg0) end
+---@param chr IsoPlayer
+function __AnimalData:setAttachedPlayer(chr) end
 
----@param arg0 IsoObject
-function __AnimalData:setAttachedTree(arg0) end
+---@param tree IsoObject
+function __AnimalData:setAttachedTree(tree) end
 
----@param arg0 AnimalBreed
-function __AnimalData:setBreed(arg0) end
+---@param breed AnimalBreed
+function __AnimalData:setBreed(breed) end
 
----@param arg0 boolean
-function __AnimalData:setCanHaveMilk(arg0) end
+---@param canHaveMilk boolean
+function __AnimalData:setCanHaveMilk(canHaveMilk) end
 
----@param arg0 boolean
-function __AnimalData:setFertilized(arg0) end
+---@param b boolean
+function __AnimalData:setFertilized(b) end
 
----@param arg0 integer
+---@param period integer
 ---@return integer
-function __AnimalData:setFertilizedTime(arg0) end
+function __AnimalData:setFertilizedTime(period) end
 
----@param arg0 integer
-function __AnimalData:setHutchPosition(arg0) end
+---@param hutchPosition integer
+function __AnimalData:setHutchPosition(hutchPosition) end
 
 ---@param maleGenome HashMap<string, AnimalGene>
 function __AnimalData:setMaleGenome(maleGenome) end
 
----@param arg0 number
-function __AnimalData:setMaxMilkActual(arg0) end
+---@param maxMilkActual number
+function __AnimalData:setMaxMilkActual(maxMilkActual) end
 
----@param arg0 number
-function __AnimalData:setMilkQuantity(arg0) end
+---@param milkQty number
+function __AnimalData:setMilkQuantity(milkQty) end
 
----@param arg0 integer
-function __AnimalData:setPreferredHutchPosition(arg0) end
+---@param preferredHutchPosition integer
+function __AnimalData:setPreferredHutchPosition(preferredHutchPosition) end
 
----@param arg0 integer
-function __AnimalData:setPregnancyTime(arg0) end
+---@param period integer
+function __AnimalData:setPregnancyTime(period) end
 
----@param arg0 boolean
-function __AnimalData:setPregnant(arg0) end
+---@param pregnant boolean
+function __AnimalData:setPregnant(pregnant) end
 
----@param arg0 number
-function __AnimalData:setSize(arg0) end
+---@param size number
+function __AnimalData:setSize(size) end
 
----@param arg0 number
-function __AnimalData:setSizeForced(arg0) end
+---@param size number
+function __AnimalData:setSizeForced(size) end
 
----@param arg0 number
-function __AnimalData:setWeight(arg0) end
+---@param weight number
+function __AnimalData:setWeight(weight) end
 
----@param arg0 number
----@param arg1 boolean
-function __AnimalData:setWoolQuantity(arg0, arg1) end
+---@param woolQty number
+---@param force boolean
+function __AnimalData:setWoolQuantity(woolQty, force) end
 
----@param arg0 number
-function __AnimalData:setWoolQuantity(arg0) end
+---@param woolQty number
+function __AnimalData:setWoolQuantity(woolQty) end
 
----@param arg0 PZCalendar
-function __AnimalData:tryInseminateInMeta(arg0) end
+---@param realCal PZCalendar
+function __AnimalData:tryInseminateInMeta(realCal) end
 
 function __AnimalData:update() end
 
 function __AnimalData:updateHealth() end
 
----@param arg0 boolean
-function __AnimalData:updateHungerAndThirst(arg0) end
+---@param fromMeta boolean
+function __AnimalData:updateHungerAndThirst(fromMeta) end
 
 function __AnimalData:updateLastPregnancyTime() end
 
@@ -303,13 +303,13 @@ AnimalData.ONE_HOUR_MILLISECONDS = nil
 ---@type integer
 AnimalData.ONE_WEEK_MILLISECONDS = nil
 
----@param arg0 ArrayList<IsoFeedingTrough>
-function AnimalData.shuffleList(arg0) end
+---@param a ArrayList<IsoFeedingTrough>
+function AnimalData.shuffleList(a) end
 
----@param arg0 IsoAnimal
----@param arg1 AnimalBreed
+---@param parent IsoAnimal
+---@param breed AnimalBreed
 ---@return AnimalData
-function AnimalData.new(arg0, arg1) end
+function AnimalData.new(parent, breed) end
 
 ---@type Class<AnimalData>
 AnimalData.class = nil

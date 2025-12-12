@@ -129,10 +129,13 @@ function MultiplayerUI:instantiate() end
 
 function MultiplayerUI:onChangeFilter() end
 
+---@param button ISButton
 function MultiplayerUI:onClickSort(button) end
 
+---@param button ISButton
 function MultiplayerUI:onDeleteAccount(button, account) end
 
+---@param button ISButton
 function MultiplayerUI:onDeleteServer(button, server) end
 
 function MultiplayerUI:onDoubleClickInternetList(server) end
@@ -141,10 +144,12 @@ function MultiplayerUI:onDoubleClickInternetList(server) end
 ---@param y number
 function MultiplayerUI:onMouseDown_Tabs(x, y) end
 
+---@param button ISButton
 ---@param x number
 ---@param y number
 function MultiplayerUI:onOptionMouseDown(button, x, y) end
 
+---@param button ISButton
 ---@param x number
 ---@param y number
 function MultiplayerUI:onPressButtonOnAccountList(button, x, y) end

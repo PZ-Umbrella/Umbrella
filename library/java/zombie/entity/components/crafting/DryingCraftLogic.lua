@@ -3,20 +3,20 @@
 ---@class DryingCraftLogic: CraftLogic
 local __DryingCraftLogic = {}
 
----@param arg0 ObjectTooltip.Layout
----@param arg1 Resource
----@param arg2 CraftRecipeData
-function __DryingCraftLogic:doProgressTooltip(arg0, arg1, arg2) end
+---@param layout ObjectTooltip.Layout
+---@param resource Resource
+---@param craftRecipeData CraftRecipeData
+function __DryingCraftLogic:doProgressTooltip(layout, resource, craftRecipeData) end
 
----@param arg0 InventoryItem
----@param arg1 CraftRecipeData
+---@param item InventoryItem
+---@param craftRecipeData CraftRecipeData
 ---@return ArrayList<Texture>
-function __DryingCraftLogic:getStatusIconsForInputItem(arg0, arg1) end
+function __DryingCraftLogic:getStatusIconsForInputItem(item, craftRecipeData) end
 
 function __DryingCraftLogic:onStart() end
 
----@param arg0 CraftRecipeData
-function __DryingCraftLogic:onUpdate(arg0) end
+---@param craftRecipeData CraftRecipeData
+function __DryingCraftLogic:onUpdate(craftRecipeData) end
 
 DryingCraftLogic = {}
 

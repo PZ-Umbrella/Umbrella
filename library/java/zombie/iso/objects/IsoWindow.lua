@@ -62,10 +62,10 @@ function __IsoWindow:addToWorld() end
 ---@return boolean
 function __IsoWindow:canAddSheetRope() end
 
----@param arg0 IsoGameCharacter
----@param arg1 HandWeapon
+---@param isoGameCharacter IsoGameCharacter
+---@param handWeapon HandWeapon
 ---@return boolean
-function __IsoWindow:canAttackBypassIsoBarricade(arg0, arg1) end
+function __IsoWindow:canAttackBypassIsoBarricade(isoGameCharacter, handWeapon) end
 
 ---@param chr IsoGameCharacter
 ---@return boolean
@@ -246,8 +246,8 @@ function __IsoWindow:smashWindow(bRemote) end
 
 function __IsoWindow:smashWindow() end
 
----@param arg0 ByteBuffer
-function __IsoWindow:syncIsoObjectReceive(arg0) end
+---@param bb ByteBuffer
+function __IsoWindow:syncIsoObjectReceive(bb) end
 
 ---@param b ByteBufferWriter
 function __IsoWindow:syncIsoObjectSend(b) end

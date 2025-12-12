@@ -62,18 +62,18 @@ function __IsoDoor:canAddCurtain() end
 ---@return boolean
 function __IsoDoor:canClimbOver(chr) end
 
----@param arg0 IsoDoor
-function __IsoDoor:changeSprite(arg0) end
+---@param door IsoDoor
+function __IsoDoor:changeSprite(door) end
 
----@param arg0 integer
-function __IsoDoor:checkKeyHighlight(arg0) end
+---@param playerIndex integer
+function __IsoDoor:checkKeyHighlight(playerIndex) end
 
 ---@return integer
 function __IsoDoor:checkKeyId() end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return boolean
-function __IsoDoor:couldBeOpen(arg0) end
+function __IsoDoor:couldBeOpen(chr) end
 
 function __IsoDoor:destroy() end
 
@@ -132,9 +132,9 @@ function __IsoDoor:getOtherSideOfDoor(chr) end
 ---@return IsoObject
 function __IsoDoor:getRenderEffectMaster() end
 
----@param arg0 integer
+---@param index integer
 ---@return IsoObject
-function __IsoDoor:getRenderEffectObjectByIndex(arg0) end
+function __IsoDoor:getRenderEffectObjectByIndex(index) end
 
 ---@return integer
 function __IsoDoor:getRenderEffectObjectCount() end
@@ -237,16 +237,16 @@ function __IsoDoor:removeSheet(chr) end
 ---@param shader Shader
 function __IsoDoor:render(x, y, z, info, bDoAttached, bWallLightingPass, shader) end
 
----@param arg0 IsoDirections
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 ColorInfo
----@param arg5 boolean
----@param arg6 boolean
----@param arg7 Shader
----@param arg8 Consumer<TextureDraw>
-function __IsoDoor:renderWallTile(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+---@param dir IsoDirections
+---@param x number
+---@param y number
+---@param z number
+---@param col ColorInfo
+---@param bDoAttached boolean
+---@param bWallLightingPass boolean
+---@param shader Shader
+---@param texdModifier Consumer<TextureDraw>
+function __IsoDoor:renderWallTile(dir, x, y, z, col, bDoAttached, bWallLightingPass, shader, texdModifier) end
 
 ---@param output ByteBuffer
 ---@param IS_DEBUG_SAVE boolean
@@ -322,9 +322,9 @@ function IsoDoor.getDoubleDoorIndex(oneOfFour) end
 ---@return IsoObject
 function IsoDoor.getDoubleDoorObject(oneOfFour, index) end
 
----@param arg0 integer
+---@param ddIndex integer
 ---@return integer
-function IsoDoor.getDoubleDoorPartnerIndex(arg0) end
+function IsoDoor.getDoubleDoorPartnerIndex(ddIndex) end
 
 ---@param oneOfThree IsoObject
 ---@return IsoObject

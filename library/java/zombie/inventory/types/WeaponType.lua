@@ -55,15 +55,15 @@ function WeaponType.getWeaponType(weapon) end
 ---@return WeaponType
 function WeaponType.getWeaponType(chr) end
 
----@param arg0 IsoGameCharacter
----@param arg1 InventoryItem
----@param arg2 InventoryItem
+---@param chr IsoGameCharacter
+---@param inv1 InventoryItem
+---@param inv2 InventoryItem
 ---@return WeaponType
-function WeaponType.getWeaponType(arg0, arg1, arg2) end
+function WeaponType.getWeaponType(chr, inv1, inv2) end
 
----@param arg0 string
+---@param name string
 ---@return WeaponType
-function WeaponType.valueOf(arg0) end
+function WeaponType.valueOf(name) end
 
 ---Returns an array containing the constants of this enum class, in
 ---the order they are declared.

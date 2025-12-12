@@ -3,13 +3,13 @@
 ---@class FurnaceLogic: Component
 local __FurnaceLogic = {}
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return boolean
-function __FurnaceLogic:canStart(arg0) end
+function __FurnaceLogic:canStart(player) end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return CraftRecipeMonitor
-function __FurnaceLogic:debugCanStart(arg0) end
+function __FurnaceLogic:debugCanStart(player) end
 
 ---@return CraftRecipe
 function __FurnaceLogic:getCurrentRecipe() end
@@ -32,9 +32,9 @@ function __FurnaceLogic:getFuelOutputsGroupName() end
 ---@return string
 function __FurnaceLogic:getFuelRecipeTagQuery() end
 
----@param arg0 ArrayList<CraftRecipe>
+---@param list ArrayList<CraftRecipe>
 ---@return ArrayList<CraftRecipe>
-function __FurnaceLogic:getFuelRecipes(arg0) end
+function __FurnaceLogic:getFuelRecipes(list) end
 
 ---@return List<Resource>
 function __FurnaceLogic:getFurnaceInputResources() end
@@ -51,17 +51,17 @@ function __FurnaceLogic:getFurnaceOutputsGroupName() end
 ---@return string
 function __FurnaceLogic:getFurnaceRecipeTagQuery() end
 
----@param arg0 ArrayList<CraftRecipe>
+---@param list ArrayList<CraftRecipe>
 ---@return ArrayList<CraftRecipe>
-function __FurnaceLogic:getFurnaceRecipes(arg0) end
+function __FurnaceLogic:getFurnaceRecipes(list) end
 
----@param arg0 integer
+---@param index integer
 ---@return ResourceItem
-function __FurnaceLogic:getInputSlotResource(arg0) end
+function __FurnaceLogic:getInputSlotResource(index) end
 
----@param arg0 integer
+---@param index integer
 ---@return ResourceItem
-function __FurnaceLogic:getOutputSlotResource(arg0) end
+function __FurnaceLogic:getOutputSlotResource(index) end
 
 ---@return CraftRecipe
 function __FurnaceLogic:getPossibleRecipe() end
@@ -72,9 +72,9 @@ function __FurnaceLogic:getProgress() end
 ---@return IsoPlayer
 function __FurnaceLogic:getRequestingPlayer() end
 
----@param arg0 integer
+---@param index integer
 ---@return FurnaceLogic.FurnaceSlot
-function __FurnaceLogic:getSlot(arg0) end
+function __FurnaceLogic:getSlot(index) end
 
 ---@return integer
 function __FurnaceLogic:getSlotSize() end
@@ -100,27 +100,27 @@ function __FurnaceLogic:isStopRequested() end
 ---@return boolean
 function __FurnaceLogic:isValid() end
 
----@param arg0 IsoPlayer
-function __FurnaceLogic:sendStartRequest(arg0) end
+---@param player IsoPlayer
+function __FurnaceLogic:sendStartRequest(player) end
 
----@param arg0 IsoPlayer
-function __FurnaceLogic:sendStopRequest(arg0) end
+---@param player IsoPlayer
+function __FurnaceLogic:sendStopRequest(player) end
 
----@param arg0 string
-function __FurnaceLogic:setFuelRecipeTagQuery(arg0) end
+---@param recipeTagQuery string
+function __FurnaceLogic:setFuelRecipeTagQuery(recipeTagQuery) end
 
----@param arg0 string
-function __FurnaceLogic:setFurnaceRecipeTagQuery(arg0) end
+---@param recipeTagQuery string
+function __FurnaceLogic:setFurnaceRecipeTagQuery(recipeTagQuery) end
 
----@param arg0 IsoPlayer
-function __FurnaceLogic:start(arg0) end
+---@param player IsoPlayer
+function __FurnaceLogic:start(player) end
 
----@param arg0 IsoPlayer
-function __FurnaceLogic:stop(arg0) end
+---@param player IsoPlayer
+function __FurnaceLogic:stop(player) end
 
----@param arg0 IsoPlayer
----@param arg1 boolean
-function __FurnaceLogic:stop(arg0, arg1) end
+---@param player IsoPlayer
+---@param force boolean
+function __FurnaceLogic:stop(player, force) end
 
 FurnaceLogic = {}
 

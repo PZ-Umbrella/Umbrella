@@ -8,8 +8,8 @@ function __IsoMannequin:addToWorld() end
 ---@param removedItem InventoryItem
 function __IsoMannequin:checkClothing(removedItem) end
 
----@param arg0 integer
-function __IsoMannequin:checkRenderDirection(arg0) end
+---@param playerIndex integer
+function __IsoMannequin:checkRenderDirection(playerIndex) end
 
 ---@return string
 function __IsoMannequin:getAnimSetName() end
@@ -87,10 +87,10 @@ function __IsoMannequin:render(x, y, z, col, bDoChild, bWallLightingPass, shader
 ---@param bDoAttached boolean
 function __IsoMannequin:renderFxMask(x, y, z, bDoAttached) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
-function __IsoMannequin:renderShadow(arg0, arg1, arg2) end
+---@param x number
+---@param y number
+---@param z number
+function __IsoMannequin:renderShadow(x, y, z) end
 
 ---@param newDir IsoDirections
 function __IsoMannequin:rotate(newDir) end

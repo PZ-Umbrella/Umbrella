@@ -3,9 +3,9 @@
 ---@class ItemKey: Record
 local __ItemKey = {}
 
----@param arg0 any
+---@param o any
 ---@return boolean
-function __ItemKey:equals(arg0) end
+function __ItemKey:equals(o) end
 
 ---@return integer
 function __ItemKey:hashCode() end
@@ -25,9 +25,9 @@ ItemKey = {}
 ---@return ItemKey
 function ItemKey.getByItemKeyValue(name) end
 
----@param arg0 string
+---@param name string
 ---@return Optional<ItemKey>
-function ItemKey.getByName(arg0) end
+function ItemKey.getByName(name) end
 
 ---@param id string
 ---@param itemType ItemType

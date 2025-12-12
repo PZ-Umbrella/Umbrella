@@ -3,15 +3,15 @@
 ---@class IsoCompost: IsoObject, Thumpable, IHasHealth
 local __IsoCompost = {}
 
----@param arg0 number
-function __IsoCompost:Damage(arg0) end
+---@param amount number
+function __IsoCompost:Damage(amount) end
 
----@param arg0 IsoMovingObject
-function __IsoCompost:Thump(arg0) end
+---@param thumper IsoMovingObject
+function __IsoCompost:Thump(thumper) end
 
----@param arg0 IsoGameCharacter
----@param arg1 HandWeapon
-function __IsoCompost:WeaponHit(arg0, arg1) end
+---@param owner IsoGameCharacter
+---@param weapon HandWeapon
+function __IsoCompost:WeaponHit(owner, weapon) end
 
 function __IsoCompost:addToWorld() end
 
@@ -51,11 +51,11 @@ function __IsoCompost:save(output, IS_DEBUG_SAVE) end
 ---@param compost number
 function __IsoCompost:setCompost(compost) end
 
----@param arg0 integer
-function __IsoCompost:setHealth(arg0) end
+---@param Health integer
+function __IsoCompost:setHealth(Health) end
 
----@param arg0 integer
-function __IsoCompost:setMaxHealth(arg0) end
+---@param maxHealth integer
+function __IsoCompost:setMaxHealth(maxHealth) end
 
 function __IsoCompost:sync() end
 
@@ -71,17 +71,17 @@ IsoCompost = {}
 ---@return IsoCompost
 function IsoCompost.new(cell) end
 
----@param arg0 IsoCell
----@param arg1 IsoGridSquare
----@param arg2 string
+---@param cell IsoCell
+---@param sq IsoGridSquare
+---@param sprite string
 ---@return IsoCompost
-function IsoCompost.new(arg0, arg1, arg2) end
+function IsoCompost.new(cell, sq, sprite) end
 
----@param arg0 IsoCell
----@param arg1 IsoGridSquare
----@param arg2 IsoSprite
+---@param cell IsoCell
+---@param sq IsoGridSquare
+---@param sprite IsoSprite
 ---@return IsoCompost
-function IsoCompost.new(arg0, arg1, arg2) end
+function IsoCompost.new(cell, sq, sprite) end
 
 ---@type Class<IsoCompost>
 IsoCompost.class = nil

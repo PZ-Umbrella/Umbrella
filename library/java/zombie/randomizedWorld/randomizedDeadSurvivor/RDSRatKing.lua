@@ -3,13 +3,13 @@
 ---@class RDSRatKing: RandomizedDeadSurvivorBase
 local __RDSRatKing = {}
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param def BuildingDef
+---@param force boolean
 ---@return boolean
-function __RDSRatKing:isValid(arg0, arg1) end
+function __RDSRatKing:isValid(def, force) end
 
----@param arg0 BuildingDef
-function __RDSRatKing:randomizeDeadSurvivor(arg0) end
+---@param def BuildingDef
+function __RDSRatKing:randomizeDeadSurvivor(def) end
 
 RDSRatKing = {}
 

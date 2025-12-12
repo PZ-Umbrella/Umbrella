@@ -3,9 +3,9 @@
 ---@class AnimalInventoryItem: InventoryItem
 local __AnimalInventoryItem = {}
 
----@param arg0 ObjectTooltip
----@param arg1 ObjectTooltip.Layout
-function __AnimalInventoryItem:DoTooltip(arg0, arg1) end
+---@param tooltipUI ObjectTooltip
+---@param layout ObjectTooltip.Layout
+function __AnimalInventoryItem:DoTooltip(tooltipUI, layout) end
 
 ---@return boolean
 function __AnimalInventoryItem:finishupdate() end
@@ -18,16 +18,16 @@ function __AnimalInventoryItem:getCategory() end
 
 function __AnimalInventoryItem:initAnimalData() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __AnimalInventoryItem:load(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __AnimalInventoryItem:load(input, WorldVersion) end
 
----@param arg0 ByteBuffer
----@param arg1 boolean
-function __AnimalInventoryItem:save(arg0, arg1) end
+---@param output ByteBuffer
+---@param net boolean
+function __AnimalInventoryItem:save(output, net) end
 
----@param arg0 IsoAnimal
-function __AnimalInventoryItem:setAnimal(arg0) end
+---@param animal IsoAnimal
+function __AnimalInventoryItem:setAnimal(animal) end
 
 ---@return boolean
 function __AnimalInventoryItem:shouldUpdateInWorld() end
@@ -36,19 +36,19 @@ function __AnimalInventoryItem:update() end
 
 AnimalInventoryItem = {}
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
----@param arg3 string
+---@param module string
+---@param name string
+---@param type string
+---@param tex string
 ---@return AnimalInventoryItem
-function AnimalInventoryItem.new(arg0, arg1, arg2, arg3) end
+function AnimalInventoryItem.new(module, name, type, tex) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
----@param arg3 Item
+---@param module string
+---@param name string
+---@param type string
+---@param item Item
 ---@return AnimalInventoryItem
-function AnimalInventoryItem.new(arg0, arg1, arg2, arg3) end
+function AnimalInventoryItem.new(module, name, type, item) end
 
 ---@type Class<AnimalInventoryItem>
 AnimalInventoryItem.class = nil

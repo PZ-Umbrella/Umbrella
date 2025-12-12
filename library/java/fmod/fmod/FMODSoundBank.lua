@@ -3,25 +3,25 @@
 ---@class FMODSoundBank: BaseSoundBank
 local __FMODSoundBank = {}
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
----@param arg3 string
----@param arg4 string
-function __FMODSoundBank:addFootstep(arg0, arg1, arg2, arg3, arg4) end
+---@param alias string
+---@param grass string
+---@param wood string
+---@param concrete string
+---@param upstairs string
+function __FMODSoundBank:addFootstep(alias, grass, wood, concrete, upstairs) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 number
-function __FMODSoundBank:addVoice(arg0, arg1, arg2) end
+---@param alias string
+---@param sound string
+---@param priority number
+function __FMODSoundBank:addVoice(alias, sound, priority) end
 
----@param arg0 string
+---@param alias string
 ---@return FMODFootstep
-function __FMODSoundBank:getFootstep(arg0) end
+function __FMODSoundBank:getFootstep(alias) end
 
----@param arg0 string
+---@param alias string
 ---@return FMODVoice
-function __FMODSoundBank:getVoice(arg0) end
+function __FMODSoundBank:getVoice(alias) end
 
 FMODSoundBank = {}
 

@@ -3,8 +3,8 @@
 ---@class RDSDevouredByRats: RandomizedDeadSurvivorBase
 local __RDSDevouredByRats = {}
 
----@param arg0 BuildingDef
-function __RDSDevouredByRats:randomizeDeadSurvivor(arg0) end
+---@param def BuildingDef
+function __RDSDevouredByRats:randomizeDeadSurvivor(def) end
 
 RDSDevouredByRats = {}
 

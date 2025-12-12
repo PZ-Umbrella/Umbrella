@@ -32,7 +32,7 @@ ISVehicleMechanics = ISCollapsableWindow:derive("ISVehicleMechanics")
 ISVehicleMechanics.Type = "ISVehicleMechanics"
 ISVehicleMechanics.alphaOverlay = 1
 ISVehicleMechanics.alphaOverlayInc = true
-ISVehicleMechanics.cheat = getDebug()
+ISVehicleMechanics.cheat = false
 ISVehicleMechanics.ghs = "<GHC>"
 ISVehicleMechanics.bhs = "<BHC>"
 

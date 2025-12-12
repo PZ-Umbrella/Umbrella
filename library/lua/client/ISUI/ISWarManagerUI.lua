@@ -32,6 +32,7 @@ function ISWarManagerUI:drawDatas(y, item, alt) end
 ---@param g number
 ---@param b number
 ---@param a number
+---@param font UIFont
 function ISWarManagerUI:drawTextRecordWidth(text, x, y, r, g, b, a, font) end
 
 function ISWarManagerUI:initialise() end

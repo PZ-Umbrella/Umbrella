@@ -50,18 +50,18 @@ function __IsoZombie:InitSpritePartsZombie() end
 ---@param desc SurvivorDesc
 function __IsoZombie:InitSpritePartsZombie(desc) end
 
----@param arg0 HandWeapon
----@param arg1 IsoGameCharacter
----@param arg2 boolean
-function __IsoZombie:Kill(arg0, arg1, arg2) end
+---@param handWeapon HandWeapon
+---@param killer IsoGameCharacter
+---@param bGory boolean
+function __IsoZombie:Kill(handWeapon, killer, bGory) end
 
 ---@param killer IsoGameCharacter
 ---@param bGory boolean
 function __IsoZombie:Kill(killer, bGory) end
 
----@param arg0 HandWeapon
----@param arg1 IsoGameCharacter
-function __IsoZombie:Kill(arg0, arg1) end
+---@param handWeapon HandWeapon
+---@param killer IsoGameCharacter
+function __IsoZombie:Kill(handWeapon, killer) end
 
 ---@param killer IsoGameCharacter
 function __IsoZombie:Kill(killer) end
@@ -128,9 +128,9 @@ function __IsoZombie:calcHitDir(wielder, weapon, out) end
 ---@return boolean
 function __IsoZombie:canBeDeletedUnnoticed(minDistance) end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return boolean
-function __IsoZombie:canSeeHeadSquare(arg0) end
+function __IsoZombie:canSeeHeadSquare(player) end
 
 ---@return boolean
 function __IsoZombie:cantBite() end
@@ -146,14 +146,14 @@ function __IsoZombie:clothingItemChanged(itemGuid) end
 ---@param obj IsoObject
 function __IsoZombie:collideWith(obj) end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return boolean
-function __IsoZombie:couldSeeHeadSquare(arg0) end
+function __IsoZombie:couldSeeHeadSquare(player) end
 
 function __IsoZombie:doZombieSpeed() end
 
----@param arg0 integer
-function __IsoZombie:doZombieSpeed(arg0) end
+---@param zombieSpeed integer
+function __IsoZombie:doZombieSpeed(zombieSpeed) end
 
 ---@param itemGUID string
 function __IsoZombie:dressInClothingItem(itemGUID) end
@@ -188,9 +188,9 @@ function __IsoZombie:getEatSpeed() end
 ---@return number
 function __IsoZombie:getFootstepVolume() end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return IsoGridSquare
-function __IsoZombie:getHeadSquare(arg0) end
+function __IsoZombie:getHeadSquare(player) end
 
 ---@return integer
 function __IsoZombie:getHitHeadWhileOnFloor() end
@@ -436,11 +436,11 @@ function __IsoZombie:load(input, WorldVersion, IS_DEBUG_SAVE) end
 ---@param binactive boolean
 function __IsoZombie:makeInactive(binactive) end
 
----@param arg0 HandWeapon
----@param arg1 IsoGameCharacter
----@param arg2 boolean
+---@param in_weapon HandWeapon
+---@param in_wielder IsoGameCharacter
+---@param in_isGory boolean
 ---@return boolean
-function __IsoZombie:onDeath_ShouldDoSplatterAndSounds(arg0, arg1, arg2) end
+function __IsoZombie:onDeath_ShouldDoSplatterAndSounds(in_weapon, in_wielder, in_isGory) end
 
 function __IsoZombie:onMouseLeftClick() end
 
@@ -487,11 +487,11 @@ function __IsoZombie:setAlwaysKnockedDown(alwaysKnockedDown) end
 
 function __IsoZombie:setAsSurvivor() end
 
----@param arg0 boolean
-function __IsoZombie:setAttackDidDamage(arg0) end
+---@param in_attackDidDamage boolean
+function __IsoZombie:setAttackDidDamage(in_attackDidDamage) end
 
----@param arg0 string
-function __IsoZombie:setAttackOutcome(arg0) end
+---@param in_attackOutcome string
+function __IsoZombie:setAttackOutcome(in_attackOutcome) end
 
 ---@param crawler boolean
 function __IsoZombie:setBecomeCrawler(crawler) end
@@ -559,11 +559,11 @@ function __IsoZombie:setNoTeeth(noTeeth) end
 ---@param onlyJawStab boolean
 function __IsoZombie:setOnlyJawStab(onlyJawStab) end
 
----@param arg0 UdpConnection
-function __IsoZombie:setOwner(arg0) end
+---@param connection UdpConnection
+function __IsoZombie:setOwner(connection) end
 
----@param arg0 IsoPlayer
-function __IsoZombie:setOwnerPlayer(arg0) end
+---@param player IsoPlayer
+function __IsoZombie:setOwnerPlayer(player) end
 
 ---@param playerAttackPosition string
 function __IsoZombie:setPlayerAttackPosition(playerAttackPosition) end
@@ -571,8 +571,8 @@ function __IsoZombie:setPlayerAttackPosition(playerAttackPosition) end
 ---@param reanimate boolean
 function __IsoZombie:setReanimate(reanimate) end
 
----@param arg0 boolean
-function __IsoZombie:setReanimatedForGrappleOnly(arg0) end
+---@param in_val boolean
+function __IsoZombie:setReanimatedForGrappleOnly(in_val) end
 
 ---@param reanimated boolean
 function __IsoZombie:setReanimatedPlayer(reanimated) end
@@ -633,21 +633,21 @@ function __IsoZombie:shouldDressInRandomOutfit() end
 ---@return boolean
 function __IsoZombie:shouldGetUpFromCrawl() end
 
----@param arg0 boolean
+---@param allowBandits boolean
 ---@return boolean
-function __IsoZombie:shouldZombieHaveKey(arg0) end
+function __IsoZombie:shouldZombieHaveKey(allowBandits) end
 
 ---@param other IsoMovingObject
 ---@param bForced boolean
 function __IsoZombie:spotted(other, bForced) end
 
----@param arg0 IsoMovingObject
----@param arg1 boolean
-function __IsoZombie:spottedNew(arg0, arg1) end
+---@param other IsoMovingObject
+---@param bForced boolean
+function __IsoZombie:spottedNew(other, bForced) end
 
----@param arg0 IsoMovingObject
----@param arg1 boolean
-function __IsoZombie:spottedOld(arg0, arg1) end
+---@param other IsoMovingObject
+---@param bForced boolean
+function __IsoZombie:spottedOld(other, bForced) end
 
 ---@param vehicle BaseVehicle
 ---@return boolean

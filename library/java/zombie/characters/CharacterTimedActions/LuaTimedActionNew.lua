@@ -21,8 +21,8 @@ function __LuaTimedActionNew:Succeeded(path, mover) end
 
 function __LuaTimedActionNew:complete() end
 
----@param arg0 MoveDeltaModifiers
-function __LuaTimedActionNew:getDeltaModifiers(arg0) end
+---@param modifiers MoveDeltaModifiers
+function __LuaTimedActionNew:getDeltaModifiers(modifiers) end
 
 ---@return string
 function __LuaTimedActionNew:getMetaType() end
@@ -38,15 +38,15 @@ function __LuaTimedActionNew:getTime() end
 
 function __LuaTimedActionNew:perform() end
 
----@param arg0 any
----@param arg1 any
-function __LuaTimedActionNew:replaceObjectInTable(arg0, arg1) end
+---@param oldObj any
+---@param newObj any
+function __LuaTimedActionNew:replaceObjectInTable(oldObj, newObj) end
 
 ---@param time number
 function __LuaTimedActionNew:setCurrentTime(time) end
 
----@param arg0 boolean
-function __LuaTimedActionNew:setCustomRemoteTimedActionSync(arg0) end
+---@param customRemoteTimedActionSync boolean
+function __LuaTimedActionNew:setCustomRemoteTimedActionSync(customRemoteTimedActionSync) end
 
 ---@param maxTime integer
 function __LuaTimedActionNew:setTime(maxTime) end

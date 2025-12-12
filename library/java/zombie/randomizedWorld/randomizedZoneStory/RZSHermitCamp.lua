@@ -3,8 +3,8 @@
 ---@class RZSHermitCamp: RandomizedZoneStoryBase
 local __RZSHermitCamp = {}
 
----@param arg0 Zone
-function __RZSHermitCamp:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSHermitCamp:randomizeZoneStory(zone) end
 
 RZSHermitCamp = {}
 

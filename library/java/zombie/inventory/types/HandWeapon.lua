@@ -17,19 +17,19 @@ function __HandWeapon:attachWeaponPart(part) end
 ---@param doChange boolean
 function __HandWeapon:attachWeaponPart(part, doChange) end
 
----@param arg0 IsoGameCharacter
----@param arg1 WeaponPart
-function __HandWeapon:attachWeaponPart(arg0, arg1) end
+---@param character IsoGameCharacter
+---@param part WeaponPart
+function __HandWeapon:attachWeaponPart(character, part) end
 
----@param arg0 IsoGameCharacter
----@param arg1 WeaponPart
----@param arg2 boolean
-function __HandWeapon:attachWeaponPart(arg0, arg1, arg2) end
+---@param character IsoGameCharacter
+---@param part WeaponPart
+---@param doChange boolean
+function __HandWeapon:attachWeaponPart(character, part, doChange) end
 
----@param arg0 IsoGameCharacter
----@param arg1 HandWeapon
+---@param isoGameCharacter IsoGameCharacter
+---@param handWeapon HandWeapon
 ---@return boolean
-function __HandWeapon:canAttackPierceTransparentWall(arg0, arg1) end
+function __HandWeapon:canAttackPierceTransparentWall(isoGameCharacter, handWeapon) end
 
 ---@return boolean
 function __HandWeapon:canBeActivated() end
@@ -43,22 +43,22 @@ function __HandWeapon:canBeReused() end
 ---@return boolean
 function __HandWeapon:canEmitLight() end
 
----@param arg0 IsoPlayer
----@param arg1 boolean
+---@param player IsoPlayer
+---@param racking boolean
 ---@return boolean
-function __HandWeapon:checkJam(arg0, arg1) end
+function __HandWeapon:checkJam(player, racking) end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return boolean
-function __HandWeapon:checkUnJam(arg0) end
+function __HandWeapon:checkUnJam(player) end
 
 function __HandWeapon:clearAllWeaponParts() end
 
----@param arg0 WeaponPart
-function __HandWeapon:clearWeaponPart(arg0) end
+---@param part WeaponPart
+function __HandWeapon:clearWeaponPart(part) end
 
----@param arg0 string
-function __HandWeapon:clearWeaponPart(arg0) end
+---@param partType string
+function __HandWeapon:clearWeaponPart(partType) end
 
 ---@return string
 function __HandWeapon:cycleFireMode() end
@@ -68,17 +68,17 @@ function __HandWeapon:detachAllWeaponParts() end
 ---@param part WeaponPart
 function __HandWeapon:detachWeaponPart(part) end
 
----@param arg0 string
-function __HandWeapon:detachWeaponPart(arg0) end
+---@param location string
+function __HandWeapon:detachWeaponPart(location) end
 
----@param arg0 IsoGameCharacter
----@param arg1 WeaponPart
-function __HandWeapon:detachWeaponPart(arg0, arg1) end
+---@param character IsoGameCharacter
+---@param part WeaponPart
+function __HandWeapon:detachWeaponPart(character, part) end
 
----@param arg0 IsoGameCharacter
----@param arg1 WeaponPart
----@param arg2 boolean
-function __HandWeapon:detachWeaponPart(arg0, arg1, arg2) end
+---@param character IsoGameCharacter
+---@param part WeaponPart
+---@param doChange boolean
+function __HandWeapon:detachWeaponPart(character, part, doChange) end
 
 ---@return WeaponPart
 function __HandWeapon:getActiveLight() end
@@ -110,9 +110,9 @@ function __HandWeapon:getAimingTime() end
 ---@return List<WeaponPart>
 function __HandWeapon:getAllWeaponParts() end
 
----@param arg0 List<WeaponPart>
+---@param result List<WeaponPart>
 ---@return List<WeaponPart>
-function __HandWeapon:getAllWeaponParts(arg0) end
+function __HandWeapon:getAllWeaponParts(result) end
 
 ---@return string
 function __HandWeapon:getAmmoBox() end
@@ -120,9 +120,9 @@ function __HandWeapon:getAmmoBox() end
 ---@return integer
 function __HandWeapon:getAmmoPerShoot() end
 
----@param arg0 Vector3
+---@param attackPosition Vector3
 ---@return IsoGridSquare
-function __HandWeapon:getAttackTargetSquare(arg0) end
+function __HandWeapon:getAttackTargetSquare(attackPosition) end
 
 ---@return number
 function __HandWeapon:getBaseSpeed() end
@@ -169,9 +169,9 @@ function __HandWeapon:getDamageCategory() end
 ---@return number
 function __HandWeapon:getDamageMod(chr) end
 
----@param arg0 IsoGameCharacter
+---@param character IsoGameCharacter
 ---@return List<WeaponPart>
-function __HandWeapon:getDetachableWeaponParts(arg0) end
+function __HandWeapon:getDetachableWeaponParts(character) end
 
 ---@return number # the doSwingBeforeImpact
 function __HandWeapon:getDoSwingBeforeImpact() end
@@ -290,9 +290,9 @@ function __HandWeapon:getMaxRange(owner) end
 ---@return number
 function __HandWeapon:getMaxSightRange() end
 
----@param arg0 IsoGameCharacter
+---@param character IsoGameCharacter
 ---@return number
-function __HandWeapon:getMaxSightRange(arg0) end
+function __HandWeapon:getMaxSightRange(character) end
 
 ---@return number # the minAngle
 function __HandWeapon:getMinAngle() end
@@ -309,9 +309,9 @@ function __HandWeapon:getMinRangeRanged() end
 ---@return number
 function __HandWeapon:getMinSightRange() end
 
----@param arg0 IsoGameCharacter
+---@param character IsoGameCharacter
 ---@return number
-function __HandWeapon:getMinSightRange(arg0) end
+function __HandWeapon:getMinSightRange(character) end
 
 ---@return number # the minimumSwingTime
 function __HandWeapon:getMinimumSwingTime() end
@@ -371,9 +371,9 @@ function __HandWeapon:getRangeMod(chr) end
 ---@return integer
 function __HandWeapon:getRecoilDelay() end
 
----@param arg0 IsoGameCharacter
+---@param owner IsoGameCharacter
 ---@return integer
-function __HandWeapon:getRecoilDelay(arg0) end
+function __HandWeapon:getRecoilDelay(owner) end
 
 ---@return integer
 function __HandWeapon:getReloadTime() end
@@ -416,10 +416,10 @@ function __HandWeapon:getSplatNumber() end
 ---@return number
 function __HandWeapon:getSplatSize() end
 
----@param arg0 IsoGameCharacter
----@param arg1 IsoGameCharacter
+---@param wielder IsoGameCharacter
+---@param target IsoGameCharacter
 ---@return number
-function __HandWeapon:getStaggerBackTimeMod(arg0, arg1) end
+function __HandWeapon:getStaggerBackTimeMod(wielder, target) end
 
 ---@return string
 function __HandWeapon:getStaticModel() end
@@ -455,9 +455,9 @@ function __HandWeapon:getTreeDamage() end
 ---@return integer
 function __HandWeapon:getTriggerExplosionTimer() end
 
----@param arg0 WeaponPart
+---@param part WeaponPart
 ---@return WeaponPart
-function __HandWeapon:getWeaponPart(arg0) end
+function __HandWeapon:getWeaponPart(part) end
 
 ---@param type string
 ---@return WeaponPart
@@ -474,9 +474,9 @@ function __HandWeapon:getWeaponPartWeightModifier(part) end
 ---@return string
 function __HandWeapon:getWeaponReloadType() end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return integer
-function __HandWeapon:getWeaponSkill(arg0) end
+function __HandWeapon:getWeaponSkill(chr) end
 
 ---@return string # the weaponSprite
 function __HandWeapon:getWeaponSprite() end
@@ -493,8 +493,8 @@ function __HandWeapon:getZombieHitSound() end
 ---@return boolean
 function __HandWeapon:haveChamber() end
 
----@param arg0 HandWeapon
-function __HandWeapon:inheritAmmunition(arg0) end
+---@param other HandWeapon
+function __HandWeapon:inheritAmmunition(other) end
 
 ---@return boolean
 function __HandWeapon:isAimed() end
@@ -601,9 +601,9 @@ function __HandWeapon:isUseSelf() end
 ---@param WorldVersion integer
 function __HandWeapon:load(input, WorldVersion) end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return number
-function __HandWeapon:muscleStrainMod(arg0) end
+function __HandWeapon:muscleStrainMod(chr) end
 
 ---@return boolean
 function __HandWeapon:needToBeClosedOnceReload() end
@@ -619,14 +619,14 @@ function __HandWeapon:render() end
 ---@param net boolean
 function __HandWeapon:save(output, net) end
 
----@param arg0 boolean
-function __HandWeapon:setActivated(arg0) end
+---@param activated boolean
+function __HandWeapon:setActivated(activated) end
 
----@param arg0 WeaponPart
-function __HandWeapon:setActiveLight(arg0) end
+---@param part WeaponPart
+function __HandWeapon:setActiveLight(part) end
 
----@param arg0 WeaponPart
-function __HandWeapon:setActiveSight(arg0) end
+---@param part WeaponPart
+function __HandWeapon:setActiveSight(part) end
 
 ---@param aimingPerkCritModifier integer
 function __HandWeapon:setAimingPerkCritModifier(aimingPerkCritModifier) end
@@ -655,8 +655,8 @@ function __HandWeapon:setAmmoPerShoot(ammoPerShoot) end
 ---@param angleFalloff boolean the angleFalloff to set
 function __HandWeapon:setAngleFalloff(angleFalloff) end
 
----@param arg0 IsoGridSquare
-function __HandWeapon:setAttackTargetSquare(arg0) end
+---@param isoGridSquare IsoGridSquare
+function __HandWeapon:setAttackTargetSquare(isoGridSquare) end
 
 ---@param baseSpeed number
 function __HandWeapon:setBaseSpeed(baseSpeed) end
@@ -694,11 +694,11 @@ function __HandWeapon:setContainsClip(containsClip) end
 ---@param criticalChance number
 function __HandWeapon:setCriticalChance(criticalChance) end
 
----@param arg0 number
-function __HandWeapon:setCriticalDamageMultiplier(arg0) end
+---@param criticalDamageMultiplier number
+function __HandWeapon:setCriticalDamageMultiplier(criticalDamageMultiplier) end
 
----@param arg0 number
-function __HandWeapon:setCyclicRateMultiplier(arg0) end
+---@param value number
+function __HandWeapon:setCyclicRateMultiplier(value) end
 
 ---@param damageCategory string
 function __HandWeapon:setDamageCategory(damageCategory) end
@@ -718,8 +718,8 @@ function __HandWeapon:setDoorHitSound(doorHitSound) end
 ---@param EnduranceMod number the EnduranceMod to set
 function __HandWeapon:setEnduranceMod(EnduranceMod) end
 
----@param arg0 integer
-function __HandWeapon:setExplosionDuration(arg0) end
+---@param seconds integer
+function __HandWeapon:setExplosionDuration(seconds) end
 
 ---@param explosionPower integer
 function __HandWeapon:setExplosionPower(explosionPower) end
@@ -742,11 +742,11 @@ function __HandWeapon:setFireModePossibilities(fireModePossibilities) end
 ---@param fireRange integer
 function __HandWeapon:setFireRange(fireRange) end
 
----@param arg0 integer
-function __HandWeapon:setFireStartingChance(arg0) end
+---@param fireStartingChance integer
+function __HandWeapon:setFireStartingChance(fireStartingChance) end
 
----@param arg0 integer
-function __HandWeapon:setFireStartingEnergy(arg0) end
+---@param fireStartingEnergy integer
+function __HandWeapon:setFireStartingEnergy(fireStartingEnergy) end
 
 ---@param haveChamber boolean
 function __HandWeapon:setHaveChamber(haveChamber) end
@@ -790,8 +790,8 @@ function __HandWeapon:setMaxHitCount(maxHitCount) end
 ---@param maxRange number the maxRange to set
 function __HandWeapon:setMaxRange(maxRange) end
 
----@param arg0 number
-function __HandWeapon:setMaxSightRange(arg0) end
+---@param value number
+function __HandWeapon:setMaxSightRange(value) end
 
 ---@param minAngle number the minAngle to set
 function __HandWeapon:setMinAngle(minAngle) end
@@ -805,8 +805,8 @@ function __HandWeapon:setMinRange(minRange) end
 ---@param minRangeRanged number
 function __HandWeapon:setMinRangeRanged(minRangeRanged) end
 
----@param arg0 number
-function __HandWeapon:setMinSightRange(arg0) end
+---@param value number
+function __HandWeapon:setMinSightRange(value) end
 
 ---@param minimumSwingTime number the minimumSwingTime to set
 function __HandWeapon:setMinimumSwingTime(minimumSwingTime) end
@@ -817,8 +817,8 @@ function __HandWeapon:setModelWeaponPart(modelWeaponPart) end
 ---@param MultipleHitConditionAffected boolean the MultipleHitConditionAffected to set
 function __HandWeapon:setMultipleHitConditionAffected(MultipleHitConditionAffected) end
 
----@param arg0 ModelKey
-function __HandWeapon:setMuzzleFlashModelKey(arg0) end
+---@param muzzleFlashModelKey ModelKey
+function __HandWeapon:setMuzzleFlashModelKey(muzzleFlashModelKey) end
 
 ---@param noiseFactor number the noiseFactor to set
 function __HandWeapon:setNoiseFactor(noiseFactor) end
@@ -850,11 +850,11 @@ function __HandWeapon:setPlacedSprite(placedSprite) end
 ---@param count integer
 function __HandWeapon:setProjectileCount(count) end
 
----@param arg0 number
-function __HandWeapon:setProjectileSpread(arg0) end
+---@param projectileSpread number
+function __HandWeapon:setProjectileSpread(projectileSpread) end
 
----@param arg0 number
-function __HandWeapon:setProjectileWeightCenter(arg0) end
+---@param projectileWeightCenter number
+function __HandWeapon:setProjectileWeightCenter(projectileWeightCenter) end
 
 ---@param pushBackMod number the pushBackMod to set
 function __HandWeapon:setPushBackMod(pushBackMod) end
@@ -880,8 +880,8 @@ function __HandWeapon:setReloadTime(reloadTime) end
 ---@param roundChambered boolean
 function __HandWeapon:setRoundChambered(roundChambered) end
 
----@param arg0 Item
-function __HandWeapon:setScriptItem(arg0) end
+---@param scriptItem Item
+function __HandWeapon:setScriptItem(scriptItem) end
 
 ---@param sensorRange integer
 function __HandWeapon:setSensorRange(sensorRange) end
@@ -946,8 +946,8 @@ function __HandWeapon:setWeaponCategories(weaponCategories) end
 ---@param weaponLength number
 function __HandWeapon:setWeaponLength(weaponLength) end
 
----@param arg0 WeaponPart
-function __HandWeapon:setWeaponPart(arg0) end
+---@param part WeaponPart
+function __HandWeapon:setWeaponPart(part) end
 
 ---@param type string
 ---@param part WeaponPart
@@ -959,8 +959,8 @@ function __HandWeapon:setWeaponReloadType(weaponReloadType) end
 ---@param weaponSprite string the weaponSprite to set
 function __HandWeapon:setWeaponSprite(weaponSprite) end
 
----@param arg0 ArrayList<string>
-function __HandWeapon:setWeaponSpritesByIndex(arg0) end
+---@param weaponSpritesByIndex ArrayList<string>
+function __HandWeapon:setWeaponSpritesByIndex(weaponSpritesByIndex) end
 
 ---@param hitSound string
 function __HandWeapon:setZombieHitSound(hitSound) end

@@ -89,9 +89,9 @@ function IsoCamera.getTargetTileY() end
 
 function IsoCamera.init() end
 
----@param arg0 IsoGameCharacter
+---@param isoGameCharacter IsoGameCharacter
 ---@return boolean
-function IsoCamera.setCameraCharacter(arg0) end
+function IsoCamera.setCameraCharacter(isoGameCharacter) end
 
 ---@param aLastOffX number the lastOffX to set
 function IsoCamera.setLastOffX(aLastOffX) end

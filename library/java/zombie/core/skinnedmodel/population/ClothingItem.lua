@@ -18,9 +18,9 @@ function __ClothingItem:getAltFemaleModel() end
 ---@return string
 function __ClothingItem:getAltMaleModel() end
 
----@param arg0 boolean
+---@param female boolean
 ---@return string
-function __ClothingItem:getAltModel(arg0) end
+function __ClothingItem:getAltModel(female) end
 
 ---@return ArrayList<string>
 function __ClothingItem:getBaseTextures() end

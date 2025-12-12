@@ -3,17 +3,17 @@
 ---@class RBJackieJaye: RandomizedBuildingBase
 local __RBJackieJaye = {}
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param def BuildingDef
+---@param force boolean
 ---@return boolean
-function __RBJackieJaye:isValid(arg0, arg1) end
+function __RBJackieJaye:isValid(def, force) end
 
----@param arg0 BuildingDef
-function __RBJackieJaye:randomizeBuilding(arg0) end
+---@param def BuildingDef
+function __RBJackieJaye:randomizeBuilding(def) end
 
----@param arg0 IsoGridSquare
+---@param sq IsoGridSquare
 ---@return boolean
-function __RBJackieJaye:roomValid(arg0) end
+function __RBJackieJaye:roomValid(sq) end
 
 RBJackieJaye = {}
 

@@ -1376,9 +1376,3 @@ PrintMediaDefinitions.MiscDetails = {
 		},
 	},
 }
-PrintMediaDefinitions.Brochures = nil ---@type unknown
-PrintMediaDefinitions.Fliers = nil ---@type unknown
-PrintMediaDefinitions.Newspapers = nil ---@type unknown
-PrintMediaDefinitions.NewspaperDetails = nil ---@type unknown
-PrintMediaDefinitions.OldNewspapers = nil ---@type unknown
-PrintMediaDefinitions.RegionalPapers = nil ---@type unknown

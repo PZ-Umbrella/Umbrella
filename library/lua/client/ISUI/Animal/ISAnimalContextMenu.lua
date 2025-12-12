@@ -2,7 +2,7 @@
 
 ---@class AnimalContextMenu
 AnimalContextMenu = {}
-AnimalContextMenu.cheat = getDebug()
+AnimalContextMenu.cheat = false
 
 ---@param attachAnimalTo IsoObject
 ---@param playerObj IsoPlayer

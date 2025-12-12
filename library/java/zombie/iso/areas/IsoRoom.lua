@@ -7,14 +7,14 @@ local __IsoRoom = {}
 ---@return IsoBuilding
 function __IsoRoom:CreateBuilding(cell) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
----@param arg3 string
----@param arg4 string
----@param arg5 boolean
+---@param bench string
+---@param sprite1 string
+---@param sprite2 string
+---@param sprite3 string
+---@param sprite4 string
+---@param both boolean
 ---@return boolean
-function __IsoRoom:add2TileBench(arg0, arg1, arg2, arg3, arg4, arg5) end
+function __IsoRoom:add2TileBench(bench, sprite1, sprite2, sprite3, sprite4, both) end
 
 ---@return boolean
 function __IsoRoom:addMetalWorkbench() end
@@ -34,9 +34,9 @@ function __IsoRoom:addSquare(sq) end
 ---@param active boolean
 function __IsoRoom:createLights(active) end
 
----@param arg0 integer
+---@param id integer
 ---@return IsoRoomLight
-function __IsoRoom:findRoomLightByID(arg0) end
+function __IsoRoom:findRoomLightByID(id) end
 
 ---@return IsoBuilding
 function __IsoRoom:getBuilding() end
@@ -65,10 +65,10 @@ function __IsoRoom:getRandomFreeSquare() end
 ---@return IsoGridSquare
 function __IsoRoom:getRandomSquare() end
 
----@param arg0 IsoDirections
----@param arg1 boolean
+---@param dir IsoDirections
+---@param both boolean
 ---@return IsoGridSquare
-function __IsoRoom:getRandomWallFreePairSquare(arg0, arg1) end
+function __IsoRoom:getRandomWallFreePairSquare(dir, both) end
 
 ---@return IsoGridSquare
 function __IsoRoom:getRandomWallFreeSquare() end

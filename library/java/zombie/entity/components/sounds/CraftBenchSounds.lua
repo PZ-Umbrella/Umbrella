@@ -3,10 +3,10 @@
 ---@class CraftBenchSounds: Component
 local __CraftBenchSounds = {}
 
----@param arg0 string
----@param arg1 string
+---@param id string
+---@param param1 string
 ---@return string
-function __CraftBenchSounds:getSoundName(arg0, arg1) end
+function __CraftBenchSounds:getSoundName(id, param1) end
 
 CraftBenchSounds = {}
 

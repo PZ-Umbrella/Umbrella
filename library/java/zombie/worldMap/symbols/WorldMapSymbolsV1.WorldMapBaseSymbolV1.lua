@@ -43,25 +43,25 @@ function __WorldMapBaseSymbolV1:isTexture() end
 ---@return boolean
 function __WorldMapBaseSymbolV1:isVisible() end
 
----@param arg0 number
----@param arg1 number
-function __WorldMapBaseSymbolV1:setAnchor(arg0, arg1) end
+---@param x number
+---@param y number
+function __WorldMapBaseSymbolV1:setAnchor(x, y) end
 
----@param arg0 boolean
-function __WorldMapBaseSymbolV1:setCollide(arg0) end
+---@param collide boolean
+function __WorldMapBaseSymbolV1:setCollide(collide) end
 
----@param arg0 number
----@param arg1 number
-function __WorldMapBaseSymbolV1:setPosition(arg0, arg1) end
+---@param x number
+---@param y number
+function __WorldMapBaseSymbolV1:setPosition(x, y) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
-function __WorldMapBaseSymbolV1:setRGBA(arg0, arg1, arg2, arg3) end
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function __WorldMapBaseSymbolV1:setRGBA(r, g, b, a) end
 
----@param arg0 number
-function __WorldMapBaseSymbolV1:setScale(arg0) end
+---@param scale number
+function __WorldMapBaseSymbolV1:setScale(scale) end
 
----@param arg0 boolean
-function __WorldMapBaseSymbolV1:setVisible(arg0) end
+---@param visible boolean
+function __WorldMapBaseSymbolV1:setVisible(visible) end

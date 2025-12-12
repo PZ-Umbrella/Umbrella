@@ -14,13 +14,13 @@ ResourceFlag = {}
 ---@type ResourceFlag
 ResourceFlag.AutoDecay = nil
 
----@param arg0 integer
+---@param id integer
 ---@return ResourceFlag
-function ResourceFlag.fromByteId(arg0) end
+function ResourceFlag.fromByteId(id) end
 
----@param arg0 string
+---@param name string
 ---@return ResourceFlag
-function ResourceFlag.valueOf(arg0) end
+function ResourceFlag.valueOf(name) end
 
 ---@return kahlua.Array<ResourceFlag>
 function ResourceFlag.values() end

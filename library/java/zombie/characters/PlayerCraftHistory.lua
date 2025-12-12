@@ -3,24 +3,24 @@
 ---@class PlayerCraftHistory
 local __PlayerCraftHistory = {}
 
----@param arg0 string
-function __PlayerCraftHistory:addCraftHistoryCraftedEvent(arg0) end
+---@param craftType string
+function __PlayerCraftHistory:addCraftHistoryCraftedEvent(craftType) end
 
----@param arg0 string
+---@param craftType string
 ---@return PlayerCraftHistory.CraftHistoryEntry
-function __PlayerCraftHistory:getCraftHistoryFor(arg0) end
+function __PlayerCraftHistory:getCraftHistoryFor(craftType) end
 
----@param arg0 ByteBuffer
-function __PlayerCraftHistory:load(arg0) end
+---@param input ByteBuffer
+function __PlayerCraftHistory:load(input) end
 
----@param arg0 ByteBuffer
-function __PlayerCraftHistory:save(arg0) end
+---@param output ByteBuffer
+function __PlayerCraftHistory:save(output) end
 
 PlayerCraftHistory = {}
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return PlayerCraftHistory
-function PlayerCraftHistory.new(arg0) end
+function PlayerCraftHistory.new(player) end
 
 ---@type Class<PlayerCraftHistory>
 PlayerCraftHistory.class = nil

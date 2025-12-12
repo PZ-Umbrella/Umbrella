@@ -212,9 +212,9 @@ InputFlag.ToolRight = nil
 ---@type InputFlag
 InputFlag.Unseal = nil
 
----@param arg0 string
+---@param name string
 ---@return InputFlag
-function InputFlag.valueOf(arg0) end
+function InputFlag.valueOf(name) end
 
 ---@return kahlua.Array<InputFlag>
 function InputFlag.values() end

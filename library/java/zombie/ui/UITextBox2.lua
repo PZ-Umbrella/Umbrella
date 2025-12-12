@@ -145,8 +145,8 @@ function __UITextBox2:onresize() end
 
 function __UITextBox2:pasteFromClipboard() end
 
----@param arg0 integer
-function __UITextBox2:putCharacter(arg0) end
+---@param eventChar integer
+function __UITextBox2:putCharacter(eventChar) end
 
 function __UITextBox2:render() end
 
@@ -154,8 +154,8 @@ function __UITextBox2:resetBlink() end
 
 function __UITextBox2:selectAll() end
 
----@param arg0 boolean
-function __UITextBox2:setCentreVertically(arg0) end
+---@param b boolean
+function __UITextBox2:setCentreVertically(b) end
 
 ---@param hasButton boolean
 function __UITextBox2:setClearButton(hasButton) end
@@ -166,14 +166,14 @@ function __UITextBox2:setCursorLine(line) end
 ---@param charIndex integer
 function __UITextBox2:setCursorPos(charIndex) end
 
----@param arg0 boolean
-function __UITextBox2:setDoingTextEntry(arg0) end
+---@param value boolean
+function __UITextBox2:setDoingTextEntry(value) end
 
 ---@param b boolean
 function __UITextBox2:setEditable(b) end
 
----@param arg0 UIFont
-function __UITextBox2:setFont(arg0) end
+---@param font UIFont
+function __UITextBox2:setFont(font) end
 
 ---@param forceUpperCase boolean
 function __UITextBox2:setForceUpperCase(forceUpperCase) end
@@ -184,8 +184,8 @@ function __UITextBox2:setFrameAlpha(alpha) end
 ---@param hasFrame boolean
 function __UITextBox2:setHasFrame(hasFrame) end
 
----@param arg0 boolean
-function __UITextBox2:setIgnoreFirst(arg0) end
+---@param value boolean
+function __UITextBox2:setIgnoreFirst(value) end
 
 ---@param b boolean
 function __UITextBox2:setMasked(b) end
@@ -202,38 +202,38 @@ function __UITextBox2:setMultipleLine(multiple) end
 ---@param onlyNumbers boolean
 function __UITextBox2:setOnlyNumbers(onlyNumbers) end
 
----@param arg0 boolean
-function __UITextBox2:setOnlyText(arg0) end
+---@param onlyText boolean
+function __UITextBox2:setOnlyText(onlyText) end
 
----@param arg0 string
-function __UITextBox2:setPlaceholderText(arg0) end
+---@param text string
+function __UITextBox2:setPlaceholderText(text) end
 
----@param arg0 ColorInfo
-function __UITextBox2:setPlaceholderTextColor(arg0) end
+---@param color ColorInfo
+function __UITextBox2:setPlaceholderTextColor(color) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
-function __UITextBox2:setPlaceholderTextRGBA(arg0, arg1, arg2, arg3) end
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function __UITextBox2:setPlaceholderTextRGBA(r, g, b, a) end
 
 ---@param b boolean
 function __UITextBox2:setSelectable(b) end
 
----@param arg0 boolean
-function __UITextBox2:setSelectingRange(arg0) end
+---@param value boolean
+function __UITextBox2:setSelectingRange(value) end
 
 ---@param newColor ColorInfo
 function __UITextBox2:setTextColor(newColor) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
-function __UITextBox2:setTextRGBA(arg0, arg1, arg2, arg3) end
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function __UITextBox2:setTextRGBA(r, g, b, a) end
 
----@param arg0 boolean
-function __UITextBox2:setWrapLines(arg0) end
+---@param b boolean
+function __UITextBox2:setWrapLines(b) end
 
 ---@param textOffset integer
 ---@return integer

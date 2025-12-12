@@ -223,7 +223,29 @@ AttachedWeaponDefinitions.knifeBack_Special = {
 		"Base.Screwdriver_Improvised",
 	},
 }
-AttachedWeaponDefinitions.knifeLowQualityLeftLeg = {}
+AttachedWeaponDefinitions.knifeLowQualityLeftLeg = {
+	chance = 30,
+	weaponLocation = {
+		"Knife Left Leg",
+	},
+	bloodLocations = {
+		"UpperLeg_L",
+	},
+	addHoles = false,
+	daySurvived = 0,
+	weapons = {
+		"Base.ButterKnife",
+		"Base.CarvingFork2",
+		"Base.Fork",
+		"Base.HandFork",
+		"Base.LetterOpener",
+		"Base.KnifeFillet",
+		"Base.KnifeParing",
+		"Base.Screwdriver",
+		"Base.Scissors",
+		"Base.TinOpener_Old",
+	},
+}
 AttachedWeaponDefinitions.huntingKnifeLeftLeg = {
 	chance = 5,
 	weaponLocation = {

@@ -16,17 +16,17 @@
 ---@field listHeaderColor umbrella.RGBA
 ---@field listHeight number
 ---@field mouseOverHighlightColor umbrella.RGBA
----@field mouseoverselected number
+---@field mouseoverselected integer?
 ---@field onmousedblclick umbrella.ISScrollingListBox.MouseCallback
 ---@field onmousedown umbrella.ISScrollingListBox.MouseCallback
 ---@field selected integer?
 ---@field selectedBeforeReset number?
----@field selectedTextColor table
+---@field selectedTextColor umbrella.RGBA
 ---@field selectionColor umbrella.RGBA
 ---@field smoothScrollTargetY number?
 ---@field smoothScrollY number?
 ---@field stopPrerender boolean
----@field textColor table
+---@field textColor umbrella.RGBA
 ---@field tooltipUI ISToolTip
 ---@field useStencilForChildren boolean
 ISScrollingListBox = ISPanelJoypad:derive("ISScrollingListBox")
@@ -233,7 +233,7 @@ function ISScrollingListBox:setTextColorRGBA(r, g, b, a) end
 ---@return integer
 function ISScrollingListBox:size() end
 
-function ISScrollingListBox:sort() end
+function ISScrollingListBox:sort(comparator) end
 
 ---@param index integer
 ---@return integer
@@ -259,5 +259,7 @@ function ISScrollingListBox:new(x, y, width, height) end
 ---@field index integer?
 ---@field item unknown?
 ---@field itemindex integer
+---@field selectedTextColor umbrella.RGBA?
 ---@field text string
+---@field textColor umbrella.RGBA?
 ---@field tooltip string?

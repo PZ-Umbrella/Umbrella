@@ -39,11 +39,11 @@ function __InputItemNode:isToolLeft() end
 ---@return boolean
 function __InputItemNode:isToolRight() end
 
----@param arg0 boolean
-function __InputItemNode:setExpandedAvailable(arg0) end
+---@param b boolean
+function __InputItemNode:setExpandedAvailable(b) end
 
----@param arg0 boolean
-function __InputItemNode:setExpandedUsed(arg0) end
+---@param b boolean
+function __InputItemNode:setExpandedUsed(b) end
 
 function __InputItemNode:toggleExpandedAvailable() end
 

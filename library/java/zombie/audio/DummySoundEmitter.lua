@@ -21,10 +21,10 @@ function __DummySoundEmitter:isPlaying(channel) end
 ---@return boolean
 function __DummySoundEmitter:isPlaying(alias) end
 
----@param arg0 integer
----@param arg1 string
+---@param handle integer
+---@param parameterName string
 ---@return boolean
-function __DummySoundEmitter:isUsingParameter(arg0, arg1) end
+function __DummySoundEmitter:isUsingParameter(handle, parameterName) end
 
 ---@param file string
 ---@return integer
@@ -109,10 +109,10 @@ function __DummySoundEmitter:set3D(handle, is3D) end
 ---@param value number
 function __DummySoundEmitter:setParameterValue(handle, parameterDescription, value) end
 
----@param arg0 integer
----@param arg1 string
----@param arg2 number
-function __DummySoundEmitter:setParameterValueByName(arg0, arg1, arg2) end
+---@param handle integer
+---@param parameterName string
+---@param value number
+function __DummySoundEmitter:setParameterValueByName(handle, parameterName, value) end
 
 ---@param handle integer
 ---@param volume number
@@ -142,8 +142,8 @@ function __DummySoundEmitter:stopOrTriggerSound(handle) end
 ---@param name string
 function __DummySoundEmitter:stopOrTriggerSoundByName(name) end
 
----@param arg0 integer
-function __DummySoundEmitter:stopOrTriggerSoundLocal(arg0) end
+---@param handle integer
+function __DummySoundEmitter:stopOrTriggerSoundLocal(handle) end
 
 ---@param channel integer
 ---@return integer
@@ -153,9 +153,9 @@ function __DummySoundEmitter:stopSound(channel) end
 ---@return integer
 function __DummySoundEmitter:stopSoundByName(name) end
 
----@param arg0 integer
+---@param channel integer
 ---@return integer
-function __DummySoundEmitter:stopSoundDelayRelease(arg0) end
+function __DummySoundEmitter:stopSoundDelayRelease(channel) end
 
 ---@param handle integer
 function __DummySoundEmitter:stopSoundLocal(handle) end

@@ -3,14 +3,14 @@
 ---@class BaseCraftingLogic
 local __BaseCraftingLogic = {}
 
----@param arg0 string
----@param arg1 any
-function __BaseCraftingLogic:addEventListener(arg0, arg1) end
+---@param event string
+---@param _function any
+function __BaseCraftingLogic:addEventListener(event, _function) end
 
----@param arg0 string
----@param arg1 any
----@param arg2 any
-function __BaseCraftingLogic:addEventListener(arg0, arg1, arg2) end
+---@param event string
+---@param _function any
+---@param targetTable any
+function __BaseCraftingLogic:addEventListener(event, _function, targetTable) end
 
 ---@return boolean
 function __BaseCraftingLogic:areAllInputItemsSatisfied() end
@@ -25,28 +25,28 @@ function __BaseCraftingLogic:canPerformCurrentRecipe() end
 
 function __BaseCraftingLogic:clearManualInputs() end
 
----@param arg0 CraftRecipeData.InputScriptData
-function __BaseCraftingLogic:clearManualInputsFor(arg0) end
+---@param input CraftRecipeData.InputScriptData
+function __BaseCraftingLogic:clearManualInputsFor(input) end
 
 function __BaseCraftingLogic:clearTargetVariableInputRatio() end
 
----@param arg0 BaseCraftingLogic
-function __BaseCraftingLogic:copyManualInputsFrom(arg0) end
+---@param logic BaseCraftingLogic
+function __BaseCraftingLogic:copyManualInputsFrom(logic) end
 
----@param arg0 string
----@param arg1 string
-function __BaseCraftingLogic:filterRecipeList(arg0, arg1) end
+---@param filter string
+---@param categoryFilter string
+function __BaseCraftingLogic:filterRecipeList(filter, categoryFilter) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 boolean
-function __BaseCraftingLogic:filterRecipeList(arg0, arg1, arg2) end
+---@param filter string
+---@param categoryFilter string
+---@param force boolean
+function __BaseCraftingLogic:filterRecipeList(filter, categoryFilter, force) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 boolean
----@param arg3 IsoPlayer
-function __BaseCraftingLogic:filterRecipeList(arg0, arg1, arg2, arg3) end
+---@param filter string
+---@param categoryFilter string
+---@param force boolean
+---@param player IsoPlayer
+function __BaseCraftingLogic:filterRecipeList(filter, categoryFilter, force, player) end
 
 ---@return List<InventoryItem>
 function __BaseCraftingLogic:getAllViableInputInventoryItems() end
@@ -54,9 +54,9 @@ function __BaseCraftingLogic:getAllViableInputInventoryItems() end
 ---@return List<Resource>
 function __BaseCraftingLogic:getAllViableInputResources() end
 
----@param arg0 CraftRecipe
+---@param recipe CraftRecipe
 ---@return BaseCraftingLogic.CachedRecipeInfo
-function __BaseCraftingLogic:getCachedRecipeInfo(arg0) end
+function __BaseCraftingLogic:getCachedRecipeInfo(recipe) end
 
 ---@return ArrayList<string>
 function __BaseCraftingLogic:getCategoryList() end
@@ -64,25 +64,25 @@ function __BaseCraftingLogic:getCategoryList() end
 ---@return ArrayList<ItemContainer>
 function __BaseCraftingLogic:getContainers() end
 
----@param arg0 InputScript
+---@param inputScript InputScript
 ---@return integer
-function __BaseCraftingLogic:getInputCount(arg0) end
+function __BaseCraftingLogic:getInputCount(inputScript) end
 
 ---@return ArrayList<InputItemNode>
 function __BaseCraftingLogic:getInputItemNodes() end
 
----@param arg0 InputScript
+---@param input InputScript
 ---@return ArrayList<InputItemNode>
-function __BaseCraftingLogic:getInputItemNodesForInput(arg0) end
+function __BaseCraftingLogic:getInputItemNodesForInput(input) end
 
----@param arg0 InputScript
+---@param inputScript InputScript
 ---@return number
-function __BaseCraftingLogic:getInputUses(arg0) end
+function __BaseCraftingLogic:getInputUses(inputScript) end
 
----@param arg0 InputScript
----@param arg1 ArrayList<InventoryItem>
+---@param inputScript InputScript
+---@param list ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __BaseCraftingLogic:getManualInputsFor(arg0, arg1) end
+function __BaseCraftingLogic:getManualInputsFor(inputScript, list) end
 
 ---@return InputScript
 function __BaseCraftingLogic:getManualSelectInputScriptFilter() end
@@ -96,32 +96,32 @@ function __BaseCraftingLogic:getModelHandTwo() end
 ---@return ArrayList<InventoryItem>
 function __BaseCraftingLogic:getMulticraftConsumedItems() end
 
----@param arg0 InputScript
----@param arg1 ArrayList<InventoryItem>
+---@param inputScript InputScript
+---@param list ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __BaseCraftingLogic:getMulticraftConsumedItemsFor(arg0, arg1) end
+function __BaseCraftingLogic:getMulticraftConsumedItemsFor(inputScript, list) end
 
 ---@return ArrayList<Resource>
 function __BaseCraftingLogic:getMulticraftConsumedResources() end
 
----@param arg0 boolean
+---@param forceRecache boolean
 ---@return integer
-function __BaseCraftingLogic:getPossibleCraftCount(arg0) end
+function __BaseCraftingLogic:getPossibleCraftCount(forceRecache) end
 
 ---@return CraftRecipe
 function __BaseCraftingLogic:getRecipe() end
 
----@param arg0 InputScript
+---@param inputScript InputScript
 ---@return List<Fluid>
-function __BaseCraftingLogic:getSatisfiedInputFluids(arg0) end
+function __BaseCraftingLogic:getSatisfiedInputFluids(inputScript) end
 
----@param arg0 InputScript
+---@param inputScript InputScript
 ---@return List<InventoryItem>
-function __BaseCraftingLogic:getSatisfiedInputInventoryItems(arg0) end
+function __BaseCraftingLogic:getSatisfiedInputInventoryItems(inputScript) end
 
----@param arg0 InputScript
+---@param inputScript InputScript
 ---@return List<Item>
-function __BaseCraftingLogic:getSatisfiedInputItems(arg0) end
+function __BaseCraftingLogic:getSatisfiedInputItems(inputScript) end
 
 ---@return number
 function __BaseCraftingLogic:getVariableInputRatio() end
@@ -132,96 +132,96 @@ function __BaseCraftingLogic:hasRequiredWorkstation() end
 ---@return boolean
 function __BaseCraftingLogic:isCharacterInRangeOfWorkbench() end
 
----@param arg0 List<ItemContainer>
+---@param containers List<ItemContainer>
 ---@return boolean
-function __BaseCraftingLogic:isContainersAccessible(arg0) end
+function __BaseCraftingLogic:isContainersAccessible(containers) end
 
----@param arg0 InputScript
+---@param inputScript InputScript
 ---@return boolean
-function __BaseCraftingLogic:isInputSatisfied(arg0) end
+function __BaseCraftingLogic:isInputSatisfied(inputScript) end
 
 ---@return boolean
 function __BaseCraftingLogic:isManualSelectInputs() end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __BaseCraftingLogic:offerInputItem(arg0) end
+function __BaseCraftingLogic:offerInputItem(item) end
 
----@param arg0 List<InventoryItem>
----@param arg1 List<Resource>
----@param arg2 boolean
-function __BaseCraftingLogic:populateInputs(arg0, arg1, arg2) end
+---@param inputItems List<InventoryItem>
+---@param resources List<Resource>
+---@param clearExisting boolean
+function __BaseCraftingLogic:populateInputs(inputItems, resources, clearExisting) end
 
 function __BaseCraftingLogic:refresh() end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __BaseCraftingLogic:removeInputItem(arg0) end
+function __BaseCraftingLogic:removeInputItem(item) end
 
----@param arg0 ArrayList<ItemContainer>
+---@param containersToUse ArrayList<ItemContainer>
 ---@return boolean
-function __BaseCraftingLogic:setContainers(arg0) end
+function __BaseCraftingLogic:setContainers(containersToUse) end
 
----@param arg0 InputScript
----@param arg1 ArrayList<InventoryItem>
+---@param inputScript InputScript
+---@param list ArrayList<InventoryItem>
 ---@return boolean
-function __BaseCraftingLogic:setManualInputsFor(arg0, arg1) end
+function __BaseCraftingLogic:setManualInputsFor(inputScript, list) end
 
----@param arg0 InputScript
-function __BaseCraftingLogic:setManualSelectInputScriptFilter(arg0) end
+---@param script InputScript
+function __BaseCraftingLogic:setManualSelectInputScriptFilter(script) end
 
----@param arg0 boolean
-function __BaseCraftingLogic:setManualSelectInputs(arg0) end
+---@param b boolean
+function __BaseCraftingLogic:setManualSelectInputs(b) end
 
----@param arg0 CraftRecipe
-function __BaseCraftingLogic:setRecipe(arg0) end
+---@param recipe CraftRecipe
+function __BaseCraftingLogic:setRecipe(recipe) end
 
----@param arg0 List<CraftRecipe>
-function __BaseCraftingLogic:setRecipes(arg0) end
+---@param recipes List<CraftRecipe>
+function __BaseCraftingLogic:setRecipes(recipes) end
 
----@param arg0 boolean
-function __BaseCraftingLogic:setShowManualSelectInputs(arg0) end
+---@param b boolean
+function __BaseCraftingLogic:setShowManualSelectInputs(b) end
 
----@param arg0 number
-function __BaseCraftingLogic:setTargetVariableInputRatio(arg0) end
+---@param target number
+function __BaseCraftingLogic:setTargetVariableInputRatio(target) end
 
 ---@return boolean
 function __BaseCraftingLogic:shouldShowManualSelectInputs() end
 
 function __BaseCraftingLogic:sortRecipeList() end
 
----@param arg0 ArrayList<ItemContainer>
+---@param containers ArrayList<ItemContainer>
 ---@return boolean
-function __BaseCraftingLogic:updateFloorContainer(arg0) end
+function __BaseCraftingLogic:updateFloorContainer(containers) end
 
 function __BaseCraftingLogic:updateManualInputAllowedItemTypes() end
 
 BaseCraftingLogic = {}
 
----@param arg0 string
----@param arg1 any
-function BaseCraftingLogic.callLua(arg0, arg1) end
+---@param func string
+---@param params any
+function BaseCraftingLogic.callLua(func, params) end
 
----@param arg0 string
----@param arg1 any
----@param arg2 any
-function BaseCraftingLogic.callLua(arg0, arg1, arg2) end
+---@param func string
+---@param params any
+---@param params2 any
+function BaseCraftingLogic.callLua(func, params, params2) end
 
----@param arg0 string
----@param arg1 any
----@param arg2 any
----@param arg3 any
-function BaseCraftingLogic.callLua(arg0, arg1, arg2, arg3) end
+---@param func string
+---@param params any
+---@param params2 any
+---@param params3 any
+function BaseCraftingLogic.callLua(func, params, params2, params3) end
 
----@param arg0 string
----@param arg1 any
+---@param func string
+---@param params any
 ---@return boolean
-function BaseCraftingLogic.callLuaBool(arg0, arg1) end
+function BaseCraftingLogic.callLuaBool(func, params) end
 
----@param arg0 string
----@param arg1 any
+---@param func string
+---@param params any
 ---@return table
-function BaseCraftingLogic.callLuaObject(arg0, arg1) end
+function BaseCraftingLogic.callLuaObject(func, params) end
 
 ---@param filterString string
 ---@param categoryFilterString string
@@ -240,13 +240,13 @@ function BaseCraftingLogic.filterAndSortRecipeList(
 )
 end
 
----@param arg0 CraftRecipe
+---@param recipe CraftRecipe
 ---@return string
-function BaseCraftingLogic.getFavouriteModDataString(arg0) end
+function BaseCraftingLogic.getFavouriteModDataString(recipe) end
 
----@param arg0 string
+---@param recipe string
 ---@return string
-function BaseCraftingLogic.getFavouriteModDataString(arg0) end
+function BaseCraftingLogic.getFavouriteModDataString(recipe) end
 
 ---@type Class<BaseCraftingLogic>
 BaseCraftingLogic.class = nil

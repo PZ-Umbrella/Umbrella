@@ -255,19 +255,19 @@ function __SoundManager:isUiSoundMuted() end
 
 function __SoundManager:pauseSoundAndMusic() end
 
----@param arg0 boolean
-function __SoundManager:pauseSoundAndMusic(arg0) end
+---@param bOptionallyKeepMusicPlaying boolean
+function __SoundManager:pauseSoundAndMusic(bOptionallyKeepMusicPlaying) end
 
 ---@param name string
 function __SoundManager:playAmbient(name) end
 
----@param arg0 IsoGridSquare
----@param arg1 MaterialType
-function __SoundManager:playDamageSound(arg0, arg1) end
+---@param isoGridSquare IsoGridSquare
+---@param materialType MaterialType
+function __SoundManager:playDamageSound(isoGridSquare, materialType) end
 
----@param arg0 IsoGridSquare
----@param arg1 MaterialType
-function __SoundManager:playDestructionSound(arg0, arg1) end
+---@param isoGridSquare IsoGridSquare
+---@param materialType MaterialType
+function __SoundManager:playDestructionSound(isoGridSquare, materialType) end
 
 ---@param isoGridSquare IsoGridSquare
 ---@param ammoType AmmoType

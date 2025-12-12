@@ -8,12 +8,12 @@ function __Trigger:getModData() end
 
 Trigger = {}
 
----@param arg0 BuildingDef
----@param arg1 integer
----@param arg2 integer
----@param arg3 string
+---@param def BuildingDef
+---@param triggerRange integer
+---@param zombieExclusionRange integer
+---@param type string
 ---@return Trigger
-function Trigger.new(arg0, arg1, arg2, arg3) end
+function Trigger.new(def, triggerRange, zombieExclusionRange, type) end
 
 ---@type Class<Trigger>
 Trigger.class = nil

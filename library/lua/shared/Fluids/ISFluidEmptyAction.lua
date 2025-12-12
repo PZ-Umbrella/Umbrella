@@ -8,6 +8,8 @@
 ISFluidEmptyAction = ISBaseTimedAction:derive("ISFluidEmptyAction")
 ISFluidEmptyAction.Type = "ISFluidEmptyAction"
 
+---@param event string
+---@param parameter string
 function ISFluidEmptyAction:animEvent(event, parameter) end
 
 ---@return boolean
@@ -29,6 +31,7 @@ function ISFluidEmptyAction:stop() end
 
 function ISFluidEmptyAction:update() end
 
+---@param delta number
 function ISFluidEmptyAction:updateEmpty(delta) end
 
 ---@param character IsoPlayer

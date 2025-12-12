@@ -3,9 +3,9 @@
 ---@class LuaComponent: Component
 local __LuaComponent = {}
 
----@param arg0 ObjectTooltip
----@param arg1 ObjectTooltip.Layout
-function __LuaComponent:DoTooltip(arg0, arg1) end
+---@param tooltipUI ObjectTooltip
+---@param layout ObjectTooltip.Layout
+function __LuaComponent:DoTooltip(tooltipUI, layout) end
 
 ---@return boolean
 function __LuaComponent:isValid() end

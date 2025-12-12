@@ -25,7 +25,7 @@
 ---@field padTopBottom number
 ---@field padY number
 ---@field parent (table | ISContextMenu)?
----@field player number
+---@field player integer
 ---@field scrollAreaHeight number
 ---@field scrollIndicatorHgt number
 ---@field slideGoalDY number?
@@ -35,7 +35,7 @@
 ---@field subInstance ISContextMenu?
 ---@field subMenu ISContextMenu?
 ---@field subMenuPool ISContextMenu[]?
----@field subOptionNums number
+---@field subOptionNums integer
 ---@field tickTexture Texture
 ---@field toolTip ISToolTip?
 ---@field visibleCheck boolean

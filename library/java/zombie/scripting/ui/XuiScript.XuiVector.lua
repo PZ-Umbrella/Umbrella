@@ -41,14 +41,14 @@ function __XuiVector:isyPercent() end
 
 XuiVector = {}
 
----@param arg0 XuiScript
----@param arg1 string
----@param arg2 XuiScript.XuiUnit
----@param arg3 XuiScript.XuiUnit
----@param arg4 XuiScript.XuiUnit
----@param arg5 XuiScript.XuiUnit
+---@param parent XuiScript
+---@param key string
+---@param x XuiScript.XuiUnit
+---@param y XuiScript.XuiUnit
+---@param w XuiScript.XuiUnit
+---@param h XuiScript.XuiUnit
 ---@return XuiScript.XuiVector
-function XuiVector.new(arg0, arg1, arg2, arg3, arg4, arg5) end
+function XuiVector.new(parent, key, x, y, w, h) end
 
 ---@type Class<XuiScript.XuiVector>
 XuiVector.class = nil

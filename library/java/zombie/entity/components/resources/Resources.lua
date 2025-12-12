@@ -3,110 +3,110 @@
 ---@class Resources: Component
 local __Resources = {}
 
----@param arg0 ObjectTooltip
----@param arg1 ObjectTooltip.Layout
-function __Resources:DoTooltip(arg0, arg1) end
+---@param tooltipUI ObjectTooltip
+---@param layout ObjectTooltip.Layout
+function __Resources:DoTooltip(tooltipUI, layout) end
 
----@param arg0 ResourceBlueprint
-function __Resources:createResource(arg0) end
+---@param blueprint ResourceBlueprint
+function __Resources:createResource(blueprint) end
 
----@param arg0 string
----@param arg1 ResourceBlueprint
-function __Resources:createResource(arg0, arg1) end
+---@param groupName string
+---@param blueprint ResourceBlueprint
+function __Resources:createResource(groupName, blueprint) end
 
----@param arg0 string
-function __Resources:createResourceFromSerial(arg0) end
+---@param blueprintSerial string
+function __Resources:createResourceFromSerial(blueprintSerial) end
 
----@param arg0 string
----@param arg1 string
-function __Resources:createResourceFromSerial(arg0, arg1) end
+---@param groupName string
+---@param blueprintSerial string
+function __Resources:createResourceFromSerial(groupName, blueprintSerial) end
 
 function __Resources:dumpContentsInSquare() end
 
----@param arg0 string
+---@param name_id string
 ---@return Resource
-function __Resources:getResource(arg0) end
+function __Resources:getResource(name_id) end
 
----@param arg0 integer
+---@param index integer
 ---@return Resource
-function __Resources:getResource(arg0) end
+function __Resources:getResource(index) end
 
 ---@return integer
 function __Resources:getResourceCount() end
 
----@param arg0 string
+---@param name string
 ---@return ResourceGroup
-function __Resources:getResourceGroup(arg0) end
+function __Resources:getResourceGroup(name) end
 
----@param arg0 Resource
+---@param resource Resource
 ---@return integer
-function __Resources:getResourceIndex(arg0) end
+function __Resources:getResourceIndex(resource) end
 
 ---@return List<Resource>
 function __Resources:getResources() end
 
----@param arg0 List<Resource>
----@param arg1 ResourceIO
+---@param list List<Resource>
+---@param io ResourceIO
 ---@return List<Resource>
-function __Resources:getResources(arg0, arg1) end
+function __Resources:getResources(list, io) end
 
----@param arg0 List<Resource>
----@param arg1 ResourceType
+---@param list List<Resource>
+---@param type ResourceType
 ---@return List<Resource>
-function __Resources:getResources(arg0, arg1) end
+function __Resources:getResources(list, type) end
 
----@param arg0 List<Resource>
----@param arg1 ResourceIO
----@param arg2 ResourceChannel
+---@param list List<Resource>
+---@param io ResourceIO
+---@param channel ResourceChannel
 ---@return List<Resource>
-function __Resources:getResources(arg0, arg1, arg2) end
+function __Resources:getResources(list, io, channel) end
 
----@param arg0 List<Resource>
----@param arg1 ResourceChannel
+---@param list List<Resource>
+---@param channel ResourceChannel
 ---@return List<Resource>
-function __Resources:getResources(arg0, arg1) end
+function __Resources:getResources(list, channel) end
 
----@param arg0 List<Resource>
----@param arg1 ResourceIO
----@param arg2 ResourceType
+---@param list List<Resource>
+---@param io ResourceIO
+---@param type ResourceType
 ---@return List<Resource>
-function __Resources:getResources(arg0, arg1, arg2) end
+function __Resources:getResources(list, io, type) end
 
----@param arg0 string
+---@param name string
 ---@return List<Resource>
-function __Resources:getResourcesForGroup(arg0) end
+function __Resources:getResourcesForGroup(name) end
 
----@param arg0 string
----@param arg1 List<Resource>
----@param arg2 ResourceIO
+---@param group string
+---@param list List<Resource>
+---@param io ResourceIO
 ---@return List<Resource>
-function __Resources:getResourcesFromGroup(arg0, arg1, arg2) end
+function __Resources:getResourcesFromGroup(group, list, io) end
 
----@param arg0 string
----@param arg1 List<Resource>
----@param arg2 ResourceType
+---@param group string
+---@param list List<Resource>
+---@param type ResourceType
 ---@return List<Resource>
-function __Resources:getResourcesFromGroup(arg0, arg1, arg2) end
+function __Resources:getResourcesFromGroup(group, list, type) end
 
----@param arg0 string
----@param arg1 List<Resource>
----@param arg2 ResourceIO
----@param arg3 ResourceChannel
+---@param group string
+---@param list List<Resource>
+---@param io ResourceIO
+---@param channel ResourceChannel
 ---@return List<Resource>
-function __Resources:getResourcesFromGroup(arg0, arg1, arg2, arg3) end
+function __Resources:getResourcesFromGroup(group, list, io, channel) end
 
----@param arg0 string
----@param arg1 List<Resource>
----@param arg2 ResourceChannel
+---@param group string
+---@param list List<Resource>
+---@param channel ResourceChannel
 ---@return List<Resource>
-function __Resources:getResourcesFromGroup(arg0, arg1, arg2) end
+function __Resources:getResourcesFromGroup(group, list, channel) end
 
----@param arg0 string
----@param arg1 List<Resource>
----@param arg2 ResourceIO
----@param arg3 ResourceType
+---@param group string
+---@param list List<Resource>
+---@param io ResourceIO
+---@param type ResourceType
 ---@return List<Resource>
-function __Resources:getResourcesFromGroup(arg0, arg1, arg2, arg3) end
+function __Resources:getResourcesFromGroup(group, list, io, type) end
 
 ---@return boolean
 function __Resources:isNoContainerOrEmpty() end
@@ -114,17 +114,17 @@ function __Resources:isNoContainerOrEmpty() end
 ---@return boolean
 function __Resources:isValid() end
 
----@param arg0 string
-function __Resources:removeResource(arg0) end
+---@param resourceID string
+function __Resources:removeResource(resourceID) end
 
----@param arg0 Resource
-function __Resources:removeResource(arg0) end
+---@param resource Resource
+function __Resources:removeResource(resource) end
 
----@param arg0 string
-function __Resources:removeResourceGroup(arg0) end
+---@param groupName string
+function __Resources:removeResourceGroup(groupName) end
 
----@param arg0 ResourceGroup
-function __Resources:removeResourceGroup(arg0) end
+---@param group ResourceGroup
+function __Resources:removeResourceGroup(group) end
 
 Resources = {}
 

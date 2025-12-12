@@ -55,10 +55,10 @@ function __DummyCharacterSoundEmitter:set(x, y, z) end
 ---@param value number
 function __DummyCharacterSoundEmitter:setParameterValue(soundRef, parameterDescription, value) end
 
----@param arg0 integer
----@param arg1 string
----@param arg2 number
-function __DummyCharacterSoundEmitter:setParameterValueByName(arg0, arg1, arg2) end
+---@param soundRef integer
+---@param parameterName string
+---@param value number
+function __DummyCharacterSoundEmitter:setParameterValueByName(soundRef, parameterName, value) end
 
 ---@param handle integer
 ---@param pitch number
@@ -76,8 +76,8 @@ function __DummyCharacterSoundEmitter:stopOrTriggerSound(handle) end
 ---@param name string
 function __DummyCharacterSoundEmitter:stopOrTriggerSoundByName(name) end
 
----@param arg0 integer
-function __DummyCharacterSoundEmitter:stopOrTriggerSoundLocal(arg0) end
+---@param handle integer
+function __DummyCharacterSoundEmitter:stopOrTriggerSoundLocal(handle) end
 
 ---@param channel integer
 ---@return integer
@@ -87,9 +87,9 @@ function __DummyCharacterSoundEmitter:stopSound(channel) end
 ---@return integer
 function __DummyCharacterSoundEmitter:stopSoundByName(soundName) end
 
----@param arg0 integer
+---@param channel integer
 ---@return integer
-function __DummyCharacterSoundEmitter:stopSoundDelayRelease(arg0) end
+function __DummyCharacterSoundEmitter:stopSoundDelayRelease(channel) end
 
 ---@param handle integer
 function __DummyCharacterSoundEmitter:stopSoundLocal(handle) end

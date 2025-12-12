@@ -17,9 +17,9 @@ function __IsoChunk:AddVehicles() end
 ---@param wy integer
 function __IsoChunk:Blam(wx, wy) end
 
----@param arg0 boolean
+---@param halfTileBorder boolean
 ---@return boolean
-function __IsoChunk:IsOnScreen(arg0) end
+function __IsoChunk:IsOnScreen(halfTileBorder) end
 
 ---@param wx integer
 ---@param wy integer
@@ -46,21 +46,21 @@ function __IsoChunk:LoadFromDiskOrBufferInternal(bb) end
 ---@return boolean
 function __IsoChunk:LoadOrCreate(wx, wy, fromServer) end
 
----@param arg0 BaseVehicle
----@param arg1 Zone
----@param arg2 string
----@param arg3 VehicleType
+---@param v BaseVehicle
+---@param zone Zone
+---@param name string
+---@param type VehicleType
 ---@return boolean
-function __IsoChunk:RandomizeModel(arg0, arg1, arg2, arg3) end
+function __IsoChunk:RandomizeModel(v, zone, name, type) end
 
 ---@param bSaveQuit boolean
 function __IsoChunk:Save(bSaveQuit) end
 
----@param arg0 ByteBuffer
----@param arg1 CRC32
----@param arg2 boolean
+---@param bb ByteBuffer
+---@param crc CRC32
+---@param bHotSave boolean
 ---@return ByteBuffer
-function __IsoChunk:Save(arg0, arg1, arg2) end
+function __IsoChunk:Save(bb, crc, bHotSave) end
 
 ---@param ccrc ClientChunkRequest.Chunk
 ---@param crc32 CRC32
@@ -77,19 +77,19 @@ function __IsoChunk:addBloodSplat(x, y, z, Type) end
 ---@param z integer
 function __IsoChunk:addGeneratorPos(x, y, z) end
 
----@param arg0 ChunkGenerationStatus
-function __IsoChunk:addModded(arg0) end
+---@param chunkGenerationStatus ChunkGenerationStatus
+function __IsoChunk:addModded(chunkGenerationStatus) end
 
 ---@param object IsoObject
 ---@param logic ObjectAmbientEmitters.PerObjectLogic
 function __IsoChunk:addObjectAmbientEmitter(object, logic) end
 
----@param arg0 Zone
----@param arg1 boolean
-function __IsoChunk:addRandomCarCrash(arg0, arg1) end
+---@param zone Zone
+---@param addToWorld boolean
+function __IsoChunk:addRandomCarCrash(zone, addToWorld) end
 
----@param arg0 integer
-function __IsoChunk:addSpawnedRoom(arg0) end
+---@param roomID integer
+function __IsoChunk:addSpawnedRoom(roomID) end
 
 ---@param forced boolean
 function __IsoChunk:addSurvivorInHorde(forced) end
@@ -99,35 +99,35 @@ function __IsoChunk:assignLoadID() end
 ---@return integer
 function __IsoChunk:attachmentsPartialSize() end
 
----@param arg0 Zone
----@param arg1 boolean
+---@param zone Zone
+---@param force boolean
 ---@return boolean
-function __IsoChunk:canAddRandomCarCrash(arg0, arg1) end
+function __IsoChunk:canAddRandomCarCrash(zone, force) end
 
 function __IsoChunk:checkForMissingGenerators() end
 
 function __IsoChunk:checkLightingLater_AllPlayers_AllLevels() end
 
----@param arg0 integer
-function __IsoChunk:checkLightingLater_AllPlayers_OneLevel(arg0) end
+---@param level integer
+function __IsoChunk:checkLightingLater_AllPlayers_OneLevel(level) end
 
----@param arg0 integer
-function __IsoChunk:checkLightingLater_OnePlayer_AllLevels(arg0) end
+---@param playerIndex integer
+function __IsoChunk:checkLightingLater_OnePlayer_AllLevels(playerIndex) end
 
----@param arg0 integer
----@param arg1 integer
-function __IsoChunk:checkLightingLater_OnePlayer_OneLevel(arg0, arg1) end
+---@param playerIndex integer
+---@param level integer
+function __IsoChunk:checkLightingLater_OnePlayer_OneLevel(playerIndex, level) end
 
----@param arg0 integer
-function __IsoChunk:checkPhysicsLater(arg0) end
+---@param level integer
+function __IsoChunk:checkPhysicsLater(level) end
 
----@param arg0 IsoChunkLevel
-function __IsoChunk:checkPhysicsLaterForActiveRagdoll(arg0) end
+---@param isoChunkLevel IsoChunkLevel
+function __IsoChunk:checkPhysicsLaterForActiveRagdoll(isoChunkLevel) end
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return boolean
-function __IsoChunk:containsPoint(arg0, arg1) end
+function __IsoChunk:containsPoint(x, y) end
 
 function __IsoChunk:doLoadGridsquare() end
 
@@ -137,9 +137,9 @@ function __IsoChunk:doReuseGridsquares() end
 
 function __IsoChunk:flagForHotSave() end
 
----@param arg0 integer
+---@param i integer
 ---@return SquareCoord
-function __IsoChunk:getAttachmentsPartial(arg0) end
+function __IsoChunk:getAttachmentsPartial(i) end
 
 ---@return kahlua.Array<boolean>
 function __IsoChunk:getAttachmentsState() end
@@ -147,9 +147,9 @@ function __IsoChunk:getAttachmentsState() end
 ---@return FBORenderCutaways.ChunkLevelsData
 function __IsoChunk:getCutawayData() end
 
----@param arg0 integer
+---@param z integer
 ---@return FBORenderCutaways.ChunkLevelData
-function __IsoChunk:getCutawayDataForLevel(arg0) end
+function __IsoChunk:getCutawayDataForLevel(z) end
 
 ---@return ErosionData.Chunk
 function __IsoChunk:getErosionData() end
@@ -160,9 +160,9 @@ function __IsoChunk:getErosionData() end
 ---@return IsoGridSquare
 function __IsoChunk:getGridSquare(x, y, z) end
 
----@param arg0 integer
+---@param level integer
 ---@return IsoChunkLevel
-function __IsoChunk:getLevelData(arg0) end
+function __IsoChunk:getLevelData(level) end
 
 ---@return integer
 function __IsoChunk:getLoadID() end
@@ -173,38 +173,38 @@ function __IsoChunk:getMaxLevel() end
 ---@return integer
 function __IsoChunk:getMinLevel() end
 
----@param arg0 BlendDirection
+---@param dir BlendDirection
 ---@return integer
-function __IsoChunk:getModifDepth(arg0) end
+function __IsoChunk:getModifDepth(dir) end
 
 ---@return integer
 function __IsoChunk:getNumberOfWaterTiles() end
 
----@param arg0 integer
+---@param playerIndex integer
 ---@return FBORenderLevels
-function __IsoChunk:getRenderLevels(arg0) end
+function __IsoChunk:getRenderLevels(playerIndex) end
 
----@param arg0 integer
+---@param roomID integer
 ---@return IsoRoom
-function __IsoChunk:getRoom(arg0) end
+function __IsoChunk:getRoom(roomID) end
 
 ---@return Zone
 function __IsoChunk:getScavengeZone() end
 
----@param arg0 integer
+---@param worldSquareZ integer
 ---@return kahlua.Array<IsoGridSquare>
-function __IsoChunk:getSquaresForLevel(arg0) end
+function __IsoChunk:getSquaresForLevel(worldSquareZ) end
 
 ---@return VisibilityPolygon2.ChunkData
 function __IsoChunk:getVispolyData() end
 
----@param arg0 integer
+---@param z integer
 ---@return VisibilityPolygon2.ChunkLevelData
-function __IsoChunk:getVispolyDataForLevel(arg0) end
+function __IsoChunk:getVispolyDataForLevel(z) end
 
----@param arg0 SquareCoord
+---@param coord SquareCoord
 ---@return boolean
-function __IsoChunk:hasAttachmentsPartial(arg0) end
+function __IsoChunk:hasAttachmentsPartial(coord) end
 
 ---@return boolean
 function __IsoChunk:hasFence() end
@@ -218,26 +218,26 @@ function __IsoChunk:hasWaterSquare() end
 
 function __IsoChunk:ignorePathfind() end
 
----@param arg0 integer
----@param arg1 integer
-function __IsoChunk:invalidateRenderChunkLevel(arg0, arg1) end
+---@param level integer
+---@param dirtyFlags integer
+function __IsoChunk:invalidateRenderChunkLevel(level, dirtyFlags) end
 
----@param arg0 integer
-function __IsoChunk:invalidateRenderChunkLevels(arg0) end
+---@param dirtyFlags integer
+function __IsoChunk:invalidateRenderChunkLevels(dirtyFlags) end
 
----@param arg0 integer
-function __IsoChunk:invalidateVispolyChunkLevel(arg0) end
+---@param level integer
+function __IsoChunk:invalidateVispolyChunkLevel(level) end
 
----@param arg0 integer
+---@param i integer
 ---@return boolean
-function __IsoChunk:isAttachmentsDone(arg0) end
+function __IsoChunk:isAttachmentsDone(i) end
 
 ---@return boolean
 function __IsoChunk:isAttachmentsDoneFull() end
 
----@param arg0 integer
+---@param i integer
 ---@return boolean
-function __IsoChunk:isBlendingDone(arg0) end
+function __IsoChunk:isBlendingDone(i) end
 
 ---@return boolean
 function __IsoChunk:isBlendingDoneFull() end
@@ -254,22 +254,22 @@ function __IsoChunk:isGeneratorPoweringSquare(x, y, z) end
 ---@return EnumSet<ChunkGenerationStatus>
 function __IsoChunk:isModded() end
 
----@param arg0 EnumSet<ChunkGenerationStatus>
-function __IsoChunk:isModded(arg0) end
+---@param chunkGenerationStatus EnumSet<ChunkGenerationStatus>
+function __IsoChunk:isModded(chunkGenerationStatus) end
 
----@param arg0 ChunkGenerationStatus
-function __IsoChunk:isModded(arg0) end
+---@param chunkGenerationStatus ChunkGenerationStatus
+function __IsoChunk:isModded(chunkGenerationStatus) end
 
 ---@return boolean
 function __IsoChunk:isNewChunk() end
 
----@param arg0 integer
+---@param roomID integer
 ---@return boolean
-function __IsoChunk:isSpawnedRoom(arg0) end
+function __IsoChunk:isSpawnedRoom(roomID) end
 
----@param arg0 integer
+---@param level integer
 ---@return boolean
-function __IsoChunk:isValidLevel(arg0) end
+function __IsoChunk:isValidLevel(level) end
 
 function __IsoChunk:loadInMainThread() end
 
@@ -293,47 +293,47 @@ function __IsoChunk:removeObjectAmbientEmitter(object) end
 
 function __IsoChunk:resetForStore() end
 
----@param arg0 ChunkGenerationStatus
-function __IsoChunk:rmModded(arg0) end
+---@param chunkGenerationStatus ChunkGenerationStatus
+function __IsoChunk:rmModded(chunkGenerationStatus) end
 
 ---@param bb ByteBuffer
 ---@return boolean
 function __IsoChunk:saveObjectState(bb) end
 
----@param arg0 boolean
-function __IsoChunk:setAttachmentsDoneFull(arg0) end
+---@param attachmentsDoneFull boolean
+function __IsoChunk:setAttachmentsDoneFull(attachmentsDoneFull) end
 
----@param arg0 SquareCoord
-function __IsoChunk:setAttachmentsPartial(arg0) end
+---@param coord SquareCoord
+function __IsoChunk:setAttachmentsPartial(coord) end
 
----@param arg0 integer
----@param arg1 boolean
-function __IsoChunk:setAttachmentsState(arg0, arg1) end
+---@param i integer
+---@param value boolean
+function __IsoChunk:setAttachmentsState(i, value) end
 
----@param arg0 boolean
-function __IsoChunk:setBlendingDoneFull(arg0) end
+---@param flag boolean
+function __IsoChunk:setBlendingDoneFull(flag) end
 
----@param arg0 boolean
-function __IsoChunk:setBlendingDonePartial(arg0) end
+---@param flag boolean
+function __IsoChunk:setBlendingDonePartial(flag) end
 
----@param arg0 integer
-function __IsoChunk:setBlendingModified(arg0) end
+---@param i integer
+function __IsoChunk:setBlendingModified(i) end
 
 function __IsoChunk:setCache() end
 
 function __IsoChunk:setCacheIncludingNull() end
 
----@param arg0 integer
----@param arg1 integer
-function __IsoChunk:setMinMaxLevel(arg0, arg1) end
+---@param minLevel integer
+---@param maxLevel integer
+function __IsoChunk:setMinMaxLevel(minLevel, maxLevel) end
 
----@param arg0 BlendDirection
----@param arg1 integer
-function __IsoChunk:setModifDepth(arg0, arg1) end
+---@param dir BlendDirection
+---@param depth integer
+function __IsoChunk:setModifDepth(dir, depth) end
 
----@param arg0 BlendDirection
----@param arg1 integer
-function __IsoChunk:setModifDepth(arg0, arg1) end
+---@param dir BlendDirection
+---@param depth integer
+function __IsoChunk:setModifDepth(dir, depth) end
 
 ---@param spawnData VehicleStorySpawnData
 function __IsoChunk:setRandomVehicleStoryToSpawnLater(spawnData) end
@@ -344,16 +344,16 @@ function __IsoChunk:setRandomVehicleStoryToSpawnLater(spawnData) end
 ---@param square IsoGridSquare
 function __IsoChunk:setSquare(x, y, z, square) end
 
----@param arg0 integer
+---@param worldSquareZ integer
 ---@return integer
-function __IsoChunk:squaresIndexOfLevel(arg0) end
+function __IsoChunk:squaresIndexOfLevel(worldSquareZ) end
 
 function __IsoChunk:update() end
 
 function __IsoChunk:updateBuildings() end
 
----@param arg0 integer
-function __IsoChunk:updatePhysicsForLevel(arg0) end
+---@param z integer
+function __IsoChunk:updatePhysicsForLevel(z) end
 
 function __IsoChunk:updateSounds() end
 
@@ -413,10 +413,10 @@ function IsoChunk.Reset() end
 ---@return ByteBuffer
 function IsoChunk.SafeRead(wx, wy, bb) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 ByteBuffer
-function IsoChunk.SafeWrite(arg0, arg1, arg2) end
+---@param wx integer
+---@param wy integer
+---@param bb ByteBuffer
+function IsoChunk.SafeWrite(wx, wy, bb) end
 
 ---@param v BaseVehicle
 function IsoChunk.addFromCheckedVehicles(v) end
@@ -434,9 +434,9 @@ function IsoChunk.updatePlayerInBullet() end
 ---@return IsoChunk
 function IsoChunk.new(cell) end
 
----@param arg0 WorldReuserThread
+---@param dummy WorldReuserThread
 ---@return IsoChunk
-function IsoChunk.new(arg0) end
+function IsoChunk.new(dummy) end
 
 ---@type Class<IsoChunk>
 IsoChunk.class = nil

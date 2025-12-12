@@ -3,8 +3,8 @@
 ---@class SafeHouse
 local __SafeHouse = {}
 
----@param arg0 string
-function __SafeHouse:addInvite(arg0) end
+---@param invited string
+function __SafeHouse:addInvite(invited) end
 
 ---@param player string
 function __SafeHouse:addPlayer(player) end
@@ -82,17 +82,17 @@ function __SafeHouse:getY() end
 ---@return integer
 function __SafeHouse:getY2() end
 
----@param arg0 string
+---@param player string
 ---@return boolean
-function __SafeHouse:haveInvite(arg0) end
+function __SafeHouse:haveInvite(player) end
 
 ---@param player IsoPlayer
 ---@return boolean
 function __SafeHouse:isOwner(player) end
 
----@param arg0 string
+---@param username string
 ---@return boolean
-function __SafeHouse:isOwner(arg0) end
+function __SafeHouse:isOwner(username) end
 
 ---@param username string
 ---@return boolean
@@ -106,8 +106,8 @@ function __SafeHouse:playerAllowed(player) end
 ---@return boolean
 function __SafeHouse:playerAllowed(name) end
 
----@param arg0 string
-function __SafeHouse:removeInvite(arg0) end
+---@param player string
+function __SafeHouse:removeInvite(player) end
 
 ---@param player string
 function __SafeHouse:removePlayer(player) end
@@ -115,23 +115,23 @@ function __SafeHouse:removePlayer(player) end
 ---@param output ByteBuffer
 function __SafeHouse:save(output) end
 
----@param arg0 integer
-function __SafeHouse:setDatetimeCreated(arg0) end
+---@param _datetimeCreated integer
+function __SafeHouse:setDatetimeCreated(_datetimeCreated) end
 
 ---@param h integer
 function __SafeHouse:setH(h) end
 
----@param arg0 integer
-function __SafeHouse:setHitPoints(arg0) end
+---@param hitPoints integer
+function __SafeHouse:setHitPoints(hitPoints) end
 
 ---@param lastVisited integer
 function __SafeHouse:setLastVisited(lastVisited) end
 
----@param arg0 string
-function __SafeHouse:setLocation(arg0) end
+---@param _location string
+function __SafeHouse:setLocation(_location) end
 
----@param arg0 integer
-function __SafeHouse:setOnlineID(arg0) end
+---@param value integer
+function __SafeHouse:setOnlineID(value) end
 
 ---@param openTimer integer
 function __SafeHouse:setOpenTimer(openTimer) end
@@ -171,13 +171,13 @@ function __SafeHouse:updateSafehouse(player) end
 
 SafeHouse = {}
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 string
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
+---@param player string
 ---@return SafeHouse
-function SafeHouse.addSafeHouse(arg0, arg1, arg2, arg3, arg4) end
+function SafeHouse.addSafeHouse(x, y, w, h, player) end
 
 ---@param square IsoGridSquare
 ---@param player IsoPlayer
@@ -195,18 +195,18 @@ function SafeHouse.canBeSafehouse(clickedSquare, player) end
 
 function SafeHouse.clearSafehouseList() end
 
----@param arg0 integer
----@param arg1 integer
+---@param x integer
+---@param y integer
 ---@return integer
-function SafeHouse.getOnlineID(arg0, arg1) end
+function SafeHouse.getOnlineID(x, y) end
 
 ---@param square IsoGridSquare
 ---@return SafeHouse
 function SafeHouse.getSafeHouse(square) end
 
----@param arg0 string
+---@param title string
 ---@return SafeHouse
-function SafeHouse.getSafeHouse(arg0) end
+function SafeHouse.getSafeHouse(title) end
 
 ---@param x integer
 ---@param y integer
@@ -215,31 +215,31 @@ function SafeHouse.getSafeHouse(arg0) end
 ---@return SafeHouse
 function SafeHouse.getSafeHouse(x, y, w, h) end
 
----@param arg0 integer
+---@param onlineID integer
 ---@return SafeHouse
-function SafeHouse.getSafeHouse(arg0) end
+function SafeHouse.getSafeHouse(onlineID) end
 
----@param arg0 string
+---@param username string
 ---@return SafeHouse
-function SafeHouse.getSafehouseByOwner(arg0) end
+function SafeHouse.getSafehouseByOwner(username) end
 
 ---@return ArrayList<SafeHouse>
 function SafeHouse.getSafehouseList() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
+---@param x1 integer
+---@param y1 integer
+---@param x2 integer
+---@param y2 integer
 ---@return SafeHouse
-function SafeHouse.getSafehouseOverlapping(arg0, arg1, arg2, arg3) end
+function SafeHouse.getSafehouseOverlapping(x1, y1, x2, y2) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 SafeHouse
+---@param x1 integer
+---@param y1 integer
+---@param x2 integer
+---@param y2 integer
+---@param ignore SafeHouse
 ---@return SafeHouse
-function SafeHouse.getSafehouseOverlapping(arg0, arg1, arg2, arg3, arg4) end
+function SafeHouse.getSafehouseOverlapping(x1, y1, x2, y2, ignore) end
 
 ---@param username string
 ---@return SafeHouse
@@ -249,22 +249,22 @@ function SafeHouse.hasSafehouse(username) end
 ---@return SafeHouse
 function SafeHouse.hasSafehouse(player) end
 
----@param arg0 integer
-function SafeHouse.hitPoint(arg0) end
+---@param onlineID integer
+function SafeHouse.hitPoint(onlineID) end
 
 function SafeHouse.init() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
+---@param startX integer
+---@param startY integer
+---@param endX integer
+---@param endY integer
 ---@return boolean
-function SafeHouse.intersects(arg0, arg1, arg2, arg3) end
+function SafeHouse.intersects(startX, startY, endX, endY) end
 
----@param arg0 string
----@param arg1 string
+---@param player1 string
+---@param player2 string
 ---@return boolean
-function SafeHouse.isInSameSafehouse(arg0, arg1) end
+function SafeHouse.isInSameSafehouse(player1, player2) end
 
 ---@param player IsoPlayer
 ---@param sq IsoGridSquare
@@ -281,33 +281,33 @@ function SafeHouse.isPlayerAllowedOnSquare(player, sq) end
 ---@return SafeHouse
 function SafeHouse.isSafeHouse(square, username, doDisableSafehouse) end
 
----@param arg0 SafeHouse
----@param arg1 IsoPlayer
+---@param safehouse SafeHouse
+---@param player IsoPlayer
 ---@return boolean
-function SafeHouse.isSafehouseAllowClaim(arg0, arg1) end
+function SafeHouse.isSafehouseAllowClaim(safehouse, player) end
 
----@param arg0 IsoGridSquare
----@param arg1 IsoPlayer
+---@param square IsoGridSquare
+---@param player IsoPlayer
 ---@return boolean
-function SafeHouse.isSafehouseAllowInteract(arg0, arg1) end
+function SafeHouse.isSafehouseAllowInteract(square, player) end
 
----@param arg0 IsoGridSquare
----@param arg1 IsoPlayer
+---@param square IsoGridSquare
+---@param player IsoPlayer
 ---@return boolean
-function SafeHouse.isSafehouseAllowLoot(arg0, arg1) end
+function SafeHouse.isSafehouseAllowLoot(square, player) end
 
----@param arg0 IsoGridSquare
----@param arg1 IsoPlayer
+---@param square IsoGridSquare
+---@param player IsoPlayer
 ---@return boolean
-function SafeHouse.isSafehouseAllowTrepass(arg0, arg1) end
+function SafeHouse.isSafehouseAllowTrepass(square, player) end
 
 ---@param bb ByteBuffer
 ---@param WorldVersion integer
 ---@return SafeHouse
 function SafeHouse.load(bb, WorldVersion) end
 
----@param arg0 SafeHouse
-function SafeHouse.removeSafeHouse(arg0) end
+---@param safeHouse SafeHouse
+function SafeHouse.removeSafeHouse(safeHouse) end
 
 function SafeHouse.updateSafehousePlayersConnected() end
 

@@ -3,8 +3,8 @@
 ---@class AttributeInstance.EnumSet<E: Enum<E>, IOEnum>: AttributeInstance<AttributeInstance.EnumSet<E>, AttributeType.EnumSet<E>>
 local __EnumSet = {}
 
----@param arg0 string
-function __EnumSet:addValueFromString(arg0) end
+---@param val string
+function __EnumSet:addValueFromString(val) end
 
 function __EnumSet:clear() end
 
@@ -18,22 +18,22 @@ function __EnumSet:equalTo(other) end
 ---@return EnumSet<E>
 function __EnumSet:getValue() end
 
----@param arg0 ByteBuffer
-function __EnumSet:load(arg0) end
+---@param input ByteBuffer
+function __EnumSet:load(input) end
 
----@param arg0 string
+---@param val string
 ---@return boolean
-function __EnumSet:removeValueFromString(arg0) end
+function __EnumSet:removeValueFromString(val) end
 
----@param arg0 ByteBuffer
-function __EnumSet:save(arg0) end
+---@param output ByteBuffer
+function __EnumSet:save(output) end
 
----@param arg0 EnumSet<E>
-function __EnumSet:setValue(arg0) end
+---@param value EnumSet<E>
+function __EnumSet:setValue(value) end
 
----@param arg0 string
+---@param val string
 ---@return boolean
-function __EnumSet:setValueFromScriptString(arg0) end
+function __EnumSet:setValueFromScriptString(val) end
 
 ---@return string
 function __EnumSet:stringValue() end

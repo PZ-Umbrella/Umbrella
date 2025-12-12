@@ -12,16 +12,16 @@ local __RandomizedVehicleStoryBase = {}
 ---@return kahlua.Array<BaseVehicle>
 function __RandomizedVehicleStoryBase:addSmashedOverlay(v1, v2, xOffset, yOffset, horizontalZone, addBlood) end
 
----@param arg0 Zone
----@param arg1 IsoChunk
----@param arg2 number
+---@param zone Zone
+---@param chunk IsoChunk
+---@param additionalRotationRadians number
 ---@return boolean
-function __RandomizedVehicleStoryBase:callVehicleStorySpawner(arg0, arg1, arg2) end
+function __RandomizedVehicleStoryBase:callVehicleStorySpawner(zone, chunk, additionalRotationRadians) end
 
----@param arg0 Zone
----@param arg1 IsoChunk
+---@param zone Zone
+---@param chunk IsoChunk
 ---@return IsoGridSquare
-function __RandomizedVehicleStoryBase:getCenterOfChunk(arg0, arg1) end
+function __RandomizedVehicleStoryBase:getCenterOfChunk(zone, chunk) end
 
 ---@return integer
 function __RandomizedVehicleStoryBase:getChance() end
@@ -44,34 +44,34 @@ function __RandomizedVehicleStoryBase:getMinimumDays() end
 ---@return string
 function __RandomizedVehicleStoryBase:getName() end
 
----@param arg0 Zone
----@param arg1 IsoChunk
----@param arg2 kahlua.Array<number>
+---@param zone Zone
+---@param chunk IsoChunk
+---@param result kahlua.Array<number>
 ---@return boolean
-function __RandomizedVehicleStoryBase:getPolylineSpawnPoint(arg0, arg1, arg2) end
+function __RandomizedVehicleStoryBase:getPolylineSpawnPoint(zone, chunk, result) end
 
----@param arg0 Zone
----@param arg1 IsoChunk
----@param arg2 kahlua.Array<number>
+---@param zone Zone
+---@param chunk IsoChunk
+---@param result kahlua.Array<number>
 ---@return boolean
-function __RandomizedVehicleStoryBase:getRectangleSpawnPoint(arg0, arg1, arg2) end
+function __RandomizedVehicleStoryBase:getRectangleSpawnPoint(zone, chunk, result) end
 
----@param arg0 Zone
----@param arg1 IsoChunk
----@param arg2 kahlua.Array<number>
+---@param zone Zone
+---@param chunk IsoChunk
+---@param result kahlua.Array<number>
 ---@return boolean
-function __RandomizedVehicleStoryBase:getSpawnPoint(arg0, arg1, arg2) end
+function __RandomizedVehicleStoryBase:getSpawnPoint(zone, chunk, result) end
 
----@param arg0 Zone
----@param arg1 IsoChunk
+---@param zone Zone
+---@param chunk IsoChunk
 ---@return VehicleStorySpawnData
-function __RandomizedVehicleStoryBase:initSpawnDataForChunk(arg0, arg1) end
+function __RandomizedVehicleStoryBase:initSpawnDataForChunk(zone, chunk) end
 
----@param arg0 Zone
----@param arg1 IsoChunk
----@param arg2 boolean
+---@param zone Zone
+---@param chunk IsoChunk
+---@param debug boolean
 ---@return boolean
-function __RandomizedVehicleStoryBase:initVehicleStorySpawner(arg0, arg1, arg2) end
+function __RandomizedVehicleStoryBase:initVehicleStorySpawner(zone, chunk, debug) end
 
 ---@param wx integer
 ---@param wy integer
@@ -85,15 +85,15 @@ function __RandomizedVehicleStoryBase:isChunkLoaded(wx, wy) end
 ---@return boolean
 function __RandomizedVehicleStoryBase:isFullyStreamedIn(x1, y1, x2, y2) end
 
----@param arg0 Zone
----@param arg1 IsoChunk
----@param arg2 boolean
+---@param zone Zone
+---@param chunk IsoChunk
+---@param force boolean
 ---@return boolean
-function __RandomizedVehicleStoryBase:isValid(arg0, arg1, arg2) end
+function __RandomizedVehicleStoryBase:isValid(zone, chunk, force) end
 
----@param arg0 Zone
----@param arg1 IsoChunk
-function __RandomizedVehicleStoryBase:randomizeVehicleStory(arg0, arg1) end
+---@param zone Zone
+---@param chunk IsoChunk
+function __RandomizedVehicleStoryBase:randomizeVehicleStory(zone, chunk) end
 
 function __RandomizedVehicleStoryBase:registerCustomOutfits() end
 
@@ -115,21 +115,21 @@ RandomizedVehicleStoryBase = {}
 ---@type integer
 RandomizedVehicleStoryBase.baseChance = nil
 
----@param arg0 Zone
----@param arg1 IsoChunk
----@param arg2 boolean
+---@param zone Zone
+---@param chunk IsoChunk
+---@param force boolean
 ---@return boolean
-function RandomizedVehicleStoryBase.doRandomStory(arg0, arg1, arg2) end
+function RandomizedVehicleStoryBase.doRandomStory(zone, chunk, force) end
 
----@param arg0 RandomizedVehicleStoryBase
----@param arg1 Zone
----@param arg2 IsoGridSquare
+---@param rvs RandomizedVehicleStoryBase
+---@param zone Zone
+---@param sq1 IsoGridSquare
 ---@return IsoGridSquare
-function RandomizedVehicleStoryBase.getRandomFreeUnoccupiedSquare(arg0, arg1, arg2) end
+function RandomizedVehicleStoryBase.getRandomFreeUnoccupiedSquare(rvs, zone, sq1) end
 
----@param arg0 Zone
----@param arg1 IsoChunk
-function RandomizedVehicleStoryBase.initAllRVSMapChance(arg0, arg1) end
+---@param zone Zone
+---@param chunk IsoChunk
+function RandomizedVehicleStoryBase.initAllRVSMapChance(zone, chunk) end
 
 ---@return RandomizedVehicleStoryBase
 function RandomizedVehicleStoryBase.new() end

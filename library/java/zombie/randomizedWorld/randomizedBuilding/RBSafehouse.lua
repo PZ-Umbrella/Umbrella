@@ -4,10 +4,10 @@
 ---@class RBSafehouse: RandomizedBuildingBase
 local __RBSafehouse = {}
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param def BuildingDef
+---@param force boolean
 ---@return boolean
-function __RBSafehouse:isValid(arg0, arg1) end
+function __RBSafehouse:isValid(def, force) end
 
 ---@param def BuildingDef
 function __RBSafehouse:randomizeBuilding(def) end

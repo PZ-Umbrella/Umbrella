@@ -14,25 +14,25 @@ function __UIElement:ButtonClicked(name) end
 
 function __UIElement:ClearChildren() end
 
----@param arg0 InventoryItem
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
-function __UIElement:DrawItemIcon(arg0, arg1, arg2, arg3, arg4, arg5) end
+---@param item InventoryItem
+---@param x number
+---@param y number
+---@param alpha number
+---@param width number
+---@param height number
+function __UIElement:DrawItemIcon(item, x, y, alpha, width, height) end
 
----@param arg0 Texture
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 number
----@param arg9 number
-function __UIElement:DrawLine(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+---@param tex Texture
+---@param x1 number
+---@param y1 number
+---@param x2 number
+---@param y2 number
+---@param thickness number
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function __UIElement:DrawLine(tex, x1, y1, x2, y2, thickness, r, g, b, a) end
 
 ---@param tex Texture
 ---@param x1 number
@@ -49,13 +49,13 @@ function __UIElement:DrawLine(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, ar
 ---@param a number
 function __UIElement:DrawPolygon(tex, x1, y1, x2, y2, x3, y3, x4, y4, r, g, b, a) end
 
----@param arg0 Item
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
-function __UIElement:DrawScriptItemIcon(arg0, arg1, arg2, arg3, arg4, arg5) end
+---@param scriptItem Item
+---@param x number
+---@param y number
+---@param alpha number
+---@param width number
+---@param height number
+function __UIElement:DrawScriptItemIcon(scriptItem, x, y, alpha, width, height) end
 
 ---@param tex Texture
 ---@param subX number
@@ -213,28 +213,28 @@ function __UIElement:DrawTextureCol(tex, x, y, col) end
 ---@param a number
 function __UIElement:DrawTextureColor(tex, x, y, r, g, b, a) end
 
----@param arg0 Texture
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 number
-function __UIElement:DrawTextureIcon(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+---@param tex Texture
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param r number
+---@param g number
+---@param b number
+---@param alpha number
+function __UIElement:DrawTextureIcon(tex, x, y, width, height, r, g, b, alpha) end
 
----@param arg0 Texture
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 number
----@param arg9 number
-function __UIElement:DrawTextureIconMask(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+---@param tex Texture
+---@param yRatio number
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param r number
+---@param g number
+---@param b number
+---@param alpha number
+function __UIElement:DrawTextureIconMask(tex, yRatio, x, y, width, height, r, g, b, alpha) end
 
 ---@param tex Texture
 ---@param x number
@@ -244,29 +244,29 @@ function __UIElement:DrawTextureIconMask(arg0, arg1, arg2, arg3, arg4, arg5, arg
 ---@param col Color
 function __UIElement:DrawTextureIgnoreOffset(tex, x, y, width, height, col) end
 
----@param arg0 Texture
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 number
----@param arg9 number
-function __UIElement:DrawTexturePercentage(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+---@param tex Texture
+---@param yRatio number
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param r number
+---@param g number
+---@param b number
+---@param alpha number
+function __UIElement:DrawTexturePercentage(tex, yRatio, x, y, width, height, r, g, b, alpha) end
 
----@param arg0 Texture
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 number
----@param arg9 number
-function __UIElement:DrawTexturePercentageBottomUp(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+---@param tex Texture
+---@param yRatio number
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param r number
+---@param g number
+---@param b number
+---@param alpha number
+function __UIElement:DrawTexturePercentageBottomUp(tex, yRatio, x, y, width, height, r, g, b, alpha) end
 
 ---@param tex Texture
 ---@param x number
@@ -298,16 +298,16 @@ function __UIElement:DrawTextureScaledAspect(tex, x, y, width, height, r, g, b, 
 ---@param alpha number
 function __UIElement:DrawTextureScaledAspect2(tex, x, y, width, height, r, g, b, alpha) end
 
----@param arg0 Texture
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 number
-function __UIElement:DrawTextureScaledAspect3(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+---@param tex Texture
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param r number
+---@param g number
+---@param b number
+---@param alpha number
+function __UIElement:DrawTextureScaledAspect3(tex, x, y, width, height, r, g, b, alpha) end
 
 ---@param tex Texture
 ---@param x number
@@ -382,16 +382,16 @@ function __UIElement:DrawTextureTiledX(tex, x, y, w, h, r, g, b, a) end
 ---@param a number
 function __UIElement:DrawTextureTiledY(tex, x, y, w, h, r, g, b, a) end
 
----@param arg0 Texture
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 number
-function __UIElement:DrawTextureTiledYOffset(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+---@param tex Texture
+---@param x number
+---@param y number
+---@param w number
+---@param h number
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function __UIElement:DrawTextureTiledYOffset(tex, x, y, w, h, r, g, b, a) end
 
 ---@param tex Texture
 ---@param x number
@@ -429,13 +429,13 @@ function __UIElement:RemoveChild(el) end
 ---@param el UIElement
 function __UIElement:RemoveControl(el) end
 
----@param arg0 Texture
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
-function __UIElement:StartOutline(arg0, arg1, arg2, arg3, arg4, arg5) end
+---@param tex Texture
+---@param outlineThickness number
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function __UIElement:StartOutline(tex, outlineThickness, r, g, b, a) end
 
 function __UIElement:backMost() end
 
@@ -571,10 +571,10 @@ function __UIElement:isModalVisible() end
 ---@return boolean
 function __UIElement:isMouseOver() end
 
----@param arg0 number
----@param arg1 number
+---@param mx number
+---@param my number
 ---@return boolean
-function __UIElement:isOverElement(arg0, arg1) end
+function __UIElement:isOverElement(mx, my) end
 
 ---@param screenX number
 ---@param screenY number
@@ -593,48 +593,48 @@ function __UIElement:isWantExtraMouseEvents() end
 ---@return boolean
 function __UIElement:isWantKeyEvents() end
 
----@param arg0 integer
+---@param key integer
 ---@return boolean
-function __UIElement:onConsumeKeyPress(arg0) end
+function __UIElement:onConsumeKeyPress(key) end
 
----@param arg0 integer
+---@param key integer
 ---@return boolean
-function __UIElement:onConsumeKeyRelease(arg0) end
+function __UIElement:onConsumeKeyRelease(key) end
 
----@param arg0 integer
+---@param key integer
 ---@return boolean
-function __UIElement:onConsumeKeyRepeat(arg0) end
+function __UIElement:onConsumeKeyRepeat(key) end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 number
+---@param btn integer
+---@param x number
+---@param y number
 ---@return boolean
-function __UIElement:onConsumeMouseButtonDown(arg0, arg1, arg2) end
+function __UIElement:onConsumeMouseButtonDown(btn, x, y) end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 number
+---@param btn integer
+---@param x number
+---@param y number
 ---@return boolean
-function __UIElement:onConsumeMouseButtonUp(arg0, arg1, arg2) end
+function __UIElement:onConsumeMouseButtonUp(btn, x, y) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
+---@param dx number
+---@param dy number
+---@param x number
+---@param y number
 ---@return boolean
-function __UIElement:onConsumeMouseMove(arg0, arg1, arg2, arg3) end
+function __UIElement:onConsumeMouseMove(dx, dy, x, y) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param del number
+---@param x number
+---@param y number
 ---@return boolean
-function __UIElement:onConsumeMouseWheel(arg0, arg1, arg2) end
+function __UIElement:onConsumeMouseWheel(del, x, y) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
-function __UIElement:onExtendMouseMoveOutside(arg0, arg1, arg2, arg3) end
+---@param dx number
+---@param dy number
+---@param x number
+---@param y number
+function __UIElement:onExtendMouseMoveOutside(dx, dy, x, y) end
 
 ---@param key integer
 function __UIElement:onKeyPress(key) end
@@ -645,20 +645,20 @@ function __UIElement:onKeyRelease(key) end
 ---@param key integer
 function __UIElement:onKeyRepeat(key) end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 number
-function __UIElement:onMouseButtonDown(arg0, arg1, arg2) end
+---@param btn integer
+---@param x number
+---@param y number
+function __UIElement:onMouseButtonDown(btn, x, y) end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 number
-function __UIElement:onMouseButtonDownOutside(arg0, arg1, arg2) end
+---@param btn integer
+---@param x number
+---@param y number
+function __UIElement:onMouseButtonDownOutside(btn, x, y) end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 number
-function __UIElement:onMouseButtonUpOutside(arg0, arg1, arg2) end
+---@param btn integer
+---@param x number
+---@param y number
+function __UIElement:onMouseButtonUpOutside(btn, x, y) end
 
 ---@param x number
 ---@param y number
@@ -786,11 +786,11 @@ function __UIElement:setScrollHeight(h) end
 ---@param bScroll boolean
 function __UIElement:setScrollWithParent(bScroll) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
-function __UIElement:setStencilCircle(arg0, arg1, arg2, arg3) end
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+function __UIElement:setStencilCircle(x, y, width, height) end
 
 ---@param x number
 ---@param y number
@@ -807,8 +807,8 @@ function __UIElement:setUIName(name) end
 ---@param visible boolean the visible to set
 function __UIElement:setVisible(visible) end
 
----@param arg0 boolean
-function __UIElement:setWantExtraMouseEvents(arg0) end
+---@param want boolean
+function __UIElement:setWantExtraMouseEvents(want) end
 
 ---@param want boolean
 function __UIElement:setWantKeyEvents(want) end

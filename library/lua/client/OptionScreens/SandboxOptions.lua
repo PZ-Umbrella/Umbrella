@@ -23,9 +23,6 @@ SandboxOptionsScreen = ISPanelJoypad:derive("SandboxOptionsScreen")
 SandboxOptionsScreen.Type = "SandboxOptionsScreen"
 SandboxOptionsScreen.instance = nil ---@type SandboxOptionsScreen?
 
----@param self ISTextEntryBox
-function SandboxOptionsScreen.searchPrerender(self) end
-
 ---@param fileName string
 ---@param text string
 ---@param userDefined boolean
@@ -91,6 +88,7 @@ function SandboxOptionsScreen:onJoypadNavigateStart(joypadData) end
 ---@param joypadData JoypadData
 function SandboxOptionsScreen:onJoypadNavigateStart_Descendant(descendant, joypadData) end
 
+---@param key integer
 function SandboxOptionsScreen:onKeyRelease(key) end
 
 ---@param joypadData JoypadData

@@ -41,25 +41,25 @@ AttributeValueType.Short = nil
 ---@type AttributeValueType
 AttributeValueType.String = nil
 
----@param arg0 AttributeValueType
+---@param valueType AttributeValueType
 ---@return boolean
-function AttributeValueType.IsDecimal(arg0) end
+function AttributeValueType.IsDecimal(valueType) end
 
----@param arg0 AttributeValueType
+---@param valueType AttributeValueType
 ---@return boolean
-function AttributeValueType.IsNumeric(arg0) end
+function AttributeValueType.IsNumeric(valueType) end
 
----@param arg0 integer
+---@param value integer
 ---@return AttributeValueType
-function AttributeValueType.fromByteIndex(arg0) end
+function AttributeValueType.fromByteIndex(value) end
 
----@param arg0 string
+---@param name string
 ---@return AttributeValueType
-function AttributeValueType.valueOf(arg0) end
+function AttributeValueType.valueOf(name) end
 
----@param arg0 string
+---@param s string
 ---@return AttributeValueType
-function AttributeValueType.valueOfIgnoreCase(arg0) end
+function AttributeValueType.valueOfIgnoreCase(s) end
 
 ---@return kahlua.Array<AttributeValueType>
 function AttributeValueType.values() end

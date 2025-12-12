@@ -11,9 +11,9 @@ MultiStageBuilding.stages = nil
 ---@param stage MultiStageBuilding.Stage
 function MultiStageBuilding.addStage(stage) end
 
----@param arg0 string
+---@param stageID string
 ---@return MultiStageBuilding.Stage
-function MultiStageBuilding.getStage(arg0) end
+function MultiStageBuilding.getStage(stageID) end
 
 ---@param chr IsoGameCharacter
 ---@param itemClicked IsoObject

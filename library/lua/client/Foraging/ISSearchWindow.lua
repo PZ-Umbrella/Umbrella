@@ -34,10 +34,6 @@ function ISSearchWindow.destroyUI(_character) end
 ---@param _isSearchMode boolean
 function ISSearchWindow.onEnableSearchMode(_character, _isSearchMode) end
 
----@param _player integer
----@param _context ISContextMenu
-function ISSearchWindow.OnFillWorldObjectContextMenu(_player, _context) end
-
 ---@param _character IsoPlayer
 function ISSearchWindow.showWindow(_character) end
 

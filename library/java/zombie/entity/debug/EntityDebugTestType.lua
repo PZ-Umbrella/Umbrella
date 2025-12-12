@@ -11,9 +11,9 @@ EntityDebugTestType.BaseTest = nil
 ---@return ArrayList<EntityDebugTestType>
 function EntityDebugTestType.getValueList() end
 
----@param arg0 string
+---@param name string
 ---@return EntityDebugTestType
-function EntityDebugTestType.valueOf(arg0) end
+function EntityDebugTestType.valueOf(name) end
 
 ---@return kahlua.Array<EntityDebugTestType>
 function EntityDebugTestType.values() end

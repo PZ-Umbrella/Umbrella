@@ -12,9 +12,9 @@ function __Short:getMin() end
 ---@return AttributeValueType
 function __Short:getValueType() end
 
----@param arg0 integer
+---@param value integer
 ---@return integer
-function __Short:validate(arg0) end
+function __Short:validate(value) end
 
 Short = {}
 

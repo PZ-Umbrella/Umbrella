@@ -42,22 +42,22 @@ function __IsoGridSquare:AddWorldInventoryItem(String, x, y, height, nbr) end
 ---@return InventoryItem
 function __IsoGridSquare:AddWorldInventoryItem(String, x, y, height) end
 
----@param arg0 string
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 boolean
+---@param itemType string
+---@param x number
+---@param y number
+---@param height number
+---@param autoAge boolean
 ---@return InventoryItem
-function __IsoGridSquare:AddWorldInventoryItem(arg0, arg1, arg2, arg3, arg4) end
+function __IsoGridSquare:AddWorldInventoryItem(itemType, x, y, height, autoAge) end
 
----@param arg0 string
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 boolean
----@param arg5 boolean
+---@param itemType string
+---@param x number
+---@param y number
+---@param height number
+---@param autoAge boolean
+---@param synchSpawn boolean
 ---@return InventoryItem
-function __IsoGridSquare:AddWorldInventoryItem(arg0, arg1, arg2, arg3, arg4, arg5) end
+function __IsoGridSquare:AddWorldInventoryItem(itemType, x, y, height, autoAge, synchSpawn) end
 
 ---@param item InventoryItem
 ---@param x number
@@ -74,14 +74,14 @@ function __IsoGridSquare:AddWorldInventoryItem(item, x, y, height) end
 ---@return InventoryItem
 function __IsoGridSquare:AddWorldInventoryItem(item, x, y, height, transmit) end
 
----@param arg0 InventoryItem
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 boolean
----@param arg5 boolean
+---@param item InventoryItem
+---@param x number
+---@param y number
+---@param height number
+---@param transmit boolean
+---@param synchSpawn boolean
 ---@return InventoryItem
-function __IsoGridSquare:AddWorldInventoryItem(arg0, arg1, arg2, arg3, arg4, arg5) end
+function __IsoGridSquare:AddWorldInventoryItem(item, x, y, height, transmit, synchSpawn) end
 
 function __IsoGridSquare:Burn() end
 
@@ -155,10 +155,10 @@ function __IsoGridSquare:DistTo(sq) end
 ---@return number
 function __IsoGridSquare:DistTo(other) end
 
----@param arg0 integer
----@param arg1 integer
+---@param x integer
+---@param y integer
 ---@return number
-function __IsoGridSquare:DistToProper(arg0, arg1) end
+function __IsoGridSquare:DistToProper(x, y) end
 
 ---@param sq IsoGridSquare
 ---@return number
@@ -168,28 +168,42 @@ function __IsoGridSquare:DistToProper(sq) end
 ---@return number
 function __IsoGridSquare:DistToProper(other) end
 
----@param arg0 IsoObject
----@param arg1 IsoDirections
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
----@param arg7 boolean
----@param arg8 boolean
----@param arg9 boolean
----@param arg10 boolean
----@param arg11 WallShaper
-function __IsoGridSquare:DoCutawayShader(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11) end
+---@param obj IsoObject
+---@param dir IsoDirections
+---@param cutawaySelf integer
+---@param cutawayN integer
+---@param cutawayS integer
+---@param cutawayW integer
+---@param cutawayE integer
+---@param bHasDoorN boolean
+---@param bHasDoorW boolean
+---@param bHasWindowN boolean
+---@param bHasWindowW boolean
+---@param texdModifier WallShaper
+function __IsoGridSquare:DoCutawayShader(
+	obj,
+	dir,
+	cutawaySelf,
+	cutawayN,
+	cutawayS,
+	cutawayW,
+	cutawayE,
+	bHasDoorN,
+	bHasDoorW,
+	bHasWindowN,
+	bHasWindowW,
+	texdModifier
+)
+end
 
----@param arg0 IsoSprite
----@param arg1 IsoDirections
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
-function __IsoGridSquare:DoCutawayShaderSprite(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+---@param sprite IsoSprite
+---@param dir IsoDirections
+---@param cutawaySelf integer
+---@param cutawayN integer
+---@param cutawayS integer
+---@param cutawayW integer
+---@param cutawayE integer
+function __IsoGridSquare:DoCutawayShaderSprite(sprite, dir, cutawaySelf, cutawayN, cutawayS, cutawayW, cutawayE) end
 
 ---@param id string
 ---@param bFlip boolean
@@ -199,46 +213,84 @@ function __IsoGridSquare:DoCutawayShaderSprite(arg0, arg1, arg2, arg3, arg4, arg
 ---@param alpha number
 function __IsoGridSquare:DoSplat(id, bFlip, prop, offX, offZ, alpha) end
 
----@param arg0 IsoObject
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
----@param arg7 boolean
----@param arg8 boolean
----@param arg9 Shader
+---@param obj IsoObject
+---@param stenciled integer
+---@param cutawaySelf integer
+---@param cutawayN integer
+---@param cutawayS integer
+---@param cutawayW integer
+---@param cutawayE integer
+---@param bHasDoorN boolean
+---@param bHasWindowN boolean
+---@param wallRenderShader Shader
 ---@return integer
-function __IsoGridSquare:DoWallLightingN(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+function __IsoGridSquare:DoWallLightingN(
+	obj,
+	stenciled,
+	cutawaySelf,
+	cutawayN,
+	cutawayS,
+	cutawayW,
+	cutawayE,
+	bHasDoorN,
+	bHasWindowN,
+	wallRenderShader
+)
+end
 
----@param arg0 IsoObject
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
----@param arg7 boolean
----@param arg8 boolean
----@param arg9 boolean
----@param arg10 boolean
----@param arg11 Shader
+---@param obj IsoObject
+---@param stenciled integer
+---@param cutawaySelf integer
+---@param cutawayN integer
+---@param cutawayS integer
+---@param cutawayW integer
+---@param cutawayE integer
+---@param bHasDoorN boolean
+---@param bHasDoorW boolean
+---@param bHasWindowN boolean
+---@param bHasWindowW boolean
+---@param wallRenderShader Shader
 ---@return integer
-function __IsoGridSquare:DoWallLightingNW(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11) end
+function __IsoGridSquare:DoWallLightingNW(
+	obj,
+	stenciled,
+	cutawaySelf,
+	cutawayN,
+	cutawayS,
+	cutawayW,
+	cutawayE,
+	bHasDoorN,
+	bHasDoorW,
+	bHasWindowN,
+	bHasWindowW,
+	wallRenderShader
+)
+end
 
----@param arg0 IsoObject
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
----@param arg7 boolean
----@param arg8 boolean
----@param arg9 Shader
+---@param obj IsoObject
+---@param stenciled integer
+---@param cutawaySelf integer
+---@param cutawayN integer
+---@param cutawayS integer
+---@param cutawayW integer
+---@param cutawayE integer
+---@param bHasDoorW boolean
+---@param bHasWindowW boolean
+---@param wallRenderShader Shader
 ---@return integer
-function __IsoGridSquare:DoWallLightingW(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+function __IsoGridSquare:DoWallLightingW(
+	obj,
+	stenciled,
+	cutawaySelf,
+	cutawayN,
+	cutawayS,
+	cutawayW,
+	cutawayE,
+	bHasDoorW,
+	bHasWindowW,
+	wallRenderShader
+)
+end
 
 function __IsoGridSquare:EnsureSurroundNotNull() end
 
@@ -362,10 +414,10 @@ function __IsoGridSquare:RecalcPropertiesIfNeeded() end
 ---@return integer
 function __IsoGridSquare:RemoveTileObject(obj) end
 
----@param arg0 IsoObject
----@param arg1 boolean
+---@param obj IsoObject
+---@param safelyRemove boolean
 ---@return integer
-function __IsoGridSquare:RemoveTileObject(arg0, arg1) end
+function __IsoGridSquare:RemoveTileObject(obj, safelyRemove) end
 
 ---@param obj IsoObject
 ---@return integer
@@ -381,44 +433,44 @@ function __IsoGridSquare:RenderOpenDoorOnly() end
 
 function __IsoGridSquare:ResetIsoWorldRegion() end
 
----@param arg0 integer
-function __IsoGridSquare:SetBLightLevel(arg0) end
+---@param val integer
+function __IsoGridSquare:SetBLightLevel(val) end
 
----@param arg0 integer
-function __IsoGridSquare:SetGLightLevel(arg0) end
+---@param val integer
+function __IsoGridSquare:SetGLightLevel(val) end
 
----@param arg0 integer
-function __IsoGridSquare:SetRLightLevel(arg0) end
+---@param val integer
+function __IsoGridSquare:SetRLightLevel(val) end
 
----@param arg0 string
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 integer
-function __IsoGridSquare:SpawnWorldInventoryItem(arg0, arg1, arg2, arg3, arg4) end
+---@param itemType string
+---@param x number
+---@param y number
+---@param height number
+---@param nbr integer
+function __IsoGridSquare:SpawnWorldInventoryItem(itemType, x, y, height, nbr) end
 
----@param arg0 string
----@param arg1 number
----@param arg2 number
----@param arg3 number
+---@param itemType string
+---@param x number
+---@param y number
+---@param height number
 ---@return InventoryItem
-function __IsoGridSquare:SpawnWorldInventoryItem(arg0, arg1, arg2, arg3) end
+function __IsoGridSquare:SpawnWorldInventoryItem(itemType, x, y, height) end
 
----@param arg0 string
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 boolean
+---@param itemType string
+---@param x number
+---@param y number
+---@param height number
+---@param autoAge boolean
 ---@return InventoryItem
-function __IsoGridSquare:SpawnWorldInventoryItem(arg0, arg1, arg2, arg3, arg4) end
+function __IsoGridSquare:SpawnWorldInventoryItem(itemType, x, y, height, autoAge) end
 
----@param arg0 InventoryItem
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 boolean
+---@param item InventoryItem
+---@param x number
+---@param y number
+---@param height number
+---@param transmit boolean
 ---@return InventoryItem
-function __IsoGridSquare:SpawnWorldInventoryItem(arg0, arg1, arg2, arg3, arg4) end
+function __IsoGridSquare:SpawnWorldInventoryItem(item, x, y, height, transmit) end
 
 ---@deprecated
 function __IsoGridSquare:StartFire() end
@@ -436,9 +488,9 @@ function __IsoGridSquare:addCorpse(body, bRemote) end
 ---@return IsoDeadBody
 function __IsoGridSquare:addCorpse() end
 
----@param arg0 boolean
+---@param isSkeleton boolean
 ---@return IsoDeadBody
-function __IsoGridSquare:addCorpse(arg0) end
+function __IsoGridSquare:addCorpse(isSkeleton) end
 
 ---@param chr IsoGameCharacter
 function __IsoGridSquare:addDeferredCharacter(chr) end
@@ -459,10 +511,10 @@ function __IsoGridSquare:addLoom() end
 
 function __IsoGridSquare:addMetalBandsaw() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __IsoGridSquare:addPlayerCutawayFlag(arg0, arg1, arg2) end
+---@param playerIndex integer
+---@param flag integer
+---@param currentTimeMillis integer
+function __IsoGridSquare:addPlayerCutawayFlag(playerIndex, flag, currentTimeMillis) end
 
 function __IsoGridSquare:addSpinningWheel() end
 
@@ -470,33 +522,33 @@ function __IsoGridSquare:addStandingDrillPress() end
 
 function __IsoGridSquare:addStump() end
 
----@param arg0 string
+---@param spriteName string
 ---@return IsoObject
-function __IsoGridSquare:addTileObject(arg0) end
+function __IsoGridSquare:addTileObject(spriteName) end
 
----@param arg0 string
+---@param sprite string
 ---@return IsoObject
-function __IsoGridSquare:addUndergroundBlock(arg0) end
+function __IsoGridSquare:addUndergroundBlock(sprite) end
 
----@param arg0 string
----@param arg1 string
+---@param scriptString string
+---@param sprite string
 ---@return IsoThumpable
-function __IsoGridSquare:addWorkstationEntity(arg0, arg1) end
+function __IsoGridSquare:addWorkstationEntity(scriptString, sprite) end
 
----@param arg0 GameEntityScript
----@param arg1 string
+---@param script GameEntityScript
+---@param sprite string
 ---@return IsoThumpable
-function __IsoGridSquare:addWorkstationEntity(arg0, arg1) end
+function __IsoGridSquare:addWorkstationEntity(script, sprite) end
 
----@param arg0 IsoThumpable
----@param arg1 GameEntityScript
-function __IsoGridSquare:addWorkstationEntity(arg0, arg1) end
+---@param thumpable IsoThumpable
+---@param script GameEntityScript
+function __IsoGridSquare:addWorkstationEntity(thumpable, script) end
 
 function __IsoGridSquare:cacheLightInfo() end
 
----@param arg0 IsoGridSquare
+---@param other IsoGridSquare
 ---@return boolean
-function __IsoGridSquare:canReachTo(arg0) end
+function __IsoGridSquare:canReachTo(other) end
 
 ---@return boolean
 function __IsoGridSquare:canSpawnVermin() end
@@ -504,8 +556,8 @@ function __IsoGridSquare:canSpawnVermin() end
 ---@return boolean
 function __IsoGridSquare:canStand() end
 
----@param arg0 BaseVehicle
-function __IsoGridSquare:checkForIntersectingCrops(arg0) end
+---@param vehicle BaseVehicle
+function __IsoGridSquare:checkForIntersectingCrops(vehicle) end
 
 ---@return boolean
 function __IsoGridSquare:checkHaveDung() end
@@ -516,10 +568,10 @@ function __IsoGridSquare:checkHaveGrass() end
 ---@param playerIndex integer
 function __IsoGridSquare:checkRoomSeen(playerIndex) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __IsoGridSquare:clearPlayerCutawayFlag(arg0, arg1, arg2) end
+---@param playerIndex integer
+---@param flag integer
+---@param currentTimeMillis integer
+function __IsoGridSquare:clearPlayerCutawayFlag(playerIndex, flag, currentTimeMillis) end
 
 function __IsoGridSquare:clearPuddles() end
 
@@ -532,22 +584,22 @@ function __IsoGridSquare:connectedWithFloor() end
 ---@return boolean
 function __IsoGridSquare:containsVegetation() end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return IsoDeadBody
-function __IsoGridSquare:createAnimalCorpseFromItem(arg0) end
+function __IsoGridSquare:createAnimalCorpseFromItem(item) end
 
----@param arg0 boolean
+---@param skeleton boolean
 ---@return IsoDeadBody
-function __IsoGridSquare:createCorpse(arg0) end
+function __IsoGridSquare:createCorpse(skeleton) end
 
----@param arg0 IsoZombie
+---@param zombie IsoZombie
 ---@return IsoDeadBody
-function __IsoGridSquare:createCorpse(arg0) end
+function __IsoGridSquare:createCorpse(zombie) end
 
----@param arg0 IsoZombie
----@param arg1 boolean
+---@param zombie IsoZombie
+---@param skeleton boolean
 ---@return IsoDeadBody
-function __IsoGridSquare:createCorpse(arg0, arg1) end
+function __IsoGridSquare:createCorpse(zombie, skeleton) end
 
 ---@param player IsoPlayer
 ---@param north boolean
@@ -598,9 +650,9 @@ end
 ---@return IsoAnimalTrack
 function __IsoGridSquare:getAnimalTrack() end
 
----@param arg0 ArrayList<IsoAnimal>
+---@param result ArrayList<IsoAnimal>
 ---@return ArrayList<IsoAnimal>
-function __IsoGridSquare:getAnimals(arg0) end
+function __IsoGridSquare:getAnimals(result) end
 
 ---@return ArrayList<IsoAnimal>
 function __IsoGridSquare:getAnimals() end
@@ -617,13 +669,13 @@ function __IsoGridSquare:getBed() end
 ---@return IsoObject
 function __IsoGridSquare:getBedTo(next) end
 
----@param arg0 boolean
+---@param north boolean
 ---@return IsoObject
-function __IsoGridSquare:getBendable(arg0) end
+function __IsoGridSquare:getBendable(north) end
 
----@param arg0 IsoGridSquare
+---@param next IsoGridSquare
 ---@return IsoObject
-function __IsoGridSquare:getBendableTo(arg0) end
+function __IsoGridSquare:getBendableTo(next) end
 
 ---@return IsoBrokenGlass
 function __IsoGridSquare:getBrokenGlass() end
@@ -720,21 +772,21 @@ function __IsoGridSquare:getFarmingPlant() end
 ---@return IsoFire
 function __IsoGridSquare:getFire() end
 
----@param arg0 IsoGridSquareCollisionData
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 boolean
----@param arg5 boolean
+---@param isoGridSquareCollisionData IsoGridSquareCollisionData
+---@param x integer
+---@param y integer
+---@param z integer
+---@param specialDiag boolean
+---@param bIgnoreDoors boolean
 ---@return IsoGridSquareCollisionData
-function __IsoGridSquare:getFirstBlocking(arg0, arg1, arg2, arg3, arg4, arg5) end
+function __IsoGridSquare:getFirstBlocking(isoGridSquareCollisionData, x, y, z, specialDiag, bIgnoreDoors) end
 
 ---@return IsoObject
 function __IsoGridSquare:getFloor() end
 
----@param arg0 boolean
+---@param bNorth boolean
 ---@return IsoObject
-function __IsoGridSquare:getGarageDoor(arg0) end
+function __IsoGridSquare:getGarageDoor(bNorth) end
 
 ---@return IsoGenerator
 function __IsoGridSquare:getGenerator() end
@@ -828,9 +880,9 @@ function __IsoGridSquare:getLightInfluenceG() end
 ---@return ArrayList<number> # the LightInfluenceR
 function __IsoGridSquare:getLightInfluenceR() end
 
----@param arg0 integer
+---@param playerNumber integer
 ---@return ColorInfo
-function __IsoGridSquare:getLightInfo(arg0) end
+function __IsoGridSquare:getLightInfo(playerNumber) end
 
 ---@param playerIndex integer
 ---@return number
@@ -857,9 +909,9 @@ function __IsoGridSquare:getMovingObjects() end
 ---@return IsoGridSquare # the n
 function __IsoGridSquare:getN() end
 
----@param arg0 integer
+---@param index integer
 ---@return integer
-function __IsoGridSquare:getNextNonItemObjectIndex(arg0) end
+function __IsoGridSquare:getNextNonItemObjectIndex(index) end
 
 ---@generic T
 ---@param in_paramToCompare T
@@ -899,10 +951,10 @@ function __IsoGridSquare:getPlayer() end
 ---@return IsoObject
 function __IsoGridSquare:getPlayerBuiltFloor() end
 
----@param arg0 integer
----@param arg1 integer
+---@param playerIndex integer
+---@param currentTimeMillis integer
 ---@return integer
-function __IsoGridSquare:getPlayerCutawayFlag(arg0, arg1) end
+function __IsoGridSquare:getPlayerCutawayFlag(playerIndex, currentTimeMillis) end
 
 ---@return PropertyContainer # the Properties
 function __IsoGridSquare:getProperties() end
@@ -919,9 +971,9 @@ function __IsoGridSquare:getPuddlesDir() end
 ---@return number
 function __IsoGridSquare:getPuddlesInGround() end
 
----@param arg0 integer
+---@param radius integer
 ---@return List<IsoGridSquare>
-function __IsoGridSquare:getRadius(arg0) end
+function __IsoGridSquare:getRadius(radius) end
 
 ---@return IsoRaindrop
 function __IsoGridSquare:getRainDrop() end
@@ -963,14 +1015,14 @@ function __IsoGridSquare:getSheetRope() end
 ---@return IsoDirections
 function __IsoGridSquare:getSlopedSurfaceDirection() end
 
----@param arg0 number
----@param arg1 number
+---@param dx number
+---@param dy number
 ---@return number
-function __IsoGridSquare:getSlopedSurfaceHeight(arg0, arg1) end
+function __IsoGridSquare:getSlopedSurfaceHeight(dx, dy) end
 
----@param arg0 IsoDirections
+---@param edge IsoDirections
 ---@return number
-function __IsoGridSquare:getSlopedSurfaceHeight(arg0) end
+function __IsoGridSquare:getSlopedSurfaceHeight(edge) end
 
 ---@return number
 function __IsoGridSquare:getSlopedSurfaceHeightMax() end
@@ -996,9 +1048,9 @@ function __IsoGridSquare:getSquareZombiesType() end
 ---@return IsoDirections
 function __IsoGridSquare:getStairsDirection() end
 
----@param arg0 IsoDirections
+---@param edge IsoDirections
 ---@return number
-function __IsoGridSquare:getStairsHeight(arg0) end
+function __IsoGridSquare:getStairsHeight(edge) end
 
 ---@return number
 function __IsoGridSquare:getStairsHeightMax() end
@@ -1019,9 +1071,9 @@ function __IsoGridSquare:getSurroundingSquares() end
 ---@return number # the targetDarkMulti
 function __IsoGridSquare:getTargetDarkMulti(playerIndex) end
 
----@param arg0 boolean
+---@param north boolean
 ---@return IsoThumpable
-function __IsoGridSquare:getThumpable(arg0) end
+function __IsoGridSquare:getThumpable(north) end
 
 ---@param bNorth boolean
 ---@return IsoObject
@@ -1098,10 +1150,10 @@ function __IsoGridSquare:getWall() end
 ---@return IsoObject
 function __IsoGridSquare:getWall(bNorth) end
 
----@param arg0 boolean
----@param arg1 IsoObject
+---@param bNorth boolean
+---@param exclude IsoObject
 ---@return IsoObject
-function __IsoGridSquare:getWallExcludingObject(arg0, arg1) end
+function __IsoGridSquare:getWallExcludingObject(bNorth, exclude) end
 
 ---@return boolean
 function __IsoGridSquare:getWallFull() end
@@ -1136,13 +1188,13 @@ function __IsoGridSquare:getWindow(north) end
 ---@return IsoWindow
 function __IsoGridSquare:getWindow() end
 
----@param arg0 boolean
+---@param north boolean
 ---@return IsoWindowFrame
-function __IsoGridSquare:getWindowFrame(arg0) end
+function __IsoGridSquare:getWindowFrame(north) end
 
----@param arg0 IsoGridSquare
+---@param next IsoGridSquare
 ---@return IsoWindowFrame
-function __IsoGridSquare:getWindowFrameTo(arg0) end
+function __IsoGridSquare:getWindowFrameTo(next) end
 
 ---Get the IsoThumpable window between this grid and the next in parameter
 ---@param next IsoGridSquare
@@ -1214,9 +1266,9 @@ function __IsoGridSquare:hasBlockedWindow(north) end
 ---@return boolean
 function __IsoGridSquare:hasBush() end
 
----@param arg0 IsoDirections
+---@param edge IsoDirections
 ---@return boolean
-function __IsoGridSquare:hasClosedDoorOnEdge(arg0) end
+function __IsoGridSquare:hasClosedDoorOnEdge(edge) end
 
 ---@return boolean
 function __IsoGridSquare:hasDirt() end
@@ -1265,13 +1317,13 @@ function __IsoGridSquare:hasGrave() end
 ---@return boolean
 function __IsoGridSquare:hasGridPower() end
 
----@param arg0 integer
+---@param offset integer
 ---@return boolean
-function __IsoGridSquare:hasGridPower(arg0) end
+function __IsoGridSquare:hasGridPower(offset) end
 
----@param arg0 IsoGridSquare
+---@param other IsoGridSquare
 ---@return boolean
-function __IsoGridSquare:hasIdenticalSlopedSurface(arg0) end
+function __IsoGridSquare:hasIdenticalSlopedSurface(other) end
 
 ---@return boolean
 function __IsoGridSquare:hasLitCampfire() end
@@ -1282,13 +1334,13 @@ function __IsoGridSquare:hasModData() end
 ---@return boolean
 function __IsoGridSquare:hasNaturalFloor() end
 
----@param arg0 boolean
+---@param isNorth boolean
 ---@return boolean
-function __IsoGridSquare:hasNonHoppableWall(arg0) end
+function __IsoGridSquare:hasNonHoppableWall(isNorth) end
 
----@param arg0 IsoDirections
+---@param edge IsoDirections
 ---@return boolean
-function __IsoGridSquare:hasOpenDoorOnEdge(arg0) end
+function __IsoGridSquare:hasOpenDoorOnEdge(edge) end
 
 ---@return boolean
 function __IsoGridSquare:hasRainBlockingTile() end
@@ -1302,9 +1354,9 @@ function __IsoGridSquare:hasSand() end
 ---@return boolean
 function __IsoGridSquare:hasSlopedSurface() end
 
----@param arg0 IsoDirections
+---@param dir IsoDirections
 ---@return boolean
-function __IsoGridSquare:hasSlopedSurfaceToLevelAbove(arg0) end
+function __IsoGridSquare:hasSlopedSurfaceToLevelAbove(dir) end
 
 ---@return boolean
 function __IsoGridSquare:hasSupport() end
@@ -1369,14 +1421,14 @@ function __IsoGridSquare:haveStains() end
 ---@param y number
 function __IsoGridSquare:interpolateLight(inf, x, y) end
 
----@param arg0 integer
-function __IsoGridSquare:invalidateRenderChunkLevel(arg0) end
+---@param dirtyFlags integer
+function __IsoGridSquare:invalidateRenderChunkLevel(dirtyFlags) end
 
 function __IsoGridSquare:invalidateVispolyChunkLevel() end
 
----@param arg0 IsoGridSquare
+---@param sq IsoGridSquare
 ---@return boolean
-function __IsoGridSquare:isAdjacentTo(arg0) end
+function __IsoGridSquare:isAdjacentTo(sq) end
 
 ---@return boolean
 function __IsoGridSquare:isAdjacentToHoppable() end
@@ -1438,10 +1490,10 @@ function __IsoGridSquare:isFreeOrMidair(bCountOtherCharacters) end
 ---@return boolean
 function __IsoGridSquare:isFreeOrMidair(bCountOtherCharacters, bDoZombie) end
 
----@param arg0 IsoDirections
----@param arg1 boolean
+---@param dir IsoDirections
+---@param both boolean
 ---@return boolean
-function __IsoGridSquare:isFreeWallPair(arg0, arg1) end
+function __IsoGridSquare:isFreeWallPair(dir, both) end
 
 ---@return boolean
 function __IsoGridSquare:isFreeWallSquare() end
@@ -1459,12 +1511,12 @@ function __IsoGridSquare:isHoppableTo(other) end
 ---@return boolean
 function __IsoGridSquare:isInARoom() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
 ---@return boolean
-function __IsoGridSquare:isInsideRectangle(arg0, arg1, arg2, arg3) end
+function __IsoGridSquare:isInsideRectangle(x, y, w, h) end
 
 ---@return boolean
 function __IsoGridSquare:isNoGas() end
@@ -1485,10 +1537,10 @@ function __IsoGridSquare:isOutside() end
 ---@return boolean
 function __IsoGridSquare:isOverlayDone() end
 
----@param arg0 IsoDirections
----@param arg1 IsoGridSquare
+---@param dir IsoDirections
+---@param oppositeSq IsoGridSquare
 ---@return boolean
-function __IsoGridSquare:isPlayerAbleToHopWallTo(arg0, arg1) end
+function __IsoGridSquare:isPlayerAbleToHopWallTo(dir, oppositeSq) end
 
 ---@return boolean
 function __IsoGridSquare:isRural() end
@@ -1516,9 +1568,9 @@ function __IsoGridSquare:isSeen(playerIndex) end
 ---@return boolean
 function __IsoGridSquare:isShop() end
 
----@param arg0 IsoDirections
+---@param edge IsoDirections
 ---@return boolean
-function __IsoGridSquare:isSlopedSurfaceEdgeBlocked(arg0) end
+function __IsoGridSquare:isSlopedSurfaceEdgeBlocked(edge) end
 
 ---@return boolean
 function __IsoGridSquare:isSolid() end
@@ -1536,17 +1588,17 @@ function __IsoGridSquare:isSolidTrans() end
 ---@return boolean
 function __IsoGridSquare:isSomethingTo(other) end
 
----@param arg0 IsoObject
+---@param obj IsoObject
 ---@return boolean
-function __IsoGridSquare:isSpriteOnSouthOrEastWall(arg0) end
+function __IsoGridSquare:isSpriteOnSouthOrEastWall(obj) end
 
 ---@param other IsoGridSquare
 ---@return boolean
 function __IsoGridSquare:isStairBlockedTo(other) end
 
----@param arg0 IsoDirections
+---@param edge IsoDirections
 ---@return boolean
-function __IsoGridSquare:isStairsEdgeBlocked(arg0) end
+function __IsoGridSquare:isStairsEdgeBlocked(edge) end
 
 ---@return boolean
 function __IsoGridSquare:isUndergroundBlock() end
@@ -1567,10 +1619,10 @@ function __IsoGridSquare:isWallSquareNW() end
 ---@return boolean
 function __IsoGridSquare:isWallTo(other) end
 
----@param arg0 IsoGridSquare
----@param arg1 integer
+---@param other IsoGridSquare
+---@param depth integer
 ---@return boolean
-function __IsoGridSquare:isWallTo(arg0, arg1) end
+function __IsoGridSquare:isWallTo(other, depth) end
 
 ---@return boolean
 function __IsoGridSquare:isWaterSquare() end
@@ -1579,10 +1631,10 @@ function __IsoGridSquare:isWaterSquare() end
 ---@return boolean
 function __IsoGridSquare:isWindowBlockedTo(other) end
 
----@param arg0 IsoObject
----@param arg1 boolean
+---@param obj IsoObject
+---@param north boolean
 ---@return boolean
-function __IsoGridSquare:isWindowOrWindowFrame(arg0, arg1) end
+function __IsoGridSquare:isWindowOrWindowFrame(obj, north) end
 
 ---@param other IsoGridSquare
 ---@return boolean
@@ -1612,9 +1664,9 @@ function __IsoGridSquare:playSound(file) end
 ---@return integer
 function __IsoGridSquare:playSound(file, doWorldSound) end
 
----@param arg0 string
+---@param file string
 ---@return integer
-function __IsoGridSquare:playSoundLocal(arg0) end
+function __IsoGridSquare:playSoundLocal(file) end
 
 function __IsoGridSquare:putOutCampfire() end
 
@@ -1664,35 +1716,46 @@ function __IsoGridSquare:renderCharacters(maxZ, deadRender, doBlendFunc) end
 ---@param maxZ integer
 function __IsoGridSquare:renderDeferredCharacters(maxZ) end
 
----@param arg0 integer
----@param arg1 ColorInfo
-function __IsoGridSquare:renderFishSplash(arg0, arg1) end
+---@param playerIndex integer
+---@param lightInfo ColorInfo
+function __IsoGridSquare:renderFishSplash(playerIndex, lightInfo) end
 
----@param arg0 Shader
+---@param floorShader Shader
 ---@return integer
-function __IsoGridSquare:renderFloor(arg0) end
+function __IsoGridSquare:renderFloor(floorShader) end
 
----@param arg0 integer
----@param arg1 boolean
----@param arg2 boolean
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
----@param arg7 integer
----@param arg8 Shader
+---@param maxZ integer
+---@param doSE boolean
+---@param vegitationRender boolean
+---@param cutawaySelf integer
+---@param cutawayN integer
+---@param cutawayS integer
+---@param cutawayW integer
+---@param cutawayE integer
+---@param wallRenderShader Shader
 ---@return boolean
-function __IsoGridSquare:renderMinusFloor(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+function __IsoGridSquare:renderMinusFloor(
+	maxZ,
+	doSE,
+	vegitationRender,
+	cutawaySelf,
+	cutawayN,
+	cutawayS,
+	cutawayW,
+	cutawayE,
+	wallRenderShader
+)
+end
 
----@param arg0 integer
----@param arg1 ColorInfo
-function __IsoGridSquare:renderRainSplash(arg0, arg1) end
+---@param playerIndex integer
+---@param lightInfo ColorInfo
+function __IsoGridSquare:renderRainSplash(playerIndex, lightInfo) end
 
----@param arg0 integer
----@param arg1 ColorInfo
----@param arg2 number
----@param arg3 boolean
-function __IsoGridSquare:renderRainSplash(arg0, arg1, arg2, arg3) end
+---@param playerIndex integer
+---@param lightInfo ColorInfo
+---@param splashFrame number
+---@param bRandomXY boolean
+function __IsoGridSquare:renderRainSplash(playerIndex, lightInfo, splashFrame, bRandomXY) end
 
 function __IsoGridSquare:restackSheetRope() end
 
@@ -1710,9 +1773,9 @@ function __IsoGridSquare:save(output, outputObj, IS_DEBUG_SAVE) end
 ---@return number
 function __IsoGridSquare:scoreAsWaypoint(x, y) end
 
----@param arg0 IsoDirections
----@param arg1 IsoGridSquare
-function __IsoGridSquare:setAdjacentSquare(arg0, arg1) end
+---@param in_dir IsoDirections
+---@param in_square IsoGridSquare
+function __IsoGridSquare:setAdjacentSquare(in_dir, in_square) end
 
 ---@param CacheIsFree boolean the CacheIsFree to set
 function __IsoGridSquare:setCacheIsFree(CacheIsFree) end
@@ -1786,10 +1849,10 @@ function __IsoGridSquare:setN(n) end
 ---@param overlayDone boolean
 function __IsoGridSquare:setOverlayDone(overlayDone) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __IsoGridSquare:setPlayerCutawayFlag(arg0, arg1, arg2) end
+---@param playerIndex integer
+---@param flags integer
+---@param currentTimeMillis integer
+function __IsoGridSquare:setPlayerCutawayFlag(playerIndex, flags, currentTimeMillis) end
 
 ---@param drop IsoRaindrop
 function __IsoGridSquare:setRainDrop(drop) end
@@ -1800,8 +1863,8 @@ function __IsoGridSquare:setRainSplash(splash) end
 ---@param room IsoRoom the room to set
 function __IsoGridSquare:setRoom(room) end
 
----@param arg0 integer
-function __IsoGridSquare:setRoomID(arg0) end
+---@param roomId integer
+function __IsoGridSquare:setRoomID(roomId) end
 
 ---@param s IsoGridSquare the s to set
 function __IsoGridSquare:setS(s) end
@@ -1847,9 +1910,9 @@ function __IsoGridSquare:setZ(z) end
 ---@return boolean
 function __IsoGridSquare:shouldNotSpawnActivatedRadiosOrTvs() end
 
----@param arg0 integer
+---@param playerIndex integer
 ---@return boolean
-function __IsoGridSquare:shouldRenderFishSplash(arg0) end
+function __IsoGridSquare:shouldRenderFishSplash(playerIndex) end
 
 ---@return boolean
 function __IsoGridSquare:shouldSave() end
@@ -1868,13 +1931,13 @@ function __IsoGridSquare:spawnRandomWorkstation() end
 ---@param alpha number
 function __IsoGridSquare:splatBlood(dist, alpha) end
 
----@param arg0 boolean
----@param arg1 number
----@param arg2 number
-function __IsoGridSquare:startWaterSplash(arg0, arg1, arg2) end
+---@param isBigSplash boolean
+---@param dx number
+---@param dy number
+function __IsoGridSquare:startWaterSplash(isBigSplash, dx, dy) end
 
----@param arg0 boolean
-function __IsoGridSquare:startWaterSplash(arg0) end
+---@param isBigSplash boolean
+function __IsoGridSquare:startWaterSplash(isBigSplash) end
 
 function __IsoGridSquare:stopFire() end
 
@@ -1935,23 +1998,23 @@ function __IsoGridSquare:transmitModdata() end
 ---@return integer
 function __IsoGridSquare:transmitRemoveItemFromSquare(obj) end
 
----@param arg0 IsoObject
-function __IsoGridSquare:transmitRemoveItemFromSquareOnClients(arg0) end
+---@param obj IsoObject
+function __IsoGridSquare:transmitRemoveItemFromSquareOnClients(obj) end
 
 function __IsoGridSquare:transmitStopFire() end
 
----@param arg0 InventoryItem
----@param arg1 number
----@param arg2 number
+---@param item InventoryItem
+---@param x number
+---@param y number
 ---@return IsoDeadBody
-function __IsoGridSquare:tryAddCorpseToWorld(arg0, arg1, arg2) end
+function __IsoGridSquare:tryAddCorpseToWorld(item, x, y) end
 
----@param arg0 InventoryItem
----@param arg1 number
----@param arg2 number
----@param arg3 boolean
+---@param item InventoryItem
+---@param x number
+---@param y number
+---@param isVisible boolean
 ---@return IsoDeadBody
-function __IsoGridSquare:tryAddCorpseToWorld(arg0, arg1, arg2, arg3) end
+function __IsoGridSquare:tryAddCorpseToWorld(item, x, y, isVisible) end
 
 IsoGridSquare = {}
 
@@ -2097,8 +2160,8 @@ function IsoGridSquare.setMatrixBit(matrix, x, y, z, val) end
 ---@return integer
 function IsoGridSquare.setMatrixBit(matrix, x, y, z, val) end
 
----@param arg0 number
-function IsoGridSquare.setRecalcLightTime(arg0) end
+---@param aRecalcLightTime number
+function IsoGridSquare.setRecalcLightTime(aRecalcLightTime) end
 
 ---@param abDoSlowPathfinding boolean the bDoSlowPathfinding to set
 function IsoGridSquare.setbDoSlowPathfinding(abDoSlowPathfinding) end

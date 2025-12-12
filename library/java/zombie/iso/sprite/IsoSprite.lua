@@ -51,9 +51,9 @@ function __IsoSprite:LoadFramesPageSimple(NObjectName, SObjectName, EObjectName,
 ---@param nFrames integer
 function __IsoSprite:LoadFramesReverseAltName(ObjectName, AnimName, AltName, nFrames) end
 
----@param arg0 string
+---@param textureName string
 ---@return Texture
-function __IsoSprite:LoadSingleTexture(arg0) end
+function __IsoSprite:LoadSingleTexture(textureName) end
 
 ---@param anim IsoAnim
 function __IsoSprite:PlayAnim(anim) end
@@ -101,9 +101,9 @@ function __IsoSprite:clearCurtainOffset() end
 
 function __IsoSprite:disposeAnimation() end
 
----@param arg0 integer
+---@param frame integer
 ---@return IsoDirectionFrame
-function __IsoSprite:getAnimFrame(arg0) end
+function __IsoSprite:getAnimFrame(frame) end
 
 ---@return Vector3f
 function __IsoSprite:getCurtainOffset() end
@@ -264,103 +264,103 @@ function __IsoSprite:renderBloodSplat(x, y, z, info2) end
 ---@param texdModifier Consumer<TextureDraw>
 function __IsoSprite:renderCurrentAnim(inst, obj, x, y, z, dir, offsetX, offsetY, col, bDoRenderPrep, texdModifier) end
 
----@param arg0 IsoSpriteInstance
----@param arg1 IsoObject
----@param arg2 IsoDirections
----@param arg3 boolean
----@param arg4 boolean
----@param arg5 boolean
----@param arg6 integer
----@param arg7 number
----@param arg8 number
----@param arg9 number
----@param arg10 number
----@param arg11 number
----@param arg12 ColorInfo
----@param arg13 boolean
----@param arg14 Consumer<TextureDraw>
+---@param inst IsoSpriteInstance
+---@param obj IsoObject
+---@param dir IsoDirections
+---@param cutawayNW boolean
+---@param cutawayNE boolean
+---@param cutawaySW boolean
+---@param cutawaySEX integer
+---@param x number
+---@param y number
+---@param z number
+---@param offsetX number
+---@param offsetY number
+---@param col ColorInfo
+---@param bDoRenderPrep boolean
+---@param texdModifier Consumer<TextureDraw>
 function __IsoSprite:renderCurrentAnimDepth(
-	arg0,
-	arg1,
-	arg2,
-	arg3,
-	arg4,
-	arg5,
-	arg6,
-	arg7,
-	arg8,
-	arg9,
-	arg10,
-	arg11,
-	arg12,
-	arg13,
-	arg14
+	inst,
+	obj,
+	dir,
+	cutawayNW,
+	cutawayNE,
+	cutawaySW,
+	cutawaySEX,
+	x,
+	y,
+	z,
+	offsetX,
+	offsetY,
+	col,
+	bDoRenderPrep,
+	texdModifier
 )
 end
 
----@param arg0 IsoObject
----@param arg1 IsoDirections
----@param arg2 boolean
----@param arg3 boolean
----@param arg4 boolean
----@param arg5 integer
----@param arg6 number
----@param arg7 number
----@param arg8 number
----@param arg9 number
----@param arg10 number
----@param arg11 ColorInfo
----@param arg12 boolean
----@param arg13 Consumer<TextureDraw>
+---@param obj IsoObject
+---@param isoDirections IsoDirections
+---@param cutawayNW boolean
+---@param cutawayNE boolean
+---@param cutawaySW boolean
+---@param cutawaySEX integer
+---@param x number
+---@param y number
+---@param z number
+---@param offsetX number
+---@param offsetY number
+---@param info2 ColorInfo
+---@param bDoRenderPrep boolean
+---@param texdModifier Consumer<TextureDraw>
 function __IsoSprite:renderDepth(
-	arg0,
-	arg1,
-	arg2,
-	arg3,
-	arg4,
-	arg5,
-	arg6,
-	arg7,
-	arg8,
-	arg9,
-	arg10,
-	arg11,
-	arg12,
-	arg13
+	obj,
+	isoDirections,
+	cutawayNW,
+	cutawayNE,
+	cutawaySW,
+	cutawaySEX,
+	x,
+	y,
+	z,
+	offsetX,
+	offsetY,
+	info2,
+	bDoRenderPrep,
+	texdModifier
 )
 end
 
----@param arg0 IsoSpriteInstance
----@param arg1 IsoObject
----@param arg2 IsoDirections
----@param arg3 boolean
----@param arg4 boolean
----@param arg5 boolean
----@param arg6 integer
----@param arg7 number
----@param arg8 number
----@param arg9 number
----@param arg10 number
----@param arg11 number
----@param arg12 ColorInfo
----@param arg13 boolean
----@param arg14 Consumer<TextureDraw>
+---@param inst IsoSpriteInstance
+---@param obj IsoObject
+---@param isoDirections IsoDirections
+---@param cutawayNW boolean
+---@param cutawayNE boolean
+---@param cutawaySW boolean
+---@param cutawaySEX integer
+---@param x number
+---@param y number
+---@param z number
+---@param offsetX number
+---@param offsetY number
+---@param info2 ColorInfo
+---@param bDoRenderPrep boolean
+---@param texdModifier Consumer<TextureDraw>
 function __IsoSprite:renderDepth(
-	arg0,
-	arg1,
-	arg2,
-	arg3,
-	arg4,
-	arg5,
-	arg6,
-	arg7,
-	arg8,
-	arg9,
-	arg10,
-	arg11,
-	arg12,
-	arg13,
-	arg14
+	inst,
+	obj,
+	isoDirections,
+	cutawayNW,
+	cutawayNE,
+	cutawaySW,
+	cutawaySEX,
+	x,
+	y,
+	z,
+	offsetX,
+	offsetY,
+	info2,
+	bDoRenderPrep,
+	texdModifier
 )
 end
 
@@ -380,29 +380,29 @@ function __IsoSprite:renderObjectPicker(def, obj, dir) end
 ---@param bDoRenderPrep boolean
 function __IsoSprite:renderVehicle(inst, obj, x, y, z, offsetX, offsetY, info2, bDoRenderPrep) end
 
----@param arg0 IsoObject
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 IsoDirections
----@param arg5 number
----@param arg6 number
----@param arg7 ColorInfo
----@param arg8 boolean
----@param arg9 Consumer<TextureDraw>
-function __IsoSprite:renderWallSliceN(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+---@param obj IsoObject
+---@param x number
+---@param y number
+---@param z number
+---@param dir IsoDirections
+---@param offsetX number
+---@param offsetY number
+---@param info2 ColorInfo
+---@param bDoRenderPrep boolean
+---@param texdModifier Consumer<TextureDraw>
+function __IsoSprite:renderWallSliceN(obj, x, y, z, dir, offsetX, offsetY, info2, bDoRenderPrep, texdModifier) end
 
----@param arg0 IsoObject
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 IsoDirections
----@param arg5 number
----@param arg6 number
----@param arg7 ColorInfo
----@param arg8 boolean
----@param arg9 Consumer<TextureDraw>
-function __IsoSprite:renderWallSliceW(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+---@param obj IsoObject
+---@param x number
+---@param y number
+---@param z number
+---@param dir IsoDirections
+---@param offsetX number
+---@param offsetY number
+---@param info2 ColorInfo
+---@param bDoRenderPrep boolean
+---@param texdModifier Consumer<TextureDraw>
+function __IsoSprite:renderWallSliceW(obj, x, y, z, dir, offsetX, offsetY, info2, bDoRenderPrep, texdModifier) end
 
 ---@param output DataOutputStream
 function __IsoSprite:save(output) end
@@ -410,10 +410,10 @@ function __IsoSprite:save(output) end
 ---@param animate boolean
 function __IsoSprite:setAnimate(animate) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
-function __IsoSprite:setCurtainOffset(arg0, arg1, arg2) end
+---@param x number
+---@param y number
+---@param z number
+function __IsoSprite:setCurtainOffset(x, y, z) end
 
 ---@param objectName string
 ---@param animName string
@@ -503,11 +503,11 @@ function IsoSprite.DisposeAll() end
 ---@return boolean
 function IsoSprite.HasCache(string) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return number
-function IsoSprite.calculateDepth(arg0, arg1, arg2) end
+function IsoSprite.calculateDepth(x, y, z) end
 
 ---@param name string
 ---@return integer
@@ -530,17 +530,17 @@ function IsoSprite.getSprite(manager, spr, offset) end
 ---@return IsoSprite
 function IsoSprite.getSprite(manager, name, offset) end
 
----@param arg0 Texture
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 number
----@param arg9 number
-function IsoSprite.renderTextureWithDepth(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+---@param texture Texture
+---@param width number
+---@param height number
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+---@param x number
+---@param y number
+---@param z number
+function IsoSprite.renderTextureWithDepth(texture, width, height, r, g, b, a, x, y, z) end
 
 ---@param manager IsoSpriteManager
 ---@param id integer

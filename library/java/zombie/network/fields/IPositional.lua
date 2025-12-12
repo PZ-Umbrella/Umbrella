@@ -13,7 +13,7 @@ function __IPositional:getY() end
 ---@return number
 function __IPositional:getZ() end
 
----@param arg0 IPositional
----@param arg1 number
+---@param other IPositional
+---@param range number
 ---@return boolean
-function __IPositional:isInRange(arg0, arg1) end
+function __IPositional:isInRange(other, range) end

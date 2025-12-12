@@ -40,9 +40,9 @@ PZMath.secondsToNanos = nil
 ---@return number
 function PZMath.abs(val) end
 
----@param arg0 number
+---@param a number
 ---@return number
-function PZMath.acosf(arg0) end
+function PZMath.acosf(a) end
 
 ---Almost Identity
 ---
@@ -71,24 +71,24 @@ function PZMath.almostIdentity(x, m, n) end
 ---@return number # value in [0..1]
 function PZMath.almostUnitIdentity(x) end
 
----@param arg0 Vector2
----@param arg1 Vector2
+---@param va Vector2
+---@param vb Vector2
 ---@return number
-function PZMath.angleBetween(arg0, arg1) end
+function PZMath.angleBetween(va, vb) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
+---@param in_ax number
+---@param in_ay number
+---@param in_bx number
+---@param in_by number
 ---@return number
-function PZMath.angleBetween(arg0, arg1, arg2, arg3) end
+function PZMath.angleBetween(in_ax, in_ay, in_bx, in_by) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
+---@param ax number
+---@param bx number
+---@param ay number
+---@param by number
 ---@return number
-function PZMath.angleBetweenNormalized(arg0, arg1, arg2, arg3) end
+function PZMath.angleBetweenNormalized(ax, bx, ay, by) end
 
 ---@param src number
 ---@param dest number
@@ -96,11 +96,11 @@ function PZMath.angleBetweenNormalized(arg0, arg1, arg2, arg3) end
 ---@return number
 function PZMath.c_lerp(src, dest, alpha) end
 
----@param arg0 Vector3
----@param arg1 Vector2
----@param arg2 Vector3
+---@param in_fromPosition Vector3
+---@param in_fromForward Vector2
+---@param in_toPosition Vector3
 ---@return number
-function PZMath.calculateBearing(arg0, arg1, arg2) end
+function PZMath.calculateBearing(in_fromPosition, in_fromForward, in_toPosition) end
 
 ---@param varStr string
 ---@return boolean
@@ -130,15 +130,15 @@ function PZMath.clamp(val, min, max) end
 ---@return integer # min <= val <= max
 function PZMath.clamp(val, min, max) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param val number
+---@param min number
+---@param max number
 ---@return number
-function PZMath.clamp(arg0, arg1, arg2) end
+function PZMath.clamp(val, min, max) end
 
----@param arg0 number
+---@param val number
 ---@return number
-function PZMath.clampDouble_01(arg0) end
+function PZMath.clampDouble_01(val) end
 
 ---@param val number
 ---@param min number
@@ -150,41 +150,41 @@ function PZMath.clampFloat(val, min, max) end
 ---@return number
 function PZMath.clamp_01(val) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 Vector2f
+---@param x1 number
+---@param y1 number
+---@param x2 number
+---@param y2 number
+---@param px number
+---@param py number
+---@param epsilon number
+---@param out Vector2f
 ---@return number
-function PZMath.closestPointOnLineSegment(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+function PZMath.closestPointOnLineSegment(x1, y1, x2, y2, px, py, epsilon, out) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 Vector2f
----@param arg9 Vector2f
+---@param x1 number
+---@param y1 number
+---@param x2 number
+---@param y2 number
+---@param x3 number
+---@param y3 number
+---@param x4 number
+---@param y4 number
+---@param p1 Vector2f
+---@param p2 Vector2f
 ---@return number
-function PZMath.closestPointsOnLineSegments(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+function PZMath.closestPointsOnLineSegments(x1, y1, x2, y2, x3, y3, x4, y4, p1, p2) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 number
+---@param lx0 number
+---@param ly0 number
+---@param lz0 number
+---@param lx1 number
+---@param ly1 number
+---@param lz1 number
+---@param x number
+---@param y number
+---@param z number
 ---@return Vector3
-function PZMath.closestVector3(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+function PZMath.closestVector3(lx0, ly0, lz0, lx1, ly1, lz1, x, y, z) end
 
 ---@param src Matrix4f
 ---@param dst Matrix4f
@@ -196,20 +196,20 @@ function PZMath.convertMatrix(src, dst) end
 ---@return Matrix4f
 function PZMath.convertMatrix(src, dst) end
 
----@param arg0 integer
----@param arg1 integer
+---@param value integer
+---@param divisor integer
 ---@return integer
-function PZMath.coorddivision(arg0, arg1) end
+function PZMath.coorddivision(value, divisor) end
 
----@param arg0 integer
----@param arg1 integer
+---@param value integer
+---@param divisor integer
 ---@return integer
-function PZMath.coordmodulo(arg0, arg1) end
+function PZMath.coordmodulo(value, divisor) end
 
----@param arg0 number
----@param arg1 integer
+---@param value number
+---@param divisor integer
 ---@return number
-function PZMath.coordmodulof(arg0, arg1) end
+function PZMath.coordmodulof(value, divisor) end
 
 ---@param degrees number
 ---@return number
@@ -238,9 +238,9 @@ function PZMath.fastfloor(x) end
 ---@return number
 function PZMath.floor(val) end
 
----@param arg0 number
+---@param val number
 ---@return number
-function PZMath.floor(arg0) end
+function PZMath.floor(val) end
 
 ---@param val number
 ---@return number
@@ -269,26 +269,26 @@ function PZMath.getClosestAngle(in_radsA, in_radsB) end
 ---@return number
 function PZMath.getClosestAngleDegrees(in_degsA, in_degsB) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 Vector2f
+---@param x1 number
+---@param y1 number
+---@param x2 number
+---@param y2 number
+---@param x3 number
+---@param y3 number
+---@param x4 number
+---@param y4 number
+---@param intersection Vector2f
 ---@return boolean
-function PZMath.intersectLineSegments(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+function PZMath.intersectLineSegments(x1, y1, x2, y2, x3, y3, x4, y4, intersection) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
+---@param x0 number
+---@param y0 number
+---@param x1 number
+---@param y1 number
+---@param x2 number
+---@param y2 number
 ---@return number
-function PZMath.isLeft(arg0, arg1, arg2, arg3, arg4, arg5) end
+function PZMath.isLeft(x0, y0, x1, y1, x2, y2) end
 
 ---@param src number
 ---@param dest number
@@ -296,12 +296,12 @@ function PZMath.isLeft(arg0, arg1, arg2, arg3, arg4, arg5) end
 ---@return number
 function PZMath.lerp(src, dest, alpha) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 LerpType
+---@param src number
+---@param dest number
+---@param alpha number
+---@param lerpType LerpType
 ---@return number
-function PZMath.lerp(arg0, arg1, arg2, arg3) end
+function PZMath.lerp(src, dest, alpha, lerpType) end
 
 ---@param out Vector3f
 ---@param a Vector3f
@@ -310,12 +310,12 @@ function PZMath.lerp(arg0, arg1, arg2, arg3) end
 ---@return Vector3f
 function PZMath.lerp(out, a, b, t) end
 
----@param arg0 Vector3
----@param arg1 Vector3
----@param arg2 Vector3
----@param arg3 number
+---@param out Vector3
+---@param a Vector3
+---@param b Vector3
+---@param t number
 ---@return Vector3
-function PZMath.lerp(arg0, arg1, arg2, arg3) end
+function PZMath.lerp(out, a, b, t) end
 
 ---@param out Vector2
 ---@param a Vector2
@@ -347,108 +347,108 @@ function PZMath.lerpFunc_EaseOutQuad(x) end
 ---@return number
 function PZMath.max(a, b) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param a number
+---@param b number
+---@param c number
 ---@return number
-function PZMath.max(arg0, arg1, arg2) end
+function PZMath.max(a, b, c) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
+---@param a number
+---@param b number
+---@param c number
+---@param d number
 ---@return number
-function PZMath.max(arg0, arg1, arg2, arg3) end
+function PZMath.max(a, b, c, d) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
+---@param a number
+---@param b number
+---@param c number
+---@param d number
+---@param e number
 ---@return number
-function PZMath.max(arg0, arg1, arg2, arg3, arg4) end
+function PZMath.max(a, b, c, d, e) end
 
 ---@param a integer
 ---@param b integer
 ---@return integer
 function PZMath.max(a, b) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param a integer
+---@param b integer
+---@param c integer
 ---@return integer
-function PZMath.max(arg0, arg1, arg2) end
+function PZMath.max(a, b, c) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
+---@param a integer
+---@param b integer
+---@param c integer
+---@param d integer
 ---@return integer
-function PZMath.max(arg0, arg1, arg2, arg3) end
+function PZMath.max(a, b, c, d) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
+---@param a integer
+---@param b integer
+---@param c integer
+---@param d integer
+---@param e integer
 ---@return integer
-function PZMath.max(arg0, arg1, arg2, arg3, arg4) end
+function PZMath.max(a, b, c, d, e) end
 
 ---@param a number
 ---@param b number
 ---@return number
 function PZMath.min(a, b) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param a number
+---@param b number
+---@param c number
 ---@return number
-function PZMath.min(arg0, arg1, arg2) end
+function PZMath.min(a, b, c) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
+---@param a number
+---@param b number
+---@param c number
+---@param d number
 ---@return number
-function PZMath.min(arg0, arg1, arg2, arg3) end
+function PZMath.min(a, b, c, d) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
+---@param a number
+---@param b number
+---@param c number
+---@param d number
+---@param e number
 ---@return number
-function PZMath.min(arg0, arg1, arg2, arg3, arg4) end
+function PZMath.min(a, b, c, d, e) end
 
 ---@param a integer
 ---@param b integer
 ---@return integer
 function PZMath.min(a, b) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param a integer
+---@param b integer
+---@param c integer
 ---@return integer
-function PZMath.min(arg0, arg1, arg2) end
+function PZMath.min(a, b, c) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
+---@param a integer
+---@param b integer
+---@param c integer
+---@param d integer
 ---@return integer
-function PZMath.min(arg0, arg1, arg2, arg3) end
+function PZMath.min(a, b, c, d) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
+---@param a integer
+---@param b integer
+---@param c integer
+---@param d integer
+---@param e integer
 ---@return integer
-function PZMath.min(arg0, arg1, arg2, arg3, arg4) end
+function PZMath.min(a, b, c, d, e) end
 
----@param arg0 integer
+---@param value integer
 ---@return integer
-function PZMath.nextPowerOfTwo(arg0) end
+function PZMath.nextPowerOfTwo(value) end
 
 ---@generic E
 ---@param list List<E>
@@ -462,59 +462,59 @@ function PZMath.normalize(list, floatGet, floatSet) end
 ---@param floatSet PZMath.FloatSet<E>
 function PZMath.normalize(list, floatGet, floatSet) end
 
----@param arg0 kahlua.Array<number>
+---@param weights kahlua.Array<number>
 ---@return kahlua.Array<number>
-function PZMath.normalize(arg0) end
+function PZMath.normalize(weights) end
 
----@param arg0 ArrayList<number>
+---@param list ArrayList<number>
 ---@return ArrayList<number>
-function PZMath.normalize(arg0) end
+function PZMath.normalize(list) end
 
----@param arg0 number
----@param arg1 number
+---@param a number
+---@param b number
 ---@return number
-function PZMath.pow(arg0, arg1) end
+function PZMath.pow(a, b) end
 
 ---@param radians number
 ---@return number
 function PZMath.radToDeg(radians) end
 
----@param arg0 Vector3f
----@param arg1 Quaternion
----@param arg2 Vector3f
+---@param in_vector Vector3f
+---@param in_quaternion Quaternion
+---@param out_result Vector3f
 ---@return Vector3f
-function PZMath.rotateVector(arg0, arg1, arg2) end
+function PZMath.rotateVector(in_vector, in_quaternion, out_result) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 Vector3f
+---@param vx number
+---@param vy number
+---@param vz number
+---@param qx number
+---@param qy number
+---@param qz number
+---@param qw number
+---@param out_result Vector3f
 ---@return Vector3f
-function PZMath.rotateVector(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+function PZMath.rotateVector(vx, vy, vz, qx, qy, qz, qw, out_result) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 Vector2
+---@param vx number
+---@param vy number
+---@param qx number
+---@param qy number
+---@param qz number
+---@param qw number
+---@param out_result Vector2
 ---@return Vector2
-function PZMath.rotateVector(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+function PZMath.rotateVector(vx, vy, qx, qy, qz, qw, out_result) end
 
----@param arg0 number
----@param arg1 integer
+---@param value number
+---@param scale integer
 ---@return number
-function PZMath.roundFloat(arg0, arg1) end
+function PZMath.roundFloat(value, scale) end
 
----@param arg0 number
----@param arg1 integer
+---@param number number
+---@param scale integer
 ---@return number
-function PZMath.roundFloatPos(arg0, arg1) end
+function PZMath.roundFloatPos(number, scale) end
 
 ---@param val number
 ---@return number
@@ -532,13 +532,13 @@ function PZMath.roundToIntPlus05(val) end
 ---@return number
 function PZMath.roundToNearest(val) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 Quaternion
+---@param ax number
+---@param ay number
+---@param az number
+---@param angleRadians number
+---@param out_result Quaternion
 ---@return Quaternion
-function PZMath.setFromAxisAngle(arg0, arg1, arg2, arg3, arg4) end
+function PZMath.setFromAxisAngle(ax, ay, az, angleRadians, out_result) end
 
 ---@param val number
 ---@return integer

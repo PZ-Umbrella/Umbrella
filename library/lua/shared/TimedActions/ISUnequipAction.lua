@@ -1,15 +1,11 @@
 ---@meta
 
 ---@class ISUnequipAction : ISBaseTimedAction
----@field animSpeed number
 ---@field clothingAction boolean
----@field fromHotbar boolean
----@field hotbar ISHotbar?
 ---@field ignoreHandsWounds boolean
 ---@field item InventoryItem
 ---@field sound integer?
 ---@field soundNoTrigger boolean
----@field useProgressBar boolean
 ISUnequipAction = ISBaseTimedAction:derive("ISUnequipAction")
 ISUnequipAction.Type = "ISUnequipAction"
 

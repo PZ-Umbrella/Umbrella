@@ -3,9 +3,9 @@
 ---@class ModelKey: Record
 local __ModelKey = {}
 
----@param arg0 any
+---@param o any
 ---@return boolean
-function __ModelKey:equals(arg0) end
+function __ModelKey:equals(o) end
 
 ---@return integer
 function __ModelKey:hashCode() end
@@ -11511,9 +11511,9 @@ ModelKey.ZUCCHINI_GROUND_ROTTEN = nil
 ---@type ModelKey
 ModelKey.ZUCCHINI_SEED_BAG_GROUND = nil
 
----@param arg0 string
+---@param id string
 ---@return ModelKey
-function ModelKey.new(arg0) end
+function ModelKey.new(id) end
 
 ---@type Class<ModelKey>
 ModelKey.class = nil

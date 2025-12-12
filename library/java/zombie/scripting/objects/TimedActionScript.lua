@@ -3,24 +3,24 @@
 ---@class TimedActionScript: BaseScriptObject
 local __TimedActionScript = {}
 
----@param arg0 string
-function __TimedActionScript:InitLoadPP(arg0) end
+---@param name string
+function __TimedActionScript:InitLoadPP(name) end
 
----@param arg0 string
----@param arg1 string
-function __TimedActionScript:Load(arg0, arg1) end
+---@param name string
+---@param body string
+function __TimedActionScript:Load(name, body) end
 
 function __TimedActionScript:OnLoadedAfterLua() end
 
 function __TimedActionScript:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __TimedActionScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __TimedActionScript:OnScriptsLoaded(loadMode) end
 
 function __TimedActionScript:PreReload() end
 
----@param arg0 IsoGameCharacter
-function __TimedActionScript:applyMuscleStrain(arg0) end
+---@param player IsoGameCharacter
+function __TimedActionScript:applyMuscleStrain(player) end
 
 ---@return string
 function __TimedActionScript:getActionAnim() end

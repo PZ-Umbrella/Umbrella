@@ -3,8 +3,8 @@
 ---@class RZSHogWild: RandomizedZoneStoryBase
 local __RZSHogWild = {}
 
----@param arg0 Zone
-function __RZSHogWild:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSHogWild:randomizeZoneStory(zone) end
 
 RZSHogWild = {}
 

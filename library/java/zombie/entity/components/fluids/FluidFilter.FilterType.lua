@@ -11,9 +11,9 @@ FilterType.Blacklist = nil
 ---@type FluidFilter.FilterType
 FilterType.Whitelist = nil
 
----@param arg0 string
+---@param name string
 ---@return FluidFilter.FilterType
-function FilterType.valueOf(arg0) end
+function FilterType.valueOf(name) end
 
 ---@return kahlua.Array<FluidFilter.FilterType>
 function FilterType.values() end

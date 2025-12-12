@@ -32,21 +32,21 @@ EnergyType.Thermal = nil
 ---@type EnergyType
 EnergyType.VoidEnergy = nil
 
----@param arg0 integer
+---@param id integer
 ---@return EnergyType
-function EnergyType.FromId(arg0) end
+function EnergyType.FromId(id) end
 
----@param arg0 string
+---@param name string
 ---@return EnergyType
-function EnergyType.FromNameLower(arg0) end
+function EnergyType.FromNameLower(name) end
 
----@param arg0 string
+---@param name string
 ---@return boolean
-function EnergyType.containsNameLowercase(arg0) end
+function EnergyType.containsNameLowercase(name) end
 
----@param arg0 string
+---@param name string
 ---@return EnergyType
-function EnergyType.valueOf(arg0) end
+function EnergyType.valueOf(name) end
 
 ---@return kahlua.Array<EnergyType>
 function EnergyType.values() end

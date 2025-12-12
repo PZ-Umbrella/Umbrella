@@ -36,8 +36,8 @@ function __SearchModeFloat:resetAll() end
 ---@param targetInterior number
 function __SearchModeFloat:set(exterior, targetExterior, interior, targetInterior) end
 
----@param arg0 number
-function __SearchModeFloat:setAll(arg0) end
+---@param value number
+function __SearchModeFloat:setAll(value) end
 
 ---@param exterior number
 function __SearchModeFloat:setExterior(exterior) end

@@ -3,25 +3,25 @@
 ---@class AssocEnumArray<K: Enum<K>, V>: AssocArray<K, V>
 local __AssocEnumArray = {}
 
----@param arg0 K
----@param arg1 V
+---@param k K
+---@param v V
 ---@return boolean
-function __AssocEnumArray:add(arg0, arg1) end
+function __AssocEnumArray:add(k, v) end
 
----@param arg0 integer
----@param arg1 K
----@param arg2 V
-function __AssocEnumArray:add(arg0, arg1, arg2) end
+---@param frontIndex integer
+---@param k K
+---@param v V
+function __AssocEnumArray:add(frontIndex, k, v) end
 
 function __AssocEnumArray:clear() end
 
----@param arg0 K
+---@param o K
 ---@return boolean
-function __AssocEnumArray:containsKey(arg0) end
+function __AssocEnumArray:containsKey(o) end
 
----@param arg0 any
+---@param o any
 ---@return boolean
-function __AssocEnumArray:equals(arg0) end
+function __AssocEnumArray:equals(o) end
 
 ---@param other AssocEnumArray<K, V>
 ---@return boolean
@@ -30,33 +30,33 @@ function __AssocEnumArray:equalsKeys(other) end
 ---@return Iterator<K>
 function __AssocEnumArray:keys() end
 
----@param arg0 K
----@param arg1 V
+---@param k K
+---@param v V
 ---@return V
-function __AssocEnumArray:put(arg0, arg1) end
+function __AssocEnumArray:put(k, v) end
 
----@param arg0 K
+---@param o K
 ---@return V
-function __AssocEnumArray:remove(arg0) end
+function __AssocEnumArray:remove(o) end
 
----@param arg0 integer
+---@param frontIndex integer
 ---@return V
-function __AssocEnumArray:removeIndex(arg0) end
+function __AssocEnumArray:removeIndex(frontIndex) end
 
 AssocEnumArray = {}
 
 ---@generic K: Enum<K>
 ---@generic V
----@param arg0 Class<K>
+---@param enumType Class<K>
 ---@return AssocEnumArray<K: Enum<K>, V>
-function AssocEnumArray.new(arg0) end
+function AssocEnumArray.new(enumType) end
 
 ---@generic K: Enum<K>
 ---@generic V
----@param arg0 Class<K>
----@param arg1 integer
+---@param enumType Class<K>
+---@param initialCapacity integer
 ---@return AssocEnumArray<K: Enum<K>, V>
-function AssocEnumArray.new(arg0, arg1) end
+function AssocEnumArray.new(enumType, initialCapacity) end
 
 ---@type Class<AssocEnumArray>
 AssocEnumArray.class = nil

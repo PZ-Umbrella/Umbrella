@@ -15,10 +15,10 @@ function __ClimateMoon:getMoonFloat() end
 ---@return string
 function __ClimateMoon:getPhaseName() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __ClimateMoon:updatePhase(arg0, arg1, arg2) end
+---@param year integer
+---@param month integer
+---@param day integer
+function __ClimateMoon:updatePhase(year, month, day) end
 
 ClimateMoon = {}
 

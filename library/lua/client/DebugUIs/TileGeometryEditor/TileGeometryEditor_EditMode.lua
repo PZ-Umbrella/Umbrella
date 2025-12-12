@@ -306,16 +306,6 @@ function TileGeometryEditor_EditMode:new(editor) end
 ---@field animation string
 ---@field belowList ISPanel
 ---@field boxPanel TileGeometryEditor_BoxPanel
----@field button1 ISButton
----@field button2 ISButton
----@field button3 ISButton
----@field button4 ISButton
----@field button5 ISButton
----@field button5_1 ISButton
----@field button5_2 ISButton
----@field button6 ISButton
----@field button7 ISButton
----@field button8 ISButton
 ---@field buttonAddBox ISButton
 ---@field buttonAddCylinder ISButton
 ---@field buttonAddXY ISButton
@@ -481,9 +471,6 @@ function TileGeometryEditor_SeatingListBox:onRightMouseDown(x, y) end
 function TileGeometryEditor_SeatingListBox:new(x, y, width, height, editor) end
 
 ---@class TileGeometryEditor_EditMode_SceneTiles : TileGeometryEditor_EditMode
----@field button1 ISButton
----@field button2 ISButton
----@field button4 ISButton
 ---@field buttonAddXZ ISButton
 ---@field buttonHideGeom ISButton
 ---@field buttonPanel ISPanel
@@ -570,7 +557,6 @@ function TileGeometryEditor_CurtainPropertiesPanel:toUI() end
 function TileGeometryEditor_CurtainPropertiesPanel:new(x, y, width, height, editor) end
 
 ---@class TileGeometryEditor_EditMode_Curtain : TileGeometryEditor_EditMode
----@field button1 ISButton
 ---@field buttonPanel ISPanel
 ---@field buttonTranslate ISButton
 ---@field previousAnimation string
@@ -623,13 +609,6 @@ function TileGeometryEditor_EditMode_Curtain:setGeometryModeSelection() end
 function TileGeometryEditor_EditMode_Curtain:new(editor) end
 
 ---@class TileGeometryEditor_EditMode_Seating : TileGeometryEditor_EditMode
----@field button1 ISButton
----@field button2 ISButton
----@field button3 ISButton
----@field button4 ISButton
----@field button5 ISButton
----@field button6 ISButton
----@field button7 ISButton
 ---@field buttonAddXY ISButton
 ---@field buttonAddXZ ISButton
 ---@field buttonAddYZ ISButton

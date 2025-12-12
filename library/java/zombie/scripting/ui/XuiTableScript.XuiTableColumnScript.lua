@@ -5,11 +5,11 @@ local __XuiTableColumnScript = {}
 
 XuiTableColumnScript = {}
 
----@param arg0 string
----@param arg1 boolean
----@param arg2 XuiScript
+---@param xuiLayoutName string
+---@param readAltKeys boolean
+---@param style XuiScript
 ---@return XuiTableScript.XuiTableColumnScript
-function XuiTableColumnScript.new(arg0, arg1, arg2) end
+function XuiTableColumnScript.new(xuiLayoutName, readAltKeys, style) end
 
 ---@type Class<XuiTableScript.XuiTableColumnScript>
 XuiTableColumnScript.class = nil

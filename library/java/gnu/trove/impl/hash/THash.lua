@@ -11,8 +11,8 @@ function __THash:clear() end
 
 function __THash:compact() end
 
----@param arg0 integer
-function __THash:ensureCapacity(arg0) end
+---@param desiredCapacity integer
+function __THash:ensureCapacity(desiredCapacity) end
 
 ---@return number
 function __THash:getAutoCompactionFactor() end
@@ -20,14 +20,14 @@ function __THash:getAutoCompactionFactor() end
 ---@return boolean
 function __THash:isEmpty() end
 
----@param arg0 ObjectInput
-function __THash:readExternal(arg0) end
+---@param _in ObjectInput
+function __THash:readExternal(_in) end
 
----@param arg0 boolean
-function __THash:reenableAutoCompaction(arg0) end
+---@param check_for_compaction boolean
+function __THash:reenableAutoCompaction(check_for_compaction) end
 
----@param arg0 number
-function __THash:setAutoCompactionFactor(arg0) end
+---@param factor number
+function __THash:setAutoCompactionFactor(factor) end
 
 ---@return integer
 function __THash:size() end
@@ -36,5 +36,5 @@ function __THash:tempDisableAutoCompaction() end
 
 function __THash:trimToSize() end
 
----@param arg0 ObjectOutput
-function __THash:writeExternal(arg0) end
+---@param out ObjectOutput
+function __THash:writeExternal(out) end

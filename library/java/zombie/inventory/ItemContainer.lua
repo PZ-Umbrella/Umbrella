@@ -16,11 +16,11 @@ function __ItemContainer:AddItem(type) end
 ---@return boolean
 function __ItemContainer:AddItem(type, useDelta) end
 
----@param arg0 string
----@param arg1 number
----@param arg2 boolean
+---@param type string
+---@param useDelta number
+---@param synchSpawn boolean
 ---@return boolean
-function __ItemContainer:AddItem(arg0, arg1, arg2) end
+function __ItemContainer:AddItem(type, useDelta, synchSpawn) end
 
 ---@param item InventoryItem
 ---@return InventoryItem
@@ -31,14 +31,14 @@ function __ItemContainer:AddItemBlind(item) end
 ---@return ArrayList<InventoryItem>
 function __ItemContainer:AddItems(item, use) end
 
----@param arg0 InventoryItem
----@param arg1 integer
+---@param item InventoryItem
+---@param count integer
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:AddItems(arg0, arg1) end
+function __ItemContainer:AddItems(item, count) end
 
----@param arg0 ArrayList<InventoryItem>
+---@param items ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:AddItems(arg0) end
+function __ItemContainer:AddItems(items) end
 
 ---@param item InventoryItem
 ---@return InventoryItem
@@ -51,9 +51,9 @@ function __ItemContainer:DoAddItemBlind(item) end
 ---@param item InventoryItem
 function __ItemContainer:DoRemoveItem(item) end
 
----@param arg0 string
+---@param itemType string
 ---@return InventoryItem
-function __ItemContainer:Find(arg0) end
+function __ItemContainer:Find(itemType) end
 
 ---@param itemType ItemType
 ---@return InventoryItem
@@ -110,39 +110,39 @@ function __ItemContainer:Remove(itemTypes) end
 ---@return InventoryItem
 function __ItemContainer:Remove(itemType) end
 
----@param arg0 string
+---@param itemType string
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:RemoveAll(arg0) end
+function __ItemContainer:RemoveAll(itemType) end
 
----@param arg0 string
----@param arg1 integer
+---@param itemType string
+---@param count integer
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:RemoveAll(arg0, arg1) end
+function __ItemContainer:RemoveAll(itemType, count) end
 
----@param arg0 string
----@param arg1 boolean
+---@param String string
+---@param insideInv boolean
 ---@return InventoryItem
-function __ItemContainer:RemoveOneOf(arg0, arg1) end
+function __ItemContainer:RemoveOneOf(String, insideInv) end
 
 ---@param String string
 function __ItemContainer:RemoveOneOf(String) end
 
----@param arg0 InventoryItem
-function __ItemContainer:SpawnItem(arg0) end
+---@param item InventoryItem
+function __ItemContainer:SpawnItem(item) end
 
----@param arg0 string
+---@param type string
 ---@return InventoryItem
-function __ItemContainer:SpawnItem(arg0) end
+function __ItemContainer:SpawnItem(type) end
 
----@param arg0 string
----@param arg1 number
+---@param type string
+---@param useDelta number
 ---@return boolean
-function __ItemContainer:SpawnItem(arg0, arg1) end
+function __ItemContainer:SpawnItem(type, useDelta) end
 
 ---@generic T: InventoryItem
----@param arg0 ItemKey
+---@param item ItemKey
 ---@return T
-function __ItemContainer:addItem(arg0) end
+function __ItemContainer:addItem(item) end
 
 ---@param item InventoryItem
 ---@return InventoryItem
@@ -151,27 +151,27 @@ function __ItemContainer:addItem(item) end
 ---@param item InventoryItem
 function __ItemContainer:addItemOnServer(item) end
 
----@param arg0 ItemKey
----@param arg1 integer
+---@param item ItemKey
+---@param count integer
 ---@return List<InventoryItem>
-function __ItemContainer:addItems(arg0, arg1) end
+function __ItemContainer:addItems(item, count) end
 
 function __ItemContainer:addItemsToProcessItems() end
 
----@param arg0 IsoGameCharacter
+---@param playerObj IsoGameCharacter
 ---@return boolean
-function __ItemContainer:canCharacterOpenVehicleDoor(arg0) end
+function __ItemContainer:canCharacterOpenVehicleDoor(playerObj) end
 
----@param arg0 IsoGameCharacter
+---@param playerObj IsoGameCharacter
 ---@return boolean
-function __ItemContainer:canCharacterUnlockVehicleDoor(arg0) end
+function __ItemContainer:canCharacterUnlockVehicleDoor(playerObj) end
 
 ---@return boolean
 function __ItemContainer:canHumanCorpseFit() end
 
----@param arg0 InventoryItem
+---@param in_item InventoryItem
 ---@return boolean
-function __ItemContainer:canItemFit(arg0) end
+function __ItemContainer:canItemFit(in_item) end
 
 function __ItemContainer:clear() end
 
@@ -295,8 +295,8 @@ function __ItemContainer:containsWithModule(moduleType, withDeltaLeft) end
 ---@return boolean
 function __ItemContainer:doesVehicleDoorNeedOpening() end
 
----@param arg0 IsoGridSquare
-function __ItemContainer:dumpContentsInSquare(arg0) end
+---@param sq IsoGridSquare
+function __ItemContainer:dumpContentsInSquare(sq) end
 
 function __ItemContainer:emptyIt() end
 
@@ -315,11 +315,11 @@ function __ItemContainer:findItem(in_predicate, doInv) end
 ---@return InventoryItem
 function __ItemContainer:findItem(in_itemToCompare, in_predicate, doInv) end
 
----@param arg0 string
----@param arg1 boolean
----@param arg2 boolean
+---@param type string
+---@param doInv boolean
+---@param ignoreBroken boolean
 ---@return InventoryItem
-function __ItemContainer:findItem(arg0, arg1, arg2) end
+function __ItemContainer:findItem(type, doInv, ignoreBroken) end
 
 ---@return string
 function __ItemContainer:getAcceptItemFunction() end
@@ -526,21 +526,21 @@ function __ItemContainer:getAllTypeRecurse(type) end
 ---@return ArrayList<InventoryItem>
 function __ItemContainer:getAllWaterFillables() end
 
----@param arg0 boolean
+---@param includeTainted boolean
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:getAllWaterFluidSources(arg0) end
+function __ItemContainer:getAllWaterFluidSources(includeTainted) end
 
----@param arg0 IsoAnimal
+---@param animal IsoAnimal
 ---@return AnimalInventoryItem
-function __ItemContainer:getAnimalInventoryItem(arg0) end
+function __ItemContainer:getAnimalInventoryItem(animal) end
 
----@param arg0 string
+---@param type string
 ---@return ArrayList<InventoryItem>
-function __ItemContainer:getAvailableFluidContainer(arg0) end
+function __ItemContainer:getAvailableFluidContainer(type) end
 
----@param arg0 string
+---@param type string
 ---@return number
-function __ItemContainer:getAvailableFluidContainersCapacity(arg0) end
+function __ItemContainer:getAvailableFluidContainersCapacity(type) end
 
 ---@return number
 function __ItemContainer:getAvailableWeightCapacity() end
@@ -782,9 +782,9 @@ function __ItemContainer:getEffectiveCapacity(chr) end
 ---@return InventoryItem
 function __ItemContainer:getFirst(predicate) end
 
----@param arg0 string
+---@param type string
 ---@return InventoryItem
-function __ItemContainer:getFirstAvailableFluidContainer(arg0) end
+function __ItemContainer:getFirstAvailableFluidContainer(type) end
 
 ---@param category string
 ---@return InventoryItem
@@ -815,9 +815,9 @@ function __ItemContainer:getFirstEvalArgRecurse(functionObj, arg) end
 ---@return InventoryItem
 function __ItemContainer:getFirstEvalRecurse(functionObj) end
 
----@param arg0 string
+---@param type string
 ---@return InventoryItem
-function __ItemContainer:getFirstFluidContainer(arg0) end
+function __ItemContainer:getFirstFluidContainer(type) end
 
 ---@param predicate Predicate<InventoryItem>
 ---@return InventoryItem
@@ -880,14 +880,14 @@ function __ItemContainer:getFirstTypeRecurse(key) end
 ---@return InventoryItem
 function __ItemContainer:getFirstTypeRecurse(type) end
 
----@param arg0 boolean
+---@param includeTainted boolean
 ---@return InventoryItem
-function __ItemContainer:getFirstWaterFluidSources(arg0) end
+function __ItemContainer:getFirstWaterFluidSources(includeTainted) end
 
----@param arg0 boolean
----@param arg1 boolean
+---@param includeTainted boolean
+---@param taintedPriority boolean
 ---@return InventoryItem
-function __ItemContainer:getFirstWaterFluidSources(arg0, arg1) end
+function __ItemContainer:getFirstWaterFluidSources(includeTainted, taintedPriority) end
 
 ---@return string
 function __ItemContainer:getFreezerPosition() end
@@ -1029,11 +1029,11 @@ function __ItemContainer:getParent() end
 ---@return string
 function __ItemContainer:getPutSound() end
 
----@param arg0 string
----@param arg1 IsoGameCharacter
----@param arg2 boolean
+---@param recipe string
+---@param chr IsoGameCharacter
+---@param recursive boolean
 ---@return InventoryItem
-function __ItemContainer:getRecipeItem(arg0, arg1, arg2) end
+function __ItemContainer:getRecipeItem(recipe, chr, recursive) end
 
 ---@param predicate Predicate<InventoryItem>
 ---@param count integer
@@ -1314,20 +1314,20 @@ function __ItemContainer:getWaterContainerCount() end
 ---@return integer
 function __ItemContainer:getWeightReduction() end
 
----@param arg0 Vector2
+---@param out_result Vector2
 ---@return Vector2
-function __ItemContainer:getWorldPosition(arg0) end
+function __ItemContainer:getWorldPosition(out_result) end
 
----@param arg0 string
----@param arg1 IsoGameCharacter
+---@param recipe string
+---@param chr IsoGameCharacter
 ---@return boolean
-function __ItemContainer:hasRecipe(arg0, arg1) end
+function __ItemContainer:hasRecipe(recipe, chr) end
 
----@param arg0 string
----@param arg1 IsoGameCharacter
----@param arg2 boolean
+---@param recipe string
+---@param chr IsoGameCharacter
+---@param recursive boolean
 ---@return boolean
-function __ItemContainer:hasRecipe(arg0, arg1, arg2) end
+function __ItemContainer:hasRecipe(recipe, chr, recursive) end
 
 ---@param chr IsoGameCharacter
 ---@param item InventoryItem
@@ -1358,9 +1358,9 @@ function __ItemContainer:isDrawDirty() end
 ---@return boolean
 function __ItemContainer:isEmpty() end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return boolean
-function __ItemContainer:isEmptyOrUnwanted(arg0) end
+function __ItemContainer:isEmptyOrUnwanted(player) end
 
 ---@return boolean
 function __ItemContainer:isExistYet() end
@@ -1459,8 +1459,8 @@ function __ItemContainer:setActive(active) end
 ---@param ageFactor number the ageFactor to set
 function __ItemContainer:setAgeFactor(ageFactor) end
 
----@param arg0 integer
-function __ItemContainer:setCapacity(arg0) end
+---@param capacity integer
+function __ItemContainer:setCapacity(capacity) end
 
 ---@param closeSound string
 function __ItemContainer:setCloseSound(closeSound) end
@@ -1471,8 +1471,8 @@ function __ItemContainer:setContainerPosition(containerPosition) end
 ---@param CookingFactor number the CookingFactor to set
 function __ItemContainer:setCookingFactor(CookingFactor) end
 
----@param arg0 string
-function __ItemContainer:setCustomName(arg0) end
+---@param name string
+function __ItemContainer:setCustomName(name) end
 
 ---@param newTemp number
 function __ItemContainer:setCustomTemperature(newTemp) end
@@ -1513,8 +1513,8 @@ function __ItemContainer:setPutSound(putSound) end
 ---@param SourceGrid IsoGridSquare the SourceGrid to set
 function __ItemContainer:setSourceGrid(SourceGrid) end
 
----@param arg0 string
-function __ItemContainer:setTakeSound(arg0) end
+---@param takeSound string
+function __ItemContainer:setTakeSound(takeSound) end
 
 ---@param type string the type to set
 function __ItemContainer:setType(type) end
@@ -1534,9 +1534,9 @@ ItemContainer = {}
 ---@return number
 function ItemContainer.floatingPointCorrection(val) end
 
----@param arg0 IsoObject
+---@param parent IsoObject
 ---@return boolean
-function ItemContainer.isObjectPowered(arg0) end
+function ItemContainer.isObjectPowered(parent) end
 
 ---@param ID integer
 ---@param containerName string

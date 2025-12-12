@@ -35,9 +35,9 @@ ContainerType.Vehicle = nil
 ---@type ContainerID.ContainerType
 ContainerType.WorldObject = nil
 
----@param arg0 string
+---@param name string
 ---@return ContainerID.ContainerType
-function ContainerType.valueOf(arg0) end
+function ContainerType.valueOf(name) end
 
 ---@return kahlua.Array<ContainerID.ContainerType>
 function ContainerType.values() end

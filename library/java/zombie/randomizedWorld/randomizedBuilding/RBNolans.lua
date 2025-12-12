@@ -3,17 +3,17 @@
 ---@class RBNolans: RandomizedBuildingBase
 local __RBNolans = {}
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param def BuildingDef
+---@param force boolean
 ---@return boolean
-function __RBNolans:isValid(arg0, arg1) end
+function __RBNolans:isValid(def, force) end
 
----@param arg0 BuildingDef
-function __RBNolans:randomizeBuilding(arg0) end
+---@param def BuildingDef
+function __RBNolans:randomizeBuilding(def) end
 
----@param arg0 IsoGridSquare
+---@param sq IsoGridSquare
 ---@return boolean
-function __RBNolans:roomValid(arg0) end
+function __RBNolans:roomValid(sq) end
 
 RBNolans = {}
 

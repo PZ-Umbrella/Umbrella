@@ -14,9 +14,9 @@ TextAlign.Left = nil
 ---@type TextAlign
 TextAlign.Right = nil
 
----@param arg0 string
+---@param name string
 ---@return TextAlign
-function TextAlign.valueOf(arg0) end
+function TextAlign.valueOf(name) end
 
 ---@return kahlua.Array<TextAlign>
 function TextAlign.values() end

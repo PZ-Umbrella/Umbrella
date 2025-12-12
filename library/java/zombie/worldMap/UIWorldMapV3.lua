@@ -3,8 +3,8 @@
 ---@class UIWorldMapV3: UIWorldMapV2
 local __UIWorldMapV3 = {}
 
----@param arg0 string
-function __UIWorldMapV3:addImagePyramid(arg0) end
+---@param fileName string
+function __UIWorldMapV3:addImagePyramid(fileName) end
 
 function __UIWorldMapV3:clearImages() end
 
@@ -14,29 +14,29 @@ function __UIWorldMapV3:getDataHeightInCells() end
 ---@return integer
 function __UIWorldMapV3:getDataWidthInCells() end
 
----@param arg0 string
+---@param fileName string
 ---@return integer
-function __UIWorldMapV3:getImagePyramidHeightInSquares(arg0) end
+function __UIWorldMapV3:getImagePyramidHeightInSquares(fileName) end
 
----@param arg0 string
+---@param fileName string
 ---@return integer
-function __UIWorldMapV3:getImagePyramidMaxX(arg0) end
+function __UIWorldMapV3:getImagePyramidMaxX(fileName) end
 
----@param arg0 string
+---@param fileName string
 ---@return integer
-function __UIWorldMapV3:getImagePyramidMaxY(arg0) end
+function __UIWorldMapV3:getImagePyramidMaxY(fileName) end
 
----@param arg0 string
+---@param fileName string
 ---@return integer
-function __UIWorldMapV3:getImagePyramidMinX(arg0) end
+function __UIWorldMapV3:getImagePyramidMinX(fileName) end
 
----@param arg0 string
+---@param fileName string
 ---@return integer
-function __UIWorldMapV3:getImagePyramidMinY(arg0) end
+function __UIWorldMapV3:getImagePyramidMinY(fileName) end
 
----@param arg0 string
+---@param fileName string
 ---@return integer
-function __UIWorldMapV3:getImagePyramidWidthInSquares(arg0) end
+function __UIWorldMapV3:getImagePyramidWidthInSquares(fileName) end
 
 ---@return number
 function __UIWorldMapV3:getMaxZoom() end
@@ -50,25 +50,25 @@ function __UIWorldMapV3:getStyleAPI() end
 ---@return boolean
 function __UIWorldMapV3:isDataLoaded() end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
-function __UIWorldMapV3:setDisplayedArea(arg0, arg1, arg2, arg3) end
+---@param worldX1 number
+---@param worldY1 number
+---@param worldX2 number
+---@param worldY2 number
+function __UIWorldMapV3:setDisplayedArea(worldX1, worldY1, worldX2, worldY2) end
 
----@param arg0 number
-function __UIWorldMapV3:setMaxZoom(arg0) end
+---@param maxZoom number
+function __UIWorldMapV3:setMaxZoom(maxZoom) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
-function __UIWorldMapV3:transitionTo(arg0, arg1, arg2) end
+---@param worldX number
+---@param worldY number
+---@param zoomF number
+function __UIWorldMapV3:transitionTo(worldX, worldY, zoomF) end
 
 UIWorldMapV3 = {}
 
----@param arg0 UIWorldMap
+---@param ui UIWorldMap
 ---@return UIWorldMapV3
-function UIWorldMapV3.new(arg0) end
+function UIWorldMapV3.new(ui) end
 
 ---@type Class<UIWorldMapV3>
 UIWorldMapV3.class = nil

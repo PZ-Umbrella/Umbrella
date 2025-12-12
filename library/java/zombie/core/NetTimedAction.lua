@@ -3,22 +3,22 @@
 ---@class NetTimedAction: Action
 local __NetTimedAction = {}
 
----@param arg0 string
----@param arg1 string
-function __NetTimedAction:animEvent(arg0, arg1) end
+---@param event string
+---@param parameter string
+function __NetTimedAction:animEvent(event, parameter) end
 
 function __NetTimedAction:forceComplete() end
 
----@param arg0 ByteBuffer
----@param arg1 UdpConnection
-function __NetTimedAction:parse(arg0, arg1) end
+---@param b ByteBuffer
+---@param connection UdpConnection
+function __NetTimedAction:parse(b, connection) end
 
----@param arg0 IsoPlayer
----@param arg1 table
-function __NetTimedAction:set(arg0, arg1) end
+---@param player IsoPlayer
+---@param action table
+function __NetTimedAction:set(player, action) end
 
----@param arg0 ByteBufferWriter
-function __NetTimedAction:write(arg0) end
+---@param b ByteBufferWriter
+function __NetTimedAction:write(b) end
 
 NetTimedAction = {}
 

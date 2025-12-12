@@ -3,8 +3,8 @@
 ---@class FluidContainerScript: ComponentScript
 local __FluidContainerScript = {}
 
----@param arg0 ScriptLoadMode
-function __FluidContainerScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __FluidContainerScript:OnScriptsLoaded(loadMode) end
 
 function __FluidContainerScript:PreReload() end
 

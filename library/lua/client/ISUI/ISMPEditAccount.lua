@@ -20,7 +20,7 @@
 ---@field servers_serveripmessage_lines unknown
 ---@field servers_serveripwarning_lines unknown
 ---@field steamRelayTickBox ISTickBox
----@field ui unknown
+---@field ui ISMPSelectAccount | MultiplayerUI
 ---@field ui_droplist unknown
 ---@field ui_password_eye unknown
 ISMPEditAccount = ISPanelJoypad:derive("ISMPEditAccount")
@@ -39,18 +39,23 @@ function ISMPEditAccount:destroy() end
 
 function ISMPEditAccount:initialise() end
 
+---@param button ISButton
 function ISMPEditAccount:onClick(button) end
 
 function ISMPEditAccount:onComboAuthType() end
 
 function ISMPEditAccount:onCommandEntered() end
 
+---@param joypadData JoypadData
 function ISMPEditAccount:onGainJoypadFocus(joypadData) end
 
+---@param joypadData JoypadData
 function ISMPEditAccount:onJoypadBeforeDeactivate(joypadData) end
 
+---@param button integer
 function ISMPEditAccount:onJoypadDown(button) end
 
+---@param joypadData JoypadData
 function ISMPEditAccount:onLoseJoypadFocus(joypadData) end
 
 ---@param x number
@@ -73,6 +78,7 @@ function ISMPEditAccount:onMouseUp(x, y) end
 ---@param y number
 function ISMPEditAccount:onMouseUpOutside(x, y) end
 
+---@param key integer
 function ISMPEditAccount:onOtherKey(key) end
 
 function ISMPEditAccount:onResolutionChange(oldw, oldh, neww, newh) end
@@ -81,6 +87,7 @@ function ISMPEditAccount:prerender() end
 
 function ISMPEditAccount:render() end
 
+---@param ui ISMPSelectAccount | MultiplayerUI
 ---@param account unknown?
 ---@return ISMPEditAccount
 function ISMPEditAccount:new(ui, server, account) end

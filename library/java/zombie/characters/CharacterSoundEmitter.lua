@@ -64,10 +64,10 @@ function __CharacterSoundEmitter:set(x, y, z) end
 ---@param value number
 function __CharacterSoundEmitter:setParameterValue(soundRef, parameterDescription, value) end
 
----@param arg0 integer
----@param arg1 string
----@param arg2 number
-function __CharacterSoundEmitter:setParameterValueByName(arg0, arg1, arg2) end
+---@param soundRef integer
+---@param parameterName string
+---@param value number
+function __CharacterSoundEmitter:setParameterValueByName(soundRef, parameterName, value) end
 
 ---@param handle integer
 ---@param pitch number
@@ -90,8 +90,8 @@ function __CharacterSoundEmitter:stopOrTriggerSound(eventInstance) end
 ---@param name string
 function __CharacterSoundEmitter:stopOrTriggerSoundByName(name) end
 
----@param arg0 integer
-function __CharacterSoundEmitter:stopOrTriggerSoundLocal(arg0) end
+---@param eventInstance integer
+function __CharacterSoundEmitter:stopOrTriggerSoundLocal(eventInstance) end
 
 ---@param eventInstance integer
 ---@return integer
@@ -101,9 +101,9 @@ function __CharacterSoundEmitter:stopSound(eventInstance) end
 ---@return integer
 function __CharacterSoundEmitter:stopSoundByName(soundName) end
 
----@param arg0 integer
+---@param eventInstance integer
 ---@return integer
-function __CharacterSoundEmitter:stopSoundDelayRelease(arg0) end
+function __CharacterSoundEmitter:stopSoundDelayRelease(eventInstance) end
 
 ---@param handle integer
 function __CharacterSoundEmitter:stopSoundLocal(handle) end

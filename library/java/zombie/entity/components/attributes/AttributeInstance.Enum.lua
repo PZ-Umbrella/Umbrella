@@ -13,18 +13,18 @@ function __Enum:equalTo(other) end
 ---@return E
 function __Enum:getValue() end
 
----@param arg0 ByteBuffer
-function __Enum:load(arg0) end
+---@param input ByteBuffer
+function __Enum:load(input) end
 
----@param arg0 ByteBuffer
-function __Enum:save(arg0) end
+---@param output ByteBuffer
+function __Enum:save(output) end
 
----@param arg0 E
-function __Enum:setValue(arg0) end
+---@param value E
+function __Enum:setValue(value) end
 
----@param arg0 string
+---@param val string
 ---@return boolean
-function __Enum:setValueFromScriptString(arg0) end
+function __Enum:setValueFromScriptString(val) end
 
 ---@return string
 function __Enum:stringValue() end

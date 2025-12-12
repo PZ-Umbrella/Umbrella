@@ -12,8 +12,8 @@ function __EntityScriptInfo:getScript() end
 ---@return boolean
 function __EntityScriptInfo:isOriginalIsItem() end
 
----@param arg0 GameEntityScript
-function __EntityScriptInfo:setOriginalScript(arg0) end
+---@param entityScript GameEntityScript
+function __EntityScriptInfo:setOriginalScript(entityScript) end
 
 EntityScriptInfo = {}
 

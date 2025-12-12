@@ -3,11 +3,11 @@
 ---@class PlayerPetAnimalState: State
 local __PlayerPetAnimalState = {}
 
----@param arg0 IsoGameCharacter
-function __PlayerPetAnimalState:enter(arg0) end
+---@param owner IsoGameCharacter
+function __PlayerPetAnimalState:enter(owner) end
 
----@param arg0 IsoGameCharacter
-function __PlayerPetAnimalState:exit(arg0) end
+---@param owner IsoGameCharacter
+function __PlayerPetAnimalState:exit(owner) end
 
 ---@return boolean
 function __PlayerPetAnimalState:isSyncInIdle() end
@@ -21,9 +21,9 @@ function __PlayerPetAnimalState:isSyncOnExit() end
 ---@return boolean
 function __PlayerPetAnimalState:isSyncOnSquare() end
 
----@param arg0 IsoGameCharacter
----@param arg1 State.Stage
-function __PlayerPetAnimalState:setParams(arg0, arg1) end
+---@param owner IsoGameCharacter
+---@param stage State.Stage
+function __PlayerPetAnimalState:setParams(owner, stage) end
 
 PlayerPetAnimalState = {}
 

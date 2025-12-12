@@ -44,13 +44,13 @@ ResourceChannel.Channel_Yellow = nil
 ---@type ResourceChannel
 ResourceChannel.NO_CHANNEL = nil
 
----@param arg0 integer
+---@param id integer
 ---@return ResourceChannel
-function ResourceChannel.fromId(arg0) end
+function ResourceChannel.fromId(id) end
 
----@param arg0 string
+---@param name string
 ---@return ResourceChannel
-function ResourceChannel.valueOf(arg0) end
+function ResourceChannel.valueOf(name) end
 
 ---@return kahlua.Array<ResourceChannel>
 function ResourceChannel.values() end

@@ -3,9 +3,9 @@
 ---@class TestComponent: Component
 local __TestComponent = {}
 
----@param arg0 ObjectTooltip
----@param arg1 ObjectTooltip.Layout
-function __TestComponent:DoTooltip(arg0, arg1) end
+---@param tooltipUI ObjectTooltip
+---@param layout ObjectTooltip.Layout
+function __TestComponent:DoTooltip(tooltipUI, layout) end
 
 ---@return boolean
 function __TestComponent:isValid() end

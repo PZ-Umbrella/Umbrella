@@ -9,8 +9,10 @@
 ---@field columns number
 ---@field index integer
 ---@field mouseDown boolean
+---@field otherFct boolean?
 ---@field pickedArgs unknown[]
 ---@field pickedFunc umbrella.ISColorPicker.PickedFunction?
+---@field pickedTarget unknown?
 ---@field rows number
 ISColorPicker = ISPanelJoypad:derive("ISColorPicker")
 ISColorPicker.Type = "ISColorPicker"

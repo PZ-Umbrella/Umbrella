@@ -3,19 +3,19 @@
 ---@class RVSDeadEnd: RandomizedVehicleStoryBase
 local __RVSDeadEnd = {}
 
----@param arg0 Zone
----@param arg1 IsoChunk
----@param arg2 boolean
+---@param zone Zone
+---@param chunk IsoChunk
+---@param debug boolean
 ---@return boolean
-function __RVSDeadEnd:initVehicleStorySpawner(arg0, arg1, arg2) end
+function __RVSDeadEnd:initVehicleStorySpawner(zone, chunk, debug) end
 
----@param arg0 Zone
----@param arg1 IsoChunk
-function __RVSDeadEnd:randomizeVehicleStory(arg0, arg1) end
+---@param zone Zone
+---@param chunk IsoChunk
+function __RVSDeadEnd:randomizeVehicleStory(zone, chunk) end
 
----@param arg0 VehicleStorySpawner
----@param arg1 VehicleStorySpawner.Element
-function __RVSDeadEnd:spawnElement(arg0, arg1) end
+---@param spawner VehicleStorySpawner
+---@param element VehicleStorySpawner.Element
+function __RVSDeadEnd:spawnElement(spawner, element) end
 
 RVSDeadEnd = {}
 

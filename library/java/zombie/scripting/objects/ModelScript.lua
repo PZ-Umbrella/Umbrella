@@ -3,8 +3,8 @@
 ---@class ModelScript: BaseScriptObject, IModelAttachmentOwner
 local __ModelScript = {}
 
----@param arg0 string
-function __ModelScript:InitLoadPP(arg0) end
+---@param name string
+function __ModelScript:InitLoadPP(name) end
 
 ---@param name string
 ---@param totalFile string
@@ -19,11 +19,11 @@ function __ModelScript:addAttachment(attach) end
 ---@return ModelAttachment
 function __ModelScript:addAttachmentAt(index, attach) end
 
----@param arg0 ModelAttachment
-function __ModelScript:afterRenameAttachment(arg0) end
+---@param attachment ModelAttachment
+function __ModelScript:afterRenameAttachment(attachment) end
 
----@param arg0 ModelAttachment
-function __ModelScript:beforeRenameAttachment(arg0) end
+---@param attachment ModelAttachment
+function __ModelScript:beforeRenameAttachment(attachment) end
 
 ---@param index integer
 ---@return ModelAttachment
@@ -71,8 +71,8 @@ function __ModelScript:removeAttachment(index) end
 
 function __ModelScript:reset() end
 
----@param arg0 number
-function __ModelScript:scaleAttachmentOffset(arg0) end
+---@param scale number
+function __ModelScript:scaleAttachmentOffset(scale) end
 
 ModelScript = {}
 

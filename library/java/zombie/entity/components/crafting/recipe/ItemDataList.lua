@@ -3,57 +3,57 @@
 ---@class ItemDataList
 local __ItemDataList = {}
 
----@param arg0 InventoryItem
-function __ItemDataList:addItem(arg0) end
+---@param inventoryItem InventoryItem
+function __ItemDataList:addItem(inventoryItem) end
 
----@param arg0 InventoryItem
----@param arg1 boolean
-function __ItemDataList:addItem(arg0, arg1) end
+---@param inventoryItem InventoryItem
+---@param existingItem boolean
+function __ItemDataList:addItem(inventoryItem, existingItem) end
 
----@param arg0 Item
-function __ItemDataList:addItem(arg0) end
+---@param item Item
+function __ItemDataList:addItem(item) end
 
----@param arg0 Item
----@param arg1 boolean
-function __ItemDataList:addItem(arg0, arg1) end
+---@param item Item
+---@param existingItem boolean
+function __ItemDataList:addItem(item, existingItem) end
 
 function __ItemDataList:clear() end
 
----@param arg0 integer
+---@param index integer
 ---@return InventoryItem
-function __ItemDataList:getInventoryItem(arg0) end
+function __ItemDataList:getInventoryItem(index) end
 
----@param arg0 integer
+---@param index integer
 ---@return Item
-function __ItemDataList:getItem(arg0) end
+function __ItemDataList:getItem(index) end
 
----@param arg0 ArrayList<InventoryItem>
-function __ItemDataList:getUnprocessed(arg0) end
+---@param items ArrayList<InventoryItem>
+function __ItemDataList:getUnprocessed(items) end
 
----@param arg0 ArrayList<InventoryItem>
----@param arg1 boolean
-function __ItemDataList:getUnprocessed(arg0, arg1) end
+---@param items ArrayList<InventoryItem>
+---@param includeExisting boolean
+function __ItemDataList:getUnprocessed(items, includeExisting) end
 
 ---@return boolean
 function __ItemDataList:hasUnprocessed() end
 
----@param arg0 integer
+---@param index integer
 ---@return boolean
-function __ItemDataList:isProcessed(arg0) end
+function __ItemDataList:isProcessed(index) end
 
 function __ItemDataList:reset() end
 
----@param arg0 integer
-function __ItemDataList:setProcessed(arg0) end
+---@param index integer
+function __ItemDataList:setProcessed(index) end
 
 ---@return integer
 function __ItemDataList:size() end
 
 ItemDataList = {}
 
----@param arg0 integer
+---@param capacity integer
 ---@return ItemDataList
-function ItemDataList.new(arg0) end
+function ItemDataList.new(capacity) end
 
 ---@type Class<ItemDataList>
 ItemDataList.class = nil

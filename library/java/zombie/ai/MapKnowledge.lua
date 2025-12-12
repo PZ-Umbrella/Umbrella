@@ -44,9 +44,9 @@ function __MapKnowledge:setKnownBlockedEdgeW(x, y, z, blocked) end
 ---@param blocked boolean
 function __MapKnowledge:setKnownBlockedWindow(object, blocked) end
 
----@param arg0 IsoWindowFrame
----@param arg1 boolean
-function __MapKnowledge:setKnownBlockedWindowFrame(arg0, arg1) end
+---@param object IsoWindowFrame
+---@param blocked boolean
+function __MapKnowledge:setKnownBlockedWindowFrame(object, blocked) end
 
 MapKnowledge = {}
 

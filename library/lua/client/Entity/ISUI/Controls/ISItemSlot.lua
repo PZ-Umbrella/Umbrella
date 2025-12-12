@@ -12,7 +12,7 @@
 
 ---@class ISItemSlot : ISPanel
 ---@field actionAddColor umbrella.RGBA
----@field actionAnim unknown?
+---@field actionAnim string?
 ---@field actionRemoveColor umbrella.RGBA
 ---@field allowDrop boolean
 ---@field backDropTex Texture?

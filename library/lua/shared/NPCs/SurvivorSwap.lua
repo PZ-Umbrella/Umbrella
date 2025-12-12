@@ -29,7 +29,7 @@ function SurvivorSwap.applyVehicle(vehicle, data) end
 ---@field profession string?
 ---@field skinTexture integer?
 ---@field surname string?
----@field traits TraitFactory.Trait[]?
+---@field traits CharacterTrait[]?
 ---@field voicePitch integer?
 ---@field voiceType integer?
 ---@field weight integer?

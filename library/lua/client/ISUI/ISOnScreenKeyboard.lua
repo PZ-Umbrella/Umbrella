@@ -9,6 +9,7 @@
 ---@field keepOnScreen boolean
 ---@field keyPanel OnScreenKeyboardPanel
 ---@field playerNum integer
+---@field prevFocus ISUIElement?
 ---@field setBlockMovement boolean
 ---@field shiftDown boolean
 ---@field textEntryBox ISTextEntryBox

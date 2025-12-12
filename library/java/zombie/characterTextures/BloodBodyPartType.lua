@@ -84,9 +84,9 @@ function BloodBodyPartType.FromString(str) end
 ---@return integer
 function BloodBodyPartType.ToIndex(BPT) end
 
----@param arg0 string
+---@param name string
 ---@return BloodBodyPartType
-function BloodBodyPartType.valueOf(arg0) end
+function BloodBodyPartType.valueOf(name) end
 
 ---Returns an array containing the constants of this enum class, in
 ---the order they are declared.

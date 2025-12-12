@@ -22,14 +22,14 @@ function __TilesetDepthTexture:getHeight() end
 ---@return string
 function __TilesetDepthTexture:getName() end
 
----@param arg0 integer
+---@param index integer
 ---@return TileDepthTexture
-function __TilesetDepthTexture:getOrCreateTile(arg0) end
+function __TilesetDepthTexture:getOrCreateTile(index) end
 
----@param arg0 integer
----@param arg1 integer
+---@param col integer
+---@param row integer
 ---@return TileDepthTexture
-function __TilesetDepthTexture:getOrCreateTile(arg0, arg1) end
+function __TilesetDepthTexture:getOrCreateTile(col, row) end
 
 ---@return string
 function __TilesetDepthTexture:getRelativeFileName() end
@@ -62,8 +62,8 @@ function __TilesetDepthTexture:isKeepPixels() end
 
 function __TilesetDepthTexture:load() end
 
----@param arg0 TilesetDepthTexture
-function __TilesetDepthTexture:mergeTileset(arg0) end
+---@param other TilesetDepthTexture
+function __TilesetDepthTexture:mergeTileset(other) end
 
 function __TilesetDepthTexture:recalculateShadowDepth() end
 
@@ -73,18 +73,18 @@ function __TilesetDepthTexture:removeFile() end
 
 function __TilesetDepthTexture:save() end
 
----@param arg0 boolean
-function __TilesetDepthTexture:setKeepPixels(arg0) end
+---@param bKeepPixels boolean
+function __TilesetDepthTexture:setKeepPixels(bKeepPixels) end
 
 TilesetDepthTexture = {}
 
----@param arg0 TileDepthTextures
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 boolean
+---@param owner TileDepthTextures
+---@param name string
+---@param columns integer
+---@param rows integer
+---@param b2x boolean
 ---@return TilesetDepthTexture
-function TilesetDepthTexture.new(arg0, arg1, arg2, arg3, arg4) end
+function TilesetDepthTexture.new(owner, name, columns, rows, b2x) end
 
 ---@type Class<TilesetDepthTexture>
 TilesetDepthTexture.class = nil

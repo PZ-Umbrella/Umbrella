@@ -8,35 +8,35 @@ ObjectDebuggerLua = {}
 ---@return ArrayList<string>
 function ObjectDebuggerLua.AllocList() end
 
----@param arg0 any
----@param arg1 ArrayList<string>
-function ObjectDebuggerLua.GetLines(arg0, arg1) end
+---@param o any
+---@param list ArrayList<string>
+function ObjectDebuggerLua.GetLines(o, list) end
 
----@param arg0 any
----@param arg1 ArrayList<string>
----@param arg2 integer
-function ObjectDebuggerLua.GetLines(arg0, arg1, arg2) end
+---@param o any
+---@param list ArrayList<string>
+---@param inheritanceDepth integer
+function ObjectDebuggerLua.GetLines(o, list, inheritanceDepth) end
 
----@param arg0 any
----@param arg1 ArrayList<string>
----@param arg2 integer
----@param arg3 integer
-function ObjectDebuggerLua.GetLines(arg0, arg1, arg2, arg3) end
+---@param o any
+---@param list ArrayList<string>
+---@param inheritanceDepth integer
+---@param memberDepth integer
+function ObjectDebuggerLua.GetLines(o, list, inheritanceDepth, memberDepth) end
 
----@param arg0 any
-function ObjectDebuggerLua.Log(arg0) end
+---@param o any
+function ObjectDebuggerLua.Log(o) end
 
----@param arg0 any
----@param arg1 integer
-function ObjectDebuggerLua.Log(arg0, arg1) end
+---@param o any
+---@param inheritanceDepth integer
+function ObjectDebuggerLua.Log(o, inheritanceDepth) end
 
----@param arg0 any
----@param arg1 integer
----@param arg2 integer
-function ObjectDebuggerLua.Log(arg0, arg1, arg2) end
+---@param o any
+---@param inheritanceDepth integer
+---@param memberDepth integer
+function ObjectDebuggerLua.Log(o, inheritanceDepth, memberDepth) end
 
----@param arg0 ArrayList<string>
-function ObjectDebuggerLua.ReleaseList(arg0) end
+---@param list ArrayList<string>
+function ObjectDebuggerLua.ReleaseList(list) end
 
 ---@return ObjectDebuggerLua
 function ObjectDebuggerLua.new() end

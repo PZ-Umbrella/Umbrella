@@ -21,7 +21,8 @@ function ISStatsAndBody:addBoolOption(_java, _var, _get, _set) end
 ---@return table
 function ISStatsAndBody:addSliderOption(_java, _var, _min, _max, _step, _get, _set) end
 
----@param _enum number
+---@param _enum CharacterStat
+---@param _step number?
 ---@return table
 function ISStatsAndBody:addSliderOptionEnum(_enum, _step) end
 
@@ -29,9 +30,9 @@ function ISStatsAndBody:createChildren() end
 
 function ISStatsAndBody:initialise() end
 
----@param _newval number
+---@param _newVal number
 ---@param _slider ISSliderPanel
-function ISStatsAndBody:onSliderChange(_newval, _slider) end
+function ISStatsAndBody:onSliderChange(_newVal, _slider) end
 
 ---@param _index integer
 ---@param _selected boolean

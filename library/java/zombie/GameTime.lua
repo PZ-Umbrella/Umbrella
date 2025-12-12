@@ -149,9 +149,9 @@ function __GameTime:getMultipliedSecondsSinceLastUpdate() end
 ---@return number # the Multiplier
 function __GameTime:getMultiplier() end
 
----@param arg0 number
+---@param in_timeDelta number
 ---@return number
-function __GameTime:getMultiplierFromTimeDelta(arg0) end
+function __GameTime:getMultiplierFromTimeDelta(in_timeDelta) end
 
 ---@deprecated
 ---@return number # the NightTint
@@ -211,9 +211,9 @@ function __GameTime:getThunderStorm() end
 ---@return number
 function __GameTime:getTimeDelta() end
 
----@param arg0 number
+---@param in_multiplier number
 ---@return number
-function __GameTime:getTimeDeltaFromMultiplier(arg0) end
+function __GameTime:getTimeDeltaFromMultiplier(in_multiplier) end
 
 ---@return number # the TimeOfDay
 function __GameTime:getTimeOfDay() end
@@ -300,8 +300,8 @@ function __GameTime:save(output) end
 ---@param output ByteBuffer
 function __GameTime:save(output) end
 
----@param arg0 SaveBufferMap
-function __GameTime:saveToBufferMap(arg0) end
+---@param bufferMap SaveBufferMap
+function __GameTime:saveToBufferMap(bufferMap) end
 
 ---@param bb ByteBuffer
 function __GameTime:saveToPacket(bb) end

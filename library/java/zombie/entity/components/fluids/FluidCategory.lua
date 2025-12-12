@@ -44,16 +44,16 @@ FluidCategory.Poisons = nil
 ---@type FluidCategory
 FluidCategory.Water = nil
 
----@param arg0 integer
+---@param id integer
 ---@return FluidCategory
-function FluidCategory.FromId(arg0) end
+function FluidCategory.FromId(id) end
 
 ---@return ArrayList<FluidCategory>
 function FluidCategory.getList() end
 
----@param arg0 string
+---@param name string
 ---@return FluidCategory
-function FluidCategory.valueOf(arg0) end
+function FluidCategory.valueOf(name) end
 
 ---@return kahlua.Array<FluidCategory>
 function FluidCategory.values() end

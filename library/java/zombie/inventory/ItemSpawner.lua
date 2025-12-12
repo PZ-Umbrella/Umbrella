@@ -5,84 +5,84 @@ local __ItemSpawner = {}
 
 ItemSpawner = {}
 
----@param arg0 InventoryItem
----@param arg1 IsoGridSquare
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 boolean
+---@param item InventoryItem
+---@param square IsoGridSquare
+---@param x number
+---@param y number
+---@param z number
+---@param fill boolean
 ---@return InventoryItem
-function ItemSpawner.spawnItem(arg0, arg1, arg2, arg3, arg4, arg5) end
+function ItemSpawner.spawnItem(item, square, x, y, z, fill) end
 
----@param arg0 InventoryItem
----@param arg1 IsoGridSquare
----@param arg2 number
----@param arg3 number
----@param arg4 number
+---@param item InventoryItem
+---@param square IsoGridSquare
+---@param x number
+---@param y number
+---@param z number
 ---@return InventoryItem
-function ItemSpawner.spawnItem(arg0, arg1, arg2, arg3, arg4) end
+function ItemSpawner.spawnItem(item, square, x, y, z) end
 
----@param arg0 InventoryItem
----@param arg1 IsoGridSquare
+---@param item InventoryItem
+---@param square IsoGridSquare
 ---@return InventoryItem
-function ItemSpawner.spawnItem(arg0, arg1) end
+function ItemSpawner.spawnItem(item, square) end
 
----@param arg0 InventoryItem
----@param arg1 IsoGridSquare
----@param arg2 boolean
+---@param item InventoryItem
+---@param square IsoGridSquare
+---@param fill boolean
 ---@return InventoryItem
-function ItemSpawner.spawnItem(arg0, arg1, arg2) end
+function ItemSpawner.spawnItem(item, square, fill) end
 
----@param arg0 string
----@param arg1 IsoGridSquare
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 boolean
+---@param itemType string
+---@param square IsoGridSquare
+---@param x number
+---@param y number
+---@param z number
+---@param fill boolean
 ---@return InventoryItem
-function ItemSpawner.spawnItem(arg0, arg1, arg2, arg3, arg4, arg5) end
+function ItemSpawner.spawnItem(itemType, square, x, y, z, fill) end
 
----@param arg0 string
----@param arg1 IsoGridSquare
----@param arg2 number
----@param arg3 number
----@param arg4 number
+---@param itemType string
+---@param square IsoGridSquare
+---@param x number
+---@param y number
+---@param z number
 ---@return InventoryItem
-function ItemSpawner.spawnItem(arg0, arg1, arg2, arg3, arg4) end
+function ItemSpawner.spawnItem(itemType, square, x, y, z) end
 
----@param arg0 InventoryItem
----@param arg1 ItemContainer
----@param arg2 boolean
+---@param item InventoryItem
+---@param container ItemContainer
+---@param fill boolean
 ---@return InventoryItem
-function ItemSpawner.spawnItem(arg0, arg1, arg2) end
+function ItemSpawner.spawnItem(item, container, fill) end
 
----@param arg0 InventoryItem
----@param arg1 ItemContainer
+---@param item InventoryItem
+---@param container ItemContainer
 ---@return InventoryItem
-function ItemSpawner.spawnItem(arg0, arg1) end
+function ItemSpawner.spawnItem(item, container) end
 
----@param arg0 string
----@param arg1 ItemContainer
----@param arg2 boolean
+---@param itemType string
+---@param container ItemContainer
+---@param fill boolean
 ---@return InventoryItem
-function ItemSpawner.spawnItem(arg0, arg1, arg2) end
+function ItemSpawner.spawnItem(itemType, container, fill) end
 
----@param arg0 string
----@param arg1 ItemContainer
+---@param itemType string
+---@param container ItemContainer
 ---@return InventoryItem
-function ItemSpawner.spawnItem(arg0, arg1) end
+function ItemSpawner.spawnItem(itemType, container) end
 
----@param arg0 InventoryItem
----@param arg1 integer
----@param arg2 ItemContainer
+---@param item InventoryItem
+---@param count integer
+---@param container ItemContainer
 ---@return List<InventoryItem>
-function ItemSpawner.spawnItems(arg0, arg1, arg2) end
+function ItemSpawner.spawnItems(item, count, container) end
 
----@param arg0 string
----@param arg1 integer
----@param arg2 ItemContainer
+---@param itemType string
+---@param count integer
+---@param container ItemContainer
 ---@return List<InventoryItem>
-function ItemSpawner.spawnItems(arg0, arg1, arg2) end
+function ItemSpawner.spawnItems(itemType, count, container) end
 
 ---@type Class<ItemSpawner>
 ItemSpawner.class = nil

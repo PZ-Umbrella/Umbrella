@@ -7,113 +7,113 @@ local __IAnimationVariableRegistry = {}
 ---@return AnimationVariableSource
 function __IAnimationVariableRegistry:getGameVariablesInternal() end
 
----@param arg0 string
----@param arg1 AnimationVariableSlotCallbackBool.CallbackGetStrongTyped
----@param arg2 IAnimationVariableSlotDescriptor
-function __IAnimationVariableRegistry:setVariable(arg0, arg1, arg2) end
+---@param key string
+---@param callbackGet AnimationVariableSlotCallbackBool.CallbackGetStrongTyped
+---@param descriptor IAnimationVariableSlotDescriptor
+function __IAnimationVariableRegistry:setVariable(key, callbackGet, descriptor) end
 
----@param arg0 string
----@param arg1 AnimationVariableSlotCallbackBool.CallbackGetStrongTyped
----@param arg2 AnimationVariableSlotCallbackBool.CallbackSetStrongTyped
----@param arg3 IAnimationVariableSlotDescriptor
-function __IAnimationVariableRegistry:setVariable(arg0, arg1, arg2, arg3) end
+---@param key string
+---@param callbackGet AnimationVariableSlotCallbackBool.CallbackGetStrongTyped
+---@param callbackSet AnimationVariableSlotCallbackBool.CallbackSetStrongTyped
+---@param descriptor IAnimationVariableSlotDescriptor
+function __IAnimationVariableRegistry:setVariable(key, callbackGet, callbackSet, descriptor) end
 
----@param arg0 string
----@param arg1 AnimationVariableSlotCallbackString.CallbackGetStrongTyped
----@param arg2 IAnimationVariableSlotDescriptor
-function __IAnimationVariableRegistry:setVariable(arg0, arg1, arg2) end
+---@param key string
+---@param callbackGet AnimationVariableSlotCallbackString.CallbackGetStrongTyped
+---@param descriptor IAnimationVariableSlotDescriptor
+function __IAnimationVariableRegistry:setVariable(key, callbackGet, descriptor) end
 
----@param arg0 string
----@param arg1 AnimationVariableSlotCallbackString.CallbackGetStrongTyped
----@param arg2 AnimationVariableSlotCallbackString.CallbackSetStrongTyped
----@param arg3 IAnimationVariableSlotDescriptor
-function __IAnimationVariableRegistry:setVariable(arg0, arg1, arg2, arg3) end
+---@param in_key string
+---@param callbackGet AnimationVariableSlotCallbackString.CallbackGetStrongTyped
+---@param callbackSet AnimationVariableSlotCallbackString.CallbackSetStrongTyped
+---@param descriptor IAnimationVariableSlotDescriptor
+function __IAnimationVariableRegistry:setVariable(in_key, callbackGet, callbackSet, descriptor) end
 
----@param arg0 string
----@param arg1 AnimationVariableSlotCallbackFloat.PrimitiveFloatSupplier
----@param arg2 IAnimationVariableSlotDescriptor
-function __IAnimationVariableRegistry:setVariable(arg0, arg1, arg2) end
+---@param in_key string
+---@param callbackGet AnimationVariableSlotCallbackFloat.PrimitiveFloatSupplier
+---@param descriptor IAnimationVariableSlotDescriptor
+function __IAnimationVariableRegistry:setVariable(in_key, callbackGet, descriptor) end
 
----@param arg0 string
----@param arg1 AnimationVariableSlotCallbackFloat.PrimitiveFloatSupplier
----@param arg2 AnimationVariableSlotCallbackFloat.PrimitiveFloatConsumer
----@param arg3 IAnimationVariableSlotDescriptor
-function __IAnimationVariableRegistry:setVariable(arg0, arg1, arg2, arg3) end
+---@param in_key string
+---@param callbackGet AnimationVariableSlotCallbackFloat.PrimitiveFloatSupplier
+---@param callbackSet AnimationVariableSlotCallbackFloat.PrimitiveFloatConsumer
+---@param descriptor IAnimationVariableSlotDescriptor
+function __IAnimationVariableRegistry:setVariable(in_key, callbackGet, callbackSet, descriptor) end
 
----@param arg0 string
----@param arg1 AnimationVariableSlotCallbackInt.CallbackGetStrongTyped
----@param arg2 IAnimationVariableSlotDescriptor
-function __IAnimationVariableRegistry:setVariable(arg0, arg1, arg2) end
+---@param in_key string
+---@param callbackGet AnimationVariableSlotCallbackInt.CallbackGetStrongTyped
+---@param descriptor IAnimationVariableSlotDescriptor
+function __IAnimationVariableRegistry:setVariable(in_key, callbackGet, descriptor) end
 
----@param arg0 string
----@param arg1 AnimationVariableSlotCallbackInt.CallbackGetStrongTyped
----@param arg2 AnimationVariableSlotCallbackInt.CallbackSetStrongTyped
----@param arg3 IAnimationVariableSlotDescriptor
-function __IAnimationVariableRegistry:setVariable(arg0, arg1, arg2, arg3) end
+---@param in_key string
+---@param callbackGet AnimationVariableSlotCallbackInt.CallbackGetStrongTyped
+---@param callbackSet AnimationVariableSlotCallbackInt.CallbackSetStrongTyped
+---@param descriptor IAnimationVariableSlotDescriptor
+function __IAnimationVariableRegistry:setVariable(in_key, callbackGet, callbackSet, descriptor) end
 
----@param arg0 string
----@param arg1 boolean
----@param arg2 AnimationVariableSlotCallbackBool.CallbackGetStrongTyped
----@param arg3 IAnimationVariableSlotDescriptor
-function __IAnimationVariableRegistry:setVariable(arg0, arg1, arg2, arg3) end
+---@param in_key string
+---@param defaultVal boolean
+---@param callbackGet AnimationVariableSlotCallbackBool.CallbackGetStrongTyped
+---@param descriptor IAnimationVariableSlotDescriptor
+function __IAnimationVariableRegistry:setVariable(in_key, defaultVal, callbackGet, descriptor) end
 
----@param arg0 string
----@param arg1 boolean
----@param arg2 AnimationVariableSlotCallbackBool.CallbackGetStrongTyped
----@param arg3 AnimationVariableSlotCallbackBool.CallbackSetStrongTyped
----@param arg4 IAnimationVariableSlotDescriptor
-function __IAnimationVariableRegistry:setVariable(arg0, arg1, arg2, arg3, arg4) end
+---@param in_key string
+---@param defaultVal boolean
+---@param callbackGet AnimationVariableSlotCallbackBool.CallbackGetStrongTyped
+---@param callbackSet AnimationVariableSlotCallbackBool.CallbackSetStrongTyped
+---@param descriptor IAnimationVariableSlotDescriptor
+function __IAnimationVariableRegistry:setVariable(in_key, defaultVal, callbackGet, callbackSet, descriptor) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 AnimationVariableSlotCallbackString.CallbackGetStrongTyped
----@param arg3 IAnimationVariableSlotDescriptor
-function __IAnimationVariableRegistry:setVariable(arg0, arg1, arg2, arg3) end
+---@param in_key string
+---@param defaultVal string
+---@param callbackGet AnimationVariableSlotCallbackString.CallbackGetStrongTyped
+---@param descriptor IAnimationVariableSlotDescriptor
+function __IAnimationVariableRegistry:setVariable(in_key, defaultVal, callbackGet, descriptor) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 AnimationVariableSlotCallbackString.CallbackGetStrongTyped
----@param arg3 AnimationVariableSlotCallbackString.CallbackSetStrongTyped
----@param arg4 IAnimationVariableSlotDescriptor
-function __IAnimationVariableRegistry:setVariable(arg0, arg1, arg2, arg3, arg4) end
+---@param in_key string
+---@param defaultVal string
+---@param callbackGet AnimationVariableSlotCallbackString.CallbackGetStrongTyped
+---@param callbackSet AnimationVariableSlotCallbackString.CallbackSetStrongTyped
+---@param descriptor IAnimationVariableSlotDescriptor
+function __IAnimationVariableRegistry:setVariable(in_key, defaultVal, callbackGet, callbackSet, descriptor) end
 
----@param arg0 string
----@param arg1 number
----@param arg2 AnimationVariableSlotCallbackFloat.PrimitiveFloatSupplier
----@param arg3 IAnimationVariableSlotDescriptor
-function __IAnimationVariableRegistry:setVariable(arg0, arg1, arg2, arg3) end
+---@param in_key string
+---@param defaultVal number
+---@param callbackGet AnimationVariableSlotCallbackFloat.PrimitiveFloatSupplier
+---@param descriptor IAnimationVariableSlotDescriptor
+function __IAnimationVariableRegistry:setVariable(in_key, defaultVal, callbackGet, descriptor) end
 
----@param arg0 string
----@param arg1 number
----@param arg2 AnimationVariableSlotCallbackFloat.PrimitiveFloatSupplier
----@param arg3 AnimationVariableSlotCallbackFloat.PrimitiveFloatConsumer
----@param arg4 IAnimationVariableSlotDescriptor
-function __IAnimationVariableRegistry:setVariable(arg0, arg1, arg2, arg3, arg4) end
+---@param in_key string
+---@param defaultVal number
+---@param callbackGet AnimationVariableSlotCallbackFloat.PrimitiveFloatSupplier
+---@param callbackSet AnimationVariableSlotCallbackFloat.PrimitiveFloatConsumer
+---@param descriptor IAnimationVariableSlotDescriptor
+function __IAnimationVariableRegistry:setVariable(in_key, defaultVal, callbackGet, callbackSet, descriptor) end
 
----@param arg0 string
----@param arg1 integer
----@param arg2 AnimationVariableSlotCallbackInt.CallbackGetStrongTyped
----@param arg3 IAnimationVariableSlotDescriptor
-function __IAnimationVariableRegistry:setVariable(arg0, arg1, arg2, arg3) end
+---@param in_key string
+---@param defaultVal integer
+---@param callbackGet AnimationVariableSlotCallbackInt.CallbackGetStrongTyped
+---@param descriptor IAnimationVariableSlotDescriptor
+function __IAnimationVariableRegistry:setVariable(in_key, defaultVal, callbackGet, descriptor) end
 
----@param arg0 string
----@param arg1 integer
----@param arg2 AnimationVariableSlotCallbackInt.CallbackGetStrongTyped
----@param arg3 AnimationVariableSlotCallbackInt.CallbackSetStrongTyped
----@param arg4 IAnimationVariableSlotDescriptor
-function __IAnimationVariableRegistry:setVariable(arg0, arg1, arg2, arg3, arg4) end
-
----@generic EnumType: Enum<EnumType>
----@param arg0 string
----@param arg1 Class<EnumType>
----@param arg2 Supplier<EnumType>
----@param arg3 IAnimationVariableSlotDescriptor
-function __IAnimationVariableRegistry:setVariable(arg0, arg1, arg2, arg3) end
+---@param in_key string
+---@param defaultVal integer
+---@param callbackGet AnimationVariableSlotCallbackInt.CallbackGetStrongTyped
+---@param callbackSet AnimationVariableSlotCallbackInt.CallbackSetStrongTyped
+---@param descriptor IAnimationVariableSlotDescriptor
+function __IAnimationVariableRegistry:setVariable(in_key, defaultVal, callbackGet, callbackSet, descriptor) end
 
 ---@generic EnumType: Enum<EnumType>
----@param arg0 string
----@param arg1 Class<EnumType>
----@param arg2 Supplier<EnumType>
----@param arg3 Consumer<EnumType>
----@param arg4 IAnimationVariableSlotDescriptor
-function __IAnimationVariableRegistry:setVariable(arg0, arg1, arg2, arg3, arg4) end
+---@param in_key string
+---@param in_enumTypeClass Class<EnumType>
+---@param callbackGet Supplier<EnumType>
+---@param descriptor IAnimationVariableSlotDescriptor
+function __IAnimationVariableRegistry:setVariable(in_key, in_enumTypeClass, callbackGet, descriptor) end
+
+---@generic EnumType: Enum<EnumType>
+---@param in_key string
+---@param in_enumTypeClass Class<EnumType>
+---@param callbackGet Supplier<EnumType>
+---@param callbackSet Consumer<EnumType>
+---@param descriptor IAnimationVariableSlotDescriptor
+function __IAnimationVariableRegistry:setVariable(in_key, in_enumTypeClass, callbackGet, callbackSet, descriptor) end

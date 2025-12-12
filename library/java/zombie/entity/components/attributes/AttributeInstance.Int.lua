@@ -6,31 +6,31 @@ local __Int = {}
 ---@return AttributeInstance.Int
 function __Int:copy() end
 
----@param arg0 AttributeInstance.Int
+---@param other AttributeInstance.Int
 ---@return boolean
-function __Int:equalTo(arg0) end
+function __Int:equalTo(other) end
 
 ---@return number
 function __Int:floatValue() end
 
----@param arg0 number
-function __Int:fromFloat(arg0) end
+---@param f number
+function __Int:fromFloat(f) end
 
 ---@return integer
 function __Int:getValue() end
 
----@param arg0 ByteBuffer
-function __Int:load(arg0) end
+---@param input ByteBuffer
+function __Int:load(input) end
 
----@param arg0 ByteBuffer
-function __Int:save(arg0) end
+---@param output ByteBuffer
+function __Int:save(output) end
 
----@param arg0 integer
-function __Int:setValue(arg0) end
+---@param value integer
+function __Int:setValue(value) end
 
----@param arg0 string
+---@param val string
 ---@return boolean
-function __Int:setValueFromScriptString(arg0) end
+function __Int:setValueFromScriptString(val) end
 
 ---@return string
 function __Int:stringValue() end

@@ -5,9 +5,9 @@ local __FluidSample = {}
 
 function __FluidSample:clear() end
 
----@param arg0 FluidSample
+---@param b FluidSample
 ---@return FluidSample
-function __FluidSample:combineWith(arg0) end
+function __FluidSample:combineWith(b) end
 
 ---@return FluidSample
 function __FluidSample:copy() end
@@ -18,21 +18,21 @@ function __FluidSample:getAmount() end
 ---@return Color
 function __FluidSample:getColor() end
 
----@param arg0 integer
+---@param index integer
 ---@return Fluid
-function __FluidSample:getFluid(arg0) end
+function __FluidSample:getFluid(index) end
 
----@param arg0 integer
+---@param index integer
 ---@return FluidInstance
-function __FluidSample:getFluidInstance(arg0) end
+function __FluidSample:getFluidInstance(index) end
 
----@param arg0 Fluid
+---@param fluid Fluid
 ---@return FluidInstance
-function __FluidSample:getFluidInstance(arg0) end
+function __FluidSample:getFluidInstance(fluid) end
 
----@param arg0 integer
+---@param index integer
 ---@return number
-function __FluidSample:getPercentage(arg0) end
+function __FluidSample:getPercentage(index) end
 
 ---@return Fluid
 function __FluidSample:getPrimaryFluid() end
@@ -45,8 +45,8 @@ function __FluidSample:isPureFluid() end
 
 function __FluidSample:release() end
 
----@param arg0 number
-function __FluidSample:scaleToAmount(arg0) end
+---@param amount number
+function __FluidSample:scaleToAmount(amount) end
 
 ---@return integer
 function __FluidSample:size() end
@@ -56,25 +56,25 @@ FluidSample = {}
 ---@return FluidSample
 function FluidSample.Alloc() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
+---@param input ByteBuffer
+---@param WorldVersion integer
 ---@return FluidSample
-function FluidSample.Load(arg0, arg1) end
+function FluidSample.Load(input, WorldVersion) end
 
----@param arg0 FluidSample
----@param arg1 ByteBuffer
----@param arg2 integer
+---@param fluidSample FluidSample
+---@param input ByteBuffer
+---@param WorldVersion integer
 ---@return FluidSample
-function FluidSample.Load(arg0, arg1, arg2) end
+function FluidSample.Load(fluidSample, input, WorldVersion) end
 
----@param arg0 FluidSample
----@param arg1 ByteBuffer
-function FluidSample.Save(arg0, arg1) end
+---@param fluidSample FluidSample
+---@param output ByteBuffer
+function FluidSample.Save(fluidSample, output) end
 
----@param arg0 FluidSample
----@param arg1 FluidSample
+---@param a FluidSample
+---@param b FluidSample
 ---@return FluidSample
-function FluidSample.combine(arg0, arg1) end
+function FluidSample.combine(a, b) end
 
 ---@type Class<FluidSample>
 FluidSample.class = nil

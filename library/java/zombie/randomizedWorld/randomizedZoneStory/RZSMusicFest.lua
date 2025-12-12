@@ -3,8 +3,8 @@
 ---@class RZSMusicFest: RandomizedZoneStoryBase
 local __RZSMusicFest = {}
 
----@param arg0 Zone
-function __RZSMusicFest:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSMusicFest:randomizeZoneStory(zone) end
 
 RZSMusicFest = {}
 

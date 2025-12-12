@@ -3,9 +3,9 @@
 ---@class ClimbOverFenceState: State
 local __ClimbOverFenceState = {}
 
----@param arg0 IsoGameCharacter
+---@param owner IsoGameCharacter
 ---@return boolean
-function __ClimbOverFenceState:canRagdoll(arg0) end
+function __ClimbOverFenceState:canRagdoll(owner) end
 
 ---@param owner IsoGameCharacter
 function __ClimbOverFenceState:enter(owner) end

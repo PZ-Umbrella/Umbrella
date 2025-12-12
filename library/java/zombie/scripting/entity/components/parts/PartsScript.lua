@@ -3,15 +3,15 @@
 ---@class PartsScript: ComponentScript
 local __PartsScript = {}
 
----@param arg0 string
-function __PartsScript:InitLoadPP(arg0) end
+---@param name string
+function __PartsScript:InitLoadPP(name) end
 
 function __PartsScript:OnLoadedAfterLua() end
 
 function __PartsScript:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __PartsScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __PartsScript:OnScriptsLoaded(loadMode) end
 
 function __PartsScript:PreReload() end
 

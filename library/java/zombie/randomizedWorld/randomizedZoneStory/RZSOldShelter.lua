@@ -3,8 +3,8 @@
 ---@class RZSOldShelter: RandomizedZoneStoryBase
 local __RZSOldShelter = {}
 
----@param arg0 Zone
-function __RZSOldShelter:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSOldShelter:randomizeZoneStory(zone) end
 
 RZSOldShelter = {}
 

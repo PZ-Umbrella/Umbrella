@@ -9,15 +9,15 @@ function __MusicThreatStatus:getId() end
 ---@return number
 function __MusicThreatStatus:getIntensity() end
 
----@param arg0 number
-function __MusicThreatStatus:setIntensity(arg0) end
+---@param value number
+function __MusicThreatStatus:setIntensity(value) end
 
 MusicThreatStatus = {}
 
----@param arg0 string
----@param arg1 number
+---@param label string
+---@param intensity number
 ---@return MusicThreatStatus
-function MusicThreatStatus.new(arg0, arg1) end
+function MusicThreatStatus.new(label, intensity) end
 
 ---@type Class<MusicThreatStatus>
 MusicThreatStatus.class = nil

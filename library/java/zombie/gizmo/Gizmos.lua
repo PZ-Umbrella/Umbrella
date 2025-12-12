@@ -3,32 +3,32 @@
 ---@class Gizmos
 local __Gizmos = {}
 
----@param arg0 integer
+---@param playerIndex integer
 ---@return Gizmo
-function __Gizmos:getGizmo(arg0) end
+function __Gizmos:getGizmo(playerIndex) end
 
----@param arg0 integer
+---@param playerIndex integer
 ---@return Gizmo
-function __Gizmos:getRotateGizmo(arg0) end
+function __Gizmos:getRotateGizmo(playerIndex) end
 
----@param arg0 integer
+---@param playerIndex integer
 ---@return Gizmo
-function __Gizmos:getTranslateGizmo(arg0) end
+function __Gizmos:getTranslateGizmo(playerIndex) end
 
----@param arg0 integer
----@param arg1 integer
+---@param mouseX integer
+---@param mouseY integer
 ---@return boolean
-function __Gizmos:hitTest(arg0, arg1) end
+function __Gizmos:hitTest(mouseX, mouseY) end
 
 ---@return boolean
 function __Gizmos:isTrackingMouse() end
 
----@param arg0 integer
-function __Gizmos:render(arg0) end
+---@param playerIndex integer
+function __Gizmos:render(playerIndex) end
 
----@param arg0 integer
----@param arg1 Gizmo
-function __Gizmos:setGizmo(arg0, arg1) end
+---@param playerIndex integer
+---@param gizmo Gizmo
+function __Gizmos:setGizmo(playerIndex, gizmo) end
 
 Gizmos = {}
 

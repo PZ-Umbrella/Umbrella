@@ -17,9 +17,9 @@ ColorSet.Game = nil
 ---@type Colors.ColorSet
 ColorSet.Standard = nil
 
----@param arg0 string
+---@param name string
 ---@return Colors.ColorSet
-function ColorSet.valueOf(arg0) end
+function ColorSet.valueOf(name) end
 
 ---@return kahlua.Array<Colors.ColorSet>
 function ColorSet.values() end

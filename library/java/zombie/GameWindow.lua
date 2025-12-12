@@ -93,9 +93,9 @@ function GameWindow.ReadString(input) end
 ---@return string
 function GameWindow.ReadStringUTF(input) end
 
----@param arg0 ByteBuffer
+---@param input ByteBuffer
 ---@return UUID
-function GameWindow.ReadUUID(arg0) end
+function GameWindow.ReadUUID(input) end
 
 ---@param output ByteBuffer
 ---@param str string
@@ -109,9 +109,9 @@ function GameWindow.WriteString(output, str) end
 ---@param str string
 function GameWindow.WriteStringUTF(output, str) end
 
----@param arg0 ByteBuffer
----@param arg1 UUID
-function GameWindow.WriteUUID(arg0, arg1) end
+---@param output ByteBuffer
+---@param uuid UUID
+function GameWindow.WriteUUID(output, uuid) end
 
 ---@param b boolean
 function GameWindow.doRenderEvent(b) end
@@ -119,9 +119,9 @@ function GameWindow.doRenderEvent(b) end
 ---@return string
 function GameWindow.getCoopServerHome() end
 
----@param arg0 string
+---@param str string
 ---@return ByteBuffer
-function GameWindow.getEncodedBytesUTF(arg0) end
+function GameWindow.getEncodedBytesUTF(str) end
 
 ---@return integer
 function GameWindow.getUpdateTime() end

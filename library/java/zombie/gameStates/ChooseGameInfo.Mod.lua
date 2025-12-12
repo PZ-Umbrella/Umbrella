@@ -87,33 +87,33 @@ function __Mod:isAvailable() end
 ---@return boolean
 function __Mod:isAvailableSelf() end
 
----@param arg0 string
-function __Mod:setAuthor(arg0) end
+---@param author string
+function __Mod:setAuthor(author) end
 
 ---@deprecated
 ---@param available boolean
 function __Mod:setAvailable(available) end
 
----@param arg0 string
-function __Mod:setCategory(arg0) end
+---@param name string
+function __Mod:setCategory(name) end
 
----@param arg0 string
-function __Mod:setIcon(arg0) end
+---@param name string
+function __Mod:setIcon(name) end
 
 ---@param id string
 function __Mod:setId(id) end
 
----@param arg0 ArrayList<string>
-function __Mod:setIncompatible(arg0) end
+---@param incompatible ArrayList<string>
+function __Mod:setIncompatible(incompatible) end
 
----@param arg0 ArrayList<string>
-function __Mod:setLoadAfter(arg0) end
+---@param loadAfter ArrayList<string>
+function __Mod:setLoadAfter(loadAfter) end
 
----@param arg0 ArrayList<string>
-function __Mod:setLoadBefore(arg0) end
+---@param loadBefore ArrayList<string>
+function __Mod:setLoadBefore(loadBefore) end
 
----@param arg0 string
-function __Mod:setModVersion(arg0) end
+---@param version string
+function __Mod:setModVersion(version) end
 
 ---@param name string
 function __Mod:setName(name) end

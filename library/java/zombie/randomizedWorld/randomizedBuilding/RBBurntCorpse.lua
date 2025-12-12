@@ -5,10 +5,10 @@
 ---@class RBBurntCorpse: RandomizedBuildingBase
 local __RBBurntCorpse = {}
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param def BuildingDef
+---@param force boolean
 ---@return boolean
-function __RBBurntCorpse:isValid(arg0, arg1) end
+function __RBBurntCorpse:isValid(def, force) end
 
 ---@param def BuildingDef
 function __RBBurntCorpse:randomizeBuilding(def) end

@@ -3,11 +3,11 @@
 ---@class PlayerStrafeState: State
 local __PlayerStrafeState = {}
 
----@param arg0 IsoGameCharacter
----@param arg1 AnimLayer
----@param arg2 AnimationTrack
----@param arg3 AnimEvent
-function __PlayerStrafeState:animEvent(arg0, arg1, arg2, arg3) end
+---@param owner IsoGameCharacter
+---@param layer AnimLayer
+---@param track AnimationTrack
+---@param event AnimEvent
+function __PlayerStrafeState:animEvent(owner, layer, track, event) end
 
 ---@param owner IsoGameCharacter
 function __PlayerStrafeState:enter(owner) end
@@ -30,9 +30,9 @@ function __PlayerStrafeState:isSyncOnExit() end
 ---@return boolean
 function __PlayerStrafeState:isSyncOnSquare() end
 
----@param arg0 IsoGameCharacter
----@param arg1 State.Stage
-function __PlayerStrafeState:setParams(arg0, arg1) end
+---@param owner IsoGameCharacter
+---@param stage State.Stage
+function __PlayerStrafeState:setParams(owner, stage) end
 
 PlayerStrafeState = {}
 

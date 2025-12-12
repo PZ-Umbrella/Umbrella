@@ -8,9 +8,9 @@ EntityEventType = {}
 ---@type EntityEventType
 EntityEventType.AddedToWorld = nil
 
----@param arg0 string
+---@param name string
 ---@return EntityEventType
-function EntityEventType.valueOf(arg0) end
+function EntityEventType.valueOf(name) end
 
 ---@return kahlua.Array<EntityEventType>
 function EntityEventType.values() end

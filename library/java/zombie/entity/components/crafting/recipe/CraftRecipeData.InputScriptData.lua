@@ -3,13 +3,13 @@
 ---@class CraftRecipeData.InputScriptData: CraftRecipeData.CacheData
 local __InputScriptData = {}
 
----@param arg0 InventoryItem
+---@param inventoryItem InventoryItem
 ---@return boolean
-function __InputScriptData:acceptsInputItem(arg0) end
+function __InputScriptData:acceptsInputItem(inventoryItem) end
 
----@param arg0 InventoryItem
+---@param inventoryItem InventoryItem
 ---@return boolean
-function __InputScriptData:addInputItem(arg0) end
+function __InputScriptData:addInputItem(inventoryItem) end
 
 ---@return InventoryItem
 function __InputScriptData:getFirstInputItem() end
@@ -29,8 +29,8 @@ function __InputScriptData:getInputScript() end
 ---@return InventoryItem
 function __InputScriptData:getLastInputItem() end
 
----@param arg0 ArrayList<InventoryItem>
-function __InputScriptData:getManualInputItems(arg0) end
+---@param list ArrayList<InventoryItem>
+function __InputScriptData:getManualInputItems(list) end
 
 ---@return boolean
 function __InputScriptData:isCachedCanConsume() end
@@ -44,12 +44,12 @@ function __InputScriptData:isInputItemsSatisfied() end
 ---@return boolean
 function __InputScriptData:isInputItemsSatisifiedToMaximum() end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __InputScriptData:removeInputItem(arg0) end
+function __InputScriptData:removeInputItem(item) end
 
----@param arg0 ArrayList<InventoryItem>
-function __InputScriptData:verifyInputItems(arg0) end
+---@param playerItems ArrayList<InventoryItem>
+function __InputScriptData:verifyInputItems(playerItems) end
 
 InputScriptData = {}
 

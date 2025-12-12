@@ -3,13 +3,13 @@
 ---@class RBPoliceSiege: RandomizedBuildingBase
 local __RBPoliceSiege = {}
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param def BuildingDef
+---@param force boolean
 ---@return boolean
-function __RBPoliceSiege:isValid(arg0, arg1) end
+function __RBPoliceSiege:isValid(def, force) end
 
----@param arg0 BuildingDef
-function __RBPoliceSiege:randomizeBuilding(arg0) end
+---@param def BuildingDef
+function __RBPoliceSiege:randomizeBuilding(def) end
 
 RBPoliceSiege = {}
 

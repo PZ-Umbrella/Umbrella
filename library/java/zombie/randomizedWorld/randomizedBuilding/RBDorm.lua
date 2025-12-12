@@ -3,17 +3,17 @@
 ---@class RBDorm: RandomizedBuildingBase
 local __RBDorm = {}
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param def BuildingDef
+---@param force boolean
 ---@return boolean
-function __RBDorm:isValid(arg0, arg1) end
+function __RBDorm:isValid(def, force) end
 
----@param arg0 BuildingDef
-function __RBDorm:randomizeBuilding(arg0) end
+---@param def BuildingDef
+function __RBDorm:randomizeBuilding(def) end
 
----@param arg0 IsoGridSquare
+---@param sq IsoGridSquare
 ---@return boolean
-function __RBDorm:roomValid(arg0) end
+function __RBDorm:roomValid(sq) end
 
 RBDorm = {}
 

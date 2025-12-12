@@ -17,9 +17,9 @@ FluidMatchMode.Mixture = nil
 ---@type FluidMatchMode
 FluidMatchMode.Primary = nil
 
----@param arg0 string
+---@param name string
 ---@return FluidMatchMode
-function FluidMatchMode.valueOf(arg0) end
+function FluidMatchMode.valueOf(name) end
 
 ---@return kahlua.Array<FluidMatchMode>
 function FluidMatchMode.values() end

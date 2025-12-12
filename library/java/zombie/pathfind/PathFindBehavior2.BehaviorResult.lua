@@ -14,9 +14,9 @@ BehaviorResult.Succeeded = nil
 ---@type PathFindBehavior2.BehaviorResult
 BehaviorResult.Working = nil
 
----@param arg0 string
+---@param name string
 ---@return PathFindBehavior2.BehaviorResult
-function BehaviorResult.valueOf(arg0) end
+function BehaviorResult.valueOf(name) end
 
 ---@return kahlua.Array<PathFindBehavior2.BehaviorResult>
 function BehaviorResult.values() end

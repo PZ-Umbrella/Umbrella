@@ -12,9 +12,9 @@ function __Byte:getMin() end
 ---@return AttributeValueType
 function __Byte:getValueType() end
 
----@param arg0 integer
+---@param value integer
 ---@return integer
-function __Byte:validate(arg0) end
+function __Byte:validate(value) end
 
 Byte = {}
 

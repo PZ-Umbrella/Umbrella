@@ -3,11 +3,11 @@
 ---@class ClimbOverWallState: State
 local __ClimbOverWallState = {}
 
----@param arg0 IsoGameCharacter
----@param arg1 AnimLayer
----@param arg2 AnimationTrack
----@param arg3 AnimEvent
-function __ClimbOverWallState:animEvent(arg0, arg1, arg2, arg3) end
+---@param owner IsoGameCharacter
+---@param layer AnimLayer
+---@param track AnimationTrack
+---@param event AnimEvent
+function __ClimbOverWallState:animEvent(owner, layer, track, event) end
 
 ---@param owner IsoGameCharacter
 function __ClimbOverWallState:enter(owner) end

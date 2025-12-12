@@ -6,259 +6,259 @@ local __Vector3f = {}
 ---@return Vector3f
 function __Vector3f:absolute() end
 
----@param arg0 Vector3f
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:absolute(arg0) end
+function __Vector3f:absolute(dest) end
 
----@param arg0 Vector3fc
+---@param v Vector3fc
 ---@return Vector3f
-function __Vector3f:add(arg0) end
+function __Vector3f:add(v) end
 
----@param arg0 Vector3fc
----@param arg1 Vector3f
+---@param v Vector3fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:add(arg0, arg1) end
+function __Vector3f:add(v, dest) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return Vector3f
-function __Vector3f:add(arg0, arg1, arg2) end
+function __Vector3f:add(x, y, z) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 Vector3f
+---@param x number
+---@param y number
+---@param z number
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:add(arg0, arg1, arg2, arg3) end
+function __Vector3f:add(x, y, z, dest) end
 
----@param arg0 Vector3fc
+---@param v Vector3fc
 ---@return number
-function __Vector3f:angle(arg0) end
+function __Vector3f:angle(v) end
 
----@param arg0 Vector3fc
+---@param v Vector3fc
 ---@return number
-function __Vector3f:angleCos(arg0) end
+function __Vector3f:angleCos(v) end
 
----@param arg0 Vector3fc
----@param arg1 Vector3fc
+---@param v Vector3fc
+---@param n Vector3fc
 ---@return number
-function __Vector3f:angleSigned(arg0, arg1) end
+function __Vector3f:angleSigned(v, n) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
+---@param x number
+---@param y number
+---@param z number
+---@param nx number
+---@param ny number
+---@param nz number
 ---@return number
-function __Vector3f:angleSigned(arg0, arg1, arg2, arg3, arg4, arg5) end
+function __Vector3f:angleSigned(x, y, z, nx, ny, nz) end
 
 ---@return Vector3f
 function __Vector3f:ceil() end
 
----@param arg0 Vector3f
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:ceil(arg0) end
+function __Vector3f:ceil(dest) end
 
----@param arg0 Vector3fc
+---@param v Vector3fc
 ---@return Vector3f
-function __Vector3f:cross(arg0) end
+function __Vector3f:cross(v) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return Vector3f
-function __Vector3f:cross(arg0, arg1, arg2) end
+function __Vector3f:cross(x, y, z) end
 
----@param arg0 Vector3fc
----@param arg1 Vector3f
+---@param v Vector3fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:cross(arg0, arg1) end
+function __Vector3f:cross(v, dest) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 Vector3f
+---@param x number
+---@param y number
+---@param z number
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:cross(arg0, arg1, arg2, arg3) end
+function __Vector3f:cross(x, y, z, dest) end
 
----@param arg0 Vector3fc
+---@param v Vector3fc
 ---@return number
-function __Vector3f:distance(arg0) end
+function __Vector3f:distance(v) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return number
-function __Vector3f:distance(arg0, arg1, arg2) end
+function __Vector3f:distance(x, y, z) end
 
----@param arg0 Vector3fc
+---@param v Vector3fc
 ---@return number
-function __Vector3f:distanceSquared(arg0) end
+function __Vector3f:distanceSquared(v) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return number
-function __Vector3f:distanceSquared(arg0, arg1, arg2) end
+function __Vector3f:distanceSquared(x, y, z) end
 
----@param arg0 Vector3fc
+---@param v Vector3fc
 ---@return Vector3f
-function __Vector3f:div(arg0) end
+function __Vector3f:div(v) end
 
----@param arg0 Vector3fc
----@param arg1 Vector3f
+---@param v Vector3fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:div(arg0, arg1) end
+function __Vector3f:div(v, dest) end
 
----@param arg0 number
+---@param scalar number
 ---@return Vector3f
-function __Vector3f:div(arg0) end
+function __Vector3f:div(scalar) end
 
----@param arg0 number
----@param arg1 Vector3f
+---@param scalar number
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:div(arg0, arg1) end
+function __Vector3f:div(scalar, dest) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return Vector3f
-function __Vector3f:div(arg0, arg1, arg2) end
+function __Vector3f:div(x, y, z) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 Vector3f
+---@param x number
+---@param y number
+---@param z number
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:div(arg0, arg1, arg2, arg3) end
+function __Vector3f:div(x, y, z, dest) end
 
----@param arg0 Vector3fc
+---@param v Vector3fc
 ---@return number
-function __Vector3f:dot(arg0) end
+function __Vector3f:dot(v) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return number
-function __Vector3f:dot(arg0, arg1, arg2) end
+function __Vector3f:dot(x, y, z) end
 
----@param arg0 any
+---@param obj any
 ---@return boolean
-function __Vector3f:equals(arg0) end
+function __Vector3f:equals(obj) end
 
----@param arg0 Vector3fc
----@param arg1 number
+---@param v Vector3fc
+---@param delta number
 ---@return boolean
-function __Vector3f:equals(arg0, arg1) end
+function __Vector3f:equals(v, delta) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return boolean
-function __Vector3f:equals(arg0, arg1, arg2) end
+function __Vector3f:equals(x, y, z) end
 
 ---@return Vector3f
 function __Vector3f:floor() end
 
----@param arg0 Vector3f
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:floor(arg0) end
+function __Vector3f:floor(dest) end
 
----@param arg0 Vector3fc
----@param arg1 Vector3fc
+---@param a Vector3fc
+---@param b Vector3fc
 ---@return Vector3f
-function __Vector3f:fma(arg0, arg1) end
+function __Vector3f:fma(a, b) end
 
----@param arg0 number
----@param arg1 Vector3fc
+---@param a number
+---@param b Vector3fc
 ---@return Vector3f
-function __Vector3f:fma(arg0, arg1) end
+function __Vector3f:fma(a, b) end
 
----@param arg0 Vector3fc
----@param arg1 Vector3fc
----@param arg2 Vector3f
+---@param a Vector3fc
+---@param b Vector3fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:fma(arg0, arg1, arg2) end
+function __Vector3f:fma(a, b, dest) end
 
----@param arg0 number
----@param arg1 Vector3fc
----@param arg2 Vector3f
+---@param a number
+---@param b Vector3fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:fma(arg0, arg1, arg2) end
+function __Vector3f:fma(a, b, dest) end
 
----@param arg0 FloatBuffer
+---@param buffer FloatBuffer
 ---@return FloatBuffer
-function __Vector3f:get(arg0) end
+function __Vector3f:get(buffer) end
 
----@param arg0 integer
----@param arg1 FloatBuffer
+---@param index integer
+---@param buffer FloatBuffer
 ---@return FloatBuffer
-function __Vector3f:get(arg0, arg1) end
+function __Vector3f:get(index, buffer) end
 
----@param arg0 ByteBuffer
+---@param buffer ByteBuffer
 ---@return ByteBuffer
-function __Vector3f:get(arg0) end
+function __Vector3f:get(buffer) end
 
----@param arg0 integer
----@param arg1 ByteBuffer
+---@param index integer
+---@param buffer ByteBuffer
 ---@return ByteBuffer
-function __Vector3f:get(arg0, arg1) end
+function __Vector3f:get(index, buffer) end
 
----@param arg0 integer
+---@param component integer
 ---@return number
-function __Vector3f:get(arg0) end
+function __Vector3f:get(component) end
 
----@param arg0 integer
----@param arg1 Vector3i
+---@param mode integer
+---@param dest Vector3i
 ---@return Vector3i
-function __Vector3f:get(arg0, arg1) end
+function __Vector3f:get(mode, dest) end
 
----@param arg0 Vector3f
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:get(arg0) end
+function __Vector3f:get(dest) end
 
----@param arg0 Vector3d
+---@param dest Vector3d
 ---@return Vector3d
-function __Vector3f:get(arg0) end
+function __Vector3f:get(dest) end
 
----@param arg0 integer
+---@param address integer
 ---@return Vector3fc
-function __Vector3f:getToAddress(arg0) end
+function __Vector3f:getToAddress(address) end
 
----@param arg0 Vector3fc
+---@param other Vector3fc
 ---@return Vector3f
-function __Vector3f:half(arg0) end
+function __Vector3f:half(other) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return Vector3f
-function __Vector3f:half(arg0, arg1, arg2) end
+function __Vector3f:half(x, y, z) end
 
----@param arg0 Vector3fc
----@param arg1 Vector3f
+---@param other Vector3fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:half(arg0, arg1) end
+function __Vector3f:half(other, dest) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 Vector3f
+---@param x number
+---@param y number
+---@param z number
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:half(arg0, arg1, arg2, arg3) end
+function __Vector3f:half(x, y, z, dest) end
 
 ---@return integer
 function __Vector3f:hashCode() end
 
----@param arg0 Vector3fc
----@param arg1 Vector3fc
----@param arg2 Vector3fc
----@param arg3 number
----@param arg4 Vector3f
+---@param t0 Vector3fc
+---@param v1 Vector3fc
+---@param t1 Vector3fc
+---@param t number
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:hermite(arg0, arg1, arg2, arg3, arg4) end
+function __Vector3f:hermite(t0, v1, t1, t, dest) end
 
 ---@return boolean
 function __Vector3f:isFinite() end
@@ -269,468 +269,468 @@ function __Vector3f:length() end
 ---@return number
 function __Vector3f:lengthSquared() end
 
----@param arg0 Vector3fc
----@param arg1 number
+---@param other Vector3fc
+---@param t number
 ---@return Vector3f
-function __Vector3f:lerp(arg0, arg1) end
+function __Vector3f:lerp(other, t) end
 
----@param arg0 Vector3fc
----@param arg1 number
----@param arg2 Vector3f
+---@param other Vector3fc
+---@param t number
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:lerp(arg0, arg1, arg2) end
+function __Vector3f:lerp(other, t, dest) end
 
----@param arg0 Vector3fc
+---@param v Vector3fc
 ---@return Vector3f
-function __Vector3f:max(arg0) end
+function __Vector3f:max(v) end
 
----@param arg0 Vector3fc
----@param arg1 Vector3f
+---@param v Vector3fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:max(arg0, arg1) end
+function __Vector3f:max(v, dest) end
 
 ---@return integer
 function __Vector3f:maxComponent() end
 
----@param arg0 Vector3fc
+---@param v Vector3fc
 ---@return Vector3f
-function __Vector3f:min(arg0) end
+function __Vector3f:min(v) end
 
----@param arg0 Vector3fc
----@param arg1 Vector3f
+---@param v Vector3fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:min(arg0, arg1) end
+function __Vector3f:min(v, dest) end
 
 ---@return integer
 function __Vector3f:minComponent() end
 
----@param arg0 Vector3fc
+---@param v Vector3fc
 ---@return Vector3f
-function __Vector3f:mul(arg0) end
+function __Vector3f:mul(v) end
 
----@param arg0 Vector3fc
----@param arg1 Vector3f
+---@param v Vector3fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:mul(arg0, arg1) end
+function __Vector3f:mul(v, dest) end
 
----@param arg0 Matrix3fc
+---@param mat Matrix3fc
 ---@return Vector3f
-function __Vector3f:mul(arg0) end
+function __Vector3f:mul(mat) end
 
----@param arg0 Matrix3fc
----@param arg1 Vector3f
+---@param mat Matrix3fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:mul(arg0, arg1) end
+function __Vector3f:mul(mat, dest) end
 
----@param arg0 Matrix3dc
+---@param mat Matrix3dc
 ---@return Vector3f
-function __Vector3f:mul(arg0) end
+function __Vector3f:mul(mat) end
 
----@param arg0 Matrix3dc
----@param arg1 Vector3f
+---@param mat Matrix3dc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:mul(arg0, arg1) end
+function __Vector3f:mul(mat, dest) end
 
----@param arg0 Matrix3x2fc
+---@param mat Matrix3x2fc
 ---@return Vector3f
-function __Vector3f:mul(arg0) end
+function __Vector3f:mul(mat) end
 
----@param arg0 Matrix3x2fc
----@param arg1 Vector3f
+---@param mat Matrix3x2fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:mul(arg0, arg1) end
+function __Vector3f:mul(mat, dest) end
 
----@param arg0 number
+---@param scalar number
 ---@return Vector3f
-function __Vector3f:mul(arg0) end
+function __Vector3f:mul(scalar) end
 
----@param arg0 number
----@param arg1 Vector3f
+---@param scalar number
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:mul(arg0, arg1) end
+function __Vector3f:mul(scalar, dest) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return Vector3f
-function __Vector3f:mul(arg0, arg1, arg2) end
+function __Vector3f:mul(x, y, z) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 Vector3f
+---@param x number
+---@param y number
+---@param z number
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:mul(arg0, arg1, arg2, arg3) end
+function __Vector3f:mul(x, y, z, dest) end
 
----@param arg0 Vector3fc
----@param arg1 Vector3fc
+---@param a Vector3fc
+---@param b Vector3fc
 ---@return Vector3f
-function __Vector3f:mulAdd(arg0, arg1) end
+function __Vector3f:mulAdd(a, b) end
 
----@param arg0 number
----@param arg1 Vector3fc
+---@param a number
+---@param b Vector3fc
 ---@return Vector3f
-function __Vector3f:mulAdd(arg0, arg1) end
+function __Vector3f:mulAdd(a, b) end
 
----@param arg0 Vector3fc
----@param arg1 Vector3fc
----@param arg2 Vector3f
+---@param a Vector3fc
+---@param b Vector3fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:mulAdd(arg0, arg1, arg2) end
+function __Vector3f:mulAdd(a, b, dest) end
 
----@param arg0 number
----@param arg1 Vector3fc
----@param arg2 Vector3f
+---@param a number
+---@param b Vector3fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:mulAdd(arg0, arg1, arg2) end
+function __Vector3f:mulAdd(a, b, dest) end
 
----@param arg0 Matrix4dc
+---@param mat Matrix4dc
 ---@return Vector3f
-function __Vector3f:mulDirection(arg0) end
+function __Vector3f:mulDirection(mat) end
 
----@param arg0 Matrix4fc
+---@param mat Matrix4fc
 ---@return Vector3f
-function __Vector3f:mulDirection(arg0) end
+function __Vector3f:mulDirection(mat) end
 
----@param arg0 Matrix4x3fc
+---@param mat Matrix4x3fc
 ---@return Vector3f
-function __Vector3f:mulDirection(arg0) end
+function __Vector3f:mulDirection(mat) end
 
----@param arg0 Matrix4dc
----@param arg1 Vector3f
+---@param mat Matrix4dc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:mulDirection(arg0, arg1) end
+function __Vector3f:mulDirection(mat, dest) end
 
----@param arg0 Matrix4fc
----@param arg1 Vector3f
+---@param mat Matrix4fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:mulDirection(arg0, arg1) end
+function __Vector3f:mulDirection(mat, dest) end
 
----@param arg0 Matrix4x3fc
----@param arg1 Vector3f
+---@param mat Matrix4x3fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:mulDirection(arg0, arg1) end
+function __Vector3f:mulDirection(mat, dest) end
 
----@param arg0 Matrix4fc
+---@param mat Matrix4fc
 ---@return Vector3f
-function __Vector3f:mulPosition(arg0) end
+function __Vector3f:mulPosition(mat) end
 
----@param arg0 Matrix4x3fc
+---@param mat Matrix4x3fc
 ---@return Vector3f
-function __Vector3f:mulPosition(arg0) end
+function __Vector3f:mulPosition(mat) end
 
----@param arg0 Matrix4fc
----@param arg1 Vector3f
+---@param mat Matrix4fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:mulPosition(arg0, arg1) end
+function __Vector3f:mulPosition(mat, dest) end
 
----@param arg0 Matrix4x3fc
----@param arg1 Vector3f
+---@param mat Matrix4x3fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:mulPosition(arg0, arg1) end
+function __Vector3f:mulPosition(mat, dest) end
 
----@param arg0 Matrix4fc
+---@param mat Matrix4fc
 ---@return number
-function __Vector3f:mulPositionW(arg0) end
+function __Vector3f:mulPositionW(mat) end
 
----@param arg0 Matrix4fc
----@param arg1 Vector3f
+---@param mat Matrix4fc
+---@param dest Vector3f
 ---@return number
-function __Vector3f:mulPositionW(arg0, arg1) end
+function __Vector3f:mulPositionW(mat, dest) end
 
----@param arg0 Matrix4fc
----@param arg1 Vector3f
+---@param mat Matrix4fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:mulProject(arg0, arg1) end
+function __Vector3f:mulProject(mat, dest) end
 
----@param arg0 Matrix4fc
----@param arg1 number
----@param arg2 Vector3f
+---@param mat Matrix4fc
+---@param w number
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:mulProject(arg0, arg1, arg2) end
+function __Vector3f:mulProject(mat, w, dest) end
 
----@param arg0 Matrix4fc
+---@param mat Matrix4fc
 ---@return Vector3f
-function __Vector3f:mulProject(arg0) end
+function __Vector3f:mulProject(mat) end
 
----@param arg0 Matrix3fc
+---@param mat Matrix3fc
 ---@return Vector3f
-function __Vector3f:mulTranspose(arg0) end
+function __Vector3f:mulTranspose(mat) end
 
----@param arg0 Matrix3fc
----@param arg1 Vector3f
+---@param mat Matrix3fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:mulTranspose(arg0, arg1) end
+function __Vector3f:mulTranspose(mat, dest) end
 
----@param arg0 Matrix4fc
+---@param mat Matrix4fc
 ---@return Vector3f
-function __Vector3f:mulTransposeDirection(arg0) end
+function __Vector3f:mulTransposeDirection(mat) end
 
----@param arg0 Matrix4fc
----@param arg1 Vector3f
+---@param mat Matrix4fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:mulTransposeDirection(arg0, arg1) end
+function __Vector3f:mulTransposeDirection(mat, dest) end
 
----@param arg0 Matrix4fc
+---@param mat Matrix4fc
 ---@return Vector3f
-function __Vector3f:mulTransposePosition(arg0) end
+function __Vector3f:mulTransposePosition(mat) end
 
----@param arg0 Matrix4fc
----@param arg1 Vector3f
+---@param mat Matrix4fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:mulTransposePosition(arg0, arg1) end
+function __Vector3f:mulTransposePosition(mat, dest) end
 
 ---@return Vector3f
 function __Vector3f:negate() end
 
----@param arg0 Vector3f
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:negate(arg0) end
+function __Vector3f:negate(dest) end
 
 ---@return Vector3f
 function __Vector3f:normalize() end
 
----@param arg0 Vector3f
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:normalize(arg0) end
+function __Vector3f:normalize(dest) end
 
----@param arg0 number
+---@param length number
 ---@return Vector3f
-function __Vector3f:normalize(arg0) end
+function __Vector3f:normalize(length) end
 
----@param arg0 number
----@param arg1 Vector3f
+---@param length number
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:normalize(arg0, arg1) end
+function __Vector3f:normalize(length, dest) end
 
----@param arg0 Vector3fc
----@param arg1 Vector3f
+---@param v Vector3fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:orthogonalize(arg0, arg1) end
+function __Vector3f:orthogonalize(v, dest) end
 
----@param arg0 Vector3fc
+---@param v Vector3fc
 ---@return Vector3f
-function __Vector3f:orthogonalize(arg0) end
+function __Vector3f:orthogonalize(v) end
 
----@param arg0 Vector3fc
----@param arg1 Vector3f
+---@param v Vector3fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:orthogonalizeUnit(arg0, arg1) end
+function __Vector3f:orthogonalizeUnit(v, dest) end
 
----@param arg0 Vector3fc
+---@param v Vector3fc
 ---@return Vector3f
-function __Vector3f:orthogonalizeUnit(arg0) end
+function __Vector3f:orthogonalizeUnit(v) end
 
----@param arg0 ObjectInput
-function __Vector3f:readExternal(arg0) end
+---@param _in ObjectInput
+function __Vector3f:readExternal(_in) end
 
----@param arg0 Vector3fc
+---@param normal Vector3fc
 ---@return Vector3f
-function __Vector3f:reflect(arg0) end
+function __Vector3f:reflect(normal) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return Vector3f
-function __Vector3f:reflect(arg0, arg1, arg2) end
+function __Vector3f:reflect(x, y, z) end
 
----@param arg0 Vector3fc
----@param arg1 Vector3f
+---@param normal Vector3fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:reflect(arg0, arg1) end
+function __Vector3f:reflect(normal, dest) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 Vector3f
+---@param x number
+---@param y number
+---@param z number
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:reflect(arg0, arg1, arg2, arg3) end
+function __Vector3f:reflect(x, y, z, dest) end
 
----@param arg0 Quaternionfc
+---@param quat Quaternionfc
 ---@return Vector3f
-function __Vector3f:rotate(arg0) end
+function __Vector3f:rotate(quat) end
 
----@param arg0 Quaternionfc
----@param arg1 Vector3f
+---@param quat Quaternionfc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:rotate(arg0, arg1) end
+function __Vector3f:rotate(quat, dest) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
+---@param angle number
+---@param x number
+---@param y number
+---@param z number
 ---@return Vector3f
-function __Vector3f:rotateAxis(arg0, arg1, arg2, arg3) end
+function __Vector3f:rotateAxis(angle, x, y, z) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 Vector3f
+---@param angle number
+---@param aX number
+---@param aY number
+---@param aZ number
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:rotateAxis(arg0, arg1, arg2, arg3, arg4) end
+function __Vector3f:rotateAxis(angle, aX, aY, aZ, dest) end
 
----@param arg0 number
+---@param angle number
 ---@return Vector3f
-function __Vector3f:rotateX(arg0) end
+function __Vector3f:rotateX(angle) end
 
----@param arg0 number
----@param arg1 Vector3f
+---@param angle number
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:rotateX(arg0, arg1) end
+function __Vector3f:rotateX(angle, dest) end
 
----@param arg0 number
+---@param angle number
 ---@return Vector3f
-function __Vector3f:rotateY(arg0) end
+function __Vector3f:rotateY(angle) end
 
----@param arg0 number
----@param arg1 Vector3f
+---@param angle number
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:rotateY(arg0, arg1) end
+function __Vector3f:rotateY(angle, dest) end
 
----@param arg0 number
+---@param angle number
 ---@return Vector3f
-function __Vector3f:rotateZ(arg0) end
+function __Vector3f:rotateZ(angle) end
 
----@param arg0 number
----@param arg1 Vector3f
+---@param angle number
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:rotateZ(arg0, arg1) end
+function __Vector3f:rotateZ(angle, dest) end
 
----@param arg0 Vector3fc
----@param arg1 Quaternionf
+---@param toDir Vector3fc
+---@param dest Quaternionf
 ---@return Quaternionf
-function __Vector3f:rotationTo(arg0, arg1) end
+function __Vector3f:rotationTo(toDir, dest) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 Quaternionf
+---@param toDirX number
+---@param toDirY number
+---@param toDirZ number
+---@param dest Quaternionf
 ---@return Quaternionf
-function __Vector3f:rotationTo(arg0, arg1, arg2, arg3) end
+function __Vector3f:rotationTo(toDirX, toDirY, toDirZ, dest) end
 
 ---@return Vector3f
 function __Vector3f:round() end
 
----@param arg0 Vector3f
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:round(arg0) end
+function __Vector3f:round(dest) end
 
----@param arg0 Vector3fc
+---@param v Vector3fc
 ---@return Vector3f
-function __Vector3f:set(arg0) end
+function __Vector3f:set(v) end
 
----@param arg0 Vector3dc
+---@param v Vector3dc
 ---@return Vector3f
-function __Vector3f:set(arg0) end
+function __Vector3f:set(v) end
 
----@param arg0 Vector3ic
+---@param v Vector3ic
 ---@return Vector3f
-function __Vector3f:set(arg0) end
+function __Vector3f:set(v) end
 
----@param arg0 Vector2fc
----@param arg1 number
+---@param v Vector2fc
+---@param z number
 ---@return Vector3f
-function __Vector3f:set(arg0, arg1) end
+function __Vector3f:set(v, z) end
 
----@param arg0 Vector2dc
----@param arg1 number
+---@param v Vector2dc
+---@param z number
 ---@return Vector3f
-function __Vector3f:set(arg0, arg1) end
+function __Vector3f:set(v, z) end
 
----@param arg0 Vector2ic
----@param arg1 number
+---@param v Vector2ic
+---@param z number
 ---@return Vector3f
-function __Vector3f:set(arg0, arg1) end
+function __Vector3f:set(v, z) end
 
----@param arg0 number
+---@param d number
 ---@return Vector3f
-function __Vector3f:set(arg0) end
+function __Vector3f:set(d) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return Vector3f
-function __Vector3f:set(arg0, arg1, arg2) end
+function __Vector3f:set(x, y, z) end
 
----@param arg0 number
+---@param d number
 ---@return Vector3f
-function __Vector3f:set(arg0) end
+function __Vector3f:set(d) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return Vector3f
-function __Vector3f:set(arg0, arg1, arg2) end
+function __Vector3f:set(x, y, z) end
 
----@param arg0 kahlua.Array<number>
+---@param xyz kahlua.Array<number>
 ---@return Vector3f
-function __Vector3f:set(arg0) end
+function __Vector3f:set(xyz) end
 
----@param arg0 ByteBuffer
+---@param buffer ByteBuffer
 ---@return Vector3f
-function __Vector3f:set(arg0) end
+function __Vector3f:set(buffer) end
 
----@param arg0 integer
----@param arg1 ByteBuffer
+---@param index integer
+---@param buffer ByteBuffer
 ---@return Vector3f
-function __Vector3f:set(arg0, arg1) end
+function __Vector3f:set(index, buffer) end
 
----@param arg0 FloatBuffer
+---@param buffer FloatBuffer
 ---@return Vector3f
-function __Vector3f:set(arg0) end
+function __Vector3f:set(buffer) end
 
----@param arg0 integer
----@param arg1 FloatBuffer
+---@param index integer
+---@param buffer FloatBuffer
 ---@return Vector3f
-function __Vector3f:set(arg0, arg1) end
+function __Vector3f:set(index, buffer) end
 
----@param arg0 integer
----@param arg1 number
+---@param component integer
+---@param value number
 ---@return Vector3f
-function __Vector3f:setComponent(arg0, arg1) end
+function __Vector3f:setComponent(component, value) end
 
----@param arg0 integer
+---@param address integer
 ---@return Vector3f
-function __Vector3f:setFromAddress(arg0) end
+function __Vector3f:setFromAddress(address) end
 
----@param arg0 Vector3fc
----@param arg1 number
----@param arg2 Vector3f
+---@param v Vector3fc
+---@param t number
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:smoothStep(arg0, arg1, arg2) end
+function __Vector3f:smoothStep(v, t, dest) end
 
----@param arg0 Vector3fc
+---@param v Vector3fc
 ---@return Vector3f
-function __Vector3f:sub(arg0) end
+function __Vector3f:sub(v) end
 
----@param arg0 Vector3fc
----@param arg1 Vector3f
+---@param v Vector3fc
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:sub(arg0, arg1) end
+function __Vector3f:sub(v, dest) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return Vector3f
-function __Vector3f:sub(arg0, arg1, arg2) end
+function __Vector3f:sub(x, y, z) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 Vector3f
+---@param x number
+---@param y number
+---@param z number
+---@param dest Vector3f
 ---@return Vector3f
-function __Vector3f:sub(arg0, arg1, arg2, arg3) end
+function __Vector3f:sub(x, y, z, dest) end
 
 ---@return string
 function __Vector3f:toString() end
 
----@param arg0 NumberFormat
+---@param formatter NumberFormat
 ---@return string
-function __Vector3f:toString(arg0) end
+function __Vector3f:toString(formatter) end
 
----@param arg0 ObjectOutput
-function __Vector3f:writeExternal(arg0) end
+---@param out ObjectOutput
+function __Vector3f:writeExternal(out) end
 
 ---@return number
 function __Vector3f:x() end
@@ -746,88 +746,88 @@ function __Vector3f:zero() end
 
 Vector3f = {}
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
+---@param x1 number
+---@param y1 number
+---@param z1 number
+---@param x2 number
+---@param y2 number
+---@param z2 number
 ---@return number
-function Vector3f.distance(arg0, arg1, arg2, arg3, arg4, arg5) end
+function Vector3f.distance(x1, y1, z1, x2, y2, z2) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
+---@param x1 number
+---@param y1 number
+---@param z1 number
+---@param x2 number
+---@param y2 number
+---@param z2 number
 ---@return number
-function Vector3f.distanceSquared(arg0, arg1, arg2, arg3, arg4, arg5) end
+function Vector3f.distanceSquared(x1, y1, z1, x2, y2, z2) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return number
-function Vector3f.length(arg0, arg1, arg2) end
+function Vector3f.length(x, y, z) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return number
-function Vector3f.lengthSquared(arg0, arg1, arg2) end
+function Vector3f.lengthSquared(x, y, z) end
 
 ---@return Vector3f
 function Vector3f.new() end
 
----@param arg0 number
+---@param d number
 ---@return Vector3f
-function Vector3f.new(arg0) end
+function Vector3f.new(d) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return Vector3f
-function Vector3f.new(arg0, arg1, arg2) end
+function Vector3f.new(x, y, z) end
 
----@param arg0 Vector3fc
+---@param v Vector3fc
 ---@return Vector3f
-function Vector3f.new(arg0) end
+function Vector3f.new(v) end
 
----@param arg0 Vector3ic
+---@param v Vector3ic
 ---@return Vector3f
-function Vector3f.new(arg0) end
+function Vector3f.new(v) end
 
----@param arg0 Vector2fc
----@param arg1 number
+---@param v Vector2fc
+---@param z number
 ---@return Vector3f
-function Vector3f.new(arg0, arg1) end
+function Vector3f.new(v, z) end
 
----@param arg0 Vector2ic
----@param arg1 number
+---@param v Vector2ic
+---@param z number
 ---@return Vector3f
-function Vector3f.new(arg0, arg1) end
+function Vector3f.new(v, z) end
 
----@param arg0 kahlua.Array<number>
+---@param xyz kahlua.Array<number>
 ---@return Vector3f
-function Vector3f.new(arg0) end
+function Vector3f.new(xyz) end
 
----@param arg0 ByteBuffer
+---@param buffer ByteBuffer
 ---@return Vector3f
-function Vector3f.new(arg0) end
+function Vector3f.new(buffer) end
 
----@param arg0 integer
----@param arg1 ByteBuffer
+---@param index integer
+---@param buffer ByteBuffer
 ---@return Vector3f
-function Vector3f.new(arg0, arg1) end
+function Vector3f.new(index, buffer) end
 
----@param arg0 FloatBuffer
+---@param buffer FloatBuffer
 ---@return Vector3f
-function Vector3f.new(arg0) end
+function Vector3f.new(buffer) end
 
----@param arg0 integer
----@param arg1 FloatBuffer
+---@param index integer
+---@param buffer FloatBuffer
 ---@return Vector3f
-function Vector3f.new(arg0, arg1) end
+function Vector3f.new(index, buffer) end
 
 ---@type Class<Vector3f>
 Vector3f.class = nil

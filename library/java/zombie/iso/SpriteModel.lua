@@ -3,9 +3,9 @@
 ---@class SpriteModel: BaseScriptObject
 local __SpriteModel = {}
 
----@param arg0 string
----@param arg1 string
-function __SpriteModel:Load(arg0, arg1) end
+---@param name string
+---@param totalFile string
+function __SpriteModel:Load(name, totalFile) end
 
 ---@return string
 function __SpriteModel:getAnimationName() end
@@ -31,33 +31,33 @@ function __SpriteModel:getTextureName() end
 ---@return Vector3f
 function __SpriteModel:getTranslate() end
 
----@param arg0 string
----@param arg1 integer
----@param arg2 integer
----@param arg3 string
-function __SpriteModel:parseRuntimeString(arg0, arg1, arg2, arg3) end
+---@param tilesetName string
+---@param tileColumn integer
+---@param tileRow integer
+---@param runtimeString string
+function __SpriteModel:parseRuntimeString(tilesetName, tileColumn, tileRow, runtimeString) end
 
----@param arg0 SpriteModel
+---@param other SpriteModel
 ---@return SpriteModel
-function __SpriteModel:set(arg0) end
+function __SpriteModel:set(other) end
 
----@param arg0 string
-function __SpriteModel:setAnimationName(arg0) end
+---@param animationName string
+function __SpriteModel:setAnimationName(animationName) end
 
----@param arg0 number
-function __SpriteModel:setAnimationTime(arg0) end
+---@param animationTime number
+function __SpriteModel:setAnimationTime(animationTime) end
 
----@param arg0 string
-function __SpriteModel:setModelScriptName(arg0) end
+---@param modelScriptName string
+function __SpriteModel:setModelScriptName(modelScriptName) end
 
----@param arg0 string
-function __SpriteModel:setRuntimeString(arg0) end
+---@param runtimeString string
+function __SpriteModel:setRuntimeString(runtimeString) end
 
----@param arg0 number
-function __SpriteModel:setScale(arg0) end
+---@param scale number
+function __SpriteModel:setScale(scale) end
 
----@param arg0 string
-function __SpriteModel:setTextureName(arg0) end
+---@param textureName string
+function __SpriteModel:setTextureName(textureName) end
 
 SpriteModel = {}
 

@@ -3,12 +3,12 @@
 ---@class ContainerID: INetworkPacketField
 local __ContainerID = {}
 
----@param arg0 ContainerID
-function __ContainerID:copy(arg0) end
+---@param other ContainerID
+function __ContainerID:copy(other) end
 
----@param arg0 any
+---@param o any
 ---@return boolean
-function __ContainerID:equals(arg0) end
+function __ContainerID:equals(o) end
 
 function __ContainerID:findObject() end
 
@@ -30,49 +30,49 @@ function __ContainerID:getVehicle() end
 ---@return integer
 function __ContainerID:hashCode() end
 
----@param arg0 integer
----@param arg1 ItemContainer
+---@param itemId integer
+---@param source ItemContainer
 ---@return boolean
-function __ContainerID:isContainerTheSame(arg0, arg1) end
+function __ContainerID:isContainerTheSame(itemId, source) end
 
----@param arg0 ByteBuffer
----@param arg1 UdpConnection
-function __ContainerID:parse(arg0, arg1) end
+---@param b ByteBuffer
+---@param connection UdpConnection
+function __ContainerID:parse(b, connection) end
 
----@param arg0 ItemContainer
-function __ContainerID:set(arg0) end
+---@param container ItemContainer
+function __ContainerID:set(container) end
 
----@param arg0 ItemContainer
----@param arg1 IsoObject
-function __ContainerID:set(arg0, arg1) end
+---@param container ItemContainer
+---@param o IsoObject
+function __ContainerID:set(container, o) end
 
----@param arg0 ItemContainer
----@param arg1 IsoGridSquare
-function __ContainerID:setFloor(arg0, arg1) end
+---@param container ItemContainer
+---@param sq IsoGridSquare
+function __ContainerID:setFloor(container, sq) end
 
----@param arg0 ItemContainer
----@param arg1 IsoPlayer
-function __ContainerID:setInventoryContainer(arg0, arg1) end
+---@param container ItemContainer
+---@param player IsoPlayer
+function __ContainerID:setInventoryContainer(container, player) end
 
----@param arg0 ItemContainer
----@param arg1 IsoObject
----@param arg2 IsoGridSquare
-function __ContainerID:setObject(arg0, arg1, arg2) end
+---@param container ItemContainer
+---@param o IsoObject
+---@param sq IsoGridSquare
+function __ContainerID:setObject(container, o, sq) end
 
----@param arg0 ItemContainer
----@param arg1 IsoObject
----@param arg2 IsoGridSquare
----@param arg3 ItemContainer
-function __ContainerID:setObjectInVehicle(arg0, arg1, arg2, arg3) end
+---@param container ItemContainer
+---@param o IsoObject
+---@param sq IsoGridSquare
+---@param part ItemContainer
+function __ContainerID:setObjectInVehicle(container, o, sq, part) end
 
 ---@return string
 function __ContainerID:toString() end
 
----@param arg0 ByteBufferWriter
-function __ContainerID:write(arg0) end
+---@param b ByteBufferWriter
+function __ContainerID:write(b) end
 
----@param arg0 ByteBuffer
-function __ContainerID:write(arg0) end
+---@param bb ByteBuffer
+function __ContainerID:write(bb) end
 
 ContainerID = {}
 

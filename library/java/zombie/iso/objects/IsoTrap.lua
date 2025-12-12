@@ -96,8 +96,8 @@ function __IsoTrap:save(output, IS_DEBUG_SAVE) end
 ---@param sound string
 function __IsoTrap:setCountDownSound(sound) end
 
----@param arg0 integer
-function __IsoTrap:setExplosionDuration(arg0) end
+---@param minutes integer
+function __IsoTrap:setExplosionDuration(minutes) end
 
 ---@param explosionPower integer
 function __IsoTrap:setExplosionPower(explosionPower) end
@@ -114,14 +114,14 @@ function __IsoTrap:setExtraDamage(extraDamage) end
 ---@param fireRange integer
 function __IsoTrap:setFireRange(fireRange) end
 
----@param arg0 integer
-function __IsoTrap:setFireStartingChance(arg0) end
+---@param fireStartingChance integer
+function __IsoTrap:setFireStartingChance(fireStartingChance) end
 
----@param arg0 integer
-function __IsoTrap:setFireStartingEnergy(arg0) end
+---@param fireStartingEnergy integer
+function __IsoTrap:setFireStartingEnergy(fireStartingEnergy) end
 
----@param arg0 boolean
-function __IsoTrap:setInstantExplosion(arg0) end
+---@param instantExplosion boolean
+function __IsoTrap:setInstantExplosion(instantExplosion) end
 
 ---@param noiseDuration integer
 function __IsoTrap:setNoiseDuration(noiseDuration) end
@@ -163,12 +163,12 @@ function IsoTrap.new(cell) end
 ---@return IsoTrap
 function IsoTrap.new(weapon, cell, sq) end
 
----@param arg0 IsoGameCharacter
----@param arg1 HandWeapon
----@param arg2 IsoCell
----@param arg3 IsoGridSquare
+---@param attacker IsoGameCharacter
+---@param weapon HandWeapon
+---@param cell IsoCell
+---@param sq IsoGridSquare
 ---@return IsoTrap
-function IsoTrap.new(arg0, arg1, arg2, arg3) end
+function IsoTrap.new(attacker, weapon, cell, sq) end
 
 ---@type Class<IsoTrap>
 IsoTrap.class = nil

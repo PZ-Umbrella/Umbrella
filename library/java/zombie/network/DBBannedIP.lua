@@ -12,22 +12,22 @@ function __DBBannedIP:getReason() end
 ---@return string
 function __DBBannedIP:getUsername() end
 
----@param arg0 string
-function __DBBannedIP:setIp(arg0) end
+---@param ip string
+function __DBBannedIP:setIp(ip) end
 
----@param arg0 string
-function __DBBannedIP:setReason(arg0) end
+---@param reason string
+function __DBBannedIP:setReason(reason) end
 
----@param arg0 string
-function __DBBannedIP:setUsername(arg0) end
+---@param username string
+function __DBBannedIP:setUsername(username) end
 
 DBBannedIP = {}
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
+---@param username string
+---@param ip string
+---@param reason string
 ---@return DBBannedIP
-function DBBannedIP.new(arg0, arg1, arg2) end
+function DBBannedIP.new(username, ip, reason) end
 
 ---@type Class<DBBannedIP>
 DBBannedIP.class = nil

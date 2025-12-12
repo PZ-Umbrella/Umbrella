@@ -36,21 +36,21 @@ function __MetaEntity:isMeta() end
 ---@return boolean
 function __MetaEntity:isOutside() end
 
----@param arg0 IsoPlayer
+---@param target IsoPlayer
 ---@return boolean
-function __MetaEntity:isUsingPlayer(arg0) end
+function __MetaEntity:isUsingPlayer(target) end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __MetaEntity:loadMetaEntity(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __MetaEntity:loadMetaEntity(input, WorldVersion) end
 
 function __MetaEntity:reset() end
 
----@param arg0 ByteBuffer
-function __MetaEntity:saveMetaEntity(arg0) end
+---@param output ByteBuffer
+function __MetaEntity:saveMetaEntity(output) end
 
----@param arg0 IsoPlayer
-function __MetaEntity:setUsingPlayer(arg0) end
+---@param player IsoPlayer
+function __MetaEntity:setUsingPlayer(player) end
 
 MetaEntity = {}
 

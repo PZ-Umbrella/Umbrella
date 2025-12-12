@@ -3,9 +3,9 @@
 ---@class XuiLayoutScript: BaseScriptObject
 local __XuiLayoutScript = {}
 
----@param arg0 string
----@param arg1 string
-function __XuiLayoutScript:Load(arg0, arg1) end
+---@param name string
+---@param totalFile string
+function __XuiLayoutScript:Load(name, totalFile) end
 
 ---@return string
 function __XuiLayoutScript:getName() end
@@ -22,10 +22,10 @@ function __XuiLayoutScript:preParse() end
 
 XuiLayoutScript = {}
 
----@param arg0 ScriptType
----@param arg1 XuiScriptType
+---@param scriptType ScriptType
+---@param xuiScriptType XuiScriptType
 ---@return XuiLayoutScript
-function XuiLayoutScript.new(arg0, arg1) end
+function XuiLayoutScript.new(scriptType, xuiScriptType) end
 
 ---@type Class<XuiLayoutScript>
 XuiLayoutScript.class = nil

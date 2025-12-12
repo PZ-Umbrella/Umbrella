@@ -3,24 +3,24 @@
 ---@class PathFindState2: State
 local __PathFindState2 = {}
 
----@param arg0 IsoGameCharacter
----@param arg1 AnimLayer
----@param arg2 AnimationTrack
----@param arg3 AnimEvent
-function __PathFindState2:animEvent(arg0, arg1, arg2, arg3) end
+---@param owner IsoGameCharacter
+---@param layer AnimLayer
+---@param track AnimationTrack
+---@param event AnimEvent
+function __PathFindState2:animEvent(owner, layer, track, event) end
 
----@param arg0 IsoGameCharacter
-function __PathFindState2:enter(arg0) end
+---@param owner IsoGameCharacter
+function __PathFindState2:enter(owner) end
 
----@param arg0 IsoGameCharacter
-function __PathFindState2:execute(arg0) end
+---@param owner IsoGameCharacter
+function __PathFindState2:execute(owner) end
 
----@param arg0 IsoGameCharacter
-function __PathFindState2:exit(arg0) end
+---@param owner IsoGameCharacter
+function __PathFindState2:exit(owner) end
 
----@param arg0 IsoGameCharacter
+---@param owner IsoGameCharacter
 ---@return boolean
-function __PathFindState2:isMoving(arg0) end
+function __PathFindState2:isMoving(owner) end
 
 PathFindState2 = {}
 

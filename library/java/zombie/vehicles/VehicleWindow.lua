@@ -48,9 +48,9 @@ function __VehicleWindow:setOpenDelta(delta) end
 
 VehicleWindow = {}
 
----@param arg0 VehiclePart
+---@param part VehiclePart
 ---@return VehicleWindow
-function VehicleWindow.new(arg0) end
+function VehicleWindow.new(part) end
 
 ---@type Class<VehicleWindow>
 VehicleWindow.class = nil

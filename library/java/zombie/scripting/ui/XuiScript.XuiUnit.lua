@@ -9,9 +9,9 @@ function __XuiUnit:getValueString() end
 ---@return boolean
 function __XuiUnit:isPercent() end
 
----@param arg0 number
----@param arg1 boolean
-function __XuiUnit:setValue(arg0, arg1) end
+---@param val number
+---@param isPercent boolean
+function __XuiUnit:setValue(val, isPercent) end
 
 XuiUnit = {}
 

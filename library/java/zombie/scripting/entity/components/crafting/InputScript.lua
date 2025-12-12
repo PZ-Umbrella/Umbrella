@@ -3,8 +3,8 @@
 ---@class InputScript: CraftRecipe.IOScript
 local __InputScript = {}
 
----@param arg0 ScriptLoadMode
-function __InputScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __InputScript:OnScriptsLoaded(loadMode) end
 
 ---@return boolean
 function __InputScript:allowDestroyedItem() end
@@ -18,50 +18,50 @@ function __InputScript:allowFrozenItem() end
 ---@return boolean
 function __InputScript:allowRottenItem() end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __InputScript:canUseItem(arg0) end
+function __InputScript:canUseItem(item) end
 
----@param arg0 string
+---@param item string
 ---@return boolean
-function __InputScript:canUseItem(arg0) end
+function __InputScript:canUseItem(item) end
 
----@param arg0 Energy
+---@param energy Energy
 ---@return boolean
-function __InputScript:containsEnergy(arg0) end
+function __InputScript:containsEnergy(energy) end
 
----@param arg0 Fluid
+---@param fluid Fluid
 ---@return boolean
-function __InputScript:containsFluid(arg0) end
+function __InputScript:containsFluid(fluid) end
 
----@param arg0 Item
+---@param item Item
 ---@return boolean
-function __InputScript:containsItem(arg0) end
+function __InputScript:containsItem(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __InputScript:doesItemPassClothingTypeStatusTests(arg0) end
+function __InputScript:doesItemPassClothingTypeStatusTests(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __InputScript:doesItemPassDamageStatusTests(arg0) end
+function __InputScript:doesItemPassDamageStatusTests(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __InputScript:doesItemPassFoodAndCookingTests(arg0) end
+function __InputScript:doesItemPassFoodAndCookingTests(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __InputScript:doesItemPassIsOrNotEmptyAndFullTests(arg0) end
+function __InputScript:doesItemPassIsOrNotEmptyAndFullTests(item) end
 
----@param arg0 InventoryItem
----@param arg1 IsoGameCharacter
+---@param item InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function __InputScript:doesItemPassRoutineStatusTests(arg0, arg1) end
+function __InputScript:doesItemPassRoutineStatusTests(item, character) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __InputScript:doesItemPassSharpnessStatusTests(arg0) end
+function __InputScript:doesItemPassSharpnessStatusTests(item) end
 
 ---@return boolean
 function __InputScript:dontAllowFrozenItem() end
@@ -72,13 +72,13 @@ function __InputScript:dontPutBack() end
 ---@return number
 function __InputScript:getAmount() end
 
----@param arg0 integer
+---@param idx integer
 ---@return number
-function __InputScript:getAmount(arg0) end
+function __InputScript:getAmount(idx) end
 
----@param arg0 string
+---@param item string
 ---@return number
-function __InputScript:getAmount(arg0) end
+function __InputScript:getAmount(item) end
 
 ---@return InputScript
 function __InputScript:getConsumeFromItemScript() end
@@ -98,24 +98,24 @@ function __InputScript:getInputFluidFilterTooltip() end
 ---@return integer
 function __InputScript:getIntAmount() end
 
----@param arg0 integer
+---@param idx integer
 ---@return integer
-function __InputScript:getIntAmount(arg0) end
+function __InputScript:getIntAmount(idx) end
 
----@param arg0 string
+---@param item string
 ---@return integer
-function __InputScript:getIntAmount(arg0) end
+function __InputScript:getIntAmount(item) end
 
 ---@return integer
 function __InputScript:getIntMaxAmount() end
 
----@param arg0 integer
+---@param idx integer
 ---@return integer
-function __InputScript:getIntMaxAmount(arg0) end
+function __InputScript:getIntMaxAmount(idx) end
 
----@param arg0 string
+---@param item string
 ---@return integer
-function __InputScript:getIntMaxAmount(arg0) end
+function __InputScript:getIntMaxAmount(item) end
 
 ---@return ItemApplyMode
 function __InputScript:getItemApplyMode() end
@@ -126,13 +126,13 @@ function __InputScript:getItemTags() end
 ---@return number
 function __InputScript:getMaxAmount() end
 
----@param arg0 integer
+---@param idx integer
 ---@return number
-function __InputScript:getMaxAmount(arg0) end
+function __InputScript:getMaxAmount(idx) end
 
----@param arg0 string
+---@param item string
 ---@return number
-function __InputScript:getMaxAmount(arg0) end
+function __InputScript:getMaxAmount(item) end
 
 ---@return string
 function __InputScript:getOriginalLine() end
@@ -149,9 +149,9 @@ function __InputScript:getPossibleInputFluids() end
 ---@return List<Item>
 function __InputScript:getPossibleInputItems() end
 
----@param arg0 string
+---@param item string
 ---@return number
-function __InputScript:getRelativeScale(arg0) end
+function __InputScript:getRelativeScale(item) end
 
 ---@deprecated
 ---@return OutputScript
@@ -170,9 +170,9 @@ function __InputScript:hasConsumeFromItem() end
 ---@return boolean
 function __InputScript:hasCreateToItem() end
 
----@param arg0 InputFlag
+---@param flag InputFlag
 ---@return boolean
-function __InputScript:hasFlag(arg0) end
+function __InputScript:hasFlag(flag) end
 
 ---@return boolean
 function __InputScript:hasParentScript() end
@@ -228,13 +228,13 @@ function __InputScript:isEmpty() end
 ---@return boolean
 function __InputScript:isEmptyContainer() end
 
----@param arg0 DrainableComboItem
+---@param item DrainableComboItem
 ---@return boolean
-function __InputScript:isEnergyMatch(arg0) end
+function __InputScript:isEnergyMatch(item) end
 
----@param arg0 Energy
+---@param energy Energy
 ---@return boolean
-function __InputScript:isEnergyMatch(arg0) end
+function __InputScript:isEnergyMatch(energy) end
 
 ---@return boolean
 function __InputScript:isExclusive() end
@@ -245,9 +245,9 @@ function __InputScript:isFluidAnything() end
 ---@return boolean
 function __InputScript:isFluidExact() end
 
----@param arg0 FluidContainer
+---@param container FluidContainer
 ---@return boolean
-function __InputScript:isFluidMatch(arg0) end
+function __InputScript:isFluidMatch(container) end
 
 ---@return boolean
 function __InputScript:isFluidMixture() end
@@ -307,9 +307,9 @@ function __InputScript:isUncookedFoodItem() end
 ---@return boolean
 function __InputScript:isUndamaged() end
 
----@param arg0 Item
+---@param item Item
 ---@return boolean
-function __InputScript:isUsesPartialItem(arg0) end
+function __InputScript:isUsesPartialItem(item) end
 
 ---@return boolean
 function __InputScript:isVariableAmount() end
@@ -338,25 +338,25 @@ function __InputScript:notEmpty() end
 ---@return boolean
 function __InputScript:notFull() end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __InputScript:passesBrokenTest(arg0) end
+function __InputScript:passesBrokenTest(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __InputScript:passesFavoriteTest(arg0) end
+function __InputScript:passesFavoriteTest(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __InputScript:passesFrozenTest(arg0) end
+function __InputScript:passesFrozenTest(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __InputScript:passesRottenTest(arg0) end
+function __InputScript:passesRottenTest(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __InputScript:passesSealedTest(arg0) end
+function __InputScript:passesSealedTest(item) end
 
 ---@return boolean
 function __InputScript:sharpnessCheck() end

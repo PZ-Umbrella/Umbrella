@@ -6,8 +6,8 @@ local __MetaTagComponent = {}
 ---@return integer
 function __MetaTagComponent:getStoredID() end
 
----@param arg0 integer
-function __MetaTagComponent:setStoredID(arg0) end
+---@param storedId integer
+function __MetaTagComponent:setStoredID(storedId) end
 
 MetaTagComponent = {}
 

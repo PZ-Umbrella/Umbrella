@@ -36,15 +36,15 @@ function __Vector3:clone() end
 ---@return number # The distance between them
 function __Vector3:distanceTo(other) end
 
----@param arg0 Vector3
+---@param other Vector3
 ---@return number
-function __Vector3:distanceTo(arg0) end
+function __Vector3:distanceTo(other) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return number
-function __Vector3:distanceTo(arg0, arg1, arg2) end
+function __Vector3:distanceTo(x, y, z) end
 
 ---@param scalar number
 ---@return Vector3

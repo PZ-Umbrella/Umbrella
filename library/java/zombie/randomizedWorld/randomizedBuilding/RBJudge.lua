@@ -3,17 +3,17 @@
 ---@class RBJudge: RandomizedBuildingBase
 local __RBJudge = {}
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param def BuildingDef
+---@param force boolean
 ---@return boolean
-function __RBJudge:isValid(arg0, arg1) end
+function __RBJudge:isValid(def, force) end
 
----@param arg0 BuildingDef
-function __RBJudge:randomizeBuilding(arg0) end
+---@param def BuildingDef
+function __RBJudge:randomizeBuilding(def) end
 
----@param arg0 IsoGridSquare
+---@param sq IsoGridSquare
 ---@return boolean
-function __RBJudge:roomValid(arg0) end
+function __RBJudge:roomValid(sq) end
 
 RBJudge = {}
 

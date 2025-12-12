@@ -6,9 +6,9 @@ local __ColorInfo = {}
 ---@param s number
 function __ColorInfo:desaturate(s) end
 
----@param arg0 any
+---@param obj any
 ---@return boolean
-function __ColorInfo:equals(arg0) end
+function __ColorInfo:equals(obj) end
 
 ---@return number
 function __ColorInfo:getA() end
@@ -55,9 +55,9 @@ function __ColorInfo:set(other) end
 ---@return ColorInfo
 function __ColorInfo:set(R, G, B, A) end
 
----@param arg0 integer
+---@param abgr integer
 ---@return ColorInfo
-function __ColorInfo:setABGR(arg0) end
+function __ColorInfo:setABGR(abgr) end
 
 ---@param RGB number
 ---@return ColorInfo

@@ -5,32 +5,32 @@ local __MusicThreatStatuses = {}
 
 function __MusicThreatStatuses:clear() end
 
----@param arg0 string
+---@param id string
 ---@return MusicThreatStatus
-function __MusicThreatStatuses:findStatusById(arg0) end
+function __MusicThreatStatuses:findStatusById(id) end
 
 ---@return number
 function __MusicThreatStatuses:getIntensity() end
 
----@param arg0 integer
+---@param index integer
 ---@return MusicThreatStatus
-function __MusicThreatStatuses:getStatusByIndex(arg0) end
+function __MusicThreatStatuses:getStatusByIndex(index) end
 
 ---@return integer
 function __MusicThreatStatuses:getStatusCount() end
 
----@param arg0 string
----@param arg1 number
+---@param id string
+---@param intensity number
 ---@return MusicThreatStatus
-function __MusicThreatStatuses:setStatus(arg0, arg1) end
+function __MusicThreatStatuses:setStatus(id, intensity) end
 
 function __MusicThreatStatuses:update() end
 
 MusicThreatStatuses = {}
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return MusicThreatStatuses
-function MusicThreatStatuses.new(arg0) end
+function MusicThreatStatuses.new(player) end
 
 ---@type Class<MusicThreatStatuses>
 MusicThreatStatuses.class = nil

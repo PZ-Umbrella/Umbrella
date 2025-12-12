@@ -1,7 +1,7 @@
 ---@meta
 
 ---@class ISEquipWeaponAction : ISBaseTimedAction
----@field alwaysTurnOn unknown?
+---@field alwaysTurnOn boolean?
 ---@field animSpeed number
 ---@field fromHotbar boolean?
 ---@field hotbar ISHotbar?
@@ -44,8 +44,9 @@ function ISEquipWeaponAction:update() end
 ---@param maxTime number
 ---@param primary boolean
 ---@param twoHands boolean?
+---@param alwaysTurnOn boolean?
 ---@return ISEquipWeaponAction
-function ISEquipWeaponAction:new(character, item, maxTime, primary, twoHands) end
+function ISEquipWeaponAction:new(character, item, maxTime, primary, twoHands, alwaysTurnOn) end
 
 ---@param item InventoryItem?
 ---@return boolean

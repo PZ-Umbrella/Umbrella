@@ -4,142 +4,142 @@
 ---@class DebugType: Enum<DebugType>
 local __DebugType = {}
 
----@param arg0 any
-function __DebugType:debugOnceln(arg0) end
+---@param in_formatNoParams any
+function __DebugType:debugOnceln(in_formatNoParams) end
 
----@param arg0 string
----@param arg1 kahlua.Array<any>
-function __DebugType:debugOnceln(arg0, arg1) end
+---@param in_format string
+---@param in_params kahlua.Array<any>
+function __DebugType:debugOnceln(in_format, in_params) end
 
----@param arg0 any
-function __DebugType:debugln(arg0) end
+---@param in_formatNoParams any
+function __DebugType:debugln(in_formatNoParams) end
 
----@param arg0 string
----@param arg1 kahlua.Array<any>
-function __DebugType:debugln(arg0, arg1) end
+---@param in_format string
+---@param in_params kahlua.Array<any>
+function __DebugType:debugln(in_format, in_params) end
 
----@param arg0 any
-function __DebugType:error(arg0) end
+---@param in_formatNoParams any
+function __DebugType:error(in_formatNoParams) end
 
----@param arg0 string
----@param arg1 kahlua.Array<any>
-function __DebugType:error(arg0, arg1) end
+---@param in_format string
+---@param in_params kahlua.Array<any>
+function __DebugType:error(in_format, in_params) end
 
 ---@return DebugLogStream
 function __DebugType:getLogStream() end
 
----@param arg0 LogSeverity
----@param arg1 string
----@param arg2 integer
+---@param in_logSeverity LogSeverity
+---@param in_indent string
+---@param in_depth integer
 ---@return StackTraceContainer
-function __DebugType:getStackTrace(arg0, arg1, arg2) end
+function __DebugType:getStackTrace(in_logSeverity, in_indent, in_depth) end
 
----@param arg0 LogSeverity
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
+---@param in_logSeverity LogSeverity
+---@param in_indent string
+---@param in_depthStart integer
+---@param in_depthCount integer
 ---@return StackTraceContainer
-function __DebugType:getStackTrace(arg0, arg1, arg2, arg3) end
+function __DebugType:getStackTrace(in_logSeverity, in_indent, in_depthStart, in_depthCount) end
 
 ---@return boolean
 function __DebugType:isEnabled() end
 
----@param arg0 any
-function __DebugType:noise(arg0) end
+---@param in_formatNoParams any
+function __DebugType:noise(in_formatNoParams) end
 
----@param arg0 string
----@param arg1 kahlua.Array<any>
-function __DebugType:noise(arg0, arg1) end
+---@param in_format string
+---@param in_params kahlua.Array<any>
+function __DebugType:noise(in_format, in_params) end
 
----@param arg0 boolean
-function __DebugType:print(arg0) end
+---@param b boolean
+function __DebugType:print(b) end
 
----@param arg0 integer
-function __DebugType:print(arg0) end
+---@param c integer
+function __DebugType:print(c) end
 
----@param arg0 integer
-function __DebugType:print(arg0) end
+---@param i integer
+function __DebugType:print(i) end
 
----@param arg0 integer
-function __DebugType:print(arg0) end
+---@param l integer
+function __DebugType:print(l) end
 
----@param arg0 number
-function __DebugType:print(arg0) end
+---@param f number
+function __DebugType:print(f) end
 
----@param arg0 number
-function __DebugType:print(arg0) end
+---@param d number
+function __DebugType:print(d) end
 
----@param arg0 string
-function __DebugType:print(arg0) end
+---@param s string
+function __DebugType:print(s) end
 
----@param arg0 any
-function __DebugType:print(arg0) end
+---@param obj any
+function __DebugType:print(obj) end
 
----@param arg0 Exception
----@param arg1 string
----@param arg2 LogSeverity
-function __DebugType:printException(arg0, arg1, arg2) end
+---@param in_ex Exception
+---@param in_message string
+---@param in_logSeverity LogSeverity
+function __DebugType:printException(in_ex, in_message, in_logSeverity) end
 
----@param arg0 string
----@param arg1 kahlua.Array<any>
+---@param format string
+---@param args kahlua.Array<any>
 ---@return PrintStream
-function __DebugType:printf(arg0, arg1) end
+function __DebugType:printf(format, args) end
 
 function __DebugType:println() end
 
----@param arg0 boolean
-function __DebugType:println(arg0) end
+---@param x boolean
+function __DebugType:println(x) end
 
----@param arg0 integer
-function __DebugType:println(arg0) end
+---@param x integer
+function __DebugType:println(x) end
 
----@param arg0 integer
-function __DebugType:println(arg0) end
+---@param x integer
+function __DebugType:println(x) end
 
----@param arg0 integer
-function __DebugType:println(arg0) end
+---@param x integer
+function __DebugType:println(x) end
 
----@param arg0 number
-function __DebugType:println(arg0) end
+---@param x number
+function __DebugType:println(x) end
 
----@param arg0 number
-function __DebugType:println(arg0) end
+---@param x number
+function __DebugType:println(x) end
 
----@param arg0 kahlua.Array<integer>
-function __DebugType:println(arg0) end
+---@param x kahlua.Array<integer>
+function __DebugType:println(x) end
 
----@param arg0 string
-function __DebugType:println(arg0) end
+---@param x string
+function __DebugType:println(x) end
 
----@param arg0 any
-function __DebugType:println(arg0) end
+---@param x any
+function __DebugType:println(x) end
 
----@param arg0 string
----@param arg1 kahlua.Array<any>
-function __DebugType:println(arg0, arg1) end
+---@param format string
+---@param params kahlua.Array<any>
+function __DebugType:println(format, params) end
 
----@param arg0 integer
----@param arg1 LogSeverity
----@param arg2 string
-function __DebugType:routedWrite(arg0, arg1, arg2) end
+---@param in_backTraceOffset integer
+---@param in_logSeverity LogSeverity
+---@param in_logText string
+function __DebugType:routedWrite(in_backTraceOffset, in_logSeverity, in_logText) end
 
----@param arg0 any
-function __DebugType:trace(arg0) end
+---@param in_formatNoParams any
+function __DebugType:trace(in_formatNoParams) end
 
----@param arg0 string
----@param arg1 kahlua.Array<any>
-function __DebugType:trace(arg0, arg1) end
+---@param in_format string
+---@param in_params kahlua.Array<any>
+function __DebugType:trace(in_format, in_params) end
 
----@param arg0 any
-function __DebugType:warn(arg0) end
+---@param in_formatNoParams any
+function __DebugType:warn(in_formatNoParams) end
 
----@param arg0 string
----@param arg1 kahlua.Array<any>
-function __DebugType:warn(arg0, arg1) end
+---@param in_format string
+---@param in_params kahlua.Array<any>
+function __DebugType:warn(in_format, in_params) end
 
----@param arg0 LogSeverity
----@param arg1 string
-function __DebugType:write(arg0, arg1) end
+---@param in_logSeverity LogSeverity
+---@param in_logText string
+function __DebugType:write(in_logSeverity, in_logText) end
 
 DebugType = {}
 
@@ -335,9 +335,9 @@ DebugType.Zombie = nil
 ---@type DebugType
 DebugType.Zone = nil
 
----@param arg0 string
+---@param name string
 ---@return DebugType
-function DebugType.valueOf(arg0) end
+function DebugType.valueOf(name) end
 
 ---Returns an array containing the constants of this enum class, in
 ---the order they are declared.

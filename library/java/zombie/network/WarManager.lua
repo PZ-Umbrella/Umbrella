@@ -10,49 +10,49 @@ function WarManager.clear() end
 ---@return integer
 function WarManager.getStartDelay() end
 
----@param arg0 integer
----@param arg1 string
+---@param onlineID integer
+---@param attacker string
 ---@return WarManager.War
-function WarManager.getWar(arg0, arg1) end
+function WarManager.getWar(onlineID, attacker) end
 
 ---@return integer
 function WarManager.getWarDuration() end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return WarManager.War
-function WarManager.getWarNearest(arg0) end
+function WarManager.getWarNearest(player) end
 
 ---@param player IsoPlayer
 ---@return ArrayList<WarManager.War>
 function WarManager.getWarRelevent(player) end
 
----@param arg0 integer
+---@param onlineID integer
 ---@return boolean
-function WarManager.isWarClaimed(arg0) end
+function WarManager.isWarClaimed(onlineID) end
 
----@param arg0 string
+---@param username string
 ---@return boolean
-function WarManager.isWarClaimed(arg0) end
+function WarManager.isWarClaimed(username) end
 
----@param arg0 integer
----@param arg1 string
+---@param onlineID integer
+---@param username string
 ---@return boolean
-function WarManager.isWarStarted(arg0, arg1) end
+function WarManager.isWarStarted(onlineID, username) end
 
----@param arg0 integer
----@param arg1 string
-function WarManager.removeWar(arg0, arg1) end
+---@param onlineID integer
+---@param attacker string
+function WarManager.removeWar(onlineID, attacker) end
 
----@param arg0 IsoPlayer
-function WarManager.sendWarToPlayer(arg0) end
+---@param player IsoPlayer
+function WarManager.sendWarToPlayer(player) end
 
 function WarManager.update() end
 
----@param arg0 integer
----@param arg1 string
----@param arg2 WarManager.State
----@param arg3 integer
-function WarManager.updateWar(arg0, arg1, arg2, arg3) end
+---@param onlineID integer
+---@param attacker string
+---@param state WarManager.State
+---@param timestamp integer
+function WarManager.updateWar(onlineID, attacker, state, timestamp) end
 
 ---@type Class<WarManager>
 WarManager.class = nil

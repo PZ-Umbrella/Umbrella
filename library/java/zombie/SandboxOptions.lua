@@ -11,9 +11,9 @@ function __SandboxOptions:copyValuesFrom(other) end
 ---@return boolean
 function __SandboxOptions:doesPowerGridExist() end
 
----@param arg0 integer
+---@param offset integer
 ---@return boolean
-function __SandboxOptions:doesPowerGridExist(arg0) end
+function __SandboxOptions:doesPowerGridExist(offset) end
 
 ---@return boolean
 function __SandboxOptions:getAllClothesUnlocked() end
@@ -24,23 +24,23 @@ function __SandboxOptions:getCompostHours() end
 ---@return integer
 function __SandboxOptions:getCurrentDiminishedLootPercentage() end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return integer
-function __SandboxOptions:getCurrentDiminishedLootPercentage(arg0) end
+function __SandboxOptions:getCurrentDiminishedLootPercentage(square) end
 
 ---@return number
 function __SandboxOptions:getCurrentLootMultiplier() end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return number
-function __SandboxOptions:getCurrentLootMultiplier(arg0) end
+function __SandboxOptions:getCurrentLootMultiplier(square) end
 
 ---@return integer
 function __SandboxOptions:getCurrentLootedChance() end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return integer
-function __SandboxOptions:getCurrentLootedChance(arg0) end
+function __SandboxOptions:getCurrentLootedChance(square) end
 
 ---@return integer
 function __SandboxOptions:getCurrentRatIndex() end
@@ -127,9 +127,9 @@ function __SandboxOptions:loadServerTextFile(serverName) end
 ---@return boolean
 function __SandboxOptions:loadServerZombiesFile(serverName) end
 
----@param arg0 string
+---@param itemType string
 ---@return boolean
-function __SandboxOptions:lootItemRemovalListContains(arg0) end
+function __SandboxOptions:lootItemRemovalListContains(itemType) end
 
 ---@return SandboxOptions
 function __SandboxOptions:newCopy() end
@@ -137,9 +137,9 @@ function __SandboxOptions:newCopy() end
 ---@param customSandboxOption CustomSandboxOption
 function __SandboxOptions:newCustomOption(customSandboxOption) end
 
----@param arg0 integer
+---@param alarmDecayModifier integer
 ---@return integer
-function __SandboxOptions:randomAlarmDecay(arg0) end
+function __SandboxOptions:randomAlarmDecay(alarmDecayModifier) end
 
 ---Random the number of day for the selectricity shut off
 ---@param electricityShutoffModifier integer
@@ -180,9 +180,9 @@ function __SandboxOptions:toLua() end
 
 function __SandboxOptions:updateFromLua() end
 
----@param arg0 string
+---@param itemType string
 ---@return boolean
-function __SandboxOptions:worldItemRemovalListContains(arg0) end
+function __SandboxOptions:worldItemRemovalListContains(itemType) end
 
 SandboxOptions = {}
 

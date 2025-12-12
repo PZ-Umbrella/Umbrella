@@ -9,23 +9,23 @@ function AddNoiseToken(sq, radius) end
 ---@param volume integer
 function AddWorldSound(player, radius, volume) end
 
----@param arg0 integer
----@param arg1 string
----@param arg2 integer
----@param arg3 string
-function InvMngGetItem(arg0, arg1, arg2, arg3) end
+---@param itemId integer
+---@param itemType string
+---@param playerID integer
+---@param username string
+function InvMngGetItem(itemId, itemType, playerID, username) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 string
-function InvMngRemoveItem(arg0, arg1, arg2) end
+---@param itemId integer
+---@param playerID integer
+---@param username string
+function InvMngRemoveItem(itemId, playerID, username) end
 
 ---@param item InventoryItem
 ---@param playerID integer
 function InvMngUpdateItem(item, playerID) end
 
----@param arg0 string
-function NewMapBinaryFile(arg0) end
+---@param cmd string
+function NewMapBinaryFile(cmd) end
 
 ---@param message string
 function proceedFactionMessage(message) end
@@ -78,11 +78,11 @@ function ZombRandFloat(min, max) end
 ---@param host string
 function acceptFactionInvite(faction, host) end
 
----@param arg0 SafeHouse
----@param arg1 string
----@param arg2 IsoPlayer
----@param arg3 boolean
-function acceptSafehouseInvite(arg0, arg1, arg2, arg3) end
+---@param safehouse SafeHouse
+---@param host string
+---@param invited IsoPlayer
+---@param isAccepted boolean
+function acceptSafehouseInvite(safehouse, host, invited, isAccepted) end
 
 ---@param you IsoPlayer
 ---@param other IsoPlayer
@@ -101,9 +101,9 @@ function activateSteamOverlayToWorkshopItem(itemID) end
 
 function activateSteamOverlayToWorkshopUser() end
 
----@param arg0 Server
----@param arg1 Account
-function addAccountToAccountList(arg0, arg1) end
+---@param server Server
+---@param account Account
+function addAccountToAccountList(server, account) end
 
 function addAllBurntVehicles() end
 
@@ -111,68 +111,68 @@ function addAllSmashedVehicles() end
 
 function addAllVehicles() end
 
----@param arg0 IsoCell
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 string
----@param arg5 AnimalBreed
----@param arg6 boolean
+---@param cell IsoCell
+---@param x integer
+---@param y integer
+---@param z integer
+---@param animalType string
+---@param breed AnimalBreed
+---@param skeleton boolean
 ---@return IsoAnimal
-function addAnimal(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+function addAnimal(cell, x, y, z, animalType, breed, skeleton) end
 
----@param arg0 IsoCell
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 string
----@param arg5 AnimalBreed
+---@param cell IsoCell
+---@param x integer
+---@param y integer
+---@param z integer
+---@param animalType string
+---@param breed AnimalBreed
 ---@return IsoAnimal
-function addAnimal(arg0, arg1, arg2, arg3, arg4, arg5) end
+function addAnimal(cell, x, y, z, animalType, breed) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 number
-function addAreaHighlight(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+---@param x1 integer
+---@param y1 integer
+---@param x2 integer
+---@param y2 integer
+---@param z integer
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function addAreaHighlight(x1, y1, x2, y2, z, r, g, b, a) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 number
----@param arg7 number
----@param arg8 number
----@param arg9 number
-function addAreaHighlightForPlayer(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+---@param playerIndex integer
+---@param x1 integer
+---@param y1 integer
+---@param x2 integer
+---@param y2 integer
+---@param z integer
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function addAreaHighlightForPlayer(playerIndex, x1, y1, x2, y2, z, r, g, b, a) end
 
 ---@param sq IsoGridSquare
 ---@param nbr integer
 function addBloodSplat(sq, nbr) end
 
----@param arg0 IsoGridSquare
----@param arg1 integer
----@param arg2 number
----@param arg3 number
-function addBloodSplat(arg0, arg1, arg2, arg3) end
+---@param sq IsoGridSquare
+---@param nbr integer
+---@param xoffset number
+---@param yoffset number
+function addBloodSplat(sq, nbr, xoffset, yoffset) end
 
 function addCarCrash() end
 
 ---@return BaseVehicle
 function addPhysicsObject() end
 
----@param arg0 string
-function addRole(arg0) end
+---@param name string
+function addRole(name) end
 
----@param arg0 Server
-function addServerToAccountList(arg0) end
+---@param server Server
+function addServerToAccountList(server) end
 
 ---@param source IsoObject
 ---@param x integer
@@ -192,15 +192,15 @@ function addTicket(author, message, ticketID) end
 ---@param text string
 function addUserlog(user, type, text) end
 
----@param arg0 string
-function addVariableToSyncList(arg0) end
+---@param key string
+function addVariableToSyncList(key) end
 
----@param arg0 string
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
+---@param script string
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return BaseVehicle
-function addVehicle(arg0, arg1, arg2, arg3) end
+function addVehicle(script, x, y, z) end
 
 ---@param scriptName string
 ---@param dir IsoDirections
@@ -218,22 +218,22 @@ function addVirtualZombie(x, y) end
 ---@param amount integer
 function addWarningPoint(user, reason, amount) end
 
----@param arg0 IsoPlayer
----@param arg1 PerkFactory.Perk
----@param arg2 number
-function addXp(arg0, arg1, arg2) end
+---@param player IsoPlayer
+---@param perk PerkFactory.Perk
+---@param amount number
+function addXp(player, perk, amount) end
 
----@param arg0 IsoPlayer
----@param arg1 PerkFactory.Perk
----@param arg2 number
----@param arg3 integer
----@param arg4 integer
-function addXpMultiplier(arg0, arg1, arg2, arg3, arg4) end
+---@param player IsoPlayer
+---@param perk PerkFactory.Perk
+---@param multiplier number
+---@param minLevel integer
+---@param maxLevel integer
+function addXpMultiplier(player, perk, multiplier, minLevel, maxLevel) end
 
----@param arg0 IsoPlayer
----@param arg1 PerkFactory.Perk
----@param arg2 number
-function addXpNoMultiplier(arg0, arg1, arg2) end
+---@param player IsoPlayer
+---@param perk PerkFactory.Perk
+---@param amount number
+function addXpNoMultiplier(player, perk, amount) end
 
 ---@param x integer
 ---@param y integer
@@ -264,71 +264,102 @@ function addZombiesInBuilding(def, totalZombies, outfit, room, femaleChance) end
 ---@return ArrayList<IsoZombie>
 function addZombiesInOutfit(x, y, z, totalZombies, outfit, femaleChance) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 string
----@param arg5 integer
----@param arg6 boolean
----@param arg7 boolean
----@param arg8 boolean
----@param arg9 boolean
----@param arg10 boolean
----@param arg11 boolean
----@param arg12 number
----@return ArrayList<IsoZombie>
-function addZombiesInOutfit(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12) end
-
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 string
----@param arg5 integer
----@param arg6 boolean
----@param arg7 boolean
----@param arg8 boolean
----@param arg9 boolean
----@param arg10 boolean
----@param arg11 boolean
----@param arg12 number
----@param arg13 boolean
----@return ArrayList<IsoZombie>
-function addZombiesInOutfit(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13) end
-
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 string
----@param arg5 integer
----@param arg6 boolean
----@param arg7 boolean
----@param arg8 boolean
----@param arg9 boolean
----@param arg10 boolean
----@param arg11 boolean
----@param arg12 number
----@param arg13 boolean
----@param arg14 number
+---@param x integer
+---@param y integer
+---@param z integer
+---@param totalZombies integer
+---@param outfit string
+---@param femaleChance integer
+---@param isCrawler boolean
+---@param isFallOnFront boolean
+---@param isFakeDead boolean
+---@param isKnockedDown boolean
+---@param isInvulnerable boolean
+---@param isSitting boolean
+---@param health number
 ---@return ArrayList<IsoZombie>
 function addZombiesInOutfit(
-	arg0,
-	arg1,
-	arg2,
-	arg3,
-	arg4,
-	arg5,
-	arg6,
-	arg7,
-	arg8,
-	arg9,
-	arg10,
-	arg11,
-	arg12,
-	arg13,
-	arg14
+	x,
+	y,
+	z,
+	totalZombies,
+	outfit,
+	femaleChance,
+	isCrawler,
+	isFallOnFront,
+	isFakeDead,
+	isKnockedDown,
+	isInvulnerable,
+	isSitting,
+	health
+)
+end
+
+---@param x integer
+---@param y integer
+---@param z integer
+---@param totalZombies integer
+---@param outfit string
+---@param femaleChance integer
+---@param isCrawler boolean
+---@param isFallOnFront boolean
+---@param isFakeDead boolean
+---@param isKnockedDown boolean
+---@param isInvulnerable boolean
+---@param isSitting boolean
+---@param health number
+---@param isAnimRecording boolean
+---@return ArrayList<IsoZombie>
+function addZombiesInOutfit(
+	x,
+	y,
+	z,
+	totalZombies,
+	outfit,
+	femaleChance,
+	isCrawler,
+	isFallOnFront,
+	isFakeDead,
+	isKnockedDown,
+	isInvulnerable,
+	isSitting,
+	health,
+	isAnimRecording
+)
+end
+
+---@param x integer
+---@param y integer
+---@param z integer
+---@param totalZombies integer
+---@param outfit string
+---@param femaleChance integer
+---@param isCrawler boolean
+---@param isFallOnFront boolean
+---@param isFakeDead boolean
+---@param isKnockedDown boolean
+---@param isInvulnerable boolean
+---@param isSitting boolean
+---@param health number
+---@param isAnimRecording boolean
+---@param heightOffset number
+---@return ArrayList<IsoZombie>
+function addZombiesInOutfit(
+	x,
+	y,
+	z,
+	totalZombies,
+	outfit,
+	femaleChance,
+	isCrawler,
+	isFallOnFront,
+	isFakeDead,
+	isKnockedDown,
+	isInvulnerable,
+	isSitting,
+	health,
+	isAnimRecording,
+	heightOffset
 )
 end
 
@@ -350,30 +381,30 @@ function attachTrailerToPlayerVehicle(playerIndex) end
 
 function backToSinglePlayer() end
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
-function banUnbanUserAction(arg0, arg1, arg2) end
+---@param action string
+---@param username string
+---@param additionArgument string
+function banUnbanUserAction(action, username, additionArgument) end
 
 function breakpoint() end
 
----@param arg0 string
+---@param filename string
 ---@return boolean
-function cacheFileExists(arg0) end
+function cacheFileExists(filename) end
 
----@param arg0 string
----@param arg1 any
-function callLua(arg0, arg1) end
+---@param func string
+---@param param1 any
+function callLua(func, param1) end
 
----@param arg0 string
----@param arg1 any
+---@param func string
+---@param params any
 ---@return boolean
-function callLuaBool(arg0, arg1) end
+function callLuaBool(func, params) end
 
----@param arg0 string
----@param arg1 ArrayList<any>
+---@param func string
+---@param params ArrayList<any>
 ---@return ArrayList<any>
-function callLuaReturn(arg0, arg1) end
+function callLuaReturn(func, params) end
 
 ---@return boolean
 function canConnect() end
@@ -388,29 +419,29 @@ function canModifyPlayerScoreboard() end
 ---@return boolean
 function canSeePlayerStats() end
 
----@param arg0 IsoPlayer
----@param arg1 InventoryItem
----@param arg2 string
+---@param player IsoPlayer
+---@param item InventoryItem
+---@param itemType string
 ---@return integer
-function changeItemTypeTransaction(arg0, arg1, arg2) end
+function changeItemTypeTransaction(player, item, itemType) end
 
----@param arg0 UdpConnection
-function checkModsNeedUpdate(arg0) end
+---@param connection UdpConnection
+function checkModsNeedUpdate(connection) end
 
----@param arg0 IsoPlayer
----@param arg1 Capability
+---@param player IsoPlayer
+---@param capability Capability
 ---@return boolean
-function checkPermissions(arg0, arg1) end
+function checkPermissions(player, capability) end
 
 ---@param chatCommand string
 ---@return boolean
 function checkPlayerCanUseChat(chatCommand) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
+---@param savedir string
+---@param player string
+---@param world string
 ---@return boolean
-function checkPlayerExistsInDatabase(arg0, arg1, arg2) end
+function checkPlayerExistsInDatabase(savedir, player, world) end
 
 ---@param f string
 ---@return boolean
@@ -438,9 +469,9 @@ function clearPVPEvents() end
 ---@return Item
 function cloneItemType(newName, oldName) end
 
----@param arg0 number
----@param arg1 number
-function configRoomFade(arg0, arg1) end
+---@param seconds number
+---@param percent number
+function configRoomFade(seconds, percent) end
 
 ---@param darkStep number
 function configureLighting(darkStep) end
@@ -448,13 +479,13 @@ function configureLighting(darkStep) end
 ---@param button string
 function connectToServerStateCallback(button) end
 
----@param arg0 string
----@param arg1 string
-function connectionManagerLog(arg0, arg1) end
+---@param event string
+---@param message string
+function connectionManagerLog(event, message) end
 
----@param arg0 table
+---@param table table
 ---@return table
-function convertToPZNetTable(arg0) end
+function convertToPZNetTable(table) end
 
 ---@param table table
 ---@return table
@@ -465,15 +496,15 @@ function copyTable(table) end
 ---@return table
 function copyTable(to, from) end
 
----@param arg0 IsoPlayer
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 boolean
----@param arg5 string
----@param arg6 table
+---@param player IsoPlayer
+---@param x number
+---@param y number
+---@param z number
+---@param north boolean
+---@param spriteName string
+---@param item table
 ---@return integer
-function createBuildAction(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+function createBuildAction(player, x, y, z, north, spriteName, item) end
 
 ---@param spawnX number
 ---@param spawnY number
@@ -491,24 +522,24 @@ function createHordeFromTo(spawnX, spawnY, targetX, targetY, count) end
 ---@param count integer
 function createHordeInAreaTo(spawnX, spawnY, spawnW, spawnH, targetX, targetY, count) end
 
----@param arg0 IsoPlayer
----@param arg1 InventoryItem
----@param arg2 ItemContainer
----@param arg3 ItemContainer
+---@param player IsoPlayer
+---@param item InventoryItem
+---@param src ItemContainer
+---@param dst ItemContainer
 ---@return integer
-function createItemTransaction(arg0, arg1, arg2, arg3) end
+function createItemTransaction(player, item, src, dst) end
 
 ---@deprecated
----@param arg0 IsoPlayer
----@param arg1 InventoryItem
----@param arg2 ItemContainer
----@param arg3 ItemContainer
----@param arg4 string
----@param arg5 number
----@param arg6 number
----@param arg7 number
+---@param player IsoPlayer
+---@param item InventoryItem
+---@param src ItemContainer
+---@param dst ItemContainer
+---@param direction string
+---@param posX number
+---@param posY number
+---@param posZ number
 ---@return integer
-function createItemTransactionWithPosData(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+function createItemTransactionWithPosData(player, item, src, dst, direction, posX, posY, posZ) end
 
 ---@param base string
 ---@param name string
@@ -518,10 +549,10 @@ function createItemTransactionWithPosData(arg0, arg1, arg2, arg3, arg4, arg5, ar
 ---@return Item
 function createNewScriptItem(base, name, display, type, icon) end
 
----@param arg0 string
----@param arg1 string
+---@param user string
+---@param key string
 ---@return Texture
-function createQRCodeTex(arg0, arg1) end
+function createQRCodeTex(user, key) end
 
 ---@param square IsoGridSquare
 ---@param blood integer
@@ -566,22 +597,22 @@ function debugLuaTable(param) end
 ---@param roomType number
 function debugSetRoomType(roomType) end
 
----@param arg0 Account
-function deleteAccountToAccountList(arg0) end
+---@param account Account
+function deleteAccountToAccountList(account) end
 
 ---@param gameMode string
 function deleteAllGameModeSaves(gameMode) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
-function deletePlayerFromDatabase(arg0, arg1, arg2) end
+---@param savedir string
+---@param player string
+---@param world string
+function deletePlayerFromDatabase(savedir, player, world) end
 
 ---@param fileName string
 function deletePlayerSave(fileName) end
 
----@param arg0 string
-function deleteRole(arg0) end
+---@param name string
+function deleteRole(name) end
 
 ---@param name string
 function deleteSandboxPreset(name) end
@@ -589,17 +620,17 @@ function deleteSandboxPreset(name) end
 ---@param file string
 function deleteSave(file) end
 
----@param arg0 Server
-function deleteServerToAccountList(arg0) end
+---@param server Server
+function deleteServerToAccountList(server) end
 
----@param arg0 string
+---@param text string
 ---@return boolean
-function detectBadWords(arg0) end
+function detectBadWords(text) end
 
 function disconnect() end
 
----@param arg0 table
-function displayLUATable(arg0) end
+---@param table table
+function displayLUATable(table) end
 
 ---@param challenge table
 function doChallenge(challenge) end
@@ -613,24 +644,24 @@ function doLuaDebuggerAction(action) end
 ---@param tutorial table
 function doTutorial(tutorial) end
 
----@param arg0 UIElement
----@param arg1 integer
----@param arg2 number
----@param arg3 number
----@param arg4 number
-function drawOverheadMap(arg0, arg1, arg2, arg3, arg4) end
+---@param ui UIElement
+---@param level integer
+---@param zoom number
+---@param xpos number
+---@param ypos number
+function drawOverheadMap(ui, level, zoom, xpos, ypos) end
 
----@param arg0 NetTimedAction
----@param arg1 integer
----@param arg2 string
----@param arg3 string
-function emulateAnimEvent(arg0, arg1, arg2, arg3) end
+---@param action NetTimedAction
+---@param duration integer
+---@param event string
+---@param parameter string
+function emulateAnimEvent(action, duration, event, parameter) end
 
----@param arg0 NetTimedAction
----@param arg1 integer
----@param arg2 string
----@param arg3 string
-function emulateAnimEventOnce(arg0, arg1, arg2, arg3) end
+---@param action NetTimedAction
+---@param duration integer
+---@param event string
+---@param parameter string
+function emulateAnimEventOnce(action, duration, event, parameter) end
 
 function endFileInput() end
 
@@ -640,9 +671,9 @@ function endHelicopter() end
 
 function endTextFileInput() end
 
----@param arg0 number
+---@param coord number
 ---@return number
-function fastfloor(arg0) end
+function fastfloor(coord) end
 
 ---@param filename string
 ---@return boolean
@@ -669,9 +700,9 @@ function getAbsoluteSaveFolderName(f) end
 ---@return string
 function getAccessLevel() end
 
----@param arg0 integer
+---@param id integer
 ---@return integer
-function getActionDuration(arg0) end
+function getActionDuration(id) end
 
 ---Gets the list of currently activated mods. Remember that in B42+, mod ids are prefixed with a \ character.
 ---@return ArrayList<string>
@@ -718,18 +749,18 @@ function getAllVoiceStyles() end
 ---@return BaseAmbientStreamManager
 function getAmbientStreamManager() end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return ArrayList<AnimalTracks>
-function getAndFindNearestTracks(arg0) end
+function getAndFindNearestTracks(chr) end
 
----@param arg0 integer
+---@param id integer
 ---@return IsoAnimal
-function getAnimal(arg0) end
+function getAnimal(id) end
 
----@param arg0 integer
----@param arg1 integer
+---@param x integer
+---@param y integer
 ---@return AnimalChunk
-function getAnimalChunk(arg0, arg1) end
+function getAnimalChunk(x, y) end
 
 ---@return AnimationViewerState
 function getAnimationViewerState() end
@@ -911,14 +942,14 @@ function getCurrentUserProfileName() end
 ---@return string
 function getCurrentUserSteamID() end
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
----@param arg3 string
----@param arg4 string
----@param arg5 string
----@param arg6 boolean
-function getCustomizationData(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+---@param username string
+---@param pwd string
+---@param ip string
+---@param port string
+---@param serverPassword string
+---@param serverName string
+---@param doHash boolean
+function getCustomizationData(username, pwd, ip, port, serverPassword, serverName, doHash) end
 
 ---@return boolean
 function getDebug() end
@@ -1032,18 +1063,18 @@ function getGametimeTimestamp() end
 ---@return HairStyles
 function getHairStylesInstance() end
 
----@param arg0 string
+---@param hostname string
 ---@return string
-function getHostByName(arg0) end
+function getHostByName(hostname) end
 
 ---@return string
 function getHourMinute() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return IsoHutch
-function getHutch(arg0, arg1, arg2) end
+function getHutch(x, y, z) end
 
 ---@return ArrayList<GameEntity>
 function getIsoEntitiesDebug() end
@@ -1051,65 +1082,65 @@ function getIsoEntitiesDebug() end
 ---@return IsoMarkers
 function getIsoMarkers() end
 
----@param arg0 string
+---@param itemType string
 ---@return Item
-function getItem(arg0) end
+function getItem(itemType) end
 
----@param arg0 string
+---@param itemType string
 ---@return number
-function getItemActualWeight(arg0) end
+function getItemActualWeight(itemType) end
 
----@param arg0 string
+---@param itemType string
 ---@return integer
-function getItemConditionMax(arg0) end
+function getItemConditionMax(itemType) end
 
----@param arg0 string
+---@param itemType string
 ---@return integer
-function getItemCount(arg0) end
+function getItemCount(itemType) end
 
----@param arg0 string
+---@param itemType string
 ---@return string
-function getItemDisplayName(arg0) end
+function getItemDisplayName(itemType) end
 
----@param arg0 string
+---@param itemType string
 ---@return string
-function getItemEvolvedRecipeName(arg0) end
+function getItemEvolvedRecipeName(itemType) end
 
----@param arg0 string
+---@param itemType string
 ---@return string
-function getItemFoodType(arg0) end
+function getItemFoodType(itemType) end
 
----@param arg0 string
+---@param itemType string
 ---@return string
-function getItemName(arg0) end
+function getItemName(itemType) end
 
 ---@param fullType string
 ---@return string
 function getItemNameFromFullType(fullType) end
 
----@param arg0 string
+---@param itemType string
 ---@return string
-function getItemStaticModel(arg0) end
+function getItemStaticModel(itemType) end
 
----@param arg0 string
+---@param itemType string
 ---@return Texture
-function getItemTex(arg0) end
+function getItemTex(itemType) end
 
 ---@param txt string
 ---@return string
 function getItemText(txt) end
 
----@param arg0 string
+---@param itemType string
 ---@return string
-function getItemTextureName(arg0) end
+function getItemTextureName(itemType) end
 
----@param arg0 integer
+---@param id integer
 ---@return integer
-function getItemTransactionDuration(arg0) end
+function getItemTransactionDuration(id) end
 
----@param arg0 string
+---@param itemType string
 ---@return number
-function getItemWeight(arg0) end
+function getItemWeight(itemType) end
 
 ---@param joypad integer
 ---@return integer
@@ -1347,9 +1378,9 @@ function getPerformanceLocal() end
 ---@return table
 function getPerformanceRemote() end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return InventoryItem
-function getPickedUpFish(arg0) end
+function getPickedUpFish(player) end
 
 ---Gets the current player. To support splitscreen, getSpecificPlayer() should be preferred instead.
 ---@return IsoPlayer # The current player.
@@ -1666,9 +1697,9 @@ function getTimestampMs() end
 ---@return ArrayList<string>
 function getTranslatorCredits(language) end
 
----@param arg0 string
+---@param input string
 ---@return string
-function getTwoLetters(arg0) end
+function getTwoLetters(input) end
 
 ---@return ArrayList<NetworkUser>
 function getUsers() end
@@ -1681,17 +1712,17 @@ function getVehicleById(id) end
 ---@return table
 function getVehicleInfo(vehicle) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return VehicleZone
-function getVehicleZoneAt(arg0, arg1, arg2) end
+function getVehicleZoneAt(x, y, z) end
 
----@param arg0 string
----@param arg1 integer
----@param arg2 integer
+---@param filename string
+---@param width integer
+---@param height integer
 ---@return VideoTexture
-function getVideo(arg0, arg1, arg2) end
+function getVideo(filename, width, height) end
 
 ---@return VoiceStyles
 function getVoiceStylesInstance() end
@@ -1718,17 +1749,17 @@ function getZombieInfo(zombie) end
 ---@return ZomboidRadio
 function getZomboidRadio() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return Zone
-function getZone(arg0, arg1, arg2) end
+function getZone(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return ArrayList<Zone>
-function getZones(arg0, arg1, arg2) end
+function getZones(x, y, z) end
 
 ---@param file string
 ---@param line integer
@@ -1751,9 +1782,9 @@ function hasDataReadBreakpoint(table, key) end
 function hasItemTag(itemType, itemTag) end
 
 ---@deprecated
----@param arg0 string
+---@param access string
 ---@return boolean
-function haveAccess(arg0) end
+function haveAccess(access) end
 
 function initUISystem() end
 
@@ -1765,10 +1796,10 @@ function instanceItem(item) end
 ---@return InventoryItem
 function instanceItem(item) end
 
----@param arg0 string
----@param arg1 number
+---@param item string
+---@param useDelta number
 ---@return InventoryItem
-function instanceItem(arg0, arg1) end
+function instanceItem(item, useDelta) end
 
 ---@param item ItemKey
 ---@return InventoryItem
@@ -1789,13 +1820,13 @@ function inviteFriend(steamID) end
 ---@return boolean
 function isAccessLevel(accessLevel) end
 
----@param arg0 integer
+---@param id integer
 ---@return boolean
-function isActionDone(arg0) end
+function isActionDone(id) end
 
----@param arg0 integer
+---@param id integer
 ---@return boolean
-function isActionRejected(arg0) end
+function isActionRejected(id) end
 
 ---@return boolean
 function isAdmin() end
@@ -1839,29 +1870,29 @@ function isGamePaused() end
 ---@return boolean
 function isIngameState() end
 
----@param arg0 string
+---@param itemType string
 ---@return boolean
-function isItemFood(arg0) end
+function isItemFood(itemType) end
 
----@param arg0 string
----@param arg1 number
+---@param itemType string
+---@param age number
 ---@return boolean
-function isItemFresh(arg0, arg1) end
+function isItemFresh(itemType, age) end
 
----@param arg0 InventoryItem
----@param arg1 ItemContainer
----@param arg2 ItemContainer
----@param arg3 string
+---@param item InventoryItem
+---@param src ItemContainer
+---@param dst ItemContainer
+---@param extra string
 ---@return boolean
-function isItemTransactionConsistent(arg0, arg1, arg2, arg3) end
+function isItemTransactionConsistent(item, src, dst, extra) end
 
----@param arg0 integer
+---@param id integer
 ---@return boolean
-function isItemTransactionDone(arg0) end
+function isItemTransactionDone(id) end
 
----@param arg0 integer
+---@param id integer
 ---@return boolean
-function isItemTransactionRejected(arg0) end
+function isItemTransactionRejected(id) end
 
 ---@param index integer
 ---@return boolean
@@ -1916,17 +1947,17 @@ function isJoypadUp(joypad) end
 ---@return boolean
 function isKeyDown(key) end
 
----@param arg0 string
+---@param keyName string
 ---@return boolean
-function isKeyDown(arg0) end
+function isKeyDown(keyName) end
 
 ---@param key integer
 ---@return boolean
 function isKeyPressed(key) end
 
----@param arg0 string
+---@param keyName string
 ---@return boolean
-function isKeyPressed(arg0) end
+function isKeyPressed(keyName) end
 
 ---@return boolean
 function isMetaKeyDown() end
@@ -1939,16 +1970,16 @@ function isModActive(mod) end
 ---@return boolean
 function isMouseButtonDown(number) end
 
----@param arg0 integer
+---@param number integer
 ---@return boolean
-function isMouseButtonPressed(arg0) end
+function isMouseButtonPressed(number) end
 
 ---@return boolean
 function isMultiplayer() end
 
----@param arg0 integer
+---@param id integer
 ---@return boolean
-function isPlaystationController(arg0) end
+function isPlaystationController(id) end
 
 ---@return boolean
 function isPublicServerListAllowed() end
@@ -2026,22 +2057,22 @@ function isoToScreenX(player, x, y, z) end
 ---@return number
 function isoToScreenY(player, x, y, z) end
 
----@param arg0 List<any>
----@param arg1 integer
+---@param javaList List<any>
+---@param index integer
 ---@return any
-function javaListRemoveAt(arg0, arg1) end
+function javaListRemoveAt(javaList, index) end
 
 ---@return string
 function lineSeparator() end
 
----@param arg0 string
----@param arg1 string
+---@param modID string
+---@param directory string
 ---@return ArrayList<string>
-function listFilesInModDirectory(arg0, arg1) end
+function listFilesInModDirectory(modID, directory) end
 
----@param arg0 string
+---@param directory string
 ---@return ArrayList<string>
-function listFilesInZomboidLuaDirectory(arg0) end
+function listFilesInZomboidLuaDirectory(directory) end
 
 ---@param name string
 ---@param loc string
@@ -2074,9 +2105,9 @@ function loadZomboidModel(name, mesh, tex, shader, bStatic) end
 ---@return string
 function localVarName(c, n) end
 
----@param arg0 DebugType
----@param arg1 string
-function log(arg0, arg1) end
+---@param type DebugType
+---@param message string
+function log(type, message) end
 
 function luaDebug() end
 
@@ -2089,26 +2120,26 @@ function manipulateSavefile(folder, action) end
 ---@return string
 function moduleDotType(module, type) end
 
----@param arg0 integer
----@param arg1 string
-function moveRole(arg0, arg1) end
+---@param dir integer
+---@param roleName string
+function moveRole(dir, roleName) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
-function networkUserAction(arg0, arg1, arg2) end
+---@param action string
+---@param username string
+---@param additionArgument string
+function networkUserAction(action, username, additionArgument) end
 
 ---@param url string
 function openUrl(url) end
 
 function pauseSoundAndMusic() end
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
----@param arg3 string
----@param arg4 boolean
-function ping(arg0, arg1, arg2, arg3, arg4) end
+---@param username string
+---@param pwd string
+---@param ip string
+---@param port string
+---@param doHash boolean
+function ping(username, pwd, ip, port, doHash) end
 
 ---@param sound string
 ---@param sq IsoGridSquare
@@ -2127,9 +2158,9 @@ function processSayMessage(message) end
 ---@param message string
 function processShoutMessage(message) end
 
----@param arg0 string
+---@param text string
 ---@return boolean
-function profanityFilterCheck(arg0) end
+function profanityFilterCheck(text) end
 
 ---@param itemIDs ArrayList<string>
 ---@param functionObj function
@@ -2155,27 +2186,27 @@ function reloadEngineRPM() end
 
 function reloadEntitiesDebug() end
 
----@param arg0 GameEntity
-function reloadEntityDebug(arg0) end
+---@param entity GameEntity
+function reloadEntityDebug(entity) end
 
----@param arg0 GameEntity
-function reloadEntityFromScriptDebug(arg0) end
+---@param entity GameEntity
+function reloadEntityFromScriptDebug(entity) end
 
 function reloadEntityScripts() end
 
----@param arg0 string
+---@param filename string
 ---@return any
-function reloadLuaFile(arg0) end
+function reloadLuaFile(filename) end
 
 ---@param meshName string
 function reloadModelsMatching(meshName) end
 
----@param arg0 ScriptType
-function reloadScripts(arg0) end
+---@param type ScriptType
+function reloadScripts(type) end
 
----@param arg0 string
+---@param filename string
 ---@return any
-function reloadServerLuaFile(arg0) end
+function reloadServerLuaFile(filename) end
 
 function reloadSoundFiles() end
 
@@ -2186,19 +2217,19 @@ function reloadVehicles() end
 
 function reloadXui() end
 
----@param arg0 integer
----@param arg1 boolean
-function removeAction(arg0, arg1) end
+---@param id integer
+---@param isCanceled boolean
+function removeAction(id, isCanceled) end
 
----@param arg0 IsoPlayer
-function removeAllVehicles(arg0) end
+---@param player IsoPlayer
+function removeAllVehicles(player) end
 
----@param arg0 integer
-function removeAnimal(arg0) end
+---@param id integer
+function removeAnimal(id) end
 
----@param arg0 integer
----@param arg1 boolean
-function removeItemTransaction(arg0, arg1) end
+---@param id integer
+---@param isCanceled boolean
+function removeItemTransaction(id, isCanceled) end
 
 ---@param ticketID integer
 function removeTicket(ticketID) end
@@ -2208,9 +2239,9 @@ function removeTicket(ticketID) end
 ---@param text string
 function removeUserlog(user, type, text) end
 
----@param arg0 IsoPlayer
----@param arg1 BaseVehicle
-function removeVehicle(arg0, arg1) end
+---@param player IsoPlayer
+---@param baseVehicle BaseVehicle
+function removeVehicle(player, baseVehicle) end
 
 ---@param gameMode string
 ---@param oldName string
@@ -2229,33 +2260,33 @@ function renameSavefile(gameMode, oldName, newName) end
 ---@param thickness integer
 function renderIsoCircle(x, y, z, radius, r, g, b, a, thickness) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 integer
-function renderIsoRect(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+---@param x number
+---@param y number
+---@param z number
+---@param radius number
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+---@param thickness integer
+function renderIsoRect(x, y, z, radius, r, g, b, a, thickness) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 number
----@param arg9 number
-function renderLine(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+---@param x number
+---@param y number
+---@param z number
+---@param tx number
+---@param ty number
+---@param tz number
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function renderLine(x, y, z, tx, ty, tz, r, g, b, a) end
 
----@param arg0 ItemContainer
----@param arg1 InventoryItem
----@param arg2 InventoryItem
-function replaceItemInContainer(arg0, arg1, arg2) end
+---@param container ItemContainer
+---@param oldItem InventoryItem
+---@param newItem InventoryItem
+function replaceItemInContainer(container, oldItem, newItem) end
 
 ---@param toReplace string
 ---@param regex string
@@ -2325,63 +2356,63 @@ function screenZoomIn() end
 
 function screenZoomOut() end
 
----@param arg0 IsoAnimal
----@param arg1 IsoPlayer
----@param arg2 BaseVehicle
-function sendAddAnimalFromHandsInTrailer(arg0, arg1, arg2) end
+---@param animal IsoAnimal
+---@param player IsoPlayer
+---@param vehicle BaseVehicle
+function sendAddAnimalFromHandsInTrailer(animal, player, vehicle) end
 
----@param arg0 IsoDeadBody
----@param arg1 IsoPlayer
----@param arg2 BaseVehicle
-function sendAddAnimalFromHandsInTrailer(arg0, arg1, arg2) end
+---@param animal IsoDeadBody
+---@param player IsoPlayer
+---@param vehicle BaseVehicle
+function sendAddAnimalFromHandsInTrailer(animal, player, vehicle) end
 
----@param arg0 IsoAnimal
----@param arg1 IsoPlayer
----@param arg2 BaseVehicle
-function sendAddAnimalInTrailer(arg0, arg1, arg2) end
+---@param animal IsoAnimal
+---@param player IsoPlayer
+---@param vehicle BaseVehicle
+function sendAddAnimalInTrailer(animal, player, vehicle) end
 
----@param arg0 IsoDeadBody
----@param arg1 IsoPlayer
----@param arg2 BaseVehicle
-function sendAddAnimalInTrailer(arg0, arg1, arg2) end
+---@param animal IsoDeadBody
+---@param player IsoPlayer
+---@param vehicle BaseVehicle
+function sendAddAnimalInTrailer(animal, player, vehicle) end
 
----@param arg0 ItemContainer
----@param arg1 InventoryItem
-function sendAddItemToContainer(arg0, arg1) end
+---@param container ItemContainer
+---@param item InventoryItem
+function sendAddItemToContainer(container, item) end
 
----@param arg0 ItemContainer
----@param arg1 ArrayList<InventoryItem>
-function sendAddItemsToContainer(arg0, arg1) end
+---@param container ItemContainer
+---@param items ArrayList<InventoryItem>
+function sendAddItemsToContainer(container, items) end
 
----@param arg0 IsoPlayer
----@param arg1 PerkFactory.Perk
----@param arg2 number
----@param arg3 boolean
-function sendAddXp(arg0, arg1, arg2, arg3) end
+---@param player IsoPlayer
+---@param perk PerkFactory.Perk
+---@param amount number
+---@param noMultiplier boolean
+function sendAddXp(player, perk, amount, noMultiplier) end
 
----@param arg0 IsoAnimal
-function sendAnimalGenome(arg0) end
+---@param animal IsoAnimal
+function sendAnimalGenome(animal) end
 
----@param arg0 IsoAnimal
----@param arg1 IsoPlayer
----@param arg2 IsoObject
----@param arg3 boolean
-function sendAttachAnimalToPlayer(arg0, arg1, arg2, arg3) end
+---@param animal IsoAnimal
+---@param player IsoPlayer
+---@param object IsoObject
+---@param remove boolean
+function sendAttachAnimalToPlayer(animal, player, object, remove) end
 
----@param arg0 IsoAnimal
----@param arg1 IsoPlayer
----@param arg2 IsoObject
----@param arg3 boolean
-function sendAttachAnimalToTree(arg0, arg1, arg2, arg3) end
+---@param animal IsoAnimal
+---@param player IsoPlayer
+---@param object IsoObject
+---@param remove boolean
+function sendAttachAnimalToTree(animal, player, object, remove) end
 
----@param arg0 IsoGameCharacter
----@param arg1 string
----@param arg2 InventoryItem
-function sendAttachedItem(arg0, arg1, arg2) end
+---@param character IsoGameCharacter
+---@param location string
+---@param item InventoryItem
+function sendAttachedItem(character, location, item) end
 
----@param arg0 IsoDeadBody
----@param arg1 IsoPlayer
-function sendButcherAnimal(arg0, arg1) end
+---@param body IsoDeadBody
+---@param player IsoPlayer
+function sendButcherAnimal(body, player) end
 
 ---Sends a command to the server, triggering the OnClientCommand event on the server. Does nothing if called on the server.
 ---@param module string Module of the command. It is conventional to use the name of your mod as the module for all of your commands.
@@ -2396,77 +2427,77 @@ function sendClientCommand(module, command, args) end
 ---@param args table Arguments to pass to the server. Non-POD elements of the table will be lost.
 function sendClientCommand(player, module, command, args) end
 
----@param arg0 IsoPlayer
----@param arg1 string
----@param arg2 string
----@param arg3 kahlua.Array<any>
-function sendClientCommandV(arg0, arg1, arg2, arg3) end
+---@param player IsoPlayer
+---@param module string
+---@param command string
+---@param values kahlua.Array<any>
+function sendClientCommandV(player, module, command, values) end
 
 ---@param player IsoPlayer
 ---@param location ItemBodyLocation
 ---@param item InventoryItem
 function sendClothing(player, location, item) end
 
----@param arg0 IsoDeadBody
-function sendCorpse(arg0) end
+---@param body IsoDeadBody
+function sendCorpse(body) end
 
----@param arg0 IsoPlayer
-function sendDamage(arg0) end
+---@param player IsoPlayer
+function sendDamage(player) end
 
----@param arg0 IsoGridSquare
----@param arg1 integer
----@param arg2 string
-function sendDebugStory(arg0, arg1, arg2) end
+---@param square IsoGridSquare
+---@param type integer
+---@param name string
+function sendDebugStory(square, type, name) end
 
----@param arg0 IsoPlayer
-function sendEquip(arg0) end
+---@param player IsoPlayer
+function sendEquip(player) end
 
 ---@param faction Faction
 ---@param host IsoPlayer
 ---@param invited string
 function sendFactionInvite(faction, host, invited) end
 
----@param arg0 IsoAnimal
----@param arg1 IsoPlayer
----@param arg2 InventoryItem
-function sendFeedAnimalFromHand(arg0, arg1, arg2) end
+---@param animal IsoAnimal
+---@param player IsoPlayer
+---@param item InventoryItem
+function sendFeedAnimalFromHand(animal, player, item) end
 
----@param arg0 string
----@param arg1 string
-function sendGoogleAuth(arg0, arg1) end
+---@param username string
+---@param code string
+function sendGoogleAuth(username, code) end
 
----@param arg0 IsoGameCharacter
----@param arg1 string
----@param arg2 boolean
----@param arg3 string
----@param arg4 string
----@param arg5 boolean
-function sendHitVehicle(arg0, arg1, arg2, arg3, arg4, arg5) end
+---@param target IsoGameCharacter
+---@param damage string
+---@param isTargetHitFromBehind boolean
+---@param vehicleDamage string
+---@param vehicleSpeed string
+---@param isVehicleHitFromBehind boolean
+function sendHitVehicle(target, damage, isTargetHitFromBehind, vehicleDamage, vehicleSpeed, isVehicleHitFromBehind) end
 
----@param arg0 IsoPlayer
-function sendHumanVisual(arg0) end
+---@param player IsoPlayer
+function sendHumanVisual(player) end
 
----@param arg0 IsoAnimal
----@param arg1 IsoPlayer
----@param arg2 IsoObject
----@param arg3 InventoryItem
-function sendHutchGrabAnimal(arg0, arg1, arg2, arg3) end
+---@param animal IsoAnimal
+---@param player IsoPlayer
+---@param object IsoObject
+---@param item InventoryItem
+function sendHutchGrabAnimal(animal, player, object, item) end
 
----@param arg0 IsoAnimal
----@param arg1 IsoPlayer
----@param arg2 IsoObject
----@param arg3 InventoryItem
-function sendHutchGrabCorpseAction(arg0, arg1, arg2, arg3) end
+---@param animal IsoAnimal
+---@param player IsoPlayer
+---@param object IsoObject
+---@param item InventoryItem
+function sendHutchGrabCorpseAction(animal, player, object, item) end
 
----@param arg0 IsoAnimal
----@param arg1 IsoPlayer
----@param arg2 IsoObject
-function sendHutchRemoveAnimalAction(arg0, arg1, arg2) end
+---@param animal IsoAnimal
+---@param player IsoPlayer
+---@param object IsoObject
+function sendHutchRemoveAnimalAction(animal, player, object) end
 
----@param arg0 IsoPlayer
----@param arg1 string
----@param arg2 number
-function sendIconFound(arg0, arg1, arg2) end
+---@param player IsoPlayer
+---@param type string
+---@param distanceTraveled number
+function sendIconFound(player, type, distanceTraveled) end
 
 ---@param sender IsoPlayer
 ---@param items ArrayList<InventoryItem>
@@ -2476,8 +2507,8 @@ function sendIconFound(arg0, arg1, arg2) end
 ---@return boolean
 function sendItemListNet(sender, items, receiver, transferID, custom) end
 
----@param arg0 InventoryItem
-function sendItemStats(arg0) end
+---@param item InventoryItem
+function sendItemStats(item) end
 
 ---@param obj IsoObject
 ---@param container ItemContainer
@@ -2486,20 +2517,20 @@ function sendItemsInContainer(obj, container) end
 ---@param player IsoPlayer
 function sendPersonalColor(player) end
 
----@param arg0 IsoAnimal
----@param arg1 IsoPlayer
----@param arg2 AnimalInventoryItem
-function sendPickupAnimal(arg0, arg1, arg2) end
+---@param animal IsoAnimal
+---@param player IsoPlayer
+---@param item AnimalInventoryItem
+function sendPickupAnimal(animal, player, item) end
 
 function sendPing() end
 
----@param arg0 string
----@param arg1 boolean
----@param arg2 IsoMovingObject
-function sendPlaySound(arg0, arg1, arg2) end
+---@param sound string
+---@param loop boolean
+---@param object IsoMovingObject
+function sendPlaySound(sound, loop, object) end
 
----@param arg0 IsoPlayer
-function sendPlayerEffects(arg0) end
+---@param player IsoPlayer
+function sendPlayerEffects(player) end
 
 ---@param p IsoPlayer
 function sendPlayerExtraInfo(p) end
@@ -2514,87 +2545,87 @@ function sendPlayerStat(player, stat) end
 ---@param player IsoPlayer
 function sendPlayerStatsChange(player) end
 
----@param arg0 IsoAnimal
----@param arg1 IsoPlayer
----@param arg2 BaseVehicle
----@param arg3 AnimalInventoryItem
-function sendRemoveAndGrabAnimalFromTrailer(arg0, arg1, arg2, arg3) end
+---@param animal IsoAnimal
+---@param player IsoPlayer
+---@param vehicle BaseVehicle
+---@param item AnimalInventoryItem
+function sendRemoveAndGrabAnimalFromTrailer(animal, player, vehicle, item) end
 
----@param arg0 IsoDeadBody
----@param arg1 IsoPlayer
----@param arg2 BaseVehicle
----@param arg3 AnimalInventoryItem
-function sendRemoveAndGrabAnimalFromTrailer(arg0, arg1, arg2, arg3) end
+---@param animal IsoDeadBody
+---@param player IsoPlayer
+---@param vehicle BaseVehicle
+---@param item AnimalInventoryItem
+function sendRemoveAndGrabAnimalFromTrailer(animal, player, vehicle, item) end
 
----@param arg0 IsoAnimal
----@param arg1 IsoPlayer
----@param arg2 BaseVehicle
-function sendRemoveAnimalFromTrailer(arg0, arg1, arg2) end
+---@param animal IsoAnimal
+---@param player IsoPlayer
+---@param vehicle BaseVehicle
+function sendRemoveAnimalFromTrailer(animal, player, vehicle) end
 
----@param arg0 ItemContainer
----@param arg1 InventoryItem
-function sendRemoveItemFromContainer(arg0, arg1) end
+---@param container ItemContainer
+---@param item InventoryItem
+function sendRemoveItemFromContainer(container, item) end
 
----@param arg0 ItemContainer
----@param arg1 ArrayList<InventoryItem>
-function sendRemoveItemsFromContainer(arg0, arg1) end
+---@param container ItemContainer
+---@param items ArrayList<InventoryItem>
+function sendRemoveItemsFromContainer(container, items) end
 
----@param arg0 ItemContainer
----@param arg1 InventoryItem
----@param arg2 InventoryItem
-function sendReplaceItemInContainer(arg0, arg1, arg2) end
+---@param container ItemContainer
+---@param oldItem InventoryItem
+---@param newItem InventoryItem
+function sendReplaceItemInContainer(container, oldItem, newItem) end
 
----@param arg0 integer
----@param arg1 string
-function sendRequestInventory(arg0, arg1) end
+---@param id integer
+---@param username string
+function sendRequestInventory(id, username) end
 
----@param arg0 SafeHouse
----@param arg1 string
-function sendSafehouseChangeMember(arg0, arg1) end
+---@param safehouse SafeHouse
+---@param player string
+function sendSafehouseChangeMember(safehouse, player) end
 
----@param arg0 SafeHouse
----@param arg1 string
-function sendSafehouseChangeOwner(arg0, arg1) end
+---@param safehouse SafeHouse
+---@param username string
+function sendSafehouseChangeOwner(safehouse, username) end
 
----@param arg0 SafeHouse
----@param arg1 string
----@param arg2 boolean
-function sendSafehouseChangeRespawn(arg0, arg1, arg2) end
+---@param safehouse SafeHouse
+---@param player string
+---@param doRemove boolean
+function sendSafehouseChangeRespawn(safehouse, player, doRemove) end
 
----@param arg0 SafeHouse
----@param arg1 string
-function sendSafehouseChangeTitle(arg0, arg1) end
+---@param safehouse SafeHouse
+---@param title string
+function sendSafehouseChangeTitle(safehouse, title) end
 
----@param arg0 IsoGridSquare
----@param arg1 IsoPlayer
----@param arg2 string
-function sendSafehouseClaim(arg0, arg1, arg2) end
+---@param square IsoGridSquare
+---@param player IsoPlayer
+---@param title string
+function sendSafehouseClaim(square, player, title) end
 
 ---@param safehouse SafeHouse
 ---@param host IsoPlayer
 ---@param invited string
 function sendSafehouseInvite(safehouse, host, invited) end
 
----@param arg0 SafeHouse
-function sendSafehouseRelease(arg0) end
+---@param safehouse SafeHouse
+function sendSafehouseRelease(safehouse) end
 
----@param arg0 string
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 string
-function sendSafezoneClaim(arg0, arg1, arg2, arg3, arg4, arg5) end
+---@param username string
+---@param x integer
+---@param y integer
+---@param h integer
+---@param w integer
+---@param title string
+function sendSafezoneClaim(username, x, y, h, w, title) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
----@param arg3 integer
----@param arg4 string
----@param arg5 boolean
----@param arg6 integer
----@param arg7 string
-function sendSecretKey(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+---@param username string
+---@param pwd string
+---@param ip string
+---@param port integer
+---@param serverPassword string
+---@param doHash boolean
+---@param authType integer
+---@param secretKey string
+function sendSecretKey(username, pwd, ip, port, serverPassword, doHash, authType, secretKey) end
 
 ---Sends a command to all clients, triggering the OnServerCommand event on every client. Does nothing if called on the client.
 ---@param module string Module of the command. It is conventional to use the name of your mod as the module for all of your commands.
@@ -2609,10 +2640,10 @@ function sendServerCommand(module, command, args) end
 ---@param args table Arguments to pass to the client. Non-POD elements of the table will be lost.
 function sendServerCommand(player, module, command, args) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 kahlua.Array<any>
-function sendServerCommandV(arg0, arg1, arg2) end
+---@param module string
+---@param command string
+---@param values kahlua.Array<any>
+function sendServerCommandV(module, command, values) end
 
 ---@param vehicle BaseVehicle
 ---@param chr IsoGameCharacter
@@ -2620,30 +2651,43 @@ function sendServerCommandV(arg0, arg1, arg2) end
 ---@param seatTo integer
 function sendSwitchSeat(vehicle, chr, seatFrom, seatTo) end
 
----@param arg0 IsoPlayer
----@param arg1 integer
-function sendSyncPlayerFields(arg0, arg1) end
+---@param player IsoPlayer
+---@param syncParams integer
+function sendSyncPlayerFields(player, syncParams) end
 
 ---@param player IsoPlayer
 function sendVisual(player) end
 
----@param arg0 integer
----@param arg1 string
----@param arg2 WarManager.State
-function sendWarManagerUpdate(arg0, arg1, arg2) end
+---@param onlineID integer
+---@param attacker string
+---@param state WarManager.State
+function sendWarManagerUpdate(onlineID, attacker, state) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
----@param arg3 string
----@param arg4 string
----@param arg5 string
----@param arg6 string
----@param arg7 boolean
----@param arg8 boolean
----@param arg9 integer
----@param arg10 string
-function serverConnect(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10) end
+---@param user string
+---@param pass string
+---@param server string
+---@param localIP string
+---@param port string
+---@param serverPassword string
+---@param serverName string
+---@param useSteamRelay boolean
+---@param doHash boolean
+---@param authtype integer
+---@param secretKey string
+function serverConnect(
+	user,
+	pass,
+	server,
+	localIP,
+	port,
+	serverPassword,
+	serverName,
+	useSteamRelay,
+	doHash,
+	authtype,
+	secretKey
+)
+end
 
 ---@param serverSteamID string
 function serverConnectCoop(serverSteamID) end
@@ -2673,16 +2717,16 @@ function setControllerDeadZone(c, axis, value) end
 ---@param index integer
 function setDebugToggleControllerPluggedIn(index) end
 
----@param arg0 string
----@param arg1 string
-function setDefaultRoleFor(arg0, arg1) end
+---@param defaultId string
+---@param roleName string
+function setDefaultRoleFor(defaultId, roleName) end
 
 ---@param NewSpeed integer
 function setGameSpeed(NewSpeed) end
 
----@param arg0 number
----@param arg1 number
-function setMinMaxZombiesPerChunk(arg0, arg1) end
+---@param min number
+---@param max number
+function setMinMaxZombiesPerChunk(min, max) end
 
 ---@param name string
 ---@param mesh string
@@ -2729,17 +2773,17 @@ function setShowPausedMessage(b) end
 ---@param enabled boolean
 function setShowServerInfo(enabled) end
 
----@param arg0 string
-function setSpawnRegion(arg0) end
+---@param spawnRegionName string
+function setSpawnRegion(spawnRegionName) end
 
----@param arg0 kahlua.Array<number>
-function setZoomLevels(arg0) end
+---@param zooms kahlua.Array<number>
+function setZoomLevels(zooms) end
 
----@param arg0 Role
----@param arg1 string
----@param arg2 Color
----@param arg3 table
-function setupRole(arg0, arg1, arg2, arg3) end
+---@param role Role
+---@param description string
+---@param color Color
+---@param capabilities_raw table
+function setupRole(role, description, color, capabilities_raw) end
 
 function showAnimationViewer() end
 
@@ -2747,8 +2791,8 @@ function showAttachmentEditor() end
 
 function showChunkDebugger() end
 
----@param arg0 string
-function showDebugInfoInChat(arg0) end
+---@param msg string
+function showDebugInfoInChat(msg) end
 
 ---@param folder string
 function showFolderInDesktop(folder) end
@@ -2815,17 +2859,17 @@ function spawnHorde(x, y, x2, y2, z, count) end
 ---@return boolean
 function spawnpointsExistsForMod(modID, mapFolder) end
 
----@param arg0 string
----@param arg1 integer
+---@param input string
+---@param maxSize integer
 ---@return table
-function splitString(arg0, arg1) end
+function splitString(input, maxSize) end
 
----@param arg0 IsoPlayer
----@param arg1 InventoryItem
----@param arg2 IsoGridSquare
----@param arg3 table
+---@param player IsoPlayer
+---@param item InventoryItem
+---@param sq IsoGridSquare
+---@param bobber table
 ---@return integer
-function startFishingAction(arg0, arg1, arg2, arg3) end
+function startFishingAction(player, item, sq, bobber) end
 
 ---@param index integer
 ---@return Server
@@ -2850,8 +2894,8 @@ function steamRequestServerRules(host, port) end
 
 function stepForward() end
 
----@param arg0 any
-function stopFire(arg0) end
+---@param obj any
+function stopFire(obj) end
 
 function stopPing() end
 
@@ -2860,28 +2904,28 @@ function stopSendSecretKey() end
 ---@param sound integer
 function stopSound(sound) end
 
----@param arg0 BodyPart
----@param arg1 integer
-function syncBodyPart(arg0, arg1) end
+---@param bodyPart BodyPart
+---@param syncParams integer
+function syncBodyPart(bodyPart, syncParams) end
 
----@param arg0 IsoPlayer
----@param arg1 HandWeapon
-function syncHandWeaponFields(arg0, arg1) end
+---@param player IsoPlayer
+---@param item HandWeapon
+function syncHandWeaponFields(player, item) end
 
----@param arg0 IsoPlayer
----@param arg1 InventoryItem
-function syncItemFields(arg0, arg1) end
+---@param player IsoPlayer
+---@param item InventoryItem
+function syncItemFields(player, item) end
 
----@param arg0 IsoPlayer
----@param arg1 InventoryItem
-function syncItemModData(arg0, arg1) end
+---@param player IsoPlayer
+---@param item InventoryItem
+function syncItemModData(player, item) end
 
----@param arg0 IsoPlayer
----@param arg1 integer
-function syncPlayerStats(arg0, arg1) end
+---@param player IsoPlayer
+---@param syncParams integer
+function syncPlayerStats(player, syncParams) end
 
----@param arg0 IsoPlayer
-function syncVisuals(arg0) end
+---@param player IsoPlayer
+function syncVisuals(player) end
 
 ---@param a string
 ---@param tabX integer
@@ -2893,18 +2937,18 @@ function takeScreenshot() end
 ---@param fileName string
 function takeScreenshot(fileName) end
 
----@param arg0 IsoPlayer
-function teleportPlayers(arg0) end
+---@param player IsoPlayer
+function teleportPlayers(player) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
-function teleportToHimUserAction(arg0, arg1, arg2) end
+---@param action string
+---@param username string
+---@param additionArgument string
+function teleportToHimUserAction(action, username, additionArgument) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
-function teleportUserAction(arg0, arg1, arg2) end
+---@param action string
+---@param username string
+---@param additionArgument string
+function teleportUserAction(action, username, additionArgument) end
 
 function testHelicopter() end
 
@@ -2941,10 +2985,10 @@ function toggleVehicleRenderToTexture() end
 ---@param i InventoryItem
 function tradingUISendAddItem(you, other, i) end
 
----@param arg0 IsoPlayer
----@param arg1 IsoPlayer
----@param arg2 InventoryItem
-function tradingUISendRemoveItem(arg0, arg1, arg2) end
+---@param you IsoPlayer
+---@param other IsoPlayer
+---@param item InventoryItem
+function tradingUISendRemoveItem(you, other, item) end
 
 ---@param you IsoPlayer
 ---@param other IsoPlayer
@@ -2983,11 +3027,11 @@ function translatePointYInOverheadMapToWindow(y, ui, zoom, ypos) end
 ---@return number
 function translatePointYInOverheadMapToWorld(y, ui, zoom, ypos) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 number
----@param arg3 number
-function transmitBigWaterSplash(arg0, arg1, arg2, arg3) end
+---@param x integer
+---@param y integer
+---@param dx number
+---@param dy number
+function transmitBigWaterSplash(x, y, dx, dy) end
 
 ---@param event string
 function triggerEvent(event) end
@@ -3014,12 +3058,12 @@ function triggerEvent(event, param, param2, param3) end
 ---@param param4 any
 function triggerEvent(event, param, param2, param3, param4) end
 
----@param arg0 string
+---@param filename string
 ---@return Texture
-function tryGetTexture(arg0) end
+function tryGetTexture(filename) end
 
----@param arg0 Account
-function updateAccountToAccountList(arg0) end
+---@param account Account
+function updateAccountToAccountList(account) end
 
 ---@param fontSize string
 ---@param showTimestamp boolean
@@ -3028,8 +3072,8 @@ function updateChatSettings(fontSize, showTimestamp, showTitle) end
 
 function updateFire() end
 
----@param arg0 Server
-function updateServerToAccountList(arg0) end
+---@param server Server
+function updateServerToAccountList(server) end
 
 ---@param use boolean
 function useStaticErosionRand(use) end
@@ -3037,17 +3081,17 @@ function useStaticErosionRand(use) end
 ---@param bUse boolean
 function useTextureFiltering(bUse) end
 
----@param arg0 string
----@param arg1 integer
-function viewedTicket(arg0, arg1) end
+---@param author string
+---@param ticketID integer
+function viewedTicket(author, ticketID) end
 
 ---@param key integer
 ---@return boolean
 function wasKeyDown(key) end
 
----@param arg0 string
+---@param keyName string
 ---@return boolean
-function wasKeyDown(arg0) end
+function wasKeyDown(keyName) end
 
 ---@return boolean
 function wasMouseActiveMoreRecentlyThanJoypad() end

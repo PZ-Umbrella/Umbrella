@@ -3,22 +3,22 @@
 ---@class MusicIntensityEvents
 local __MusicIntensityEvents = {}
 
----@param arg0 string
----@param arg1 number
----@param arg2 integer
----@param arg3 boolean
+---@param id string
+---@param intensity number
+---@param durationMS integer
+---@param bMultiple boolean
 ---@return MusicIntensityEvent
-function __MusicIntensityEvents:addEvent(arg0, arg1, arg2, arg3) end
+function __MusicIntensityEvents:addEvent(id, intensity, durationMS, bMultiple) end
 
 function __MusicIntensityEvents:clear() end
 
----@param arg0 string
+---@param id string
 ---@return MusicIntensityEvent
-function __MusicIntensityEvents:findEventById(arg0) end
+function __MusicIntensityEvents:findEventById(id) end
 
----@param arg0 integer
+---@param index integer
 ---@return MusicIntensityEvent
-function __MusicIntensityEvents:getEventByIndex(arg0) end
+function __MusicIntensityEvents:getEventByIndex(index) end
 
 ---@return integer
 function __MusicIntensityEvents:getEventCount() end

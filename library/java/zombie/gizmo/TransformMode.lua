@@ -11,9 +11,9 @@ TransformMode.Global = nil
 ---@type TransformMode
 TransformMode.Local = nil
 
----@param arg0 string
+---@param name string
 ---@return TransformMode
-function TransformMode.valueOf(arg0) end
+function TransformMode.valueOf(name) end
 
 ---@return kahlua.Array<TransformMode>
 function TransformMode.values() end

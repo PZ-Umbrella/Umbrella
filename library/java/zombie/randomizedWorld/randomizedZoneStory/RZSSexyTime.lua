@@ -3,8 +3,8 @@
 ---@class RZSSexyTime: RandomizedZoneStoryBase
 local __RZSSexyTime = {}
 
----@param arg0 Zone
-function __RZSSexyTime:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSSexyTime:randomizeZoneStory(zone) end
 
 RZSSexyTime = {}
 

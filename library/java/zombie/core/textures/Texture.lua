@@ -3,17 +3,17 @@
 ---@class Texture: Asset, IDestroyable, ITexture, Serializable
 local __Texture = {}
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
-function __Texture:TexDeferedCreation(arg0, arg1, arg2, arg3, arg4) end
+---@param w integer
+---@param h integer
+---@param flags integer
+---@param format integer
+---@param internalFormat integer
+function __Texture:TexDeferedCreation(w, h, flags, format, internalFormat) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __Texture:TexDeferedCreation(arg0, arg1, arg2) end
+---@param w integer
+---@param h integer
+---@param flags integer
+function __Texture:TexDeferedCreation(w, h, flags) end
 
 ---Blinds the image
 function __Texture:bind() end
@@ -161,10 +161,10 @@ function __Texture:isCollisionable() end
 ---@return boolean
 function __Texture:isDestroyed() end
 
----@param arg0 integer
----@param arg1 integer
+---@param x integer
+---@param y integer
 ---@return boolean
-function __Texture:isMaskSet(arg0, arg1) end
+function __Texture:isMaskSet(x, y) end
 
 ---Description copied from interface: ITexture
 ---@return boolean # if the texture is solid or not.
@@ -520,14 +520,14 @@ function Texture.new(path, manager, params) end
 ---@return Texture
 function Texture.new(data, name) end
 
----@param arg0 TextureID
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
+---@param data TextureID
+---@param name string
+---@param splitX integer
+---@param splitY integer
+---@param splitW integer
+---@param splitH integer
 ---@return Texture
-function Texture.new(arg0, arg1, arg2, arg3, arg4, arg5) end
+function Texture.new(data, name, splitX, splitY, splitW, splitH) end
 
 ---LOADS and crete a texture from a file
 ---@param file string relative path
@@ -567,20 +567,20 @@ function Texture.new(width, height, name, flags) end
 ---@return Texture
 function Texture.new(width, height, flags) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
+---@param width integer
+---@param height integer
+---@param flags integer
+---@param format integer
+---@param internalFormat integer
 ---@return Texture
-function Texture.new(arg0, arg1, arg2, arg3, arg4) end
+function Texture.new(width, height, flags, format, internalFormat) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 boolean
+---@param width integer
+---@param height integer
+---@param flags integer
+---@param deferCreation boolean
 ---@return Texture
-function Texture.new(arg0, arg1, arg2, arg3) end
+function Texture.new(width, height, flags, deferCreation) end
 
 ---loads and create a texture from a file and cretes as trasparent the section that have the color equal to the
 --- RGB valued

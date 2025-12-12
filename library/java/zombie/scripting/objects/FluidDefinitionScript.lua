@@ -3,19 +3,19 @@
 ---@class FluidDefinitionScript: BaseScriptObject
 local __FluidDefinitionScript = {}
 
----@param arg0 string
-function __FluidDefinitionScript:InitLoadPP(arg0) end
+---@param name string
+function __FluidDefinitionScript:InitLoadPP(name) end
 
----@param arg0 string
----@param arg1 string
-function __FluidDefinitionScript:Load(arg0, arg1) end
+---@param name string
+---@param body string
+function __FluidDefinitionScript:Load(name, body) end
 
 function __FluidDefinitionScript:OnLoadedAfterLua() end
 
 function __FluidDefinitionScript:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __FluidDefinitionScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __FluidDefinitionScript:OnScriptsLoaded(loadMode) end
 
 function __FluidDefinitionScript:PreReload() end
 

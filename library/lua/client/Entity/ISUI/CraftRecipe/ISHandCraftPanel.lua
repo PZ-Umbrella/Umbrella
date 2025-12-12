@@ -78,7 +78,8 @@ function ISHandCraftPanel:onUpdateRecipeList(_recipeList) end
 
 function ISHandCraftPanel:prerender() end
 
-function ISHandCraftPanel:refreshRecipeList() end
+---@param _forceRefresh boolean
+function ISHandCraftPanel:refreshRecipeList(_forceRefresh) end
 
 function ISHandCraftPanel:render() end
 
@@ -94,6 +95,7 @@ function ISHandCraftPanel:setRecipeListMode(_useListMode) end
 
 function ISHandCraftPanel:setRecipes(_recipeQuery) end
 
+---@param enabled boolean
 function ISHandCraftPanel:setSeeAllRecipe(enabled) end
 
 ---@param _sortMode string

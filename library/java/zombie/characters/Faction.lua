@@ -103,10 +103,10 @@ function Faction.isAlreadyInFaction(username) end
 ---@return boolean
 function Faction.isAlreadyInFaction(player) end
 
----@param arg0 IsoPlayer
----@param arg1 IsoPlayer
+---@param player IsoPlayer
+---@param other IsoPlayer
 ---@return boolean
-function Faction.isInSameFaction(arg0, arg1) end
+function Faction.isInSameFaction(player, other) end
 
 ---@param name string
 ---@return boolean

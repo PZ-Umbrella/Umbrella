@@ -3,15 +3,15 @@
 ---@class CraftBenchScript: ComponentScript
 local __CraftBenchScript = {}
 
----@param arg0 string
-function __CraftBenchScript:InitLoadPP(arg0) end
+---@param name string
+function __CraftBenchScript:InitLoadPP(name) end
 
 function __CraftBenchScript:OnLoadedAfterLua() end
 
 function __CraftBenchScript:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __CraftBenchScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __CraftBenchScript:OnScriptsLoaded(loadMode) end
 
 function __CraftBenchScript:PreReload() end
 

@@ -9,32 +9,32 @@ function __IsoAnimalTrack:getAnimalTracks() end
 ---@return string
 function __IsoAnimalTrack:getObjectName() end
 
----@param arg0 IsoPlayer
-function __IsoAnimalTrack:glow(arg0) end
+---@param chr IsoPlayer
+function __IsoAnimalTrack:glow(chr) end
 
----@param arg0 ByteBuffer
----@param arg1 integer
----@param arg2 boolean
-function __IsoAnimalTrack:load(arg0, arg1, arg2) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+---@param IS_DEBUG_SAVE boolean
+function __IsoAnimalTrack:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
----@param arg0 ByteBuffer
----@param arg1 boolean
-function __IsoAnimalTrack:save(arg0, arg1) end
+---@param output ByteBuffer
+---@param IS_DEBUG_SAVE boolean
+function __IsoAnimalTrack:save(output, IS_DEBUG_SAVE) end
 
----@param arg0 IsoPlayer
-function __IsoAnimalTrack:stopGlow(arg0) end
+---@param chr IsoPlayer
+function __IsoAnimalTrack:stopGlow(chr) end
 
 IsoAnimalTrack = {}
 
----@param arg0 IsoCell
+---@param cell IsoCell
 ---@return IsoAnimalTrack
-function IsoAnimalTrack.new(arg0) end
+function IsoAnimalTrack.new(cell) end
 
----@param arg0 IsoGridSquare
----@param arg1 string
----@param arg2 AnimalTracks
+---@param sq IsoGridSquare
+---@param sprite string
+---@param track AnimalTracks
 ---@return IsoAnimalTrack
-function IsoAnimalTrack.new(arg0, arg1, arg2) end
+function IsoAnimalTrack.new(sq, sprite, track) end
 
 ---@type Class<IsoAnimalTrack>
 IsoAnimalTrack.class = nil

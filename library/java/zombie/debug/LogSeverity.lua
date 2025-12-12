@@ -32,9 +32,9 @@ LogSeverity.Warning = nil
 ---@return ArrayList<LogSeverity>
 function LogSeverity.getValueList() end
 
----@param arg0 string
+---@param name string
 ---@return LogSeverity
-function LogSeverity.valueOf(arg0) end
+function LogSeverity.valueOf(name) end
 
 ---Returns an array containing the constants of this enum class, in
 ---the order they are declared.

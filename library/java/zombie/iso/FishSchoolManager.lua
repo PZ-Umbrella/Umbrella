@@ -3,43 +3,43 @@
 ---@class FishSchoolManager
 local __FishSchoolManager = {}
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __FishSchoolManager:addChum(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param force integer
+function __FishSchoolManager:addChum(x, y, force) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function __FishSchoolManager:addSoundNoise(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param radius integer
+function __FishSchoolManager:addSoundNoise(x, y, radius) end
 
----@param arg0 integer
----@param arg1 integer
-function __FishSchoolManager:catchFish(arg0, arg1) end
+---@param x integer
+---@param y integer
+function __FishSchoolManager:catchFish(x, y) end
 
 function __FishSchoolManager:generateSeed() end
 
----@param arg0 integer
----@param arg1 integer
+---@param x integer
+---@param y integer
 ---@return number
-function __FishSchoolManager:getFishAbundance(arg0, arg1) end
+function __FishSchoolManager:getFishAbundance(x, y) end
 
----@param arg0 integer
----@param arg1 integer
+---@param x integer
+---@param y integer
 ---@return number
-function __FishSchoolManager:getTrashAbundance(arg0, arg1) end
+function __FishSchoolManager:getTrashAbundance(x, y) end
 
 function __FishSchoolManager:init() end
 
 function __FishSchoolManager:load() end
 
----@param arg0 ByteBuffer
-function __FishSchoolManager:receiveFishingData(arg0) end
+---@param bb ByteBuffer
+function __FishSchoolManager:receiveFishingData(bb) end
 
 function __FishSchoolManager:save() end
 
----@param arg0 ByteBufferWriter
-function __FishSchoolManager:setFishingData(arg0) end
+---@param bb ByteBufferWriter
+function __FishSchoolManager:setFishingData(bb) end
 
 function __FishSchoolManager:update() end
 

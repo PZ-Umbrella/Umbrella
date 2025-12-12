@@ -3,19 +3,19 @@
 ---@class Component
 local __Component = {}
 
----@param arg0 ObjectTooltip
-function __Component:DoTooltip(arg0) end
+---@param tooltipUI ObjectTooltip
+function __Component:DoTooltip(tooltipUI) end
 
----@param arg0 ObjectTooltip
----@param arg1 ObjectTooltip.Layout
-function __Component:DoTooltip(arg0, arg1) end
+---@param tooltipUI ObjectTooltip
+---@param layout ObjectTooltip.Layout
+function __Component:DoTooltip(tooltipUI, layout) end
 
 function __Component:dumpContentsInSquare() end
 
 ---@generic T: Component
----@param arg0 ComponentType
+---@param type ComponentType
 ---@return T
-function __Component:getComponent(arg0) end
+function __Component:getComponent(type) end
 
 ---@return ComponentType
 function __Component:getComponentType() end
@@ -47,20 +47,20 @@ function __Component:isRenderLast() end
 ---@return boolean
 function __Component:isRunningInMeta() end
 
----@param arg0 IsoPlayer
+---@param target IsoPlayer
 ---@return boolean
-function __Component:isUsingPlayer(arg0) end
+function __Component:isUsingPlayer(target) end
 
 ---@return boolean
 function __Component:isValid() end
 
----@param arg0 GameEntityType
+---@param type GameEntityType
 ---@return boolean
-function __Component:isValidOwnerType(arg0) end
+function __Component:isValidOwnerType(type) end
 
----@param arg0 IsoPlayer
----@param arg1 EntityPacketData
-function __Component:sendServerPacketTo(arg0, arg1) end
+---@param player IsoPlayer
+---@param data EntityPacketData
+function __Component:sendServerPacketTo(player, data) end
 
 ---@return string
 function __Component:toString() end

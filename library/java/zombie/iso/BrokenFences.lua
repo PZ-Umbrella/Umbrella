@@ -11,26 +11,26 @@ function __BrokenFences:addBrokenTiles(tiles) end
 ---@param tiles table
 function __BrokenFences:addDebrisTiles(tiles) end
 
----@param arg0 IsoObject
----@param arg1 IsoGridSquare
-function __BrokenFences:addItems(arg0, arg1) end
+---@param obj IsoObject
+---@param square IsoGridSquare
+function __BrokenFences:addItems(obj, square) end
 
 ---@param obj IsoObject
 ---@param dir IsoDirections
 function __BrokenFences:destroyFence(obj, dir) end
 
----@param arg0 IsoGridSquare
----@param arg1 boolean
+---@param square IsoGridSquare
+---@param north boolean
 ---@return IsoObject
-function __BrokenFences:getBreakableObject(arg0, arg1) end
+function __BrokenFences:getBreakableObject(square, north) end
 
 ---@param obj IsoObject
 ---@return boolean
 function __BrokenFences:isBreakableObject(obj) end
 
----@param arg0 string
+---@param spriteName string
 ---@return boolean
-function __BrokenFences:isBreakableSprite(arg0) end
+function __BrokenFences:isBreakableSprite(spriteName) end
 
 ---@param obj IsoObject
 function __BrokenFences:setDamagedLeft(obj) end

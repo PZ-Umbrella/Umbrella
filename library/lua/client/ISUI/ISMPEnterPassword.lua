@@ -16,14 +16,19 @@ function ISMPEnterPassword:destroy() end
 
 function ISMPEnterPassword:initialise() end
 
+---@param button ISButton
 function ISMPEnterPassword:onClick(button) end
 
+---@param joypadData JoypadData
 function ISMPEnterPassword:onGainJoypadFocus(joypadData) end
 
+---@param joypadData JoypadData
 function ISMPEnterPassword:onJoypadBeforeDeactivate(joypadData) end
 
+---@param button integer
 function ISMPEnterPassword:onJoypadDown(button) end
 
+---@param joypadData JoypadData
 function ISMPEnterPassword:onLoseJoypadFocus(joypadData) end
 
 ---@param x number

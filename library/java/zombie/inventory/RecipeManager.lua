@@ -47,12 +47,12 @@ function RecipeManager.IsRecipeValid(recipe, chr, item, containers) end
 
 function RecipeManager.LoadedAfterLua() end
 
----@param arg0 Recipe
----@param arg1 InventoryItem
----@param arg2 IsoGameCharacter
----@param arg3 ArrayList<ItemContainer>
+---@param recipe Recipe
+---@param selectedItem InventoryItem
+---@param chr IsoGameCharacter
+---@param containers ArrayList<ItemContainer>
 ---@return ArrayList<InventoryItem>
-function RecipeManager.PerformMakeItem(arg0, arg1, arg2, arg3) end
+function RecipeManager.PerformMakeItem(recipe, selectedItem, chr, containers) end
 
 function RecipeManager.ScriptsLoaded() end
 
@@ -135,30 +135,30 @@ function RecipeManager.getUniqueRecipeItems(item, chr, containers) end
 ---@return boolean
 function RecipeManager.hasHeat(recipe, item, containers, chr) end
 
----@param arg0 Recipe
----@param arg1 IsoGameCharacter
----@param arg2 InventoryItem
----@param arg3 ArrayList<ItemContainer>
+---@param recipe Recipe
+---@param chr IsoGameCharacter
+---@param selectedItem InventoryItem
+---@param containers ArrayList<ItemContainer>
 ---@return boolean
-function RecipeManager.isAllItemsUsableRotten(arg0, arg1, arg2, arg3) end
+function RecipeManager.isAllItemsUsableRotten(recipe, chr, selectedItem, containers) end
 
----@param arg0 Recipe
----@param arg1 IsoGameCharacter
----@param arg2 InventoryItem
----@param arg3 ArrayList<ItemContainer>
-function RecipeManager.printDebugRecipeValid(arg0, arg1, arg2, arg3) end
+---@param recipe Recipe
+---@param chr IsoGameCharacter
+---@param item InventoryItem
+---@param containers ArrayList<ItemContainer>
+function RecipeManager.printDebugRecipeValid(recipe, chr, item, containers) end
 
----@param arg0 Recipe
----@param arg1 InventoryItem
----@param arg2 ArrayList<ItemContainer>
----@param arg3 IsoGameCharacter
+---@param recipe Recipe
+---@param item InventoryItem
+---@param containers ArrayList<ItemContainer>
+---@param chr IsoGameCharacter
 ---@return boolean
-function RecipeManager.validateHasHeat(arg0, arg1, arg2, arg3) end
+function RecipeManager.validateHasHeat(recipe, item, containers, chr) end
 
----@param arg0 Recipe
----@param arg1 InventoryItem
+---@param recipe Recipe
+---@param item InventoryItem
 ---@return boolean
-function RecipeManager.validateRecipeContainsSourceItem(arg0, arg1) end
+function RecipeManager.validateRecipeContainsSourceItem(recipe, item) end
 
 ---@return RecipeManager
 function RecipeManager.new() end

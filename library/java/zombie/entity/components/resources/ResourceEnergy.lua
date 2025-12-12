@@ -3,27 +3,27 @@
 ---@class ResourceEnergy: Resource
 local __ResourceEnergy = {}
 
----@param arg0 ObjectTooltip
----@param arg1 ObjectTooltip.Layout
-function __ResourceEnergy:DoTooltip(arg0, arg1) end
+---@param tooltipUI ObjectTooltip
+---@param layout ObjectTooltip.Layout
+function __ResourceEnergy:DoTooltip(tooltipUI, layout) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __ResourceEnergy:canDrainFromItem(arg0) end
+function __ResourceEnergy:canDrainFromItem(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __ResourceEnergy:canDrainToItem(arg0) end
+function __ResourceEnergy:canDrainToItem(item) end
 
 function __ResourceEnergy:clear() end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __ResourceEnergy:drainFromItem(arg0) end
+function __ResourceEnergy:drainFromItem(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __ResourceEnergy:drainToItem(arg0) end
+function __ResourceEnergy:drainToItem(item) end
 
 ---@return Energy
 function __ResourceEnergy:getEnergy() end
@@ -46,34 +46,34 @@ function __ResourceEnergy:isEmpty() end
 ---@return boolean
 function __ResourceEnergy:isFull() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __ResourceEnergy:load(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __ResourceEnergy:load(input, WorldVersion) end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __ResourceEnergy:loadSync(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __ResourceEnergy:loadSync(input, WorldVersion) end
 
----@param arg0 ByteBuffer
-function __ResourceEnergy:save(arg0) end
+---@param output ByteBuffer
+function __ResourceEnergy:save(output) end
 
----@param arg0 ByteBuffer
-function __ResourceEnergy:saveSync(arg0) end
+---@param output ByteBuffer
+function __ResourceEnergy:saveSync(output) end
 
----@param arg0 number
+---@param amount number
 ---@return boolean
-function __ResourceEnergy:setEnergyAmount(arg0) end
+function __ResourceEnergy:setEnergyAmount(amount) end
 
----@param arg0 ResourceEnergy
----@param arg1 number
-function __ResourceEnergy:transferTo(arg0, arg1) end
+---@param target ResourceEnergy
+---@param transferAmount number
+function __ResourceEnergy:transferTo(target, transferAmount) end
 
----@param arg0 Resource
-function __ResourceEnergy:tryTransferTo(arg0) end
+---@param target Resource
+function __ResourceEnergy:tryTransferTo(target) end
 
----@param arg0 Resource
----@param arg1 number
-function __ResourceEnergy:tryTransferTo(arg0, arg1) end
+---@param target Resource
+---@param amount number
+function __ResourceEnergy:tryTransferTo(target, amount) end
 
 ResourceEnergy = {}
 

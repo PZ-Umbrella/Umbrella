@@ -23,12 +23,12 @@ function __BodyDamage:AddRandomDamage() end
 ---@return boolean
 function __BodyDamage:AddRandomDamageFromZombie(zombie, hitReaction) end
 
----@param arg0 IsoAnimal
-function __BodyDamage:DamageFromAnimal(arg0) end
+---@param wielder IsoAnimal
+function __BodyDamage:DamageFromAnimal(wielder) end
 
----@param arg0 HandWeapon
----@param arg1 integer
-function __BodyDamage:DamageFromWeapon(arg0, arg1) end
+---@param weapon HandWeapon
+---@param PartIndex integer
+function __BodyDamage:DamageFromWeapon(weapon, PartIndex) end
 
 ---@param BodyPartIndex integer
 function __BodyDamage:DisableFakeInfection(BodyPartIndex) end
@@ -87,13 +87,13 @@ function __BodyDamage:IsBleedingStemmed(BodyPart) end
 ---@return boolean
 function __BodyDamage:IsBleedingStemmed(BodyPartIndex) end
 
----@param arg0 BodyPartType
+---@param BodyPart BodyPartType
 ---@return boolean
-function __BodyDamage:IsCauterized(arg0) end
+function __BodyDamage:IsCauterized(BodyPart) end
 
----@param arg0 integer
+---@param BodyPartIndex integer
 ---@return boolean
-function __BodyDamage:IsCauterized(arg0) end
+function __BodyDamage:IsCauterized(BodyPartIndex) end
 
 ---@param BodyPart BodyPartType
 ---@return boolean
@@ -155,10 +155,10 @@ function __BodyDamage:IsWounded(BodyPartIndex) end
 ---@param percentage number
 function __BodyDamage:JustAteFood(NewFood, percentage) end
 
----@param arg0 Food
----@param arg1 number
----@param arg2 boolean
-function __BodyDamage:JustAteFood(arg0, arg1, arg2) end
+---@param NewFood Food
+---@param percentage number
+---@param useUtensil boolean
+function __BodyDamage:JustAteFood(NewFood, percentage, useUtensil) end
 
 ---@param NewFood Food
 function __BodyDamage:JustAteFood(NewFood) end
@@ -167,8 +167,8 @@ function __BodyDamage:JustAteFood(NewFood) end
 ---@param percentage number
 function __BodyDamage:JustDrankBooze(food, percentage) end
 
----@param arg0 number
-function __BodyDamage:JustDrankBoozeFluid(arg0) end
+---@param alcohol number
+function __BodyDamage:JustDrankBoozeFluid(alcohol) end
 
 ---@param lit Literature
 function __BodyDamage:JustReadSomething(lit) end
@@ -224,13 +224,13 @@ function __BodyDamage:SetBleedingStemmed(BodyPart, BleedingStemmed) end
 ---@param BleedingStemmed boolean
 function __BodyDamage:SetBleedingStemmed(BodyPartIndex, BleedingStemmed) end
 
----@param arg0 BodyPartType
----@param arg1 boolean
-function __BodyDamage:SetCauterized(arg0, arg1) end
+---@param BodyPart BodyPartType
+---@param Cauterized boolean
+function __BodyDamage:SetCauterized(BodyPart, Cauterized) end
 
----@param arg0 integer
----@param arg1 boolean
-function __BodyDamage:SetCauterized(arg0, arg1) end
+---@param BodyPartIndex integer
+---@param Cauterized boolean
+function __BodyDamage:SetCauterized(BodyPartIndex, Cauterized) end
 
 ---@param BodyPartIndex integer
 ---@param Cut boolean
@@ -282,19 +282,19 @@ function __BodyDamage:UseBandageOnMostNeededPart() end
 ---@return boolean
 function __BodyDamage:WasBurntToDeath() end
 
----@param arg0 BodyPart
----@param arg1 number
-function __BodyDamage:addStiffness(arg0, arg1) end
+---@param part BodyPart
+---@param stiffness number
+function __BodyDamage:addStiffness(part, stiffness) end
 
----@param arg0 BodyPartType
----@param arg1 number
-function __BodyDamage:addStiffness(arg0, arg1) end
+---@param partType BodyPartType
+---@param stiffness number
+function __BodyDamage:addStiffness(partType, stiffness) end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 integer
----@param arg3 number
-function __BodyDamage:applyDamageFromWeapon(arg0, arg1, arg2, arg3) end
+---@param partIndex integer
+---@param damage number
+---@param damageType integer
+---@param pain number
+function __BodyDamage:applyDamageFromWeapon(partIndex, damage, damageType, pain) end
 
 ---Returns TRUE if either body part is bleeding. ie. A OR B
 ---@param partA BodyPartType
@@ -549,9 +549,9 @@ function __BodyDamage:isReduceFakeInfection() end
 ---@param WorldVersion integer
 function __BodyDamage:load(input, WorldVersion) end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __BodyDamage:loadMainFields(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __BodyDamage:loadMainFields(input, WorldVersion) end
 
 ---@return number
 function __BodyDamage:pickMortalityDuration() end
@@ -559,8 +559,8 @@ function __BodyDamage:pickMortalityDuration() end
 ---@param output ByteBuffer
 function __BodyDamage:save(output) end
 
----@param arg0 ByteBuffer
-function __BodyDamage:saveMainFields(arg0) end
+---@param output ByteBuffer
+function __BodyDamage:saveMainFields(output) end
 
 function __BodyDamage:setBodyPartsLastState() end
 
@@ -718,11 +718,11 @@ function __BodyDamage:setStandardHealthFromFoodTime(StandardHealthFromFoodTime) 
 ---@param StandardPainReductionWhenWell number the StandardPainReductionWhenWell to set
 function __BodyDamage:setStandardPainReductionWhenWell(StandardPainReductionWhenWell) end
 
----@param arg0 number
-function __BodyDamage:setTimeToSneezeOrCough(arg0) end
+---@param TimeToSneezeOrCough number
+function __BodyDamage:setTimeToSneezeOrCough(TimeToSneezeOrCough) end
 
----@param arg0 boolean
-function __BodyDamage:setWasDraggingCorpse(arg0) end
+---@param WasDraggingCorpse boolean
+function __BodyDamage:setWasDraggingCorpse(WasDraggingCorpse) end
 
 function __BodyDamage:splatBloodFloorBig() end
 
@@ -731,11 +731,11 @@ BodyDamage = {}
 ---@type number
 BodyDamage.InfectionLevelToZombify = nil
 
----@param arg0 IsoGameCharacter
----@param arg1 IsoGameCharacter
----@param arg2 integer
----@param arg3 HandWeapon
-function BodyDamage.damageFromSpikedArmor(arg0, arg1, arg2, arg3) end
+---@param owner IsoGameCharacter
+---@param target IsoGameCharacter
+---@param partIndex integer
+---@param weapon HandWeapon
+function BodyDamage.damageFromSpikedArmor(owner, target, partIndex, weapon) end
 
 ---@param corpseCount integer
 ---@return number

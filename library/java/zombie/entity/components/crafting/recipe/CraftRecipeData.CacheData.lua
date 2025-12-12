@@ -3,12 +3,12 @@
 ---@class CraftRecipeData.CacheData
 local __CacheData = {}
 
----@param arg0 ArrayList<InventoryItem>
-function __CacheData:addAppliedItemsToList(arg0) end
+---@param items ArrayList<InventoryItem>
+function __CacheData:addAppliedItemsToList(items) end
 
----@param arg0 integer
+---@param index integer
 ---@return InventoryItem
-function __CacheData:getAppliedItem(arg0) end
+function __CacheData:getAppliedItem(index) end
 
 ---@return integer
 function __CacheData:getAppliedItemsCount() end
@@ -19,19 +19,19 @@ function __CacheData:getFirstAppliedItem() end
 ---@return InventoryItem
 function __CacheData:getMostRecentItem() end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __CacheData:hasAppliedItem(arg0) end
+function __CacheData:hasAppliedItem(item) end
 
----@param arg0 Item
+---@param item Item
 ---@return boolean
-function __CacheData:hasAppliedItemType(arg0) end
+function __CacheData:hasAppliedItemType(item) end
 
 ---@return boolean
 function __CacheData:isMoveToOutputs() end
 
----@param arg0 boolean
-function __CacheData:setMoveToOutputs(arg0) end
+---@param b boolean
+function __CacheData:setMoveToOutputs(b) end
 
 CacheData = {}
 

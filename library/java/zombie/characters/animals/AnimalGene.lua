@@ -17,22 +17,22 @@ function __AnimalGene:getUsedGene() end
 
 function __AnimalGene:initUsedGene() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
----@param arg2 boolean
-function __AnimalGene:load(arg0, arg1, arg2) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+---@param IS_DEBUG_SAVE boolean
+function __AnimalGene:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
----@param arg0 ByteBuffer
----@param arg1 boolean
-function __AnimalGene:save(arg0, arg1) end
+---@param output ByteBuffer
+---@param IS_DEBUG_SAVE boolean
+function __AnimalGene:save(output, IS_DEBUG_SAVE) end
 
 AnimalGene = {}
 
----@param arg0 IsoAnimal
-function AnimalGene.checkGeneticDisorder(arg0) end
+---@param animal IsoAnimal
+function AnimalGene.checkGeneticDisorder(animal) end
 
----@param arg0 AnimalAllele
-function AnimalGene.doMutation(arg0) end
+---@param allele AnimalAllele
+function AnimalGene.doMutation(allele) end
 
 ---@param def AnimalGenomeDefinitions
 ---@param fullGenome HashMap<string, AnimalGene>
@@ -44,8 +44,8 @@ function AnimalGene.doRatio(def, fullGenome, allele) end
 ---@return HashMap<string, AnimalGene>
 function AnimalGene.initGenesFromParents(femaleGenome, maleGenome) end
 
----@param arg0 IsoAnimal
-function AnimalGene.initGenome(arg0) end
+---@param animal IsoAnimal
+function AnimalGene.initGenome(animal) end
 
 ---@return AnimalGene
 function AnimalGene.new() end

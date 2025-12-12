@@ -410,12 +410,12 @@ Keyboard.KEY_YEN = nil
 ---@type integer
 Keyboard.KEY_Z = nil
 
----@param arg0 integer
-function Keyboard.addCharEvent(arg0) end
+---@param c integer
+function Keyboard.addCharEvent(c) end
 
----@param arg0 integer
----@param arg1 integer
-function Keyboard.addKeyEvent(arg0, arg1) end
+---@param key integer
+---@param status integer
+function Keyboard.addKeyEvent(key, status) end
 
 ---@return boolean
 function Keyboard.areRepeatEventsEnabled() end
@@ -424,8 +424,8 @@ function Keyboard.create() end
 
 function Keyboard.destroy() end
 
----@param arg0 boolean
-function Keyboard.enableRepeatEvents(arg0) end
+---@param enable boolean
+function Keyboard.enableRepeatEvents(enable) end
 
 ---@return integer
 function Keyboard.getEventCharacter() end
@@ -439,22 +439,22 @@ function Keyboard.getEventKeyState() end
 ---@return integer
 function Keyboard.getEventNanoseconds() end
 
----@param arg0 string
+---@param keyName string
 ---@return integer
-function Keyboard.getKeyIndex(arg0) end
+function Keyboard.getKeyIndex(keyName) end
 
----@param arg0 integer
+---@param key integer
 ---@return string
-function Keyboard.getKeyName(arg0) end
+function Keyboard.getKeyName(key) end
 
 function Keyboard.initKeyNames() end
 
 ---@return boolean
 function Keyboard.isCreated() end
 
----@param arg0 integer
+---@param key integer
 ---@return boolean
-function Keyboard.isKeyDown(arg0) end
+function Keyboard.isKeyDown(key) end
 
 ---@return boolean
 function Keyboard.isRepeatEvent() end

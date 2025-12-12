@@ -71,7 +71,7 @@ function ISPlayerStatsUI:drawPerk(y, item, alt) end
 function ISPlayerStatsUI:initialise() end
 
 ---@param button ISButton
----@param trait TraitFactory.Trait
+---@param trait CharacterTraitDefinition
 function ISPlayerStatsUI:onAddTrait(button, trait) end
 
 ---@param button ISButton
@@ -96,7 +96,7 @@ function ISPlayerStatsUI:onChangeAccessLevel(button, accessLevel) end
 function ISPlayerStatsUI:onChangeName(button, player, changedName) end
 
 ---@param button ISButton
----@param prof ProfessionFactory.Profession
+---@param prof CharacterProfessionDefinition
 function ISPlayerStatsUI:onChangeProfession(button, prof) end
 
 ---@param button ISButton

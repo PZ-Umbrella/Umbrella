@@ -3,37 +3,37 @@
 ---@class ImmutableArray<T>: Iterable<T>
 local __ImmutableArray = {}
 
----@param arg0 T
----@param arg1 boolean
+---@param value T
+---@param identity boolean
 ---@return boolean
-function __ImmutableArray:contains(arg0, arg1) end
+function __ImmutableArray:contains(value, identity) end
 
----@param arg0 any
+---@param object any
 ---@return boolean
-function __ImmutableArray:equals(arg0) end
+function __ImmutableArray:equals(object) end
 
 ---@return T
 function __ImmutableArray:first() end
 
----@param arg0 integer
+---@param index integer
 ---@return T
-function __ImmutableArray:get(arg0) end
+function __ImmutableArray:get(index) end
 
 ---@return integer
 function __ImmutableArray:hashCode() end
 
----@param arg0 T
----@param arg1 boolean
+---@param value T
+---@param identity boolean
 ---@return integer
-function __ImmutableArray:indexOf(arg0, arg1) end
+function __ImmutableArray:indexOf(value, identity) end
 
 ---@return Iterator<T>
 function __ImmutableArray:iterator() end
 
----@param arg0 T
----@param arg1 boolean
+---@param value T
+---@param identity boolean
 ---@return integer
-function __ImmutableArray:lastIndexOf(arg0, arg1) end
+function __ImmutableArray:lastIndexOf(value, identity) end
 
 ---@return T
 function __ImmutableArray:peek() end
@@ -48,23 +48,23 @@ function __ImmutableArray:size() end
 function __ImmutableArray:toArray() end
 
 ---@generic V
----@param arg0 Class<V>
+---@param type Class<V>
 ---@return V
-function __ImmutableArray:toArray(arg0) end
+function __ImmutableArray:toArray(type) end
 
 ---@return string
 function __ImmutableArray:toString() end
 
----@param arg0 string
+---@param separator string
 ---@return string
-function __ImmutableArray:toString(arg0) end
+function __ImmutableArray:toString(separator) end
 
 ImmutableArray = {}
 
 ---@generic T
----@param arg0 Array<T>
+---@param array Array<T>
 ---@return ImmutableArray<T>
-function ImmutableArray.new(arg0) end
+function ImmutableArray.new(array) end
 
 ---@type Class<ImmutableArray>
 ImmutableArray.class = nil

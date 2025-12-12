@@ -46,19 +46,19 @@ function __VirtualZombieManager:addZombiesToMap(nSize, room, bAllowDead) end
 ---@return boolean
 function __VirtualZombieManager:canSpawnAt(x, y, z) end
 
----@param arg0 IsoZombie
+---@param zombie IsoZombie
 ---@return boolean
-function __VirtualZombieManager:checkAndSpawnZombieForBuildingKey(arg0) end
+function __VirtualZombieManager:checkAndSpawnZombieForBuildingKey(zombie) end
 
----@param arg0 IsoZombie
----@param arg1 boolean
+---@param zombie IsoZombie
+---@param bandits boolean
 ---@return boolean
-function __VirtualZombieManager:checkAndSpawnZombieForBuildingKey(arg0, arg1) end
+function __VirtualZombieManager:checkAndSpawnZombieForBuildingKey(zombie, bandits) end
 
----@param arg0 string
----@param arg1 IsoGridSquare
+---@param outfitName string
+---@param square IsoGridSquare
 ---@return boolean
-function __VirtualZombieManager:checkZombieKeyForBuilding(arg0, arg1) end
+function __VirtualZombieManager:checkZombieKeyForBuilding(outfitName, square) end
 
 ---@param target IsoDeadBody
 ---@param nb integer
@@ -119,18 +119,18 @@ function __VirtualZombieManager:reusableZombiesSize() end
 ---@param room IsoRoom
 function __VirtualZombieManager:roomSpotted(room) end
 
----@param arg0 integer
+---@param level integer
 ---@return boolean
-function __VirtualZombieManager:shouldSpawnZombiesOnLevel(arg0) end
+function __VirtualZombieManager:shouldSpawnZombiesOnLevel(level) end
 
----@param arg0 IsoZombie
+---@param zombie IsoZombie
 ---@return boolean
-function __VirtualZombieManager:spawnBuildingKeyOnZombie(arg0) end
+function __VirtualZombieManager:spawnBuildingKeyOnZombie(zombie) end
 
----@param arg0 IsoZombie
----@param arg1 BuildingDef
+---@param zombie IsoZombie
+---@param def BuildingDef
 ---@return boolean
-function __VirtualZombieManager:spawnBuildingKeyOnZombie(arg0, arg1) end
+function __VirtualZombieManager:spawnBuildingKeyOnZombie(zombie, def) end
 
 ---@param room RoomDef
 ---@param bAllowDead boolean

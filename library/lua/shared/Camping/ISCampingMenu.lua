@@ -12,13 +12,6 @@ ISCampingMenu = {}
 ---@return boolean
 function ISCampingMenu.doAddFuelOption(context, worldobjects, currentFuel, fuelInfo, target, timedAction, playerObj) end
 
----@param player integer
----@param context ISContextMenu
----@param worldobjects IsoObject[]
----@param test boolean?
----@return boolean?
-function ISCampingMenu.doCampingMenu(player, context, worldobjects, test) end
-
 ---@param playerObj IsoPlayer
 ---@param context ISContextMenu
 ---@param worldobjects IsoObject[]?
@@ -39,12 +32,6 @@ function ISCampingMenu.doLightFireOption(
 	kindleAction
 )
 end
-
----@param context ISContextMenu
----@param bed IsoObject
----@param player integer
----@param playerObj IsoPlayer
-function ISCampingMenu.doSleepOption(context, bed, player, playerObj) end
 
 ---@param item InventoryItem?
 ---@return number
@@ -96,7 +83,8 @@ function ISCampingMenu.onAddFuel(playerObj, target, fuelType, timedAction, curre
 ---@param fuelType string
 ---@param timedAction ISBaseTimedAction
 ---@param currentFuel number
-function ISCampingMenu.onAddMultipleFuel(playerObj, target, fuelType, timedAction, currentFuel) end
+---@param count integer?
+function ISCampingMenu.onAddMultipleFuel(playerObj, target, fuelType, timedAction, currentFuel, count) end
 
 ---@param worldobjects IsoObject[]
 ---@param playerObj IsoPlayer
@@ -132,10 +120,6 @@ function ISCampingMenu.onLightFromLiterature(playerObj, itemType, lighter, targe
 function ISCampingMenu.onLightFromPetrol(playerObj, lighter, petrol, target, timedAction) end
 
 ---@param worldobjects IsoObject[]
----@param player integer
-function ISCampingMenu.onPlaceCampfire(worldobjects, player) end
-
----@param worldobjects IsoObject[]
 ---@param playerObj IsoPlayer
 ---@param campfire CCampfireGlobalObject
 function ISCampingMenu.onPutOutCampfire(worldobjects, playerObj, campfire) end
@@ -144,11 +128,6 @@ function ISCampingMenu.onPutOutCampfire(worldobjects, playerObj, campfire) end
 ---@param playerObj IsoPlayer
 ---@param campfire CCampfireGlobalObject
 function ISCampingMenu.onRemoveCampfire(worldobjects, playerObj, campfire) end
-
----@param worldobjects IsoObject[]
----@param player integer
----@param tent IsoObject
-function ISCampingMenu.onRest(worldobjects, player, tent) end
 
 ---@param item InventoryItem
 ---@param includeEquipped boolean?

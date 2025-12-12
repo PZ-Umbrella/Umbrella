@@ -178,31 +178,31 @@ DebugLog.printServerTime = nil
 ---@param severity LogSeverity
 function DebugLog.enableLog(type, severity) end
 
----@param arg0 DebugType
----@param arg1 LogSeverity
----@param arg2 any
----@param arg3 boolean
----@param arg4 string
+---@param type DebugType
+---@param logSeverity LogSeverity
+---@param affix any
+---@param in_allowRepeat boolean
+---@param formatNoParams string
 ---@return string
-function DebugLog.formatString(arg0, arg1, arg2, arg3, arg4) end
+function DebugLog.formatString(type, logSeverity, affix, in_allowRepeat, formatNoParams) end
 
----@param arg0 DebugType
----@param arg1 LogSeverity
----@param arg2 any
----@param arg3 boolean
----@param arg4 string
----@param arg5 kahlua.Array<any>
+---@param type DebugType
+---@param logSeverity LogSeverity
+---@param affix any
+---@param in_allowRepeat boolean
+---@param format string
+---@param params kahlua.Array<any>
 ---@return string
-function DebugLog.formatString(arg0, arg1, arg2, arg3, arg4, arg5) end
+function DebugLog.formatString(type, logSeverity, affix, in_allowRepeat, format, params) end
 
----@param arg0 DebugType
----@param arg1 LogSeverity
----@param arg2 any
----@param arg3 boolean
----@param arg4 string
----@param arg5 kahlua.Array<any>
+---@param type DebugType
+---@param logSeverity LogSeverity
+---@param affix any
+---@param in_allowRepeat boolean
+---@param format string
+---@param params kahlua.Array<any>
 ---@return string
-function DebugLog.formatStringVarArgs(arg0, arg1, arg2, arg3, arg4, arg5) end
+function DebugLog.formatStringVarArgs(type, logSeverity, affix, in_allowRepeat, format, params) end
 
 ---@return ArrayList<DebugType>
 function DebugLog.getDebugTypes() end
@@ -211,13 +211,13 @@ function DebugLog.getDebugTypes() end
 ---@return LogSeverity
 function DebugLog.getLogLevel(type) end
 
----@param arg0 DebugType
+---@param in_type DebugType
 ---@return LogSeverity
-function DebugLog.getLogSeverity(arg0) end
+function DebugLog.getLogSeverity(in_type) end
 
----@param arg0 DebugType
+---@param in_type DebugType
 ---@return DebugLogStream
-function DebugLog.getOrCreateDebugLogStream(arg0) end
+function DebugLog.getOrCreateDebugLogStream(in_type) end
 
 function DebugLog.init() end
 
@@ -235,8 +235,8 @@ function DebugLog.isLogTraceFileLocationEnabled() end
 
 function DebugLog.load() end
 
----@param arg0 string
-function DebugLog.loadDebugConfig(arg0) end
+---@param filepath string
+function DebugLog.loadDebugConfig(filepath) end
 
 ---@param type DebugType
 ---@param str string
@@ -245,10 +245,10 @@ function DebugLog.log(type, str) end
 ---@param str string
 function DebugLog.log(str) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
-function DebugLog.nativeLog(arg0, arg1, arg2) end
+---@param in_logType string
+---@param in_logSeverity string
+---@param in_logTxt string
+function DebugLog.nativeLog(in_logType, in_logSeverity, in_logTxt) end
 
 function DebugLog.printLogLevels() end
 
@@ -260,9 +260,9 @@ function DebugLog.setDefaultLogSeverity() end
 ---@param bEnabled boolean
 function DebugLog.setLogEnabled(type, bEnabled) end
 
----@param arg0 DebugType
----@param arg1 LogSeverity
-function DebugLog.setLogSeverity(arg0, arg1) end
+---@param in_type DebugType
+---@param in_logSeverity LogSeverity
+function DebugLog.setLogSeverity(in_type, in_logSeverity) end
 
 ---@param out OutputStream
 function DebugLog.setStdErr(out) end

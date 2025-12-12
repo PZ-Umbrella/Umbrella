@@ -3,19 +3,19 @@
 ---@class RVSRoadKillSmall: RandomizedVehicleStoryBase
 local __RVSRoadKillSmall = {}
 
----@param arg0 Zone
----@param arg1 IsoChunk
----@param arg2 boolean
+---@param zone Zone
+---@param chunk IsoChunk
+---@param debug boolean
 ---@return boolean
-function __RVSRoadKillSmall:initVehicleStorySpawner(arg0, arg1, arg2) end
+function __RVSRoadKillSmall:initVehicleStorySpawner(zone, chunk, debug) end
 
----@param arg0 Zone
----@param arg1 IsoChunk
-function __RVSRoadKillSmall:randomizeVehicleStory(arg0, arg1) end
+---@param zone Zone
+---@param chunk IsoChunk
+function __RVSRoadKillSmall:randomizeVehicleStory(zone, chunk) end
 
----@param arg0 VehicleStorySpawner
----@param arg1 VehicleStorySpawner.Element
-function __RVSRoadKillSmall:spawnElement(arg0, arg1) end
+---@param spawner VehicleStorySpawner
+---@param element VehicleStorySpawner.Element
+function __RVSRoadKillSmall:spawnElement(spawner, element) end
 
 RVSRoadKillSmall = {}
 

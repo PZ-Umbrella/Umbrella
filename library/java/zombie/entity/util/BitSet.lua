@@ -3,46 +3,46 @@
 ---@class BitSet
 local __BitSet = {}
 
----@param arg0 BitSet
-__BitSet["and"] = function(self, arg0) end
+---@param other BitSet
+__BitSet["and"] = function(self, other) end
 
----@param arg0 BitSet
-function __BitSet:andNot(arg0) end
+---@param other BitSet
+function __BitSet:andNot(other) end
 
----@param arg0 integer
-function __BitSet:clear(arg0) end
+---@param index integer
+function __BitSet:clear(index) end
 
 function __BitSet:clear() end
 
----@param arg0 BitSet
+---@param other BitSet
 ---@return boolean
-function __BitSet:containsAll(arg0) end
+function __BitSet:containsAll(other) end
 
----@param arg0 any
+---@param obj any
 ---@return boolean
-function __BitSet:equals(arg0) end
+function __BitSet:equals(obj) end
 
----@param arg0 integer
-function __BitSet:flip(arg0) end
+---@param index integer
+function __BitSet:flip(index) end
 
----@param arg0 integer
+---@param index integer
 ---@return boolean
-function __BitSet:get(arg0) end
+function __BitSet:get(index) end
 
----@param arg0 integer
+---@param index integer
 ---@return boolean
-function __BitSet:getAndClear(arg0) end
+function __BitSet:getAndClear(index) end
 
----@param arg0 integer
+---@param index integer
 ---@return boolean
-function __BitSet:getAndSet(arg0) end
+function __BitSet:getAndSet(index) end
 
 ---@return integer
 function __BitSet:hashCode() end
 
----@param arg0 BitSet
+---@param other BitSet
 ---@return boolean
-function __BitSet:intersects(arg0) end
+function __BitSet:intersects(other) end
 
 ---@return boolean
 function __BitSet:isEmpty() end
@@ -50,13 +50,13 @@ function __BitSet:isEmpty() end
 ---@return integer
 function __BitSet:length() end
 
----@param arg0 integer
+---@param fromIndex integer
 ---@return integer
-function __BitSet:nextClearBit(arg0) end
+function __BitSet:nextClearBit(fromIndex) end
 
----@param arg0 integer
+---@param fromIndex integer
 ---@return integer
-function __BitSet:nextSetBit(arg0) end
+function __BitSet:nextSetBit(fromIndex) end
 
 ---@return boolean
 function __BitSet:notEmpty() end
@@ -64,27 +64,27 @@ function __BitSet:notEmpty() end
 ---@return integer
 function __BitSet:numBits() end
 
----@param arg0 BitSet
-__BitSet["or"] = function(self, arg0) end
+---@param other BitSet
+__BitSet["or"] = function(self, other) end
 
----@param arg0 integer
-function __BitSet:set(arg0) end
+---@param index integer
+function __BitSet:set(index) end
 
----@param arg0 BitSet
-function __BitSet:xor(arg0) end
+---@param other BitSet
+function __BitSet:xor(other) end
 
 BitSet = {}
 
 ---@return BitSet
 function BitSet.new() end
 
----@param arg0 integer
+---@param nbits integer
 ---@return BitSet
-function BitSet.new(arg0) end
+function BitSet.new(nbits) end
 
----@param arg0 BitSet
+---@param bitsToCpy BitSet
 ---@return BitSet
-function BitSet.new(arg0) end
+function BitSet.new(bitsToCpy) end
 
 ---@type Class<BitSet>
 BitSet.class = nil

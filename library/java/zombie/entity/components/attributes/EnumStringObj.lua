@@ -3,49 +3,49 @@
 ---@class EnumStringObj<E: Enum<E>, IOEnum>
 local __EnumStringObj = {}
 
----@param arg0 E
-function __EnumStringObj:add(arg0) end
+---@param e E
+function __EnumStringObj:add(e) end
 
----@param arg0 string
-function __EnumStringObj:add(arg0) end
+---@param s string
+function __EnumStringObj:add(s) end
 
----@param arg0 boolean
----@param arg1 EnumStringObj<E>
-function __EnumStringObj:addAll(arg0, arg1) end
+---@param clearAll boolean
+---@param c EnumStringObj<E>
+function __EnumStringObj:addAll(clearAll, c) end
 
----@param arg0 EnumStringObj<E>
-function __EnumStringObj:addAll(arg0) end
+---@param c EnumStringObj<E>
+function __EnumStringObj:addAll(c) end
 
 function __EnumStringObj:clear() end
 
----@param arg0 E
+---@param o E
 ---@return boolean
-function __EnumStringObj:contains(arg0) end
+function __EnumStringObj:contains(o) end
 
----@param arg0 string
+---@param o string
 ---@return boolean
-function __EnumStringObj:contains(arg0) end
+function __EnumStringObj:contains(o) end
 
 ---@return EnumStringObj<E>
 function __EnumStringObj:copy() end
 
----@param arg0 any
+---@param o any
 ---@return boolean
-function __EnumStringObj:equals(arg0) end
+function __EnumStringObj:equals(o) end
 
----@param arg0 ArrayList<string>
-function __EnumStringObj:getSortedNames(arg0) end
+---@param list ArrayList<string>
+function __EnumStringObj:getSortedNames(list) end
 
 ---@return boolean
 function __EnumStringObj:isEmpty() end
 
----@param arg0 E
+---@param e E
 ---@return boolean
-function __EnumStringObj:remove(arg0) end
+function __EnumStringObj:remove(e) end
 
----@param arg0 string
+---@param s string
 ---@return boolean
-function __EnumStringObj:remove(arg0) end
+function __EnumStringObj:remove(s) end
 
 function __EnumStringObj:removeAllEnums() end
 

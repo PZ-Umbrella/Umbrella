@@ -21,29 +21,29 @@ function __AnimalAllele:isDominant() end
 ---@return boolean
 function __AnimalAllele:isUsed() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
----@param arg2 boolean
-function __AnimalAllele:load(arg0, arg1, arg2) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+---@param IS_DEBUG_SAVE boolean
+function __AnimalAllele:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
----@param arg0 ByteBuffer
----@param arg1 boolean
-function __AnimalAllele:save(arg0, arg1) end
+---@param output ByteBuffer
+---@param IS_DEBUG_SAVE boolean
+function __AnimalAllele:save(output, IS_DEBUG_SAVE) end
 
----@param arg0 number
-function __AnimalAllele:setCurrentValue(arg0) end
+---@param newValue number
+function __AnimalAllele:setCurrentValue(newValue) end
 
----@param arg0 boolean
-function __AnimalAllele:setDominant(arg0) end
+---@param dom boolean
+function __AnimalAllele:setDominant(dom) end
 
----@param arg0 string
-function __AnimalAllele:setGeneticDisorder(arg0) end
+---@param gd string
+function __AnimalAllele:setGeneticDisorder(gd) end
 
----@param arg0 number
-function __AnimalAllele:setTrueRatioValue(arg0) end
+---@param newValue number
+function __AnimalAllele:setTrueRatioValue(newValue) end
 
----@param arg0 boolean
-function __AnimalAllele:setUsed(arg0) end
+---@param used boolean
+function __AnimalAllele:setUsed(used) end
 
 AnimalAllele = {}
 

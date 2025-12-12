@@ -11,30 +11,30 @@ function __GameEntity:attrib() end
 ---@return integer
 function __GameEntity:componentSize() end
 
----@param arg0 Component
+---@param component Component
 ---@return boolean
-function __GameEntity:containsComponent(arg0) end
+function __GameEntity:containsComponent(component) end
 
 ---@return AttributeContainer
 function __GameEntity:getAttributes() end
 
 ---@generic T: Component
----@param arg0 ComponentType
+---@param type ComponentType
 ---@return T
-function __GameEntity:getComponent(arg0) end
+function __GameEntity:getComponent(type) end
 
 ---@generic T: Component
----@param arg0 kahlua.Array<ComponentType>
+---@param types kahlua.Array<ComponentType>
 ---@return T
-function __GameEntity:getComponentAny(arg0) end
+function __GameEntity:getComponentAny(types) end
 
----@param arg0 integer
+---@param index integer
 ---@return Component
-function __GameEntity:getComponentForIndex(arg0) end
+function __GameEntity:getComponentForIndex(index) end
 
----@param arg0 integer
+---@param id integer
 ---@return Component
-function __GameEntity:getComponentFromID(arg0) end
+function __GameEntity:getComponentFromID(id) end
 
 ---@return Durability
 function __GameEntity:getDurabilityComponent() end
@@ -78,13 +78,13 @@ function __GameEntity:getY() end
 ---@return number
 function __GameEntity:getZ() end
 
----@param arg0 ComponentType
+---@param type ComponentType
 ---@return boolean
-function __GameEntity:hasComponent(arg0) end
+function __GameEntity:hasComponent(type) end
 
----@param arg0 kahlua.Array<ComponentType>
+---@param types kahlua.Array<ComponentType>
 ---@return boolean
-function __GameEntity:hasComponentAny(arg0) end
+function __GameEntity:hasComponentAny(types) end
 
 ---@return boolean
 function __GameEntity:hasComponents() end
@@ -113,16 +113,16 @@ function __GameEntity:isScheduledForBucketUpdate() end
 ---@return boolean
 function __GameEntity:isScheduledForEngineRemoval() end
 
----@param arg0 IsoPlayer
+---@param target IsoPlayer
 ---@return boolean
-function __GameEntity:isUsingPlayer(arg0) end
+function __GameEntity:isUsingPlayer(target) end
 
 ---@return boolean
 function __GameEntity:isValidEngineEntity() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __GameEntity:loadEntity(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __GameEntity:loadEntity(input, WorldVersion) end
 
 ---@param input ByteBuffer
 ---@param WorldVersion integer
@@ -131,8 +131,8 @@ function __GameEntity:loadEntity(input, WorldVersion, loaded) end
 
 function __GameEntity:onEquip() end
 
----@param arg0 boolean
-function __GameEntity:onEquip(arg0) end
+---@param register boolean
+function __GameEntity:onEquip(register) end
 
 function __GameEntity:onFluidContainerUpdate() end
 
@@ -140,8 +140,8 @@ function __GameEntity:onUnEquip() end
 
 function __GameEntity:removeFromWorld() end
 
----@param arg0 boolean
-function __GameEntity:removeFromWorld(arg0) end
+---@param offloadEntityToMeta boolean
+function __GameEntity:removeFromWorld(offloadEntityToMeta) end
 
 function __GameEntity:renderlast() end
 
@@ -152,14 +152,14 @@ function __GameEntity:requiresEntitySave() end
 
 function __GameEntity:reset() end
 
----@param arg0 ByteBuffer
-function __GameEntity:saveEntity(arg0) end
+---@param output ByteBuffer
+function __GameEntity:saveEntity(output) end
 
----@param arg0 UdpConnection
-function __GameEntity:sendSyncEntity(arg0) end
+---@param ignoreConnection UdpConnection
+function __GameEntity:sendSyncEntity(ignoreConnection) end
 
----@param arg0 IsoPlayer
-function __GameEntity:setUsingPlayer(arg0) end
+---@param player IsoPlayer
+function __GameEntity:setUsingPlayer(player) end
 
 GameEntity = {}
 

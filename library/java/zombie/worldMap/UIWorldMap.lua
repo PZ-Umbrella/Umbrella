@@ -3,61 +3,76 @@
 ---@class UIWorldMap: UIElement
 local __UIWorldMap = {}
 
----@param arg0 Texture
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 boolean
----@param arg8 boolean
----@param arg9 number
----@param arg10 number
----@param arg11 number
----@param arg12 number
-function __UIWorldMap:DrawSymbol(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12) end
+---@param tex Texture
+---@param pointOfRotationX number
+---@param pointOfRotationY number
+---@param width number
+---@param height number
+---@param degrees number
+---@param scale number
+---@param bMatchPerspective boolean
+---@param bApplyZoom boolean
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function __UIWorldMap:DrawSymbol(
+	tex,
+	pointOfRotationX,
+	pointOfRotationY,
+	width,
+	height,
+	degrees,
+	scale,
+	bMatchPerspective,
+	bApplyZoom,
+	r,
+	g,
+	b,
+	a
+)
+end
 
----@param arg0 UIFont
----@param arg1 string
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 number
-function __UIWorldMap:DrawTextSdf(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+---@param font UIFont
+---@param text string
+---@param x number
+---@param y number
+---@param scale number
+---@param r number
+---@param g number
+---@param b number
+---@param alpha number
+function __UIWorldMap:DrawTextSdf(font, text, x, y, scale, r, g, b, alpha) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 boolean
----@param arg9 boolean
----@param arg10 number
----@param arg11 number
----@param arg12 number
----@param arg13 number
+---@param layerID string
+---@param text string
+---@param pointOfRotationX number
+---@param pointOfRotationY number
+---@param anchorX number
+---@param anchorY number
+---@param degrees number
+---@param scale number
+---@param bMatchPerspective boolean
+---@param bApplyZoom boolean
+---@param r number
+---@param g number
+---@param b number
+---@param alpha number
 function __UIWorldMap:DrawTextSdfRotated(
-	arg0,
-	arg1,
-	arg2,
-	arg3,
-	arg4,
-	arg5,
-	arg6,
-	arg7,
-	arg8,
-	arg9,
-	arg10,
-	arg11,
-	arg12,
-	arg13
+	layerID,
+	text,
+	pointOfRotationX,
+	pointOfRotationY,
+	anchorX,
+	anchorY,
+	degrees,
+	scale,
+	bMatchPerspective,
+	bApplyZoom,
+	r,
+	g,
+	b,
+	alpha
 )
 end
 
@@ -114,11 +129,11 @@ function __UIWorldMap:render() end
 
 function __UIWorldMap:scaleWidthToHeight() end
 
----@param arg0 boolean
-function __UIWorldMap:setDoStencil(arg0) end
+---@param value boolean
+function __UIWorldMap:setDoStencil(value) end
 
----@param arg0 boolean
-function __UIWorldMap:setMapEditor(arg0) end
+---@param b boolean
+function __UIWorldMap:setMapEditor(b) end
 
 function __UIWorldMap:update() end
 

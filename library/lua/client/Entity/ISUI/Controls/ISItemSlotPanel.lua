@@ -1,7 +1,7 @@
 ---@meta
 
 ---@class ISItemSlotPanel : ISGroupBox
----@field actionAnim unknown?
+---@field actionAnim string?
 ---@field allowDrop boolean
 ---@field drawProgress boolean
 ---@field entity GameEntity

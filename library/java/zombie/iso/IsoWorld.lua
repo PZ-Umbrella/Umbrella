@@ -153,9 +153,9 @@ function __IsoWorld:getRandomizedWorldBase() end
 ---@return ArrayList<RandomizedZoneStoryBase>
 function __IsoWorld:getRandomizedZoneList() end
 
----@param arg0 string
+---@param name string
 ---@return RandomizedZoneStoryBase
-function __IsoWorld:getRandomizedZoneStoryByName(arg0) end
+function __IsoWorld:getRandomizedZoneStoryByName(name) end
 
 ---@return Rules
 function __IsoWorld:getRules() end
@@ -207,16 +207,16 @@ function __IsoWorld:isHydroPowerOn() end
 ---@return boolean
 function __IsoWorld:isValidSquare(x, y, z) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
----@param arg7 table
+---@param name string
+---@param type string
+---@param x integer
+---@param y integer
+---@param z integer
+---@param width integer
+---@param height integer
+---@param properties table
 ---@return Zone
-function __IsoWorld:registerMannequinZone(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+function __IsoWorld:registerMannequinZone(name, type, x, y, z, width, height, properties) end
 
 ---@param name string
 ---@param type string
@@ -235,16 +235,16 @@ function __IsoWorld:registerRoomTone(name, type, x, y, z, width, height, propert
 ---@param properties table
 function __IsoWorld:registerSpawnOrigin(x, y, width, height, properties) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
----@param arg7 table
+---@param name string
+---@param type string
+---@param x integer
+---@param y integer
+---@param z integer
+---@param width integer
+---@param height integer
+---@param properties table
 ---@return Zone
-function __IsoWorld:registerVehiclesZone(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+function __IsoWorld:registerVehiclesZone(name, type, x, y, z, width, height, properties) end
 
 ---@param x number
 ---@param y number
@@ -260,26 +260,26 @@ function __IsoWorld:registerWaterFlow(x, y, flow, speed) end
 ---@param water_ground number
 function __IsoWorld:registerWaterZone(x1, y1, x2, y2, shore, water_ground) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
+---@param name string
+---@param type string
+---@param x integer
+---@param y integer
+---@param z integer
+---@param width integer
+---@param height integer
 ---@return Zone
-function __IsoWorld:registerZone(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+function __IsoWorld:registerZone(name, type, x, y, z, width, height) end
 
 ---@deprecated
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
+---@param name string
+---@param type string
+---@param x integer
+---@param y integer
+---@param z integer
+---@param width integer
+---@param height integer
 ---@return Zone
-function __IsoWorld:registerZoneNoOverlap(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+function __IsoWorld:registerZoneNoOverlap(name, type, x, y, z, width, height) end
 
 ---@param lotDir string
 function __IsoWorld:removeZonesForLotDirectory(lotDir) end
@@ -295,14 +295,14 @@ function __IsoWorld:sceneCullAnimals() end
 
 function __IsoWorld:sceneCullZombies() end
 
----@param arg0 AttachmentsHandler
-function __IsoWorld:setAttachmentsHandler(arg0) end
+---@param attachmentsHandler AttachmentsHandler
+function __IsoWorld:setAttachmentsHandler(attachmentsHandler) end
 
----@param arg0 BiomeMap
-function __IsoWorld:setBiomeMap(arg0) end
+---@param biomeMap BiomeMap
+function __IsoWorld:setBiomeMap(biomeMap) end
 
----@param arg0 Blending
-function __IsoWorld:setBlending(arg0) end
+---@param blending Blending
+function __IsoWorld:setBlending(blending) end
 
 ---@param difficulty string
 function __IsoWorld:setDifficulty(difficulty) end
@@ -343,14 +343,14 @@ function __IsoWorld:setLuaSpawnCellY(luaSpawnCellY) end
 ---@param world string
 function __IsoWorld:setMap(world) end
 
----@param arg0 string
-function __IsoWorld:setPreset(arg0) end
+---@param mode string
+function __IsoWorld:setPreset(mode) end
 
----@param arg0 Rules
-function __IsoWorld:setRules(arg0) end
+---@param rules Rules
+function __IsoWorld:setRules(rules) end
 
----@param arg0 string
-function __IsoWorld:setSpawnRegion(arg0) end
+---@param spawnRegionName string
+function __IsoWorld:setSpawnRegion(spawnRegionName) end
 
 ---@param timeSinceLastSurvivorInHorde integer
 function __IsoWorld:setTimeSinceLastSurvivorInHorde(timeSinceLastSurvivorInHorde) end
@@ -364,11 +364,11 @@ function __IsoWorld:setWgChunk(wgChunk) end
 ---@param world string
 function __IsoWorld:setWorld(world) end
 
----@param arg0 List<ZombieVoronoi>
-function __IsoWorld:setZombieVoronois(arg0) end
+---@param zombieVoronois List<ZombieVoronoi>
+function __IsoWorld:setZombieVoronois(zombieVoronois) end
 
----@param arg0 ZoneGenerator
-function __IsoWorld:setZoneGenerator(arg0) end
+---@param zoneGenerator ZoneGenerator
+function __IsoWorld:setZoneGenerator(zoneGenerator) end
 
 ---@param emitter BaseSoundEmitter
 function __IsoWorld:takeOwnershipOfEmitter(emitter) end
@@ -576,10 +576,10 @@ function IsoWorld.readInt(_in) end
 ---@return string
 function IsoWorld.readString(_in) end
 
----@param arg0 InputStream
----@param arg1 StringBuilder
+---@param _in InputStream
+---@param input StringBuilder
 ---@return string
-function IsoWorld.readString(arg0, arg1) end
+function IsoWorld.readString(_in, input) end
 
 ---@return IsoWorld
 function IsoWorld.new() end

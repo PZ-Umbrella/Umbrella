@@ -167,7 +167,7 @@ function CoopOptionsScreenPanel:onLoseJoypadFocus(joypadData) end
 CoopConnection = {
 	username = "admin",
 	servername = "servertest",
-	memory = is64bit() and 4096 or 1024, ---@type number?
+	memory = 4096, ---@type number?
 }
 CoopConnection.serverPassword = nil ---@type string?
 

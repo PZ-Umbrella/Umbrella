@@ -89,6 +89,7 @@ function ISMPTabPanel:onMouseUp(x, y) end
 ---@param y number
 function ISMPTabPanel:onMouseUpOutside(x, y) end
 
+---@param del number
 ---@return boolean
 function ISMPTabPanel:onMouseWheel(del) end
 

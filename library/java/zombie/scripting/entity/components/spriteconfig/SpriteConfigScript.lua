@@ -3,8 +3,8 @@
 ---@class SpriteConfigScript: ComponentScript
 local __SpriteConfigScript = {}
 
----@param arg0 ScriptLoadMode
-function __SpriteConfigScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __SpriteConfigScript:OnScriptsLoaded(loadMode) end
 
 function __SpriteConfigScript:PreReload() end
 
@@ -29,9 +29,9 @@ function __SpriteConfigScript:getDebugItem() end
 ---@return boolean
 function __SpriteConfigScript:getDontNeedFrame() end
 
----@param arg0 integer
+---@param id integer
 ---@return SpriteConfigScript.FaceScript
-function __SpriteConfigScript:getFace(arg0) end
+function __SpriteConfigScript:getFace(id) end
 
 ---@return integer
 function __SpriteConfigScript:getHealth() end
@@ -72,8 +72,8 @@ function __SpriteConfigScript:getSkillBaseHealth() end
 ---@return string
 function __SpriteConfigScript:getTimedActionOnIsValid() end
 
----@param arg0 IVersionHash
-function __SpriteConfigScript:getVersion(arg0) end
+---@param hash IVersionHash
+function __SpriteConfigScript:getVersion(hash) end
 
 ---@return boolean
 function __SpriteConfigScript:isMultiTile() end

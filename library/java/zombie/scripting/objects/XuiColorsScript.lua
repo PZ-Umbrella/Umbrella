@@ -3,9 +3,9 @@
 ---@class XuiColorsScript: BaseScriptObject
 local __XuiColorsScript = {}
 
----@param arg0 string
----@param arg1 string
-function __XuiColorsScript:Load(arg0, arg1) end
+---@param name string
+---@param totalFile string
+function __XuiColorsScript:Load(name, totalFile) end
 
 ---@return Map<string, Color>
 function __XuiColorsScript:getColorMap() end

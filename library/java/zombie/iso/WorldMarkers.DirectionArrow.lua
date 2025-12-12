@@ -98,10 +98,10 @@ DirectionArrow = {}
 ---@type boolean
 DirectionArrow.doDebug = nil
 
----@param arg0 WorldMarkers
----@param arg1 integer
+---@param this_0 WorldMarkers
+---@param plrIndex integer
 ---@return WorldMarkers.DirectionArrow
-function DirectionArrow.new(arg0, arg1) end
+function DirectionArrow.new(this_0, plrIndex) end
 
 ---@type Class<WorldMarkers.DirectionArrow>
 DirectionArrow.class = nil

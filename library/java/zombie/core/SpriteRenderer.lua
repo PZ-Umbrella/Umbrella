@@ -7,9 +7,9 @@ function __SpriteRenderer:EndShader() end
 
 function __SpriteRenderer:FBORenderChunkEnd() end
 
----@param arg0 integer
----@param arg1 boolean
-function __SpriteRenderer:FBORenderChunkStart(arg0, arg1) end
+---@param index integer
+---@param bClear boolean
+function __SpriteRenderer:FBORenderChunkStart(index, bClear) end
 
 function __SpriteRenderer:NewFrame() end
 
@@ -48,17 +48,17 @@ function __SpriteRenderer:ShaderUpdate4f(shaderID, uniform, value1, value2, valu
 ---@param playerIndex integer
 function __SpriteRenderer:StartShader(iD, playerIndex) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 ShaderUniformSetter
-function __SpriteRenderer:StartShader(arg0, arg1, arg2) end
+---@param iD integer
+---@param playerIndex integer
+---@param uniforms ShaderUniformSetter
+function __SpriteRenderer:StartShader(iD, playerIndex, uniforms) end
 
 ---@param waitCallback BooleanSupplier
 ---@return SpriteRenderState
 function __SpriteRenderer:acquireStateForRendering(waitCallback) end
 
----@param arg0 PerformanceProfileProbe
-function __SpriteRenderer:beginProfile(arg0) end
+---@param probe PerformanceProfileProbe
+function __SpriteRenderer:beginProfile(probe) end
 
 function __SpriteRenderer:clearCutawayTexture() end
 
@@ -72,9 +72,9 @@ function __SpriteRenderer:create() end
 ---@param val number
 function __SpriteRenderer:doCoreIntParam(id, val) end
 
----@param arg0 TextureDraw.GenericDrawer
+---@param gd TextureDraw.GenericDrawer
 ---@return TextureDraw
-function __SpriteRenderer:drawGeneric(arg0) end
+function __SpriteRenderer:drawGeneric(gd) end
 
 ---@param model ModelManager.ModelSlot
 function __SpriteRenderer:drawModel(model) end
@@ -84,11 +84,11 @@ function __SpriteRenderer:drawModel(model) end
 ---@param var2 integer
 function __SpriteRenderer:drawParticles(playerIndex, var1, var2) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
-function __SpriteRenderer:drawPuddles(arg0, arg1, arg2, arg3) end
+---@param playerIndex integer
+---@param z integer
+---@param firstSquare integer
+---@param numSquares integer
+function __SpriteRenderer:drawPuddles(playerIndex, z, firstSquare, numSquares) end
 
 ---@param shader Shader
 ---@param playerIndex integer
@@ -102,8 +102,8 @@ function __SpriteRenderer:drawSkyBox(shader, playerIndex, apiId, bufferId) end
 ---@param bShore boolean
 function __SpriteRenderer:drawWater(shader, playerIndex, apiId, bShore) end
 
----@param arg0 PerformanceProfileProbe
-function __SpriteRenderer:endProfile(arg0) end
+---@param probe PerformanceProfileProbe
+function __SpriteRenderer:endProfile(probe) end
 
 ---@return boolean
 function __SpriteRenderer:getDoAdditive() end
@@ -143,9 +143,9 @@ function __SpriteRenderer:glAlphaFunc(a, b) end
 ---@param a integer
 function __SpriteRenderer:glBind(a) end
 
----@param arg0 integer
----@param arg1 integer
-function __SpriteRenderer:glBindFramebuffer(arg0, arg1) end
+---@param binding integer
+---@param fbo integer
+function __SpriteRenderer:glBindFramebuffer(binding, fbo) end
 
 ---@param a integer
 function __SpriteRenderer:glBlendEquation(a) end
@@ -173,8 +173,8 @@ function __SpriteRenderer:glClear(a) end
 ---@param a integer
 function __SpriteRenderer:glClearColor(r, g, b, a) end
 
----@param arg0 number
-function __SpriteRenderer:glClearDepth(arg0) end
+---@param d number
+function __SpriteRenderer:glClearDepth(d) end
 
 ---@param a integer
 ---@param b integer
@@ -182,8 +182,8 @@ function __SpriteRenderer:glClearDepth(arg0) end
 ---@param d integer
 function __SpriteRenderer:glColorMask(a, b, c, d) end
 
----@param arg0 integer
-function __SpriteRenderer:glDepthFunc(arg0) end
+---@param a integer
+function __SpriteRenderer:glDepthFunc(a) end
 
 ---@param b boolean
 function __SpriteRenderer:glDepthMask(b) end
@@ -209,22 +209,22 @@ function __SpriteRenderer:glDoStartFrame(w, h, zoom, player) end
 ---@param isTextFrame boolean
 function __SpriteRenderer:glDoStartFrame(w, h, zoom, player, isTextFrame) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 number
----@param arg3 integer
-function __SpriteRenderer:glDoStartFrameFlipY(arg0, arg1, arg2, arg3) end
+---@param w integer
+---@param h integer
+---@param zoom number
+---@param player integer
+function __SpriteRenderer:glDoStartFrameFlipY(w, h, zoom, player) end
 
 ---@param w integer
 ---@param h integer
 ---@param player integer
 function __SpriteRenderer:glDoStartFrameFx(w, h, player) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 number
----@param arg3 integer
-function __SpriteRenderer:glDoStartFrameNoZoom(arg0, arg1, arg2, arg3) end
+---@param w integer
+---@param h integer
+---@param zoom number
+---@param player integer
+function __SpriteRenderer:glDoStartFrameNoZoom(w, h, zoom, player) end
 
 ---@param a integer
 function __SpriteRenderer:glEnable(a) end
@@ -283,12 +283,12 @@ function __SpriteRenderer:prePopulating() end
 
 function __SpriteRenderer:pushFrameDown() end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 boolean
-function __SpriteRenderer:pushIsoView(arg0, arg1, arg2, arg3, arg4) end
+---@param ox number
+---@param oy number
+---@param oz number
+---@param useangle number
+---@param vehicle boolean
+function __SpriteRenderer:pushIsoView(ox, oy, oz, useangle, vehicle) end
 
 function __SpriteRenderer:releaseFBORenderChunkLock() end
 
@@ -364,51 +364,28 @@ function __SpriteRenderer:render(
 )
 end
 
----@param arg0 Texture
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 number
----@param arg9 number
----@param arg10 number
----@param arg11 number
----@param arg12 number
----@param arg13 number
----@param arg14 number
----@param arg15 number
----@param arg16 number
----@param arg17 number
----@param arg18 number
----@param arg19 number
----@param arg20 number
-function __SpriteRenderer:render(
-	arg0,
-	arg1,
-	arg2,
-	arg3,
-	arg4,
-	arg5,
-	arg6,
-	arg7,
-	arg8,
-	arg9,
-	arg10,
-	arg11,
-	arg12,
-	arg13,
-	arg14,
-	arg15,
-	arg16,
-	arg17,
-	arg18,
-	arg19,
-	arg20
-)
-end
+---@param tex Texture
+---@param x1 number
+---@param y1 number
+---@param x2 number
+---@param y2 number
+---@param x3 number
+---@param y3 number
+---@param x4 number
+---@param y4 number
+---@param u1 number
+---@param v1 number
+---@param u2 number
+---@param v2 number
+---@param u3 number
+---@param v3 number
+---@param u4 number
+---@param v4 number
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function __SpriteRenderer:render(tex, x1, y1, x2, y2, x3, y3, x4, y4, u1, v1, u2, v2, u3, v3, u4, v4, r, g, b, a) end
 
 ---@param tex Texture
 ---@param x1 number
@@ -437,18 +414,18 @@ function __SpriteRenderer:render(tex, x1, y1, x2, y2, x3, y3, x4, y4, c1, c2, c3
 ---@param texdModifier Consumer<TextureDraw>
 function __SpriteRenderer:render(tex, x, y, width, height, r, g, b, a, texdModifier) end
 
----@param arg0 Texture
----@param arg1 Texture
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 number
----@param arg9 number
----@param arg10 Consumer<TextureDraw>
-function __SpriteRenderer:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10) end
+---@param tex Texture
+---@param tex2 Texture
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+---@param texdModifier Consumer<TextureDraw>
+function __SpriteRenderer:render(tex, tex2, x, y, width, height, r, g, b, a, texdModifier) end
 
 ---@param tex Texture
 ---@param x number
@@ -489,8 +466,8 @@ function __SpriteRenderer:render(tex, x, y, width, height, r, g, b, a, u1, v1, u
 ---@param texdModifier Consumer<TextureDraw>
 function __SpriteRenderer:render(tex, x, y, width, height, r, g, b, a, u1, v1, u2, v2, u3, v3, u4, v4, texdModifier) end
 
----@param arg0 ImDrawData
-function __SpriteRenderer:render(arg0) end
+---@param drawData ImDrawData
+function __SpriteRenderer:render(drawData) end
 
 ---@param tex Texture
 ---@param x integer
@@ -691,17 +668,17 @@ function __SpriteRenderer:renderflipped(tex, x, y, width, height, r, g, b, a, te
 ---@param texdModifier Consumer<TextureDraw>
 function __SpriteRenderer:renderi(tex, x, y, width, height, r, g, b, a, texdModifier) end
 
----@param arg0 Texture
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 number
----@param arg9 number
-function __SpriteRenderer:renderline(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+---@param tex Texture
+---@param x1 integer
+---@param y1 integer
+---@param x2 integer
+---@param y2 integer
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+---@param thickness number
+function __SpriteRenderer:renderline(tex, x1, y1, x2, y2, r, g, b, a, thickness) end
 
 ---@param tex Texture
 ---@param x1 integer
@@ -714,30 +691,30 @@ function __SpriteRenderer:renderline(arg0, arg1, arg2, arg3, arg4, arg5, arg6, a
 ---@param a number
 function __SpriteRenderer:renderline(tex, x1, y1, x2, y2, r, g, b, a) end
 
----@param arg0 Texture
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 number
----@param arg9 integer
-function __SpriteRenderer:renderlinef(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
+---@param tex Texture
+---@param x1 number
+---@param y1 number
+---@param x2 number
+---@param y2 number
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+---@param thickness integer
+function __SpriteRenderer:renderlinef(tex, x1, y1, x2, y2, r, g, b, a, thickness) end
 
----@param arg0 Texture
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 number
----@param arg9 number
----@param arg10 number
-function __SpriteRenderer:renderlinef(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10) end
+---@param tex Texture
+---@param x1 number
+---@param y1 number
+---@param x2 number
+---@param y2 number
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+---@param baseThickness number
+---@param topThickness number
+function __SpriteRenderer:renderlinef(tex, x1, y1, x2, y2, r, g, b, a, baseThickness, topThickness) end
 
 ---@param tex Texture
 ---@param x integer
@@ -746,12 +723,12 @@ function __SpriteRenderer:renderlinef(arg0, arg1, arg2, arg3, arg4, arg5, arg6, 
 ---@param h integer
 function __SpriteRenderer:setCutawayTexture(tex, x, y, w, h) end
 
----@param arg0 Texture
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
-function __SpriteRenderer:setCutawayTexture2(arg0, arg1, arg2, arg3, arg4) end
+---@param tex Texture
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
+function __SpriteRenderer:setCutawayTexture2(tex, x, y, w, h) end
 
 ---@param style AbstractStyle
 function __SpriteRenderer:setDefaultStyle(style) end

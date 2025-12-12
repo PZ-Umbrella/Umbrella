@@ -3,15 +3,15 @@
 ---@class SyncPlayerStatsPacket: INetworkPacket
 local __SyncPlayerStatsPacket = {}
 
----@param arg0 ByteBuffer
----@param arg1 UdpConnection
-function __SyncPlayerStatsPacket:parse(arg0, arg1) end
+---@param b ByteBuffer
+---@param connection UdpConnection
+function __SyncPlayerStatsPacket:parse(b, connection) end
 
 ---@param values kahlua.Array<any>
 function __SyncPlayerStatsPacket:setData(values) end
 
----@param arg0 ByteBufferWriter
-function __SyncPlayerStatsPacket:write(arg0) end
+---@param b ByteBufferWriter
+function __SyncPlayerStatsPacket:write(b) end
 
 SyncPlayerStatsPacket = {}
 

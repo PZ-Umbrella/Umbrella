@@ -87,13 +87,13 @@ function Mouse.isButtonDown(number) end
 ---@return boolean
 function Mouse.isButtonDownUICheck(number) end
 
----@param arg0 integer
+---@param number integer
 ---@return boolean
-function Mouse.isButtonPressed(arg0) end
+function Mouse.isButtonPressed(number) end
 
----@param arg0 integer
+---@param number integer
 ---@return boolean
-function Mouse.isButtonReleased(arg0) end
+function Mouse.isButtonReleased(number) end
 
 ---@return boolean
 function Mouse.isCursorVisible() end
@@ -154,9 +154,9 @@ function Mouse.setXY(x, y) end
 
 function Mouse.update() end
 
----@param arg0 integer
+---@param number integer
 ---@return boolean
-function Mouse.wasButtonDown(arg0) end
+function Mouse.wasButtonDown(number) end
 
 ---@return Mouse
 function Mouse.new() end

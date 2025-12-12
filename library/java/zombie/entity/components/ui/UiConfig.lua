@@ -15,9 +15,9 @@ function __UiConfig:getEntityUiStyle() end
 ---@return XuiSkin
 function __UiConfig:getSkin() end
 
----@param arg0 boolean
+---@param doDefault boolean
 ---@return XuiSkin
-function __UiConfig:getSkin(arg0) end
+function __UiConfig:getSkin(doDefault) end
 
 ---@return XuiSkin
 function __UiConfig:getSkinOrDefault() end

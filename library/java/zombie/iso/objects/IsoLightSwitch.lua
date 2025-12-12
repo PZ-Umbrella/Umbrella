@@ -83,18 +83,18 @@ function __IsoLightSwitch:removeFromWorld() end
 ---@return InventoryItem
 function __IsoLightSwitch:removeLightBulb(chr) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 ColorInfo
-function __IsoLightSwitch:renderAnimatedAttachments(arg0, arg1, arg2, arg3) end
+---@param x number
+---@param y number
+---@param z number
+---@param col ColorInfo
+function __IsoLightSwitch:renderAnimatedAttachments(x, y, z, col) end
 
 ---@param output ByteBuffer
 ---@param IS_DEBUG_SAVE boolean
 function __IsoLightSwitch:save(output, IS_DEBUG_SAVE) end
 
----@param arg0 boolean
-function __IsoLightSwitch:setActivated(arg0) end
+---@param val boolean
+function __IsoLightSwitch:setActivated(val) end
 
 ---@param active boolean
 ---@return boolean
@@ -114,8 +114,8 @@ function __IsoLightSwitch:setActive(active, setActiveBoolOnly, ignoreSwitchCheck
 ---@param item string
 function __IsoLightSwitch:setBulbItemRaw(item) end
 
----@param arg0 boolean
-function __IsoLightSwitch:setCanBeModified(arg0) end
+---@param val boolean
+function __IsoLightSwitch:setCanBeModified(val) end
 
 ---@param item InventoryItem
 function __IsoLightSwitch:setCustomSettingsToItem(item) end
@@ -123,8 +123,8 @@ function __IsoLightSwitch:setCustomSettingsToItem(item) end
 ---@param delta number
 function __IsoLightSwitch:setDelta(delta) end
 
----@param arg0 boolean
-function __IsoLightSwitch:setHasBattery(arg0) end
+---@param val boolean
+function __IsoLightSwitch:setHasBattery(val) end
 
 ---@param b boolean
 function __IsoLightSwitch:setHasBatteryRaw(b) end
@@ -144,8 +144,8 @@ function __IsoLightSwitch:setPrimaryR(r) end
 ---@param b boolean
 function __IsoLightSwitch:setUseBattery(b) end
 
----@param arg0 boolean
-function __IsoLightSwitch:setUseBatteryDirect(arg0) end
+---@param b boolean
+function __IsoLightSwitch:setUseBatteryDirect(b) end
 
 ---@return boolean
 function __IsoLightSwitch:shouldShowOnOverlay() end
@@ -184,12 +184,12 @@ function IsoLightSwitch.chunkLoaded(chunk) end
 ---@return IsoLightSwitch
 function IsoLightSwitch.new(cell) end
 
----@param arg0 IsoCell
----@param arg1 IsoGridSquare
----@param arg2 IsoSprite
----@param arg3 integer
+---@param cell IsoCell
+---@param sq IsoGridSquare
+---@param gid IsoSprite
+---@param roomId integer
 ---@return IsoLightSwitch
-function IsoLightSwitch.new(arg0, arg1, arg2, arg3) end
+function IsoLightSwitch.new(cell, sq, gid, roomId) end
 
 ---@type Class<IsoLightSwitch>
 IsoLightSwitch.class = nil

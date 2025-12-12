@@ -4,26 +4,26 @@
 ---@class PZUnmodifiableCollection<E>: Collection<E>
 local __PZUnmodifiableCollection = {}
 
----@param arg0 E
+---@param e E
 ---@return boolean
-function __PZUnmodifiableCollection:add(arg0) end
+function __PZUnmodifiableCollection:add(e) end
 
----@param arg0 Collection<E>
+---@param coll Collection<E>
 ---@return boolean
-function __PZUnmodifiableCollection:addAll(arg0) end
+function __PZUnmodifiableCollection:addAll(coll) end
 
 function __PZUnmodifiableCollection:clear() end
 
----@param arg0 any
+---@param o any
 ---@return boolean
-function __PZUnmodifiableCollection:contains(arg0) end
+function __PZUnmodifiableCollection:contains(o) end
 
----@param arg0 Collection<any>
+---@param coll Collection<any>
 ---@return boolean
-function __PZUnmodifiableCollection:containsAll(arg0) end
+function __PZUnmodifiableCollection:containsAll(coll) end
 
----@param arg0 Consumer<any>
-function __PZUnmodifiableCollection:forEach(arg0) end
+---@param action Consumer<any>
+function __PZUnmodifiableCollection:forEach(action) end
 
 ---@return boolean
 function __PZUnmodifiableCollection:isEmpty() end
@@ -34,21 +34,21 @@ function __PZUnmodifiableCollection:iterator() end
 ---@return Stream<E>
 function __PZUnmodifiableCollection:parallelStream() end
 
----@param arg0 any
+---@param o any
 ---@return boolean
-function __PZUnmodifiableCollection:remove(arg0) end
+function __PZUnmodifiableCollection:remove(o) end
 
----@param arg0 Collection<any>
+---@param coll Collection<any>
 ---@return boolean
-function __PZUnmodifiableCollection:removeAll(arg0) end
+function __PZUnmodifiableCollection:removeAll(coll) end
 
----@param arg0 Predicate<any>
+---@param filter Predicate<any>
 ---@return boolean
-function __PZUnmodifiableCollection:removeIf(arg0) end
+function __PZUnmodifiableCollection:removeIf(filter) end
 
----@param arg0 Collection<any>
+---@param coll Collection<any>
 ---@return boolean
-function __PZUnmodifiableCollection:retainAll(arg0) end
+function __PZUnmodifiableCollection:retainAll(coll) end
 
 ---@return integer
 function __PZUnmodifiableCollection:size() end
@@ -63,14 +63,14 @@ function __PZUnmodifiableCollection:stream() end
 function __PZUnmodifiableCollection:toArray() end
 
 ---@generic T
----@param arg0 T
+---@param a T
 ---@return T
-function __PZUnmodifiableCollection:toArray(arg0) end
+function __PZUnmodifiableCollection:toArray(a) end
 
 ---@generic T
----@param arg0 IntFunction<T>
+---@param f IntFunction<T>
 ---@return T
-function __PZUnmodifiableCollection:toArray(arg0) end
+function __PZUnmodifiableCollection:toArray(f) end
 
 ---@return string
 function __PZUnmodifiableCollection:toString() end

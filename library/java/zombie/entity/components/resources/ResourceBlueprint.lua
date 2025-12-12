@@ -24,9 +24,9 @@ function __ResourceBlueprint:getId() end
 ---@return ResourceType
 function __ResourceBlueprint:getType() end
 
----@param arg0 ResourceFlag
+---@param flag ResourceFlag
 ---@return boolean
-function __ResourceBlueprint:hasFlag(arg0) end
+function __ResourceBlueprint:hasFlag(flag) end
 
 ---@return boolean
 function __ResourceBlueprint:isStackAnyItem() end
@@ -39,52 +39,52 @@ ResourceBlueprint.serialElementSeparator = nil
 ---@type string
 ResourceBlueprint.serialSubSeparator = nil
 
----@param arg0 string
+---@param serial string
 ---@return ResourceBlueprint
-function ResourceBlueprint.Deserialize(arg0) end
+function ResourceBlueprint.Deserialize(serial) end
 
----@param arg0 ResourceBlueprint
----@param arg1 string
+---@param bp ResourceBlueprint
+---@param serial string
 ---@return ResourceBlueprint
-function ResourceBlueprint.Deserialize(arg0, arg1) end
+function ResourceBlueprint.Deserialize(bp, serial) end
 
----@param arg0 ResourceBlueprint
----@param arg1 string
----@param arg2 boolean
+---@param bp ResourceBlueprint
+---@param serial string
+---@param flagsAsString boolean
 ---@return ResourceBlueprint
-function ResourceBlueprint.Deserialize(arg0, arg1, arg2) end
+function ResourceBlueprint.Deserialize(bp, serial, flagsAsString) end
 
----@param arg0 string
+---@param serial string
 ---@return ResourceBlueprint
-function ResourceBlueprint.DeserializeFromScript(arg0) end
+function ResourceBlueprint.DeserializeFromScript(serial) end
 
----@param arg0 ResourceBlueprint
+---@param bp ResourceBlueprint
 ---@return string
-function ResourceBlueprint.Serialize(arg0) end
+function ResourceBlueprint.Serialize(bp) end
 
----@param arg0 string
----@param arg1 ResourceType
----@param arg2 ResourceIO
----@param arg3 number
----@param arg4 boolean
----@param arg5 string
----@param arg6 ResourceChannel
----@param arg7 EnumBitStore<ResourceFlag>
+---@param id string
+---@param type ResourceType
+---@param io ResourceIO
+---@param capacity number
+---@param stackAnyItem boolean
+---@param filter string
+---@param channel ResourceChannel
+---@param flags EnumBitStore<ResourceFlag>
 ---@return string
-function ResourceBlueprint.Serialize(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+function ResourceBlueprint.Serialize(id, type, io, capacity, stackAnyItem, filter, channel, flags) end
 
----@param arg0 string
----@param arg1 ResourceType
----@param arg2 ResourceIO
----@param arg3 number
----@param arg4 string
----@param arg5 ResourceChannel
----@param arg6 EnumBitStore<ResourceFlag>
+---@param id string
+---@param type ResourceType
+---@param io ResourceIO
+---@param capacity number
+---@param filter string
+---@param channel ResourceChannel
+---@param flags EnumBitStore<ResourceFlag>
 ---@return ResourceBlueprint
-function ResourceBlueprint.alloc(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+function ResourceBlueprint.alloc(id, type, io, capacity, filter, channel, flags) end
 
----@param arg0 ResourceBlueprint
-function ResourceBlueprint.release(arg0) end
+---@param bp ResourceBlueprint
+function ResourceBlueprint.release(bp) end
 
 ---@type Class<ResourceBlueprint>
 ResourceBlueprint.class = nil

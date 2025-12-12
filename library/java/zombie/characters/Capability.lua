@@ -293,9 +293,9 @@ Capability.UseZombieDontAttackCheat = nil
 ---@type Capability
 Capability.WorkWithUserlog = nil
 
----@param arg0 string
+---@param name string
 ---@return Capability
-function Capability.valueOf(arg0) end
+function Capability.valueOf(name) end
 
 ---@return kahlua.Array<Capability>
 function Capability.values() end

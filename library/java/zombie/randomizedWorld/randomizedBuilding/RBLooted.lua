@@ -4,10 +4,10 @@
 ---@class RBLooted: RandomizedBuildingBase
 local __RBLooted = {}
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param def BuildingDef
+---@param force boolean
 ---@return boolean
-function __RBLooted:isValid(arg0, arg1) end
+function __RBLooted:isValid(def, force) end
 
 ---@param def BuildingDef
 function __RBLooted:randomizeBuilding(def) end

@@ -75,9 +75,9 @@ CharacterActionAnims.Shave = nil
 ---@type CharacterActionAnims
 CharacterActionAnims.TakePills = nil
 
----@param arg0 string
+---@param name string
 ---@return CharacterActionAnims
-function CharacterActionAnims.valueOf(arg0) end
+function CharacterActionAnims.valueOf(name) end
 
 ---Returns an array containing the constants of this enum class, in
 ---the order they are declared.

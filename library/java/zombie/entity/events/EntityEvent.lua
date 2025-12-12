@@ -13,10 +13,10 @@ function __EntityEvent:release() end
 
 EntityEvent = {}
 
----@param arg0 EntityEventType
----@param arg1 GameEntity
+---@param type EntityEventType
+---@param entity GameEntity
 ---@return EntityEvent
-function EntityEvent.Alloc(arg0, arg1) end
+function EntityEvent.Alloc(type, entity) end
 
 ---@type Class<EntityEvent>
 EntityEvent.class = nil

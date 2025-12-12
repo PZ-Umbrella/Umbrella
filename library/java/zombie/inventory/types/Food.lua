@@ -14,11 +14,11 @@ function __Food:DoTooltip(tooltipUI, layout) end
 ---@return boolean
 function __Food:IsFood() end
 
----@param arg0 ItemContainer
-function __Food:OnAddedToContainer(arg0) end
+---@param container ItemContainer
+function __Food:OnAddedToContainer(container) end
 
----@param arg0 ItemContainer
-function __Food:OnBeforeRemoveFromContainer(arg0) end
+---@param container ItemContainer
+function __Food:OnBeforeRemoveFromContainer(container) end
 
 ---@return boolean
 function __Food:canAge() end
@@ -26,45 +26,45 @@ function __Food:canAge() end
 ---@return boolean
 function __Food:canBeFrozen() end
 
----@param arg0 IsoHutch
+---@param hutch IsoHutch
 ---@return boolean
-function __Food:checkEggHatch(arg0) end
+function __Food:checkEggHatch(hutch) end
 
----@param arg0 Food
-function __Food:copyAgeFrom(arg0) end
+---@param otherFood Food
+function __Food:copyAgeFrom(otherFood) end
 
----@param arg0 Food
-function __Food:copyCookedBurntFrom(arg0) end
+---@param otherFood Food
+function __Food:copyCookedBurntFrom(otherFood) end
 
----@param arg0 Food
-function __Food:copyExtraItems(arg0) end
+---@param otherFood Food
+function __Food:copyExtraItems(otherFood) end
 
----@param arg0 Food
-function __Food:copyFoodFrom(arg0) end
+---@param otherFood Food
+function __Food:copyFoodFrom(otherFood) end
 
----@param arg0 Food
----@param arg1 integer
-function __Food:copyFoodFromSplit(arg0, arg1) end
+---@param otherFood Food
+---@param split integer
+function __Food:copyFoodFromSplit(otherFood, split) end
 
----@param arg0 Food
-function __Food:copyFrozenFrom(arg0) end
+---@param otherFood Food
+function __Food:copyFrozenFrom(otherFood) end
 
----@param arg0 Food
-function __Food:copyNutritionFrom(arg0) end
+---@param otherFood Food
+function __Food:copyNutritionFrom(otherFood) end
 
----@param arg0 Food
----@param arg1 number
-function __Food:copyNutritionFromRatio(arg0, arg1) end
+---@param otherFood Food
+---@param ratio number
+function __Food:copyNutritionFromRatio(otherFood, ratio) end
 
----@param arg0 Food
----@param arg1 integer
-function __Food:copyNutritionFromSplit(arg0, arg1) end
+---@param otherFood Food
+---@param split integer
+function __Food:copyNutritionFromSplit(otherFood, split) end
 
----@param arg0 Food
-function __Food:copyPoisonFrom(arg0) end
+---@param otherFood Food
+function __Food:copyPoisonFrom(otherFood) end
 
----@param arg0 Food
-function __Food:copyTemperatureFrom(arg0) end
+---@param otherFood Food
+function __Food:copyTemperatureFrom(otherFood) end
 
 ---@return boolean
 function __Food:finishupdate() end
@@ -174,9 +174,9 @@ function __Food:getMilkType() end
 ---@return string # the name
 function __Food:getName() end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return string
-function __Food:getName(arg0) end
+function __Food:getName(player) end
 
 ---@return string
 function __Food:getOnCooked() end
@@ -257,11 +257,11 @@ function __Food:getWorldTexture() end
 ---@return boolean
 function __Food:hasAnimalParts() end
 
----@param arg0 InventoryItem
-function __Food:inheritFoodAgeFrom(arg0) end
+---@param otherItem InventoryItem
+function __Food:inheritFoodAgeFrom(otherItem) end
 
----@param arg0 InventoryItem
-function __Food:inheritOlderFoodAge(arg0) end
+---@param otherItem InventoryItem
+function __Food:inheritOlderFoodAge(otherItem) end
 
 ---@return boolean
 function __Food:isAnimalSkeleton() end
@@ -337,11 +337,11 @@ function __Food:multiplyFoodValues(percentage) end
 ---@param net boolean
 function __Food:save(output, net) end
 
----@param arg0 string
-function __Food:setAnimalHatch(arg0) end
+---@param animalHatch string
+function __Food:setAnimalHatch(animalHatch) end
 
----@param arg0 string
-function __Food:setAnimalHatchBreed(arg0) end
+---@param animalHatchBreed string
+function __Food:setAnimalHatchBreed(animalHatchBreed) end
 
 function __Food:setAutoAge() end
 
@@ -372,8 +372,8 @@ function __Food:setCompostTime(compostTime) end
 ---@param b boolean
 function __Food:setCookedInMicrowave(b) end
 
----@param arg0 integer
-function __Food:setCurrentUses(arg0) end
+---@param newuses integer
+function __Food:setCurrentUses(newuses) end
 
 ---@param customEatSound string
 function __Food:setCustomEatSound(customEatSound) end
@@ -384,11 +384,11 @@ function __Food:setEndChange(endChange) end
 ---@param endChange number
 function __Food:setEnduranceChange(endChange) end
 
----@param arg0 boolean
-function __Food:setFertilized(arg0) end
+---@param fertilized boolean
+function __Food:setFertilized(fertilized) end
 
----@param arg0 integer
-function __Food:setFertilizedTime(arg0) end
+---@param time integer
+function __Food:setFertilizedTime(time) end
 
 ---@param fluReduction integer
 function __Food:setFluReduction(fluReduction) end
@@ -423,11 +423,11 @@ function __Food:setLastCookMinute(LastCookMinute) end
 ---@param lipids number
 function __Food:setLipids(lipids) end
 
----@param arg0 integer
-function __Food:setMilkQty(arg0) end
+---@param qty integer
+function __Food:setMilkQty(qty) end
 
----@param arg0 string
-function __Food:setMilkType(arg0) end
+---@param type string
+function __Food:setMilkType(type) end
 
 ---@param onCooked string
 function __Food:setOnCooked(onCooked) end
@@ -474,14 +474,14 @@ function __Food:setSpice(isSpice) end
 ---@param spices ArrayList<string>
 function __Food:setSpices(spices) end
 
----@param arg0 boolean
-function __Food:setTainted(arg0) end
+---@param tainted boolean
+function __Food:setTainted(tainted) end
 
 ---@param thirstChange number
 function __Food:setThirstChange(thirstChange) end
 
----@param arg0 integer
-function __Food:setTimeToHatch(arg0) end
+---@param timeToHatch integer
+function __Food:setTimeToHatch(timeToHatch) end
 
 ---@param useForPoison integer
 function __Food:setUseForPoison(useForPoison) end
@@ -501,8 +501,8 @@ function __Food:update() end
 
 function __Food:updateAge() end
 
----@param arg0 boolean
-function __Food:updateAge(arg0) end
+---@param bSendItemStats boolean
+function __Food:updateAge(bSendItemStats) end
 
 ---@param emitter BaseSoundEmitter
 function __Food:updateSound(emitter) end

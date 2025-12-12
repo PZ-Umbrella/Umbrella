@@ -41,16 +41,16 @@ Energy.Thermal = nil
 ---@type Energy
 Energy.VoidEnergy = nil
 
----@param arg0 EnergyType
+---@param type EnergyType
 ---@return Energy
-function Energy.Get(arg0) end
+function Energy.Get(type) end
 
----@param arg0 string
+---@param name string
 ---@return Energy
-function Energy.Get(arg0) end
+function Energy.Get(name) end
 
----@param arg0 ScriptLoadMode
-function Energy.Init(arg0) end
+---@param loadMode ScriptLoadMode
+function Energy.Init(loadMode) end
 
 function Energy.PreReloadScripts() end
 
@@ -59,14 +59,14 @@ function Energy.Reset() end
 ---@return ArrayList<Energy>
 function Energy.getAllEnergies() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
+---@param input ByteBuffer
+---@param WorldVersion integer
 ---@return Energy
-function Energy.loadEnergy(arg0, arg1) end
+function Energy.loadEnergy(input, WorldVersion) end
 
----@param arg0 Energy
----@param arg1 ByteBuffer
-function Energy.saveEnergy(arg0, arg1) end
+---@param energy Energy
+---@param output ByteBuffer
+function Energy.saveEnergy(energy, output) end
 
 ---@type Class<Energy>
 Energy.class = nil

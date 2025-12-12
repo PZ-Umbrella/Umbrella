@@ -3,11 +3,11 @@
 ---@class FitnessState: State
 local __FitnessState = {}
 
----@param arg0 IsoGameCharacter
----@param arg1 AnimLayer
----@param arg2 AnimationTrack
----@param arg3 AnimEvent
-function __FitnessState:animEvent(arg0, arg1, arg2, arg3) end
+---@param owner IsoGameCharacter
+---@param layer AnimLayer
+---@param track AnimationTrack
+---@param event AnimEvent
+function __FitnessState:animEvent(owner, layer, track, event) end
 
 ---@param owner IsoGameCharacter
 function __FitnessState:enter(owner) end
@@ -30,9 +30,9 @@ function __FitnessState:isSyncOnExit() end
 ---@return boolean
 function __FitnessState:isSyncOnSquare() end
 
----@param arg0 IsoGameCharacter
----@param arg1 State.Stage
-function __FitnessState:setParams(arg0, arg1) end
+---@param owner IsoGameCharacter
+---@param stage State.Stage
+function __FitnessState:setParams(owner, stage) end
 
 FitnessState = {}
 

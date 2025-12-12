@@ -3,19 +3,19 @@
 ---@class AttributeContainer: Component
 local __AttributeContainer = {}
 
----@param arg0 ObjectTooltip
----@param arg1 ObjectTooltip.Layout
-function __AttributeContainer:DoTooltip(arg0, arg1) end
+---@param tooltipUI ObjectTooltip
+---@param layout ObjectTooltip.Layout
+function __AttributeContainer:DoTooltip(tooltipUI, layout) end
 
----@param arg0 AttributeType
+---@param type AttributeType
 ---@return boolean
-function __AttributeContainer:add(arg0) end
+function __AttributeContainer:add(type) end
 
 function __AttributeContainer:clear() end
 
----@param arg0 AttributeType
+---@param type AttributeType
 ---@return boolean
-function __AttributeContainer:contains(arg0) end
+function __AttributeContainer:contains(type) end
 
 ---@return AttributeContainer
 function __AttributeContainer:copy() end
@@ -44,106 +44,106 @@ function __AttributeContainer:get(type) end
 ---@return EnumStringObj<E>
 function __AttributeContainer:get(type) end
 
----@param arg0 AttributeType.String
+---@param type AttributeType.String
 ---@return string
-function __AttributeContainer:get(arg0) end
+function __AttributeContainer:get(type) end
 
----@param arg0 AttributeType.String
----@param arg1 string
+---@param type AttributeType.String
+---@param defaultTo string
 ---@return string
-function __AttributeContainer:get(arg0, arg1) end
+function __AttributeContainer:get(type, defaultTo) end
 
----@param arg0 AttributeType.Bool
+---@param type AttributeType.Bool
 ---@return boolean
-function __AttributeContainer:get(arg0) end
+function __AttributeContainer:get(type) end
 
----@param arg0 AttributeType.Bool
----@param arg1 boolean
+---@param type AttributeType.Bool
+---@param defaultTo boolean
 ---@return boolean
-function __AttributeContainer:get(arg0, arg1) end
+function __AttributeContainer:get(type, defaultTo) end
 
----@param arg0 AttributeType.Float
+---@param type AttributeType.Float
 ---@return number
-function __AttributeContainer:get(arg0) end
+function __AttributeContainer:get(type) end
 
----@param arg0 AttributeType.Float
----@param arg1 number
+---@param type AttributeType.Float
+---@param defaultTo number
 ---@return number
-function __AttributeContainer:get(arg0, arg1) end
+function __AttributeContainer:get(type, defaultTo) end
 
----@param arg0 AttributeType.Double
+---@param type AttributeType.Double
 ---@return number
-function __AttributeContainer:get(arg0) end
+function __AttributeContainer:get(type) end
 
----@param arg0 AttributeType.Double
----@param arg1 number
+---@param type AttributeType.Double
+---@param defaultTo number
 ---@return number
-function __AttributeContainer:get(arg0, arg1) end
+function __AttributeContainer:get(type, defaultTo) end
 
----@param arg0 AttributeType.Byte
+---@param type AttributeType.Byte
 ---@return integer
-function __AttributeContainer:get(arg0) end
+function __AttributeContainer:get(type) end
 
----@param arg0 AttributeType.Byte
----@param arg1 integer
+---@param type AttributeType.Byte
+---@param defaultTo integer
 ---@return integer
-function __AttributeContainer:get(arg0, arg1) end
+function __AttributeContainer:get(type, defaultTo) end
 
----@param arg0 AttributeType.Short
+---@param type AttributeType.Short
 ---@return integer
-function __AttributeContainer:get(arg0) end
+function __AttributeContainer:get(type) end
 
----@param arg0 AttributeType.Short
----@param arg1 integer
+---@param type AttributeType.Short
+---@param defaultTo integer
 ---@return integer
-function __AttributeContainer:get(arg0, arg1) end
+function __AttributeContainer:get(type, defaultTo) end
 
----@param arg0 AttributeType.Int
+---@param type AttributeType.Int
 ---@return integer
-function __AttributeContainer:get(arg0) end
+function __AttributeContainer:get(type) end
 
----@param arg0 AttributeType.Int
----@param arg1 integer
+---@param type AttributeType.Int
+---@param defaultTo integer
 ---@return integer
-function __AttributeContainer:get(arg0, arg1) end
+function __AttributeContainer:get(type, defaultTo) end
 
----@param arg0 AttributeType.Long
+---@param type AttributeType.Long
 ---@return integer
-function __AttributeContainer:get(arg0) end
+function __AttributeContainer:get(type) end
 
----@param arg0 AttributeType.Long
----@param arg1 integer
+---@param type AttributeType.Long
+---@param defaultTo integer
 ---@return integer
-function __AttributeContainer:get(arg0, arg1) end
+function __AttributeContainer:get(type, defaultTo) end
 
----@param arg0 integer
+---@param index integer
 ---@return AttributeInstance
-function __AttributeContainer:getAttribute(arg0) end
+function __AttributeContainer:getAttribute(index) end
 
----@param arg0 AttributeType
+---@param type AttributeType
 ---@return AttributeInstance
-function __AttributeContainer:getAttribute(arg0) end
+function __AttributeContainer:getAttribute(type) end
 
----@param arg0 AttributeType.Numeric
+---@param type AttributeType.Numeric
 ---@return number
-function __AttributeContainer:getFloatValue(arg0) end
+function __AttributeContainer:getFloatValue(type) end
 
----@param arg0 AttributeType.Numeric
----@param arg1 number
+---@param type AttributeType.Numeric
+---@param defaultTo number
 ---@return number
-function __AttributeContainer:getFloatValue(arg0, arg1) end
+function __AttributeContainer:getFloatValue(type, defaultTo) end
 
----@param arg0 integer
+---@param index integer
 ---@return AttributeType
-function __AttributeContainer:getKey(arg0) end
+function __AttributeContainer:getKey(index) end
 
----@param arg0 AttributeContainer
+---@param other AttributeContainer
 ---@return boolean
-function __AttributeContainer:isIdenticalTo(arg0) end
+function __AttributeContainer:isIdenticalTo(other) end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __AttributeContainer:load(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __AttributeContainer:load(input, WorldVersion) end
 
 ---@generic E: Enum<E>, IOEnum
 ---@param type AttributeType.Enum<E>
@@ -160,52 +160,52 @@ function __AttributeContainer:put(type, value) end
 ---@param value EnumStringObj<E>
 function __AttributeContainer:put(type, value) end
 
----@param arg0 AttributeType.String
----@param arg1 string
-function __AttributeContainer:put(arg0, arg1) end
+---@param type AttributeType.String
+---@param value string
+function __AttributeContainer:put(type, value) end
 
----@param arg0 AttributeType.Bool
----@param arg1 boolean
-function __AttributeContainer:put(arg0, arg1) end
+---@param type AttributeType.Bool
+---@param value boolean
+function __AttributeContainer:put(type, value) end
 
----@param arg0 AttributeType.Float
----@param arg1 number
-function __AttributeContainer:put(arg0, arg1) end
+---@param type AttributeType.Float
+---@param value number
+function __AttributeContainer:put(type, value) end
 
----@param arg0 AttributeType.Double
----@param arg1 number
-function __AttributeContainer:put(arg0, arg1) end
+---@param type AttributeType.Double
+---@param value number
+function __AttributeContainer:put(type, value) end
 
----@param arg0 AttributeType.Byte
----@param arg1 integer
-function __AttributeContainer:put(arg0, arg1) end
+---@param type AttributeType.Byte
+---@param value integer
+function __AttributeContainer:put(type, value) end
 
----@param arg0 AttributeType.Short
----@param arg1 integer
-function __AttributeContainer:put(arg0, arg1) end
+---@param type AttributeType.Short
+---@param value integer
+function __AttributeContainer:put(type, value) end
 
----@param arg0 AttributeType.Int
----@param arg1 integer
-function __AttributeContainer:put(arg0, arg1) end
+---@param type AttributeType.Int
+---@param value integer
+function __AttributeContainer:put(type, value) end
 
----@param arg0 AttributeType.Long
----@param arg1 integer
-function __AttributeContainer:put(arg0, arg1) end
+---@param type AttributeType.Long
+---@param value integer
+function __AttributeContainer:put(type, value) end
 
----@param arg0 AttributeType.Numeric
----@param arg1 number
-function __AttributeContainer:putFloatValue(arg0, arg1) end
+---@param type AttributeType.Numeric
+---@param value number
+function __AttributeContainer:putFloatValue(type, value) end
 
----@param arg0 AttributeType
----@param arg1 string
+---@param type AttributeType
+---@param scriptVal string
 ---@return boolean
-function __AttributeContainer:putFromScript(arg0, arg1) end
+function __AttributeContainer:putFromScript(type, scriptVal) end
 
----@param arg0 AttributeType
-function __AttributeContainer:remove(arg0) end
+---@param type AttributeType
+function __AttributeContainer:remove(type) end
 
----@param arg0 ByteBuffer
-function __AttributeContainer:save(arg0) end
+---@param output ByteBuffer
+function __AttributeContainer:save(output) end
 
 ---@generic E: Enum<E>, IOEnum
 ---@param type AttributeType.Enum<E>
@@ -222,41 +222,41 @@ function __AttributeContainer:set(type, value) end
 ---@param value EnumStringObj<E>
 function __AttributeContainer:set(type, value) end
 
----@param arg0 AttributeType.String
----@param arg1 string
-function __AttributeContainer:set(arg0, arg1) end
+---@param type AttributeType.String
+---@param value string
+function __AttributeContainer:set(type, value) end
 
----@param arg0 AttributeType.Bool
----@param arg1 boolean
-function __AttributeContainer:set(arg0, arg1) end
+---@param type AttributeType.Bool
+---@param value boolean
+function __AttributeContainer:set(type, value) end
 
----@param arg0 AttributeType.Float
----@param arg1 number
-function __AttributeContainer:set(arg0, arg1) end
+---@param type AttributeType.Float
+---@param value number
+function __AttributeContainer:set(type, value) end
 
----@param arg0 AttributeType.Double
----@param arg1 number
-function __AttributeContainer:set(arg0, arg1) end
+---@param type AttributeType.Double
+---@param value number
+function __AttributeContainer:set(type, value) end
 
----@param arg0 AttributeType.Byte
----@param arg1 integer
-function __AttributeContainer:set(arg0, arg1) end
+---@param type AttributeType.Byte
+---@param value integer
+function __AttributeContainer:set(type, value) end
 
----@param arg0 AttributeType.Short
----@param arg1 integer
-function __AttributeContainer:set(arg0, arg1) end
+---@param type AttributeType.Short
+---@param value integer
+function __AttributeContainer:set(type, value) end
 
----@param arg0 AttributeType.Int
----@param arg1 integer
-function __AttributeContainer:set(arg0, arg1) end
+---@param type AttributeType.Int
+---@param value integer
+function __AttributeContainer:set(type, value) end
 
----@param arg0 AttributeType.Long
----@param arg1 integer
-function __AttributeContainer:set(arg0, arg1) end
+---@param type AttributeType.Long
+---@param value integer
+function __AttributeContainer:set(type, value) end
 
----@param arg0 AttributeType.Numeric
----@param arg1 number
-function __AttributeContainer:setFloatValue(arg0, arg1) end
+---@param type AttributeType.Numeric
+---@param value number
+function __AttributeContainer:setFloatValue(type, value) end
 
 ---@return integer
 function __AttributeContainer:size() end
@@ -269,13 +269,13 @@ AttributeContainer = {}
 ---@type integer
 AttributeContainer.STORAGE_SIZE = nil
 
----@param arg0 AttributeContainer
----@param arg1 AttributeContainer
-function AttributeContainer.Copy(arg0, arg1) end
+---@param source AttributeContainer
+---@param target AttributeContainer
+function AttributeContainer.Copy(source, target) end
 
----@param arg0 AttributeContainer
----@param arg1 AttributeContainer
-function AttributeContainer.Merge(arg0, arg1) end
+---@param source AttributeContainer
+---@param target AttributeContainer
+function AttributeContainer.Merge(source, target) end
 
 ---@type Class<AttributeContainer>
 AttributeContainer.class = nil

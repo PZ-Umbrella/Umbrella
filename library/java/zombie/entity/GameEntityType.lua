@@ -32,13 +32,13 @@ GameEntityType.Template = nil
 ---@type GameEntityType
 GameEntityType.VehiclePart = nil
 
----@param arg0 integer
+---@param id integer
 ---@return GameEntityType
-function GameEntityType.FromID(arg0) end
+function GameEntityType.FromID(id) end
 
----@param arg0 string
+---@param name string
 ---@return GameEntityType
-function GameEntityType.valueOf(arg0) end
+function GameEntityType.valueOf(name) end
 
 ---@return kahlua.Array<GameEntityType>
 function GameEntityType.values() end

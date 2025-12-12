@@ -4,9 +4,9 @@
 ---@class IAnimationVariableSourceContainer: IAnimationVariableSource
 local __IAnimationVariableSourceContainer = {}
 
----@param arg0 string
+---@param name string
 ---@return boolean
-function __IAnimationVariableSourceContainer:containsVariable(arg0) end
+function __IAnimationVariableSourceContainer:containsVariable(name) end
 
 ---@return Iterable<IAnimationVariableSlot>
 function __IAnimationVariableSourceContainer:getGameVariables() end
@@ -14,33 +14,33 @@ function __IAnimationVariableSourceContainer:getGameVariables() end
 ---@return IAnimationVariableSource
 function __IAnimationVariableSourceContainer:getGameVariablesInternal() end
 
----@param arg0 AnimationVariableHandle
+---@param handle AnimationVariableHandle
 ---@return IAnimationVariableSlot
-function __IAnimationVariableSourceContainer:getVariable(arg0) end
+function __IAnimationVariableSourceContainer:getVariable(handle) end
 
----@param arg0 string
+---@param key string
 ---@return IAnimationVariableSlot
-function __IAnimationVariableSourceContainer:getVariable(arg0) end
+function __IAnimationVariableSourceContainer:getVariable(key) end
 
----@param arg0 string
+---@param name string
 ---@return boolean
-function __IAnimationVariableSourceContainer:getVariableBoolean(arg0) end
+function __IAnimationVariableSourceContainer:getVariableBoolean(name) end
 
----@param arg0 string
----@param arg1 boolean
+---@param key string
+---@param defaultVal boolean
 ---@return boolean
-function __IAnimationVariableSourceContainer:getVariableBoolean(arg0, arg1) end
+function __IAnimationVariableSourceContainer:getVariableBoolean(key, defaultVal) end
 
----@param arg0 string
----@param arg1 number
+---@param name string
+---@param defaultVal number
 ---@return number
-function __IAnimationVariableSourceContainer:getVariableFloat(arg0, arg1) end
+function __IAnimationVariableSourceContainer:getVariableFloat(name, defaultVal) end
 
----@param arg0 string
+---@param name string
 ---@return string
-function __IAnimationVariableSourceContainer:getVariableString(arg0) end
+function __IAnimationVariableSourceContainer:getVariableString(name) end
 
----@param arg0 string
----@param arg1 string
+---@param name string
+---@param val string
 ---@return boolean
-function __IAnimationVariableSourceContainer:isVariable(arg0, arg1) end
+function __IAnimationVariableSourceContainer:isVariable(name, val) end

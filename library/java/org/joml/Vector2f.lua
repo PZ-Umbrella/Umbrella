@@ -6,173 +6,173 @@ local __Vector2f = {}
 ---@return Vector2f
 function __Vector2f:absolute() end
 
----@param arg0 Vector2f
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:absolute(arg0) end
+function __Vector2f:absolute(dest) end
 
----@param arg0 Vector2fc
+---@param v Vector2fc
 ---@return Vector2f
-function __Vector2f:add(arg0) end
+function __Vector2f:add(v) end
 
----@param arg0 Vector2fc
----@param arg1 Vector2f
+---@param v Vector2fc
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:add(arg0, arg1) end
+function __Vector2f:add(v, dest) end
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return Vector2f
-function __Vector2f:add(arg0, arg1) end
+function __Vector2f:add(x, y) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 Vector2f
+---@param x number
+---@param y number
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:add(arg0, arg1, arg2) end
+function __Vector2f:add(x, y, dest) end
 
----@param arg0 Vector2fc
+---@param v Vector2fc
 ---@return number
-function __Vector2f:angle(arg0) end
+function __Vector2f:angle(v) end
 
 ---@return Vector2f
 function __Vector2f:ceil() end
 
----@param arg0 Vector2f
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:ceil(arg0) end
+function __Vector2f:ceil(dest) end
 
----@param arg0 Vector2fc
+---@param v Vector2fc
 ---@return number
-function __Vector2f:distance(arg0) end
+function __Vector2f:distance(v) end
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return number
-function __Vector2f:distance(arg0, arg1) end
+function __Vector2f:distance(x, y) end
 
----@param arg0 Vector2fc
+---@param v Vector2fc
 ---@return number
-function __Vector2f:distanceSquared(arg0) end
+function __Vector2f:distanceSquared(v) end
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return number
-function __Vector2f:distanceSquared(arg0, arg1) end
+function __Vector2f:distanceSquared(x, y) end
 
----@param arg0 Vector2fc
+---@param v Vector2fc
 ---@return Vector2f
-function __Vector2f:div(arg0) end
+function __Vector2f:div(v) end
 
----@param arg0 Vector2fc
----@param arg1 Vector2f
+---@param v Vector2fc
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:div(arg0, arg1) end
+function __Vector2f:div(v, dest) end
 
----@param arg0 number
+---@param scalar number
 ---@return Vector2f
-function __Vector2f:div(arg0) end
+function __Vector2f:div(scalar) end
 
----@param arg0 number
----@param arg1 Vector2f
+---@param scalar number
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:div(arg0, arg1) end
+function __Vector2f:div(scalar, dest) end
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return Vector2f
-function __Vector2f:div(arg0, arg1) end
+function __Vector2f:div(x, y) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 Vector2f
+---@param x number
+---@param y number
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:div(arg0, arg1, arg2) end
+function __Vector2f:div(x, y, dest) end
 
----@param arg0 Vector2fc
+---@param v Vector2fc
 ---@return number
-function __Vector2f:dot(arg0) end
+function __Vector2f:dot(v) end
 
----@param arg0 any
+---@param obj any
 ---@return boolean
-function __Vector2f:equals(arg0) end
+function __Vector2f:equals(obj) end
 
----@param arg0 Vector2fc
----@param arg1 number
+---@param v Vector2fc
+---@param delta number
 ---@return boolean
-function __Vector2f:equals(arg0, arg1) end
+function __Vector2f:equals(v, delta) end
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return boolean
-function __Vector2f:equals(arg0, arg1) end
+function __Vector2f:equals(x, y) end
 
 ---@return Vector2f
 function __Vector2f:floor() end
 
----@param arg0 Vector2f
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:floor(arg0) end
+function __Vector2f:floor(dest) end
 
----@param arg0 Vector2fc
----@param arg1 Vector2fc
+---@param a Vector2fc
+---@param b Vector2fc
 ---@return Vector2f
-function __Vector2f:fma(arg0, arg1) end
+function __Vector2f:fma(a, b) end
 
----@param arg0 number
----@param arg1 Vector2fc
+---@param a number
+---@param b Vector2fc
 ---@return Vector2f
-function __Vector2f:fma(arg0, arg1) end
+function __Vector2f:fma(a, b) end
 
----@param arg0 Vector2fc
----@param arg1 Vector2fc
----@param arg2 Vector2f
+---@param a Vector2fc
+---@param b Vector2fc
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:fma(arg0, arg1, arg2) end
+function __Vector2f:fma(a, b, dest) end
 
----@param arg0 number
----@param arg1 Vector2fc
----@param arg2 Vector2f
+---@param a number
+---@param b Vector2fc
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:fma(arg0, arg1, arg2) end
+function __Vector2f:fma(a, b, dest) end
 
----@param arg0 integer
+---@param component integer
 ---@return number
-function __Vector2f:get(arg0) end
+function __Vector2f:get(component) end
 
----@param arg0 integer
----@param arg1 Vector2i
+---@param mode integer
+---@param dest Vector2i
 ---@return Vector2i
-function __Vector2f:get(arg0, arg1) end
+function __Vector2f:get(mode, dest) end
 
----@param arg0 Vector2f
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:get(arg0) end
+function __Vector2f:get(dest) end
 
----@param arg0 Vector2d
+---@param dest Vector2d
 ---@return Vector2d
-function __Vector2f:get(arg0) end
+function __Vector2f:get(dest) end
 
----@param arg0 ByteBuffer
+---@param buffer ByteBuffer
 ---@return ByteBuffer
-function __Vector2f:get(arg0) end
+function __Vector2f:get(buffer) end
 
----@param arg0 integer
----@param arg1 ByteBuffer
+---@param index integer
+---@param buffer ByteBuffer
 ---@return ByteBuffer
-function __Vector2f:get(arg0, arg1) end
+function __Vector2f:get(index, buffer) end
 
----@param arg0 FloatBuffer
+---@param buffer FloatBuffer
 ---@return FloatBuffer
-function __Vector2f:get(arg0) end
+function __Vector2f:get(buffer) end
 
----@param arg0 integer
----@param arg1 FloatBuffer
+---@param index integer
+---@param buffer FloatBuffer
 ---@return FloatBuffer
-function __Vector2f:get(arg0, arg1) end
+function __Vector2f:get(index, buffer) end
 
----@param arg0 integer
+---@param address integer
 ---@return Vector2fc
-function __Vector2f:getToAddress(arg0) end
+function __Vector2f:getToAddress(address) end
 
 ---@return integer
 function __Vector2f:hashCode() end
@@ -186,241 +186,241 @@ function __Vector2f:length() end
 ---@return number
 function __Vector2f:lengthSquared() end
 
----@param arg0 Vector2fc
----@param arg1 number
+---@param other Vector2fc
+---@param t number
 ---@return Vector2f
-function __Vector2f:lerp(arg0, arg1) end
+function __Vector2f:lerp(other, t) end
 
----@param arg0 Vector2fc
----@param arg1 number
----@param arg2 Vector2f
+---@param other Vector2fc
+---@param t number
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:lerp(arg0, arg1, arg2) end
+function __Vector2f:lerp(other, t, dest) end
 
----@param arg0 Vector2fc
+---@param v Vector2fc
 ---@return Vector2f
-function __Vector2f:max(arg0) end
+function __Vector2f:max(v) end
 
----@param arg0 Vector2fc
----@param arg1 Vector2f
+---@param v Vector2fc
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:max(arg0, arg1) end
+function __Vector2f:max(v, dest) end
 
 ---@return integer
 function __Vector2f:maxComponent() end
 
----@param arg0 Vector2fc
+---@param v Vector2fc
 ---@return Vector2f
-function __Vector2f:min(arg0) end
+function __Vector2f:min(v) end
 
----@param arg0 Vector2fc
----@param arg1 Vector2f
+---@param v Vector2fc
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:min(arg0, arg1) end
+function __Vector2f:min(v, dest) end
 
 ---@return integer
 function __Vector2f:minComponent() end
 
----@param arg0 number
+---@param scalar number
 ---@return Vector2f
-function __Vector2f:mul(arg0) end
+function __Vector2f:mul(scalar) end
 
----@param arg0 number
----@param arg1 Vector2f
+---@param scalar number
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:mul(arg0, arg1) end
+function __Vector2f:mul(scalar, dest) end
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return Vector2f
-function __Vector2f:mul(arg0, arg1) end
+function __Vector2f:mul(x, y) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 Vector2f
+---@param x number
+---@param y number
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:mul(arg0, arg1, arg2) end
+function __Vector2f:mul(x, y, dest) end
 
----@param arg0 Vector2fc
+---@param v Vector2fc
 ---@return Vector2f
-function __Vector2f:mul(arg0) end
+function __Vector2f:mul(v) end
 
----@param arg0 Vector2fc
----@param arg1 Vector2f
+---@param v Vector2fc
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:mul(arg0, arg1) end
+function __Vector2f:mul(v, dest) end
 
----@param arg0 Matrix2fc
+---@param mat Matrix2fc
 ---@return Vector2f
-function __Vector2f:mul(arg0) end
+function __Vector2f:mul(mat) end
 
----@param arg0 Matrix2fc
----@param arg1 Vector2f
+---@param mat Matrix2fc
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:mul(arg0, arg1) end
+function __Vector2f:mul(mat, dest) end
 
----@param arg0 Matrix2dc
+---@param mat Matrix2dc
 ---@return Vector2f
-function __Vector2f:mul(arg0) end
+function __Vector2f:mul(mat) end
 
----@param arg0 Matrix2dc
----@param arg1 Vector2f
+---@param mat Matrix2dc
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:mul(arg0, arg1) end
+function __Vector2f:mul(mat, dest) end
 
----@param arg0 Matrix3x2fc
+---@param mat Matrix3x2fc
 ---@return Vector2f
-function __Vector2f:mulDirection(arg0) end
+function __Vector2f:mulDirection(mat) end
 
----@param arg0 Matrix3x2fc
----@param arg1 Vector2f
+---@param mat Matrix3x2fc
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:mulDirection(arg0, arg1) end
+function __Vector2f:mulDirection(mat, dest) end
 
----@param arg0 Matrix3x2fc
+---@param mat Matrix3x2fc
 ---@return Vector2f
-function __Vector2f:mulPosition(arg0) end
+function __Vector2f:mulPosition(mat) end
 
----@param arg0 Matrix3x2fc
----@param arg1 Vector2f
+---@param mat Matrix3x2fc
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:mulPosition(arg0, arg1) end
+function __Vector2f:mulPosition(mat, dest) end
 
----@param arg0 Matrix2fc
+---@param mat Matrix2fc
 ---@return Vector2f
-function __Vector2f:mulTranspose(arg0) end
+function __Vector2f:mulTranspose(mat) end
 
----@param arg0 Matrix2fc
----@param arg1 Vector2f
+---@param mat Matrix2fc
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:mulTranspose(arg0, arg1) end
+function __Vector2f:mulTranspose(mat, dest) end
 
 ---@return Vector2f
 function __Vector2f:negate() end
 
----@param arg0 Vector2f
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:negate(arg0) end
+function __Vector2f:negate(dest) end
 
 ---@return Vector2f
 function __Vector2f:normalize() end
 
----@param arg0 Vector2f
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:normalize(arg0) end
+function __Vector2f:normalize(dest) end
 
----@param arg0 number
+---@param length number
 ---@return Vector2f
-function __Vector2f:normalize(arg0) end
+function __Vector2f:normalize(length) end
 
----@param arg0 number
----@param arg1 Vector2f
+---@param length number
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:normalize(arg0, arg1) end
+function __Vector2f:normalize(length, dest) end
 
 ---@return Vector2f
 function __Vector2f:perpendicular() end
 
----@param arg0 ObjectInput
-function __Vector2f:readExternal(arg0) end
+---@param _in ObjectInput
+function __Vector2f:readExternal(_in) end
 
 ---@return Vector2f
 function __Vector2f:round() end
 
----@param arg0 Vector2f
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:round(arg0) end
+function __Vector2f:round(dest) end
 
----@param arg0 number
+---@param d number
 ---@return Vector2f
-function __Vector2f:set(arg0) end
+function __Vector2f:set(d) end
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return Vector2f
-function __Vector2f:set(arg0, arg1) end
+function __Vector2f:set(x, y) end
 
----@param arg0 number
+---@param d number
 ---@return Vector2f
-function __Vector2f:set(arg0) end
+function __Vector2f:set(d) end
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return Vector2f
-function __Vector2f:set(arg0, arg1) end
+function __Vector2f:set(x, y) end
 
----@param arg0 Vector2fc
+---@param v Vector2fc
 ---@return Vector2f
-function __Vector2f:set(arg0) end
+function __Vector2f:set(v) end
 
----@param arg0 Vector2ic
+---@param v Vector2ic
 ---@return Vector2f
-function __Vector2f:set(arg0) end
+function __Vector2f:set(v) end
 
----@param arg0 Vector2dc
+---@param v Vector2dc
 ---@return Vector2f
-function __Vector2f:set(arg0) end
+function __Vector2f:set(v) end
 
----@param arg0 kahlua.Array<number>
+---@param xy kahlua.Array<number>
 ---@return Vector2f
-function __Vector2f:set(arg0) end
+function __Vector2f:set(xy) end
 
----@param arg0 ByteBuffer
+---@param buffer ByteBuffer
 ---@return Vector2f
-function __Vector2f:set(arg0) end
+function __Vector2f:set(buffer) end
 
----@param arg0 integer
----@param arg1 ByteBuffer
+---@param index integer
+---@param buffer ByteBuffer
 ---@return Vector2f
-function __Vector2f:set(arg0, arg1) end
+function __Vector2f:set(index, buffer) end
 
----@param arg0 FloatBuffer
+---@param buffer FloatBuffer
 ---@return Vector2f
-function __Vector2f:set(arg0) end
+function __Vector2f:set(buffer) end
 
----@param arg0 integer
----@param arg1 FloatBuffer
+---@param index integer
+---@param buffer FloatBuffer
 ---@return Vector2f
-function __Vector2f:set(arg0, arg1) end
+function __Vector2f:set(index, buffer) end
 
----@param arg0 integer
----@param arg1 number
+---@param component integer
+---@param value number
 ---@return Vector2f
-function __Vector2f:setComponent(arg0, arg1) end
+function __Vector2f:setComponent(component, value) end
 
----@param arg0 integer
+---@param address integer
 ---@return Vector2f
-function __Vector2f:setFromAddress(arg0) end
+function __Vector2f:setFromAddress(address) end
 
----@param arg0 Vector2fc
+---@param v Vector2fc
 ---@return Vector2f
-function __Vector2f:sub(arg0) end
+function __Vector2f:sub(v) end
 
----@param arg0 Vector2fc
----@param arg1 Vector2f
+---@param v Vector2fc
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:sub(arg0, arg1) end
+function __Vector2f:sub(v, dest) end
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return Vector2f
-function __Vector2f:sub(arg0, arg1) end
+function __Vector2f:sub(x, y) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 Vector2f
+---@param x number
+---@param y number
+---@param dest Vector2f
 ---@return Vector2f
-function __Vector2f:sub(arg0, arg1, arg2) end
+function __Vector2f:sub(x, y, dest) end
 
 ---@return string
 function __Vector2f:toString() end
 
----@param arg0 NumberFormat
+---@param formatter NumberFormat
 ---@return string
-function __Vector2f:toString(arg0) end
+function __Vector2f:toString(formatter) end
 
----@param arg0 ObjectOutput
-function __Vector2f:writeExternal(arg0) end
+---@param out ObjectOutput
+function __Vector2f:writeExternal(out) end
 
 ---@return number
 function __Vector2f:x() end
@@ -433,71 +433,71 @@ function __Vector2f:zero() end
 
 Vector2f = {}
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
+---@param x1 number
+---@param y1 number
+---@param x2 number
+---@param y2 number
 ---@return number
-function Vector2f.distance(arg0, arg1, arg2, arg3) end
+function Vector2f.distance(x1, y1, x2, y2) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
+---@param x1 number
+---@param y1 number
+---@param x2 number
+---@param y2 number
 ---@return number
-function Vector2f.distanceSquared(arg0, arg1, arg2, arg3) end
+function Vector2f.distanceSquared(x1, y1, x2, y2) end
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return number
-function Vector2f.length(arg0, arg1) end
+function Vector2f.length(x, y) end
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return number
-function Vector2f.lengthSquared(arg0, arg1) end
+function Vector2f.lengthSquared(x, y) end
 
 ---@return Vector2f
 function Vector2f.new() end
 
----@param arg0 number
+---@param d number
 ---@return Vector2f
-function Vector2f.new(arg0) end
+function Vector2f.new(d) end
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return Vector2f
-function Vector2f.new(arg0, arg1) end
+function Vector2f.new(x, y) end
 
----@param arg0 Vector2fc
+---@param v Vector2fc
 ---@return Vector2f
-function Vector2f.new(arg0) end
+function Vector2f.new(v) end
 
----@param arg0 Vector2ic
+---@param v Vector2ic
 ---@return Vector2f
-function Vector2f.new(arg0) end
+function Vector2f.new(v) end
 
----@param arg0 kahlua.Array<number>
+---@param xy kahlua.Array<number>
 ---@return Vector2f
-function Vector2f.new(arg0) end
+function Vector2f.new(xy) end
 
----@param arg0 ByteBuffer
+---@param buffer ByteBuffer
 ---@return Vector2f
-function Vector2f.new(arg0) end
+function Vector2f.new(buffer) end
 
----@param arg0 integer
----@param arg1 ByteBuffer
+---@param index integer
+---@param buffer ByteBuffer
 ---@return Vector2f
-function Vector2f.new(arg0, arg1) end
+function Vector2f.new(index, buffer) end
 
----@param arg0 FloatBuffer
+---@param buffer FloatBuffer
 ---@return Vector2f
-function Vector2f.new(arg0) end
+function Vector2f.new(buffer) end
 
----@param arg0 integer
----@param arg1 FloatBuffer
+---@param index integer
+---@param buffer FloatBuffer
 ---@return Vector2f
-function Vector2f.new(arg0, arg1) end
+function Vector2f.new(index, buffer) end
 
 ---@type Class<Vector2f>
 Vector2f.class = nil

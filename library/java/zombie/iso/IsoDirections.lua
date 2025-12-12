@@ -23,9 +23,9 @@ function __IsoDirections:RotRight() end
 ---@return Vector2
 function __IsoDirections:ToVector() end
 
----@param arg0 Vector2
+---@param out_result Vector2
 ---@return Vector2
-function __IsoDirections:ToVector(arg0) end
+function __IsoDirections:ToVector(out_result) end
 
 ---@return integer
 function __IsoDirections:dx() end
@@ -110,9 +110,9 @@ function IsoDirections.fromAngleActual(angle) end
 ---@return IsoDirections
 function IsoDirections.fromIndex(index) end
 
----@param arg0 string
+---@param str string
 ---@return IsoDirections
-function IsoDirections.fromString(arg0) end
+function IsoDirections.fromString(str) end
 
 ---@return kahlua.Array<kahlua.Array<IsoDirections>>
 function IsoDirections.generateTables() end
@@ -124,9 +124,9 @@ function IsoDirections.getRandom() end
 ---@return IsoDirections
 function IsoDirections.reverse(dir) end
 
----@param arg0 string
+---@param name string
 ---@return IsoDirections
-function IsoDirections.valueOf(arg0) end
+function IsoDirections.valueOf(name) end
 
 ---Returns an array containing the constants of this enum class, in
 ---the order they are declared.

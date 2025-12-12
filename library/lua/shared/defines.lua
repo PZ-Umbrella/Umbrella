@@ -44,7 +44,6 @@ ZomboidGlobals = {
 	IdleIncrease = 0.0005,
 	IdleDecrease = 0.0060,
 }
-ZomboidGlobals.BroodingAngerDecreaseMultiplier = 0.3
 
 ---@class ZombiePopulationMultiplier
 ZombiePopulationMultiplier = {}

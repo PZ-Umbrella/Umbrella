@@ -20,10 +20,10 @@ function __HumanVisual:addBodyVisualFromItemType(itemType) end
 ---@return ItemVisual
 function __HumanVisual:addClothingItem(itemVisuals, scriptItem) end
 
----@param arg0 ItemVisuals
----@param arg1 ClothingItem
+---@param itemVisuals ItemVisuals
+---@param clothingItem ClothingItem
 ---@return ItemVisual
-function __HumanVisual:addClothingItem(arg0, arg1) end
+function __HumanVisual:addClothingItem(itemVisuals, clothingItem) end
 
 function __HumanVisual:clear() end
 
@@ -43,10 +43,10 @@ function __HumanVisual:dressInClothingItem(itemGUID, itemVisuals, clearCurrentVi
 ---@param itemVisuals ItemVisuals
 function __HumanVisual:dressInNamedOutfit(outfitName, itemVisuals) end
 
----@param arg0 string
----@param arg1 ItemVisuals
----@param arg2 boolean
-function __HumanVisual:dressInNamedOutfit(arg0, arg1, arg2) end
+---@param outfitName string
+---@param itemVisuals ItemVisuals
+---@param clear boolean
+function __HumanVisual:dressInNamedOutfit(outfitName, itemVisuals, clear) end
 
 ---@return ImmutableColor
 function __HumanVisual:getBeardColor() end

@@ -33,26 +33,26 @@ function __IsoMarker:getY() end
 ---@return number
 function __IsoMarker:getZ() end
 
----@param arg0 table
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 IsoGridSquare
-function __IsoMarker:init(arg0, arg1, arg2, arg3, arg4) end
+---@param textureTable table
+---@param x integer
+---@param y integer
+---@param z integer
+---@param gs IsoGridSquare
+function __IsoMarker:init(textureTable, x, y, z, gs) end
 
----@param arg0 string
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 IsoGridSquare
-function __IsoMarker:init(arg0, arg1, arg2, arg3, arg4) end
+---@param spriteName string
+---@param x integer
+---@param y integer
+---@param z integer
+---@param gs IsoGridSquare
+function __IsoMarker:init(spriteName, x, y, z, gs) end
 
----@param arg0 InventoryItem
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 IsoGridSquare
-function __IsoMarker:init(arg0, arg1, arg2, arg3, arg4) end
+---@param item InventoryItem
+---@param x integer
+---@param y integer
+---@param z integer
+---@param gs IsoGridSquare
+function __IsoMarker:init(item, x, y, z, gs) end
 
 ---@return boolean
 function __IsoMarker:isActive() end
@@ -74,14 +74,14 @@ function __IsoMarker:setAlpha(alpha) end
 ---@param b number
 function __IsoMarker:setB(b) end
 
----@param arg0 number
-function __IsoMarker:setCircleSize(arg0) end
+---@param size number
+function __IsoMarker:setCircleSize(size) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
-function __IsoMarker:setColor(arg0, arg1, arg2, arg3) end
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function __IsoMarker:setColor(r, g, b, a) end
 
 ---@param g number
 function __IsoMarker:setG(g) end
@@ -94,8 +94,8 @@ function __IsoMarker:setPos(x, y, z) end
 ---@param r number
 function __IsoMarker:setR(r) end
 
----@param arg0 number
-function __IsoMarker:setRotation(arg0) end
+---@param rotation number
+function __IsoMarker:setRotation(rotation) end
 
 ---@param square IsoGridSquare
 function __IsoMarker:setSquare(square) end

@@ -3,9 +3,9 @@
 ---@class CraftBench: Component
 local __CraftBench = {}
 
----@param arg0 ObjectTooltip
----@param arg1 ObjectTooltip.Layout
-function __CraftBench:DoTooltip(arg0, arg1) end
+---@param tooltipUI ObjectTooltip
+---@param layout ObjectTooltip.Layout
+function __CraftBench:DoTooltip(tooltipUI, layout) end
 
 ---@return EnumBitStore<ResourceChannel>
 function __CraftBench:getEnergyInputChannels() end
@@ -25,8 +25,8 @@ function __CraftBench:getResources() end
 ---@return boolean
 function __CraftBench:isValid() end
 
----@param arg0 string
-function __CraftBench:setRecipeTagQuery(arg0) end
+---@param recipeTagQuery string
+function __CraftBench:setRecipeTagQuery(recipeTagQuery) end
 
 CraftBench = {}
 

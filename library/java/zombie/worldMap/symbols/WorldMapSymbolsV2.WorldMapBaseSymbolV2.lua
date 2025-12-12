@@ -58,9 +58,9 @@ function __WorldMapBaseSymbolV2:getRotation() end
 ---@return number
 function __WorldMapBaseSymbolV2:getScale() end
 
----@param arg0 integer
+---@param index integer
 ---@return string
-function __WorldMapBaseSymbolV2:getVisibleToPlayerByIndex(arg0) end
+function __WorldMapBaseSymbolV2:getVisibleToPlayerByIndex(index) end
 
 ---@return integer
 function __WorldMapBaseSymbolV2:getVisibleToPlayerCount() end
@@ -107,53 +107,53 @@ function __WorldMapBaseSymbolV2:isVisibleToFaction() end
 ---@return boolean
 function __WorldMapBaseSymbolV2:isVisibleToSafehouse() end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
-function __WorldMapBaseSymbolV2:renderOutline(arg0, arg1, arg2, arg3, arg4) end
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+---@param thickness number
+function __WorldMapBaseSymbolV2:renderOutline(r, g, b, a, thickness) end
 
----@param arg0 number
----@param arg1 number
-function __WorldMapBaseSymbolV2:setAnchor(arg0, arg1) end
+---@param x number
+---@param y number
+function __WorldMapBaseSymbolV2:setAnchor(x, y) end
 
----@param arg0 boolean
-function __WorldMapBaseSymbolV2:setApplyZoom(arg0) end
+---@param b boolean
+function __WorldMapBaseSymbolV2:setApplyZoom(b) end
 
----@param arg0 boolean
-function __WorldMapBaseSymbolV2:setCollide(arg0) end
+---@param collide boolean
+function __WorldMapBaseSymbolV2:setCollide(collide) end
 
----@param arg0 boolean
-function __WorldMapBaseSymbolV2:setMatchPerspective(arg0) end
+---@param b boolean
+function __WorldMapBaseSymbolV2:setMatchPerspective(b) end
 
----@param arg0 number
-function __WorldMapBaseSymbolV2:setMaxZoom(arg0) end
+---@param zoomF number
+function __WorldMapBaseSymbolV2:setMaxZoom(zoomF) end
 
----@param arg0 number
-function __WorldMapBaseSymbolV2:setMinZoom(arg0) end
+---@param zoomF number
+function __WorldMapBaseSymbolV2:setMinZoom(zoomF) end
 
----@param arg0 number
----@param arg1 number
-function __WorldMapBaseSymbolV2:setPosition(arg0, arg1) end
+---@param x number
+---@param y number
+function __WorldMapBaseSymbolV2:setPosition(x, y) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
-function __WorldMapBaseSymbolV2:setRGBA(arg0, arg1, arg2, arg3) end
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function __WorldMapBaseSymbolV2:setRGBA(r, g, b, a) end
 
----@param arg0 number
-function __WorldMapBaseSymbolV2:setRotation(arg0) end
+---@param degrees number
+function __WorldMapBaseSymbolV2:setRotation(degrees) end
 
----@param arg0 number
-function __WorldMapBaseSymbolV2:setScale(arg0) end
+---@param scale number
+function __WorldMapBaseSymbolV2:setScale(scale) end
 
----@param arg0 table
-function __WorldMapBaseSymbolV2:setSharing(arg0) end
+---@param table table
+function __WorldMapBaseSymbolV2:setSharing(table) end
 
----@param arg0 boolean
-function __WorldMapBaseSymbolV2:setUserDefined(arg0) end
+---@param b boolean
+function __WorldMapBaseSymbolV2:setUserDefined(b) end
 
----@param arg0 boolean
-function __WorldMapBaseSymbolV2:setVisible(arg0) end
+---@param visible boolean
+function __WorldMapBaseSymbolV2:setVisible(visible) end

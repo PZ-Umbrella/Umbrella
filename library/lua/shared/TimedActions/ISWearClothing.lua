@@ -9,35 +9,9 @@
 ---@field soundNoTrigger boolean
 ISWearClothing = ISBaseTimedAction:derive("ISWearClothing")
 ISWearClothing.Type = "ISWearClothing"
-ISWearClothing.WalkBodyLocations = {
-	ItemBodyLocation.AMMO_STRAP,
-	ItemBodyLocation.BACK,
-	ItemBodyLocation.ELBOW_LEFT,
-	ItemBodyLocation.ELBOW_RIGHT,
-	ItemBodyLocation.EYES,
-	ItemBodyLocation.FULL_HAT,
-	ItemBodyLocation.HANDS,
-	ItemBodyLocation.HANDS_LEFT,
-	ItemBodyLocation.HANDS_RIGHT,
-	ItemBodyLocation.HAT,
-	ItemBodyLocation.LEFT_MIDDLE_FINGER,
-	ItemBodyLocation.LEFT_RING_FINGER,
-	ItemBodyLocation.LEFT_EYE,
-	ItemBodyLocation.LEFT_WRIST,
-	ItemBodyLocation.MASK,
-	ItemBodyLocation.MASK_EYES,
-	ItemBodyLocation.MASK_FULL,
-	ItemBodyLocation.NECKLACE,
-	ItemBodyLocation.NECKLACE_LONG,
-	ItemBodyLocation.NECK,
-	ItemBodyLocation.RIGHT_MIDDLE_FINGER,
-	ItemBodyLocation.RIGHT_RING_FINGER,
-	ItemBodyLocation.RIGHT_EYE,
-	ItemBodyLocation.RIGHT_WRIST,
-	ItemBodyLocation.SATCHEL,
-	ItemBodyLocation.SCARF,
-}
+ISWearClothing.WalkBodyLocations = {} ---@type ItemBodyLocation[]
 
+---@param item InventoryItem
 ---@return boolean
 function ISWearClothing.isStopOnWalk(item) end
 
@@ -71,28 +45,3 @@ function ISWearClothing:new(character, item) end
 
 ---@class WearClothingAnimations
 WearClothingAnimations = {}
-WearClothingAnimations.Belt = "Waist"
-WearClothingAnimations.BeltExtra = "Waist"
-WearClothingAnimations.Dress = "Legs"
-WearClothingAnimations.Ears = "Face"
-WearClothingAnimations.EarTop = "Face"
-WearClothingAnimations.Eyes = "Face"
-WearClothingAnimations.FannyPackBack = "Waist"
-WearClothingAnimations.FannyPackFront = "Waist"
-WearClothingAnimations.FullHat = "Face"
-WearClothingAnimations.Hat = "Face"
-WearClothingAnimations.Jacket = "Jacket"
-WearClothingAnimations.JacketHat = "Jacket"
-WearClothingAnimations.Legs1 = "Legs"
-WearClothingAnimations.Mask = "Face"
-WearClothingAnimations.MaskEyes = "Face"
-WearClothingAnimations.Nose = "Face"
-WearClothingAnimations.Pants = "Legs"
-WearClothingAnimations.Shoes = "Feet"
-WearClothingAnimations.Skirt = "Legs"
-WearClothingAnimations.Socks = "Feet"
-WearClothingAnimations.Shirt = "Jacket"
-WearClothingAnimations.ShortSleeveShirt = "Jacket"
-WearClothingAnimations.TankTop = "Pullover"
-WearClothingAnimations.Tshirt = "Pullover"
-WearClothingAnimations[string] = nil ---@type string

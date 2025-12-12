@@ -3,9 +3,9 @@
 ---@class CraftRecipeData
 local __CraftRecipeData = {}
 
----@param arg0 InventoryItem
+---@param inventoryItem InventoryItem
 ---@return boolean
-function __CraftRecipeData:OnTestItem(arg0) end
+function __CraftRecipeData:OnTestItem(inventoryItem) end
 
 ---@param input InputScript
 ---@param resources HashMap<Resource, ArrayList<InventoryItem>>
@@ -14,121 +14,121 @@ function __CraftRecipeData:addOverfilledResource(input, resources) end
 ---@return boolean
 function __CraftRecipeData:areAllInputItemsSatisfied() end
 
----@param arg0 List<Resource>
----@param arg1 List<InventoryItem>
----@param arg2 boolean
----@param arg3 boolean
+---@param inputResources List<Resource>
+---@param overrideInputItems List<InventoryItem>
+---@param forceTestAll boolean
+---@param clearAllViable boolean
 ---@return boolean
-function __CraftRecipeData:canConsumeInputs(arg0, arg1, arg2, arg3) end
+function __CraftRecipeData:canConsumeInputs(inputResources, overrideInputItems, forceTestAll, clearAllViable) end
 
----@param arg0 List<Resource>
+---@param inputResources List<Resource>
 ---@return boolean
-function __CraftRecipeData:canConsumeInputs(arg0) end
+function __CraftRecipeData:canConsumeInputs(inputResources) end
 
----@param arg0 List<Resource>
+---@param outputResources List<Resource>
 ---@return boolean
-function __CraftRecipeData:canCreateOutputs(arg0) end
+function __CraftRecipeData:canCreateOutputs(outputResources) end
 
----@param arg0 List<Resource>
----@param arg1 IsoGameCharacter
+---@param outputResources List<Resource>
+---@param character IsoGameCharacter
 ---@return boolean
-function __CraftRecipeData:canCreateOutputs(arg0, arg1) end
+function __CraftRecipeData:canCreateOutputs(outputResources, character) end
 
----@param arg0 InventoryItem
+---@param inventoryItem InventoryItem
 ---@return boolean
-function __CraftRecipeData:canOfferInputItem(arg0) end
+function __CraftRecipeData:canOfferInputItem(inventoryItem) end
 
----@param arg0 InventoryItem
----@param arg1 boolean
+---@param inventoryItem InventoryItem
+---@param verbose boolean
 ---@return boolean
-function __CraftRecipeData:canOfferInputItem(arg0, arg1) end
+function __CraftRecipeData:canOfferInputItem(inventoryItem, verbose) end
 
----@param arg0 InputScript
----@param arg1 InventoryItem
+---@param inputScript InputScript
+---@param item InventoryItem
 ---@return boolean
-function __CraftRecipeData:canOfferInputItem(arg0, arg1) end
+function __CraftRecipeData:canOfferInputItem(inputScript, item) end
 
----@param arg0 InputScript
----@param arg1 InventoryItem
----@param arg2 boolean
+---@param inputScript InputScript
+---@param item InventoryItem
+---@param verbose boolean
 ---@return boolean
-function __CraftRecipeData:canOfferInputItem(arg0, arg1, arg2) end
+function __CraftRecipeData:canOfferInputItem(inputScript, item, verbose) end
 
----@param arg0 IsoGameCharacter
----@param arg1 List<Resource>
----@param arg2 List<InventoryItem>
----@param arg3 boolean
----@param arg4 ArrayList<ItemContainer>
+---@param character IsoGameCharacter
+---@param inputResources List<Resource>
+---@param overrideInputItems List<InventoryItem>
+---@param forceTestAll boolean
+---@param containers ArrayList<ItemContainer>
 ---@return boolean
-function __CraftRecipeData:canPerform(arg0, arg1, arg2, arg3, arg4) end
+function __CraftRecipeData:canPerform(character, inputResources, overrideInputItems, forceTestAll, containers) end
 
 function __CraftRecipeData:clearManualInputs() end
 
----@param arg0 CraftRecipeData.InputScriptData
-function __CraftRecipeData:clearManualInputs(arg0) end
+---@param input CraftRecipeData.InputScriptData
+function __CraftRecipeData:clearManualInputs(input) end
 
 function __CraftRecipeData:clearTargetVariableInputRatio() end
 
----@param arg0 List<Resource>
+---@param inputResources List<Resource>
 ---@return boolean
-function __CraftRecipeData:consumeInputs(arg0) end
+function __CraftRecipeData:consumeInputs(inputResources) end
 
----@param arg0 List<Resource>
+---@param inputResources List<Resource>
 ---@return boolean
-function __CraftRecipeData:consumeOnTickInputs(arg0) end
+function __CraftRecipeData:consumeOnTickInputs(inputResources) end
 
----@param arg0 InventoryItem
+---@param inventoryItem InventoryItem
 ---@return boolean
-function __CraftRecipeData:containsInputItem(arg0) end
+function __CraftRecipeData:containsInputItem(inventoryItem) end
 
----@param arg0 CraftRecipeData.InputScriptData
----@param arg1 InventoryItem
+---@param data CraftRecipeData.InputScriptData
+---@param inventoryItem InventoryItem
 ---@return boolean
-function __CraftRecipeData:containsInputItem(arg0, arg1) end
+function __CraftRecipeData:containsInputItem(data, inventoryItem) end
 
----@param arg0 List<Resource>
+---@param outputResources List<Resource>
 ---@return boolean
-function __CraftRecipeData:createOnTickOutputs(arg0) end
+function __CraftRecipeData:createOnTickOutputs(outputResources) end
 
----@param arg0 List<Resource>
+---@param outputResources List<Resource>
 ---@return boolean
-function __CraftRecipeData:createOutputs(arg0) end
+function __CraftRecipeData:createOutputs(outputResources) end
 
----@param arg0 List<Resource>
----@param arg1 IsoGameCharacter
+---@param outputResources List<Resource>
+---@param character IsoGameCharacter
 ---@return boolean
-function __CraftRecipeData:createOutputs(arg0, arg1) end
+function __CraftRecipeData:createOutputs(outputResources, character) end
 
----@param arg0 boolean
----@param arg1 List<Resource>
----@param arg2 IsoGameCharacter
+---@param testOnly boolean
+---@param outputResources List<Resource>
+---@param character IsoGameCharacter
 ---@return boolean
-function __CraftRecipeData:createRecipeOutputs(arg0, arg1, arg2) end
+function __CraftRecipeData:createRecipeOutputs(testOnly, outputResources, character) end
 
 ---@return ArrayList<InventoryItem>
 function __CraftRecipeData:getAllConsumedItems() end
 
----@param arg0 ArrayList<InventoryItem>
+---@param list ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __CraftRecipeData:getAllConsumedItems(arg0) end
+function __CraftRecipeData:getAllConsumedItems(list) end
 
----@param arg0 ArrayList<InventoryItem>
----@param arg1 boolean
+---@param list ArrayList<InventoryItem>
+---@param includeKeep boolean
 ---@return ArrayList<InventoryItem>
-function __CraftRecipeData:getAllConsumedItems(arg0, arg1) end
+function __CraftRecipeData:getAllConsumedItems(list, includeKeep) end
 
----@param arg0 ArrayList<InventoryItem>
----@param arg1 boolean
----@param arg2 boolean
+---@param list ArrayList<InventoryItem>
+---@param includeKeep boolean
+---@param onlyRecorded boolean
 ---@return ArrayList<InventoryItem>
-function __CraftRecipeData:getAllConsumedItems(arg0, arg1, arg2) end
+function __CraftRecipeData:getAllConsumedItems(list, includeKeep, onlyRecorded) end
 
 ---@return ArrayList<InventoryItem>
 function __CraftRecipeData:getAllCreatedItems() end
 
----@param arg0 ArrayList<InventoryItem>
+---@param list ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __CraftRecipeData:getAllCreatedItems(arg0) end
+function __CraftRecipeData:getAllCreatedItems(list) end
 
 ---@return ArrayList<InventoryItem>
 function __CraftRecipeData:getAllDestroyInputItems() end
@@ -136,20 +136,20 @@ function __CraftRecipeData:getAllDestroyInputItems() end
 ---@return ArrayList<InventoryItem>
 function __CraftRecipeData:getAllInputItems() end
 
----@param arg0 InputFlag
+---@param flag InputFlag
 ---@return ArrayList<InventoryItem>
-function __CraftRecipeData:getAllInputItemsWithFlag(arg0) end
+function __CraftRecipeData:getAllInputItemsWithFlag(flag) end
 
----@param arg0 string
+---@param flag string
 ---@return ArrayList<InventoryItem>
-function __CraftRecipeData:getAllInputItemsWithFlag(arg0) end
+function __CraftRecipeData:getAllInputItemsWithFlag(flag) end
 
 ---@return ArrayList<InventoryItem>
 function __CraftRecipeData:getAllKeepInputItems() end
 
----@param arg0 ArrayList<InventoryItem>
+---@param list ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __CraftRecipeData:getAllKeepInputItems(arg0) end
+function __CraftRecipeData:getAllKeepInputItems(list) end
 
 ---@return ArrayList<InventoryItem>
 function __CraftRecipeData:getAllNotKeepInputItems() end
@@ -160,9 +160,9 @@ function __CraftRecipeData:getAllPutBackInputItems() end
 ---@return ArrayList<InventoryItem>
 function __CraftRecipeData:getAllRecordedConsumedItems() end
 
----@param arg0 ArrayList<InventoryItem>
+---@param list ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __CraftRecipeData:getAllRecordedConsumedItems(arg0) end
+function __CraftRecipeData:getAllRecordedConsumedItems(list) end
 
 ---@return integer
 function __CraftRecipeData:getAllViableItemsCount() end
@@ -170,16 +170,16 @@ function __CraftRecipeData:getAllViableItemsCount() end
 ---@return integer
 function __CraftRecipeData:getAllViableResourcesCount() end
 
----@param arg0 HashSet<string>
+---@param appliedItemTypes HashSet<string>
 ---@return HashSet<string>
-function __CraftRecipeData:getAppliedInputItemTypes(arg0) end
+function __CraftRecipeData:getAppliedInputItemTypes(appliedItemTypes) end
 
 ---@return number
 function __CraftRecipeData:getCalculatedVariableInputRatio() end
 
----@param arg0 InputScript
+---@param script InputScript
 ---@return CraftRecipeData.InputScriptData
-function __CraftRecipeData:getDataForInputScript(arg0) end
+function __CraftRecipeData:getDataForInputScript(script) end
 
 ---@return integer
 function __CraftRecipeData:getEatPercentage() end
@@ -190,38 +190,38 @@ function __CraftRecipeData:getElapsedTime() end
 ---@return InventoryItem
 function __CraftRecipeData:getFirstCreatedItem() end
 
----@param arg0 InputFlag
+---@param flag InputFlag
 ---@return FluidSample
-function __CraftRecipeData:getFirstInputFluidWithFlag(arg0) end
+function __CraftRecipeData:getFirstInputFluidWithFlag(flag) end
 
----@param arg0 string
+---@param flag string
 ---@return FluidSample
-function __CraftRecipeData:getFirstInputFluidWithFlag(arg0) end
+function __CraftRecipeData:getFirstInputFluidWithFlag(flag) end
 
----@param arg0 InputFlag
+---@param flag InputFlag
 ---@return InventoryItem
-function __CraftRecipeData:getFirstInputItemWithFlag(arg0) end
+function __CraftRecipeData:getFirstInputItemWithFlag(flag) end
 
----@param arg0 string
+---@param flag string
 ---@return InventoryItem
-function __CraftRecipeData:getFirstInputItemWithFlag(arg0) end
+function __CraftRecipeData:getFirstInputItemWithFlag(flag) end
 
 ---@param itemTag ItemTag
 ---@return InventoryItem
 function __CraftRecipeData:getFirstInputItemWithTag(itemTag) end
 
----@param arg0 InputScript
+---@param inputScript InputScript
 ---@return InventoryItem
-function __CraftRecipeData:getFirstManualInputFor(arg0) end
+function __CraftRecipeData:getFirstManualInputFor(inputScript) end
 
----@param arg0 integer
+---@param index integer
 ---@return ArrayList<InventoryItem>
-function __CraftRecipeData:getInputItems(arg0) end
+function __CraftRecipeData:getInputItems(index) end
 
----@param arg0 InputScript
----@param arg1 ArrayList<InventoryItem>
+---@param inputScript InputScript
+---@param list ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __CraftRecipeData:getManualInputsFor(arg0, arg1) end
+function __CraftRecipeData:getManualInputsFor(inputScript, list) end
 
 ---@return table
 function __CraftRecipeData:getModData() end
@@ -232,13 +232,20 @@ function __CraftRecipeData:getModelHandOne() end
 ---@return string
 function __CraftRecipeData:getModelHandTwo() end
 
----@param arg0 List<Resource>
----@param arg1 List<InventoryItem>
----@param arg2 List<Resource>
----@param arg3 List<InventoryItem>
----@param arg4 boolean
+---@param inputResources List<Resource>
+---@param inputItems List<InventoryItem>
+---@param consumedResources List<Resource>
+---@param consumedItems List<InventoryItem>
+---@param limitItemsToAppliedItems boolean
 ---@return integer
-function __CraftRecipeData:getPossibleCraftCount(arg0, arg1, arg2, arg3, arg4) end
+function __CraftRecipeData:getPossibleCraftCount(
+	inputResources,
+	inputItems,
+	consumedResources,
+	consumedItems,
+	limitItemsToAppliedItems
+)
+end
 
 ---@return CraftRecipe
 function __CraftRecipeData:getRecipe() end
@@ -249,13 +256,13 @@ function __CraftRecipeData:getToOutputItems() end
 ---@return number
 function __CraftRecipeData:getVariableInputRatio() end
 
----@param arg0 integer
+---@param index integer
 ---@return InventoryItem
-function __CraftRecipeData:getViableItem(arg0) end
+function __CraftRecipeData:getViableItem(index) end
 
----@param arg0 integer
+---@param index integer
 ---@return Resource
-function __CraftRecipeData:getViableResource(arg0) end
+function __CraftRecipeData:getViableResource(index) end
 
 ---@return boolean
 function __CraftRecipeData:isAllowInputItems() end
@@ -275,117 +282,131 @@ function __CraftRecipeData:isFinished() end
 ---@return boolean
 function __CraftRecipeData:isVariableAmount() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
----@param arg2 CraftRecipe
----@param arg3 boolean
+---@param input ByteBuffer
+---@param WorldVersion integer
+---@param recipe CraftRecipe
+---@param recipeInvalidated boolean
 ---@return boolean
-function __CraftRecipeData:load(arg0, arg1, arg2, arg3) end
+function __CraftRecipeData:load(input, WorldVersion, recipe, recipeInvalidated) end
 
 function __CraftRecipeData:luaCallOnCreate() end
 
----@param arg0 IsoGameCharacter
-function __CraftRecipeData:luaCallOnCreate(arg0) end
+---@param character IsoGameCharacter
+function __CraftRecipeData:luaCallOnCreate(character) end
 
 function __CraftRecipeData:luaCallOnFailed() end
 
 function __CraftRecipeData:luaCallOnStart() end
 
----@param arg0 IsoGameCharacter
-function __CraftRecipeData:luaCallOnStart(arg0) end
+---@param character IsoGameCharacter
+function __CraftRecipeData:luaCallOnStart(character) end
 
 ---@return boolean
 function __CraftRecipeData:luaCallOnTest() end
 
 function __CraftRecipeData:luaCallOnUpdate() end
 
----@param arg0 InventoryItem
+---@param inventoryItem InventoryItem
 ---@return boolean
-function __CraftRecipeData:offerAndReplaceInputItem(arg0) end
+function __CraftRecipeData:offerAndReplaceInputItem(inventoryItem) end
 
----@param arg0 CraftRecipeData.InputScriptData
----@param arg1 InventoryItem
+---@param data CraftRecipeData.InputScriptData
+---@param inventoryItem InventoryItem
 ---@return boolean
-function __CraftRecipeData:offerAndReplaceInputItem(arg0, arg1) end
+function __CraftRecipeData:offerAndReplaceInputItem(data, inventoryItem) end
 
----@param arg0 InputScript
----@param arg1 InventoryItem
+---@param inputScript InputScript
+---@param item InventoryItem
 ---@return boolean
-function __CraftRecipeData:offerInputItem(arg0, arg1) end
+function __CraftRecipeData:offerInputItem(inputScript, item) end
 
----@param arg0 InputScript
----@param arg1 InventoryItem
----@param arg2 boolean
+---@param inputScript InputScript
+---@param item InventoryItem
+---@param verbose boolean
 ---@return boolean
-function __CraftRecipeData:offerInputItem(arg0, arg1, arg2) end
+function __CraftRecipeData:offerInputItem(inputScript, item, verbose) end
 
----@param arg0 IsoGameCharacter
----@param arg1 List<Resource>
----@param arg2 List<InventoryItem>
----@param arg3 ArrayList<ItemContainer>
+---@param character IsoGameCharacter
+---@param inputResources List<Resource>
+---@param overrideInputItems List<InventoryItem>
+---@param containers ArrayList<ItemContainer>
 ---@return boolean
-function __CraftRecipeData:perform(arg0, arg1, arg2, arg3) end
+function __CraftRecipeData:perform(character, inputResources, overrideInputItems, containers) end
 
----@param arg0 List<InventoryItem>
----@param arg1 List<Resource>
----@param arg2 boolean
-function __CraftRecipeData:populateInputs(arg0, arg1, arg2) end
+---@param inputItems List<InventoryItem>
+---@param resources List<Resource>
+---@param clearExisting boolean
+function __CraftRecipeData:populateInputs(inputItems, resources, clearExisting) end
 
----@param arg0 IsoGameCharacter
-function __CraftRecipeData:processDestroyAndUsedItems(arg0) end
+---@param character IsoGameCharacter
+function __CraftRecipeData:processDestroyAndUsedItems(character) end
 
----@param arg0 InventoryItem
+---@param inventoryItem InventoryItem
 ---@return boolean
-function __CraftRecipeData:removeInputItem(arg0) end
+function __CraftRecipeData:removeInputItem(inventoryItem) end
 
 function __CraftRecipeData:reset() end
 
----@param arg0 ByteBuffer
-function __CraftRecipeData:save(arg0) end
+---@param output ByteBuffer
+function __CraftRecipeData:save(output) end
 
----@param arg0 number
-function __CraftRecipeData:setCalculatedVariableInputRatio(arg0) end
+---@param value number
+function __CraftRecipeData:setCalculatedVariableInputRatio(value) end
 
----@param arg0 integer
-function __CraftRecipeData:setEatPercentage(arg0) end
+---@param percentage integer
+function __CraftRecipeData:setEatPercentage(percentage) end
 
----@param arg0 number
-function __CraftRecipeData:setElapsedTime(arg0) end
+---@param elapsedTime number
+function __CraftRecipeData:setElapsedTime(elapsedTime) end
 
----@param arg0 InputScript
----@param arg1 ArrayList<InventoryItem>
+---@param inputScript InputScript
+---@param list ArrayList<InventoryItem>
 ---@return boolean
-function __CraftRecipeData:setManualInputsFor(arg0, arg1) end
+function __CraftRecipeData:setManualInputsFor(inputScript, list) end
 
----@param arg0 CraftRecipeMonitor
-function __CraftRecipeData:setMonitor(arg0) end
+---@param monitor CraftRecipeMonitor
+function __CraftRecipeData:setMonitor(monitor) end
 
----@param arg0 CraftRecipe
-function __CraftRecipeData:setRecipe(arg0) end
+---@param recipe CraftRecipe
+function __CraftRecipeData:setRecipe(recipe) end
 
----@param arg0 number
-function __CraftRecipeData:setTargetVariableInputRatio(arg0) end
+---@param target number
+function __CraftRecipeData:setTargetVariableInputRatio(target) end
 
 CraftRecipeData = {}
 
----@param arg0 CraftMode
----@param arg1 boolean
----@param arg2 boolean
----@param arg3 boolean
----@param arg4 boolean
+---@param craftMode CraftMode
+---@param allowInputResources boolean
+---@param allowInputItems boolean
+---@param allowOutputResources boolean
+---@param allowOutputItems boolean
 ---@return CraftRecipeData
-function CraftRecipeData.Alloc(arg0, arg1, arg2, arg3, arg4) end
+function CraftRecipeData.Alloc(
+	craftMode,
+	allowInputResources,
+	allowInputItems,
+	allowOutputResources,
+	allowOutputItems
+)
+end
 
----@param arg0 CraftRecipeData
-function CraftRecipeData.Release(arg0) end
+---@param data CraftRecipeData
+function CraftRecipeData.Release(data) end
 
----@param arg0 CraftMode
----@param arg1 boolean
----@param arg2 boolean
----@param arg3 boolean
----@param arg4 boolean
+---@param craftMode CraftMode
+---@param allowInputResources boolean
+---@param allowInputItems boolean
+---@param allowOutputResources boolean
+---@param allowOutputItems boolean
 ---@return CraftRecipeData
-function CraftRecipeData.new(arg0, arg1, arg2, arg3, arg4) end
+function CraftRecipeData.new(
+	craftMode,
+	allowInputResources,
+	allowInputItems,
+	allowOutputResources,
+	allowOutputItems
+)
+end
 
 ---@type Class<CraftRecipeData>
 CraftRecipeData.class = nil

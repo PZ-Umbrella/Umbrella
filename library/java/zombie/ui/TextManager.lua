@@ -3,10 +3,10 @@
 ---@class TextManager
 local __TextManager = {}
 
----@param arg0 UIFont
----@param arg1 string
+---@param font UIFont
+---@param str string
 ---@return integer
-function __TextManager:CentreStringYOffset(arg0, arg1) end
+function __TextManager:CentreStringYOffset(font, str) end
 
 ---@param x number
 ---@param y number
@@ -140,40 +140,40 @@ function __TextManager:MeasureStringX(font, str) end
 ---@return integer
 function __TextManager:MeasureStringY(font, str) end
 
----@param arg0 UIFont
----@param arg1 string
----@param arg2 boolean
----@param arg3 boolean
+---@param font UIFont
+---@param str string
+---@param returnActualHeight boolean
+---@param returnOffset boolean
 ---@return integer
-function __TextManager:MeasureStringY(arg0, arg1, arg2, arg3) end
+function __TextManager:MeasureStringY(font, str, returnActualHeight, returnOffset) end
 
----@param arg0 UIFont
----@param arg1 string
+---@param font UIFont
+---@param str string
 ---@return integer
-function __TextManager:MeasureStringYOffset(arg0, arg1) end
+function __TextManager:MeasureStringYOffset(font, str) end
 
----@param arg0 UIFont
----@param arg1 string
+---@param font UIFont
+---@param str string
 ---@return integer
-function __TextManager:MeasureStringYReal(arg0, arg1) end
+function __TextManager:MeasureStringYReal(font, str) end
 
----@param arg0 UIFont
----@param arg1 string
----@param arg2 integer
+---@param font UIFont
+---@param str string
+---@param maxWidth integer
 ---@return string
-function __TextManager:WrapText(arg0, arg1, arg2) end
+function __TextManager:WrapText(font, str, maxWidth) end
 
----@param arg0 UIFont
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
----@param arg4 string
+---@param font UIFont
+---@param str string
+---@param maxWidth integer
+---@param maxLines integer
+---@param maxLinesSuffix string
 ---@return string
-function __TextManager:WrapText(arg0, arg1, arg2, arg3, arg4) end
+function __TextManager:WrapText(font, str, maxWidth, maxLines, maxLinesSuffix) end
 
----@param arg0 ArrayList<UIFont>
+---@param result ArrayList<UIFont>
 ---@return ArrayList<UIFont>
-function __TextManager:getAllFonts(arg0) end
+function __TextManager:getAllFonts(result) end
 
 ---@return UIFont
 function __TextManager:getCurrentCodeFont() end
@@ -190,9 +190,9 @@ function __TextManager:getFontHeight(fontID) end
 ---@return AngelCodeFont
 function __TextManager:getNormalFromFontSize(points) end
 
----@param arg0 UIFont
+---@param font UIFont
 ---@return boolean
-function __TextManager:isSdf(arg0) end
+function __TextManager:isSdf(font) end
 
 ---@return boolean
 function __TextManager:isUsingNonEnglishFonts() end

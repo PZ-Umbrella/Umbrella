@@ -33,26 +33,26 @@ function ItemPickerJava.InitSandboxLootSettings() end
 
 function ItemPickerJava.Parse() end
 
----@param arg0 InventoryItem
----@param arg1 ItemContainer
+---@param spawnItem InventoryItem
+---@param container ItemContainer
 ---@return boolean
-function ItemPickerJava.addVehicleKeyAsLoot(arg0, arg1) end
+function ItemPickerJava.addVehicleKeyAsLoot(spawnItem, container) end
 
----@param arg0 ItemContainer
----@param arg1 string
+---@param container ItemContainer
+---@param zone string
 ---@return boolean
-function ItemPickerJava.containerHasZone(arg0, arg1) end
+function ItemPickerJava.containerHasZone(container, zone) end
 
 ---@param sq IsoGridSquare
 function ItemPickerJava.doOverlaySprite(sq) end
 
----@param arg0 ItemPickerJava.ItemPickerContainer
----@param arg1 ItemContainer
----@param arg2 number
----@param arg3 IsoGameCharacter
----@param arg4 boolean
----@param arg5 ItemPickerJava.ItemPickerRoom
-function ItemPickerJava.doRollItem(arg0, arg1, arg2, arg3, arg4, arg5) end
+---@param containerDist ItemPickerJava.ItemPickerContainer
+---@param container ItemContainer
+---@param zombieDensity number
+---@param character IsoGameCharacter
+---@param doItemContainer boolean
+---@param roomDist ItemPickerJava.ItemPickerRoom
+function ItemPickerJava.doRollItem(containerDist, container, zombieDensity, character, doItemContainer, roomDist) end
 
 ---@param container ItemContainer
 ---@param player IsoPlayer
@@ -64,35 +64,35 @@ function ItemPickerJava.fillContainer(container, player) end
 ---@param character IsoGameCharacter
 function ItemPickerJava.fillContainerType(roomDist, container, roomName, character) end
 
----@param arg0 ItemPickerJava.ItemPickerItem
----@param arg1 IsoGameCharacter
----@param arg2 ItemContainer
----@param arg3 number
----@param arg4 boolean
+---@param item ItemPickerJava.ItemPickerItem
+---@param character IsoGameCharacter
+---@param container ItemContainer
+---@param zombieDensity number
+---@param isJunk boolean
 ---@return number
-function ItemPickerJava.getActualSpawnChance(arg0, arg1, arg2, arg3, arg4) end
+function ItemPickerJava.getActualSpawnChance(item, character, container, zombieDensity, isJunk) end
 
----@param arg0 number
----@param arg1 Item
----@param arg2 boolean
+---@param zombieDensity number
+---@param scriptItem Item
+---@param isJunk boolean
 ---@return number
-function ItemPickerJava.getAdjustedZombieDensity(arg0, arg1, arg2) end
+function ItemPickerJava.getAdjustedZombieDensity(zombieDensity, scriptItem, isJunk) end
 
----@param arg0 ItemPickerJava.ItemPickerItem
----@param arg1 IsoGameCharacter
----@param arg2 boolean
+---@param item ItemPickerJava.ItemPickerItem
+---@param character IsoGameCharacter
+---@param isJunk boolean
 ---@return number
-function ItemPickerJava.getBaseChance(arg0, arg1, arg2) end
+function ItemPickerJava.getBaseChance(item, character, isJunk) end
 
----@param arg0 IsoGameCharacter
----@param arg1 boolean
----@param arg2 Item
+---@param character IsoGameCharacter
+---@param isJunk boolean
+---@param scriptItem Item
 ---@return number
-function ItemPickerJava.getBaseChanceMultiplier(arg0, arg1, arg2) end
+function ItemPickerJava.getBaseChanceMultiplier(character, isJunk, scriptItem) end
 
----@param arg0 ItemContainer
+---@param container ItemContainer
 ---@return string
-function ItemPickerJava.getContainerZombiesType(arg0) end
+function ItemPickerJava.getContainerZombiesType(container) end
 
 ---@param room string
 ---@param container string
@@ -104,67 +104,67 @@ function ItemPickerJava.getItemContainer(room, container, proceduralName, junk) 
 ---@return THashMap<string, ItemPickerJava.ItemPickerContainer>
 function ItemPickerJava.getItemPickerContainers() end
 
----@param arg0 IsoObject
+---@param object IsoObject
 ---@return string
-function ItemPickerJava.getLootDebugString(arg0) end
+function ItemPickerJava.getLootDebugString(object) end
 
 ---@param itemname string
 ---@return number
 function ItemPickerJava.getLootModifier(itemname) end
 
----@param arg0 string
----@param arg1 boolean
+---@param itemName string
+---@param isJunk boolean
 ---@return number
-function ItemPickerJava.getLootModifier(arg0, arg1) end
+function ItemPickerJava.getLootModifier(itemName, isJunk) end
 
----@param arg0 string
+---@param lootType string
 ---@return number
-function ItemPickerJava.getLootModifierFromType(arg0) end
+function ItemPickerJava.getLootModifierFromType(lootType) end
 
----@param arg0 Item
+---@param item Item
 ---@return string
-function ItemPickerJava.getLootType(arg0) end
+function ItemPickerJava.getLootType(item) end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return string
-function ItemPickerJava.getSquareBuildingName(arg0) end
+function ItemPickerJava.getSquareBuildingName(square) end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return string
-function ItemPickerJava.getSquareRegion(arg0) end
+function ItemPickerJava.getSquareRegion(square) end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return string
-function ItemPickerJava.getSquareZombiesType(arg0) end
+function ItemPickerJava.getSquareZombiesType(square) end
 
----@param arg0 ItemPickerJava.ItemPickerContainer
----@param arg1 ItemContainer
+---@param containerDist ItemPickerJava.ItemPickerContainer
+---@param container ItemContainer
 ---@return number
-function ItemPickerJava.getZombieDensityFactor(arg0, arg1) end
+function ItemPickerJava.getZombieDensityFactor(containerDist, container) end
 
----@param arg0 string
----@param arg1 string
+---@param containerType string
+---@param roomdef string
 ---@return boolean
-function ItemPickerJava.hasDistributionForContainerInRoom(arg0, arg1) end
+function ItemPickerJava.hasDistributionForContainerInRoom(containerType, roomdef) end
 
----@param arg0 string
+---@param roomdef string
 ---@return boolean
-function ItemPickerJava.hasDistributionForRoom(arg0) end
+function ItemPickerJava.hasDistributionForRoom(roomdef) end
 
----@param arg0 string
+---@param vehicleType string
 ---@return boolean
-function ItemPickerJava.isGoodKey(arg0) end
+function ItemPickerJava.isGoodKey(vehicleType) end
 
----@param arg0 InventoryItem
-function ItemPickerJava.itemSpawnSanityCheck(arg0) end
+---@param spawnItem InventoryItem
+function ItemPickerJava.itemSpawnSanityCheck(spawnItem) end
 
----@param arg0 InventoryItem
----@param arg1 ItemContainer
-function ItemPickerJava.itemSpawnSanityCheck(arg0, arg1) end
+---@param spawnItem InventoryItem
+---@param container ItemContainer
+function ItemPickerJava.itemSpawnSanityCheck(spawnItem, container) end
 
----@param arg0 InventoryItem
----@param arg1 IsoGridSquare
-function ItemPickerJava.keyNamerBuilding(arg0, arg1) end
+---@param item InventoryItem
+---@param square IsoGridSquare
+function ItemPickerJava.keyNamerBuilding(item, square) end
 
 ---@param item InventoryItem
 ---@param region string
@@ -182,31 +182,31 @@ function ItemPickerJava.rollContainerItem(bag, character, containerDist) end
 ---@param roomDist ItemPickerJava.ItemPickerRoom
 function ItemPickerJava.rollItem(containerDist, container, doItemContainer, character, roomDist) end
 
----@param arg0 InventoryItem
-function ItemPickerJava.rotItem(arg0) end
+---@param spawnItem InventoryItem
+function ItemPickerJava.rotItem(spawnItem) end
 
----@param arg0 InventoryItem
----@param arg1 ItemContainer
-function ItemPickerJava.spawnLootCarKey(arg0, arg1) end
+---@param spawnItem InventoryItem
+---@param container ItemContainer
+function ItemPickerJava.spawnLootCarKey(spawnItem, container) end
 
----@param arg0 InventoryItem
----@param arg1 ItemContainer
----@param arg2 ItemContainer
-function ItemPickerJava.spawnLootCarKey(arg0, arg1, arg2) end
+---@param spawnItem InventoryItem
+---@param container ItemContainer
+---@param outtermost ItemContainer
+function ItemPickerJava.spawnLootCarKey(spawnItem, container, outtermost) end
 
----@param arg0 IsoGridSquare
----@param arg1 string
+---@param square IsoGridSquare
+---@param zone string
 ---@return boolean
-function ItemPickerJava.squareHasZone(arg0, arg1) end
+function ItemPickerJava.squareHasZone(square, zone) end
 
----@param arg0 InventoryItem
-function ItemPickerJava.trashItem(arg0) end
+---@param spawnItem InventoryItem
+function ItemPickerJava.trashItem(spawnItem) end
 
----@param arg0 InventoryItem
-function ItemPickerJava.trashItemLooted(arg0) end
+---@param spawnItem InventoryItem
+function ItemPickerJava.trashItemLooted(spawnItem) end
 
----@param arg0 InventoryItem
-function ItemPickerJava.trashItemRats(arg0) end
+---@param spawnItem InventoryItem
+function ItemPickerJava.trashItemRats(spawnItem) end
 
 ---@param container ItemContainer
 ---@param itemType string
@@ -217,8 +217,8 @@ function ItemPickerJava.tryAddItemToContainer(container, itemType, containerDist
 ---@param obj IsoObject
 function ItemPickerJava.updateOverlaySprite(obj) end
 
----@param arg0 InventoryItem
-function ItemPickerJava.wearDownItem(arg0) end
+---@param spawnItem InventoryItem
+function ItemPickerJava.wearDownItem(spawnItem) end
 
 ---@return ItemPickerJava
 function ItemPickerJava.new() end

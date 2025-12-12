@@ -10,7 +10,7 @@
 ---@field beardButton ISButton
 ---@field bFemale boolean
 ---@field char IsoPlayer
----@field displayedTraits TraitFactory.Trait[]
+---@field displayedTraits CharacterTraitDefinition[]
 ---@field hairButton ISButton
 ---@field joypadButtons ISButton[]
 ---@field literatureButton ISButton

@@ -3,8 +3,8 @@
 ---@class RZSSirTwiggy: RandomizedZoneStoryBase
 local __RZSSirTwiggy = {}
 
----@param arg0 Zone
-function __RZSSirTwiggy:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSSirTwiggy:randomizeZoneStory(zone) end
 
 RZSSirTwiggy = {}
 

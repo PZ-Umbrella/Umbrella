@@ -24,20 +24,20 @@ function __SwipeStatePlayer:isSyncOnExit() end
 ---@return boolean
 function __SwipeStatePlayer:isSyncOnSquare() end
 
----@param arg0 IsoGameCharacter
----@param arg1 State.Stage
-function __SwipeStatePlayer:setParams(arg0, arg1) end
+---@param owner IsoGameCharacter
+---@param stage State.Stage
+function __SwipeStatePlayer:setParams(owner, stage) end
 
 SwipeStatePlayer = {}
 
 ---@type number
 SwipeStatePlayer.MaxStompDistance = nil
 
----@param arg0 IsoGameCharacter
----@param arg1 AnimLayer
----@param arg2 AnimationTrack
----@param arg3 AnimEvent
-function SwipeStatePlayer.dbgOnGlobalAnimEvent(arg0, arg1, arg2, arg3) end
+---@param in_owner IsoGameCharacter
+---@param in_layer AnimLayer
+---@param in_track AnimationTrack
+---@param in_event AnimEvent
+function SwipeStatePlayer.dbgOnGlobalAnimEvent(in_owner, in_layer, in_track, in_event) end
 
 ---@return SwipeStatePlayer
 function SwipeStatePlayer.instance() end

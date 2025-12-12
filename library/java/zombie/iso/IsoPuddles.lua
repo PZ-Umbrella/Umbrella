@@ -53,20 +53,20 @@ function __IsoPuddles:getShaderTime() end
 ---@return number
 function __IsoPuddles:getWetGroundFinalValue() end
 
----@param arg0 integer
----@param arg1 integer
-function __IsoPuddles:puddlesGeometry(arg0, arg1) end
+---@param firstSquare integer
+---@param numSquares integer
+function __IsoPuddles:puddlesGeometry(firstSquare, numSquares) end
 
----@param arg0 Matrix4f
-function __IsoPuddles:puddlesProjection(arg0) end
+---@param PROJECTION Matrix4f
+function __IsoPuddles:puddlesProjection(PROJECTION) end
 
 ---@param grid ArrayList<IsoGridSquare>
 ---@param z integer
 function __IsoPuddles:render(grid, z) end
 
----@param arg0 ArrayList<IsoGridSquare>
----@param arg1 integer
-function __IsoPuddles:renderToChunkTexture(arg0, arg1) end
+---@param squares ArrayList<IsoGridSquare>
+---@param z integer
+function __IsoPuddles:renderToChunkTexture(squares, z) end
 
 ---@return boolean
 function __IsoPuddles:shouldRenderPuddles() end

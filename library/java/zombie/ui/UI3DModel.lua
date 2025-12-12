@@ -3,8 +3,8 @@
 ---@class UI3DModel: UIElement, IClothingItemListener
 local __UI3DModel = {}
 
----@param arg0 string
-function __UI3DModel:clearVariable(arg0) end
+---@param key string
+function __UI3DModel:clearVariable(key) end
 
 function __UI3DModel:clearVariables() end
 
@@ -20,9 +20,9 @@ function __UI3DModel:getDirection() end
 ---@return string
 function __UI3DModel:getState() end
 
----@param arg0 string
+---@param key string
 ---@return any
-function __UI3DModel:getVariable(arg0) end
+function __UI3DModel:getVariable(key) end
 
 function __UI3DModel:render() end
 
@@ -58,17 +58,17 @@ function __UI3DModel:setState(state) end
 ---@param survivorDesc SurvivorDesc
 function __UI3DModel:setSurvivorDesc(survivorDesc) end
 
----@param arg0 string
----@param arg1 string
-function __UI3DModel:setVariable(arg0, arg1) end
+---@param key string
+---@param value string
+function __UI3DModel:setVariable(key, value) end
 
----@param arg0 string
----@param arg1 boolean
-function __UI3DModel:setVariable(arg0, arg1) end
+---@param key string
+---@param value boolean
+function __UI3DModel:setVariable(key, value) end
 
----@param arg0 string
----@param arg1 number
-function __UI3DModel:setVariable(arg0, arg1) end
+---@param key string
+---@param value number
+function __UI3DModel:setVariable(key, value) end
 
 ---@param newXOffset number
 function __UI3DModel:setXOffset(newXOffset) end

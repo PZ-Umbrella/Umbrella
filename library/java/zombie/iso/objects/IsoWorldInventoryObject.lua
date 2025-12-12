@@ -12,19 +12,19 @@ function __IsoWorldInventoryObject:HasTooltip() end
 ---@return boolean
 function __IsoWorldInventoryObject:Serialize() end
 
----@param arg0 FluidType
----@param arg1 number
-function __IsoWorldInventoryObject:addFluid(arg0, arg1) end
+---@param fluidType FluidType
+---@param amount number
+function __IsoWorldInventoryObject:addFluid(fluidType, amount) end
 
 function __IsoWorldInventoryObject:addToWorld() end
 
----@param arg0 FluidContainer
+---@param other FluidContainer
 ---@return boolean
-function __IsoWorldInventoryObject:canTransferFluidFrom(arg0) end
+function __IsoWorldInventoryObject:canTransferFluidFrom(other) end
 
----@param arg0 FluidContainer
+---@param other FluidContainer
 ---@return boolean
-function __IsoWorldInventoryObject:canTransferFluidTo(arg0) end
+function __IsoWorldInventoryObject:canTransferFluidTo(other) end
 
 function __IsoWorldInventoryObject:emptyFluid() end
 
@@ -90,9 +90,9 @@ function __IsoWorldInventoryObject:isFluidInputLocked() end
 ---@return boolean
 function __IsoWorldInventoryObject:isIgnoreRemoveSandbox() end
 
----@param arg0 boolean
+---@param includeTainted boolean
 ---@return boolean
-function __IsoWorldInventoryObject:isPureWater(arg0) end
+function __IsoWorldInventoryObject:isPureWater(includeTainted) end
 
 ---@return boolean
 function __IsoWorldInventoryObject:isTaintedWater() end
@@ -139,62 +139,62 @@ function __IsoWorldInventoryObject:save(output, IS_DEBUG_SAVE) end
 ---@param bb ByteBuffer
 function __IsoWorldInventoryObject:saveChange(change, tbl, bb) end
 
----@param arg0 boolean
-function __IsoWorldInventoryObject:setExtendedPlacement(arg0) end
+---@param b boolean
+function __IsoWorldInventoryObject:setExtendedPlacement(b) end
 
----@param arg0 integer
----@param arg1 boolean
----@param arg2 boolean
-function __IsoWorldInventoryObject:setHighlighted(arg0, arg1, arg2) end
+---@param playerIndex integer
+---@param bHighlight boolean
+---@param bRenderOnce boolean
+function __IsoWorldInventoryObject:setHighlighted(playerIndex, bHighlight, bRenderOnce) end
 
 ---@param b boolean
 function __IsoWorldInventoryObject:setIgnoreRemoveSandbox(b) end
 
----@param arg0 number
-function __IsoWorldInventoryObject:setOffX(arg0) end
+---@param newoff number
+function __IsoWorldInventoryObject:setOffX(newoff) end
 
----@param arg0 number
-function __IsoWorldInventoryObject:setOffY(arg0) end
+---@param newoff number
+function __IsoWorldInventoryObject:setOffY(newoff) end
 
----@param arg0 number
-function __IsoWorldInventoryObject:setOffZ(arg0) end
+---@param newoff number
+function __IsoWorldInventoryObject:setOffZ(newoff) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
-function __IsoWorldInventoryObject:setOffset(arg0, arg1, arg2) end
+---@param x number
+---@param y number
+---@param z number
+function __IsoWorldInventoryObject:setOffset(x, y, z) end
 
 function __IsoWorldInventoryObject:softReset() end
 
 ---@param newItem InventoryItem
 function __IsoWorldInventoryObject:swapItem(newItem) end
 
----@param arg0 boolean
----@param arg1 integer
----@param arg2 UdpConnection
----@param arg3 ByteBuffer
-function __IsoWorldInventoryObject:syncIsoObject(arg0, arg1, arg2, arg3) end
+---@param bRemote boolean
+---@param val integer
+---@param source UdpConnection
+---@param bb ByteBuffer
+function __IsoWorldInventoryObject:syncIsoObject(bRemote, val, source, bb) end
 
----@param arg0 ByteBufferWriter
-function __IsoWorldInventoryObject:syncIsoObjectSend(arg0) end
+---@param b ByteBufferWriter
+function __IsoWorldInventoryObject:syncIsoObjectSend(b) end
 
----@param arg0 FluidContainer
----@param arg1 number
+---@param source FluidContainer
+---@param amount number
 ---@return number
-function __IsoWorldInventoryObject:transferFluidFrom(arg0, arg1) end
+function __IsoWorldInventoryObject:transferFluidFrom(source, amount) end
 
----@param arg0 FluidContainer
----@param arg1 number
+---@param target FluidContainer
+---@param amount number
 ---@return number
-function __IsoWorldInventoryObject:transferFluidTo(arg0, arg1) end
+function __IsoWorldInventoryObject:transferFluidTo(target, amount) end
 
 function __IsoWorldInventoryObject:update() end
 
 function __IsoWorldInventoryObject:updateSprite() end
 
----@param arg0 number
+---@param amount number
 ---@return number
-function __IsoWorldInventoryObject:useFluid(arg0) end
+function __IsoWorldInventoryObject:useFluid(amount) end
 
 IsoWorldInventoryObject = {}
 
@@ -203,11 +203,11 @@ IsoWorldInventoryObject = {}
 ---@return number
 function IsoWorldInventoryObject.getSurfaceAlpha(square, zoff) end
 
----@param arg0 IsoGridSquare
----@param arg1 number
----@param arg2 boolean
+---@param square IsoGridSquare
+---@param zoff number
+---@param bTargetAlpha boolean
 ---@return number
-function IsoWorldInventoryObject.getSurfaceAlpha(arg0, arg1, arg2) end
+function IsoWorldInventoryObject.getSurfaceAlpha(square, zoff, bTargetAlpha) end
 
 ---@param item InventoryItem
 ---@param sq IsoGridSquare

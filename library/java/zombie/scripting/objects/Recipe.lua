@@ -9,9 +9,9 @@ function __Recipe:DoResult(type) end
 ---@param type string
 function __Recipe:DoSource(type) end
 
----@param arg0 string
----@param arg1 string
-function __Recipe:Load(arg0, arg1) end
+---@param name string
+---@param totalFile string
+function __Recipe:Load(name, totalFile) end
 
 ---@param perk PerkFactory.Perk
 ---@param level integer

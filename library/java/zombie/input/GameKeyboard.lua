@@ -25,22 +25,22 @@ function GameKeyboard.getEventQueuePolling() end
 ---@return boolean
 function GameKeyboard.isKeyDown(key) end
 
----@param arg0 string
+---@param keyName string
 ---@return boolean
-function GameKeyboard.isKeyDown(arg0) end
+function GameKeyboard.isKeyDown(keyName) end
 
----@param arg0 integer
+---@param key integer
 ---@return boolean
-function GameKeyboard.isKeyDownRaw(arg0) end
+function GameKeyboard.isKeyDownRaw(key) end
 
 ---Has the key been pressed. Not continuous. That is, is the key down now, but was not down before.
 ---@param key integer
 ---@return boolean
 function GameKeyboard.isKeyPressed(key) end
 
----@param arg0 string
+---@param keyName string
 ---@return boolean
-function GameKeyboard.isKeyPressed(arg0) end
+function GameKeyboard.isKeyPressed(keyName) end
 
 function GameKeyboard.poll() end
 
@@ -54,29 +54,29 @@ function GameKeyboard.update() end
 ---@return boolean
 function GameKeyboard.wasKeyDown(key) end
 
----@param arg0 string
+---@param keyName string
 ---@return boolean
-function GameKeyboard.wasKeyDown(arg0) end
+function GameKeyboard.wasKeyDown(keyName) end
 
----@param arg0 integer
+---@param key integer
 ---@return boolean
-function GameKeyboard.wasKeyDownRaw(arg0) end
+function GameKeyboard.wasKeyDownRaw(key) end
 
----@param arg0 string
+---@param keyName string
 ---@return integer
-function GameKeyboard.whichKeyDown(arg0) end
+function GameKeyboard.whichKeyDown(keyName) end
 
 ---@param keyName string
 ---@return integer
 function GameKeyboard.whichKeyDownIgnoreMouse(keyName) end
 
----@param arg0 string
+---@param keyName string
 ---@return integer
-function GameKeyboard.whichKeyPressed(arg0) end
+function GameKeyboard.whichKeyPressed(keyName) end
 
----@param arg0 string
+---@param keyName string
 ---@return integer
-function GameKeyboard.whichKeyWasDown(arg0) end
+function GameKeyboard.whichKeyWasDown(keyName) end
 
 ---@return GameKeyboard
 function GameKeyboard.new() end

@@ -3,21 +3,21 @@
 ---@class DesignationZoneAnimal: DesignationZone
 local __DesignationZoneAnimal = {}
 
----@param arg0 IsoAnimal
-function __DesignationZoneAnimal:addAnimal(arg0) end
+---@param animal IsoAnimal
+function __DesignationZoneAnimal:addAnimal(animal) end
 
----@param arg0 IsoDeadBody
-function __DesignationZoneAnimal:addCorpse(arg0) end
+---@param corpse IsoDeadBody
+function __DesignationZoneAnimal:addCorpse(corpse) end
 
----@param arg0 IsoWorldInventoryObject
-function __DesignationZoneAnimal:addFoodOnGround(arg0) end
+---@param item IsoWorldInventoryObject
+function __DesignationZoneAnimal:addFoodOnGround(item) end
 
 function __DesignationZoneAnimal:check() end
 
 function __DesignationZoneAnimal:createSurroundingFence() end
 
----@param arg0 integer
-function __DesignationZoneAnimal:doMeta(arg0) end
+---@param hours integer
+function __DesignationZoneAnimal:doMeta(hours) end
 
 ---@return ArrayList<IsoAnimal>
 function __DesignationZoneAnimal:getAnimals() end
@@ -67,11 +67,11 @@ function __DesignationZoneAnimal:getTroughs() end
 ---@return ArrayList<IsoFeedingTrough>
 function __DesignationZoneAnimal:getTroughsConnected() end
 
----@param arg0 IsoAnimal
-function __DesignationZoneAnimal:removeAnimal(arg0) end
+---@param animal IsoAnimal
+function __DesignationZoneAnimal:removeAnimal(animal) end
 
----@param arg0 IsoDeadBody
-function __DesignationZoneAnimal:removeCorpse(arg0) end
+---@param corpse IsoDeadBody
+function __DesignationZoneAnimal:removeCorpse(corpse) end
 
 DesignationZoneAnimal = {}
 
@@ -110,20 +110,20 @@ DesignationZoneAnimal.designationAnimalZoneList = nil
 
 function DesignationZoneAnimal.Reset() end
 
----@param arg0 IsoWorldInventoryObject
----@param arg1 IsoGridSquare
-function DesignationZoneAnimal.addItemOnGround(arg0, arg1) end
+---@param item IsoWorldInventoryObject
+---@param sq IsoGridSquare
+function DesignationZoneAnimal.addItemOnGround(item, sq) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
-function DesignationZoneAnimal.addNewRoof(arg0, arg1, arg2) end
+---@param x integer
+---@param y integer
+---@param z integer
+function DesignationZoneAnimal.addNewRoof(x, y, z) end
 
----@param arg0 ArrayList<DesignationZoneAnimal>
----@param arg1 DesignationZoneAnimal
----@param arg2 DesignationZoneAnimal
+---@param currentList ArrayList<DesignationZoneAnimal>
+---@param zoneToCheck DesignationZoneAnimal
+---@param previousZone DesignationZoneAnimal
 ---@return ArrayList<DesignationZoneAnimal>
-function DesignationZoneAnimal.getAllDZones(arg0, arg1, arg2) end
+function DesignationZoneAnimal.getAllDZones(currentList, zoneToCheck, previousZone) end
 
 ---@return ArrayList<DesignationZoneAnimal>
 function DesignationZoneAnimal.getAllZones() end
@@ -131,41 +131,41 @@ function DesignationZoneAnimal.getAllZones() end
 ---@return string
 function DesignationZoneAnimal.getType() end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return DesignationZoneAnimal
-function DesignationZoneAnimal.getZone(arg0, arg1, arg2) end
+function DesignationZoneAnimal.getZone(x, y, z) end
 
----@param arg0 integer
----@param arg1 integer
+---@param x integer
+---@param y integer
 ---@return DesignationZoneAnimal
-function DesignationZoneAnimal.getZone(arg0, arg1) end
+function DesignationZoneAnimal.getZone(x, y) end
 
 ---@param zoneID number
 ---@return DesignationZoneAnimal
 function DesignationZoneAnimal.getZoneById(zoneID) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param x number
+---@param y number
+---@param z number
 ---@return DesignationZoneAnimal
-function DesignationZoneAnimal.getZoneF(arg0, arg1, arg2) end
+function DesignationZoneAnimal.getZoneF(x, y, z) end
 
----@param arg0 IsoWorldInventoryObject
+---@param item IsoWorldInventoryObject
 ---@return boolean
-function DesignationZoneAnimal.isItemDung(arg0) end
+function DesignationZoneAnimal.isItemDung(item) end
 
----@param arg0 IsoWorldInventoryObject
+---@param item IsoWorldInventoryObject
 ---@return boolean
-function DesignationZoneAnimal.isItemFeather(arg0) end
+function DesignationZoneAnimal.isItemFeather(item) end
 
----@param arg0 IsoWorldInventoryObject
+---@param item IsoWorldInventoryObject
 ---@return boolean
-function DesignationZoneAnimal.isItemFood(arg0) end
+function DesignationZoneAnimal.isItemFood(item) end
 
----@param arg0 IsoWorldInventoryObject
-function DesignationZoneAnimal.removeItemFromGround(arg0) end
+---@param item IsoWorldInventoryObject
+function DesignationZoneAnimal.removeItemFromGround(item) end
 
 ---@param zone DesignationZoneAnimal
 ---@param doSync boolean

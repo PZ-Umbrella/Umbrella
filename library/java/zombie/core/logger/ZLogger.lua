@@ -10,18 +10,18 @@ function __ZLogger:write(logs) end
 ---@param level string
 function __ZLogger:write(logs, level) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 boolean
-function __ZLogger:write(arg0, arg1, arg2) end
+---@param logs string
+---@param level string
+---@param append boolean
+function __ZLogger:write(logs, level, append) end
 
 ---@param ex Exception
 function __ZLogger:write(ex) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 boolean
-function __ZLogger:writeUnsafe(arg0, arg1, arg2) end
+---@param logs string
+---@param prefix string
+---@param append boolean
+function __ZLogger:writeUnsafe(logs, prefix, append) end
 
 ZLogger = {}
 

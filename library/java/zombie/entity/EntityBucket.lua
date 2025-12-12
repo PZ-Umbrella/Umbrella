@@ -3,9 +3,9 @@
 ---@class EntityBucket
 local __EntityBucket = {}
 
----@param arg0 integer
----@param arg1 IBucketListener
-function __EntityBucket:addListener(arg0, arg1) end
+---@param priority integer
+---@param listener IBucketListener
+function __EntityBucket:addListener(priority, listener) end
 
 ---@return ImmutableArray<GameEntity>
 function __EntityBucket:getEntities() end
@@ -13,11 +13,11 @@ function __EntityBucket:getEntities() end
 ---@return integer
 function __EntityBucket:getIndex() end
 
----@param arg0 IBucketListener
-function __EntityBucket:removeListener(arg0) end
+---@param listener IBucketListener
+function __EntityBucket:removeListener(listener) end
 
----@param arg0 boolean
-function __EntityBucket:setVerbose(arg0) end
+---@param b boolean
+function __EntityBucket:setVerbose(b) end
 
 EntityBucket = {}
 

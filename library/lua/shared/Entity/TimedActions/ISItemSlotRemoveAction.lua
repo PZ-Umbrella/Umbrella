@@ -2,7 +2,7 @@
 
 ---@class ISItemSlotRemoveAction : ISBaseTimedAction
 ---@field actionAnim string
----@field actionAnimVariables table
+---@field actionAnimVariables table<string, string>
 ---@field entity IsoObject
 ---@field item InventoryItem?
 ---@field itemSlot ISItemSlot?
@@ -33,7 +33,7 @@ function ISItemSlotRemoveAction:update() end
 
 ---@param character IsoPlayer
 ---@param entity IsoObject
----@param resource ResourceItem
+---@param itemSlot ISItemSlot
 ---@param item InventoryItem?
 ---@return ISItemSlotRemoveAction
-function ISItemSlotRemoveAction:new(character, entity, resource, item) end
+function ISItemSlotRemoveAction:new(character, entity, itemSlot, item) end

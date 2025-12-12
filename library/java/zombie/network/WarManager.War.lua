@@ -21,24 +21,24 @@ function __War:getTime() end
 ---@return integer
 function __War:getTimestamp() end
 
----@param arg0 WarManager.State
+---@param state WarManager.State
 ---@return boolean
-function __War:isValidState(arg0) end
+function __War:isValidState(state) end
 
----@param arg0 WarManager.State
-function __War:setState(arg0) end
+---@param state WarManager.State
+function __War:setState(state) end
 
----@param arg0 integer
-function __War:setTimestamp(arg0) end
+---@param timestamp integer
+function __War:setTimestamp(timestamp) end
 
 War = {}
 
----@param arg0 integer
----@param arg1 string
----@param arg2 WarManager.State
----@param arg3 integer
+---@param onlineId integer
+---@param attacker string
+---@param state WarManager.State
+---@param timestamp integer
 ---@return WarManager.War
-function War.new(arg0, arg1, arg2, arg3) end
+function War.new(onlineId, attacker, state, timestamp) end
 
 ---@type Class<WarManager.War>
 War.class = nil

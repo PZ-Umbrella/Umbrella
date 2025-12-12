@@ -9,18 +9,18 @@ function __DBBannedSteamID:getReason() end
 ---@return string
 function __DBBannedSteamID:getSteamID() end
 
----@param arg0 string
-function __DBBannedSteamID:setReason(arg0) end
+---@param reason string
+function __DBBannedSteamID:setReason(reason) end
 
----@param arg0 string
-function __DBBannedSteamID:setSteamID(arg0) end
+---@param steamid string
+function __DBBannedSteamID:setSteamID(steamid) end
 
 DBBannedSteamID = {}
 
----@param arg0 string
----@param arg1 string
+---@param steamid string
+---@param reason string
 ---@return DBBannedSteamID
-function DBBannedSteamID.new(arg0, arg1) end
+function DBBannedSteamID.new(steamid, reason) end
 
 ---@type Class<DBBannedSteamID>
 DBBannedSteamID.class = nil

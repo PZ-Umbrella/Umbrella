@@ -13,26 +13,26 @@ function __AtomUITexture:init() end
 
 function __AtomUITexture:render() end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
-function __AtomUITexture:setAnimValues(arg0, arg1, arg2, arg3) end
+---@param animDelay number
+---@param animFrameNum number
+---@param animFrameRows number
+---@param animFrameColumns number
+function __AtomUITexture:setAnimValues(animDelay, animFrameNum, animFrameRows, animFrameColumns) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
-function __AtomUITexture:setSlice9(arg0, arg1, arg2, arg3) end
+---@param left number
+---@param right number
+---@param top number
+---@param down number
+function __AtomUITexture:setSlice9(left, right, top, down) end
 
----@param arg0 Texture
-function __AtomUITexture:setTexture(arg0) end
+---@param tex Texture
+function __AtomUITexture:setTexture(tex) end
 
 AtomUITexture = {}
 
----@param arg0 table
+---@param table table
 ---@return AtomUITexture
-function AtomUITexture.new(arg0) end
+function AtomUITexture.new(table) end
 
 ---@type Class<AtomUITexture>
 AtomUITexture.class = nil

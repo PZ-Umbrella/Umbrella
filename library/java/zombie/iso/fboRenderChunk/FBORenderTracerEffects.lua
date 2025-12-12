@@ -3,33 +3,33 @@
 ---@class FBORenderTracerEffects
 local __FBORenderTracerEffects = {}
 
----@param arg0 IsoGameCharacter
----@param arg1 number
-function __FBORenderTracerEffects:addEffect(arg0, arg1) end
+---@param chr IsoGameCharacter
+---@param range number
+function __FBORenderTracerEffects:addEffect(chr, range) end
 
----@param arg0 integer
+---@param index integer
 ---@return ConfigOption
-function __FBORenderTracerEffects:getOptionByIndex(arg0) end
+function __FBORenderTracerEffects:getOptionByIndex(index) end
 
----@param arg0 string
+---@param name string
 ---@return ConfigOption
-function __FBORenderTracerEffects:getOptionByName(arg0) end
+function __FBORenderTracerEffects:getOptionByName(name) end
 
 ---@return integer
 function __FBORenderTracerEffects:getOptionCount() end
 
 function __FBORenderTracerEffects:load() end
 
----@param arg0 IsoGameCharacter
-function __FBORenderTracerEffects:releaseWeaponTransform(arg0) end
+---@param chr IsoGameCharacter
+function __FBORenderTracerEffects:releaseWeaponTransform(chr) end
 
 function __FBORenderTracerEffects:render() end
 
 function __FBORenderTracerEffects:save() end
 
----@param arg0 IsoGameCharacter
----@param arg1 Matrix4f
-function __FBORenderTracerEffects:storeWeaponTransform(arg0, arg1) end
+---@param chr IsoGameCharacter
+---@param xfrm Matrix4f
+function __FBORenderTracerEffects:storeWeaponTransform(chr, xfrm) end
 
 FBORenderTracerEffects = {}
 

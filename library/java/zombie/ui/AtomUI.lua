@@ -3,8 +3,8 @@
 ---@class AtomUI: UIElementInterface
 local __AtomUI = {}
 
----@param arg0 AtomUI
-function __AtomUI:addNode(arg0) end
+---@param el AtomUI
+function __AtomUI:addNode(el) end
 
 function __AtomUI:bringToTop() end
 
@@ -19,20 +19,20 @@ function __AtomUI:getColor() end
 ---@return number
 function __AtomUI:getHeight() end
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return table
-function __AtomUI:getLuaAbsolutePosition(arg0, arg1) end
+function __AtomUI:getLuaAbsolutePosition(x, y) end
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return table
-function __AtomUI:getLuaLocalPosition(arg0, arg1) end
+function __AtomUI:getLuaLocalPosition(x, y) end
 
----@param arg0 number
----@param arg1 number
+---@param x number
+---@param y number
 ---@return table
-function __AtomUI:getLuaParentPosition(arg0, arg1) end
+function __AtomUI:getLuaParentPosition(x, y) end
 
 ---@return number
 function __AtomUI:getMaxDrawHeight() end
@@ -108,15 +108,15 @@ function __AtomUI:isModalVisible() end
 ---@return boolean
 function __AtomUI:isMouseOver() end
 
----@param arg0 number
----@param arg1 number
+---@param mx number
+---@param my number
 ---@return boolean
-function __AtomUI:isOverElement(arg0, arg1) end
+function __AtomUI:isOverElement(mx, my) end
 
----@param arg0 number
----@param arg1 number
+---@param screenX number
+---@param screenY number
 ---@return boolean
-function __AtomUI:isPointOver(arg0, arg1) end
+function __AtomUI:isPointOver(screenX, screenY) end
 
 ---@return boolean
 function __AtomUI:isVisible() end
@@ -124,132 +124,132 @@ function __AtomUI:isVisible() end
 ---@return boolean
 function __AtomUI:isWantKeyEvents() end
 
----@param arg0 integer
+---@param key integer
 ---@return boolean
-function __AtomUI:onConsumeKeyPress(arg0) end
+function __AtomUI:onConsumeKeyPress(key) end
 
----@param arg0 integer
+---@param key integer
 ---@return boolean
-function __AtomUI:onConsumeKeyRelease(arg0) end
+function __AtomUI:onConsumeKeyRelease(key) end
 
----@param arg0 integer
+---@param key integer
 ---@return boolean
-function __AtomUI:onConsumeKeyRepeat(arg0) end
+function __AtomUI:onConsumeKeyRepeat(key) end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 number
+---@param btn integer
+---@param x number
+---@param y number
 ---@return boolean
-function __AtomUI:onConsumeMouseButtonDown(arg0, arg1, arg2) end
+function __AtomUI:onConsumeMouseButtonDown(btn, x, y) end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 number
+---@param btn integer
+---@param x number
+---@param y number
 ---@return boolean
-function __AtomUI:onConsumeMouseButtonUp(arg0, arg1, arg2) end
+function __AtomUI:onConsumeMouseButtonUp(btn, x, y) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
+---@param dx number
+---@param dy number
+---@param x number
+---@param y number
 ---@return boolean
-function __AtomUI:onConsumeMouseMove(arg0, arg1, arg2, arg3) end
+function __AtomUI:onConsumeMouseMove(dx, dy, x, y) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
+---@param del number
+---@param x number
+---@param y number
 ---@return boolean
-function __AtomUI:onConsumeMouseWheel(arg0, arg1, arg2) end
+function __AtomUI:onConsumeMouseWheel(del, x, y) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
-function __AtomUI:onExtendMouseMoveOutside(arg0, arg1, arg2, arg3) end
+---@param dx number
+---@param dy number
+---@param x number
+---@param y number
+function __AtomUI:onExtendMouseMoveOutside(dx, dy, x, y) end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 number
-function __AtomUI:onMouseButtonDownOutside(arg0, arg1, arg2) end
+---@param btn integer
+---@param x number
+---@param y number
+function __AtomUI:onMouseButtonDownOutside(btn, x, y) end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 number
-function __AtomUI:onMouseButtonUpOutside(arg0, arg1, arg2) end
+---@param btn integer
+---@param x number
+---@param y number
+function __AtomUI:onMouseButtonUpOutside(btn, x, y) end
 
----@param arg0 AtomUI
-function __AtomUI:removeNode(arg0) end
+---@param el AtomUI
+function __AtomUI:removeNode(el) end
 
 function __AtomUI:render() end
 
 function __AtomUI:repaintStencilRect() end
 
----@param arg0 boolean
-function __AtomUI:setAlwaysOnTop(arg0) end
+---@param value boolean
+function __AtomUI:setAlwaysOnTop(value) end
 
----@param arg0 number
-function __AtomUI:setAngle(arg0) end
+---@param angle number
+function __AtomUI:setAngle(angle) end
 
----@param arg0 boolean
-function __AtomUI:setBackMost(arg0) end
+---@param value boolean
+function __AtomUI:setBackMost(value) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
-function __AtomUI:setColor(arg0, arg1, arg2, arg3) end
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function __AtomUI:setColor(r, g, b, a) end
 
----@param arg0 boolean
-function __AtomUI:setEnabled(arg0) end
+---@param enabled boolean
+function __AtomUI:setEnabled(enabled) end
 
----@param arg0 number
-function __AtomUI:setHeight(arg0) end
+---@param value number
+function __AtomUI:setHeight(value) end
 
----@param arg0 number
-function __AtomUI:setHeightSilent(arg0) end
+---@param value number
+function __AtomUI:setHeightSilent(value) end
 
----@param arg0 AtomUI
-function __AtomUI:setParentNode(arg0) end
+---@param parent AtomUI
+function __AtomUI:setParentNode(parent) end
 
----@param arg0 number
-function __AtomUI:setPivotX(arg0) end
+---@param x number
+function __AtomUI:setPivotX(x) end
 
----@param arg0 number
-function __AtomUI:setPivotY(arg0) end
+---@param y number
+function __AtomUI:setPivotY(y) end
 
----@param arg0 number
-function __AtomUI:setScaleX(arg0) end
+---@param x number
+function __AtomUI:setScaleX(x) end
 
----@param arg0 number
-function __AtomUI:setScaleY(arg0) end
+---@param y number
+function __AtomUI:setScaleY(y) end
 
 function __AtomUI:setStencilRect() end
 
----@param arg0 string
-function __AtomUI:setUIName(arg0) end
+---@param name string
+function __AtomUI:setUIName(name) end
 
----@param arg0 boolean
-function __AtomUI:setVisible(arg0) end
+---@param value boolean
+function __AtomUI:setVisible(value) end
 
----@param arg0 number
-function __AtomUI:setWidth(arg0) end
+---@param value number
+function __AtomUI:setWidth(value) end
 
----@param arg0 number
-function __AtomUI:setWidthSilent(arg0) end
+---@param value number
+function __AtomUI:setWidthSilent(value) end
 
----@param arg0 number
-function __AtomUI:setX(arg0) end
+---@param value number
+function __AtomUI:setX(value) end
 
----@param arg0 number
-function __AtomUI:setY(arg0) end
+---@param value number
+function __AtomUI:setY(value) end
 
 function __AtomUI:update() end
 
 AtomUI = {}
 
----@param arg0 table
+---@param table table
 ---@return AtomUI
-function AtomUI.new(arg0) end
+function AtomUI.new(table) end
 
 ---@type Class<AtomUI>
 AtomUI.class = nil

@@ -3,39 +3,39 @@
 ---@class WorldMapSymbolsV2: WorldMapSymbolsAPI
 local __WorldMapSymbolsV2 = {}
 
----@param arg0 string
----@param arg1 number
----@param arg2 number
+---@param symbolID string
+---@param x number
+---@param y number
 ---@return WorldMapSymbolsV2.WorldMapTextureSymbolV2
-function __WorldMapSymbolsV2:addTexture(arg0, arg1, arg2) end
+function __WorldMapSymbolsV2:addTexture(symbolID, x, y) end
 
----@param arg0 string
----@param arg1 UIFont
----@param arg2 number
----@param arg3 number
+---@param text string
+---@param font UIFont
+---@param x number
+---@param y number
 ---@return WorldMapSymbolsV2.WorldMapTextSymbolV2
-function __WorldMapSymbolsV2:addTranslatedText(arg0, arg1, arg2, arg3) end
+function __WorldMapSymbolsV2:addTranslatedText(text, font, x, y) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 number
----@param arg3 number
+---@param text string
+---@param layerID string
+---@param x number
+---@param y number
 ---@return WorldMapSymbolsV2.WorldMapTextSymbolV2
-function __WorldMapSymbolsV2:addTranslatedText(arg0, arg1, arg2, arg3) end
+function __WorldMapSymbolsV2:addTranslatedText(text, layerID, x, y) end
 
----@param arg0 string
----@param arg1 UIFont
----@param arg2 number
----@param arg3 number
+---@param text string
+---@param font UIFont
+---@param x number
+---@param y number
 ---@return WorldMapSymbolsV2.WorldMapTextSymbolV2
-function __WorldMapSymbolsV2:addUntranslatedText(arg0, arg1, arg2, arg3) end
+function __WorldMapSymbolsV2:addUntranslatedText(text, font, x, y) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 number
----@param arg3 number
+---@param text string
+---@param layerID string
+---@param x number
+---@param y number
 ---@return WorldMapSymbolsV2.WorldMapTextSymbolV2
-function __WorldMapSymbolsV2:addUntranslatedText(arg0, arg1, arg2, arg3) end
+function __WorldMapSymbolsV2:addUntranslatedText(text, layerID, x, y) end
 
 function __WorldMapSymbolsV2:clear() end
 
@@ -47,33 +47,33 @@ function __WorldMapSymbolsV2:getDefaultLayerID() end
 ---@return string
 function __WorldMapSymbolsV2:getDefaultTextLayerID() end
 
----@param arg0 string
----@param arg1 number
----@param arg2 boolean
+---@param layerID string
+---@param scale number
+---@param bApplyZoom boolean
 ---@return number
-function __WorldMapSymbolsV2:getDisplayScale(arg0, arg1, arg2) end
+function __WorldMapSymbolsV2:getDisplayScale(layerID, scale, bApplyZoom) end
 
----@param arg0 integer
+---@param index integer
 ---@return WorldMapSymbolsV2.WorldMapBaseSymbolV2
-function __WorldMapSymbolsV2:getSymbolByIndex(arg0) end
+function __WorldMapSymbolsV2:getSymbolByIndex(index) end
 
 ---@return integer
 function __WorldMapSymbolsV2:getSymbolCount() end
 
----@param arg0 string
----@param arg1 string
+---@param text string
+---@param layerID string
 ---@return integer
-function __WorldMapSymbolsV2:getTextLayoutHeight(arg0, arg1) end
+function __WorldMapSymbolsV2:getTextLayoutHeight(text, layerID) end
 
----@param arg0 string
----@param arg1 string
+---@param text string
+---@param layerID string
 ---@return integer
-function __WorldMapSymbolsV2:getTextLayoutWidth(arg0, arg1) end
+function __WorldMapSymbolsV2:getTextLayoutWidth(text, layerID) end
 
----@param arg0 number
----@param arg1 number
+---@param uiX number
+---@param uiY number
 ---@return integer
-function __WorldMapSymbolsV2:hitTest(arg0, arg1) end
+function __WorldMapSymbolsV2:hitTest(uiX, uiY) end
 
 function __WorldMapSymbolsV2:initDefaultAnnotations() end
 
@@ -82,37 +82,37 @@ function __WorldMapSymbolsV2:isUserEditing() end
 
 function __WorldMapSymbolsV2:reinitDefaultAnnotations() end
 
----@param arg0 WorldMapSymbolsV2.WorldMapBaseSymbolV2
-function __WorldMapSymbolsV2:removeSymbol(arg0) end
+---@param symbol WorldMapSymbolsV2.WorldMapBaseSymbolV2
+function __WorldMapSymbolsV2:removeSymbol(symbol) end
 
----@param arg0 integer
-function __WorldMapSymbolsV2:removeSymbolByIndex(arg0) end
+---@param index integer
+function __WorldMapSymbolsV2:removeSymbolByIndex(index) end
 
----@param arg0 WorldMapSymbolsV2.WorldMapBaseSymbolV2
-function __WorldMapSymbolsV2:sendModifySymbol(arg0) end
+---@param symbolV2 WorldMapSymbolsV2.WorldMapBaseSymbolV2
+function __WorldMapSymbolsV2:sendModifySymbol(symbolV2) end
 
----@param arg0 WorldMapSymbolsV2.WorldMapBaseSymbolV2
-function __WorldMapSymbolsV2:sendRemoveSymbol(arg0) end
+---@param symbolV2 WorldMapSymbolsV2.WorldMapBaseSymbolV2
+function __WorldMapSymbolsV2:sendRemoveSymbol(symbolV2) end
 
----@param arg0 WorldMapSymbolsV2.WorldMapBaseSymbolV2
-function __WorldMapSymbolsV2:sendSetPrivateSymbol(arg0) end
+---@param symbolV2 WorldMapSymbolsV2.WorldMapBaseSymbolV2
+function __WorldMapSymbolsV2:sendSetPrivateSymbol(symbolV2) end
 
----@param arg0 WorldMapSymbolsV2.WorldMapBaseSymbolV2
----@param arg1 WorldMapSymbolNetworkInfo
-function __WorldMapSymbolsV2:sendShareSymbol(arg0, arg1) end
+---@param symbolV2 WorldMapSymbolsV2.WorldMapBaseSymbolV2
+---@param networkInfo WorldMapSymbolNetworkInfo
+function __WorldMapSymbolsV2:sendShareSymbol(symbolV2, networkInfo) end
 
----@param arg0 boolean
-function __WorldMapSymbolsV2:setUserEditing(arg0) end
+---@param b boolean
+function __WorldMapSymbolsV2:setUserEditing(b) end
 
 WorldMapSymbolsV2 = {}
 
----@param arg0 LuaManager.Exposer
-function WorldMapSymbolsV2.setExposed(arg0) end
+---@param exposer LuaManager.Exposer
+function WorldMapSymbolsV2.setExposed(exposer) end
 
----@param arg0 UIWorldMap
----@param arg1 WorldMapSymbols
+---@param ui UIWorldMap
+---@param symbols WorldMapSymbols
 ---@return WorldMapSymbolsV2
-function WorldMapSymbolsV2.new(arg0, arg1) end
+function WorldMapSymbolsV2.new(ui, symbols) end
 
 ---@type Class<WorldMapSymbolsV2>
 WorldMapSymbolsV2.class = nil

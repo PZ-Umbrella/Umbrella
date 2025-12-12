@@ -28,8 +28,6 @@ PlayerClimateDebug.eventsAdded = false
 PlayerClimateDebug.fx = nil ---@type IsoWeatherFX?
 PlayerClimateDebug.cm = nil ---@type ClimateManager?
 
-function PlayerClimateDebug.onClimateTickDebug() end
-
 ---@return PlayerClimateDebug?
 function PlayerClimateDebug.OnOpenPanel() end
 

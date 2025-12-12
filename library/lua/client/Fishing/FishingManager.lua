@@ -16,7 +16,6 @@ Fishing.FishingManager = nil ---@type Fishing.FishingManager
 ---@class Fishing.FishingManager
 ---@field fishingRod Fishing.FishingRod?
 ---@field joypad integer
----@field onSave function
 ---@field onTickFunc function
 ---@field player IsoPlayer
 ---@field state umbrella.FishingState?

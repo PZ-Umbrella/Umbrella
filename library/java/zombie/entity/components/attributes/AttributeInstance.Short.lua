@@ -6,31 +6,31 @@ local __Short = {}
 ---@return AttributeInstance.Short
 function __Short:copy() end
 
----@param arg0 AttributeInstance.Short
+---@param other AttributeInstance.Short
 ---@return boolean
-function __Short:equalTo(arg0) end
+function __Short:equalTo(other) end
 
 ---@return number
 function __Short:floatValue() end
 
----@param arg0 number
-function __Short:fromFloat(arg0) end
+---@param f number
+function __Short:fromFloat(f) end
 
 ---@return integer
 function __Short:getValue() end
 
----@param arg0 ByteBuffer
-function __Short:load(arg0) end
+---@param input ByteBuffer
+function __Short:load(input) end
 
----@param arg0 ByteBuffer
-function __Short:save(arg0) end
+---@param output ByteBuffer
+function __Short:save(output) end
 
----@param arg0 integer
-function __Short:setValue(arg0) end
+---@param value integer
+function __Short:setValue(value) end
 
----@param arg0 string
+---@param val string
 ---@return boolean
-function __Short:setValueFromScriptString(arg0) end
+function __Short:setValueFromScriptString(val) end
 
 ---@return string
 function __Short:stringValue() end

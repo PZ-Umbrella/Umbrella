@@ -3,8 +3,8 @@
 ---@class RZSCharcoalBurner: RandomizedZoneStoryBase
 local __RZSCharcoalBurner = {}
 
----@param arg0 Zone
-function __RZSCharcoalBurner:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSCharcoalBurner:randomizeZoneStory(zone) end
 
 RZSCharcoalBurner = {}
 

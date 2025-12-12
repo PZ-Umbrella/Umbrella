@@ -38,30 +38,30 @@ FluidUtil.UNIT_mL = nil
 ---@type number
 FluidUtil.UNIT_uL = nil
 
----@param arg0 number
+---@param amount number
 ---@return string
-function FluidUtil.getAmountFormatted(arg0) end
+function FluidUtil.getAmountFormatted(amount) end
 
----@param arg0 number
+---@param amount number
 ---@return string
-function FluidUtil.getAmountLiter(arg0) end
+function FluidUtil.getAmountLiter(amount) end
 
----@param arg0 number
+---@param amount number
 ---@return string
-function FluidUtil.getAmountLiter10(arg0) end
+function FluidUtil.getAmountLiter10(amount) end
 
----@param arg0 number
+---@param amount number
 ---@return string
-function FluidUtil.getAmountLiter1000(arg0) end
+function FluidUtil.getAmountLiter1000(amount) end
 
----@param arg0 number
+---@param amount number
 ---@return string
-function FluidUtil.getAmountMilli(arg0) end
+function FluidUtil.getAmountMilli(amount) end
 
----@param arg0 number
----@param arg1 number
+---@param numerator number
+---@param denominator number
 ---@return string
-function FluidUtil.getFractionFormatted(arg0, arg1) end
+function FluidUtil.getFractionFormatted(numerator, denominator) end
 
 ---@return number
 function FluidUtil.getMinContainerCapacity() end
@@ -96,9 +96,9 @@ function FluidUtil.getUnitMicroLiter() end
 ---@return number
 function FluidUtil.getUnitMilliLiter() end
 
----@param arg0 number
+---@param amount number
 ---@return number
-function FluidUtil.roundTransfer(arg0) end
+function FluidUtil.roundTransfer(amount) end
 
 ---@return FluidUtil
 function FluidUtil.new() end

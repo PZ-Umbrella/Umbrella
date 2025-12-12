@@ -3,15 +3,15 @@
 ---@class MashingLogicScript: ComponentScript
 local __MashingLogicScript = {}
 
----@param arg0 string
-function __MashingLogicScript:InitLoadPP(arg0) end
+---@param name string
+function __MashingLogicScript:InitLoadPP(name) end
 
 function __MashingLogicScript:OnLoadedAfterLua() end
 
 function __MashingLogicScript:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __MashingLogicScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __MashingLogicScript:OnScriptsLoaded(loadMode) end
 
 function __MashingLogicScript:PreReload() end
 

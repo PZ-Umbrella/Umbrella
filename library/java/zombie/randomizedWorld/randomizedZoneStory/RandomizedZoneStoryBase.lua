@@ -3,9 +3,9 @@
 ---@class RandomizedZoneStoryBase: RandomizedWorldBase
 local __RandomizedZoneStoryBase = {}
 
----@param arg0 RandomizedZoneStoryBase
----@param arg1 Zone
-function __RandomizedZoneStoryBase:cleanAreaForStory(arg0, arg1) end
+---@param rzs RandomizedZoneStoryBase
+---@param zone Zone
+function __RandomizedZoneStoryBase:cleanAreaForStory(rzs, zone) end
 
 ---@return integer
 function __RandomizedZoneStoryBase:getMinimumHeight() end
@@ -13,37 +13,37 @@ function __RandomizedZoneStoryBase:getMinimumHeight() end
 ---@return integer
 function __RandomizedZoneStoryBase:getMinimumWidth() end
 
----@param arg0 RandomizedZoneStoryBase
----@param arg1 Zone
+---@param rzs RandomizedZoneStoryBase
+---@param zone Zone
 ---@return IsoGridSquare
-function __RandomizedZoneStoryBase:getRandomExtraFreeSquare(arg0, arg1) end
+function __RandomizedZoneStoryBase:getRandomExtraFreeSquare(rzs, zone) end
 
----@param arg0 RandomizedZoneStoryBase
----@param arg1 Zone
+---@param rzs RandomizedZoneStoryBase
+---@param zone Zone
 ---@return IsoGridSquare
-function __RandomizedZoneStoryBase:getRandomFreeSquare(arg0, arg1) end
+function __RandomizedZoneStoryBase:getRandomFreeSquare(rzs, zone) end
 
----@param arg0 RandomizedZoneStoryBase
----@param arg1 Zone
----@param arg2 IsoGridSquare
+---@param rzs RandomizedZoneStoryBase
+---@param zone Zone
+---@param notSquare IsoGridSquare
 ---@return IsoGridSquare
-function __RandomizedZoneStoryBase:getRandomFreeSquare(arg0, arg1, arg2) end
+function __RandomizedZoneStoryBase:getRandomFreeSquare(rzs, zone, notSquare) end
 
----@param arg0 RandomizedZoneStoryBase
----@param arg1 Zone
+---@param rzs RandomizedZoneStoryBase
+---@param zone Zone
 ---@return IsoGridSquare
-function __RandomizedZoneStoryBase:getRandomFreeSquareFullZone(arg0, arg1) end
+function __RandomizedZoneStoryBase:getRandomFreeSquareFullZone(rzs, zone) end
 
----@param arg0 Zone
----@param arg1 boolean
+---@param zone Zone
+---@param force boolean
 ---@return boolean
-function __RandomizedZoneStoryBase:isValid(arg0, arg1) end
+function __RandomizedZoneStoryBase:isValid(zone, force) end
 
 ---@return boolean
 function __RandomizedZoneStoryBase:isValid() end
 
----@param arg0 Zone
-function __RandomizedZoneStoryBase:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RandomizedZoneStoryBase:randomizeZoneStory(zone) end
 
 RandomizedZoneStoryBase = {}
 
@@ -56,26 +56,26 @@ RandomizedZoneStoryBase.totalChance = nil
 ---@type string
 RandomizedZoneStoryBase.zoneStory = nil
 
----@param arg0 IsoGridSquare
-function RandomizedZoneStoryBase.cleanSquareForStory(arg0) end
+---@param sq IsoGridSquare
+function RandomizedZoneStoryBase.cleanSquareForStory(sq) end
 
----@param arg0 RandomizedZoneStoryBase
----@param arg1 Zone
+---@param rzs RandomizedZoneStoryBase
+---@param zone Zone
 ---@return IsoGridSquare
-function RandomizedZoneStoryBase.getRandomExtraFreeUnoccupiedSquare(arg0, arg1) end
+function RandomizedZoneStoryBase.getRandomExtraFreeUnoccupiedSquare(rzs, zone) end
 
----@param arg0 RandomizedZoneStoryBase
----@param arg1 Zone
+---@param rzs RandomizedZoneStoryBase
+---@param zone Zone
 ---@return IsoGridSquare
-function RandomizedZoneStoryBase.getRandomFreeUnoccupiedSquare(arg0, arg1) end
+function RandomizedZoneStoryBase.getRandomFreeUnoccupiedSquare(rzs, zone) end
 
----@param arg0 Zone
-function RandomizedZoneStoryBase.initAllRZSMapChance(arg0) end
+---@param zone Zone
+function RandomizedZoneStoryBase.initAllRZSMapChance(zone) end
 
----@param arg0 Zone
----@param arg1 boolean
+---@param zone Zone
+---@param force boolean
 ---@return boolean
-function RandomizedZoneStoryBase.isValidForStory(arg0, arg1) end
+function RandomizedZoneStoryBase.isValidForStory(zone, force) end
 
 ---@return RandomizedZoneStoryBase
 function RandomizedZoneStoryBase.new() end

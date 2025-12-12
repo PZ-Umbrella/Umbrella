@@ -3,8 +3,8 @@
 ---@class ClimbSheetRopeState: State
 local __ClimbSheetRopeState = {}
 
----@param arg0 IsoGameCharacter
-function __ClimbSheetRopeState:debug(arg0) end
+---@param isoGameCharacter IsoGameCharacter
+function __ClimbSheetRopeState:debug(isoGameCharacter) end
 
 ---@param owner IsoGameCharacter
 function __ClimbSheetRopeState:enter(owner) end
@@ -27,9 +27,9 @@ function __ClimbSheetRopeState:isSyncOnExit() end
 ---@return boolean
 function __ClimbSheetRopeState:isSyncOnSquare() end
 
----@param arg0 IsoGameCharacter
----@param arg1 State.Stage
-function __ClimbSheetRopeState:setParams(arg0, arg1) end
+---@param isoGameCharacter IsoGameCharacter
+---@param stage State.Stage
+function __ClimbSheetRopeState:setParams(isoGameCharacter, stage) end
 
 ClimbSheetRopeState = {}
 
@@ -45,17 +45,17 @@ ClimbSheetRopeState.FallChanceBase = nil
 ---@type number
 ClimbSheetRopeState.FallChanceMultiplier = nil
 
----@param arg0 IsoGameCharacter
-function ClimbSheetRopeState.applyIdealDirection(arg0) end
+---@param isoGameCharacter IsoGameCharacter
+function ClimbSheetRopeState.applyIdealDirection(isoGameCharacter) end
 
----@param arg0 IsoGameCharacter
-function ClimbSheetRopeState.createClimbData(arg0) end
+---@param isoGameCharacter IsoGameCharacter
+function ClimbSheetRopeState.createClimbData(isoGameCharacter) end
 
 ---@return ClimbSheetRopeState
 function ClimbSheetRopeState.instance() end
 
----@param arg0 IsoGameCharacter
-function ClimbSheetRopeState.setIdealDirection(arg0) end
+---@param isoGameCharacter IsoGameCharacter
+function ClimbSheetRopeState.setIdealDirection(isoGameCharacter) end
 
 ---@return ClimbSheetRopeState
 function ClimbSheetRopeState.new() end

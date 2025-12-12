@@ -10,6 +10,8 @@
 ISAddFluidFromItemAction = ISBaseTimedAction:derive("ISAddFluidFromItemAction")
 ISAddFluidFromItemAction.Type = "ISAddFluidFromItemAction"
 
+---@param event string
+---@param parameter string
 function ISAddFluidFromItemAction:animEvent(event, parameter) end
 
 ---@return boolean
@@ -33,6 +35,7 @@ function ISAddFluidFromItemAction:stopSound() end
 
 function ISAddFluidFromItemAction:update() end
 
+---@param delta number
 function ISAddFluidFromItemAction:updateAdd(delta) end
 
 ---@return boolean

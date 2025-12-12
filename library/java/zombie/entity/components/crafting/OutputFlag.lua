@@ -41,9 +41,9 @@ OutputFlag.RespectCapacity = nil
 ---@type OutputFlag
 OutputFlag.SetActivated = nil
 
----@param arg0 string
+---@param name string
 ---@return OutputFlag
-function OutputFlag.valueOf(arg0) end
+function OutputFlag.valueOf(name) end
 
 ---@return kahlua.Array<OutputFlag>
 function OutputFlag.values() end

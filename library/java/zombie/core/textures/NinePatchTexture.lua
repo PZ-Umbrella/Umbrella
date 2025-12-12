@@ -3,9 +3,9 @@
 ---@class NinePatchTexture: Asset
 local __NinePatchTexture = {}
 
----@param arg0 integer
+---@param column integer
 ---@return integer
-function __NinePatchTexture:getColumnWidth(arg0) end
+function __NinePatchTexture:getColumnWidth(column) end
 
 ---@return integer
 function __NinePatchTexture:getMinHeight() end
@@ -13,9 +13,9 @@ function __NinePatchTexture:getMinHeight() end
 ---@return integer
 function __NinePatchTexture:getMinWidth() end
 
----@param arg0 integer
+---@param row integer
 ---@return integer
-function __NinePatchTexture:getRowHeight(arg0) end
+function __NinePatchTexture:getRowHeight(row) end
 
 ---@return AssetType
 function __NinePatchTexture:getType() end
@@ -41,24 +41,24 @@ function __NinePatchTexture:is3x1() end
 ---@return boolean
 function __NinePatchTexture:is9x9() end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
-function __NinePatchTexture:render(arg0, arg1, arg2, arg3) end
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+function __NinePatchTexture:render(x, y, width, height) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
----@param arg7 number
-function __NinePatchTexture:render(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+---@param x number
+---@param y number
+---@param width number
+---@param height number
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function __NinePatchTexture:render(x, y, width, height, r, g, b, a) end
 
----@param arg0 ImageData
-function __NinePatchTexture:setImageData(arg0) end
+---@param imageData ImageData
+function __NinePatchTexture:setImageData(imageData) end
 
 NinePatchTexture = {}
 
@@ -94,9 +94,9 @@ NinePatchTexture.TOP_RIGHT = nil
 
 function NinePatchTexture.Reset() end
 
----@param arg0 string
+---@param path string
 ---@return NinePatchTexture
-function NinePatchTexture.getSharedTexture(arg0) end
+function NinePatchTexture.getSharedTexture(path) end
 
 function NinePatchTexture.onTexturePacksChanged() end
 

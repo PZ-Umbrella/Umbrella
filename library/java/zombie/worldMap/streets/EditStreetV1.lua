@@ -3,26 +3,26 @@
 ---@class EditStreetV1: PooledObject
 local __EditStreetV1 = {}
 
----@param arg0 number
----@param arg1 number
-function __EditStreetV1:addPoint(arg0, arg1) end
+---@param x number
+---@param y number
+function __EditStreetV1:addPoint(x, y) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 Vector2f
+---@param uiX number
+---@param uiY number
+---@param closest Vector2f
 ---@return Vector2f
-function __EditStreetV1:getAddPointLocation(arg0, arg1, arg2) end
+function __EditStreetV1:getAddPointLocation(uiX, uiY, closest) end
 
 ---@return integer
 function __EditStreetV1:getNumPoints() end
 
----@param arg0 integer
+---@param index integer
 ---@return number
-function __EditStreetV1:getPointX(arg0) end
+function __EditStreetV1:getPointX(index) end
 
----@param arg0 integer
+---@param index integer
 ---@return number
-function __EditStreetV1:getPointY(arg0) end
+function __EditStreetV1:getPointY(index) end
 
 ---@return string
 function __EditStreetV1:getTranslatedText() end
@@ -30,30 +30,30 @@ function __EditStreetV1:getTranslatedText() end
 ---@return integer
 function __EditStreetV1:getWidth() end
 
----@param arg0 number
----@param arg1 number
-function __EditStreetV1:insertPoint(arg0, arg1) end
+---@param x number
+---@param y number
+function __EditStreetV1:insertPoint(x, y) end
 
----@param arg0 number
----@param arg1 number
+---@param uiX number
+---@param uiY number
 ---@return integer
-function __EditStreetV1:pickPoint(arg0, arg1) end
+function __EditStreetV1:pickPoint(uiX, uiY) end
 
----@param arg0 integer
-function __EditStreetV1:removePoint(arg0) end
+---@param index integer
+function __EditStreetV1:removePoint(index) end
 
 function __EditStreetV1:reverseDirection() end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 number
-function __EditStreetV1:setPoint(arg0, arg1, arg2) end
+---@param index integer
+---@param x number
+---@param y number
+function __EditStreetV1:setPoint(index, x, y) end
 
----@param arg0 string
-function __EditStreetV1:setTranslatedText(arg0) end
+---@param text string
+function __EditStreetV1:setTranslatedText(text) end
 
----@param arg0 integer
-function __EditStreetV1:setWidth(arg0) end
+---@param width integer
+function __EditStreetV1:setWidth(width) end
 
 EditStreetV1 = {}
 

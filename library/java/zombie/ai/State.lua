@@ -4,15 +4,15 @@
 ---@class State: IAnimEventListener, IAnimEventWrappedBroadcaster
 local __State = {}
 
----@param arg0 IsoGameCharacter
----@param arg1 AnimLayer
----@param arg2 AnimationTrack
----@param arg3 AnimEvent
-function __State:animEvent(arg0, arg1, arg2, arg3) end
+---@param owner IsoGameCharacter
+---@param layer AnimLayer
+---@param track AnimationTrack
+---@param event AnimEvent
+function __State:animEvent(owner, layer, track, event) end
 
----@param arg0 IsoGameCharacter
+---@param owner IsoGameCharacter
 ---@return boolean
-function __State:canRagdoll(arg0) end
+function __State:canRagdoll(owner) end
 
 ---@param owner IsoGameCharacter
 function __State:enter(owner) end
@@ -86,6 +86,6 @@ function __State:processOnEnter(owner, delegate) end
 ---@param delegate Map<any, any>
 function __State:processOnExit(owner, delegate) end
 
----@param arg0 IsoGameCharacter
----@param arg1 State.Stage
-function __State:setParams(arg0, arg1) end
+---@param owner IsoGameCharacter
+---@param stage State.Stage
+function __State:setParams(owner, stage) end

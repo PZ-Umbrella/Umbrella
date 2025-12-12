@@ -47,9 +47,9 @@ function StashSystem.init() end
 ---Load our different stashes description from lua files in "media/lua/shared/StashDescriptions"
 function StashSystem.initAllStashes() end
 
----@param arg0 BuildingDef
+---@param def BuildingDef
 ---@return boolean
-function StashSystem.isStashBuilding(arg0) end
+function StashSystem.isStashBuilding(def) end
 
 ---@param input ByteBuffer
 ---@param WorldVersion integer

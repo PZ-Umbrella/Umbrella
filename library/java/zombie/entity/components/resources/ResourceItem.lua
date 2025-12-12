@@ -3,31 +3,31 @@
 ---@class ResourceItem: Resource
 local __ResourceItem = {}
 
----@param arg0 ObjectTooltip
-function __ResourceItem:DoTooltip(arg0) end
+---@param tooltipUI ObjectTooltip
+function __ResourceItem:DoTooltip(tooltipUI) end
 
----@param arg0 ObjectTooltip
----@param arg1 ObjectTooltip.Layout
-function __ResourceItem:DoTooltip(arg0, arg1) end
+---@param tooltipUI ObjectTooltip
+---@param layout ObjectTooltip.Layout
+function __ResourceItem:DoTooltip(tooltipUI, layout) end
 
----@param arg0 InventoryItem
----@param arg1 boolean
+---@param item InventoryItem
+---@param ignoreFilters boolean
 ---@return boolean
-function __ResourceItem:acceptsItem(arg0, arg1) end
+function __ResourceItem:acceptsItem(item, ignoreFilters) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __ResourceItem:canStackItem(arg0) end
+function __ResourceItem:canStackItem(item) end
 
----@param arg0 Item
+---@param item Item
 ---@return boolean
-function __ResourceItem:canStackItem(arg0) end
+function __ResourceItem:canStackItem(item) end
 
 function __ResourceItem:clear() end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __ResourceItem:containsItem(arg0) end
+function __ResourceItem:containsItem(item) end
 
 ---@return number
 function __ResourceItem:getEnergyAmount() end
@@ -56,9 +56,9 @@ function __ResourceItem:getFreeItemUsesCapacity() end
 ---@return integer
 function __ResourceItem:getItemAmount() end
 
----@param arg0 Item
+---@param itemType Item
 ---@return integer
-function __ResourceItem:getItemAmount(arg0) end
+function __ResourceItem:getItemAmount(itemType) end
 
 ---@return integer
 function __ResourceItem:getItemCapacity() end
@@ -66,9 +66,9 @@ function __ResourceItem:getItemCapacity() end
 ---@return ItemFilter
 function __ResourceItem:getItemFilter() end
 
----@param arg0 InputScript
+---@param inputScript InputScript
 ---@return number
-function __ResourceItem:getItemUses(arg0) end
+function __ResourceItem:getItemUses(inputScript) end
 
 ---@return number
 function __ResourceItem:getItemUsesAmount() end
@@ -79,9 +79,9 @@ function __ResourceItem:getItemUsesCapacity() end
 ---@return ArrayList<InventoryItem>
 function __ResourceItem:getStoredItems() end
 
----@param arg0 Item
+---@param itemType Item
 ---@return ArrayList<InventoryItem>
-function __ResourceItem:getStoredItemsOfType(arg0) end
+function __ResourceItem:getStoredItemsOfType(itemType) end
 
 ---@return ArrayList<Item>
 function __ResourceItem:getUniqueItems() end
@@ -95,90 +95,90 @@ function __ResourceItem:isFull() end
 ---@return boolean
 function __ResourceItem:isStackAnyItem() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __ResourceItem:load(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __ResourceItem:load(input, WorldVersion) end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __ResourceItem:loadSync(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __ResourceItem:loadSync(input, WorldVersion) end
 
----@param arg0 InventoryItem
----@param arg1 boolean
+---@param item InventoryItem
+---@param ignoreFilters boolean
 ---@return InventoryItem
-function __ResourceItem:offerItem(arg0, arg1) end
+function __ResourceItem:offerItem(item, ignoreFilters) end
 
----@param arg0 InventoryItem
----@param arg1 boolean
----@param arg2 boolean
----@param arg3 boolean
+---@param item InventoryItem
+---@param ignoreFilters boolean
+---@param force boolean
+---@param syncEntity boolean
 ---@return InventoryItem
-function __ResourceItem:offerItem(arg0, arg1, arg2, arg3) end
+function __ResourceItem:offerItem(item, ignoreFilters, force, syncEntity) end
 
----@param arg0 ArrayList<InventoryItem>
+---@param items ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __ResourceItem:offerItems(arg0) end
+function __ResourceItem:offerItems(items) end
 
----@param arg0 ArrayList<InventoryItem>
----@param arg1 boolean
+---@param items ArrayList<InventoryItem>
+---@param ignoreFilters boolean
 ---@return ArrayList<InventoryItem>
-function __ResourceItem:offerItems(arg0, arg1) end
+function __ResourceItem:offerItems(items, ignoreFilters) end
 
 ---@return InventoryItem
 function __ResourceItem:peekItem() end
 
----@param arg0 integer
+---@param offset integer
 ---@return InventoryItem
-function __ResourceItem:peekItem(arg0) end
+function __ResourceItem:peekItem(offset) end
 
 ---@return InventoryItem
 function __ResourceItem:pollItem() end
 
----@param arg0 boolean
----@param arg1 boolean
+---@param force boolean
+---@param syncEntity boolean
 ---@return InventoryItem
-function __ResourceItem:pollItem(arg0, arg1) end
+function __ResourceItem:pollItem(force, syncEntity) end
 
----@param arg0 ArrayList<InventoryItem>
+---@param list ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
-function __ResourceItem:removeAllItems(arg0) end
+function __ResourceItem:removeAllItems(list) end
 
----@param arg0 ArrayList<InventoryItem>
----@param arg1 Item
+---@param list ArrayList<InventoryItem>
+---@param itemType Item
 ---@return ArrayList<InventoryItem>
-function __ResourceItem:removeAllItems(arg0, arg1) end
+function __ResourceItem:removeAllItems(list, itemType) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return InventoryItem
-function __ResourceItem:removeItem(arg0) end
+function __ResourceItem:removeItem(item) end
 
----@param arg0 ByteBuffer
-function __ResourceItem:save(arg0) end
+---@param output ByteBuffer
+function __ResourceItem:save(output) end
 
----@param arg0 ByteBuffer
-function __ResourceItem:saveSync(arg0) end
+---@param output ByteBuffer
+function __ResourceItem:saveSync(output) end
 
 ---@return integer
 function __ResourceItem:storedSize() end
 
----@param arg0 ResourceItem
----@param arg1 integer
-function __ResourceItem:transferTo(arg0, arg1) end
+---@param target ResourceItem
+---@param transferAmount integer
+function __ResourceItem:transferTo(target, transferAmount) end
 
----@param arg0 ByteBuffer
----@param arg1 integer
----@param arg2 integer
----@param arg3 string
----@param arg4 boolean
+---@param input ByteBuffer
+---@param WorldVersion integer
+---@param size integer
+---@param type string
+---@param forceCreate boolean
 ---@return boolean
-function __ResourceItem:tryLoadSyncItems(arg0, arg1, arg2, arg3, arg4) end
+function __ResourceItem:tryLoadSyncItems(input, WorldVersion, size, type, forceCreate) end
 
----@param arg0 Resource
-function __ResourceItem:tryTransferTo(arg0) end
+---@param target Resource
+function __ResourceItem:tryTransferTo(target) end
 
----@param arg0 Resource
----@param arg1 number
-function __ResourceItem:tryTransferTo(arg0, arg1) end
+---@param target Resource
+---@param amount number
+function __ResourceItem:tryTransferTo(target, amount) end
 
 ResourceItem = {}
 

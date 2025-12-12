@@ -24,10 +24,12 @@ function ISInventoryWindowControlHandler_TransferSameTypeMultiContainer:getItems
 ---@return table
 function ISInventoryWindowControlHandler_TransferSameTypeMultiContainer:getItemsToTransfer() end
 
+---@param button ISButton
 ---@param dx number
 ---@param dy number
 function ISInventoryWindowControlHandler_TransferSameTypeMultiContainer:onMouseOutButton(button, dx, dy) end
 
+---@param button ISButton
 ---@param x number
 ---@param y number
 function ISInventoryWindowControlHandler_TransferSameTypeMultiContainer:onMouseOverButton(button, x, y) end

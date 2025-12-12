@@ -3,9 +3,9 @@
 ---@class CraftRecipeComponent: Component
 local __CraftRecipeComponent = {}
 
----@param arg0 ObjectTooltip
----@param arg1 ObjectTooltip.Layout
-function __CraftRecipeComponent:DoTooltip(arg0, arg1) end
+---@param tooltipUI ObjectTooltip
+---@param layout ObjectTooltip.Layout
+function __CraftRecipeComponent:DoTooltip(tooltipUI, layout) end
 
 ---@return boolean
 function __CraftRecipeComponent:isValid() end

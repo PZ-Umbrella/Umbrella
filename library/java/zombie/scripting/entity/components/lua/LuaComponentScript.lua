@@ -3,15 +3,15 @@
 ---@class LuaComponentScript: ComponentScript
 local __LuaComponentScript = {}
 
----@param arg0 string
-function __LuaComponentScript:InitLoadPP(arg0) end
+---@param name string
+function __LuaComponentScript:InitLoadPP(name) end
 
 function __LuaComponentScript:OnLoadedAfterLua() end
 
 function __LuaComponentScript:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __LuaComponentScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __LuaComponentScript:OnScriptsLoaded(loadMode) end
 
 function __LuaComponentScript:PreReload() end
 

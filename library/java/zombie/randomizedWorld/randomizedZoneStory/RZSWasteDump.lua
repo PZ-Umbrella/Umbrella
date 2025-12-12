@@ -3,8 +3,8 @@
 ---@class RZSWasteDump: RandomizedZoneStoryBase
 local __RZSWasteDump = {}
 
----@param arg0 Zone
-function __RZSWasteDump:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSWasteDump:randomizeZoneStory(zone) end
 
 RZSWasteDump = {}
 

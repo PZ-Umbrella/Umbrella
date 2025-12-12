@@ -11,15 +11,15 @@ function __PZArrayList:add(e) end
 ---@param e E
 function __PZArrayList:add(index, e) end
 
----@param arg0 E
-function __PZArrayList:addUnique(arg0) end
+---@param newItem E
+function __PZArrayList:addUnique(newItem) end
 
 ---@param newItem E
 ---@param in_comparator Invokers.Params2.Boolean.ICallback<E, E>
 function __PZArrayList:addUnique(newItem, in_comparator) end
 
----@param arg0 E
-function __PZArrayList:addUniqueReference(arg0) end
+---@param newItem E
+function __PZArrayList:addUniqueReference(newItem) end
 
 function __PZArrayList:clear() end
 
@@ -33,12 +33,12 @@ function __PZArrayList:contains(o) end
 ---@return boolean
 function __PZArrayList:contains(o, in_comparator) end
 
----@param arg0 E
+---@param o E
 ---@return boolean
-function __PZArrayList:containsReference(arg0) end
+function __PZArrayList:containsReference(o) end
 
----@param arg0 integer
-function __PZArrayList:ensureCapacity(arg0) end
+---@param minCapacity integer
+function __PZArrayList:ensureCapacity(minCapacity) end
 
 ---@param index integer
 ---@return E
@@ -78,9 +78,9 @@ function __PZArrayList:remove(index) end
 ---@return boolean
 function __PZArrayList:remove(o) end
 
----@param arg0 Collection<any>
+---@param c Collection<any>
 ---@return boolean
-function __PZArrayList:removeAll(arg0) end
+function __PZArrayList:removeAll(c) end
 
 ---@param index integer
 ---@param e E
@@ -101,17 +101,17 @@ function PZArrayList.emptyList() end
 
 ---@generic E1
 ---@generic E2
----@param arg0 E1
----@param arg1 E2
+---@param a E1
+---@param b E2
 ---@return boolean
-function PZArrayList.objectsEqual(arg0, arg1) end
+function PZArrayList.objectsEqual(a, b) end
 
 ---@generic E1
 ---@generic E2
----@param arg0 E1
----@param arg1 E2
+---@param a E1
+---@param b E2
 ---@return boolean
-function PZArrayList.referenceEqual(arg0, arg1) end
+function PZArrayList.referenceEqual(a, b) end
 
 ---@generic E
 ---@param elementType Class<E>

@@ -3,33 +3,33 @@
 ---@class XuiSkin
 local __XuiSkin = {}
 
----@param arg0 string
+---@param alias string
 ---@return Color
-function __XuiSkin:color(arg0) end
+function __XuiSkin:color(alias) end
 
 function __XuiSkin:debugPrint() end
 
----@param arg0 string
----@param arg1 string
+---@param luaClass string
+---@param alias string
 ---@return XuiLuaStyle
-function __XuiSkin:get(arg0, arg1) end
+function __XuiSkin:get(luaClass, alias) end
 
----@param arg0 string
----@param arg1 ComponentType
+---@param entityAlias string
+---@param componentType ComponentType
 ---@return XuiSkin.ComponentUiStyle
-function __XuiSkin:getComponentUiStyle(arg0, arg1) end
+function __XuiSkin:getComponentUiStyle(entityAlias, componentType) end
 
----@param arg0 string
+---@param luaClass string
 ---@return XuiLuaStyle
-function __XuiSkin:getDefault(arg0) end
+function __XuiSkin:getDefault(luaClass) end
 
----@param arg0 string
+---@param entityAlias string
 ---@return string
-function __XuiSkin:getEntityDisplayName(arg0) end
+function __XuiSkin:getEntityDisplayName(entityAlias) end
 
----@param arg0 string
+---@param alias string
 ---@return XuiSkin.EntityUiStyle
-function __XuiSkin:getEntityUiStyle(arg0) end
+function __XuiSkin:getEntityUiStyle(alias) end
 
 ---@return string
 function __XuiSkin:getName() end
@@ -45,10 +45,10 @@ function XuiSkin.Default() end
 ---@return string
 function XuiSkin.getDefaultSkinName() end
 
----@param arg0 string
----@param arg1 XuiSkinScript
+---@param name string
+---@param script XuiSkinScript
 ---@return XuiSkin
-function XuiSkin.new(arg0, arg1) end
+function XuiSkin.new(name, script) end
 
 ---@type Class<XuiSkin>
 XuiSkin.class = nil

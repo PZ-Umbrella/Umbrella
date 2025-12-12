@@ -9,18 +9,18 @@ function __EnumServerOption:asConfigOption() end
 ---@return string
 function __EnumServerOption:getTooltip() end
 
----@param arg0 integer
+---@param index integer
 ---@return string
-function __EnumServerOption:getValueTranslationByIndex(arg0) end
+function __EnumServerOption:getValueTranslationByIndex(index) end
 
 EnumServerOption = {}
 
----@param arg0 ServerOptions
----@param arg1 string
----@param arg2 integer
----@param arg3 integer
+---@param owner ServerOptions
+---@param name string
+---@param numValues integer
+---@param defaultValue integer
 ---@return ServerOptions.EnumServerOption
-function EnumServerOption.new(arg0, arg1, arg2, arg3) end
+function EnumServerOption.new(owner, name, numValues, defaultValue) end
 
 ---@type Class<ServerOptions.EnumServerOption>
 EnumServerOption.class = nil

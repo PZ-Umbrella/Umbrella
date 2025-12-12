@@ -38,11 +38,11 @@ function __ColNfo:getRInt() end
 
 ColNfo = {}
 
----@param arg0 string
----@param arg1 Color
----@param arg2 Colors.ColorSet
+---@param name string
+---@param c Color
+---@param colorSet Colors.ColorSet
 ---@return Colors.ColNfo
-function ColNfo.new(arg0, arg1, arg2) end
+function ColNfo.new(name, c, colorSet) end
 
 ---@type Class<Colors.ColNfo>
 ColNfo.class = nil

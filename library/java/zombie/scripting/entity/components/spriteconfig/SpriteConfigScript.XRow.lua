@@ -3,9 +3,9 @@
 ---@class SpriteConfigScript.XRow
 local __XRow = {}
 
----@param arg0 integer
+---@param x integer
 ---@return SpriteConfigScript.TileScript
-function __XRow:getTile(arg0) end
+function __XRow:getTile(x) end
 
 ---@return integer
 function __XRow:getWidth() end

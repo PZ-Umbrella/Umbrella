@@ -20,16 +20,16 @@ LosUtil.sizeY = nil
 ---@type integer
 LosUtil.sizeZ = nil
 
----@param arg0 IsoCell
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 integer
----@param arg5 integer
----@param arg6 integer
----@param arg7 boolean
+---@param cell IsoCell
+---@param x0 integer
+---@param y0 integer
+---@param z0 integer
+---@param x1 integer
+---@param y1 integer
+---@param z1 integer
+---@param bIgnoreDoors boolean
 ---@return IsoGridSquareCollisionData
-function LosUtil.getFirstBlockingIsoGridSquare(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+function LosUtil.getFirstBlockingIsoGridSquare(cell, x0, y0, z0, x1, y1, z1, bIgnoreDoors) end
 
 ---@param width integer
 ---@param height integer

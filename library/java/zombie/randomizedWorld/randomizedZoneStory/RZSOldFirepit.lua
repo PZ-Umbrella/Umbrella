@@ -3,8 +3,8 @@
 ---@class RZSOldFirepit: RandomizedZoneStoryBase
 local __RZSOldFirepit = {}
 
----@param arg0 Zone
-function __RZSOldFirepit:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSOldFirepit:randomizeZoneStory(zone) end
 
 RZSOldFirepit = {}
 

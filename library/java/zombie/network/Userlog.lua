@@ -24,23 +24,23 @@ function __Userlog:getUsername() end
 ---@param amount integer
 function __Userlog:setAmount(amount) end
 
----@param arg0 ByteBuffer
-function __Userlog:write(arg0) end
+---@param output ByteBuffer
+function __Userlog:write(output) end
 
 Userlog = {}
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
----@param arg3 string
----@param arg4 integer
----@param arg5 string
+---@param username string
+---@param type string
+---@param text string
+---@param issuedBy string
+---@param amount integer
+---@param lastUpdate string
 ---@return Userlog
-function Userlog.new(arg0, arg1, arg2, arg3, arg4, arg5) end
+function Userlog.new(username, type, text, issuedBy, amount, lastUpdate) end
 
----@param arg0 ByteBuffer
+---@param input ByteBuffer
 ---@return Userlog
-function Userlog.new(arg0) end
+function Userlog.new(input) end
 
 ---@type Class<Userlog>
 Userlog.class = nil

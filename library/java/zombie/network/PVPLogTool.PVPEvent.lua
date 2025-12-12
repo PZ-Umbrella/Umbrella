@@ -18,30 +18,30 @@ function __PVPEvent:getZ() end
 ---@return boolean
 function __PVPEvent:isSet() end
 
----@param arg0 string
----@param arg1 string
----@param arg2 number
----@param arg3 number
----@param arg4 number
-function __PVPEvent:reset(arg0, arg1, arg2, arg3, arg4) end
+---@param wielder string
+---@param target string
+---@param x number
+---@param y number
+---@param z number
+function __PVPEvent:reset(wielder, target, x, y, z) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 string
----@param arg3 number
----@param arg4 number
----@param arg5 number
-function __PVPEvent:reset(arg0, arg1, arg2, arg3, arg4, arg5) end
+---@param timestamp string
+---@param wielder string
+---@param target string
+---@param x number
+---@param y number
+---@param z number
+function __PVPEvent:reset(timestamp, wielder, target, x, y, z) end
 
 PVPEvent = {}
 
----@param arg0 string
----@param arg1 string
----@param arg2 number
----@param arg3 number
----@param arg4 number
+---@param wielder string
+---@param target string
+---@param x number
+---@param y number
+---@param z number
 ---@return PVPLogTool.PVPEvent
-function PVPEvent.new(arg0, arg1, arg2, arg3, arg4) end
+function PVPEvent.new(wielder, target, x, y, z) end
 
 ---@type Class<PVPLogTool.PVPEvent>
 PVPEvent.class = nil

@@ -6,9 +6,9 @@ local __ScriptType = {}
 ---@return string
 function __ScriptType:getScriptTag() end
 
----@param arg0 ScriptType.Flags
+---@param flag ScriptType.Flags
 ---@return boolean
-function __ScriptType:hasFlag(arg0) end
+function __ScriptType:hasFlag(flag) end
 
 ---@param flags EnumSet<ScriptType.Flags>
 ---@return boolean
@@ -23,8 +23,8 @@ function __ScriptType:isTemplate() end
 ---@return boolean
 function __ScriptType:isVerbose() end
 
----@param arg0 boolean
-function __ScriptType:setVerbose(arg0) end
+---@param b boolean
+function __ScriptType:setVerbose(b) end
 
 ScriptType = {}
 
@@ -145,9 +145,9 @@ ScriptType.XuiStyle = nil
 ---@return ArrayList<ScriptType>
 function ScriptType.GetEnumListLua() end
 
----@param arg0 string
+---@param name string
 ---@return ScriptType
-function ScriptType.valueOf(arg0) end
+function ScriptType.valueOf(name) end
 
 ---@return kahlua.Array<ScriptType>
 function ScriptType.values() end

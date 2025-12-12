@@ -25,9 +25,9 @@ function __WorldMapSymbolsV1:addUntranslatedText(text, font, x, y) end
 
 function __WorldMapSymbolsV1:clear() end
 
----@param arg0 integer
+---@param index integer
 ---@return WorldMapSymbolsV1.WorldMapBaseSymbolV1
-function __WorldMapSymbolsV1:getSymbolByIndex(arg0) end
+function __WorldMapSymbolsV1:getSymbolByIndex(index) end
 
 ---@return integer
 function __WorldMapSymbolsV1:getSymbolCount() end

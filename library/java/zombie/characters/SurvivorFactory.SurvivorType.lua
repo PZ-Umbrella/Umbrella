@@ -14,9 +14,9 @@ SurvivorType.Friendly = nil
 ---@type SurvivorFactory.SurvivorType
 SurvivorType.Neutral = nil
 
----@param arg0 string
+---@param name string
 ---@return SurvivorFactory.SurvivorType
-function SurvivorType.valueOf(arg0) end
+function SurvivorType.valueOf(name) end
 
 ---Returns an array containing the constants of this enum class, in
 ---the order they are declared.

@@ -55,11 +55,11 @@ StringConfigOption = {}
 ---@return StringConfigOption
 function StringConfigOption.new(name, defaultValue, maxLength) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 kahlua.Array<string>
+---@param name string
+---@param defaultValue string
+---@param values kahlua.Array<string>
 ---@return StringConfigOption
-function StringConfigOption.new(arg0, arg1, arg2) end
+function StringConfigOption.new(name, defaultValue, values) end
 
 ---@type Class<StringConfigOption>
 StringConfigOption.class = nil

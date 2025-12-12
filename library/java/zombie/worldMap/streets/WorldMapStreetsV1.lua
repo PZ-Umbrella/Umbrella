@@ -3,13 +3,13 @@
 ---@class WorldMapStreetsV1
 local __WorldMapStreetsV1 = {}
 
----@param arg0 string
-function __WorldMapStreetsV1:addStreetData(arg0) end
+---@param relativeFileName string
+function __WorldMapStreetsV1:addStreetData(relativeFileName) end
 
----@param arg0 number
----@param arg1 number
+---@param uiX number
+---@param uiY number
 ---@return boolean
-function __WorldMapStreetsV1:canPickStreet(arg0, arg1) end
+function __WorldMapStreetsV1:canPickStreet(uiX, uiY) end
 
 function __WorldMapStreetsV1:clearStreetData() end
 
@@ -25,35 +25,35 @@ function __WorldMapStreetsV1:getMouseOverStreetWorldX() end
 ---@return number
 function __WorldMapStreetsV1:getMouseOverStreetWorldY() end
 
----@param arg0 integer
+---@param index integer
 ---@return WorldMapStreets
-function __WorldMapStreetsV1:getStreetDataByIndex(arg0) end
+function __WorldMapStreetsV1:getStreetDataByIndex(index) end
 
----@param arg0 string
+---@param relativeFileName string
 ---@return WorldMapStreets
-function __WorldMapStreetsV1:getStreetDataByRelativeFileName(arg0) end
+function __WorldMapStreetsV1:getStreetDataByRelativeFileName(relativeFileName) end
 
 ---@return integer
 function __WorldMapStreetsV1:getStreetDataCount() end
 
----@param arg0 number
----@param arg1 number
+---@param uiX number
+---@param uiY number
 ---@return WorldMapStreetV1
-function __WorldMapStreetsV1:pickStreet(arg0, arg1) end
+function __WorldMapStreetsV1:pickStreet(uiX, uiY) end
 
----@param arg0 WorldMapStreetV1
----@param arg1 number
----@param arg2 number
-function __WorldMapStreetsV1:setMouseOverStreet(arg0, arg1, arg2) end
+---@param streetV1 WorldMapStreetV1
+---@param worldX number
+---@param worldY number
+function __WorldMapStreetsV1:setMouseOverStreet(streetV1, worldX, worldY) end
 
 WorldMapStreetsV1 = {}
 
----@param arg0 LuaManager.Exposer
-function WorldMapStreetsV1.setExposed(arg0) end
+---@param exposer LuaManager.Exposer
+function WorldMapStreetsV1.setExposed(exposer) end
 
----@param arg0 UIWorldMap
+---@param ui UIWorldMap
 ---@return WorldMapStreetsV1
-function WorldMapStreetsV1.new(arg0) end
+function WorldMapStreetsV1.new(ui) end
 
 ---@type Class<WorldMapStreetsV1>
 WorldMapStreetsV1.class = nil

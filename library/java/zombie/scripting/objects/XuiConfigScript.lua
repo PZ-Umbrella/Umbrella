@@ -3,19 +3,19 @@
 ---@class XuiConfigScript: BaseScriptObject
 local __XuiConfigScript = {}
 
----@param arg0 string
-function __XuiConfigScript:InitLoadPP(arg0) end
+---@param name string
+function __XuiConfigScript:InitLoadPP(name) end
 
----@param arg0 string
----@param arg1 string
-function __XuiConfigScript:Load(arg0, arg1) end
+---@param name string
+---@param body string
+function __XuiConfigScript:Load(name, body) end
 
 function __XuiConfigScript:OnLoadedAfterLua() end
 
 function __XuiConfigScript:OnPostWorldDictionaryInit() end
 
----@param arg0 ScriptLoadMode
-function __XuiConfigScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __XuiConfigScript:OnScriptsLoaded(loadMode) end
 
 function __XuiConfigScript:PreReload() end
 

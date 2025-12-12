@@ -3,18 +3,18 @@
 ---@class RDSRatInfested: RandomizedDeadSurvivorBase
 local __RDSRatInfested = {}
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param def BuildingDef
+---@param force boolean
 ---@return boolean
-function __RDSRatInfested:isValid(arg0, arg1) end
+function __RDSRatInfested:isValid(def, force) end
 
----@param arg0 BuildingDef
-function __RDSRatInfested:randomizeDeadSurvivor(arg0) end
+---@param def BuildingDef
+function __RDSRatInfested:randomizeDeadSurvivor(def) end
 
 RDSRatInfested = {}
 
----@param arg0 RoomDef
-function RDSRatInfested.ratRoom(arg0) end
+---@param def RoomDef
+function RDSRatInfested.ratRoom(def) end
 
 ---@return RDSRatInfested
 function RDSRatInfested.new() end

@@ -6,10 +6,10 @@
 ---@class RBBasic: RandomizedBuildingBase
 local __RBBasic = {}
 
----@param arg0 BuildingDef
----@param arg1 string
----@param arg2 ItemPickerJava.ItemPickerRoom
-function __RBBasic:doProfessionBuilding(arg0, arg1, arg2) end
+---@param def BuildingDef
+---@param professionChoosed string
+---@param prof ItemPickerJava.ItemPickerRoom
+function __RBBasic:doProfessionBuilding(def, professionChoosed, prof) end
 
 ---@param def BuildingDef
 ---@param professionChoosed string
@@ -19,9 +19,9 @@ function __RBBasic:doProfessionStory(def, professionChoosed) end
 ---@param DSDef RandomizedDeadSurvivorBase
 function __RBBasic:doRandomDeadSurvivorStory(buildingDef, DSDef) end
 
----@param arg0 BaseVehicle
----@param arg1 string
-function __RBBasic:forceVehicleDistribution(arg0, arg1) end
+---@param vehicle BaseVehicle
+---@param distribution string
+function __RBBasic:forceVehicleDistribution(vehicle, distribution) end
 
 ---@return ArrayList<string>
 function __RBBasic:getSurvivorProfession() end
@@ -34,33 +34,33 @@ function __RBBasic:randomizeBuilding(def) end
 
 RBBasic = {}
 
----@param arg0 IsoGridSquare
-function RBBasic.doCafeStuff(arg0) end
+---@param sq IsoGridSquare
+function RBBasic.doCafeStuff(sq) end
 
----@param arg0 IsoGridSquare
----@param arg1 ArrayList<string>
-function RBBasic.doGeneralRoom(arg0, arg1) end
+---@param sq IsoGridSquare
+---@param clutter ArrayList<string>
+function RBBasic.doGeneralRoom(sq, clutter) end
 
----@param arg0 IsoGridSquare
-function RBBasic.doGigamartStuff(arg0) end
+---@param sq IsoGridSquare
+function RBBasic.doGigamartStuff(sq) end
 
----@param arg0 IsoGridSquare
-function RBBasic.doGroceryStuff(arg0) end
+---@param sq IsoGridSquare
+function RBBasic.doGroceryStuff(sq) end
 
----@param arg0 IsoGridSquare
-function RBBasic.doJudgeStuff(arg0) end
+---@param sq IsoGridSquare
+function RBBasic.doJudgeStuff(sq) end
 
----@param arg0 IsoGridSquare
-function RBBasic.doNolansOfficeStuff(arg0) end
+---@param sq IsoGridSquare
+function RBBasic.doNolansOfficeStuff(sq) end
 
----@param arg0 IsoGridSquare
-function RBBasic.doOfficeStuff(arg0) end
+---@param sq IsoGridSquare
+function RBBasic.doOfficeStuff(sq) end
 
----@param arg0 IsoGridSquare
-function RBBasic.doTwiggyStuff(arg0) end
+---@param sq IsoGridSquare
+function RBBasic.doTwiggyStuff(sq) end
 
----@param arg0 IsoGridSquare
-function RBBasic.doWoodcraftStuff(arg0) end
+---@param sq IsoGridSquare
+function RBBasic.doWoodcraftStuff(sq) end
 
 ---@return ArrayList<string>
 function RBBasic.getUniqueRDSSpawned() end

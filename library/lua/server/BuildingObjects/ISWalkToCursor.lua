@@ -20,7 +20,8 @@ function ISWalkToCursor:create(x, y, z, north, sprite) end
 ---@return boolean
 function ISWalkToCursor:isValid(square) end
 
----@return unknown
+---@param square IsoGridSquare
+---@return IsoGridSquare?
 function ISWalkToCursor:locateTargetSquare(square) end
 
 ---@param x number

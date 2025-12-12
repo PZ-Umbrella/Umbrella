@@ -28,14 +28,8 @@ function BaseGameCharacterDetails.DoTraits() end
 
 function BaseGameCharacterDetails.DoTrouserColor() end
 
----@param prof ProfessionFactory.Profession
-function BaseGameCharacterDetails.SetProfessionDescription(prof) end
+---@param professionDefinition CharacterProfessionDefinition
+function BaseGameCharacterDetails.SetProfessionDescription(professionDefinition) end
 
----@param trait TraitFactory.Trait
-function BaseGameCharacterDetails.SetTraitDescription(trait) end
-
----@param metalworker TraitFactory.Trait
-function doMetalWorkerRecipes(metalworker) end
-
----@param tailor TraitFactory.Trait
-function doTailorRecipes(tailor) end
+---@param characterTraitDefinition CharacterTraitDefinition
+function BaseGameCharacterDetails.SetTraitDescription(characterTraitDefinition) end

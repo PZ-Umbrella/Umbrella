@@ -23,41 +23,41 @@ function XuiManager.GetCombinedScripts() end
 ---@return XuiSkin
 function XuiManager.GetDefaultSkin() end
 
----@param arg0 string
+---@param luaClass string
 ---@return XuiScript
-function XuiManager.GetDefaultStyle(arg0) end
+function XuiManager.GetDefaultStyle(luaClass) end
 
----@param arg0 string
+---@param name string
 ---@return XuiLayoutScript
-function XuiManager.GetDefaultStyleScript(arg0) end
+function XuiManager.GetDefaultStyleScript(name) end
 
----@param arg0 string
+---@param name string
 ---@return XuiScript
-function XuiManager.GetLayout(arg0) end
+function XuiManager.GetLayout(name) end
 
----@param arg0 string
+---@param name string
 ---@return XuiLayoutScript
-function XuiManager.GetLayoutScript(arg0) end
+function XuiManager.GetLayoutScript(name) end
 
----@param arg0 string
+---@param name string
 ---@return XuiSkin
-function XuiManager.GetSkin(arg0) end
+function XuiManager.GetSkin(name) end
 
----@param arg0 string
+---@param style string
 ---@return XuiScript
-function XuiManager.GetStyle(arg0) end
+function XuiManager.GetStyle(style) end
 
----@param arg0 string
+---@param name string
 ---@return XuiLayoutScript
-function XuiManager.GetStyleScript(arg0) end
+function XuiManager.GetStyleScript(name) end
 
 function XuiManager.ParseScripts() end
 
 ---@return string
 function XuiManager.getDefaultSkinName() end
 
----@param arg0 boolean
-function XuiManager.setParseOnce(arg0) end
+---@param b boolean
+function XuiManager.setParseOnce(b) end
 
 ---@return XuiManager
 function XuiManager.new() end

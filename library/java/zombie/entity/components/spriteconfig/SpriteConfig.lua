@@ -3,9 +3,9 @@
 ---@class SpriteConfig: Component
 local __SpriteConfig = {}
 
----@param arg0 ArrayList<IsoObject>
+---@param outlist ArrayList<IsoObject>
 ---@return boolean
-function __SpriteConfig:getAllMultiSquareObjects(arg0) end
+function __SpriteConfig:getAllMultiSquareObjects(outlist) end
 
 ---@return SpriteConfigManager.FaceInfo
 function __SpriteConfig:getFaceInfo() end

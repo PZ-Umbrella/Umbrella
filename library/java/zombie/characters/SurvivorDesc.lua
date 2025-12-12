@@ -27,9 +27,9 @@ function __SurvivorDesc:getCommonHairColor() end
 ---@return number # the compassion
 function __SurvivorDesc:getCompassion() end
 
----@param arg0 string
+---@param newStr string
 ---@return string
-function __SurvivorDesc:getDescription(arg0) end
+function __SurvivorDesc:getDescription(newStr) end
 
 ---@return ArrayList<string>
 function __SurvivorDesc:getExtras() end
@@ -211,14 +211,14 @@ function __SurvivorDesc:setTorso(torso) end
 ---@param type SurvivorFactory.SurvivorType
 function __SurvivorDesc:setType(type) end
 
----@param arg0 number
-function __SurvivorDesc:setVoicePitch(arg0) end
+---@param voicePitch number
+function __SurvivorDesc:setVoicePitch(voicePitch) end
 
----@param arg0 string
-function __SurvivorDesc:setVoicePrefix(arg0) end
+---@param voicePrefix string
+function __SurvivorDesc:setVoicePrefix(voicePrefix) end
 
----@param arg0 integer
-function __SurvivorDesc:setVoiceType(arg0) end
+---@param voiceType integer
+function __SurvivorDesc:setVoiceType(voiceType) end
 
 ---@param itemBodyLocation ItemBodyLocation
 ---@param item InventoryItem

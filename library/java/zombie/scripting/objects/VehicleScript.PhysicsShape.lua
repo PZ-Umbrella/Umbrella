@@ -21,8 +21,8 @@ function __PhysicsShape:getRotate() end
 ---@return string
 function __PhysicsShape:getTypeString() end
 
----@param arg0 string
-function __PhysicsShape:setPhysicsShapeScript(arg0) end
+---@param scriptId string
+function __PhysicsShape:setPhysicsShapeScript(scriptId) end
 
 ---@param radius number
 function __PhysicsShape:setRadius(radius) end

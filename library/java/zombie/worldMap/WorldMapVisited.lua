@@ -35,29 +35,29 @@ function __WorldMapVisited:getMinX() end
 ---@return integer
 function __WorldMapVisited:getMinY() end
 
----@param arg0 integer
----@param arg1 integer
+---@param x integer
+---@param y integer
 ---@return boolean
-function __WorldMapVisited:isKnown(arg0, arg1) end
+function __WorldMapVisited:isKnown(x, y) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
+---@param x1 integer
+---@param y1 integer
+---@param x2 integer
+---@param y2 integer
 ---@return boolean
-function __WorldMapVisited:isKnown(arg0, arg1, arg2, arg3) end
+function __WorldMapVisited:isKnown(x1, y1, x2, y2) end
 
----@param arg0 integer
----@param arg1 integer
+---@param x integer
+---@param y integer
 ---@return boolean
-function __WorldMapVisited:isVisited(arg0, arg1) end
+function __WorldMapVisited:isVisited(x, y) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
+---@param x integer
+---@param y integer
+---@param x2 integer
+---@param y2 integer
 ---@return boolean
-function __WorldMapVisited:isVisited(arg0, arg1, arg2, arg3) end
+function __WorldMapVisited:isVisited(x, y, x2, y2) end
 
 function __WorldMapVisited:load() end
 
@@ -85,8 +85,8 @@ function __WorldMapVisited:renderMain() end
 
 function __WorldMapVisited:save() end
 
----@param arg0 SaveBufferMap
-function __WorldMapVisited:saveToBufferMap(arg0) end
+---@param bufferMap SaveBufferMap
+function __WorldMapVisited:saveToBufferMap(bufferMap) end
 
 ---@param minX integer
 ---@param minY integer

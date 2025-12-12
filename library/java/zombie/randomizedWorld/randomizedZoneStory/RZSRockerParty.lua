@@ -3,8 +3,8 @@
 ---@class RZSRockerParty: RandomizedZoneStoryBase
 local __RZSRockerParty = {}
 
----@param arg0 Zone
-function __RZSRockerParty:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSRockerParty:randomizeZoneStory(zone) end
 
 RZSRockerParty = {}
 

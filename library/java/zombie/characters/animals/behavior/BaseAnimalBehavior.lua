@@ -3,26 +3,26 @@
 ---@class BaseAnimalBehavior
 local __BaseAnimalBehavior = {}
 
----@param arg0 IsoHutch
----@param arg1 boolean
+---@param hutch IsoHutch
+---@param force boolean
 ---@return boolean
-function __BaseAnimalBehavior:callToHutch(arg0, arg1) end
+function __BaseAnimalBehavior:callToHutch(hutch, force) end
 
 ---@return boolean
 function __BaseAnimalBehavior:canBeAttached() end
 
----@param arg0 IsoFeedingTrough
+---@param trough IsoFeedingTrough
 ---@return boolean
-function __BaseAnimalBehavior:canDrinkFromTrough(arg0) end
+function __BaseAnimalBehavior:canDrinkFromTrough(trough) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __BaseAnimalBehavior:canEatThis(arg0) end
+function __BaseAnimalBehavior:canEatThis(item) end
 
----@param arg0 IsoHutch
----@param arg1 boolean
+---@param hutch IsoHutch
+---@param force boolean
 ---@return boolean
-function __BaseAnimalBehavior:canGoToHutch(arg0, arg1) end
+function __BaseAnimalBehavior:canGoToHutch(hutch, force) end
 
 function __BaseAnimalBehavior:checkBehavior() end
 
@@ -40,12 +40,12 @@ function __BaseAnimalBehavior:fightAnimal() end
 
 function __BaseAnimalBehavior:forceEatFromMom() end
 
----@param arg0 IsoGameCharacter
-function __BaseAnimalBehavior:forceFleeFromChr(arg0) end
+---@param chr IsoGameCharacter
+function __BaseAnimalBehavior:forceFleeFromChr(chr) end
 
----@param arg0 IsoGridSquare
+---@param sq IsoGridSquare
 ---@return IsoGridSquare
-function __BaseAnimalBehavior:getNearestWaterSquare(arg0) end
+function __BaseAnimalBehavior:getNearestWaterSquare(sq) end
 
 ---@return ArrayList<IsoFeedingTrough>
 function __BaseAnimalBehavior:getRandomTroughList() end
@@ -53,8 +53,8 @@ function __BaseAnimalBehavior:getRandomTroughList() end
 ---@return number
 function __BaseAnimalBehavior:getWildDropDeadTimer() end
 
----@param arg0 IsoGameCharacter
-function __BaseAnimalBehavior:goAttack(arg0) end
+---@param fightingOpponent IsoGameCharacter
+function __BaseAnimalBehavior:goAttack(fightingOpponent) end
 
 ---@return boolean
 function __BaseAnimalBehavior:isWildAndHurt() end
@@ -64,32 +64,32 @@ function __BaseAnimalBehavior:pickRandomWanderInterval() end
 
 function __BaseAnimalBehavior:resetBehaviorAction() end
 
----@param arg0 boolean
-function __BaseAnimalBehavior:setBlockMovement(arg0) end
+---@param block boolean
+function __BaseAnimalBehavior:setBlockMovement(block) end
 
----@param arg0 boolean
-function __BaseAnimalBehavior:setDoingBehavior(arg0) end
+---@param doingBehavior boolean
+function __BaseAnimalBehavior:setDoingBehavior(doingBehavior) end
 
----@param arg0 integer
-function __BaseAnimalBehavior:setHourBeforeLeavingHutch(arg0) end
+---@param hours integer
+function __BaseAnimalBehavior:setHourBeforeLeavingHutch(hours) end
 
----@param arg0 boolean
-function __BaseAnimalBehavior:setWildAndHurt(arg0) end
+---@param wildAndHurt boolean
+function __BaseAnimalBehavior:setWildAndHurt(wildAndHurt) end
 
----@param arg0 number
-function __BaseAnimalBehavior:setWildDropDeadTimer(arg0) end
+---@param wildDropDeadTimer number
+function __BaseAnimalBehavior:setWildDropDeadTimer(wildDropDeadTimer) end
 
----@param arg0 IsoMovingObject
----@param arg1 boolean
----@param arg2 number
-function __BaseAnimalBehavior:spotted(arg0, arg1, arg2) end
+---@param other IsoMovingObject
+---@param bForced boolean
+---@param dist number
+function __BaseAnimalBehavior:spotted(other, bForced, dist) end
 
 ---@return IsoObject
 function __BaseAnimalBehavior:tryAndGetGrassFloor() end
 
----@param arg0 integer
+---@param searchRadius integer
 ---@return IsoObject
-function __BaseAnimalBehavior:tryAndGetPuddle(arg0) end
+function __BaseAnimalBehavior:tryAndGetPuddle(searchRadius) end
 
 function __BaseAnimalBehavior:update() end
 
@@ -101,15 +101,15 @@ function __BaseAnimalBehavior:wanderIdle() end
 
 BaseAnimalBehavior = {}
 
----@param arg0 ArrayList<IsoFeedingTrough>
-function BaseAnimalBehavior.shuffleList(arg0) end
+---@param a ArrayList<IsoFeedingTrough>
+function BaseAnimalBehavior.shuffleList(a) end
 
----@param arg0 ArrayList<IsoGridSquare>
-function BaseAnimalBehavior.shuffleListSq(arg0) end
+---@param a ArrayList<IsoGridSquare>
+function BaseAnimalBehavior.shuffleListSq(a) end
 
----@param arg0 IsoAnimal
+---@param parent IsoAnimal
 ---@return BaseAnimalBehavior
-function BaseAnimalBehavior.new(arg0) end
+function BaseAnimalBehavior.new(parent) end
 
 ---@type Class<BaseAnimalBehavior>
 BaseAnimalBehavior.class = nil

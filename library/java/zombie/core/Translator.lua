@@ -25,13 +25,13 @@ function Translator.debugRecipeGroupNames() end
 
 function Translator.debugRecipeNames() end
 
----@param arg0 string
+---@param s string
 ---@return string
-function Translator.getAttributeText(arg0) end
+function Translator.getAttributeText(s) end
 
----@param arg0 string
+---@param s string
 ---@return string
-function Translator.getAttributeTextOrNull(arg0) end
+function Translator.getAttributeTextOrNull(s) end
 
 ---@return ArrayList<zombie.core.Language>
 function Translator.getAvailableLanguage() end
@@ -49,13 +49,13 @@ function Translator.getDefaultLanguage() end
 ---@return string
 function Translator.getDisplayItemName(trim) end
 
----@param arg0 string
+---@param s string
 ---@return string
-function Translator.getEntityText(arg0) end
+function Translator.getEntityText(s) end
 
----@param arg0 string
+---@param s string
 ---@return string
-function Translator.getFluidText(arg0) end
+function Translator.getFluidText(s) end
 
 ---@param fullType string
 ---@return string
@@ -68,9 +68,9 @@ function Translator.getItemNameFromFullType(fullType) end
 ---@return zombie.core.Language
 function Translator.getLanguage() end
 
----@param arg0 string
+---@param s string
 ---@return string
-function Translator.getMapLabelText(arg0) end
+function Translator.getMapLabelText(s) end
 
 ---@param name string
 ---@return string

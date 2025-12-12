@@ -14,43 +14,43 @@ function __CraftRecipeMonitor:close() end
 ---@return CraftRecipe
 function __CraftRecipeMonitor:getRecipe() end
 
----@param arg0 string
-function __CraftRecipeMonitor:log(arg0) end
+---@param s string
+function __CraftRecipeMonitor:log(s) end
 
----@param arg0 CraftLogic
-function __CraftRecipeMonitor:logCraftLogic(arg0) end
+---@param logic CraftLogic
+function __CraftRecipeMonitor:logCraftLogic(logic) end
 
----@param arg0 DryingLogic
-function __CraftRecipeMonitor:logDryingLogic(arg0) end
+---@param logic DryingLogic
+function __CraftRecipeMonitor:logDryingLogic(logic) end
 
----@param arg0 FurnaceLogic
-function __CraftRecipeMonitor:logFurnaceLogic(arg0) end
+---@param logic FurnaceLogic
+function __CraftRecipeMonitor:logFurnaceLogic(logic) end
 
----@param arg0 InputScript
-function __CraftRecipeMonitor:logInputScript(arg0) end
+---@param input InputScript
+function __CraftRecipeMonitor:logInputScript(input) end
 
 ---@generic T
----@param arg0 string
----@param arg1 ArrayList<T>
-function __CraftRecipeMonitor:logList(arg0, arg1) end
+---@param tag string
+---@param list ArrayList<T>
+function __CraftRecipeMonitor:logList(tag, list) end
 
----@param arg0 MashingLogic
-function __CraftRecipeMonitor:logMashingLogic(arg0) end
+---@param logic MashingLogic
+function __CraftRecipeMonitor:logMashingLogic(logic) end
 
----@param arg0 OutputScript
-function __CraftRecipeMonitor:logOutputScript(arg0) end
+---@param output OutputScript
+function __CraftRecipeMonitor:logOutputScript(output) end
 
----@param arg0 CraftRecipe
----@param arg1 boolean
-function __CraftRecipeMonitor:logRecipe(arg0, arg1) end
+---@param recipe CraftRecipe
+---@param doInputsOutputs boolean
+function __CraftRecipeMonitor:logRecipe(recipe, doInputsOutputs) end
 
----@param arg0 List<Resource>
----@param arg1 List<Resource>
-function __CraftRecipeMonitor:logResources(arg0, arg1) end
+---@param inputs List<Resource>
+---@param outputs List<Resource>
+function __CraftRecipeMonitor:logResources(inputs, outputs) end
 
----@param arg0 string
----@param arg1 List<Resource>
-function __CraftRecipeMonitor:logResourcesList(arg0, arg1) end
+---@param tag string
+---@param resources List<Resource>
+function __CraftRecipeMonitor:logResourcesList(tag, resources) end
 
 function __CraftRecipeMonitor:open() end
 
@@ -59,17 +59,17 @@ function __CraftRecipeMonitor:reset() end
 ---@return CraftRecipeMonitor
 function __CraftRecipeMonitor:seal() end
 
----@param arg0 boolean
-function __CraftRecipeMonitor:setPrintToConsole(arg0) end
+---@param b boolean
+function __CraftRecipeMonitor:setPrintToConsole(b) end
 
----@param arg0 CraftRecipe
-function __CraftRecipeMonitor:setRecipe(arg0) end
+---@param recipe CraftRecipe
+function __CraftRecipeMonitor:setRecipe(recipe) end
 
----@param arg0 string
-function __CraftRecipeMonitor:success(arg0) end
+---@param s string
+function __CraftRecipeMonitor:success(s) end
 
----@param arg0 string
-function __CraftRecipeMonitor:warn(arg0) end
+---@param s string
+function __CraftRecipeMonitor:warn(s) end
 
 CraftRecipeMonitor = {}
 

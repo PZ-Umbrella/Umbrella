@@ -20,9 +20,9 @@ XuiAutoApply.IfSetAndKeyExists = nil
 ---@type XuiAutoApply
 XuiAutoApply.No = nil
 
----@param arg0 string
+---@param name string
 ---@return XuiAutoApply
-function XuiAutoApply.valueOf(arg0) end
+function XuiAutoApply.valueOf(name) end
 
 ---@return kahlua.Array<XuiAutoApply>
 function XuiAutoApply.values() end

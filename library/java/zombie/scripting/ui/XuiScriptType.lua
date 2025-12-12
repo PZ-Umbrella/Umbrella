@@ -17,9 +17,9 @@ XuiScriptType.Reference = nil
 ---@type XuiScriptType
 XuiScriptType.Style = nil
 
----@param arg0 string
+---@param name string
 ---@return XuiScriptType
-function XuiScriptType.valueOf(arg0) end
+function XuiScriptType.valueOf(name) end
 
 ---@return kahlua.Array<XuiScriptType>
 function XuiScriptType.values() end

@@ -8,157 +8,157 @@ CraftUtil = {}
 ---@return ArrayList<Resource>
 function CraftUtil.AllocResourceList() end
 
----@param arg0 ArrayList<Resource>
-function CraftUtil.ReleaseResourceList(arg0) end
+---@param list ArrayList<Resource>
+function CraftUtil.ReleaseResourceList(list) end
 
----@param arg0 InventoryItem
----@param arg1 InventoryItem
+---@param item InventoryItem
+---@param other InventoryItem
 ---@return boolean
-function CraftUtil.canItemsStack(arg0, arg1) end
+function CraftUtil.canItemsStack(item, other) end
 
----@param arg0 InventoryItem
----@param arg1 InventoryItem
----@param arg2 boolean
+---@param item InventoryItem
+---@param other InventoryItem
+---@param nullReturn boolean
 ---@return boolean
-function CraftUtil.canItemsStack(arg0, arg1, arg2) end
+function CraftUtil.canItemsStack(item, other, nullReturn) end
 
----@param arg0 Item
----@param arg1 Item
----@param arg2 boolean
+---@param item Item
+---@param other Item
+---@param nullReturn boolean
 ---@return boolean
-function CraftUtil.canItemsStack(arg0, arg1, arg2) end
+function CraftUtil.canItemsStack(item, other, nullReturn) end
 
----@param arg0 CraftRecipe
----@param arg1 CraftRecipeData
----@param arg2 List<Resource>
----@param arg3 List<Resource>
+---@param recipe CraftRecipe
+---@param craftTestData CraftRecipeData
+---@param inputs List<Resource>
+---@param outputs List<Resource>
 ---@return boolean
-function CraftUtil.canPerformRecipe(arg0, arg1, arg2, arg3) end
+function CraftUtil.canPerformRecipe(recipe, craftTestData, inputs, outputs) end
 
----@param arg0 CraftRecipe
----@param arg1 CraftRecipeData
----@param arg2 List<Resource>
----@param arg3 List<Resource>
----@param arg4 CraftRecipeMonitor
+---@param recipe CraftRecipe
+---@param craftTestData CraftRecipeData
+---@param inputs List<Resource>
+---@param outputs List<Resource>
+---@param _m CraftRecipeMonitor
 ---@return boolean
-function CraftUtil.canPerformRecipe(arg0, arg1, arg2, arg3, arg4) end
+function CraftUtil.canPerformRecipe(recipe, craftTestData, inputs, outputs, _m) end
 
----@param arg0 Resource
----@param arg1 InventoryItem
+---@param resource Resource
+---@param item InventoryItem
 ---@return boolean
-function CraftUtil.canResourceFitItem(arg0, arg1) end
+function CraftUtil.canResourceFitItem(resource, item) end
 
----@param arg0 Resource
----@param arg1 InventoryItem
----@param arg2 integer
+---@param resource Resource
+---@param item InventoryItem
+---@param count integer
 ---@return boolean
-function CraftUtil.canResourceFitItem(arg0, arg1, arg2) end
+function CraftUtil.canResourceFitItem(resource, item, count) end
 
----@param arg0 Resource
----@param arg1 InventoryItem
----@param arg2 integer
----@param arg3 Resource
----@param arg4 HashSet<Resource>
+---@param resource Resource
+---@param item InventoryItem
+---@param count integer
+---@param ignoreResource Resource
+---@param ignoreSet HashSet<Resource>
 ---@return boolean
-function CraftUtil.canResourceFitItem(arg0, arg1, arg2, arg3, arg4) end
+function CraftUtil.canResourceFitItem(resource, item, count, ignoreResource, ignoreSet) end
 
----@param arg0 Resource
----@param arg1 Item
+---@param resource Resource
+---@param item Item
 ---@return boolean
-function CraftUtil.canResourceFitItem(arg0, arg1) end
+function CraftUtil.canResourceFitItem(resource, item) end
 
----@param arg0 Resource
----@param arg1 Item
----@param arg2 integer
+---@param resource Resource
+---@param item Item
+---@param count integer
 ---@return boolean
-function CraftUtil.canResourceFitItem(arg0, arg1, arg2) end
+function CraftUtil.canResourceFitItem(resource, item, count) end
 
----@param arg0 Resource
----@param arg1 Item
----@param arg2 integer
----@param arg3 Resource
----@param arg4 HashSet<Resource>
+---@param resource Resource
+---@param item Item
+---@param count integer
+---@param ignoreResource Resource
+---@param ignoreSet HashSet<Resource>
 ---@return boolean
-function CraftUtil.canResourceFitItem(arg0, arg1, arg2, arg3, arg4) end
+function CraftUtil.canResourceFitItem(resource, item, count, ignoreResource, ignoreSet) end
 
----@param arg0 CraftRecipeData
----@param arg1 List<CraftRecipe>
----@param arg2 List<Resource>
----@param arg3 List<Resource>
+---@param craftTestData CraftRecipeData
+---@param recipes List<CraftRecipe>
+---@param inputs List<Resource>
+---@param outputs List<Resource>
 ---@return boolean
-function CraftUtil.canStart(arg0, arg1, arg2, arg3) end
+function CraftUtil.canStart(craftTestData, recipes, inputs, outputs) end
 
----@param arg0 CraftRecipeData
----@param arg1 List<CraftRecipe>
----@param arg2 List<Resource>
----@param arg3 List<Resource>
----@param arg4 CraftRecipeMonitor
+---@param craftTestData CraftRecipeData
+---@param recipes List<CraftRecipe>
+---@param inputs List<Resource>
+---@param outputs List<Resource>
+---@param _m CraftRecipeMonitor
 ---@return boolean
-function CraftUtil.canStart(arg0, arg1, arg2, arg3, arg4) end
+function CraftUtil.canStart(craftTestData, recipes, inputs, outputs, _m) end
 
----@param arg0 IsoPlayer
----@param arg1 CraftRecipeData
----@param arg2 List<CraftRecipe>
----@param arg3 List<Resource>
----@param arg4 List<Resource>
----@param arg5 CraftRecipeMonitor
+---@param player IsoPlayer
+---@param craftTestData CraftRecipeData
+---@param recipes List<CraftRecipe>
+---@param inputs List<Resource>
+---@param outputs List<Resource>
+---@param monitor CraftRecipeMonitor
 ---@return CraftRecipeMonitor
-function CraftUtil.debugCanStart(arg0, arg1, arg2, arg3, arg4, arg5) end
+function CraftUtil.debugCanStart(player, craftTestData, recipes, inputs, outputs, monitor) end
 
----@param arg0 ResourceIO
----@param arg1 List<Resource>
----@param arg2 InventoryItem
----@param arg3 integer
----@param arg4 Resource
----@param arg5 HashSet<Resource>
+---@param resourceIO ResourceIO
+---@param outputResources List<Resource>
+---@param item InventoryItem
+---@param count integer
+---@param ignoreResource Resource
+---@param ignoreSet HashSet<Resource>
 ---@return Resource
-function CraftUtil.findResourceOrEmpty(arg0, arg1, arg2, arg3, arg4, arg5) end
+function CraftUtil.findResourceOrEmpty(resourceIO, outputResources, item, count, ignoreResource, ignoreSet) end
 
----@param arg0 ResourceIO
----@param arg1 List<Resource>
----@param arg2 Item
----@param arg3 integer
----@param arg4 Resource
----@param arg5 HashSet<Resource>
+---@param resourceIO ResourceIO
+---@param resources List<Resource>
+---@param item Item
+---@param count integer
+---@param ignoreResource Resource
+---@param ignoreSet HashSet<Resource>
 ---@return Resource
-function CraftUtil.findResourceOrEmpty(arg0, arg1, arg2, arg3, arg4, arg5) end
+function CraftUtil.findResourceOrEmpty(resourceIO, resources, item, count, ignoreResource, ignoreSet) end
 
----@param arg0 ResourceIO
----@param arg1 List<Resource>
----@param arg2 Fluid
----@param arg3 number
----@param arg4 Resource
----@param arg5 HashSet<Resource>
+---@param resourceIO ResourceIO
+---@param resources List<Resource>
+---@param fluid Fluid
+---@param amount number
+---@param ignoreResource Resource
+---@param ignoreSet HashSet<Resource>
 ---@return Resource
-function CraftUtil.findResourceOrEmpty(arg0, arg1, arg2, arg3, arg4, arg5) end
+function CraftUtil.findResourceOrEmpty(resourceIO, resources, fluid, amount, ignoreResource, ignoreSet) end
 
----@param arg0 ResourceIO
----@param arg1 List<Resource>
----@param arg2 Energy
----@param arg3 number
----@param arg4 Resource
----@param arg5 HashSet<Resource>
+---@param resourceIO ResourceIO
+---@param resources List<Resource>
+---@param energy Energy
+---@param amount number
+---@param ignoreResource Resource
+---@param ignoreSet HashSet<Resource>
 ---@return Resource
-function CraftUtil.findResourceOrEmpty(arg0, arg1, arg2, arg3, arg4, arg5) end
+function CraftUtil.findResourceOrEmpty(resourceIO, resources, energy, amount, ignoreResource, ignoreSet) end
 
----@param arg0 GameEntity
+---@param entity GameEntity
 ---@return number
-function CraftUtil.getEntityTemperature(arg0) end
+function CraftUtil.getEntityTemperature(entity) end
 
----@param arg0 CraftRecipeData
----@param arg1 List<CraftRecipe>
----@param arg2 List<Resource>
----@param arg3 List<Resource>
+---@param craftTestData CraftRecipeData
+---@param recipes List<CraftRecipe>
+---@param inputs List<Resource>
+---@param outputs List<Resource>
 ---@return CraftRecipe
-function CraftUtil.getPossibleRecipe(arg0, arg1, arg2, arg3) end
+function CraftUtil.getPossibleRecipe(craftTestData, recipes, inputs, outputs) end
 
----@param arg0 CraftRecipeData
----@param arg1 List<CraftRecipe>
----@param arg2 List<Resource>
----@param arg3 List<Resource>
----@param arg4 CraftRecipeMonitor
+---@param craftTestData CraftRecipeData
+---@param recipes List<CraftRecipe>
+---@param inputs List<Resource>
+---@param outputs List<Resource>
+---@param _m CraftRecipeMonitor
 ---@return CraftRecipe
-function CraftUtil.getPossibleRecipe(arg0, arg1, arg2, arg3, arg4) end
+function CraftUtil.getPossibleRecipe(craftTestData, recipes, inputs, outputs, _m) end
 
 ---@return CraftUtil
 function CraftUtil.new() end

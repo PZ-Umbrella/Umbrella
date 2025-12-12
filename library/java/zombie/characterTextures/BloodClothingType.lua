@@ -183,9 +183,9 @@ function BloodClothingType.getCoveredParts(bloodClothingType) end
 ---@return ArrayList<BloodBodyPartType>
 function BloodClothingType.getCoveredParts(bloodClothingType, result) end
 
----@param arg0 string
+---@param name string
 ---@return BloodClothingType
-function BloodClothingType.valueOf(arg0) end
+function BloodClothingType.valueOf(name) end
 
 ---Returns an array containing the constants of this enum class, in
 ---the order they are declared.

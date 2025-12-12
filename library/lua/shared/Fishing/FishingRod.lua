@@ -18,7 +18,7 @@ Fishing.FishingRod = nil ---@type Fishing.FishingRod
 ---@field mpAimX number
 ---@field mpAimY number
 ---@field player IsoPlayer
----@field playerIndex unknown
+---@field playerIndex integer
 ---@field prevReelValue number
 ---@field reelDelta number
 ---@field rodCoeff number

@@ -13,39 +13,39 @@ function __BentFences:addFenceTiles(VERSION, tiles) end
 ---@param dir IsoDirections
 function __BentFences:bendFence(obj, dir) end
 
----@param arg0 IsoObject
----@param arg1 IsoDirections
----@param arg2 BentFences.Entry
+---@param obj IsoObject
+---@param dir IsoDirections
+---@param entry BentFences.Entry
 ---@return boolean
-function __BentFences:checkCanCollapse(arg0, arg1, arg2) end
+function __BentFences:checkCanCollapse(obj, dir, entry) end
 
----@param arg0 IsoMovingObject
----@param arg1 IsoGridSquare
----@param arg2 IsoGridSquare
-function __BentFences:checkDamageHoppableFence(arg0, arg1, arg2) end
+---@param thumper IsoMovingObject
+---@param sq IsoGridSquare
+---@param oppositeSq IsoGridSquare
+function __BentFences:checkDamageHoppableFence(thumper, sq, oppositeSq) end
 
----@param arg0 IsoObject
----@param arg1 IsoDirections
----@param arg2 BentFences.Entry
----@param arg3 integer
-function __BentFences:collapse(arg0, arg1, arg2, arg3) end
+---@param obj IsoObject
+---@param dir IsoDirections
+---@param entry BentFences.Entry
+---@param index integer
+function __BentFences:collapse(obj, dir, entry, index) end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return IsoObject
-function __BentFences:getCollapsedFence(arg0) end
+function __BentFences:getCollapsedFence(square) end
 
----@param arg0 IsoObject
+---@param obj IsoObject
 ---@return BentFences.ThumpData
-function __BentFences:getThumpData(arg0) end
+function __BentFences:getThumpData(obj) end
 
----@param arg0 IsoObject
----@param arg1 BentFences.Entry
+---@param obj IsoObject
+---@param entry BentFences.Entry
 ---@return BentFences.ThumpData
-function __BentFences:getThumpData(arg0, arg1) end
+function __BentFences:getThumpData(obj, entry) end
 
----@param arg0 IsoObject
+---@param obj IsoObject
 ---@return boolean
-function __BentFences:isBendableFence(arg0) end
+function __BentFences:isBendableFence(obj) end
 
 ---@param obj IsoObject
 ---@return boolean
@@ -58,39 +58,39 @@ function __BentFences:isEnabled() end
 ---@return boolean
 function __BentFences:isUnbentObject(obj) end
 
----@param arg0 IsoObject
----@param arg1 IsoDirections
+---@param obj IsoObject
+---@param dir IsoDirections
 ---@return boolean
-function __BentFences:isUnbentObject(arg0, arg1) end
+function __BentFences:isUnbentObject(obj, dir) end
 
----@param arg0 IsoObject
----@param arg1 IsoDirections
----@param arg2 BentFences.Entry
----@param arg3 integer
-function __BentFences:removeCollapsedTiles(arg0, arg1, arg2, arg3) end
+---@param obj IsoObject
+---@param dir IsoDirections
+---@param entry BentFences.Entry
+---@param index integer
+function __BentFences:removeCollapsedTiles(obj, dir, entry, index) end
 
----@param arg0 IsoObject
-function __BentFences:resetFence(arg0) end
+---@param obj IsoObject
+function __BentFences:resetFence(obj) end
 
----@param arg0 IsoObject
----@param arg1 IsoDirections
-function __BentFences:smashFence(arg0, arg1) end
+---@param obj IsoObject
+---@param dir IsoDirections
+function __BentFences:smashFence(obj, dir) end
 
----@param arg0 IsoObject
----@param arg1 IsoDirections
----@param arg2 integer
-function __BentFences:smashFence(arg0, arg1, arg2) end
+---@param obj IsoObject
+---@param dir IsoDirections
+---@param index integer
+function __BentFences:smashFence(obj, dir, index) end
 
----@param arg0 IsoObject
----@param arg1 IsoDirections
----@param arg2 boolean
-function __BentFences:swapTiles(arg0, arg1, arg2) end
+---@param obj IsoObject
+---@param dir IsoDirections
+---@param bending boolean
+function __BentFences:swapTiles(obj, dir, bending) end
 
----@param arg0 IsoObject
----@param arg1 IsoDirections
----@param arg2 boolean
----@param arg3 integer
-function __BentFences:swapTiles(arg0, arg1, arg2, arg3) end
+---@param obj IsoObject
+---@param dir IsoDirections
+---@param bending boolean
+---@param forceStage integer
+function __BentFences:swapTiles(obj, dir, bending, forceStage) end
 
 ---@param obj IsoObject
 function __BentFences:unbendFence(obj) end

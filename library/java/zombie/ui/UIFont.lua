@@ -111,9 +111,9 @@ UIFont.Title = nil
 ---@return UIFont
 function UIFont.FromString(str) end
 
----@param arg0 string
+---@param name string
 ---@return UIFont
-function UIFont.valueOf(arg0) end
+function UIFont.valueOf(name) end
 
 ---Returns an array containing the constants of this enum class, in
 ---the order they are declared.

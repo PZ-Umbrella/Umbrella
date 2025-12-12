@@ -2,9 +2,7 @@
 
 ---@class ISWidgetRecipeFilterPanel : ISPanelJoypad
 ---@field autoFillContents boolean
----@field buttonViewMode ISButton?
 ---@field callbackTarget unknown?
----@field entryBox ISTextEntryBox
 ---@field filterTypeCombo ISComboBox?
 ---@field iconGrid Texture
 ---@field iconList Texture
@@ -28,7 +26,6 @@
 ---@field showFilterByOutputItem boolean
 ---@field sortCombo ISComboBox?
 ---@field sortComboLabel ISLabel?
----@field tickbox ISTickBox?
 ---@field tickBoxShowAllVersion ISTickBox
 ---@field viewModeButton ISButton
 ISWidgetRecipeFilterPanel = ISPanelJoypad:derive("ISWidgetRecipeFilterPanel")
@@ -43,6 +40,8 @@ function ISWidgetRecipeFilterPanel:calculateLayout(_preferredWidth, _preferredHe
 
 function ISWidgetRecipeFilterPanel:createChildren() end
 
+---@param textFilter string
+---@param selectedCombo string
 function ISWidgetRecipeFilterPanel:filter(textFilter, selectedCombo) end
 
 function ISWidgetRecipeFilterPanel:initialise() end
@@ -66,10 +65,10 @@ function ISWidgetRecipeFilterPanel:onResize() end
 
 ---@param clickedOption integer
 ---@param enabled boolean
-function ISWidgetRecipeFilterPanel:OnShowAllClick(clickedOption, enabled) end
-
 function ISWidgetRecipeFilterPanel:onShowAllRecipeClick(clickedOption, enabled) end
 
+---@param clickedOption integer
+---@param enabled boolean
 function ISWidgetRecipeFilterPanel:onShowAllVersionClick(clickedOption, enabled) end
 
 function ISWidgetRecipeFilterPanel:populateComboList() end

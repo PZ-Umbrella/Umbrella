@@ -3,9 +3,9 @@
 ---@class EvolvedRecipe: BaseScriptObject
 local __EvolvedRecipe = {}
 
----@param arg0 string
----@param arg1 string
-function __EvolvedRecipe:Load(arg0, arg1) end
+---@param name string
+---@param token string
+function __EvolvedRecipe:Load(name, token) end
 
 ---@param baseItem InventoryItem
 ---@param usedItem InventoryItem
@@ -56,9 +56,9 @@ function __EvolvedRecipe:getResultItem() end
 ---@return string
 function __EvolvedRecipe:getUntranslatedName() end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __EvolvedRecipe:hasMinimumWater(arg0) end
+function __EvolvedRecipe:hasMinimumWater(item) end
 
 ---@return boolean
 function __EvolvedRecipe:isAllowFrozenItem() end

@@ -1,12 +1,12 @@
 ---@meta
 
----@alias umbrella.ISPlayerStatsChooseProfessionUI.OnClick fun(target: unknown?, button: ISButton, profession: ProfessionFactory.Profession)
+---@alias umbrella.ISPlayerStatsChooseProfessionUI.OnClick fun(target: unknown?, button: ISButton, profession: CharacterProfessionDefinition)
 
 ---@class ISPlayerStatsChooseProfessionUI : ISPanel
 ---@field cancel ISButton
 ---@field chr IsoPlayer
 ---@field combo ISComboBox
----@field comboList ProfessionFactory.Profession[]
+---@field comboList CharacterProfessionDefinition[]
 ---@field ok ISButton
 ---@field onclick umbrella.ISPlayerStatsChooseProfessionUI.OnClick?
 ---@field target unknown?

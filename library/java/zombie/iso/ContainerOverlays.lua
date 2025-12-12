@@ -8,9 +8,9 @@ function __ContainerOverlays:Reset() end
 ---@param overlayMap table
 function __ContainerOverlays:addOverlays(overlayMap) end
 
----@param arg0 string
+---@param overlayName string
 ---@return ArrayList<string>
-function __ContainerOverlays:getUnderlyingSpriteNames(arg0) end
+function __ContainerOverlays:getUnderlyingSpriteNames(overlayName) end
 
 ---@param obj IsoObject
 ---@return boolean

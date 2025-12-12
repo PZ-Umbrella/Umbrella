@@ -3,27 +3,27 @@
 ---@class ResourceFluid: Resource
 local __ResourceFluid = {}
 
----@param arg0 ObjectTooltip
----@param arg1 ObjectTooltip.Layout
-function __ResourceFluid:DoTooltip(arg0, arg1) end
+---@param tooltipUI ObjectTooltip
+---@param layout ObjectTooltip.Layout
+function __ResourceFluid:DoTooltip(tooltipUI, layout) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __ResourceFluid:canDrainFromItem(arg0) end
+function __ResourceFluid:canDrainFromItem(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __ResourceFluid:canDrainToItem(arg0) end
+function __ResourceFluid:canDrainToItem(item) end
 
 function __ResourceFluid:clear() end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __ResourceFluid:drainFromItem(arg0) end
+function __ResourceFluid:drainFromItem(item) end
 
----@param arg0 InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __ResourceFluid:drainToItem(arg0) end
+function __ResourceFluid:drainToItem(item) end
 
 ---@return number
 function __ResourceFluid:getFluidAmount() end
@@ -46,30 +46,30 @@ function __ResourceFluid:isEmpty() end
 ---@return boolean
 function __ResourceFluid:isFull() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __ResourceFluid:load(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __ResourceFluid:load(input, WorldVersion) end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __ResourceFluid:loadSync(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __ResourceFluid:loadSync(input, WorldVersion) end
 
----@param arg0 ByteBuffer
-function __ResourceFluid:save(arg0) end
+---@param output ByteBuffer
+function __ResourceFluid:save(output) end
 
----@param arg0 ByteBuffer
-function __ResourceFluid:saveSync(arg0) end
+---@param output ByteBuffer
+function __ResourceFluid:saveSync(output) end
 
----@param arg0 ResourceFluid
----@param arg1 number
-function __ResourceFluid:transferTo(arg0, arg1) end
+---@param target ResourceFluid
+---@param transferAmount number
+function __ResourceFluid:transferTo(target, transferAmount) end
 
----@param arg0 Resource
-function __ResourceFluid:tryTransferTo(arg0) end
+---@param target Resource
+function __ResourceFluid:tryTransferTo(target) end
 
----@param arg0 Resource
----@param arg1 number
-function __ResourceFluid:tryTransferTo(arg0, arg1) end
+---@param target Resource
+---@param amount number
+function __ResourceFluid:tryTransferTo(target, amount) end
 
 ResourceFluid = {}
 

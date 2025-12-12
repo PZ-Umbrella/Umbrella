@@ -7,16 +7,16 @@ local __XP = {}
 ---@param amount number
 function __XP:AddXP(type, amount) end
 
----@param arg0 PerkFactory.Perk
----@param arg1 number
----@param arg2 boolean
-function __XP:AddXP(arg0, arg1, arg2) end
+---@param type PerkFactory.Perk
+---@param amount number
+---@param noMultiplier boolean
+function __XP:AddXP(type, amount, noMultiplier) end
 
----@param arg0 PerkFactory.Perk
----@param arg1 number
----@param arg2 boolean
----@param arg3 boolean
-function __XP:AddXP(arg0, arg1, arg2, arg3) end
+---@param type PerkFactory.Perk
+---@param amount number
+---@param noMultiplier boolean
+---@param haloText boolean
+function __XP:AddXP(type, amount, noMultiplier, haloText) end
 
 ---@param type PerkFactory.Perk
 ---@param amount number
@@ -25,22 +25,22 @@ function __XP:AddXP(arg0, arg1, arg2, arg3) end
 ---@param remote boolean
 function __XP:AddXP(type, amount, callLua, doXPBoost, remote) end
 
----@param arg0 PerkFactory.Perk
----@param arg1 number
----@param arg2 boolean
----@param arg3 boolean
----@param arg4 boolean
----@param arg5 boolean
-function __XP:AddXP(arg0, arg1, arg2, arg3, arg4, arg5) end
+---@param type PerkFactory.Perk
+---@param amount number
+---@param callLua boolean
+---@param doXPBoost boolean
+---@param remote boolean
+---@param haloText boolean
+function __XP:AddXP(type, amount, callLua, doXPBoost, remote, haloText) end
 
 ---@deprecated
 ---@param weapon HandWeapon
 ---@param amount integer
 function __XP:AddXP(weapon, amount) end
 
----@param arg0 PerkFactory.Perk
----@param arg1 number
-function __XP:AddXPHaloText(arg0, arg1) end
+---@param type PerkFactory.Perk
+---@param amount number
+function __XP:AddXPHaloText(type, amount) end
 
 ---@param type PerkFactory.Perk
 ---@param amount number
@@ -105,10 +105,10 @@ function __XP:setXPToLevel(key, perkLevel) end
 
 XP = {}
 
----@param arg0 IsoGameCharacter
----@param arg1 IsoGameCharacter
+---@param this_0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return IsoGameCharacter.XP
-function XP.new(arg0, arg1) end
+function XP.new(this_0, chr) end
 
 ---@type Class<IsoGameCharacter.XP>
 XP.class = nil

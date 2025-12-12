@@ -3,11 +3,11 @@
 ---@class FBORenderChunk
 local __FBORenderChunk = {}
 
----@param arg0 boolean
-function __FBORenderChunk:beginMainThread(arg0) end
+---@param bClear boolean
+function __FBORenderChunk:beginMainThread(bClear) end
 
----@param arg0 boolean
-function __FBORenderChunk:beginRenderThread(arg0) end
+---@param bClear boolean
+function __FBORenderChunk:beginRenderThread(bClear) end
 
 function __FBORenderChunk:endMainThread() end
 
@@ -22,29 +22,29 @@ function __FBORenderChunk:getRenderLevels() end
 ---@return Texture
 function __FBORenderChunk:getTexture() end
 
----@param arg0 number
+---@param cameraZoom number
 ---@return integer
-function __FBORenderChunk:getTextureHeight(arg0) end
+function __FBORenderChunk:getTextureHeight(cameraZoom) end
 
----@param arg0 number
+---@param cameraZoom number
 ---@return integer
-function __FBORenderChunk:getTextureWidth(arg0) end
+function __FBORenderChunk:getTextureWidth(cameraZoom) end
 
 ---@return integer
 function __FBORenderChunk:getTopLevel() end
 
 function __FBORenderChunk:init() end
 
----@param arg0 integer
+---@param level integer
 ---@return boolean
-function __FBORenderChunk:isTopLevel(arg0) end
+function __FBORenderChunk:isTopLevel(level) end
 
 function __FBORenderChunk:preInit() end
 
 function __FBORenderChunk:renderInWorldMainThread() end
 
----@param arg0 FBORenderLevels
-function __FBORenderChunk:setRenderLevels(arg0) end
+---@param renderLevels FBORenderLevels
+function __FBORenderChunk:setRenderLevels(renderLevels) end
 
 FBORenderChunk = {}
 

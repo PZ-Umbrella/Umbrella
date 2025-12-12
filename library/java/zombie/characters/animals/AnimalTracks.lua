@@ -9,13 +9,13 @@ function __AnimalTracks:addItemToWorld() end
 ---@return ArrayList<IsoAnimalTrack>
 function __AnimalTracks:addToWorld() end
 
----@param arg0 IsoGameCharacter
----@param arg1 boolean
-function __AnimalTracks:addTrackingExp(arg0, arg1) end
+---@param chr IsoGameCharacter
+---@param success boolean
+function __AnimalTracks:addTrackingExp(chr, success) end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return boolean
-function __AnimalTracks:canFindTrack(arg0) end
+function __AnimalTracks:canFindTrack(chr) end
 
 ---@return ArrayList<IsoAnimalTrack>
 function __AnimalTracks:getAllIsoTracks() end
@@ -26,9 +26,9 @@ function __AnimalTracks:getAnimalType() end
 ---@return IsoDirections
 function __AnimalTracks:getDir() end
 
----@param arg0 integer
+---@param trackingLevel integer
 ---@return string
-function __AnimalTracks:getFreshnessString(arg0) end
+function __AnimalTracks:getFreshnessString(trackingLevel) end
 
 ---@return IsoAnimalTrack
 function __AnimalTracks:getIsoAnimalTrack() end
@@ -45,9 +45,9 @@ function __AnimalTracks:getSquare() end
 ---@return string
 function __AnimalTracks:getTimestamp() end
 
----@param arg0 IsoGameCharacter
+---@param chr IsoGameCharacter
 ---@return string
-function __AnimalTracks:getTrackAge(arg0) end
+function __AnimalTracks:getTrackAge(chr) end
 
 ---@return integer
 function __AnimalTracks:getTrackAgeDays() end
@@ -70,47 +70,47 @@ function __AnimalTracks:isAddedToWorld() end
 ---@return boolean
 function __AnimalTracks:isItem() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __AnimalTracks:load(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __AnimalTracks:load(input, WorldVersion) end
 
----@param arg0 ByteBuffer
-function __AnimalTracks:save(arg0) end
+---@param output ByteBuffer
+function __AnimalTracks:save(output) end
 
----@param arg0 boolean
-function __AnimalTracks:setAddedToWorld(arg0) end
+---@param b boolean
+function __AnimalTracks:setAddedToWorld(b) end
 
----@param arg0 InventoryItem
-function __AnimalTracks:setItem(arg0) end
+---@param item InventoryItem
+function __AnimalTracks:setItem(item) end
 
 AnimalTracks = {}
 
----@param arg0 VirtualAnimal
----@param arg1 AnimalTracksDefinitions.AnimalTracksType
+---@param animal VirtualAnimal
+---@param trackType AnimalTracksDefinitions.AnimalTracksType
 ---@return AnimalTracks
-function AnimalTracks.addAnimalTrack(arg0, arg1) end
+function AnimalTracks.addAnimalTrack(animal, trackType) end
 
----@param arg0 VirtualAnimal
----@param arg1 integer
----@param arg2 integer
----@param arg3 AnimalTracksDefinitions.AnimalTracksType
----@param arg4 integer
+---@param animal VirtualAnimal
+---@param x integer
+---@param y integer
+---@param trackType AnimalTracksDefinitions.AnimalTracksType
+---@param timeMinus integer
 ---@return AnimalTracks
-function AnimalTracks.addAnimalTrackAtPos(arg0, arg1, arg2, arg3, arg4) end
+function AnimalTracks.addAnimalTrackAtPos(animal, x, y, trackType, timeMinus) end
 
----@param arg0 IsoGameCharacter
+---@param character IsoGameCharacter
 ---@return ArrayList<AnimalTracks>
-function AnimalTracks.getAndFindNearestTracks(arg0) end
+function AnimalTracks.getAndFindNearestTracks(character) end
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param radius integer
 ---@return ArrayList<AnimalTracks>
-function AnimalTracks.getNearestTracks(arg0, arg1, arg2) end
+function AnimalTracks.getNearestTracks(x, y, radius) end
 
----@param arg0 string
+---@param trackType string
 ---@return string
-function AnimalTracks.getTrackStr(arg0) end
+function AnimalTracks.getTrackStr(trackType) end
 
 ---@return AnimalTracks
 function AnimalTracks.new() end

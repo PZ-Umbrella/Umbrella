@@ -3,8 +3,8 @@
 ---@class IsoBarricade: IsoObject, Thumpable, IHasHealth
 local __IsoBarricade = {}
 
----@param arg0 number
-function __IsoBarricade:Damage(arg0) end
+---@param amount number
+function __IsoBarricade:Damage(amount) end
 
 ---@param obj IsoMovingObject
 ---@param from IsoGridSquare
@@ -24,9 +24,9 @@ function __IsoBarricade:Thump(thumper) end
 ---@param weapon HandWeapon
 function __IsoBarricade:WeaponHit(owner, weapon) end
 
----@param arg0 IsoGameCharacter
----@param arg1 ArrayList<InventoryItem>
-function __IsoBarricade:addFromCraftRecipe(arg0, arg1) end
+---@param chr IsoGameCharacter
+---@param items ArrayList<InventoryItem>
+function __IsoBarricade:addFromCraftRecipe(chr, items) end
 
 ---@param chr IsoGameCharacter
 ---@param metal InventoryItem
@@ -36,8 +36,8 @@ function __IsoBarricade:addMetal(chr, metal) end
 ---@param metalBar InventoryItem
 function __IsoBarricade:addMetalBar(chr, metalBar) end
 
----@param arg0 IsoGameCharacter
-function __IsoBarricade:addPlank(arg0) end
+---@param chr IsoGameCharacter
+function __IsoBarricade:addPlank(chr) end
 
 ---@param chr IsoGameCharacter
 ---@param plank InventoryItem
@@ -46,10 +46,10 @@ function __IsoBarricade:addPlank(chr, plank) end
 ---@return boolean
 function __IsoBarricade:canAddPlank() end
 
----@param arg0 IsoGameCharacter
----@param arg1 HandWeapon
+---@param isoGameCharacter IsoGameCharacter
+---@param handWeapon HandWeapon
 ---@return boolean
-function __IsoBarricade:canAttackBypassIsoBarricade(arg0, arg1) end
+function __IsoBarricade:canAttackBypassIsoBarricade(isoGameCharacter, handWeapon) end
 
 ---@return BarricadeAble
 function __IsoBarricade:getBarricadedObject() end
@@ -131,20 +131,20 @@ function __IsoBarricade:save(output, IS_DEBUG_SAVE) end
 ---@param bb ByteBuffer
 function __IsoBarricade:saveChange(change, tbl, bb) end
 
----@param arg0 integer
-function __IsoBarricade:setHealth(arg0) end
+---@param Health integer
+function __IsoBarricade:setHealth(Health) end
 
----@param arg0 boolean
----@param arg1 integer
----@param arg2 UdpConnection
----@param arg3 ByteBuffer
-function __IsoBarricade:syncIsoObject(arg0, arg1, arg2, arg3) end
+---@param bRemote boolean
+---@param val integer
+---@param source UdpConnection
+---@param bb ByteBuffer
+function __IsoBarricade:syncIsoObject(bRemote, val, source, bb) end
 
----@param arg0 ByteBuffer
-function __IsoBarricade:syncIsoObjectReceive(arg0) end
+---@param bb ByteBuffer
+function __IsoBarricade:syncIsoObjectReceive(bb) end
 
----@param arg0 ByteBufferWriter
-function __IsoBarricade:syncIsoObjectSend(arg0) end
+---@param b ByteBufferWriter
+function __IsoBarricade:syncIsoObjectSend(b) end
 
 IsoBarricade = {}
 
@@ -192,17 +192,17 @@ function IsoBarricade.barricadeCurrentCellWithMetalBars() end
 
 function IsoBarricade.barricadeCurrentCellWithMetalPlate() end
 
----@param arg0 integer
-function IsoBarricade.barricadeCurrentCellWithPlanks(arg0) end
+---@param numberOfPlanks integer
+function IsoBarricade.barricadeCurrentCellWithPlanks(numberOfPlanks) end
 
 ---@param cell IsoCell
 ---@return IsoBarricade
 function IsoBarricade.new(cell) end
 
----@param arg0 IsoGridSquare
----@param arg1 IsoDirections
+---@param gridSquare IsoGridSquare
+---@param dir IsoDirections
 ---@return IsoBarricade
-function IsoBarricade.new(arg0, arg1) end
+function IsoBarricade.new(gridSquare, dir) end
 
 ---@type Class<IsoBarricade>
 IsoBarricade.class = nil

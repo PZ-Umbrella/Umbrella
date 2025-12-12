@@ -9,9 +9,9 @@ function __IsoWeatherFX:Reset() end
 ---@return number
 function __IsoWeatherFX:getCloudIntensity() end
 
----@param arg0 integer
+---@param id integer
 ---@return WeatherParticleDrawer
-function __IsoWeatherFX:getDrawer(arg0) end
+function __IsoWeatherFX:getDrawer(id) end
 
 ---@return number
 function __IsoWeatherFX:getFogIntensity() end

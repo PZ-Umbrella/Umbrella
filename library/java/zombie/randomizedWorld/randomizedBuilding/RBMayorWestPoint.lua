@@ -3,17 +3,17 @@
 ---@class RBMayorWestPoint: RandomizedBuildingBase
 local __RBMayorWestPoint = {}
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param def BuildingDef
+---@param force boolean
 ---@return boolean
-function __RBMayorWestPoint:isValid(arg0, arg1) end
+function __RBMayorWestPoint:isValid(def, force) end
 
----@param arg0 BuildingDef
-function __RBMayorWestPoint:randomizeBuilding(arg0) end
+---@param def BuildingDef
+function __RBMayorWestPoint:randomizeBuilding(def) end
 
----@param arg0 IsoGridSquare
+---@param sq IsoGridSquare
 ---@return boolean
-function __RBMayorWestPoint:roomValid(arg0) end
+function __RBMayorWestPoint:roomValid(sq) end
 
 RBMayorWestPoint = {}
 

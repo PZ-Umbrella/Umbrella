@@ -3,11 +3,11 @@
 ---@class IsoGameCharacter.Location
 local __Location = {}
 
----@param arg0 integer
----@param arg1 integer
----@param arg2 integer
+---@param x integer
+---@param y integer
+---@param z integer
 ---@return boolean
-function __Location:equals(arg0, arg1, arg2) end
+function __Location:equals(x, y, z) end
 
 ---@param other any
 ---@return boolean

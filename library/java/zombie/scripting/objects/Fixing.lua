@@ -3,9 +3,9 @@
 ---@class Fixing: BaseScriptObject
 local __Fixing = {}
 
----@param arg0 string
----@param arg1 string
-function __Fixing:Load(arg0, arg1) end
+---@param name string
+---@param body string
+function __Fixing:Load(name, body) end
 
 ---@param require string
 function __Fixing:addRequiredItem(require) end

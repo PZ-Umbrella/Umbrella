@@ -3,8 +3,8 @@
 ---@class RZSFrankHemingway: RandomizedZoneStoryBase
 local __RZSFrankHemingway = {}
 
----@param arg0 Zone
-function __RZSFrankHemingway:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSFrankHemingway:randomizeZoneStory(zone) end
 
 RZSFrankHemingway = {}
 

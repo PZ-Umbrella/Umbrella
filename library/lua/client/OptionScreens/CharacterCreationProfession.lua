@@ -9,7 +9,7 @@
 ---@field cost integer
 ---@field deleteBuildButton ISButton
 ---@field fontHgt number
----@field freeTraits TraitFactory.Trait[]
+---@field freeTraits ArrayList<string>
 ---@field infoBtn ISButton
 ---@field infoRichText ISModalRichText?
 ---@field inputModal ISTextBox
@@ -24,7 +24,7 @@
 ---@field pointToSpend integer
 ---@field presetPanel ISScrollingListBox
 ---@field previousScreen string?
----@field profession ProfessionFactory.Profession?
+---@field profession CharacterProfessionDefinition?
 ---@field randomButton ISButton
 ---@field removeTraitBtn ISButton
 ---@field resetButton ISButton
@@ -54,7 +54,7 @@ function CharacterCreationProfession:addBadTrait() end
 
 function CharacterCreationProfession:addGoodTrait() end
 
----@param trait TraitFactory.Trait
+---@param trait CharacterTraitDefinition
 function CharacterCreationProfession:addTrait(trait) end
 
 function CharacterCreationProfession:changeClothes() end
@@ -69,7 +69,7 @@ function CharacterCreationProfession:deleteBuildStep1() end
 ---@param joypadData JoypadData
 function CharacterCreationProfession:deleteBuildStep2(button, joypadData) end
 
----@param trait TraitFactory.Trait
+---@param trait CharacterTraitDefinition
 ---@param isRemovingTrait boolean
 function CharacterCreationProfession:doTestForMutuallyExclusiveTraits(trait, isRemovingTrait) end
 
@@ -91,10 +91,10 @@ function CharacterCreationProfession:drawTraitMap(y, item, alt) end
 ---@return number
 function CharacterCreationProfession:drawXpBoostMap(y, item, alt) end
 
----@return ProfessionFactory.Profession
+---@return CharacterProfessionDefinition
 function CharacterCreationProfession:getSelectedProf() end
 
----@param trait TraitFactory.Trait
+---@param trait CharacterTraitDefinition
 ---@return umbrella.RGB
 function CharacterCreationProfession:getTraitColor(trait) end
 
@@ -102,20 +102,20 @@ function CharacterCreationProfession:initialise() end
 
 function CharacterCreationProfession:instantiate() end
 
----@param trait TraitFactory.Trait
+---@param trait CharacterTraitDefinition
 ---@return boolean
 function CharacterCreationProfession:isTraitExcluded(trait) end
 
 ---@return number
 function CharacterCreationProfession:negativeTraitOffset() end
 
----@param item TraitFactory.Trait
+---@param item CharacterTraitDefinition
 function CharacterCreationProfession:onDblClickBadTrait(item) end
 
----@param item TraitFactory.Trait
+---@param item CharacterTraitDefinition
 function CharacterCreationProfession:onDblClickSelectedTrait(item) end
 
----@param item TraitFactory.Trait
+---@param item CharacterTraitDefinition
 function CharacterCreationProfession:onDblClickTrait(item) end
 
 ---@param joypadData JoypadData
@@ -157,16 +157,16 @@ function CharacterCreationProfession:onOptionMouseDown(button, x, y) end
 ---@param newh number
 function CharacterCreationProfession:onResolutionChange(oldw, oldh, neww, newh) end
 
----@param item TraitFactory.Trait
+---@param item CharacterTraitDefinition
 function CharacterCreationProfession:onSelectBadTrait(item) end
 
----@param item TraitFactory.Trait
+---@param item CharacterTraitDefinition
 function CharacterCreationProfession:onSelectChosenTrait(item) end
 
----@param item ProfessionFactory.Profession
-function CharacterCreationProfession:onSelectProf(item) end
+---@param characterProfessionDefinition CharacterProfessionDefinition
+function CharacterCreationProfession:onSelectProf(characterProfessionDefinition) end
 
----@param item TraitFactory.Trait
+---@param item CharacterTraitDefinition
 function CharacterCreationProfession:onSelectTrait(item) end
 
 ---@return number

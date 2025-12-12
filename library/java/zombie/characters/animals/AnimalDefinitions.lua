@@ -15,9 +15,9 @@ function __AnimalDefinitions:getBabyType() end
 ---@return string
 function __AnimalDefinitions:getBodyModelStr() end
 
----@param arg0 string
+---@param breedName string
 ---@return AnimalBreed
-function __AnimalDefinitions:getBreedByName(arg0) end
+function __AnimalDefinitions:getBreedByName(breedName) end
 
 ---@return ArrayList<AnimalBreed>
 function __AnimalDefinitions:getBreeds() end
@@ -37,9 +37,9 @@ function __AnimalDefinitions:getRandomBreed() end
 ---@return number
 function __AnimalDefinitions:getWildFleeTimeUntilDeadTimer() end
 
----@param arg0 integer
+---@param hour integer
 ---@return boolean
-function __AnimalDefinitions:isInsideHutchTime(arg0) end
+function __AnimalDefinitions:isInsideHutchTime(hour) end
 
 ---@return boolean
 function __AnimalDefinitions:isOutsideHutchTime() end
@@ -57,13 +57,13 @@ function AnimalDefinitions.getAnimalDefs() end
 ---@return ArrayList<AnimalDefinitions>
 function AnimalDefinitions.getAnimalDefsArray() end
 
----@param arg0 IsoAnimal
+---@param animal IsoAnimal
 ---@return AnimalDefinitions
-function AnimalDefinitions.getDef(arg0) end
+function AnimalDefinitions.getDef(animal) end
 
----@param arg0 string
+---@param animalType string
 ---@return AnimalDefinitions
-function AnimalDefinitions.getDef(arg0) end
+function AnimalDefinitions.getDef(animalType) end
 
 function AnimalDefinitions.loadAnimalDefinitions() end
 

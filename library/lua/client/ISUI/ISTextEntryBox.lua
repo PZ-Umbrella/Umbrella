@@ -8,6 +8,7 @@
 ---@field joypadFocused unknown
 ---@field keeplog boolean
 ---@field logIndex number
+---@field onOtherKey (fun(self: ISTextEntryBox, key: integer))?
 ---@field placeholderText string?
 ---@field title string
 ---@field tooltip unknown?

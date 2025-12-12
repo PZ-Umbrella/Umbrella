@@ -3,13 +3,13 @@
 ---@class RDSRPGNight: RandomizedDeadSurvivorBase
 local __RDSRPGNight = {}
 
----@param arg0 BuildingDef
----@param arg1 boolean
+---@param def BuildingDef
+---@param force boolean
 ---@return boolean
-function __RDSRPGNight:isValid(arg0, arg1) end
+function __RDSRPGNight:isValid(def, force) end
 
----@param arg0 BuildingDef
-function __RDSRPGNight:randomizeDeadSurvivor(arg0) end
+---@param def BuildingDef
+function __RDSRPGNight:randomizeDeadSurvivor(def) end
 
 RDSRPGNight = {}
 

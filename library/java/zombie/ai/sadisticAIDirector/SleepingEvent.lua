@@ -7,11 +7,11 @@ local __SleepingEvent = {}
 ---@param sleepingTime integer
 function __SleepingEvent:setPlayerFallAsleep(chr, sleepingTime) end
 
----@param arg0 IsoPlayer
----@param arg1 integer
----@param arg2 boolean
----@param arg3 boolean
-function __SleepingEvent:setPlayerFallAsleep(arg0, arg1, arg2, arg3) end
+---@param chr IsoPlayer
+---@param sleepingTime integer
+---@param forceZombieEvent boolean
+---@param forceNightmareEvent boolean
+function __SleepingEvent:setPlayerFallAsleep(chr, sleepingTime, forceZombieEvent, forceNightmareEvent) end
 
 ---@param chr IsoPlayer
 function __SleepingEvent:update(chr) end

@@ -24,8 +24,8 @@ function __BaseAction:forceStop() end
 ---@return number
 function __BaseAction:getCurrentTime() end
 
----@param arg0 MoveDeltaModifiers
-function __BaseAction:getDeltaModifiers(arg0) end
+---@param modifiers MoveDeltaModifiers
+function __BaseAction:getDeltaModifiers(modifiers) end
 
 ---@return number
 function __BaseAction:getJobDelta() end
@@ -73,8 +73,8 @@ function __BaseAction:setActionAnim(act) end
 ---@param animNode string
 function __BaseAction:setActionAnim(animNode) end
 
----@param arg0 boolean
-function __BaseAction:setAllowedWhileDraggingCorpses(arg0) end
+---@param in_val boolean
+function __BaseAction:setAllowedWhileDraggingCorpses(in_val) end
 
 ---@param key string
 ---@param val string
@@ -87,8 +87,8 @@ function __BaseAction:setAnimVariable(key, val) end
 ---@param block boolean
 function __BaseAction:setBlockMovementEtc(block) end
 
----@param arg0 number
-function __BaseAction:setJobDelta(arg0) end
+---@param delta number
+function __BaseAction:setJobDelta(delta) end
 
 ---@param looped boolean
 function __BaseAction:setLoopedAction(looped) end
@@ -119,14 +119,14 @@ function __BaseAction:setOverrideHandModelsString(primaryHand, secondaryHand) en
 ---@param resetModel boolean
 function __BaseAction:setOverrideHandModelsString(primaryHand, secondaryHand, resetModel) end
 
----@param arg0 boolean
-function __BaseAction:setPathfinding(arg0) end
+---@param b boolean
+function __BaseAction:setPathfinding(b) end
 
 ---@param use boolean
 function __BaseAction:setUseProgressBar(use) end
 
----@param arg0 boolean
-function __BaseAction:setWaitForFinished(arg0) end
+---@param val boolean
+function __BaseAction:setWaitForFinished(val) end
 
 function __BaseAction:start() end
 

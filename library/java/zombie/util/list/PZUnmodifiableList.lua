@@ -3,67 +3,67 @@
 ---@class PZUnmodifiableList<E>: PZUnmodifiableCollection<E>, List<E>
 local __PZUnmodifiableList = {}
 
----@param arg0 integer
----@param arg1 E
-function __PZUnmodifiableList:add(arg0, arg1) end
+---@param index integer
+---@param element E
+function __PZUnmodifiableList:add(index, element) end
 
----@param arg0 integer
----@param arg1 Collection<E>
+---@param index integer
+---@param c Collection<E>
 ---@return boolean
-function __PZUnmodifiableList:addAll(arg0, arg1) end
+function __PZUnmodifiableList:addAll(index, c) end
 
----@param arg0 any
+---@param o any
 ---@return boolean
-function __PZUnmodifiableList:equals(arg0) end
+function __PZUnmodifiableList:equals(o) end
 
----@param arg0 integer
+---@param index integer
 ---@return E
-function __PZUnmodifiableList:get(arg0) end
+function __PZUnmodifiableList:get(index) end
 
 ---@return integer
 function __PZUnmodifiableList:hashCode() end
 
----@param arg0 any
+---@param o any
 ---@return integer
-function __PZUnmodifiableList:indexOf(arg0) end
+function __PZUnmodifiableList:indexOf(o) end
 
----@param arg0 any
+---@param o any
 ---@return integer
-function __PZUnmodifiableList:lastIndexOf(arg0) end
+function __PZUnmodifiableList:lastIndexOf(o) end
 
 ---@return ListIterator<E>
 function __PZUnmodifiableList:listIterator() end
 
----@param arg0 integer
+---@param index integer
 ---@return ListIterator<E>
-function __PZUnmodifiableList:listIterator(arg0) end
+function __PZUnmodifiableList:listIterator(index) end
 
----@param arg0 integer
+---@param index integer
 ---@return E
-function __PZUnmodifiableList:remove(arg0) end
+function __PZUnmodifiableList:remove(index) end
 
----@param arg0 UnaryOperator<E>
-function __PZUnmodifiableList:replaceAll(arg0) end
+---@param operator UnaryOperator<E>
+function __PZUnmodifiableList:replaceAll(operator) end
 
----@param arg0 integer
----@param arg1 E
+---@param index integer
+---@param element E
 ---@return E
-function __PZUnmodifiableList:set(arg0, arg1) end
+function __PZUnmodifiableList:set(index, element) end
 
----@param arg0 Comparator<any>
-function __PZUnmodifiableList:sort(arg0) end
+---@param c Comparator<any>
+function __PZUnmodifiableList:sort(c) end
 
----@param arg0 integer
----@param arg1 integer
+---@param fromIndex integer
+---@param toIndex integer
 ---@return List<E>
-function __PZUnmodifiableList:subList(arg0, arg1) end
+function __PZUnmodifiableList:subList(fromIndex, toIndex) end
 
 PZUnmodifiableList = {}
 
 ---@generic T
----@param arg0 List<T>
+---@param list List<T>
 ---@return List<T>
-function PZUnmodifiableList.wrap(arg0) end
+function PZUnmodifiableList.wrap(list) end
 
 ---@type Class<PZUnmodifiableList>
 PZUnmodifiableList.class = nil

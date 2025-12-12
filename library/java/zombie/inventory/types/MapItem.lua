@@ -42,8 +42,8 @@ function MapItem.Reset() end
 
 function MapItem.SaveWorldMap() end
 
----@param arg0 SaveBufferMap
-function MapItem.SaveWorldMapToBufferMap(arg0) end
+---@param bufferMap SaveBufferMap
+function MapItem.SaveWorldMapToBufferMap(bufferMap) end
 
 ---@return MapItem
 function MapItem.getSingleton() end

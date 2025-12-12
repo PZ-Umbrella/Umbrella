@@ -3,8 +3,8 @@
 ---@class Account
 local __Account = {}
 
----@param arg0 string
-function __Account:encryptPwd(arg0) end
+---@param pwd string
+function __Account:encryptPwd(pwd) end
 
 ---@return integer
 function __Account:getAuthType() end
@@ -36,37 +36,37 @@ function __Account:getUserName() end
 ---@return boolean
 function __Account:isSavePwd() end
 
----@param arg0 integer
-function __Account:setAuthType(arg0) end
+---@param authType integer
+function __Account:setAuthType(authType) end
 
----@param arg0 integer
-function __Account:setID(arg0) end
+---@param id integer
+function __Account:setID(id) end
 
----@param arg0 Texture
-function __Account:setIcon(arg0) end
+---@param icon Texture
+function __Account:setIcon(icon) end
 
----@param arg0 LocalDateTime
-function __Account:setLastLogon(arg0) end
+---@param lastLogon LocalDateTime
+function __Account:setLastLogon(lastLogon) end
 
 function __Account:setLastLogonNow() end
 
----@param arg0 string
-function __Account:setPlayerFirstAndLastName(arg0) end
+---@param name string
+function __Account:setPlayerFirstAndLastName(name) end
 
----@param arg0 string
-function __Account:setPwd(arg0) end
+---@param pwd string
+function __Account:setPwd(pwd) end
 
----@param arg0 boolean
-function __Account:setSavePwd(arg0) end
+---@param savePwd boolean
+function __Account:setSavePwd(savePwd) end
 
----@param arg0 integer
-function __Account:setTimePlayed(arg0) end
+---@param timePlayed integer
+function __Account:setTimePlayed(timePlayed) end
 
----@param arg0 boolean
-function __Account:setUseSteamRelay(arg0) end
+---@param useSteamRelay boolean
+function __Account:setUseSteamRelay(useSteamRelay) end
 
----@param arg0 string
-function __Account:setUserName(arg0) end
+---@param userName string
+function __Account:setUserName(userName) end
 
 Account = {}
 

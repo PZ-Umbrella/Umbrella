@@ -3,8 +3,8 @@
 ---@class AttributesScript: ComponentScript
 local __AttributesScript = {}
 
----@param arg0 ScriptLoadMode
-function __AttributesScript:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __AttributesScript:OnScriptsLoaded(loadMode) end
 
 function __AttributesScript:PreReload() end
 

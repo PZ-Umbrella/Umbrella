@@ -12,9 +12,9 @@ function __Long:getMin() end
 ---@return AttributeValueType
 function __Long:getValueType() end
 
----@param arg0 integer
+---@param value integer
 ---@return integer
-function __Long:validate(arg0) end
+function __Long:validate(value) end
 
 Long = {}
 

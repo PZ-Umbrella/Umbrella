@@ -11,8 +11,8 @@ function __Moveable:CanBeDroppedOnFloor() end
 ---@return boolean
 function __Moveable:ReadFromWorldSprite(sprite) end
 
----@param arg0 string
-function __Moveable:getCustomIcon(arg0) end
+---@param sprite string
+function __Moveable:getCustomIcon(sprite) end
 
 ---@return string
 function __Moveable:getCustomNameFull() end
@@ -44,9 +44,9 @@ function __Moveable:getMovableFullName() end
 ---@return string # the name
 function __Moveable:getName() end
 
----@param arg0 IsoPlayer
+---@param player IsoPlayer
 ---@return string
-function __Moveable:getName(arg0) end
+function __Moveable:getName(player) end
 
 ---@return IsoSpriteGrid
 function __Moveable:getSpriteGrid() end

@@ -17,9 +17,9 @@ function __BodyLocationGroup:getLocation(itemBodyLocation) end
 ---@return BodyLocation
 function __BodyLocationGroup:getLocationByIndex(index) end
 
----@param arg0 ItemBodyLocation
+---@param itemBodyLocation ItemBodyLocation
 ---@return BodyLocation
-function __BodyLocationGroup:getOrCreateLocation(arg0) end
+function __BodyLocationGroup:getOrCreateLocation(itemBodyLocation) end
 
 ---@param locationId ItemBodyLocation
 ---@return integer

@@ -7,24 +7,24 @@ local __Action = {}
 ---@return number
 function __Action:getProgress() end
 
----@param arg0 UdpConnection
+---@param connection UdpConnection
 ---@return boolean
-function __Action:isConsistent(arg0) end
+function __Action:isConsistent(connection) end
 
----@param arg0 ByteBuffer
----@param arg1 UdpConnection
-function __Action:parse(arg0, arg1) end
+---@param b ByteBuffer
+---@param connection UdpConnection
+function __Action:parse(b, connection) end
 
----@param arg0 IsoPlayer
-function __Action:set(arg0) end
+---@param player IsoPlayer
+function __Action:set(player) end
 
----@param arg0 integer
-function __Action:setDuration(arg0) end
+---@param duration integer
+function __Action:setDuration(duration) end
 
----@param arg0 Transaction.TransactionState
-function __Action:setState(arg0) end
+---@param state Transaction.TransactionState
+function __Action:setState(state) end
 
 function __Action:setTimeData() end
 
----@param arg0 ByteBufferWriter
-function __Action:write(arg0) end
+---@param b ByteBufferWriter
+function __Action:write(b) end

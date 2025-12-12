@@ -2,8 +2,6 @@
 
 ---@class ISBuildWidgetIngredientsInputs : ISPanelJoypad
 ---@field autoFillContents boolean
----@field autoLabel ISLabel?
----@field autoToggle ISWidgetAutoToggle?
 ---@field doToolTip boolean
 ---@field inputs ISWidgetInput[]
 ---@field inputsLabel ISLabel?
@@ -14,8 +12,6 @@
 ---@field itemMargin number
 ---@field itemNameMaxLines number
 ---@field itemSpacing number
----@field joypadIndex integer
----@field joypadIndexY integer
 ---@field logic BuildLogic
 ---@field margin number
 ---@field player IsoPlayer
@@ -33,9 +29,6 @@ function ISBuildWidgetIngredientsInputs:calculateLayout(_preferredWidth, _prefer
 function ISBuildWidgetIngredientsInputs:createChildren() end
 
 function ISBuildWidgetIngredientsInputs:initialise() end
-
----@param _newState boolean
-function ISBuildWidgetIngredientsInputs:onAutoToggled(_newState) end
 
 ---@param joypadData JoypadData
 function ISBuildWidgetIngredientsInputs:onGainJoypadFocus(joypadData) end

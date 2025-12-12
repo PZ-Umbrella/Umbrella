@@ -3,64 +3,64 @@
 ---@class FMODDebugEventPlayer
 local __FMODDebugEventPlayer = {}
 
----@param arg0 integer
-function __FMODDebugEventPlayer:clearParameterValue(arg0) end
+---@param index integer
+function __FMODDebugEventPlayer:clearParameterValue(index) end
 
----@param arg0 string
----@param arg1 integer
+---@param eventPath string
+---@param index integer
 ---@return number
-function __FMODDebugEventPlayer:getGlobalParameterValue(arg0, arg1) end
+function __FMODDebugEventPlayer:getGlobalParameterValue(eventPath, index) end
 
----@param arg0 string
+---@param eventPath string
 ---@return integer
-function __FMODDebugEventPlayer:getParameterCount(arg0) end
+function __FMODDebugEventPlayer:getParameterCount(eventPath) end
 
----@param arg0 string
----@param arg1 integer
+---@param eventPath string
+---@param index integer
 ---@return string
-function __FMODDebugEventPlayer:getParameterName(arg0, arg1) end
+function __FMODDebugEventPlayer:getParameterName(eventPath, index) end
 
----@param arg0 integer
+---@param index integer
 ---@return number
-function __FMODDebugEventPlayer:getParameterValue(arg0) end
+function __FMODDebugEventPlayer:getParameterValue(index) end
 
----@param arg0 string
-function __FMODDebugEventPlayer:initParameterValues(arg0) end
+---@param eventPath string
+function __FMODDebugEventPlayer:initParameterValues(eventPath) end
 
----@param arg0 string
----@param arg1 integer
+---@param eventPath string
+---@param index integer
 ---@return boolean
-function __FMODDebugEventPlayer:isGlobalParameter(arg0, arg1) end
+function __FMODDebugEventPlayer:isGlobalParameter(eventPath, index) end
 
 ---@return boolean
 function __FMODDebugEventPlayer:isPlaying() end
 
----@param arg0 string
-function __FMODDebugEventPlayer:play(arg0) end
+---@param eventPath string
+function __FMODDebugEventPlayer:play(eventPath) end
 
----@param arg0 integer
-function __FMODDebugEventPlayer:setDurationMillis(arg0) end
+---@param ms integer
+function __FMODDebugEventPlayer:setDurationMillis(ms) end
 
----@param arg0 boolean
-function __FMODDebugEventPlayer:setFollowPlayer(arg0) end
+---@param bFollowPlayer boolean
+function __FMODDebugEventPlayer:setFollowPlayer(bFollowPlayer) end
 
----@param arg0 boolean
-function __FMODDebugEventPlayer:setLoop(arg0) end
+---@param bLoop boolean
+function __FMODDebugEventPlayer:setLoop(bLoop) end
 
----@param arg0 integer
----@param arg1 number
-function __FMODDebugEventPlayer:setParameterValue(arg0, arg1) end
+---@param index integer
+---@param value number
+function __FMODDebugEventPlayer:setParameterValue(index, value) end
 
----@param arg0 integer
-function __FMODDebugEventPlayer:setTimelinePosition(arg0) end
+---@param ms integer
+function __FMODDebugEventPlayer:setTimelinePosition(ms) end
 
----@param arg0 number
-function __FMODDebugEventPlayer:setVolume(arg0) end
+---@param volume number
+function __FMODDebugEventPlayer:setVolume(volume) end
 
 function __FMODDebugEventPlayer:stop() end
 
----@param arg0 boolean
-function __FMODDebugEventPlayer:stop(arg0) end
+---@param bTriggerCue boolean
+function __FMODDebugEventPlayer:stop(bTriggerCue) end
 
 function __FMODDebugEventPlayer:update() end
 

@@ -29,7 +29,7 @@
 ---@field equippedItemIcon Texture
 ---@field expandAll ISButton
 ---@field expandicon Texture
----@field favoriteRecipeInputStar unknown
+---@field favoriteRecipeInputStar Texture
 ---@field favoriteStar Texture
 ---@field filtericon Texture
 ---@field filterMenu ISButton
@@ -52,7 +52,7 @@
 ---@field mode string
 ---@field mouseOverOption number
 ---@field nameHeader ISResizableButton
----@field noFavoriteRecipeInputStar unknown
+---@field noFavoriteRecipeInputStar Texture
 ---@field player integer
 ---@field poisonIcon Texture
 ---@field previousMouseUp number?

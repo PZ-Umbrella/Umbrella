@@ -3,8 +3,8 @@
 ---@class RZSWaterPump: RandomizedZoneStoryBase
 local __RZSWaterPump = {}
 
----@param arg0 Zone
-function __RZSWaterPump:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSWaterPump:randomizeZoneStory(zone) end
 
 RZSWaterPump = {}
 

@@ -15,46 +15,46 @@ function __IsoButcherHook:getRemovingBloodProgress() end
 ---@return boolean
 function __IsoButcherHook:isRemovingBlood() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
----@param arg2 boolean
-function __IsoButcherHook:load(arg0, arg1, arg2) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+---@param IS_DEBUG_SAVE boolean
+function __IsoButcherHook:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 function __IsoButcherHook:onReceivedNetUpdate() end
 
----@param arg0 IsoAnimal
-function __IsoButcherHook:playPutDownCorpseSound(arg0) end
+---@param animal IsoAnimal
+function __IsoButcherHook:playPutDownCorpseSound(animal) end
 
----@param arg0 IsoAnimal
-function __IsoButcherHook:reattachAnimal(arg0) end
+---@param animal IsoAnimal
+function __IsoButcherHook:reattachAnimal(animal) end
 
 function __IsoButcherHook:removeFromWorld() end
 
 function __IsoButcherHook:removeHook() end
 
----@param arg0 ByteBuffer
----@param arg1 boolean
-function __IsoButcherHook:save(arg0, arg1) end
+---@param output ByteBuffer
+---@param IS_DEBUG_SAVE boolean
+function __IsoButcherHook:save(output, IS_DEBUG_SAVE) end
 
----@param arg0 IsoAnimal
-function __IsoButcherHook:setAnimal(arg0) end
+---@param animal IsoAnimal
+function __IsoButcherHook:setAnimal(animal) end
 
----@param arg0 table
-function __IsoButcherHook:setLuaHook(arg0) end
+---@param luaHook table
+function __IsoButcherHook:setLuaHook(luaHook) end
 
----@param arg0 boolean
-function __IsoButcherHook:setPlayRemovingBloodSound(arg0) end
+---@param b boolean
+function __IsoButcherHook:setPlayRemovingBloodSound(b) end
 
----@param arg0 table
-function __IsoButcherHook:startRemovingBlood(arg0) end
+---@param luaHook table
+function __IsoButcherHook:startRemovingBlood(luaHook) end
 
 function __IsoButcherHook:stopRemovingBlood() end
 
----@param arg0 ByteBuffer
-function __IsoButcherHook:syncIsoObjectReceive(arg0) end
+---@param bb ByteBuffer
+function __IsoButcherHook:syncIsoObjectReceive(bb) end
 
----@param arg0 ByteBufferWriter
-function __IsoButcherHook:syncIsoObjectSend(arg0) end
+---@param b ByteBufferWriter
+function __IsoButcherHook:syncIsoObjectSend(b) end
 
 function __IsoButcherHook:update() end
 
@@ -62,13 +62,13 @@ function __IsoButcherHook:updateAnimalModel() end
 
 IsoButcherHook = {}
 
----@param arg0 IsoGridSquare
+---@param sq IsoGridSquare
 ---@return IsoButcherHook
-function IsoButcherHook.new(arg0) end
+function IsoButcherHook.new(sq) end
 
----@param arg0 IsoCell
+---@param cell IsoCell
 ---@return IsoButcherHook
-function IsoButcherHook.new(arg0) end
+function IsoButcherHook.new(cell) end
 
 ---@type Class<IsoButcherHook>
 IsoButcherHook.class = nil

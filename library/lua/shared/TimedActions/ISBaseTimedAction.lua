@@ -37,10 +37,6 @@ function ISBaseTimedAction:begin() end
 
 function ISBaseTimedAction:beginAddingActions() end
 
----Called upon completion on the server. In singleplayer, called after perform(). Optional: if this function is not defined, the new action networking model will not be used.
----@return boolean
-function ISBaseTimedAction:complete() end
-
 function ISBaseTimedAction:create() end
 
 ---@return boolean
@@ -55,7 +51,7 @@ function ISBaseTimedAction:forceStop() end
 ---@param deltas MoveDeltaModifiers
 function ISBaseTimedAction:getDeltaModifiers(deltas) end
 
----Calculates the duration of the timed action. Overriding this should be prefered over setting the maxTime in new() to prevent exploits.
+---Calculates the duration of the timed action. Networked timed actions should override this to calculate the duration of the action.
 ---@return number
 function ISBaseTimedAction:getDuration() end
 
@@ -84,14 +80,6 @@ function ISBaseTimedAction:perform() end
 function ISBaseTimedAction:resetJobDelta() end
 
 function ISBaseTimedAction:restoreWeaponType() end
-
----Called when the server starts the action.
----@return boolean
-function ISBaseTimedAction:serverStart() end
-
----Called upon cancelling the action on the server.
----@return boolean
-function ISBaseTimedAction:serverStop() end
 
 ---@param _action CharacterActionAnims | string
 ---@param _displayItemModels unknown?
@@ -135,3 +123,18 @@ function ISBaseTimedAction:waitToStart() end
 ---@param character IsoPlayer
 ---@return ISBaseTimedAction
 function ISBaseTimedAction:new(character) end
+
+---@class umbrella.NetworkedTimedAction
+local __umbrella_NetworkedTimedAction = {}
+
+---Called upon completion on the server. In singleplayer, called after perform(). Optional: if this function is not defined, the new action networking model will not be used.
+---@return boolean
+function __umbrella_NetworkedTimedAction:complete() end
+
+---Called when the server starts the action.
+---@return boolean
+function __umbrella_NetworkedTimedAction:serverStart() end
+
+---Called upon cancelling the action on the server.
+---@return boolean
+function __umbrella_NetworkedTimedAction:serverStop() end

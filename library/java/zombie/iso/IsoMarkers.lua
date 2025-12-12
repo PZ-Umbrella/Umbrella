@@ -3,33 +3,33 @@
 ---@class IsoMarkers
 local __IsoMarkers = {}
 
----@param arg0 string
----@param arg1 IsoGridSquare
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
+---@param spriteName string
+---@param gs IsoGridSquare
+---@param r number
+---@param g number
+---@param b number
+---@param alpha number
 ---@return IsoMarkers.IsoMarker
-function __IsoMarkers:addIsoMarker(arg0, arg1, arg2, arg3, arg4, arg5) end
+function __IsoMarkers:addIsoMarker(spriteName, gs, r, g, b, alpha) end
 
----@param arg0 table
----@param arg1 IsoGridSquare
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
+---@param textureTable table
+---@param gs IsoGridSquare
+---@param r number
+---@param g number
+---@param b number
+---@param alpha number
 ---@return IsoMarkers.IsoMarker
-function __IsoMarkers:addIsoMarker(arg0, arg1, arg2, arg3, arg4, arg5) end
+function __IsoMarkers:addIsoMarker(textureTable, gs, r, g, b, alpha) end
 
----@param arg0 InventoryItem
----@param arg1 IsoGridSquare
----@param arg2 number
----@param arg3 number
----@param arg4 number
----@param arg5 number
----@param arg6 number
+---@param item InventoryItem
+---@param gs IsoGridSquare
+---@param r number
+---@param g number
+---@param b number
+---@param alpha number
+---@param rotation number
 ---@return IsoMarkers.IsoMarker
-function __IsoMarkers:addIsoMarker(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+function __IsoMarkers:addIsoMarker(item, gs, r, g, b, alpha, rotation) end
 
 ---@param id integer
 ---@return IsoMarkers.IsoMarker

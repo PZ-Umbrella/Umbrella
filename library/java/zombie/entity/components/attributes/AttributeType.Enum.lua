@@ -3,13 +3,13 @@
 ---@class AttributeType.Enum<E: Enum<E>, IOEnum>: AttributeType
 local __Enum = {}
 
----@param arg0 integer
+---@param id integer
 ---@return E
-function __Enum:enumValueFromByteID(arg0) end
+function __Enum:enumValueFromByteID(id) end
 
----@param arg0 string
+---@param s string
 ---@return E
-function __Enum:enumValueFromString(arg0) end
+function __Enum:enumValueFromString(s) end
 
 ---@return E
 function __Enum:getInitialValue() end

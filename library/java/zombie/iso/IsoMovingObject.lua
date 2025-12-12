@@ -85,9 +85,9 @@ function __IsoMovingObject:getCurrentSquare() end
 ---@return Zone
 function __IsoMovingObject:getCurrentZone() end
 
----@param arg0 string
+---@param in_separatorStr string
 ---@return string
-function __IsoMovingObject:getDescription(arg0) end
+function __IsoMovingObject:getDescription(in_separatorStr) end
 
 ---@param other IsoMovingObject
 ---@return number
@@ -188,13 +188,13 @@ function __IsoMovingObject:getPathFindIndex() end
 ---@return Vector3 # The out parameter.
 function __IsoMovingObject:getPosition(out) end
 
----@param arg0 Vector3f
+---@param out Vector3f
 ---@return Vector3f
-function __IsoMovingObject:getPosition(arg0) end
+function __IsoMovingObject:getPosition(out) end
 
----@param arg0 Vector2
+---@param out Vector2
 ---@return Vector2
-function __IsoMovingObject:getPosition(arg0) end
+function __IsoMovingObject:getPosition(out) end
 
 ---@return number
 function __IsoMovingObject:getScreenX() end
@@ -399,14 +399,14 @@ function __IsoMovingObject:setCurrent(current) end
 
 function __IsoMovingObject:setCurrentSquareFromPosition() end
 
----@param arg0 number
----@param arg1 number
-function __IsoMovingObject:setCurrentSquareFromPosition(arg0, arg1) end
+---@param x1 number
+---@param y1 number
+function __IsoMovingObject:setCurrentSquareFromPosition(x1, y1) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
-function __IsoMovingObject:setCurrentSquareFromPosition(arg0, arg1, arg2) end
+---@param x1 number
+---@param y1 number
+---@param z1 number
+function __IsoMovingObject:setCurrentSquareFromPosition(x1, y1, z1) end
 
 ---@param destroyed boolean the destroyed to set
 function __IsoMovingObject:setDestroyed(destroyed) end
@@ -420,11 +420,11 @@ function __IsoMovingObject:setFeelersize(feelersize) end
 ---@param firstUpdate boolean the firstUpdate to set
 function __IsoMovingObject:setFirstUpdate(firstUpdate) end
 
----@param arg0 number
-function __IsoMovingObject:setForceX(arg0) end
+---@param x number
+function __IsoMovingObject:setForceX(x) end
 
----@param arg0 number
-function __IsoMovingObject:setForceY(arg0) end
+---@param y number
+function __IsoMovingObject:setForceY(y) end
 
 ---@param hitDir Vector2 the hitDir to set
 function __IsoMovingObject:setHitDir(hitDir) end
@@ -453,17 +453,17 @@ function __IsoMovingObject:setLastCollideTime(lastCollideTime) end
 ---@param lastTargettedBy IsoZombie the lastTargettedBy to set
 function __IsoMovingObject:setLastTargettedBy(lastTargettedBy) end
 
----@param arg0 number
+---@param lx number
 ---@return number
-function __IsoMovingObject:setLastX(arg0) end
+function __IsoMovingObject:setLastX(lx) end
 
----@param arg0 number
+---@param ly number
 ---@return number
-function __IsoMovingObject:setLastY(arg0) end
+function __IsoMovingObject:setLastY(ly) end
 
----@param arg0 number
+---@param lz number
 ---@return number
-function __IsoMovingObject:setLastZ(arg0) end
+function __IsoMovingObject:setLastZ(lz) end
 
 ---@param limpulsex number the limpulsex to set
 function __IsoMovingObject:setLimpulsex(limpulsex) end
@@ -476,13 +476,13 @@ function __IsoMovingObject:setMovementLastFrame(movementLastFrame) end
 
 function __IsoMovingObject:setMovingSquareNow() end
 
----@param arg0 number
+---@param nx number
 ---@return number
-function __IsoMovingObject:setNextX(arg0) end
+function __IsoMovingObject:setNextX(nx) end
 
----@param arg0 number
+---@param ny number
 ---@return number
-function __IsoMovingObject:setNextY(arg0) end
+function __IsoMovingObject:setNextY(ny) end
 
 ---@param dmg boolean whether the object should take damage.
 function __IsoMovingObject:setNoDamage(dmg) end
@@ -493,28 +493,28 @@ function __IsoMovingObject:setOnFloor(bOnFloor) end
 ---@param PathFindIndex integer the PathFindIndex to set
 function __IsoMovingObject:setPathFindIndex(PathFindIndex) end
 
----@param arg0 number
----@param arg1 number
-function __IsoMovingObject:setPosition(arg0, arg1) end
+---@param x number
+---@param y number
+function __IsoMovingObject:setPosition(x, y) end
 
----@param arg0 Vector2
-function __IsoMovingObject:setPosition(arg0) end
+---@param in_pos Vector2
+function __IsoMovingObject:setPosition(in_pos) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
-function __IsoMovingObject:setPosition(arg0, arg1, arg2) end
+---@param x number
+---@param y number
+---@param z number
+function __IsoMovingObject:setPosition(x, y, z) end
 
 ---@param ScriptModule string the ScriptModule to set
 function __IsoMovingObject:setScriptModule(ScriptModule) end
 
----@param arg0 number
+---@param scriptnx number
 ---@return number
-function __IsoMovingObject:setScriptNextX(arg0) end
+function __IsoMovingObject:setScriptNextX(scriptnx) end
 
----@param arg0 number
+---@param scriptny number
 ---@return number
-function __IsoMovingObject:setScriptNextY(arg0) end
+function __IsoMovingObject:setScriptNextY(scriptny) end
 
 ---@param scriptnx number the scriptnx to set
 function __IsoMovingObject:setScriptnx(scriptnx) end
@@ -543,24 +543,24 @@ function __IsoMovingObject:setWeight(weight) end
 ---@param width number the width to set
 function __IsoMovingObject:setWidth(width) end
 
----@param arg0 number
+---@param x number
 ---@return number
-function __IsoMovingObject:setX(arg0) end
+function __IsoMovingObject:setX(x) end
 
----@param arg0 number
+---@param y number
 ---@return number
-function __IsoMovingObject:setY(arg0) end
+function __IsoMovingObject:setY(y) end
 
----@param arg0 number
+---@param z number
 ---@return number
-function __IsoMovingObject:setZ(arg0) end
+function __IsoMovingObject:setZ(z) end
 
 ---@param bAltCollide boolean the bAltCollide to set
 function __IsoMovingObject:setbAltCollide(bAltCollide) end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return boolean
-function __IsoMovingObject:shouldIgnoreCollisionWithSquare(arg0) end
+function __IsoMovingObject:shouldIgnoreCollisionWithSquare(square) end
 
 ---@param other IsoMovingObject
 ---@param bForced boolean

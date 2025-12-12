@@ -3,34 +3,61 @@
 ---@class IsoObject: GameEntity, Serializable, ILuaIsoObject, Thumpable, IsoRenderable
 local __IsoObject = {}
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 number
----@param arg4 integer
----@param arg5 integer
----@param arg6 boolean
----@param arg7 integer
----@param arg8 boolean
----@param arg9 number
----@param arg10 ColorInfo
+---@param ObjectName string
+---@param AnimName string
+---@param NumFrames integer
+---@param frameIncrease number
+---@param OffsetX integer
+---@param OffsetY integer
+---@param Looping boolean
+---@param FinishHoldFrameIndex integer
+---@param DeleteWhenFinished boolean
+---@param zBias number
+---@param TintMod ColorInfo
 ---@return IsoSpriteInstance
-function __IsoObject:AttachAnim(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10) end
+function __IsoObject:AttachAnim(
+	ObjectName,
+	AnimName,
+	NumFrames,
+	frameIncrease,
+	OffsetX,
+	OffsetY,
+	Looping,
+	FinishHoldFrameIndex,
+	DeleteWhenFinished,
+	zBias,
+	TintMod
+)
+end
 
----@param arg0 string
----@param arg1 string
----@param arg2 integer
----@param arg3 number
----@param arg4 integer
----@param arg5 integer
----@param arg6 boolean
----@param arg7 integer
----@param arg8 boolean
----@param arg9 number
----@param arg10 ColorInfo
----@param arg11 boolean
+---@param ObjectName string
+---@param AnimName string
+---@param NumFrames integer
+---@param frameIncrease number
+---@param OffsetX integer
+---@param OffsetY integer
+---@param Looping boolean
+---@param FinishHoldFrameIndex integer
+---@param DeleteWhenFinished boolean
+---@param zBias number
+---@param TintMod ColorInfo
+---@param bRandomFrame boolean
 ---@return IsoSpriteInstance
-function __IsoObject:AttachAnim(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11) end
+function __IsoObject:AttachAnim(
+	ObjectName,
+	AnimName,
+	NumFrames,
+	frameIncrease,
+	OffsetX,
+	OffsetY,
+	Looping,
+	FinishHoldFrameIndex,
+	DeleteWhenFinished,
+	zBias,
+	TintMod,
+	bRandomFrame
+)
+end
 
 ---@param spr IsoSprite
 ---@param OffsetX integer
@@ -146,36 +173,36 @@ function __IsoObject:UnCollision(object) end
 ---@param weapon HandWeapon
 function __IsoObject:WeaponHit(chr, weapon) end
 
----@param arg0 IsoSprite
-function __IsoObject:addAttachedAnimSprite(arg0) end
+---@param sprite IsoSprite
+function __IsoObject:addAttachedAnimSprite(sprite) end
 
----@param arg0 string
-function __IsoObject:addAttachedAnimSpriteByName(arg0) end
+---@param spriteName string
+function __IsoObject:addAttachedAnimSpriteByName(spriteName) end
 
----@param arg0 IsoSpriteInstance
-function __IsoObject:addAttachedAnimSpriteInstance(arg0) end
+---@param inst IsoSpriteInstance
+function __IsoObject:addAttachedAnimSpriteInstance(inst) end
 
 ---@param child IsoObject
 function __IsoObject:addChild(child) end
 
----@param arg0 FluidType
----@param arg1 number
-function __IsoObject:addFluid(arg0, arg1) end
+---@param fluidType FluidType
+---@param amount number
+function __IsoObject:addFluid(fluidType, amount) end
 
----@param arg0 string
+---@param item string
 ---@return InventoryItem
-function __IsoObject:addItemToObjectSurface(arg0) end
+function __IsoObject:addItemToObjectSurface(item) end
 
----@param arg0 string
----@param arg1 boolean
+---@param item string
+---@param randomRotation boolean
 ---@return InventoryItem
-function __IsoObject:addItemToObjectSurface(arg0, arg1) end
+function __IsoObject:addItemToObjectSurface(item, randomRotation) end
 
----@param arg0 string
----@param arg1 boolean
----@param arg2 boolean
+---@param item string
+---@param randomRotation boolean
+---@param spawnChecks boolean
 ---@return InventoryItem
-function __IsoObject:addItemToObjectSurface(arg0, arg1, arg2) end
+function __IsoObject:addItemToObjectSurface(item, randomRotation, spawnChecks) end
 
 ---@param container ItemContainer
 function __IsoObject:addSecondaryContainer(container) end
@@ -192,13 +219,13 @@ function __IsoObject:afterRotated() end
 ---@return boolean
 function __IsoObject:canAddSheetRope() end
 
----@param arg0 FluidContainer
+---@param other FluidContainer
 ---@return boolean
-function __IsoObject:canTransferFluidFrom(arg0) end
+function __IsoObject:canTransferFluidFrom(other) end
 
----@param arg0 FluidContainer
+---@param other FluidContainer
 ---@return boolean
-function __IsoObject:canTransferFluidTo(arg0) end
+function __IsoObject:canTransferFluidTo(other) end
 
 function __IsoObject:checkAmbientSound() end
 
@@ -276,10 +303,10 @@ function __IsoObject:getContainerByIndex(index) end
 ---@return ItemContainer
 function __IsoObject:getContainerByType(type) end
 
----@param arg0 integer
----@param arg1 integer
+---@param screenX integer
+---@param screenY integer
 ---@return ItemContainer
-function __IsoObject:getContainerClickedOn(arg0, arg1) end
+function __IsoObject:getContainerClickedOn(screenX, screenY) end
 
 ---@return integer
 function __IsoObject:getContainerCount() end
@@ -348,9 +375,9 @@ function __IsoObject:getGameEntityType() end
 ---@return ColorInfo
 function __IsoObject:getHighlightColor() end
 
----@param arg0 integer
+---@param playerIndex integer
 ---@return ColorInfo
-function __IsoObject:getHighlightColor(arg0) end
+function __IsoObject:getHighlightColor(playerIndex) end
 
 ---@return boolean
 function __IsoObject:getIsSurfaceNormalOffset() end
@@ -419,13 +446,13 @@ function __IsoObject:getOverlaySpriteColor() end
 ---@return integer
 function __IsoObject:getPipedFuelAmount() end
 
----@param arg0 Vector3
+---@param out Vector3
 ---@return Vector3
-function __IsoObject:getPosition(arg0) end
+function __IsoObject:getPosition(out) end
 
----@param arg0 Vector3f
+---@param out Vector3f
 ---@return Vector3f
-function __IsoObject:getPosition(arg0) end
+function __IsoObject:getPosition(out) end
 
 ---@return PropertyContainer
 function __IsoObject:getProperties() end
@@ -437,16 +464,16 @@ function __IsoObject:getProperty(p) end
 ---@return IsoObject
 function __IsoObject:getRenderEffectMaster() end
 
----@param arg0 integer
+---@param index integer
 ---@return IsoObject
-function __IsoObject:getRenderEffectObjectByIndex(arg0) end
+function __IsoObject:getRenderEffectObjectByIndex(index) end
 
 ---@return integer
 function __IsoObject:getRenderEffectObjectCount() end
 
----@param arg0 integer
+---@param playerIndex integer
 ---@return ObjectRenderInfo
-function __IsoObject:getRenderInfo(arg0) end
+function __IsoObject:getRenderInfo(playerIndex) end
 
 ---@return IsoGridSquare
 function __IsoObject:getRenderSquare() end
@@ -478,15 +505,15 @@ function __IsoObject:getSpriteGrid() end
 ---@param result ArrayList<IsoObject>
 function __IsoObject:getSpriteGridObjects(result) end
 
----@param arg0 ArrayList<IsoObject>
----@param arg1 boolean
-function __IsoObject:getSpriteGridObjects(arg0, arg1) end
+---@param result ArrayList<IsoObject>
+---@param bAddSelf boolean
+function __IsoObject:getSpriteGridObjects(result, bAddSelf) end
 
----@param arg0 ArrayList<IsoObject>
-function __IsoObject:getSpriteGridObjectsExcludingSelf(arg0) end
+---@param result ArrayList<IsoObject>
+function __IsoObject:getSpriteGridObjectsExcludingSelf(result) end
 
----@param arg0 ArrayList<IsoObject>
-function __IsoObject:getSpriteGridObjectsIncludingSelf(arg0) end
+---@param result ArrayList<IsoObject>
+function __IsoObject:getSpriteGridObjectsIncludingSelf(result) end
 
 ---@return SpriteModel
 function __IsoObject:getSpriteModel() end
@@ -603,8 +630,8 @@ function __IsoObject:haveSheetRope() end
 ---@return boolean
 function __IsoObject:haveSpecialTooltip() end
 
----@param arg0 integer
-function __IsoObject:invalidateRenderChunkLevel(arg0) end
+---@param dirtyFlags integer
+function __IsoObject:invalidateRenderChunkLevel(dirtyFlags) end
 
 function __IsoObject:invalidateVispolyChunkLevel() end
 
@@ -630,9 +657,9 @@ function __IsoObject:isAnimating() end
 ---@return boolean
 function __IsoObject:isBlink() end
 
----@param arg0 integer
+---@param playerIndex integer
 ---@return boolean
-function __IsoObject:isBlink(arg0) end
+function __IsoObject:isBlink(playerIndex) end
 
 ---@return boolean
 function __IsoObject:isBush() end
@@ -643,9 +670,9 @@ function __IsoObject:isCanPath() end
 ---@return boolean
 function __IsoObject:isCharacter() end
 
----@param arg0 IsoObject
+---@param object IsoObject
 ---@return boolean
-function __IsoObject:isConnectedSpriteGridObject(arg0) end
+function __IsoObject:isConnectedSpriteGridObject(object) end
 
 ---@return boolean
 function __IsoObject:isDestroyed() end
@@ -677,16 +704,16 @@ function __IsoObject:isGrave() end
 ---@return boolean
 function __IsoObject:isHighlightRenderOnce() end
 
----@param arg0 integer
+---@param playerIndex integer
 ---@return boolean
-function __IsoObject:isHighlightRenderOnce(arg0) end
+function __IsoObject:isHighlightRenderOnce(playerIndex) end
 
 ---@return boolean
 function __IsoObject:isHighlighted() end
 
----@param arg0 integer
+---@param playerIndex integer
 ---@return boolean
-function __IsoObject:isHighlighted(arg0) end
+function __IsoObject:isHighlighted(playerIndex) end
 
 ---@return boolean
 function __IsoObject:isHoppable() end
@@ -844,9 +871,9 @@ function __IsoObject:loadFromRemoteBuffer(b, addToObjects) end
 ---@param bb ByteBuffer
 function __IsoObject:loadState(bb) end
 
----@param arg0 number
+---@param amount number
 ---@return FluidContainer
-function __IsoObject:moveFluidToTemporaryContainer(arg0) end
+function __IsoObject:moveFluidToTemporaryContainer(amount) end
 
 function __IsoObject:onAnimationFinished() end
 
@@ -895,22 +922,33 @@ function __IsoObject:removeSheetRope(player) end
 ---@param shader Shader
 function __IsoObject:render(x, y, z, col, bDoAttached, bWallLightingPass, shader) end
 
----@param arg0 number
----@param arg1 number
----@param arg2 number
----@param arg3 ColorInfo
-function __IsoObject:renderAnimatedAttachments(arg0, arg1, arg2, arg3) end
+---@param x number
+---@param y number
+---@param z number
+---@param col ColorInfo
+function __IsoObject:renderAnimatedAttachments(x, y, z, col) end
 
----@param arg0 IsoDirections
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 ColorInfo
----@param arg5 boolean
----@param arg6 boolean
----@param arg7 Shader
----@param arg8 Consumer<TextureDraw>
-function __IsoObject:renderAttachedAndOverlaySprites(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+---@param dir IsoDirections
+---@param x number
+---@param y number
+---@param z number
+---@param col ColorInfo
+---@param bDoAttached boolean
+---@param bWallLightingPass boolean
+---@param shader Shader
+---@param texdModifier Consumer<TextureDraw>
+function __IsoObject:renderAttachedAndOverlaySprites(
+	dir,
+	x,
+	y,
+	z,
+	col,
+	bDoAttached,
+	bWallLightingPass,
+	shader,
+	texdModifier
+)
+end
 
 ---@param x number
 ---@param y number
@@ -946,38 +984,51 @@ function __IsoObject:renderFxMask(x, y, z, bDoAttached) end
 ---@param lightInfo ColorInfo
 function __IsoObject:renderObjectPicker(x, y, z, lightInfo) end
 
----@param arg0 IsoDirections
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 ColorInfo
----@param arg5 boolean
----@param arg6 boolean
----@param arg7 Shader
----@param arg8 Consumer<TextureDraw>
-function __IsoObject:renderWallTile(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
+---@param dir IsoDirections
+---@param x number
+---@param y number
+---@param z number
+---@param col ColorInfo
+---@param bDoAttached boolean
+---@param bWallLightingPass boolean
+---@param shader Shader
+---@param texdModifier Consumer<TextureDraw>
+function __IsoObject:renderWallTile(dir, x, y, z, col, bDoAttached, bWallLightingPass, shader, texdModifier) end
 
----@param arg0 IsoDirections
----@param arg1 boolean
----@param arg2 boolean
----@param arg3 boolean
----@param arg4 integer
----@param arg5 number
----@param arg6 number
----@param arg7 number
----@param arg8 ColorInfo
----@param arg9 Shader
----@param arg10 Consumer<TextureDraw>
-function __IsoObject:renderWallTileDepth(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10) end
+---@param dir IsoDirections
+---@param cutawaySelf boolean
+---@param cutawayE boolean
+---@param cutawayS boolean
+---@param cutawaySEX integer
+---@param x number
+---@param y number
+---@param z number
+---@param col ColorInfo
+---@param shader Shader
+---@param texdModifier Consumer<TextureDraw>
+function __IsoObject:renderWallTileDepth(
+	dir,
+	cutawaySelf,
+	cutawayE,
+	cutawayS,
+	cutawaySEX,
+	x,
+	y,
+	z,
+	col,
+	shader,
+	texdModifier
+)
+end
 
----@param arg0 IsoDirections
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 ColorInfo
----@param arg5 Shader
----@param arg6 Consumer<TextureDraw>
-function __IsoObject:renderWallTileOnly(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+---@param dir IsoDirections
+---@param x number
+---@param y number
+---@param z number
+---@param col ColorInfo
+---@param shader Shader
+---@param texdModifier Consumer<TextureDraw>
+function __IsoObject:renderWallTileOnly(dir, x, y, z, col, shader, texdModifier) end
 
 function __IsoObject:renderlast() end
 
@@ -1011,9 +1062,9 @@ function __IsoObject:sendObjectChange(change) end
 ---@param tbl table
 function __IsoObject:sendObjectChange(change, tbl) end
 
----@param arg0 string
----@param arg1 kahlua.Array<any>
-function __IsoObject:sendObjectChange(arg0, arg1) end
+---@param change string
+---@param args kahlua.Array<any>
+function __IsoObject:sendObjectChange(change, args) end
 
 ---@param alpha number the alpha to set
 function __IsoObject:setAlpha(alpha) end
@@ -1032,8 +1083,8 @@ function __IsoObject:setAlphaAndTarget(playerIndex, alpha) end
 ---@param playerIndex integer The playerIndex to use
 function __IsoObject:setAlphaToTarget(playerIndex) end
 
----@param arg0 boolean
-function __IsoObject:setAnimating(arg0) end
+---@param bAnimating boolean
+function __IsoObject:setAnimating(bAnimating) end
 
 ---@param AttachedAnimSprite ArrayList<IsoSpriteInstance> the AttachedAnimSprite to set
 function __IsoObject:setAttachedAnimSprite(AttachedAnimSprite) end
@@ -1041,9 +1092,9 @@ function __IsoObject:setAttachedAnimSprite(AttachedAnimSprite) end
 ---@param blink boolean
 function __IsoObject:setBlink(blink) end
 
----@param arg0 integer
----@param arg1 boolean
-function __IsoObject:setBlink(arg0, arg1) end
+---@param playerIndex integer
+---@param blink boolean
+function __IsoObject:setBlink(playerIndex, blink) end
 
 ---@param AttachedAnimSprite ArrayList<IsoSpriteInstance> the AttachedAnimSprite to set
 function __IsoObject:setChildSprites(AttachedAnimSprite) end
@@ -1066,17 +1117,17 @@ function __IsoObject:setDamage(Damage) end
 ---@param dir integer the dir to set
 function __IsoObject:setDir(dir) end
 
----@param arg0 boolean
-function __IsoObject:setDoRender(arg0) end
+---@param doRender boolean
+function __IsoObject:setDoRender(doRender) end
 
----@param arg0 boolean
-function __IsoObject:setExplored(arg0) end
+---@param isExplored boolean
+function __IsoObject:setExplored(isExplored) end
 
----@param arg0 IsoDirections
-function __IsoObject:setForwardIsoDirection(arg0) end
+---@param dir IsoDirections
+function __IsoObject:setForwardIsoDirection(dir) end
 
----@param arg0 integer
-function __IsoObject:setForwardIsoDirection(arg0) end
+---@param dir integer
+function __IsoObject:setForwardIsoDirection(dir) end
 
 ---@param highlightColor ColorInfo
 function __IsoObject:setHighlightColor(highlightColor) end
@@ -1087,23 +1138,23 @@ function __IsoObject:setHighlightColor(highlightColor) end
 ---@param a number
 function __IsoObject:setHighlightColor(r, g, b, a) end
 
----@param arg0 integer
----@param arg1 ColorInfo
-function __IsoObject:setHighlightColor(arg0, arg1) end
+---@param playerIndex integer
+---@param highlightColor ColorInfo
+function __IsoObject:setHighlightColor(playerIndex, highlightColor) end
 
----@param arg0 integer
----@param arg1 number
----@param arg2 number
----@param arg3 number
----@param arg4 number
-function __IsoObject:setHighlightColor(arg0, arg1, arg2, arg3, arg4) end
+---@param playerIndex integer
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function __IsoObject:setHighlightColor(playerIndex, r, g, b, a) end
 
----@param arg0 boolean
-function __IsoObject:setHighlightRenderOnce(arg0) end
+---@param highlight boolean
+function __IsoObject:setHighlightRenderOnce(highlight) end
 
----@param arg0 integer
----@param arg1 boolean
-function __IsoObject:setHighlightRenderOnce(arg0, arg1) end
+---@param playerIndex integer
+---@param highlight boolean
+function __IsoObject:setHighlightRenderOnce(playerIndex, highlight) end
 
 ---@param highlight boolean
 function __IsoObject:setHighlighted(highlight) end
@@ -1112,26 +1163,26 @@ function __IsoObject:setHighlighted(highlight) end
 ---@param renderOnce boolean
 function __IsoObject:setHighlighted(highlight, renderOnce) end
 
----@param arg0 integer
----@param arg1 boolean
-function __IsoObject:setHighlighted(arg0, arg1) end
+---@param playerIndex integer
+---@param highlight boolean
+function __IsoObject:setHighlighted(playerIndex, highlight) end
 
----@param arg0 integer
----@param arg1 boolean
----@param arg2 boolean
-function __IsoObject:setHighlighted(arg0, arg1, arg2) end
+---@param playerIndex integer
+---@param highlight boolean
+---@param renderOnce boolean
+function __IsoObject:setHighlighted(playerIndex, highlight, renderOnce) end
 
 ---@param keyId integer
 function __IsoObject:setKeyId(keyId) end
 
----@param arg0 IsoLightSource
-function __IsoObject:setLightSource(arg0) end
+---@param lightSource IsoLightSource
+function __IsoObject:setLightSource(lightSource) end
 
----@param arg0 boolean
-function __IsoObject:setLit(arg0) end
+---@param lit boolean
+function __IsoObject:setLit(lit) end
 
----@param arg0 table
-function __IsoObject:setModData(arg0) end
+---@param newDatas table
+function __IsoObject:setModData(newDatas) end
 
 ---@param movedThumpable boolean
 function __IsoObject:setMovedThumpable(movedThumpable) end
@@ -1148,8 +1199,8 @@ function __IsoObject:setOffsetX(offsetX) end
 ---@param offsetY number the offsetY to set
 function __IsoObject:setOffsetY(offsetY) end
 
----@param arg0 IsoSpriteInstance
-function __IsoObject:setOnOverlay(arg0) end
+---@param inst IsoSpriteInstance
+function __IsoObject:setOnOverlay(inst) end
 
 ---@param isOutlineHighlight boolean
 function __IsoObject:setOutlineHighlight(isOutlineHighlight) end
@@ -1246,11 +1297,11 @@ function __IsoObject:setRerouteCollide(rerouteCollide) end
 ---@param rerouteMask IsoObject the rerouteMask to set
 function __IsoObject:setRerouteMask(rerouteMask) end
 
----@param arg0 boolean
-function __IsoObject:setSatChair(arg0) end
+---@param satChair boolean
+function __IsoObject:setSatChair(satChair) end
 
----@param arg0 boolean
-function __IsoObject:setSceneCulled(arg0) end
+---@param isCulled boolean
+function __IsoObject:setSceneCulled(isCulled) end
 
 ---@param specialTooltip boolean
 function __IsoObject:setSpecialTooltip(specialTooltip) end
@@ -1264,8 +1315,8 @@ function __IsoObject:setSprite(name) end
 ---@param name string
 function __IsoObject:setSpriteFromName(name) end
 
----@param arg0 string
-function __IsoObject:setSpriteModelName(arg0) end
+---@param spriteModelName string
+function __IsoObject:setSpriteModelName(spriteModelName) end
 
 ---@param square IsoGridSquare the square to set
 function __IsoObject:setSquare(square) end
@@ -1280,8 +1331,8 @@ function __IsoObject:setTargetAlpha(targetAlpha) end
 ---@param targetAlpha number the targetAlpha to set
 function __IsoObject:setTargetAlpha(playerIndex, targetAlpha) end
 
----@param arg0 string
-function __IsoObject:setTile(arg0) end
+---@param tile string
+function __IsoObject:setTile(tile) end
 
 ---@param type IsoObjectType
 function __IsoObject:setType(type) end
@@ -1294,14 +1345,14 @@ function __IsoObject:shouldShowOnOverlay() end
 
 function __IsoObject:softReset() end
 
----@param arg0 string
+---@param item string
 ---@return InventoryItem
-function __IsoObject:spawnItemToObjectSurface(arg0) end
+function __IsoObject:spawnItemToObjectSurface(item) end
 
----@param arg0 string
----@param arg1 boolean
+---@param item string
+---@param randomRotation boolean
 ---@return InventoryItem
-function __IsoObject:spawnItemToObjectSurface(arg0, arg1) end
+function __IsoObject:spawnItemToObjectSurface(item, randomRotation) end
 
 ---@param item string
 ---@param randomRotation boolean
@@ -1311,11 +1362,11 @@ function __IsoObject:spawnItemToObjectSurface(item, randomRotation, checkForAdja
 
 function __IsoObject:sync() end
 
----@param arg0 ByteBuffer
-function __IsoObject:syncFluidContainerReceive(arg0) end
+---@param bb ByteBuffer
+function __IsoObject:syncFluidContainerReceive(bb) end
 
----@param arg0 ByteBufferWriter
-function __IsoObject:syncFluidContainerSend(arg0) end
+---@param bb ByteBufferWriter
+function __IsoObject:syncFluidContainerSend(bb) end
 
 ---@param bRemote boolean
 ---@param val integer
@@ -1323,8 +1374,8 @@ function __IsoObject:syncFluidContainerSend(arg0) end
 ---@param bb ByteBuffer
 function __IsoObject:syncIsoObject(bRemote, val, source, bb) end
 
----@param arg0 ByteBuffer
-function __IsoObject:syncIsoObjectReceive(arg0) end
+---@param bb ByteBuffer
+function __IsoObject:syncIsoObjectReceive(bb) end
 
 ---@param bb ByteBufferWriter
 function __IsoObject:syncIsoObjectSend(bb) end
@@ -1332,15 +1383,15 @@ function __IsoObject:syncIsoObjectSend(bb) end
 ---@return string
 function __IsoObject:toString() end
 
----@param arg0 FluidContainer
----@param arg1 number
+---@param source FluidContainer
+---@param amount number
 ---@return number
-function __IsoObject:transferFluidFrom(arg0, arg1) end
+function __IsoObject:transferFluidFrom(source, amount) end
 
----@param arg0 FluidContainer
----@param arg1 number
+---@param target FluidContainer
+---@param amount number
 ---@return number
-function __IsoObject:transferFluidTo(arg0, arg1) end
+function __IsoObject:transferFluidTo(target, amount) end
 
 function __IsoObject:transmitCompleteItemToClients() end
 
@@ -1367,9 +1418,9 @@ function __IsoObject:unsetOutlineHighlight() end
 
 function __IsoObject:update() end
 
----@param arg0 number
+---@param amount number
 ---@return number
-function __IsoObject:useFluid(arg0) end
+function __IsoObject:useFluid(amount) end
 
 ---@deprecated
 ---@param item InventoryItem

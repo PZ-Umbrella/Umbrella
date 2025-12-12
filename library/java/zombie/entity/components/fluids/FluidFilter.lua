@@ -3,49 +3,49 @@
 ---@class FluidFilter
 local __FluidFilter = {}
 
----@param arg0 FluidCategory
+---@param category FluidCategory
 ---@return FluidFilter
-function __FluidFilter:add(arg0) end
+function __FluidFilter:add(category) end
 
----@param arg0 FluidType
+---@param fluid FluidType
 ---@return FluidFilter
-function __FluidFilter:add(arg0) end
+function __FluidFilter:add(fluid) end
 
----@param arg0 Fluid
+---@param fluid Fluid
 ---@return FluidFilter
-function __FluidFilter:add(arg0) end
+function __FluidFilter:add(fluid) end
 
----@param arg0 string
+---@param fluid string
 ---@return FluidFilter
-function __FluidFilter:add(arg0) end
+function __FluidFilter:add(fluid) end
 
----@param arg0 FluidType
+---@param fluidType FluidType
 ---@return boolean
-function __FluidFilter:allows(arg0) end
+function __FluidFilter:allows(fluidType) end
 
----@param arg0 Fluid
+---@param fluid Fluid
 ---@return boolean
-function __FluidFilter:allows(arg0) end
+function __FluidFilter:allows(fluid) end
 
----@param arg0 string
+---@param fluidString string
 ---@return boolean
-function __FluidFilter:allows(arg0) end
+function __FluidFilter:allows(fluidString) end
 
----@param arg0 FluidCategory
+---@param category FluidCategory
 ---@return boolean
-function __FluidFilter:contains(arg0) end
+function __FluidFilter:contains(category) end
 
----@param arg0 FluidType
+---@param fluid FluidType
 ---@return boolean
-function __FluidFilter:contains(arg0) end
+function __FluidFilter:contains(fluid) end
 
----@param arg0 Fluid
+---@param fluid Fluid
 ---@return boolean
-function __FluidFilter:contains(arg0) end
+function __FluidFilter:contains(fluid) end
 
----@param arg0 string
+---@param fluid string
 ---@return boolean
-function __FluidFilter:contains(arg0) end
+function __FluidFilter:contains(fluid) end
 
 ---@return FluidFilter
 function __FluidFilter:copy() end
@@ -62,37 +62,37 @@ function __FluidFilter:getFilterType() end
 ---@return boolean
 function __FluidFilter:isSealed() end
 
----@param arg0 ByteBuffer
----@param arg1 integer
-function __FluidFilter:load(arg0, arg1) end
+---@param input ByteBuffer
+---@param WorldVersion integer
+function __FluidFilter:load(input, WorldVersion) end
 
----@param arg0 FluidCategory
+---@param category FluidCategory
 ---@return FluidFilter
-function __FluidFilter:remove(arg0) end
+function __FluidFilter:remove(category) end
 
----@param arg0 FluidType
+---@param fluid FluidType
 ---@return FluidFilter
-function __FluidFilter:remove(arg0) end
+function __FluidFilter:remove(fluid) end
 
----@param arg0 Fluid
+---@param fluid Fluid
 ---@return FluidFilter
-function __FluidFilter:remove(arg0) end
+function __FluidFilter:remove(fluid) end
 
----@param arg0 string
+---@param fluid string
 ---@return FluidFilter
-function __FluidFilter:remove(arg0) end
+function __FluidFilter:remove(fluid) end
 
----@param arg0 ByteBuffer
-function __FluidFilter:save(arg0) end
+---@param output ByteBuffer
+function __FluidFilter:save(output) end
 
 function __FluidFilter:seal() end
 
----@param arg0 string
-function __FluidFilter:setFilterScript(arg0) end
+---@param filterScriptName string
+function __FluidFilter:setFilterScript(filterScriptName) end
 
----@param arg0 FluidFilter.FilterType
+---@param filterType FluidFilter.FilterType
 ---@return FluidFilter
-function __FluidFilter:setFilterType(arg0) end
+function __FluidFilter:setFilterType(filterType) end
 
 ---@return string
 function __FluidFilter:toString() end

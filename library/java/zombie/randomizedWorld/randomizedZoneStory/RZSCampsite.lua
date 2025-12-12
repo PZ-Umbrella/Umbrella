@@ -3,8 +3,8 @@
 ---@class RZSCampsite: RandomizedZoneStoryBase
 local __RZSCampsite = {}
 
----@param arg0 Zone
-function __RZSCampsite:randomizeZoneStory(arg0) end
+---@param zone Zone
+function __RZSCampsite:randomizeZoneStory(zone) end
 
 RZSCampsite = {}
 

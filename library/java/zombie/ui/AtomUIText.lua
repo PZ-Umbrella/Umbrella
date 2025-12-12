@@ -13,20 +13,20 @@ function __AtomUIText:init() end
 
 function __AtomUIText:render() end
 
----@param arg0 number
-function __AtomUIText:setAutoWidth(arg0) end
+---@param width number
+function __AtomUIText:setAutoWidth(width) end
 
----@param arg0 UIFont
-function __AtomUIText:setFont(arg0) end
+---@param font UIFont
+function __AtomUIText:setFont(font) end
 
----@param arg0 string
-function __AtomUIText:setText(arg0) end
+---@param text string
+function __AtomUIText:setText(text) end
 
 AtomUIText = {}
 
----@param arg0 table
+---@param table table
 ---@return AtomUIText
-function AtomUIText.new(arg0) end
+function AtomUIText.new(table) end
 
 ---@type Class<AtomUIText>
 AtomUIText.class = nil

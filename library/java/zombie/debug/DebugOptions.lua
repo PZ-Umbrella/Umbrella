@@ -13,9 +13,9 @@ function __DebugOptions:getBoolean(name) end
 ---@return Iterable<IDebugOption>
 function __DebugOptions:getChildren() end
 
----@param arg0 string
+---@param childName string
 ---@return string
-function __DebugOptions:getCombinedName(arg0) end
+function __DebugOptions:getCombinedName(childName) end
 
 ---@return string
 function __DebugOptions:getName() end
@@ -46,8 +46,8 @@ function __DebugOptions:onDescendantAdded(newOption) end
 
 function __DebugOptions:onFullPathChanged() end
 
----@param arg0 IDebugOption
-function __DebugOptions:removeChild(arg0) end
+---@param child IDebugOption
+function __DebugOptions:removeChild(child) end
 
 function __DebugOptions:save() end
 

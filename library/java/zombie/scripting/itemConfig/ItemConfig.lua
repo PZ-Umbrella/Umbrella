@@ -5,19 +5,19 @@ local __ItemConfig = {}
 
 function __ItemConfig:BuildBuckets() end
 
----@param arg0 GameEntity
-function __ItemConfig:ConfigureEntityOnCreate(arg0) end
+---@param entity GameEntity
+function __ItemConfig:ConfigureEntityOnCreate(entity) end
 
----@param arg0 GameEntity
----@param arg1 ItemPickInfo
-function __ItemConfig:ConfigureEntitySpawned(arg0, arg1) end
+---@param entity GameEntity
+---@param pickInfo ItemPickInfo
+function __ItemConfig:ConfigureEntitySpawned(entity, pickInfo) end
 
----@param arg0 string
----@param arg1 string
-function __ItemConfig:Load(arg0, arg1) end
+---@param name string
+---@param totalFile string
+function __ItemConfig:Load(name, totalFile) end
 
----@param arg0 ScriptLoadMode
-function __ItemConfig:OnScriptsLoaded(arg0) end
+---@param loadMode ScriptLoadMode
+function __ItemConfig:OnScriptsLoaded(loadMode) end
 
 function __ItemConfig:PreReload() end
 

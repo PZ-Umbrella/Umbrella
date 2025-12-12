@@ -5,41 +5,41 @@ local __TileDepthTextures = {}
 
 function __TileDepthTextures:Reset() end
 
----@param arg0 string
+---@param tilesetName string
 ---@return TilesetDepthTexture
-function __TileDepthTextures:getExistingTileset(arg0) end
+function __TileDepthTextures:getExistingTileset(tilesetName) end
 
----@param arg0 string
----@param arg1 integer
+---@param tilesetName string
+---@param tileIndex integer
 ---@return TileDepthTexture
-function __TileDepthTextures:getTexture(arg0, arg1) end
+function __TileDepthTextures:getTexture(tilesetName, tileIndex) end
 
----@param arg0 string
+---@param tileName string
 ---@return TileDepthTexture
-function __TileDepthTextures:getTextureFromTileName(arg0) end
+function __TileDepthTextures:getTextureFromTileName(tileName) end
 
 function __TileDepthTextures:initSprites() end
 
----@param arg0 string
-function __TileDepthTextures:initSprites(arg0) end
+---@param tilesetName string
+function __TileDepthTextures:initSprites(tilesetName) end
 
 function __TileDepthTextures:loadDepthTextureImages() end
 
----@param arg0 TilesetDepthTexture
-function __TileDepthTextures:mergeTileset(arg0) end
+---@param other TilesetDepthTexture
+function __TileDepthTextures:mergeTileset(other) end
 
----@param arg0 TileDepthTextures
-function __TileDepthTextures:mergeTilesets(arg0) end
+---@param other TileDepthTextures
+function __TileDepthTextures:mergeTilesets(other) end
 
----@param arg0 string
-function __TileDepthTextures:saveTileset(arg0) end
+---@param tilesetName string
+function __TileDepthTextures:saveTileset(tilesetName) end
 
 TileDepthTextures = {}
 
----@param arg0 string
----@param arg1 string
+---@param modID string
+---@param mediaAbsPath string
 ---@return TileDepthTextures
-function TileDepthTextures.new(arg0, arg1) end
+function TileDepthTextures.new(modID, mediaAbsPath) end
 
 ---@type Class<TileDepthTextures>
 TileDepthTextures.class = nil

@@ -5,25 +5,25 @@ local __ISWorldObjectContextMenuLogic = {}
 
 ISWorldObjectContextMenuLogic = {}
 
----@param arg0 IsoPlayer
+---@param chr IsoPlayer
 ---@return boolean
-function ISWorldObjectContextMenuLogic.checkBlowTorchForBarricade(arg0) end
+function ISWorldObjectContextMenuLogic.checkBlowTorchForBarricade(chr) end
 
----@param arg0 table
----@param arg1 table
----@param arg2 number
----@param arg3 table
----@param arg4 integer
----@param arg5 integer
----@param arg6 boolean
+---@param fetch table
+---@param context table
+---@param player number
+---@param worldobjects table
+---@param x integer
+---@param y integer
+---@param test boolean
 ---@return boolean
-function ISWorldObjectContextMenuLogic.createMenuEntries(arg0, arg1, arg2, arg3, arg4, arg5, arg6) end
+function ISWorldObjectContextMenuLogic.createMenuEntries(fetch, context, player, worldobjects, x, y, test) end
 
----@param arg0 table
----@param arg1 IsoObject
----@param arg2 number
----@param arg3 boolean
-function ISWorldObjectContextMenuLogic.fetch(arg0, arg1, arg2, arg3) end
+---@param fetch table
+---@param v IsoObject
+---@param player number
+---@param doSquare boolean
+function ISWorldObjectContextMenuLogic.fetch(fetch, v, player, doSquare) end
 
 ---@return ISWorldObjectContextMenuLogic
 function ISWorldObjectContextMenuLogic.new() end

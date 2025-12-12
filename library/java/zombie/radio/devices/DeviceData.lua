@@ -26,9 +26,9 @@ function __DeviceData:addMediaItem(media) end
 ---@return boolean
 function __DeviceData:canBePoweredHere() end
 
----@param arg0 IsoGameCharacter
+---@param character IsoGameCharacter
 ---@return boolean
-function __DeviceData:canPlayerRemoteInteract(arg0) end
+function __DeviceData:canPlayerRemoteInteract(character) end
 
 function __DeviceData:cleanSoundsAndEmitter() end
 
@@ -290,18 +290,18 @@ function __DeviceData:setTurnedOnRaw(b) end
 ---@param f number
 function __DeviceData:setUseDelta(f) end
 
----@param arg0 integer
----@param arg1 GameSoundClip
----@param arg2 BitSet
-function __DeviceData:startEvent(arg0, arg1, arg2) end
+---@param eventInstance integer
+---@param clip GameSoundClip
+---@param parameterSet BitSet
+function __DeviceData:startEvent(eventInstance, clip, parameterSet) end
 
----@param arg0 integer
----@param arg1 GameSoundClip
----@param arg2 BitSet
-function __DeviceData:stopEvent(arg0, arg1, arg2) end
+---@param eventInstance integer
+---@param clip GameSoundClip
+---@param parameterSet BitSet
+function __DeviceData:stopEvent(eventInstance, clip, parameterSet) end
 
----@param arg0 string
-function __DeviceData:stopOrTriggerSoundByName(arg0) end
+---@param soundName string
+function __DeviceData:stopOrTriggerSoundByName(soundName) end
 
 function __DeviceData:transmitBattryChange() end
 
@@ -311,9 +311,9 @@ function __DeviceData:transmitPresets() end
 ---@param playerInRange boolean
 function __DeviceData:update(isIso, playerInRange) end
 
----@param arg0 integer
----@param arg1 GameSoundClip
-function __DeviceData:updateEvent(arg0, arg1) end
+---@param eventInstance integer
+---@param clip GameSoundClip
+function __DeviceData:updateEvent(eventInstance, clip) end
 
 function __DeviceData:updateMediaPlaying() end
 

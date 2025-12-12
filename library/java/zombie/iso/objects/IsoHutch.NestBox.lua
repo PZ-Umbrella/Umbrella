@@ -3,12 +3,12 @@
 ---@class IsoHutch.NestBox
 local __NestBox = {}
 
----@param arg0 Food
-function __NestBox:addEgg(arg0) end
+---@param egg Food
+function __NestBox:addEgg(egg) end
 
----@param arg0 integer
+---@param index integer
 ---@return Food
-function __NestBox:getEgg(arg0) end
+function __NestBox:getEgg(index) end
 
 ---@return integer
 function __NestBox:getEggsNb() end
@@ -16,19 +16,19 @@ function __NestBox:getEggsNb() end
 ---@return integer
 function __NestBox:getIndex() end
 
----@param arg0 integer
+---@param index integer
 ---@return Food
-function __NestBox:removeEgg(arg0) end
+function __NestBox:removeEgg(index) end
 
 NestBox = {}
 
 ---@type integer
 NestBox.maxEggs = nil
 
----@param arg0 IsoHutch
----@param arg1 integer
+---@param this_0 IsoHutch
+---@param index integer
 ---@return IsoHutch.NestBox
-function NestBox.new(arg0, arg1) end
+function NestBox.new(this_0, index) end
 
 ---@type Class<IsoHutch.NestBox>
 NestBox.class = nil

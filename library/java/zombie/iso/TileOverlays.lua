@@ -11,9 +11,9 @@ function __TileOverlays:addOverlays(overlayMap) end
 ---@param square IsoGridSquare
 function __TileOverlays:fixTableTopOverlays(square) end
 
----@param arg0 string
+---@param overlayName string
 ---@return ArrayList<string>
-function __TileOverlays:getUnderlyingSpriteNames(arg0) end
+function __TileOverlays:getUnderlyingSpriteNames(overlayName) end
 
 ---@param obj IsoObject
 ---@return boolean

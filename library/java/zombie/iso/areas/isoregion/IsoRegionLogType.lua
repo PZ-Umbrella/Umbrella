@@ -12,9 +12,9 @@ IsoRegionLogType.Normal = nil
 ---@type IsoRegionLogType
 IsoRegionLogType.Warn = nil
 
----@param arg0 string
+---@param name string
 ---@return IsoRegionLogType
-function IsoRegionLogType.valueOf(arg0) end
+function IsoRegionLogType.valueOf(name) end
 
 ---Returns an array containing the constants of this enum class, in
 ---the order they are declared.

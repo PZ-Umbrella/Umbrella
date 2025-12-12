@@ -31,9 +31,9 @@ function __PlayerFallingState:isSyncOnSquare() end
 ---@param delegate Map<any, any>
 function __PlayerFallingState:processOnExit(owner, delegate) end
 
----@param arg0 IsoGameCharacter
----@param arg1 State.Stage
-function __PlayerFallingState:setParams(arg0, arg1) end
+---@param owner IsoGameCharacter
+---@param stage State.Stage
+function __PlayerFallingState:setParams(owner, stage) end
 
 PlayerFallingState = {}
 

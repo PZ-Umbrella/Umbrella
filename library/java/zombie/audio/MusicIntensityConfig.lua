@@ -3,19 +3,19 @@
 ---@class MusicIntensityConfig
 local __MusicIntensityConfig = {}
 
----@param arg0 IsoGameCharacter
-function __MusicIntensityConfig:checkHealthPanelVisible(arg0) end
+---@param character IsoGameCharacter
+function __MusicIntensityConfig:checkHealthPanelVisible(character) end
 
----@param arg0 table
-function __MusicIntensityConfig:initEvents(arg0) end
+---@param eventsTable table
+function __MusicIntensityConfig:initEvents(eventsTable) end
 
----@param arg0 IsoGameCharacter
-function __MusicIntensityConfig:restoreToFullHealth(arg0) end
+---@param character IsoGameCharacter
+function __MusicIntensityConfig:restoreToFullHealth(character) end
 
----@param arg0 string
----@param arg1 MusicIntensityEvents
+---@param id string
+---@param mie MusicIntensityEvents
 ---@return MusicIntensityEvent
-function __MusicIntensityConfig:triggerEvent(arg0, arg1) end
+function __MusicIntensityConfig:triggerEvent(id, mie) end
 
 MusicIntensityConfig = {}
 

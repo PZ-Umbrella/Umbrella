@@ -3,15 +3,15 @@
 ---@class Server
 local __Server = {}
 
----@param arg0 Account
-function __Server:addAccount(arg0) end
+---@param account Account
+function __Server:addAccount(account) end
 
----@param arg0 string
----@param arg1 string
----@param arg2 boolean
----@param arg3 boolean
----@param arg4 integer
-function __Server:addAccount(arg0, arg1, arg2, arg3, arg4) end
+---@param username string
+---@param password string
+---@param savePwd boolean
+---@param userSteamRelay boolean
+---@param authType integer
+function __Server:addAccount(username, password, savePwd, userSteamRelay, authType) end
 
 ---@return ArrayList<Account>
 function __Server:getAccounts() end
@@ -126,35 +126,35 @@ function __Server:isResponded() end
 ---@return boolean
 function __Server:isSavePwd() end
 
----@param arg0 Account
-function __Server:removeAccount(arg0) end
+---@param account Account
+function __Server:removeAccount(account) end
 
 ---@deprecated
----@param arg0 integer
-function __Server:setAuthType(arg0) end
+---@param authType integer
+function __Server:setAuthType(authType) end
 
 ---@param description string
 function __Server:setDescription(description) end
 
----@param arg0 boolean
-function __Server:setFeatured(arg0) end
+---@param featured boolean
+function __Server:setFeatured(featured) end
 
 ---@param hosted boolean
 function __Server:setHosted(hosted) end
 
----@param arg0 integer
-function __Server:setID(arg0) end
+---@param id integer
+function __Server:setID(id) end
 
 ---@param ip string
 function __Server:setIp(ip) end
 
----@param arg0 LocalDateTime
-function __Server:setLastDataUpdate(arg0) end
+---@param lastDataUpdate LocalDateTime
+function __Server:setLastDataUpdate(lastDataUpdate) end
 
 function __Server:setLastDataUpdateNow() end
 
----@param arg0 LocalDateTime
-function __Server:setLastOnline(arg0) end
+---@param lastOnline LocalDateTime
+function __Server:setLastOnline(lastOnline) end
 
 function __Server:setLastOnlineNow() end
 
@@ -164,8 +164,8 @@ function __Server:setLastUpdate(lastUpdate) end
 ---@param ip string
 function __Server:setLocalIP(ip) end
 
----@param arg0 string
-function __Server:setMapName(arg0) end
+---@param mapName string
+function __Server:setMapName(mapName) end
 
 ---@param maxPlayers string
 function __Server:setMaxPlayers(maxPlayers) end
@@ -176,8 +176,8 @@ function __Server:setMods(mods) end
 ---@param name string
 function __Server:setName(name) end
 
----@param arg0 boolean
-function __Server:setNeedSave(arg0) end
+---@param needSave boolean
+function __Server:setNeedSave(needSave) end
 
 ---@param open boolean
 function __Server:setOpen(open) end
@@ -191,8 +191,8 @@ function __Server:setPing(ping) end
 ---@param players string
 function __Server:setPlayers(players) end
 
----@param arg0 integer
-function __Server:setPort(arg0) end
+---@param port integer
+function __Server:setPort(port) end
 
 ---@param bPublic boolean
 function __Server:setPublic(bPublic) end
@@ -201,28 +201,28 @@ function __Server:setPublic(bPublic) end
 ---@param pwd string
 function __Server:setPwd(pwd) end
 
----@param arg0 string
----@param arg1 boolean
-function __Server:setPwd(arg0, arg1) end
+---@param pwd string
+---@param hashed boolean
+function __Server:setPwd(pwd, hashed) end
 
----@param arg0 boolean
-function __Server:setResponded(arg0) end
+---@param responded boolean
+function __Server:setResponded(responded) end
 
 ---@deprecated
----@param arg0 boolean
-function __Server:setSavePwd(arg0) end
+---@param savePwd boolean
+function __Server:setSavePwd(savePwd) end
 
----@param arg0 integer
-function __Server:setServerCustomizationLastUpdate(arg0) end
+---@param serverCustomizationLastUpdate integer
+function __Server:setServerCustomizationLastUpdate(serverCustomizationLastUpdate) end
 
----@param arg0 Texture
-function __Server:setServerIcon(arg0) end
+---@param serverIcon Texture
+function __Server:setServerIcon(serverIcon) end
 
----@param arg0 Texture
-function __Server:setServerLoadingScreen(arg0) end
+---@param serverLoadingScreen Texture
+function __Server:setServerLoadingScreen(serverLoadingScreen) end
 
----@param arg0 Texture
-function __Server:setServerLoginScreen(arg0) end
+---@param serverLoginScreen Texture
+function __Server:setServerLoginScreen(serverLoginScreen) end
 
 ---@param pwd string
 function __Server:setServerPassword(pwd) end
@@ -231,8 +231,8 @@ function __Server:setServerPassword(pwd) end
 function __Server:setSteamId(steamId) end
 
 ---@deprecated
----@param arg0 boolean
-function __Server:setUseSteamRelay(arg0) end
+---@param useSteamRelay boolean
+function __Server:setUseSteamRelay(useSteamRelay) end
 
 ---@deprecated
 ---@param userName string

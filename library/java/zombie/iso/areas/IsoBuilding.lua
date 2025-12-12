@@ -14,9 +14,9 @@ function __IsoBuilding:CalculateWindows() end
 ---@return boolean
 function __IsoBuilding:ContainsAllItems(items) end
 
----@param arg0 BuildingDef
----@param arg1 IsoMetaCell
-function __IsoBuilding:CreateFrom(arg0, arg1) end
+---@param building BuildingDef
+---@param metaCell IsoMetaCell
+function __IsoBuilding:CreateFrom(building, metaCell) end
 
 function __IsoBuilding:FillContainers() end
 
@@ -71,9 +71,9 @@ function __IsoBuilding:getID() end
 ---@return ItemContainer
 function __IsoBuilding:getRandomContainer(type) end
 
----@param arg0 string
+---@param type string
 ---@return ItemContainer
-function __IsoBuilding:getRandomContainerSingle(arg0) end
+function __IsoBuilding:getRandomContainerSingle(type) end
 
 ---@return IsoWindow
 function __IsoBuilding:getRandomFirstFloorWindow() end
@@ -91,9 +91,9 @@ function __IsoBuilding:getRoomsNumber() end
 ---@return boolean
 function __IsoBuilding:hasBasement() end
 
----@param arg0 string
+---@param room string
 ---@return boolean
-function __IsoBuilding:hasRoom(arg0) end
+function __IsoBuilding:hasRoom(room) end
 
 ---@return boolean
 function __IsoBuilding:hasWater() end

@@ -27,8 +27,8 @@ function ISWidgetRecipeListPanel:prerender() end
 
 function ISWidgetRecipeListPanel:render() end
 
----@param _recipeList ArrayList<CraftRecipe>
-function ISWidgetRecipeListPanel:setDataList(_recipeList) end
+---@param _recipeCollection CraftRecipeListNodeCollection
+function ISWidgetRecipeListPanel:setDataList(_recipeCollection) end
 
 ---@param _x number
 ---@param _y number

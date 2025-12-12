@@ -4,9 +4,9 @@
 ---@class IsoCell
 local __IsoCell = {}
 
----@param arg0 ArrayList<IsoBuilding>
----@param arg1 IsoBuilding
-function __IsoCell:AddUniqueToBuildingList(arg0, arg1) end
+---@param buildings ArrayList<IsoBuilding>
+---@param inBuilding IsoBuilding
+function __IsoCell:AddUniqueToBuildingList(buildings, inBuilding) end
 
 ---@param sqThis IsoGridSquare
 ---@param x integer
@@ -44,12 +44,12 @@ function __IsoCell:DoBuilding(player, bRender) end
 ---@param getter IsoGridSquare.GetSquare
 function __IsoCell:DoGridNav(newSquare, getter) end
 
----@param arg0 IsoGridSquare
----@param arg1 IsoGridSquare
----@param arg2 integer
----@param arg3 integer
+---@param playerSquare IsoGridSquare
+---@param square IsoGridSquare
+---@param playerIndex integer
+---@param currentTimeMillis integer
 ---@return boolean
-function __IsoCell:DoesSquareHaveValidCutaways(arg0, arg1, arg2, arg3) end
+function __IsoCell:DoesSquareHaveValidCutaways(playerSquare, square, playerIndex, currentTimeMillis) end
 
 function __IsoCell:DrawStencilMask() end
 
@@ -58,10 +58,10 @@ function __IsoCell:DrawStencilMask() end
 ---@param zz integer
 function __IsoCell:EnsureSurroundNotNull(xx, yy, zz) end
 
----@param arg0 ArrayList<IsoBuilding>
----@param arg1 IsoGridSquare
----@param arg2 boolean
-function __IsoCell:GetBuildingsInFrontOfCharacter(arg0, arg1, arg2) end
+---@param buildings ArrayList<IsoBuilding>
+---@param square IsoGridSquare
+---@param bRightOfSquare boolean
+function __IsoCell:GetBuildingsInFrontOfCharacter(buildings, square, bRightOfSquare) end
 
 ---@param square IsoGridSquare
 ---@param filter IsoGridOcclusionData.OcclusionFilter
@@ -71,29 +71,29 @@ function __IsoCell:GetBuildingsInFrontOfMustSeeSquare(square, filter) end
 ---@return integer
 function __IsoCell:GetEffectivePlayerRoomId() end
 
----@param arg0 IsoGridSquare
----@param arg1 IsoDirections
+---@param square IsoGridSquare
+---@param lookDir IsoDirections
 ---@return IsoBuilding
-function __IsoCell:GetPeekedInBuilding(arg0, arg1) end
+function __IsoCell:GetPeekedInBuilding(square, lookDir) end
 
----@param arg0 IsoPlayer
----@param arg1 IsoGridSquare
----@param arg2 ArrayList<IsoGridSquare>
----@param arg3 ArrayList<IsoGridSquare>
-function __IsoCell:GetSquaresAroundPlayerSquare(arg0, arg1, arg2, arg3) end
+---@param player IsoPlayer
+---@param square IsoGridSquare
+---@param outGridSquaresToLeft ArrayList<IsoGridSquare>
+---@param outGridSquaresToRight ArrayList<IsoGridSquare>
+function __IsoCell:GetSquaresAroundPlayerSquare(player, square, outGridSquaresToLeft, outGridSquaresToRight) end
 
----@param arg0 IsoGridSquare
+---@param sq IsoGridSquare
 ---@return boolean
-function __IsoCell:IsBehindStuff(arg0) end
+function __IsoCell:IsBehindStuff(sq) end
 
----@param arg0 IsoGridSquare
+---@param square IsoGridSquare
 ---@return boolean
-function __IsoCell:IsCollapsibleBuildingSquare(arg0) end
+function __IsoCell:IsCollapsibleBuildingSquare(square) end
 
----@param arg0 IsoGridSquare
----@param arg1 integer
+---@param square IsoGridSquare
+---@param currentTimeMillis integer
 ---@return boolean
-function __IsoCell:IsCutawaySquare(arg0, arg1) end
+function __IsoCell:IsCutawaySquare(square, currentTimeMillis) end
 
 ---@param playerIndex integer
 ---@return boolean
@@ -117,16 +117,16 @@ function __IsoCell:PlaceLot(filename, sx, sy, sz, bClearExisting) end
 ---@param bClearExisting boolean
 function __IsoCell:PlaceLot(lot, sx, sy, sz, bClearExisting) end
 
----@param arg0 IsoLot
----@param arg1 integer
----@param arg2 integer
----@param arg3 integer
----@param arg4 IsoChunk
----@param arg5 integer
----@param arg6 integer
----@param arg7 kahlua.Array<boolean>
+---@param lot IsoLot
+---@param sx integer
+---@param sy integer
+---@param sz integer
+---@param ch IsoChunk
+---@param WX integer
+---@param WY integer
+---@param bDoneSquares kahlua.Array<boolean>
 ---@return integer
-function __IsoCell:PlaceLot(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
+function __IsoCell:PlaceLot(lot, sx, sy, sz, ch, WX, WY, bDoneSquares) end
 
 function __IsoCell:ProcessSpottedRooms() end
 
@@ -136,8 +136,8 @@ function __IsoCell:Remove(obj) end
 ---@param zza integer
 function __IsoCell:RenderFloorShading(zza) end
 
----@param arg0 integer
-function __IsoCell:RenderSnow(arg0) end
+---@param zza integer
+function __IsoCell:RenderSnow(zza) end
 
 ---@param MaxHeight integer
 function __IsoCell:RenderTiles(MaxHeight) end
@@ -164,10 +164,10 @@ function __IsoCell:addLamppost(x, y, z, r, g, b, rad) end
 ---@param o IsoMovingObject
 function __IsoCell:addMovingObject(o) end
 
----@param arg0 IsoGridSquare
----@param arg1 string
+---@param sq IsoGridSquare
+---@param spriteName string
 ---@return IsoObject
-function __IsoCell:addTileObject(arg0, arg1) end
+function __IsoCell:addTileObject(sq, spriteName) end
 
 ---@param object IsoObject
 function __IsoCell:addToProcessIsoObject(object) end
@@ -216,11 +216,11 @@ function __IsoCell:checkHaveRoof(x, y) end
 ---@param playerIndex integer
 function __IsoCell:clearCacheGridSquare(playerIndex) end
 
----@param arg0 BuildingDef
----@param arg1 IsoGridSquare
----@param arg2 IsoGridSquare
+---@param def BuildingDef
+---@param sq IsoGridSquare
+---@param pl IsoGridSquare
 ---@return boolean
-function __IsoCell:collapsibleBuildingSquareAlgorithm(arg0, arg1, arg2) end
+function __IsoCell:collapsibleBuildingSquareAlgorithm(def, sq, pl) end
 
 ---@param x integer
 ---@param y integer
@@ -229,9 +229,9 @@ function __IsoCell:collapsibleBuildingSquareAlgorithm(arg0, arg1, arg2) end
 ---@return IsoGridSquare
 function __IsoCell:createNewGridSquare(x, y, z, recalcAll) end
 
----@param arg0 IsoCell.PerPlayerRender
----@param arg1 integer
-function __IsoCell:flattenAnyFoliage(arg0, arg1) end
+---@param perPlayerRender IsoCell.PerPlayerRender
+---@param playerIndex integer
+function __IsoCell:flattenAnyFoliage(perPlayerRender, playerIndex) end
 
 ---@return ArrayList<IsoMovingObject> # the addList
 function __IsoCell:getAddList() end
@@ -396,9 +396,9 @@ function __IsoCell:getObjectList() end
 ---@return IsoGridSquare
 function __IsoCell:getOrCreateGridSquare(x, y, z) end
 
----@param arg0 integer
+---@param playerIndex integer
 ---@return IsoCell.PerPlayerRender
-function __IsoCell:getPerPlayerRenderAt(arg0) end
+function __IsoCell:getPerPlayerRenderAt(playerIndex) end
 
 ---@return ArrayList<IsoObject>
 function __IsoCell:getProcessIsoObjectRemove() end
@@ -530,12 +530,12 @@ function __IsoCell:removeLamppost(light) end
 
 function __IsoCell:render() end
 
----@param arg0 IsoCell.PerPlayerRender
----@param arg1 integer
-function __IsoCell:renderDebugLighting(arg0, arg1) end
+---@param perPlayerRender IsoCell.PerPlayerRender
+---@param MaxHeight integer
+function __IsoCell:renderDebugLighting(perPlayerRender, MaxHeight) end
 
----@param arg0 integer
-function __IsoCell:renderDebugPhysics(arg0) end
+---@param playerIndex integer
+function __IsoCell:renderDebugPhysics(playerIndex) end
 
 function __IsoCell:renderRain() end
 

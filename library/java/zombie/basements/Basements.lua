@@ -9,20 +9,20 @@ function __Basements:beforeLoadMetaGrid() end
 
 function __Basements:beforeOnLoadMapZones() end
 
----@param arg0 IsoChunk
+---@param chunk IsoChunk
 ---@return boolean
-function __Basements:chunkHasBasement(arg0) end
+function __Basements:chunkHasBasement(chunk) end
 
----@param arg0 string
+---@param mapID string
 ---@return BasementsPerMap
-function __Basements:getOrCreatePerMap(arg0) end
+function __Basements:getOrCreatePerMap(mapID) end
 
----@param arg0 string
+---@param mapID string
 ---@return BasementsPerMap
-function __Basements:getPerMap(arg0) end
+function __Basements:getPerMap(mapID) end
 
----@param arg0 IsoChunk
-function __Basements:onNewChunkLoaded(arg0) end
+---@param chunk IsoChunk
+function __Basements:onNewChunkLoaded(chunk) end
 
 function __Basements:parseBasementAccessDefinitions() end
 

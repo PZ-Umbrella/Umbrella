@@ -15,16 +15,21 @@ function ISMPEnterServerPwd:destroy() end
 
 function ISMPEnterServerPwd:initialise() end
 
+---@param button ISButton
 function ISMPEnterServerPwd:onClick(button) end
 
 function ISMPEnterServerPwd:onCommandEntered() end
 
+---@param joypadData JoypadData
 function ISMPEnterServerPwd:onGainJoypadFocus(joypadData) end
 
+---@param joypadData JoypadData
 function ISMPEnterServerPwd:onJoypadBeforeDeactivate(joypadData) end
 
+---@param button integer
 function ISMPEnterServerPwd:onJoypadDown(button) end
 
+---@param joypadData JoypadData
 function ISMPEnterServerPwd:onLoseJoypadFocus(joypadData) end
 
 ---@param x number
