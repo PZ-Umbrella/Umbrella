@@ -27,8 +27,8 @@ function __BodyDamage:AddRandomDamageFromZombie(zombie, hitReaction) end
 function __BodyDamage:DamageFromAnimal(wielder) end
 
 ---@param weapon HandWeapon
----@param PartIndex integer
-function __BodyDamage:DamageFromWeapon(weapon, PartIndex) end
+---@param partIndex integer
+function __BodyDamage:DamageFromWeapon(weapon, partIndex) end
 
 ---@param BodyPartIndex integer
 function __BodyDamage:DisableFakeInfection(BodyPartIndex) end
@@ -87,13 +87,13 @@ function __BodyDamage:IsBleedingStemmed(BodyPart) end
 ---@return boolean
 function __BodyDamage:IsBleedingStemmed(BodyPartIndex) end
 
----@param BodyPart BodyPartType
+---@param bodyPart BodyPartType
 ---@return boolean
-function __BodyDamage:IsCauterized(BodyPart) end
+function __BodyDamage:IsCauterized(bodyPart) end
 
----@param BodyPartIndex integer
+---@param bodyPartIndex integer
 ---@return boolean
-function __BodyDamage:IsCauterized(BodyPartIndex) end
+function __BodyDamage:IsCauterized(bodyPartIndex) end
 
 ---@param BodyPart BodyPartType
 ---@return boolean
@@ -155,10 +155,10 @@ function __BodyDamage:IsWounded(BodyPartIndex) end
 ---@param percentage number
 function __BodyDamage:JustAteFood(NewFood, percentage) end
 
----@param NewFood Food
+---@param newFood Food
 ---@param percentage number
 ---@param useUtensil boolean
-function __BodyDamage:JustAteFood(NewFood, percentage, useUtensil) end
+function __BodyDamage:JustAteFood(newFood, percentage, useUtensil) end
 
 ---@param NewFood Food
 function __BodyDamage:JustAteFood(NewFood) end
@@ -224,13 +224,13 @@ function __BodyDamage:SetBleedingStemmed(BodyPart, BleedingStemmed) end
 ---@param BleedingStemmed boolean
 function __BodyDamage:SetBleedingStemmed(BodyPartIndex, BleedingStemmed) end
 
----@param BodyPart BodyPartType
----@param Cauterized boolean
-function __BodyDamage:SetCauterized(BodyPart, Cauterized) end
+---@param bodyPart BodyPartType
+---@param cauterized boolean
+function __BodyDamage:SetCauterized(bodyPart, cauterized) end
 
----@param BodyPartIndex integer
----@param Cauterized boolean
-function __BodyDamage:SetCauterized(BodyPartIndex, Cauterized) end
+---@param bodyPartIndex integer
+---@param cauterized boolean
+function __BodyDamage:SetCauterized(bodyPartIndex, cauterized) end
 
 ---@param BodyPartIndex integer
 ---@param Cut boolean
@@ -550,8 +550,8 @@ function __BodyDamage:isReduceFakeInfection() end
 function __BodyDamage:load(input, WorldVersion) end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __BodyDamage:loadMainFields(input, WorldVersion) end
+---@param worldVersion integer
+function __BodyDamage:loadMainFields(input, worldVersion) end
 
 ---@return number
 function __BodyDamage:pickMortalityDuration() end
@@ -718,11 +718,11 @@ function __BodyDamage:setStandardHealthFromFoodTime(StandardHealthFromFoodTime) 
 ---@param StandardPainReductionWhenWell number the StandardPainReductionWhenWell to set
 function __BodyDamage:setStandardPainReductionWhenWell(StandardPainReductionWhenWell) end
 
----@param TimeToSneezeOrCough number
-function __BodyDamage:setTimeToSneezeOrCough(TimeToSneezeOrCough) end
+---@param timeToSneezeOrCough number
+function __BodyDamage:setTimeToSneezeOrCough(timeToSneezeOrCough) end
 
----@param WasDraggingCorpse boolean
-function __BodyDamage:setWasDraggingCorpse(WasDraggingCorpse) end
+---@param wasDraggingCorpse boolean
+function __BodyDamage:setWasDraggingCorpse(wasDraggingCorpse) end
 
 function __BodyDamage:splatBloodFloorBig() end
 

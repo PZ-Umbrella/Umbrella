@@ -41,14 +41,16 @@ function CraftRecipeManager.getAllRecipeTags() end
 
 ---@param recipe CraftRecipe
 ---@param inventoryItem InventoryItem
+---@param character IsoGameCharacter
 ---@return ArrayList<InputScript>
-function CraftRecipeManager.getAllValidInputScriptsForItem(recipe, inventoryItem) end
+function CraftRecipeManager.getAllValidInputScriptsForItem(recipe, inventoryItem, character) end
 
 ---@param recipe CraftRecipe
 ---@param sourceItems ArrayList<InventoryItem>
 ---@param filteredItems ArrayList<InventoryItem>
+---@param character IsoGameCharacter
 ---@return ArrayList<InventoryItem>
-function CraftRecipeManager.getAllValidItemsForRecipe(recipe, sourceItems, filteredItems) end
+function CraftRecipeManager.getAllValidItemsForRecipe(recipe, sourceItems, filteredItems, character) end
 
 ---@param recipe CraftRecipe
 ---@param allItems ArrayList<InventoryItem>
@@ -74,8 +76,9 @@ function CraftRecipeManager.getUniqueRecipeItems(item, chr, containers) end
 
 ---@param recipe CraftRecipe
 ---@param inventoryItem InventoryItem
+---@param character IsoGameCharacter
 ---@return InputScript
-function CraftRecipeManager.getValidInputScriptForItem(recipe, inventoryItem) end
+function CraftRecipeManager.getValidInputScriptForItem(recipe, inventoryItem, character) end
 
 ---@param recipe CraftRecipe
 ---@param character IsoGameCharacter
@@ -89,25 +92,28 @@ function CraftRecipeManager.hasPlayerRequiredSkill(requiredSkill, character) end
 
 ---@param recipe CraftRecipe
 ---@param inventoryItem InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function CraftRecipeManager.isItemToolForRecipe(recipe, inventoryItem) end
+function CraftRecipeManager.isItemToolForRecipe(recipe, inventoryItem, character) end
 
 ---@param input InputScript
 ---@param inventoryItem InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function CraftRecipeManager.isItemValidForInputScript(input, inventoryItem) end
+function CraftRecipeManager.isItemValidForInputScript(input, inventoryItem, character) end
 
 ---@param recipe CraftRecipe
 ---@param inventoryItem InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function CraftRecipeManager.isItemValidForRecipe(recipe, inventoryItem) end
+function CraftRecipeManager.isItemValidForRecipe(recipe, inventoryItem, character) end
 
 ---@param recipe CraftRecipe
 ---@param character IsoGameCharacter
----@param _m CraftRecipeMonitor
+---@param monitor CraftRecipeMonitor
 ---@param containers ArrayList<ItemContainer>
 ---@return boolean
-function CraftRecipeManager.isValidRecipeForCharacter(recipe, character, _m, containers) end
+function CraftRecipeManager.isValidRecipeForCharacter(recipe, character, monitor, containers) end
 
 ---@param tagQueryString string
 ---@param listToPopulate List<CraftRecipe>
@@ -125,6 +131,10 @@ function CraftRecipeManager.populateRecipeList(tagQueryString, listToPopulate, s
 ---@param tagQueryString string
 ---@return List<CraftRecipe>
 function CraftRecipeManager.queryRecipes(tagQueryString) end
+
+---@param craftRecipeTag kahlua.Array<CraftRecipeTag>
+---@return List<CraftRecipe>
+function CraftRecipeManager.queryRecipes(craftRecipeTag) end
 
 ---@param tagQueryString string
 ---@return string

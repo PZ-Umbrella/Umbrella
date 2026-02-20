@@ -9,7 +9,4 @@
 ---(Not exposed)
 ---@class DebugOptions.Checks
 
----(Not exposed)
----@class StackTraceContainer
-
 zombie.debug = {}

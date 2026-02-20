@@ -9,11 +9,11 @@ function __IsoDeadBody:Burn() end
 ---@param object IsoObject
 function __IsoDeadBody:Collision(collision, object) end
 
----@param in_grappler IGrappleable
----@param in_grapplersWeapon HandWeapon
----@param in_grappleEffectiveness number
----@param in_grappleType string
-function __IsoDeadBody:Grappled(in_grappler, in_grapplersWeapon, in_grappleEffectiveness, in_grappleType) end
+---@param grappler IGrappleable
+---@param weapon HandWeapon
+---@param grappleEffectiveness number
+---@param grappleType string
+function __IsoDeadBody:Grappled(grappler, weapon, grappleEffectiveness, grappleType) end
 
 ---@return boolean
 function __IsoDeadBody:IsSpeaking() end
@@ -26,6 +26,11 @@ function __IsoDeadBody:addToWorld() end
 ---@return InventoryItem
 function __IsoDeadBody:becomeCorpseItem() end
 
+---@param x number
+---@param y number
+---@return boolean
+function __IsoDeadBody:canBeGrabbedFrom(x, y) end
+
 ---@param newStage integer
 function __IsoDeadBody:changeRotStage(newStage) end
 
@@ -35,9 +40,9 @@ function __IsoDeadBody:checkClothing(removedItem) end
 ---@return number
 function __IsoDeadBody:getAngle() end
 
----@param out_forwardDirection Vector2
+---@param forwardDirection Vector2
 ---@return Vector2
-function __IsoDeadBody:getAnimForwardDirection(out_forwardDirection) end
+function __IsoDeadBody:getAnimForwardDirection(forwardDirection) end
 
 ---@return number
 function __IsoDeadBody:getAnimalSize() end
@@ -116,6 +121,9 @@ function __IsoDeadBody:getKilledBy() end
 
 ---@return ObjectID
 function __IsoDeadBody:getObjectID() end
+
+---@return integer
+function __IsoDeadBody:getObjectIDAsLong() end
 
 ---@return string
 function __IsoDeadBody:getObjectName() end
@@ -234,7 +242,7 @@ function __IsoDeadBody:isZombie() end
 ---@param IS_DEBUG_SAVE boolean
 function __IsoDeadBody:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param bb ByteBuffer
 function __IsoDeadBody:loadChange(change, bb) end
 
@@ -276,7 +284,7 @@ function __IsoDeadBody:renderlast() end
 ---@param IS_DEBUG_SAVE boolean
 function __IsoDeadBody:save(output, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param tbl table
 ---@param bb ByteBuffer
 function __IsoDeadBody:saveChange(change, tbl, bb) end
@@ -308,12 +316,12 @@ function __IsoDeadBody:setFakeDead(fakeDead) end
 ---@param fallOnFront boolean
 function __IsoDeadBody:setFallOnFront(fallOnFront) end
 
----@param in_directionX number
----@param in_directionY number
-function __IsoDeadBody:setForwardDirection(in_directionX, in_directionY) end
+---@param directionX number
+---@param directionY number
+function __IsoDeadBody:setForwardDirection(directionX, directionY) end
 
----@param in_angle number
-function __IsoDeadBody:setForwardDirectionAngle(in_angle) end
+---@param angle number
+function __IsoDeadBody:setForwardDirectionAngle(angle) end
 
 ---@param invalidate boolean
 function __IsoDeadBody:setInvalidateNextRender(invalidate) end
@@ -321,8 +329,8 @@ function __IsoDeadBody:setInvalidateNextRender(invalidate) end
 ---@param killedBy IsoGameCharacter
 function __IsoDeadBody:setKilledBy(killedBy) end
 
----@param bKilledByFall boolean
-function __IsoDeadBody:setKilledByFall(bKilledByFall) end
+---@param killedByFall boolean
+function __IsoDeadBody:setKilledByFall(killedByFall) end
 
 ---@param value boolean
 function __IsoDeadBody:setOnHook(value) end

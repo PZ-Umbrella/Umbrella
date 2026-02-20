@@ -797,6 +797,20 @@ function __RandomizedWorldBase:spawnCarOnNearestNav(carName, def, distribution) 
 ---@param sq IsoGridSquare
 function __RandomizedWorldBase:trashSquare(sq) end
 
+---@param itemType string
+---@param square IsoGridSquare
+---@param x number
+---@param y number
+---@param z number
+---@param fill boolean
+---@return InventoryItem
+function __RandomizedWorldBase:trySpawnStoryItem(itemType, square, x, y, z, fill) end
+
+---@param item InventoryItem
+---@param container ItemContainer
+---@return InventoryItem
+function __RandomizedWorldBase:trySpawnStoryItem(item, container) end
+
 RandomizedWorldBase = {}
 
 ---@param square IsoGridSquare
@@ -1009,6 +1023,28 @@ function RandomizedWorldBase.is2x2AreaClear(square) end
 
 ---@param zone Zone
 function RandomizedWorldBase.removeAllVehiclesOnZone(zone) end
+
+---@param itemType string
+---@param square IsoGridSquare
+---@param x number
+---@param y number
+---@param z number
+---@return InventoryItem
+function RandomizedWorldBase.trySpawnStoryItem(itemType, square, x, y, z) end
+
+---@param item InventoryItem
+---@param square IsoGridSquare
+---@param x number
+---@param y number
+---@param z number
+---@return InventoryItem
+function RandomizedWorldBase.trySpawnStoryItem(item, square, x, y, z) end
+
+---@param itemType string
+---@param obj IsoObject
+---@param randomRotation boolean
+---@return InventoryItem
+function RandomizedWorldBase.trySpawnStoryItem(itemType, obj, randomRotation) end
 
 ---@return RandomizedWorldBase
 function RandomizedWorldBase.new() end

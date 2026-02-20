@@ -182,6 +182,9 @@ function __Core:getBlinkingMoodle() end
 function __Core:getBreakModGameVersion() end
 
 ---@return string
+function __Core:getBulletVersion() end
+
+---@return string
 function __Core:getChallengeID() end
 
 ---@return integer
@@ -925,8 +928,8 @@ function __Core:setAutoZoom(playerIndex, auto) end
 ---@param isAzerty boolean
 function __Core:setAzerty(isAzerty) end
 
----@param BadHighlitedColor ColorInfo
-function __Core:setBadHighlitedColor(BadHighlitedColor) end
+---@param badHighlitedColor ColorInfo
+function __Core:setBadHighlitedColor(badHighlitedColor) end
 
 ---@param blinkingMoodle string
 function __Core:setBlinkingMoodle(blinkingMoodle) end
@@ -970,8 +973,8 @@ function __Core:setFramerate(index) end
 ---@param gameMode string
 function __Core:setGameMode(gameMode) end
 
----@param GoodHighlitedColor ColorInfo
-function __Core:setGoodHighlitedColor(GoodHighlitedColor) end
+---@param goodHighlitedColor ColorInfo
+function __Core:setGoodHighlitedColor(goodHighlitedColor) end
 
 ---@param gotit boolean
 function __Core:setGotNewBelt(gotit) end

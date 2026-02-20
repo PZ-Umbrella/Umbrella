@@ -110,9 +110,9 @@ function __IsoHutch:isSlave() end
 function __IsoHutch:killAnimal(animal) end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
----@param IS_DEBUG_SAVE boolean
-function __IsoHutch:load(input, WorldVersion, IS_DEBUG_SAVE) end
+---@param worldVersion integer
+---@param isDebugSave boolean
+function __IsoHutch:load(input, worldVersion, isDebugSave) end
 
 function __IsoHutch:reforceUpdate() end
 
@@ -126,8 +126,8 @@ function __IsoHutch:removeFromWorld() end
 function __IsoHutch:removeHutch() end
 
 ---@param output ByteBuffer
----@param IS_DEBUG_SAVE boolean
-function __IsoHutch:save(output, IS_DEBUG_SAVE) end
+---@param isDebugSave boolean
+function __IsoHutch:save(output, isDebugSave) end
 
 ---@param hutchDirt number
 function __IsoHutch:setHutchDirt(hutchDirt) end
@@ -149,6 +149,9 @@ function __IsoHutch:transmitCompleteItemToClients() end
 
 ---@param animal IsoAnimal
 function __IsoHutch:tryFindAndRemoveAnimalFromNestBox(animal) end
+
+---@param animal IsoAnimal
+function __IsoHutch:tryRemoveAnimalFromWorld(animal) end
 
 function __IsoHutch:update() end
 

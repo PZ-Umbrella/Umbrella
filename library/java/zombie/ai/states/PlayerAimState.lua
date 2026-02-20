@@ -13,22 +13,21 @@ function __PlayerAimState:animEvent(owner, layer, track, event) end
 function __PlayerAimState:enter(owner) end
 
 ---@param owner IsoGameCharacter
-function __PlayerAimState:execute(owner) end
-
----@param owner IsoGameCharacter
 function __PlayerAimState:exit(owner) end
 
 ---@return boolean
-function __PlayerAimState:isSyncInIdle() end
+function __PlayerAimState:isProcessedOnEnter() end
 
 ---@return boolean
-function __PlayerAimState:isSyncOnEnter() end
+function __PlayerAimState:isProcessedOnExit() end
 
----@return boolean
-function __PlayerAimState:isSyncOnExit() end
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __PlayerAimState:processOnEnter(owner, delegate) end
 
----@return boolean
-function __PlayerAimState:isSyncOnSquare() end
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __PlayerAimState:processOnExit(owner, delegate) end
 
 ---@param owner IsoGameCharacter
 ---@param stage State.Stage
@@ -36,11 +35,17 @@ function __PlayerAimState:setParams(owner, stage) end
 
 PlayerAimState = {}
 
----@return PlayerAimState
-function PlayerAimState.instance() end
+---@type State.Param<boolean>
+PlayerAimState.AIM = nil
+
+---@type State.Param<boolean>
+PlayerAimState.AIM_FLOOR = nil
+
+---@type State.Param<number>
+PlayerAimState.AIM_FLOOR_DISTANCE = nil
 
 ---@return PlayerAimState
-function PlayerAimState.new() end
+function PlayerAimState.instance() end
 
 ---@type Class<PlayerAimState>
 PlayerAimState.class = nil

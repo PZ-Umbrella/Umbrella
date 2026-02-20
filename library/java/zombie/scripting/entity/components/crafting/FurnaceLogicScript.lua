@@ -3,13 +3,6 @@
 ---@class FurnaceLogicScript: ComponentScript
 local __FurnaceLogicScript = {}
 
----@param name string
-function __FurnaceLogicScript:InitLoadPP(name) end
-
-function __FurnaceLogicScript:OnLoadedAfterLua() end
-
-function __FurnaceLogicScript:OnPostWorldDictionaryInit() end
-
 ---@param loadMode ScriptLoadMode
 function __FurnaceLogicScript:OnScriptsLoaded(loadMode) end
 
@@ -35,11 +28,6 @@ function __FurnaceLogicScript:getOutputsGroupName() end
 
 ---@return StartMode
 function __FurnaceLogicScript:getStartMode() end
-
----@return boolean
-function __FurnaceLogicScript:isoMasterOnly() end
-
-function __FurnaceLogicScript:reset() end
 
 FurnaceLogicScript = {}
 

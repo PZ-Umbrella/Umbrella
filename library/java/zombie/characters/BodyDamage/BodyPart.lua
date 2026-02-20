@@ -43,8 +43,8 @@ function __BodyPart:SetBitten(Bitten, Infected) end
 ---@param BleedingStemmed boolean
 function __BodyPart:SetBleedingStemmed(BleedingStemmed) end
 
----@param Cauterized boolean
-function __BodyPart:SetCauterized(Cauterized) end
+---@param cauterized boolean
+function __BodyPart:SetCauterized(cauterized) end
 
 ---@param inf boolean
 function __BodyPart:SetFakeInfected(inf) end

@@ -4,7 +4,7 @@
 local __BodyPartSyncPacket = {}
 
 ---@param b ByteBuffer
----@param connection UdpConnection
+---@param connection IConnection
 function __BodyPartSyncPacket:parse(b, connection) end
 
 ---@param values kahlua.Array<any>

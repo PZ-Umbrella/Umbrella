@@ -282,8 +282,8 @@ function __IsoMetaGrid:load(input) end
 function __IsoMetaGrid:load(inFilePath, loadMethod) end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __IsoMetaGrid:loadAnimalZones(input, WorldVersion) end
+---@param worldVersion integer
+function __IsoMetaGrid:loadAnimalZones(input, worldVersion) end
 
 ---@param path string
 ---@param filter string

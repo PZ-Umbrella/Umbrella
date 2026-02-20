@@ -26,14 +26,8 @@ function __Item:InstanceItem(param, isFirstTimeCreated) end
 ---@param totalFile string
 function __Item:Load(name, totalFile) end
 
-function __Item:OnLoadedAfterLua() end
-
-function __Item:OnPostWorldDictionaryInit() end
-
 ---@param loadMode ScriptLoadMode
 function __Item:OnScriptsLoaded(loadMode) end
-
-function __Item:PreReload() end
 
 ---@param categoryName string
 function __Item:addForageFocusCategory(categoryName) end
@@ -255,6 +249,9 @@ function __Item:getHungerChange() end
 ---@return string # the Icon
 function __Item:getIcon() end
 
+---@return string
+function __Item:getIconFluidMask() end
+
 ---@return ArrayList<string>
 function __Item:getIconsForTexture() end
 
@@ -467,9 +464,9 @@ function __Item:getSkillTrained() end
 ---@return string
 function __Item:getSoundByID(ID) end
 
----@param ID SoundMapKey
+---@param id SoundMapKey
 ---@return string
-function __Item:getSoundByID(ID) end
+function __Item:getSoundByID(id) end
 
 ---@param parameterName string
 ---@return string
@@ -776,8 +773,6 @@ function __Item:isWorldRender() end
 ---@param character IsoGameCharacter
 function __Item:researchRecipes(character) end
 
-function __Item:reset() end
-
 function __Item:resolveItemTypes() end
 
 function __Item:resolveModelScripts() end
@@ -889,8 +884,8 @@ function __Item:setItemConfig(itemConfig) end
 ---@param itemType ItemType
 function __Item:setItemType(itemType) end
 
----@param KeepOnDeplete boolean
-function __Item:setKeepOnDeplete(KeepOnDeplete) end
+---@param keepOnDeplete boolean
+function __Item:setKeepOnDeplete(keepOnDeplete) end
 
 ---@param KnockBackOnNoDeath boolean the KnockBackOnNoDeath to set
 function __Item:setKnockBackOnNoDeath(KnockBackOnNoDeath) end
@@ -940,8 +935,8 @@ function __Item:setOpeningRecipe(recipeName) end
 ---@param OtherCharacterVolumeBoost number the OtherCharacterVolumeBoost to set
 function __Item:setOtherCharacterVolumeBoost(OtherCharacterVolumeBoost) end
 
----@param OtherHandRequire ItemTag
-function __Item:setOtherHandRequire(OtherHandRequire) end
+---@param otherHandRequire ItemTag
+function __Item:setOtherHandRequire(otherHandRequire) end
 
 ---@param OtherHandUse boolean the OtherHandUse to set
 function __Item:setOtherHandUse(OtherHandUse) end
@@ -967,8 +962,8 @@ function __Item:setRanged(Ranged) end
 ---@param ReplaceOnDeplete string
 function __Item:setReplaceOnDeplete(ReplaceOnDeplete) end
 
----@param ReplaceOnExtinguish string
-function __Item:setReplaceOnExtinguish(ReplaceOnExtinguish) end
+---@param replaceOnExtinguish string
+function __Item:setReplaceOnExtinguish(replaceOnExtinguish) end
 
 ---@param ReplaceOnUse string the ReplaceOnUse to set
 function __Item:setReplaceOnUse(ReplaceOnUse) end

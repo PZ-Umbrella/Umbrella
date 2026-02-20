@@ -139,6 +139,10 @@ function GameWindow.readInt(_in) end
 ---@return integer
 function GameWindow.readLong(_in) end
 
+---@param input ByteBuffer
+---@return IsoObjectChange
+function GameWindow.readObjectChange(input) end
+
 function GameWindow.render() end
 
 ---@param bDoChars boolean

@@ -28,6 +28,9 @@ function __Radio:HasPlayerInRange() end
 ---@return boolean
 function __Radio:IsSpeaking() end
 
+---@param container ItemContainer
+function __Radio:OnAddedToContainer(container) end
+
 ---@param sprite string
 ---@return boolean
 function __Radio:ReadFromWorldSprite(sprite) end
@@ -43,6 +46,9 @@ function __Radio:doReceiveSignal(distance) end
 
 ---@return string
 function __Radio:getClothingExtraSubmenu() end
+
+---@return number
+function __Radio:getCurrentUsesFloat() end
 
 ---@return number
 function __Radio:getDelta() end

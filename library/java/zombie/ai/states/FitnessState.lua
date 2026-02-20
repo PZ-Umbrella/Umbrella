@@ -13,22 +13,7 @@ function __FitnessState:animEvent(owner, layer, track, event) end
 function __FitnessState:enter(owner) end
 
 ---@param owner IsoGameCharacter
-function __FitnessState:execute(owner) end
-
----@param owner IsoGameCharacter
 function __FitnessState:exit(owner) end
-
----@return boolean
-function __FitnessState:isSyncInIdle() end
-
----@return boolean
-function __FitnessState:isSyncOnEnter() end
-
----@return boolean
-function __FitnessState:isSyncOnExit() end
-
----@return boolean
-function __FitnessState:isSyncOnSquare() end
 
 ---@param owner IsoGameCharacter
 ---@param stage State.Stage
@@ -36,11 +21,26 @@ function __FitnessState:setParams(owner, stage) end
 
 FitnessState = {}
 
----@return FitnessState
-function FitnessState.instance() end
+---@type State.Param<boolean>
+FitnessState.EXERCISE_ENDED = nil
+
+---@type State.Param<string>
+FitnessState.EXERCISE_HAND = nil
+
+---@type State.Param<string>
+FitnessState.EXERCISE_TYPE = nil
+
+---@type State.Param<boolean>
+FitnessState.FITNESS_FINISHED = nil
+
+---@type State.Param<number>
+FitnessState.FITNESS_SPEED = nil
+
+---@type State.Param<boolean>
+FitnessState.FITNESS_STRUGGLE = nil
 
 ---@return FitnessState
-function FitnessState.new() end
+function FitnessState.instance() end
 
 ---@type Class<FitnessState>
 FitnessState.class = nil

@@ -18,25 +18,13 @@ function __LungeState:exit(chr) end
 ---@return boolean
 function __LungeState:isMoving(owner) end
 
----@return boolean
-function __LungeState:isSyncInIdle() end
-
----@return boolean
-function __LungeState:isSyncOnEnter() end
-
----@return boolean
-function __LungeState:isSyncOnExit() end
-
----@return boolean
-function __LungeState:isSyncOnSquare() end
-
 LungeState = {}
+
+---@type State.Param<integer>
+LungeState.TICK_COUNT = nil
 
 ---@return LungeState
 function LungeState.instance() end
-
----@return LungeState
-function LungeState.new() end
 
 ---@type Class<LungeState>
 LungeState.class = nil

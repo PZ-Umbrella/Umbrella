@@ -152,10 +152,10 @@ function UI3DScene.closest_distance_between_lines(l1, l2) end
 ---@return number
 function UI3DScene.closest_distance_line_circle(ray, c, point) end
 
----@param P Vector3f
----@param L UI3DScene.Ray
+---@param p Vector3f
+---@param l UI3DScene.Ray
 ---@return number
-function UI3DScene.distance_between_point_ray(P, L) end
+function UI3DScene.distance_between_point_ray(p, l) end
 
 ---@param Pn UI3DScene.Plane
 ---@param S UI3DScene.Ray
@@ -163,8 +163,8 @@ function UI3DScene.distance_between_point_ray(P, L) end
 ---@return integer
 function UI3DScene.intersect_ray_plane(Pn, S, out) end
 
----@param Plane UI3DScene.Plane
-function UI3DScene.releasePlane(Plane) end
+---@param plane UI3DScene.Plane
+function UI3DScene.releasePlane(plane) end
 
 ---@param ray UI3DScene.Ray
 function UI3DScene.releaseRay(ray) end

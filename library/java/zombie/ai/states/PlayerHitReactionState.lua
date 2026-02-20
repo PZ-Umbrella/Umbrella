@@ -13,30 +13,12 @@ function __PlayerHitReactionState:animEvent(owner, layer, track, event) end
 function __PlayerHitReactionState:enter(owner) end
 
 ---@param owner IsoGameCharacter
-function __PlayerHitReactionState:execute(owner) end
-
----@param owner IsoGameCharacter
 function __PlayerHitReactionState:exit(owner) end
-
----@return boolean
-function __PlayerHitReactionState:isSyncInIdle() end
-
----@return boolean
-function __PlayerHitReactionState:isSyncOnEnter() end
-
----@return boolean
-function __PlayerHitReactionState:isSyncOnExit() end
-
----@return boolean
-function __PlayerHitReactionState:isSyncOnSquare() end
 
 PlayerHitReactionState = {}
 
 ---@return PlayerHitReactionState
 function PlayerHitReactionState.instance() end
-
----@return PlayerHitReactionState
-function PlayerHitReactionState.new() end
 
 ---@type Class<PlayerHitReactionState>
 PlayerHitReactionState.class = nil

@@ -3,7 +3,7 @@
 ---@class WeaponType: Enum<WeaponType>
 local __WeaponType = {}
 
----@return List<AttackType>
+---@return WeightedList<AttackType>
 function __WeaponType:getPossibleAttack() end
 
 ---@return string

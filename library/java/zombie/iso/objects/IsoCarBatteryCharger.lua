@@ -17,6 +17,9 @@ function __IsoCarBatteryCharger:getItem() end
 ---@return string
 function __IsoCarBatteryCharger:getObjectName() end
 
+---@return Texture
+function __IsoCarBatteryCharger:getTexture() end
+
 ---@return boolean
 function __IsoCarBatteryCharger:hasAnimatedAttachments() end
 

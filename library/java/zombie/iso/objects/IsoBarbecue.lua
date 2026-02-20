@@ -45,9 +45,9 @@ function __IsoBarbecue:isTemperatureChanging() end
 ---@param IS_DEBUG_SAVE boolean
 function __IsoBarbecue:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
----@param change string
----@param bb ByteBuffer
-function __IsoBarbecue:loadChange(change, bb) end
+---@param change IsoObjectChange
+---@param byteBuffer ByteBuffer
+function __IsoBarbecue:loadChange(change, byteBuffer) end
 
 function __IsoBarbecue:removeFromWorld() end
 
@@ -73,10 +73,10 @@ function __IsoBarbecue:renderAnimatedAttachments(x, y, z, colorInfo) end
 ---@param IS_DEBUG_SAVE boolean
 function __IsoBarbecue:save(output, IS_DEBUG_SAVE) end
 
----@param change string
----@param tbl table
----@param bb ByteBuffer
-function __IsoBarbecue:saveChange(change, tbl, bb) end
+---@param change IsoObjectChange
+---@param kahluaTable table
+---@param byteBuffer ByteBuffer
+function __IsoBarbecue:saveChange(change, kahluaTable, byteBuffer) end
 
 ---@param units integer
 function __IsoBarbecue:setFuelAmount(units) end

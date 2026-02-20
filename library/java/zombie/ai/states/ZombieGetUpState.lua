@@ -9,25 +9,13 @@ function __ZombieGetUpState:enter(owner) end
 ---@param owner IsoGameCharacter
 function __ZombieGetUpState:exit(owner) end
 
----@return boolean
-function __ZombieGetUpState:isSyncInIdle() end
-
----@return boolean
-function __ZombieGetUpState:isSyncOnEnter() end
-
----@return boolean
-function __ZombieGetUpState:isSyncOnExit() end
-
----@return boolean
-function __ZombieGetUpState:isSyncOnSquare() end
-
 ZombieGetUpState = {}
+
+---@type State.Param<State>
+ZombieGetUpState.PREV_STATE = nil
 
 ---@return ZombieGetUpState
 function ZombieGetUpState.instance() end
-
----@return ZombieGetUpState
-function ZombieGetUpState.new() end
 
 ---@type Class<ZombieGetUpState>
 ZombieGetUpState.class = nil

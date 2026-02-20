@@ -12,18 +12,6 @@ function __ZombieOnGroundState:execute(owner) end
 ---@param owner IsoGameCharacter
 function __ZombieOnGroundState:exit(owner) end
 
----@return boolean
-function __ZombieOnGroundState:isSyncInIdle() end
-
----@return boolean
-function __ZombieOnGroundState:isSyncOnEnter() end
-
----@return boolean
-function __ZombieOnGroundState:isSyncOnExit() end
-
----@return boolean
-function __ZombieOnGroundState:isSyncOnSquare() end
-
 ZombieOnGroundState = {}
 
 ---@return ZombieOnGroundState
@@ -36,9 +24,6 @@ function ZombieOnGroundState.isCharacterStandingOnOther(chrStanding, chrProne) e
 
 ---@param ownerZombie IsoZombie
 function ZombieOnGroundState.startReanimateTimer(ownerZombie) end
-
----@return ZombieOnGroundState
-function ZombieOnGroundState.new() end
 
 ---@type Class<ZombieOnGroundState>
 ZombieOnGroundState.class = nil

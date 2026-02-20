@@ -7,9 +7,9 @@ local __IAnimatable = {}
 ---@return string
 function __IAnimatable:GetAnimSetName() end
 
----@param in_stateName string
+---@param stateName string
 ---@return boolean
-function __IAnimatable:canTransitionToState(in_stateName) end
+function __IAnimatable:canTransitionToState(stateName) end
 
 ---@return ActionContext
 function __IAnimatable:getActionContext() end

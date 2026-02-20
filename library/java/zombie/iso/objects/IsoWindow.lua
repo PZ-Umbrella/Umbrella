@@ -201,15 +201,6 @@ function __IsoWindow:removeSheet(chr) end
 ---@return boolean
 function __IsoWindow:removeSheetRope(player) end
 
----@param x number
----@param y number
----@param z number
----@param col ColorInfo
----@param bDoAttached boolean
----@param bWallLightingPass boolean
----@param shader Shader
-function __IsoWindow:render(x, y, z, col, bDoAttached, bWallLightingPass, shader) end
-
 function __IsoWindow:reset() end
 
 ---@param output ByteBuffer

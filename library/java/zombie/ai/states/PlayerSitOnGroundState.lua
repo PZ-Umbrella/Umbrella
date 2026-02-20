@@ -19,16 +19,18 @@ function __PlayerSitOnGroundState:execute(owner) end
 function __PlayerSitOnGroundState:exit(owner) end
 
 ---@return boolean
-function __PlayerSitOnGroundState:isSyncInIdle() end
+function __PlayerSitOnGroundState:isProcessedOnEnter() end
 
 ---@return boolean
-function __PlayerSitOnGroundState:isSyncOnEnter() end
+function __PlayerSitOnGroundState:isProcessedOnExit() end
 
----@return boolean
-function __PlayerSitOnGroundState:isSyncOnExit() end
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __PlayerSitOnGroundState:processOnEnter(owner, delegate) end
 
----@return boolean
-function __PlayerSitOnGroundState:isSyncOnSquare() end
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __PlayerSitOnGroundState:processOnExit(owner, delegate) end
 
 ---@param owner IsoGameCharacter
 ---@param stage State.Stage
@@ -36,11 +38,20 @@ function __PlayerSitOnGroundState:setParams(owner, stage) end
 
 PlayerSitOnGroundState = {}
 
----@return PlayerSitOnGroundState
-function PlayerSitOnGroundState.instance() end
+---@type State.Param<integer>
+PlayerSitOnGroundState.CHANGE_ANIM = nil
+
+---@type State.Param<integer>
+PlayerSitOnGroundState.CHECK_FIRE = nil
+
+---@type State.Param<boolean>
+PlayerSitOnGroundState.FIRE = nil
+
+---@type State.Param<string>
+PlayerSitOnGroundState.SITGROUNDANIM = nil
 
 ---@return PlayerSitOnGroundState
-function PlayerSitOnGroundState.new() end
+function PlayerSitOnGroundState.instance() end
 
 ---@type Class<PlayerSitOnGroundState>
 PlayerSitOnGroundState.class = nil

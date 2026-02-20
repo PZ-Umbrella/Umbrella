@@ -105,6 +105,9 @@ Drainable.COMPOST_BAG = nil
 Drainable.CORRECTION_FLUID = nil
 
 ---@type ItemKey
+Drainable.DENTAL_FLOSS = nil
+
+---@type ItemKey
 Drainable.DIRTBAG = nil
 
 ---@type ItemKey

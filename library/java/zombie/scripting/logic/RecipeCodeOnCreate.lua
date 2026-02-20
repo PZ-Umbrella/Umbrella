@@ -47,6 +47,10 @@ function RecipeCodeOnCreate.cutSmallAnimal(data, character) end
 
 ---@param data CraftRecipeData
 ---@param character IsoGameCharacter
+function RecipeCodeOnCreate.dismantleElectronics(data, character) end
+
+---@param data CraftRecipeData
+---@param character IsoGameCharacter
 function RecipeCodeOnCreate.dismantleFishingNet(data, character) end
 
 ---@param data CraftRecipeData
@@ -56,18 +60,6 @@ function RecipeCodeOnCreate.dismantleFlashlight(data, character) end
 ---@param data CraftRecipeData
 ---@param character IsoGameCharacter
 function RecipeCodeOnCreate.dismantleMiscElectronics(data, character) end
-
----@param data CraftRecipeData
----@param character IsoGameCharacter
-function RecipeCodeOnCreate.dismantleRadio(data, character) end
-
----@param data CraftRecipeData
----@param character IsoGameCharacter
-function RecipeCodeOnCreate.dismantleRadioTV(data, character) end
-
----@param data CraftRecipeData
----@param character IsoGameCharacter
-function RecipeCodeOnCreate.dismantleRadioTwoWay(data, character) end
 
 ---@param data CraftRecipeData
 ---@param character IsoGameCharacter

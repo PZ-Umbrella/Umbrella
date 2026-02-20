@@ -1011,6 +1011,9 @@ ItemTag.RESPIRATOR_FILTER = nil
 ItemTag.RESPIRATOR_NO_FILTER = nil
 
 ---@type ItemTag
+ItemTag.REUSABLE_BANDAGE = nil
+
+---@type ItemTag
 ItemTag.RICE_RECIPE = nil
 
 ---@type ItemTag

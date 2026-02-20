@@ -13,8 +13,6 @@ function __FluidFilterScript:LoadAnonymousFromBlock(block) end
 ---@param fluidName string
 function __FluidFilterScript:LoadAnonymousSingleFluid(fluidName) end
 
-function __FluidFilterScript:OnLoadedAfterLua() end
-
 function __FluidFilterScript:OnPostWorldDictionaryInit() end
 
 ---@param loadMode ScriptLoadMode

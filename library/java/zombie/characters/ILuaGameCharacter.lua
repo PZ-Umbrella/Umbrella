@@ -3,7 +3,7 @@
 ---(Not exposed)
 ---ILuaGameCharacter
 --- Provides the functions expected by LUA when dealing with objects of this type.
----@class ILuaGameCharacter: ILuaIsoObject, ILuaVariableSource, ILuaGameCharacterAttachedItems, ILuaGameCharacterDamage, ILuaGameCharacterClothing, ILuaGameCharacterHealth
+---@class ILuaGameCharacter: ILuaIsoObject, ILuaVariableSource, ILuaGameCharacterAttachedItems, ILuaGameCharacterDamage, ILuaGameCharacterClothing, ILuaGameCharacterHealth, IStateCharacter
 local __ILuaGameCharacter = {}
 
 function __ILuaGameCharacter:Callout() end
@@ -95,9 +95,6 @@ function __ILuaGameCharacter:canClimbDownSheetRopeInCurrentSquare() end
 ---@return boolean
 function __ILuaGameCharacter:canClimbSheetRope(sq) end
 
----@param state State
-function __ILuaGameCharacter:changeState(state) end
-
 function __ILuaGameCharacter:clearKnownMediaLines() end
 
 function __ILuaGameCharacter:climbDownSheetRope() end
@@ -152,9 +149,6 @@ function __ILuaGameCharacter:getCharacterActions() end
 
 ---@return CharacterTraits
 function __ILuaGameCharacter:getCharacterTraits() end
-
----@return State
-function __ILuaGameCharacter:getCurrentState() end
 
 ---@return AnimatorDebugMonitor
 function __ILuaGameCharacter:getDebugMonitor() end
@@ -303,6 +297,9 @@ function __ILuaGameCharacter:isAiming() end
 function __ILuaGameCharacter:isAnimalCheat() end
 
 ---@return boolean
+function __ILuaGameCharacter:isAnimalExtraValuesCheat() end
+
+---@return boolean
 function __ILuaGameCharacter:isAsleep() end
 
 ---@param item InventoryItem
@@ -311,10 +308,6 @@ function __ILuaGameCharacter:isAttachedItem(item) end
 
 ---@return boolean
 function __ILuaGameCharacter:isBuildCheat() end
-
----@param state State
----@return boolean
-function __ILuaGameCharacter:isCurrentState(state) end
 
 ---@return boolean
 function __ILuaGameCharacter:isDriving() end
@@ -487,6 +480,9 @@ function __ILuaGameCharacter:setAlreadyReadPages(fullType, pages) end
 
 ---@param arg0 boolean
 function __ILuaGameCharacter:setAnimalCheat(arg0) end
+
+---@param arg0 boolean
+function __ILuaGameCharacter:setAnimalExtraValuesCheat(arg0) end
 
 ---@param Asleep boolean
 function __ILuaGameCharacter:setAsleep(Asleep) end

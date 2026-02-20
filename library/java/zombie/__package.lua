@@ -74,6 +74,9 @@
 ---@class SoundManager.Music
 
 ---(Not exposed)
+---@class UpdateSchedulerSimulationLevel
+
+---(Not exposed)
 ---@class WorldSoundManager.ResultBiggestSound
 
 ---(Not exposed)

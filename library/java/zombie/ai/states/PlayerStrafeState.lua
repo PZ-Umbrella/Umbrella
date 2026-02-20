@@ -13,22 +13,21 @@ function __PlayerStrafeState:animEvent(owner, layer, track, event) end
 function __PlayerStrafeState:enter(owner) end
 
 ---@param owner IsoGameCharacter
-function __PlayerStrafeState:execute(owner) end
-
----@param owner IsoGameCharacter
 function __PlayerStrafeState:exit(owner) end
 
 ---@return boolean
-function __PlayerStrafeState:isSyncInIdle() end
+function __PlayerStrafeState:isProcessedOnEnter() end
 
 ---@return boolean
-function __PlayerStrafeState:isSyncOnEnter() end
+function __PlayerStrafeState:isProcessedOnExit() end
 
----@return boolean
-function __PlayerStrafeState:isSyncOnExit() end
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __PlayerStrafeState:processOnEnter(owner, delegate) end
 
----@return boolean
-function __PlayerStrafeState:isSyncOnSquare() end
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __PlayerStrafeState:processOnExit(owner, delegate) end
 
 ---@param owner IsoGameCharacter
 ---@param stage State.Stage
@@ -36,11 +35,14 @@ function __PlayerStrafeState:setParams(owner, stage) end
 
 PlayerStrafeState = {}
 
----@return PlayerStrafeState
-function PlayerStrafeState.instance() end
+---@type State.Param<boolean>
+PlayerStrafeState.AIM = nil
+
+---@type State.Param<number>
+PlayerStrafeState.STRAFE_SPEED = nil
 
 ---@return PlayerStrafeState
-function PlayerStrafeState.new() end
+function PlayerStrafeState.instance() end
 
 ---@type Class<PlayerStrafeState>
 PlayerStrafeState.class = nil

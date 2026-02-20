@@ -6,12 +6,6 @@ local __IsoWorldInventoryObject = {}
 ---@param tooltipUI ObjectTooltip
 function __IsoWorldInventoryObject:DoTooltip(tooltipUI) end
 
----@return boolean
-function __IsoWorldInventoryObject:HasTooltip() end
-
----@return boolean
-function __IsoWorldInventoryObject:Serialize() end
-
 ---@param fluidType FluidType
 ---@param amount number
 function __IsoWorldInventoryObject:addFluid(fluidType, amount) end
@@ -102,14 +96,9 @@ function __IsoWorldInventoryObject:isTaintedWater() end
 ---@param IS_DEBUG_SAVE boolean
 function __IsoWorldInventoryObject:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param bb ByteBuffer
 function __IsoWorldInventoryObject:loadChange(change, bb) end
-
----@param x integer
----@param y integer
----@return boolean
-function __IsoWorldInventoryObject:onMouseLeftClick(x, y) end
 
 function __IsoWorldInventoryObject:removeFromSquare() end
 
@@ -134,7 +123,7 @@ function __IsoWorldInventoryObject:renderObjectPicker(x, y, z, lightInfo) end
 ---@param IS_DEBUG_SAVE boolean
 function __IsoWorldInventoryObject:save(output, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param tbl table
 ---@param bb ByteBuffer
 function __IsoWorldInventoryObject:saveChange(change, tbl, bb) end
@@ -168,6 +157,8 @@ function __IsoWorldInventoryObject:softReset() end
 
 ---@param newItem InventoryItem
 function __IsoWorldInventoryObject:swapItem(newItem) end
+
+function __IsoWorldInventoryObject:syncExtendedPlacement() end
 
 ---@param bRemote boolean
 ---@param val integer

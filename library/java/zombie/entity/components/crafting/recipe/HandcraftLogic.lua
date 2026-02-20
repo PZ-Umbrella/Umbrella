@@ -15,6 +15,11 @@ function __HandcraftLogic:checkValidRecipeSelected() end
 ---@param player IsoPlayer
 function __HandcraftLogic:filterRecipeList(filter, categoryFilter, force, player) end
 
+---@param player IsoGameCharacter
+---@param radius integer
+---@return IsoObject
+function __HandcraftLogic:findCraftSurface(player, radius) end
+
 ---@return ArrayList<InventoryItem>
 function __HandcraftLogic:getAllItems() end
 

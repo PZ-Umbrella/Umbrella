@@ -4,7 +4,7 @@
 local __SyncPlayerStatsPacket = {}
 
 ---@param b ByteBuffer
----@param connection UdpConnection
+---@param connection IConnection
 function __SyncPlayerStatsPacket:parse(b, connection) end
 
 ---@param values kahlua.Array<any>

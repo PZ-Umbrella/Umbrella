@@ -64,9 +64,9 @@ function __SeatingManager:getAnimationTrackFraction(character, animNodeName) end
 
 ---@param boneAxis BoneAxis
 ---@param bonePos Vector3f
----@param out_deferredPos Vector2
+---@param deferredPos Vector2
 ---@return Vector2
-function __SeatingManager:getDeferredMovement(boneAxis, bonePos, out_deferredPos) end
+function __SeatingManager:getDeferredMovement(boneAxis, bonePos, deferredPos) end
 
 ---@param modID string
 ---@param tilesetName string

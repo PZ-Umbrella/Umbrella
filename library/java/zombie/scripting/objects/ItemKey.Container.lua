@@ -15,9 +15,6 @@ Container.AMMO_STRAP_BROWN_SHELLS = nil
 Container.AMMO_STRAP_BULLETS = nil
 
 ---@type ItemKey
-Container.AMMO_STRAP_BULLETS_223 = nil
-
----@type ItemKey
 Container.AMMO_STRAP_BULLETS_308 = nil
 
 ---@type ItemKey
@@ -43,9 +40,6 @@ Container.BAG_ALICE_BELT_SUS_GREEN = nil
 
 ---@type ItemKey
 Container.BAG_AMMO_BOX = nil
-
----@type ItemKey
-Container.BAG_AMMO_BOX_223 = nil
 
 ---@type ItemKey
 Container.BAG_AMMO_BOX_308 = nil
@@ -256,9 +250,6 @@ Container.BAG_PROTECTIVE_CASE_BULKY = nil
 
 ---@type ItemKey
 Container.BAG_PROTECTIVE_CASE_BULKY_AMMO = nil
-
----@type ItemKey
-Container.BAG_PROTECTIVE_CASE_BULKY_AMMO_223 = nil
 
 ---@type ItemKey
 Container.BAG_PROTECTIVE_CASE_BULKY_AMMO_308 = nil

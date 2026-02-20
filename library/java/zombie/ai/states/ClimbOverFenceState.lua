@@ -34,18 +34,6 @@ function __ClimbOverFenceState:isIgnoreCollide(owner, fromX, fromY, fromZ, toX, 
 ---@return boolean
 function __ClimbOverFenceState:isProcessedOnEnter() end
 
----@return boolean
-function __ClimbOverFenceState:isSyncInIdle() end
-
----@return boolean
-function __ClimbOverFenceState:isSyncOnEnter() end
-
----@return boolean
-function __ClimbOverFenceState:isSyncOnExit() end
-
----@return boolean
-function __ClimbOverFenceState:isSyncOnSquare() end
-
 ---@param owner IsoGameCharacter
 ---@param delegate Map<any, any>
 function __ClimbOverFenceState:processOnEnter(owner, delegate) end
@@ -56,8 +44,50 @@ function __ClimbOverFenceState:setParams(owner, dir) end
 
 ClimbOverFenceState = {}
 
+---@type State.Param<boolean>
+ClimbOverFenceState.COLLIDABLE = nil
+
 ---@type integer
 ClimbOverFenceState.COLLIDE_WITH_WALL = nil
+
+---@type State.Param<boolean>
+ClimbOverFenceState.COUNTER = nil
+
+---@type State.Param<IsoDirections>
+ClimbOverFenceState.DIR = nil
+
+---@type State.Param<integer>
+ClimbOverFenceState.END_X = nil
+
+---@type State.Param<integer>
+ClimbOverFenceState.END_Y = nil
+
+---@type State.Param<string>
+ClimbOverFenceState.OUTCOME = nil
+
+---@type State.Param<State>
+ClimbOverFenceState.PREV_STATE = nil
+
+---@type State.Param<boolean>
+ClimbOverFenceState.RUN = nil
+
+---@type State.Param<boolean>
+ClimbOverFenceState.SCRATCH = nil
+
+---@type State.Param<boolean>
+ClimbOverFenceState.SHEET_ROPE = nil
+
+---@type State.Param<boolean>
+ClimbOverFenceState.SOLID_FLOOR = nil
+
+---@type State.Param<boolean>
+ClimbOverFenceState.SPRINT = nil
+
+---@type State.Param<integer>
+ClimbOverFenceState.START_X = nil
+
+---@type State.Param<integer>
+ClimbOverFenceState.START_Y = nil
 
 ---@type integer
 ClimbOverFenceState.TRIP_METAL_BARS = nil
@@ -70,6 +100,12 @@ ClimbOverFenceState.TRIP_WINDOW = nil
 
 ---@type integer
 ClimbOverFenceState.TRIP_ZOMBIE = nil
+
+---@type State.Param<integer>
+ClimbOverFenceState.Z = nil
+
+---@type State.Param<boolean>
+ClimbOverFenceState.ZOMBIE_ON_FLOOR = nil
 
 ---@return ClimbOverFenceState
 function ClimbOverFenceState.instance() end

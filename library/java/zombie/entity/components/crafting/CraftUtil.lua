@@ -39,9 +39,9 @@ function CraftUtil.canPerformRecipe(recipe, craftTestData, inputs, outputs) end
 ---@param craftTestData CraftRecipeData
 ---@param inputs List<Resource>
 ---@param outputs List<Resource>
----@param _m CraftRecipeMonitor
+---@param monitor CraftRecipeMonitor
 ---@return boolean
-function CraftUtil.canPerformRecipe(recipe, craftTestData, inputs, outputs, _m) end
+function CraftUtil.canPerformRecipe(recipe, craftTestData, inputs, outputs, monitor) end
 
 ---@param resource Resource
 ---@param item InventoryItem
@@ -92,9 +92,9 @@ function CraftUtil.canStart(craftTestData, recipes, inputs, outputs) end
 ---@param recipes List<CraftRecipe>
 ---@param inputs List<Resource>
 ---@param outputs List<Resource>
----@param _m CraftRecipeMonitor
+---@param monitor CraftRecipeMonitor
 ---@return boolean
-function CraftUtil.canStart(craftTestData, recipes, inputs, outputs, _m) end
+function CraftUtil.canStart(craftTestData, recipes, inputs, outputs, monitor) end
 
 ---@param player IsoPlayer
 ---@param craftTestData CraftRecipeData
@@ -156,9 +156,9 @@ function CraftUtil.getPossibleRecipe(craftTestData, recipes, inputs, outputs) en
 ---@param recipes List<CraftRecipe>
 ---@param inputs List<Resource>
 ---@param outputs List<Resource>
----@param _m CraftRecipeMonitor
+---@param monitor CraftRecipeMonitor
 ---@return CraftRecipe
-function CraftUtil.getPossibleRecipe(craftTestData, recipes, inputs, outputs, _m) end
+function CraftUtil.getPossibleRecipe(craftTestData, recipes, inputs, outputs, monitor) end
 
 ---@return CraftUtil
 function CraftUtil.new() end

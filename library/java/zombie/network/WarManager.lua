@@ -48,11 +48,11 @@ function WarManager.sendWarToPlayer(player) end
 
 function WarManager.update() end
 
----@param onlineID integer
+---@param onlineId integer
 ---@param attacker string
 ---@param state WarManager.State
 ---@param timestamp integer
-function WarManager.updateWar(onlineID, attacker, state, timestamp) end
+function WarManager.updateWar(onlineId, attacker, state, timestamp) end
 
 ---@type Class<WarManager>
 WarManager.class = nil

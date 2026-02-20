@@ -3,9 +3,6 @@
 ---@class IsoFire: IsoObject
 local __IsoFire = {}
 
----@return boolean
-function __IsoFire:HasTooltip() end
-
 function __IsoFire:Spread() end
 
 ---@param obj IsoMovingObject
@@ -52,7 +49,7 @@ function __IsoFire:isPermanent() end
 ---@param IS_DEBUG_SAVE boolean
 function __IsoFire:load(b, WorldVersion, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param bb ByteBuffer
 function __IsoFire:loadChange(change, bb) end
 
@@ -77,7 +74,7 @@ function __IsoFire:renderAnimatedAttachments(x, y, z, col) end
 ---@param IS_DEBUG_SAVE boolean
 function __IsoFire:save(output, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param tbl table
 ---@param bb ByteBuffer
 function __IsoFire:saveChange(change, tbl, bb) end
@@ -97,6 +94,9 @@ function __IsoFire:setLightRadius(radius) end
 function __IsoFire:setSpreadDelay(SpreadDelay) end
 
 function __IsoFire:update() end
+
+---@param timer number
+function __IsoFire:updateFromTimer(timer) end
 
 IsoFire = {}
 

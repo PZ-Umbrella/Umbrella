@@ -158,6 +158,18 @@ function __FluidContainer:isPoisonous() end
 
 ---@param fluid Fluid
 ---@return boolean
+function __FluidContainer:isPrimaryFluid(fluid) end
+
+---@param fluidType FluidType
+---@return boolean
+function __FluidContainer:isPrimaryFluidType(fluidType) end
+
+---@param fluidType string
+---@return boolean
+function __FluidContainer:isPrimaryFluidType(fluidType) end
+
+---@param fluid Fluid
+---@return boolean
 function __FluidContainer:isPureFluid(fluid) end
 
 ---@return boolean
@@ -169,9 +181,12 @@ function __FluidContainer:isTainted() end
 ---@return boolean
 function __FluidContainer:isTaintedStatusKnown() end
 
+---@return boolean
+function __FluidContainer:isWaterSource() end
+
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __FluidContainer:load(input, WorldVersion) end
+---@param worldVersion integer
+function __FluidContainer:load(input, worldVersion) end
 
 function __FluidContainer:removeFluid() end
 

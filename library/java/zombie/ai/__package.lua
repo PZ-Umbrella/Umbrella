@@ -7,6 +7,9 @@
 ---@class KnownBlockedEdges
 
 ---(Not exposed)
+---@class State.Param<T>
+
+---(Not exposed)
 ---@class State.Stage
 
 ---(Not exposed)

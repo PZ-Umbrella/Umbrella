@@ -104,6 +104,37 @@ end
 ---@param z integer
 ---@param radius integer
 ---@param volume integer
+---@param zombieIgnoreDist number
+---@param stressMod number
+---@param sourceIsZombie boolean
+---@param doSend boolean
+---@param remote boolean
+---@param repeating boolean
+---@param flags integer
+---@return WorldSoundManager.WorldSound
+function __WorldSoundManager:addSound(
+	source,
+	x,
+	y,
+	z,
+	radius,
+	volume,
+	zombieIgnoreDist,
+	stressMod,
+	sourceIsZombie,
+	doSend,
+	remote,
+	repeating,
+	flags
+)
+end
+
+---@param source any
+---@param x integer
+---@param y integer
+---@param z integer
+---@param radius integer
+---@param volume integer
 ---@param stressHumans boolean
 ---@param zombieIgnoreDist number
 ---@param stressMod number
@@ -141,6 +172,16 @@ function __WorldSoundManager:addSoundRepeating(source, x, y, z, radius, volume, 
 ---@param StressHumans boolean
 ---@return WorldSoundManager.WorldSound
 function __WorldSoundManager:addSoundRepeating(source, x, y, z, radius, volume, StressHumans) end
+
+---@param source any
+---@param x integer
+---@param y integer
+---@param z integer
+---@param radius integer
+---@param volume integer
+---@param flags integer
+---@return WorldSoundManager.WorldSound
+function __WorldSoundManager:addSoundRepeating(source, x, y, z, radius, volume, flags) end
 
 ---@param x integer
 ---@param y integer

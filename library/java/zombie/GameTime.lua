@@ -149,9 +149,9 @@ function __GameTime:getMultipliedSecondsSinceLastUpdate() end
 ---@return number # the Multiplier
 function __GameTime:getMultiplier() end
 
----@param in_timeDelta number
+---@param timeDelta number
 ---@return number
-function __GameTime:getMultiplierFromTimeDelta(in_timeDelta) end
+function __GameTime:getMultiplierFromTimeDelta(timeDelta) end
 
 ---@deprecated
 ---@return number # the NightTint
@@ -211,9 +211,9 @@ function __GameTime:getThunderStorm() end
 ---@return number
 function __GameTime:getTimeDelta() end
 
----@param in_multiplier number
+---@param multiplier number
 ---@return number
-function __GameTime:getTimeDeltaFromMultiplier(in_multiplier) end
+function __GameTime:getTimeDeltaFromMultiplier(multiplier) end
 
 ---@return number # the TimeOfDay
 function __GameTime:getTimeOfDay() end

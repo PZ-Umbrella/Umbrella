@@ -113,8 +113,8 @@ function __Color:hashCode() end
 function __Color:interp(to, delta, dest) end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __Color:load(input, WorldVersion) end
+---@param worldVersion integer
+function __Color:load(input, worldVersion) end
 
 ---@param input ByteBuffer
 function __Color:loadCompact(input) end

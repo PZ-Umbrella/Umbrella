@@ -47,12 +47,12 @@ function __ResourceEnergy:isEmpty() end
 function __ResourceEnergy:isFull() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __ResourceEnergy:load(input, WorldVersion) end
+---@param worldVersion integer
+function __ResourceEnergy:load(input, worldVersion) end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __ResourceEnergy:loadSync(input, WorldVersion) end
+---@param worldVersion integer
+function __ResourceEnergy:loadSync(input, worldVersion) end
 
 ---@param output ByteBuffer
 function __ResourceEnergy:save(output) end

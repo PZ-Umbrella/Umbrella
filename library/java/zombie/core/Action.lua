@@ -7,12 +7,12 @@ local __Action = {}
 ---@return number
 function __Action:getProgress() end
 
----@param connection UdpConnection
+---@param connection IConnection
 ---@return boolean
 function __Action:isConsistent(connection) end
 
 ---@param b ByteBuffer
----@param connection UdpConnection
+---@param connection IConnection
 function __Action:parse(b, connection) end
 
 ---@param player IsoPlayer

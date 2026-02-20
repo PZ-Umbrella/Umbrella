@@ -62,18 +62,6 @@ function __ClimbThroughWindowState:isPastOuterEdgeOfSquare(owner, x, y, moveDir)
 ---@return boolean
 function __ClimbThroughWindowState:isProcessedOnEnter() end
 
----@return boolean
-function __ClimbThroughWindowState:isSyncInIdle() end
-
----@return boolean
-function __ClimbThroughWindowState:isSyncOnEnter() end
-
----@return boolean
-function __ClimbThroughWindowState:isSyncOnExit() end
-
----@return boolean
-function __ClimbThroughWindowState:isSyncOnSquare() end
-
 ---@param owner IsoGameCharacter
 ---@return boolean
 function __ClimbThroughWindowState:isWindowClosing(owner) end
@@ -92,13 +80,28 @@ function __ClimbThroughWindowState:setParams(owner, stage) end
 
 ClimbThroughWindowState = {}
 
----@param in_climbingCharacter IsoGameCharacter
----@param in_windowObject IsoObject
----@param out_climbParams ClimbThroughWindowPositioningParams
+---@type State.Param<string>
+ClimbThroughWindowState.OUTCOME = nil
+
+---@type State.Param<ClimbThroughWindowPositioningParams>
+ClimbThroughWindowState.PARAMS = nil
+
+---@type State.Param<State>
+ClimbThroughWindowState.PREV_STATE = nil
+
+---@type State.Param<boolean>
+ClimbThroughWindowState.SCRATCHED = nil
+
+---@type State.Param<boolean>
+ClimbThroughWindowState.ZOMBIE_ON_FLOOR = nil
+
+---@param climbingCharacter IsoGameCharacter
+---@param windowObject IsoObject
+---@param climbParams ClimbThroughWindowPositioningParams
 function ClimbThroughWindowState.getClimbThroughWindowPositioningParams(
-	in_climbingCharacter,
-	in_windowObject,
-	out_climbParams
+	climbingCharacter,
+	windowObject,
+	climbParams
 )
 end
 
@@ -118,9 +121,9 @@ function ClimbThroughWindowState.isFreeSquare(square) end
 ---@return boolean
 function ClimbThroughWindowState.isObstacleSquare(square) end
 
----@param in_character IsoGameCharacter
----@param in_positioningParams ClimbThroughWindowPositioningParams
-function ClimbThroughWindowState.slideCharacterToWindowOpening(in_character, in_positioningParams) end
+---@param character IsoGameCharacter
+---@param positioningParams ClimbThroughWindowPositioningParams
+function ClimbThroughWindowState.slideCharacterToWindowOpening(character, positioningParams) end
 
 ---@param owner IsoGameCharacter
 ---@param x number
@@ -129,9 +132,6 @@ function ClimbThroughWindowState.slideX(owner, x) end
 ---@param owner IsoGameCharacter
 ---@param y number
 function ClimbThroughWindowState.slideY(owner, y) end
-
----@return ClimbThroughWindowState
-function ClimbThroughWindowState.new() end
 
 ---@type Class<ClimbThroughWindowState>
 ClimbThroughWindowState.class = nil

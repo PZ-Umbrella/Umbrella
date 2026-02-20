@@ -85,9 +85,9 @@ function __IsoMovingObject:getCurrentSquare() end
 ---@return Zone
 function __IsoMovingObject:getCurrentZone() end
 
----@param in_separatorStr string
+---@param separatorStr string
 ---@return string
-function __IsoMovingObject:getDescription(in_separatorStr) end
+function __IsoMovingObject:getDescription(separatorStr) end
 
 ---@param other IsoMovingObject
 ---@return number
@@ -162,6 +162,9 @@ function __IsoMovingObject:getLimpulsey() end
 ---@return IWorldRegion
 function __IsoMovingObject:getMasterRegion() end
 
+---@return UpdateSchedulerSimulationLevel
+function __IsoMovingObject:getMinimumSimulationLevel() end
+
 ---@return Vector2 # the movementLastFrame
 function __IsoMovingObject:getMovementLastFrame() end
 
@@ -171,8 +174,14 @@ function __IsoMovingObject:getMovingSquare() end
 ---@return number
 function __IsoMovingObject:getNextX() end
 
+---@return integer
+function __IsoMovingObject:getNextXi() end
+
 ---@return number
 function __IsoMovingObject:getNextY() end
+
+---@return integer
+function __IsoMovingObject:getNextYi() end
 
 ---@return boolean # whether the object should take damage or not.
 function __IsoMovingObject:getNoDamage() end
@@ -208,8 +217,14 @@ function __IsoMovingObject:getScriptModule() end
 ---@return number
 function __IsoMovingObject:getScriptNextX() end
 
+---@return integer
+function __IsoMovingObject:getScriptNextXi() end
+
 ---@return number
 function __IsoMovingObject:getScriptNextY() end
+
+---@return integer
+function __IsoMovingObject:getScriptNextYi() end
 
 ---@return number # the scriptnx
 function __IsoMovingObject:getScriptnx() end
@@ -344,8 +359,6 @@ function __IsoMovingObject:load(input, WorldVersion, IS_DEBUG_SAVE) end
 ---@param lx integer
 ---@param ly integer
 function __IsoMovingObject:onMouseRightClick(lx, ly) end
-
-function __IsoMovingObject:onMouseRightReleased() end
 
 function __IsoMovingObject:postupdate() end
 
@@ -497,8 +510,8 @@ function __IsoMovingObject:setPathFindIndex(PathFindIndex) end
 ---@param y number
 function __IsoMovingObject:setPosition(x, y) end
 
----@param in_pos Vector2
-function __IsoMovingObject:setPosition(in_pos) end
+---@param pos Vector2
+function __IsoMovingObject:setPosition(pos) end
 
 ---@param x number
 ---@param y number
@@ -561,6 +574,11 @@ function __IsoMovingObject:setbAltCollide(bAltCollide) end
 ---@param square IsoGridSquare
 ---@return boolean
 function __IsoMovingObject:shouldIgnoreCollisionWithSquare(square) end
+
+---@param collNewPosX number
+---@param collNewPosY number
+---@param instant boolean
+function __IsoMovingObject:slideAwayToCollisionPos(collNewPosX, collNewPosY, instant) end
 
 ---@param other IsoMovingObject
 ---@param bForced boolean

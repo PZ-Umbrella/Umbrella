@@ -18,7 +18,8 @@ function __IsoFeedingTrough:checkIsoRegion() end
 
 function __IsoFeedingTrough:checkOverlayAfterAnimalEat() end
 
-function __IsoFeedingTrough:checkOverlayFull() end
+---@param transmit boolean
+function __IsoFeedingTrough:checkOverlayFull(transmit) end
 
 function __IsoFeedingTrough:checkWaterFromRain() end
 
@@ -74,9 +75,9 @@ function __IsoFeedingTrough:isEmptyFeed() end
 function __IsoFeedingTrough:isItemAllowedInContainer(container, item) end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
----@param IS_DEBUG_SAVE boolean
-function __IsoFeedingTrough:load(input, WorldVersion, IS_DEBUG_SAVE) end
+---@param worldVersion integer
+---@param isDebugSave boolean
+function __IsoFeedingTrough:load(input, worldVersion, isDebugSave) end
 
 function __IsoFeedingTrough:onFluidContainerUpdate() end
 
@@ -92,8 +93,8 @@ function __IsoFeedingTrough:removeFromWorld() end
 function __IsoFeedingTrough:removeWater(water) end
 
 ---@param output ByteBuffer
----@param IS_DEBUG_SAVE boolean
-function __IsoFeedingTrough:save(output, IS_DEBUG_SAVE) end
+---@param isDebugSave boolean
+function __IsoFeedingTrough:save(output, isDebugSave) end
 
 ---@param container ItemContainer
 function __IsoFeedingTrough:setContainer(container) end

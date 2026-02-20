@@ -44,8 +44,8 @@ function __WorldGenUtils:getFiles(basePath) end
 function __WorldGenUtils:getFilesNum() end
 
 ---@param clazzStr string
----@param field_ string
-function __WorldGenUtils:getTimerKept(clazzStr, field_) end
+---@param fieldName string
+function __WorldGenUtils:getTimerKept(clazzStr, fieldName) end
 
 ---@param trace StackTraceElement
 ---@return string

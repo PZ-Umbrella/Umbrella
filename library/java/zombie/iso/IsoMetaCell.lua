@@ -112,8 +112,8 @@ function __IsoMetaCell:hasChunk(i) end
 
 ---@param grid IsoMetaGrid
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __IsoMetaCell:load(grid, input, WorldVersion) end
+---@param worldVersion integer
+function __IsoMetaCell:load(grid, input, worldVersion) end
 
 ---@param room RoomDef
 function __IsoMetaCell:removeRoom(room) end

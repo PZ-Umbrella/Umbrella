@@ -21,29 +21,17 @@ function __OpenWindowState:exit(owner) end
 ---@return boolean # TRUE if this state handles the "Cancel Action" key or the B controller button.
 function __OpenWindowState:isDoingActionThatCanBeCancelled() end
 
----@return boolean
-function __OpenWindowState:isSyncInIdle() end
-
----@return boolean
-function __OpenWindowState:isSyncOnEnter() end
-
----@return boolean
-function __OpenWindowState:isSyncOnExit() end
-
----@return boolean
-function __OpenWindowState:isSyncOnSquare() end
-
 ---@param owner IsoGameCharacter
 ---@param window IsoWindow
 function __OpenWindowState:setParams(owner, window) end
 
 OpenWindowState = {}
 
----@return OpenWindowState
-function OpenWindowState.instance() end
+---@type State.Param<IsoWindow>
+OpenWindowState.WINDOW = nil
 
 ---@return OpenWindowState
-function OpenWindowState.new() end
+function OpenWindowState.instance() end
 
 ---@type Class<OpenWindowState>
 OpenWindowState.class = nil

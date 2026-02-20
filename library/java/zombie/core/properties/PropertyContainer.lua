@@ -10,9 +10,13 @@ function __PropertyContainer:Clear() end
 
 function __PropertyContainer:CreateKeySet() end
 
----@param property string
+---@param type IsoPropertyType
 ---@return string
-function __PropertyContainer:get(property) end
+function __PropertyContainer:get(type) end
+
+---@param name string
+---@return string
+function __PropertyContainer:get(name) end
 
 ---@return ArrayList<IsoFlagType>
 function __PropertyContainer:getFlagsList() end
@@ -46,6 +50,10 @@ function __PropertyContainer:has(flag) end
 ---@return boolean
 function __PropertyContainer:has(flag) end
 
+---@param isoPropertyType IsoPropertyType
+---@return boolean
+function __PropertyContainer:has(isoPropertyType) end
+
 ---@param isoPropertyType string
 ---@return boolean
 function __PropertyContainer:has(isoPropertyType) end
@@ -59,19 +67,36 @@ function __PropertyContainer:isTable() end
 ---@return boolean
 function __PropertyContainer:isTableTop() end
 
----@param key string
+---@param type IsoPropertyType
 ---@param value string
 ---@return boolean
-function __PropertyContainer:propertyEquals(key, value) end
+function __PropertyContainer:propertyEquals(type, value) end
+
+---@param name string
+---@param value string
+---@return boolean
+function __PropertyContainer:propertyEquals(name, value) end
+
+---@param tilePropertyKey string
+function __PropertyContainer:set(tilePropertyKey) end
+
+---@param type IsoPropertyType
+---@param propValue string
+function __PropertyContainer:set(type, propValue) end
 
 ---@param propName string
----@param propName2 string
-function __PropertyContainer:set(propName, propName2) end
+---@param propValue string
+function __PropertyContainer:set(propName, propValue) end
 
----@param propName string
----@param propName2 string
+---@param type IsoPropertyType
+---@param propValue string
 ---@param checkIsoFlagType boolean
-function __PropertyContainer:set(propName, propName2, checkIsoFlagType) end
+function __PropertyContainer:set(type, propValue, checkIsoFlagType) end
+
+---@param propName string
+---@param propValue string
+---@param checkIsoFlagType boolean
+function __PropertyContainer:set(propName, propValue, checkIsoFlagType) end
 
 ---@param flag IsoFlagType
 function __PropertyContainer:set(flag) end

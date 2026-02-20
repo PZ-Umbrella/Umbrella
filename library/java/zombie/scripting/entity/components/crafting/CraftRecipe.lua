@@ -14,16 +14,15 @@ function __CraftRecipe:Load(name, body) end
 ---@param block ScriptParser.Block
 function __CraftRecipe:Load(name, block) end
 
-function __CraftRecipe:OnLoadedAfterLua() end
-
 function __CraftRecipe:OnPostWorldDictionaryInit() end
 
 ---@param loadMode ScriptLoadMode
 function __CraftRecipe:OnScriptsLoaded(loadMode) end
 
 ---@param inventoryItem InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function __CraftRecipe:OnTestItem(inventoryItem) end
+function __CraftRecipe:OnTestItem(inventoryItem, character) end
 
 function __CraftRecipe:PreReload() end
 
@@ -69,8 +68,9 @@ function __CraftRecipe:canResearch(chr) end
 function __CraftRecipe:canResearch(chr, blacklistKnown) end
 
 ---@param item InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function __CraftRecipe:canUseItem(item) end
+function __CraftRecipe:canUseItem(item, character) end
 
 ---@param item string
 ---@return boolean

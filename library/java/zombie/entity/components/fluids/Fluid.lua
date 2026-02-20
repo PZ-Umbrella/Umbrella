@@ -161,9 +161,9 @@ function Fluid.getAllFluidItemsDebug() end
 function Fluid.getAllFluids() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
+---@param worldVersion integer
 ---@return Fluid
-function Fluid.loadFluid(input, WorldVersion) end
+function Fluid.loadFluid(input, worldVersion) end
 
 ---@param fluid Fluid
 ---@param output ByteBuffer

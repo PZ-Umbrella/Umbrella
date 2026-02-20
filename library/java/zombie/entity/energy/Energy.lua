@@ -60,9 +60,9 @@ function Energy.Reset() end
 function Energy.getAllEnergies() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
+---@param worldVersion integer
 ---@return Energy
-function Energy.loadEnergy(input, WorldVersion) end
+function Energy.loadEnergy(input, worldVersion) end
 
 ---@param energy Energy
 ---@param output ByteBuffer

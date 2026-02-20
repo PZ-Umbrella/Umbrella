@@ -120,10 +120,10 @@ function DesignationZoneAnimal.addItemOnGround(item, sq) end
 function DesignationZoneAnimal.addNewRoof(x, y, z) end
 
 ---@param currentList ArrayList<DesignationZoneAnimal>
----@param zoneToCheck DesignationZoneAnimal
+---@param zone DesignationZoneAnimal
 ---@param previousZone DesignationZoneAnimal
 ---@return ArrayList<DesignationZoneAnimal>
-function DesignationZoneAnimal.getAllDZones(currentList, zoneToCheck, previousZone) end
+function DesignationZoneAnimal.getAllDZones(currentList, zone, previousZone) end
 
 ---@return ArrayList<DesignationZoneAnimal>
 function DesignationZoneAnimal.getAllZones() end

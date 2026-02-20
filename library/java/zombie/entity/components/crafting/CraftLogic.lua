@@ -103,6 +103,8 @@ function __CraftLogic:onUpdate(craftRecipeData) end
 ---@param craftRecipeData CraftRecipeData
 function __CraftLogic:returnConsumedItemsToResourcesOrSquare(craftRecipeData) end
 
+function __CraftLogic:sendCraftLogicSync() end
+
 ---@param player IsoPlayer
 function __CraftLogic:sendStartRequest(player) end
 

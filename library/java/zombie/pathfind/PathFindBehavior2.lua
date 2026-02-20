@@ -90,6 +90,9 @@ function __PathFindBehavior2:moveToPoint(x, y, speedMul) end
 ---@param target IsoGameCharacter
 function __PathFindBehavior2:pathToCharacter(target) end
 
+---@param targetBody IsoDeadBody
+function __PathFindBehavior2:pathToGrabCorpse(targetBody) end
+
 ---@param x integer
 ---@param y integer
 ---@param z integer

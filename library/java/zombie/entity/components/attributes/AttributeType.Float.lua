@@ -9,9 +9,6 @@ function __Float:getMax() end
 ---@return number
 function __Float:getMin() end
 
----@return AttributeValueType
-function __Float:getValueType() end
-
 ---@param value number
 ---@return number
 function __Float:validate(value) end

@@ -3,59 +3,59 @@
 ---@class IsoObject: GameEntity, Serializable, ILuaIsoObject, Thumpable, IsoRenderable
 local __IsoObject = {}
 
----@param ObjectName string
----@param AnimName string
----@param NumFrames integer
+---@param objectName string
+---@param animName string
+---@param numFrames integer
 ---@param frameIncrease number
----@param OffsetX integer
----@param OffsetY integer
----@param Looping boolean
----@param FinishHoldFrameIndex integer
----@param DeleteWhenFinished boolean
+---@param offsetX integer
+---@param offsetY integer
+---@param looping boolean
+---@param finishHoldFrameIndex integer
+---@param deleteWhenFinished boolean
 ---@param zBias number
----@param TintMod ColorInfo
+---@param tintMod ColorInfo
 ---@return IsoSpriteInstance
 function __IsoObject:AttachAnim(
-	ObjectName,
-	AnimName,
-	NumFrames,
+	objectName,
+	animName,
+	numFrames,
 	frameIncrease,
-	OffsetX,
-	OffsetY,
-	Looping,
-	FinishHoldFrameIndex,
-	DeleteWhenFinished,
+	offsetX,
+	offsetY,
+	looping,
+	finishHoldFrameIndex,
+	deleteWhenFinished,
 	zBias,
-	TintMod
+	tintMod
 )
 end
 
----@param ObjectName string
----@param AnimName string
----@param NumFrames integer
+---@param objectName string
+---@param animName string
+---@param numFrames integer
 ---@param frameIncrease number
----@param OffsetX integer
----@param OffsetY integer
----@param Looping boolean
----@param FinishHoldFrameIndex integer
----@param DeleteWhenFinished boolean
+---@param offsetX integer
+---@param offsetY integer
+---@param looping boolean
+---@param finishHoldFrameIndex integer
+---@param deleteWhenFinished boolean
 ---@param zBias number
----@param TintMod ColorInfo
----@param bRandomFrame boolean
+---@param tintMod ColorInfo
+---@param randomFrame boolean
 ---@return IsoSpriteInstance
 function __IsoObject:AttachAnim(
-	ObjectName,
-	AnimName,
-	NumFrames,
+	objectName,
+	animName,
+	numFrames,
 	frameIncrease,
-	OffsetX,
-	OffsetY,
-	Looping,
-	FinishHoldFrameIndex,
-	DeleteWhenFinished,
+	offsetX,
+	offsetY,
+	looping,
+	finishHoldFrameIndex,
+	deleteWhenFinished,
 	zBias,
-	TintMod,
-	bRandomFrame
+	tintMod,
+	randomFrame
 )
 end
 
@@ -316,11 +316,11 @@ function __IsoObject:getContainerCount() end
 function __IsoObject:getContainerIndex(container) end
 
 ---@generic T
----@param in_paramToCompare T
----@param in_isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@param inout_containerList PZArrayList<ItemContainer>
+---@param paramToCompare T
+---@param isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
+---@param containerList PZArrayList<ItemContainer>
 ---@return PZArrayList<ItemContainer>
-function __IsoObject:getContainers(in_paramToCompare, in_isValidPredicate, inout_containerList) end
+function __IsoObject:getContainers(paramToCompare, isValidPredicate, containerList) end
 
 ---@return Texture
 function __IsoObject:getCurrentFrameTex() end
@@ -503,16 +503,20 @@ function __IsoObject:getSprite() end
 function __IsoObject:getSpriteGrid() end
 
 ---@param result ArrayList<IsoObject>
+---@return ArrayList<IsoObject>
 function __IsoObject:getSpriteGridObjects(result) end
 
 ---@param result ArrayList<IsoObject>
 ---@param bAddSelf boolean
+---@return ArrayList<IsoObject>
 function __IsoObject:getSpriteGridObjects(result, bAddSelf) end
 
 ---@param result ArrayList<IsoObject>
+---@return ArrayList<IsoObject>
 function __IsoObject:getSpriteGridObjectsExcludingSelf(result) end
 
 ---@param result ArrayList<IsoObject>
+---@return ArrayList<IsoObject>
 function __IsoObject:getSpriteGridObjectsIncludingSelf(result) end
 
 ---@return SpriteModel
@@ -857,7 +861,7 @@ function __IsoObject:load(input, WorldVersion) end
 ---@param IS_DEBUG_SAVE boolean
 function __IsoObject:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param bb ByteBuffer
 function __IsoObject:loadChange(change, bb) end
 
@@ -1030,8 +1034,6 @@ end
 ---@param texdModifier Consumer<TextureDraw>
 function __IsoObject:renderWallTileOnly(dir, x, y, z, col, shader, texdModifier) end
 
-function __IsoObject:renderlast() end
-
 ---@param item InventoryItem
 ---@return InventoryItem
 function __IsoObject:replaceItem(item) end
@@ -1047,7 +1049,7 @@ function __IsoObject:save(output) end
 ---@param IS_DEBUG_SAVE boolean
 function __IsoObject:save(output, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param tbl table
 ---@param bb ByteBuffer
 function __IsoObject:saveChange(change, tbl, bb) end
@@ -1055,14 +1057,14 @@ function __IsoObject:saveChange(change, tbl, bb) end
 ---@param bb ByteBuffer
 function __IsoObject:saveState(bb) end
 
----@param change string
+---@param change IsoObjectChange
 function __IsoObject:sendObjectChange(change) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param tbl table
 function __IsoObject:sendObjectChange(change, tbl) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param args kahlua.Array<any>
 function __IsoObject:sendObjectChange(change, args) end
 

@@ -102,29 +102,6 @@ function __UIWorldMap:getWorldMap() end
 ---@return boolean
 function __UIWorldMap:isMapEditor() end
 
----@param x number
----@param y number
----@return boolean
-function __UIWorldMap:onMouseDown(x, y) end
-
----@param dx number
----@param dy number
----@return boolean
-function __UIWorldMap:onMouseMove(dx, dy) end
-
----@param x number
----@param y number
----@return boolean
-function __UIWorldMap:onMouseUp(x, y) end
-
----@param x number
----@param y number
-function __UIWorldMap:onMouseUpOutside(x, y) end
-
----@param delta number
----@return boolean
-function __UIWorldMap:onMouseWheel(delta) end
-
 function __UIWorldMap:render() end
 
 function __UIWorldMap:scaleWidthToHeight() end
@@ -134,8 +111,6 @@ function __UIWorldMap:setDoStencil(value) end
 
 ---@param b boolean
 function __UIWorldMap:setMapEditor(b) end
-
-function __UIWorldMap:update() end
 
 UIWorldMap = {}
 

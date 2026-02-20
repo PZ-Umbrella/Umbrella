@@ -32,7 +32,7 @@ function __Clothing:addPatch(chr, part, fabric) end
 ---@param tailorLvl integer
 ---@param fabricType integer
 ---@param hasHole boolean
-function __Clothing:addPatchForClient(partIdx, tailorLvl, fabricType, hasHole) end
+function __Clothing:addPatchForSync(partIdx, tailorLvl, fabricType, hasHole) end
 
 function __Clothing:addRandomBlood() end
 
@@ -123,7 +123,7 @@ function __Clothing:getCoveredParts() end
 function __Clothing:getDefForPart(part, bite, bullet) end
 
 ---@return number
-function __Clothing:getDirtyness() end
+function __Clothing:getDirtiness() end
 
 ---@return string
 function __Clothing:getFilterType() end
@@ -227,6 +227,8 @@ function __Clothing:load(input, WorldVersion) end
 ---@param holeChance integer
 function __Clothing:randomizeCondition(wetChance, dirtChance, bloodChance, holeChance) end
 
+function __Clothing:removeAllPatches() end
+
 ---@param part BloodBodyPartType
 function __Clothing:removePatch(part) end
 
@@ -259,7 +261,7 @@ function __Clothing:setCondition(Condition) end
 function __Clothing:setConditionLowerChance(conditionLowerChance) end
 
 ---@param delta number
-function __Clothing:setDirtyness(delta) end
+function __Clothing:setDirtiness(delta) end
 
 ---@param filterType string
 function __Clothing:setFilterType(filterType) end

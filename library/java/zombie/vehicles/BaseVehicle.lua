@@ -3,23 +3,12 @@
 ---@class BaseVehicle: IsoMovingObject, Thumpable, IFMODParameterUpdater, IPositional
 local __BaseVehicle = {}
 
----@param obj IsoObject
----@param mul number
-function __BaseVehicle:ApplyImpulse(obj, mul) end
-
----@param obj IsoObject
----@param mul number
-function __BaseVehicle:ApplyImpulse4Break(obj, mul) end
-
 ---@param amount number
 function __BaseVehicle:Damage(amount) end
 
 ---@param vehicle BaseVehicle
 ---@param amount number
 function __BaseVehicle:HitByVehicle(vehicle, amount) end
-
----@return boolean
-function __BaseVehicle:Serialize() end
 
 ---@param thumper IsoMovingObject
 function __BaseVehicle:Thump(thumper) end
@@ -108,9 +97,41 @@ function __BaseVehicle:addToWorld() end
 ---@param crashed boolean
 function __BaseVehicle:addToWorld(crashed) end
 
-function __BaseVehicle:applyImpulseFromHitZombies() end
+function __BaseVehicle:applyAccumulatedImpulsesFromHitObjectsToPhysics() end
 
-function __BaseVehicle:applyImpulseFromProneCharacters() end
+function __BaseVehicle:applyAllImpulsesFromProneCharacters() end
+
+---@param chr IsoDeadBody
+function __BaseVehicle:applyImpulseFromHitCorpse(chr) end
+
+---@param obj IsoObject
+---@param mul number
+function __BaseVehicle:applyImpulseFromHitObject(obj, mul) end
+
+---@param chr IsoGameCharacter
+function __BaseVehicle:applyImpulseFromHitPedestrian(chr) end
+
+---@param obj IsoObject
+---@param mul number
+function __BaseVehicle:applyImpulseFromHitPlant(obj, mul) end
+
+---@param fromX number
+---@param fromY number
+---@param fromZ number
+---@param impulseDirX number
+---@param impulseDirY number
+---@param impulseDirZ number
+---@param impulseStrength number
+function __BaseVehicle:applyImpulseGeneric(
+	fromX,
+	fromY,
+	fromZ,
+	impulseDirX,
+	impulseDirY,
+	impulseDirZ,
+	impulseStrength
+)
+end
 
 ---@return boolean
 function __BaseVehicle:areAllDoorsLocked() end
@@ -235,10 +256,6 @@ function __BaseVehicle:changeTransmission(newTransmission) end
 ---@param broken boolean
 function __BaseVehicle:cheatHotwire(hotwired, broken) end
 
----@param target IsoGameCharacter
----@return BaseVehicle.HitVars
-function __BaseVehicle:checkCollision(target) end
-
 ---@param one string
 ---@param two string
 ---@param three string
@@ -253,6 +270,10 @@ function __BaseVehicle:checkForSpecialMatchTwo(one, two, three) end
 
 ---@return boolean
 function __BaseVehicle:checkIfGoodVehicleForKey() end
+
+---@param target IsoGameCharacter
+---@return BaseVehicle.HitVars
+function __BaseVehicle:checkNetworkCollision(target) end
 
 function __BaseVehicle:checkPhysicsValidWithServer() end
 
@@ -334,9 +355,6 @@ function __BaseVehicle:damagePlayers(damage) end
 function __BaseVehicle:distanceToManhatten(x, y) end
 
 function __BaseVehicle:doBloodOverlay() end
-
----@param chr IsoObject
-function __BaseVehicle:doChrHitImpulse(chr) end
 
 function __BaseVehicle:doDamageOverlay() end
 
@@ -544,6 +562,9 @@ function __BaseVehicle:getCurrentAbsoluteSpeedKmHour() end
 ---@return InventoryItem
 function __BaseVehicle:getCurrentKey() end
 
+---@return IsoGameCharacter
+function __BaseVehicle:getCurrentOrLastKnownDriver() end
+
 ---@return number
 function __BaseVehicle:getCurrentSpeedForRegulator() end
 
@@ -555,9 +576,6 @@ function __BaseVehicle:getCurrentSteering() end
 
 ---@return number
 function __BaseVehicle:getCurrentTotalAnimalSize() end
-
----@return IsoGameCharacter
-function __BaseVehicle:getDamagedBy() end
 
 ---@return number
 function __BaseVehicle:getDebugZ() end
@@ -637,9 +655,6 @@ function __BaseVehicle:getIntersectPoint(start, _end, result) end
 ---@return integer
 function __BaseVehicle:getJoypad() end
 
----@return integer
-function __BaseVehicle:getKeyId() end
-
 ---@return boolean
 function __BaseVehicle:getKeySpawned() end
 
@@ -686,6 +701,9 @@ function __BaseVehicle:getMechanicalID() end
 
 ---@return BaseVehicle.MinMaxPosition
 function __BaseVehicle:getMinMaxPosition() end
+
+---@return UpdateSchedulerSimulationLevel
+function __BaseVehicle:getMinimumSimulationLevel() end
 
 ---@param chr IsoGameCharacter
 ---@return VehiclePart
@@ -956,17 +974,17 @@ function __BaseVehicle:getUseablePart(chr, checkDir) end
 function __BaseVehicle:getVehicleEngineRPM() end
 
 ---@generic T
----@param in_paramToCompare T
----@param in_isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
+---@param paramToCompare T
+---@param isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
 ---@return PZArrayList<ItemContainer>
-function __BaseVehicle:getVehicleItemContainers(in_paramToCompare, in_isValidPredicate) end
+function __BaseVehicle:getVehicleItemContainers(paramToCompare, isValidPredicate) end
 
 ---@generic T
----@param in_paramToCompare T
----@param in_isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@param inout_containerList PZArrayList<ItemContainer>
+---@param paramToCompare T
+---@param isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
+---@param containerList PZArrayList<ItemContainer>
 ---@return PZArrayList<ItemContainer>
-function __BaseVehicle:getVehicleItemContainers(in_paramToCompare, in_isValidPredicate, inout_containerList) end
+function __BaseVehicle:getVehicleItemContainers(paramToCompare, isValidPredicate, containerList) end
 
 ---@return BaseVehicle
 function __BaseVehicle:getVehicleTowedBy() end
@@ -1060,15 +1078,14 @@ function __BaseVehicle:hasZombieType(outfit) end
 ---@return boolean
 function __BaseVehicle:haveOneDoorUnlocked() end
 
----@param chr IsoZombie
-function __BaseVehicle:hitCharacter(chr) end
+---@param chr IsoGameCharacter
+---@param impactPosOnVehicle Vector2
+---@param pushedBack boolean
+---@return number
+function __BaseVehicle:hitCharacter(chr, impactPosOnVehicle, pushedBack) end
 
 ---@param chr IsoAnimal
 function __BaseVehicle:hitCharacter(chr) end
-
----@param character IsoGameCharacter
----@param vars BaseVehicle.HitVars
-function __BaseVehicle:hitCharacter(character, vars) end
 
 ---@param x1 number
 ---@param y1 number
@@ -1263,6 +1280,10 @@ function __BaseVehicle:isOperational() end
 ---@return boolean
 function __BaseVehicle:isPassengerUseDoor2(chr, seat) end
 
+---@param chr IsoGameCharacter
+---@return boolean
+function __BaseVehicle:isPersistentContact(chr) end
+
 ---@param x number
 ---@param y number
 ---@return boolean
@@ -1327,10 +1348,6 @@ function __BaseVehicle:leftSideFuel() end
 ---@param IS_DEBUG_SAVE boolean
 function __BaseVehicle:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
----@param change string
----@param bb ByteBuffer
-function __BaseVehicle:loadChange(change, bb) end
-
 ---@param lockTimeMs integer
 function __BaseVehicle:lockServerUpdate(lockTimeMs) end
 
@@ -1352,9 +1369,14 @@ function __BaseVehicle:onBackMoveSignalStart() end
 
 function __BaseVehicle:onBackMoveSignalStop() end
 
+---@param square IsoGridSquare
+function __BaseVehicle:onHitLandmine(square) end
+
 function __BaseVehicle:onHornStart() end
 
 function __BaseVehicle:onHornStop() end
+
+function __BaseVehicle:onJump() end
 
 function __BaseVehicle:partsClear() end
 
@@ -1472,11 +1494,6 @@ function __BaseVehicle:rightSideFuel() end
 ---@param output ByteBuffer
 ---@param IS_DEBUG_SAVE boolean
 function __BaseVehicle:save(output, IS_DEBUG_SAVE) end
-
----@param change string
----@param tbl table
----@param bb ByteBuffer
-function __BaseVehicle:saveChange(change, tbl, bb) end
 
 function __BaseVehicle:scriptReloaded() end
 
@@ -1775,15 +1792,17 @@ function __BaseVehicle:testCollisionWithObject(obj, circleRadius, out) end
 
 ---@param chr IsoGameCharacter
 ---@param doSound boolean
+---@param outImpactPosOnVehicle Vector2
 ---@return integer
-function __BaseVehicle:testCollisionWithProneCharacter(chr, doSound) end
+function __BaseVehicle:testCollisionWithProneCharacter(chr, doSound, outImpactPosOnVehicle) end
 
 ---@param chr IsoMovingObject
 ---@param angleX number
 ---@param angleY number
 ---@param doSound boolean
+---@param outImpactPosOnVehicle Vector2
 ---@return integer
-function __BaseVehicle:testCollisionWithProneCharacter(chr, angleX, angleY, doSound) end
+function __BaseVehicle:testCollisionWithProneCharacter(chr, angleX, angleY, doSound, outImpactPosOnVehicle) end
 
 ---@param obj BaseVehicle
 ---@return boolean
@@ -1875,11 +1894,11 @@ function __BaseVehicle:updateHasExtendOffsetForExit(chr) end
 ---@param chr IsoGameCharacter
 function __BaseVehicle:updateHasExtendOffsetForExitEnd(chr) end
 
+function __BaseVehicle:updateLights() end
+
 ---@param target IsoGameCharacter
 ---@return boolean
-function __BaseVehicle:updateHitByVehicle(target) end
-
-function __BaseVehicle:updateLights() end
+function __BaseVehicle:updateNetworkHitByVehicle(target) end
 
 ---Update the stats of the part depending on condition
 function __BaseVehicle:updatePartStats() end

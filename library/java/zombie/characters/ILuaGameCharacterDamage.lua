@@ -6,13 +6,16 @@
 ---@class ILuaGameCharacterDamage
 local __ILuaGameCharacterDamage = {}
 
----@param vehicle BaseVehicle
----@param speed number
----@param isHitFromBehind boolean
----@param hitDirX number
----@param hitDirY number
+---@param arg0 BaseVehicle
+---@param arg1 number
+---@param arg2 boolean
+---@param arg3 number
+---@param arg4 number
+---@param arg5 boolean
+---@param arg6 number
+---@param arg7 number
 ---@return number
-function __ILuaGameCharacterDamage:Hit(vehicle, speed, isHitFromBehind, hitDirX, hitDirY) end
+function __ILuaGameCharacterDamage:Hit(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) end
 
 ---@param weapon HandWeapon
 ---@param wielder IsoGameCharacter

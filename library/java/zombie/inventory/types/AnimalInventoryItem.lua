@@ -19,8 +19,8 @@ function __AnimalInventoryItem:getCategory() end
 function __AnimalInventoryItem:initAnimalData() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __AnimalInventoryItem:load(input, WorldVersion) end
+---@param worldVersion integer
+function __AnimalInventoryItem:load(input, worldVersion) end
 
 ---@param output ByteBuffer
 ---@param net boolean

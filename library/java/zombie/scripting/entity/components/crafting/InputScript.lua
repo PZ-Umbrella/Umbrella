@@ -19,8 +19,9 @@ function __InputScript:allowFrozenItem() end
 function __InputScript:allowRottenItem() end
 
 ---@param item InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function __InputScript:canUseItem(item) end
+function __InputScript:canUseItem(item, character) end
 
 ---@param item string
 ---@return boolean

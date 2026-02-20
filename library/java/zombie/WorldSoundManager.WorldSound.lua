@@ -34,6 +34,18 @@ function __WorldSound:init(source, x, y, z, radius, volume, stresshumans) end
 ---@return WorldSoundManager.WorldSound
 function __WorldSound:init(source, x, y, z, radius, volume, stresshumans, zombieIgnoreDist, stressMod) end
 
+---@param source any
+---@param x integer
+---@param y integer
+---@param z integer
+---@param radius integer
+---@param volume integer
+---@param zombieIgnoreDist number
+---@param stressMod number
+---@param flags integer
+---@return WorldSoundManager.WorldSound
+function __WorldSound:init(source, x, y, z, radius, volume, zombieIgnoreDist, stressMod, flags) end
+
 ---@param sourceIsZombie boolean
 ---@param x integer
 ---@param y integer

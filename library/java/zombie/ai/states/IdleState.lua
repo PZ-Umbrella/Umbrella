@@ -15,29 +15,17 @@ function __IdleState:enter(owner) end
 ---@param owner IsoGameCharacter
 function __IdleState:exit(owner) end
 
----@return boolean
-function __IdleState:isSyncInIdle() end
-
----@return boolean
-function __IdleState:isSyncOnEnter() end
-
----@return boolean
-function __IdleState:isSyncOnExit() end
-
----@return boolean
-function __IdleState:isSyncOnSquare() end
-
 ---@param owner IsoGameCharacter
 ---@param stage State.Stage
 function __IdleState:setParams(owner, stage) end
 
 IdleState = {}
 
----@return IdleState
-function IdleState.instance() end
+---@type State.Param<boolean>
+IdleState.AIM = nil
 
 ---@return IdleState
-function IdleState.new() end
+function IdleState.instance() end
 
 ---@type Class<IdleState>
 IdleState.class = nil

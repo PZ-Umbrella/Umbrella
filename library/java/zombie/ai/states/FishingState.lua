@@ -14,16 +14,18 @@ function __FishingState:execute(owner) end
 function __FishingState:exit(owner) end
 
 ---@return boolean
-function __FishingState:isSyncInIdle() end
+function __FishingState:isProcessedOnEnter() end
 
 ---@return boolean
-function __FishingState:isSyncOnEnter() end
+function __FishingState:isProcessedOnExit() end
 
----@return boolean
-function __FishingState:isSyncOnExit() end
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __FishingState:processOnEnter(owner, delegate) end
 
----@return boolean
-function __FishingState:isSyncOnSquare() end
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __FishingState:processOnExit(owner, delegate) end
 
 ---@param owner IsoGameCharacter
 ---@param stage State.Stage
@@ -31,11 +33,23 @@ function __FishingState:setParams(owner, stage) end
 
 FishingState = {}
 
----@return FishingState
-function FishingState.instance() end
+---@type State.Param<boolean>
+FishingState.AIM = nil
+
+---@type State.Param<boolean>
+FishingState.FISHING_FINISHED = nil
+
+---@type State.Param<string>
+FishingState.FISHING_STAGE = nil
+
+---@type State.Param<string>
+FishingState.FISHING_X = nil
+
+---@type State.Param<string>
+FishingState.FISHING_Y = nil
 
 ---@return FishingState
-function FishingState.new() end
+function FishingState.instance() end
 
 ---@type Class<FishingState>
 FishingState.class = nil

@@ -81,19 +81,19 @@ function __ThermalNode:isCore() end
 ThermalNode = {}
 
 ---@param this_0 Thermoregulator
----@param init_temperature number
+---@param initTemperature number
 ---@param bodyPart BodyPart
 ---@param insulationMultiplier number
 ---@return Thermoregulator.ThermalNode
-function ThermalNode.new(this_0, init_temperature, bodyPart, insulationMultiplier) end
+function ThermalNode.new(this_0, initTemperature, bodyPart, insulationMultiplier) end
 
 ---@param this_0 Thermoregulator
 ---@param isCore boolean
----@param init_temperature number
+---@param initTemperature number
 ---@param bodyPart BodyPart
 ---@param insulationMultiplier number
 ---@return Thermoregulator.ThermalNode
-function ThermalNode.new(this_0, isCore, init_temperature, bodyPart, insulationMultiplier) end
+function ThermalNode.new(this_0, isCore, initTemperature, bodyPart, insulationMultiplier) end
 
 ---@type Class<Thermoregulator.ThermalNode>
 ThermalNode.class = nil

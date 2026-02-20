@@ -363,6 +363,43 @@ function addZombiesInOutfit(
 )
 end
 
+---@param x integer
+---@param y integer
+---@param z integer
+---@param totalZombies integer
+---@param outfit string
+---@param femaleChance integer
+---@param isCrawler boolean
+---@param isFallOnFront boolean
+---@param isFakeDead boolean
+---@param isKnockedDown boolean
+---@param isInvulnerable boolean
+---@param isSitting boolean
+---@param health number
+---@param isAnimRecording boolean
+---@param heightOffset number
+---@param isRagdolling boolean
+---@return ArrayList<IsoZombie>
+function addZombiesInOutfit(
+	x,
+	y,
+	z,
+	totalZombies,
+	outfit,
+	femaleChance,
+	isCrawler,
+	isFallOnFront,
+	isFakeDead,
+	isKnockedDown,
+	isInvulnerable,
+	isSitting,
+	health,
+	isAnimRecording,
+	heightOffset,
+	isRagdolling
+)
+end
+
 ---@param x1 integer
 ---@param y1 integer
 ---@param x2 integer
@@ -1258,6 +1295,13 @@ function getLocalVarStack(c, n) end
 ---@return integer
 function getLocalVarStackIndex(c, n) end
 
+---@param timer any
+---@return integer
+function getLoosingXpTick(timer) end
+
+---@return integer
+function getLoosingXpValue() end
+
 ---@return ArrayList<string>
 function getLotDirectories() end
 
@@ -1883,8 +1927,9 @@ function isItemFresh(itemType, age) end
 ---@param src ItemContainer
 ---@param dst ItemContainer
 ---@param extra string
+---@param player IsoPlayer
 ---@return boolean
-function isItemTransactionConsistent(item, src, dst, extra) end
+function isItemTransactionConsistent(item, src, dst, extra, player) end
 
 ---@param id integer
 ---@return boolean
@@ -2384,26 +2429,8 @@ function sendAddItemToContainer(container, item) end
 ---@param items ArrayList<InventoryItem>
 function sendAddItemsToContainer(container, items) end
 
----@param player IsoPlayer
----@param perk PerkFactory.Perk
----@param amount number
----@param noMultiplier boolean
-function sendAddXp(player, perk, amount, noMultiplier) end
-
 ---@param animal IsoAnimal
 function sendAnimalGenome(animal) end
-
----@param animal IsoAnimal
----@param player IsoPlayer
----@param object IsoObject
----@param remove boolean
-function sendAttachAnimalToPlayer(animal, player, object, remove) end
-
----@param animal IsoAnimal
----@param player IsoPlayer
----@param object IsoObject
----@param remove boolean
-function sendAttachAnimalToTree(animal, player, object, remove) end
 
 ---@param character IsoGameCharacter
 ---@param location string
@@ -2782,8 +2809,8 @@ function setZoomLevels(zooms) end
 ---@param role Role
 ---@param description string
 ---@param color Color
----@param capabilities_raw table
-function setupRole(role, description, color, capabilities_raw) end
+---@param capabilitiesRaw table
+function setupRole(role, description, color, capabilitiesRaw) end
 
 function showAnimationViewer() end
 
@@ -2911,6 +2938,10 @@ function syncBodyPart(bodyPart, syncParams) end
 ---@param player IsoPlayer
 ---@param item HandWeapon
 function syncHandWeaponFields(player, item) end
+
+---@param player IsoPlayer
+---@param item InventoryItem
+function syncItemActivated(player, item) end
 
 ---@param player IsoPlayer
 ---@param item InventoryItem

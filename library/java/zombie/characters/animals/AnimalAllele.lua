@@ -22,13 +22,13 @@ function __AnimalAllele:isDominant() end
 function __AnimalAllele:isUsed() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
----@param IS_DEBUG_SAVE boolean
-function __AnimalAllele:load(input, WorldVersion, IS_DEBUG_SAVE) end
+---@param worldVersion integer
+---@param isDebugSave boolean
+function __AnimalAllele:load(input, worldVersion, isDebugSave) end
 
 ---@param output ByteBuffer
----@param IS_DEBUG_SAVE boolean
-function __AnimalAllele:save(output, IS_DEBUG_SAVE) end
+---@param isDebugSave boolean
+function __AnimalAllele:save(output, isDebugSave) end
 
 ---@param newValue number
 function __AnimalAllele:setCurrentValue(newValue) end

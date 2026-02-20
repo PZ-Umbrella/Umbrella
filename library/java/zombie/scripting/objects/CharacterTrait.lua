@@ -183,9 +183,6 @@ CharacterTrait.MECHANICS = nil
 CharacterTrait.MECHANICS2 = nil
 
 ---@type CharacterTrait
-CharacterTrait.MOTION_SENSITIVE = nil
-
----@type CharacterTrait
 CharacterTrait.NEEDS_LESS_SLEEP = nil
 
 ---@type CharacterTrait

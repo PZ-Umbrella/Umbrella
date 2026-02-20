@@ -63,7 +63,7 @@ function __IsoMannequin:isZombie() end
 ---@param IS_DEBUG_SAVE boolean
 function __IsoMannequin:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param bb ByteBuffer
 function __IsoMannequin:loadChange(change, bb) end
 
@@ -99,7 +99,7 @@ function __IsoMannequin:rotate(newDir) end
 ---@param IS_DEBUG_SAVE boolean
 function __IsoMannequin:save(output, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param tbl table
 ---@param bb ByteBuffer
 function __IsoMannequin:saveChange(change, tbl, bb) end

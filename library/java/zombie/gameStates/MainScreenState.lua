@@ -10,9 +10,6 @@ function __MainScreenState:enter() end
 
 function __MainScreenState:exit() end
 
----@return GameState
-function __MainScreenState:redirectState() end
-
 function __MainScreenState:render() end
 
 function __MainScreenState:renderBackground() end

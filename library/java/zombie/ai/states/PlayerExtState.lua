@@ -13,22 +13,7 @@ function __PlayerExtState:animEvent(owner, layer, track, event) end
 function __PlayerExtState:enter(owner) end
 
 ---@param owner IsoGameCharacter
-function __PlayerExtState:execute(owner) end
-
----@param owner IsoGameCharacter
 function __PlayerExtState:exit(owner) end
-
----@return boolean
-function __PlayerExtState:isSyncInIdle() end
-
----@return boolean
-function __PlayerExtState:isSyncOnEnter() end
-
----@return boolean
-function __PlayerExtState:isSyncOnExit() end
-
----@return boolean
-function __PlayerExtState:isSyncOnSquare() end
 
 ---@param owner IsoGameCharacter
 ---@param stage State.Stage
@@ -36,11 +21,14 @@ function __PlayerExtState:setParams(owner, stage) end
 
 PlayerExtState = {}
 
----@return PlayerExtState
-function PlayerExtState.instance() end
+---@type State.Param<string>
+PlayerExtState.EXT = nil
+
+---@type State.Param<boolean>
+PlayerExtState.EXT_PLAYING = nil
 
 ---@return PlayerExtState
-function PlayerExtState.new() end
+function PlayerExtState.instance() end
 
 ---@type Class<PlayerExtState>
 PlayerExtState.class = nil

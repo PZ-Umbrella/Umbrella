@@ -48,7 +48,7 @@ function __IsoFireplace:isTemperatureChanging() end
 ---@param IS_DEBUG_SAVE boolean
 function __IsoFireplace:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param bb ByteBuffer
 function __IsoFireplace:loadChange(change, bb) end
 
@@ -73,7 +73,7 @@ function __IsoFireplace:renderAnimatedAttachments(x, y, z, col) end
 ---@param IS_DEBUG_SAVE boolean
 function __IsoFireplace:save(output, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param tbl table
 ---@param bb ByteBuffer
 function __IsoFireplace:saveChange(change, tbl, bb) end

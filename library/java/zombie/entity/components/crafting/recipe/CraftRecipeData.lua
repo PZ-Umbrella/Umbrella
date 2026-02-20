@@ -177,6 +177,9 @@ function __CraftRecipeData:getAppliedInputItemTypes(appliedItemTypes) end
 ---@return number
 function __CraftRecipeData:getCalculatedVariableInputRatio() end
 
+---@return IsoGameCharacter
+function __CraftRecipeData:getCharacter() end
+
 ---@param script InputScript
 ---@return CraftRecipeData.InputScriptData
 function __CraftRecipeData:getDataForInputScript(script) end
@@ -283,11 +286,11 @@ function __CraftRecipeData:isFinished() end
 function __CraftRecipeData:isVariableAmount() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
+---@param worldVersion integer
 ---@param recipe CraftRecipe
 ---@param recipeInvalidated boolean
 ---@return boolean
-function __CraftRecipeData:load(input, WorldVersion, recipe, recipeInvalidated) end
+function __CraftRecipeData:load(input, worldVersion, recipe, recipeInvalidated) end
 
 function __CraftRecipeData:luaCallOnCreate() end
 
@@ -352,6 +355,9 @@ function __CraftRecipeData:save(output) end
 
 ---@param value number
 function __CraftRecipeData:setCalculatedVariableInputRatio(value) end
+
+---@param character IsoGameCharacter
+function __CraftRecipeData:setCharacter(character) end
 
 ---@param percentage integer
 function __CraftRecipeData:setEatPercentage(percentage) end

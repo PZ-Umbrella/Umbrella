@@ -3,25 +3,32 @@
 ---@class PathFindState: State
 local __PathFindState = {}
 
----@return boolean
-function __PathFindState:isSyncInIdle() end
+---@param owner IsoGameCharacter
+---@param layer AnimLayer
+---@param track AnimationTrack
+---@param event AnimEvent
+function __PathFindState:animEvent(owner, layer, track, event) end
 
----@return boolean
-function __PathFindState:isSyncOnEnter() end
+---@param owner IsoGameCharacter
+function __PathFindState:enter(owner) end
 
----@return boolean
-function __PathFindState:isSyncOnExit() end
+---@param owner IsoGameCharacter
+function __PathFindState:execute(owner) end
 
+---@param owner IsoGameCharacter
+function __PathFindState:exit(owner) end
+
+---@param owner IsoGameCharacter
 ---@return boolean
-function __PathFindState:isSyncOnSquare() end
+function __PathFindState:isMoving(owner) end
 
 PathFindState = {}
 
----@return PathFindState2
-function PathFindState.instance() end
+---@type State.Param<integer>
+PathFindState.TICK_COUNT = nil
 
 ---@return PathFindState
-function PathFindState.new() end
+function PathFindState.instance() end
 
 ---@type Class<PathFindState>
 PathFindState.class = nil

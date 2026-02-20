@@ -30,21 +30,6 @@ function __IsoZombie:GetAnimSetName() end
 ---@return number
 function __IsoZombie:Hit(weapon, wielder, damageSplit, bIgnoreDamage, modDelta, bRemote) end
 
----@param vehicle BaseVehicle
----@param speed number
----@param isHitFromBehind boolean
----@param hitDir Vector2
----@return number
-function __IsoZombie:Hit(vehicle, speed, isHitFromBehind, hitDir) end
-
----@param vehicle BaseVehicle
----@param speed number
----@param isHitFromBehind boolean
----@param hitDirX number
----@param hitDirY number
----@return number
-function __IsoZombie:Hit(vehicle, speed, isHitFromBehind, hitDirX, hitDirY) end
-
 function __IsoZombie:InitSpritePartsZombie() end
 
 ---@param desc SurvivorDesc
@@ -87,7 +72,7 @@ function __IsoZombie:actionStateChanged(sender) end
 function __IsoZombie:addAggro(other, damage) end
 
 ---@param speed number
-function __IsoZombie:addBlood(speed) end
+function __IsoZombie:addBloodFromVehicleImpact(speed) end
 
 function __IsoZombie:addFootstepParametersIfNeeded() end
 
@@ -108,21 +93,11 @@ function __IsoZombie:addRandomVisualDamages() end
 ---@param bloody boolean
 function __IsoZombie:addVisualBandage(bodyPart, bloody) end
 
----@return boolean
-function __IsoZombie:allowsTwist() end
-
----@param vehicleSpeed number
----@param damage number
-function __IsoZombie:applyDamageFromVehicle(vehicleSpeed, damage) end
-
 ---@return IsoDeadBody
 function __IsoZombie:becomeCorpse() end
 
----@param wielder IsoGameCharacter
----@param weapon HandWeapon
----@param out Vector2
----@return number
-function __IsoZombie:calcHitDir(wielder, weapon, out) end
+---@return IsoDeadBody
+function __IsoZombie:becomeCorpseSilently() end
 
 ---@param minDistance number
 ---@return boolean
@@ -269,6 +244,9 @@ function __IsoZombie:getThumpTimer() end
 ---@return number
 function __IsoZombie:getTurnDelta() end
 
+---@return number
+function __IsoZombie:getUnbalancedLevel() end
+
 ---@return BaseVisual
 function __IsoZombie:getVisual() end
 
@@ -411,10 +389,6 @@ function __IsoZombie:isUseless() end
 ---@return boolean
 function __IsoZombie:isUsingWornItems() end
 
----@param testVehicle BaseVehicle
----@return boolean
-function __IsoZombie:isVehicleCollisionActive(testVehicle) end
-
 ---@return boolean
 function __IsoZombie:isZombie() end
 
@@ -436,11 +410,19 @@ function __IsoZombie:load(input, WorldVersion, IS_DEBUG_SAVE) end
 ---@param binactive boolean
 function __IsoZombie:makeInactive(binactive) end
 
----@param in_weapon HandWeapon
----@param in_wielder IsoGameCharacter
----@param in_isGory boolean
+---@param weapon HandWeapon
+---@param wielder IsoGameCharacter
+---@param isGory boolean
 ---@return boolean
-function __IsoZombie:onDeath_ShouldDoSplatterAndSounds(in_weapon, in_wielder, in_isGory) end
+function __IsoZombie:onDeath_ShouldDoSplatterAndSounds(weapon, wielder, isGory) end
+
+---@param vehicle BaseVehicle
+---@param impactSpeed number
+---@param hitDir Vector2
+---@param impactPosOnVehicle Vector2
+---@param pushedBack boolean
+---@return number
+function __IsoZombie:onHitByVehicle(vehicle, impactSpeed, hitDir, impactPosOnVehicle, pushedBack) end
 
 function __IsoZombie:onMouseLeftClick() end
 
@@ -487,11 +469,11 @@ function __IsoZombie:setAlwaysKnockedDown(alwaysKnockedDown) end
 
 function __IsoZombie:setAsSurvivor() end
 
----@param in_attackDidDamage boolean
-function __IsoZombie:setAttackDidDamage(in_attackDidDamage) end
+---@param attackDidDamage boolean
+function __IsoZombie:setAttackDidDamage(attackDidDamage) end
 
----@param in_attackOutcome string
-function __IsoZombie:setAttackOutcome(in_attackOutcome) end
+---@param attackOutcome string
+function __IsoZombie:setAttackOutcome(attackOutcome) end
 
 ---@param crawler boolean
 function __IsoZombie:setBecomeCrawler(crawler) end
@@ -571,8 +553,8 @@ function __IsoZombie:setPlayerAttackPosition(playerAttackPosition) end
 ---@param reanimate boolean
 function __IsoZombie:setReanimate(reanimate) end
 
----@param in_val boolean
-function __IsoZombie:setReanimatedForGrappleOnly(in_val) end
+---@param val boolean
+function __IsoZombie:setReanimatedForGrappleOnly(val) end
 
 ---@param reanimated boolean
 function __IsoZombie:setReanimatedPlayer(reanimated) end
@@ -608,6 +590,9 @@ function __IsoZombie:setThumpTimer(thumpTimer) end
 ---@param soundX integer
 ---@param soundY integer
 function __IsoZombie:setTurnAlertedValues(soundX, soundY) end
+
+---@param unbalancedLevel number
+function __IsoZombie:setUnbalancedLevel(unbalancedLevel) end
 
 ---@param useless boolean
 function __IsoZombie:setUseless(useless) end
@@ -648,10 +633,6 @@ function __IsoZombie:spottedNew(other, bForced) end
 ---@param other IsoMovingObject
 ---@param bForced boolean
 function __IsoZombie:spottedOld(other, bForced) end
-
----@param vehicle BaseVehicle
----@return boolean
-function __IsoZombie:testCollideWithVehicles(vehicle) end
 
 ---@return string
 function __IsoZombie:toString() end

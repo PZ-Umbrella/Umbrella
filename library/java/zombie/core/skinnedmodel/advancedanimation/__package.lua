@@ -48,10 +48,10 @@
 ---@class AnimationVariableSlotCallbackFloat.PrimitiveFloatSupplier
 
 ---(Not exposed)
----@class AnimationVariableSlotCallbackInt.CallbackGetStrongTyped
+---@class AnimationVariableSlotCallbackInt.PrimitiveIntConsumer
 
 ---(Not exposed)
----@class AnimationVariableSlotCallbackInt.CallbackSetStrongTyped
+---@class AnimationVariableSlotCallbackInt.PrimitiveIntSupplier
 
 ---(Not exposed)
 ---@class AnimationVariableSlotCallbackString.CallbackGetStrongTyped

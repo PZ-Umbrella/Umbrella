@@ -30,10 +30,6 @@ function __BuildLogic:getRecipeList() end
 ---@return string
 function __BuildLogic:getRecipeSortMode() end
 
----@param inputScript InputScript
----@return List<Item>
-function __BuildLogic:getSatisfiedInputItems(inputScript) end
-
 ---@return SpriteConfigManager.ObjectInfo
 function __BuildLogic:getSelectedBuildObject() end
 

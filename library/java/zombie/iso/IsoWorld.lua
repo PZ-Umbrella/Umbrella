@@ -407,6 +407,9 @@ IsoWorld.WorldVersion_AnimalRottingTexture = nil
 IsoWorld.WorldVersion_BodyDamageSavePoulticeValues = nil
 
 ---@type integer
+IsoWorld.WorldVersion_BodyDamageStatusesSync = nil
+
+---@type integer
 IsoWorld.WorldVersion_CharacterDiscomfort = nil
 
 ---@type integer
@@ -473,6 +476,9 @@ IsoWorld.WorldVersion_PlayerAutoDrink = nil
 IsoWorld.WorldVersion_PlayerExtraInfoFlags = nil
 
 ---@type integer
+IsoWorld.WorldVersion_PlayerInsulation = nil
+
+---@type integer
 IsoWorld.WorldVersion_PlayerSaveCraftingHistory = nil
 
 ---@type integer
@@ -492,6 +498,9 @@ IsoWorld.WorldVersion_SafeHouseCreatedTimeAndLocation = nil
 
 ---@type integer
 IsoWorld.WorldVersion_SafeHouseHitPoints = nil
+
+---@type integer
+IsoWorld.WorldVersion_SaveFireTimer = nil
 
 ---@type integer
 IsoWorld.WorldVersion_SavePlayerCheats = nil

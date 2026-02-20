@@ -69,6 +69,12 @@ function __EvolvedRecipe:isCookable() end
 ---@return boolean
 function __EvolvedRecipe:isHidden() end
 
+---@param chr IsoGameCharacter
+---@param baseItem InventoryItem
+---@param id integer
+---@return boolean
+function __EvolvedRecipe:isItemUsableInRecipe(chr, baseItem, id) end
+
 ---@param item InventoryItem
 ---@return boolean
 function __EvolvedRecipe:isResultItem(item) end

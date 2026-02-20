@@ -20,6 +20,9 @@ Registries.BROCHURE = nil
 ---@type Registry<Business>
 Registries.BUSINESS = nil
 
+---@type Registry<Catalogue>
+Registries.CATALOGUE = nil
+
 ---@type Registry<CharacterProfession>
 Registries.CHARACTER_PROFESSION = nil
 
@@ -28,6 +31,12 @@ Registries.CHARACTER_TRAIT = nil
 
 ---@type Registry<ComicBook>
 Registries.COMIC_BOOK = nil
+
+---@type Registry<Doodle>
+Registries.DOODLE = nil
+
+---@type Registry<DoodleKids>
+Registries.DOODLE_KIDS = nil
 
 ---@type Registry<Flier>
 Registries.FLIER = nil
@@ -43,6 +52,12 @@ Registries.ITEM_TYPE = nil
 
 ---@type Registry<Job>
 Registries.JOB = nil
+
+---@type Registry<Letter>
+Registries.LETTER = nil
+
+---@type Registry<Locket>
+Registries.LOCKET = nil
 
 ---@type Registry<Magazine>
 Registries.MAGAZINE = nil
@@ -68,11 +83,20 @@ Registries.PET_NAME = nil
 ---@type Registry<Photo>
 Registries.PHOTO = nil
 
+---@type Registry<Postcard>
+Registries.POSTCARD = nil
+
 ---@type Registry<Registry<any>>
 Registries.REGISTRY = nil
 
+---@type Registry<RpgManual>
+Registries.RPG_MANUAL = nil
+
 ---@type Registry<SeasonRecipe>
 Registries.SEASON_RECIPE = nil
+
+---@type Registry<SoundKey>
+Registries.SOUND_KEY = nil
 
 ---@type Registry<TilePropertyKey>
 Registries.TILE_PROPERTY_KEY = nil

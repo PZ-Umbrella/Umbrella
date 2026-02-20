@@ -71,8 +71,8 @@ function __AnimalTracks:isAddedToWorld() end
 function __AnimalTracks:isItem() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __AnimalTracks:load(input, WorldVersion) end
+---@param worldVersion integer
+function __AnimalTracks:load(input, worldVersion) end
 
 ---@param output ByteBuffer
 function __AnimalTracks:save(output) end

@@ -12,29 +12,23 @@ function __PlayerGetUpState:execute(owner) end
 ---@param owner IsoGameCharacter
 function __PlayerGetUpState:exit(owner) end
 
----@return boolean
-function __PlayerGetUpState:isSyncInIdle() end
-
----@return boolean
-function __PlayerGetUpState:isSyncOnEnter() end
-
----@return boolean
-function __PlayerGetUpState:isSyncOnExit() end
-
----@return boolean
-function __PlayerGetUpState:isSyncOnSquare() end
-
 ---@param owner IsoGameCharacter
 ---@param stage State.Stage
 function __PlayerGetUpState:setParams(owner, stage) end
 
 PlayerGetUpState = {}
 
----@return PlayerGetUpState
-function PlayerGetUpState.instance() end
+---@type State.Param<boolean>
+PlayerGetUpState.FORCE = nil
+
+---@type State.Param<IsoDirections>
+PlayerGetUpState.ISO_DIRECTION = nil
+
+---@type State.Param<boolean>
+PlayerGetUpState.MOVING = nil
 
 ---@return PlayerGetUpState
-function PlayerGetUpState.new() end
+function PlayerGetUpState.instance() end
 
 ---@type Class<PlayerGetUpState>
 PlayerGetUpState.class = nil

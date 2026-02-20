@@ -18,25 +18,10 @@ function __PlayerKnockedDown:execute(owner) end
 ---@param owner IsoGameCharacter
 function __PlayerKnockedDown:exit(owner) end
 
----@return boolean
-function __PlayerKnockedDown:isSyncInIdle() end
-
----@return boolean
-function __PlayerKnockedDown:isSyncOnEnter() end
-
----@return boolean
-function __PlayerKnockedDown:isSyncOnExit() end
-
----@return boolean
-function __PlayerKnockedDown:isSyncOnSquare() end
-
 PlayerKnockedDown = {}
 
 ---@return PlayerKnockedDown
 function PlayerKnockedDown.instance() end
-
----@return PlayerKnockedDown
-function PlayerKnockedDown.new() end
 
 ---@type Class<PlayerKnockedDown>
 PlayerKnockedDown.class = nil

@@ -26,17 +26,15 @@ function __IsoClothingWasher:isRemoveItemAllowedFromContainer(container, item) e
 ---@param IS_DEBUG_SAVE boolean
 function __IsoClothingWasher:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param bb ByteBuffer
 function __IsoClothingWasher:loadChange(change, bb) end
-
-function __IsoClothingWasher:removeFromWorld() end
 
 ---@param output ByteBuffer
 ---@param IS_DEBUG_SAVE boolean
 function __IsoClothingWasher:save(output, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param tbl table
 ---@param bb ByteBuffer
 function __IsoClothingWasher:saveChange(change, tbl, bb) end

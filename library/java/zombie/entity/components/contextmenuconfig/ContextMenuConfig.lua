@@ -9,9 +9,6 @@ function __ContextMenuConfig:getEntries() end
 ---@return boolean
 function __ContextMenuConfig:isQualifiesForMetaStorage() end
 
----@return boolean
-function __ContextMenuConfig:isValid() end
-
 ContextMenuConfig = {}
 
 ---@type Class<ContextMenuConfig>

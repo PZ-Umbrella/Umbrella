@@ -96,12 +96,12 @@ function __ResourceItem:isFull() end
 function __ResourceItem:isStackAnyItem() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __ResourceItem:load(input, WorldVersion) end
+---@param worldVersion integer
+function __ResourceItem:load(input, worldVersion) end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __ResourceItem:loadSync(input, WorldVersion) end
+---@param worldVersion integer
+function __ResourceItem:loadSync(input, worldVersion) end
 
 ---@param item InventoryItem
 ---@param ignoreFilters boolean
@@ -166,12 +166,12 @@ function __ResourceItem:storedSize() end
 function __ResourceItem:transferTo(target, transferAmount) end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
+---@param worldVersion integer
 ---@param size integer
 ---@param type string
 ---@param forceCreate boolean
 ---@return boolean
-function __ResourceItem:tryLoadSyncItems(input, WorldVersion, size, type, forceCreate) end
+function __ResourceItem:tryLoadSyncItems(input, worldVersion, size, type, forceCreate) end
 
 ---@param target Resource
 function __ResourceItem:tryTransferTo(target) end

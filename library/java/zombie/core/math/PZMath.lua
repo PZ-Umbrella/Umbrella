@@ -40,6 +40,10 @@ PZMath.secondsToNanos = nil
 ---@return number
 function PZMath.abs(val) end
 
+---@param val integer
+---@return integer
+function PZMath.abs(val) end
+
 ---@param a number
 ---@return number
 function PZMath.acosf(a) end
@@ -76,12 +80,12 @@ function PZMath.almostUnitIdentity(x) end
 ---@return number
 function PZMath.angleBetween(va, vb) end
 
----@param in_ax number
----@param in_ay number
----@param in_bx number
----@param in_by number
+---@param ax number
+---@param ay number
+---@param bx number
+---@param by number
 ---@return number
-function PZMath.angleBetween(in_ax, in_ay, in_bx, in_by) end
+function PZMath.angleBetween(ax, ay, bx, by) end
 
 ---@param ax number
 ---@param bx number
@@ -96,11 +100,11 @@ function PZMath.angleBetweenNormalized(ax, bx, ay, by) end
 ---@return number
 function PZMath.c_lerp(src, dest, alpha) end
 
----@param in_fromPosition Vector3
----@param in_fromForward Vector2
----@param in_toPosition Vector3
+---@param fromPosition Vector3
+---@param fromForward Vector2
+---@param toPosition Vector3
 ---@return number
-function PZMath.calculateBearing(in_fromPosition, in_fromForward, in_toPosition) end
+function PZMath.calculateBearing(fromPosition, fromForward, toPosition) end
 
 ---@param varStr string
 ---@return boolean
@@ -479,11 +483,11 @@ function PZMath.pow(a, b) end
 ---@return number
 function PZMath.radToDeg(radians) end
 
----@param in_vector Vector3f
----@param in_quaternion Quaternion
----@param out_result Vector3f
+---@param vector Vector3f
+---@param quaternion Quaternion
+---@param result Vector3f
 ---@return Vector3f
-function PZMath.rotateVector(in_vector, in_quaternion, out_result) end
+function PZMath.rotateVector(vector, quaternion, result) end
 
 ---@param vx number
 ---@param vy number
@@ -492,9 +496,9 @@ function PZMath.rotateVector(in_vector, in_quaternion, out_result) end
 ---@param qy number
 ---@param qz number
 ---@param qw number
----@param out_result Vector3f
+---@param result Vector3f
 ---@return Vector3f
-function PZMath.rotateVector(vx, vy, vz, qx, qy, qz, qw, out_result) end
+function PZMath.rotateVector(vx, vy, vz, qx, qy, qz, qw, result) end
 
 ---@param vx number
 ---@param vy number
@@ -502,9 +506,9 @@ function PZMath.rotateVector(vx, vy, vz, qx, qy, qz, qw, out_result) end
 ---@param qy number
 ---@param qz number
 ---@param qw number
----@param out_result Vector2
+---@param result Vector2
 ---@return Vector2
-function PZMath.rotateVector(vx, vy, qx, qy, qz, qw, out_result) end
+function PZMath.rotateVector(vx, vy, qx, qy, qz, qw, result) end
 
 ---@param value number
 ---@param scale integer
@@ -536,9 +540,9 @@ function PZMath.roundToNearest(val) end
 ---@param ay number
 ---@param az number
 ---@param angleRadians number
----@param out_result Quaternion
+---@param result Quaternion
 ---@return Quaternion
-function PZMath.setFromAxisAngle(ax, ay, az, angleRadians, out_result) end
+function PZMath.setFromAxisAngle(ax, ay, az, angleRadians, result) end
 
 ---@param val number
 ---@return integer

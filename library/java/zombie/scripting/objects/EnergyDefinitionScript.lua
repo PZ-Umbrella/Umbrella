@@ -10,10 +10,6 @@ function __EnergyDefinitionScript:InitLoadPP(name) end
 ---@param body string
 function __EnergyDefinitionScript:Load(name, body) end
 
-function __EnergyDefinitionScript:OnLoadedAfterLua() end
-
-function __EnergyDefinitionScript:OnPostWorldDictionaryInit() end
-
 ---@param loadMode ScriptLoadMode
 function __EnergyDefinitionScript:OnScriptsLoaded(loadMode) end
 
@@ -48,8 +44,6 @@ function __EnergyDefinitionScript:getVerticalBarTexture() end
 
 ---@return boolean
 function __EnergyDefinitionScript:isVanilla() end
-
-function __EnergyDefinitionScript:reset() end
 
 EnergyDefinitionScript = {}
 

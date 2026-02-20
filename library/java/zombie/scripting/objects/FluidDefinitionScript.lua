@@ -10,10 +10,6 @@ function __FluidDefinitionScript:InitLoadPP(name) end
 ---@param body string
 function __FluidDefinitionScript:Load(name, body) end
 
-function __FluidDefinitionScript:OnLoadedAfterLua() end
-
-function __FluidDefinitionScript:OnPostWorldDictionaryInit() end
-
 ---@param loadMode ScriptLoadMode
 function __FluidDefinitionScript:OnScriptsLoaded(loadMode) end
 
@@ -102,8 +98,6 @@ function __FluidDefinitionScript:hasPropertiesSet() end
 
 ---@return boolean
 function __FluidDefinitionScript:isVanilla() end
-
-function __FluidDefinitionScript:reset() end
 
 FluidDefinitionScript = {}
 

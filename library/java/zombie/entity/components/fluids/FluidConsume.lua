@@ -23,15 +23,15 @@ FluidConsume = {}
 function FluidConsume.Alloc() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
+---@param worldVersion integer
 ---@return FluidConsume
-function FluidConsume.Load(input, WorldVersion) end
+function FluidConsume.Load(input, worldVersion) end
 
 ---@param fluidConsume FluidConsume
 ---@param input ByteBuffer
----@param WorldVersion integer
+---@param worldVersion integer
 ---@return FluidConsume
-function FluidConsume.Load(fluidConsume, input, WorldVersion) end
+function FluidConsume.Load(fluidConsume, input, worldVersion) end
 
 ---@param fluidConsume FluidConsume
 ---@param output ByteBuffer

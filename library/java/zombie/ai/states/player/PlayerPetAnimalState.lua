@@ -9,29 +9,23 @@ function __PlayerPetAnimalState:enter(owner) end
 ---@param owner IsoGameCharacter
 function __PlayerPetAnimalState:exit(owner) end
 
----@return boolean
-function __PlayerPetAnimalState:isSyncInIdle() end
-
----@return boolean
-function __PlayerPetAnimalState:isSyncOnEnter() end
-
----@return boolean
-function __PlayerPetAnimalState:isSyncOnExit() end
-
----@return boolean
-function __PlayerPetAnimalState:isSyncOnSquare() end
-
 ---@param owner IsoGameCharacter
 ---@param stage State.Stage
 function __PlayerPetAnimalState:setParams(owner, stage) end
 
 PlayerPetAnimalState = {}
 
----@return PlayerPetAnimalState
-function PlayerPetAnimalState.instance() end
+---@type State.Param<string>
+PlayerPetAnimalState.ANIMAL = nil
+
+---@type State.Param<number>
+PlayerPetAnimalState.ANIMAL_SIZE = nil
+
+---@type State.Param<boolean>
+PlayerPetAnimalState.PET_ANIMAL = nil
 
 ---@return PlayerPetAnimalState
-function PlayerPetAnimalState.new() end
+function PlayerPetAnimalState.instance() end
 
 ---@type Class<PlayerPetAnimalState>
 PlayerPetAnimalState.class = nil

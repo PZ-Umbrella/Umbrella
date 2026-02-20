@@ -139,12 +139,12 @@ function __Resource:isFull() end
 function __Resource:isLocked() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __Resource:load(input, WorldVersion) end
+---@param worldVersion integer
+function __Resource:load(input, worldVersion) end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __Resource:loadSync(input, WorldVersion) end
+---@param worldVersion integer
+function __Resource:loadSync(input, worldVersion) end
 
 ---@param item InventoryItem
 ---@return InventoryItem
@@ -190,6 +190,8 @@ function __Resource:setLocked(locked) end
 
 ---@param progress number
 function __Resource:setProgress(progress) end
+
+function __Resource:sync() end
 
 ---@param target Resource
 function __Resource:tryTransferTo(target) end

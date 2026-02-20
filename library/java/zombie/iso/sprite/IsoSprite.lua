@@ -117,6 +117,9 @@ function __IsoSprite:getFrameCount() end
 ---@return integer
 function __IsoSprite:getID() end
 
+---@return integer
+function __IsoSprite:getItemHeight() end
+
 ---@param dir IsoDirections
 ---@param x integer
 ---@param y integer
@@ -139,8 +142,17 @@ function __IsoSprite:getRoofProperties() end
 ---@return integer
 function __IsoSprite:getSheetGridIdFromName() end
 
+---@return IsoDirections
+function __IsoSprite:getSlopedSurfaceDirection() end
+
 ---@return IsoSpriteGrid
 function __IsoSprite:getSpriteGrid() end
+
+---@return integer
+function __IsoSprite:getStackReplaceTileOffset() end
+
+---@return integer
+function __IsoSprite:getSurface() end
 
 ---@param dir IsoDirections
 ---@return Texture
@@ -150,6 +162,9 @@ function __IsoSprite:getTextureForCurrentFrame(dir) end
 ---@param dir IsoDirections
 ---@return Texture
 function __IsoSprite:getTextureForFrame(frame, dir) end
+
+---@return IsoObjectType
+function __IsoSprite:getTileType() end
 
 ---@return ColorInfo
 function __IsoSprite:getTintMod() end
@@ -185,6 +200,15 @@ function __IsoSprite:isMaskClicked(dir, x, y, flip) end
 
 ---@return boolean
 function __IsoSprite:isMoveWithWind() end
+
+---@return boolean
+function __IsoSprite:isSurfaceOffset() end
+
+---@return boolean
+function __IsoSprite:isTable() end
+
+---@return boolean
+function __IsoSprite:isTableTop() end
 
 ---@return boolean
 function __IsoSprite:isWallSE() end
@@ -431,6 +455,9 @@ function __IsoSprite:setParentObjectName(val) end
 
 ---@param sGrid IsoSpriteGrid
 function __IsoSprite:setSpriteGrid(sGrid) end
+
+---@param type IsoObjectType
+function __IsoSprite:setTileType(type) end
 
 ---@param info ColorInfo
 function __IsoSprite:setTintMod(info) end

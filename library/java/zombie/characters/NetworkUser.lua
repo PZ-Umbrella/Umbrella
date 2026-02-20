@@ -12,9 +12,9 @@ function __NetworkUser:getAuthTypeName() end
 ---@return string
 function __NetworkUser:getDisplayName() end
 
----@param _username string
+---@param username string
 ---@return string
-function __NetworkUser:getFirstBannedIPForUser(_username) end
+function __NetworkUser:getFirstBannedIPForUser(username) end
 
 ---@return string
 function __NetworkUser:getIpBanned() end
@@ -52,9 +52,9 @@ function __NetworkUser:isInWhitelist() end
 ---@return boolean
 function __NetworkUser:isOnline() end
 
----@param _steamid string
+---@param steamId string
 ---@return string
-function __NetworkUser:isSteamIdBanned(_steamid) end
+function __NetworkUser:isSteamIdBanned(steamId) end
 
 ---@param input ByteBuffer
 function __NetworkUser:parse(input) end

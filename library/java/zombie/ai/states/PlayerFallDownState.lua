@@ -13,22 +13,7 @@ function __PlayerFallDownState:animEvent(owner, layer, track, event) end
 function __PlayerFallDownState:enter(owner) end
 
 ---@param owner IsoGameCharacter
-function __PlayerFallDownState:execute(owner) end
-
----@param owner IsoGameCharacter
 function __PlayerFallDownState:exit(owner) end
-
----@return boolean
-function __PlayerFallDownState:isSyncInIdle() end
-
----@return boolean
-function __PlayerFallDownState:isSyncOnEnter() end
-
----@return boolean
-function __PlayerFallDownState:isSyncOnExit() end
-
----@return boolean
-function __PlayerFallDownState:isSyncOnSquare() end
 
 ---@param owner IsoGameCharacter
 ---@param stage State.Stage
@@ -36,11 +21,17 @@ function __PlayerFallDownState:setParams(owner, stage) end
 
 PlayerFallDownState = {}
 
----@return PlayerFallDownState
-function PlayerFallDownState.instance() end
+---@type State.Param<boolean>
+PlayerFallDownState.DEAD = nil
+
+---@type State.Param<boolean>
+PlayerFallDownState.KNOCKED_DOWN = nil
+
+---@type State.Param<boolean>
+PlayerFallDownState.ON_FLOOR = nil
 
 ---@return PlayerFallDownState
-function PlayerFallDownState.new() end
+function PlayerFallDownState.instance() end
 
 ---@type Class<PlayerFallDownState>
 PlayerFallDownState.class = nil

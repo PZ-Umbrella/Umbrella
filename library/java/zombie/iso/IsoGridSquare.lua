@@ -627,25 +627,19 @@ function __IsoGridSquare:getAdjacentPathSquare(dir) end
 function __IsoGridSquare:getAdjacentSquare(dir) end
 
 ---@generic T
----@param in_paramToCompare T
----@param in_isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@param inout_containerList PZArrayList<ItemContainer>
+---@param paramToCompare T
+---@param isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
+---@param containerList PZArrayList<ItemContainer>
 ---@return PZArrayList<ItemContainer>
-function __IsoGridSquare:getAllContainers(in_paramToCompare, in_isValidPredicate, inout_containerList) end
+function __IsoGridSquare:getAllContainers(paramToCompare, isValidPredicate, containerList) end
 
 ---@generic T
----@param in_dir IsoDirections
----@param in_paramToCompare T
----@param in_isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@param inout_containerList PZArrayList<ItemContainer>
+---@param dir IsoDirections
+---@param paramToCompare T
+---@param isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
+---@param containerList PZArrayList<ItemContainer>
 ---@return PZArrayList<ItemContainer>
-function __IsoGridSquare:getAllContainersFromAdjacentSquare(
-	in_dir,
-	in_paramToCompare,
-	in_isValidPredicate,
-	inout_containerList
-)
-end
+function __IsoGridSquare:getAllContainersFromAdjacentSquare(dir, paramToCompare, isValidPredicate, containerList) end
 
 ---@return IsoAnimalTrack
 function __IsoGridSquare:getAnimalTrack() end
@@ -737,6 +731,9 @@ function __IsoGridSquare:getDeadBodys() end
 
 ---@return ArrayList<IsoGameCharacter> # the DeferedCharacters
 function __IsoGridSquare:getDeferedCharacters() end
+
+---@return DeviceData
+function __IsoGridSquare:getDeviceData() end
 
 ---@param north boolean
 ---@return IsoObject
@@ -914,11 +911,15 @@ function __IsoGridSquare:getN() end
 function __IsoGridSquare:getNextNonItemObjectIndex(index) end
 
 ---@generic T
----@param in_paramToCompare T
----@param in_isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@param inout_containerList PZArrayList<ItemContainer>
+---@param paramToCompare T
+---@param isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
+---@param containerList PZArrayList<ItemContainer>
 ---@return PZArrayList<ItemContainer>
-function __IsoGridSquare:getObjectContainers(in_paramToCompare, in_isValidPredicate, inout_containerList) end
+function __IsoGridSquare:getObjectContainers(paramToCompare, isValidPredicate, containerList) end
+
+---@param spriteName string
+---@return IsoObject
+function __IsoGridSquare:getObjectWithSprite(spriteName) end
 
 ---@return PZArrayList<IsoObject> # the Objects
 function __IsoGridSquare:getObjects() end
@@ -1045,6 +1046,9 @@ function __IsoGridSquare:getSquareRegion() end
 ---@return string
 function __IsoGridSquare:getSquareZombiesType() end
 
+---@return IsoObject
+function __IsoGridSquare:getStairPillar() end
+
 ---@return IsoDirections
 function __IsoGridSquare:getStairsDirection() end
 
@@ -1117,17 +1121,17 @@ function __IsoGridSquare:getTree() end
 function __IsoGridSquare:getVehicleContainer() end
 
 ---@generic T
----@param in_paramToCompare T
----@param in_isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
+---@param paramToCompare T
+---@param isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
 ---@return PZArrayList<ItemContainer>
-function __IsoGridSquare:getVehicleItemContainers(in_paramToCompare, in_isValidPredicate) end
+function __IsoGridSquare:getVehicleItemContainers(paramToCompare, isValidPredicate) end
 
 ---@generic T
----@param in_paramToCompare T
----@param in_isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@param inout_containerList PZArrayList<ItemContainer>
+---@param paramToCompare T
+---@param isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
+---@param containerList PZArrayList<ItemContainer>
 ---@return PZArrayList<ItemContainer>
-function __IsoGridSquare:getVehicleItemContainers(in_paramToCompare, in_isValidPredicate, inout_containerList) end
+function __IsoGridSquare:getVehicleItemContainers(paramToCompare, isValidPredicate, containerList) end
 
 ---@param i integer
 ---@param playerIndex integer
@@ -1237,6 +1241,10 @@ function __IsoGridSquare:getZoneType() end
 ---@return boolean
 function __IsoGridSquare:has(flag) end
 
+---@param flag IsoPropertyType
+---@return boolean
+function __IsoGridSquare:has(flag) end
+
 ---@param flag string
 ---@return boolean
 function __IsoGridSquare:has(flag) end
@@ -1304,6 +1312,9 @@ function __IsoGridSquare:hasFloor(north) end
 
 ---@return boolean
 function __IsoGridSquare:hasFloor() end
+
+---@return boolean
+function __IsoGridSquare:hasFloorAtTopOfStairs() end
 
 ---@return boolean
 function __IsoGridSquare:hasFloorOverWater() end
@@ -1773,9 +1784,12 @@ function __IsoGridSquare:save(output, outputObj, IS_DEBUG_SAVE) end
 ---@return number
 function __IsoGridSquare:scoreAsWaypoint(x, y) end
 
----@param in_dir IsoDirections
----@param in_square IsoGridSquare
-function __IsoGridSquare:setAdjacentSquare(in_dir, in_square) end
+---@param tilePropertyKey string
+function __IsoGridSquare:set(tilePropertyKey) end
+
+---@param dir IsoDirections
+---@param square IsoGridSquare
+function __IsoGridSquare:setAdjacentSquare(dir, square) end
 
 ---@param CacheIsFree boolean the CacheIsFree to set
 function __IsoGridSquare:setCacheIsFree(CacheIsFree) end
@@ -1999,6 +2013,11 @@ function __IsoGridSquare:transmitModdata() end
 function __IsoGridSquare:transmitRemoveItemFromSquare(obj) end
 
 ---@param obj IsoObject
+---@param safelyRemove boolean
+---@return integer
+function __IsoGridSquare:transmitRemoveItemFromSquare(obj, safelyRemove) end
+
+---@param obj IsoObject
 function __IsoGridSquare:transmitRemoveItemFromSquareOnClients(obj) end
 
 function __IsoGridSquare:transmitStopFire() end
@@ -2015,6 +2034,9 @@ function __IsoGridSquare:tryAddCorpseToWorld(item, x, y) end
 ---@param isVisible boolean
 ---@return IsoDeadBody
 function __IsoGridSquare:tryAddCorpseToWorld(item, x, y, isVisible) end
+
+---@param tilePropertyKey string
+function __IsoGridSquare:unset(tilePropertyKey) end
 
 IsoGridSquare = {}
 

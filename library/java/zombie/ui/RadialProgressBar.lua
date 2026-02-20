@@ -12,6 +12,9 @@ function __RadialProgressBar:getValue() end
 
 function __RadialProgressBar:render() end
 
+---@param color ColorInfo
+function __RadialProgressBar:setColor(color) end
+
 ---@param texture Texture
 function __RadialProgressBar:setTexture(texture) end
 

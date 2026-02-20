@@ -18,9 +18,6 @@ FluidType = {}
 FluidType.Acid = nil
 
 ---@type FluidType
-FluidType.Alcohol = nil
-
----@type FluidType
 FluidType.AnimalBlood = nil
 
 ---@type FluidType
@@ -85,6 +82,9 @@ FluidType.PoisonStrong = nil
 
 ---@type FluidType
 FluidType.PoisonWeak = nil
+
+---@type FluidType
+FluidType.RubbingAlcohol = nil
 
 ---@type FluidType
 FluidType.SecretFlavoring = nil

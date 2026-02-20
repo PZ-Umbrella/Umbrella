@@ -300,7 +300,7 @@ Normal.BOTTLE_OPENER_KEYCHAIN = nil
 Normal.BOWL = nil
 
 ---@type ItemKey
-Normal.BOX_223 = nil
+Normal.BOX_3030 = nil
 
 ---@type ItemKey
 Normal.BOX_308 = nil
@@ -363,10 +363,19 @@ Normal.BUCKET_WOOD = nil
 Normal.BUCKLE = nil
 
 ---@type ItemKey
-Normal.BULLETS_223 = nil
+Normal.BULLETS_3030 = nil
 
 ---@type ItemKey
 Normal.BULLETS_308 = nil
+
+---@type ItemKey
+Normal.BULLETS_357 = nil
+
+---@type ItemKey
+Normal.BULLETS_357_BOX = nil
+
+---@type ItemKey
+Normal.BULLETS_357_CARTON = nil
 
 ---@type ItemKey
 Normal.BULLETS_38 = nil
@@ -558,7 +567,7 @@ Normal.CARD_DECK = nil
 Normal.CARROT_SEED = nil
 
 ---@type ItemKey
-Normal.CARTON_223 = nil
+Normal.CARTON_3030 = nil
 
 ---@type ItemKey
 Normal.CARTON_308 = nil
@@ -600,16 +609,10 @@ Normal.CERAMIC_INGOT_CAST_UNFIRED = nil
 Normal.CERAMIC_MORTARAND_PESTLE = nil
 
 ---@type ItemKey
-Normal.CERAMIC_MORTARAND_PESTLE_GLAZED_UNFIRED = nil
-
----@type ItemKey
 Normal.CERAMIC_MORTARAND_PESTLE_UNFIRED = nil
 
 ---@type ItemKey
 Normal.CERAMIC_TEACUP = nil
-
----@type ItemKey
-Normal.CERAMIC_TEACUP_GLAZED_UNFIRED = nil
 
 ---@type ItemKey
 Normal.CERAMIC_TEACUP_UNFIRED = nil
@@ -765,16 +768,10 @@ Normal.CLAY_JAR = nil
 Normal.CLAY_JAR_GLAZED = nil
 
 ---@type ItemKey
-Normal.CLAY_JAR_GLAZED_UNFIRED = nil
-
----@type ItemKey
 Normal.CLAY_JAR_UNFIRED = nil
 
 ---@type ItemKey
 Normal.CLAY_MUG = nil
-
----@type ItemKey
-Normal.CLAY_MUG_GLAZED_UNFIRED = nil
 
 ---@type ItemKey
 Normal.CLAY_MUG_UNFIRED = nil
@@ -1384,9 +1381,6 @@ Normal.GLASS_TUMBLER = nil
 
 ---@type ItemKey
 Normal.GLASS_WINE = nil
-
----@type ItemKey
-Normal.GLAZE_BOWL = nil
 
 ---@type ItemKey
 Normal.GLOVE_BOX_1 = nil
@@ -2322,9 +2316,6 @@ Normal.PLASTIC_TRAY = nil
 Normal.PLATE = nil
 
 ---@type ItemKey
-Normal.PLATE_GLAZED_UNFIRED = nil
-
----@type ItemKey
 Normal.PLIERS = nil
 
 ---@type ItemKey
@@ -3010,9 +3001,6 @@ Normal.TENT_YELLOW_PACKED = nil
 
 ---@type ItemKey
 Normal.TEQUILA = nil
-
----@type ItemKey
-Normal.TEST_CAN_POP_COMMON = nil
 
 ---@type ItemKey
 Normal.TEST_DEBUG_WATER = nil

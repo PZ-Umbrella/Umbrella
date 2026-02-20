@@ -22,16 +22,18 @@ function __PlayerSitOnFurnitureState:execute(owner) end
 function __PlayerSitOnFurnitureState:exit(owner) end
 
 ---@return boolean
-function __PlayerSitOnFurnitureState:isSyncInIdle() end
+function __PlayerSitOnFurnitureState:isProcessedOnEnter() end
 
 ---@return boolean
-function __PlayerSitOnFurnitureState:isSyncOnEnter() end
+function __PlayerSitOnFurnitureState:isProcessedOnExit() end
 
----@return boolean
-function __PlayerSitOnFurnitureState:isSyncOnExit() end
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __PlayerSitOnFurnitureState:processOnEnter(owner, delegate) end
 
----@return boolean
-function __PlayerSitOnFurnitureState:isSyncOnSquare() end
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __PlayerSitOnFurnitureState:processOnExit(owner, delegate) end
 
 ---@param owner IsoGameCharacter
 ---@param stage State.Stage
@@ -39,11 +41,17 @@ function __PlayerSitOnFurnitureState:setParams(owner, stage) end
 
 PlayerSitOnFurnitureState = {}
 
----@return PlayerSitOnFurnitureState
-function PlayerSitOnFurnitureState.instance() end
+---@type State.Param<string>
+PlayerSitOnFurnitureState.BEFORE_SIT_DIR = nil
+
+---@type State.Param<IsoDirections>
+PlayerSitOnFurnitureState.DIR = nil
+
+---@type State.Param<IsoObject>
+PlayerSitOnFurnitureState.SIT_OBJECT = nil
 
 ---@return PlayerSitOnFurnitureState
-function PlayerSitOnFurnitureState.new() end
+function PlayerSitOnFurnitureState.instance() end
 
 ---@type Class<PlayerSitOnFurnitureState>
 PlayerSitOnFurnitureState.class = nil

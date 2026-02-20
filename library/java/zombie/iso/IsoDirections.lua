@@ -6,26 +6,26 @@ local __IsoDirections = {}
 ---@return IsoDirections
 function __IsoDirections:Rot180() end
 
----@param time integer
----@return IsoDirections
-function __IsoDirections:RotLeft(time) end
-
 ---@return IsoDirections
 function __IsoDirections:RotLeft() end
 
 ---@param time integer
 ---@return IsoDirections
-function __IsoDirections:RotRight(time) end
+function __IsoDirections:RotLeft(time) end
 
 ---@return IsoDirections
 function __IsoDirections:RotRight() end
 
+---@param time integer
+---@return IsoDirections
+function __IsoDirections:RotRight(time) end
+
 ---@return Vector2
 function __IsoDirections:ToVector() end
 
----@param out_result Vector2
+---@param result Vector2
 ---@return Vector2
-function __IsoDirections:ToVector(out_result) end
+function __IsoDirections:ToVector(result) end
 
 ---@return integer
 function __IsoDirections:dx() end
@@ -33,28 +33,16 @@ function __IsoDirections:dx() end
 ---@return integer
 function __IsoDirections:dy() end
 
----@return integer
-function __IsoDirections:index() end
-
----@return integer
-function __IsoDirections:indexUnmodified() end
-
 ---@return number
 function __IsoDirections:toAngle() end
 
 ---@return number
 function __IsoDirections:toAngleDegrees() end
 
----@return string
-function __IsoDirections:toCompassString() end
-
 IsoDirections = {}
 
 ---@type IsoDirections
 IsoDirections.E = nil
-
----@type IsoDirections
-IsoDirections.Max = nil
 
 ---@type IsoDirections
 IsoDirections.N = nil
@@ -77,21 +65,18 @@ IsoDirections.SW = nil
 ---@type IsoDirections
 IsoDirections.W = nil
 
----@param dir IsoDirections
----@return IsoDirections
-function IsoDirections.RotLeft(dir) end
-
----@param dir IsoDirections
----@return IsoDirections
-function IsoDirections.RotRight(dir) end
-
 ---@param angle Vector2
 ---@return IsoDirections
 function IsoDirections.cardinalFromAngle(angle) end
 
+---@param dx number
+---@param dy number
+---@return IsoDirections
+function IsoDirections.cardinalFromAngle(dx, dy) end
+
 ---@param angleRadians number
 ---@return IsoDirections
-function IsoDirections.fromAngle(angleRadians) end
+function IsoDirections.cardinalFromAngle(angleRadians) end
 
 ---@param angle Vector2
 ---@return IsoDirections
@@ -102,9 +87,9 @@ function IsoDirections.fromAngle(angle) end
 ---@return IsoDirections
 function IsoDirections.fromAngle(angleX, angleY) end
 
----@param angle Vector2
+---@param angleRadians number
 ---@return IsoDirections
-function IsoDirections.fromAngleActual(angle) end
+function IsoDirections.fromAngle(angleRadians) end
 
 ---@param index integer
 ---@return IsoDirections
@@ -114,15 +99,8 @@ function IsoDirections.fromIndex(index) end
 ---@return IsoDirections
 function IsoDirections.fromString(str) end
 
----@return kahlua.Array<kahlua.Array<IsoDirections>>
-function IsoDirections.generateTables() end
-
 ---@return IsoDirections
 function IsoDirections.getRandom() end
-
----@param dir IsoDirections
----@return IsoDirections
-function IsoDirections.reverse(dir) end
 
 ---@param name string
 ---@return IsoDirections

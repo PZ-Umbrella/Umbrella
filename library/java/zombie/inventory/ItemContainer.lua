@@ -119,10 +119,10 @@ function __ItemContainer:RemoveAll(itemType) end
 ---@return ArrayList<InventoryItem>
 function __ItemContainer:RemoveAll(itemType, count) end
 
----@param String string
+---@param string string
 ---@param insideInv boolean
 ---@return InventoryItem
-function __ItemContainer:RemoveOneOf(String, insideInv) end
+function __ItemContainer:RemoveOneOf(string, insideInv) end
 
 ---@param String string
 function __ItemContainer:RemoveOneOf(String) end
@@ -169,9 +169,9 @@ function __ItemContainer:canCharacterUnlockVehicleDoor(playerObj) end
 ---@return boolean
 function __ItemContainer:canHumanCorpseFit() end
 
----@param in_item InventoryItem
+---@param item InventoryItem
 ---@return boolean
-function __ItemContainer:canItemFit(in_item) end
+function __ItemContainer:canItemFit(item) end
 
 function __ItemContainer:clear() end
 
@@ -184,17 +184,17 @@ function __ItemContainer:contains(item) end
 ---@return boolean
 function __ItemContainer:contains(itemToFind, doInv) end
 
----@param in_predicate Invokers.Params2.Boolean.IParam2<InventoryItem>
+---@param predicate Invokers.Params2.Boolean.IParam2<InventoryItem>
 ---@param doInv boolean
 ---@return boolean
-function __ItemContainer:contains(in_predicate, doInv) end
+function __ItemContainer:contains(predicate, doInv) end
 
 ---@generic T
----@param in_itemToCompare T
----@param in_predicate Invokers.Params2.Boolean.ICallback<T, InventoryItem>
+---@param itemToCompare T
+---@param predicate Invokers.Params2.Boolean.ICallback<T, InventoryItem>
 ---@param doInv boolean
 ---@return boolean
-function __ItemContainer:contains(in_itemToCompare, in_predicate, doInv) end
+function __ItemContainer:contains(itemToCompare, predicate, doInv) end
 
 ---@param type string
 ---@param doInv boolean
@@ -279,6 +279,10 @@ function __ItemContainer:containsTypeEvalArgRecurse(type, functionObj, arg) end
 ---@return boolean
 function __ItemContainer:containsTypeEvalRecurse(type, functionObj) end
 
+---@param type ItemKey
+---@return boolean
+function __ItemContainer:containsTypeRecurse(type) end
+
 ---@param type string
 ---@return boolean
 function __ItemContainer:containsTypeRecurse(type) end
@@ -303,17 +307,17 @@ function __ItemContainer:emptyIt() end
 ---@return InventoryItem
 function __ItemContainer:findHumanCorpseItem() end
 
----@param in_predicate Invokers.Params2.Boolean.IParam2<InventoryItem>
+---@param predicate Invokers.Params2.Boolean.IParam2<InventoryItem>
 ---@param doInv boolean
 ---@return InventoryItem
-function __ItemContainer:findItem(in_predicate, doInv) end
+function __ItemContainer:findItem(predicate, doInv) end
 
 ---@generic T
----@param in_itemToCompare T
----@param in_predicate Invokers.Params2.Boolean.ICallback<T, InventoryItem>
+---@param itemToCompare T
+---@param predicate Invokers.Params2.Boolean.ICallback<T, InventoryItem>
 ---@param doInv boolean
 ---@return InventoryItem
-function __ItemContainer:findItem(in_itemToCompare, in_predicate, doInv) end
+function __ItemContainer:findItem(itemToCompare, predicate, doInv) end
 
 ---@param type string
 ---@param doInv boolean
@@ -910,6 +914,10 @@ function __ItemContainer:getItemCount(type, doBags) end
 ---@return integer
 function __ItemContainer:getItemCountFromTypeRecurse(type) end
 
+---@param type ItemKey
+---@return integer
+function __ItemContainer:getItemCountRecurse(type) end
+
 ---@param type string
 ---@return integer
 function __ItemContainer:getItemCountRecurse(type) end
@@ -1314,9 +1322,12 @@ function __ItemContainer:getWaterContainerCount() end
 ---@return integer
 function __ItemContainer:getWeightReduction() end
 
----@param out_result Vector2
+---@return IsoWorldInventoryObject
+function __ItemContainer:getWorldItem() end
+
+---@param result Vector2
 ---@return Vector2
-function __ItemContainer:getWorldPosition(out_result) end
+function __ItemContainer:getWorldPosition(result) end
 
 ---@param recipe string
 ---@param chr IsoGameCharacter
@@ -1338,6 +1349,15 @@ function __ItemContainer:hasRoomFor(chr, item) end
 ---@param weightVal number
 ---@return boolean
 function __ItemContainer:hasRoomFor(chr, weightVal) end
+
+---@param chr IsoGameCharacter
+---@param weightVal number
+---@param weightAddedToFloor number
+---@return boolean
+function __ItemContainer:hasRoomFor(chr, weightVal, weightAddedToFloor) end
+
+---@return boolean
+function __ItemContainer:hasWorldItem() end
 
 ---@param keyId integer
 ---@return InventoryItem

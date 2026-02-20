@@ -3,6 +3,32 @@
 ---@class ZomboidRadio
 local __ZomboidRadio = {}
 
+---@param sourceX integer
+---@param sourceY integer
+---@param channel integer
+---@param msg string
+---@param guid string
+---@param codes string
+---@param r number
+---@param g number
+---@param b number
+---@param signalStrength integer
+---@param isTV boolean
+function __ZomboidRadio:DistributeTransmission(
+	sourceX,
+	sourceY,
+	channel,
+	msg,
+	guid,
+	codes,
+	r,
+	g,
+	b,
+	signalStrength,
+	isTV
+)
+end
+
 ---@param category string
 ---@return Map<integer, string>
 function __ZomboidRadio:GetChannelList(category) end
@@ -17,32 +43,6 @@ function __ZomboidRadio:Load() end
 ---@param listenmode boolean
 ---@param isTV boolean
 function __ZomboidRadio:PlayerListensChannel(channel, listenmode, isTV) end
-
----@param sourceX integer
----@param sourceY integer
----@param channel integer
----@param msg string
----@param guid string
----@param codes string
----@param r number
----@param g number
----@param b number
----@param signalStrength integer
----@param isTV boolean
-function __ZomboidRadio:ReceiveTransmission(
-	sourceX,
-	sourceY,
-	channel,
-	msg,
-	guid,
-	codes,
-	r,
-	g,
-	b,
-	signalStrength,
-	isTV
-)
-end
 
 ---@param device WaveSignalDevice
 function __ZomboidRadio:RegisterDevice(device) end

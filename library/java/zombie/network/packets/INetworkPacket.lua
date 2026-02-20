@@ -32,7 +32,7 @@ function __INetworkPacket:processClientLoading(connection) end
 function __INetworkPacket:processServer(packetType, connection) end
 
 ---@param packetType PacketTypes.PacketType
----@param connection UdpConnection
+---@param connection IConnection
 function __INetworkPacket:sendToClient(packetType, connection) end
 
 ---@param packetType PacketTypes.PacketType

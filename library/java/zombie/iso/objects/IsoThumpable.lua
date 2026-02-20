@@ -107,6 +107,9 @@ function __IsoThumpable:createLightSource(radius, offsetX, offsetY, offsetZ, lif
 
 function __IsoThumpable:destroy() end
 
+---@param consumer Consumer<IsoThumpable>
+function __IsoThumpable:forEachDoorObject(consumer) end
+
 ---@param chr IsoGameCharacter
 ---@return IsoGridSquare
 function __IsoThumpable:getAddSheetSquare(chr) end
@@ -316,9 +319,6 @@ function __IsoThumpable:isTallHoppable() end
 function __IsoThumpable:isThumpable() end
 
 ---@return boolean
-function __IsoThumpable:isWindow() end
-
----@return boolean
 function __IsoThumpable:isWindowN() end
 
 ---@return boolean
@@ -329,7 +329,7 @@ function __IsoThumpable:isWindowW() end
 ---@param IS_DEBUG_SAVE boolean
 function __IsoThumpable:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param bb ByteBuffer
 function __IsoThumpable:loadChange(change, bb) end
 
@@ -372,7 +372,7 @@ function __IsoThumpable:renderWallTile(dir, x, y, z, col, bDoAttached, bWallLigh
 ---@param IS_DEBUG_SAVE boolean
 function __IsoThumpable:save(output, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param tbl table
 ---@param bb ByteBuffer
 function __IsoThumpable:saveChange(change, tbl, bb) end

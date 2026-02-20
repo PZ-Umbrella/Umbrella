@@ -29,25 +29,19 @@ function __WalkTowardState:exit(owner) end
 ---@return boolean
 function __WalkTowardState:isMoving(owner) end
 
----@return boolean
-function __WalkTowardState:isSyncInIdle() end
-
----@return boolean
-function __WalkTowardState:isSyncOnEnter() end
-
----@return boolean
-function __WalkTowardState:isSyncOnExit() end
-
----@return boolean
-function __WalkTowardState:isSyncOnSquare() end
-
 WalkTowardState = {}
+
+---@type State.Param<boolean>
+WalkTowardState.IGNORE_OFFSET = nil
+
+---@type State.Param<integer>
+WalkTowardState.IGNORE_TIME = nil
+
+---@type State.Param<integer>
+WalkTowardState.TICK_COUNT = nil
 
 ---@return WalkTowardState
 function WalkTowardState.instance() end
-
----@return WalkTowardState
-function WalkTowardState.new() end
 
 ---@type Class<WalkTowardState>
 WalkTowardState.class = nil

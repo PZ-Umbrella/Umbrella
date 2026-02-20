@@ -16,9 +16,9 @@ function __IsoButcherHook:getRemovingBloodProgress() end
 function __IsoButcherHook:isRemovingBlood() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
----@param IS_DEBUG_SAVE boolean
-function __IsoButcherHook:load(input, WorldVersion, IS_DEBUG_SAVE) end
+---@param worldVersion integer
+---@param isDebugSave boolean
+function __IsoButcherHook:load(input, worldVersion, isDebugSave) end
 
 function __IsoButcherHook:onReceivedNetUpdate() end
 
@@ -31,10 +31,6 @@ function __IsoButcherHook:reattachAnimal(animal) end
 function __IsoButcherHook:removeFromWorld() end
 
 function __IsoButcherHook:removeHook() end
-
----@param output ByteBuffer
----@param IS_DEBUG_SAVE boolean
-function __IsoButcherHook:save(output, IS_DEBUG_SAVE) end
 
 ---@param animal IsoAnimal
 function __IsoButcherHook:setAnimal(animal) end

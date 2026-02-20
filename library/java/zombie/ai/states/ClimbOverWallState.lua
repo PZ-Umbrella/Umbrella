@@ -32,18 +32,6 @@ function __ClimbOverWallState:isIgnoreCollide(owner, fromX, fromY, fromZ, toX, t
 ---@return boolean
 function __ClimbOverWallState:isProcessedOnEnter() end
 
----@return boolean
-function __ClimbOverWallState:isSyncInIdle() end
-
----@return boolean
-function __ClimbOverWallState:isSyncOnEnter() end
-
----@return boolean
-function __ClimbOverWallState:isSyncOnExit() end
-
----@return boolean
-function __ClimbOverWallState:isSyncOnSquare() end
-
 ---@param owner IsoGameCharacter
 ---@param delegate Map<any, any>
 function __ClimbOverWallState:processOnEnter(owner, delegate) end
@@ -54,11 +42,32 @@ function __ClimbOverWallState:setParams(owner, dir) end
 
 ClimbOverWallState = {}
 
----@return ClimbOverWallState
-function ClimbOverWallState.instance() end
+---@type State.Param<IsoDirections>
+ClimbOverWallState.DIR = nil
+
+---@type State.Param<integer>
+ClimbOverWallState.END_X = nil
+
+---@type State.Param<integer>
+ClimbOverWallState.END_Y = nil
+
+---@type State.Param<integer>
+ClimbOverWallState.START_X = nil
+
+---@type State.Param<integer>
+ClimbOverWallState.START_Y = nil
+
+---@type State.Param<boolean>
+ClimbOverWallState.STRUGGLE = nil
+
+---@type State.Param<boolean>
+ClimbOverWallState.SUCCESS = nil
+
+---@type State.Param<integer>
+ClimbOverWallState.Z = nil
 
 ---@return ClimbOverWallState
-function ClimbOverWallState.new() end
+function ClimbOverWallState.instance() end
 
 ---@type Class<ClimbOverWallState>
 ClimbOverWallState.class = nil

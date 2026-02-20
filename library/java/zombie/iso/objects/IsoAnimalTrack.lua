@@ -13,13 +13,13 @@ function __IsoAnimalTrack:getObjectName() end
 function __IsoAnimalTrack:glow(chr) end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
----@param IS_DEBUG_SAVE boolean
-function __IsoAnimalTrack:load(input, WorldVersion, IS_DEBUG_SAVE) end
+---@param worldversion integer
+---@param isDebugSave boolean
+function __IsoAnimalTrack:load(input, worldversion, isDebugSave) end
 
 ---@param output ByteBuffer
----@param IS_DEBUG_SAVE boolean
-function __IsoAnimalTrack:save(output, IS_DEBUG_SAVE) end
+---@param isDebugSave boolean
+function __IsoAnimalTrack:save(output, isDebugSave) end
 
 ---@param chr IsoPlayer
 function __IsoAnimalTrack:stopGlow(chr) end

@@ -115,16 +115,16 @@ function __Zone:isPolyline() end
 function __Zone:isRectangle() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
+---@param worldVersion integer
 ---@param stringMap Map<integer, string>
 ---@param sharedStrings SharedStrings
 ---@return Zone
-function __Zone:load(input, WorldVersion, stringMap, sharedStrings) end
+function __Zone:load(input, worldVersion, stringMap, sharedStrings) end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
+---@param worldVersion integer
 ---@return Zone
-function __Zone:load(input, WorldVersion) end
+function __Zone:load(input, worldVersion) end
 
 ---@param location IsoGameCharacter.Location
 ---@return IsoGameCharacter.Location

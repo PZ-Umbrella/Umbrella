@@ -10,7 +10,7 @@ function __NetTimedAction:animEvent(event, parameter) end
 function __NetTimedAction:forceComplete() end
 
 ---@param b ByteBuffer
----@param connection UdpConnection
+---@param connection IConnection
 function __NetTimedAction:parse(b, connection) end
 
 ---@param player IsoPlayer

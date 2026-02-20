@@ -55,9 +55,6 @@ function __IsoLightSwitch:getPrimaryR() end
 function __IsoLightSwitch:getUseBattery() end
 
 ---@return boolean
-function __IsoLightSwitch:hasAnimatedAttachments() end
-
----@return boolean
 function __IsoLightSwitch:hasLightBulb() end
 
 ---@return boolean
@@ -82,12 +79,6 @@ function __IsoLightSwitch:removeFromWorld() end
 ---@param chr IsoGameCharacter
 ---@return InventoryItem
 function __IsoLightSwitch:removeLightBulb(chr) end
-
----@param x number
----@param y number
----@param z number
----@param col ColorInfo
-function __IsoLightSwitch:renderAnimatedAttachments(x, y, z, col) end
 
 ---@param output ByteBuffer
 ---@param IS_DEBUG_SAVE boolean

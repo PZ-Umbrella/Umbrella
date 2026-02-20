@@ -115,8 +115,8 @@ function __SafeHouse:removePlayer(player) end
 ---@param output ByteBuffer
 function __SafeHouse:save(output) end
 
----@param _datetimeCreated integer
-function __SafeHouse:setDatetimeCreated(_datetimeCreated) end
+---@param datetimeCreated integer
+function __SafeHouse:setDatetimeCreated(datetimeCreated) end
 
 ---@param h integer
 function __SafeHouse:setH(h) end
@@ -127,8 +127,8 @@ function __SafeHouse:setHitPoints(hitPoints) end
 ---@param lastVisited integer
 function __SafeHouse:setLastVisited(lastVisited) end
 
----@param _location string
-function __SafeHouse:setLocation(_location) end
+---@param location string
+function __SafeHouse:setLocation(location) end
 
 ---@param value integer
 function __SafeHouse:setOnlineID(value) end
@@ -284,7 +284,7 @@ function SafeHouse.isSafeHouse(square, username, doDisableSafehouse) end
 ---@param safehouse SafeHouse
 ---@param player IsoPlayer
 ---@return boolean
-function SafeHouse.isSafehouseAllowClaim(safehouse, player) end
+function SafeHouse.isSafehouseAllowClaimWar(safehouse, player) end
 
 ---@param square IsoGridSquare
 ---@param player IsoPlayer

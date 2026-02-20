@@ -57,15 +57,15 @@ FluidSample = {}
 function FluidSample.Alloc() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
+---@param worldVersion integer
 ---@return FluidSample
-function FluidSample.Load(input, WorldVersion) end
+function FluidSample.Load(input, worldVersion) end
 
 ---@param fluidSample FluidSample
 ---@param input ByteBuffer
----@param WorldVersion integer
+---@param worldVersion integer
 ---@return FluidSample
-function FluidSample.Load(fluidSample, input, WorldVersion) end
+function FluidSample.Load(fluidSample, input, worldVersion) end
 
 ---@param fluidSample FluidSample
 ---@param output ByteBuffer

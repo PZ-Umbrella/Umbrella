@@ -44,6 +44,10 @@ function __BodyLocationGroup:isHideModel(firstId, secondId) end
 ---@return boolean
 function __BodyLocationGroup:isMultiItem(locationId) end
 
+---@param itemBodyLocation ItemBodyLocation
+---@param index integer
+function __BodyLocationGroup:moveLocationToIndex(itemBodyLocation, index) end
+
 ---@param firstId ItemBodyLocation
 ---@param secondId ItemBodyLocation
 function __BodyLocationGroup:setAltModel(firstId, secondId) end

@@ -9,6 +9,27 @@ function __IsoAnimal:GetAnimSetName() end
 ---@param vehicle BaseVehicle
 ---@param speed number
 ---@param isHitFromBehind boolean
+---@param hitDirX number
+---@param hitDirY number
+---@param pushedBack boolean
+---@param collisionPosOnVehicleX number
+---@param collisionPosOnVehicleY number
+---@return number
+function __IsoAnimal:Hit(
+	vehicle,
+	speed,
+	isHitFromBehind,
+	hitDirX,
+	hitDirY,
+	pushedBack,
+	collisionPosOnVehicleX,
+	collisionPosOnVehicleY
+)
+end
+
+---@param vehicle BaseVehicle
+---@param speed number
+---@param isHitFromBehind boolean
 ---@param hitDir Vector2
 ---@return number
 function __IsoAnimal:Hit(vehicle, speed, isHitFromBehind, hitDir) end
@@ -45,10 +66,6 @@ function __IsoAnimal:allowsTwist() end
 
 ---@return boolean
 function __IsoAnimal:animalShouldThump() end
-
----@param vehicleSpeed number
----@param damage number
-function __IsoAnimal:applyDamageFromVehicle(vehicleSpeed, damage) end
 
 ---@return boolean
 function __IsoAnimal:attackOtherMales() end
@@ -107,6 +124,9 @@ function __IsoAnimal:canPoop() end
 
 ---@return boolean
 function __IsoAnimal:canRagdoll() end
+
+---@return boolean
+function __IsoAnimal:canUseCurrentPoseForCorpse() end
 
 function __IsoAnimal:cancelLuring() end
 
@@ -503,9 +523,9 @@ function __IsoAnimal:isWild() end
 function __IsoAnimal:killed(chr) end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
----@param IS_DEBUG_SAVE boolean
-function __IsoAnimal:load(input, WorldVersion, IS_DEBUG_SAVE) end
+---@param worldVersion integer
+---@param isDebugSave boolean
+function __IsoAnimal:load(input, worldVersion, isDebugSave) end
 
 ---@param chr IsoGameCharacter
 ---@param bucket InventoryItem
@@ -572,15 +592,6 @@ function __IsoAnimal:removeFromWorld() end
 ---@param x number
 ---@param y number
 ---@param z number
----@param col ColorInfo
----@param bDoChild boolean
----@param bWallLightingPass boolean
----@param shader Shader
-function __IsoAnimal:render(x, y, z, col, bDoChild, bWallLightingPass, shader) end
-
----@param x number
----@param y number
----@param z number
 function __IsoAnimal:renderShadow(x, y, z) end
 
 function __IsoAnimal:renderlast() end
@@ -588,13 +599,13 @@ function __IsoAnimal:renderlast() end
 function __IsoAnimal:respondToSound() end
 
 ---@param output ByteBuffer
----@param IS_DEBUG_SAVE boolean
-function __IsoAnimal:save(output, IS_DEBUG_SAVE) end
+---@param isDebugSave boolean
+function __IsoAnimal:save(output, isDebugSave) end
 
 ---@param output ByteBuffer
----@param IS_DEBUG_SAVE boolean
+---@param isDebugSave boolean
 ---@param serialize boolean
-function __IsoAnimal:save(output, IS_DEBUG_SAVE, serialize) end
+function __IsoAnimal:save(output, isDebugSave, serialize) end
 
 ---@param newAge integer
 function __IsoAnimal:setAgeDebug(newAge) end
@@ -608,8 +619,8 @@ function __IsoAnimal:setAnimalID(id) end
 ---@param zone AnimalZone
 function __IsoAnimal:setAnimalZone(zone) end
 
----@param character IsoGameCharacter
-function __IsoAnimal:setAttackedBy(character) end
+---@param attackedBy IsoGameCharacter
+function __IsoAnimal:setAttackedBy(attackedBy) end
 
 ---@param customName string
 function __IsoAnimal:setCustomName(customName) end
@@ -630,8 +641,8 @@ function __IsoAnimal:setDebugStress(stress) end
 ---@param female boolean
 function __IsoAnimal:setFemale(female) end
 
----@param Health number
-function __IsoAnimal:setHealth(Health) end
+---@param health number
+function __IsoAnimal:setHealth(health) end
 
 ---@param hook IsoButcherHook
 function __IsoAnimal:setHook(hook) end
@@ -708,8 +719,9 @@ function __IsoAnimal:stopAllMovementNow() end
 function __IsoAnimal:test() end
 
 ---@param vehicle BaseVehicle
+---@param hitVars BaseVehicle.HitVars
 ---@return boolean
-function __IsoAnimal:testCollideWithVehicles(vehicle) end
+function __IsoAnimal:testCollideWithVehicles(vehicle, hitVars) end
 
 ---@param chr IsoPlayer
 ---@param item InventoryItem
@@ -745,9 +757,6 @@ IsoAnimal = {}
 ---@type integer
 IsoAnimal.INVALID_SQUARE_XY = nil
 
----@type boolean
-IsoAnimal.displayExtraValues = nil
-
 ---@type Vector2
 IsoAnimal.tempVector2 = nil
 
@@ -760,18 +769,10 @@ function IsoAnimal.addAnimalPart(part, player, carcass) end
 ---@return IsoAnimal
 function IsoAnimal.createAnimalFromCorpse(body) end
 
----@return boolean
-function IsoAnimal.isExtraValues() end
-
 ---@param item Food
 ---@param size number
 ---@param meatRatio number
 function IsoAnimal.modifyMeat(item, size, meatRatio) end
-
----@param doit boolean
-function IsoAnimal.setExtraValues(doit) end
-
-function IsoAnimal.toggleExtraValues() end
 
 ---@param cell IsoCell
 ---@return IsoAnimal

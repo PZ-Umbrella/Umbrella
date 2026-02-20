@@ -122,11 +122,11 @@ function __IsoCell:PlaceLot(lot, sx, sy, sz, bClearExisting) end
 ---@param sy integer
 ---@param sz integer
 ---@param ch IsoChunk
----@param WX integer
----@param WY integer
+---@param wx integer
+---@param wy integer
 ---@param bDoneSquares kahlua.Array<boolean>
 ---@return integer
-function __IsoCell:PlaceLot(lot, sx, sy, sz, ch, WX, WY, bDoneSquares) end
+function __IsoCell:PlaceLot(lot, sx, sy, sz, ch, wx, wy, bDoneSquares) end
 
 function __IsoCell:ProcessSpottedRooms() end
 
@@ -531,8 +531,8 @@ function __IsoCell:removeLamppost(light) end
 function __IsoCell:render() end
 
 ---@param perPlayerRender IsoCell.PerPlayerRender
----@param MaxHeight integer
-function __IsoCell:renderDebugLighting(perPlayerRender, MaxHeight) end
+---@param maxHeight integer
+function __IsoCell:renderDebugLighting(perPlayerRender, maxHeight) end
 
 ---@param playerIndex integer
 function __IsoCell:renderDebugPhysics(playerIndex) end

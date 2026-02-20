@@ -3,10 +3,6 @@
 ---@class Resources: Component
 local __Resources = {}
 
----@param tooltipUI ObjectTooltip
----@param layout ObjectTooltip.Layout
-function __Resources:DoTooltip(tooltipUI, layout) end
-
 ---@param blueprint ResourceBlueprint
 function __Resources:createResource(blueprint) end
 
@@ -23,9 +19,9 @@ function __Resources:createResourceFromSerial(groupName, blueprintSerial) end
 
 function __Resources:dumpContentsInSquare() end
 
----@param name_id string
+---@param nameId string
 ---@return Resource
-function __Resources:getResource(name_id) end
+function __Resources:getResource(nameId) end
 
 ---@param index integer
 ---@return Resource
@@ -110,9 +106,6 @@ function __Resources:getResourcesFromGroup(group, list, io, type) end
 
 ---@return boolean
 function __Resources:isNoContainerOrEmpty() end
-
----@return boolean
-function __Resources:isValid() end
 
 ---@param resourceID string
 function __Resources:removeResource(resourceID) end

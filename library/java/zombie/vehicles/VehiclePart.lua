@@ -31,6 +31,17 @@ function __VehiclePart:createSignalDevice() end
 ---@param focusing integer
 function __VehiclePart:createSpotLight(xOffset, yOffset, dist, intensity, dot, focusing) end
 
+---@param xOffset number
+---@param yOffset number
+---@param dist number
+---@param intensity number
+---@param dot number
+---@param focusing integer
+---@param r number
+---@param g number
+---@param b number
+function __VehiclePart:createSpotLightColor(xOffset, yOffset, dist, intensity, dot, focusing, r, g, b) end
+
 ---@param amount integer
 function __VehiclePart:damage(amount) end
 

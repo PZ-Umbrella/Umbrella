@@ -44,8 +44,8 @@ function __WornItems:getLocation(item) end
 function __WornItems:isEmpty() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __WornItems:load(input, WorldVersion) end
+---@param worldVersion integer
+function __WornItems:load(input, worldVersion) end
 
 ---@param item InventoryItem
 function __WornItems:remove(item) end

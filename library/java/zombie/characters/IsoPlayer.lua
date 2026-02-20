@@ -21,14 +21,6 @@ function __IsoPlayer:DoFootstepSound(type) end
 ---@return string
 function __IsoPlayer:GetAnimSetName() end
 
----@param vehicle BaseVehicle
----@param speed number
----@param isHitFromBehind boolean
----@param hitDirX number
----@param hitDirY number
----@return number
-function __IsoPlayer:Hit(vehicle, speed, isHitFromBehind, hitDirX, hitDirY) end
-
 function __IsoPlayer:InitSpriteParts() end
 
 ---@return boolean
@@ -61,9 +53,6 @@ function __IsoPlayer:TestAnimalSpotPlayer(chr) end
 
 ---@param chr IsoMovingObject
 function __IsoPlayer:TestZombieSpotPlayer(chr) end
-
----@param sender ActionContext
-function __IsoPlayer:actionStateChanged(sender) end
 
 ---@param anim IsoAnimal
 function __IsoPlayer:addAttachedAnimal(anim) end
@@ -137,10 +126,6 @@ function __IsoPlayer:climbOverWall(dir) end
 ---@return ByteBufferWriter
 function __IsoPlayer:createPlayerStats(b, adminUsername) end
 
----@param vehicleSpeed number
----@return number
-function __IsoPlayer:doBeatenVehicle(vehicleSpeed) end
-
 ---@return boolean
 function __IsoPlayer:doContext() end
 
@@ -195,9 +180,6 @@ function __IsoPlayer:getAttackType() end
 ---@return boolean
 function __IsoPlayer:getAutoDrink() end
 
----@return IsoCell # the cell
-function __IsoPlayer:getCell() end
-
 ---@return integer
 function __IsoPlayer:getClearSpottedTimer() end
 
@@ -220,9 +202,9 @@ function __IsoPlayer:getControllerAimDir(vec) end
 ---@return number
 function __IsoPlayer:getDamageFromHitByACar(vehicleSpeed) end
 
----@param in_separatorStr string
+---@param separatorStr string
 ---@return string
-function __IsoPlayer:getDescription(in_separatorStr) end
+function __IsoPlayer:getDescription(separatorStr) end
 
 ---@return integer
 function __IsoPlayer:getDialogMood() end
@@ -307,6 +289,9 @@ function __IsoPlayer:getMaxWeightDelta() end
 ---@return integer
 function __IsoPlayer:getMechanicsItem(itemId) end
 
+---@return UpdateSchedulerSimulationLevel
+function __IsoPlayer:getMinimumSimulationLevel() end
+
 ---@param type MoodleType
 ---@return integer
 function __IsoPlayer:getMoodleLevel(type) end
@@ -381,9 +366,6 @@ function __IsoPlayer:getReloadingMod() end
 
 ---@return Role
 function __IsoPlayer:getRole() end
-
----@return number
-function __IsoPlayer:getSeeNearbyCharacterDistance() end
 
 ---@return number
 function __IsoPlayer:getSelectedZoneForHighlight() end
@@ -517,9 +499,11 @@ function __IsoPlayer:isAttackType(attackType) end
 ---@return boolean
 function __IsoPlayer:isAttacking() end
 
+---@deprecated
 ---@return boolean
 function __IsoPlayer:isAuthorizeMeleeAction() end
 
+---@deprecated
 ---@return boolean
 function __IsoPlayer:isAuthorizeShoveStomp() end
 
@@ -720,10 +704,6 @@ function __IsoPlayer:isTorchCone() end
 ---@return boolean
 function __IsoPlayer:isUnwanted(item) end
 
----@param testVehicle BaseVehicle
----@return boolean
-function __IsoPlayer:isVehicleCollisionActive(testVehicle) end
-
 ---@return boolean
 function __IsoPlayer:isWaiting() end
 
@@ -750,16 +730,29 @@ function __IsoPlayer:load(input, WorldVersion, IS_DEBUG_SAVE) end
 ---@param fileName string
 function __IsoPlayer:load(fileName) end
 
+---@param change IsoObjectChange
+---@param bb ByteBuffer
+function __IsoPlayer:loadChange(change, bb) end
+
 ---@param item InventoryItem
 function __IsoPlayer:lureAnimal(item) end
 
 function __IsoPlayer:nullifyAiming() end
+
+---@param vehicle BaseVehicle
+---@param impactSpeed number
+---@param pushedBack boolean
+---@return number
+function __IsoPlayer:onHitByVehicleApplyDamage(vehicle, impactSpeed, pushedBack) end
 
 function __IsoPlayer:onWornItemsChanged() end
 
 function __IsoPlayer:petAnimal() end
 
 function __IsoPlayer:playBloodSplatterSound() end
+
+---@return integer
+function __IsoPlayer:playGainExperienceLevelSound() end
 
 ---@param suffix string
 ---@return integer
@@ -846,15 +839,17 @@ function __IsoPlayer:setAttackStarted(attackStarted) end
 ---@param attackType AttackType
 function __IsoPlayer:setAttackType(attackType) end
 
----@param in_attackVariationX number
-function __IsoPlayer:setAttackVariationX(in_attackVariationX) end
+---@param attackVariationX number
+function __IsoPlayer:setAttackVariationX(attackVariationX) end
 
----@param in_attackVariationY number
-function __IsoPlayer:setAttackVariationY(in_attackVariationY) end
+---@param attackVariationY number
+function __IsoPlayer:setAttackVariationY(attackVariationY) end
 
+---@deprecated
 ---@param enabled boolean
 function __IsoPlayer:setAuthorizeMeleeAction(enabled) end
 
+---@deprecated
 ---@param enabled boolean
 function __IsoPlayer:setAuthorizeShoveStomp(enabled) end
 
@@ -1257,13 +1252,13 @@ function IsoPlayer.hasInstance() end
 ---@param callback Runnable
 function IsoPlayer.invokeOnPlayerInstance(callback) end
 
----@param in_character IsoGameCharacter
+---@param character IsoGameCharacter
 ---@return boolean
-function IsoPlayer.isLocalPlayer(in_character) end
+function IsoPlayer.isLocalPlayer(character) end
 
----@param in_characterObject any
+---@param characterObject any
 ---@return boolean
-function IsoPlayer.isLocalPlayer(in_characterObject) end
+function IsoPlayer.isLocalPlayer(characterObject) end
 
 ---@param id string
 ---@return boolean

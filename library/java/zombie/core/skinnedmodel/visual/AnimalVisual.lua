@@ -5,8 +5,8 @@ local __AnimalVisual = {}
 
 function __AnimalVisual:clear() end
 
----@param other_ BaseVisual
-function __AnimalVisual:copyFrom(other_) end
+---@param baseVisual BaseVisual
+function __AnimalVisual:copyFrom(baseVisual) end
 
 ---@param outfitName string
 ---@param itemVisuals ItemVisuals
@@ -38,8 +38,8 @@ function __AnimalVisual:getSkinTexture() end
 function __AnimalVisual:isSkeleton() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __AnimalVisual:load(input, WorldVersion) end
+---@param worldVersion integer
+function __AnimalVisual:load(input, worldVersion) end
 
 ---@param output ByteBuffer
 function __AnimalVisual:save(output) end

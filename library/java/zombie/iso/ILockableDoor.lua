@@ -17,6 +17,10 @@ function __ILockableDoor:canAddCurtain() end
 ---@return boolean
 function __ILockableDoor:canClimbOver(arg0) end
 
+---@param arg0 IsoGameCharacter
+---@return boolean
+function __ILockableDoor:couldBeOpen(arg0) end
+
 ---@return integer
 function __ILockableDoor:getKeyId() end
 

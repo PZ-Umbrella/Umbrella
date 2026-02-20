@@ -3,10 +3,6 @@
 ---@class Food: InventoryItem
 local __Food = {}
 
----@param item InventoryItem
----@return boolean
-function __Food:CanStack(item) end
-
 ---@param tooltipUI ObjectTooltip
 ---@param layout ObjectTooltip.Layout
 function __Food:DoTooltip(tooltipUI, layout) end
@@ -29,6 +25,9 @@ function __Food:canBeFrozen() end
 ---@param hutch IsoHutch
 ---@return boolean
 function __Food:checkEggHatch(hutch) end
+
+---@param realUsedHunger number
+function __Food:consumeHunger(realUsedHunger) end
 
 ---@param otherFood Food
 function __Food:copyAgeFrom(otherFood) end

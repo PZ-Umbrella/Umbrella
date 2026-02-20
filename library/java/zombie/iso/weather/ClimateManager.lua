@@ -316,7 +316,7 @@ function __ClimateManager:resetOverrides() end
 ---@param output DataOutputStream
 function __ClimateManager:save(output) end
 
----@param connection UdpConnection
+---@param connection IConnection
 function __ClimateManager:sendInitialState(connection) end
 
 ---@param f number

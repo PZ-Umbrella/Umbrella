@@ -3100,6 +3100,9 @@ ModelKey.DENIM_STRIPS_DIRTY = nil
 ModelKey.DENIM_STRIPS_DIRTY_BUNDLE = nil
 
 ---@type ModelKey
+ModelKey.DENTAL_FLOSS = nil
+
+---@type ModelKey
 ModelKey.DENTED_CAN = nil
 
 ---@type ModelKey

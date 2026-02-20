@@ -71,8 +71,6 @@ function __Nutrition:setProteins(proteins) end
 ---@param weight number
 function __Nutrition:setWeight(weight) end
 
-function __Nutrition:syncWeight() end
-
 function __Nutrition:update() end
 
 Nutrition = {}

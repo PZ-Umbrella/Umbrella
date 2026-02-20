@@ -22,25 +22,10 @@ function __StaggerBackState:exit(owner) end
 ---@return number
 function __StaggerBackState:getMaxStaggerTime(owner) end
 
----@return boolean
-function __StaggerBackState:isSyncInIdle() end
-
----@return boolean
-function __StaggerBackState:isSyncOnEnter() end
-
----@return boolean
-function __StaggerBackState:isSyncOnExit() end
-
----@return boolean
-function __StaggerBackState:isSyncOnSquare() end
-
 StaggerBackState = {}
 
 ---@return StaggerBackState
 function StaggerBackState.instance() end
-
----@return StaggerBackState
-function StaggerBackState.new() end
 
 ---@type Class<StaggerBackState>
 StaggerBackState.class = nil

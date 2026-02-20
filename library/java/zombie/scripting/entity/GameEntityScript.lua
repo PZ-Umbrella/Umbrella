@@ -63,9 +63,6 @@ function __GameEntityScript:getModuleName() end
 ---@return string
 function __GameEntityScript:getName() end
 
----@return boolean
-function __GameEntityScript:getObsolete() end
-
 ---@return integer
 function __GameEntityScript:getRegistry_id() end
 

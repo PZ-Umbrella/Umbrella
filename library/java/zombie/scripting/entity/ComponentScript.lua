@@ -3,9 +3,6 @@
 ---@class ComponentScript: BaseScriptObject
 local __ComponentScript = {}
 
----@param loadMode ScriptLoadMode
-function __ComponentScript:OnScriptsLoaded(loadMode) end
-
 ---@return string
 function __ComponentScript:getName() end
 

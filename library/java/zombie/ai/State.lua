@@ -1,7 +1,7 @@
 ---@meta _
 
 ---(Not exposed)
----@class State: IAnimEventListener, IAnimEventWrappedBroadcaster
+---@class State: IAnimEventListener, IAnimEventWrappedBroadcaster, IStateFlagsSource
 local __State = {}
 
 ---@param owner IsoGameCharacter
@@ -9,10 +9,6 @@ local __State = {}
 ---@param track AnimationTrack
 ---@param event AnimEvent
 function __State:animEvent(owner, layer, track, event) end
-
----@param owner IsoGameCharacter
----@return boolean
-function __State:canRagdoll(owner) end
 
 ---@param owner IsoGameCharacter
 function __State:enter(owner) end
@@ -33,14 +29,9 @@ function __State:getDeltaModifiers(owner, modifiers) end
 ---@return string
 function __State:getName() end
 
----Return TRUE if the owner is currently attacking.
----  Defaults to FALSE
 ---@param owner IsoGameCharacter
----@return boolean
-function __State:isAttacking(owner) end
-
----@return boolean # TRUE if this state handles the "Cancel Action" key or the B controller button.
-function __State:isDoingActionThatCanBeCancelled() end
+---@return Map<State.Param<any>, any>
+function __State:getParams(owner) end
 
 ---Return TRUE if the owner should ignore collisions when passing between two squares.
 --- Defaults to FALSE
@@ -53,12 +44,6 @@ function __State:isDoingActionThatCanBeCancelled() end
 ---@param toZ integer
 ---@return boolean
 function __State:isIgnoreCollide(owner, fromX, fromY, fromZ, toX, toY, toZ) end
-
----Return TRUE if the owner is currently moving.
----  Defaults to FALSE
----@param owner IsoGameCharacter
----@return boolean
-function __State:isMoving(owner) end
 
 ---@return boolean
 function __State:isProcessedOnEnter() end
@@ -77,6 +62,10 @@ function __State:isSyncOnExit() end
 
 ---@return boolean
 function __State:isSyncOnSquare() end
+
+---@param delegate Map<any, any>
+---@param character IsoGameCharacter
+function __State:loadFrom(delegate, character) end
 
 ---@param owner IsoGameCharacter
 ---@param delegate Map<any, any>

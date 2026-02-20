@@ -13,22 +13,7 @@ function __PlayerActionsState:animEvent(owner, layer, track, event) end
 function __PlayerActionsState:enter(owner) end
 
 ---@param owner IsoGameCharacter
-function __PlayerActionsState:execute(owner) end
-
----@param owner IsoGameCharacter
 function __PlayerActionsState:exit(owner) end
-
----@return boolean
-function __PlayerActionsState:isSyncInIdle() end
-
----@return boolean
-function __PlayerActionsState:isSyncOnEnter() end
-
----@return boolean
-function __PlayerActionsState:isSyncOnExit() end
-
----@return boolean
-function __PlayerActionsState:isSyncOnSquare() end
 
 ---@param owner IsoGameCharacter
 ---@param stage State.Stage
@@ -36,11 +21,29 @@ function __PlayerActionsState:setParams(owner, stage) end
 
 PlayerActionsState = {}
 
----@return PlayerActionsState
-function PlayerActionsState.instance() end
+---@type State.Param<boolean>
+PlayerActionsState.OVERRIDE = nil
+
+---@type State.Param<string>
+PlayerActionsState.PRIMARY = nil
+
+---@type State.Param<number>
+PlayerActionsState.RELOAD_SPEED = nil
+
+---@type State.Param<string>
+PlayerActionsState.SECONDARY = nil
+
+---@type State.Param<boolean>
+PlayerActionsState.SITONGROUND = nil
+
+---@type State.Param<State.Stage>
+PlayerActionsState.STAGE = nil
+
+---@type State.Param<Variables>
+PlayerActionsState.VARIABLES = nil
 
 ---@return PlayerActionsState
-function PlayerActionsState.new() end
+function PlayerActionsState.instance() end
 
 ---@type Class<PlayerActionsState>
 PlayerActionsState.class = nil

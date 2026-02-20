@@ -10,6 +10,9 @@
 ---@class GameClient
 
 ---(Not exposed)
+---@class IConnection
+
+---(Not exposed)
 ---@class NetworkVariables.ZombieState
 
 ---(Not exposed)

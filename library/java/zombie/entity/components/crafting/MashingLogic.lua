@@ -3,10 +3,6 @@
 ---@class MashingLogic: Component
 local __MashingLogic = {}
 
----@param tooltipUI ObjectTooltip
----@param layout ObjectTooltip.Layout
-function __MashingLogic:DoTooltip(tooltipUI, layout) end
-
 ---@param player IsoPlayer
 ---@return boolean
 function __MashingLogic:canStart(player) end
@@ -67,9 +63,6 @@ function __MashingLogic:isStartRequested() end
 
 ---@return boolean
 function __MashingLogic:isStopRequested() end
-
----@return boolean
-function __MashingLogic:isValid() end
 
 ---@param player IsoPlayer
 function __MashingLogic:sendStartRequest(player) end

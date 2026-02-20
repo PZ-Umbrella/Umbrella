@@ -36,6 +36,10 @@ function __ILuaGameCharacterClothing:getWornItems() end
 ---@param item InventoryItem
 function __ILuaGameCharacterClothing:removeWornItem(item) end
 
+---@param arg0 InventoryItem
+---@param arg1 boolean
+function __ILuaGameCharacterClothing:removeWornItem(arg0, arg1) end
+
 ---@param item InventoryItem
 function __ILuaGameCharacterClothing:setClothingItem_Back(item) end
 

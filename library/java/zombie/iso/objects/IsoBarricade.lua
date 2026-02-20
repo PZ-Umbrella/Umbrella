@@ -6,12 +6,6 @@ local __IsoBarricade = {}
 ---@param amount number
 function __IsoBarricade:Damage(amount) end
 
----@param obj IsoMovingObject
----@param from IsoGridSquare
----@param to IsoGridSquare
----@return boolean
-function __IsoBarricade:TestCollide(obj, from, to) end
-
 ---@param from IsoGridSquare
 ---@param to IsoGridSquare
 ---@return IsoObject.VisionResult
@@ -97,7 +91,7 @@ function __IsoBarricade:isMetalBar() end
 ---@param IS_DEBUG_SAVE boolean
 function __IsoBarricade:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param bb ByteBuffer
 function __IsoBarricade:loadChange(change, bb) end
 
@@ -126,13 +120,13 @@ function __IsoBarricade:render(x, y, z, col, bDoAttached, bWallLightingPass, sha
 ---@param IS_DEBUG_SAVE boolean
 function __IsoBarricade:save(output, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param tbl table
 ---@param bb ByteBuffer
 function __IsoBarricade:saveChange(change, tbl, bb) end
 
----@param Health integer
-function __IsoBarricade:setHealth(Health) end
+---@param health integer
+function __IsoBarricade:setHealth(health) end
 
 ---@param bRemote boolean
 ---@param val integer

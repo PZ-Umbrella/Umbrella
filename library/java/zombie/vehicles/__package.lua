@@ -158,6 +158,9 @@
 ---@class VehicleInterpolation
 
 ---(Not exposed)
+---@class VehiclePedestrianContactTracking
+
+---(Not exposed)
 ---@class VehicleType.VehicleTypeDefinition
 
 zombie.vehicles = {}

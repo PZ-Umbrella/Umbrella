@@ -608,6 +608,10 @@ function __HandWeapon:muscleStrainMod(chr) end
 ---@return boolean
 function __HandWeapon:needToBeClosedOnceReload() end
 
+function __HandWeapon:playActivateSound() end
+
+function __HandWeapon:playDeactivateSound() end
+
 ---@return integer
 function __HandWeapon:randomizeBullets() end
 

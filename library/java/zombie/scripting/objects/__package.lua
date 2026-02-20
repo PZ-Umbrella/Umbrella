@@ -10,6 +10,9 @@
 ---@class Business
 
 ---(Not exposed)
+---@class Catalogue
+
+---(Not exposed)
 ---@class CharacterProfessionDefinitionScript
 
 ---(Not exposed)
@@ -28,7 +31,16 @@
 ---@class CoverType
 
 ---(Not exposed)
+---@class CraftRecipeKey
+
+---(Not exposed)
 ---@class CraftRecipeTag
+
+---(Not exposed)
+---@class Doodle
+
+---(Not exposed)
+---@class DoodleKids
 
 ---(Not exposed)
 ---@class Fixing.PredicateRequired
@@ -44,6 +56,12 @@
 
 ---(Not exposed)
 ---@class Job
+
+---(Not exposed)
+---@class Letter
+
+---(Not exposed)
+---@class Locket
 
 ---(Not exposed)
 ---@class Magazine
@@ -70,6 +88,9 @@
 ---@class PhysicsHitReactionScript
 
 ---(Not exposed)
+---@class Postcard
+
+---(Not exposed)
 ---@class RagdollScript
 
 ---(Not exposed)
@@ -79,10 +100,16 @@
 ---@class RecipeKey
 
 ---(Not exposed)
+---@class RpgManual
+
+---(Not exposed)
 ---@class SeasonRecipe
 
 ---(Not exposed)
 ---@class SignType
+
+---(Not exposed)
+---@class SoundKey
 
 ---(Not exposed)
 ---@class SoundMapKey

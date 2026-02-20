@@ -98,9 +98,10 @@ function __SpriteRenderer:drawSkyBox(shader, playerIndex, apiId, bufferId) end
 
 ---@param shader Shader
 ---@param playerIndex integer
----@param apiId integer
+---@param firstSquare integer
+---@param numSquares integer
 ---@param bShore boolean
-function __SpriteRenderer:drawWater(shader, playerIndex, apiId, bShore) end
+function __SpriteRenderer:drawWater(shader, playerIndex, firstSquare, numSquares, bShore) end
 
 ---@param probe PerformanceProfileProbe
 function __SpriteRenderer:endProfile(probe) end

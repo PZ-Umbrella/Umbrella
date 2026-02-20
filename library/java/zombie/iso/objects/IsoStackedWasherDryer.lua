@@ -31,17 +31,15 @@ function __IsoStackedWasherDryer:isWasherActivated() end
 ---@param IS_DEBUG_SAVE boolean
 function __IsoStackedWasherDryer:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param bb ByteBuffer
 function __IsoStackedWasherDryer:loadChange(change, bb) end
-
-function __IsoStackedWasherDryer:removeFromWorld() end
 
 ---@param output ByteBuffer
 ---@param IS_DEBUG_SAVE boolean
 function __IsoStackedWasherDryer:save(output, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param tbl table
 ---@param bb ByteBuffer
 function __IsoStackedWasherDryer:saveChange(change, tbl, bb) end

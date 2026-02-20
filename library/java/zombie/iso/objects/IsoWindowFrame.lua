@@ -74,17 +74,17 @@ function __IsoWindowFrame:isBarricadeAllowed() end
 function __IsoWindowFrame:isBarricaded() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
----@param IS_DEBUG_SAVE boolean
-function __IsoWindowFrame:load(input, WorldVersion, IS_DEBUG_SAVE) end
+---@param worldVersion integer
+---@param isDebugSave boolean
+function __IsoWindowFrame:load(input, worldVersion, isDebugSave) end
 
 ---@param player IsoPlayer
 ---@return boolean
 function __IsoWindowFrame:removeSheetRope(player) end
 
 ---@param output ByteBuffer
----@param IS_DEBUG_SAVE boolean
-function __IsoWindowFrame:save(output, IS_DEBUG_SAVE) end
+---@param isDebugSave boolean
+function __IsoWindowFrame:save(output, isDebugSave) end
 
 IsoWindowFrame = {}
 

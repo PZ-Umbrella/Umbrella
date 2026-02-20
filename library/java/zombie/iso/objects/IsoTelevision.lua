@@ -23,12 +23,6 @@ function __IsoTelevision:load(input, WorldVersion, IS_DEBUG_SAVE) end
 ---@param sprite IsoSprite
 function __IsoTelevision:removeTvScreenSprite(sprite) end
 
-function __IsoTelevision:renderlast() end
-
----@param output ByteBuffer
----@param IS_DEBUG_SAVE boolean
-function __IsoTelevision:save(output, IS_DEBUG_SAVE) end
-
 function __IsoTelevision:update() end
 
 IsoTelevision = {}

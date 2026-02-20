@@ -12,29 +12,17 @@ function __ClimbDownSheetRopeState:execute(owner) end
 ---@param owner IsoGameCharacter
 function __ClimbDownSheetRopeState:exit(owner) end
 
----@return boolean
-function __ClimbDownSheetRopeState:isSyncInIdle() end
-
----@return boolean
-function __ClimbDownSheetRopeState:isSyncOnEnter() end
-
----@return boolean
-function __ClimbDownSheetRopeState:isSyncOnExit() end
-
----@return boolean
-function __ClimbDownSheetRopeState:isSyncOnSquare() end
-
 ---@param isoGameCharacter IsoGameCharacter
 ---@param stage State.Stage
 function __ClimbDownSheetRopeState:setParams(isoGameCharacter, stage) end
 
 ClimbDownSheetRopeState = {}
 
----@return ClimbDownSheetRopeState
-function ClimbDownSheetRopeState.instance() end
+---@type State.Param<number>
+ClimbDownSheetRopeState.SPEED = nil
 
 ---@return ClimbDownSheetRopeState
-function ClimbDownSheetRopeState.new() end
+function ClimbDownSheetRopeState.instance() end
 
 ---@type Class<ClimbDownSheetRopeState>
 ClimbDownSheetRopeState.class = nil

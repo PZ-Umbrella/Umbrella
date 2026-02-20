@@ -6,143 +6,62 @@ local __DebugLog = {}
 
 DebugLog = {}
 
----@type DebugLogStream
+---@type DebugType
 DebugLog.Action = nil
 
----@type DebugLogStream
-DebugLog.ActionSystem = nil
-
----@type DebugLogStream
+---@type DebugType
 DebugLog.Animal = nil
 
----@type DebugLogStream
-DebugLog.Animation = nil
-
----@type DebugLogStream
-DebugLog.AnimationDetailed = nil
-
----@type DebugLogStream
-DebugLog.Asset = nil
-
----@type DebugLogStream
-DebugLog.Basement = nil
-
----@type DebugLogStream
-DebugLog.Clothing = nil
-
----@type DebugLogStream
-DebugLog.Combat = nil
-
----@type DebugLogStream
+---@type DebugType
 DebugLog.CraftLogic = nil
 
----@type DebugLogStream
-DebugLog.Damage = nil
-
----@type DebugLogStream
-DebugLog.Death = nil
-
----@type DebugLogStream
+---@type DebugType
 DebugLog.DetailedInfo = nil
 
----@type DebugLogStream
-DebugLog.Discord = nil
-
----@type DebugLogStream
-DebugLog.Energy = nil
-
----@type DebugLogStream
+---@type DebugType
 DebugLog.Entity = nil
 
----@type DebugLogStream
-DebugLog.FileIO = nil
-
----@type DebugLogStream
-DebugLog.Fireplace = nil
-
----@type DebugLogStream
-DebugLog.Fluid = nil
-
----@type DebugLogStream
-DebugLog.Foraging = nil
-
----@type DebugLogStream
+---@type DebugType
 DebugLog.General = nil
 
----@type DebugLogStream
+---@type DebugType
 DebugLog.Grapple = nil
 
----@type DebugLogStream
-DebugLog.ImGui = nil
-
----@type DebugLogStream
-DebugLog.Input = nil
-
----@type DebugLogStream
-DebugLog.IsoRegion = nil
-
----@type DebugLogStream
-DebugLog.ItemPicker = nil
-
----@type DebugLogStream
-DebugLog.Lightning = nil
-
----@type DebugLogStream
+---@type DebugType
 DebugLog.Lua = nil
 
----@type DebugLogStream
+---@type DebugType
 DebugLog.MapLoading = nil
 
----@type DebugLogStream
+---@type DebugType
 DebugLog.Mod = nil
 
----@type DebugLogStream
-DebugLog.Moveable = nil
-
----@type DebugLogStream
+---@type DebugType
 DebugLog.Multiplayer = nil
 
----@type DebugLogStream
+---@type DebugType
 DebugLog.Network = nil
 
----@type DebugLogStream
+---@type DebugType
 DebugLog.NetworkFileDebug = nil
 
----@type DebugLogStream
+---@type DebugType
 DebugLog.Objects = nil
 
----@type DebugLogStream
-DebugLog.Packet = nil
-
----@type DebugLogStream
-DebugLog.Physics = nil
-
----@type DebugLogStream
+---@type DebugType
 DebugLog.Radio = nil
 
----@type DebugLogStream
+---@type DebugType
 DebugLog.Recipe = nil
 
----@type DebugLogStream
-DebugLog.Saving = nil
-
----@type DebugLogStream
+---@type DebugType
 DebugLog.Script = nil
 
----@type DebugLogStream
+---@type DebugType
 DebugLog.Shader = nil
 
----@type DebugLogStream
+---@type DebugType
 DebugLog.Sound = nil
-
----@type DebugLogStream
-DebugLog.Sprite = nil
-
----@type DebugLogStream
-DebugLog.Statistic = nil
-
----@type DebugLogStream
-DebugLog.Translation = nil
 
 ---@type integer
 DebugLog.VERSION = nil
@@ -153,26 +72,30 @@ DebugLog.VERSION1 = nil
 ---@type integer
 DebugLog.VERSION2 = nil
 
----@type DebugLogStream
+---@type DebugType
 DebugLog.Vehicle = nil
 
----@type DebugLogStream
+---@type DebugType
 DebugLog.Voice = nil
 
----@type DebugLogStream
-DebugLog.WorldGen = nil
-
----@type DebugLogStream
-DebugLog.Xml = nil
-
----@type DebugLogStream
+---@type DebugType
 DebugLog.Zombie = nil
-
----@type DebugLogStream
-DebugLog.Zone = nil
 
 ---@type boolean
 DebugLog.printServerTime = nil
+
+---@param debugType DebugType
+---@return DebugLogStream
+function DebugLog.createLogStream(debugType) end
+
+---@param logSeverity LogSeverity
+---@param messageType string
+---@param outString string
+function DebugLog.echoExceptionLineToLogFiles(logSeverity, messageType, outString) end
+
+---@param logSeverity LogSeverity
+---@param outString string
+function DebugLog.echoToLogFiles(logSeverity, outString) end
 
 ---@param type DebugType
 ---@param severity LogSeverity
@@ -181,28 +104,28 @@ function DebugLog.enableLog(type, severity) end
 ---@param type DebugType
 ---@param logSeverity LogSeverity
 ---@param affix any
----@param in_allowRepeat boolean
+---@param allowRepeat boolean
 ---@param formatNoParams string
 ---@return string
-function DebugLog.formatString(type, logSeverity, affix, in_allowRepeat, formatNoParams) end
+function DebugLog.formatString(type, logSeverity, affix, allowRepeat, formatNoParams) end
 
 ---@param type DebugType
 ---@param logSeverity LogSeverity
 ---@param affix any
----@param in_allowRepeat boolean
+---@param allowRepeat boolean
 ---@param format string
 ---@param params kahlua.Array<any>
 ---@return string
-function DebugLog.formatString(type, logSeverity, affix, in_allowRepeat, format, params) end
+function DebugLog.formatString(type, logSeverity, affix, allowRepeat, format, params) end
 
 ---@param type DebugType
 ---@param logSeverity LogSeverity
 ---@param affix any
----@param in_allowRepeat boolean
+---@param allowRepeat boolean
 ---@param format string
 ---@param params kahlua.Array<any>
 ---@return string
-function DebugLog.formatStringVarArgs(type, logSeverity, affix, in_allowRepeat, format, params) end
+function DebugLog.formatStringVarArgs(type, logSeverity, affix, allowRepeat, format, params) end
 
 ---@return ArrayList<DebugType>
 function DebugLog.getDebugTypes() end
@@ -211,13 +134,12 @@ function DebugLog.getDebugTypes() end
 ---@return LogSeverity
 function DebugLog.getLogLevel(type) end
 
----@param in_type DebugType
+---@param type DebugType
 ---@return LogSeverity
-function DebugLog.getLogSeverity(in_type) end
+function DebugLog.getLogSeverity(type) end
 
----@param in_type DebugType
----@return DebugLogStream
-function DebugLog.getOrCreateDebugLogStream(in_type) end
+---@return PrintStream
+function DebugLog.getRecordingOut() end
 
 function DebugLog.init() end
 
@@ -245,10 +167,10 @@ function DebugLog.log(type, str) end
 ---@param str string
 function DebugLog.log(str) end
 
----@param in_logType string
----@param in_logSeverity string
----@param in_logTxt string
-function DebugLog.nativeLog(in_logType, in_logSeverity, in_logTxt) end
+---@param logType string
+---@param logSeverity string
+---@param logTxt string
+function DebugLog.nativeLog(logType, logSeverity, logTxt) end
 
 function DebugLog.printLogLevels() end
 
@@ -260,9 +182,12 @@ function DebugLog.setDefaultLogSeverity() end
 ---@param bEnabled boolean
 function DebugLog.setLogEnabled(type, bEnabled) end
 
----@param in_type DebugType
----@param in_logSeverity LogSeverity
-function DebugLog.setLogSeverity(in_type, in_logSeverity) end
+---@param type DebugType
+---@param logSeverity LogSeverity
+function DebugLog.setLogSeverity(type, logSeverity) end
+
+---@param recordingOut PrintStream
+function DebugLog.setRecordingOut(recordingOut) end
 
 ---@param out OutputStream
 function DebugLog.setStdErr(out) end

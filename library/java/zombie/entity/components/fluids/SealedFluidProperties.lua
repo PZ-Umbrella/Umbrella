@@ -52,8 +52,8 @@ function __SealedFluidProperties:getUnhappyChange() end
 function __SealedFluidProperties:hasProperties() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __SealedFluidProperties:load(input, WorldVersion) end
+---@param worldVersion integer
+function __SealedFluidProperties:load(input, worldVersion) end
 
 ---@param output ByteBuffer
 function __SealedFluidProperties:save(output) end

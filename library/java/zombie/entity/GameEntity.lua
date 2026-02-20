@@ -72,11 +72,20 @@ function __GameEntity:getUsingPlayer() end
 ---@return number
 function __GameEntity:getX() end
 
+---@return integer
+function __GameEntity:getXi() end
+
 ---@return number
 function __GameEntity:getY() end
 
+---@return integer
+function __GameEntity:getYi() end
+
 ---@return number
 function __GameEntity:getZ() end
+
+---@return integer
+function __GameEntity:getZi() end
 
 ---@param type ComponentType
 ---@return boolean
@@ -121,13 +130,13 @@ function __GameEntity:isUsingPlayer(target) end
 function __GameEntity:isValidEngineEntity() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __GameEntity:loadEntity(input, WorldVersion) end
+---@param worldVersion integer
+function __GameEntity:loadEntity(input, worldVersion) end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
+---@param worldVersion integer
 ---@param loaded List<Component>
-function __GameEntity:loadEntity(input, WorldVersion, loaded) end
+function __GameEntity:loadEntity(input, worldVersion, loaded) end
 
 function __GameEntity:onEquip() end
 
@@ -154,6 +163,8 @@ function __GameEntity:reset() end
 
 ---@param output ByteBuffer
 function __GameEntity:saveEntity(output) end
+
+function __GameEntity:sendRequestSyncGameEntity() end
 
 ---@param ignoreConnection UdpConnection
 function __GameEntity:sendSyncEntity(ignoreConnection) end

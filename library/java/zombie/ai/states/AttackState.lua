@@ -23,25 +23,13 @@ function __AttackState:exit(owner) end
 ---@return boolean
 function __AttackState:isAttacking(owner) end
 
----@return boolean
-function __AttackState:isSyncInIdle() end
-
----@return boolean
-function __AttackState:isSyncOnEnter() end
-
----@return boolean
-function __AttackState:isSyncOnExit() end
-
----@return boolean
-function __AttackState:isSyncOnSquare() end
-
 AttackState = {}
+
+---@type State.Param<boolean>
+AttackState.SKIP_TEST_DEFENCE = nil
 
 ---@return AttackState
 function AttackState.instance() end
-
----@return AttackState
-function AttackState.new() end
 
 ---@type Class<AttackState>
 AttackState.class = nil

@@ -9,29 +9,20 @@ function __PlayerMovementState:enter(owner) end
 ---@param owner IsoGameCharacter
 function __PlayerMovementState:exit(owner) end
 
----@return boolean
-function __PlayerMovementState:isSyncInIdle() end
-
----@return boolean
-function __PlayerMovementState:isSyncOnEnter() end
-
----@return boolean
-function __PlayerMovementState:isSyncOnExit() end
-
----@return boolean
-function __PlayerMovementState:isSyncOnSquare() end
-
 ---@param owner IsoGameCharacter
 ---@param stage State.Stage
 function __PlayerMovementState:setParams(owner, stage) end
 
 PlayerMovementState = {}
 
----@return PlayerMovementState
-function PlayerMovementState.instance() end
+---@type State.Param<boolean>
+PlayerMovementState.RUN = nil
+
+---@type State.Param<boolean>
+PlayerMovementState.SPRINT = nil
 
 ---@return PlayerMovementState
-function PlayerMovementState.new() end
+function PlayerMovementState.instance() end
 
 ---@type Class<PlayerMovementState>
 PlayerMovementState.class = nil

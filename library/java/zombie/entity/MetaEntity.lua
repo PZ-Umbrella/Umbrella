@@ -41,8 +41,8 @@ function __MetaEntity:isOutside() end
 function __MetaEntity:isUsingPlayer(target) end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __MetaEntity:loadMetaEntity(input, WorldVersion) end
+---@param worldVersion integer
+function __MetaEntity:loadMetaEntity(input, worldVersion) end
 
 function __MetaEntity:reset() end
 

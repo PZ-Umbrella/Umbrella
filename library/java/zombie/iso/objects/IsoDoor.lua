@@ -77,6 +77,9 @@ function __IsoDoor:couldBeOpen(chr) end
 
 function __IsoDoor:destroy() end
 
+---@param consumer Consumer<IsoDoor>
+function __IsoDoor:forEachDoorObject(consumer) end
+
 ---Returns the square the player should stand on to add a sheet.
 ---@param chr IsoGameCharacter
 ---@return IsoGridSquare
@@ -211,7 +214,7 @@ function __IsoDoor:isObstructed() end
 ---@param IS_DEBUG_SAVE boolean
 function __IsoDoor:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param bb ByteBuffer
 function __IsoDoor:loadChange(change, bb) end
 
@@ -252,7 +255,7 @@ function __IsoDoor:renderWallTile(dir, x, y, z, col, bDoAttached, bWallLightingP
 ---@param IS_DEBUG_SAVE boolean
 function __IsoDoor:save(output, IS_DEBUG_SAVE) end
 
----@param change string
+---@param change IsoObjectChange
 ---@param tbl table
 ---@param bb ByteBuffer
 function __IsoDoor:saveChange(change, tbl, bb) end
@@ -312,6 +315,10 @@ function IsoDoor.destroyDoubleDoor(oneOfFour) end
 ---@param oneOfThree IsoObject
 ---@return boolean
 function IsoDoor.destroyGarageDoor(oneOfThree) end
+
+---@param object IsoObject
+---@param consumer Consumer<IsoObject>
+function IsoDoor.forEachDoorObject(object, consumer) end
 
 ---@param oneOfFour IsoObject
 ---@return integer

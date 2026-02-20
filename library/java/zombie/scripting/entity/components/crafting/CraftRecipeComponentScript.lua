@@ -3,9 +3,6 @@
 ---@class CraftRecipeComponentScript: ComponentScript
 local __CraftRecipeComponentScript = {}
 
----@param name string
-function __CraftRecipeComponentScript:InitLoadPP(name) end
-
 function __CraftRecipeComponentScript:OnLoadedAfterLua() end
 
 function __CraftRecipeComponentScript:OnPostWorldDictionaryInit() end
@@ -23,11 +20,6 @@ function __CraftRecipeComponentScript:getCraftRecipe() end
 
 ---@return Texture
 function __CraftRecipeComponentScript:getIconTexture() end
-
----@return boolean
-function __CraftRecipeComponentScript:isoMasterOnly() end
-
-function __CraftRecipeComponentScript:reset() end
 
 CraftRecipeComponentScript = {}
 

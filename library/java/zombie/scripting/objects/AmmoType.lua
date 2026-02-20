@@ -15,10 +15,13 @@ function __AmmoType:toString() end
 AmmoType = {}
 
 ---@type AmmoType
-AmmoType.BULLETS_223 = nil
+AmmoType.BULLETS_3030 = nil
 
 ---@type AmmoType
 AmmoType.BULLETS_308 = nil
+
+---@type AmmoType
+AmmoType.BULLETS_357 = nil
 
 ---@type AmmoType
 AmmoType.BULLETS_38 = nil

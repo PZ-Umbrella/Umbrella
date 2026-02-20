@@ -19,6 +19,9 @@
 ---@class ContainerOverlays.ContainerOverlayEntry
 
 ---(Not exposed)
+---@class CorpseCount.ChunkData
+
+---(Not exposed)
 ---@class DiamondMatrixIterator
 
 ---(Not exposed)

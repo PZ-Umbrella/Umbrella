@@ -77,22 +77,22 @@ function __VirtualZombieManager:createHordeFromTo(spawnX, spawnY, targetX, targe
 ---@return IsoZombie
 function __VirtualZombieManager:createRealZombie(x, y, z) end
 
----@param ZombieDir integer
+---@param dir IsoDirections
 ---@param bDead boolean
 ---@return IsoZombie
-function __VirtualZombieManager:createRealZombieAlways(ZombieDir, bDead) end
+function __VirtualZombieManager:createRealZombieAlways(dir, bDead) end
 
----@param descriptorID integer
----@param ZombieDir integer
+---@param descriptorId integer
+---@param dir IsoDirections
 ---@param bDead boolean
 ---@return IsoZombie
-function __VirtualZombieManager:createRealZombieAlways(descriptorID, ZombieDir, bDead) end
+function __VirtualZombieManager:createRealZombieAlways(descriptorId, dir, bDead) end
 
----@param ZombieDir integer
+---@param dir IsoDirections
 ---@param bDead boolean
 ---@param outfitID integer
 ---@return IsoZombie
-function __VirtualZombieManager:createRealZombieAlways(ZombieDir, bDead, outfitID) end
+function __VirtualZombieManager:createRealZombieAlways(dir, bDead, outfitID) end
 
 ---@param x number
 ---@param y number

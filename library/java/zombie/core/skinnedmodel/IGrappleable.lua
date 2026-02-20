@@ -166,11 +166,11 @@ function __IGrappleable:setFallOnFront(arg0) end
 ---@param arg1 number
 function __IGrappleable:setForwardDirection(arg0, arg1) end
 
----@param in_grappleOffset Vector3f
-function __IGrappleable:setGrappleDeferredOffset(in_grappleOffset) end
+---@param grappleOffset Vector3f
+function __IGrappleable:setGrappleDeferredOffset(grappleOffset) end
 
----@param in_grappleOffset Vector3
-function __IGrappleable:setGrappleDeferredOffset(in_grappleOffset) end
+---@param grappleOffset Vector3
+function __IGrappleable:setGrappleDeferredOffset(grappleOffset) end
 
 ---@param arg0 number
 ---@param arg1 number
@@ -198,8 +198,8 @@ function __IGrappleable:setOnFloor(arg0) end
 ---@param arg0 boolean
 function __IGrappleable:setPerformingGrappleGrabAnimation(arg0) end
 
----@param in_position Vector3
-function __IGrappleable:setPosition(in_position) end
+---@param position Vector3
+function __IGrappleable:setPosition(position) end
 
 ---@param arg0 number
 ---@param arg1 number
@@ -222,19 +222,19 @@ function __IGrappleable:setSharedGrappleType(arg0) end
 ---@param arg1 number
 function __IGrappleable:setTargetAndCurrentDirection(arg0, arg1) end
 
----@param in_grapplePos Vector3f
-function __IGrappleable:setTargetGrapplePos(in_grapplePos) end
+---@param grapplePos Vector3f
+function __IGrappleable:setTargetGrapplePos(grapplePos) end
 
----@param in_grapplePos Vector3
-function __IGrappleable:setTargetGrapplePos(in_grapplePos) end
+---@param grapplePos Vector3
+function __IGrappleable:setTargetGrapplePos(grapplePos) end
 
 ---@param arg0 number
 ---@param arg1 number
 ---@param arg2 number
 function __IGrappleable:setTargetGrapplePos(arg0, arg1, arg2) end
 
----@param in_forward Vector2
-function __IGrappleable:setTargetGrappleRotation(in_forward) end
+---@param forward Vector2
+function __IGrappleable:setTargetGrappleRotation(forward) end
 
 ---@param arg0 number
 ---@param arg1 number

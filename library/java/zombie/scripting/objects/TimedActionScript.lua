@@ -4,18 +4,8 @@
 local __TimedActionScript = {}
 
 ---@param name string
-function __TimedActionScript:InitLoadPP(name) end
-
----@param name string
 ---@param body string
 function __TimedActionScript:Load(name, body) end
-
-function __TimedActionScript:OnLoadedAfterLua() end
-
-function __TimedActionScript:OnPostWorldDictionaryInit() end
-
----@param loadMode ScriptLoadMode
-function __TimedActionScript:OnScriptsLoaded(loadMode) end
 
 function __TimedActionScript:PreReload() end
 

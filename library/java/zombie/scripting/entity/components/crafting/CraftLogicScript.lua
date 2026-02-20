@@ -3,13 +3,6 @@
 ---@class CraftLogicScript: ComponentScript
 local __CraftLogicScript = {}
 
----@param name string
-function __CraftLogicScript:InitLoadPP(name) end
-
-function __CraftLogicScript:OnLoadedAfterLua() end
-
-function __CraftLogicScript:OnPostWorldDictionaryInit() end
-
 ---@param loadMode ScriptLoadMode
 function __CraftLogicScript:OnScriptsLoaded(loadMode) end
 
@@ -33,11 +26,6 @@ function __CraftLogicScript:getRecipeTagQuery() end
 
 ---@return StartMode
 function __CraftLogicScript:getStartMode() end
-
----@return boolean
-function __CraftLogicScript:isoMasterOnly() end
-
-function __CraftLogicScript:reset() end
 
 CraftLogicScript = {}
 

@@ -22,28 +22,25 @@ function __ZombieGetDownState:exit(owner) end
 ---@return boolean
 function __ZombieGetDownState:isNearStartXY(owner) end
 
----@return boolean
-function __ZombieGetDownState:isSyncInIdle() end
-
----@return boolean
-function __ZombieGetDownState:isSyncOnEnter() end
-
----@return boolean
-function __ZombieGetDownState:isSyncOnExit() end
-
----@return boolean
-function __ZombieGetDownState:isSyncOnSquare() end
-
 ---@param owner IsoGameCharacter
 function __ZombieGetDownState:setParams(owner) end
 
 ZombieGetDownState = {}
 
----@return ZombieGetDownState
-function ZombieGetDownState.instance() end
+---@type State.Param<State>
+ZombieGetDownState.PREV_STATE = nil
+
+---@type State.Param<number>
+ZombieGetDownState.START_X = nil
+
+---@type State.Param<number>
+ZombieGetDownState.START_Y = nil
+
+---@type State.Param<number>
+ZombieGetDownState.WAIT_TIME = nil
 
 ---@return ZombieGetDownState
-function ZombieGetDownState.new() end
+function ZombieGetDownState.instance() end
 
 ---@type Class<ZombieGetDownState>
 ZombieGetDownState.class = nil

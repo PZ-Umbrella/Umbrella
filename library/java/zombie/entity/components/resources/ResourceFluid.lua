@@ -47,12 +47,12 @@ function __ResourceFluid:isEmpty() end
 function __ResourceFluid:isFull() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __ResourceFluid:load(input, WorldVersion) end
+---@param worldVersion integer
+function __ResourceFluid:load(input, worldVersion) end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __ResourceFluid:loadSync(input, WorldVersion) end
+---@param worldVersion integer
+function __ResourceFluid:loadSync(input, worldVersion) end
 
 ---@param output ByteBuffer
 function __ResourceFluid:save(output) end

@@ -66,8 +66,6 @@ function __IsoTree:load(input, WorldVersion, IS_DEBUG_SAVE) end
 ---@param shader Shader
 function __IsoTree:render(x, y, z, col, bDoAttached, bWallLightingPass, shader) end
 
-function __IsoTree:reset() end
-
 ---@param output ByteBuffer
 ---@param IS_DEBUG_SAVE boolean
 function __IsoTree:save(output, IS_DEBUG_SAVE) end

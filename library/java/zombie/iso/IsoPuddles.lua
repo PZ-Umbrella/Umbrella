@@ -57,8 +57,8 @@ function __IsoPuddles:getWetGroundFinalValue() end
 ---@param numSquares integer
 function __IsoPuddles:puddlesGeometry(firstSquare, numSquares) end
 
----@param PROJECTION Matrix4f
-function __IsoPuddles:puddlesProjection(PROJECTION) end
+---@param projection Matrix4f
+function __IsoPuddles:puddlesProjection(projection) end
 
 ---@param grid ArrayList<IsoGridSquare>
 ---@param z integer

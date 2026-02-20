@@ -4,20 +4,8 @@
 local __XuiSkinScript = {}
 
 ---@param name string
-function __XuiSkinScript:InitLoadPP(name) end
-
----@param name string
 ---@param body string
 function __XuiSkinScript:Load(name, body) end
-
-function __XuiSkinScript:OnLoadedAfterLua() end
-
-function __XuiSkinScript:OnPostWorldDictionaryInit() end
-
----@param loadMode ScriptLoadMode
-function __XuiSkinScript:OnScriptsLoaded(loadMode) end
-
-function __XuiSkinScript:PreReload() end
 
 ---@return XuiColorsScript
 function __XuiSkinScript:getColorsScript() end

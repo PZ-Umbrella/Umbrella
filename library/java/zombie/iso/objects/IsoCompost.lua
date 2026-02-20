@@ -51,8 +51,8 @@ function __IsoCompost:save(output, IS_DEBUG_SAVE) end
 ---@param compost number
 function __IsoCompost:setCompost(compost) end
 
----@param Health integer
-function __IsoCompost:setHealth(Health) end
+---@param health integer
+function __IsoCompost:setHealth(health) end
 
 ---@param maxHealth integer
 function __IsoCompost:setMaxHealth(maxHealth) end

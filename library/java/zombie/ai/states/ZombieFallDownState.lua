@@ -13,30 +13,12 @@ function __ZombieFallDownState:animEvent(owner, layer, track, event) end
 function __ZombieFallDownState:enter(owner) end
 
 ---@param owner IsoGameCharacter
-function __ZombieFallDownState:execute(owner) end
-
----@param owner IsoGameCharacter
 function __ZombieFallDownState:exit(owner) end
-
----@return boolean
-function __ZombieFallDownState:isSyncInIdle() end
-
----@return boolean
-function __ZombieFallDownState:isSyncOnEnter() end
-
----@return boolean
-function __ZombieFallDownState:isSyncOnExit() end
-
----@return boolean
-function __ZombieFallDownState:isSyncOnSquare() end
 
 ZombieFallDownState = {}
 
 ---@return ZombieFallDownState
 function ZombieFallDownState.instance() end
-
----@return ZombieFallDownState
-function ZombieFallDownState.new() end
 
 ---@type Class<ZombieFallDownState>
 ZombieFallDownState.class = nil

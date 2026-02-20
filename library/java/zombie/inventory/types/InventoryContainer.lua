@@ -31,6 +31,9 @@ function __InventoryContainer:getClothingExtraSubmenu() end
 ---@return number
 function __InventoryContainer:getContentsWeight() end
 
+---@return number
+function __InventoryContainer:getDirtiness() end
+
 ---@param chr IsoGameCharacter
 ---@return integer
 function __InventoryContainer:getEffectiveCapacity(chr) end

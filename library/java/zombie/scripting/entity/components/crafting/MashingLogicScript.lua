@@ -3,13 +3,6 @@
 ---@class MashingLogicScript: ComponentScript
 local __MashingLogicScript = {}
 
----@param name string
-function __MashingLogicScript:InitLoadPP(name) end
-
-function __MashingLogicScript:OnLoadedAfterLua() end
-
-function __MashingLogicScript:OnPostWorldDictionaryInit() end
-
 ---@param loadMode ScriptLoadMode
 function __MashingLogicScript:OnScriptsLoaded(loadMode) end
 
@@ -23,11 +16,6 @@ function __MashingLogicScript:getRecipeTagQuery() end
 
 ---@return string
 function __MashingLogicScript:getResourceFluidID() end
-
----@return boolean
-function __MashingLogicScript:isoMasterOnly() end
-
-function __MashingLogicScript:reset() end
 
 MashingLogicScript = {}
 

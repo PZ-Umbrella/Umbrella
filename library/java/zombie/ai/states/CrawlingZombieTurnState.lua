@@ -13,22 +13,7 @@ function __CrawlingZombieTurnState:animEvent(owner, layer, track, event) end
 function __CrawlingZombieTurnState:enter(owner) end
 
 ---@param owner IsoGameCharacter
-function __CrawlingZombieTurnState:execute(owner) end
-
----@param owner IsoGameCharacter
 function __CrawlingZombieTurnState:exit(owner) end
-
----@return boolean
-function __CrawlingZombieTurnState:isSyncInIdle() end
-
----@return boolean
-function __CrawlingZombieTurnState:isSyncOnEnter() end
-
----@return boolean
-function __CrawlingZombieTurnState:isSyncOnExit() end
-
----@return boolean
-function __CrawlingZombieTurnState:isSyncOnSquare() end
 
 CrawlingZombieTurnState = {}
 
@@ -39,9 +24,6 @@ function CrawlingZombieTurnState.calculateDir(owner, targetDir) end
 
 ---@return CrawlingZombieTurnState
 function CrawlingZombieTurnState.instance() end
-
----@return CrawlingZombieTurnState
-function CrawlingZombieTurnState.new() end
 
 ---@type Class<CrawlingZombieTurnState>
 CrawlingZombieTurnState.class = nil

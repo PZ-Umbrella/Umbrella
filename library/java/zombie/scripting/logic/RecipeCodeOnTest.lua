@@ -6,60 +6,74 @@ local __RecipeCodeOnTest = {}
 RecipeCodeOnTest = {}
 
 ---@param item InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function RecipeCodeOnTest.breakGlass(item) end
+function RecipeCodeOnTest.breakGlass(item, character) end
 
 ---@param item InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function RecipeCodeOnTest.canAddToPack(item) end
+function RecipeCodeOnTest.canAddToPack(item, character) end
 
 ---@param item InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function RecipeCodeOnTest.copyKey(item) end
+function RecipeCodeOnTest.copyKey(item, character) end
 
 ---@param item InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function RecipeCodeOnTest.cutFillet(item) end
+function RecipeCodeOnTest.cutFillet(item, character) end
 
 ---@param item InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function RecipeCodeOnTest.cutFish(item) end
+function RecipeCodeOnTest.cutFish(item, character) end
 
 ---@param item InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function RecipeCodeOnTest.genericPacking(item) end
+function RecipeCodeOnTest.genericPacking(item, character) end
 
 ---@param item InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function RecipeCodeOnTest.haveFilter(item) end
+function RecipeCodeOnTest.haveFilter(item, character) end
 
 ---@param item InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function RecipeCodeOnTest.haveOxygenTank(item) end
+function RecipeCodeOnTest.haveOxygenTank(item, character) end
 
 ---@param item InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function RecipeCodeOnTest.hotFluidContainer(item) end
+function RecipeCodeOnTest.hotFluidContainer(item, character) end
 
 ---@param item InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function RecipeCodeOnTest.noFilter(item) end
+function RecipeCodeOnTest.noFilter(item, character) end
 
 ---@param item InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function RecipeCodeOnTest.noOxygenTank(item) end
+function RecipeCodeOnTest.noOxygenTank(item, character) end
 
 ---@param item InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function RecipeCodeOnTest.openFire(item) end
+function RecipeCodeOnTest.openFire(item, character) end
 
 ---@param item InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function RecipeCodeOnTest.purifyWater(item) end
+function RecipeCodeOnTest.purifyWater(item, character) end
 
 ---@param item InventoryItem
+---@param character IsoGameCharacter
 ---@return boolean
-function RecipeCodeOnTest.scratchTicket(item) end
+function RecipeCodeOnTest.scratchTicket(item, character) end
 
 ---@return RecipeCodeOnTest
 function RecipeCodeOnTest.new() end

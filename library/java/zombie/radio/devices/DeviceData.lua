@@ -47,7 +47,6 @@ function __DeviceData:generatePresets() end
 function __DeviceData:getBaseVolumeRange() end
 
 ---@param inventory ItemContainer
----@return InventoryItem
 function __DeviceData:getBattery(inventory) end
 
 ---@return integer
@@ -194,7 +193,6 @@ function __DeviceData:playSoundSend(soundname, useDeviceVolume) end
 function __DeviceData:receiveDeviceDataStatePacket(bb, ignoreConnection) end
 
 ---@param inventory ItemContainer
----@return InventoryItem
 function __DeviceData:removeMediaItem(inventory) end
 
 ---@param output ByteBuffer
@@ -303,7 +301,9 @@ function __DeviceData:stopEvent(eventInstance, clip, parameterSet) end
 ---@param soundName string
 function __DeviceData:stopOrTriggerSoundByName(soundName) end
 
-function __DeviceData:transmitBattryChange() end
+function __DeviceData:transmitBatteryChange() end
+
+function __DeviceData:transmitBatteryChangeServer() end
 
 function __DeviceData:transmitPresets() end
 

@@ -4,9 +4,6 @@
 ---@class ServerChatMessage: ChatMessage
 local __ServerChatMessage = {}
 
----@return string
-function __ServerChatMessage:getAuthor() end
-
 ---@param author string
 function __ServerChatMessage:setAuthor(author) end
 

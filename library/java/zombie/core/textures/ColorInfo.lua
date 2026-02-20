@@ -27,22 +27,22 @@ function __ColorInfo:getR() end
 ---@param dest ColorInfo
 function __ColorInfo:interp(to, delta, dest) end
 
----@param R number
----@param G number
----@param B number
----@param A number
+---@param r number
+---@param g number
+---@param b number
+---@param a number
 ---@return ColorInfo
-function __ColorInfo:min(R, G, B, A) end
+function __ColorInfo:min(r, g, b, a) end
 
----@param RGB number
+---@param rgb number
 ---@return ColorInfo
-function __ColorInfo:minRGB(RGB) end
+function __ColorInfo:minRGB(rgb) end
 
----@param R number
----@param G number
----@param B number
+---@param r number
+---@param g number
+---@param b number
 ---@return ColorInfo
-function __ColorInfo:minRGB(R, G, B) end
+function __ColorInfo:minRGB(r, g, b) end
 
 ---@param other ColorInfo
 ---@return ColorInfo
@@ -59,15 +59,15 @@ function __ColorInfo:set(R, G, B, A) end
 ---@return ColorInfo
 function __ColorInfo:setABGR(abgr) end
 
----@param RGB number
+---@param rgb number
 ---@return ColorInfo
-function __ColorInfo:setRGB(RGB) end
+function __ColorInfo:setRGB(rgb) end
 
----@param R number
----@param G number
----@param B number
+---@param r number
+---@param g number
+---@param b number
 ---@return ColorInfo
-function __ColorInfo:setRGB(R, G, B) end
+function __ColorInfo:setRGB(r, g, b) end
 
 ---@return Color
 function __ColorInfo:toColor() end

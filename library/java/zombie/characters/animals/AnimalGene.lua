@@ -18,13 +18,13 @@ function __AnimalGene:getUsedGene() end
 function __AnimalGene:initUsedGene() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
----@param IS_DEBUG_SAVE boolean
-function __AnimalGene:load(input, WorldVersion, IS_DEBUG_SAVE) end
+---@param worldVersion integer
+---@param isDebugSave boolean
+function __AnimalGene:load(input, worldVersion, isDebugSave) end
 
 ---@param output ByteBuffer
----@param IS_DEBUG_SAVE boolean
-function __AnimalGene:save(output, IS_DEBUG_SAVE) end
+---@param isDebugSave boolean
+function __AnimalGene:save(output, isDebugSave) end
 
 AnimalGene = {}
 

@@ -17,9 +17,6 @@ BurntToDeath = {}
 ---@return BurntToDeath
 function BurntToDeath.instance() end
 
----@return BurntToDeath
-function BurntToDeath.new() end
-
 ---@type Class<BurntToDeath>
 BurntToDeath.class = nil
 

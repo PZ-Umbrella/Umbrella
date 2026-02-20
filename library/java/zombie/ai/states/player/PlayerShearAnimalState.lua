@@ -9,29 +9,23 @@ function __PlayerShearAnimalState:enter(owner) end
 ---@param owner IsoGameCharacter
 function __PlayerShearAnimalState:exit(owner) end
 
----@return boolean
-function __PlayerShearAnimalState:isSyncInIdle() end
-
----@return boolean
-function __PlayerShearAnimalState:isSyncOnEnter() end
-
----@return boolean
-function __PlayerShearAnimalState:isSyncOnExit() end
-
----@return boolean
-function __PlayerShearAnimalState:isSyncOnSquare() end
-
 ---@param owner IsoGameCharacter
 ---@param stage State.Stage
 function __PlayerShearAnimalState:setParams(owner, stage) end
 
 PlayerShearAnimalState = {}
 
----@return PlayerShearAnimalState
-function PlayerShearAnimalState.instance() end
+---@type State.Param<string>
+PlayerShearAnimalState.ANIMAL = nil
+
+---@type State.Param<number>
+PlayerShearAnimalState.ANIMAL_SIZE = nil
+
+---@type State.Param<boolean>
+PlayerShearAnimalState.SHEAR_ANIMAL = nil
 
 ---@return PlayerShearAnimalState
-function PlayerShearAnimalState.new() end
+function PlayerShearAnimalState.instance() end
 
 ---@type Class<PlayerShearAnimalState>
 PlayerShearAnimalState.class = nil

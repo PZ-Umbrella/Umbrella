@@ -668,9 +668,6 @@ function __InventoryItem:getName() end
 ---@return string
 function __InventoryItem:getName(player) end
 
----@return IsoDirections # the newPlaceDir
-function __InventoryItem:getNewPlaceDir() end
-
 ---@return integer # the OffAge
 function __InventoryItem:getOffAge() end
 
@@ -700,9 +697,6 @@ function __InventoryItem:getOutermostContainer() end
 
 ---@return IsoGameCharacter
 function __InventoryItem:getOwner() end
-
----@return IsoDirections # the placeDir
-function __InventoryItem:getPlaceDir() end
 
 ---@return string
 function __InventoryItem:getPlaceMultipleSound() end
@@ -1034,6 +1028,9 @@ function __InventoryItem:hasTag(itemTag) end
 function __InventoryItem:hasTimesHeadRepaired() end
 
 ---@return boolean
+function __InventoryItem:hasWorldItem() end
+
+---@return boolean
 function __InventoryItem:haveExtraItems() end
 
 ---@return boolean
@@ -1202,6 +1199,10 @@ function __InventoryItem:isInfected() end
 ---@return boolean
 function __InventoryItem:isInitialised() end
 
+---@param square IsoGridSquare
+---@return boolean
+function __InventoryItem:isInsideBagOnSquare(square) end
+
 ---@return boolean # the IsCookable
 function __InventoryItem:isIsCookable() end
 
@@ -1221,6 +1222,14 @@ function __InventoryItem:isMemento() end
 ---@param player IsoPlayer
 ---@return boolean
 function __InventoryItem:isNoRecipes(player) end
+
+---@param square IsoGridSquare
+---@return boolean
+function __InventoryItem:isOnGroundOnSquare(square) end
+
+---@param square IsoGridSquare
+---@return boolean
+function __InventoryItem:isOnGroundOrInsideBagOnSquare(square) end
 
 ---@return boolean
 function __InventoryItem:isProtectFromRainWhileEquipped() end
@@ -1316,8 +1325,6 @@ function __InventoryItem:reduceHeadCondition() end
 
 ---@param character IsoGameCharacter
 function __InventoryItem:researchRecipes(character) end
-
-function __InventoryItem:reset() end
 
 ---@param output ByteBuffer
 ---@param net boolean
@@ -1451,14 +1458,14 @@ function __InventoryItem:setConditionLowerOffroad(conditionLowerOffroad) end
 ---@param ConditionMax integer the ConditionMax to set
 function __InventoryItem:setConditionMax(ConditionMax) end
 
----@param Condition integer
-function __InventoryItem:setConditionNoSound(Condition) end
+---@param condition integer
+function __InventoryItem:setConditionNoSound(condition) end
 
 ---@param item InventoryItem
 function __InventoryItem:setConditionTo(item) end
 
----@param Condition integer
-function __InventoryItem:setConditionWhileLoading(Condition) end
+---@param condition integer
+function __InventoryItem:setConditionWhileLoading(condition) end
 
 ---@param container ItemContainer the container to set
 function __InventoryItem:setContainer(container) end
@@ -1545,6 +1552,10 @@ function __InventoryItem:setFatigueChange(fatigueChange) end
 
 ---@param favorite boolean
 function __InventoryItem:setFavorite(favorite) end
+
+---@param favorite boolean
+---@param isSyncNeeded boolean
+function __InventoryItem:setFavorite(favorite, isSyncNeeded) end
 
 ---@param foodSicknessChange integer
 function __InventoryItem:setFoodSicknessChange(foodSicknessChange) end
@@ -1648,9 +1659,6 @@ function __InventoryItem:setModule(module) end
 ---@param name string the name to set
 function __InventoryItem:setName(name) end
 
----@param newPlaceDir IsoDirections the newPlaceDir to set
-function __InventoryItem:setNewPlaceDir(newPlaceDir) end
-
 ---@param player IsoPlayer
 ---@param noCrafting boolean
 function __InventoryItem:setNoRecipes(player, noCrafting) end
@@ -1687,9 +1695,6 @@ function __InventoryItem:setOriginY(value) end
 
 ---@param value integer
 function __InventoryItem:setOriginZ(value) end
-
----@param placeDir IsoDirections the placeDir to set
-function __InventoryItem:setPlaceDir(placeDir) end
 
 ---@param previousOwner IsoGameCharacter the previousOwner to set
 function __InventoryItem:setPreviousOwner(previousOwner) end
@@ -1949,11 +1954,11 @@ function InventoryItem.loadItem(input, WorldVersion) end
 function InventoryItem.loadItem(input, WorldVersion, doSaveTypeCheck) end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
+---@param worldVersion integer
 ---@param doSaveTypeCheck boolean
 ---@param i InventoryItem
 ---@return InventoryItem
-function InventoryItem.loadItem(input, WorldVersion, doSaveTypeCheck, i) end
+function InventoryItem.loadItem(input, worldVersion, doSaveTypeCheck, i) end
 
 ---@param module string
 ---@param name string

@@ -7,9 +7,6 @@ function __IsoPushableObject:DoCollideNorS() end
 
 function __IsoPushableObject:DoCollideWorE() end
 
----@return boolean
-function __IsoPushableObject:Serialize() end
-
 ---@return string
 function __IsoPushableObject:getObjectName() end
 

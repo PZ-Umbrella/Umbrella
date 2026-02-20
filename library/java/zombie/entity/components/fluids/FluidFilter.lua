@@ -63,8 +63,8 @@ function __FluidFilter:getFilterType() end
 function __FluidFilter:isSealed() end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __FluidFilter:load(input, WorldVersion) end
+---@param worldVersion integer
+function __FluidFilter:load(input, worldVersion) end
 
 ---@param category FluidCategory
 ---@return FluidFilter

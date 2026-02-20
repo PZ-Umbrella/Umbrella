@@ -3,10 +3,6 @@
 ---@class DrainableComboItem: InventoryItem, Drainable, IUpdater
 local __DrainableComboItem = {}
 
----@param item InventoryItem
----@return boolean
-function __DrainableComboItem:CanStack(item) end
-
 ---@return boolean
 function __DrainableComboItem:IsDrainable() end
 

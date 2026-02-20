@@ -131,6 +131,12 @@ function __RandomizedBuildingBase:setMinimumRooms(minimumRooms) end
 ---@param chance integer
 function __RandomizedBuildingBase:spawnItemsInContainers(def, distribName, chance) end
 
+---@param itemType string
+---@param square IsoGridSquare
+---@param obj IsoObject
+---@return InventoryItem
+function __RandomizedBuildingBase:trySpawnStoryItem(itemType, square, obj) end
+
 RandomizedBuildingBase = {}
 
 ---@type integer

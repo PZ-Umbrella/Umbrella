@@ -73,8 +73,8 @@ function __BaseAction:setActionAnim(act) end
 ---@param animNode string
 function __BaseAction:setActionAnim(animNode) end
 
----@param in_val boolean
-function __BaseAction:setAllowedWhileDraggingCorpses(in_val) end
+---@param val boolean
+function __BaseAction:setAllowedWhileDraggingCorpses(val) end
 
 ---@param key string
 ---@param val string

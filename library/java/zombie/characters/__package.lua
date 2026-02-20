@@ -13,6 +13,9 @@
 ---@class ClothingWetness
 
 ---(Not exposed)
+---@class ClothingWetnessSync
+
+---(Not exposed)
 ---@class ContextualAction
 
 ---(Not exposed)
@@ -35,6 +38,9 @@
 
 ---(Not exposed)
 ---@class IsoGameCharacter.Bandages
+
+---(Not exposed)
+---@class IsoGameCharacter.LC_slideAwayFromWalls
 
 ---(Not exposed)
 ---@class IsoGameCharacter.LightInfo
@@ -67,9 +73,6 @@
 ---@class IsoZombie.FloodFill
 
 ---(Not exposed)
----@class IsoZombie.LC_slideAwayFromWalls
-
----(Not exposed)
 ---@class NetworkCharacter
 
 ---(Not exposed)
@@ -89,6 +92,9 @@
 
 ---(Not exposed)
 ---@class PlayerCraftHistory.CraftHistoryEntry
+
+---(Not exposed)
+---@class Side
 
 ---(Not exposed)
 ---Created by LEMMYCOOLER on 26/07/14.

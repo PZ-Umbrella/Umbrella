@@ -12,38 +12,44 @@ function __SwipeStatePlayer:execute(owner) end
 ---@param owner IsoGameCharacter
 function __SwipeStatePlayer:exit(owner) end
 
----@return boolean
-function __SwipeStatePlayer:isSyncInIdle() end
-
----@return boolean
-function __SwipeStatePlayer:isSyncOnEnter() end
-
----@return boolean
-function __SwipeStatePlayer:isSyncOnExit() end
-
----@return boolean
-function __SwipeStatePlayer:isSyncOnSquare() end
-
 ---@param owner IsoGameCharacter
 ---@param stage State.Stage
 function __SwipeStatePlayer:setParams(owner, stage) end
 
 SwipeStatePlayer = {}
 
+---@type State.Param<boolean>
+SwipeStatePlayer.ATTACKED = nil
+
+---@type State.Param<boolean>
+SwipeStatePlayer.DO_CONTINUE_GRAPPLE = nil
+
+---@type State.Param<boolean>
+SwipeStatePlayer.DO_GRAPPLE = nil
+
+---@type State.Param<IGrappleable>
+SwipeStatePlayer.GRAPPLING_TARGET = nil
+
+---@type State.Param<string>
+SwipeStatePlayer.GRAPPLING_TYPE = nil
+
+---@type State.Param<boolean>
+SwipeStatePlayer.IS_GRAPPLE_WINDOW = nil
+
+---@type State.Param<boolean>
+SwipeStatePlayer.LOWER_CONDITION = nil
+
 ---@type number
 SwipeStatePlayer.MaxStompDistance = nil
 
----@param in_owner IsoGameCharacter
----@param in_layer AnimLayer
----@param in_track AnimationTrack
----@param in_event AnimEvent
-function SwipeStatePlayer.dbgOnGlobalAnimEvent(in_owner, in_layer, in_track, in_event) end
+---@param owner IsoGameCharacter
+---@param layer AnimLayer
+---@param track AnimationTrack
+---@param event AnimEvent
+function SwipeStatePlayer.dbgOnGlobalAnimEvent(owner, layer, track, event) end
 
 ---@return SwipeStatePlayer
 function SwipeStatePlayer.instance() end
-
----@return SwipeStatePlayer
-function SwipeStatePlayer.new() end
 
 ---@type Class<SwipeStatePlayer>
 SwipeStatePlayer.class = nil

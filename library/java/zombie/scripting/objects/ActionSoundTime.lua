@@ -12,6 +12,9 @@ ActionSoundTime = {}
 ActionSoundTime.ACTION_START = nil
 
 ---@type ActionSoundTime
+ActionSoundTime.ANIMATION_EVENT = nil
+
+---@type ActionSoundTime
 ActionSoundTime.ANIMATION_START = nil
 
 ---@param value string

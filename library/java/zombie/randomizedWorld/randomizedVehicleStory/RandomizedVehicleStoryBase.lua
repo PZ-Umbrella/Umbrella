@@ -26,12 +26,6 @@ function __RandomizedVehicleStoryBase:getCenterOfChunk(zone, chunk) end
 ---@return integer
 function __RandomizedVehicleStoryBase:getChance() end
 
----@return string
-function __RandomizedVehicleStoryBase:getDebugLine() end
-
----@return integer
-function __RandomizedVehicleStoryBase:getMaximumDays() end
-
 ---@return integer
 function __RandomizedVehicleStoryBase:getMinZoneHeight() end
 
@@ -40,9 +34,6 @@ function __RandomizedVehicleStoryBase:getMinZoneWidth() end
 
 ---@return integer
 function __RandomizedVehicleStoryBase:getMinimumDays() end
-
----@return string
-function __RandomizedVehicleStoryBase:getName() end
 
 ---@param zone Zone
 ---@param chunk IsoChunk
@@ -99,9 +90,6 @@ function __RandomizedVehicleStoryBase:registerCustomOutfits() end
 
 ---@param chance integer
 function __RandomizedVehicleStoryBase:setChance(chance) end
-
----@param maximumDays integer
-function __RandomizedVehicleStoryBase:setMaximumDays(maximumDays) end
 
 ---@param minimumDays integer
 function __RandomizedVehicleStoryBase:setMinimumDays(minimumDays) end

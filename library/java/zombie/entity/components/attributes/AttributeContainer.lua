@@ -142,8 +142,8 @@ function __AttributeContainer:getKey(index) end
 function __AttributeContainer:isIdenticalTo(other) end
 
 ---@param input ByteBuffer
----@param WorldVersion integer
-function __AttributeContainer:load(input, WorldVersion) end
+---@param worldVersion integer
+function __AttributeContainer:load(input, worldVersion) end
 
 ---@generic E: Enum<E>, IOEnum
 ---@param type AttributeType.Enum<E>

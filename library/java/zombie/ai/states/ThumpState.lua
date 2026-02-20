@@ -18,18 +18,6 @@ function __ThumpState:execute(owner) end
 ---@param owner IsoGameCharacter
 function __ThumpState:exit(owner) end
 
----@return boolean
-function __ThumpState:isSyncInIdle() end
-
----@return boolean
-function __ThumpState:isSyncOnEnter() end
-
----@return boolean
-function __ThumpState:isSyncOnExit() end
-
----@return boolean
-function __ThumpState:isSyncOnSquare() end
-
 ThumpState = {}
 
 ---@return integer
@@ -37,9 +25,6 @@ function ThumpState.getFastForwardDamageMultiplier() end
 
 ---@return ThumpState
 function ThumpState.instance() end
-
----@return ThumpState
-function ThumpState.new() end
 
 ---@type Class<ThumpState>
 ThumpState.class = nil

@@ -15,18 +15,6 @@ function __PlayerFallingState:exit(owner) end
 ---@return boolean
 function __PlayerFallingState:isProcessedOnExit() end
 
----@return boolean
-function __PlayerFallingState:isSyncInIdle() end
-
----@return boolean
-function __PlayerFallingState:isSyncOnEnter() end
-
----@return boolean
-function __PlayerFallingState:isSyncOnExit() end
-
----@return boolean
-function __PlayerFallingState:isSyncOnSquare() end
-
 ---@param owner IsoGameCharacter
 ---@param delegate Map<any, any>
 function __PlayerFallingState:processOnExit(owner, delegate) end
@@ -37,11 +25,14 @@ function __PlayerFallingState:setParams(owner, stage) end
 
 PlayerFallingState = {}
 
----@return PlayerFallingState
-function PlayerFallingState.instance() end
+---@type State.Param<boolean>
+PlayerFallingState.CLIMBING = nil
+
+---@type State.Param<number>
+PlayerFallingState.LANDING_IMPACT = nil
 
 ---@return PlayerFallingState
-function PlayerFallingState.new() end
+function PlayerFallingState.instance() end
 
 ---@type Class<PlayerFallingState>
 PlayerFallingState.class = nil
