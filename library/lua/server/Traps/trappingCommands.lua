@@ -16,6 +16,10 @@ function STrapSystemCommands.addAnimalDebug(player, args) end
 function STrapSystemCommands.addBait(player, args) end
 
 ---@param player IsoPlayer
+---@param args umbrella.XYZ
+function STrapSystemCommands.checkTrap(player, args) end
+
+---@param player IsoPlayer
 ---@param args table
 function STrapSystemCommands.destroy(player, args) end
 

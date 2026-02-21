@@ -25,25 +25,33 @@ WeaponUpgrades = {
 	VarmintRifle = {
 		"x2Scope",
 		"x4Scope",
-		"x8Scope",
 		"RecoilPad",
 	},
 	HuntingRifle = {
-		"x2Scope",
 		"x4Scope",
 		"x8Scope",
 		"RecoilPad",
 	},
 	Shotgun = {
-		"AmmoStraps",
 		"ChokeTubeFull",
 		"ChokeTubeImproved",
+		"RecoilPad",
 	},
-	Pistol = {},
-	Pistol2 = {},
-	Pistol3 = {},
-	Revolver = {},
-	Revolver_Long = {},
+	Pistol = {
+		"GunLight",
+		"Laser",
+		"TritiumSights",
+	},
+	Pistol2 = {
+		"GunLight",
+		"Laser",
+		"TritiumSights",
+	},
+	Pistol3 = {
+		"GunLight",
+		"Laser",
+		"TritiumSights",
+	},
 }
 
 ---@param _dist table

@@ -18,6 +18,8 @@ function ISPickupFishAction:animEvent(event, parameter) end
 ---@return boolean
 function ISPickupFishAction:complete() end
 
+function ISPickupFishAction:dropFish() end
+
 ---@return number
 function ISPickupFishAction:getDuration() end
 
@@ -29,6 +31,8 @@ function ISPickupFishAction:perform() end
 function ISPickupFishAction:PickupFishUpdate() end
 
 function ISPickupFishAction:serverStart() end
+
+function ISPickupFishAction:serverStop() end
 
 function ISPickupFishAction:start() end
 

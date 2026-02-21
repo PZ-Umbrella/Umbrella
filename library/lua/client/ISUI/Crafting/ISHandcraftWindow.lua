@@ -29,6 +29,9 @@ ISHandcraftWindow = ISCollapsableWindow:derive("ISHandcraftWindow")
 ISHandcraftWindow.Type = "ISHandcraftWindow"
 ISHandcraftWindow.autoCloseDistance = 1.5
 
+---@param playerObj IsoPlayer
+function ISHandcraftWindow.OnPlayerDeath(playerObj) end
+
 ---@param _preferredWidth number?
 ---@param _preferredHeight number?
 function ISHandcraftWindow:calculateLayout(_preferredWidth, _preferredHeight) end

@@ -591,10 +591,6 @@ function __serverSettingsScreen_SpawnRegionsListBox:prerender() end
 
 function __serverSettingsScreen_SpawnRegionsListBox:render() end
 
----@class ServerSettingsScreen.SpawnPointsListBox : ISScrollingListBox
-local __serverSettingsScreen_SpawnPointsListBox = ISScrollingListBox:derive("SpawnPointsListBox")
-__serverSettingsScreen_SpawnPointsListBox.Type = "SpawnPointsListBox"
-
 ---@class ServerSettingsScreen.ServerSettingsScreenGroupBox : ServerSettingsScreen.ServerSettingsScreenPanel
 ---@field _instance ServerSettingsScreen.Page3
 ---@field category unknown

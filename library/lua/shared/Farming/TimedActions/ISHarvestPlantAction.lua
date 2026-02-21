@@ -2,6 +2,7 @@
 
 ---@class ISHarvestPlantAction : ISBaseTimedAction
 ---@field character IsoPlayer
+---@field maxTimeInit number
 ---@field plant CPlantGlobalObject
 ---@field sound integer?
 ISHarvestPlantAction = ISBaseTimedAction:derive("ISHarvestPlantAction")
@@ -29,6 +30,6 @@ function ISHarvestPlantAction:waitToStart() end
 
 ---@param character IsoPlayer
 ---@param plant CPlantGlobalObject
----@param maxTime number
+---@param maxTimeInit number
 ---@return ISHarvestPlantAction
-function ISHarvestPlantAction:new(character, plant, maxTime) end
+function ISHarvestPlantAction:new(character, plant, maxTimeInit) end

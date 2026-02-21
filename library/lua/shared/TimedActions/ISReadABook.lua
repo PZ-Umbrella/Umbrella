@@ -2,6 +2,7 @@
 
 ---@class ISReadABook : ISBaseTimedAction
 ---@field forceProgressBar boolean
+---@field forceStopped boolean
 ---@field ignoreHandsWounds boolean
 ---@field isLiteratureRead boolean?
 ---@field item Literature
@@ -29,6 +30,8 @@ function ISReadABook:animEvent(event, parameter) end
 function ISReadABook:complete() end
 
 function ISReadABook:displayPrintMedia() end
+
+function ISReadABook:doHaloText() end
 
 ---@return number
 function ISReadABook:getDuration() end

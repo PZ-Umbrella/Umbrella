@@ -24,7 +24,6 @@
 ---@field perks table
 ---@field perksAddXPButtons table
 ---@field selectedPerk umbrella.ISPlayerStatsUI.PerkTable?
----@field syncWeightTimer number
 ---@field traits ISImage[]
 ---@field traitsRemoveButtons table<string, ISButton>
 ---@field userlogBtn ISButton
@@ -131,8 +130,6 @@ function ISPlayerStatsUI:subPanelRender() end
 function ISPlayerStatsUI:updateButtons() end
 
 function ISPlayerStatsUI:updateColumns() end
-
-function ISPlayerStatsUI:updateWeight() end
 
 ---@param x number
 ---@param y number

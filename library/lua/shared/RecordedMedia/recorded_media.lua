@@ -9,7 +9,8 @@ RecMedia = {}
 ---@field category string
 ---@field extra string?
 ---@field itemDisplayName string
----@field spawning (0 | 1)?
+---@field lines umbrella.RecMediaLine[]
+---@field spawning (0 | 1 | 2)?
 ---@field subtitle string?
 ---@field title string
 

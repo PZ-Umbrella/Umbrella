@@ -20,6 +20,8 @@ function __UI_PrintMedia:onKeyRelease(key) end
 
 function __UI_PrintMedia:onResize() end
 
+function __UI_PrintMedia:renderUpdate() end
+
 ---@param collapsed boolean
 function __UI_PrintMedia:setCollapsed(collapsed) end
 

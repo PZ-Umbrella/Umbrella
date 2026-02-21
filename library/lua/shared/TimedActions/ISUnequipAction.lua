@@ -1,9 +1,13 @@
 ---@meta
 
 ---@class ISUnequipAction : ISBaseTimedAction
+---@field animSpeed number
 ---@field clothingAction boolean
+---@field fromHotbar boolean?
+---@field hotbar ISHotbar?
 ---@field ignoreHandsWounds boolean
 ---@field item InventoryItem
+---@field maxTimeInit number
 ---@field sound integer?
 ---@field soundNoTrigger boolean
 ISUnequipAction = ISBaseTimedAction:derive("ISUnequipAction")
@@ -32,6 +36,6 @@ function ISUnequipAction:update() end
 
 ---@param character IsoPlayer
 ---@param item InventoryItem
----@param maxTime number
+---@param maxTimeInit number
 ---@return ISUnequipAction
-function ISUnequipAction:new(character, item, maxTime) end
+function ISUnequipAction:new(character, item, maxTimeInit) end

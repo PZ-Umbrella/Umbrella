@@ -77,6 +77,10 @@ ISInventoryPane.highlightItem = nil ---@type string?
 ---@return InventoryItem[]
 function ISInventoryPane.getActualItems(items) end
 
+---@param items (InventoryItem | umbrella.ISInventoryPane.ItemRecord)[]
+---@return InventoryItem[]
+function ISInventoryPane.getActualUniqueItems(items) end
+
 ---@param a umbrella.ISInventoryPane.ItemRecord
 ---@param b umbrella.ISInventoryPane.ItemRecord
 ---@return boolean
@@ -338,6 +342,9 @@ function ISInventoryPane:new(x, y, width, height, inventory, zoom) end
 ---@field mouseOverWhat string?
 ---@field playerNum integer
 ISInventoryPaneDraggedItems = {}
+
+---@return boolean
+function ISInventoryPaneDraggedItems:cannotDropAnyItem() end
 
 ---@param item InventoryItem
 ---@return boolean

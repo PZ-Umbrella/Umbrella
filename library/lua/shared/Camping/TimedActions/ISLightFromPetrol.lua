@@ -3,6 +3,7 @@
 ---@class ISLightFromPetrol : ISBaseTimedAction
 ---@field campfire SCampfireGlobalObject
 ---@field lighter InventoryItem
+---@field maxTimeInit number
 ---@field petrol InventoryItem
 ISLightFromPetrol = ISBaseTimedAction:derive("ISLightFromPetrol")
 ISLightFromPetrol.Type = "ISLightFromPetrol"
@@ -31,6 +32,6 @@ function ISLightFromPetrol:waitToStart() end
 ---@param campfire SCampfireGlobalObject
 ---@param lighter InventoryItem
 ---@param petrol InventoryItem
----@param maxTime integer
+---@param maxTimeInit number
 ---@return ISLightFromPetrol
-function ISLightFromPetrol:new(character, campfire, lighter, petrol, maxTime) end
+function ISLightFromPetrol:new(character, campfire, lighter, petrol, maxTimeInit) end

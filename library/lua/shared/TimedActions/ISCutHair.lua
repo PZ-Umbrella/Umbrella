@@ -4,6 +4,7 @@
 ---@field hairStyle string
 ---@field item InventoryItem?
 ---@field maxTime number
+---@field maxTimeInit number
 ---@field sound integer?
 ISCutHair = ISBaseTimedAction:derive("ISCutHair")
 ISCutHair.Type = "ISCutHair"
@@ -30,6 +31,6 @@ function ISCutHair:update() end
 ---@param character IsoPlayer
 ---@param hairStyle string
 ---@param item InventoryItem?
----@param maxTime number
+---@param maxTimeInit number
 ---@return ISCutHair
-function ISCutHair:new(character, hairStyle, item, maxTime) end
+function ISCutHair:new(character, hairStyle, item, maxTimeInit) end

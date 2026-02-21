@@ -11,6 +11,10 @@
 ISConsolidateDrainable = ISBaseTimedAction:derive("ISConsolidateDrainable")
 ISConsolidateDrainable.Type = "ISConsolidateDrainable"
 
+---@param event string
+---@param parameter string
+function ISConsolidateDrainable:animEvent(event, parameter) end
+
 ---@return boolean
 function ISConsolidateDrainable:complete() end
 
@@ -29,7 +33,7 @@ function ISConsolidateDrainable:perform() end
 ---@param intoItem DrainableComboItem
 function ISConsolidateDrainable:runAgain(drainable, intoItem) end
 
-function ISConsolidateDrainable:serverStop() end
+function ISConsolidateDrainable:serverStart() end
 
 function ISConsolidateDrainable:start() end
 

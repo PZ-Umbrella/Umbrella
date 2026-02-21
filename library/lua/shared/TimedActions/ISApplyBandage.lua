@@ -8,9 +8,11 @@
 ---@field doctorLevel number
 ---@field doIt boolean
 ---@field item InventoryItem
+---@field itemWasPresent boolean
 ---@field otherPlayer IsoPlayer
 ---@field sound integer?
 ---@field sound2 integer?
+---@field wasBandaged boolean
 ISApplyBandage = ISBaseTimedAction:derive("ISApplyBandage")
 ISApplyBandage.Type = "ISApplyBandage"
 

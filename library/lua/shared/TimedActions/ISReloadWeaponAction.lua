@@ -29,6 +29,10 @@ function ISReloadWeaponAction.canRack(weapon) end
 ---@return boolean
 function ISReloadWeaponAction.canShoot(player, weapon) end
 
+---@param baseTime number
+---@return number
+function ISReloadWeaponAction.getReloadTime(character, baseTime) end
+
 ---@param playerObj IsoPlayer
 ---@param weapon HandWeapon
 function ISReloadWeaponAction.OnPlayerAttackFinished(playerObj, weapon) end

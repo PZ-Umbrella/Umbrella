@@ -8,6 +8,7 @@
 ---@field rotation integer
 ---@field sound integer
 ---@field vehicle BaseVehicle
+---@field wasValid boolean?
 ISDropVehicleItemAction = ISBaseTimedAction:derive("ISDropVehicleItemAction")
 ISDropVehicleItemAction.Type = "ISDropVehicleItemAction"
 

@@ -69,6 +69,22 @@ function ISBuildIsoEntity:cacheSprites(_face) end
 ---@return boolean?
 function ISBuildIsoEntity:create(x, y, z, north, sprite) end
 
+---@param x number
+---@param y number
+---@param z number
+function ISBuildIsoEntity:ensureSquareExists1(x, y, z) end
+
+---@param x number
+---@param y number
+---@param z number
+---@return unknown?
+function ISBuildIsoEntity:ensureSquareExists2(x, y, z) end
+
+---@param x number
+---@param y number
+---@param z number
+function ISBuildIsoEntity:ensureSquaresExist(x, y, z) end
+
 ---@return SpriteConfigManager.FaceInfo
 function ISBuildIsoEntity:getFace() end
 

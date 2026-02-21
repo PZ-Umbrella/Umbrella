@@ -51,6 +51,8 @@ function ISDebugMenu:onClick_Main() end
 
 function ISDebugMenu:onClickSandboxSettings() end
 
+function ISDebugMenu:onForgetRecipes() end
+
 function ISDebugMenu:setupButtons() end
 
 ---@param x number

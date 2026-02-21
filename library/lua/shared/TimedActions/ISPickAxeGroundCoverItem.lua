@@ -14,6 +14,9 @@ ISPickAxeGroundCoverItem.Type = "ISPickAxeGroundCoverItem"
 function ISPickAxeGroundCoverItem:animEvent(event, parameter) end
 
 ---@return boolean
+function ISPickAxeGroundCoverItem:isMineralDeposit() end
+
+---@return boolean
 function ISPickAxeGroundCoverItem:isValid() end
 
 function ISPickAxeGroundCoverItem:perform() end

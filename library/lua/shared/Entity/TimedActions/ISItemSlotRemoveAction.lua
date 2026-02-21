@@ -33,7 +33,8 @@ function ISItemSlotRemoveAction:update() end
 
 ---@param character IsoPlayer
 ---@param entity IsoObject
----@param itemSlot ISItemSlot
+---@param resource ResourceItem
+---@param internalItemSlot ISItemSlot
 ---@param item InventoryItem?
 ---@return ISItemSlotRemoveAction
-function ISItemSlotRemoveAction:new(character, entity, itemSlot, item) end
+function ISItemSlotRemoveAction:new(character, entity, resource, internalItemSlot, item) end

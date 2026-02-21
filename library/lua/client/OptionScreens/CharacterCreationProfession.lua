@@ -104,6 +104,10 @@ function CharacterCreationProfession:instantiate() end
 
 ---@param trait CharacterTraitDefinition
 ---@return boolean
+function CharacterCreationProfession:isTraitEnabled(trait) end
+
+---@param trait CharacterTraitDefinition
+---@return boolean
 function CharacterCreationProfession:isTraitExcluded(trait) end
 
 ---@return number

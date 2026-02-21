@@ -8,6 +8,7 @@
 ---@field ignoreHandsWounds boolean
 ---@field item InventoryItem
 ---@field jobType string
+---@field maxTimeInit number
 ---@field primary boolean
 ---@field sound integer?
 ---@field twoHands boolean?
@@ -41,12 +42,12 @@ function ISEquipWeaponAction:update() end
 
 ---@param character IsoPlayer
 ---@param item InventoryItem
----@param maxTime number
+---@param maxTimeInit number
 ---@param primary boolean
 ---@param twoHands boolean?
 ---@param alwaysTurnOn boolean?
 ---@return ISEquipWeaponAction
-function ISEquipWeaponAction:new(character, item, maxTime, primary, twoHands, alwaysTurnOn) end
+function ISEquipWeaponAction:new(character, item, maxTimeInit, primary, twoHands, alwaysTurnOn) end
 
 ---@param item InventoryItem?
 ---@return boolean

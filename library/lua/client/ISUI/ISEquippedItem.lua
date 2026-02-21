@@ -2,21 +2,25 @@
 
 ---@class ISEquippedItem : ISPanel
 ---@field adminBtn ISButton
----@field adminIconOff unknown
+---@field adminIconOff Texture
 ---@field adminIconOn Texture
+---@field bhc ColorInfo
 ---@field buildBtn ISButton
+---@field changingSafetyState boolean
 ---@field chr IsoPlayer
 ---@field clientBtn ISButton
----@field clientIconOff unknown
+---@field clientIconOff Texture
 ---@field clientIconOn Texture
 ---@field clockTexture Texture
 ---@field craftingBtn ISButton
----@field craftingIconOff unknown
+---@field craftingIconOff Texture
 ---@field craftingIconOn Texture
+---@field currentSafetyState boolean
 ---@field debugBtn ISButton
----@field debugIconOff unknown
+---@field debugIconOff Texture
 ---@field debugIconOn Texture
 ---@field disableTexture Texture
+---@field ghc ColorInfo
 ---@field handMainTexture Texture
 ---@field HandSecondaryTexture Texture
 ---@field healthBtn ISButton
@@ -27,12 +31,12 @@
 ---@field healthIconOscillatorScalar number
 ---@field healthIconOscillatorStartLevel number
 ---@field healthIconOscillatorStep number
----@field heartIconOff unknown
+---@field heartIconOff Texture
 ---@field heartIconOn Texture
 ---@field infopanel unknown?
 ---@field invBtn ISButton
 ---@field inventory unknown?
----@field inventoryTextureOff unknown
+---@field inventoryTextureOff Texture
 ---@field inventoryTextureOn Texture
 ---@field loot unknown?
 ---@field mainHand ISImage
@@ -43,35 +47,39 @@
 ---@field mouseOverList umbrella.ISEquippedItem.MouseOverItem[]
 ---@field movableBtn ISButton
 ---@field movableIconOff Texture
----@field movableIconOn unknown
+---@field movableIconOn Texture
 ---@field movableIconPickup Texture
 ---@field movableIconPlace Texture
 ---@field movableIconRotate Texture
 ---@field movableIconScrap Texture
 ---@field movablePopup ISMoveablesIconPopup
 ---@field movableTooltip ISMoveablesIconToolTip
----@field moveableIconBuildOff unknown
+---@field moveableIconBuildOff Texture
 ---@field moveableIconBuildOn Texture
 ---@field moveableIconRepair Texture
+---@field nhc ColorInfo
 ---@field offHand ISImage
 ---@field playerNum integer
 ---@field previousHealth number
+---@field previousSafetyState boolean
 ---@field radialIcon ISRadialProgressBar
 ---@field safety Safety
+---@field safetyBackground Texture
 ---@field safetyBtn ISButton
----@field safetyOff unknown
----@field safetyOn unknown
+---@field safetyTint Texture
 ---@field searchBtn ISButton
----@field searchIconOff unknown
+---@field searchIconOff Texture
 ---@field searchIconOn Texture
 ---@field sidebarSizeOption integer
+---@field toolRender ISToolTipInv
 ---@field toolTip ISToolTip
----@field warIconOff unknown
----@field warIconOn unknown
+---@field warIconOff Texture
+---@field warIconOn Texture
+---@field warIconTimer number
 ---@field warManagerBtn ISButton
 ---@field warSoon Texture
 ---@field zoneBtn ISButton
----@field zoneIconOff unknown
+---@field zoneIconOff Texture
 ---@field zoneIconOn Texture
 ISEquippedItem = ISPanel:derive("ISEquippedItem")
 ISEquippedItem.Type = "ISEquippedItem"
@@ -94,6 +102,10 @@ function ISEquippedItem:checkBounds(_boundsItem, _x, _y) end
 function ISEquippedItem:checkSidebarSizeOption() end
 
 function ISEquippedItem:checkToolTip() end
+
+---@param item InventoryItem
+---@param player IsoPlayer
+function ISEquippedItem:doInvToolTip(item, player) end
 
 ---@param _state boolean
 ---@param _text string
@@ -206,33 +218,6 @@ function ISMapPopup:render() end
 ---@param height number
 ---@return ISMapPopup
 function ISMapPopup:new(x, y, width, height) end
-
----@class ISMetaPopup : ISPanel
----@field texAnimalZone unknown
----@field texRoomEditor unknown
-ISMetaPopup = ISPanel:derive("ISMetaPopup")
-ISMetaPopup.Type = "ISMetaPopup"
-
----@param x number
----@param y number
----@return boolean
-function ISMetaPopup:onMouseDown(x, y) end
-
----@param x number
----@param y number
----@return boolean
-function ISMetaPopup:onMouseUp(x, y) end
-
-function ISMetaPopup:prerender() end
-
-function ISMetaPopup:render() end
-
----@param x number
----@param y number
----@param width number
----@param height number
----@return ISMetaPopup
-function ISMetaPopup:new(x, y, width, height) end
 
 ---@class umbrella.ISEquippedItem.MouseOverItem
 ---@field displayString string

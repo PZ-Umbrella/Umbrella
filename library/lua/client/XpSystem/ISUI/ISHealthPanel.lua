@@ -154,6 +154,9 @@ function ISHealthPanel:update() end
 
 function ISHealthPanel:updateBodyPartList() end
 
+---@return boolean
+function ISHealthPanel:wasRemotePlayerRecreated() end
+
 ---@param player IsoPlayer
 ---@param x number
 ---@param y number

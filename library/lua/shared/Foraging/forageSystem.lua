@@ -89,7 +89,7 @@ forageSystem = {
 		"hasNeededRecipes",
 		"hasRequiredItems",
 	},
-	globalXPModifier = 800,
+	globalXPModifier = 400,
 	levelXPModifier = 5,
 	worldSprites = {
 		dogbane = {

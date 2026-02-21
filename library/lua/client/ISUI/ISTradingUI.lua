@@ -46,7 +46,7 @@ function ISTradingUI.AcceptedTrade(accepted) end
 ---@param item InventoryItem
 function ISTradingUI.OtherAddNewItem(player, item) end
 
----@param requester string
+---@param requester IsoPlayer
 function ISTradingUI.ReceiveTradeRequest(requester) end
 
 ---@param player IsoPlayer

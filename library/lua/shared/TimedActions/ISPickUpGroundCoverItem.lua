@@ -3,6 +3,7 @@
 ---@class ISPickUpGroundCoverItem : ISBaseTimedAction
 ---@field object IsoObject
 ---@field objectType string?
+---@field sound integer?
 ---@field spriteFrame number
 ---@field square IsoGridSquare
 ISPickUpGroundCoverItem = ISBaseTimedAction:derive("ISPickUpGroundCoverItem")
@@ -31,6 +32,8 @@ function ISPickUpGroundCoverItem:perform() end
 function ISPickUpGroundCoverItem:start() end
 
 function ISPickUpGroundCoverItem:stop() end
+
+function ISPickUpGroundCoverItem:stopSound() end
 
 function ISPickUpGroundCoverItem:update() end
 

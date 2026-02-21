@@ -15,6 +15,11 @@ ISPathFindAction.Type = "ISPathFindAction"
 function ISPathFindAction:isValid() end
 
 ---@param character IsoPlayer
+---@param corpse IsoDeadBody
+---@return ISPathFindAction
+function ISPathFindAction:pathToGrabCorpse(character, corpse) end
+
+---@param character IsoPlayer
 ---@param targetX number
 ---@param targetY number
 ---@param targetZ number

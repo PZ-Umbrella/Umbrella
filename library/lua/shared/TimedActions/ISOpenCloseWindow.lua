@@ -3,6 +3,7 @@
 ---@class ISOpenCloseWindow : ISBaseTimedAction
 ---@field ignoreHandsWounds boolean
 ---@field object IsoWindow
+---@field retriggerLastAction boolean
 ---@field useProgressBar boolean
 ISOpenCloseWindow = ISBaseTimedAction:derive("ISOpenCloseWindow")
 ISOpenCloseWindow.Type = "ISOpenCloseWindow"

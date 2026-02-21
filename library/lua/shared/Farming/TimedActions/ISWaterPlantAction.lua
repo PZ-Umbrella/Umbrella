@@ -4,6 +4,7 @@
 ---@field character IsoPlayer
 ---@field deltaPerUse number
 ---@field item InventoryItem
+---@field maxTimeInit number
 ---@field sound integer?
 ---@field sq IsoGridSquare
 ---@field uses integer
@@ -37,6 +38,6 @@ function ISWaterPlantAction:waitToStart() end
 ---@param item InventoryItem
 ---@param uses integer
 ---@param sq IsoGridSquare
----@param maxTime number
+---@param maxTimeInit number
 ---@return ISWaterPlantAction
-function ISWaterPlantAction:new(character, item, uses, sq, maxTime) end
+function ISWaterPlantAction:new(character, item, uses, sq, maxTimeInit) end

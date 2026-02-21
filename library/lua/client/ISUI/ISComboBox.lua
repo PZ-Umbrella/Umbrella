@@ -221,5 +221,3 @@ function ISComboBoxPopup:new(x, y, width, height) end
 ---@class umbrella.ISComboBox.Option
 ---@field data unknown
 ---@field text string
-
-function testcomboBox() end

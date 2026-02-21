@@ -3,6 +3,7 @@
 ---@class ISRepairLightbar : ISBaseTimedAction
 ---@field item InventoryItem
 ---@field jobType string
+---@field maxTimeInit number
 ---@field part VehiclePart
 ---@field vehicle BaseVehicle
 ISRepairLightbar = ISBaseTimedAction:derive("ISRepairLightbar")
@@ -31,6 +32,6 @@ function ISRepairLightbar:waitToStart() end
 ---@param character IsoPlayer
 ---@param part VehiclePart
 ---@param item InventoryItem
----@param maxTime number
+---@param maxTimeInit number
 ---@return ISRepairLightbar
-function ISRepairLightbar:new(character, part, item, maxTime) end
+function ISRepairLightbar:new(character, part, item, maxTimeInit) end

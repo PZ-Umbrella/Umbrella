@@ -3,6 +3,7 @@
 ---@class ISTakeEngineParts : ISBaseTimedAction
 ---@field item InventoryItem
 ---@field jobType string
+---@field maxTimeInit number
 ---@field part VehiclePart
 ---@field vehicle BaseVehicle
 ISTakeEngineParts = ISBaseTimedAction:derive("ISTakeEngineParts")
@@ -31,6 +32,6 @@ function ISTakeEngineParts:update() end
 ---@param character IsoPlayer
 ---@param part VehiclePart
 ---@param item InventoryItem
----@param maxTime number
+---@param maxTimeInit number
 ---@return ISTakeEngineParts
-function ISTakeEngineParts:new(character, part, item, maxTime) end
+function ISTakeEngineParts:new(character, part, item, maxTimeInit) end

@@ -18,6 +18,9 @@ function ISRadialProgressBar:prerender() end
 
 function ISRadialProgressBar:render() end
 
+---@param _col ColorInfo
+function ISRadialProgressBar:setColor(_col) end
+
 ---@param _tex Texture?
 function ISRadialProgressBar:setTexture(_tex) end
 

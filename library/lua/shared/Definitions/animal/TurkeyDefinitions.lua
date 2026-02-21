@@ -94,7 +94,7 @@ AnimalDefinitions.breeds = {
 						name = "PutDownAnimalDeadTurkey",
 					},
 					run = {
-						name = "AnimalFootstepsTurkeyWalk",
+						name = "AnimalFootstepsTurkeyRun",
 					},
 					stressed = {
 						name = "AnimalVoiceTurkeyStressed",

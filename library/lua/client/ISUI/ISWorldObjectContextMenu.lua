@@ -98,7 +98,8 @@ function ISWorldObjectContextMenu.compareClothingBlood(item1, item2) end
 ---@param x number
 ---@param y number
 ---@param test boolean?
----@return boolean?
+---@return (ISContextMenu | boolean)?
+---@overload fun(player: integer, worldobjects: IsoObject[], x: number, y: number): ISContextMenu
 function ISWorldObjectContextMenu.createMenu(player, worldobjects, x, y, test) end
 
 ---@param worldobjects IsoObject[]
@@ -367,10 +368,9 @@ function ISWorldObjectContextMenu.onAddSheetRope(worldobjects, window, player, s
 ---@param tree IsoObject
 function ISWorldObjectContextMenu.onAttachAnimalToTree(animal, player, tree) end
 
----@param worldobjects IsoObject[]
----@param window IsoThumpable
----@param player integer
-function ISWorldObjectContextMenu.onBarricade(worldobjects, window, player) end
+---@param spriteName string
+---@param playerObj IsoPlayer
+function ISWorldObjectContextMenu.onBarricade(spriteName, playerObj) end
 
 ---@param playerObj IsoPlayer
 ---@param anim string
@@ -527,9 +527,9 @@ function ISWorldObjectContextMenu.onGetOnBed(playerObj, bed) end
 function ISWorldObjectContextMenu.onGrabAllWItems(worldobjects, WItems, player) end
 
 ---@param worldobjects IsoObject[]
----@param WItem IsoDeadBody
+---@param isoDeadBody IsoDeadBody
 ---@param player integer
-function ISWorldObjectContextMenu.onGrabCorpseItem(worldobjects, WItem, player) end
+function ISWorldObjectContextMenu.onGrabCorpseItem(worldobjects, isoDeadBody, player) end
 
 ---@param worldobjects IsoObject[]
 ---@param WItems IsoWorldInventoryObject[]
@@ -580,16 +580,6 @@ function ISWorldObjectContextMenu.onLockDoor(worldobjects, player, door) end
 ---@param player IsoPlayer
 ---@param otherPlayer IsoPlayer
 function ISWorldObjectContextMenu.onMedicalCheck(worldobjects, player, otherPlayer) end
-
----@param worldobjects IsoObject[]
----@param window IsoThumpable
----@param player integer
-function ISWorldObjectContextMenu.onMetalBarBarricade(worldobjects, window, player) end
-
----@param worldobjects IsoObject[]
----@param window IsoThumpable
----@param player integer
-function ISWorldObjectContextMenu.onMetalBarricade(worldobjects, window, player) end
 
 ---@param worldobjects IsoObject[]
 ---@param stove IsoStove

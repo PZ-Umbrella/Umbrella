@@ -178,9 +178,6 @@ function MultiplayerUI:serverInfoBluePanelHeight() end
 
 function MultiplayerUI:sortInternetList() end
 
----@return boolean?
-function MultiplayerUI:sortServerList(a, b) end
-
 function MultiplayerUI:updateButtons() end
 
 function MultiplayerUI:updateListSort() end

@@ -102,7 +102,7 @@ AnimalDefinitions.breeds = {
 						slot = "voice",
 					},
 					run = {
-						name = "AnimalFootstepsChickenWalk",
+						name = "AnimalFootstepsChickenRun",
 					},
 					stressed = {
 						name = "AnimalVoiceChickenStressed",
@@ -195,7 +195,7 @@ AnimalDefinitions.breeds = {
 						slot = "voice",
 					},
 					run = {
-						name = "AnimalFootstepsChickenWalk",
+						name = "AnimalFootstepsChickenRun",
 					},
 					stressed = {
 						name = "AnimalVoiceChickenStressed",

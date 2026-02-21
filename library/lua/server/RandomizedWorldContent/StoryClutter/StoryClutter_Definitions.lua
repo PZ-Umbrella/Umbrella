@@ -83,6 +83,7 @@ StoryClutter.BathroomSinkClutter = {
 	"Base.Ring_Left_RingFinger_GoldDiamond",
 	"Base.Ring_Left_RingFinger_Silver",
 	"Base.Rubberducky",
+	"Base.DentalFloss",
 }
 StoryClutter.BBQClutter = {
 	"Base.Bag_PicnicBasket",
@@ -299,6 +300,7 @@ StoryClutter.DormClutter = {
 	"Base.BeerEmpty",
 	"Base.BeerCanEmpty",
 	"Base.Hat_Cowboy_Plastic",
+	"Base.DentalFloss",
 }
 StoryClutter.FarmStorageClutter = {
 	"Base.Lantern_Hurricane",

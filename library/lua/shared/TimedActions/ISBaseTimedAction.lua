@@ -1,6 +1,5 @@
 ---@meta
 
----When using the new network model, an action's table must be global and its name must match its Type.
 ---@class ISBaseTimedAction : ISBaseObject
 ---@field _isAddingActions boolean?
 ---@field _numAddedActions number?
@@ -11,7 +10,7 @@
 ---@field loopedAction boolean?
 ---@field maxTime number
 ---@field name string?
----@field netAction NetTimedAction? Nil on clients.
+---@field netAction NetTimedAction?
 ---@field path Path?
 ---@field stopOnAim boolean
 ---@field stopOnRun boolean
@@ -28,10 +27,6 @@ function ISBaseTimedAction:addAfter(action) end
 ---@param maxTime number
 ---@return number
 function ISBaseTimedAction:adjustMaxTime(maxTime) end
-
----@param event string
----@param parameter string
-function ISBaseTimedAction:animEvent(event, parameter) end
 
 function ISBaseTimedAction:begin() end
 
@@ -51,7 +46,6 @@ function ISBaseTimedAction:forceStop() end
 ---@param deltas MoveDeltaModifiers
 function ISBaseTimedAction:getDeltaModifiers(deltas) end
 
----Calculates the duration of the timed action. Networked timed actions should override this to calculate the duration of the action.
 ---@return number
 function ISBaseTimedAction:getDuration() end
 
@@ -64,8 +58,6 @@ function ISBaseTimedAction:isStarted() end
 ---@return boolean
 function ISBaseTimedAction:isUsingTimeout() end
 
----Called every tick during the action to determine if the action should continue.
----@return boolean valid If non-true, the action will be cancelled.
 function ISBaseTimedAction:isValid() end
 
 ---@return boolean
@@ -73,7 +65,6 @@ function ISBaseTimedAction:isValidStart() end
 
 function ISBaseTimedAction:overrideWeaponType() end
 
----Called upon completion on the client. In singleplayer, called before complete().
 function ISBaseTimedAction:perform() end
 
 ---@return unknown?
@@ -108,10 +99,8 @@ function ISBaseTimedAction:setOverrideHandModelsString(_primaryHand, _secondaryH
 ---@param time number
 function ISBaseTimedAction:setTime(time) end
 
----Called when the client starts the action.
 function ISBaseTimedAction:start() end
 
----Called upon cancelling the action on the client.
 function ISBaseTimedAction:stop() end
 
 function ISBaseTimedAction:update() end
@@ -119,22 +108,6 @@ function ISBaseTimedAction:update() end
 ---@return boolean
 function ISBaseTimedAction:waitToStart() end
 
----When using the new network model, this will be called on the server when the action starts on the client. The client object's field values will be passed to the parameters with matching names. Care should be taken when modifying these arguments as the server will receive the client's already modified values. If there is no field with a matching name, nil is passed.
 ---@param character IsoPlayer
 ---@return ISBaseTimedAction
 function ISBaseTimedAction:new(character) end
-
----@class umbrella.NetworkedTimedAction
-local __umbrella_NetworkedTimedAction = {}
-
----Called upon completion on the server. In singleplayer, called after perform(). Optional: if this function is not defined, the new action networking model will not be used.
----@return boolean
-function __umbrella_NetworkedTimedAction:complete() end
-
----Called when the server starts the action.
----@return boolean
-function __umbrella_NetworkedTimedAction:serverStart() end
-
----Called upon cancelling the action on the server.
----@return boolean
-function __umbrella_NetworkedTimedAction:serverStop() end

@@ -3,6 +3,7 @@
 ---@class ISRemoveCampfireAction : ISBaseTimedAction
 ---@field campfire SCampfireGlobalObject
 ---@field character IsoPlayer
+---@field maxTimeInit number
 ---@field sound integer?
 ISRemoveCampfireAction = ISBaseTimedAction:derive("ISRemoveCampfireAction")
 ISRemoveCampfireAction.Type = "ISRemoveCampfireAction"
@@ -31,6 +32,6 @@ function ISRemoveCampfireAction:waitToStart() end
 
 ---@param character IsoPlayer
 ---@param campfire SCampfireGlobalObject
----@param maxTime integer
+---@param maxTimeInit number
 ---@return ISRemoveCampfireAction
-function ISRemoveCampfireAction:new(character, campfire, maxTime) end
+function ISRemoveCampfireAction:new(character, campfire, maxTimeInit) end

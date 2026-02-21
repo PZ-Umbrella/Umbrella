@@ -3,6 +3,7 @@
 ---@class ISFertilizeAction : ISBaseTimedAction
 ---@field character IsoPlayer
 ---@field item InventoryItem
+---@field maxTimeInit number
 ---@field plant CPlantGlobalObject
 ---@field sound integer?
 ISFertilizeAction = ISBaseTimedAction:derive("ISFertilizeAction")
@@ -31,6 +32,6 @@ function ISFertilizeAction:waitToStart() end
 ---@param character IsoPlayer
 ---@param item InventoryItem
 ---@param plant CPlantGlobalObject
----@param maxTime number
+---@param maxTimeInit number
 ---@return ISFertilizeAction
-function ISFertilizeAction:new(character, item, plant, maxTime) end
+function ISFertilizeAction:new(character, item, plant, maxTimeInit) end

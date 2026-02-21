@@ -5,7 +5,6 @@
 ---@field buttonPrompt ISButtonPrompt
 ---@field characterInfo ISCharacterInfoWindow
 ---@field contextMenu ISContextMenu
----@field craftingUI ISCraftingUI
 ---@field equipped ISEquippedItem
 ---@field h1 number
 ---@field h2 number

@@ -6,95 +6,11 @@ Fishing.Utils = nil ---@type Fishing.Utils
 
 ---@class Fishing.Utils
 local __fishing_Utils = {}
-__fishing_Utils.stopFishingKeysKeyboard = {
-	"Forward",
-	"Left",
-	"Backward",
-	"Right",
-	"Melee",
-	"CancelAction",
-}
-__fishing_Utils.hotbarKeys = {
-	"Hotbar 1",
-	"Hotbar 2",
-	"Hotbar 3",
-	"Hotbar 4",
-	"Hotbar 5",
-	"Hotbar 6",
-	"Hotbar 7",
-	"Hotbar 8",
-}
+__fishing_Utils.stopFishingKeysKeyboard = {} ---@type string[]
+__fishing_Utils.hotbarKeys = {} ---@type string[]
 __fishing_Utils.tempVec2 = Vector2.new()
-__fishing_Utils.skillSizeLimit = {
-	[0] = 1.4,
-	1.5,
-	1.9,
-	2.2,
-	2.3,
-	2.8,
-	4.5,
-	9,
-	27,
-	32,
-	45,
-}
-__fishing_Utils.fishSizeChancesBySkillLevel = {
-	[0] = {
-		95,
-		5,
-		0,
-	},
-	{
-		85,
-		15,
-		0,
-	},
-	{
-		75,
-		24,
-		1,
-	},
-	{
-		70,
-		25,
-		5,
-	},
-	{
-		60,
-		30,
-		10,
-	},
-	{
-		48,
-		40,
-		12,
-	},
-	{
-		35,
-		45,
-		20,
-	},
-	{
-		25,
-		45,
-		30,
-	},
-	{
-		20,
-		40,
-		40,
-	},
-	{
-		15,
-		40,
-		45,
-	},
-	{
-		10,
-		40,
-		50,
-	},
-}
+__fishing_Utils.skillSizeLimit = {} ---@type table<integer, number>
+__fishing_Utils.fishSizeChancesBySkillLevel = {} ---@type table<integer, [integer, integer, integer]>
 
 ---@param player IsoPlayer
 function __fishing_Utils.facePlayerToAim(player) end
@@ -145,6 +61,8 @@ function __fishing_Utils.isAccessibleAimDist(player) end
 ---@return boolean
 function __fishing_Utils.isCastButtonPressed(joypad) end
 
+---@param joypad integer
+---@param prevValue number
 ---@return number
 ---@return number
 ---@return boolean?

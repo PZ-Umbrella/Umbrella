@@ -40,10 +40,6 @@ function getPlayerInfoPanel(id) end
 function getPlayerBackButtonWheel(id) end
 
 ---@param id integer
----@return ISCraftingUI?
-function getPlayerCraftingUI(id) end
-
----@param id integer
 ---@return ISDesignationZonePanel?
 function getPlayerZoneUI(id) end
 

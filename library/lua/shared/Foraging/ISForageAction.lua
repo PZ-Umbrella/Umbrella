@@ -5,9 +5,9 @@
 ---@field forageIcon ISForageIcon
 ---@field iconID string
 ---@field itemCount integer
+---@field itemDataList table[]
 ---@field itemDef umbrella.Foraging.ItemDefinition
 ---@field itemType string
----@field itemTypeList string[]
 ---@field manager ISSearchManager
 ---@field started boolean
 ---@field targetContainer ItemContainer
@@ -39,8 +39,8 @@ function ISForageAction:waitToStart() end
 
 ---@param character IsoPlayer
 ---@param iconID string
----@param itemTypeList string[]
+---@param itemDataList table[]
 ---@param targetContainer ItemContainer
 ---@param itemType string
 ---@return ISForageAction
-function ISForageAction:new(character, iconID, itemTypeList, targetContainer, itemType) end
+function ISForageAction:new(character, iconID, itemDataList, targetContainer, itemType) end

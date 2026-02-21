@@ -32,8 +32,9 @@
 ---@field x number
 ---@field y number
 
----@class umbrella.XYWH
+---@class umbrella.XYZ : umbrella.XY
+---@field z number
+
+---@class umbrella.XYWH : umbrella.XY
 ---@field h number
 ---@field w number
----@field x number
----@field y number

@@ -169,6 +169,9 @@ function ISButton:setRepeatWhilePressed(func) end
 ---@param soundName string?
 function ISButton:setSound(which, soundName) end
 
+---@param color ColorInfo
+function ISButton:setTextureColor(color) end
+
 ---@param r number
 ---@param g number
 ---@param b number

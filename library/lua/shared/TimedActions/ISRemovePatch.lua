@@ -5,6 +5,7 @@
 ---@field fabricType integer?
 ---@field needle InventoryItem
 ---@field part BloodBodyPartType
+---@field patchExisted boolean
 ---@field sound integer
 ISRemovePatch = ISBaseTimedAction:derive("ISRemovePatch")
 ISRemovePatch.Type = "ISRemovePatch"

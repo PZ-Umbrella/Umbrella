@@ -1,7 +1,7 @@
 ---@meta
 
 ---@alias umbrella.ContainerDistribution
----| umbrella.Distributions.ItemsContainerDistribution
+---| umbrella.ProceduralDistribution
 ---| umbrella.Distributions.ListContainerDistribution
 
 ---@class Distributions
@@ -11,35 +11,17 @@ Distributions = {}
 SuburbsDistributions = {}
 
 ---@class ClutterTables
+---@field [string] any
 ClutterTables = {}
 
 ---@class BagsAndContainers
+---@field [string] umbrella.ProceduralDistribution
 BagsAndContainers = {}
 
 ---@class umbrella.Distributions.ListContainerDistribution
 ---@field isShop boolean?
 ---@field procedural true
 ---@field procList umbrella.Distributions.ProceduralItem[]
-
----@class umbrella.Distributions.ItemsContainerDistribution
----@field bags umbrella.ContainerDistribution?
----@field canBurn boolean?
----@field cookFood boolean?
----@field defaultInventoryLoot boolean?
----@field dontSpawnAmmo boolean?
----@field fillRand integer?
----@field ignoreZombieDensity boolean?
----@field isRotten boolean?
----@field isShop boolean?
----@field isTrash boolean?
----@field isWorn boolean?
----@field items (string | integer)[]
----@field junk umbrella.ContainerDistribution?
----@field maxMap integer?
----@field noAutoAge boolean?
----@field onlyOne boolean?
----@field rolls integer
----@field stashChance integer?
 
 ---@class umbrella.Distributions.ProceduralItem
 ---@field forceForItems string?

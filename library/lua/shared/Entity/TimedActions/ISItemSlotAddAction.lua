@@ -37,6 +37,7 @@ function ISItemSlotAddAction:update() end
 ---@param character IsoPlayer
 ---@param entity IsoObject
 ---@param item InventoryItem
----@param itemSlot ISItemSlot
+---@param resource Resource
+---@param internalItemSlot ISItemSlot
 ---@return ISItemSlotAddAction
-function ISItemSlotAddAction:new(character, entity, item, itemSlot) end
+function ISItemSlotAddAction:new(character, entity, item, resource, internalItemSlot) end

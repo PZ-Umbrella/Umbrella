@@ -13,13 +13,7 @@ ISRadioAction.Type = "ISRadioAction"
 function ISRadioAction:isValid() end
 
 ---@return boolean
-function ISRadioAction:isValidAddBattery() end
-
----@return boolean
 function ISRadioAction:isValidAddHeadphones() end
-
----@return boolean
-function ISRadioAction:isValidAddMedia() end
 
 ---@return boolean
 function ISRadioAction:isValidMuteMicrophone() end
@@ -28,13 +22,7 @@ function ISRadioAction:isValidMuteMicrophone() end
 function ISRadioAction:isValidMuteVolume() end
 
 ---@return boolean
-function ISRadioAction:isValidRemoveBattery() end
-
----@return boolean
 function ISRadioAction:isValidRemoveHeadphones() end
-
----@return boolean
-function ISRadioAction:isValidRemoveMedia() end
 
 ---@return boolean
 function ISRadioAction:isValidSetChannel() end
@@ -53,21 +41,13 @@ function ISRadioAction:isValidUnMuteVolume() end
 
 function ISRadioAction:perform() end
 
-function ISRadioAction:performAddBattery() end
-
 function ISRadioAction:performAddHeadphones() end
-
-function ISRadioAction:performAddMedia() end
 
 function ISRadioAction:performMuteMicrophone() end
 
 function ISRadioAction:performMuteVolume() end
 
-function ISRadioAction:performRemoveBattery() end
-
 function ISRadioAction:performRemoveHeadphones() end
-
-function ISRadioAction:performRemoveMedia() end
 
 function ISRadioAction:performSetChannel() end
 

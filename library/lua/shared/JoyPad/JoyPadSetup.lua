@@ -294,6 +294,9 @@ function onJoypadRenderTick(ticks) end
 ---@param id integer
 function onJoypadActivate(id) end
 
+---@param joypadData JoypadData
+function onJoypadActivateNotifyPlayer(joypadData) end
+
 ---@param id integer
 function onJoypadActivateUI(id) end
 

@@ -28,6 +28,9 @@ ISBuildWindow = ISCollapsableWindow:derive("ISBuildWindow")
 ISBuildWindow.Type = "ISBuildWindow"
 ISBuildWindow.autoCloseDistance = 1.5
 
+---@param playerObj IsoPlayer
+function ISBuildWindow.OnPlayerDeath(playerObj) end
+
 ---@param _preferredWidth number?
 ---@param _preferredHeight number?
 function ISBuildWindow:calculateLayout(_preferredWidth, _preferredHeight) end

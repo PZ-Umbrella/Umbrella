@@ -103,6 +103,7 @@ function __buildRecipeCode_campfire.OnIsValid(params) end
 local __buildRecipeCode_composter = {}
 
 ---@param params umbrella.BuildRecipeCode.OnCreateParams
+---@return table
 function __buildRecipeCode_composter.OnCreate(params) end
 
 ---@class BuildRecipeCode.windowGlass

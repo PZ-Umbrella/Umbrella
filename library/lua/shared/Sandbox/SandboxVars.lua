@@ -1,7 +1,7 @@
 ---@meta
 
 ---@class SandboxVars
----@field [string] unknown
+---@field [string] any
 ---@field AbundantLootFactor number
 ---@field Alarm integer
 ---@field AlarmDecay integer

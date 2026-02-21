@@ -27,6 +27,9 @@ function ISAddItemInRecipe:getDuration() end
 ---@return boolean
 function ISAddItemInRecipe:isValid() end
 
+---@return boolean
+function ISAddItemInRecipe:isValidStart() end
+
 function ISAddItemInRecipe:perform() end
 
 function ISAddItemInRecipe:start() end

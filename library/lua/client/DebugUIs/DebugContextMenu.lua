@@ -80,6 +80,8 @@ function DebugContextMenu.doDebugVehicleMenu(playerObj, context, worldobjects) e
 ---@param square IsoGridSquare
 function DebugContextMenu.doDebugZombieMenu(player, context, worldobjects, test, square) end
 
+function DebugContextMenu.doFluidContainerCSV() end
+
 ---@param player integer
 ---@param context ISContextMenu
 ---@param worldobjects IsoObject[]
@@ -197,9 +199,16 @@ function DebugContextMenu.OnGetBuildingKey(worldobjects, player) end
 ---@param player integer
 function DebugContextMenu.OnGetDoorKey(worldobjects, door, player) end
 
+---@param vehicle BaseVehicle
+---@param square IsoGridSquare
+function DebugContextMenu.onHitLandmine(vehicle, square) end
+
 ---@param square IsoGridSquare
 ---@param player IsoPlayer
 function DebugContextMenu.onHordeManager(square, player) end
+
+---@param vehicle BaseVehicle
+function DebugContextMenu.onJumpVehicle(vehicle) end
 
 ---@param square IsoGridSquare
 ---@param playerObj IsoPlayer

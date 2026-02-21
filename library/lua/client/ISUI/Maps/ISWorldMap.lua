@@ -132,6 +132,7 @@ function ISWorldMapButtonPanel:new(x, y, width, height) end
 ---@field zoomOutButton ISButton
 ISWorldMap = ISPanelJoypad:derive("ISWorldMap")
 ISWorldMap.Type = "ISWorldMap"
+ISWorldMap.instance = nil ---@type ISWorldMap?
 
 ---@param key integer
 ---@return boolean

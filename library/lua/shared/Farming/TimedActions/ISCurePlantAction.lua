@@ -3,6 +3,7 @@
 ---@class ISCurePlantAction : ISBaseTimedAction
 ---@field cure string
 ---@field item InventoryItem
+---@field maxTimeInit number
 ---@field plant CPlantGlobalObject
 ---@field sound integer?
 ---@field uses integer
@@ -33,7 +34,7 @@ function ISCurePlantAction:waitToStart() end
 ---@param item InventoryItem
 ---@param uses integer
 ---@param plant CPlantGlobalObject
----@param maxTime number
+---@param maxTimeInit number
 ---@param cure string
 ---@return ISCurePlantAction
-function ISCurePlantAction:new(character, item, uses, plant, maxTime, cure) end
+function ISCurePlantAction:new(character, item, uses, plant, maxTimeInit, cure) end

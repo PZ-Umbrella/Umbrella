@@ -317,6 +317,11 @@ function ISInventoryPaneContextMenu.doPillsMenu(context, items, player, cmd) end
 function ISInventoryPaneContextMenu.doPlace3DItemOption(items, player, context) end
 
 ---@param context ISContextMenu
+---@param items (InventoryItem | umbrella.ISInventoryPane.ItemRecord)[]
+---@param player integer
+function ISInventoryPaneContextMenu.doPrintMediaMenu(context, items, player) end
+
+---@param context ISContextMenu
 ---@param playerObj IsoPlayer
 ---@param isLiterature boolean
 function ISInventoryPaneContextMenu.doRecipeList(context, text, recipeItem, recipes, playerObj, isLiterature) end
@@ -635,6 +640,10 @@ function ISInventoryPaneContextMenu.onLoadBulletsIntoFirearm(playerObj, weapon) 
 ---@param makeup InventoryItem
 ---@param playerObj IsoPlayer
 function ISInventoryPaneContextMenu.onMakeUp(makeup, playerObj) end
+
+---@param playerNum integer
+---@param text string
+function ISInventoryPaneContextMenu.onMediaText(playerNum, text) end
 
 ---@param items InventoryItem[]
 ---@param dest ItemContainer

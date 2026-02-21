@@ -30,7 +30,7 @@
 ---@field skipBuildAction boolean
 ---@field skipWalk boolean
 ---@field subObjectIndex integer
----@field tryInitialInvItem boolean?
+---@field tryInitialInvItem InventoryItem?
 ---@field xJoypad number?
 ---@field yJoypad number?
 ---@field yOffset number
@@ -168,7 +168,7 @@ function ISMoveableCursor:setMoveableMode(_mode) end
 ---@return boolean
 function ISMoveableCursor:shouldAddObject(_obj, moveProps) end
 
----@param _item boolean
+---@param _item InventoryItem
 function ISMoveableCursor:tryInitialItem(_item) end
 
 ---@param _character IsoPlayer

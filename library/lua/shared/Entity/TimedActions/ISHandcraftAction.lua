@@ -43,6 +43,11 @@ function ISHandcraftAction:clearItemsProgressBar(bSetJobType) end
 ---@return boolean
 function ISHandcraftAction:complete() end
 
+function ISHandcraftAction:fixManualInputs() end
+
+---@param items ArrayList<InventoryItem>
+function ISHandcraftAction:fixMovedItems(items) end
+
 ---@return number
 function ISHandcraftAction:getDuration() end
 

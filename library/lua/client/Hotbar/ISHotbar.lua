@@ -15,6 +15,7 @@
 ---@field slotPad number
 ---@field slotWidth number
 ---@field textColor umbrella.RGBA
+---@field toolRender ISToolTipInv?
 ---@field wornItems InventoryItem[]
 ISHotbar = ISPanelJoypad:derive("ISHotbar")
 ISHotbar.Type = "ISHotbar"

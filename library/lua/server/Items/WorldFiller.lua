@@ -2817,6 +2817,13 @@ return {
 			},
 		},
 		{
+			name = "hunting",
+			tiles = {
+				"weapons_01_0",
+				"weapons_01_8",
+			},
+		},
+		{
 			name = "other",
 			tiles = {
 				"books&misc_01_88",
@@ -2841,6 +2848,13 @@ return {
 		},
 		{
 			name = "gunstore",
+			tiles = {
+				"weapons_01_17",
+				"weapons_01_25",
+			},
+		},
+		{
+			name = "hunting",
 			tiles = {
 				"weapons_01_17",
 				"weapons_01_25",
@@ -2877,6 +2891,13 @@ return {
 			},
 		},
 		{
+			name = "hunting",
+			tiles = {
+				"weapons_01_18",
+				"weapons_01_26",
+			},
+		},
+		{
 			name = "other",
 			tiles = {
 				"books&misc_01_90",
@@ -2901,6 +2922,13 @@ return {
 		},
 		{
 			name = "gunstore",
+			tiles = {
+				"weapons_01_19",
+				"weapons_01_27",
+			},
+		},
+		{
+			name = "hunting",
 			tiles = {
 				"weapons_01_19",
 				"weapons_01_27",
@@ -2937,10 +2965,17 @@ return {
 			},
 		},
 		{
+			name = "hunting",
+			tiles = {
+				"weapons_01_20",
+				"weapons_01_28",
+			},
+		},
+		{
 			name = "other",
 			tiles = {
-				"books&misc_01_92",
-				"books&misc_01_100",
+				"weapons_01_20",
+				"weapons_01_28",
 			},
 		},
 		{
@@ -2961,6 +2996,13 @@ return {
 		},
 		{
 			name = "gunstore",
+			tiles = {
+				"weapons_01_21",
+				"weapons_01_29",
+			},
+		},
+		{
+			name = "hunting",
 			tiles = {
 				"weapons_01_21",
 				"weapons_01_29",
@@ -2997,6 +3039,13 @@ return {
 			},
 		},
 		{
+			name = "hunting",
+			tiles = {
+				"weapons_01_22",
+				"weapons_01_30",
+			},
+		},
+		{
 			name = "other",
 			tiles = {
 				"books&misc_01_94",
@@ -3021,6 +3070,13 @@ return {
 		},
 		{
 			name = "gunstore",
+			tiles = {
+				"weapons_01_23",
+				"weapons_01_31",
+			},
+		},
+		{
+			name = "hunting",
 			tiles = {
 				"weapons_01_23",
 				"weapons_01_31",

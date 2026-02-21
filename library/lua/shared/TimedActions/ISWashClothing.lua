@@ -24,6 +24,10 @@ function ISWashClothing.GetRequiredWater(item) end
 ---@return number
 function ISWashClothing.GetSoapRemaining(soaps) end
 
+---@param event string
+---@param parameter string
+function ISWashClothing:animEvent(event, parameter) end
+
 ---@return boolean
 function ISWashClothing:complete() end
 
