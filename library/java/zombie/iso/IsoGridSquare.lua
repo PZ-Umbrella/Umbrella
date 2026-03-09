@@ -35,12 +35,27 @@ function __IsoGridSquare:AddTileObject(obj, index) end
 ---@param nbr integer
 function __IsoGridSquare:AddWorldInventoryItem(String, x, y, height, nbr) end
 
+---@param itemKey ItemKey
+---@param x number
+---@param y number
+---@param height number
+---@return InventoryItem
+function __IsoGridSquare:AddWorldInventoryItem(itemKey, x, y, height) end
+
 ---@param String string
 ---@param x number
 ---@param y number
 ---@param height number
 ---@return InventoryItem
 function __IsoGridSquare:AddWorldInventoryItem(String, x, y, height) end
+
+---@param itemKey ItemKey
+---@param x number
+---@param y number
+---@param height number
+---@param autoAge boolean
+---@return InventoryItem
+function __IsoGridSquare:AddWorldInventoryItem(itemKey, x, y, height, autoAge) end
 
 ---@param itemType string
 ---@param x number
@@ -677,6 +692,9 @@ function __IsoGridSquare:getBrokenGlass() end
 ---@return IsoBuilding
 function __IsoGridSquare:getBuilding() end
 
+---@return BuildingDef
+function __IsoGridSquare:getBuildingDef() end
+
 ---@return IsoObject
 function __IsoGridSquare:getBush() end
 
@@ -695,6 +713,12 @@ function __IsoGridSquare:getCanSee(playerIndex) end
 
 ---@return IsoCell # the getCell()
 function __IsoGridSquare:getCell() end
+
+---@return number
+function __IsoGridSquare:getCenterX() end
+
+---@return number
+function __IsoGridSquare:getCenterY() end
 
 ---@return IsoChunk
 function __IsoGridSquare:getChunk() end
@@ -993,6 +1017,9 @@ function __IsoGridSquare:getRoofHideBuilding() end
 
 ---@return IsoRoom # the room
 function __IsoGridSquare:getRoom() end
+
+---@return RoomDef
+function __IsoGridSquare:getRoomDef() end
 
 ---@return integer
 function __IsoGridSquare:getRoomID() end

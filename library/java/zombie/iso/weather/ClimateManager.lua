@@ -302,7 +302,7 @@ function __ClimateManager:load(input, worldVersion) end
 
 function __ClimateManager:postCellLoadSetSnow() end
 
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 ---@param ignoreConnection UdpConnection
 function __ClimateManager:receiveClimatePacket(bb, ignoreConnection) end
 

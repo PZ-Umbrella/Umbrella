@@ -531,6 +531,12 @@ Weapon.JAWBONE_BOVIDE_CLUB = nil
 Weapon.JAWBONE_BOVIDE_MORNINGSTAR = nil
 
 ---@type ItemKey
+Weapon.JS14_RIFLE = nil
+
+---@type ItemKey
+Weapon.JS3T_SHOTGUN = nil
+
+---@type ItemKey
 Weapon.KATANA = nil
 
 ---@type ItemKey
@@ -568,6 +574,12 @@ Weapon.KNIFE_SHIV = nil
 
 ---@type ItemKey
 Weapon.KNIFE_SUSHI = nil
+
+---@type ItemKey
+Weapon.L92_CARBINE = nil
+
+---@type ItemKey
+Weapon.L94_RIFLE = nil
 
 ---@type ItemKey
 Weapon.LARGE_ANIMAL_BONE = nil
@@ -709,6 +721,9 @@ Weapon.MORNINGSTAR_SCRAP = nil
 
 ---@type ItemKey
 Weapon.MORNINGSTAR_SCRAP_SHORT = nil
+
+---@type ItemKey
+Weapon.MSR7T_RIFLE = nil
 
 ---@type ItemKey
 Weapon.MULTITOOL = nil
@@ -1159,6 +1174,9 @@ Weapon.TIRE_IRON = nil
 
 ---@type ItemKey
 Weapon.TOOTHBRUSH_SHIV = nil
+
+---@type ItemKey
+Weapon.TRAPPER_CARBINE = nil
 
 ---@type ItemKey
 Weapon.TREE_BRANCH_2 = nil

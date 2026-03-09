@@ -52,6 +52,27 @@ WeaponUpgrades = {
 		"Laser",
 		"TritiumSights",
 	},
+	JS14_Rifle = {
+		"x2Scope",
+		"x4Scope",
+		"Laser",
+		"RedDot",
+	},
+	JS3T_Shotgun = {
+		"AmmoStraps",
+		"RedDot",
+	},
+	MSR7T_Rifle = {
+		"x4Scope",
+		"x8Scope",
+		"RecoilPad",
+	},
+	TrapperCarbine = {
+		"x2Scope",
+		"x4Scope",
+		"Laser",
+		"RedDot",
+	},
 }
 
 ---@param _dist table

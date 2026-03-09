@@ -120,7 +120,7 @@ function __ChatBase:showMessage(msg) end
 ---@param players ArrayList<string>
 function __ChatBase:syncMembersByUsernames(players) end
 
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 ---@return ChatMessage
 function __ChatBase:unpackMessage(bb) end
 

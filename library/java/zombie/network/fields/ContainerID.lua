@@ -35,7 +35,7 @@ function __ContainerID:hashCode() end
 ---@return boolean
 function __ContainerID:isContainerTheSame(itemId, source) end
 
----@param b ByteBuffer
+---@param b ByteBufferReader
 ---@param connection IConnection
 function __ContainerID:parse(b, connection) end
 

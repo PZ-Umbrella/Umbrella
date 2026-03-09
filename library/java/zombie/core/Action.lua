@@ -11,7 +11,7 @@ function __Action:getProgress() end
 ---@return boolean
 function __Action:isConsistent(connection) end
 
----@param b ByteBuffer
+---@param b ByteBufferReader
 ---@param connection IConnection
 function __Action:parse(b, connection) end
 

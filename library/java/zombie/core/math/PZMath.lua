@@ -215,6 +215,12 @@ function PZMath.coordmodulo(value, divisor) end
 ---@return number
 function PZMath.coordmodulof(value, divisor) end
 
+---@param a Vector3
+---@param b Vector3
+---@param out Vector3
+---@return Vector3
+function PZMath.cross(a, b, out) end
+
 ---@param degrees number
 ---@return number
 function PZMath.degToRad(degrees) end

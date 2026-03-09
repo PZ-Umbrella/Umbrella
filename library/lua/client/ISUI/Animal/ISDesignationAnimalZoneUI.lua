@@ -16,10 +16,12 @@
 ---@field player IsoPlayer
 ---@field playerNum integer
 ---@field reloadBtn ISButton
+---@field showZoneTickBox ISTickBox
 ---@field updateTick number
 ---@field zone DesignationZoneAnimal
 ISDesignationZoneAnimalZoneUI = ISPanelJoypad:derive("ISDesignationZoneAnimalZoneUI")
 ISDesignationZoneAnimalZoneUI.Type = "ISDesignationZoneAnimalZoneUI"
+ISDesignationZoneAnimalZoneUI.showZone = nil ---@type boolean?
 
 ---@param playerObj IsoPlayer
 ---@param self ISDesignationZoneAnimalZoneUI
@@ -72,6 +74,8 @@ function ISDesignationZoneAnimalZoneUI:onJoypadDown_Descendant(descendant, butto
 
 ---@param joypadData JoypadData
 function ISDesignationZoneAnimalZoneUI:onLoseJoypadFocus(joypadData) end
+
+function ISDesignationZoneAnimalZoneUI:onTicked(index, selected) end
 
 function ISDesignationZoneAnimalZoneUI:prerender() end
 

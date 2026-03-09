@@ -5,15 +5,14 @@ local __Translator = {}
 
 Translator = {}
 
+---@type Map<string, Map<string, string>>
+Translator.BY_NAME = nil
+
 ---@type boolean
 Translator.debug = nil
 
 ---@type zombie.core.Language
 Translator.language = nil
-
----@param language zombie.core.Language
----@param languages ArrayList<zombie.core.Language>
-function Translator.addLanguageToList(language, languages) end
 
 function Translator.debugItemEvolvedRecipeNames() end
 
@@ -25,6 +24,9 @@ function Translator.debugRecipeGroupNames() end
 
 function Translator.debugRecipeNames() end
 
+---@param consumer Consumer<zombie.core.Language>
+function Translator.forLanguageStack(consumer) end
+
 ---@param s string
 ---@return string
 function Translator.getAttributeText(s) end
@@ -33,14 +35,11 @@ function Translator.getAttributeText(s) end
 ---@return string
 function Translator.getAttributeTextOrNull(s) end
 
----@return ArrayList<zombie.core.Language>
+---@return List<zombie.core.Language>
 function Translator.getAvailableLanguage() end
 
 ---@return ArrayList<string>
 function Translator.getAzertyMap() end
-
----@return string
-function Translator.getCharset() end
 
 ---@return zombie.core.Language
 function Translator.getDefaultLanguage() end
@@ -80,10 +79,6 @@ function Translator.getMoveableDisplayName(name) end
 ---@return string
 function Translator.getMoveableDisplayNameOrNull(name) end
 
----@param name string
----@return string
-function Translator.getMultiStageBuild(name) end
-
 ---@param s string
 ---@return string
 function Translator.getRadioText(s) end
@@ -103,30 +98,9 @@ function Translator.getRecipeName(name) end
 function Translator.getText(desc) end
 
 ---@param desc string
----@param arg1 any
+---@param args kahlua.Array<any>
 ---@return string
-function Translator.getText(desc, arg1) end
-
----@param desc string
----@param arg1 any
----@param arg2 any
----@return string
-function Translator.getText(desc, arg1, arg2) end
-
----@param desc string
----@param arg1 any
----@param arg2 any
----@param arg3 any
----@return string
-function Translator.getText(desc, arg1, arg2, arg3) end
-
----@param desc string
----@param arg1 any
----@param arg2 any
----@param arg3 any
----@param arg4 any
----@return string
-function Translator.getText(desc, arg1, arg2, arg3, arg4) end
+function Translator.getText(desc, args) end
 
 ---@param desc string
 ---@return string
@@ -137,35 +111,21 @@ function Translator.getTextMediaEN(desc) end
 function Translator.getTextOrNull(desc) end
 
 ---@param desc string
----@param arg1 any
+---@param args kahlua.Array<any>
 ---@return string
-function Translator.getTextOrNull(desc, arg1) end
-
----@param desc string
----@param arg1 any
----@param arg2 any
----@return string
-function Translator.getTextOrNull(desc, arg1, arg2) end
-
----@param desc string
----@param arg1 any
----@param arg2 any
----@param arg3 any
----@return string
-function Translator.getTextOrNull(desc, arg1, arg2, arg3) end
-
----@param desc string
----@param arg1 any
----@param arg2 any
----@param arg3 any
----@param arg4 any
----@return string
-function Translator.getTextOrNull(desc, arg1, arg2, arg3, arg4) end
+function Translator.getTextOrNull(desc, args) end
 
 ---@return Map<string, string>
 function Translator.getUI() end
 
 function Translator.loadFiles() end
+
+---@param map ChooseGameInfo.Map
+---@param dir string
+function Translator.readMapTranslation(map, dir) end
+
+---@param mod ChooseGameInfo.Mod
+function Translator.readModTranslation(mod) end
 
 ---@param fullType string
 ---@param english string

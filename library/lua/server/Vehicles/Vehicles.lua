@@ -380,6 +380,9 @@ function VehicleUtils.getContainers(playerNum) end
 ---@return number
 function VehicleUtils.getInsideTemperature(player) end
 
+---@param containers table
+function VehicleUtils.getInventoryContainersRecurse(containers, container) end
+
 ---@param playerNum integer
 ---@return table<string, InventoryItem[]>
 ---@return table<string, InventoryItem[]>

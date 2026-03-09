@@ -15,11 +15,28 @@ function __ClimbSheetRopeState:execute(owner) end
 ---@param owner IsoGameCharacter
 function __ClimbSheetRopeState:exit(owner) end
 
+---@return boolean
+function __ClimbSheetRopeState:isProcessedOnEnter() end
+
+---@return boolean
+function __ClimbSheetRopeState:isProcessedOnExit() end
+
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __ClimbSheetRopeState:processOnEnter(owner, delegate) end
+
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __ClimbSheetRopeState:processOnExit(owner, delegate) end
+
 ---@param isoGameCharacter IsoGameCharacter
 ---@param stage State.Stage
 function __ClimbSheetRopeState:setParams(isoGameCharacter, stage) end
 
 ClimbSheetRopeState = {}
+
+---@type State.Param<boolean>
+ClimbSheetRopeState.CLIMB = nil
 
 ---@type number
 ClimbSheetRopeState.ClimbSlowdown = nil

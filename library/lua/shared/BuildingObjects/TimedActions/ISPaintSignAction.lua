@@ -3,6 +3,7 @@
 ---@class ISPaintSignAction : ISBaseTimedAction
 ---@field b number
 ---@field g number
+---@field isBuildCheat boolean
 ---@field paintPot InventoryItem?
 ---@field r number
 ---@field sign integer

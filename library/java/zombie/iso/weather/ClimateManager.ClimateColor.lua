@@ -85,7 +85,7 @@ function __ClimateColor:setModdedValue(targ) end
 ---@param inter number
 function __ClimateColor:setOverride(targ, inter) end
 
----@param input ByteBuffer
+---@param input ByteBufferReader
 ---@param interp number
 function __ClimateColor:setOverride(input, interp) end
 

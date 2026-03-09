@@ -397,7 +397,7 @@ function __BodyPart:stitched() end
 ---@param updater BodyDamageSync.Updater
 function __BodyPart:sync(other, updater) end
 
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 ---@param id integer
 function __BodyPart:sync(bb, id) end
 

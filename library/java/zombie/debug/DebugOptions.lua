@@ -34,6 +34,9 @@ function __DebugOptions:getOptionCount() end
 ---@return IDebugOptionGroup
 function __DebugOptions:getParent() end
 
+---@return SlowMotionMultiplier
+function __DebugOptions:getSlowMotionMultiplier() end
+
 function __DebugOptions:init() end
 
 function __DebugOptions:load() end

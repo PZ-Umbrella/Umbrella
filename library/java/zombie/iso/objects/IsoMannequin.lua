@@ -64,7 +64,7 @@ function __IsoMannequin:isZombie() end
 function __IsoMannequin:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoMannequin:loadChange(change, bb) end
 
 ---@param input ByteBuffer
@@ -101,7 +101,7 @@ function __IsoMannequin:save(output, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
 ---@param tbl table
----@param bb ByteBuffer
+---@param bb ByteBufferWriter
 function __IsoMannequin:saveChange(change, tbl, bb) end
 
 ---@param output ByteBuffer

@@ -115,11 +115,11 @@ function __ResourceItem:offerItem(item, ignoreFilters) end
 ---@return InventoryItem
 function __ResourceItem:offerItem(item, ignoreFilters, force, syncEntity) end
 
----@param items ArrayList<InventoryItem>
+---@param items List<InventoryItem>
 ---@return ArrayList<InventoryItem>
 function __ResourceItem:offerItems(items) end
 
----@param items ArrayList<InventoryItem>
+---@param items List<InventoryItem>
 ---@param ignoreFilters boolean
 ---@return ArrayList<InventoryItem>
 function __ResourceItem:offerItems(items, ignoreFilters) end

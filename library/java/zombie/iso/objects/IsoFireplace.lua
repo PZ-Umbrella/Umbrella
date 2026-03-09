@@ -49,7 +49,7 @@ function __IsoFireplace:isTemperatureChanging() end
 function __IsoFireplace:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoFireplace:loadChange(change, bb) end
 
 function __IsoFireplace:removeFromWorld() end
@@ -75,7 +75,7 @@ function __IsoFireplace:save(output, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
 ---@param tbl table
----@param bb ByteBuffer
+---@param bb ByteBufferWriter
 function __IsoFireplace:saveChange(change, tbl, bb) end
 
 ---@param units integer

@@ -60,6 +60,9 @@ function __Mod:getPosterCount() end
 ---@return ArrayList<string>
 function __Mod:getRequire() end
 
+---@return string
+function __Mod:getSource() end
+
 ---@return Texture
 function __Mod:getTexture() end
 
@@ -96,6 +99,9 @@ function __Mod:setAvailable(available) end
 
 ---@param name string
 function __Mod:setCategory(name) end
+
+---@param desc string
+function __Mod:setDescription(desc) end
 
 ---@param name string
 function __Mod:setIcon(name) end

@@ -31,7 +31,7 @@ function __ThunderStorm:load(input) end
 ---@param s string
 function __ThunderStorm:noise(s) end
 
----@param input ByteBuffer
+---@param input ByteBufferReader
 function __ThunderStorm:readNetThunderEvent(input) end
 
 ---IO
@@ -83,7 +83,7 @@ function __ThunderStorm:triggerThunderEvent(x, y, doStrike, doLightning, doRumbl
 ---@param currentTime number
 function __ThunderStorm:update(currentTime) end
 
----@param output ByteBuffer
+---@param output ByteBufferWriter
 function __ThunderStorm:writeNetThunderEvent(output) end
 
 ThunderStorm = {}

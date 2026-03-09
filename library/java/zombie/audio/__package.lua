@@ -22,6 +22,12 @@
 ---@class ObjectAmbientEmitters.PerObjectLogic
 
 ---(Not exposed)
+---@class SoundInstanceLimiter
+
+---(Not exposed)
+---@class SoundLimiterParams
+
+---(Not exposed)
 ---@class TreeSoundManager
 
 zombie.audio = {}

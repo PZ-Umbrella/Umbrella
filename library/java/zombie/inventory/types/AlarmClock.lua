@@ -68,6 +68,8 @@ function __AlarmClock:shouldUpdateInWorld() end
 
 function __AlarmClock:stopRinging() end
 
+function __AlarmClock:stopSoundOnPlayer() end
+
 function __AlarmClock:syncAlarmClock() end
 
 ---@param player IsoPlayer

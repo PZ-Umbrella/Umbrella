@@ -893,6 +893,10 @@ function __ItemContainer:getFirstWaterFluidSources(includeTainted) end
 ---@return InventoryItem
 function __ItemContainer:getFirstWaterFluidSources(includeTainted, taintedPriority) end
 
+---@param chr IsoGameCharacter
+---@return number
+function __ItemContainer:getFreeCapacity(chr) end
+
 ---@return string
 function __ItemContainer:getFreezerPosition() end
 
@@ -1042,6 +1046,11 @@ function __ItemContainer:getPutSound() end
 ---@param recursive boolean
 ---@return InventoryItem
 function __ItemContainer:getRecipeItem(recipe, chr, recursive) end
+
+---@param result List<InventoryItem>
+---@param includeLiquidSoap boolean
+---@return List<InventoryItem>
+function __ItemContainer:getSoapList(result, includeLiquidSoap) end
 
 ---@param predicate Predicate<InventoryItem>
 ---@param count integer
@@ -1387,6 +1396,10 @@ function __ItemContainer:isExistYet() end
 
 ---@return boolean
 function __ItemContainer:isExplored() end
+
+---@param chr IsoGameCharacter
+---@return boolean
+function __ItemContainer:isFull(chr) end
 
 ---@return boolean
 function __ItemContainer:isHasBeenLooted() end

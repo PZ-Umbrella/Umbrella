@@ -148,6 +148,9 @@ function __FluidContainer:isInputLocked() end
 ---@return boolean
 function __FluidContainer:isMixture() end
 
+---@return boolean
+function __FluidContainer:isMultiTileMoveable() end
+
 ---@param fluid Fluid
 ---@param character IsoGameCharacter
 ---@return boolean

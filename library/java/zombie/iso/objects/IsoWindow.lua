@@ -237,7 +237,7 @@ function __IsoWindow:smashWindow(bRemote) end
 
 function __IsoWindow:smashWindow() end
 
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoWindow:syncIsoObjectReceive(bb) end
 
 ---@param b ByteBufferWriter

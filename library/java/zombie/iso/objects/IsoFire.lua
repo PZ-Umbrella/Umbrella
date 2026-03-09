@@ -50,7 +50,7 @@ function __IsoFire:isPermanent() end
 function __IsoFire:load(b, WorldVersion, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoFire:loadChange(change, bb) end
 
 function __IsoFire:removeFromWorld() end
@@ -76,7 +76,7 @@ function __IsoFire:save(output, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
 ---@param tbl table
----@param bb ByteBuffer
+---@param bb ByteBufferWriter
 function __IsoFire:saveChange(change, tbl, bb) end
 
 ---Up this number to make the fire life longer

@@ -173,6 +173,9 @@ function __GameTime:getNightTint() end
 ---@return integer # Number of nights since game start.
 function __GameTime:getNightsSurvived() end
 
+---@return number
+function __GameTime:getPhysicsSecondsSinceLastUpdate() end
+
 ---Number of real seconds since the last tick.
 ---@return number
 function __GameTime:getRealworldSecondsSinceLastUpdate() end
@@ -287,7 +290,7 @@ function __GameTime:isZombieInactivityPhase() end
 ---@param input DataInputStream
 function __GameTime:load(input) end
 
----@param input ByteBuffer
+---@param input ByteBufferReader
 function __GameTime:load(input) end
 
 function __GameTime:load() end
@@ -303,7 +306,7 @@ function __GameTime:save(output) end
 ---@param bufferMap SaveBufferMap
 function __GameTime:saveToBufferMap(bufferMap) end
 
----@param bb ByteBuffer
+---@param bb ByteBufferWriter
 function __GameTime:saveToPacket(bb) end
 
 ---@deprecated
@@ -469,6 +472,9 @@ function GameTime.getServerTimeMills() end
 
 ---@return boolean
 function GameTime.getServerTimeShiftIsSet() end
+
+---@return number
+function GameTime.getSlomoMultiplier() end
 
 ---@return boolean
 function GameTime.isGamePaused() end

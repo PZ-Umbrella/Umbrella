@@ -211,6 +211,9 @@ function __Food:getRottenTime() end
 ---@return number
 function __Food:getScore(desc) end
 
+---@return string
+function __Food:getSoundLimiterGroupID() end
+
 ---@return ArrayList<string>
 function __Food:getSpices() end
 
@@ -331,6 +334,9 @@ function __Food:load(input, WorldVersion) end
 
 ---@param percentage number
 function __Food:multiplyFoodValues(percentage) end
+
+---@param limiter SoundInstanceLimiter
+function __Food:registerWithSoundLimiter(limiter) end
 
 ---@param output ByteBuffer
 ---@param net boolean
@@ -503,8 +509,11 @@ function __Food:updateAge() end
 ---@param bSendItemStats boolean
 function __Food:updateAge(bSendItemStats) end
 
+function __Food:updateClientCookingSounds() end
+
 ---@param emitter BaseSoundEmitter
-function __Food:updateSound(emitter) end
+---@param params SoundLimiterParams
+function __Food:updateSound(emitter, params) end
 
 Food = {}
 

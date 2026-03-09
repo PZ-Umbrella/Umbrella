@@ -17,6 +17,9 @@ function ISWashYourself.GetRequiredSoap(character) end
 ---@return number
 function ISWashYourself.GetRequiredWater(character) end
 
+---@return number
+function ISWashYourself.GetSoapRemaining(soaps) end
+
 ---@param event string
 ---@param parameter string
 function ISWashYourself:animEvent(event, parameter) end

@@ -243,7 +243,7 @@ function __IsoDeadBody:isZombie() end
 function __IsoDeadBody:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoDeadBody:loadChange(change, bb) end
 
 ---@param b ByteBuffer
@@ -286,7 +286,7 @@ function __IsoDeadBody:save(output, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
 ---@param tbl table
----@param bb ByteBuffer
+---@param bb ByteBufferWriter
 function __IsoDeadBody:saveChange(change, tbl, bb) end
 
 ---@param died IsoAnimal
@@ -354,7 +354,7 @@ function __IsoDeadBody:toString() end
 
 function __IsoDeadBody:update() end
 
----@param b ByteBuffer
+---@param b ByteBufferWriter
 function __IsoDeadBody:writeInventory(b) end
 
 IsoDeadBody = {}

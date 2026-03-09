@@ -4,8 +4,11 @@
 DebugContextMenu = {}
 DebugContextMenu.staggerBacking = false
 DebugContextMenu.stagTime = 0
-DebugContextMenu.ticked = false
+DebugContextMenu.player = nil
+DebugContextMenu.pickedCharacters = nil ---@type table?
+DebugContextMenu.highlightedCharacter = nil
 DebugContextMenu.selectedZombie = nil
+DebugContextMenu.ticked = false
 
 ---@param type string
 ---@param breed AnimalBreed
@@ -35,6 +38,8 @@ function DebugContextMenu.do3DItem() end
 function DebugContextMenu.doCheatMenu(context, playerObj) end
 
 function DebugContextMenu.doCSV() end
+
+function DebugContextMenu.doCSVMoveableTiles() end
 
 ---@param playerObj IsoPlayer
 ---@param context ISContextMenu
@@ -80,6 +85,8 @@ function DebugContextMenu.doDebugVehicleMenu(playerObj, context, worldobjects) e
 ---@param square IsoGridSquare
 function DebugContextMenu.doDebugZombieMenu(player, context, worldobjects, test, square) end
 
+function DebugContextMenu.doFirearmsCSV() end
+
 function DebugContextMenu.doFluidContainerCSV() end
 
 ---@param player integer
@@ -109,6 +116,11 @@ function DebugContextMenu.doRandomizedZoneStory(square, rzs) end
 ---@param worldobjects IsoObject[]
 ---@param test boolean?
 function DebugContextMenu.doSurvivorSwapMenu(player, context, worldobjects, test) end
+
+---@return table
+function DebugContextMenu.findIsoGameCharactersInSquare(square) end
+
+function DebugContextMenu.initWorldCharacterHighlightOption(option, object) end
 
 ---@param playerObj IsoPlayer
 function DebugContextMenu.onAddDesignationZone(playerObj) end
@@ -198,6 +210,9 @@ function DebugContextMenu.OnGetBuildingKey(worldobjects, player) end
 ---@param door IsoDoor | IsoThumpable
 ---@param player integer
 function DebugContextMenu.OnGetDoorKey(worldobjects, door, player) end
+
+---@param _isHighlighted boolean
+function DebugContextMenu.onHighlightWorldCharacter(_option, _menu, _isHighlighted, _object) end
 
 ---@param vehicle BaseVehicle
 ---@param square IsoGridSquare

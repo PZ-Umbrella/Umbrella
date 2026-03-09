@@ -3,9 +3,11 @@
 ---@class ISLoadBulletsInMagazine : ISBaseTimedAction
 ---@field ammoCount integer
 ---@field ammoCountStart integer
+---@field loadedThisLoop boolean
 ---@field loadFinished boolean
 ---@field magazine InventoryItem
 ---@field playedInsertAmmoStartSound boolean
+---@field updateLoadBulletsTime number
 ---@field useProgressBar boolean
 ISLoadBulletsInMagazine = ISBaseTimedAction:derive("ISLoadBulletsInMagazine")
 ISLoadBulletsInMagazine.Type = "ISLoadBulletsInMagazine"
@@ -26,6 +28,9 @@ function ISLoadBulletsInMagazine:initVars() end
 function ISLoadBulletsInMagazine:isLoadFinished() end
 
 ---@return boolean
+function ISLoadBulletsInMagazine:isLocal() end
+
+---@return boolean
 function ISLoadBulletsInMagazine:isValid() end
 
 function ISLoadBulletsInMagazine:perform() end
@@ -37,6 +42,8 @@ function ISLoadBulletsInMagazine:start() end
 function ISLoadBulletsInMagazine:stop() end
 
 function ISLoadBulletsInMagazine:update() end
+
+function ISLoadBulletsInMagazine:updateLoadingTime() end
 
 ---@param character IsoPlayer
 ---@param magazine InventoryItem

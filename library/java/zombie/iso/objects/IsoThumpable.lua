@@ -330,7 +330,7 @@ function __IsoThumpable:isWindowW() end
 function __IsoThumpable:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoThumpable:loadChange(change, bb) end
 
 ---@param x integer
@@ -374,7 +374,7 @@ function __IsoThumpable:save(output, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
 ---@param tbl table
----@param bb ByteBuffer
+---@param bb ByteBufferWriter
 function __IsoThumpable:saveChange(change, tbl, bb) end
 
 ---@param blockAllTheSquare boolean
@@ -516,7 +516,7 @@ function __IsoThumpable:setThumpDmg(pThumpDmg) end
 ---@param thumpSound string
 function __IsoThumpable:setThumpSound(thumpSound) end
 
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoThumpable:syncIsoObjectReceive(bb) end
 
 ---@param b ByteBufferWriter

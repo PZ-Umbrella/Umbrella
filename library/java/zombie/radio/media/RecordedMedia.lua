@@ -81,7 +81,7 @@ RecordedMedia.disableLineLearning = nil
 ---@return integer
 function RecordedMedia.getMediaTypeForCategory(category) end
 
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function RecordedMedia.receiveRequestData(bb) end
 
 ---@param string string

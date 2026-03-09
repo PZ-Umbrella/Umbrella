@@ -194,10 +194,6 @@ function __IsoPlayer:getCombatSpeed() end
 ---@return IsoObject
 function __IsoPlayer:getContextDoorOrWindowOrWindowFrame(assumedDir) end
 
----@param vec Vector2
----@return Vector2
-function __IsoPlayer:getControllerAimDir(vec) end
-
 ---@param vehicleSpeed number
 ---@return number
 function __IsoPlayer:getDamageFromHitByACar(vehicleSpeed) end
@@ -208,6 +204,9 @@ function __IsoPlayer:getDescription(separatorStr) end
 
 ---@return integer
 function __IsoPlayer:getDialogMood() end
+
+---@return string
+function __IsoPlayer:getDisguisedDisplayName() end
 
 ---@return string
 function __IsoPlayer:getDisplayName() end
@@ -295,10 +294,6 @@ function __IsoPlayer:getMinimumSimulationLevel() end
 ---@param type MoodleType
 ---@return integer
 function __IsoPlayer:getMoodleLevel(type) end
-
----@param vec Vector2
----@return Vector2
-function __IsoPlayer:getMouseAimVector(vec) end
 
 ---@return number
 function __IsoPlayer:getMoveSpeed() end
@@ -532,11 +527,10 @@ function __IsoPlayer:isClimbOverWallStruggle() end
 function __IsoPlayer:isClimbOverWallSuccess() end
 
 ---@return boolean
-function __IsoPlayer:isDoingActionThatCanBeCancelled() end
+function __IsoPlayer:isControllerAimingAxisBeingApplied() end
 
----@param stateName string
 ---@return boolean
-function __IsoPlayer:isDraggingCorpseStateName(stateName) end
+function __IsoPlayer:isDoingActionThatCanBeCancelled() end
 
 ---@return boolean
 function __IsoPlayer:isFactionPvp() end
@@ -572,6 +566,9 @@ function __IsoPlayer:isGhostMode() end
 
 ---@return boolean
 function __IsoPlayer:isGrapplePressed() end
+
+---@return boolean
+function __IsoPlayer:isHeadLookAtControlApplied() end
 
 ---@return boolean
 function __IsoPlayer:isIgnoreAutoVault() end
@@ -635,9 +632,6 @@ function __IsoPlayer:isPathfindRunning() end
 function __IsoPlayer:isPerformingAnAction() end
 
 ---@return boolean
-function __IsoPlayer:isPickingUpBody() end
-
----@return boolean
 function __IsoPlayer:isPlayerMoving() end
 
 ---@param soundName string
@@ -650,9 +644,6 @@ function __IsoPlayer:isPushableForSeparate() end
 ---@param other IsoMovingObject
 ---@return boolean
 function __IsoPlayer:isPushedByForSeparate(other) end
-
----@return boolean
-function __IsoPlayer:isPuttingDownBody() end
 
 ---@return boolean
 function __IsoPlayer:isRemoteAndHasObstacleOnPath() end
@@ -731,7 +722,7 @@ function __IsoPlayer:load(input, WorldVersion, IS_DEBUG_SAVE) end
 function __IsoPlayer:load(fileName) end
 
 ---@param change IsoObjectChange
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoPlayer:loadChange(change, bb) end
 
 ---@param item InventoryItem
@@ -795,6 +786,8 @@ function __IsoPlayer:removeSaveFile() end
 function __IsoPlayer:render(x, y, z, col, bDoChild, bWallLightingPass, shader) end
 
 function __IsoPlayer:renderlast() end
+
+function __IsoPlayer:resetDisplayName() end
 
 function __IsoPlayer:resetSelectedZonesForHighlight() end
 
@@ -1026,7 +1019,7 @@ function __IsoPlayer:setPing(ping) end
 ---@param aPlayerMoveDir Vector2
 function __IsoPlayer:setPlayerMoveDir(aPlayerMoveDir) end
 
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 ---@param adminUsername string
 ---@return string
 function __IsoPlayer:setPlayerStats(bb, adminUsername) end
@@ -1221,8 +1214,16 @@ function IsoPlayer.getInstance() end
 ---@return IsoPlayer
 function IsoPlayer.getLocalPlayerByOnlineID(ID) end
 
+---@param playerIndex integer
+---@return IsoPlayer
+function IsoPlayer.getPlayer(playerIndex) end
+
 ---@return integer
 function IsoPlayer.getPlayerIndex() end
+
+---@param chr IsoGameCharacter
+---@return integer
+function IsoPlayer.getPlayerIndex(chr) end
 
 ---@return ArrayList<IsoPlayer>
 function IsoPlayer.getPlayers() end

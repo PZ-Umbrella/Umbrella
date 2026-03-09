@@ -43,14 +43,14 @@ function __Role:hasCapability(capability) end
 ---@return boolean
 function __Role:isReadOnly() end
 
----@param input ByteBuffer
+---@param input ByteBufferReader
 function __Role:parse(input) end
 
 ---@param capability Capability
 ---@return boolean
 function __Role:removeCapability(capability) end
 
----@param output ByteBuffer
+---@param output ByteBufferWriter
 function __Role:send(output) end
 
 ---@param v Color

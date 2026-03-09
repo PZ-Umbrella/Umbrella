@@ -23,6 +23,9 @@ function ISAddBaitToFishNetAction:stop() end
 
 function ISAddBaitToFishNetAction:update() end
 
+---@return unknown
+function ISAddBaitToFishNetAction:waitToStart() end
+
 ---@param character IsoPlayer
 ---@param fishNet IsoObject
 ---@param bait InventoryItem

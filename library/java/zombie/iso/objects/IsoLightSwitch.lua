@@ -150,7 +150,7 @@ function __IsoLightSwitch:syncCustomizedSettings(source) end
 ---@param bRemote boolean
 ---@param val integer
 ---@param source UdpConnection
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoLightSwitch:syncIsoObject(bRemote, val, source, bb) end
 
 ---@param bRemote boolean

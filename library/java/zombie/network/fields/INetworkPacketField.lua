@@ -11,7 +11,7 @@ function __INetworkPacketField:getPacketSizeBytes() end
 ---@return boolean
 function __INetworkPacketField:isConsistent(connection) end
 
----@param arg0 ByteBuffer
+---@param arg0 ByteBufferReader
 ---@param arg1 IConnection
 function __INetworkPacketField:parse(arg0, arg1) end
 

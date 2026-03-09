@@ -215,7 +215,7 @@ function __IsoDoor:isObstructed() end
 function __IsoDoor:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoDoor:loadChange(change, bb) end
 
 ---@param bb ByteBuffer
@@ -257,7 +257,7 @@ function __IsoDoor:save(output, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
 ---@param tbl table
----@param bb ByteBuffer
+---@param bb ByteBufferWriter
 function __IsoDoor:saveChange(change, tbl, bb) end
 
 ---@param bb ByteBuffer
@@ -292,7 +292,7 @@ function __IsoDoor:syncDoorKey() end
 ---@param bRemote boolean
 ---@param val integer
 ---@param source UdpConnection
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoDoor:syncIsoObject(bRemote, val, source, bb) end
 
 ---@param b ByteBufferWriter

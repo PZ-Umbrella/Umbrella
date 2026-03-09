@@ -49,6 +49,8 @@ function __IsoMovingObject:MoveUnmodded(dir) end
 ---@return integer # 0 - no attackets, 1 - one player can attack this character, 2 - multiply players can attack this character
 function __IsoMovingObject:canHaveMultipleHits() end
 
+function __IsoMovingObject:closeAnimationRecorder() end
+
 ---@param obj IsoObject
 function __IsoMovingObject:collideWith(obj) end
 
@@ -62,6 +64,12 @@ function __IsoMovingObject:distToNearestCamCharacter() end
 function __IsoMovingObject:doStairs() end
 
 function __IsoMovingObject:ensureOnTile() end
+
+---@return IsoGridSquare
+function __IsoMovingObject:findCurrentGridSquare() end
+
+---@return AnimationPlayerRecorder
+function __IsoMovingObject:getAnimationRecorder() end
 
 ---@return IsoBuilding
 function __IsoMovingObject:getBuilding() end
@@ -247,6 +255,9 @@ function __IsoMovingObject:getThumpTarget() end
 ---@return integer # the TimeSinceZombieAttack
 function __IsoMovingObject:getTimeSinceZombieAttack() end
 
+---@return string
+function __IsoMovingObject:getUID() end
+
 ---@param moveForwardVec Vector2
 ---@return Vector2
 function __IsoMovingObject:getVectorFromDirection(moveForwardVec) end
@@ -270,6 +281,9 @@ function __IsoMovingObject:getY() end
 
 ---@return number
 function __IsoMovingObject:getZ() end
+
+---@return boolean
+function __IsoMovingObject:isAnimationRecorderActive() end
 
 ---@return boolean
 function __IsoMovingObject:isCharacter() end
@@ -377,6 +391,10 @@ function __IsoMovingObject:save(output, IS_DEBUG_SAVE) end
 ---Collision detection
 function __IsoMovingObject:separate() end
 
+---@param isActive boolean
+---@param isExclusive boolean
+function __IsoMovingObject:setAnimRecorderActive(isActive, isExclusive) end
+
 ---@param closeKilled boolean
 function __IsoMovingObject:setCloseKilled(closeKilled) end
 
@@ -409,6 +427,9 @@ function __IsoMovingObject:setCollidedWithDoor(CollidedWithDoor) end
 
 ---@param current IsoGridSquare the current to set
 function __IsoMovingObject:setCurrent(current) end
+
+---@param square IsoGridSquare
+function __IsoMovingObject:setCurrentSquare(square) end
 
 function __IsoMovingObject:setCurrentSquareFromPosition() end
 
@@ -448,9 +469,6 @@ function __IsoMovingObject:setHitForce(hitForce) end
 ---@param hitFromAngle number the hitFromAngle to set
 function __IsoMovingObject:setHitFromAngle(hitFromAngle) end
 
----@param ID integer the ID to set
-function __IsoMovingObject:setID(ID) end
-
 ---@param impulsex number the impulsex to set
 function __IsoMovingObject:setImpulsex(impulsex) end
 
@@ -486,6 +504,9 @@ function __IsoMovingObject:setLimpulsey(limpulsey) end
 
 ---@param movementLastFrame Vector2 the movementLastFrame to set
 function __IsoMovingObject:setMovementLastFrame(movementLastFrame) end
+
+---@param newMovingSquare IsoGridSquare
+function __IsoMovingObject:setMovingSquare(newMovingSquare) end
 
 function __IsoMovingObject:setMovingSquareNow() end
 
@@ -575,6 +596,9 @@ function __IsoMovingObject:setbAltCollide(bAltCollide) end
 ---@return boolean
 function __IsoMovingObject:shouldIgnoreCollisionWithSquare(square) end
 
+---@return boolean
+function __IsoMovingObject:shouldSnapZToCurrentSquare() end
+
 ---@param collNewPosX number
 ---@param collNewPosY number
 ---@param instant boolean
@@ -610,24 +634,17 @@ function IsoMovingObject.getVectorFromDirection(moveForwardVec, dir) end
 ---@param aIDCount integer the IDCount to set
 function IsoMovingObject.setIDCount(aIDCount) end
 
----@param cell IsoCell
 ---@return IsoMovingObject
-function IsoMovingObject.new(cell) end
+function IsoMovingObject.new() end
 
----@param cell IsoCell
 ---@param bObjectListAdd boolean
 ---@return IsoMovingObject
-function IsoMovingObject.new(cell, bObjectListAdd) end
+function IsoMovingObject.new(bObjectListAdd) end
 
----@param cell IsoCell
----@param square IsoGridSquare
 ---@param spr IsoSprite
 ---@param bObjectListAdd boolean
 ---@return IsoMovingObject
-function IsoMovingObject.new(cell, square, spr, bObjectListAdd) end
-
----@return IsoMovingObject
-function IsoMovingObject.new() end
+function IsoMovingObject.new(spr, bObjectListAdd) end
 
 ---@type Class<IsoMovingObject>
 IsoMovingObject.class = nil

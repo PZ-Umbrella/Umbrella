@@ -8,6 +8,11 @@ local __CraftLogic = {}
 function __CraftLogic:canStart(player) end
 
 ---@param player IsoPlayer
+---@param selectedInventoryItems List<InventoryItem>
+---@return boolean
+function __CraftLogic:canStartWithInventoryItems(player, selectedInventoryItems) end
+
+---@param player IsoPlayer
 ---@return CraftRecipeMonitor
 function __CraftLogic:debugCanStart(player) end
 
@@ -126,6 +131,10 @@ function __CraftLogic:stop(player) end
 ---@param player IsoPlayer
 ---@param force boolean
 function __CraftLogic:stop(player, force) end
+
+---@param inventoryItems List<InventoryItem>
+---@return boolean
+function __CraftLogic:willInputsAccommodate(inventoryItems) end
 
 CraftLogic = {}
 

@@ -343,6 +343,10 @@ function __BaseVehicle:createPhysics(spawnSwap) end
 ---@return InventoryItem
 function __BaseVehicle:createVehicleKey() end
 
+---@param dmgFront integer
+---@param dmgBack integer
+function __BaseVehicle:damageFromHitChr(dmgFront, dmgBack) end
+
 ---@param damage number
 function __BaseVehicle:damageObjects(damage) end
 
@@ -1284,6 +1288,9 @@ function __BaseVehicle:isPassengerUseDoor2(chr, seat) end
 ---@return boolean
 function __BaseVehicle:isPersistentContact(chr) end
 
+---@return boolean
+function __BaseVehicle:isPhysicsActive() end
+
 ---@param x number
 ---@param y number
 ---@return boolean
@@ -1731,6 +1738,9 @@ function __BaseVehicle:shouldCollideWithObjects() end
 
 ---@return boolean
 function __BaseVehicle:shouldNotHaveLoot() end
+
+---@return boolean
+function __BaseVehicle:shouldSnapZToCurrentSquare() end
 
 ---@param seat integer
 ---@return boolean

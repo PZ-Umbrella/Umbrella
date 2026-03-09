@@ -71,7 +71,7 @@ function __IsoStove:sync() end
 ---@param bRemote boolean
 ---@param val integer
 ---@param source UdpConnection
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoStove:syncIsoObject(bRemote, val, source, bb) end
 
 ---@param b ByteBufferWriter

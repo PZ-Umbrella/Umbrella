@@ -1611,6 +1611,9 @@ Normal.JERRY_CAN = nil
 Normal.JIG_LURE = nil
 
 ---@type ItemKey
+Normal.JS14_CLIP = nil
+
+---@type ItemKey
 Normal.JUICE_BOX = nil
 
 ---@type ItemKey

@@ -987,6 +987,9 @@ ItemTag.REMOVE_BULLET = nil
 ItemTag.REMOVE_GLASS = nil
 
 ---@type ItemTag
+ItemTag.REMOVE_STUMP = nil
+
+---@type ItemTag
 ItemTag.REPAIRABLE_SAWBLADE = nil
 
 ---@type ItemTag

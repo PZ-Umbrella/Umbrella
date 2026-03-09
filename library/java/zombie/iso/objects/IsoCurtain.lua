@@ -80,7 +80,7 @@ function __IsoCurtain:save(output, IS_DEBUG_SAVE) end
 ---@param bRemote boolean
 ---@param val integer
 ---@param source UdpConnection
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoCurtain:syncIsoObject(bRemote, val, source, bb) end
 
 ---@param bRemote boolean

@@ -28,7 +28,7 @@ function __CharacterTraits:getTraits() end
 ---@param input ByteBuffer
 function __CharacterTraits:load(input) end
 
----@param input ByteBuffer
+---@param input ByteBufferReader
 function __CharacterTraits:read(input) end
 
 ---@param characterTrait CharacterTrait

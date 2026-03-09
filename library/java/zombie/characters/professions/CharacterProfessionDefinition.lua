@@ -3,6 +3,9 @@
 ---@class CharacterProfessionDefinition: IListBoxItem
 local __CharacterProfessionDefinition = {}
 
+---@param recipe string
+function __CharacterProfessionDefinition:addGrantedRecipe(recipe) end
+
 ---@param characterTrait CharacterTrait
 function __CharacterProfessionDefinition:addGrantedTrait(characterTrait) end
 
@@ -72,9 +75,6 @@ function CharacterProfessionDefinition.addCharacterProfessionDefinition(
 	iconPathName
 )
 end
-
----@param characterProfessionDefinitionBuilder CharacterProfessionDefinitionBuilder
-function CharacterProfessionDefinition.addCharacterProfessionDefinition(characterProfessionDefinitionBuilder) end
 
 ---@param characterProfession CharacterProfession
 ---@return CharacterProfessionDefinition

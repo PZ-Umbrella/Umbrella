@@ -429,7 +429,7 @@ AnimalDefinitions.animals = {
 		dungChancePerDay = 70,
 		minBlood = 1000,
 		maxBlood = 3500,
-		corpseSize = 7,
+		corpseSize = 4,
 		idleSoundRadius = 50,
 		idleSoundVolume = 30,
 	},

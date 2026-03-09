@@ -69,9 +69,6 @@ function __IsoWorld:getCell() end
 ---@return ClimateManager
 function __IsoWorld:getClimateManager() end
 
----@return string
-function __IsoWorld:getDifficulty() end
-
 ---@return integer
 function __IsoWorld:getFrameNo() end
 
@@ -304,9 +301,6 @@ function __IsoWorld:setBiomeMap(biomeMap) end
 ---@param blending Blending
 function __IsoWorld:setBlending(blending) end
 
----@param difficulty string
-function __IsoWorld:setDifficulty(difficulty) end
-
 ---@param b boolean
 function __IsoWorld:setDrawWorld(b) end
 
@@ -491,6 +485,9 @@ IsoWorld.WorldVersion_PrintMediaRottingCorpsesBodyDamage = nil
 IsoWorld.WorldVersion_RecipesAndAmmoCheats = nil
 
 ---@type integer
+IsoWorld.WorldVersion_RemoveDifficulty = nil
+
+---@type integer
 IsoWorld.WorldVersion_RootLocale = nil
 
 ---@type integer
@@ -566,10 +563,10 @@ function IsoWorld.getZombiesDisabled() end
 function IsoWorld.getZombiesEnabled() end
 
 ---@return boolean
-function IsoWorld.isAnimRecorderActive() end
+function IsoWorld.isAnimRecorderDiscardTriggered() end
 
 ---@return boolean
-function IsoWorld.isAnimRecorderDiscardTriggered() end
+function IsoWorld.isAnimationRecorderActive() end
 
 function IsoWorld.parseDistributions() end
 

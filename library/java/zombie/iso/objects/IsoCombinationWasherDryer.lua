@@ -33,7 +33,7 @@ function __IsoCombinationWasherDryer:isRemoveItemAllowedFromContainer(container,
 function __IsoCombinationWasherDryer:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoCombinationWasherDryer:loadChange(change, bb) end
 
 ---@param output ByteBuffer
@@ -42,7 +42,7 @@ function __IsoCombinationWasherDryer:save(output, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
 ---@param tbl table
----@param bb ByteBuffer
+---@param bb ByteBufferWriter
 function __IsoCombinationWasherDryer:saveChange(change, tbl, bb) end
 
 ---@param activated boolean

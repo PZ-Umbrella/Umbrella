@@ -27,7 +27,7 @@ function __IsoClothingDryer:isRemoveItemAllowedFromContainer(container, item) en
 function __IsoClothingDryer:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoClothingDryer:loadChange(change, bb) end
 
 ---@param output ByteBuffer
@@ -36,7 +36,7 @@ function __IsoClothingDryer:save(output, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
 ---@param tbl table
----@param bb ByteBuffer
+---@param bb ByteBufferWriter
 function __IsoClothingDryer:saveChange(change, tbl, bb) end
 
 ---@param activated boolean

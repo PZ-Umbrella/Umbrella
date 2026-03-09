@@ -28,10 +28,10 @@ function __ErosionMain:isSnow() end
 
 function __ErosionMain:mainTimer() end
 
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __ErosionMain:receiveState(bb) end
 
----@param bb ByteBuffer
+---@param bb ByteBufferWriter
 function __ErosionMain:sendState(bb) end
 
 function __ErosionMain:snowCheck() end

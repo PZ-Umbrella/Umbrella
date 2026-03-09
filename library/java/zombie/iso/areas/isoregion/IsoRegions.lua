@@ -166,11 +166,11 @@ function IsoRegions.log(str) end
 ---@param col Color
 function IsoRegions.log(str, col) end
 
----@param input ByteBuffer
+---@param input ByteBufferReader
 ---@param conn UdpConnection
 function IsoRegions.receiveClientRequestFullDataChunks(input, conn) end
 
----@param input ByteBuffer
+---@param input ByteBufferReader
 function IsoRegions.receiveServerUpdatePacket(input) end
 
 function IsoRegions.reset() end

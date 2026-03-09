@@ -3,7 +3,7 @@
 ---@class SyncPlayerStatsPacket: INetworkPacket
 local __SyncPlayerStatsPacket = {}
 
----@param b ByteBuffer
+---@param b ByteBufferReader
 ---@param connection IConnection
 function __SyncPlayerStatsPacket:parse(b, connection) end
 

@@ -498,8 +498,11 @@ function __InventoryItem:getG() end
 ---@return GameEntityType
 function __InventoryItem:getGameEntityType() end
 
----@return string
+---@return ArrayList<string>
 function __InventoryItem:getGunType() end
+
+---@return string
+function __InventoryItem:getGunTypeString() end
 
 ---@return integer
 function __InventoryItem:getHaveBeenRepaired() end
@@ -800,6 +803,9 @@ function __InventoryItem:getShoutType() end
 ---@param ID string
 ---@return string
 function __InventoryItem:getSoundByID(ID) end
+
+---@return string
+function __InventoryItem:getSoundLimiterGroupID() end
 
 ---@param parameterName string
 ---@return string
@@ -1323,6 +1329,9 @@ function __InventoryItem:reduceCondition() end
 
 function __InventoryItem:reduceHeadCondition() end
 
+---@param limiter SoundInstanceLimiter
+function __InventoryItem:registerWithSoundLimiter(limiter) end
+
 ---@param character IsoGameCharacter
 function __InventoryItem:researchRecipes(character) end
 
@@ -1560,7 +1569,7 @@ function __InventoryItem:setFavorite(favorite, isSyncNeeded) end
 ---@param foodSicknessChange integer
 function __InventoryItem:setFoodSicknessChange(foodSicknessChange) end
 
----@param gunType string
+---@param gunType ArrayList<string>
 function __InventoryItem:setGunType(gunType) end
 
 ---@param haveBeenRepaired integer
@@ -1903,6 +1912,8 @@ function __InventoryItem:sharpnessCheck(skill, multiplier, maintenance, isEquipp
 ---@return boolean
 function __InventoryItem:shouldUpdateInWorld() end
 
+function __InventoryItem:stopSoundOnPlayer() end
+
 ---@param o IsoObject
 function __InventoryItem:storeInByteData(o) end
 
@@ -1930,6 +1941,10 @@ function __InventoryItem:updateEquippedAndActivatedSound() end
 
 ---@param emitter BaseSoundEmitter
 function __InventoryItem:updateSound(emitter) end
+
+---@param emitter BaseSoundEmitter
+---@param params SoundLimiterParams
+function __InventoryItem:updateSound(emitter, params) end
 
 InventoryItem = {}
 

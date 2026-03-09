@@ -76,6 +76,8 @@ function __IsoTrap:isInstantExplosion() end
 ---@param IS_DEBUG_SAVE boolean
 function __IsoTrap:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
+function __IsoTrap:place() end
+
 function __IsoTrap:playExplosionSound() end
 
 function __IsoTrap:removeFromWorld() end
@@ -141,8 +143,11 @@ function __IsoTrap:setSmokeRange(smokeRange) end
 ---@param timerBeforeExplosion integer
 function __IsoTrap:setTimerBeforeExplosion(timerBeforeExplosion) end
 
+---@deprecated
 ---@param sensor boolean
 function __IsoTrap:triggerExplosion(sensor) end
+
+function __IsoTrap:triggerExplosion() end
 
 function __IsoTrap:update() end
 

@@ -145,6 +145,9 @@ function __IsoSprite:getSheetGridIdFromName() end
 ---@return IsoDirections
 function __IsoSprite:getSlopedSurfaceDirection() end
 
+---@return IsoSprite
+function __IsoSprite:getSnowSprite() end
+
 ---@return IsoSpriteGrid
 function __IsoSprite:getSpriteGrid() end
 
@@ -155,8 +158,24 @@ function __IsoSprite:getStackReplaceTileOffset() end
 function __IsoSprite:getSurface() end
 
 ---@param dir IsoDirections
+---@param useSnowSprite boolean
+---@return Texture
+function __IsoSprite:getTextureForCurrentFrame(dir, useSnowSprite) end
+
+---@param dir IsoDirections
 ---@return Texture
 function __IsoSprite:getTextureForCurrentFrame(dir) end
+
+---@param dir IsoDirections
+---@param obj IsoObject
+---@return Texture
+function __IsoSprite:getTextureForCurrentFrame(dir, obj) end
+
+---@param frame integer
+---@param dir IsoDirections
+---@param useSnowSprite boolean
+---@return Texture
+function __IsoSprite:getTextureForFrame(frame, dir, useSnowSprite) end
 
 ---@param frame integer
 ---@param dir IsoDirections
@@ -180,6 +199,18 @@ function __IsoSprite:hasAnimation() end
 
 ---@return boolean
 function __IsoSprite:hasNoTextures() end
+
+---@param propertyType IsoPropertyType
+---@return boolean
+function __IsoSprite:hasProperty(propertyType) end
+
+---@param propertyName string
+---@return boolean
+function __IsoSprite:hasProperty(propertyName) end
+
+---@param flag IsoFlagType
+---@return boolean
+function __IsoSprite:hasProperty(flag) end
 
 ---@param flag IsoFlagType
 ---@return boolean
@@ -452,6 +483,9 @@ function __IsoSprite:setName(string) end
 
 ---@param val string
 function __IsoSprite:setParentObjectName(val) end
+
+---@param sprite IsoSprite
+function __IsoSprite:setSnowSprite(sprite) end
 
 ---@param sGrid IsoSpriteGrid
 function __IsoSprite:setSpriteGrid(sGrid) end

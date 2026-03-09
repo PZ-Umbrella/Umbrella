@@ -916,6 +916,9 @@ function __IsoGameCharacter:getAimAtFloorAmount() end
 ---@return number
 function __IsoGameCharacter:getAimingDelay() end
 
+---@return AimingMode
+function __IsoGameCharacter:getAimingMode() end
+
 ---@param fullType string
 ---@return integer
 function __IsoGameCharacter:getAlreadyReadPages(fullType) end
@@ -952,9 +955,6 @@ function __IsoGameCharacter:getAnimationDebug() end
 
 ---@return AnimationPlayer
 function __IsoGameCharacter:getAnimationPlayer() end
-
----@return AnimationPlayerRecorder
-function __IsoGameCharacter:getAnimationPlayerRecorder() end
 
 ---@return string
 function __IsoGameCharacter:getAnimationStateName() end
@@ -1317,6 +1317,9 @@ function __IsoGameCharacter:getForwardDirectionY() end
 
 ---@return IsoDirections
 function __IsoGameCharacter:getForwardMovementIsoDirection() end
+
+---@return number
+function __IsoGameCharacter:getFreeInventoryCapacity() end
 
 ---@return string
 function __IsoGameCharacter:getFullName() end
@@ -1905,9 +1908,6 @@ function __IsoGameCharacter:getTurnDelta() end
 ---@return number
 function __IsoGameCharacter:getTwist() end
 
----@return string
-function __IsoGameCharacter:getUID() end
-
 ---@return HandWeapon # the useHandWeapon
 function __IsoGameCharacter:getUseHandWeapon() end
 
@@ -2015,6 +2015,9 @@ function __IsoGameCharacter:hasEquippedTag(itemTag) end
 function __IsoGameCharacter:hasFootInjury() end
 
 ---@return boolean
+function __IsoGameCharacter:hasFullInventory() end
+
+---@return boolean
 function __IsoGameCharacter:hasHitReaction() end
 
 ---@param type string
@@ -2091,9 +2094,6 @@ function __IsoGameCharacter:isAllowConversation() end
 function __IsoGameCharacter:isAnimForecasted() end
 
 ---@return boolean
-function __IsoGameCharacter:isAnimRecorderActive() end
-
----@return boolean
 function __IsoGameCharacter:isAnimal() end
 
 ---@return boolean
@@ -2107,9 +2107,6 @@ function __IsoGameCharacter:isAnimalRunningToDeathPosition() end
 
 ---@return boolean
 function __IsoGameCharacter:isAnimatingBackwards() end
-
----@return boolean
-function __IsoGameCharacter:isAnimationRecorderActive() end
 
 ---@return boolean
 function __IsoGameCharacter:isAnimationUpdatingThisFrame() end
@@ -2264,6 +2261,9 @@ function __IsoGameCharacter:isFemale() end
 
 ---@return boolean
 function __IsoGameCharacter:isFishingCheat() end
+
+---@return boolean
+function __IsoGameCharacter:isFullyRagdolling() end
 
 ---@return boolean
 function __IsoGameCharacter:isGodMod() end
@@ -2698,7 +2698,7 @@ function __IsoGameCharacter:level0(perk) end
 function __IsoGameCharacter:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoGameCharacter:loadChange(change, bb) end
 
 ---@param characterTrait CharacterTrait
@@ -2820,7 +2820,7 @@ function __IsoGameCharacter:preupdate() end
 ---@return number
 function __IsoGameCharacter:processHitDamage(weapon, wielder, damageSplit, bIgnoreDamage, modDelta) end
 
----@param b ByteBuffer
+---@param b ByteBufferReader
 function __IsoGameCharacter:readInventory(b) end
 
 function __IsoGameCharacter:releaseAnimationPlayer() end
@@ -2904,7 +2904,7 @@ function __IsoGameCharacter:save(output, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
 ---@param tbl table
----@param bb ByteBuffer
+---@param bb ByteBufferWriter
 function __IsoGameCharacter:saveChange(change, tbl, bb) end
 
 ---@generic T
@@ -2938,10 +2938,6 @@ function __IsoGameCharacter:setAlreadyReadPages(fullType, pages) end
 
 ---@param timeMs integer
 function __IsoGameCharacter:setAnimForecasted(timeMs) end
-
----@param isActive boolean
----@param isExclusive boolean
-function __IsoGameCharacter:setAnimRecorderActive(isActive, isExclusive) end
 
 ---@param b boolean
 function __IsoGameCharacter:setAnimalCheat(b) end
@@ -3718,6 +3714,9 @@ function __IsoGameCharacter:shouldBecomeZombieAfterDeath() end
 function __IsoGameCharacter:shouldIgnoreCollisionWithSquare(square) end
 
 ---@return boolean
+function __IsoGameCharacter:shouldSnapZToCurrentSquare() end
+
+---@return boolean
 function __IsoGameCharacter:shouldWaitToStartTimedAction() end
 
 ---@param part VehiclePart
@@ -3840,6 +3839,8 @@ function __IsoGameCharacter:tryGetAIState(stateName) end
 function __IsoGameCharacter:update() end
 
 function __IsoGameCharacter:updateAimingDelay() end
+
+function __IsoGameCharacter:updateAimingMode() end
 
 function __IsoGameCharacter:updateBallistics() end
 

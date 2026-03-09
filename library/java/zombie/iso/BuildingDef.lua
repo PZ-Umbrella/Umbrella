@@ -89,6 +89,9 @@ function __BuildingDef:getMaxLevel() end
 ---@return integer
 function __BuildingDef:getMinLevel() end
 
+---@return List<IsoObject>
+function __BuildingDef:getObjects() end
+
 ---@return RoomDef
 function __BuildingDef:getRandomRoom() end
 
@@ -119,6 +122,9 @@ function __BuildingDef:getRooms() end
 
 ---@return integer
 function __BuildingDef:getRoomsNumber() end
+
+---@return List<IsoGridSquare>
+function __BuildingDef:getSquares() end
 
 ---@return table
 function __BuildingDef:getTable() end

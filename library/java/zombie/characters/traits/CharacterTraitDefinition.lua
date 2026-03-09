@@ -3,6 +3,9 @@
 ---@class CharacterTraitDefinition: IListBoxItem
 local __CharacterTraitDefinition = {}
 
+---@param recipe string
+function __CharacterTraitDefinition:addGrantedRecipe(recipe) end
+
 ---@param characterTrait CharacterTrait
 function __CharacterTraitDefinition:addGrantedTrait(characterTrait) end
 
@@ -111,9 +114,6 @@ function CharacterTraitDefinition.addCharacterTraitDefinition(
 	disabledInMultiplayer
 )
 end
-
----@param characterTraitDefinitionBuilder CharacterTraitDefinitionBuilder
-function CharacterTraitDefinition.addCharacterTraitDefinition(characterTraitDefinitionBuilder) end
 
 ---@param characterTrait CharacterTrait
 ---@return CharacterTraitDefinition

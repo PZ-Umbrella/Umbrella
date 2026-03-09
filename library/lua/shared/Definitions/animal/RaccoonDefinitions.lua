@@ -139,6 +139,7 @@ AnimalDefinitions.animals = {
 		babyType = AnimalDefinitions.animals["raccoonsow"].babyType,
 		wanderMul = 600,
 		alwaysFleeHumans = true,
+		dontAttackOtherMale = true,
 		male = true,
 		collidable = false,
 		group = "raccoon",

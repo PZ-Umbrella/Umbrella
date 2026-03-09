@@ -3,7 +3,9 @@
 ---@class ISUnloadBulletsFromMagazine : ISBaseTimedAction
 ---@field ammoCountStart integer?
 ---@field magazine InventoryItem
+---@field unloadedThisLoop boolean
 ---@field unloadFinished boolean
+---@field updateLoadBulletsTime number
 ---@field useProgressBar boolean
 ISUnloadBulletsFromMagazine = ISBaseTimedAction:derive("ISUnloadBulletsFromMagazine")
 ISUnloadBulletsFromMagazine.Type = "ISUnloadBulletsFromMagazine"
@@ -21,6 +23,9 @@ function ISUnloadBulletsFromMagazine:getDuration() end
 function ISUnloadBulletsFromMagazine:initVars() end
 
 ---@return boolean
+function ISUnloadBulletsFromMagazine:isLocal() end
+
+---@return boolean
 function ISUnloadBulletsFromMagazine:isValid() end
 
 function ISUnloadBulletsFromMagazine:perform() end
@@ -34,6 +39,8 @@ function ISUnloadBulletsFromMagazine:start() end
 function ISUnloadBulletsFromMagazine:stop() end
 
 function ISUnloadBulletsFromMagazine:update() end
+
+function ISUnloadBulletsFromMagazine:updateLoadingTime() end
 
 ---@param character IsoPlayer
 ---@param magazine InventoryItem

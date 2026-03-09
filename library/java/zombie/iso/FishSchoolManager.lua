@@ -33,7 +33,7 @@ function __FishSchoolManager:init() end
 
 function __FishSchoolManager:load() end
 
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __FishSchoolManager:receiveFishingData(bb) end
 
 function __FishSchoolManager:save() end

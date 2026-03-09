@@ -21,6 +21,9 @@ function ISPickAxeGroundCoverItem:isValid() end
 
 function ISPickAxeGroundCoverItem:perform() end
 
+---@return boolean
+function ISPickAxeGroundCoverItem:predicatePickAxe(item) end
+
 function ISPickAxeGroundCoverItem:start() end
 
 function ISPickAxeGroundCoverItem:stop() end

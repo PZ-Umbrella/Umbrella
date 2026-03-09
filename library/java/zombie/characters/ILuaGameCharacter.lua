@@ -138,6 +138,9 @@ function __ILuaGameCharacter:faceThisObjectAlt(object) end
 ---@return integer
 function __ILuaGameCharacter:getAlreadyReadPages(fullType) end
 
+---@return number
+function __ILuaGameCharacter:getAnimationTimeDelta() end
+
 ---@return IsoObject
 function __ILuaGameCharacter:getBed() end
 

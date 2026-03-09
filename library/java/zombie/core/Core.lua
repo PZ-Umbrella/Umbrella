@@ -1637,9 +1637,6 @@ function Core.UnfocusActiveTextEntryBox() end
 ---@return kahlua.Array<integer>
 function Core.flipPixels(imgPixels, imgw, imgh) end
 
----@return string
-function Core.getDifficulty() end
-
 ---@return integer
 function Core.getGLMajorVersion() end
 
@@ -1674,9 +1671,6 @@ function Core.isUseGameViewport() end
 
 ---@return boolean
 function Core.isUseViewports() end
-
----@param vdifficulty string
-function Core.setDifficulty(vdifficulty) end
 
 ---@param width integer
 ---@param height integer

@@ -125,7 +125,7 @@ function __WeatherPeriod:isTropicalStorm() end
 ---@param worldVersion integer
 function __WeatherPeriod:load(input, worldVersion) end
 
----@param input ByteBuffer
+---@param input ByteBufferReader
 function __WeatherPeriod:readNetWeatherData(input) end
 
 ---IO
@@ -159,7 +159,7 @@ function __WeatherPeriod:stopWeatherPeriod() end
 ---@param hoursSinceStart number
 function __WeatherPeriod:update(hoursSinceStart) end
 
----@param output ByteBuffer
+---@param output ByteBufferWriter
 function __WeatherPeriod:writeNetWeatherData(output) end
 
 WeatherPeriod = {}

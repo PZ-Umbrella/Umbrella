@@ -67,7 +67,7 @@ function __IsoCarBatteryCharger:setBattery(battery) end
 ---@param chargeRate number
 function __IsoCarBatteryCharger:setChargeRate(chargeRate) end
 
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoCarBatteryCharger:syncIsoObjectReceive(bb) end
 
 ---@param b ByteBufferWriter

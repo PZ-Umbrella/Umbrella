@@ -188,7 +188,7 @@ function __DeviceData:playSoundLocal(soundname, useDeviceVolume) end
 ---@param useDeviceVolume boolean
 function __DeviceData:playSoundSend(soundname, useDeviceVolume) end
 
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 ---@param ignoreConnection UdpConnection
 function __DeviceData:receiveDeviceDataStatePacket(bb, ignoreConnection) end
 

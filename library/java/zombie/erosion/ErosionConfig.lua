@@ -8,14 +8,14 @@ function __ErosionConfig:consolePrint() end
 ---@return ErosionConfig.Debug
 function __ErosionConfig:getDebug() end
 
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __ErosionConfig:load(bb) end
 
 ---@param _file string
 ---@return boolean
 function __ErosionConfig:readFile(_file) end
 
----@param bb ByteBuffer
+---@param bb ByteBufferWriter
 function __ErosionConfig:save(bb) end
 
 ---@param _file string

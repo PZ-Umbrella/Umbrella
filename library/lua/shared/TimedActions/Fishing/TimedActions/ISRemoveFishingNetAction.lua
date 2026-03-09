@@ -22,6 +22,9 @@ function ISRemoveFishingNetAction:stop() end
 
 function ISRemoveFishingNetAction:update() end
 
+---@return unknown
+function ISRemoveFishingNetAction:waitToStart() end
+
 ---@param character IsoPlayer
 ---@param trap IsoObject?
 ---@return ISRemoveFishingNetAction

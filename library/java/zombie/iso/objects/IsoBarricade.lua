@@ -92,7 +92,7 @@ function __IsoBarricade:isMetalBar() end
 function __IsoBarricade:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoBarricade:loadChange(change, bb) end
 
 ---@param chr IsoGameCharacter
@@ -122,7 +122,7 @@ function __IsoBarricade:save(output, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
 ---@param tbl table
----@param bb ByteBuffer
+---@param bb ByteBufferWriter
 function __IsoBarricade:saveChange(change, tbl, bb) end
 
 ---@param health integer
@@ -131,10 +131,10 @@ function __IsoBarricade:setHealth(health) end
 ---@param bRemote boolean
 ---@param val integer
 ---@param source UdpConnection
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoBarricade:syncIsoObject(bRemote, val, source, bb) end
 
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoBarricade:syncIsoObjectReceive(bb) end
 
 ---@param b ByteBufferWriter

@@ -7,15 +7,15 @@ local __INetworkPacket = {}
 ---@return boolean
 function __INetworkPacket:isPostponed() end
 
----@param b ByteBuffer
+---@param b ByteBufferReader
 ---@param connection UdpConnection
 function __INetworkPacket:parseClient(b, connection) end
 
----@param b ByteBuffer
+---@param b ByteBufferReader
 ---@param connection UdpConnection
 function __INetworkPacket:parseClientLoading(b, connection) end
 
----@param b ByteBuffer
+---@param b ByteBufferReader
 ---@param connection UdpConnection
 function __INetworkPacket:parseServer(b, connection) end
 

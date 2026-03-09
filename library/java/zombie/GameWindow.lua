@@ -90,10 +90,6 @@ function GameWindow.ReadString(input) end
 function GameWindow.ReadString(input) end
 
 ---@param input ByteBuffer
----@return string
-function GameWindow.ReadStringUTF(input) end
-
----@param input ByteBuffer
 ---@return UUID
 function GameWindow.ReadUUID(input) end
 
@@ -104,10 +100,6 @@ function GameWindow.WriteString(output, str) end
 ---@param output DataOutputStream
 ---@param str string
 function GameWindow.WriteString(output, str) end
-
----@param output ByteBuffer
----@param str string
-function GameWindow.WriteStringUTF(output, str) end
 
 ---@param output ByteBuffer
 ---@param uuid UUID
@@ -138,10 +130,6 @@ function GameWindow.readInt(_in) end
 ---@param _in DataInputStream
 ---@return integer
 function GameWindow.readLong(_in) end
-
----@param input ByteBuffer
----@return IsoObjectChange
-function GameWindow.readObjectChange(input) end
 
 function GameWindow.render() end
 

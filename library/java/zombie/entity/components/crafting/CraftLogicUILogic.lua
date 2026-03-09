@@ -22,6 +22,9 @@ function __CraftLogicUILogic:cachedCanPerformCurrentRecipe() end
 ---@return boolean
 function __CraftLogicUILogic:cachedCanStart(player) end
 
+---@param input CraftRecipeData.InputScriptData
+function __CraftLogicUILogic:clearManualInputsFor(input) end
+
 ---@param itemSlot table
 ---@param tooltipUI ObjectTooltip
 function __CraftLogicUILogic:doPreviewSlotTooltip(itemSlot, tooltipUI) end
@@ -65,6 +68,9 @@ function __CraftLogicUILogic:getInputItemNodes() end
 function __CraftLogicUILogic:getInputItemNodesForInput(input) end
 
 ---@return table
+function __CraftLogicUILogic:getInventoryItemsToTransfer() end
+
+---@return table
 function __CraftLogicUILogic:getItemsInProgress() end
 
 ---@return InputScript
@@ -103,7 +109,13 @@ function __CraftLogicUILogic:getSelectedRecipeStyle() end
 ---@return ArrayList<Texture>
 function __CraftLogicUILogic:getStatusIconsForItemInProgress(item, craftRecipeData) end
 
+---@param inventoryItem InventoryItem
+function __CraftLogicUILogic:offerInputItem(inventoryItem) end
+
 function __CraftLogicUILogic:onResourceSlotContentsChanged() end
+
+---@param inventoryItem InventoryItem
+function __CraftLogicUILogic:removeInputItem(inventoryItem) end
 
 ---@param containersToUse ArrayList<ItemContainer>
 function __CraftLogicUILogic:setContainers(containersToUse) end

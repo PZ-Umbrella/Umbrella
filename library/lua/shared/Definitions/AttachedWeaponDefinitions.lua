@@ -954,6 +954,7 @@ AttachedWeaponDefinitions.shotgunPolice = {
 	daySurvived = 0,
 	weapons = {
 		"Base.Shotgun",
+		"Base.JS3T_Shotgun",
 	},
 }
 AttachedWeaponDefinitions.gunOnBackSWAT = {
@@ -970,9 +971,9 @@ AttachedWeaponDefinitions.gunOnBackSWAT = {
 	daySurvived = 0,
 	weapons = {
 		"Base.AssaultRifle",
-		"Base.AssaultRifle2",
-		"Base.HuntingRifle",
-		"Base.Shotgun",
+		"Base.JS3T_Shotgun",
+		"Base.JS5_SMG",
+		"Base.MSR7T_Rifle",
 	},
 }
 AttachedWeaponDefinitions.assaultRifleOnBack = {
@@ -990,6 +991,7 @@ AttachedWeaponDefinitions.assaultRifleOnBack = {
 	weapons = {
 		"Base.AssaultRifle",
 		"Base.AssaultRifle2",
+		"Base.JS14_Rifle",
 	},
 }
 AttachedWeaponDefinitions.assaultRifleArmyOnBack = {
@@ -1022,14 +1024,8 @@ AttachedWeaponDefinitions.gunOnBackMisc = {
 	addHoles = false,
 	daySurvived = 0,
 	weapons = {
-		"Base.AssaultRifle",
-		"Base.AssaultRifle2",
-		"Base.DoubleBarrelShotgun",
-		"Base.DoubleBarrelShotgunSawnoff",
-		"Base.HuntingRifle",
-		"Base.VarmintRifle",
-		"Base.Shotgun",
-		"Base.ShotgunSawnoff",
+		"Base.L92_Carbine",
+		"Base.L94_Rifle",
 	},
 }
 AttachedWeaponDefinitions.gunOnBackHunter = {
@@ -1047,8 +1043,11 @@ AttachedWeaponDefinitions.gunOnBackHunter = {
 	weapons = {
 		"Base.DoubleBarrelShotgun",
 		"Base.HuntingRifle",
-		"Base.VarmintRifle",
+		"Base.JS14_Rifle",
+		"Base.L92_Carbine",
+		"Base.L94_Rifle",
 		"Base.Shotgun",
+		"Base.VarmintRifle",
 	},
 }
 AttachedWeaponDefinitions.gunOnBackBagSurvivalist = {
@@ -1072,6 +1071,9 @@ AttachedWeaponDefinitions.gunOnBackBagSurvivalist = {
 		"Base.AssaultRifle2",
 		"Base.DoubleBarrelShotgun",
 		"Base.DoubleBarrelShotgunSawnoff",
+		"Base.JS14_Rifle",
+		"Base.L92_Carbine",
+		"Base.L94_Rifle",
 		"Base.Shotgun",
 		"Base.ShotgunSawnoff",
 	},
@@ -1089,8 +1091,10 @@ AttachedWeaponDefinitions.huntingRifleOnBack = {
 	addHoles = false,
 	daySurvived = 0,
 	weapons = {
-		"Base.VarmintRifle",
+		"Base.L92_Carbine",
+		"Base.L94_Rifle",
 		"Base.HuntingRifle",
+		"Base.VarmintRifle",
 	},
 }
 AttachedWeaponDefinitions.rifleOnBackGhillie = {
@@ -1107,7 +1111,7 @@ AttachedWeaponDefinitions.rifleOnBackGhillie = {
 	daySurvived = 0,
 	weapons = {
 		"Base.AssaultRifle2",
-		"Base.HuntingRifle",
+		"Base.MSR7T_Rifle",
 	},
 }
 AttachedWeaponDefinitions.gunOnBackCrime = {
@@ -1125,6 +1129,7 @@ AttachedWeaponDefinitions.gunOnBackCrime = {
 	daySurvived = 0,
 	weapons = {
 		"Base.AssaultRifle",
+		"Base.JS14_Rifle",
 		"Base.ShotgunSawnoff",
 		"Base.DoubleBarrelShotgunSawnoff",
 	},
@@ -1143,7 +1148,7 @@ AttachedWeaponDefinitions.gunOnBackBountyHunter = {
 	daySurvived = 0,
 	weapons = {
 		"Base.AssaultRifle",
-		"Base.ShotgunSawnoff",
+		"Base.JS3T_Shotgun",
 	},
 }
 AttachedWeaponDefinitions.constructionWorker = {
@@ -1334,6 +1339,10 @@ AttachedWeaponDefinitions.meleeInBack_Mid = {
 		"Base.DoubleBarrelShotgun",
 		"Base.DoubleBarrelShotgunSawnoff",
 		"Base.HuntingRifle",
+		"Base.JS14_Rifle",
+		"Base.JS3T_Shotgun",
+		"Base.L92_Carbine",
+		"Base.L94_Rifle",
 		"Base.VarmintRifle",
 		"Base.Shotgun",
 		"Base.ShotgunSawnoff",
@@ -1436,6 +1445,9 @@ AttachedWeaponDefinitions.meleeInBack_Late = {
 		"Base.AssaultRifle2",
 		"Base.DoubleBarrelShotgun",
 		"Base.DoubleBarrelShotgunSawnoff",
+		"Base.L94_Rifle",
+		"Base.JS14_Rifle",
+		"Base.JS3T_Shotgun",
 		"Base.Shotgun",
 		"Base.ShotgunSawnoff",
 	},
@@ -1529,9 +1541,13 @@ AttachedWeaponDefinitions.meleeInBackBag_Mid = {
 		"Base.DoubleBarrelShotgun",
 		"Base.DoubleBarrelShotgunSawnoff",
 		"Base.HuntingRifle",
-		"Base.VarmintRifle",
+		"Base.JS14_Rifle",
+		"Base.JS3T_Shotgun",
+		"Base.L92_Carbine",
+		"Base.L94_Rifle",
 		"Base.Shotgun",
 		"Base.ShotgunSawnoff",
+		"Base.VarmintRifle",
 	},
 }
 AttachedWeaponDefinitions.meleeInBackBag_Late = {
@@ -1584,6 +1600,9 @@ AttachedWeaponDefinitions.meleeInBackBag_Late = {
 		"Base.AssaultRifle2",
 		"Base.DoubleBarrelShotgun",
 		"Base.DoubleBarrelShotgunSawnoff",
+		"Base.JS14_Rifle",
+		"Base.JS3T_Shotgun",
+		"Base.L94_Rifle",
 		"Base.Shotgun",
 		"Base.ShotgunSawnoff",
 	},

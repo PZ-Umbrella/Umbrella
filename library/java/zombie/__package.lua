@@ -68,6 +68,9 @@
 ---@class SharedDescriptors.Descriptor
 
 ---(Not exposed)
+---@class SlowMotionMultiplier
+
+---(Not exposed)
 ---@class SoundManager.ImpactSound
 
 ---(Not exposed)

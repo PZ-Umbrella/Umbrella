@@ -62,6 +62,9 @@ function SandboxOptionsScreen:getHardPreset() end
 ---@return umbrella.SandboxOptionsScreen.Preset
 function SandboxOptionsScreen:getNormalPreset() end
 
+---@return table
+function SandboxOptionsScreen:getSandboxPreset(preset) end
+
 ---@return umbrella.SandboxOptionsScreen.Preset
 function SandboxOptionsScreen:getSurvivalPreset() end
 

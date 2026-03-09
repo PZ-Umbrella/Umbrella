@@ -56,10 +56,10 @@ function __NetworkUser:isOnline() end
 ---@return string
 function __NetworkUser:isSteamIdBanned(steamId) end
 
----@param input ByteBuffer
+---@param input ByteBufferReader
 function __NetworkUser:parse(input) end
 
----@param output ByteBuffer
+---@param output ByteBufferWriter
 function __NetworkUser:send(output) end
 
 ---@param inWhitelist boolean

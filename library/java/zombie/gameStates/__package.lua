@@ -1,6 +1,9 @@
 ---@meta _
 
 ---(Not exposed)
+---@class ChooseGameInfo.Map
+
+---(Not exposed)
 ---@class ChooseGameInfo.PackFile
 
 ---(Not exposed)

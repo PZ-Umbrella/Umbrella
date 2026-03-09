@@ -21,7 +21,7 @@ function __IAnimatable:getAdvancedAnimator() end
 function __IAnimatable:getAnimationPlayer() end
 
 ---@return AnimationPlayerRecorder
-function __IAnimatable:getAnimationPlayerRecorder() end
+function __IAnimatable:getAnimationRecorder() end
 
 ---@return IGrappleable
 function __IAnimatable:getGrappleable() end

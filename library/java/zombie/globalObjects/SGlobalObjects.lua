@@ -54,7 +54,7 @@ function SGlobalObjects.registerSystem(name) end
 
 function SGlobalObjects.save() end
 
----@param bb ByteBuffer
+---@param bb ByteBufferWriter
 function SGlobalObjects.saveInitialStateForClient(bb) end
 
 function SGlobalObjects.update() end

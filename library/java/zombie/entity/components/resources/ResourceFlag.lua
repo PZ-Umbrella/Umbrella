@@ -14,6 +14,9 @@ ResourceFlag = {}
 ---@type ResourceFlag
 ResourceFlag.AutoDecay = nil
 
+---@type ResourceFlag
+ResourceFlag.Temporary = nil
+
 ---@param id integer
 ---@return ResourceFlag
 function ResourceFlag.fromByteId(id) end

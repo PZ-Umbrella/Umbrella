@@ -46,7 +46,7 @@ function __IsoBarbecue:isTemperatureChanging() end
 function __IsoBarbecue:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
----@param byteBuffer ByteBuffer
+---@param byteBuffer ByteBufferReader
 function __IsoBarbecue:loadChange(change, byteBuffer) end
 
 function __IsoBarbecue:removeFromWorld() end
@@ -75,7 +75,7 @@ function __IsoBarbecue:save(output, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
 ---@param kahluaTable table
----@param byteBuffer ByteBuffer
+---@param byteBuffer ByteBufferWriter
 function __IsoBarbecue:saveChange(change, kahluaTable, byteBuffer) end
 
 ---@param units integer

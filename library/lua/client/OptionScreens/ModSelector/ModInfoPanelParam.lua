@@ -7,7 +7,10 @@
 ---@field modLink string
 ---@field modLinkLen number
 ---@field name string
+---@field path string
+---@field pathLen unknown
 ---@field pressed boolean
+---@field source string
 ---@field tickTexture Texture
 ---@field type string
 ---@field urlLen number

@@ -835,6 +835,9 @@ function __IsoObject:isTargetAlphaZero(playerIndex) end
 function __IsoObject:isTent() end
 
 ---@return boolean
+function __IsoObject:isUseSnowSprite() end
+
+---@return boolean
 function __IsoObject:isWall() end
 
 ---@return boolean
@@ -862,13 +865,13 @@ function __IsoObject:load(input, WorldVersion) end
 function __IsoObject:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoObject:loadChange(change, bb) end
 
----@param b ByteBuffer
+---@param b ByteBufferReader
 function __IsoObject:loadFromRemoteBuffer(b) end
 
----@param b ByteBuffer
+---@param b ByteBufferReader
 ---@param addToObjects boolean
 function __IsoObject:loadFromRemoteBuffer(b, addToObjects) end
 
@@ -1051,7 +1054,7 @@ function __IsoObject:save(output, IS_DEBUG_SAVE) end
 
 ---@param change IsoObjectChange
 ---@param tbl table
----@param bb ByteBuffer
+---@param bb ByteBufferWriter
 function __IsoObject:saveChange(change, tbl, bb) end
 
 ---@param bb ByteBuffer
@@ -1364,7 +1367,10 @@ function __IsoObject:spawnItemToObjectSurface(item, randomRotation, checkForAdja
 
 function __IsoObject:sync() end
 
----@param bb ByteBuffer
+---@param i integer
+function __IsoObject:sync(i) end
+
+---@param bb ByteBufferReader
 function __IsoObject:syncFluidContainerReceive(bb) end
 
 ---@param bb ByteBufferWriter
@@ -1373,10 +1379,10 @@ function __IsoObject:syncFluidContainerSend(bb) end
 ---@param bRemote boolean
 ---@param val integer
 ---@param source UdpConnection
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoObject:syncIsoObject(bRemote, val, source, bb) end
 
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoObject:syncIsoObjectReceive(bb) end
 
 ---@param bb ByteBufferWriter

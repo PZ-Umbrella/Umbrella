@@ -22,6 +22,7 @@ ISWorldObjectContextMenu.chairCheckList = {
 		"Stump",
 		"Block",
 		"Table",
+		"Toilet",
 	},
 	goodList = {
 		"Beach",
@@ -692,6 +693,8 @@ function ISWorldObjectContextMenu.onRemoveGroundCoverItemHammerOrPickAxe(worldob
 ---@param object IsoObject
 function ISWorldObjectContextMenu.onRemoveGroundCoverItemPickAxe(worldobjects, player, object) end
 
+function ISWorldObjectContextMenu.onRemoveGroundCoverItemStump(worldobjects, player, object) end
+
 ---@param worldobjects IsoObject[]
 ---@param player integer
 ---@param thump IsoThumpable
@@ -847,6 +850,10 @@ function ISWorldObjectContextMenu.onViewSafeHouse(worldobjects, safehouse, playe
 ---@param player IsoPlayer
 ---@param otherPlayer IsoPlayer
 function ISWorldObjectContextMenu.onWakeOther(worldobjects, player, otherPlayer) end
+
+function ISWorldObjectContextMenu.onWalkNextToWaterComplete(callback, args) end
+
+function ISWorldObjectContextMenu.onWalkNextToWaterFail(playerObj, waterSquare, range, callback, args) end
 
 ---@param worldobjects IsoObject[] | integer
 ---@param item IsoObject | integer

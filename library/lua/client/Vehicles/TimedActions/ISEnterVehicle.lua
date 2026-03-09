@@ -22,6 +22,9 @@ function ISEnterVehicle:stop() end
 
 function ISEnterVehicle:update() end
 
+---@return boolean
+function ISEnterVehicle:waitToStart() end
+
 ---@param character IsoPlayer
 ---@param vehicle BaseVehicle
 ---@param seat integer

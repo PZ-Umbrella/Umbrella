@@ -11,6 +11,12 @@ SliceY.SliceBuffer = nil
 ---@type any
 SliceY.SliceBufferLock = nil
 
+---@type ByteBufferReader
+SliceY.sliceBufferReader = nil
+
+---@type ByteBufferWriter
+SliceY.sliceBufferWriter = nil
+
 ---@return SliceY
 function SliceY.new() end
 

@@ -5,10 +5,10 @@ local __WorldMapClient = {}
 
 function __WorldMapClient:Reset() end
 
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __WorldMapClient:receive(bb) end
 
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __WorldMapClient:receiveRequestData(bb) end
 
 ---@param symbol WorldMapBaseSymbol

@@ -2493,6 +2493,11 @@ function sendFeedAnimalFromHand(animal, player, item) end
 ---@param code string
 function sendGoogleAuth(username, code) end
 
+---@param target IsoPlayer
+---@param damage string
+---@param range string
+function sendHitPlayer(target, damage, range) end
+
 ---@param target IsoGameCharacter
 ---@param damage string
 ---@param isTargetHitFromBehind boolean

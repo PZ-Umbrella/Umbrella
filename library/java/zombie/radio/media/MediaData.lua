@@ -26,6 +26,9 @@ function __MediaData:getId() end
 ---@return integer
 function __MediaData:getIndex() end
 
+---@return number
+function __MediaData:getIndexForLua() end
+
 ---@param index integer
 ---@return MediaData.MediaLineData
 function __MediaData:getLine(index) end

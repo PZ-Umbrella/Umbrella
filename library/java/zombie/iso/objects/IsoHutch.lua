@@ -135,7 +135,7 @@ function __IsoHutch:setHutchDirt(hutchDirt) end
 ---@param nestBoxDirt number
 function __IsoHutch:setNestBoxDirt(nestBoxDirt) end
 
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function __IsoHutch:syncIsoObjectReceive(bb) end
 
 ---@param b ByteBufferWriter

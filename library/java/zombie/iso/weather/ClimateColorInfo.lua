@@ -23,7 +23,7 @@ function __ClimateColorInfo:interp(to, t, result) end
 ---@param worldVersion integer
 function __ClimateColorInfo:load(input, worldVersion) end
 
----@param input ByteBuffer
+---@param input ByteBufferReader
 function __ClimateColorInfo:read(input) end
 
 ---@param output DataOutputStream
@@ -53,7 +53,7 @@ function __ClimateColorInfo:setInterior(r, g, b, a) end
 ---@param other ClimateColorInfo
 function __ClimateColorInfo:setTo(other) end
 
----@param output ByteBuffer
+---@param output ByteBufferWriter
 function __ClimateColorInfo:write(output) end
 
 ClimateColorInfo = {}

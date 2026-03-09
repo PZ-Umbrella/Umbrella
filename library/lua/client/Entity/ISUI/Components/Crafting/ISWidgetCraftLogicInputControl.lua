@@ -59,6 +59,8 @@ function ISWidgetCraftLogicInputControl:render() end
 
 function ISWidgetCraftLogicInputControl:update() end
 
+function ISWidgetCraftLogicInputControl:updateInputItemsCount() end
+
 function ISWidgetCraftLogicInputControl:updateOutputItems() end
 
 ---@param x number

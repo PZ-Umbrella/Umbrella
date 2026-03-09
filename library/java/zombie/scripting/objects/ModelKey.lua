@@ -5257,6 +5257,12 @@ ModelKey.JOKE_ARROW_GROUND = nil
 ModelKey.JOKE_KNIFE_GROUND = nil
 
 ---@type ModelKey
+ModelKey.JS14_RIFLE = nil
+
+---@type ModelKey
+ModelKey.JS3T_SHOTGUN = nil
+
+---@type ModelKey
 ModelKey.JUICE_BOTTLE_CRANBERRY = nil
 
 ---@type ModelKey
@@ -5549,6 +5555,12 @@ ModelKey.KNITTING_NEEDLES_BONE = nil
 
 ---@type ModelKey
 ModelKey.KNITTING_NEEDLES_WOOD = nil
+
+---@type ModelKey
+ModelKey.L92_CARBINE = nil
+
+---@type ModelKey
+ModelKey.L94_RIFLE = nil
 
 ---@type ModelKey
 ModelKey.LADLE = nil
@@ -6602,6 +6614,9 @@ ModelKey.MOTION_SENSOR = nil
 
 ---@type ModelKey
 ModelKey.MOUSE_BODY = nil
+
+---@type ModelKey
+ModelKey.MSR7T_RIFLE = nil
 
 ---@type ModelKey
 ModelKey.MUFFIN_FRUIT_GROUND = nil
@@ -10322,6 +10337,9 @@ ModelKey.TOY_CAR = nil
 
 ---@type ModelKey
 ModelKey.TOY_PLANE = nil
+
+---@type ModelKey
+ModelKey.TRAPPER_CARBINE = nil
 
 ---@type ModelKey
 ModelKey.TRAP_BOX = nil

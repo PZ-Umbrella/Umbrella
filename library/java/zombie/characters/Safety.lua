@@ -27,11 +27,11 @@ function __Safety:isLast() end
 ---@return boolean
 function __Safety:isToggleAllowed() end
 
----@param input ByteBuffer
----@param WorldVersion integer
-function __Safety:load(input, WorldVersion) end
+---@param input ByteBufferReader
+---@param worldVersion integer
+function __Safety:load(input, worldVersion) end
 
----@param output ByteBuffer
+---@param output ByteBufferWriter
 function __Safety:save(output) end
 
 ---@param cooldown number

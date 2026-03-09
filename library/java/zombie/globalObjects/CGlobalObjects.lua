@@ -20,7 +20,7 @@ function CGlobalObjects.getSystemCount() end
 
 function CGlobalObjects.initSystems() end
 
----@param bb ByteBuffer
+---@param bb ByteBufferReader
 function CGlobalObjects.loadInitialState(bb) end
 
 ---@param name string

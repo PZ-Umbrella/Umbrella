@@ -3,7 +3,7 @@
 ---@class BodyPartSyncPacket: INetworkPacket
 local __BodyPartSyncPacket = {}
 
----@param b ByteBuffer
+---@param b ByteBufferReader
 ---@param connection IConnection
 function __BodyPartSyncPacket:parse(b, connection) end
 

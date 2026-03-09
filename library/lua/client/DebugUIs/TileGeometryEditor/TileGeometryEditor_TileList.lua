@@ -3,6 +3,7 @@
 ---@class TileGeometryEditor_TileList : ISPanel
 ---@field editor TileGeometryEditor
 ---@field picker TileGeometryEditor_TilePicker
+---@field selected number
 ---@field selection table
 ---@field tileset string?
 TileGeometryEditor_TileList = ISPanel:derive("TileGeometryEditor_TileList")
@@ -43,6 +44,8 @@ function TileGeometryEditor_TileList:onMouseDown(x, y) end
 
 ---@param del number
 function TileGeometryEditor_TileList:onMouseWheel(del) end
+
+function TileGeometryEditor_TileList:onRemoveGeometryOfSelectedTiles() end
 
 ---@param x number
 ---@param y number

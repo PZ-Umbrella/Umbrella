@@ -23,6 +23,9 @@ function ISCheckFishingNetAction:stop() end
 
 function ISCheckFishingNetAction:update() end
 
+---@return unknown
+function ISCheckFishingNetAction:waitToStart() end
+
 ---@param character IsoPlayer
 ---@param trap IsoObject
 ---@param hours integer

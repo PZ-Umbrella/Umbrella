@@ -138,6 +138,9 @@ function __Resource:isFull() end
 ---@return boolean
 function __Resource:isLocked() end
 
+---@return boolean
+function __Resource:isTemporary() end
+
 ---@param input ByteBuffer
 ---@param worldVersion integer
 function __Resource:load(input, worldVersion) end
