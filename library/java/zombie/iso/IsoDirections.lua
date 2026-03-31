@@ -33,6 +33,12 @@ function __IsoDirections:dx() end
 ---@return integer
 function __IsoDirections:dy() end
 
+---@return boolean
+function __IsoDirections:isCardinal() end
+
+---@return boolean
+function __IsoDirections:isDiagonal() end
+
 ---@return number
 function __IsoDirections:toAngle() end
 

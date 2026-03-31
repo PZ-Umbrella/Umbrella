@@ -398,6 +398,9 @@ IsoWorld.WorldVersion_AnimalPetTime = nil
 IsoWorld.WorldVersion_AnimalRottingTexture = nil
 
 ---@type integer
+IsoWorld.WorldVersion_AnimalWild = nil
+
+---@type integer
 IsoWorld.WorldVersion_BodyDamageSavePoulticeValues = nil
 
 ---@type integer

@@ -156,6 +156,9 @@ function __Thermoregulator:update() end
 
 Thermoregulator = {}
 
+---@type number
+Thermoregulator.THERMAL_COLD_DAMAGE_MOD = nil
+
 ---@return number
 function Thermoregulator.getSkinCelciusFavorable() end
 

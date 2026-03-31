@@ -160,6 +160,9 @@ function luautils.walkAdjAltTest(playerObj, square, altSquare, keepActions) end
 ---@return boolean
 function luautils.walkAdjFence(playerObj, square, object, keepActions) end
 
+---@return boolean
+function luautils.walkAdjObject(playerObj, object, allowDiagonal, keepActions) end
+
 ---@param playerObj IsoPlayer
 ---@param square IsoGridSquare
 ---@return boolean

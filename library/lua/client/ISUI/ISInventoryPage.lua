@@ -42,6 +42,8 @@
 ---@field lookDir IsoDirections
 ---@field lootAll ISButton
 ---@field mouseOverButton ISButton?
+---@field mouseOverColoredContainer unknown?
+---@field mouseOverColoredContainerInv unknown
 ---@field onCharacter boolean
 ---@field pin boolean
 ---@field pinbutton Texture
@@ -326,6 +328,8 @@ function ISInventoryPage:setInfo(text) end
 function ISInventoryPage:setNewContainer(inventory) end
 
 function ISInventoryPage:setPinned() end
+
+function ISInventoryPage:stopHighlightContainer(container) end
 
 function ISInventoryPage:syncAddFuel() end
 

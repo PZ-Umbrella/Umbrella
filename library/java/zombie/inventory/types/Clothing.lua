@@ -66,6 +66,9 @@ function __Clothing:flushWetness() end
 
 function __Clothing:fullyRestore() end
 
+---@return string
+function __Clothing:getAlternateModelName() end
+
 ---@return number
 function __Clothing:getBiteDefense() end
 

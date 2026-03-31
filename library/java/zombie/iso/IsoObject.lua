@@ -287,6 +287,11 @@ function __IsoObject:getChildSprites() end
 ---@return IsoChunk
 function __IsoObject:getChunk() end
 
+---@param toX number
+---@param toY number
+---@return IsoObject
+function __IsoObject:getClosestSpriteGridObject(toX, toY) end
+
 ---@return ItemContainer # the container
 function __IsoObject:getContainer() end
 
@@ -454,6 +459,9 @@ function __IsoObject:getPosition(out) end
 ---@return Vector3f
 function __IsoObject:getPosition(out) end
 
+---@return Fluid
+function __IsoObject:getPrimaryFluid() end
+
 ---@return PropertyContainer
 function __IsoObject:getProperties() end
 
@@ -532,6 +540,9 @@ function __IsoObject:getSquare() end
 function __IsoObject:getStaticMovingObjectIndex() end
 
 ---@return number
+function __IsoObject:getStressModFromThumping() end
+
+---@return number
 function __IsoObject:getSurfaceNormalOffset() end
 
 ---@return number
@@ -559,6 +570,11 @@ function __IsoObject:getThumpCondition() end
 ---@param chr IsoGameCharacter
 ---@return Thumpable
 function __IsoObject:getThumpableFor(chr) end
+
+---@param chr IsoGameCharacter
+---@param weapon HandWeapon
+---@return Thumpable
+function __IsoObject:getThumpableFor(chr, weapon) end
 
 ---@return string
 function __IsoObject:getTile() end
@@ -703,6 +719,12 @@ function __IsoObject:isFluidInputLocked() end
 function __IsoObject:isGenericCraftingSurface() end
 
 ---@return boolean
+function __IsoObject:isGrass() end
+
+---@return boolean
+function __IsoObject:isGrassLike() end
+
+---@return boolean
 function __IsoObject:isGrave() end
 
 ---@return boolean
@@ -761,6 +783,9 @@ function __IsoObject:isOnScreen() end
 
 ---@return boolean
 function __IsoObject:isOre() end
+
+---@return boolean
+function __IsoObject:isOres() end
 
 ---@return boolean
 function __IsoObject:isOutlineHighlight() end
@@ -1441,6 +1466,18 @@ IsoObject = {}
 
 ---@type integer
 IsoObject.MAX_WALL_SPLATS = nil
+
+---@type number
+IsoObject.THUMP_STRESS_DEFAULT = nil
+
+---@type number
+IsoObject.THUMP_STRESS_FENCES = nil
+
+---@type number
+IsoObject.THUMP_STRESS_THUMPABLE = nil
+
+---@type number
+IsoObject.THUMP_STRESS_TRANSPARENT_FENCES = nil
 
 ---@type number
 IsoObject.bmod = nil

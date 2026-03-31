@@ -41,6 +41,9 @@ Registries.DOODLE_KIDS = nil
 ---@type Registry<Flier>
 Registries.FLIER = nil
 
+---@type Registry<GameMode>
+Registries.GAME_MODE = nil
+
 ---@type Registry<ItemBodyLocation>
 Registries.ITEM_BODY_LOCATION = nil
 

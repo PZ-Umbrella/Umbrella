@@ -328,6 +328,7 @@ AnimalDefinitions.animals = {
 		litterEatTogether = true,
 		thirstHungerTrigger = 0.2,
 		wildFleeTimeUntilDeadTimer = 100,
+		feedByHandAnim = "AnimalLureLow",
 	},
 	rabdoe = {
 		bodyModel = "Rab_Body",
@@ -381,6 +382,7 @@ AnimalDefinitions.animals = {
 		hungerBoost = 16,
 		thirstBoost = 20,
 		wildFleeTimeUntilDeadTimer = 300,
+		feedByHandAnim = AnimalDefinitions.animals["rabkitten"].feedByHandAnim,
 	},
 	rabbuck = {
 		bodyModel = "Rab_Body",
@@ -429,5 +431,6 @@ AnimalDefinitions.animals = {
 		hungerBoost = 16,
 		thirstBoost = 20,
 		wildFleeTimeUntilDeadTimer = 300,
+		feedByHandAnim = AnimalDefinitions.animals["rabkitten"].feedByHandAnim,
 	},
 }

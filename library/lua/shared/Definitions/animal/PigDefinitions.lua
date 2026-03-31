@@ -267,6 +267,7 @@ AnimalDefinitions.animals = {
 		maxBlood = 600,
 		idleSoundRadius = 20,
 		idleSoundVolume = 10,
+		feedByHandAnim = "AnimalLureLow",
 	},
 	sow = {
 		bodyModel = "FarmPig_SowBody",
@@ -335,6 +336,7 @@ AnimalDefinitions.animals = {
 		idleSoundVolume = 20,
 		hungerBoost = 3,
 		thirstBoost = 5,
+		feedByHandAnim = AnimalDefinitions.animals["piglet"].feedByHandAnim,
 	},
 	boar = {
 		bodyModel = "FarmPig_BoarBody",
@@ -400,5 +402,6 @@ AnimalDefinitions.animals = {
 		idleSoundVolume = 20,
 		hungerBoost = 3,
 		thirstBoost = 5,
+		feedByHandAnim = AnimalDefinitions.animals["sow"].feedByHandAnim,
 	},
 }

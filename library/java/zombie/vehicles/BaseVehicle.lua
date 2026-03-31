@@ -271,6 +271,9 @@ function __BaseVehicle:checkForSpecialMatchTwo(one, two, three) end
 ---@return boolean
 function __BaseVehicle:checkIfGoodVehicleForKey() end
 
+---@return boolean
+function __BaseVehicle:checkIgnoreCollisionSoundCooldown() end
+
 ---@param target IsoGameCharacter
 ---@return BaseVehicle.HitVars
 function __BaseVehicle:checkNetworkCollision(target) end
@@ -293,6 +296,8 @@ function __BaseVehicle:checkSquareForVehicleKeySpotContainer(square) end
 ---@param square IsoGridSquare
 ---@return boolean
 function __BaseVehicle:checkSquareForVehicleKeySpotZombie(square) end
+
+function __BaseVehicle:checkSurroundingChunks() end
 
 ---@param zombie IsoZombie
 ---@return boolean
@@ -2052,6 +2057,42 @@ BaseVehicle.TL_vector3f_pool = nil
 
 ---@type ThreadLocal<BaseVehicle.Vector4fObjectPool>
 BaseVehicle.TL_vector4f_pool = nil
+
+---@type number
+BaseVehicle.TRAILER_ANGULAR_LOWER_LIMIT_X = nil
+
+---@type number
+BaseVehicle.TRAILER_ANGULAR_LOWER_LIMIT_Y = nil
+
+---@type number
+BaseVehicle.TRAILER_ANGULAR_LOWER_LIMIT_Z = nil
+
+---@type number
+BaseVehicle.TRAILER_ANGULAR_UPPER_LIMIT_X = nil
+
+---@type number
+BaseVehicle.TRAILER_ANGULAR_UPPER_LIMIT_Y = nil
+
+---@type number
+BaseVehicle.TRAILER_ANGULAR_UPPER_LIMIT_Z = nil
+
+---@type number
+BaseVehicle.TRAILER_LINEAR_LOWER_LIMIT_X = nil
+
+---@type number
+BaseVehicle.TRAILER_LINEAR_LOWER_LIMIT_Y = nil
+
+---@type number
+BaseVehicle.TRAILER_LINEAR_LOWER_LIMIT_Z = nil
+
+---@type number
+BaseVehicle.TRAILER_LINEAR_UPPER_LIMIT_X = nil
+
+---@type number
+BaseVehicle.TRAILER_LINEAR_UPPER_LIMIT_Y = nil
+
+---@type number
+BaseVehicle.TRAILER_LINEAR_UPPER_LIMIT_Z = nil
 
 ---@type boolean
 BaseVehicle.YURI_FORCE_FIELD = nil

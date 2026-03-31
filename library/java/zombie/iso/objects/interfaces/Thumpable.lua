@@ -18,5 +18,10 @@ function __Thumpable:getThumpCondition() end
 ---@return Thumpable
 function __Thumpable:getThumpableFor(chr) end
 
+---@param arg0 IsoGameCharacter
+---@param arg1 HandWeapon
+---@return Thumpable
+function __Thumpable:getThumpableFor(arg0, arg1) end
+
 ---@return boolean
 function __Thumpable:isDestroyed() end

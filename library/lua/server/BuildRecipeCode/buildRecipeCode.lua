@@ -110,6 +110,7 @@ function __buildRecipeCode_composter.OnCreate(params) end
 local __buildRecipeCode_windowGlass = {}
 
 ---@param params umbrella.BuildRecipeCode.OnCreateParams
+---@return table
 function __buildRecipeCode_windowGlass.OnCreate(params) end
 
 ---@class BuildRecipeCode.woodLampPillar

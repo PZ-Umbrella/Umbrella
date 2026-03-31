@@ -40,10 +40,6 @@ function __IsoCell:DistanceFromSupport(x, y, z) end
 ---@return boolean
 function __IsoCell:DoBuilding(player, bRender) end
 
----@param newSquare IsoGridSquare
----@param getter IsoGridSquare.GetSquare
-function __IsoCell:DoGridNav(newSquare, getter) end
-
 ---@param playerSquare IsoGridSquare
 ---@param square IsoGridSquare
 ---@param playerIndex integer
@@ -235,6 +231,9 @@ function __IsoCell:flattenAnyFoliage(perPlayerRender, playerIndex) end
 
 ---@return ArrayList<IsoMovingObject> # the addList
 function __IsoCell:getAddList() end
+
+---@return List<IsoAnimal>
+function __IsoCell:getAnimals() end
 
 ---@param criteria IsoCell.BuildingSearchCriteria
 ---@param count integer

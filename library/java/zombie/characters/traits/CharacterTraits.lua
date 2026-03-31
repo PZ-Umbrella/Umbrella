@@ -57,6 +57,9 @@ CharacterTraits.AllThumbsStrengthPenalty = nil
 CharacterTraits.AwkwardGlovesClimbingPenaltyDivisor = nil
 
 ---@type number
+CharacterTraits.BASE_DETECTION_RANGE = nil
+
+---@type number
 CharacterTraits.BurglarClimbingBonus = nil
 
 ---@type integer
@@ -64,6 +67,9 @@ CharacterTraits.BurglarStrengthBonus = nil
 
 ---@type number
 CharacterTraits.ClumsyClimbingPenaltyDivisor = nil
+
+---@type number
+CharacterTraits.DEAF_DETECTION_RANGE = nil
 
 ---@type number
 CharacterTraits.DextrousClimbingBonus = nil
@@ -78,10 +84,19 @@ CharacterTraits.DrunkClimbingPenaltyMultiplier = nil
 CharacterTraits.EnduranceClimbingPenaltyMultiplier = nil
 
 ---@type number
+CharacterTraits.FATIGUE_SCALE = nil
+
+---@type number
+CharacterTraits.FATIGUE_THRESHOLD = nil
+
+---@type number
 CharacterTraits.GymnastClimbingBonus = nil
 
 ---@type integer
 CharacterTraits.GymnastStrengthBonus = nil
+
+---@type number
+CharacterTraits.HARD_OF_HEARING_RANGE_PENALTY = nil
 
 ---@type number
 CharacterTraits.HealthReductionMultiplierModerate = nil
@@ -91,6 +106,9 @@ CharacterTraits.HealthReductionMultiplierSevere = nil
 
 ---@type number
 CharacterTraits.HeavyLoadClimbingPenaltyMultiplier = nil
+
+---@type number
+CharacterTraits.KEEN_HEARING_RANGE_BONUS = nil
 
 ---@type number
 CharacterTraits.ObeseClimbingPenalty = nil

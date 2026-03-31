@@ -122,11 +122,11 @@ function ItemCodeOnCreate.onCreateMonogram(item) end
 ---@param item InventoryItem
 function ItemCodeOnCreate.onCreateOldNewspaper(item) end
 
----@param item InventoryItem
-function ItemCodeOnCreate.onCreateOldPhoto(item) end
-
 ---@param item Literature
 function ItemCodeOnCreate.onCreatePaperwork(item) end
+
+---@param item InventoryItem
+function ItemCodeOnCreate.onCreatePhoto(item) end
 
 ---@param item InventoryItem
 function ItemCodeOnCreate.onCreatePopBottle(item) end

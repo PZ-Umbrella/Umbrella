@@ -51,6 +51,11 @@ function SwipeStatePlayer.dbgOnGlobalAnimEvent(owner, layer, track, event) end
 ---@return SwipeStatePlayer
 function SwipeStatePlayer.instance() end
 
+---@param owner IsoGameCharacter
+---@param doShove boolean
+---@return boolean
+function SwipeStatePlayer.isStompingDisabled(owner, doShove) end
+
 ---@type Class<SwipeStatePlayer>
 SwipeStatePlayer.class = nil
 

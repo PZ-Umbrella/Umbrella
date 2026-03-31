@@ -73,6 +73,13 @@ function IsoUtils.DistanceToSquared(fromX, fromY, toX, toY) end
 ---@return number
 function IsoUtils.XToIso(screenX, screenY, floor) end
 
+---@param playerIndex integer
+---@param screenX number
+---@param screenY number
+---@param floor number
+---@return number
+function IsoUtils.XToIso(playerIndex, screenX, screenY, floor) end
+
 ---@param screenX number
 ---@param screenY number
 ---@param floor integer
@@ -105,6 +112,13 @@ function IsoUtils.XToScreenInt(objectX, objectY, objectZ, screenZ) end
 ---@param floor number
 ---@return number
 function IsoUtils.YToIso(screenX, screenY, floor) end
+
+---@param playerIndex integer
+---@param screenX number
+---@param screenY number
+---@param floor number
+---@return number
+function IsoUtils.YToIso(playerIndex, screenX, screenY, floor) end
 
 ---@param objectX number
 ---@param objectY number

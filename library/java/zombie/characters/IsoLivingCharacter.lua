@@ -38,5 +38,8 @@ function __IsoLivingCharacter:isShoving() end
 ---@return boolean
 function __IsoLivingCharacter:isShovingWhileAiming() end
 
+---@return boolean
+function __IsoLivingCharacter:isUnarmed() end
+
 ---@param bDoShove boolean
 function __IsoLivingCharacter:setDoShove(bDoShove) end

@@ -25,6 +25,12 @@ function __DebugType:error(formatNoParams) end
 ---@param params kahlua.Array<any>
 function __DebugType:error(format, params) end
 
+---@return IDebugLogFormatter
+function __DebugType:getFormatter() end
+
+---@return LogSeverity
+function __DebugType:getLogSeverity() end
+
 ---@return DebugLogStream
 function __DebugType:getLogStream() end
 
@@ -34,6 +40,10 @@ function __DebugType:isEnabled() end
 ---@param logSeverity LogSeverity
 ---@return boolean
 function __DebugType:isEnabled(logSeverity) end
+
+---@param rhs string
+---@return boolean
+function __DebugType:isName(rhs) end
 
 ---@param formatNoParams any
 function __DebugType:noise(formatNoParams) end
@@ -65,6 +75,10 @@ function __DebugType:print(s) end
 
 ---@param obj any
 function __DebugType:print(obj) end
+
+---@param ex Throwable
+---@param logSeverity LogSeverity
+function __DebugType:printException(ex, logSeverity) end
 
 ---@param ex Throwable
 ---@param message string
@@ -130,6 +144,9 @@ function __DebugType:println(format, params) end
 ---@param logSeverity LogSeverity
 ---@param logText string
 function __DebugType:routedWrite(backTraceOffset, logSeverity, logText) end
+
+---@param newSeverity LogSeverity
+function __DebugType:setLogSeverity(newSeverity) end
 
 ---@param formatNoParams any
 function __DebugType:trace(formatNoParams) end

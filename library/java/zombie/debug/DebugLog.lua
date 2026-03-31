@@ -84,10 +84,6 @@ DebugLog.Zombie = nil
 ---@type boolean
 DebugLog.printServerTime = nil
 
----@param debugType DebugType
----@return DebugLogStream
-function DebugLog.createLogStream(debugType) end
-
 ---@param logSeverity LogSeverity
 ---@param messageType string
 ---@param outString string
@@ -101,31 +97,13 @@ function DebugLog.echoToLogFiles(logSeverity, outString) end
 ---@param severity LogSeverity
 function DebugLog.enableLog(type, severity) end
 
----@param type DebugType
+---@param debugType DebugType
 ---@param logSeverity LogSeverity
 ---@param affix any
----@param allowRepeat boolean
----@param formatNoParams string
----@return string
-function DebugLog.formatString(type, logSeverity, affix, allowRepeat, formatNoParams) end
-
----@param type DebugType
----@param logSeverity LogSeverity
----@param affix any
----@param allowRepeat boolean
----@param format string
+---@param format any
 ---@param params kahlua.Array<any>
 ---@return string
-function DebugLog.formatString(type, logSeverity, affix, allowRepeat, format, params) end
-
----@param type DebugType
----@param logSeverity LogSeverity
----@param affix any
----@param allowRepeat boolean
----@param format string
----@param params kahlua.Array<any>
----@return string
-function DebugLog.formatStringVarArgs(type, logSeverity, affix, allowRepeat, format, params) end
+function DebugLog.formatLogString(debugType, logSeverity, affix, format, params) end
 
 ---@return ArrayList<DebugType>
 function DebugLog.getDebugTypes() end
@@ -137,6 +115,10 @@ function DebugLog.getLogLevel(type) end
 ---@param type DebugType
 ---@return LogSeverity
 function DebugLog.getLogSeverity(type) end
+
+---@param debugType DebugType
+---@return DebugLogStream
+function DebugLog.getOrCreateLogStream(debugType) end
 
 ---@return PrintStream
 function DebugLog.getRecordingOut() end

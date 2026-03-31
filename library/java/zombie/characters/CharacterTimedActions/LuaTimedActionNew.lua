@@ -36,6 +36,8 @@ function __LuaTimedActionNew:getTable() end
 ---@return integer
 function __LuaTimedActionNew:getTime() end
 
+function __LuaTimedActionNew:interruptWaitToStart() end
+
 function __LuaTimedActionNew:perform() end
 
 ---@param oldObj any

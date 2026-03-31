@@ -129,6 +129,9 @@ function __Food:getEnduranceChange() end
 function __Food:getEnduranceChangeUnmodified() end
 
 ---@return integer
+function __Food:getFertilizedTime() end
+
+---@return integer
 function __Food:getFluReduction() end
 
 ---@return integer

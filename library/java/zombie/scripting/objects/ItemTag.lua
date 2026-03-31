@@ -933,6 +933,9 @@ ItemTag.PIZZA_SAUCE = nil
 ItemTag.PLANTAIN = nil
 
 ---@type ItemTag
+ItemTag.PLASTER_BUCKET = nil
+
+---@type ItemTag
 ItemTag.PLASTER_TROWEL = nil
 
 ---@type ItemTag

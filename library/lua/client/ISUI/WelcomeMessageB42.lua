@@ -11,7 +11,7 @@ function WelcomeMessages.doMsg() end
 ---@field rich ISRichTextPanel
 ---@field screenshot Texture
 ---@field titleLabel ISLabel
-WelcomeMessageUI = ISCollapsableWindow:derive("WelcomeMessageUI")
+WelcomeMessageUI = {}
 WelcomeMessageUI.Type = "WelcomeMessageUI"
 
 function WelcomeMessageUI:create() end

@@ -868,6 +868,9 @@ function getCellSizeInChunks() end
 ---@return number
 function getCellSizeInSquares() end
 
+---@return List<CheatType>
+function getCheatTypes() end
+
 ---@return number
 function getChunkSizeInSquares() end
 
@@ -2484,6 +2487,9 @@ function sendEquip(player) end
 ---@param invited string
 function sendFactionInvite(faction, host, invited) end
 
+---@param player IsoPlayer
+function sendFactionStatsChange(player) end
+
 ---@param animal IsoAnimal
 ---@param player IsoPlayer
 ---@param item InventoryItem
@@ -3013,6 +3019,8 @@ function toggleBreakpoint(file, line) end
 ---@param mod ChooseGameInfo.Mod
 ---@param active boolean
 function toggleModActive(mod, active) end
+
+function toggleStatisticsTransmission() end
 
 function toggleVehicleRenderToTexture() end
 

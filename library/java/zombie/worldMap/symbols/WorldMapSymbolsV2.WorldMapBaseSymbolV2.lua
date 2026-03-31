@@ -78,6 +78,9 @@ function __WorldMapBaseSymbolV2:hasCustomColor() end
 function __WorldMapBaseSymbolV2:isApplyZoom() end
 
 ---@return boolean
+function __WorldMapBaseSymbolV2:isAuthorLocalPlayer() end
+
+---@return boolean
 function __WorldMapBaseSymbolV2:isMatchPerspective() end
 
 ---@return boolean

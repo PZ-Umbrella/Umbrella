@@ -530,6 +530,9 @@ function __Item:getTicksPerEquipUse() end
 function __Item:getToHitModifier() end
 
 ---@return string
+function __Item:getTooltip() end
+
+---@return string
 function __Item:getUnequipSound() end
 
 ---@return number # the UnhappyChange

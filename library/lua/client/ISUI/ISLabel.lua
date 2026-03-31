@@ -57,6 +57,9 @@ function ISLabel:setJoypadFocused(focused) end
 ---@param name string
 function ISLabel:setName(name) end
 
+---@param name string
+function ISLabel:setNameWithoutMoving(name) end
+
 ---@param tooltip string
 function ISLabel:setTooltip(tooltip) end
 

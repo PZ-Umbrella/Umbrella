@@ -972,7 +972,6 @@ AttachedWeaponDefinitions.gunOnBackSWAT = {
 	weapons = {
 		"Base.AssaultRifle",
 		"Base.JS3T_Shotgun",
-		"Base.JS5_SMG",
 		"Base.MSR7T_Rifle",
 	},
 }

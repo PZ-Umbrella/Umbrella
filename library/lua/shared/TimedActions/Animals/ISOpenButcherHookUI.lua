@@ -23,6 +23,7 @@ function ISOpenButcherHookUI:getDuration() end
 ---@return boolean
 function ISOpenButcherHookUI:isValid() end
 
+---@return boolean
 function ISOpenButcherHookUI:perform() end
 
 function ISOpenButcherHookUI:serverStart() end

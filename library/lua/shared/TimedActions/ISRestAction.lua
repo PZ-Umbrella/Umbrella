@@ -30,6 +30,8 @@ function ISRestAction:furnitureHasSittingData(bed) end
 ---@return number
 function ISRestAction:getDuration() end
 
+function ISRestAction:interruptWaitToStart() end
+
 ---@return boolean
 function ISRestAction:isValid() end
 

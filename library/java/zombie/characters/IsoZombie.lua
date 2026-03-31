@@ -35,22 +35,6 @@ function __IsoZombie:InitSpritePartsZombie() end
 ---@param desc SurvivorDesc
 function __IsoZombie:InitSpritePartsZombie(desc) end
 
----@param handWeapon HandWeapon
----@param killer IsoGameCharacter
----@param bGory boolean
-function __IsoZombie:Kill(handWeapon, killer, bGory) end
-
----@param killer IsoGameCharacter
----@param bGory boolean
-function __IsoZombie:Kill(killer, bGory) end
-
----@param handWeapon HandWeapon
----@param killer IsoGameCharacter
-function __IsoZombie:Kill(handWeapon, killer) end
-
----@param killer IsoGameCharacter
-function __IsoZombie:Kill(killer) end
-
 ---@param dir Vector2
 function __IsoZombie:Move(dir) end
 
@@ -92,9 +76,6 @@ function __IsoZombie:addRandomVisualDamages() end
 ---@param bodyPart BodyPartType
 ---@param bloody boolean
 function __IsoZombie:addVisualBandage(bodyPart, bloody) end
-
----@return IsoDeadBody
-function __IsoZombie:becomeCorpse() end
 
 ---@return IsoDeadBody
 function __IsoZombie:becomeCorpseSilently() end
@@ -423,6 +404,11 @@ function __IsoZombie:onDeath_ShouldDoSplatterAndSounds(weapon, wielder, isGory) 
 ---@param pushedBack boolean
 ---@return number
 function __IsoZombie:onHitByVehicle(vehicle, impactSpeed, hitDir, impactPosOnVehicle, pushedBack) end
+
+---@param killer IsoGameCharacter
+---@param handWeapon HandWeapon
+---@param bGory boolean
+function __IsoZombie:onKilled(killer, handWeapon, bGory) end
 
 function __IsoZombie:onMouseLeftClick() end
 

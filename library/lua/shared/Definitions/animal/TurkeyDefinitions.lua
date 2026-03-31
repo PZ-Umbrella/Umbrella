@@ -191,6 +191,7 @@ AnimalDefinitions.animals = {
 		thirstBoost = 22,
 		distToEat = 1,
 		corpseSize = 0,
+		feedByHandAnim = "AnimalLureLow",
 	},
 	turkeyhen = {
 		bodyModel = "Turkey",
@@ -255,6 +256,7 @@ AnimalDefinitions.animals = {
 		corpseSize = 0.7,
 		idleSoundRadius = 20,
 		idleSoundVolume = 10,
+		feedByHandAnim = AnimalDefinitions.animals["turkeypoult"].feedByHandAnim,
 	},
 	gobblers = {
 		bodyModel = "Turkey",
@@ -321,5 +323,6 @@ AnimalDefinitions.animals = {
 		corpseSize = 0.7,
 		idleSoundRadius = 20,
 		idleSoundVolume = 10,
+		feedByHandAnim = AnimalDefinitions.animals["turkeypoult"].feedByHandAnim,
 	},
 }

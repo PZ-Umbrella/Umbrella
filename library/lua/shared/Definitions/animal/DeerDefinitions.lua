@@ -145,6 +145,7 @@ AnimalDefinitions.animals = {
 		minWeight = 15,
 		maxWeight = 100,
 		wildFleeTimeUntilDeadTimer = 300,
+		feedByHandAnim = "AnimalLureLow",
 	},
 	doe = {
 		bodyModel = "DeerDoe",
@@ -188,6 +189,7 @@ AnimalDefinitions.animals = {
 		minWeight = 110,
 		maxWeight = 200,
 		wildFleeTimeUntilDeadTimer = 700,
+		feedByHandAnim = "AnimalLureHigh",
 	},
 	buck = {
 		bodyModel = "DeerStag",
@@ -230,5 +232,6 @@ AnimalDefinitions.animals = {
 		minWeight = 110,
 		maxWeight = 200,
 		wildFleeTimeUntilDeadTimer = 800,
+		feedByHandAnim = AnimalDefinitions.animals["doe"].feedByHandAnim,
 	},
 }

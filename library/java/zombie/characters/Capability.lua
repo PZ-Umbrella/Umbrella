@@ -108,6 +108,9 @@ Capability.DisplayServerMessage = nil
 Capability.EditItem = nil
 
 ---@type Capability
+Capability.EditMapSymbols = nil
+
+---@type Capability
 Capability.EmptyLinesInChat = nil
 
 ---@type Capability
@@ -276,7 +279,10 @@ Capability.UseFishingCheat = nil
 Capability.UseHealthCheat = nil
 
 ---@type Capability
-Capability.UseLootTool = nil
+Capability.UseLootLog = nil
+
+---@type Capability
+Capability.UseLootZed = nil
 
 ---@type Capability
 Capability.UseMechanicsCheat = nil

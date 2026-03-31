@@ -4,6 +4,9 @@
 ---@class Action: INetworkPacketField
 local __Action = {}
 
+---@param act Action
+function __Action:copyFrom(act) end
+
 ---@return number
 function __Action:getProgress() end
 

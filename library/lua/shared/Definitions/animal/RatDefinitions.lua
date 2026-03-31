@@ -36,9 +36,9 @@ AnimalDefinitions.breeds = {
 				invIconMale = "Item_Rat",
 				invIconFemale = "Item_Rat",
 				invIconBaby = "Item_Rat",
-				invIconMaleDead = "Item_DeadRat.png",
-				invIconFemaleDead = "Item_DeadRat.png",
-				invIconBabyDead = "Item_DeadRat.png",
+				invIconMaleDead = "Item_RatDead",
+				invIconFemaleDead = "Item_RatDead",
+				invIconBabyDead = "Item_RatDead",
 				sounds = nil, ---@type table
 			},
 			white = {
@@ -55,9 +55,9 @@ AnimalDefinitions.breeds = {
 				invIconMale = "Item_Rat",
 				invIconFemale = "Item_Rat",
 				invIconBaby = "Item_Rat",
-				invIconMaleDead = "Item_DeadRat.png",
-				invIconFemaleDead = "Item_DeadRat.png",
-				invIconBabyDead = "Item_DeadRat.png",
+				invIconMaleDead = "Item_RatDead",
+				invIconFemaleDead = "Item_RatDead",
+				invIconBabyDead = "Item_RatDead",
 				sounds = nil, ---@type table
 			},
 		},
@@ -142,6 +142,7 @@ AnimalDefinitions.animals = {
 		corpseSize = 0,
 		dung = "Dung_Rat",
 		wildFleeTimeUntilDeadTimer = 100,
+		feedByHandAnim = AnimalDefinitions.animals["ratbaby"].feedByHandAnim,
 	},
 	rat = {
 		bodyModel = "Rat_Body",
@@ -196,5 +197,6 @@ AnimalDefinitions.animals = {
 		corpseSize = AnimalDefinitions.animals["ratfemale"].corpseSize,
 		dung = "Dung_Rat",
 		wildFleeTimeUntilDeadTimer = 100,
+		feedByHandAnim = AnimalDefinitions.animals["ratbaby"].feedByHandAnim,
 	},
 }

@@ -14,6 +14,9 @@ ISPathFindAction.Type = "ISPathFindAction"
 ---@return boolean
 function ISPathFindAction:isValid() end
 
+---@return ISPathFindAction?
+function ISPathFindAction:pathAdjacentToMultiTileObject(character, object, allowDiagonal) end
+
 ---@param character IsoPlayer
 ---@param corpse IsoDeadBody
 ---@return ISPathFindAction
@@ -30,6 +33,11 @@ function ISPathFindAction:pathToLocationF(character, targetX, targetY, targetZ) 
 ---@param locations number[]
 ---@return ISPathFindAction
 function ISPathFindAction:pathToNearest(character, locations) end
+
+---@param locations table
+---@param locationsAlt table
+---@return ISPathFindAction
+function ISPathFindAction:pathToNearestPreferred(character, locations, locationsAlt) end
 
 ---@param character IsoPlayer
 ---@param bed IsoObject

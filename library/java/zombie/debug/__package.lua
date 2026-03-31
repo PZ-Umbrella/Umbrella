@@ -9,4 +9,7 @@
 ---(Not exposed)
 ---@class DebugOptions.Checks
 
+---(Not exposed)
+---@class IDebugLogFormatter
+
 zombie.debug = {}

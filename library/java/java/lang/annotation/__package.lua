@@ -1,0 +1,15 @@
+---@meta _
+
+---(Not exposed)
+---The common interface extended by all annotation interfaces.  Note that an
+--- interface that manually extends this one does not define
+--- an annotation interface.  Also note that this interface does not itself
+--- define an annotation interface.
+---
+--- More information about annotation interfaces can be found in section
+--- 9.6 of The Java Language Specification.
+---
+--- The AnnotatedElement interface discusses
+--- compatibility concerns when evolving an annotation interface from being
+--- non-repeatable to being repeatable.
+---@class Annotation

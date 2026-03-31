@@ -106,7 +106,8 @@ function __IsoGridSquare:Burn(explode) end
 function __IsoGridSquare:BurnTick() end
 
 ---@param explode boolean
-function __IsoGridSquare:BurnWalls(explode) end
+---@param recursive boolean
+function __IsoGridSquare:BurnWalls(explode, recursive) end
 
 function __IsoGridSquare:BurnWallsTCOnly() end
 
@@ -629,6 +630,10 @@ function __IsoGridSquare:disableErosion() end
 
 function __IsoGridSquare:discard() end
 
+---@param getter IsoGridSquare.GetSquare
+---@return IsoGridSquare
+function __IsoGridSquare:doGridNav(getter) end
+
 function __IsoGridSquare:fixPlacedItemRenderOffsets() end
 
 function __IsoGridSquare:flagForHotSave() end
@@ -805,6 +810,9 @@ function __IsoGridSquare:getFirstBlocking(isoGridSquareCollisionData, x, y, z, s
 ---@return IsoObject
 function __IsoGridSquare:getFloor() end
 
+---@return IsoGridSquare
+function __IsoGridSquare:getFloorSquareBelow() end
+
 ---@param bNorth boolean
 ---@return IsoObject
 function __IsoGridSquare:getGarageDoor(bNorth) end
@@ -963,6 +971,9 @@ function __IsoGridSquare:getOrCreateOcclusionData() end
 
 ---@return IsoObject
 function __IsoGridSquare:getOre() end
+
+---@return List<IsoObject>
+function __IsoGridSquare:getOres() end
 
 ---@param dx integer
 ---@param dy integer
@@ -1272,6 +1283,10 @@ function __IsoGridSquare:has(flag) end
 ---@return boolean
 function __IsoGridSquare:has(flag) end
 
+---@param flag kahlua.Array<IsoPropertyType>
+---@return boolean
+function __IsoGridSquare:has(flag) end
+
 ---@param flag string
 ---@return boolean
 function __IsoGridSquare:has(flag) end
@@ -1342,6 +1357,9 @@ function __IsoGridSquare:hasFloor() end
 
 ---@return boolean
 function __IsoGridSquare:hasFloorAtTopOfStairs() end
+
+---@return boolean
+function __IsoGridSquare:hasFloorBelow() end
 
 ---@return boolean
 function __IsoGridSquare:hasFloorOverWater() end
@@ -2094,7 +2112,7 @@ IsoGridSquare.WALL_TYPE_W = nil
 ---@type number
 IsoGridSquare.bmod = nil
 
----@type IsoGridSquare.CellGetSquare
+---@type IsoGridSquare.GetSquare
 IsoGridSquare.cellGetSquare = nil
 
 ---@type ArrayList<IsoGridSquare>

@@ -5,6 +5,10 @@ local __WorldMapClient = {}
 
 function __WorldMapClient:Reset() end
 
+---@param userName string
+---@return boolean
+function __WorldMapClient:isAuthorHidden(userName) end
+
 ---@param bb ByteBufferReader
 function __WorldMapClient:receive(bb) end
 
@@ -27,6 +31,10 @@ function __WorldMapClient:sendSetPrivateSymbol(symbol) end
 ---@param symbol WorldMapBaseSymbol
 ---@param networkInfo WorldMapSymbolNetworkInfo
 function __WorldMapClient:sendShareSymbol(symbol, networkInfo) end
+
+---@param userName string
+---@param hidden boolean
+function __WorldMapClient:setAuthorHidden(userName, hidden) end
 
 function __WorldMapClient:worldMapLoaded() end
 

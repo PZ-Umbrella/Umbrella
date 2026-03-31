@@ -85,7 +85,10 @@ ModelKey.AMETHYST_CRYSTAL_LARGE = nil
 ModelKey.AMMO_BOX_GROUND = nil
 
 ---@type ModelKey
-ModelKey.AMMO_STRAP_GROUND = nil
+ModelKey.AMMO_STRAP_GROUND_BULLETS = nil
+
+---@type ModelKey
+ModelKey.AMMO_STRAP_GROUND_SHELLS = nil
 
 ---@type ModelKey
 ModelKey.AMPLIFIER = nil

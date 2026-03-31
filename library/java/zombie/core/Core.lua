@@ -1524,6 +1524,12 @@ Core.challengeId = nil
 ---@type number
 Core.characterHeight = nil
 
+---@type number
+Core.characterMeleeAimPointHeight = nil
+
+---@type number
+Core.characterRangedAimPointHeight = nil
+
 ---@type UITextEntryInterface
 Core.currentTextEntryBox = nil
 

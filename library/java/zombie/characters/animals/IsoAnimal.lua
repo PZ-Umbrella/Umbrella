@@ -70,9 +70,6 @@ function __IsoAnimal:animalShouldThump() end
 ---@return boolean
 function __IsoAnimal:attackOtherMales() end
 
----@return IsoDeadBody
-function __IsoAnimal:becomeCorpse() end
-
 ---@return number
 function __IsoAnimal:calcDamage() end
 
@@ -253,9 +250,6 @@ function __IsoAnimal:getAttachmentWorldPos(attachmentName, pos) end
 ---@return Position3D
 function __IsoAnimal:getAttachmentWorldPos(attachmentName) end
 
----@return IsoGameCharacter
-function __IsoAnimal:getAttackedBy() end
-
 ---@return ArrayList<IsoAnimal>
 function __IsoAnimal:getBabies() end
 
@@ -306,6 +300,9 @@ function __IsoAnimal:getFeatherItem() end
 
 ---@return integer
 function __IsoAnimal:getFeatherNumber() end
+
+---@return string
+function __IsoAnimal:getFeedByHandAnim() end
 
 ---@return number
 function __IsoAnimal:getFeelersize() end
@@ -618,9 +615,6 @@ function __IsoAnimal:setAnimalID(id) end
 
 ---@param zone AnimalZone
 function __IsoAnimal:setAnimalZone(zone) end
-
----@param attackedBy IsoGameCharacter
-function __IsoAnimal:setAttackedBy(attackedBy) end
 
 ---@param customName string
 function __IsoAnimal:setCustomName(customName) end

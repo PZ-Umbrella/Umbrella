@@ -50,30 +50,43 @@
 ---@field sortType string
 ---@field tabs ISMPTabPanel
 ---@field ui_add_icon unknown
+---@field ui_allVersions unknown
 ---@field ui_circle unknown
 ---@field ui_closed unknown
 ---@field ui_details_icon unknown
 ---@field ui_details_ping unknown
 ---@field ui_details_players unknown
+---@field ui_emptyServer unknown
 ---@field ui_feature unknown
 ---@field ui_feature_enabled unknown
+---@field ui_filters_1 unknown
+---@field ui_filters_2 unknown
+---@field ui_filters_3 unknown
 ---@field ui_filters_4 unknown
+---@field ui_filters_5 unknown
+---@field ui_filters_6 unknown
 ---@field ui_filters_allversions unknown
 ---@field ui_filters_closed unknown
 ---@field ui_filters_feature unknown
 ---@field ui_filters_haveplayers unknown
 ---@field ui_filters_mods unknown
 ---@field ui_filters_mods_off unknown
+---@field ui_fullServer unknown
 ---@field ui_icon_bg unknown
+---@field ui_mods unknown
 ---@field ui_offline unknown
 ---@field ui_online unknown
 ---@field ui_open unknown
+---@field ui_passwordOff unknown
+---@field ui_passwordOn unknown
 ---@field ui_ping unknown
+---@field ui_playerCount unknown
 ---@field ui_players unknown
 ---@field ui_separator unknown
 ---@field ui_separator_filter unknown
 ---@field ui_subitem_first unknown
 ---@field ui_subitem_other unknown
+---@field ui_whitelist unknown
 MultiplayerUI = ISPanel:derive("MultiplayerUI")
 MultiplayerUI.Type = "MultiplayerUI"
 MultiplayerUI.startRefreshTime = nil ---@type number?
@@ -119,6 +132,11 @@ function MultiplayerUI:drawAccountListItem(y, item, alt) end
 
 ---@return number
 function MultiplayerUI:drawInternetListItem(y, item, alt) end
+
+---@param x number
+---@param y number
+---@return number
+function MultiplayerUI:drawTickboxIcons(texture, x, y, scale) end
 
 ---@return unknown?
 function MultiplayerUI:getServerFeatured(server) end
@@ -177,6 +195,9 @@ function MultiplayerUI:selectInternetServer(server) end
 function MultiplayerUI:serverInfoBluePanelHeight() end
 
 function MultiplayerUI:sortInternetList() end
+
+---@return boolean?
+function MultiplayerUI:sortServerList(a, b) end
 
 function MultiplayerUI:updateButtons() end
 

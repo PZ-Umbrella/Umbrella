@@ -15,6 +15,13 @@ function __PlayerActionsState:enter(owner) end
 ---@param owner IsoGameCharacter
 function __PlayerActionsState:exit(owner) end
 
+---@return boolean
+function __PlayerActionsState:isProcessedOnExit() end
+
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __PlayerActionsState:processOnExit(owner, delegate) end
+
 ---@param owner IsoGameCharacter
 ---@param stage State.Stage
 function __PlayerActionsState:setParams(owner, stage) end

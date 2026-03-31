@@ -32,9 +32,6 @@ function __IsoPlayer:IsRunning() end
 ---@return boolean
 function __IsoPlayer:IsUsingAimWeapon() end
 
----@param killer IsoGameCharacter
-function __IsoPlayer:Kill(killer) end
-
 ---@param dir Vector2
 function __IsoPlayer:Move(dir) end
 
@@ -73,14 +70,14 @@ function __IsoPlayer:addWorldSoundUnlessInvisible(radius, volume, bStressHumans)
 ---@return boolean
 function __IsoPlayer:allowsTwist() end
 
----@return IsoDeadBody
-function __IsoPlayer:becomeCorpse() end
-
 function __IsoPlayer:calculateContext() end
 
 ---@param target IsoGameCharacter
 ---@return integer
 function __IsoPlayer:calculateCritChance(target) end
+
+---@return boolean
+function __IsoPlayer:calculateShowAdminTag() end
 
 ---@param dir IsoDirections
 ---@return boolean
@@ -92,8 +89,21 @@ function __IsoPlayer:canHearAll() end
 ---@return boolean
 function __IsoPlayer:canPerformHandToHandCombat() end
 
+---@param square IsoGridSquare
+---@return boolean
+function __IsoPlayer:canPlaceCorpseOnSquare(square) end
+
 ---@return boolean
 function __IsoPlayer:canSeeAll() end
+
+---@param fromSq IsoGridSquare
+---@param dir IsoDirections
+---@return boolean
+function __IsoPlayer:canThrowCorpseOver(fromSq, dir) end
+
+---@param dir IsoDirections
+---@return boolean
+function __IsoPlayer:canThrowCorpseOver(dir) end
 
 function __IsoPlayer:checkActionGroup() end
 
@@ -167,6 +177,10 @@ function __IsoPlayer:getAnimalType() end
 
 ---@return AnimalVisual
 function __IsoPlayer:getAnimalVisual() end
+
+---@param connection UdpConnection
+---@return integer
+function __IsoPlayer:getAnticheatMask(connection) end
 
 ---@return number
 function __IsoPlayer:getAsleepTime() end
@@ -263,6 +277,10 @@ function __IsoPlayer:getItemVisuals(itemVisuals) end
 ---@return integer
 function __IsoPlayer:getJoypadBind() end
 
+---@param out Vector2
+---@return Vector2
+function __IsoPlayer:getJoypadMoveVector(out) end
+
 ---@return Vector2
 function __IsoPlayer:getLastAngle() end
 
@@ -347,6 +365,7 @@ function __IsoPlayer:getPlayerCraftHistory() end
 ---@return Vector2
 function __IsoPlayer:getPlayerMoveDir() end
 
+---@deprecated
 ---@return integer
 function __IsoPlayer:getPlayerNum() end
 
@@ -461,12 +480,6 @@ function __IsoPlayer:isAccessLevel(level) end
 function __IsoPlayer:isAimControlActive() end
 
 ---@return boolean
-function __IsoPlayer:isAimKeyDown() end
-
----@return boolean
-function __IsoPlayer:isAimKeyDownIgnoreMouse() end
-
----@return boolean
 function __IsoPlayer:isAiming() end
 
 ---@return boolean
@@ -527,9 +540,6 @@ function __IsoPlayer:isClimbOverWallStruggle() end
 function __IsoPlayer:isClimbOverWallSuccess() end
 
 ---@return boolean
-function __IsoPlayer:isControllerAimingAxisBeingApplied() end
-
----@return boolean
 function __IsoPlayer:isDoingActionThatCanBeCancelled() end
 
 ---@return boolean
@@ -568,9 +578,6 @@ function __IsoPlayer:isGhostMode() end
 function __IsoPlayer:isGrapplePressed() end
 
 ---@return boolean
-function __IsoPlayer:isHeadLookAtControlApplied() end
-
----@return boolean
 function __IsoPlayer:isIgnoreAutoVault() end
 
 ---@return boolean
@@ -590,10 +597,13 @@ function __IsoPlayer:isInitiateAttack() end
 function __IsoPlayer:isInvPageDirty() end
 
 ---@return boolean
-function __IsoPlayer:isJustMoved() end
+function __IsoPlayer:isJoypadIgnoreAimUntilCentered() end
 
 ---@return boolean
-function __IsoPlayer:isLBPressed() end
+function __IsoPlayer:isJoypadMovementActive() end
+
+---@return boolean
+function __IsoPlayer:isJustMoved() end
 
 ---@return boolean
 function __IsoPlayer:isLocal() end
@@ -668,9 +678,6 @@ function __IsoPlayer:isSeeEveryone() end
 function __IsoPlayer:isSeeNonPvpZone() end
 
 ---@return boolean
-function __IsoPlayer:isShowMPInfos() end
-
----@return boolean
 function __IsoPlayer:isShowTag() end
 
 ---@return boolean
@@ -736,6 +743,11 @@ function __IsoPlayer:nullifyAiming() end
 ---@return number
 function __IsoPlayer:onHitByVehicleApplyDamage(vehicle, impactSpeed, pushedBack) end
 
+---@param killer IsoGameCharacter
+---@param attackingWeapon HandWeapon
+---@param isGory boolean
+function __IsoPlayer:onKilled(killer, attackingWeapon, isGory) end
+
 function __IsoPlayer:onWornItemsChanged() end
 
 function __IsoPlayer:petAnimal() end
@@ -744,6 +756,10 @@ function __IsoPlayer:playBloodSplatterSound() end
 
 ---@return integer
 function __IsoPlayer:playGainExperienceLevelSound() end
+
+---@param soundName string
+---@return integer
+function __IsoPlayer:playRangedWeaponShootSound(soundName) end
 
 ---@param suffix string
 ---@return integer
@@ -961,6 +977,9 @@ function __IsoPlayer:setIsLuringAnimals(luring) end
 ---@param ignore boolean
 function __IsoPlayer:setJoypadIgnoreAimUntilCentered(ignore) end
 
+---@param joypadMovementActive boolean
+function __IsoPlayer:setJoypadMovementActive(joypadMovementActive) end
+
 ---@param val boolean
 function __IsoPlayer:setJustMoved(val) end
 
@@ -1038,9 +1057,6 @@ function __IsoPlayer:setSeeNonPvpZone(seeNonPvpZone) end
 
 ---@param id number
 function __IsoPlayer:setSelectedZoneForHighlight(id) end
-
----@param b boolean
-function __IsoPlayer:setShowMPInfos(b) end
 
 ---@param show boolean
 function __IsoPlayer:setShowTag(show) end
@@ -1194,6 +1210,9 @@ function IsoPlayer.allPlayersAsleep() end
 
 ---@return boolean
 function IsoPlayer.allPlayersDead() end
+
+---@param visitor Invokers.Params1.ICallback<IsoPlayer>
+function IsoPlayer.forEachPlayer(visitor) end
 
 ---@return ArrayList<string>
 function IsoPlayer.getAllFileNames() end

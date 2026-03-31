@@ -21,7 +21,7 @@ return {
 	WaterShutModifier = 14, ---@type number
 	ElecShutModifier = 14, ---@type number
 	AlarmDecayModifier = 14,
-	FoodLootNew = 0.6,
+	FoodLootNew = 0.8,
 	LiteratureLootNew = 0.6,
 	SkillBookLoot = 0.6,
 	RecipeResourceLoot = 0.6,
@@ -29,7 +29,7 @@ return {
 	SurvivalGearsLootNew = 0.6,
 	CannedFoodLootNew = 0.6,
 	WeaponLootNew = 0.6,
-	RangedWeaponLootNew = 2.0,
+	RangedWeaponLootNew = 1.2,
 	AmmoLootNew = 0.6,
 	MechanicsLootNew = 0.6,
 	OtherLootNew = 0.6,
@@ -54,7 +54,7 @@ return {
 	AbundantLootFactor = 3.0,
 	Temperature = 3, ---@type number
 	Rain = 3, ---@type number
-	ErosionSpeed = 3, ---@type number
+	ErosionSpeed = 4, ---@type number
 	ErosionDays = 0,
 	Farming = 3, ---@type number
 	CompostTime = 2,
@@ -174,7 +174,7 @@ return {
 	NoBlackClothes = true,
 	EasyClimbing = false,
 	MaximumFireFuelHours = 8,
-	FirearmUseDamageChance = true,
+	FirearmUseDamageChance = 2,
 	FirearmNoiseMultiplier = 1.0,
 	FirearmJamMultiplier = 1.0, ---@type number
 	FirearmMoodleMultiplier = 1.0,
@@ -202,7 +202,7 @@ return {
 		Mortality = 5,
 		Reanimate = 3,
 		Cognition = 3,
-		DoorOpeningPercentage = 33,
+		DoorOpeningPercentage = 0,
 		CrawlUnderVehicle = 5,
 		Memory = 2,
 		Sight = 5,

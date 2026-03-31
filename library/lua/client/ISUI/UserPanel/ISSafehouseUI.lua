@@ -8,6 +8,7 @@
 ---@field changeTitle ISButton
 ---@field dateCreated ISLabel
 ---@field location ISLabel
+---@field nameLbl ISLabel
 ---@field no ISButton
 ---@field owner ISLabel
 ---@field player IsoPlayer

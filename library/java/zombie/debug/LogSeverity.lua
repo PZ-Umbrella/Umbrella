@@ -3,6 +3,14 @@
 ---@class LogSeverity: Enum<LogSeverity>
 local __LogSeverity = {}
 
+---@param logSeverity LogSeverity
+---@return boolean
+function __LogSeverity:isLogEnabled(logSeverity) end
+
+---@param str string
+---@return boolean
+function __LogSeverity:isName(str) end
+
 LogSeverity = {}
 
 ---@type LogSeverity

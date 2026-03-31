@@ -45,6 +45,8 @@ function __BaseAction:getSecondaryHandMdl() end
 ---@return boolean
 function __BaseAction:hasStalled() end
 
+function __BaseAction:interruptWaitToStart() end
+
 ---@return boolean
 function __BaseAction:isAllowedWhileDraggingCorpses() end
 

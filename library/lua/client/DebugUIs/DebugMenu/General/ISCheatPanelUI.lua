@@ -4,7 +4,7 @@
 ---@field ok ISButton
 ---@field player number
 ---@field tickBox ISTickBox
-ISCheatPanelUI = ISPanel:derive("ISCheatPanelUI")
+ISCheatPanelUI = {}
 ISCheatPanelUI.Type = "ISCheatPanelUI"
 ISCheatPanelUI.instance = nil ---@type ISCheatPanelUI?
 ISCheatPanelUI.cheatTooltips = {} ---@type table<string, string>

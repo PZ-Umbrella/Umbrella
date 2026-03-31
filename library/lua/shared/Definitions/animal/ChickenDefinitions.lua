@@ -282,6 +282,7 @@ AnimalDefinitions.animals = {
 		thirstBoost = 22,
 		distToEat = 1,
 		corpseSize = 0,
+		feedByHandAnim = "AnimalLureLow",
 	},
 	hen = {
 		bodyModel = "Chicken_Hen",
@@ -345,6 +346,7 @@ AnimalDefinitions.animals = {
 		corpseSize = 0.7,
 		idleSoundRadius = 20,
 		idleSoundVolume = 10,
+		feedByHandAnim = AnimalDefinitions.animals["chick"].feedByHandAnim,
 	},
 	cockerel = {
 		bodyModel = "Chicken_Cockrel",
@@ -410,5 +412,6 @@ AnimalDefinitions.animals = {
 		corpseSize = 0.7,
 		idleSoundRadius = 20,
 		idleSoundVolume = 10,
+		feedByHandAnim = AnimalDefinitions.animals["chick"].feedByHandAnim,
 	},
 }

@@ -51,6 +51,9 @@ function __INetworkPacket:sendToServer(packetType) end
 ---@param values kahlua.Array<any>
 function __INetworkPacket:setData(values) end
 
+---@return boolean
+function __INetworkPacket:shouldInstantiate() end
+
 ---@param packetType PacketTypes.PacketType
 ---@param connection UdpConnection
 function __INetworkPacket:sync(packetType, connection) end

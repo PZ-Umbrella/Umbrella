@@ -471,7 +471,7 @@ function __HandWeapon:getWeaponPartWeightModifier(type) end
 ---@return number
 function __HandWeapon:getWeaponPartWeightModifier(part) end
 
----@return string
+---@return WeaponReloadType
 function __HandWeapon:getWeaponReloadType() end
 
 ---@param chr IsoGameCharacter
@@ -957,7 +957,7 @@ function __HandWeapon:setWeaponPart(part) end
 ---@param part WeaponPart
 function __HandWeapon:setWeaponPart(type, part) end
 
----@param weaponReloadType string
+---@param weaponReloadType WeaponReloadType
 function __HandWeapon:setWeaponReloadType(weaponReloadType) end
 
 ---@param weaponSprite string the weaponSprite to set
@@ -978,6 +978,10 @@ HandWeapon = {}
 
 ---@type integer
 HandWeapon.MAX_ATTACHMENT_COUNT = nil
+
+---@param handWeapon HandWeapon
+---@return boolean
+function HandWeapon.isAimedFirearm(handWeapon) end
 
 ---@param module string
 ---@param name string

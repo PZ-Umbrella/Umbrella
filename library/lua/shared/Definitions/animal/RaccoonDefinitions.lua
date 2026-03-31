@@ -110,6 +110,7 @@ AnimalDefinitions.animals = {
 		dung = "Dung_Raccoon",
 		wildFleeTimeUntilDeadTimer = 250,
 		sitRandomly = AnimalDefinitions.animals["raccoonkit"].sitRandomly,
+		feedByHandAnim = AnimalDefinitions.animals["raccoonkit"].feedByHandAnim,
 	},
 	raccoonboar = {
 		bodyModel = "Raccoon_Body",
@@ -160,5 +161,6 @@ AnimalDefinitions.animals = {
 		dung = "Dung_Raccoon",
 		wildFleeTimeUntilDeadTimer = 250,
 		sitRandomly = AnimalDefinitions.animals["raccoonkit"].sitRandomly,
+		feedByHandAnim = AnimalDefinitions.animals["raccoonkit"].feedByHandAnim,
 	},
 }

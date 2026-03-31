@@ -74,9 +74,6 @@
 ---@class IsoGridOcclusionData.OcclusionFilter
 
 ---(Not exposed)
----@class IsoGridSquare.CellGetSquare
-
----(Not exposed)
 ---@class IsoGridSquare.GetSquare
 
 ---(Not exposed)

@@ -52,6 +52,8 @@ function ISBaseTimedAction:getDuration() end
 ---@return number
 function ISBaseTimedAction:getJobDelta() end
 
+function ISBaseTimedAction:interruptWaitToStart() end
+
 ---@return boolean
 function ISBaseTimedAction:isStarted() end
 

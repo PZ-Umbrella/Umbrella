@@ -3,6 +3,7 @@
 ---@class ISMPEditAccount : ISPanelJoypad
 ---@field account unknown?
 ---@field accountLoginList table
+---@field addBelow ISTickBox
 ---@field authType ISComboBox
 ---@field cancelBtn ISButton
 ---@field googleAuthButton ISButton

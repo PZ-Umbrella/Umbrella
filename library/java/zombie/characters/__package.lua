@@ -7,6 +7,12 @@
 ---@class AnimStateTriggerXmlFile
 
 ---(Not exposed)
+---@class CharacterDiedListener
+
+---(Not exposed)
+---@class CharacterInputMode
+
+---(Not exposed)
 ---@class CharacterSoundEmitter.footstep
 
 ---(Not exposed)

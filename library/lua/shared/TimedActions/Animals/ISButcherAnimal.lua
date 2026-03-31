@@ -2,6 +2,7 @@
 
 ---@class ISButcherAnimal : ISBaseTimedAction
 ---@field body IsoDeadBody
+---@field bodyItemToRemove boolean
 ---@field perkLevel integer
 ---@field sound integer
 ISButcherAnimal = ISBaseTimedAction:derive("ISButcherAnimal")
@@ -21,6 +22,8 @@ function ISButcherAnimal:isLargeAnimal(corpse) end
 function ISButcherAnimal:isValid() end
 
 function ISButcherAnimal:perform() end
+
+function ISButcherAnimal:serverStart() end
 
 function ISButcherAnimal:start() end
 

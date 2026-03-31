@@ -141,6 +141,11 @@ function __IsoWindow:getThumpCondition() end
 ---@return Thumpable
 function __IsoWindow:getThumpableFor(chr) end
 
+---@param chr IsoGameCharacter
+---@param weapon HandWeapon
+---@return Thumpable
+function __IsoWindow:getThumpableFor(chr, weapon) end
+
 ---@return boolean
 function __IsoWindow:haveSheetRope() end
 

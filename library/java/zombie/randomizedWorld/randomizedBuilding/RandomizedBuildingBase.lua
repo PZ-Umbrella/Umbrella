@@ -145,7 +145,114 @@ RandomizedBuildingBase.maximumRoomCount = nil
 ---@param building IsoBuilding
 function RandomizedBuildingBase.ChunkLoaded(building) end
 
+---@param gun HandWeapon
+function RandomizedBuildingBase.addClip(gun) end
+
+---@param props PropertyContainer
+---@param facingE boolean
+---@param facingW boolean
+---@param facingN boolean
+---@param sq IsoGridSquare
+---@param ammoCans WeightedList<ItemKey>
+function RandomizedBuildingBase.doAmmoCans(props, facingE, facingW, facingN, sq, ammoCans) end
+
+---@param facingE boolean
+---@param sq IsoGridSquare
+---@param vestType ItemKey
+---@param spawnChance integer
+function RandomizedBuildingBase.doBodyArmor(facingE, sq, vestType, spawnChance) end
+
+---@param facingE boolean
+---@param facingW boolean
+---@param facingN boolean
+---@param sq IsoGridSquare
+---@param ammoCases WeightedList<ItemKey>
+---@param ammoCans WeightedList<ItemKey>
+function RandomizedBuildingBase.doCornerAmmoCans(facingE, facingW, facingN, sq, ammoCases, ammoCans) end
+
+---@param facingE boolean
+---@param facingW boolean
+---@param facingN boolean
+---@param sq IsoGridSquare
+---@param ammoBoxes WeightedList<ItemKey>
+function RandomizedBuildingBase.doCounterAmmoDisplay(facingE, facingW, facingN, sq, ammoBoxes) end
+
+---@param facingE boolean
+---@param sq IsoGridSquare
+---@param pistolTypes WeightedList<ItemKey>
+---@param rifleTypes WeightedList<ItemKey>
+---@param spawnChancePistol integer
+---@param spawnChanceRifle integer
+function RandomizedBuildingBase.doGunShelfHandguns(
+	facingE,
+	sq,
+	pistolTypes,
+	rifleTypes,
+	spawnChancePistol,
+	spawnChanceRifle
+)
+end
+
+---@param facingE boolean
+---@param sq IsoGridSquare
+---@param rifleTypes WeightedList<ItemKey>
+---@param spawnChance integer
+function RandomizedBuildingBase.doGunShelfRifles(facingE, sq, rifleTypes, spawnChance) end
+
+---@param facingE boolean
+---@param facingW boolean
+---@param facingN boolean
+---@param sq IsoGridSquare
+---@param pistolTypes WeightedList<ItemKey>
+function RandomizedBuildingBase.doHandgunCounterDisplay(facingE, facingW, facingN, sq, pistolTypes) end
+
+---@param facingE boolean
+---@param facingW boolean
+---@param facingN boolean
+---@param sq IsoGridSquare
+---@param rifleTypes WeightedList<ItemKey>
+function RandomizedBuildingBase.doRifleCounterDisplay(facingE, facingW, facingN, sq, rifleTypes) end
+
+---@param def BuildingDef
+---@return ArrayList<IsoObject>
+function RandomizedBuildingBase.getBuildingObjects(def) end
+
+---@param def BuildingDef
+---@return ArrayList<IsoObject>
+function RandomizedBuildingBase.getBuildingObjectsSimple(def) end
+
+---@param def BuildingDef
+---@return ArrayList<IsoGridSquare>
+function RandomizedBuildingBase.getBuildingSquares(def) end
+
+---@param rect RoomDef.RoomRect
+---@param room RoomDef
+---@return ArrayList<IsoGridSquare>
+function RandomizedBuildingBase.getRectSquares(rect, room) end
+
 function RandomizedBuildingBase.initAllRBMapChance() end
+
+---@param item InventoryItem
+---@param xRotation number
+---@param yRotation number
+---@param zRotation number
+function RandomizedBuildingBase.setWorldRotation(item, xRotation, yRotation, zRotation) end
+
+---@param vest InventoryItem
+---@param sq IsoGridSquare
+---@param xOffset number
+---@param yOffset number
+---@param zOffset number
+---@param spawnChance integer
+function RandomizedBuildingBase.spawnBodyArmor(vest, sq, xOffset, yOffset, zOffset, spawnChance) end
+
+---@param gunType ItemKey
+---@return HandWeapon
+function RandomizedBuildingBase.spawnPistol(gunType) end
+
+---@param gunType ItemKey
+---@return HandWeapon
+function RandomizedBuildingBase.spawnRifle(gunType) end
 
 ---@return RandomizedBuildingBase
 function RandomizedBuildingBase.new() end

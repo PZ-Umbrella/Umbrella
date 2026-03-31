@@ -95,6 +95,8 @@ function ISFluidTransferUI:prerender() end
 
 function ISFluidTransferUI:render() end
 
+function ISFluidTransferUI:resetSlider() end
+
 ---@param _value number
 function ISFluidTransferUI:setMaxTransfer(_value) end
 

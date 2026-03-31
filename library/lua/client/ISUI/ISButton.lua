@@ -66,6 +66,8 @@ function ISButton:enableAcceptColor() end
 
 function ISButton:enableCancelColor() end
 
+function ISButton:enableDisabledColor() end
+
 ---@return unknown?
 function ISButton:forceClick() end
 

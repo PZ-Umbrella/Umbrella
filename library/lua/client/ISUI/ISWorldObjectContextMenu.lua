@@ -44,6 +44,8 @@ ISWorldObjectContextMenu.chairCheckList = {
 ---@param obj IsoObject
 function ISWorldObjectContextMenu.activateRadio(pl, obj) end
 
+function ISWorldObjectContextMenu.addFluidDebug(playerObj, fluidContainer, fluid) end
+
 ---@param worldobjects IsoObject[]
 function ISWorldObjectContextMenu.addGrabCorpseSubmenuOption(player, worldobjects, subMenuGrab, corpse) end
 
@@ -781,6 +783,10 @@ function ISWorldObjectContextMenu.onTakeTrap(worldobjects, trap, player) end
 ---@param waterContainer InventoryItem?
 ---@param player integer
 function ISWorldObjectContextMenu.onTakeWater(worldobjects, waterObject, waterContainerList, waterContainer, player) end
+
+function ISWorldObjectContextMenu.onThrowCorpseOverFence(playerObj, fence, dir) end
+
+function ISWorldObjectContextMenu.onThrowCorpseThroughWindow(playerObj, window) end
 
 ---@param timedAction string
 ---@param object InventoryItem

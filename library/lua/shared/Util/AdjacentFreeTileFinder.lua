@@ -70,3 +70,6 @@ function AdjacentFreeTileFinder.privTrySquareForWalls2(src, x, y, z) end
 ---@param test IsoGridSquare
 ---@return boolean
 function AdjacentFreeTileFinder.privTrySquareWindow(src, test) end
+
+---@return boolean?
+function AdjacentFreeTileFinder.tryDirection(directions, gridSquare, choices) end

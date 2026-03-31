@@ -18,6 +18,9 @@ function ISBBQMenu.onDisplayInfo(worldobjects, player, bbq) end
 ---@param bbq IsoBarbecue
 function ISBBQMenu.onExtinguish(worldobjects, player, bbq) end
 
+---@return boolean?
+function ISBBQMenu.OnFillWorldObjectContextMenu(player, context, worldobjects, test) end
+
 ---@param worldobjects IsoObject[]
 ---@param player integer
 ---@param bbq IsoBarbecue

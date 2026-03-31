@@ -77,6 +77,10 @@ function __WorldMapSymbolsV2:hitTest(uiX, uiY) end
 
 function __WorldMapSymbolsV2:initDefaultAnnotations() end
 
+---@param userName string
+---@return boolean
+function __WorldMapSymbolsV2:isAuthorHidden(userName) end
+
 ---@return boolean
 function __WorldMapSymbolsV2:isUserEditing() end
 
@@ -100,6 +104,10 @@ function __WorldMapSymbolsV2:sendSetPrivateSymbol(symbolV2) end
 ---@param symbolV2 WorldMapSymbolsV2.WorldMapBaseSymbolV2
 ---@param networkInfo WorldMapSymbolNetworkInfo
 function __WorldMapSymbolsV2:sendShareSymbol(symbolV2, networkInfo) end
+
+---@param userName string
+---@param hidden boolean
+function __WorldMapSymbolsV2:setAuthorHidden(userName, hidden) end
 
 ---@param b boolean
 function __WorldMapSymbolsV2:setUserEditing(b) end

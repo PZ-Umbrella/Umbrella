@@ -12,6 +12,9 @@ ISCampingMenu = {}
 ---@return boolean
 function ISCampingMenu.doAddFuelOption(context, worldobjects, currentFuel, fuelInfo, target, timedAction, playerObj) end
 
+---@return boolean?
+function ISCampingMenu.doCampingMenu(player, context, worldobjects, test) end
+
 ---@param playerObj IsoPlayer
 ---@param context ISContextMenu
 ---@param worldobjects IsoObject[]?

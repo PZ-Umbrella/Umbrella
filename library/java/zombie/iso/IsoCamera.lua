@@ -37,8 +37,16 @@ function IsoCamera.getLastOffY() end
 ---@return number # the OffX
 function IsoCamera.getOffX() end
 
+---@param playerIndex integer
+---@return number
+function IsoCamera.getOffX(playerIndex) end
+
 ---@return number # the OffY
 function IsoCamera.getOffY() end
+
+---@param playerIndex integer
+---@return number
+function IsoCamera.getOffY(playerIndex) end
 
 ---@param playerIndex integer
 ---@return integer

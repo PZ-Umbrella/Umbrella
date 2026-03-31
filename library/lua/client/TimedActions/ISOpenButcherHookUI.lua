@@ -4,7 +4,7 @@
 ---@field hook IsoButcherHook
 ---@field player IsoPlayer
 ---@field playerNum integer
-ISOpenButcherHookUI = ISBaseTimedAction:derive("ISOpenButcherHookUI")
+ISOpenButcherHookUI = {}
 ISOpenButcherHookUI.Type = "ISOpenButcherHookUI"
 
 ---@param event string
@@ -33,5 +33,5 @@ function ISOpenButcherHookUI:waitToStart() end
 
 ---@param character IsoPlayer
 ---@param hook IsoButcherHook
----@return ISBaseTimedAction
+---@return ISOpenButcherHookUI
 function ISOpenButcherHookUI:new(character, hook) end

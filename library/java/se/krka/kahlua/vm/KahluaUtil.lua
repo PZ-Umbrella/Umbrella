@@ -115,6 +115,10 @@ function KahluaUtil.luaAssert(b, msg) end
 function KahluaUtil.numberToString(num) end
 
 ---@param o any
+---@return StackTraceElement
+function KahluaUtil.rawToStackTraceElement(o) end
+
+---@param o any
 ---@return number
 function KahluaUtil.rawTonumber(o) end
 

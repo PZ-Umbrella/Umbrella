@@ -365,6 +365,7 @@ AnimalDefinitions.animals = {
 		corpseSize = 2.5,
 		idleSoundRadius = 20,
 		idleSoundVolume = 10,
+		feedByHandAnim = "AnimalLureLow",
 	},
 	cow = {
 		bodyModel = "CowBody",
@@ -432,6 +433,7 @@ AnimalDefinitions.animals = {
 		corpseSize = 4,
 		idleSoundRadius = 50,
 		idleSoundVolume = 30,
+		feedByHandAnim = "AnimalLureHigh",
 	},
 	bull = {
 		bodyModel = "Bull_Body",
@@ -497,5 +499,6 @@ AnimalDefinitions.animals = {
 		corpseSize = AnimalDefinitions.animals["cow"].corpseSize,
 		idleSoundRadius = 50,
 		idleSoundVolume = 30,
+		feedByHandAnim = AnimalDefinitions.animals["cow"].feedByHandAnim,
 	},
 }

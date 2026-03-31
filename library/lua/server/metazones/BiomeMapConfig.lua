@@ -86,6 +86,12 @@ biome_map_config = {
 		zone = "OrganicForest",
 	},
 	{
+		pixel = 254,
+		biome = "dirt",
+		ore = "dirt",
+		zone = "ForagingNav",
+	},
+	{
 		pixel = 255,
 		biome = "primary_forest",
 		ore = "map_deep_forest",

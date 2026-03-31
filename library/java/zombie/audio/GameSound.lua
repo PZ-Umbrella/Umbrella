@@ -9,6 +9,9 @@ function __GameSound:getCategory() end
 ---@return string
 function __GameSound:getMasterName() end
 
+---@return number
+function __GameSound:getMaxDistanceOfClips() end
+
 ---@return string
 function __GameSound:getName() end
 

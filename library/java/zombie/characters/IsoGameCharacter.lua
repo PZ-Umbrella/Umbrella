@@ -1,6 +1,6 @@
 ---@meta _
 
----@class IsoGameCharacter: IsoMovingObject, Talker, ChatElementOwner, IAnimatable, IAnimationVariableMap, IAnimationVariableRegistry, IClothingItemListener, IActionStateChanged, IAnimEventCallback, IAnimEventWrappedBroadcaster, IFMODParameterUpdater, IGrappleableWrapper, ILuaVariableSource, ILuaGameCharacter, IStateCharacter
+---@class IsoGameCharacter: IsoMovingObject, Talker, ChatElementOwner, IAnimatable, IAnimationVariableMap, IAnimationVariableRegistry, IClothingItemListener, IActionStateChanged, IAnimEventCallback, IAnimEventWrappedBroadcaster, IFMODParameterUpdater, IGrappleableWrapper, ILuaVariableSource, ILuaGameCharacter, IStateCharacter, CharacterInputComponent
 local __IsoGameCharacter = {}
 
 ---@param apply boolean
@@ -195,12 +195,22 @@ function __IsoGameCharacter:IsSpeaking() end
 ---@return boolean
 function __IsoGameCharacter:IsSpeakingNPC() end
 
+---@param killer IsoGameCharacter
+function __IsoGameCharacter:Kill(killer) end
+
 ---@param handWeapon HandWeapon
 ---@param killer IsoGameCharacter
 function __IsoGameCharacter:Kill(handWeapon, killer) end
 
 ---@param killer IsoGameCharacter
-function __IsoGameCharacter:Kill(killer) end
+---@param bGory boolean
+function __IsoGameCharacter:Kill(killer, bGory) end
+
+---@param killer IsoGameCharacter
+---@param attackingWeapon HandWeapon
+---@param isGory boolean
+---@param onDiedListener CharacterDiedListener
+function __IsoGameCharacter:Kill(killer, attackingWeapon, isGory, onDiedListener) end
 
 ---Level up a perk (max lvl 5)
 ---@param perk PerkFactory.Perk the perk to lvl up
@@ -472,6 +482,10 @@ function __IsoGameCharacter:addLotsOfDirt(part, nbr, allLayers) end
 ---@param painfactor number
 function __IsoGameCharacter:addNeckMuscleStrain(painfactor) end
 
+---@param onDiedListener CharacterDiedListener
+---@param autoRemoveOnInvoke boolean
+function __IsoGameCharacter:addOnDiedListener(onDiedListener, autoRemoveOnInvoke) end
+
 ---@param name string
 function __IsoGameCharacter:addReadLiterature(name) end
 
@@ -528,9 +542,6 @@ function __IsoGameCharacter:autoDrink() end
 ---@return boolean
 function __IsoGameCharacter:avoidDamage() end
 
----@return IsoDeadBody
-function __IsoGameCharacter:becomeCorpse() end
-
 ---@param placeInContainer ItemContainer
 ---@return InventoryItem
 function __IsoGameCharacter:becomeCorpseItem(placeInContainer) end
@@ -582,7 +593,6 @@ function __IsoGameCharacter:calcConeAngleOffset(target, movingBackward) end
 ---@param wielder IsoGameCharacter
 ---@param weapon HandWeapon
 ---@param out Vector2
----@return number
 function __IsoGameCharacter:calcHitDir(wielder, weapon, out) end
 
 ---@param out Vector2
@@ -654,7 +664,10 @@ function __IsoGameCharacter:canUseCurrentPoseForCorpse() end
 function __IsoGameCharacter:canUseDebugContextMenu() end
 
 ---@return boolean
-function __IsoGameCharacter:canUseLootTool() end
+function __IsoGameCharacter:canUseLootLog() end
+
+---@return boolean
+function __IsoGameCharacter:canUseLootZed() end
 
 ---@param carSpeed Vector2
 ---@return boolean
@@ -683,7 +696,11 @@ function __IsoGameCharacter:clear(clazz) end
 
 function __IsoGameCharacter:clearAttachedItems() end
 
+function __IsoGameCharacter:clearDiedBody() end
+
 function __IsoGameCharacter:clearFallDamage() end
+
+function __IsoGameCharacter:clearHitInfo() end
 
 function __IsoGameCharacter:clearKnownMediaLines() end
 
@@ -762,7 +779,15 @@ function __IsoGameCharacter:dbgGetAnimTrackTime(layerIdx, trackIdx) end
 ---@return number
 function __IsoGameCharacter:dbgGetAnimTrackWeight(layerIdx, trackIdx) end
 
+---@return IsoDeadBody
 function __IsoGameCharacter:die() end
+
+---@param killer IsoGameCharacter
+---@param attackingWeapon HandWeapon
+---@param isGory boolean
+---@param onDiedListener CharacterDiedListener
+---@return IsoDeadBody
+function __IsoGameCharacter:dieNetwork(killer, attackingWeapon, isGory, onDiedListener) end
 
 ---@param weapon HandWeapon
 ---@param wielder IsoGameCharacter
@@ -1057,6 +1082,9 @@ function __IsoGameCharacter:getBumpType() end
 ---@return IsoGameCharacter
 function __IsoGameCharacter:getBumpedChr() end
 
+---@return IsoDirections
+function __IsoGameCharacter:getCardinalDirection() end
+
 ---@return Stack<BaseAction> # the CharacterActions
 function __IsoGameCharacter:getCharacterActions() end
 
@@ -1229,6 +1257,9 @@ function __IsoGameCharacter:getDescription(separatorStr) end
 ---@return SurvivorDesc # the descriptor
 function __IsoGameCharacter:getDescriptor() end
 
+---@return number
+function __IsoGameCharacter:getDetectionRange() end
+
 ---@return integer # the DieCount
 function __IsoGameCharacter:getDieCount() end
 
@@ -1247,6 +1278,9 @@ function __IsoGameCharacter:getDotWithForwardDirection(bonePos) end
 ---@param targetY number
 ---@return number
 function __IsoGameCharacter:getDotWithForwardDirection(targetX, targetY) end
+
+---@return number
+function __IsoGameCharacter:getEffectiveFatigue() end
 
 ---@return BaseCharacterSoundEmitter
 function __IsoGameCharacter:getEmitter() end
@@ -1742,9 +1776,6 @@ function __IsoGameCharacter:getSecondaryHandItem() end
 ---@return string
 function __IsoGameCharacter:getSecondaryHandType() end
 
----@return number
-function __IsoGameCharacter:getSeeNearbyCharacterDistance() end
-
 ---The character's current shoulder-twist angle, in degrees.
 ---@return number
 function __IsoGameCharacter:getShoulderTwist() end
@@ -2085,6 +2116,9 @@ function __IsoGameCharacter:isAimAtFloor() end
 function __IsoGameCharacter:isAiming() end
 
 ---@return boolean
+function __IsoGameCharacter:isAimingFirearmEquipped() end
+
+---@return boolean
 function __IsoGameCharacter:isAlive() end
 
 ---@return boolean # the AllowConversation
@@ -2154,6 +2188,10 @@ function __IsoGameCharacter:isCanShout() end
 
 ---@return boolean
 function __IsoGameCharacter:isCanUseBrushTool() end
+
+---@param cheat CheatType
+---@return boolean
+function __IsoGameCharacter:isCheatSet(cheat) end
 
 ---@return boolean # the bClimbing
 function __IsoGameCharacter:isClimbing() end
@@ -2401,6 +2439,9 @@ function __IsoGameCharacter:isMechanicsCheat() end
 function __IsoGameCharacter:isMeleeAttackRange(handWeapon, isoMovingObject, bonePos) end
 
 ---@return boolean
+function __IsoGameCharacter:isMeleeWeaponEquipped() end
+
+---@return boolean
 function __IsoGameCharacter:isMovablesCheat() end
 
 ---@return boolean
@@ -2454,6 +2495,9 @@ function __IsoGameCharacter:isPerformingGrappleAnimation() end
 function __IsoGameCharacter:isPerformingHostileAnimation() end
 
 ---@return boolean
+function __IsoGameCharacter:isPerformingNoAimShortStrafe() end
+
+---@return boolean
 function __IsoGameCharacter:isPerformingShoveAnimation() end
 
 ---@return boolean
@@ -2502,6 +2546,9 @@ function __IsoGameCharacter:isRagdollSimulationActive() end
 
 ---@return boolean
 function __IsoGameCharacter:isRangedWeaponEmpty() end
+
+---@return boolean
+function __IsoGameCharacter:isRangedWeaponEquipped() end
 
 ---@return boolean
 function __IsoGameCharacter:isReading() end
@@ -2606,6 +2653,9 @@ function __IsoGameCharacter:isTurningAround() end
 
 ---@return boolean
 function __IsoGameCharacter:isTwisting() end
+
+---@return boolean
+function __IsoGameCharacter:isUnarmed() end
 
 ---@return boolean
 function __IsoGameCharacter:isUnderVehicle() end
@@ -2731,6 +2781,11 @@ function __IsoGameCharacter:onHitByVehicle(vehicle, impactSpeed, hitDir, impactP
 ---@param pushedBack boolean
 ---@return number
 function __IsoGameCharacter:onHitByVehicleApplyDamage(vehicle, impactSpeed, pushedBack) end
+
+---@param killer IsoGameCharacter
+---@param attackingWeapon HandWeapon
+---@param isGory boolean
+function __IsoGameCharacter:onKilled(killer, attackingWeapon, isGory) end
 
 ---@param x integer
 ---@param y integer
@@ -3037,7 +3092,10 @@ function __IsoGameCharacter:setCanUseBrushTool(b) end
 function __IsoGameCharacter:setCanUseDebugContextMenu(b) end
 
 ---@param b boolean
-function __IsoGameCharacter:setCanUseLootTool(b) end
+function __IsoGameCharacter:setCanUseLootLog(b) end
+
+---@param b boolean
+function __IsoGameCharacter:setCanUseLootZed(b) end
 
 ---@param clickSound string
 function __IsoGameCharacter:setClickSound(clickSound) end
@@ -3840,8 +3898,6 @@ function __IsoGameCharacter:update() end
 
 function __IsoGameCharacter:updateAimingDelay() end
 
-function __IsoGameCharacter:updateAimingMode() end
-
 function __IsoGameCharacter:updateBallistics() end
 
 function __IsoGameCharacter:updateDiscomfortModifiers() end
@@ -3861,6 +3917,8 @@ function __IsoGameCharacter:updateEvent(eventInstance, clip) end
 function __IsoGameCharacter:updateForServerGui() end
 
 function __IsoGameCharacter:updateHandEquips() end
+
+function __IsoGameCharacter:updateHasTargetFlag() end
 
 function __IsoGameCharacter:updateLightInfo() end
 

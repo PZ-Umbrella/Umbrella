@@ -29,6 +29,9 @@ ItemPickerJava.rooms = nil
 ---@type number
 ItemPickerJava.zombieDensityCap = nil
 
+---@param item InventoryItem
+function ItemPickerJava.DoWeaponUpgrade(item) end
+
 function ItemPickerJava.InitSandboxLootSettings() end
 
 function ItemPickerJava.Parse() end

@@ -40,3 +40,5 @@ function ISFeedingTroughMenu.onInfo(trough, chr) end
 ---@param playerObj IsoPlayer
 ---@param isoObject IsoObject
 function ISFeedingTroughMenu.onRemoveFoodDebug(playerObj, isoObject) end
+
+function ISFeedingTroughMenu.onRemoveWaterDebug(playerObj, isoObject) end

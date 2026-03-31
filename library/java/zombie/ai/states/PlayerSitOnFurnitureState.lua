@@ -12,6 +12,9 @@ function __PlayerSitOnFurnitureState:abortSitting(owner) end
 ---@param event AnimEvent
 function __PlayerSitOnFurnitureState:animEvent(owner, layer, track, event) end
 
+---@return number
+function __PlayerSitOnFurnitureState:awayCheckDistance() end
+
 ---@param owner IsoGameCharacter
 function __PlayerSitOnFurnitureState:enter(owner) end
 

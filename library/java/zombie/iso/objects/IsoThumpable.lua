@@ -235,6 +235,11 @@ function __IsoThumpable:getThumpSound() end
 ---@return Thumpable
 function __IsoThumpable:getThumpableFor(chr) end
 
+---@param chr IsoGameCharacter
+---@param weapon HandWeapon
+---@return Thumpable
+function __IsoThumpable:getThumpableFor(chr, weapon) end
+
 ---@return boolean
 function __IsoThumpable:hasModData() end
 

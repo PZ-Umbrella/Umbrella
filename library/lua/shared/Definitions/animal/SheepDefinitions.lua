@@ -393,6 +393,7 @@ AnimalDefinitions.animals = {
 		maxBlood = 600,
 		idleSoundRadius = 20,
 		idleSoundVolume = 10,
+		feedByHandAnim = "AnimalLureLow",
 	},
 	ewe = {
 		bodyModel = "Sheep_EweSheared",
@@ -465,6 +466,7 @@ AnimalDefinitions.animals = {
 		idleSoundVolume = 20,
 		hungerBoost = 3,
 		thirstBoost = 5,
+		feedByHandAnim = "AnimalLure",
 	},
 	ram = {
 		bodyModel = "Sheep_RamSheared",
@@ -536,5 +538,6 @@ AnimalDefinitions.animals = {
 		idleSoundVolume = 20,
 		hungerBoost = 3,
 		thirstBoost = 5,
+		feedByHandAnim = AnimalDefinitions.animals["ewe"].feedByHandAnim,
 	},
 }

@@ -258,10 +258,16 @@ CharacterTrait.SUNDAY_DRIVER = nil
 CharacterTrait.TAILOR = nil
 
 ---@type CharacterTrait
+CharacterTrait.TARGET_SHOOTER = nil
+
+---@type CharacterTrait
 CharacterTrait.THICK_SKINNED = nil
 
 ---@type CharacterTrait
 CharacterTrait.THIN_SKINNED = nil
+
+---@type CharacterTrait
+CharacterTrait.TINKERER = nil
 
 ---@type CharacterTrait
 CharacterTrait.UNDERWEIGHT = nil

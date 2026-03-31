@@ -111,6 +111,10 @@ function __Vector2:setLength(length) end
 ---@return Vector2
 function __Vector2:setLengthAndDirection(direction, length) end
 
+---@param maxLength number
+---@return number
+function __Vector2:setMaxLength(maxLength) end
+
 ---@param x number the x to set
 function __Vector2:setX(x) end
 

@@ -81,7 +81,9 @@ function __ISWorldMapSharing_CheckList:new(x, y, width, height) end
 ---@class ISWorldMapSharing.PanelMain : ISPanelJoypad
 ---@field buttonPlayers ISButton
 ---@field currentSymbol unknown
+---@field hideAuthorTickBox ISTickBox
 ---@field labelAuthor ISLabel
+---@field mapUI unknown
 ---@field radioBtns ISRadioButtons
 ---@field tickBox ISTickBox
 local __ISWorldMapSharing_PanelMain = ISPanelJoypad:derive("ISWorldMapSharing_PanelMain")
@@ -104,6 +106,8 @@ function __ISWorldMapSharing_PanelMain:onJoypadDown(button, joypadData) end
 ---@param buttons ISRadioButtons
 ---@param index number
 function __ISWorldMapSharing_PanelMain:onRadioButton(buttons, index) end
+
+function __ISWorldMapSharing_PanelMain:onTickBoxHideAuthor(index, selected) end
 
 function __ISWorldMapSharing_PanelMain:prerender() end
 
