@@ -68,6 +68,8 @@ function ISAdminPowerUI:render() end
 ---@param tooltips table
 function ISAdminPowerUI:renderTickBox(tickBox, tooltips) end
 
+function ISAdminPowerUI:updateAdminPower() end
+
 ---@param x number
 ---@param y number
 ---@param width number

@@ -5,9 +5,11 @@
 ---@field addByClick ISButton
 ---@field brushType ISRadioButtons
 ---@field close ISButton
+---@field currentButton unknown?
 ---@field endPos { x: integer, y: integer }?
 ---@field isAdd boolean
 ---@field player IsoPlayer
+---@field playerNum unknown
 ---@field removeByArea ISButton
 ---@field removeByClick ISButton
 ---@field selectByClick boolean
@@ -36,7 +38,11 @@ function FireBrushUI:addSmoke(square) end
 
 function FireBrushUI:applyOnArea() end
 
+function FireBrushUI:applyOnSquare(sq) end
+
 function FireBrushUI:destroy() end
+
+function FireBrushUI:disableCurrentButton() end
 
 function FireBrushUI:initialise() end
 

@@ -154,11 +154,17 @@
 ---@class UI3DScene.View
 
 ---(Not exposed)
+---@class VehicleHitCharacterSounds
+
+---(Not exposed)
 ---Created by kroto on 1/17/2017.
 ---@class VehicleInterpolation
 
 ---(Not exposed)
 ---@class VehiclePedestrianContactTracking
+
+---(Not exposed)
+---@class VehicleRunOverBodySounds
 
 ---(Not exposed)
 ---@class VehicleType.VehicleTypeDefinition

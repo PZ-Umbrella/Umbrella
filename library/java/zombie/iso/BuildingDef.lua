@@ -202,6 +202,9 @@ function __BuildingDef:isHasBeenVisited() end
 function __BuildingDef:isResidential() end
 
 ---@return boolean
+function __BuildingDef:isRural() end
+
+---@return boolean
 function __BuildingDef:isShop() end
 
 ---@return boolean

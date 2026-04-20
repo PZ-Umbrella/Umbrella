@@ -8,6 +8,9 @@ Translator = {}
 ---@type Map<string, Map<string, string>>
 Translator.BY_NAME = nil
 
+---@type kahlua.Array<integer>
+Translator.LOOKALIKE_CHARS = nil
+
 ---@type boolean
 Translator.debug = nil
 

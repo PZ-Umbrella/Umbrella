@@ -39,12 +39,6 @@ function __IsoMovingObject:DoCollideWorE() end
 ---@return number
 function __IsoMovingObject:Hit(weapon, wielder, damageSplit, bIgnoreDamage, modDelta) end
 
----@param dir Vector2
-function __IsoMovingObject:Move(dir) end
-
----@param dir Vector2
-function __IsoMovingObject:MoveUnmodded(dir) end
-
 ---This function calculate count of attackers
 ---@return integer # 0 - no attackets, 1 - one player can attack this character, 2 - multiply players can attack this character
 function __IsoMovingObject:canHaveMultipleHits() end
@@ -369,6 +363,10 @@ function __IsoMovingObject:isbAltCollide() end
 ---@param WorldVersion integer
 ---@param IS_DEBUG_SAVE boolean
 function __IsoMovingObject:load(input, WorldVersion, IS_DEBUG_SAVE) end
+
+---@param diffX number
+---@param diffY number
+function __IsoMovingObject:moveUnmodded(diffX, diffY) end
 
 ---@param lx integer
 ---@param ly integer

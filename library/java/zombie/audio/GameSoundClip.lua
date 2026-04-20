@@ -15,6 +15,10 @@ function __GameSoundClip:getEffectiveVolumeInMenu() end
 ---@return string
 function __GameSoundClip:getEvent() end
 
+---@param remote boolean
+---@return FMOD_STUDIO_EVENT_DESCRIPTION
+function __GameSoundClip:getEventDescription(remote) end
+
 ---@return string
 function __GameSoundClip:getFile() end
 
@@ -36,12 +40,14 @@ function __GameSoundClip:hasMaxDistance() end
 ---@return boolean
 function __GameSoundClip:hasMinDistance() end
 
+---@param remote boolean
 ---@param parameterDescription FMOD_STUDIO_PARAMETER_DESCRIPTION
 ---@return boolean
-function __GameSoundClip:hasParameter(parameterDescription) end
+function __GameSoundClip:hasParameter(remote, parameterDescription) end
 
+---@param remote boolean
 ---@return boolean
-function __GameSoundClip:hasSustainPoints() end
+function __GameSoundClip:hasSustainPoints(remote) end
 
 ---@return boolean
 function __GameSoundClip:isStopImmediate() end

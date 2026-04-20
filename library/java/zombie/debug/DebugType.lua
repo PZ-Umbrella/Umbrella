@@ -224,6 +224,9 @@ DebugType.Clothing = nil
 DebugType.Combat = nil
 
 ---@type DebugType
+DebugType.Context = nil
+
+---@type DebugType
 DebugType.CraftLogic = nil
 
 ---@type DebugType
@@ -251,6 +254,9 @@ DebugType.Entity = nil
 DebugType.ExitDebug = nil
 
 ---@type DebugType
+DebugType.FaceLocationFix = nil
+
+---@type DebugType
 DebugType.FallDamage = nil
 
 ---@type DebugType
@@ -270,6 +276,9 @@ DebugType.General = nil
 
 ---@type DebugType
 DebugType.Grapple = nil
+
+---@type DebugType
+DebugType.ISUI = nil
 
 ---@type DebugType
 DebugType.ImGui = nil

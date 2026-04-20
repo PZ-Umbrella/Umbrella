@@ -17,6 +17,7 @@
 ---@field isTickBox boolean
 ---@field itemGap number
 ---@field itemHgt number
+---@field joypadFocused unknown
 ---@field joypadIndex integer
 ---@field leftMargin number
 ---@field mouseDownOverOption unknown?

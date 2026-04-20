@@ -24,9 +24,10 @@ function __GameSound:getUserVolume() end
 ---@return boolean
 function __GameSound:isLooped() end
 
+---@param remote boolean
 ---@param parameterName string
 ---@return integer
-function __GameSound:numClipsUsingParameter(parameterName) end
+function __GameSound:numClipsUsingParameter(remote, parameterName) end
 
 function __GameSound:reset() end
 

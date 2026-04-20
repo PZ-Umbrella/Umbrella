@@ -47,6 +47,14 @@ function ISDestroyCursor:_isWall(object) end
 ---@return boolean
 function ISDestroyCursor:canDestroy(object) end
 
+---@return boolean
+function ISDestroyCursor:canDestroyWall_North(object) end
+
+---@return boolean
+function ISDestroyCursor:canDestroyWall_West(object) end
+
+function ISDestroyCursor:checkNorthWestCorner(object) end
+
 ---@param object IsoObject
 ---@param square IsoGridSquare
 ---@return boolean
@@ -59,6 +67,10 @@ function ISDestroyCursor:couldSeeOpposite(object, square) end
 ---@param sprite string
 function ISDestroyCursor:create(x, y, z, north, sprite) end
 
+function ISDestroyCursor:cycleToNextObject() end
+
+function ISDestroyCursor:cycleToPreviousObject() end
+
 ---@return string?
 function ISDestroyCursor:getAPrompt() end
 
@@ -70,6 +82,9 @@ function ISDestroyCursor:getObjectList() end
 
 ---@return string?
 function ISDestroyCursor:getRBPrompt() end
+
+---@return boolean
+function ISDestroyCursor:isBasementWallAdjacentToTheVoid(object) end
 
 ---@param object IsoObject
 ---@return boolean

@@ -1,9 +1,6 @@
 ---@meta _
 
 ---(Not exposed)
----@class AIBrainPlayerControlVars
-
----(Not exposed)
 ---@class KnownBlockedEdges
 
 ---(Not exposed)

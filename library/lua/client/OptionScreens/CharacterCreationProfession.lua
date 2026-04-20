@@ -193,6 +193,8 @@ function CharacterCreationProfession:presetExists(findText) end
 
 function CharacterCreationProfession:randomizeTraits() end
 
+function CharacterCreationProfession:removeAllTraits() end
+
 ---@param index number
 function CharacterCreationProfession:removeTrait(index) end
 

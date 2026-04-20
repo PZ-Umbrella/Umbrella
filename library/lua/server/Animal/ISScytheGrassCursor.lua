@@ -51,6 +51,9 @@ function ISScytheGrassCursor:getSquares(x, y, z) end
 ---@return number
 function ISScytheGrassCursor:getTopLeftOfSquares(x, y, z) end
 
+---@return string
+function ISScytheGrassCursor:getYPrompt() end
+
 ---@return ISBaseTimedAction
 function ISScytheGrassCursor:isRunningAction() end
 

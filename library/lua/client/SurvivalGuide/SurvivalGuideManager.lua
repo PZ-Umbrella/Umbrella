@@ -2,7 +2,7 @@
 
 ---@class SurvivalGuideManager : ISBaseObject
 ---@field panel ISTutorialPanel
-SurvivalGuideManager = ISBaseObject:derive("SurvivalGuideManager")
+SurvivalGuideManager = {}
 SurvivalGuideManager.Type = "SurvivalGuideManager"
 SurvivalGuideManager.instance = nil ---@type SurvivalGuideManager?
 

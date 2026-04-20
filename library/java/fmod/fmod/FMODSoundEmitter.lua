@@ -123,6 +123,9 @@ function __FMODSoundEmitter:setParameterValueByName(soundRef, parameterName, val
 ---@param pitch number
 function __FMODSoundEmitter:setPitch(soundRef, pitch) end
 
+---@param remote boolean
+function __FMODSoundEmitter:setPlayRemoteEvents(remote) end
+
 ---@param x number
 ---@param y number
 ---@param z number

@@ -254,6 +254,9 @@ function __BodyPart:isNeedBurnWash() end
 ---@return boolean
 function __BodyPart:isSplint() end
 
+---@return string
+function __BodyPart:manipulatingUsername() end
+
 ---@return boolean
 function __BodyPart:scratched() end
 
@@ -348,6 +351,9 @@ function __BodyPart:setInfectedWound(infectedWound) end
 
 ---@param lastTimeBurnWash number
 function __BodyPart:setLastTimeBurnWash(lastTimeBurnWash) end
+
+---@param manipulatingUsername string
+function __BodyPart:setManipulatingUsername(manipulatingUsername) end
 
 ---@param needBurnWash boolean
 function __BodyPart:setNeedBurnWash(needBurnWash) end

@@ -12,8 +12,10 @@
 ---@field controllerLabel ISLabel
 ---@field controllerLabel2 ISLabel
 ---@field createWorld boolean
+---@field creditOption ISLabel
 ---@field credits LuaList
 ---@field creditsIndex number
+---@field creditsScreen CreditsScreen
 ---@field creditTime number
 ---@field creditTimeMax number
 ---@field debOption ISLabel

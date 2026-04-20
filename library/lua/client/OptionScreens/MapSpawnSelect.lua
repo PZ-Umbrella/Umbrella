@@ -7,6 +7,7 @@
 ---@field checkExistsName string
 ---@field listbox MapSpawnSelectListBox
 ---@field mapPanel MapSpawnSelectImage
+---@field mediumResolution boolean
 ---@field nextButton ISButton
 ---@field notSortedList umbrella.MapSpawnSelect.Item[]
 ---@field previousScreen string?
@@ -16,6 +17,7 @@
 ---@field seedTextBox ISTextEntryBox
 ---@field selectedMapIndex integer
 ---@field selectedRegion umbrella.SpawnRegion?
+---@field smallResolution boolean
 ---@field sortedList umbrella.MapSpawnSelect.Item[]
 ---@field startY number
 ---@field textEntry ISTextEntryBox

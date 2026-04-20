@@ -459,6 +459,9 @@ function ISUIElement:getKeepOnScreen() end
 function ISUIElement:getMaxDrawHeight() end
 
 ---@return number
+function ISUIElement:getMaxWidthOfElements(...) end
+
+---@return number
 function ISUIElement:getMouseX() end
 
 ---@return number
@@ -767,6 +770,9 @@ function ISUIElement:setCapture(bCapture) end
 
 ---@param c integer
 function ISUIElement:setController(c) end
+
+---@return number
+function ISUIElement:setElementWidthToMaxOf(...) end
 
 ---@param en boolean
 function ISUIElement:setEnabled(en) end

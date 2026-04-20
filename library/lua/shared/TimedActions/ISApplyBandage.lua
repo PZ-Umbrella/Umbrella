@@ -27,6 +27,10 @@ function ISApplyBandage:isValid() end
 
 function ISApplyBandage:perform() end
 
+function ISApplyBandage:serverStart() end
+
+function ISApplyBandage:serverStop() end
+
 function ISApplyBandage:start() end
 
 function ISApplyBandage:stop() end

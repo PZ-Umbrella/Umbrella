@@ -106,6 +106,9 @@ IsoObjectChange.ROTATE = nil
 IsoObjectChange.SET_CURTAIN_OPEN = nil
 
 ---@type IsoObjectChange
+IsoObjectChange.SET_HALO_NOTE = nil
+
+---@type IsoObjectChange
 IsoObjectChange.SHOVE = nil
 
 ---@type IsoObjectChange

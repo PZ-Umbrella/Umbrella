@@ -35,6 +35,9 @@ function __FluidContainerScript:getInputLocked() end
 ---@return number
 function __FluidContainerScript:getRainCatcher() end
 
+---@return number
+function __FluidContainerScript:getTransferRate() end
+
 ---@return FluidFilter
 function __FluidContainerScript:getWhitelistCopy() end
 

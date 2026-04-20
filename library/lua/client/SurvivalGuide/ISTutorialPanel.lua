@@ -11,7 +11,7 @@
 ---@field tutorialSetInfo ISTutorialSetInfo
 ---@field visibleFunction function
 ---@field visibleTarget ISTutorialPanel
-ISTutorialPanel = ISCollapsableWindowJoypad:derive("ISTutorialPanel")
+ISTutorialPanel = {}
 ISTutorialPanel.Type = "ISTutorialPanel"
 
 function ISTutorialPanel:close() end
@@ -57,7 +57,7 @@ function ISTutorialPanel:new(x, y, width, height) end
 
 ---@class ISSurvivalGuideListBox : ISScrollingListBox
 ---@field selected integer
-ISSurvivalGuideListBox = ISScrollingListBox:derive("ISSurvivalGuideListBox")
+ISSurvivalGuideListBox = {}
 ISSurvivalGuideListBox.Type = "ISSurvivalGuideListBox"
 
 ---@param y number
@@ -91,7 +91,7 @@ function ISSurvivalGuideListBox:new(x, y, width, height) end
 ---@field smoothScrollY number?
 ---@field text string
 ---@field yScrollDelta number
-ISSurvivalGuideRichText = ISRichTextPanel:derive("ISSurvivalGuideRichText")
+ISSurvivalGuideRichText = {}
 ISSurvivalGuideRichText.Type = "ISSurvivalGuideRichText"
 ISSurvivalGuideRichText.doRightJoystickScrolling = ISPanelJoypad.doRightJoystickScrolling
 
@@ -129,7 +129,7 @@ function ISSurvivalGuideRichText:new(x, y, width, height) end
 ---@class ISSurvivalGuideRightPanel : ISPanelJoypad
 ---@field richText ISRichTextPanel
 ---@field tickBox ISTickBox
-ISSurvivalGuideRightPanel = ISPanelJoypad:derive("ISSurvivalGuideRightPanel")
+ISSurvivalGuideRightPanel = {}
 ISSurvivalGuideRightPanel.Type = "ISSurvivalGuideRightPanel"
 
 function ISSurvivalGuideRightPanel:createChildren() end

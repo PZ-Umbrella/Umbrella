@@ -60,6 +60,10 @@ function __ResourceItem:getItemAmount() end
 ---@return integer
 function __ResourceItem:getItemAmount(itemType) end
 
+---@param id integer
+---@return InventoryItem
+function __ResourceItem:getItemById(id) end
+
 ---@return integer
 function __ResourceItem:getItemCapacity() end
 
@@ -151,6 +155,10 @@ function __ResourceItem:removeAllItems(list, itemType) end
 ---@param item InventoryItem
 ---@return InventoryItem
 function __ResourceItem:removeItem(item) end
+
+---@param id integer
+---@return InventoryItem
+function __ResourceItem:removeItemById(id) end
 
 ---@param output ByteBuffer
 function __ResourceItem:save(output) end

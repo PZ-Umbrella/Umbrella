@@ -1,6 +1,6 @@
 ---@meta _
 
----@class IsoObject: GameEntity, Serializable, ILuaIsoObject, Thumpable, IsoRenderable
+---@class IsoObject: GameEntity, Serializable, ILuaIsoObject, Thumpable, IsoRenderable, ECSEntity
 local __IsoObject = {}
 
 ---@param objectName string
@@ -341,6 +341,9 @@ function __IsoObject:getDir() end
 
 ---@return boolean
 function __IsoObject:getDoRender() end
+
+---@return HashMap<Class<ECSComponent>, ECSComponent>
+function __IsoObject:getECSComponentMap() end
 
 ---@return integer
 function __IsoObject:getEntityNetID() end

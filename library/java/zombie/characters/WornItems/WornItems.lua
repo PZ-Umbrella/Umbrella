@@ -29,6 +29,10 @@ function __WornItems:getBodyLocationGroup() end
 ---@return InventoryItem
 function __WornItems:getItem(location) end
 
+---@param id integer
+---@return InventoryItem
+function __WornItems:getItemById(id) end
+
 ---@param index integer
 ---@return InventoryItem
 function __WornItems:getItemByIndex(index) end

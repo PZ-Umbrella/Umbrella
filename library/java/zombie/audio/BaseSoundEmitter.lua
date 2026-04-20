@@ -120,6 +120,9 @@ function __BaseSoundEmitter:setParameterValueByName(arg0, arg1, arg2) end
 ---@param pitch number
 function __BaseSoundEmitter:setPitch(handle, pitch) end
 
+---@param arg0 boolean
+function __BaseSoundEmitter:setPlayRemoteEvents(arg0) end
+
 ---@param x number
 ---@param y number
 ---@param z number

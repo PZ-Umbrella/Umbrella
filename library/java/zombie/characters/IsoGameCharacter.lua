@@ -1,6 +1,6 @@
 ---@meta _
 
----@class IsoGameCharacter: IsoMovingObject, Talker, ChatElementOwner, IAnimatable, IAnimationVariableMap, IAnimationVariableRegistry, IClothingItemListener, IActionStateChanged, IAnimEventCallback, IAnimEventWrappedBroadcaster, IFMODParameterUpdater, IGrappleableWrapper, ILuaVariableSource, ILuaGameCharacter, IStateCharacter, CharacterInputComponent
+---@class IsoGameCharacter: IsoMovingObject, Talker, ChatElementOwner, IAnimatable, IAnimationVariableMap, IAnimationVariableRegistry, IClothingItemListener, IActionStateChanged, IAnimEventCallback, IAnimEventWrappedBroadcaster, IFMODParameterUpdater, IGrappleableWrapper, ILuaVariableSource, ILuaGameCharacter, IStateCharacter, CharacterInputComponentEntity
 local __IsoGameCharacter = {}
 
 ---@param apply boolean
@@ -230,27 +230,6 @@ function __IsoGameCharacter:LoseLevel(perk) end
 ---@param y number
 ---@param soundDelta number
 function __IsoGameCharacter:MoveForward(dist, x, y, soundDelta) end
-
----@return boolean
-function __IsoGameCharacter:NPCGetAiming() end
-
----@return boolean
-function __IsoGameCharacter:NPCGetRunning() end
-
----@param isAiming boolean
-function __IsoGameCharacter:NPCSetAiming(isAiming) end
-
----@param newvalue boolean
-function __IsoGameCharacter:NPCSetAttack(newvalue) end
-
----@param newvalue boolean
-function __IsoGameCharacter:NPCSetJustMoved(newvalue) end
-
----@param newvalue boolean
-function __IsoGameCharacter:NPCSetMelee(newvalue) end
-
----@param newvalue boolean
-function __IsoGameCharacter:NPCSetRunning(newvalue) end
 
 ---@param sender AnimLayer
 ---@param track AnimationTrack
@@ -876,10 +855,12 @@ function __IsoGameCharacter:faceDirection(dir) end
 
 ---@param x number
 ---@param y number
+---@return boolean
 function __IsoGameCharacter:faceLocation(x, y) end
 
 ---@param x number
 ---@param y number
+---@return boolean
 function __IsoGameCharacter:faceLocationF(x, y) end
 
 ---@param x integer
@@ -1358,9 +1339,6 @@ function __IsoGameCharacter:getFreeInventoryCapacity() end
 ---@return string
 function __IsoGameCharacter:getFullName() end
 
----@return GameCharacterAIBrain
-function __IsoGameCharacter:getGameCharacterAIBrain() end
-
 ---Description copied from interface: IAnimationVariableSource
 ---@return Iterable<IAnimationVariableSlot>
 function __IsoGameCharacter:getGameVariables() end
@@ -1443,9 +1421,6 @@ function __IsoGameCharacter:getInventory() end
 
 ---@return number
 function __IsoGameCharacter:getInventoryWeight() end
-
----@return boolean
-function __IsoGameCharacter:getIsNPC() end
 
 ---@return ItemVisuals
 function __IsoGameCharacter:getItemVisuals() end
@@ -2074,6 +2049,10 @@ function __IsoGameCharacter:hasTimedActions() end
 ---@return boolean
 function __IsoGameCharacter:hasTrait(characterTrait) end
 
+---@param characterTrait kahlua.Array<CharacterTrait>
+---@return boolean
+function __IsoGameCharacter:hasTrait(characterTrait) end
+
 ---@param itemTag ItemTag
 ---@return boolean
 function __IsoGameCharacter:hasWornTag(itemTag) end
@@ -2348,9 +2327,6 @@ function __IsoGameCharacter:isIgnoreMovementForDirection() end
 ---@return boolean # the IgnoreStaggerBack
 function __IsoGameCharacter:isIgnoreStaggerBack() end
 
----@return boolean
-function __IsoGameCharacter:isIgnoringAimingInput() end
-
 ---@param impactDir Vector2
 ---@return boolean
 function __IsoGameCharacter:isImpactFromBehind(impactDir) end
@@ -2448,14 +2424,14 @@ function __IsoGameCharacter:isMovablesCheat() end
 function __IsoGameCharacter:isMoving() end
 
 ---@return boolean
-function __IsoGameCharacter:isNPC() end
-
----@return boolean
 function __IsoGameCharacter:isNearSirenVehicle() end
 
 ---@param testVehicle BaseVehicle
 ---@return boolean
 function __IsoGameCharacter:isNetworkVehicleCollisionActive(testVehicle) end
+
+---@return boolean
+function __IsoGameCharacter:isNpc() end
 
 ---@param obj IsoObject
 ---@return boolean
@@ -3285,9 +3261,6 @@ function __IsoGameCharacter:setHitReaction(hitReaction) end
 ---@param hurtSound string the hurtSound to set
 function __IsoGameCharacter:setHurtSound(hurtSound) end
 
----@param b boolean
-function __IsoGameCharacter:setIgnoreAimingInput(b) end
-
 ---@param ignoreMovement boolean
 function __IsoGameCharacter:setIgnoreMovement(ignoreMovement) end
 
@@ -3315,9 +3288,6 @@ function __IsoGameCharacter:setIsAiming(aIsAiming) end
 
 ---@param v boolean
 function __IsoGameCharacter:setIsAnimal(v) end
-
----@param isAI boolean
-function __IsoGameCharacter:setIsNPC(isAI) end
 
 ---@param isResting boolean
 function __IsoGameCharacter:setIsResting(isResting) end
@@ -3427,9 +3397,6 @@ function __IsoGameCharacter:setMoving(val) end
 ---@param key string
 ---@param value any
 function __IsoGameCharacter:setMusicIntensityEventModData(key, value) end
-
----@param newvalue boolean
-function __IsoGameCharacter:setNPC(newvalue) end
 
 ---@param NextWander integer the NextWander to set
 function __IsoGameCharacter:setNextWander(NextWander) end
@@ -3801,16 +3768,18 @@ function __IsoGameCharacter:splatBloodFloorBig() end
 
 ---@param eventInstance integer
 ---@param clip GameSoundClip
+---@param remote boolean
 ---@param parameterSet BitSet
-function __IsoGameCharacter:startEvent(eventInstance, clip, parameterSet) end
+function __IsoGameCharacter:startEvent(eventInstance, clip, remote, parameterSet) end
 
 ---@return AnimationVariableSource
 function __IsoGameCharacter:startPlaybackGameVariables() end
 
 ---@param eventInstance integer
 ---@param clip GameSoundClip
+---@param remote boolean
 ---@param parameterSet BitSet
-function __IsoGameCharacter:stopEvent(eventInstance, clip, parameterSet) end
+function __IsoGameCharacter:stopEvent(eventInstance, clip, remote, parameterSet) end
 
 ---@param eventInstance integer
 function __IsoGameCharacter:stopOrTriggerSound(eventInstance) end

@@ -87,6 +87,10 @@ function Mouse.isButtonDown(number) end
 ---@return boolean
 function Mouse.isButtonDownUICheck(number) end
 
+---@param key integer
+---@return boolean
+function Mouse.isButtonKey(key) end
+
 ---@param number integer
 ---@return boolean
 function Mouse.isButtonPressed(number) end

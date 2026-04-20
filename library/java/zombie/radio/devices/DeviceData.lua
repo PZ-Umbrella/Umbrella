@@ -290,13 +290,15 @@ function __DeviceData:setUseDelta(f) end
 
 ---@param eventInstance integer
 ---@param clip GameSoundClip
+---@param remote boolean
 ---@param parameterSet BitSet
-function __DeviceData:startEvent(eventInstance, clip, parameterSet) end
+function __DeviceData:startEvent(eventInstance, clip, remote, parameterSet) end
 
 ---@param eventInstance integer
 ---@param clip GameSoundClip
+---@param remote boolean
 ---@param parameterSet BitSet
-function __DeviceData:stopEvent(eventInstance, clip, parameterSet) end
+function __DeviceData:stopEvent(eventInstance, clip, remote, parameterSet) end
 
 ---@param soundName string
 function __DeviceData:stopOrTriggerSoundByName(soundName) end

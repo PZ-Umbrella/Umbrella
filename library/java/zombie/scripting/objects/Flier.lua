@@ -171,9 +171,6 @@ Flier.HOUSE_FOR_SALE_907 = nil
 Flier.HOUSE_FOR_SALE_912 = nil
 
 ---@type Flier
-Flier.HOUSE_FOR_SALE_915 = nil
-
----@type Flier
 Flier.HOUSE_FOR_SALE_919 = nil
 
 ---@type Flier

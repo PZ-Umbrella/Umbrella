@@ -112,6 +112,8 @@ function ISButton:prerender() end
 
 function ISButton:render() end
 
+function ISButton:restoreDefaultColors() end
+
 ---@param r number
 ---@param g number
 ---@param b number

@@ -140,6 +140,9 @@ function __IsoAnimal:checkAlphaAndTargetAlpha(other) end
 ---@return boolean
 function __IsoAnimal:checkForChickenpocalypse() end
 
+---@return boolean
+function __IsoAnimal:checkForWater() end
+
 ---@param hour integer
 ---@return boolean
 function __IsoAnimal:checkKilledByMetaPredator(hour) end

@@ -49,11 +49,6 @@ function AttachmentEditorState.readScriptNew(script) end
 ---@return boolean
 function AttachmentEditorState.updateScript(fileName, tokens, modelScript) end
 
----@param fileName string
----@param tokens ArrayList<string>
----@return boolean
-function AttachmentEditorState.writeScript(fileName, tokens) end
-
 ---@return AttachmentEditorState
 function AttachmentEditorState.new() end
 

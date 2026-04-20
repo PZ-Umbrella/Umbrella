@@ -16,9 +16,6 @@
 ---@class PathFindBehavior2.Goal
 
 ---(Not exposed)
----@class PathFindBehavior2.NPCData
-
----(Not exposed)
 ---@class PathFindBehavior2.PointOnPath
 
 ---(Not exposed)

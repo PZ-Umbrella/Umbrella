@@ -229,7 +229,7 @@ function __IsoCell:createNewGridSquare(x, y, z, recalcAll) end
 ---@param playerIndex integer
 function __IsoCell:flattenAnyFoliage(perPlayerRender, playerIndex) end
 
----@return ArrayList<IsoMovingObject> # the addList
+---@return Set<IsoMovingObject>
 function __IsoCell:getAddList() end
 
 ---@return List<IsoAnimal>
@@ -386,8 +386,11 @@ function __IsoCell:getNearestVisibleZombie(playerIndex) end
 ---@return IsoSurvivor
 function __IsoCell:getNetworkPlayer(RemoteID) end
 
----@return ArrayList<IsoMovingObject> # the ObjectList
+---@return Set<IsoMovingObject>
 function __IsoCell:getObjectList() end
+
+---@return List<IsoMovingObject>
+function __IsoCell:getObjectListForLua() end
 
 ---@param x number
 ---@param y number
@@ -436,7 +439,7 @@ function __IsoCell:getRelativeGridSquare(x, y, z) end
 ---@return ArrayList<IsoGameCharacter> # the RemoteSurvivorList
 function __IsoCell:getRemoteSurvivorList() end
 
----@return ArrayList<IsoMovingObject> # the removeList
+---@return Set<IsoMovingObject>
 function __IsoCell:getRemoveList() end
 
 ---@param ID integer
@@ -458,7 +461,7 @@ function __IsoCell:getStaticUpdaterObjectList() end
 ---@return ArrayList<IsoSurvivor>
 function __IsoCell:getSurvivorList() end
 
----@return ArrayList<BaseVehicle>
+---@return Set<BaseVehicle>
 function __IsoCell:getVehicles() end
 
 ---@return IsoWeatherFX
@@ -733,6 +736,14 @@ function IsoCell.getMaxHeight() end
 ---@param col integer
 ---@return integer
 function IsoCell.getRComponent(col) end
+
+---@param object IsoObject
+---@return boolean
+function IsoCell.isBasementWallAdjacentToTheVoid_North(object) end
+
+---@param object IsoObject
+---@return boolean
+function IsoCell.isBasementWallAdjacentToTheVoid_West(object) end
 
 ---@param scores Stack<BuildingScore>
 function IsoCell.setBuildings(scores) end

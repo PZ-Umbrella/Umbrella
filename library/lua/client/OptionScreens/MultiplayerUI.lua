@@ -45,6 +45,7 @@
 ---@field serverListItem table
 ---@field serverListSelected table
 ---@field serversInList boolean
+---@field showIPAddressesTickBox ISTickBox
 ---@field sortDown boolean
 ---@field sortListUpdateTicks number
 ---@field sortType string
@@ -178,6 +179,8 @@ function MultiplayerUI:onResolutionChange(oldw, oldh, neww, newh) end
 function MultiplayerUI:onSelectAccount(_item) end
 
 function MultiplayerUI:onSelectInternetServer(server) end
+
+function MultiplayerUI:onToggleShowIPs() end
 
 function MultiplayerUI:prerender() end
 

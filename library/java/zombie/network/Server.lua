@@ -23,6 +23,15 @@ function __Server:getAuthType() end
 ---@return string
 function __Server:getDescription() end
 
+---@return string
+function __Server:getDisplayAddress() end
+
+---@return string
+function __Server:getDisplayIp() end
+
+---@return string
+function __Server:getDisplayPort() end
+
 ---@return integer
 function __Server:getID() end
 

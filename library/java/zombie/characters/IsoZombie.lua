@@ -35,12 +35,6 @@ function __IsoZombie:InitSpritePartsZombie() end
 ---@param desc SurvivorDesc
 function __IsoZombie:InitSpritePartsZombie(desc) end
 
----@param dir Vector2
-function __IsoZombie:Move(dir) end
-
----@param dir Vector2
-function __IsoZombie:MoveUnmodded(dir) end
-
 function __IsoZombie:RespondToSound() end
 
 function __IsoZombie:Wander() end
@@ -237,6 +231,9 @@ function __IsoZombie:getVoiceChoice() end
 ---@return string
 function __IsoZombie:getVoiceSoundName() end
 
+---@return string
+function __IsoZombie:getWalkType() end
+
 function __IsoZombie:getZombieLungeSpeed() end
 
 ---@param speed number
@@ -390,6 +387,10 @@ function __IsoZombie:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
 ---@param binactive boolean
 function __IsoZombie:makeInactive(binactive) end
+
+---@param dirX number
+---@param dirY number
+function __IsoZombie:moveUnmodded(dirX, dirY) end
 
 ---@param weapon HandWeapon
 ---@param wielder IsoGameCharacter

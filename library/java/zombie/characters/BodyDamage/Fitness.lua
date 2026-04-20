@@ -5,6 +5,9 @@ local __Fitness = {}
 
 function __Fitness:exerciseRepeat() end
 
+---@return Fitness.FitnessExercise
+function __Fitness:getCurrentExe() end
+
 ---@param type string
 ---@return number
 function __Fitness:getCurrentExeStiffnessInc(type) end

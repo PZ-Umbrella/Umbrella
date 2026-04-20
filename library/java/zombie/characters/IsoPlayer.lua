@@ -32,12 +32,6 @@ function __IsoPlayer:IsRunning() end
 ---@return boolean
 function __IsoPlayer:IsUsingAimWeapon() end
 
----@param dir Vector2
-function __IsoPlayer:Move(dir) end
-
----@param dir Vector2
-function __IsoPlayer:MoveUnmodded(dir) end
-
 ---@param sender AnimLayer
 ---@param track AnimationTrack
 ---@param event AnimEvent
@@ -262,6 +256,10 @@ function __IsoPlayer:getHumanVisual() end
 ---@return integer
 function __IsoPlayer:getIndex() end
 
+---@param out Vector2
+---@return Vector2
+function __IsoPlayer:getInputMoveVector(out) end
+
 ---@return number
 function __IsoPlayer:getInvAimingMod() end
 
@@ -273,13 +271,6 @@ function __IsoPlayer:getItemVisuals() end
 
 ---@param itemVisuals ItemVisuals
 function __IsoPlayer:getItemVisuals(itemVisuals) end
-
----@return integer
-function __IsoPlayer:getJoypadBind() end
-
----@param out Vector2
----@return Vector2
-function __IsoPlayer:getJoypadMoveVector(out) end
 
 ---@return Vector2
 function __IsoPlayer:getLastAngle() end
@@ -361,9 +352,6 @@ function __IsoPlayer:getPlayerClothingTemperature() end
 
 ---@return PlayerCraftHistory
 function __IsoPlayer:getPlayerCraftHistory() end
-
----@return Vector2
-function __IsoPlayer:getPlayerMoveDir() end
 
 ---@deprecated
 ---@return integer
@@ -486,12 +474,6 @@ function __IsoPlayer:isAiming() end
 function __IsoPlayer:isAllChatMuted() end
 
 ---@return boolean
-function __IsoPlayer:isAllowRun() end
-
----@return boolean
-function __IsoPlayer:isAllowSprint() end
-
----@return boolean
 function __IsoPlayer:isAttackAnimThrowTimeOut() end
 
 ---@return boolean
@@ -557,16 +539,7 @@ function __IsoPlayer:isFavouriteRecipe(recipe) end
 function __IsoPlayer:isFavouriteRecipe(recipe) end
 
 ---@return boolean
-function __IsoPlayer:isForceAim() end
-
----@return boolean
 function __IsoPlayer:isForceOverrideAnim() end
-
----@return boolean
-function __IsoPlayer:isForceRun() end
-
----@return boolean
-function __IsoPlayer:isForceSprint() end
 
 ---@return boolean
 function __IsoPlayer:isGettingUp() end
@@ -583,9 +556,6 @@ function __IsoPlayer:isIgnoreAutoVault() end
 ---@return boolean
 function __IsoPlayer:isIgnoreContextKey() end
 
----@return boolean
-function __IsoPlayer:isIgnoreInputsForDirection() end
-
 ---@param ignoreBush boolean
 ---@return boolean
 function __IsoPlayer:isInTrees2(ignoreBush) end
@@ -595,12 +565,6 @@ function __IsoPlayer:isInitiateAttack() end
 
 ---@return boolean
 function __IsoPlayer:isInvPageDirty() end
-
----@return boolean
-function __IsoPlayer:isJoypadIgnoreAimUntilCentered() end
-
----@return boolean
-function __IsoPlayer:isJoypadMovementActive() end
 
 ---@return boolean
 function __IsoPlayer:isJustMoved() end
@@ -735,6 +699,10 @@ function __IsoPlayer:loadChange(change, bb) end
 ---@param item InventoryItem
 function __IsoPlayer:lureAnimal(item) end
 
+---@param dirX number
+---@param dirY number
+function __IsoPlayer:moveUnmodded(dirX, dirY) end
+
 function __IsoPlayer:nullifyAiming() end
 
 ---@param vehicle BaseVehicle
@@ -783,6 +751,8 @@ function __IsoPlayer:preupdate() end
 
 function __IsoPlayer:processWakingUp() end
 
+function __IsoPlayer:registerECSComponents() end
+
 function __IsoPlayer:removeAllAttachedAnimals() end
 
 ---@param animal IsoAnimal
@@ -824,12 +794,6 @@ function __IsoPlayer:setAddedToModelManager(modelManager, isAdded) end
 
 ---@param allChatMuted boolean
 function __IsoPlayer:setAllChatMuted(allChatMuted) end
-
----@param allowRun boolean
-function __IsoPlayer:setAllowRun(allowRun) end
-
----@param allowSprint boolean
-function __IsoPlayer:setAllowSprint(allowSprint) end
 
 function __IsoPlayer:setAngleFromAim() end
 
@@ -922,17 +886,8 @@ function __IsoPlayer:setFitnessSpeed() end
 ---@param followID integer
 function __IsoPlayer:setFollowID(followID) end
 
----@param forceAim boolean
-function __IsoPlayer:setForceAim(forceAim) end
-
 ---@param forceOverride boolean
 function __IsoPlayer:setForceOverrideAnim(forceOverride) end
-
----@param forceRun boolean
-function __IsoPlayer:setForceRun(forceRun) end
-
----@param forceSprint boolean
-function __IsoPlayer:setForceSprint(forceSprint) end
 
 ---@param aGhostMode boolean
 ---@param isForced boolean
@@ -959,9 +914,6 @@ function __IsoPlayer:setIgnoreAutoVault(ignoreAutoVault) end
 ---@param ignoreContextKey boolean
 function __IsoPlayer:setIgnoreContextKey(ignoreContextKey) end
 
----@param ignoreInputsForDirection boolean
-function __IsoPlayer:setIgnoreInputsForDirection(ignoreInputsForDirection) end
-
 ---@param initiate boolean
 function __IsoPlayer:setInitiateAttack(initiate) end
 
@@ -973,12 +925,6 @@ function __IsoPlayer:setIsFarming(isFarmingBool) end
 
 ---@param luring boolean
 function __IsoPlayer:setIsLuringAnimals(luring) end
-
----@param ignore boolean
-function __IsoPlayer:setJoypadIgnoreAimUntilCentered(ignore) end
-
----@param joypadMovementActive boolean
-function __IsoPlayer:setJoypadMovementActive(joypadMovementActive) end
 
 ---@param val boolean
 function __IsoPlayer:setJustMoved(val) end
@@ -1017,6 +963,9 @@ function __IsoPlayer:setNoClip(noClip, isForced) end
 ---@param noClip boolean
 function __IsoPlayer:setNoClip(noClip) end
 
+---@param isNpc boolean
+function __IsoPlayer:setNpc(isNpc) end
+
 ---@param offSetXUI integer
 function __IsoPlayer:setOffSetXUI(offSetXUI) end
 
@@ -1034,9 +983,6 @@ function __IsoPlayer:setPerformingAnAction(val) end
 
 ---@param ping integer
 function __IsoPlayer:setPing(ping) end
-
----@param aPlayerMoveDir Vector2
-function __IsoPlayer:setPlayerMoveDir(aPlayerMoveDir) end
 
 ---@param bb ByteBufferReader
 ---@param adminUsername string
@@ -1140,14 +1086,7 @@ function __IsoPlayer:stopPlayerVoiceSound(suffix) end
 ---@param other IsoPlayer
 function __IsoPlayer:stopReceivingBodyDamageUpdates(other) end
 
----@return boolean
-function __IsoPlayer:toggleForceAim() end
-
----@return boolean
-function __IsoPlayer:toggleForceRun() end
-
----@return boolean
-function __IsoPlayer:toggleForceSprint() end
+function __IsoPlayer:syncVisuals() end
 
 ---@return boolean
 function __IsoPlayer:tooDarkToRead() end
@@ -1296,6 +1235,9 @@ function IsoPlayer.setInstance(newInstance) end
 ---@param index integer
 ---@param newPlayerObj IsoPlayer
 function IsoPlayer.setLocalPlayer(index, newPlayerObj) end
+
+---@param visitor Consumer<IsoPlayer>
+function IsoPlayer.visitAllPlayers(visitor) end
 
 ---@param cell IsoCell
 ---@return IsoPlayer

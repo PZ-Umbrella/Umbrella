@@ -174,7 +174,7 @@ function __PZAPI_ModOptions:save() end
 ---@field tooltip string? Optional tooltip text
 local __umbrella_ModOptions_BaseOption = {}
 
----@param bool string
+---@param bool boolean
 function __umbrella_ModOptions_BaseOption:setEnabled(bool) end
 
 ---@class umbrella.ModOptions.TextEntry : umbrella.ModOptions.BaseOption

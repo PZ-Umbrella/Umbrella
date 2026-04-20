@@ -1459,7 +1459,7 @@ Events.OnPlayerGetDamage = {
 ---
 ---@alias Callback_OnPlayerMove fun(character:IsoPlayer)
 
----(Client) OnPlayerMove: Triggered during each local player's update if they are walking.
+---OnPlayerMove: Triggered during a player's update if they are walking.
 ---<br><br>
 Events.OnPlayerMove = {
 	---@param callback Callback_OnPlayerMove

@@ -234,6 +234,8 @@ function __workshopSubmitScreen_Page4:new(x, y, width, height) end
 ---@field button2 ISButton
 ---@field IDEntry ISTextEntryBox
 ---@field prevPage unknown
+---@field tipLabel ISLabel
+---@field tipLabelVal number
 ---@field titleEntry ISTextEntryBox
 local __workshopSubmitScreen_Page5 = ISPanelJoypad:derive("Page5")
 __workshopSubmitScreen_Page5.Type = "Page5"

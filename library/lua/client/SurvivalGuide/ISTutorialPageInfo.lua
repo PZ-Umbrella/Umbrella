@@ -6,7 +6,7 @@
 ---@field nextcondition (fun(): boolean)?
 ---@field text string
 ---@field title string
-ISTutorialPageInfo = ISBaseObject:derive("ISTutorialPageInfo")
+ISTutorialPageInfo = {}
 ISTutorialPageInfo.Type = "ISTutorialPageInfo"
 
 function ISTutorialPageInfo:initialise() end
@@ -22,7 +22,7 @@ function ISTutorialPageInfo:new(title, text, moreTextInfo, nextcondition) end
 ---@field currentPage integer
 ---@field pageCount integer
 ---@field pages ISTutorialPageInfo[]
-ISTutorialSetInfo = ISBaseObject:derive("ISTutorialSetInfo")
+ISTutorialSetInfo = {}
 ISTutorialSetInfo.Type = "ISTutorialSetInfo"
 
 ---@param pagetitle string

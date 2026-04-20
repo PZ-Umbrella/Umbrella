@@ -13,6 +13,9 @@
 ---@class CharacterInputMode
 
 ---(Not exposed)
+---@class CharacterJoypadButtonBinding.IsDownBinding
+
+---(Not exposed)
 ---@class CharacterSoundEmitter.footstep
 
 ---(Not exposed)
@@ -38,9 +41,6 @@
 
 ---(Not exposed)
 ---@class Imposter
-
----(Not exposed)
----@class IsoAIModule
 
 ---(Not exposed)
 ---@class IsoGameCharacter.Bandages
@@ -101,10 +101,6 @@
 
 ---(Not exposed)
 ---@class Side
-
----(Not exposed)
----Created by LEMMYCOOLER on 26/07/14.
----@class Stance
 
 ---(Not exposed)
 ---@class SurvivorGroup

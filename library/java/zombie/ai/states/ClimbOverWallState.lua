@@ -32,9 +32,16 @@ function __ClimbOverWallState:isIgnoreCollide(owner, fromX, fromY, fromZ, toX, t
 ---@return boolean
 function __ClimbOverWallState:isProcessedOnEnter() end
 
+---@return boolean
+function __ClimbOverWallState:isProcessedOnExit() end
+
 ---@param owner IsoGameCharacter
 ---@param delegate Map<any, any>
 function __ClimbOverWallState:processOnEnter(owner, delegate) end
+
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __ClimbOverWallState:processOnExit(owner, delegate) end
 
 ---@param owner IsoGameCharacter
 ---@param dir IsoDirections
@@ -56,6 +63,9 @@ ClimbOverWallState.START_X = nil
 
 ---@type State.Param<integer>
 ClimbOverWallState.START_Y = nil
+
+---@type State.Param<number>
+ClimbOverWallState.STRAIN = nil
 
 ---@type State.Param<boolean>
 ClimbOverWallState.STRUGGLE = nil

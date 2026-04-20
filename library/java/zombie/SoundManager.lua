@@ -321,15 +321,17 @@ function __SoundManager:setVehicleEngineVolume(volume) end
 
 ---@param eventInstance integer
 ---@param clip GameSoundClip
+---@param remote boolean
 ---@param parameterSet BitSet
-function __SoundManager:startEvent(eventInstance, clip, parameterSet) end
+function __SoundManager:startEvent(eventInstance, clip, remote, parameterSet) end
 
 function __SoundManager:stop() end
 
 ---@param eventInstance integer
 ---@param clip GameSoundClip
+---@param remote boolean
 ---@param parameterSet BitSet
-function __SoundManager:stopEvent(eventInstance, clip, parameterSet) end
+function __SoundManager:stopEvent(eventInstance, clip, remote, parameterSet) end
 
 ---@param name string
 function __SoundManager:stopMusic(name) end

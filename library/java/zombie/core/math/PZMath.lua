@@ -279,6 +279,16 @@ function PZMath.getClosestAngle(in_radsA, in_radsB) end
 ---@return number
 function PZMath.getClosestAngleDegrees(in_degsA, in_degsB) end
 
+---@param x number
+---@param y number
+---@return number
+function PZMath.getLength(x, y) end
+
+---@param x number
+---@param y number
+---@return number
+function PZMath.getLengthSq(x, y) end
+
 ---@param x1 number
 ---@param y1 number
 ---@param x2 number
@@ -290,6 +300,12 @@ function PZMath.getClosestAngleDegrees(in_degsA, in_degsB) end
 ---@param intersection Vector2f
 ---@return boolean
 function PZMath.intersectLineSegments(x1, y1, x2, y2, x3, y3, x4, y4, intersection) end
+
+---@param value number
+---@param min number
+---@param max number
+---@return boolean
+function PZMath.isBetween(value, min, max) end
 
 ---@param x0 number
 ---@param y0 number

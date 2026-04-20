@@ -46,6 +46,7 @@ ZomboidGlobals = {
 	IdleDecrease = 0.0060,
 	VehicleDiscomfortWhenOverEncumbered = 0.25,
 	EquippedOrWornEncumbranceMultiplier = 0.3,
+	CorpseSicknessFilterDrainMultiplier = 0.3,
 }
 
 ---@class ZombiePopulationMultiplier

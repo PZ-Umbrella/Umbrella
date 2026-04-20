@@ -271,9 +271,6 @@ function __BaseVehicle:checkForSpecialMatchTwo(one, two, three) end
 ---@return boolean
 function __BaseVehicle:checkIfGoodVehicleForKey() end
 
----@return boolean
-function __BaseVehicle:checkIgnoreCollisionSoundCooldown() end
-
 ---@param target IsoGameCharacter
 ---@return BaseVehicle.HitVars
 function __BaseVehicle:checkNetworkCollision(target) end
@@ -1767,13 +1764,15 @@ function __BaseVehicle:softReset() end
 
 ---@param eventInstance integer
 ---@param clip GameSoundClip
+---@param remote boolean
 ---@param parameterSet BitSet
-function __BaseVehicle:startEvent(eventInstance, clip, parameterSet) end
+function __BaseVehicle:startEvent(eventInstance, clip, remote, parameterSet) end
 
 ---@param eventInstance integer
 ---@param clip GameSoundClip
+---@param remote boolean
 ---@param parameterSet BitSet
-function __BaseVehicle:stopEvent(eventInstance, clip, parameterSet) end
+function __BaseVehicle:stopEvent(eventInstance, clip, remote, parameterSet) end
 
 ---@param channel integer
 ---@return integer
@@ -1934,6 +1933,12 @@ function __BaseVehicle:updateTotalMass() end
 function __BaseVehicle:windowsOpen() end
 
 BaseVehicle = {}
+
+---@type integer
+BaseVehicle.AMBIENT_SOUND_RADIUS = nil
+
+---@type integer
+BaseVehicle.ENGINE_SOUND_RADIUS = nil
 
 ---@type integer
 BaseVehicle.FADE_DISTANCE = nil

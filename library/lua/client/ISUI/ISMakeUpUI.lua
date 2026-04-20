@@ -32,6 +32,8 @@ ISMakeUpUI = ISCollapsableWindowJoypad:derive("ISMakeUpUI")
 ISMakeUpUI.Type = "ISMakeUpUI"
 ISMakeUpUI.windows = {} ---@type table<integer, ISMakeUpUI>
 
+function ISMakeUpUI.OnClothingUpdated(playerObj) end
+
 ---@param playerObj IsoPlayer
 function ISMakeUpUI.OnPlayerDeath(playerObj) end
 

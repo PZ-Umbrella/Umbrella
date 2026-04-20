@@ -578,10 +578,10 @@ PrintMediaDefinitions.MiscDetails = {
 	riversideindependencedaypartyallwelcome = {
 		location1 = {
 			{
-				x1 = 6770,
-				y1 = 5320,
-				x2 = 6799,
-				y2 = 5339,
+				x1 = 6728,
+				y1 = 5296,
+				x2 = 6791,
+				y2 = 5367,
 			},
 		},
 	},
@@ -752,16 +752,6 @@ PrintMediaDefinitions.MiscDetails = {
 				y1 = 9364,
 				x2 = 10967,
 				y2 = 9400,
-			},
-		},
-	},
-	houseforsale915 = {
-		location1 = {
-			{
-				x1 = 10139,
-				y1 = 6607,
-				x2 = 10173,
-				y2 = 6659,
 			},
 		},
 	},
@@ -1018,10 +1008,10 @@ PrintMediaDefinitions.MiscDetails = {
 	fallaslakechurch = {
 		location1 = {
 			{
-				x1 = 7338,
-				y1 = 8278,
-				x2 = 7438,
-				y2 = 8402,
+				x1 = 7192,
+				y1 = 8504,
+				x2 = 7295,
+				y2 = 8583,
 			},
 		},
 	},

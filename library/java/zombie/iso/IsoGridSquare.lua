@@ -525,16 +525,12 @@ function __IsoGridSquare:addHandPress() end
 
 function __IsoGridSquare:addLoom() end
 
-function __IsoGridSquare:addMetalBandsaw() end
-
 ---@param playerIndex integer
 ---@param flag integer
 ---@param currentTimeMillis integer
 function __IsoGridSquare:addPlayerCutawayFlag(playerIndex, flag, currentTimeMillis) end
 
 function __IsoGridSquare:addSpinningWheel() end
-
-function __IsoGridSquare:addStandingDrillPress() end
 
 function __IsoGridSquare:addStump() end
 
@@ -1658,6 +1654,12 @@ function __IsoGridSquare:isStairsEdgeBlocked(edge) end
 
 ---@return boolean
 function __IsoGridSquare:isUndergroundBlock() end
+
+---@return boolean
+function __IsoGridSquare:isUserDefinedBuilding() end
+
+---@return boolean
+function __IsoGridSquare:isUserDefinedRoom() end
 
 ---@return boolean
 function __IsoGridSquare:isVehicleIntersecting() end

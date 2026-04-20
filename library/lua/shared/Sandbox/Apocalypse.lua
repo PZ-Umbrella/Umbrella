@@ -32,7 +32,7 @@ return {
 	RangedWeaponLootNew = 1.2,
 	AmmoLootNew = 0.6,
 	MechanicsLootNew = 0.6,
-	OtherLootNew = 0.6,
+	OtherLootNew = 0.8,
 	ClothingLootNew = 0.6,
 	ContainerLootNew = 0.6,
 	KeyLootNew = 0.4,
@@ -124,7 +124,7 @@ return {
 	CarAlarm = 3, ---@type number
 	PlayerDamageFromCrash = true,
 	SirenShutoffHours = 0.0,
-	ChanceHasGas = 1, ---@type number
+	ChanceHasGas = 2, ---@type number
 	RecentlySurvivorVehicles = 2, ---@type number
 	MultiHitZombies = false, ---@type boolean
 	RearVulnerability = 3,
@@ -170,7 +170,7 @@ return {
 	DaysUntilMaximumDiminishedLoot = 3650,
 	MuscleStrainFactor = 0.7,
 	DiscomfortFactor = 0.8,
-	WoundInfectionFactor = 0.0,
+	WoundInfectionFactor = 1.0,
 	NoBlackClothes = true,
 	EasyClimbing = false,
 	MaximumFireFuelHours = 8,

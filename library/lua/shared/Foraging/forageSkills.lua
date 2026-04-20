@@ -535,6 +535,21 @@ forageSystem.forageSkillDefinitions = {
 			Mushrooms = 5,
 		},
 	},
+	Herbalist_Prof = {
+		name = "Herbalist_Prof",
+		type = "trait",
+		visionBonus = 0.2,
+		weatherEffect = 0,
+		darknessEffect = 0,
+		specialisations = {
+			MedicinalPlants = 15,
+			WildPlants = 5,
+			WildHerbs = 5,
+			Crops = 5,
+			Berries = 5,
+			Mushrooms = 5,
+		},
+	},
 	Agoraphobic = {
 		name = "Agoraphobic",
 		type = "trait",

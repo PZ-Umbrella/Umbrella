@@ -118,6 +118,9 @@ function __DummySoundEmitter:setParameterValueByName(handle, parameterName, valu
 ---@param volume number
 function __DummySoundEmitter:setPitch(handle, volume) end
 
+---@param remote boolean
+function __DummySoundEmitter:setPlayRemoteEvents(remote) end
+
 ---@param x number
 ---@param y number
 ---@param z number

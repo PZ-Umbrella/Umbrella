@@ -149,6 +149,9 @@ function __RoomDef:isRoofFixed() end
 ---@return boolean
 function __RoomDef:isShop() end
 
+---@return boolean
+function __RoomDef:isUserDefined() end
+
 ---@param dx integer
 ---@param dy integer
 function __RoomDef:offset(dx, dy) end

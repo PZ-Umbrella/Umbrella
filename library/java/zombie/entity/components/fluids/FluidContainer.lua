@@ -113,6 +113,9 @@ function __FluidContainer:getRatioForFluid(fluid) end
 ---@return number
 function __FluidContainer:getSpecificFluidAmount(fluid) end
 
+---@return number
+function __FluidContainer:getTransferRate() end
+
 ---@return string
 function __FluidContainer:getTranslatedContainerName() end
 
@@ -254,6 +257,9 @@ function __FluidContainer:unseal() end
 function __FluidContainer:unsealIfNotFull() end
 
 FluidContainer = {}
+
+---@type number
+FluidContainer.DEFAULT_TRANSFER_RATE = nil
 
 ---@type string
 FluidContainer.DEF_CONTAINER_NAME = nil

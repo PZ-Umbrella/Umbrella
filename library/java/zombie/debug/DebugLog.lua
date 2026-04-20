@@ -4,64 +4,76 @@
 ---@class DebugLog
 local __DebugLog = {}
 
+---@param debugType DebugType
+---@return DebugLogStream
+function __DebugLog:createLogStream(debugType) end
+
+---@param debugType DebugType
+---@param logSeverity LogSeverity
+---@param messageType string
+---@param outString string
+function __DebugLog:echoExceptionLineToLogFiles(debugType, logSeverity, messageType, outString) end
+
+---@param debugType DebugType
+---@param logSeverity LogSeverity
+---@param callerAffix string
+---@param rawOutString string
+function __DebugLog:echoToLogFiles(debugType, logSeverity, callerAffix, rawOutString) end
+
+---@param debugType DebugType
+---@param logSeverity LogSeverity
+---@param callerAffix string
+---@param outputStr any
+---@return string
+function __DebugLog:formatLogStringAnimationRecordingFile(debugType, logSeverity, callerAffix, outputStr) end
+
+---@param debugType DebugType
+---@param logSeverity LogSeverity
+---@param callerAffix string
+---@param outputStr any
+---@return string
+function __DebugLog:formatLogStringForConsole(debugType, logSeverity, callerAffix, outputStr) end
+
+---@param debugType DebugType
+---@param logSeverity LogSeverity
+---@param callerAffix string
+---@param outputStr any
+---@return string
+function __DebugLog:formatLogStringForLogFile(debugType, logSeverity, callerAffix, outputStr) end
+
+---@return PrintStream
+function __DebugLog:getRecordingOut() end
+
+function __DebugLog:init() end
+
+---@return boolean
+function __DebugLog:isLogServerTimeMsEnabled() end
+
+---@return boolean
+function __DebugLog:isLogTraceFileLocationEnabled() end
+
+---@param filepath string
+function __DebugLog:loadDebugConfig(filepath) end
+
+---@param logServerTimeMsEnabled boolean
+function __DebugLog:setLogServerTimeMsEnabled(logServerTimeMsEnabled) end
+
+---@param recordingOut PrintStream
+function __DebugLog:setRecordingOut(recordingOut) end
+
+---@param out OutputStream
+function __DebugLog:setStdErr(out) end
+
+---@param out OutputStream
+function __DebugLog:setStdOut(out) end
+
+---@return boolean
+function __DebugLog:shouldLogIncludeServerTime() end
+
+---@return boolean
+function __DebugLog:shouldLogIncludeTimeMs() end
+
 DebugLog = {}
-
----@type DebugType
-DebugLog.Action = nil
-
----@type DebugType
-DebugLog.Animal = nil
-
----@type DebugType
-DebugLog.CraftLogic = nil
-
----@type DebugType
-DebugLog.DetailedInfo = nil
-
----@type DebugType
-DebugLog.Entity = nil
-
----@type DebugType
-DebugLog.General = nil
-
----@type DebugType
-DebugLog.Grapple = nil
-
----@type DebugType
-DebugLog.Lua = nil
-
----@type DebugType
-DebugLog.MapLoading = nil
-
----@type DebugType
-DebugLog.Mod = nil
-
----@type DebugType
-DebugLog.Multiplayer = nil
-
----@type DebugType
-DebugLog.Network = nil
-
----@type DebugType
-DebugLog.NetworkFileDebug = nil
-
----@type DebugType
-DebugLog.Objects = nil
-
----@type DebugType
-DebugLog.Radio = nil
-
----@type DebugType
-DebugLog.Recipe = nil
-
----@type DebugType
-DebugLog.Script = nil
-
----@type DebugType
-DebugLog.Shader = nil
-
----@type DebugType
-DebugLog.Sound = nil
 
 ---@type integer
 DebugLog.VERSION = nil
@@ -72,58 +84,11 @@ DebugLog.VERSION1 = nil
 ---@type integer
 DebugLog.VERSION2 = nil
 
----@type DebugType
-DebugLog.Vehicle = nil
-
----@type DebugType
-DebugLog.Voice = nil
-
----@type DebugType
-DebugLog.Zombie = nil
-
----@type boolean
-DebugLog.printServerTime = nil
-
----@param logSeverity LogSeverity
----@param messageType string
----@param outString string
-function DebugLog.echoExceptionLineToLogFiles(logSeverity, messageType, outString) end
-
----@param logSeverity LogSeverity
----@param outString string
-function DebugLog.echoToLogFiles(logSeverity, outString) end
-
----@param type DebugType
----@param severity LogSeverity
-function DebugLog.enableLog(type, severity) end
-
----@param debugType DebugType
----@param logSeverity LogSeverity
----@param affix any
----@param format any
----@param params kahlua.Array<any>
----@return string
-function DebugLog.formatLogString(debugType, logSeverity, affix, format, params) end
-
 ---@return ArrayList<DebugType>
 function DebugLog.getDebugTypes() end
 
----@param type DebugType
----@return LogSeverity
-function DebugLog.getLogLevel(type) end
-
----@param type DebugType
----@return LogSeverity
-function DebugLog.getLogSeverity(type) end
-
----@param debugType DebugType
----@return DebugLogStream
-function DebugLog.getOrCreateLogStream(debugType) end
-
----@return PrintStream
-function DebugLog.getRecordingOut() end
-
-function DebugLog.init() end
+---@return DebugLog
+function DebugLog.getInstance() end
 
 ---@param type DebugType
 ---@return boolean
@@ -134,13 +99,7 @@ function DebugLog.isEnabled(type) end
 ---@return boolean
 function DebugLog.isLogEnabled(type, logSeverity) end
 
----@return boolean
-function DebugLog.isLogTraceFileLocationEnabled() end
-
 function DebugLog.load() end
-
----@param filepath string
-function DebugLog.loadDebugConfig(filepath) end
 
 ---@param type DebugType
 ---@param str string
@@ -163,22 +122,6 @@ function DebugLog.setDefaultLogSeverity() end
 ---@param type DebugType
 ---@param bEnabled boolean
 function DebugLog.setLogEnabled(type, bEnabled) end
-
----@param type DebugType
----@param logSeverity LogSeverity
-function DebugLog.setLogSeverity(type, logSeverity) end
-
----@param recordingOut PrintStream
-function DebugLog.setRecordingOut(recordingOut) end
-
----@param out OutputStream
-function DebugLog.setStdErr(out) end
-
----@param out OutputStream
-function DebugLog.setStdOut(out) end
-
----@return DebugLog
-function DebugLog.new() end
 
 ---@type Class<DebugLog>
 DebugLog.class = nil

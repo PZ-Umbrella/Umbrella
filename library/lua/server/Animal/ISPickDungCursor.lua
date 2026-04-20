@@ -51,6 +51,9 @@ function ISPickDungCursor:getSquares(x, y, z) end
 ---@return number
 function ISPickDungCursor:getTopLeftOfSquares(x, y, z) end
 
+---@return string
+function ISPickDungCursor:getYPrompt() end
+
 ---@return ISBaseTimedAction
 function ISPickDungCursor:isRunningAction() end
 

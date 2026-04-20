@@ -9,13 +9,15 @@ function __IFMODParameterUpdater:getFMODParameters() end
 
 ---@param arg0 integer
 ---@param arg1 GameSoundClip
----@param arg2 BitSet
-function __IFMODParameterUpdater:startEvent(arg0, arg1, arg2) end
+---@param arg2 boolean
+---@param arg3 BitSet
+function __IFMODParameterUpdater:startEvent(arg0, arg1, arg2, arg3) end
 
 ---@param arg0 integer
 ---@param arg1 GameSoundClip
----@param arg2 BitSet
-function __IFMODParameterUpdater:stopEvent(arg0, arg1, arg2) end
+---@param arg2 boolean
+---@param arg3 BitSet
+function __IFMODParameterUpdater:stopEvent(arg0, arg1, arg2, arg3) end
 
 ---@param arg0 integer
 ---@param arg1 GameSoundClip

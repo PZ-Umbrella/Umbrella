@@ -34,6 +34,9 @@ function SandboxOptionsScreen:changeAdvancedMode(_, bool) end
 
 function SandboxOptionsScreen:create() end
 
+---@return table
+function SandboxOptionsScreen:createControlForSetting(setting, tooltip) end
+
 ---@param page umbrella.ServerSettingsScreen.SettingsPage
 ---@return ISUIElement
 function SandboxOptionsScreen:createPanel(page) end

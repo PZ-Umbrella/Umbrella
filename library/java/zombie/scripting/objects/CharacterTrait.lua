@@ -135,6 +135,9 @@ CharacterTrait.HEMOPHOBIC = nil
 CharacterTrait.HERBALIST = nil
 
 ---@type CharacterTrait
+CharacterTrait.HERBALIST_PROF = nil
+
+---@type CharacterTrait
 CharacterTrait.HIGH_THIRST = nil
 
 ---@type CharacterTrait
@@ -154,6 +157,9 @@ CharacterTrait.INSOMNIAC = nil
 
 ---@type CharacterTrait
 CharacterTrait.INVENTIVE = nil
+
+---@type CharacterTrait
+CharacterTrait.INVENTIVE_PROF = nil
 
 ---@type CharacterTrait
 CharacterTrait.IRON_GUT = nil

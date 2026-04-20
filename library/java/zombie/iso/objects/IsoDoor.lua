@@ -209,6 +209,9 @@ function __IsoDoor:isLockedByKey() end
 ---@return boolean
 function __IsoDoor:isObstructed() end
 
+---@return boolean
+function __IsoDoor:isOpen() end
+
 ---@param input ByteBuffer
 ---@param WorldVersion integer
 ---@param IS_DEBUG_SAVE boolean
@@ -283,6 +286,9 @@ function __IsoDoor:setLocked(bLocked) end
 
 ---@param lockedByKey boolean
 function __IsoDoor:setLockedByKey(lockedByKey) end
+
+---@param open boolean
+function __IsoDoor:setOpen(open) end
 
 ---@param sprite IsoSprite
 function __IsoDoor:setOpenSprite(sprite) end

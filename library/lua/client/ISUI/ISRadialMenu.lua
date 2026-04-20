@@ -3,6 +3,7 @@
 ---@class ISRadialMenu : ISPanelJoypad
 ---@field disableJoypadNavigation boolean
 ---@field hideWhenButtonReleased ISButton?
+---@field ignoreAim boolean
 ---@field innerRadius number
 ---@field javaObject RadialMenu
 ---@field outerRadius number

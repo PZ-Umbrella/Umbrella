@@ -61,6 +61,10 @@ function __WorldMapVisited:isVisited(x, y, x2, y2) end
 
 function __WorldMapVisited:load() end
 
+---@param pos integer
+---@param chunk kahlua.Array<integer>
+function __WorldMapVisited:processDataChunk(pos, chunk) end
+
 ---@param renderX number
 ---@param renderY number
 ---@param minX integer
@@ -127,7 +131,25 @@ function WorldMapVisited.SaveAll() end
 ---@return WorldMapVisited
 function WorldMapVisited.getInstance() end
 
+---@param isLoadingNeeded boolean
+---@return WorldMapVisited
+function WorldMapVisited.getInstance(isLoadingNeeded) end
+
+---@return integer
+function WorldMapVisited.getVisitedLength() end
+
+---@param minX integer
+---@param minY integer
+---@param maxX integer
+---@param maxY integer
+---@param visited kahlua.Array<integer>
+function WorldMapVisited.setKnownInSquares(minX, minY, maxX, maxY, visited) end
+
 function WorldMapVisited.update() end
+
+---@param player IsoPlayer
+---@param visited kahlua.Array<integer>
+function WorldMapVisited.updatePlayer(player, visited) end
 
 ---@return WorldMapVisited
 function WorldMapVisited.new() end

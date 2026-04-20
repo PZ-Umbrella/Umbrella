@@ -912,17 +912,9 @@ function getConnectedPlayers() end
 function getContainerOverlays() end
 
 ---@param c integer
----@return integer
-function getControllerAxisCount(c) end
-
----@param c integer
 ---@param axis integer
 ---@return number
 function getControllerAxisValue(c, axis) end
-
----@param c integer
----@return integer
-function getControllerButtonCount(c) end
 
 ---@return integer
 function getControllerCount() end
@@ -1183,10 +1175,6 @@ function getItemTransactionDuration(id) end
 function getItemWeight(itemType) end
 
 ---@param joypad integer
----@return integer
-function getJoypadAButton(joypad) end
-
----@param joypad integer
 ---@return number
 function getJoypadAimingAxisX(joypad) end
 
@@ -1195,48 +1183,12 @@ function getJoypadAimingAxisX(joypad) end
 function getJoypadAimingAxisY(joypad) end
 
 ---@param joypad integer
----@return integer
-function getJoypadBButton(joypad) end
-
----@param joypad integer
----@return integer
-function getJoypadBackButton(joypad) end
-
----@param joypad integer
----@return integer
-function getJoypadLBumper(joypad) end
-
----@param joypad integer
----@return integer
-function getJoypadLeftStickButton(joypad) end
-
----@param joypad integer
 ---@return number
 function getJoypadMovementAxisX(joypad) end
 
 ---@param joypad integer
 ---@return number
 function getJoypadMovementAxisY(joypad) end
-
----@param joypad integer
----@return integer
-function getJoypadRBumper(joypad) end
-
----@param joypad integer
----@return integer
-function getJoypadRightStickButton(joypad) end
-
----@param joypad integer
----@return integer
-function getJoypadStartButton(joypad) end
-
----@param joypad integer
----@return integer
-function getJoypadXButton(joypad) end
-
----@param joypad integer
----@return integer
-function getJoypadYButton(joypad) end
 
 ---@param keyName string
 ---@return integer
@@ -1672,6 +1624,11 @@ function getText(txt, arg1, arg2, arg3) end
 ---@return string
 function getText(txt, arg1, arg2, arg3, arg4) end
 
+---@param txt string
+---@param args List<string>
+---@return string
+function getTextList(txt, args) end
+
 ---@return TextManager
 function getTextManager() end
 
@@ -1965,11 +1922,6 @@ function isJoypadLeft(joypad) end
 ---@param joypad integer
 ---@return boolean
 function isJoypadLeftStickButtonPressed(joypad) end
-
----@param joypad integer
----@param button integer
----@return boolean
-function isJoypadPressed(joypad, button) end
 
 ---@param joypad integer
 ---@return boolean
@@ -2762,6 +2714,18 @@ function setDefaultRoleFor(defaultId, roleName) end
 ---@param NewSpeed integer
 function setGameSpeed(NewSpeed) end
 
+---@param id integer
+---@param bActive boolean
+function setIgnoreInputsForDirection(id, bActive) end
+
+---@param id integer
+---@param bActive boolean
+function setJoypadIgnoreAim(id, bActive) end
+
+---@param id integer
+---@param bActive boolean
+function setJoypadIgnoreAimUntilCentered(id, bActive) end
+
 ---@param min number
 ---@param max number
 function setMinMaxZombiesPerChunk(min, max) end
@@ -2777,18 +2741,19 @@ function setModelMetaData(name, mesh, tex, shader, bStatic) end
 ---@param y integer
 function setMouseXY(x, y) end
 
+---@param id integer
+---@param bActive boolean
+function setPlayerButtonsActive(id, bActive) end
+
 ---@param player integer
 ---@param joypad integer
 ---@param playerObj IsoPlayer
 ---@param username string
-function setPlayerJoypad(player, joypad, playerObj, username) end
+---@param allowNewPlayer boolean
+function setPlayerJoypad(player, joypad, playerObj, username, allowNewPlayer) end
 
 ---@param playerObj IsoPlayer
 function setPlayerMouse(playerObj) end
-
----@param id integer
----@param bActive boolean
-function setPlayerMovementActive(id, bActive) end
 
 ---@param player IsoPlayer
 ---@param value integer
@@ -2945,6 +2910,9 @@ function stopSound(sound) end
 ---@param bodyPart BodyPart
 ---@param syncParams integer
 function syncBodyPart(bodyPart, syncParams) end
+
+---@param player IsoPlayer
+function syncClothingFields(player) end
 
 ---@param player IsoPlayer
 ---@param item HandWeapon

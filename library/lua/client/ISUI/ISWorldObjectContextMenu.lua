@@ -23,6 +23,7 @@ ISWorldObjectContextMenu.chairCheckList = {
 		"Block",
 		"Table",
 		"Toilet",
+		"Swingset",
 	},
 	goodList = {
 		"Beach",

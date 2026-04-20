@@ -170,7 +170,7 @@ return {
 	DaysUntilMaximumDiminishedLoot = 1825,
 	MuscleStrainFactor = 1.0,
 	DiscomfortFactor = 1.0,
-	WoundInfectionFactor = 0.5,
+	WoundInfectionFactor = 1.0,
 	NoBlackClothes = true,
 	EasyClimbing = false,
 	MaximumFireFuelHours = 8,

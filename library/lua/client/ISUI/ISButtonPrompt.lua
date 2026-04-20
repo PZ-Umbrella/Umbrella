@@ -51,6 +51,8 @@ ISButtonPrompt = ISUIElement:derive("ISButtonPrompt")
 ISButtonPrompt.Type = "ISButtonPrompt"
 ISButtonPrompt.test = nil ---@type umbrella.ISButtonPrompt.Test?
 
+function ISButtonPrompt:clearButtonBindings() end
+
 function ISButtonPrompt:climbFence() end
 
 ---@param window IsoWindow
@@ -101,13 +103,27 @@ function ISButtonPrompt:doAButtonDoorOrWindowOrWindowFrame(dir, obj) end
 ---@param obj IsoObject
 function ISButtonPrompt:doBButtonDoorOrWindowOrWindowFrame(dir, obj) end
 
+function ISButtonPrompt:doClimbThroughButtonDoorOrWindowOrWindowFrame(dir, obj) end
+
+function ISButtonPrompt:doInteractButtonDoorOrWindowOrWindowFrame(dir, obj) end
+
 function ISButtonPrompt:dropCorpse() end
 
 ---@param dir IsoDirections
 function ISButtonPrompt:getBestAButtonAction(dir) end
 
+function ISButtonPrompt:getBestApplyBrakesButtonAction(dir) end
+
 ---@param dir IsoDirections
 function ISButtonPrompt:getBestBButtonAction(dir) end
+
+function ISButtonPrompt:getBestButtonBindingAction(buttonBinding, dir) end
+
+function ISButtonPrompt:getBestCancelButtonAction(dir) end
+
+function ISButtonPrompt:getBestClimbThroughButtonAction(dir) end
+
+function ISButtonPrompt:getBestInteractButtonAction(dir) end
 
 ---@param dir IsoDirections
 function ISButtonPrompt:getBestLBButtonAction(dir) end
@@ -115,11 +131,18 @@ function ISButtonPrompt:getBestLBButtonAction(dir) end
 ---@param dir IsoDirections
 function ISButtonPrompt:getBestRBButtonAction(dir) end
 
+function ISButtonPrompt:getBestSmashWindowButtonAction(dir) end
+
+function ISButtonPrompt:getBestSprintButtonAction(dir) end
+
 ---@param dir IsoDirections
 function ISButtonPrompt:getBestXButtonAction(dir) end
 
 ---@param dir IsoDirections
 function ISButtonPrompt:getBestYButtonAction(dir) end
+
+---@return LuaList?
+function ISButtonPrompt:getInteractOptionsButtonObjects(dir) end
 
 ---@return number
 function ISButtonPrompt:getTopOf() end
@@ -182,6 +205,12 @@ function ISButtonPrompt:setAPrompt(str, func, param1, param2, param3, param4) en
 ---@param param4 unknown?
 function ISButtonPrompt:setBPrompt(str, func, param1, param2, param3, param4) end
 
+---@param str string
+function ISButtonPrompt:setButtonBindingPrompt(buttonBinding, str, func, param1, param2, param3, param4) end
+
+---@param str string
+function ISButtonPrompt:setButtonPrompt(button, str, func, param1, param2, param3, param4) end
+
 ---@param str string?
 ---@param func function?
 ---@param param1 unknown?
@@ -226,6 +255,12 @@ function ISButtonPrompt:testAButtonAction(dir) end
 
 ---@param dir IsoDirections
 function ISButtonPrompt:testBButtonAction(dir) end
+
+function ISButtonPrompt:testClimbThroughButtonAction(dir) end
+
+function ISButtonPrompt:testInteractButtonAction(dir) end
+
+function ISButtonPrompt:testSmashWindowButtonAction(dir) end
 
 function ISButtonPrompt:update() end
 

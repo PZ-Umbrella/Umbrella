@@ -26,6 +26,8 @@
 ---@field marginRight number
 ---@field marginTop number
 ---@field maxLines number
+---@field onmousedown unknown
+---@field onmouseup unknown
 ---@field orient table<integer, "left" | "right" | "centre">
 ---@field r integer
 ---@field rgb table<integer, umbrella.RGB>
@@ -52,6 +54,14 @@ ISRichTextPanel.drawMargins = false
 function ISRichTextPanel:doRightJoystickScrolling(joypadData, dx, dy) end
 
 function ISRichTextPanel:initialise() end
+
+---@param x number
+---@param y number
+function ISRichTextPanel:onMouseDown(x, y) end
+
+---@param x number
+---@param y number
+function ISRichTextPanel:onMouseUp(x, y) end
 
 ---@param del number
 ---@return boolean
@@ -92,8 +102,14 @@ function ISRichTextPanel:setContentTransparency(alpha) end
 ---@param bottom number
 function ISRichTextPanel:setMargins(left, top, right, bottom) end
 
+function ISRichTextPanel:setOnMouseDownFunction(target, onmousedown) end
+
+function ISRichTextPanel:setOnMouseUpFunction(target, onmouseup) end
+
 ---@param text string?
 function ISRichTextPanel:setText(text) end
+
+function ISRichTextPanel:updateAutoScroll() end
 
 ---@param x number
 ---@param y number

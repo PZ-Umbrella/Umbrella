@@ -117,9 +117,6 @@ function __Stats:write(b, field) end
 
 Stats = {}
 
----@type integer
-Stats.numCloseZombies = nil
-
 ---@return Stats
 function Stats.new() end
 

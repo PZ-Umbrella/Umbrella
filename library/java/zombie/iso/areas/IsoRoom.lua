@@ -107,6 +107,9 @@ function __IsoRoom:isDerelict() end
 function __IsoRoom:isInside(x, y, z) end
 
 ---@return boolean
+function __IsoRoom:isRural() end
+
+---@return boolean
 function __IsoRoom:isShop() end
 
 function __IsoRoom:onSee() end

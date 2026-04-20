@@ -16,12 +16,11 @@ function __BodyDamage:AddGeneralHealth(Val) end
 
 function __BodyDamage:AddRandomDamage() end
 
----This gonna decide the strength of the damage you'll get.
---- Getting surrounded can also trigger an instant death animation.
 ---@param zombie IsoZombie
 ---@param hitReaction string
+---@param partIndex integer
 ---@return boolean
-function __BodyDamage:AddRandomDamageFromZombie(zombie, hitReaction) end
+function __BodyDamage:AddRandomDamageFromZombie(zombie, hitReaction, partIndex) end
 
 ---@param wielder IsoAnimal
 function __BodyDamage:DamageFromAnimal(wielder) end

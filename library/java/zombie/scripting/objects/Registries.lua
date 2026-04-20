@@ -32,6 +32,9 @@ Registries.CHARACTER_TRAIT = nil
 ---@type Registry<ComicBook>
 Registries.COMIC_BOOK = nil
 
+---@type Registry<ContainerType>
+Registries.CONTAINER_TYPE = nil
+
 ---@type Registry<Doodle>
 Registries.DOODLE = nil
 
@@ -100,6 +103,9 @@ Registries.SEASON_RECIPE = nil
 
 ---@type Registry<SoundKey>
 Registries.SOUND_KEY = nil
+
+---@type Registry<SurvivalGuideEntry>
+Registries.SURVIVAL_GUIDE_ENTRY = nil
 
 ---@type Registry<TilePropertyKey>
 Registries.TILE_PROPERTY_KEY = nil

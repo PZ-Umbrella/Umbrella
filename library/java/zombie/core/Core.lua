@@ -846,6 +846,9 @@ function __Core:isOptionSimpleClothingTextures(bZombie) end
 function __Core:isOptiondblTapJogToSprint() end
 
 ---@return boolean
+function __Core:isPopulateServerListOnStart() end
+
+---@return boolean
 function __Core:isRenderPrecipIndoors() end
 
 ---@return boolean
@@ -1378,6 +1381,9 @@ function __Core:setPoisonousBerry(poisonousBerry) end
 
 ---@param poisonousMushroom string
 function __Core:setPoisonousMushroom(poisonousMushroom) end
+
+---@param populateServerListOnStart boolean
+function __Core:setPopulateServerListOnStart(populateServerListOnStart) end
 
 ---@param optionRenderPrecipIndoors boolean
 function __Core:setRenderPrecipIndoors(optionRenderPrecipIndoors) end

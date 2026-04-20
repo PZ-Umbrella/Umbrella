@@ -49,6 +49,9 @@
 ---@class ParameterExercising
 
 ---(Not exposed)
+---@class ParameterFirearmDistance
+
+---(Not exposed)
 ---@class ParameterFirearmInside
 
 ---(Not exposed)

@@ -27,6 +27,11 @@ function __IsoDirections:ToVector() end
 ---@return Vector2
 function __IsoDirections:ToVector(result) end
 
+---@param addTo Vector2
+---@param result Vector2
+---@return Vector2
+function __IsoDirections:addToVector(addTo, result) end
+
 ---@return integer
 function __IsoDirections:dx() end
 

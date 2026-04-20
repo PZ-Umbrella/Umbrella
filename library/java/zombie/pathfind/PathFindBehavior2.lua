@@ -63,6 +63,11 @@ function __PathFindBehavior2:isGoalVehicleArea() end
 ---@return boolean
 function __PathFindBehavior2:isGoalVehicleSeat() end
 
+---@param targetSquare IsoGridSquare
+---@param adjacentSquare IsoGridSquare
+---@return boolean
+function __PathFindBehavior2:isGoodChairAdjacentSquare(targetSquare, adjacentSquare) end
+
 ---@return boolean
 function __PathFindBehavior2:isMovingUsingPathFind() end
 

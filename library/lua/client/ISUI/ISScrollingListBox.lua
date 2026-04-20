@@ -19,6 +19,7 @@
 ---@field mouseoverselected integer?
 ---@field onmousedblclick umbrella.ISScrollingListBox.MouseCallback
 ---@field onmousedown umbrella.ISScrollingListBox.MouseCallback
+---@field overrideAButtonFunction unknown
 ---@field selected integer?
 ---@field selectedBeforeReset number?
 ---@field selectedTextColor umbrella.RGBA
@@ -217,6 +218,8 @@ function ISScrollingListBox:setOnMouseDoubleClick(target, onmousedblclick) end
 ---@param target unknown?
 ---@param onmousedown umbrella.ISScrollingListBox.MouseCallback?
 function ISScrollingListBox:setOnMouseDownFunction(target, onmousedown) end
+
+function ISScrollingListBox:setOverrideAButtonFunction(target, fct) end
 
 ---@param r number
 ---@param g number

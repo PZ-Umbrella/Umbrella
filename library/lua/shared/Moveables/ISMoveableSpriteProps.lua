@@ -38,6 +38,7 @@ InfoPanelFlags.needStandingInside = nil ---@type boolean?
 InfoPanelFlags.mustPlaceRoomRoof = nil ---@type boolean?
 InfoPanelFlags.isOperational = nil ---@type boolean?
 InfoPanelFlags.removePropane = nil ---@type boolean?
+InfoPanelFlags.basementWallAdjacentToTheVoid = nil ---@type boolean?
 
 ---@class SpriteGridCache
 ---@field [integer] umbrella.SpriteGridCache.Item
@@ -459,6 +460,9 @@ function ISMoveableSpriteProps:hasTool(_player, _mode) end
 ---@return InventoryItem?
 function ISMoveableSpriteProps:instanceItem(_spriteNameOverride) end
 
+---@return boolean
+function ISMoveableSpriteProps:isBasementWallAdjacentToTheVoid(object) end
+
 ---@param _object IsoObject
 ---@return boolean
 function ISMoveableSpriteProps:isBreakablePlant(_object) end
@@ -536,6 +540,8 @@ function ISMoveableSpriteProps:placeMoveableViaCursor(_character, _square, _orig
 ---@param _character IsoPlayer
 ---@param _object IsoObject
 function ISMoveableSpriteProps:playBreakSound(_character, _object) end
+
+function ISMoveableSpriteProps:playScrapSuccessSound(_character) end
 
 ---@param obj IsoObject
 ---@return FluidContainer[]
@@ -631,6 +637,9 @@ function ISMoveableSpriteProps:snapFaceToSquare(_square) end
 ---@param _action ISBaseTimedAction
 ---@return boolean
 function ISMoveableSpriteProps:startScrapAction(_action) end
+
+---@param _sound string
+function ISMoveableSpriteProps:transmitPlaySound(_character, _sound) end
 
 ---@param character IsoPlayer
 ---@param square IsoGridSquare

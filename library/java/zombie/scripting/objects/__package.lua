@@ -28,6 +28,9 @@
 ---@class ComicBook
 
 ---(Not exposed)
+---@class ContainerType
+
+---(Not exposed)
 ---@class CoverType
 
 ---(Not exposed)
