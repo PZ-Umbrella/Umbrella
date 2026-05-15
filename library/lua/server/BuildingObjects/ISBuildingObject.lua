@@ -53,6 +53,11 @@ function ISBuildingObject.onDestroy(thump, player) end
 ---@param square IsoGridSquare
 function ISBuildingObject.removeFromGround(square) end
 
+---@param x number
+---@param y number
+---@param z number
+function ISBuildingObject:beforeWorldRender(x, y, z) end
+
 function ISBuildingObject:deactivate() end
 
 ---@return string?

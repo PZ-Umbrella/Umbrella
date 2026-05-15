@@ -163,6 +163,12 @@ function luautils.walkAdjFence(playerObj, square, object, keepActions) end
 ---@return boolean
 function luautils.walkAdjObject(playerObj, object, allowDiagonal, keepActions) end
 
+---@return boolean
+function luautils.walkAdjSquares(playerObj, squares, allowDiagonal, keepActions) end
+
+---@return boolean
+function luautils.walkAdjSquaresExcluded(playerObj, squares, squaresExcluded, allowDiagonal, keepActions) end
+
 ---@param playerObj IsoPlayer
 ---@param square IsoGridSquare
 ---@return boolean

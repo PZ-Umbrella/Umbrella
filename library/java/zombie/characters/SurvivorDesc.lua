@@ -18,6 +18,9 @@ function __SurvivorDesc:getBravery() end
 ---@return integer
 function __SurvivorDesc:getCalculatedToughness() end
 
+---@return CharacterGender
+function __SurvivorDesc:getCharacterGender() end
+
 ---@return CharacterProfession
 function __SurvivorDesc:getCharacterProfession() end
 
@@ -159,6 +162,9 @@ function __SurvivorDesc:setAggressiveness(aggressiveness) end
 
 ---@param bravery number the bravery to set
 function __SurvivorDesc:setBravery(bravery) end
+
+---@param characterGender CharacterGender
+function __SurvivorDesc:setCharacterGender(characterGender) end
 
 ---@param characterProfession CharacterProfession
 function __SurvivorDesc:setCharacterProfession(characterProfession) end

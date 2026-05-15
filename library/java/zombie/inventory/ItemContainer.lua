@@ -148,9 +148,6 @@ function __ItemContainer:addItem(item) end
 ---@return InventoryItem
 function __ItemContainer:addItem(item) end
 
----@param item InventoryItem
-function __ItemContainer:addItemOnServer(item) end
-
 ---@param item ItemKey
 ---@param count integer
 ---@return List<InventoryItem>
@@ -409,6 +406,10 @@ function __ItemContainer:getAllItems(items, inInv) end
 ---@param result ArrayList<InventoryItem>
 ---@return ArrayList<InventoryItem>
 function __ItemContainer:getAllRecurse(predicate, result) end
+
+---@param predicate Predicate<InventoryItem>
+---@return ArrayList<InventoryItem>
+function __ItemContainer:getAllRecurse(predicate) end
 
 ---@param itemTag ItemTag
 ---@return ArrayList<InventoryItem>
@@ -1396,6 +1397,12 @@ function __ItemContainer:isExistYet() end
 
 ---@return boolean
 function __ItemContainer:isExplored() end
+
+---@return boolean
+function __ItemContainer:isFreezer() end
+
+---@return boolean
+function __ItemContainer:isFridge() end
 
 ---@param chr IsoGameCharacter
 ---@return boolean

@@ -78,6 +78,9 @@ function __CharacterTraitDefinition:setDescription(description) end
 ---@param disabledInMultiplayer boolean
 function __CharacterTraitDefinition:setDisabledInMultiplayer(disabledInMultiplayer) end
 
+---@param texture Texture
+function __CharacterTraitDefinition:setTexture(texture) end
+
 CharacterTraitDefinition = {}
 
 ---@type Map<CharacterTrait, CharacterTraitDefinition>

@@ -28,6 +28,11 @@ ISHealthPanel.Type = "ISHealthPanel"
 ISHealthPanel.cheat = false or getDebug()
 ISHealthPanel.instance = nil ---@type ISHealthPanel?
 
+function ISHealthPanel.AcceptedMedicalCheck(target, requester) end
+
+---@return boolean
+function ISHealthPanel.canPerformMedicalCheck(target, requester) end
+
 ---@param doctor IsoPlayer
 ---@param patient IsoPlayer
 ---@param patientX number
@@ -69,6 +74,8 @@ function ISHealthPanel.onCheatItem(itemType, playerObj) end
 ---@param player IsoPlayer
 ---@param otherPlayer IsoPlayer
 function ISHealthPanel.onCheatOtherPlayer(bodyPart, action, player, otherPlayer) end
+
+function ISHealthPanel.ReceiveMedicalCheckRequest(requester) end
 
 ---@param playerObj IsoPlayer
 ---@param bodyPart BodyPart
@@ -117,6 +124,8 @@ function ISHealthPanel:getDoctor() end
 function ISHealthPanel:getPatient() end
 
 function ISHealthPanel:initialise() end
+
+function ISHealthPanel:onAnswerMedicalCheckRequest(button) end
 
 ---@param joypadData JoypadData
 function ISHealthPanel:onGainJoypadFocus(joypadData) end

@@ -423,6 +423,9 @@ ItemTag.FISHING_SPEAR = nil
 ItemTag.FISH_MEAT = nil
 
 ---@type ItemTag
+ItemTag.FITS_CLOTHING_RACK = nil
+
+---@type ItemTag
 ItemTag.FITS_KEY_RING = nil
 
 ---@type ItemTag
@@ -565,6 +568,9 @@ ItemTag.IDCARD = nil
 
 ---@type ItemTag
 ItemTag.IGNORE_ZOMBIE_DENSITY = nil
+
+---@type ItemTag
+ItemTag.IMPROVISED_GAS_MASK = nil
 
 ---@type ItemTag
 ItemTag.INFERIOR_BINDING = nil
@@ -955,6 +961,9 @@ ItemTag.PURIFY_WATER = nil
 
 ---@type ItemTag
 ItemTag.QUARTER_BAR_STOCK = nil
+
+---@type ItemTag
+ItemTag.RAG_FILTER = nil
 
 ---@type ItemTag
 ItemTag.RAILROAD_SPIKE_PULLER = nil

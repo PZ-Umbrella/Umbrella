@@ -20,6 +20,11 @@
 ---@field partCatRGB umbrella.RGB
 ---@field partRGB umbrella.RGB
 ---@field playerNum integer
+---@field progressHgt unknown
+---@field progressPadBottom number
+---@field progressY number
+---@field rectHgt number
+---@field rectY number
 ---@field rightListSelection number?
 ---@field selected integer
 ---@field title string

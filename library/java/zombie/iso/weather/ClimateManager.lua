@@ -545,6 +545,9 @@ ClimateManager.MAX_WINDSPEED_KPH = nil
 ClimateManager.MAX_WINDSPEED_MPH = nil
 
 ---@type integer
+ClimateManager.PUDDLES_BROADCAST_INTERVAL_MS = nil
+
+---@type integer
 ClimateManager.PacketAdminVarsUpdate = nil
 
 ---@type integer

@@ -23,6 +23,8 @@ function ISFitnessAction:complete() end
 
 function ISFitnessAction:exeLooped() end
 
+function ISFitnessAction:forceStop() end
+
 ---@return number
 function ISFitnessAction:getDuration() end
 

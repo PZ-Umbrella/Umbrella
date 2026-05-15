@@ -1,6 +1,6 @@
 ---@meta _
 
----@class BaseVehicle: IsoMovingObject, Thumpable, IFMODParameterUpdater, IPositional
+---@class BaseVehicle: IsoMovingObject, Thumpable, IFMODParameterUpdater, IPositional, VehicleSoundOwner
 local __BaseVehicle = {}
 
 ---@param amount number
@@ -525,6 +525,9 @@ function __BaseVehicle:getCharacter(seat) end
 ---@return HashMap<string, string>
 function __BaseVehicle:getChoosenParts() end
 
+---@return string
+function __BaseVehicle:getChosenAlarmSound() end
+
 ---@return number
 function __BaseVehicle:getClientForce() end
 
@@ -596,6 +599,9 @@ function __BaseVehicle:getDriverRegardlessOfTow() end
 function __BaseVehicle:getEmitter() end
 
 ---@return integer
+function __BaseVehicle:getEngineCondition() end
+
+---@return integer
 function __BaseVehicle:getEngineLoudness() end
 
 ---@return integer
@@ -606,6 +612,9 @@ function __BaseVehicle:getEngineQuality() end
 
 ---@return number
 function __BaseVehicle:getEngineSpeed() end
+
+---@return BaseVehicle.engineStateTypes
+function __BaseVehicle:getEngineState() end
 
 ---@param seat integer
 ---@param x number
@@ -677,6 +686,9 @@ function __BaseVehicle:getLightbarLightsMode() end
 ---@return integer
 function __BaseVehicle:getLightbarSirenMode() end
 
+---@return LightbarSirenMode
+function __BaseVehicle:getLightbarSirenModeObject() end
+
 ---@param out Vector3f
 ---@return Vector3f
 function __BaseVehicle:getLinearVelocity(out) end
@@ -702,11 +714,17 @@ function __BaseVehicle:getMaxPassengers() end
 ---@return number
 function __BaseVehicle:getMaxSpeed() end
 
+---@return number
+function __BaseVehicle:getMaxWheelSteering() end
+
 ---@return integer
 function __BaseVehicle:getMechanicalID() end
 
 ---@return BaseVehicle.MinMaxPosition
 function __BaseVehicle:getMinMaxPosition() end
+
+---@return number
+function __BaseVehicle:getMinWheelSkid() end
 
 ---@return UpdateSchedulerSimulationLevel
 function __BaseVehicle:getMinimumSimulationLevel() end
@@ -736,6 +754,9 @@ function __BaseVehicle:getObjectName() end
 --- Currently x2 to balance things
 ---@return number
 function __BaseVehicle:getOffroadEfficiency() end
+
+---@return IsoPlayer
+function __BaseVehicle:getPVPPlayerDriver() end
 
 ---@param id string
 ---@return VehiclePart
@@ -844,6 +865,9 @@ function __BaseVehicle:getRegulatorSpeed() end
 ---@return number
 function __BaseVehicle:getRemainingFuelPercentage() end
 
+---@return ParameterVehicleRoadMaterial.Material
+function __BaseVehicle:getRoadMaterial() end
+
 ---@return number
 function __BaseVehicle:getRust() end
 
@@ -950,6 +974,9 @@ function __BaseVehicle:getTrailerTrunkPart() end
 
 ---@return integer
 function __BaseVehicle:getTransmissionNumber() end
+
+---@return TransmissionNumber
+function __BaseVehicle:getTransmissionNumberEnum() end
 
 ---@return string
 function __BaseVehicle:getTransmissionNumberLetter() end
@@ -1084,14 +1111,13 @@ function __BaseVehicle:hasZombieType(outfit) end
 ---@return boolean
 function __BaseVehicle:haveOneDoorUnlocked() end
 
+---@param chr IsoAnimal
+function __BaseVehicle:hitAnimal(chr) end
+
 ---@param chr IsoGameCharacter
 ---@param impactPosOnVehicle Vector2
----@param pushedBack boolean
 ---@return number
-function __BaseVehicle:hitCharacter(chr, impactPosOnVehicle, pushedBack) end
-
----@param chr IsoAnimal
-function __BaseVehicle:hitCharacter(chr) end
+function __BaseVehicle:hitCharacter(chr, impactPosOnVehicle) end
 
 ---@param x1 number
 ---@param y1 number
@@ -1111,6 +1137,9 @@ function __BaseVehicle:intersectLineWithExtents(x1, y1, x2, y2, adjust, intersec
 function __BaseVehicle:intersectLineWithPoly(x1, y1, x2, y2, intersection) end
 
 ---@return boolean
+function __BaseVehicle:isAlarmSounding() end
+
+---@return boolean
 function __BaseVehicle:isAlarmed() end
 
 ---@return boolean
@@ -1120,10 +1149,19 @@ function __BaseVehicle:isAnyDoorLocked() end
 function __BaseVehicle:isAnyListenerInside() end
 
 ---@return boolean
+function __BaseVehicle:isAnyTireMissing() end
+
+---@return boolean
 function __BaseVehicle:isAtRest() end
 
 ---@return boolean
 function __BaseVehicle:isBackSignalEmitting() end
+
+---@return boolean
+function __BaseVehicle:isBackupBeeperSounding() end
+
+---@return boolean
+function __BaseVehicle:isBrakePedalPressed() end
 
 ---@return boolean
 function __BaseVehicle:isBraking() end
@@ -1152,6 +1190,9 @@ function __BaseVehicle:isDoColor() end
 function __BaseVehicle:isDoingOffroad() end
 
 ---@return boolean
+function __BaseVehicle:isDoorAlarmSounding() end
+
+---@return boolean
 function __BaseVehicle:isDriveable() end
 
 ---@param chr IsoGameCharacter
@@ -1160,6 +1201,9 @@ function __BaseVehicle:isDriver(chr) end
 
 ---@return boolean
 function __BaseVehicle:isEngineRunning() end
+
+---@return boolean
+function __BaseVehicle:isEngineSounding() end
 
 ---@return boolean
 function __BaseVehicle:isEngineStarted() end
@@ -1191,7 +1235,13 @@ function __BaseVehicle:isExitBlocked(chr, seat) end
 function __BaseVehicle:isExitBlocked2(seat) end
 
 ---@return boolean
+function __BaseVehicle:isGasPedalPressed() end
+
+---@return boolean
 function __BaseVehicle:isGoodCar() end
+
+---@return boolean
+function __BaseVehicle:isHornSounding() end
 
 ---@return boolean
 function __BaseVehicle:isHotwired() end
@@ -1260,6 +1310,10 @@ function __BaseVehicle:isKeyboardControlled() end
 
 ---@return boolean
 function __BaseVehicle:isKeysInIgnition() end
+
+---@param range number
+---@return boolean
+function __BaseVehicle:isListenerInRange(range) end
 
 ---@return boolean
 function __BaseVehicle:isLocalPhysicSim() end
@@ -1330,6 +1384,9 @@ function __BaseVehicle:isSeatInstalled(seat) end
 ---@param seat integer
 ---@return boolean
 function __BaseVehicle:isSeatOccupied(seat) end
+
+---@return boolean
+function __BaseVehicle:isSirenSounding() end
 
 ---@return boolean
 function __BaseVehicle:isSirening() end
@@ -1733,6 +1790,9 @@ function __BaseVehicle:setWorldTransform(_in) end
 function __BaseVehicle:setZone(name) end
 
 ---@return boolean
+function __BaseVehicle:shouldAnimRecorderBeActive() end
+
+---@return boolean
 function __BaseVehicle:shouldCollideWithCharacters() end
 
 ---@return boolean
@@ -1831,6 +1891,8 @@ function __BaseVehicle:testTouchingVehicle(isoGameCharacter, ragdollController) 
 ---@param chr IsoGameCharacter
 ---@param locked boolean
 function __BaseVehicle:toggleLockedDoor(part, chr, locked) end
+
+function __BaseVehicle:transmitAlarmed() end
 
 function __BaseVehicle:transmitBlood() end
 

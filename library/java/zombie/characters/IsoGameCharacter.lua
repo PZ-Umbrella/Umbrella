@@ -504,9 +504,10 @@ function __IsoGameCharacter:applyCharacterTraitsRecipes() end
 ---@param damageAmount number
 function __IsoGameCharacter:applyDamage(damageAmount) end
 
+---@param vehicle BaseVehicle
 ---@param vehicleSpeed number
 ---@param damage number
-function __IsoGameCharacter:applyDamageFromVehicleHit(vehicleSpeed, damage) end
+function __IsoGameCharacter:applyDamageFromVehicleHit(vehicle, vehicleSpeed, damage) end
 
 function __IsoGameCharacter:applyProfessionRecipes() end
 
@@ -652,6 +653,10 @@ function __IsoGameCharacter:canUseLootZed() end
 ---@return boolean
 function __IsoGameCharacter:carMovingBackward(carSpeed) end
 
+---@param impactingVehicle BaseVehicle
+---@return boolean
+function __IsoGameCharacter:causesDamageToVehicleWhenHit(impactingVehicle) end
+
 ---@param state State
 function __IsoGameCharacter:changeState(state) end
 
@@ -776,9 +781,9 @@ function __IsoGameCharacter:doDeathSplatterAndSounds(weapon, wielder, isGory) en
 ---@param dMovement Vector3
 function __IsoGameCharacter:doDeferredMovementFromRagdoll(dMovement) end
 
----@param baseVehicle BaseVehicle
+---@param hitByVehicle BaseVehicle
 ---@param hitVars BaseVehicle.HitVars
-function __IsoGameCharacter:doNetworkHitByVehicle(baseVehicle, hitVars) end
+function __IsoGameCharacter:doNetworkHitByVehicle(hitByVehicle, hitVars) end
 
 ---@param text string
 function __IsoGameCharacter:drawDebugTextBelow(text) end
@@ -1068,6 +1073,9 @@ function __IsoGameCharacter:getCardinalDirection() end
 
 ---@return Stack<BaseAction> # the CharacterActions
 function __IsoGameCharacter:getCharacterActions() end
+
+---@return CharacterGender
+function __IsoGameCharacter:getCharacterGender() end
 
 ---@return CharacterTraits
 function __IsoGameCharacter:getCharacterTraits() end
@@ -1811,6 +1819,9 @@ function __IsoGameCharacter:getStaggerTimeMod() end
 
 ---@return StateMachine # the stateMachine
 function __IsoGameCharacter:getStateMachine() end
+
+---@return StateMachineComponent
+function __IsoGameCharacter:getStateMachineComponent() end
 
 ---@param clazz Class<any>
 ---@return Map<State.Param<any>, any>
@@ -2744,19 +2755,19 @@ function __IsoGameCharacter:nearbyZombieClimbPenalty() end
 ---@return boolean
 function __IsoGameCharacter:onDeath_ShouldDoSplatterAndSounds(weapon, wielder, isGory) end
 
+function __IsoGameCharacter:onFireLightSourceCheck() end
+
 ---@param vehicle BaseVehicle
 ---@param impactSpeed number
 ---@param hitDir Vector2
 ---@param impactPosOnVehicle Vector2
----@param pushedBack boolean
 ---@return number
-function __IsoGameCharacter:onHitByVehicle(vehicle, impactSpeed, hitDir, impactPosOnVehicle, pushedBack) end
+function __IsoGameCharacter:onHitByVehicle(vehicle, impactSpeed, hitDir, impactPosOnVehicle) end
 
 ---@param vehicle BaseVehicle
 ---@param impactSpeed number
----@param pushedBack boolean
 ---@return number
-function __IsoGameCharacter:onHitByVehicleApplyDamage(vehicle, impactSpeed, pushedBack) end
+function __IsoGameCharacter:onHitByVehicleApplyDamage(vehicle, impactSpeed) end
 
 ---@param killer IsoGameCharacter
 ---@param attackingWeapon HandWeapon
@@ -2854,6 +2865,8 @@ function __IsoGameCharacter:processHitDamage(weapon, wielder, damageSplit, bIgno
 ---@param b ByteBufferReader
 function __IsoGameCharacter:readInventory(b) end
 
+function __IsoGameCharacter:registerECSComponents() end
+
 function __IsoGameCharacter:releaseAnimationPlayer() end
 
 function __IsoGameCharacter:releaseBallisticsController() end
@@ -2880,6 +2893,8 @@ function __IsoGameCharacter:removeFromWorld() end
 
 ---@param guid string
 function __IsoGameCharacter:removeKnownMediaLine(guid) end
+
+function __IsoGameCharacter:removeOnFireLightSource() end
 
 ---@param item InventoryItem
 function __IsoGameCharacter:removeWornItem(item) end
@@ -3072,6 +3087,9 @@ function __IsoGameCharacter:setCanUseLootLog(b) end
 
 ---@param b boolean
 function __IsoGameCharacter:setCanUseLootZed(b) end
+
+---@param characterGender CharacterGender
+function __IsoGameCharacter:setCharacterGender(characterGender) end
 
 ---@param clickSound string
 function __IsoGameCharacter:setClickSound(clickSound) end

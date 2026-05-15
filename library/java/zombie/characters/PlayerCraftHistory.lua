@@ -6,6 +6,8 @@ local __PlayerCraftHistory = {}
 ---@param craftType string
 function __PlayerCraftHistory:addCraftHistoryCraftedEvent(craftType) end
 
+function __PlayerCraftHistory:cleanupHistory() end
+
 ---@param craftType string
 ---@return PlayerCraftHistory.CraftHistoryEntry
 function __PlayerCraftHistory:getCraftHistoryFor(craftType) end

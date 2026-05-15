@@ -64,6 +64,11 @@ function __IsoPlayer:addWorldSoundUnlessInvisible(radius, volume, bStressHumans)
 ---@return boolean
 function __IsoPlayer:allowsTwist() end
 
+---@param vehicle BaseVehicle
+---@param vehicleSpeed number
+---@param damage number
+function __IsoPlayer:applyDamageFromVehicleHit(vehicle, vehicleSpeed, damage) end
+
 function __IsoPlayer:calculateContext() end
 
 ---@param target IsoGameCharacter
@@ -201,10 +206,6 @@ function __IsoPlayer:getCombatSpeed() end
 ---@param assumedDir IsoDirections
 ---@return IsoObject
 function __IsoPlayer:getContextDoorOrWindowOrWindowFrame(assumedDir) end
-
----@param vehicleSpeed number
----@return number
-function __IsoPlayer:getDamageFromHitByACar(vehicleSpeed) end
 
 ---@param separatorStr string
 ---@return string
@@ -707,9 +708,8 @@ function __IsoPlayer:nullifyAiming() end
 
 ---@param vehicle BaseVehicle
 ---@param impactSpeed number
----@param pushedBack boolean
 ---@return number
-function __IsoPlayer:onHitByVehicleApplyDamage(vehicle, impactSpeed, pushedBack) end
+function __IsoPlayer:onHitByVehicleApplyDamage(vehicle, impactSpeed) end
 
 ---@param killer IsoGameCharacter
 ---@param attackingWeapon HandWeapon

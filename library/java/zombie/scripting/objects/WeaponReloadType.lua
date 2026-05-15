@@ -24,6 +24,9 @@ WeaponReloadType.DOUBLE_BARREL_SHOTGUN_SAWN = nil
 WeaponReloadType.HANDGUN = nil
 
 ---@type WeaponReloadType
+WeaponReloadType.LEVER_ACTION = nil
+
+---@type WeaponReloadType
 WeaponReloadType.NONE = nil
 
 ---@type WeaponReloadType

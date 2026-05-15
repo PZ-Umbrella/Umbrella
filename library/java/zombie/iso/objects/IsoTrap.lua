@@ -143,6 +143,9 @@ function __IsoTrap:setSmokeRange(smokeRange) end
 ---@param timerBeforeExplosion integer
 function __IsoTrap:setTimerBeforeExplosion(timerBeforeExplosion) end
 
+---@return boolean
+function __IsoTrap:shouldPlaceInWorldAfterThrowing() end
+
 ---@deprecated
 ---@param sensor boolean
 function __IsoTrap:triggerExplosion(sensor) end

@@ -75,15 +75,6 @@ function __DebugLog:shouldLogIncludeTimeMs() end
 
 DebugLog = {}
 
----@type integer
-DebugLog.VERSION = nil
-
----@type integer
-DebugLog.VERSION1 = nil
-
----@type integer
-DebugLog.VERSION2 = nil
-
 ---@return ArrayList<DebugType>
 function DebugLog.getDebugTypes() end
 
@@ -99,8 +90,6 @@ function DebugLog.isEnabled(type) end
 ---@return boolean
 function DebugLog.isLogEnabled(type, logSeverity) end
 
-function DebugLog.load() end
-
 ---@param type DebugType
 ---@param str string
 function DebugLog.log(type, str) end
@@ -114,8 +103,6 @@ function DebugLog.log(str) end
 function DebugLog.nativeLog(logType, logSeverity, logTxt) end
 
 function DebugLog.printLogLevels() end
-
-function DebugLog.save() end
 
 function DebugLog.setDefaultLogSeverity() end
 

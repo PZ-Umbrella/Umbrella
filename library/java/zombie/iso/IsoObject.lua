@@ -468,6 +468,10 @@ function __IsoObject:getPrimaryFluid() end
 ---@return PropertyContainer
 function __IsoObject:getProperties() end
 
+---@param p IsoPropertyType
+---@return string
+function __IsoObject:getProperty(p) end
+
 ---@param p string
 ---@return string
 function __IsoObject:getProperty(p) end
@@ -606,6 +610,8 @@ function __IsoObject:getY() end
 ---@return number
 function __IsoObject:getZ() end
 
+function __IsoObject:handleBurning() end
+
 ---@return boolean
 function __IsoObject:hasAdjacentCanStandSquare() end
 
@@ -632,6 +638,10 @@ function __IsoObject:hasOverlaySprite() end
 
 ---@return boolean
 function __IsoObject:hasPropaneTank() end
+
+---@param p IsoPropertyType
+---@return boolean
+function __IsoObject:hasProperty(p) end
 
 ---@param flag IsoFlagType
 ---@return boolean

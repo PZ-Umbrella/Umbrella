@@ -268,6 +268,9 @@ function __IsoAnimal:getBloodQuantity() end
 ---@return AnimalBreed
 function __IsoAnimal:getBreed() end
 
+---@return CharacterGender
+function __IsoAnimal:getCharacterGender() end
+
 ---@return ArrayList<DesignationZoneAnimal>
 function __IsoAnimal:getConnectedDZone() end
 
@@ -487,9 +490,6 @@ function __IsoAnimal:isBaby() end
 function __IsoAnimal:isExistInTheWorld() end
 
 ---@return boolean
-function __IsoAnimal:isFemale() end
-
----@return boolean
 function __IsoAnimal:isGeriatric() end
 
 ---@return boolean
@@ -619,6 +619,9 @@ function __IsoAnimal:setAnimalID(id) end
 ---@param zone AnimalZone
 function __IsoAnimal:setAnimalZone(zone) end
 
+---@param characterGender CharacterGender
+function __IsoAnimal:setCharacterGender(characterGender) end
+
 ---@param customName string
 function __IsoAnimal:setCustomName(customName) end
 
@@ -634,9 +637,6 @@ function __IsoAnimal:setDebugAcceptance(chr, acceptance) end
 
 ---@param stress number
 function __IsoAnimal:setDebugStress(stress) end
-
----@param female boolean
-function __IsoAnimal:setFemale(female) end
 
 ---@param health number
 function __IsoAnimal:setHealth(health) end

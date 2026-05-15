@@ -10,6 +10,9 @@
 ---@class CharacterDiedListener
 
 ---(Not exposed)
+---@class CharacterGender
+
+---(Not exposed)
 ---@class CharacterInputMode
 
 ---(Not exposed)
@@ -31,6 +34,9 @@
 ---@class ContextualAction.Action
 
 ---(Not exposed)
+---@class DamageModifier
+
+---(Not exposed)
 ---@class FallDamage
 
 ---(Not exposed)
@@ -41,6 +47,9 @@
 
 ---(Not exposed)
 ---@class Imposter
+
+---(Not exposed)
+---@class InjurySeverity
 
 ---(Not exposed)
 ---@class IsoGameCharacter.Bandages

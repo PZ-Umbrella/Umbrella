@@ -6,17 +6,17 @@ local __BodyPartType = {}
 ---@return string
 function __BodyPartType:getBandageModel() end
 
----@param female boolean
+---@param gender CharacterGender
 ---@return string
-function __BodyPartType:getBiteWoundModel(female) end
+function __BodyPartType:getBiteWoundModel(gender) end
 
----@param female boolean
+---@param gender CharacterGender
 ---@return string
-function __BodyPartType:getCutWoundModel(female) end
+function __BodyPartType:getCutWoundModel(gender) end
 
----@param female boolean
+---@param gender CharacterGender
 ---@return string
-function __BodyPartType:getScratchWoundModel(female) end
+function __BodyPartType:getScratchWoundModel(gender) end
 
 ---@return integer
 function __BodyPartType:index() end

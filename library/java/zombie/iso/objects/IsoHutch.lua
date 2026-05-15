@@ -33,6 +33,9 @@ function __IsoHutch:doMeta(hours) end
 
 function __IsoHutch:dropAllEggs() end
 
+---@return List<IsoHutch>
+function __IsoHutch:getAllHutchObjects() end
+
 ---@param index integer
 ---@return IsoAnimal
 function __IsoHutch:getAnimal(index) end
@@ -79,6 +82,8 @@ function __IsoHutch:getNestBoxDirt() end
 ---@return string
 function __IsoHutch:getObjectName() end
 
+function __IsoHutch:handleBurning() end
+
 ---@return boolean
 function __IsoHutch:haveEggHatchDoor() end
 
@@ -124,6 +129,9 @@ function __IsoHutch:removeAnimal(animal) end
 function __IsoHutch:removeFromWorld() end
 
 function __IsoHutch:removeHutch() end
+
+---@param hutch IsoHutch
+function __IsoHutch:removeHutchObject(hutch) end
 
 ---@param output ByteBuffer
 ---@param isDebugSave boolean

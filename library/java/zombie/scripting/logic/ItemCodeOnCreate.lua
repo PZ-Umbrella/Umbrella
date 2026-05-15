@@ -149,14 +149,8 @@ function ItemCodeOnCreate.onCreateRecipeClipping(item) end
 ---@param item Literature
 function ItemCodeOnCreate.onCreateRecipeMagazine(item) end
 
----@param item Clothing
-function ItemCodeOnCreate.onCreateRespirator(item) end
-
 ---@param item InventoryItem
 function ItemCodeOnCreate.onCreateRpgManual(item) end
-
----@param item Clothing
-function ItemCodeOnCreate.onCreateSCBA(item) end
 
 ---@param item InventoryItem
 function ItemCodeOnCreate.onCreateScarecrow(item) end

@@ -23,6 +23,10 @@ function RecipeCodeOnCreate.applyLidCondition(data, character) end
 
 ---@param data CraftRecipeData
 ---@param character IsoGameCharacter
+function RecipeCodeOnCreate.assignRagFilterLife(data, character) end
+
+---@param data CraftRecipeData
+---@param character IsoGameCharacter
 function RecipeCodeOnCreate.carveSpear(data, character) end
 
 ---@param data CraftRecipeData

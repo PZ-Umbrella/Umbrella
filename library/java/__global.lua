@@ -78,9 +78,13 @@ function ZombRandFloat(min, max) end
 ---@param host string
 function acceptFactionInvite(faction, host) end
 
+---@param target IsoPlayer
+---@param requester IsoPlayer
+function acceptMedicalCheck(target, requester) end
+
 ---@param safehouse SafeHouse
 ---@param host string
----@param invited IsoPlayer
+---@param invited string
 ---@param isAccepted boolean
 function acceptSafehouseInvite(safehouse, host, invited, isAccepted) end
 
@@ -397,6 +401,45 @@ function addZombiesInOutfit(
 	isAnimRecording,
 	heightOffset,
 	isRagdolling
+)
+end
+
+---@param x integer
+---@param y integer
+---@param z integer
+---@param totalZombies integer
+---@param outfit string
+---@param femaleChance integer
+---@param isCrawler boolean
+---@param isFallOnFront boolean
+---@param isFakeDead boolean
+---@param isKnockedDown boolean
+---@param isInvulnerable boolean
+---@param isSitting boolean
+---@param health number
+---@param isAnimRecording boolean
+---@param heightOffset number
+---@param isRagdolling boolean
+---@param onFire boolean
+---@return ArrayList<IsoZombie>
+function addZombiesInOutfit(
+	x,
+	y,
+	z,
+	totalZombies,
+	outfit,
+	femaleChance,
+	isCrawler,
+	isFallOnFront,
+	isFakeDead,
+	isKnockedDown,
+	isInvulnerable,
+	isSitting,
+	health,
+	isAnimRecording,
+	heightOffset,
+	isRagdolling,
+	onFire
 )
 end
 
@@ -1056,6 +1099,10 @@ function getFriendsList() end
 
 ---@return table
 function getFullSaveDirectoryTable() end
+
+---@param filename string
+---@return table
+function getFunctionsForFile(filename) end
 
 ---@return integer
 function getGPUTime() end
@@ -2253,12 +2300,26 @@ function renameSavefile(gameMode, oldName, newName) end
 ---@param y number
 ---@param z number
 ---@param radius number
+---@param segments integer
+---@param thickness integer
 ---@param r number
 ---@param g number
 ---@param b number
 ---@param a number
+function renderIsoCircle(x, y, z, radius, segments, thickness, r, g, b, a) end
+
+---@param x number
+---@param y number
+---@param z number
+---@param tx number
+---@param ty number
+---@param tz number
 ---@param thickness integer
-function renderIsoCircle(x, y, z, radius, r, g, b, a, thickness) end
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function renderIsoLine(x, y, z, tx, ty, tz, thickness, r, g, b, a) end
 
 ---@param x number
 ---@param y number
@@ -2293,6 +2354,10 @@ function replaceItemInContainer(container, oldItem, newItem) end
 ---@param by string
 ---@return string
 function replaceWith(toReplace, regex, by) end
+
+---@param target IsoPlayer
+---@param requester IsoPlayer
+function requestMedicalCheck(target, requester) end
 
 function requestPVPEvents() end
 
@@ -2459,10 +2524,8 @@ function sendHitPlayer(target, damage, range) end
 ---@param target IsoGameCharacter
 ---@param damage string
 ---@param isTargetHitFromBehind boolean
----@param vehicleDamage string
 ---@param vehicleSpeed string
----@param isVehicleHitFromBehind boolean
-function sendHitVehicle(target, damage, isTargetHitFromBehind, vehicleDamage, vehicleSpeed, isVehicleHitFromBehind) end
+function sendHitVehicle(target, damage, isTargetHitFromBehind, vehicleSpeed) end
 
 ---@param player IsoPlayer
 function sendHumanVisual(player) end
@@ -2511,6 +2574,11 @@ function sendPersonalColor(player) end
 ---@param player IsoPlayer
 ---@param item AnimalInventoryItem
 function sendPickupAnimal(animal, player, item) end
+
+---@param animal IsoAnimal
+---@param player IsoPlayer
+---@param item AnimalInventoryItem
+function sendPickupAnimalFromTrap(animal, player, item) end
 
 function sendPing() end
 
@@ -2592,7 +2660,7 @@ function sendSafehouseChangeTitle(safehouse, title) end
 function sendSafehouseClaim(square, player, title) end
 
 ---@param safehouse SafeHouse
----@param host IsoPlayer
+---@param host string
 ---@param invited string
 function sendSafehouseInvite(safehouse, host, invited) end
 

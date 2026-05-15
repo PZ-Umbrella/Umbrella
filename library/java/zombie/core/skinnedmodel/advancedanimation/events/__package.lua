@@ -4,6 +4,9 @@
 ---@class AnimEventBroadcaster
 
 ---(Not exposed)
+---@class GlobalAnimEvent
+
+---(Not exposed)
 ---@class IAnimEventListenerBoolean
 
 ---(Not exposed)

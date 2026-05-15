@@ -814,6 +814,8 @@ forageSystem = {
 }
 forageSystem.itemBlacklist = nil ---@type ArrayList<string>?
 
+function forageSystem.actionComplete(_character, _iconID) end
+
 ---@param _catDef table
 ---@param _overwrite boolean?
 function forageSystem.addCatDef(_catDef, _overwrite) end
@@ -962,6 +964,8 @@ function forageSystem.doWorldAgeSpawn(_character, _inventory, _itemDef, _items) 
 
 ---@param _zoneData umbrella.Foraging.ZoneData
 function forageSystem.fillZone(_zoneData) end
+
+function forageSystem.forageAction(_character, _forageIcon) end
 
 function forageSystem.generateLootTable() end
 

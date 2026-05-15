@@ -12,14 +12,6 @@ function __WorldMapVisitedServer:forget(player) end
 ---@param connection IConnection
 function __WorldMapVisitedServer:loadUser(connection) end
 
----@param user string
----@param pos integer
----@param chunk kahlua.Array<integer>
-function __WorldMapVisitedServer:processDataChunk(user, pos, chunk) end
-
----@param user string
-function __WorldMapVisitedServer:saveUser(user) end
-
 ---@param player IsoPlayer
 ---@param minX integer
 ---@param minY integer

@@ -442,6 +442,9 @@ function __Core:getOptionMacOSIgnoreMouseWheelAcceleration() end
 ---@return boolean
 function __Core:getOptionMacOSMapHorizontalMouseWheelToVertical() end
 
+---@return boolean
+function __Core:getOptionMapViewPause() end
+
 ---@return number
 function __Core:getOptionMaxChatOpaque() end
 
@@ -1147,6 +1150,9 @@ function __Core:setOptionMacOSIgnoreMouseWheelAcceleration(b) end
 
 ---@param b boolean
 function __Core:setOptionMacOSMapHorizontalMouseWheelToVertical(b) end
+
+---@param pause boolean
+function __Core:setOptionMapViewPause(pause) end
 
 ---@param optionMaxChatOpaque number
 function __Core:setOptionMaxChatOpaque(optionMaxChatOpaque) end

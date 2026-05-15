@@ -64,6 +64,8 @@ function __IsoFeedingTrough:getObjectName() end
 ---@return number
 function __IsoFeedingTrough:getWater() end
 
+function __IsoFeedingTrough:handleBurning() end
+
 function __IsoFeedingTrough:initWithDef() end
 
 ---@return boolean

@@ -39,6 +39,7 @@ InfoPanelFlags.mustPlaceRoomRoof = nil ---@type boolean?
 InfoPanelFlags.isOperational = nil ---@type boolean?
 InfoPanelFlags.removePropane = nil ---@type boolean?
 InfoPanelFlags.basementWallAdjacentToTheVoid = nil ---@type boolean?
+InfoPanelFlags.isSatChair = nil ---@type boolean?
 
 ---@class SpriteGridCache
 ---@field [integer] umbrella.SpriteGridCache.Item
@@ -327,6 +328,12 @@ function ISMoveableSpriteProps:getInfoPanelFlagsPerTile(_square, _object, _playe
 ---@return IsoSprite?
 function ISMoveableSpriteProps:getMoveableOverlayFromObject(_object) end
 
+---@param _left number
+---@param _top number
+---@param _z number
+---@return table?
+function ISMoveableSpriteProps:getMultiTileSquares(_left, _top, _z) end
+
 ---@return number
 function ISMoveableSpriteProps:getObjectHealth() end
 
@@ -405,6 +412,12 @@ function ISMoveableSpriteProps:getSpriteGridCache(_square, _verifyOnly, _getWorl
 ---@param _getWorldObjects boolean
 ---@return SpriteGridCache?
 function ISMoveableSpriteProps:getSpriteGridInfo(_square, _getWorldObjects) end
+
+---@param _x number
+---@param _y number
+---@return number
+---@return number
+function ISMoveableSpriteProps:getSpriteGridTopLeft(_x, _y) end
 
 ---@param _itemTypes string[]
 ---@param _itemNames table<string, string>
@@ -646,6 +659,12 @@ function ISMoveableSpriteProps:transmitPlaySound(_character, _sound) end
 ---@param keepActions boolean
 ---@return boolean?
 function ISMoveableSpriteProps:walkAdj(character, square, keepActions) end
+
+---@param _x number
+---@param _y number
+---@param _z number
+---@return boolean
+function ISMoveableSpriteProps:walkAdjMultiTile(_character, _x, _y, _z, _keepActions, _directionRotated) end
 
 ---@param _character IsoPlayer
 ---@param _square IsoGridSquare

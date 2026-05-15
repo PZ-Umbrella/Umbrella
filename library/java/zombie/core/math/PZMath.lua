@@ -316,6 +316,10 @@ function PZMath.isBetween(value, min, max) end
 ---@return number
 function PZMath.isLeft(x0, y0, x1, y1, x2, y2) end
 
+---@param vec Vector2
+---@return boolean
+function PZMath.isNullOrZero(vec) end
+
 ---@param src number
 ---@param dest number
 ---@param alpha number
@@ -580,6 +584,10 @@ function PZMath.slerp(result, from, to, alpha) end
 ---@param val number
 ---@return number
 function PZMath.sqrt(val) end
+
+---@param a number
+---@return number
+function PZMath.squared(a) end
 
 ---@param from number
 ---@param to number

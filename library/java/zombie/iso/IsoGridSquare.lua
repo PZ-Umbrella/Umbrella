@@ -494,6 +494,8 @@ function __IsoGridSquare:StartFire() end
 ---@return boolean
 function __IsoGridSquare:TreatAsSolidFloor() end
 
+function __IsoGridSquare:addAshes() end
+
 ---@return IsoBrokenGlass
 function __IsoGridSquare:addBrokenGlass() end
 
@@ -870,8 +872,9 @@ function __IsoGridSquare:getHoursSinceLastSeen() end
 ---@return IsoHutch
 function __IsoGridSquare:getHutch() end
 
+---@param sourceHutch IsoHutch
 ---@return ArrayList<IsoHutch>
-function __IsoGridSquare:getHutchTiles() end
+function __IsoGridSquare:getHutchTiles(sourceHutch) end
 
 ---@return integer # the ID
 function __IsoGridSquare:getID() end
@@ -1082,6 +1085,9 @@ function __IsoGridSquare:getSquareZombiesType() end
 
 ---@return IsoObject
 function __IsoGridSquare:getStairPillar() end
+
+---@return IsoObjectType
+function __IsoGridSquare:getStairs() end
 
 ---@return IsoDirections
 function __IsoGridSquare:getStairsDirection() end
@@ -2006,7 +2012,8 @@ function __IsoGridSquare:stopFire() end
 function __IsoGridSquare:switchLight(active) end
 
 ---@param weapon HandWeapon
-function __IsoGridSquare:syncIsoTrap(weapon) end
+---@param attacker IsoPlayer
+function __IsoGridSquare:syncIsoTrap(weapon, attacker) end
 
 ---@param collideObject IsoMovingObject
 ---@param x integer
@@ -2086,6 +2093,9 @@ function __IsoGridSquare:tryAddCorpseToWorld(item, x, y, isVisible) end
 function __IsoGridSquare:unset(tilePropertyKey) end
 
 IsoGridSquare = {}
+
+---@type string
+IsoGridSquare.FLOORS_BURNT_SPRITE_PREFIX = nil
 
 ---@type integer
 IsoGridSquare.PCF_NONE = nil

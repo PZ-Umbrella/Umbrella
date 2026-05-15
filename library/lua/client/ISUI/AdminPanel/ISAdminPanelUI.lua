@@ -30,6 +30,8 @@ function ISAdminPanelUI.OnNetworkUsersReceived() end
 
 function ISAdminPanelUI.OnRolesReceived() end
 
+function ISAdminPanelUI.OnRoleUpdated() end
+
 function ISAdminPanelUI.OnSafehousesChanged() end
 
 function ISAdminPanelUI:close() end

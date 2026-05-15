@@ -11,11 +11,22 @@
 ISPathFindAction = ISBaseTimedAction:derive("ISPathFindAction")
 ISPathFindAction.Type = "ISPathFindAction"
 
+function ISPathFindAction:debugRender() end
+
 ---@return boolean
 function ISPathFindAction:isValid() end
 
 ---@return ISPathFindAction?
 function ISPathFindAction:pathAdjacentToMultiTileObject(character, object, allowDiagonal) end
+
+---@param squares table
+---@return ISPathFindAction?
+function ISPathFindAction:pathAdjacentToSquares(character, squares, allowDiagonal) end
+
+---@param predicate function
+---@param predicateArg table
+---@return ISPathFindAction?
+function ISPathFindAction:pathAdjacentToSquaresPredicate(character, squares, allowDiagonal, predicate, predicateArg) end
 
 ---@param character IsoPlayer
 ---@param corpse IsoDeadBody

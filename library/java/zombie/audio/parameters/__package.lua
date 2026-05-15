@@ -49,6 +49,9 @@
 ---@class ParameterExercising
 
 ---(Not exposed)
+---@class ParameterFenceTypeLow.FenceType
+
+---(Not exposed)
 ---@class ParameterFirearmDistance
 
 ---(Not exposed)
@@ -166,6 +169,9 @@
 ---@class ParameterTimeOfDay
 
 ---(Not exposed)
+---@class ParameterTripObstacleType.ObstacleType
+
+---(Not exposed)
 ---@class ParameterVehicleBrake
 
 ---(Not exposed)
@@ -185,6 +191,9 @@
 
 ---(Not exposed)
 ---@class ParameterVehicleRoadMaterial
+
+---(Not exposed)
+---@class ParameterVehicleRoadMaterial.Material
 
 ---(Not exposed)
 ---@class ParameterVehicleSkid

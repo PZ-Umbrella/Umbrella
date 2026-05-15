@@ -348,6 +348,9 @@ Drainable.PROPANE_REFILL = nil
 Drainable.PROPANE_TANK = nil
 
 ---@type ItemKey
+Drainable.RAG_FILTER = nil
+
+---@type ItemKey
 Drainable.RAT_POISON = nil
 
 ---@type ItemKey

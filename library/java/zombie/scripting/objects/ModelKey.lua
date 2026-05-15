@@ -11395,9 +11395,6 @@ ModelKey.WOODEN_BLOCK_ANVIL_MOLD = nil
 ModelKey.WOODEN_BRICK_MOLD = nil
 
 ---@type ModelKey
-ModelKey.WOODEN_CRUCIBLE_MOLD = nil
-
----@type ModelKey
 ModelKey.WOODEN_CRUDE_BENCH_VISE_PARTS_MOLD = nil
 
 ---@type ModelKey

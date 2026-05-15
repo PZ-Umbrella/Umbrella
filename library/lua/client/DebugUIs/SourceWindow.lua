@@ -3,11 +3,13 @@
 ---@class SourceWindow : ISCollapsableWindow
 ---@field bottomPanel ISPanel
 ---@field filename string
+---@field functionCombo ISComboBox
 ---@field keepOnScreen boolean
 ---@field lineNumberEntry ISTextEntryBox
 ---@field reloadBtn ISButton
 ---@field sourceView ISScrollingListBox
 ---@field title string
+---@field topPanel ISPanel
 SourceWindow = ISCollapsableWindow:derive("SourceWindow")
 SourceWindow.Type = "SourceWindow"
 SourceWindow.map = {} ---@type table<string, SourceWindow>
@@ -23,12 +25,18 @@ function SourceWindow:doDrawItem(y, item) end
 
 function SourceWindow:fill() end
 
+function SourceWindow:fillFunctionCombo() end
+
 function SourceWindow:initialise() end
+
+function SourceWindow:onFunctionCombo(combo) end
 
 function SourceWindow:onLineNumberEntered() end
 
 ---@param item string
 function SourceWindow:onMouseDoubleClickBreakpointToggle(item) end
+
+function SourceWindow:onResize() end
 
 ---@param self ISScrollingListBox
 ---@param del number

@@ -59,6 +59,9 @@
 ---@class SandboxOptions.MultiplierConfig
 
 ---(Not exposed)
+---@class SandboxOptions.StrongEnumSandboxOption<EnumType: Enum<EnumType>>
+
+---(Not exposed)
 ---@class SandboxOptions.ZombieConfig
 
 ---(Not exposed)

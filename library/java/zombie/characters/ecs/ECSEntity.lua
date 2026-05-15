@@ -4,6 +4,8 @@
 ---@class ECSEntity
 local __ECSEntity = {}
 
+function __ECSEntity:frameStep() end
+
 ---@generic ComponentType: ECSComponent
 ---@param componentTypeClass Class<ComponentType>
 ---@return ComponentType
@@ -12,6 +14,9 @@ function __ECSEntity:getECSComponent(componentTypeClass) end
 ---@return HashMap<Class<ECSComponent>, ECSComponent>
 function __ECSEntity:getECSComponentMap() end
 
+---@return integer
+function __ECSEntity:getFrameNo() end
+
 ---@param componentTypeClass Class<ECSComponent>
 ---@return boolean
 function __ECSEntity:hasECSComponent(componentTypeClass) end
@@ -19,8 +24,6 @@ function __ECSEntity:hasECSComponent(componentTypeClass) end
 ---@param component ECSComponent
 ---@return boolean
 function __ECSEntity:hasECSComponent(component) end
-
-function __ECSEntity:invokeECSFrameStep() end
 
 function __ECSEntity:onGameLoadingStateEnter() end
 

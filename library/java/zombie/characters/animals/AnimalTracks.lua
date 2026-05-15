@@ -98,6 +98,10 @@ function AnimalTracks.addAnimalTrack(animal, trackType) end
 ---@return AnimalTracks
 function AnimalTracks.addAnimalTrackAtPos(animal, x, y, trackType, timeMinus) end
 
+---@param track AnimalTracks
+---@param state boolean
+function AnimalTracks.broadcastAnimalTrackToAdminsDebug(track, state) end
+
 ---@param character IsoGameCharacter
 ---@return ArrayList<AnimalTracks>
 function AnimalTracks.getAndFindNearestTracks(character) end

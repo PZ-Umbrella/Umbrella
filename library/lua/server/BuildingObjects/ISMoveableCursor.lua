@@ -17,11 +17,13 @@
 ---@field joypadFacing number?
 ---@field moveableMode string
 ---@field noNeedHammer boolean
+---@field objectHiddenDuringRotate unknown?
 ---@field objectIndex integer
 ---@field objectListCache (umbrella.ISMoveableCursor.ObjectInfo | umbrella.ISMoveableCursor.ObjectInfo[] | false)?
 ---@field objectSprite string?
 ---@field origMoveProps ISMoveableSpriteProps?
 ---@field origSpriteName string?
+---@field pathfindAction unknown?
 ---@field player integer
 ---@field renderFloorHelper boolean
 ---@field renderX number
@@ -55,6 +57,7 @@ ISMoveableCursor.invalidColor = {
 	g = 0,
 	b = 0,
 }
+ISMoveableCursor.DEBUG_RENDER = getDebug() and false
 
 ---@param _key integer
 ---@param _playerNum integer
@@ -65,6 +68,17 @@ function ISMoveableCursor.clearCacheForAllPlayers() end
 
 ---@param _key integer
 function ISMoveableCursor.exitCursorKey(_key) end
+
+---@param x number
+---@param y number
+---@param z number
+function ISMoveableCursor:beforeWorldRender(x, y, z) end
+
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function ISMoveableCursor:cannotCreate(x, y, z) end
 
 function ISMoveableCursor:clearCache() end
 
@@ -81,6 +95,10 @@ function ISMoveableCursor:exitCursor() end
 
 ---@return string?
 function ISMoveableCursor:getAPrompt() end
+
+---@return number
+---@return number
+function ISMoveableCursor:getCenterOfRotation() end
 
 ---@param item InventoryItem
 ---@return IsoDirections
@@ -116,6 +134,9 @@ function ISMoveableCursor:getScrapObjectList() end
 ---@return string?
 function ISMoveableCursor:getXPrompt() end
 
+---@return boolean
+function ISMoveableCursor:isFacingOriginalDirection() end
+
 ---@param _square IsoGridSquare
 ---@return boolean
 function ISMoveableCursor:isValid(_square) end
@@ -136,6 +157,24 @@ function ISMoveableCursor:onObjectLeftMouseButtonDown(object, x, y) end
 ---@param _z number
 ---@param _square IsoGridSquare
 function ISMoveableCursor:render(_x, _y, _z, _square) end
+
+---@param _x number
+---@param _y number
+---@param _z number
+---@return boolean
+function ISMoveableCursor:renderObjectThatCanRotate(_x, _y, _z, renderRotateIndicator) end
+
+---@param _x number
+---@param _y number
+---@param _z number
+function ISMoveableCursor:renderRotateIndicator(_x, _y, _z, _dir) end
+
+---@param _x number
+---@param _y number
+---@param _z number
+function ISMoveableCursor:renderSpriteGrid(_x, _y, _z, color) end
+
+function ISMoveableCursor:resetObjectHiddenDuringRotate() end
 
 ---@param key integer
 ---@param _joypadTriggered boolean
@@ -162,6 +201,8 @@ function ISMoveableCursor:setJoypadFocus(_window) end
 
 ---@param _mode string?
 function ISMoveableCursor:setMoveableMode(_mode) end
+
+function ISMoveableCursor:setObjectHiddenDuringRotate(object) end
 
 ---@param _obj IsoObject
 ---@param moveProps ISMoveableSpriteProps

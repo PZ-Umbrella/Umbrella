@@ -47,9 +47,6 @@ ClimbOverFenceState = {}
 ---@type State.Param<boolean>
 ClimbOverFenceState.COLLIDABLE = nil
 
----@type integer
-ClimbOverFenceState.COLLIDE_WITH_WALL = nil
-
 ---@type State.Param<boolean>
 ClimbOverFenceState.COUNTER = nil
 
@@ -88,18 +85,6 @@ ClimbOverFenceState.START_X = nil
 
 ---@type State.Param<integer>
 ClimbOverFenceState.START_Y = nil
-
----@type integer
-ClimbOverFenceState.TRIP_METAL_BARS = nil
-
----@type integer
-ClimbOverFenceState.TRIP_TREE = nil
-
----@type integer
-ClimbOverFenceState.TRIP_WINDOW = nil
-
----@type integer
-ClimbOverFenceState.TRIP_ZOMBIE = nil
 
 ---@type State.Param<integer>
 ClimbOverFenceState.Z = nil

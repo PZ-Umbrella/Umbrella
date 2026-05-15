@@ -124,6 +124,9 @@ function __InputScript:getItemApplyMode() end
 ---@return Set<ItemTag>
 function __InputScript:getItemTags() end
 
+---@return List<string>
+function __InputScript:getItems() end
+
 ---@return number
 function __InputScript:getMaxAmount() end
 

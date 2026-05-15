@@ -5,6 +5,9 @@ local __UIManager = {}
 
 UIManager = {}
 
+---@type integer
+UIManager.DEBUGGER_FPS = nil
+
 ---@type ArrayList<string>
 UIManager.DoneTutorials = nil
 

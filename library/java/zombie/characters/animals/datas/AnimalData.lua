@@ -39,9 +39,6 @@ function __AnimalData:dropFeather(meta) end
 function __AnimalData:eat() end
 
 ---@param item InventoryItem
-function __AnimalData:eatFood(item) end
-
----@param item InventoryItem
 ---@param onground boolean
 function __AnimalData:eatItem(item, onground) end
 
@@ -293,6 +290,9 @@ AnimalData = {}
 
 ---@type integer
 AnimalData.FEATHER_CHANCE_PER_HOUR = nil
+
+---@type number
+AnimalData.HUNGER_PER_DRAINABLE_USE = nil
 
 ---@type integer
 AnimalData.ONE_DAY_MILLISECONDS = nil

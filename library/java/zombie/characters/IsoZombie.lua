@@ -100,6 +100,18 @@ function __IsoZombie:collideWith(obj) end
 ---@return boolean
 function __IsoZombie:couldSeeHeadSquare(player) end
 
+---@param zombieSpeed integer
+function __IsoZombie:doCrawlerSpeed(zombieSpeed) end
+
+---@param zombieSpeed integer
+function __IsoZombie:doFakeShambler(zombieSpeed) end
+
+function __IsoZombie:doFastShambler() end
+
+function __IsoZombie:doShambler() end
+
+function __IsoZombie:doSprinter() end
+
 function __IsoZombie:doZombieSpeed() end
 
 ---@param zombieSpeed integer
@@ -203,6 +215,9 @@ function __IsoZombie:getSharedDescriptor() end
 
 ---@return integer
 function __IsoZombie:getSharedDescriptorID() end
+
+---@return integer
+function __IsoZombie:getSpeedType() end
 
 ---@return IsoMovingObject
 function __IsoZombie:getTarget() end
@@ -402,9 +417,8 @@ function __IsoZombie:onDeath_ShouldDoSplatterAndSounds(weapon, wielder, isGory) 
 ---@param impactSpeed number
 ---@param hitDir Vector2
 ---@param impactPosOnVehicle Vector2
----@param pushedBack boolean
 ---@return number
-function __IsoZombie:onHitByVehicle(vehicle, impactSpeed, hitDir, impactPosOnVehicle, pushedBack) end
+function __IsoZombie:onHitByVehicle(vehicle, impactSpeed, hitDir, impactPosOnVehicle) end
 
 ---@param killer IsoGameCharacter
 ---@param handWeapon HandWeapon

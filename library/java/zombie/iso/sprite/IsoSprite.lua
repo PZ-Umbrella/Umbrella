@@ -136,6 +136,14 @@ function __IsoSprite:getParentObjectName() end
 ---@return PropertyContainer # the Properties
 function __IsoSprite:getProperties() end
 
+---@param propertyType IsoPropertyType
+---@return string
+function __IsoSprite:getProperty(propertyType) end
+
+---@param name string
+---@return string
+function __IsoSprite:getProperty(name) end
+
 ---@return RoofProperties
 function __IsoSprite:getRoofProperties() end
 

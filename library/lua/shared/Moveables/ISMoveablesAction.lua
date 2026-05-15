@@ -9,6 +9,7 @@
 ---@field moveCursor ISMoveableCursor?
 ---@field moveProps ISMoveableSpriteProps
 ---@field object IsoObject?
+---@field origMoveProps ISMoveableSpriteProps
 ---@field origSpriteName string?
 ---@field playerNum integer
 ---@field sound integer?
@@ -22,6 +23,12 @@ function ISMoveablesAction:complete() end
 
 ---@return number
 function ISMoveablesAction:getDuration() end
+
+---@return boolean
+function ISMoveablesAction:isAdjacentToAnySquare() end
+
+---@return boolean
+function ISMoveablesAction:isAdjacentToSquare(square) end
 
 ---@return boolean
 function ISMoveablesAction:isReachableObjectType() end

@@ -217,6 +217,9 @@ function __CraftRecipe:getModID() end
 ---@return string
 function __CraftRecipe:getModName() end
 
+---@return List<string>
+function __CraftRecipe:getModTags() end
+
 ---@return string
 function __CraftRecipe:getName() end
 
@@ -408,6 +411,9 @@ function __CraftRecipe:setProp2(prop) end
 
 ---@param level integer
 function __CraftRecipe:setResearchSkillLevel(level) end
+
+---@param tags List<string>
+function __CraftRecipe:setTags(tags) end
 
 ---@param chr IsoGameCharacter
 ---@param containers ArrayList<ItemContainer>

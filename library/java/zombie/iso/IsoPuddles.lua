@@ -3,6 +3,11 @@
 ---@class IsoPuddles
 local __IsoPuddles = {}
 
+---@param wetGroundValue number
+---@param puddlesSizeValue number
+---@param muddyPuddlesValue number
+function __IsoPuddles:applyNetworkUpdate(wetGroundValue, puddlesSizeValue, muddyPuddlesValue) end
+
 function __IsoPuddles:applyPuddlesQuality() end
 
 function __IsoPuddles:clearThreadData() end
@@ -20,6 +25,9 @@ function __IsoPuddles:getHMTexture() end
 
 ---@return ByteBuffer
 function __IsoPuddles:getHMTextureBuffer() end
+
+---@return number
+function __IsoPuddles:getMuddyPuddlesFinalValue() end
 
 ---@param id integer
 ---@return IsoPuddles.PuddlesFloat

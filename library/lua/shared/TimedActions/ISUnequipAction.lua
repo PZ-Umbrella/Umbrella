@@ -8,6 +8,7 @@
 ---@field ignoreHandsWounds boolean
 ---@field item InventoryItem
 ---@field maxTimeInit number
+---@field reason string?
 ---@field sound integer?
 ---@field soundNoTrigger boolean
 ISUnequipAction = ISBaseTimedAction:derive("ISUnequipAction")

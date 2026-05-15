@@ -3315,9 +3315,6 @@ Normal.WOODEN_BLOCK_ANVIL_MOLD = nil
 Normal.WOODEN_BRICK_MOLD = nil
 
 ---@type ItemKey
-Normal.WOODEN_CRUCIBLE_MOLD = nil
-
----@type ItemKey
 Normal.WOODEN_CRUDE_BENCH_VISE_PARTS_MOLD = nil
 
 ---@type ItemKey

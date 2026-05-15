@@ -159,6 +159,9 @@ function ISWorldMap.onKeyStartPressed(key) end
 ---@param playerObj IsoPlayer
 function ISWorldMap.OnPlayerDeath(playerObj) end
 
+---@return boolean
+function ISWorldMap.shouldPause() end
+
 ---@param playerNum integer
 ---@param centerX number?
 ---@param centerY number?

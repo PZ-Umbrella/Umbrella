@@ -100,6 +100,27 @@ function __IsoFire:updateFromTimer(timer) end
 
 IsoFire = {}
 
+---@type number
+IsoFire.LIGHT_B = nil
+
+---@type number
+IsoFire.LIGHT_G = nil
+
+---@type number
+IsoFire.LIGHT_R = nil
+
+---@type integer
+IsoFire.LIGHT_RADIUS_HIGH = nil
+
+---@type integer
+IsoFire.LIGHT_RADIUS_LOW = nil
+
+---@type integer
+IsoFire.LIGHT_RADIUS_MEDIUM = nil
+
+---@type integer
+IsoFire.LIGHT_RADIUS_MINIMUM = nil
+
 ---@type integer
 IsoFire.MaxLife = nil
 

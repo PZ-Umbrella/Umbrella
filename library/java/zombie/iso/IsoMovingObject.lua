@@ -590,6 +590,9 @@ function __IsoMovingObject:setZ(z) end
 ---@param bAltCollide boolean the bAltCollide to set
 function __IsoMovingObject:setbAltCollide(bAltCollide) end
 
+---@return boolean
+function __IsoMovingObject:shouldAnimRecorderBeActive() end
+
 ---@param square IsoGridSquare
 ---@return boolean
 function __IsoMovingObject:shouldIgnoreCollisionWithSquare(square) end
