@@ -74,10 +74,6 @@ function __IsoZombie:addVisualBandage(bodyPart, bloody) end
 ---@return IsoDeadBody
 function __IsoZombie:becomeCorpseSilently() end
 
----@param minDistance number
----@return boolean
-function __IsoZombie:canBeDeletedUnnoticed(minDistance) end
-
 ---@param player IsoPlayer
 ---@return boolean
 function __IsoZombie:canSeeHeadSquare(player) end
@@ -566,6 +562,8 @@ function __IsoZombie:setSitAgainstWall(sitAgainstWall) end
 ---@param isSkeleton boolean
 function __IsoZombie:setSkeleton(isSkeleton) end
 
+function __IsoZombie:setSpeedTypeFromWalkType() end
+
 ---@param bStaggerBack boolean
 function __IsoZombie:setStaggerBack(bStaggerBack) end
 
@@ -754,6 +752,10 @@ IsoZombie.VISION_RADIUS_MIN = nil
 
 ---@type number
 IsoZombie.VISION_RAIN_PENALTY_MAX = nil
+
+---@param walkType string
+---@return integer
+function IsoZombie.getSpeedTypeFromWalkType(walkType) end
 
 ---@param cell IsoCell
 ---@return IsoZombie

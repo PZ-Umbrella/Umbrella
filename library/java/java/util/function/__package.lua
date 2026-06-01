@@ -19,6 +19,9 @@
 ---@class BiFunction<T, U, R>
 
 ---(Not exposed)
+---@class BiPredicate<T, U>
+
+---(Not exposed)
 ---Represents a supplier of boolean-valued results.  This is the
 --- boolean-producing primitive specialization of Supplier.
 ---

@@ -5,6 +5,12 @@ local __IsoClothingDryer = {}
 
 function __IsoClothingDryer:addToWorld() end
 
+---@return boolean
+function __IsoClothingDryer:couldBePoweredByGenerator() end
+
+---@return number
+function __IsoClothingDryer:getGeneratorPowerConsumption() end
+
 ---@return string
 function __IsoClothingDryer:getObjectName() end
 

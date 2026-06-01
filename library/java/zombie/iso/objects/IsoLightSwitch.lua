@@ -18,6 +18,9 @@ function __IsoLightSwitch:addToWorld() end
 ---@return boolean
 function __IsoLightSwitch:canSwitchLight() end
 
+---@return boolean
+function __IsoLightSwitch:couldBePoweredByGenerator() end
+
 ---@return string
 function __IsoLightSwitch:getBulbItem() end
 
@@ -29,6 +32,9 @@ function __IsoLightSwitch:getCustomSettingsFromItem(item) end
 
 ---@return number
 function __IsoLightSwitch:getDelta() end
+
+---@return number
+function __IsoLightSwitch:getGeneratorPowerConsumption() end
 
 ---@return boolean
 function __IsoLightSwitch:getHasBattery() end

@@ -362,7 +362,6 @@ StoryClutter.FarmStorageClutter = {
 	"Base.SteelChunk",
 	"Base.NutsBolts",
 	"Base.RailroadSpike",
-	"Base.RailroadTrackPiece",
 	"Base.Screwdriver",
 	"Base.MeasuringTape",
 	"Base.BallPeenHammer",

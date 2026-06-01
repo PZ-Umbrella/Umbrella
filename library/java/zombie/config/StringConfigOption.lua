@@ -57,6 +57,12 @@ function StringConfigOption.new(name, defaultValue, maxLength) end
 
 ---@param name string
 ---@param defaultValue string
+---@param onChange ConfigOption.ConfigOptionOnChangeCallback
+---@return StringConfigOption
+function StringConfigOption.new(name, defaultValue, onChange) end
+
+---@param name string
+---@param defaultValue string
 ---@param values kahlua.Array<string>
 ---@return StringConfigOption
 function StringConfigOption.new(name, defaultValue, values) end

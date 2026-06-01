@@ -106,6 +106,9 @@ function __IsoPlayer:canThrowCorpseOver(dir) end
 
 function __IsoPlayer:checkActionGroup() end
 
+---@param newPrimaryItem InventoryItem
+function __IsoPlayer:checkAnimalAttachedToRope(newPrimaryItem) end
+
 ---@param remoteConnection UdpConnection
 ---@return boolean
 function __IsoPlayer:checkCanSeeClient(remoteConnection) end
@@ -147,6 +150,9 @@ function __IsoPlayer:dressInClothingItem(itemGUID) end
 
 ---@param outfitName string
 function __IsoPlayer:dressInNamedOutfit(outfitName) end
+
+---@return IsoDeadBody
+function __IsoPlayer:findClosestCorpseOnGroundToPickup() end
 
 ---@deprecated
 ---@return string
@@ -369,6 +375,9 @@ function __IsoPlayer:getReloadingMod() end
 
 ---@return Role
 function __IsoPlayer:getRole() end
+
+---@return number
+function __IsoPlayer:getScreenChestHeight() end
 
 ---@return number
 function __IsoPlayer:getSelectedZoneForHighlight() end
@@ -1150,6 +1159,18 @@ function IsoPlayer.allPlayersAsleep() end
 ---@return boolean
 function IsoPlayer.allPlayersDead() end
 
+---@generic C
+---@param compareParam C
+---@param predicate BiPredicate<IsoPlayer, C>
+---@return boolean
+function IsoPlayer.anyPlayer(compareParam, predicate) end
+
+---@generic C
+---@param compareParam C
+---@param predicate BiPredicate<IsoPlayer, C>
+---@return IsoPlayer
+function IsoPlayer.findPlayer(compareParam, predicate) end
+
 ---@param visitor Invokers.Params1.ICallback<IsoPlayer>
 function IsoPlayer.forEachPlayer(visitor) end
 
@@ -1238,6 +1259,11 @@ function IsoPlayer.setLocalPlayer(index, newPlayerObj) end
 
 ---@param visitor Consumer<IsoPlayer>
 function IsoPlayer.visitAllPlayers(visitor) end
+
+---@generic ComponentType: ECSComponent
+---@param componentClass Class<ComponentType>
+---@param visitor BiConsumer<IsoPlayer, ComponentType>
+function IsoPlayer.visitAllPlayersWithComponent(componentClass, visitor) end
 
 ---@param cell IsoCell
 ---@return IsoPlayer

@@ -582,6 +582,8 @@ function ISMoveableSpriteProps:repairObjectViaCursor(_character, _square, _origS
 ---@param components FluidContainer[]
 function ISMoveableSpriteProps:restoreComponentsAfterPlacing(obj, components) end
 
+function ISMoveableSpriteProps:restoreThumpableParameters(modData, obj) end
+
 ---@param _character IsoPlayer
 ---@param _square IsoGridSquare
 ---@param _origSpriteName string

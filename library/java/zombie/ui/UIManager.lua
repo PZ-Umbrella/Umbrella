@@ -56,12 +56,6 @@ UIManager.fadeInTimeMax = nil
 ---@type boolean
 UIManager.fadingOut = nil
 
----@type boolean
-UIManager.keyDownZoomIn = nil
-
----@type boolean
-UIManager.keyDownZoomOut = nil
-
 ---@type number
 UIManager.lastAlpha = nil
 

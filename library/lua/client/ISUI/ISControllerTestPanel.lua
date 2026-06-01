@@ -8,7 +8,7 @@
 ---@field label ISLabel
 ---@field selectedController unknown?
 ---@field smallFontHgt number
-ISControllerTestPanel = ISPanel:derive("ControllerTest")
+ISControllerTestPanel = {}
 ISControllerTestPanel.Type = "ControllerTest"
 
 function ISControllerTestPanel:createChildren() end

@@ -22,6 +22,8 @@ function ISAttachAnimalToPlayer:start() end
 
 function ISAttachAnimalToPlayer:stop() end
 
+function ISAttachAnimalToPlayer:takeRope() end
+
 function ISAttachAnimalToPlayer:update() end
 
 ---@return boolean

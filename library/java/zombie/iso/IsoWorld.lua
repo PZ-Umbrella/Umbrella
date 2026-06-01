@@ -392,6 +392,9 @@ IsoWorld.WorldVersion_AlarmDecay = nil
 IsoWorld.WorldVersion_AnimalHutch = nil
 
 ---@type integer
+IsoWorld.WorldVersion_AnimalOnlineId = nil
+
+---@type integer
 IsoWorld.WorldVersion_AnimalPetTime = nil
 
 ---@type integer
@@ -432,6 +435,9 @@ IsoWorld.WorldVersion_CraftLogicParallelCrafting = nil
 
 ---@type integer
 IsoWorld.WorldVersion_CraftUpdateFoundations = nil
+
+---@type integer
+IsoWorld.WorldVersion_DeadBodyAnimalGenetics = nil
 
 ---@type integer
 IsoWorld.WorldVersion_DesignationZone = nil
@@ -564,12 +570,6 @@ function IsoWorld.getZombiesDisabled() end
 
 ---@return boolean
 function IsoWorld.getZombiesEnabled() end
-
----@return boolean
-function IsoWorld.isAnimRecorderDiscardTriggered() end
-
----@return boolean
-function IsoWorld.isAnimationRecorderActive() end
 
 function IsoWorld.parseDistributions() end
 

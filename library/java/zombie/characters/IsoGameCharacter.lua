@@ -925,6 +925,15 @@ function __IsoGameCharacter:getAge() end
 function __IsoGameCharacter:getAimAtFloorAmount() end
 
 ---@return number
+function __IsoGameCharacter:getAimOriginPosX() end
+
+---@return number
+function __IsoGameCharacter:getAimOriginPosY() end
+
+---@return number
+function __IsoGameCharacter:getAimOriginPosZ() end
+
+---@return number
 function __IsoGameCharacter:getAimingDelay() end
 
 ---@return AimingMode
@@ -1085,6 +1094,9 @@ function __IsoGameCharacter:getChatElement() end
 
 ---@return PlayerCheats
 function __IsoGameCharacter:getCheats() end
+
+---@return number
+function __IsoGameCharacter:getChestHeight() end
 
 ---@return number
 function __IsoGameCharacter:getChopTreeSpeed() end
@@ -2361,6 +2373,9 @@ function __IsoGameCharacter:isInTrees2(ignoreBush) end
 function __IsoGameCharacter:isInTreesNoBush() end
 
 ---@return boolean
+function __IsoGameCharacter:isInventive() end
+
+---@return boolean
 function __IsoGameCharacter:isInvincible() end
 
 ---@return boolean
@@ -2844,7 +2859,8 @@ function __IsoGameCharacter:playbackRecordCurrentStateSnapshot() end
 ---@param snapshot ActionStateSnapshot
 function __IsoGameCharacter:playbackSetCurrentStateSnapshot(snapshot) end
 
-function __IsoGameCharacter:postAnimationFinishing() end
+---@param state string
+function __IsoGameCharacter:postAnimationFinishing(state) end
 
 function __IsoGameCharacter:postUpdateEquippedTextures() end
 
@@ -3944,11 +3960,23 @@ IsoGameCharacter.AwkwardGlovesStrengthDivisor = nil
 ---@type integer
 IsoGameCharacter.GlovesStrengthBonus = nil
 
+---@type number
+IsoGameCharacter.HUMANOID_SCREEN_CHEST_HEIGHT = nil
+
+---@type number
+IsoGameCharacter.HUMANOID_WORLD_CHEST_HEIGHT = nil
+
 ---@type integer
 IsoGameCharacter.RENDER_OFFSET_X = nil
 
 ---@type integer
 IsoGameCharacter.RENDER_OFFSET_Y = nil
+
+---@type number
+IsoGameCharacter.WALK_SPEED_DEFAULT = nil
+
+---@type number
+IsoGameCharacter.WALK_SPEED_SLOW = nil
 
 ---@type number
 IsoGameCharacter.s_maxPossibleTwist = nil

@@ -21,6 +21,10 @@ PresetEntry = {}
 ---@return PresetEntry
 function PresetEntry.new() end
 
+---@param other PresetEntry
+---@return PresetEntry
+function PresetEntry.new(other) end
+
 ---@param n string
 ---@param f integer
 ---@return PresetEntry

@@ -20,6 +20,7 @@
 ---@field popup ISComboBoxPopup
 ---@field sawMouseDown boolean
 ---@field selected integer
+---@field SuperType ISPanel
 ---@field target unknown?
 ---@field textColor umbrella.RGBA
 ---@field tooltip table<string, string>?
@@ -70,6 +71,9 @@ function ISComboBox:getOptionTooltip(index) end
 
 ---@return integer
 function ISComboBox:getSelected() end
+
+---@return unknown
+function ISComboBox:getSelectedData() end
 
 ---@return string?
 function ISComboBox:getSelectedText() end
@@ -141,8 +145,12 @@ function ISComboBox:setFilterText(text) end
 ---@param focused boolean
 function ISComboBox:setJoypadFocused(focused) end
 
+function ISComboBox:setOnChange(target, onChange, onChangeArg1, onChangeArg2) end
+
 ---@param value integer
 function ISComboBox:setSelected(value) end
+
+function ISComboBox:setSelectedData(data) end
 
 ---@param tooltipmap table<string, string>
 function ISComboBox:setToolTipMap(tooltipmap) end

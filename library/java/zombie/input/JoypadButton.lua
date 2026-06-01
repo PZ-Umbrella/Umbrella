@@ -3,6 +3,9 @@
 ---@class JoypadButton: Enum<JoypadButton>
 local __JoypadButton = {}
 
+---@return string
+function __JoypadButton:getNameTranslationKey() end
+
 ---@param joypadBind integer
 ---@return boolean
 function __JoypadButton:isDown(joypadBind) end

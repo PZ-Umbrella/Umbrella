@@ -3,6 +3,12 @@
 ---@class IsoRadio: IsoWaveSignal
 local __IsoRadio = {}
 
+---@return boolean
+function __IsoRadio:couldBePoweredByGenerator() end
+
+---@return number
+function __IsoRadio:getGeneratorPowerConsumption() end
+
 ---@return string
 function __IsoRadio:getObjectName() end
 

@@ -10,6 +10,7 @@
 ---@field logIndex number
 ---@field onOtherKey (fun(self: ISTextEntryBox, key: integer))?
 ---@field placeholderText string?
+---@field SuperType ISPanelJoypad
 ---@field title string
 ---@field tooltip unknown?
 ---@field tooltipUI ISToolTip
@@ -41,6 +42,9 @@ function ISTextEntryBox:getPlaceholderText() end
 
 ---@return string
 function ISTextEntryBox:getText() end
+
+---@return unknown
+function ISTextEntryBox:hasClearButton() end
 
 function ISTextEntryBox:ignoreFirstInput() end
 

@@ -188,6 +188,9 @@ function __FluidContainer:isTainted() end
 function __FluidContainer:isTaintedStatusKnown() end
 
 ---@return boolean
+function __FluidContainer:isWaterOnlySource() end
+
+---@return boolean
 function __FluidContainer:isWaterSource() end
 
 ---@param input ByteBuffer

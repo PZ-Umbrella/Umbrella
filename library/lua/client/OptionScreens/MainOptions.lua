@@ -17,6 +17,7 @@
 ---@field colorPicker4 ISColorPicker
 ---@field colorPicker5 ISColorPicker
 ---@field colorPicker6 ISColorPicker
+---@field controllerTab GameOptionControllerTab
 ---@field controllerTestPanel ISControllerTestPanel
 ---@field cover ISPanel
 ---@field gameOptions GameOptions
@@ -46,6 +47,7 @@ MainOptions.keys = {} ---@type umbrella.KeybindTable[]
 MainOptions.keyText = {} ---@type umbrella.MainOptions.KeyTextItem[]
 MainOptions.setKeybindDialog = nil ---@type ISSetKeybindDialog?
 MainOptions.keyBindingLength = 0
+MainOptions.style = ISStyle:new()
 MainOptions.translatorPane = nil ---@type ISRichTextPanel?
 MainOptions.KEYS_VERSION1 = 1
 MainOptions.KEYS_VERSION = 2
@@ -162,6 +164,7 @@ function MainOptions:addModOptionsPanel() end
 function MainOptions:addMultiplayerPanel() end
 
 ---@param name string
+---@return ISPanelJoypad
 function MainOptions:addPage(name) end
 
 ---@param x number
@@ -252,6 +255,8 @@ function MainOptions:close() end
 function MainOptions:ControllerReload(button) end
 
 function MainOptions:create() end
+
+function MainOptions:doLayout() end
 
 function MainOptions:initialise() end
 
@@ -427,6 +432,29 @@ function MainOptions:toUI() end
 ---@return MainOptions
 function MainOptions:new(x, y, width, height) end
 
+---@class MainOptions.HorizontalLine : ISPanel
+local __mainOptions_HorizontalLine = ISPanel:derive("HorizontalLine")
+__mainOptions_HorizontalLine.Type = "HorizontalLine"
+
+function __mainOptions_HorizontalLine:prerender() end
+
+function __mainOptions_HorizontalLine:render() end
+
+---@param x number
+---@param y number
+---@param width number
+---@return MainOptions.HorizontalLine
+function __mainOptions_HorizontalLine:new(x, y, width) end
+
+---@class ISStyle
+---@field borderSpacing number
+---@field buttonHeight number
+---@field buttonPadding number
+---@field initialY number
+---@field joypadTexSize number
+---@field labelHeight number
+ISStyle = {}
+
 ---@class MainOptions.GameOption : ISBaseObject
 ---@field arg1 unknown?
 ---@field arg2 unknown?
@@ -434,7 +462,7 @@ function MainOptions:new(x, y, width, height) end
 ---@field name string
 ---@field onChange function?
 ---@field tableContains function?
-local __mainOptions_GameOption = ISBaseObject:derive("GameOption")
+local __mainOptions_GameOption = {}
 __mainOptions_GameOption.Type = "GameOption"
 
 function __mainOptions_GameOption:apply() end
@@ -474,7 +502,7 @@ function __mainOptions_GameOption:new(name, control, arg1, arg2) end
 ---@class MainOptions.GameOptions : ISBaseObject
 ---@field changed boolean
 ---@field options table
-local __mainOptions_GameOptions = ISBaseObject:derive("GameOptions")
+local __mainOptions_GameOptions = {}
 __mainOptions_GameOptions.Type = "GameOptions"
 
 ---@param option MainOptions.GameOption
@@ -497,20 +525,6 @@ function __mainOptions_GameOptions:toUI() end
 
 ---@return MainOptions.GameOptions
 function __mainOptions_GameOptions:new() end
-
----@class MainOptions.HorizontalLine : ISPanel
-local __mainOptions_HorizontalLine = ISPanel:derive("HorizontalLine")
-__mainOptions_HorizontalLine.Type = "HorizontalLine"
-
-function __mainOptions_HorizontalLine:prerender() end
-
-function __mainOptions_HorizontalLine:render() end
-
----@param x number
----@param y number
----@param width number
----@return MainOptions.HorizontalLine
-function __mainOptions_HorizontalLine:new(x, y, width) end
 
 ---@class umbrella.MainOptions.KeyTextElement
 ---@field altCode integer

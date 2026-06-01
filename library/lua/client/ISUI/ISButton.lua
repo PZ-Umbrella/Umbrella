@@ -27,7 +27,10 @@
 ---@field iconRightHeight number
 ---@field iconRightWidth number
 ---@field image Texture?
+---@field isBaseBackgroundVisible boolean
+---@field isBorderVisible boolean
 ---@field isButton true
+---@field isHighlightedBackgroundVisible boolean
 ---@field isJoypad boolean
 ---@field joypadTexture unknown?
 ---@field joypadTextureWH number
@@ -44,6 +47,7 @@
 ---@field repeatWhilePressedFunc umbrella.ISButton.RepeatWhilePressed?
 ---@field repeatWhilePressedTimer number
 ---@field sounds table<string, string>
+---@field SuperType ISPanel
 ---@field target unknown?
 ---@field textColor umbrella.RGBA
 ---@field textureBackground Texture?
@@ -74,6 +78,9 @@ function ISButton:forceClick() end
 ---@param width number
 ---@param height number
 function ISButton:forceImageSize(width, height) end
+
+---@return table
+function ISButton:getBackgroundColor() end
 
 ---@return string
 function ISButton:getTitle() end
@@ -194,6 +201,12 @@ function ISButton:setVisible(visible) end
 ---@param minWidth number?
 ---@param isJoypad boolean?
 function ISButton:setWidthToTitle(minWidth, isJoypad) end
+
+---@return boolean
+function ISButton:shouldDrawBackground() end
+
+---@return boolean
+function ISButton:shouldDrawBorder() end
 
 ---@param bEnabled boolean
 function ISButton:toggleAcceptCancel(bEnabled) end

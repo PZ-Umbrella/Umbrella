@@ -25,6 +25,9 @@ function __AnimalDefinitions:getBreeds() end
 ---@return string
 function __AnimalDefinitions:getGroup() end
 
+---@return AnimalGrowStage
+function __AnimalDefinitions:getGrowStage() end
+
 ---@return integer
 function __AnimalDefinitions:getMaxBaby() end
 
@@ -36,6 +39,9 @@ function __AnimalDefinitions:getRandomBreed() end
 
 ---@return number
 function __AnimalDefinitions:getWildFleeTimeUntilDeadTimer() end
+
+---@return boolean
+function __AnimalDefinitions:isBaby() end
 
 ---@param hour integer
 ---@return boolean

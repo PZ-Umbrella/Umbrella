@@ -910,6 +910,10 @@ function __ItemContainer:getItemById(id) end
 ---@return integer
 function __ItemContainer:getItemCount(type) end
 
+---@param type ItemKey
+---@return integer
+function __ItemContainer:getItemCount(type) end
+
 ---@param type string
 ---@param doBags boolean
 ---@return integer
@@ -1575,8 +1579,9 @@ ItemContainer = {}
 function ItemContainer.floatingPointCorrection(val) end
 
 ---@param parent IsoObject
+---@param includeGenerators boolean
 ---@return boolean
-function ItemContainer.isObjectPowered(parent) end
+function ItemContainer.isObjectPowered(parent, includeGenerators) end
 
 ---@param ID integer
 ---@param containerName string

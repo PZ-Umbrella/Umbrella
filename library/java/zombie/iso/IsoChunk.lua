@@ -84,6 +84,9 @@ function __IsoChunk:addModded(chunkGenerationStatus) end
 ---@param logic ObjectAmbientEmitters.PerObjectLogic
 function __IsoChunk:addObjectAmbientEmitter(object, logic) end
 
+---@param object IsoObject
+function __IsoChunk:addObjectPoweredByGenerator(object) end
+
 ---@param zone Zone
 ---@param addToWorld boolean
 function __IsoChunk:addRandomCarCrash(zone, addToWorld) end
@@ -290,6 +293,9 @@ function __IsoChunk:removeGeneratorPos(x, y, z) end
 
 ---@param object IsoObject
 function __IsoChunk:removeObjectAmbientEmitter(object) end
+
+---@param object IsoObject
+function __IsoChunk:removeObjectPoweredByGenerator(object) end
 
 function __IsoChunk:resetForStore() end
 

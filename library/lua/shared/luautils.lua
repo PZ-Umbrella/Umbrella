@@ -3,6 +3,9 @@
 ---@class luautils
 luautils = {}
 
+---@return table
+function luautils.concatenateArrays(table1, table2) end
+
 ---@param _containerList ItemContainer[]
 ---@param _itemsNum integer?
 ---@return integer
@@ -84,6 +87,9 @@ function luautils.okModal(_text, _centered, _width, _height, _posX, _posY) end
 ---@param sep string
 ---@return string?
 function luautils.packString(stringTable, sep) end
+
+---@return number
+function luautils.remove(table1, value) end
 
 ---@param _value number
 ---@param _value2 number

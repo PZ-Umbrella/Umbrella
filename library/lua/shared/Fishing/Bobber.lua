@@ -5,6 +5,67 @@ Fishing = {}
 Fishing.Bobber = nil ---@type Fishing.Bobber
 Fishing.ServerBobberManager = {} ---@type table<integer, Fishing.Bobber>
 
+---@class Bobber
+---@field attractTimer number
+---@field catchFishStarted boolean
+---@field fish Fishing.Fish?
+---@field fishingLvl unknown
+---@field fishingRod Fishing.FishingRod
+---@field id unknown
+---@field lure unknown
+---@field nibbleTimer number
+---@field player unknown
+---@field renderFunc function
+---@field sq unknown
+---@field x number
+---@field y number
+---@field z number
+Bobber = {}
+
+---@return unknown?
+function Bobber.getBobber(player) end
+
+function Bobber.onFishingActionMPUpdate(data) end
+
+---@return boolean
+function Bobber:attractFish() end
+
+function Bobber:destroy() end
+
+---@return number
+---@return number
+function Bobber:getFreeWaterDirection() end
+
+---@return number
+function Bobber:getNibbleTime() end
+
+---@return number
+function Bobber:getX() end
+
+---@return number
+function Bobber:getY() end
+
+---@return number
+function Bobber:getZ() end
+
+---@return unknown?
+function Bobber:grabFish() end
+
+---@return boolean
+function Bobber:isOnGround() end
+
+---@param dx number
+---@param dy number
+function Bobber:move(dx, dy) end
+
+function Bobber:update() end
+
+---@param fishingRod Fishing.FishingRod
+---@param x number
+---@param y number
+---@return Bobber
+function Bobber:new(player, fishingRod, x, y) end
+
 ---@class Fishing.Bobber
 ---@field attractTimer integer
 ---@field catchFishStarted boolean

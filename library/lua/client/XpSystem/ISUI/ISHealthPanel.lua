@@ -159,6 +159,8 @@ function ISHealthPanel:setVisible(visible) end
 ---@param bodyPart BodyPart
 function ISHealthPanel:toPlayerInventory(playerObj, item, bodyPart) end
 
+function ISHealthPanel:tryStopReceivingBodyDamageUpdates() end
+
 function ISHealthPanel:update() end
 
 function ISHealthPanel:updateBodyPartList() end

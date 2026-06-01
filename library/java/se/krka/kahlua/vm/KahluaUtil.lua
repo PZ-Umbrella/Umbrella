@@ -90,6 +90,14 @@ function KahluaUtil.ipow(base, exponent) end
 ---@return boolean
 function KahluaUtil.isNegative(vDouble) end
 
+---@param o any
+---@return boolean
+function KahluaUtil.isTable(o) end
+
+---@param o any
+---@return boolean
+function KahluaUtil.isUserdata(o) end
+
 ---@param kahluaTable table
 ---@param low integer
 ---@param high integer

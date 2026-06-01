@@ -9,6 +9,7 @@
 ---@field mouseOver boolean
 ---@field moveWithMouse boolean
 ---@field moving boolean
+---@field SuperType ISUIElement
 ISPanel = ISUIElement:derive("ISPanel")
 ISPanel.Type = "ISPanel"
 
@@ -16,6 +17,7 @@ function ISPanel:close() end
 
 function ISPanel:initialise() end
 
+---@return ISPanel
 function ISPanel:noBackground() end
 
 ---@param x number

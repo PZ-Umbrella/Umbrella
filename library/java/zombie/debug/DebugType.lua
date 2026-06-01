@@ -272,6 +272,9 @@ DebugType.Fluid = nil
 DebugType.Foraging = nil
 
 ---@type DebugType
+DebugType.GameOption = nil
+
+---@type DebugType
 DebugType.General = nil
 
 ---@type DebugType
@@ -279,6 +282,9 @@ DebugType.Grapple = nil
 
 ---@type DebugType
 DebugType.ISUI = nil
+
+---@type DebugType
+DebugType.ISUIStackTrace = nil
 
 ---@type DebugType
 DebugType.ImGui = nil
@@ -300,6 +306,9 @@ DebugType.LoadAnimation = nil
 
 ---@type DebugType
 DebugType.Lua = nil
+
+---@type DebugType
+DebugType.LuaObject = nil
 
 ---@type DebugType
 DebugType.MapLoading = nil

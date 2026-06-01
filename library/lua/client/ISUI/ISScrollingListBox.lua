@@ -27,6 +27,7 @@
 ---@field smoothScrollTargetY number?
 ---@field smoothScrollY number?
 ---@field stopPrerender boolean
+---@field SuperType ISPanelJoypad
 ---@field textColor umbrella.RGBA
 ---@field tooltipUI ISToolTip
 ---@field useStencilForChildren boolean

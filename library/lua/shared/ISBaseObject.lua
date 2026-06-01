@@ -2,6 +2,7 @@
 
 ---@class ISBaseObject
 ---@field __eventListeners table<string, table<function, unknown>>?
+---@field SuperType ISBaseObject?
 ---@field Type string
 ISBaseObject = {}
 
@@ -16,6 +17,10 @@ function ISBaseObject:clearEventListeners() end
 function ISBaseObject:derive(type) end
 
 function ISBaseObject:initialise() end
+
+---@param type string
+---@return boolean
+function ISBaseObject:instanceof(object, type) end
 
 ---@param _event string
 ---@param _callback function

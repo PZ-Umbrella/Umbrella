@@ -35,6 +35,7 @@
 ---@field repeatWhilePressedFunc unknown
 ---@field repeatWhilePressedTimer number
 ---@field sounds table
+---@field SuperType ISPanel
 ---@field target MultiplayerUI
 ---@field textColor table
 ---@field textureBackground unknown?

@@ -242,6 +242,9 @@ function __IsoObject:clearAttachedAnimSprite() end
 
 function __IsoObject:clearOnOverlay() end
 
+---@return boolean
+function __IsoObject:couldBePoweredByGenerator() end
+
 ---@return integer
 function __IsoObject:countAddSheetRope() end
 
@@ -379,6 +382,9 @@ function __IsoObject:getForwardMovementIsoDirection() end
 
 ---@return GameEntityType
 function __IsoObject:getGameEntityType() end
+
+---@return number
+function __IsoObject:getGeneratorPowerConsumption() end
 
 ---@return ColorInfo
 function __IsoObject:getHighlightColor() end
@@ -687,6 +693,14 @@ function __IsoObject:isAlphaZero(playerIndex) end
 ---@return boolean
 function __IsoObject:isAnimating() end
 
+---@param sprite IsoSprite
+---@return boolean
+function __IsoObject:isAttachedAnimSprite(sprite) end
+
+---@param sprite IsoSprite
+---@return boolean
+function __IsoObject:isAttachedOrOverlaySprite(sprite) end
+
 ---@return boolean
 function __IsoObject:isBlink() end
 
@@ -727,6 +741,10 @@ function __IsoObject:isFloor() end
 
 ---@return boolean
 function __IsoObject:isFluidInputLocked() end
+
+---@param localCharacter IsoGameCharacter
+---@return boolean
+function __IsoObject:isFurnitureOccupied(localCharacter) end
 
 ---@return boolean
 function __IsoObject:isGenericCraftingSurface() end

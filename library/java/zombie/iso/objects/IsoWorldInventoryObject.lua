@@ -20,6 +20,9 @@ function __IsoWorldInventoryObject:canTransferFluidFrom(other) end
 ---@return boolean
 function __IsoWorldInventoryObject:canTransferFluidTo(other) end
 
+---@return boolean
+function __IsoWorldInventoryObject:couldBePoweredByGenerator() end
+
 function __IsoWorldInventoryObject:emptyFluid() end
 
 ---@return boolean

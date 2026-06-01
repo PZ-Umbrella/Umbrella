@@ -22,6 +22,7 @@
 ---@field mouseOverIndex integer
 ---@field options umbrella.ISRadioButtons.Option[]
 ---@field selected integer?
+---@field SuperType ISPanel
 ---@field textGap number
 ---@field textureCircle Texture
 ---@field textureIndicator Texture

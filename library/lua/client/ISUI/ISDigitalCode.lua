@@ -9,6 +9,7 @@
 ---@field button2p ISButton
 ---@field button3m ISButton
 ---@field button3p ISButton
+---@field cancel ISButton
 ---@field character IsoPlayer?
 ---@field joypadButtons ISButton[]?
 ---@field name unknown?

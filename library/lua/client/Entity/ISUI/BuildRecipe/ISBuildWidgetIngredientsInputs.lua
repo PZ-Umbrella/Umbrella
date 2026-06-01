@@ -33,6 +33,8 @@ function ISBuildWidgetIngredientsInputs:initialise() end
 ---@param joypadData JoypadData
 function ISBuildWidgetIngredientsInputs:onGainJoypadFocus(joypadData) end
 
+function ISBuildWidgetIngredientsInputs:onJoypadDown(button, joypadData) end
+
 ---@param joypadData JoypadData
 function ISBuildWidgetIngredientsInputs:onLoseJoypadFocus(joypadData) end
 

@@ -202,6 +202,9 @@ function __InventoryItem:getA() end
 ---@return number # the ActualWeight
 function __InventoryItem:getActualWeight() end
 
+---@return number
+function __InventoryItem:getActualWeightUnmodded() end
+
 ---@return number # the Age
 function __InventoryItem:getAge() end
 
@@ -1283,6 +1286,9 @@ function __InventoryItem:isVanilla() end
 
 ---@return boolean
 function __InventoryItem:isVisualAid() end
+
+---@return boolean
+function __InventoryItem:isWaterOnlySource() end
 
 ---@return boolean # the IsWaterSource
 function __InventoryItem:isWaterSource() end

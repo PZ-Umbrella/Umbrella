@@ -118,12 +118,6 @@
 ---TriggerXmlFile
 ---  A serialized representation of a Trigger_SetClothing.xml file.
 ---  Used by AnimZed to message a character to change its outfit.
----@class TriggerSetAnimationRecorderFile
-
----(Not exposed)
----TriggerXmlFile
----  A serialized representation of a Trigger_SetClothing.xml file.
----  Used by AnimZed to message a character to change its outfit.
 ---@class TriggerXmlFile
 
 ---(Not exposed)

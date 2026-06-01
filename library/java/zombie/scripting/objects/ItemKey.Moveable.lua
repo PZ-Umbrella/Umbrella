@@ -18,19 +18,28 @@ Moveable.BROKEN_GLASS = nil
 Moveable.BULL_SKULL_WALL = nil
 
 ---@type ItemKey
+Moveable.CALF_LEATHER_ANGUS_FUR_TAN = nil
+
+---@type ItemKey
+Moveable.CALF_LEATHER_HOLSTEIN_FUR_TAN = nil
+
+---@type ItemKey
+Moveable.CALF_LEATHER_SIMMENTAL_FUR_TAN = nil
+
+---@type ItemKey
 Moveable.CAMPING_TENT_KIT_2 = nil
 
 ---@type ItemKey
 Moveable.COW_HIDE = nil
 
 ---@type ItemKey
+Moveable.COW_LEATHER_ANGUS_FUR_TAN = nil
+
+---@type ItemKey
+Moveable.COW_LEATHER_HOLSTEIN_FUR_TAN = nil
+
+---@type ItemKey
 Moveable.COW_LEATHER_SIMMENTAL_FUR_TAN = nil
-
----@type ItemKey
-Moveable.COW_LEATHER_SIMMENTAL_FUR_TAN_MEDIUM = nil
-
----@type ItemKey
-Moveable.COW_LEATHER_SIMMENTAL_FUR_TAN_SMALL = nil
 
 ---@type ItemKey
 Moveable.COW_SKULL_WALL = nil
@@ -48,10 +57,10 @@ Moveable.DEER_HIDE = nil
 Moveable.DEER_LEATHER_FUR_TAN = nil
 
 ---@type ItemKey
-Moveable.DEER_LEATHER_FUR_TAN_SMALL = nil
+Moveable.DEER_STAG_SKULL_WALL = nil
 
 ---@type ItemKey
-Moveable.DEER_STAG_SKULL_WALL = nil
+Moveable.FAWN_LEATHER_FUR_TAN = nil
 
 ---@type ItemKey
 Moveable.HEMATITE = nil
@@ -64,6 +73,9 @@ Moveable.HIDE_TENT = nil
 
 ---@type ItemKey
 Moveable.IMPROVISED_TENT_KIT = nil
+
+---@type ItemKey
+Moveable.LAMB_LEATHER_FUR_TAN = nil
 
 ---@type ItemKey
 Moveable.LARGE_BELLOWS = nil
@@ -184,6 +196,9 @@ Moveable.MOV_BROWN_COMFY_CHAIR = nil
 
 ---@type ItemKey
 Moveable.MOV_BROWN_CURTAIN = nil
+
+---@type ItemKey
+Moveable.MOV_BROWN_DISHWASHER = nil
 
 ---@type ItemKey
 Moveable.MOV_BROWN_LOW_TABLE = nil
@@ -511,6 +526,9 @@ Moveable.MOV_MANNEQUIN_MALE = nil
 
 ---@type ItemKey
 Moveable.MOV_MAP_USA = nil
+
+---@type ItemKey
+Moveable.MOV_METAL_DISHWASHER = nil
 
 ---@type ItemKey
 Moveable.MOV_METAL_LOCKER = nil
@@ -1068,7 +1086,25 @@ Moveable.MOV_YELLOW_MODERN_CHAIR = nil
 Moveable.MOV_YELLOW_WALL_LOCKER = nil
 
 ---@type ItemKey
+Moveable.PIGLET_LEATHER_BLACK_FUR_TAN = nil
+
+---@type ItemKey
+Moveable.PIGLET_LEATHER_LANDRACE_FUR_TAN = nil
+
+---@type ItemKey
+Moveable.PIG_LEATHER_BLACK_FUR_TAN = nil
+
+---@type ItemKey
+Moveable.PIG_LEATHER_LANDRACE_FUR_TAN = nil
+
+---@type ItemKey
 Moveable.PIG_SKULL_WALL = nil
+
+---@type ItemKey
+Moveable.RABBIT_LEATHER_FUR_TAN = nil
+
+---@type ItemKey
+Moveable.SHEEP_LEATHER_FUR_TAN = nil
 
 ---@type ItemKey
 Moveable.SHEEP_SKULL_WALL = nil

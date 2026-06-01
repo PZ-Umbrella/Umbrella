@@ -1,7 +1,7 @@
 ---@meta _
 
 ---Turrubo
----@class DevicePresets: Cloneable
+---@class DevicePresets
 local __DevicePresets = {}
 
 ---@param name string
@@ -62,6 +62,10 @@ DevicePresets = {}
 
 ---@return DevicePresets
 function DevicePresets.new() end
+
+---@param other DevicePresets
+---@return DevicePresets
+function DevicePresets.new(other) end
 
 ---@type Class<DevicePresets>
 DevicePresets.class = nil

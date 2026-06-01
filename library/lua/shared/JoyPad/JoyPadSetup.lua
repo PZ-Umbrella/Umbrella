@@ -51,40 +51,7 @@ Joypad.DPadLeft = 100
 Joypad.DPadRight = 101
 Joypad.DPadUp = 102
 Joypad.DPadDown = 103
-Joypad.ButtonTextures = {}
-Joypad.AxisTextures = {}
-Joypad.Texture = nil ---@type Joypad.Texture
-
----@class Joypad.Texture
-local __joypad_Texture = {}
-__joypad_Texture.AButton = Joypad.ButtonTextures[JoypadButton.A]
-__joypad_Texture.BButton = Joypad.ButtonTextures[JoypadButton.B]
-__joypad_Texture.XButton = Joypad.ButtonTextures[JoypadButton.X]
-__joypad_Texture.YButton = Joypad.ButtonTextures[JoypadButton.Y]
-__joypad_Texture.LBumper = Joypad.ButtonTextures[JoypadButton.LeftBump]
-__joypad_Texture.RBumper = Joypad.ButtonTextures[JoypadButton.RightBump]
-__joypad_Texture.Start = Joypad.ButtonTextures[JoypadButton.Start]
-__joypad_Texture.Back = Joypad.ButtonTextures[JoypadButton.Back]
-__joypad_Texture.Menu = Joypad.ButtonTextures[JoypadButton.Start]
-__joypad_Texture.View = Joypad.ButtonTextures[JoypadButton.Back]
-__joypad_Texture.LStick = Joypad.AxisTextures[JoypadAxis2d.LeftStick]
-__joypad_Texture.LStickLR = Joypad.AxisTextures[JoypadAxis1d.LeftStickX]
-__joypad_Texture.LStickUD = Joypad.AxisTextures[JoypadAxis1d.LeftStickY]
-__joypad_Texture.RStick = Joypad.AxisTextures[JoypadAxis2d.RightStick]
-__joypad_Texture.RStickLR = Joypad.AxisTextures[JoypadAxis1d.RightStickX]
-__joypad_Texture.RStickUD = Joypad.AxisTextures[JoypadAxis1d.RightStickY]
-__joypad_Texture.DPad = getTexture(
-	"media/ui/controller/" .. ((getCore():getOptionControllerButtonStyle() == 1) and "XBOX" or "PS4") .. "_DPad.png"
-)
-__joypad_Texture.DPadUp = Joypad.ButtonTextures[JoypadButton.DPadUp]
-__joypad_Texture.DPadRight = Joypad.ButtonTextures[JoypadButton.DPadRight]
-__joypad_Texture.DPadDown = Joypad.ButtonTextures[JoypadButton.DPadDown]
-__joypad_Texture.DPadLeft = Joypad.ButtonTextures[JoypadButton.DPadLeft]
-__joypad_Texture.LTrigger = Joypad.AxisTextures[JoypadAxis1d.LeftTrigger]
-__joypad_Texture.RTrigger = Joypad.AxisTextures[JoypadAxis1d.RightTrigger]
-
----@return unknown?
-function __joypad_Texture.fromCommand(command) end
+Joypad.Texture = nil ---@type unknown
 
 ---@class joypad
 joypad = {}
@@ -117,7 +84,7 @@ joypad.wantNoise = getDebug()
 ---@field timeupproc number
 ---@field up boolean
 ---@field wasPressed table<integer, boolean>
-JoypadControllerData = ISBaseObject:derive("JoypadControllerData")
+JoypadControllerData = {}
 JoypadControllerData.Type = "JoypadControllerData"
 
 function JoypadControllerData:clearJoypad() end
@@ -176,7 +143,7 @@ function JoypadControllerData:new(id) end
 ---@field player integer?
 ---@field prevfocus ISUIElement?
 ---@field prevprevfocus ISUIElement?
-JoypadData = ISBaseObject:derive("JoypadData")
+JoypadData = {}
 JoypadData.Type = "JoypadData"
 
 function JoypadData:clearController() end
@@ -227,12 +194,6 @@ function setPrevFocusForPlayer(playerID) end
 
 ---@param playerID integer
 function setPrevPrevFocusForPlayer(playerID) end
-
----@return boolean
-function isIgnoreAim(uiElement) end
-
----@return boolean
-function isIgnoreButtons(uiElement) end
 
 ---@param joypadData JoypadData?
 function updateJoypadFocus(joypadData) end

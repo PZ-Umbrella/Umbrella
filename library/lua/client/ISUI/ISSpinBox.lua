@@ -17,6 +17,9 @@ ISSpinBox.Type = "ISSpinBox"
 ---@param option string
 function ISSpinBox:addOption(option) end
 
+---@param options table
+function ISSpinBox:addOptions(options) end
+
 function ISSpinBox:createChildren() end
 
 ---@param button ISButton
@@ -28,6 +31,8 @@ function ISSpinBox:onMouseWheel(delta) end
 function ISSpinBox:prerender() end
 
 function ISSpinBox:render() end
+
+function ISSpinBox:setSelectedOption(option) end
 
 ---@param x number
 ---@param y number

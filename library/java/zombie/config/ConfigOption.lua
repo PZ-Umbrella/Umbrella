@@ -21,6 +21,8 @@ function __ConfigOption:getValueAsObject() end
 ---@return string
 function __ConfigOption:getValueAsString() end
 
+function __ConfigOption:invokeOnChangeEvent() end
+
 ---@param s string
 ---@return boolean
 function __ConfigOption:isValidString(s) end
@@ -34,6 +36,9 @@ function __ConfigOption:parse(s) end
 function __ConfigOption:resetToDefault() end
 
 function __ConfigOption:setDefaultToCurrentValue() end
+
+---@param onChange ConfigOption.ConfigOptionOnChangeCallback
+function __ConfigOption:setOnChangeCallback(onChange) end
 
 ---@param o any
 function __ConfigOption:setValueFromObject(o) end

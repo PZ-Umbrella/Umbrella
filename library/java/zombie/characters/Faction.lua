@@ -108,6 +108,11 @@ function Faction.isAlreadyInFaction(player) end
 ---@return boolean
 function Faction.isInSameFaction(player, other) end
 
+---@param player IsoPlayer
+---@param username string
+---@return boolean
+function Faction.isInSameFaction(player, username) end
+
 ---@param name string
 ---@return boolean
 function Faction.tagExist(name) end

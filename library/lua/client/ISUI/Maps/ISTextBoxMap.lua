@@ -13,6 +13,7 @@
 ---@field entry ISTextEntryBox
 ---@field fontHgt number
 ---@field fontPicker ISComboBox
+---@field joypadIndex unknown
 ---@field layerColorTickBox ISTickBox
 ---@field mapAPI unknown
 ---@field mapUI umbrella.MapUI

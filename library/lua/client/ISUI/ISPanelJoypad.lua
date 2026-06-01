@@ -1,6 +1,39 @@
 ---@meta
 
+---@class rowTree
+---@field above rowTree?
+---@field below rowTree?
+---@field elements table
+local __rowTree = {}
+
+---@return string
+function __rowTree.rowToString(row) end
+
+---@return number?
+function __rowTree:findHorizontallyOverlappingElement(left, right, vsElementIdx) end
+
+---@param result table?
+---@return table?
+function __rowTree:getAllRows(result) end
+
+---@return rowTree?
+function __rowTree:getBottomMostBranch() end
+
+---@return table
+---@return table
+---@return table
+function __rowTree:getSplitElements(y) end
+
+---@return rowTree?
+function __rowTree:getTopMostBranch() end
+
+function __rowTree:splitOverlappingColumns() end
+
+---@return rowTree
+function __rowTree:new(elements) end
+
 ---@class ISPanelJoypad : ISUIElement
+---@field allJoypadButtons table
 ---@field background boolean
 ---@field backgroundColor umbrella.RGBA
 ---@field borderColor umbrella.RGBA
@@ -14,11 +47,26 @@
 ---@field joypadButtonsY ISButton[][]
 ---@field joypadIndex integer
 ---@field joypadIndexY integer
+---@field lastIntercepts table?
+---@field lastProjectedBounds unknown?
 ---@field mouseOver boolean
 ---@field moveWithMouse boolean
 ---@field moving boolean
 ISPanelJoypad = ISUIElement:derive("ISPanelJoypad")
 ISPanelJoypad.Type = "ISPanelJoypad"
+
+---@return boolean?
+function ISPanelJoypad.autoAddUIElementToJoypadButtons(allJoypadButtons, uiElement) end
+
+---@return table
+function ISPanelJoypad.autoGenerateJoypadButtonRowsFromUIElement(uiRootElement) end
+
+---@return string
+function ISPanelJoypad.rowListToDebugString(list) end
+
+function ISPanelJoypad:addJoypadButtonRows(rows) end
+
+function ISPanelJoypad:autoGenerateJoypadButtonsLists() end
 
 function ISPanelJoypad:clearISButtonA() end
 
@@ -30,6 +78,8 @@ function ISPanelJoypad:clearISButtonX() end
 
 function ISPanelJoypad:clearISButtonY() end
 
+function ISPanelJoypad:clearJoypadButtonsList() end
+
 ---@param joypadData JoypadData
 function ISPanelJoypad:clearJoypadFocus(joypadData) end
 
@@ -40,6 +90,29 @@ function ISPanelJoypad:close() end
 function ISPanelJoypad:doRightJoystickScrolling(dx, dy) end
 
 function ISPanelJoypad:ensureVisible() end
+
+---@return unknown?
+function ISPanelJoypad:findClosestNavigableChildAlongBounds(
+	fromChild,
+	fromChildBounds,
+	projectedBounds,
+	minDistance,
+	distanceToFunc,
+	results
+)
+end
+
+---@return unknown?
+function ISPanelJoypad:findNextNavigableChildX(fromChild, xDir) end
+
+---@return unknown?
+function ISPanelJoypad:findNextNavigableChildY(fromChild, yDir) end
+
+---@return number
+function ISPanelJoypad:getChildJoypadIndex(child) end
+
+---@return number
+function ISPanelJoypad:getChildJoypadIndexY(child) end
 
 ---@param children ISUIElement[]
 ---@param x number
@@ -103,6 +176,7 @@ function ISPanelJoypad:insertNewListOfButtonsList(list) end
 ---@return boolean
 function ISPanelJoypad:isFocusOnControl() end
 
+---@return unknown
 function ISPanelJoypad:noBackground() end
 
 ---@param joypadData JoypadData
@@ -145,6 +219,15 @@ function ISPanelJoypad:prerender() end
 
 ---@return table
 function ISPanelJoypad:recordJoypadState() end
+
+function ISPanelJoypad:removeJoypadButtonRows(rows) end
+
+---@return boolean
+function ISPanelJoypad:removeListOfButtons(list) end
+
+function ISPanelJoypad:render() end
+
+function ISPanelJoypad:renderDebugUINavigation() end
 
 ---@param joypadData JoypadData
 function ISPanelJoypad:restoreJoypadFocus(joypadData) end

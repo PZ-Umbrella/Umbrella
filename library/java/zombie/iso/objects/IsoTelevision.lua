@@ -8,6 +8,12 @@ function __IsoTelevision:addTvScreenSprite(sprite) end
 
 function __IsoTelevision:clearTvScreenSprites() end
 
+---@return boolean
+function __IsoTelevision:couldBePoweredByGenerator() end
+
+---@return number
+function __IsoTelevision:getGeneratorPowerConsumption() end
+
 ---@return string
 function __IsoTelevision:getObjectName() end
 

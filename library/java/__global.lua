@@ -1155,6 +1155,10 @@ function getHourMinute() end
 ---@return IsoHutch
 function getHutch(x, y, z) end
 
+---@param maxDepth integer
+---@return string
+function getISUIStackTrace(maxDepth) end
+
 ---@return ArrayList<GameEntity>
 function getIsoEntitiesDebug() end
 
@@ -1886,6 +1890,9 @@ function isAdmin() end
 function isAltKeyDown() end
 
 ---@return boolean
+function isAnimationRecorderActive() end
+
+---@return boolean
 function isClient() end
 
 ---@param index integer
@@ -2606,13 +2613,13 @@ function sendPlayerStatsChange(player) end
 ---@param animal IsoAnimal
 ---@param player IsoPlayer
 ---@param vehicle BaseVehicle
----@param item AnimalInventoryItem
+---@param item InventoryItem
 function sendRemoveAndGrabAnimalFromTrailer(animal, player, vehicle, item) end
 
 ---@param animal IsoDeadBody
 ---@param player IsoPlayer
 ---@param vehicle BaseVehicle
----@param item AnimalInventoryItem
+---@param item InventoryItem
 function sendRemoveAndGrabAnimalFromTrailer(animal, player, vehicle, item) end
 
 ---@param animal IsoAnimal
@@ -2763,6 +2770,9 @@ function setAdmin() end
 ---@param x integer
 ---@param y integer
 function setAggroTarget(id, x, y) end
+
+---@param setActive boolean
+function setAnimationRecorderActive(setActive) end
 
 ---@param b boolean
 function setBehaviorStep(b) end
@@ -3141,6 +3151,10 @@ function triggerEvent(event, param, param2, param3, param4) end
 ---@param filename string
 ---@return Texture
 function tryGetTexture(filename) end
+
+---@param o any
+---@return string
+function typeof(o) end
 
 ---@param account Account
 function updateAccountToAccountList(account) end

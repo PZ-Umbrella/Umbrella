@@ -55,6 +55,10 @@ function __DebugLog:isLogTraceFileLocationEnabled() end
 ---@param filepath string
 function __DebugLog:loadDebugConfig(filepath) end
 
+---@param s string
+---@param enable boolean
+function __DebugLog:readConfigCommand(s, enable) end
+
 ---@param logServerTimeMsEnabled boolean
 function __DebugLog:setLogServerTimeMsEnabled(logServerTimeMsEnabled) end
 
@@ -80,6 +84,24 @@ function DebugLog.getDebugTypes() end
 
 ---@return DebugLog
 function DebugLog.getInstance() end
+
+---@param debugType DebugType
+---@return LogSeverity
+function DebugLog.getLogSeverityForSelectedProfile(debugType) end
+
+---@return List<string>
+function DebugLog.getProfileAliases() end
+
+---@return List<string>
+function DebugLog.getProfileNames() end
+
+---@return string
+function DebugLog.getSelectedProfileName() end
+
+---@param profileOrAlias string
+function DebugLog.invokeProfile(profileOrAlias) end
+
+function DebugLog.invokeSelectedProfile() end
 
 ---@param type DebugType
 ---@return boolean
@@ -109,6 +131,15 @@ function DebugLog.setDefaultLogSeverity() end
 ---@param type DebugType
 ---@param bEnabled boolean
 function DebugLog.setLogEnabled(type, bEnabled) end
+
+---@param debugType DebugType
+---@param logSeverity LogSeverity
+function DebugLog.updateSelectedProfile(debugType, logSeverity) end
+
+---@param logSeverity LogSeverity
+function DebugLog.updateSelectedProfileAll(logSeverity) end
+
+function DebugLog.writeConfigFile() end
 
 ---@type Class<DebugLog>
 DebugLog.class = nil

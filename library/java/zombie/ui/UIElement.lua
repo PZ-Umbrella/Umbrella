@@ -836,6 +836,9 @@ function __UIElement:setYScroll(y) end
 
 function __UIElement:suspendStencil() end
 
+---@return string
+function __UIElement:toString() end
+
 function __UIElement:update() end
 
 UIElement = {}

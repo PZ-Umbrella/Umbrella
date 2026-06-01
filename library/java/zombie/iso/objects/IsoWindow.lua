@@ -253,6 +253,9 @@ IsoWindow = {}
 ---@type number
 IsoWindow.NoWeaponDoorDamage = nil
 
+---@type integer
+IsoWindow.SMASH_SOUND_RADIUS = nil
+
 ---@type number
 IsoWindow.WeaponDoorDamageModifier = nil
 

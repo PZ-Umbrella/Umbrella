@@ -31,6 +31,9 @@ IsoObjectChange.ADD_SHEET = nil
 IsoObjectChange.ADD_ZOMBIE_KILL = nil
 
 ---@type IsoObjectChange
+IsoObjectChange.ANIMAL_ROT_STAGE = nil
+
+---@type IsoObjectChange
 IsoObjectChange.BECOME_SKELETON = nil
 
 ---@type IsoObjectChange

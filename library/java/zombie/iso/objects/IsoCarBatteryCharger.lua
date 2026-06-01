@@ -5,11 +5,17 @@ local __IsoCarBatteryCharger = {}
 
 function __IsoCarBatteryCharger:addToWorld() end
 
+---@return boolean
+function __IsoCarBatteryCharger:couldBePoweredByGenerator() end
+
 ---@return InventoryItem
 function __IsoCarBatteryCharger:getBattery() end
 
 ---@return number
 function __IsoCarBatteryCharger:getChargeRate() end
+
+---@return number
+function __IsoCarBatteryCharger:getGeneratorPowerConsumption() end
 
 ---@return InventoryItem
 function __IsoCarBatteryCharger:getItem() end

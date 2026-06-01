@@ -9,11 +9,16 @@
 ---@field anchorLeft boolean
 ---@field anchorRight boolean
 ---@field anchorTop boolean
+---@field autoAddJoypadButton boolean
 ---@field children table<integer, ISUIElement>
+---@field childrenInOrder table
+---@field contentHorizontalAlignment number
 ---@field controller integer?
+---@field creationCallStack unknown
 ---@field dock string
 ---@field enabled boolean?
 ---@field forceCursorVisible boolean?
+---@field gameOption unknown?
 ---@field getAPrompt (fun(self: ISUIElement): string?)?
 ---@field getBPrompt (fun(self: ISUIElement): string?)?
 ---@field getLBPrompt (fun(self: ISUIElement): string?)?
@@ -33,15 +38,19 @@
 ---@field joypadNavigateTransition table?
 ---@field minimumHeight number
 ---@field minimumWidth number
+---@field name unknown?
+---@field onDoLayout unknown?
 ---@field onMouseDoubleClick umbrella.ISUIElement.MouseDoubleClick
 ---@field overrideBPrompt boolean?
 ---@field parent ISUIElement?
 ---@field removed boolean
 ---@field scrollwidth number
+---@field style unknown?
 ---@field target unknown?
 ---@field vscroll ISScrollBar?
 ---@field wantExtraMouseEvents boolean?
 ---@field wantKeyEvents boolean?
+---@field wantMouseEvents boolean?
 ---@field width number
 ---@field x number
 ---@field y number
@@ -50,6 +59,7 @@ ISUIElement.Type = "ISUIElement"
 ISUIElement.IDMax = 1
 
 ---@param otherElement ISUIElement
+---@return unknown
 function ISUIElement:addChild(otherElement) end
 
 ---@param addHorizontal boolean?
@@ -94,6 +104,12 @@ function ISUIElement:containsPointLocal(x, y) end
 
 function ISUIElement:createChildren() end
 
+function ISUIElement:debugPrintTree(indent) end
+
+function ISUIElement:detachFromParent() end
+
+function ISUIElement:doLayout() end
+
 ---@param item InventoryItem
 ---@param x number
 ---@param y number
@@ -110,7 +126,25 @@ function ISUIElement:drawItemIcon(item, x, y, a, w, h) end
 ---@param r number
 ---@param g number
 ---@param b number
+function ISUIElement:drawLine(texture, x, y, x2, y2, thickness, a, r, g, b) end
+
+---@param x number
+---@param y number
+---@param x2 number
+---@param y2 number
+---@param a number
+---@param r number
+---@param g number
+---@param b number
 function ISUIElement:drawLine2(x, y, x2, y2, a, r, g, b) end
+
+---@param x number
+---@param y number
+---@param a number
+---@param r number
+---@param g number
+---@param b number
+function ISUIElement:drawLineAbsolute(texture, x, y, x2, y2, thickness, a, r, g, b) end
 
 ---@param tex Texture
 ---@param x1 number
@@ -165,6 +199,12 @@ function ISUIElement:drawRectBorder(x, y, w, h, a, r, g, b) end
 ---@param b number
 function ISUIElement:drawRectBorderStatic(x, y, w, h, a, r, g, b) end
 
+---@param a number
+---@param r number
+---@param g number
+---@param b number
+function ISUIElement:drawRectBounds(bounds, a, r, g, b) end
+
 ---@param x number
 ---@param y number
 ---@param w number
@@ -182,6 +222,16 @@ function ISUIElement:drawRectStatic(x, y, w, h, a, r, g, b) end
 ---@param w number
 ---@param h number
 function ISUIElement:drawScriptItemIcon(scriptItem, x, y, a, w, h) end
+
+---@param x number
+---@param y number
+---@param w number
+---@param h number
+---@param a number
+---@param r number
+---@param g number
+---@param b number
+function ISUIElement:drawSubTexture(texture, subX, subY, subW, subH, x, y, w, h, a, r, g, b) end
 
 ---@param str string
 ---@param x number
@@ -414,6 +464,21 @@ function ISUIElement:drawTextZoomed(str, x, y, zoom, r, g, b, a, font) end
 function ISUIElement:EndOutline() end
 
 ---@return number
+function ISUIElement:getAbsoluteBottom() end
+
+---@return ISBounds
+function ISUIElement:getAbsoluteBounds() end
+
+---@return number
+function ISUIElement:getAbsoluteCenterX() end
+
+---@return number
+function ISUIElement:getAbsoluteCenterY() end
+
+---@return number
+function ISUIElement:getAbsoluteRight() end
+
+---@return number
 function ISUIElement:getAbsoluteX() end
 
 ---@return number
@@ -421,6 +486,15 @@ function ISUIElement:getAbsoluteY() end
 
 ---@return number
 function ISUIElement:getBottom() end
+
+---@return ISBounds
+function ISUIElement:getBounds() end
+
+---@return number
+function ISUIElement:getCenterX() end
+
+---@return number
+function ISUIElement:getCenterY() end
 
 ---@return number
 function ISUIElement:getCentreX() end
@@ -430,6 +504,9 @@ function ISUIElement:getCentreY() end
 
 ---@return table<integer, ISUIElement>
 function ISUIElement:getChildren() end
+
+---@return table
+function ISUIElement:getChildrenInOrder() end
 
 ---@return integer?
 function ISUIElement:getController() end
@@ -455,6 +532,12 @@ function ISUIElement:getJoypadNavigateStartDelay() end
 ---@return boolean
 function ISUIElement:getKeepOnScreen() end
 
+---@return unknown
+function ISUIElement:getLeft() end
+
+---@return ISBounds
+function ISUIElement:getLocalBounds() end
+
 ---@return number
 function ISUIElement:getMaxDrawHeight() end
 
@@ -476,6 +559,9 @@ function ISUIElement:getRenderThisPlayerOnly() end
 ---@return number
 function ISUIElement:getRight() end
 
+---@return ISBounds
+function ISUIElement:getScrollableBounds() end
+
 ---@return number
 function ISUIElement:getScrollAreaHeight() end
 
@@ -493,6 +579,15 @@ function ISUIElement:getScrollWidth() end
 
 ---@return boolean?
 function ISUIElement:getScrollWithParent() end
+
+---@return number
+function ISUIElement:getSelfCenterX() end
+
+---@return unknown?
+function ISUIElement:getStyle() end
+
+---@return unknown
+function ISUIElement:getTop() end
 
 ---@param name string?
 ---@return string
@@ -563,6 +658,12 @@ function ISUIElement:isVisible() end
 
 ---@return boolean
 function ISUIElement:isVScrollBarVisible() end
+
+---@return boolean?
+function ISUIElement:isWantMouseEvents() end
+
+---@return number
+function ISUIElement:numChildren() end
 
 ---@param x number
 ---@param y number
@@ -704,6 +805,8 @@ function ISUIElement:removeChild(otherElement) end
 
 function ISUIElement:removeFromUIManager() end
 
+function ISUIElement:removeScrollBars() end
+
 function ISUIElement:render() end
 
 ---@param x number
@@ -765,8 +868,14 @@ function ISUIElement:setAnchorsTBLR(bAnchorT, bAnchorB, bAnchorL, bAnchorR) end
 ---@param bAnchor boolean
 function ISUIElement:setAnchorTop(bAnchor) end
 
+function ISUIElement:setBounds(bounds) end
+
 ---@param bCapture boolean
 function ISUIElement:setCapture(bCapture) end
+
+function ISUIElement:setCenterX(x) end
+
+function ISUIElement:setCenterY(y) end
 
 ---@param c integer
 function ISUIElement:setController(c) end
@@ -845,6 +954,8 @@ function ISUIElement:setWantExtraMouseEvents(want) end
 ---@param want boolean
 function ISUIElement:setWantKeyEvents(want) end
 
+function ISUIElement:setWantMouseEvents(want) end
+
 ---@param w number
 function ISUIElement:setWidth(w) end
 
@@ -888,11 +999,32 @@ function ISUIElement:stayOnSplitScreen(playerNum) end
 function ISUIElement:suspendStencil() end
 
 ---@return string
+function ISUIElement:toDebugString() end
+
+---@return unknown
+function ISUIElement:toLocalBounds(absoluteBounds) end
+
+---@return string
+function ISUIElement:toPathString() end
+
+---@return string
+function ISUIElement:tostring() end
+
+---@return string
 function ISUIElement:toString() end
+
+---@return string
+function ISUIElement:toTypeNameString() end
 
 function ISUIElement:update() end
 
 function ISUIElement:updateScrollbars() end
+
+---@return unknown
+function ISUIElement:visitAllDescendants(param0, visitor) end
+
+---@return unknown
+function ISUIElement:visitAndAllDescendants(param0, visitor) end
 
 ---@param title string
 ---@param resizable boolean?

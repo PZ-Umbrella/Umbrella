@@ -5,6 +5,12 @@ local __IsoClothingWasher = {}
 
 function __IsoClothingWasher:addToWorld() end
 
+---@return boolean
+function __IsoClothingWasher:couldBePoweredByGenerator() end
+
+---@return number
+function __IsoClothingWasher:getGeneratorPowerConsumption() end
+
 ---@return string
 function __IsoClothingWasher:getObjectName() end
 

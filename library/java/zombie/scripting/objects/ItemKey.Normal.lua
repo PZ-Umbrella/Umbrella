@@ -441,9 +441,6 @@ Normal.CALF_LEATHER_ANGUS_FULL = nil
 Normal.CALF_LEATHER_ANGUS_FUR = nil
 
 ---@type ItemKey
-Normal.CALF_LEATHER_ANGUS_FUR_TAN = nil
-
----@type ItemKey
 Normal.CALF_LEATHER_ANGUS_FUR_TAN_WET = nil
 
 ---@type ItemKey
@@ -453,9 +450,6 @@ Normal.CALF_LEATHER_HOLSTEIN_FULL = nil
 Normal.CALF_LEATHER_HOLSTEIN_FUR = nil
 
 ---@type ItemKey
-Normal.CALF_LEATHER_HOLSTEIN_FUR_TAN = nil
-
----@type ItemKey
 Normal.CALF_LEATHER_HOLSTEIN_FUR_TAN_WET = nil
 
 ---@type ItemKey
@@ -463,9 +457,6 @@ Normal.CALF_LEATHER_SIMMENTAL_FULL = nil
 
 ---@type ItemKey
 Normal.CALF_LEATHER_SIMMENTAL_FUR = nil
-
----@type ItemKey
-Normal.CALF_LEATHER_SIMMENTAL_FUR_TAN = nil
 
 ---@type ItemKey
 Normal.CALF_LEATHER_SIMMENTAL_FUR_TAN_WET = nil
@@ -927,9 +918,6 @@ Normal.COW_LEATHER_ANGUS_FULL = nil
 Normal.COW_LEATHER_ANGUS_FUR = nil
 
 ---@type ItemKey
-Normal.COW_LEATHER_ANGUS_FUR_TAN = nil
-
----@type ItemKey
 Normal.COW_LEATHER_ANGUS_FUR_TAN_MEDIUM = nil
 
 ---@type ItemKey
@@ -945,9 +933,6 @@ Normal.COW_LEATHER_HOLSTEIN_FULL = nil
 Normal.COW_LEATHER_HOLSTEIN_FUR = nil
 
 ---@type ItemKey
-Normal.COW_LEATHER_HOLSTEIN_FUR_TAN = nil
-
----@type ItemKey
 Normal.COW_LEATHER_HOLSTEIN_FUR_TAN_MEDIUM = nil
 
 ---@type ItemKey
@@ -961,6 +946,12 @@ Normal.COW_LEATHER_SIMMENTAL_FULL = nil
 
 ---@type ItemKey
 Normal.COW_LEATHER_SIMMENTAL_FUR = nil
+
+---@type ItemKey
+Normal.COW_LEATHER_SIMMENTAL_FUR_TAN_MEDIUM = nil
+
+---@type ItemKey
+Normal.COW_LEATHER_SIMMENTAL_FUR_TAN_SMALL = nil
 
 ---@type ItemKey
 Normal.COW_LEATHER_SIMMENTAL_FUR_TAN_WET = nil
@@ -1057,6 +1048,9 @@ Normal.DEER_LEATHER_FULL = nil
 
 ---@type ItemKey
 Normal.DEER_LEATHER_FUR = nil
+
+---@type ItemKey
+Normal.DEER_LEATHER_FUR_TAN_SMALL = nil
 
 ---@type ItemKey
 Normal.DEER_LEATHER_FUR_TAN_WET = nil
@@ -1204,9 +1198,6 @@ Normal.FAWN_LEATHER_FULL = nil
 
 ---@type ItemKey
 Normal.FAWN_LEATHER_FUR = nil
-
----@type ItemKey
-Normal.FAWN_LEATHER_FUR_TAN = nil
 
 ---@type ItemKey
 Normal.FAWN_LEATHER_FUR_TAN_WET = nil
@@ -1693,9 +1684,6 @@ Normal.LAMB_LEATHER_FULL = nil
 
 ---@type ItemKey
 Normal.LAMB_LEATHER_FUR = nil
-
----@type ItemKey
-Normal.LAMB_LEATHER_FUR_TAN = nil
 
 ---@type ItemKey
 Normal.LAMB_LEATHER_FUR_TAN_WET = nil
@@ -2211,9 +2199,6 @@ Normal.PIGLET_LEATHER_BLACK_FULL = nil
 Normal.PIGLET_LEATHER_BLACK_FUR = nil
 
 ---@type ItemKey
-Normal.PIGLET_LEATHER_BLACK_FUR_TAN = nil
-
----@type ItemKey
 Normal.PIGLET_LEATHER_BLACK_FUR_TAN_WET = nil
 
 ---@type ItemKey
@@ -2221,9 +2206,6 @@ Normal.PIGLET_LEATHER_LANDRACE_FULL = nil
 
 ---@type ItemKey
 Normal.PIGLET_LEATHER_LANDRACE_FUR = nil
-
----@type ItemKey
-Normal.PIGLET_LEATHER_LANDRACE_FUR_TAN = nil
 
 ---@type ItemKey
 Normal.PIGLET_LEATHER_LANDRACE_FUR_TAN_WET = nil
@@ -2238,9 +2220,6 @@ Normal.PIG_LEATHER_BLACK_FULL = nil
 Normal.PIG_LEATHER_BLACK_FUR = nil
 
 ---@type ItemKey
-Normal.PIG_LEATHER_BLACK_FUR_TAN = nil
-
----@type ItemKey
 Normal.PIG_LEATHER_BLACK_FUR_TAN_SMALL = nil
 
 ---@type ItemKey
@@ -2251,9 +2230,6 @@ Normal.PIG_LEATHER_LANDRACE_FULL = nil
 
 ---@type ItemKey
 Normal.PIG_LEATHER_LANDRACE_FUR = nil
-
----@type ItemKey
-Normal.PIG_LEATHER_LANDRACE_FUR_TAN = nil
 
 ---@type ItemKey
 Normal.PIG_LEATHER_LANDRACE_FUR_TAN_SMALL = nil
@@ -2385,9 +2361,6 @@ Normal.RABBIT_LEATHER_FULL = nil
 Normal.RABBIT_LEATHER_FUR = nil
 
 ---@type ItemKey
-Normal.RABBIT_LEATHER_FUR_TAN = nil
-
----@type ItemKey
 Normal.RABBIT_LEATHER_FUR_TAN_WET = nil
 
 ---@type ItemKey
@@ -2425,12 +2398,6 @@ Normal.RADIO_RECEIVER = nil
 
 ---@type ItemKey
 Normal.RADIO_TRANSMITTER = nil
-
----@type ItemKey
-Normal.RAILROAD_TRACK = nil
-
----@type ItemKey
-Normal.RAILROAD_TRACK_PIECE = nil
 
 ---@type ItemKey
 Normal.RAKE_HEAD = nil
@@ -2602,9 +2569,6 @@ Normal.SHEEP_LEATHER_FULL = nil
 
 ---@type ItemKey
 Normal.SHEEP_LEATHER_FUR = nil
-
----@type ItemKey
-Normal.SHEEP_LEATHER_FUR_TAN = nil
 
 ---@type ItemKey
 Normal.SHEEP_LEATHER_FUR_TAN_SMALL = nil

@@ -8,6 +8,12 @@
 ISGrabCorpseAction = ISBaseTimedAction:derive("ISGrabCorpseAction")
 ISGrabCorpseAction.Type = "ISGrabCorpseAction"
 
+function ISGrabCorpseAction.OnContextKey(playerObj, timePressedContext) end
+
+function ISGrabCorpseAction.OnKeyPressed(key) end
+
+function ISGrabCorpseAction.PerformGrabCorpse() end
+
 ---@return boolean?
 function ISGrabCorpseAction:complete() end
 

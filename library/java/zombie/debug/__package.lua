@@ -4,6 +4,9 @@
 ---@class DebugLog.OutputStreamWrapper
 
 ---(Not exposed)
+---@class DebugLogCfgFile
+
+---(Not exposed)
 ---@class DebugLogStream
 
 ---(Not exposed)

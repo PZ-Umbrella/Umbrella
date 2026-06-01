@@ -1999,6 +1999,9 @@ BaseVehicle = {}
 ---@type integer
 BaseVehicle.AMBIENT_SOUND_RADIUS = nil
 
+---@type number
+BaseVehicle.DOT_PRODUCT_ATTACH_TRAILER = nil
+
 ---@type integer
 BaseVehicle.ENGINE_SOUND_RADIUS = nil
 

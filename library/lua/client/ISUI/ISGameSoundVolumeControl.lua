@@ -7,6 +7,7 @@
 ---@field fade UITransition
 ---@field isSlider boolean
 ---@field joypadFocused boolean?
+---@field SuperType ISPanel
 ---@field targetFunc umbrella.ISGameSoundVolumeControl.TargetFunction?
 ---@field tooltip unknown?
 ---@field tooltipUI ISToolTip

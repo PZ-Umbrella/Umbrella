@@ -55,6 +55,9 @@ function __UITextBox2:getStandardFrameColour() end
 ---@return string
 function __UITextBox2:getText() end
 
+---@return boolean
+function __UITextBox2:hasClearButton() end
+
 function __UITextBox2:ignoreFirstInput() end
 
 ---@return boolean

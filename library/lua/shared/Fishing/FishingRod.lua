@@ -80,6 +80,8 @@ function __fishing_FishingRod:reel() end
 
 function __fishing_FishingRod:releaseLine() end
 
+function __fishing_FishingRod:removeLure() end
+
 function __fishing_FishingRod:resetItemModel() end
 
 ---@return boolean

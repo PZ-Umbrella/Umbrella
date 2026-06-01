@@ -7,6 +7,9 @@ local __JoypadAxis2d = {}
 ---@return number
 function __JoypadAxis2d:getLength(joypadBind) end
 
+---@return string
+function __JoypadAxis2d:getNameTranslationKey() end
+
 ---@param joypadBind integer
 ---@param out Vector2
 ---@return Vector2
@@ -31,6 +34,9 @@ JoypadAxis2d.LeftStick = nil
 
 ---@type JoypadAxis2d
 JoypadAxis2d.RightStick = nil
+
+---@return kahlua.Array<JoypadAxis2d>
+function JoypadAxis2d.getAxes() end
 
 ---@param name string
 ---@return JoypadAxis2d

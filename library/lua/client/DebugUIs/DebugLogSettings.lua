@@ -2,6 +2,7 @@
 
 ---@class DebugLogSettings : ISCollapsableWindow
 ---@field comboLookup table<DebugType, ISComboBox>
+---@field comboSetAll ISComboBox
 DebugLogSettings = ISCollapsableWindow:derive("DebugLogSettings")
 DebugLogSettings.Type = "DebugLogSettings"
 
@@ -15,8 +16,12 @@ function DebugLogSettings:onComboBox(comboBox, debugType) end
 ---@param y number
 function DebugLogSettings:onMouseDownOutside(x, y) end
 
+function DebugLogSettings:onSave(button) end
+
 ---@param comboBox ISComboBox
 function DebugLogSettings:onSetAll(comboBox) end
+
+function DebugLogSettings:onSetProfile(comboBox) end
 
 ---@param bVisible boolean
 function DebugLogSettings:setVisible(bVisible) end

@@ -28,6 +28,7 @@
 ---@field options string[]
 ---@field optionsIndex table<integer, string>
 ---@field selected table<integer, boolean>
+---@field SuperType ISPanel
 ---@field textGap number
 ---@field textures table<integer, Texture>
 ---@field tickTexture Texture

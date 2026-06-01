@@ -153,6 +153,12 @@ function __IsoAnimal:climbOverFence(dir) end
 ---@param animal IsoAnimal
 function __IsoAnimal:copyFrom(animal) end
 
+---@param disorders Collection<string>
+function __IsoAnimal:copyGeneticDisorder(disorders) end
+
+---@param genome Collection<AnimalGene>
+function __IsoAnimal:copyGenome(genome) end
+
 ---@return Food
 function __IsoAnimal:createEgg() end
 
@@ -267,9 +273,6 @@ function __IsoAnimal:getBloodQuantity() end
 
 ---@return AnimalBreed
 function __IsoAnimal:getBreed() end
-
----@return CharacterGender
-function __IsoAnimal:getCharacterGender() end
 
 ---@return ArrayList<DesignationZoneAnimal>
 function __IsoAnimal:getConnectedDZone() end
@@ -430,6 +433,9 @@ function __IsoAnimal:getTypeAndBreed() end
 ---@param name string
 ---@return AnimalAllele
 function __IsoAnimal:getUsedGene(name) end
+
+---@return DesignationZone
+function __IsoAnimal:getZone() end
 
 ---@return number
 function __IsoAnimal:getZoneAcceptance() end
@@ -607,6 +613,8 @@ function __IsoAnimal:save(output, isDebugSave) end
 ---@param serialize boolean
 function __IsoAnimal:save(output, isDebugSave, serialize) end
 
+function __IsoAnimal:sendExtraUpdateToClients() end
+
 ---@param newAge integer
 function __IsoAnimal:setAgeDebug(newAge) end
 
@@ -618,9 +626,6 @@ function __IsoAnimal:setAnimalID(id) end
 
 ---@param zone AnimalZone
 function __IsoAnimal:setAnimalZone(zone) end
-
----@param characterGender CharacterGender
-function __IsoAnimal:setCharacterGender(characterGender) end
 
 ---@param customName string
 function __IsoAnimal:setCustomName(customName) end

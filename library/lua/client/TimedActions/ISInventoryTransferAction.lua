@@ -80,6 +80,8 @@ function ISInventoryTransferAction:playSourceContainerCloseSound() end
 
 function ISInventoryTransferAction:playSourceContainerOpenSound() end
 
+function ISInventoryTransferAction:playTransferCompleteSound(item) end
+
 ---@param allow boolean
 function ISInventoryTransferAction:setAllowMissingItems(allow) end
 

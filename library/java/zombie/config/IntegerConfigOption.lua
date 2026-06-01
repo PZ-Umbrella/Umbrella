@@ -56,6 +56,14 @@ IntegerConfigOption = {}
 ---@return IntegerConfigOption
 function IntegerConfigOption.new(name, min, max, defaultValue) end
 
+---@param name string
+---@param min integer
+---@param max integer
+---@param defaultValue integer
+---@param onChange ConfigOption.ConfigOptionOnChangeCallback
+---@return IntegerConfigOption
+function IntegerConfigOption.new(name, min, max, defaultValue, onChange) end
+
 ---@type Class<IntegerConfigOption>
 IntegerConfigOption.class = nil
 

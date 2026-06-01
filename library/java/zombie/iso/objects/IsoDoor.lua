@@ -278,9 +278,6 @@ function __IsoDoor:setHealth(Health) end
 ---@param lock boolean
 function __IsoDoor:setIsLocked(lock) end
 
----@param keyId integer
-function __IsoDoor:setKeyId(keyId) end
-
 ---@param bLocked boolean
 function __IsoDoor:setLocked(bLocked) end
 
@@ -292,8 +289,6 @@ function __IsoDoor:setOpen(open) end
 
 ---@param sprite IsoSprite
 function __IsoDoor:setOpenSprite(sprite) end
-
-function __IsoDoor:syncDoorKey() end
 
 ---@param bRemote boolean
 ---@param val integer
@@ -310,6 +305,9 @@ function __IsoDoor:toggleCurtain() end
 function __IsoDoor:transmitSetCurtainOpen(open) end
 
 IsoDoor = {}
+
+---@type integer
+IsoDoor.BREAK_SOUND_RADIUS = nil
 
 ---@type Vector2
 IsoDoor.tempo = nil

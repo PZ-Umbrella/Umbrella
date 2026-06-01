@@ -15,11 +15,17 @@ function __IsoStove:addToWorld() end
 
 function __IsoStove:afterRotated() end
 
+---@return boolean
+function __IsoStove:couldBePoweredByGenerator() end
+
 ---@return string
 function __IsoStove:getActivatableType() end
 
 ---@return number
 function __IsoStove:getCurrentTemperature() end
+
+---@return number
+function __IsoStove:getGeneratorPowerConsumption() end
 
 ---@return number
 function __IsoStove:getMaxTemperature() end

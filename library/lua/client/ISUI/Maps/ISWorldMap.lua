@@ -76,6 +76,7 @@ function ISWorldMapButtonPanel:render() end
 function ISWorldMapButtonPanel:new(x, y, width, height) end
 
 ---@class ISWorldMap : ISPanelJoypad
+---@field activeWhilePaused boolean
 ---@field buttonPanel ISWorldMapButtonPanel
 ---@field centerBtn ISButton
 ---@field character IsoPlayer?

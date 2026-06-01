@@ -8158,12 +8158,6 @@ ModelKey.RAILROAD_SPIKE_PULLER_OLD = nil
 ModelKey.RAILROAD_TIE = nil
 
 ---@type ModelKey
-ModelKey.RAILROAD_TRACK = nil
-
----@type ModelKey
-ModelKey.RAILROAD_TRACK_PIECE = nil
-
----@type ModelKey
 ModelKey.RAKE = nil
 
 ---@type ModelKey

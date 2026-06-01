@@ -6,6 +6,8 @@ CFarmingSystem = CGlobalObjectSystem:derive("CFarmingSystem")
 CFarmingSystem.Type = "CFarmingSystem"
 CFarmingSystem.instance = nil ---@type CFarmingSystem?
 
+function CFarmingSystem.destroyPlant(square) end
+
 ---@param player IsoPlayer
 function CFarmingSystem:changePlayer(player) end
 

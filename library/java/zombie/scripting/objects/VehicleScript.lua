@@ -92,6 +92,13 @@ function __VehicleScript:getCenterOfMassOffset() end
 ---@return TFloatArrayList
 function __VehicleScript:getCrawlOffsets() end
 
+---@return integer
+function __VehicleScript:getCrawlThroughWheel() end
+
+---@param index integer
+---@return VehicleScript.Wheel
+function __VehicleScript:getCrawlThroughWheel(index) end
+
 ---@return number
 function __VehicleScript:getEngineForce() end
 

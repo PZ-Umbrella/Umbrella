@@ -26,6 +26,9 @@ function __IsoDeadBody:addToWorld() end
 ---@return InventoryItem
 function __IsoDeadBody:becomeCorpseItem() end
 
+---@return boolean
+function __IsoDeadBody:canBeGrabbed() end
+
 ---@param x number
 ---@param y number
 ---@return boolean
@@ -43,6 +46,12 @@ function __IsoDeadBody:getAngle() end
 ---@param forwardDirection Vector2
 ---@return Vector2
 function __IsoDeadBody:getAnimForwardDirection(forwardDirection) end
+
+---@return List<string>
+function __IsoDeadBody:getAnimalGeneticDisorder() end
+
+---@return List<AnimalGene>
+function __IsoDeadBody:getAnimalGenome() end
 
 ---@return number
 function __IsoDeadBody:getAnimalSize() end
@@ -366,6 +375,11 @@ IsoDeadBody.MAX_ROT_STAGES = nil
 IsoDeadBody.MAX_ROT_STAGES_ANIMALS = nil
 
 function IsoDeadBody.Reset() end
+
+---@param fromSquare IsoGridSquare
+---@param toSquare IsoGridSquare
+---@return boolean
+function IsoDeadBody.canPickUpBodyFromSquare(fromSquare, toSquare) end
 
 ---@param id integer
 ---@return boolean

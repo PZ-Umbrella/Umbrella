@@ -36,6 +36,10 @@ function __INetworkPacket:processServer(packetType, connection) end
 function __INetworkPacket:sendToClient(packetType, connection) end
 
 ---@param packetType PacketTypes.PacketType
+---@param username string
+function __INetworkPacket:sendToClient(packetType, username) end
+
+---@param packetType PacketTypes.PacketType
 ---@param excluded UdpConnection
 function __INetworkPacket:sendToClients(packetType, excluded) end
 

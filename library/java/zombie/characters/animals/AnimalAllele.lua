@@ -50,6 +50,10 @@ AnimalAllele = {}
 ---@return AnimalAllele
 function AnimalAllele.new() end
 
+---@param allele AnimalAllele
+---@return AnimalAllele
+function AnimalAllele.new(allele) end
+
 ---@type Class<AnimalAllele>
 AnimalAllele.class = nil
 

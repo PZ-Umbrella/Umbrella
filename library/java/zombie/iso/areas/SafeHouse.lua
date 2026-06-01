@@ -163,12 +163,6 @@ function __SafeHouse:setY(y) end
 
 function __SafeHouse:updatePlayersConnected() end
 
----Update the last visited value everytime someone is in this safehouse If it's
---- not visited for some time (SafehouseRemoval serveroption) it's automatically
---- removed.
----@param player IsoPlayer
-function __SafeHouse:updateSafehouse(player) end
-
 SafeHouse = {}
 
 ---@param x integer
@@ -241,6 +235,10 @@ function SafeHouse.getSafehouseOverlapping(x1, y1, x2, y2) end
 ---@return SafeHouse
 function SafeHouse.getSafehouseOverlapping(x1, y1, x2, y2, ignore) end
 
+---@param player IsoPlayer
+---@return boolean
+function SafeHouse.hasNotSurvivedEnoughToClaim(player) end
+
 ---@param username string
 ---@return SafeHouse
 function SafeHouse.hasSafehouse(username) end
@@ -301,6 +299,10 @@ function SafeHouse.isSafehouseAllowLoot(square, player) end
 ---@return boolean
 function SafeHouse.isSafehouseAllowTrepass(square, player) end
 
+---@param safeHouse SafeHouse
+---@param username string
+function SafeHouse.kickUserFromSafehouse(safeHouse, username) end
+
 ---@param bb ByteBuffer
 ---@param WorldVersion integer
 ---@return SafeHouse
@@ -308,6 +310,8 @@ function SafeHouse.load(bb, WorldVersion) end
 
 ---@param safeHouse SafeHouse
 function SafeHouse.removeSafeHouse(safeHouse) end
+
+function SafeHouse.update() end
 
 function SafeHouse.updateSafehousePlayersConnected() end
 

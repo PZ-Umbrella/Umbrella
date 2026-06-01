@@ -9,6 +9,9 @@ function __NetworkUser:getAuthType() end
 ---@return string
 function __NetworkUser:getAuthTypeName() end
 
+---@return UdpConnection.ConnectionType
+function __NetworkUser:getConnectionType() end
+
 ---@return string
 function __NetworkUser:getDisplayName() end
 
@@ -47,6 +50,9 @@ function __NetworkUser:getWarningPoints() end
 function __NetworkUser:getWorld() end
 
 ---@return boolean
+function __NetworkUser:isConnectedDirectly() end
+
+---@return boolean
 function __NetworkUser:isInWhitelist() end
 
 ---@return boolean
@@ -61,6 +67,9 @@ function __NetworkUser:parse(input) end
 
 ---@param output ByteBufferWriter
 function __NetworkUser:send(output) end
+
+---@param connectionType UdpConnection.ConnectionType
+function __NetworkUser:setConnectionType(connectionType) end
 
 ---@param inWhitelist boolean
 function __NetworkUser:setInWhitelist(inWhitelist) end

@@ -536,6 +536,9 @@ function __IsoThumpable:update() end
 
 IsoThumpable = {}
 
+---@type integer
+IsoThumpable.BREAK_SOUND_RADIUS = nil
+
 ---@type SoundKey
 IsoThumpable.DEFAULT_BREAK_SOUND = nil
 

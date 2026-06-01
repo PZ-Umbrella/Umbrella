@@ -72,6 +72,18 @@ function __IsoMovingObject:getBuilding() end
 ---@return string
 function __IsoMovingObject:getBumpedType(bumped) end
 
+---@generic ObjectType: IsoMovingObject
+---@param objects List<ObjectType>
+---@return ObjectType
+function __IsoMovingObject:getClosestObject(objects) end
+
+---@generic ObjectType: IsoMovingObject
+---@param objectType Class<ObjectType>
+---@param squareFilter BiPredicate<IsoGridSquare, IsoGridSquare>
+---@param objectFilter Predicate<ObjectType>
+---@return ObjectType
+function __IsoMovingObject:getClosestStaticMovingObjectInNearbySquares(objectType, squareFilter, objectFilter) end
+
 ---@return string
 function __IsoMovingObject:getCollideType() end
 
@@ -355,6 +367,11 @@ function __IsoMovingObject:isSolidForSeparate() end
 
 ---@return boolean
 function __IsoMovingObject:isStanding() end
+
+---@param object IsoMovingObject
+---@param minRange number
+---@return boolean
+function __IsoMovingObject:isWithinRange(object, minRange) end
 
 ---@return boolean # the bAltCollide
 function __IsoMovingObject:isbAltCollide() end

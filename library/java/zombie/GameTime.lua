@@ -153,6 +153,9 @@ function __GameTime:getMultiplier() end
 ---@return number
 function __GameTime:getMultiplierFromTimeDelta(timeDelta) end
 
+---@return number
+function __GameTime:getMultiplierInMenu() end
+
 ---@deprecated
 ---@return number # the NightTint
 function __GameTime:getNight() end
@@ -206,6 +209,9 @@ function __GameTime:getStartYear() end
 ---@return number
 function __GameTime:getThirtyFPSMultiplier() end
 
+---@return number
+function __GameTime:getThirtyFPSMultiplierInMenu() end
+
 ---@deprecated
 ---@return boolean
 function __GameTime:getThunderStorm() end
@@ -217,6 +223,9 @@ function __GameTime:getTimeDelta() end
 ---@param multiplier number
 ---@return number
 function __GameTime:getTimeDeltaFromMultiplier(multiplier) end
+
+---@return number
+function __GameTime:getTimeDeltaInMenu() end
 
 ---@return number # the TimeOfDay
 function __GameTime:getTimeOfDay() end

@@ -364,6 +364,9 @@ function __Core:getOptionContextMenuFont() end
 ---@return integer
 function __Core:getOptionControllerButtonStyle() end
 
+---@return string
+function __Core:getOptionControllerButtonStyleString() end
+
 ---@return boolean
 function __Core:getOptionCorpseShadows() end
 
@@ -408,6 +411,9 @@ function __Core:getOptionFontSize() end
 
 ---@return integer
 function __Core:getOptionFontSizeReal() end
+
+---@return string
+function __Core:getOptionGamepadBindingPreset() end
 
 ---@return boolean
 function __Core:getOptionHighResPlacedItems() end
@@ -908,6 +914,12 @@ function __Core:loadOptions_OLD() end
 ---@return boolean
 function __Core:loadedShader() end
 
+---@param sender ConfigOption
+function __Core:onOptionControllerButtonStyleChanged(sender) end
+
+---@param sender ConfigOption
+function __Core:onOptionGamepadBindingPresetChanged(sender) end
+
 function __Core:quit() end
 
 function __Core:quitToDesktop() end
@@ -1117,6 +1129,9 @@ function __Core:setOptionFocusloss(pause) end
 
 ---@param size integer
 function __Core:setOptionFontSize(size) end
+
+---@param newValue string
+function __Core:setOptionGamepadBindingPreset(newValue) end
 
 ---@param b boolean
 function __Core:setOptionHighResPlacedItems(b) end
@@ -1520,6 +1535,9 @@ Core.addZombieOnCellLoad = nil
 
 ---@type boolean
 Core.altMoveMethod = nil
+
+---@type boolean
+Core.antiCheats = nil
 
 ---@type boolean
 Core.bDemo = nil

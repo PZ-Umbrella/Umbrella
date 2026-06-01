@@ -13,6 +13,9 @@ function __CharacterJoypadAxis2dBinding:getJoypadAxis() end
 ---@return number
 function __CharacterJoypadAxis2dBinding:getLength(joypadBind) end
 
+---@return string
+function __CharacterJoypadAxis2dBinding:getNameTranslationKey() end
+
 ---@param joypadBind integer
 ---@param out Vector2
 ---@return Vector2
@@ -30,6 +33,12 @@ function __CharacterJoypadAxis2dBinding:getValueY(joypadBind) end
 ---@return boolean
 function __CharacterJoypadAxis2dBinding:isApplied(joypadBind) end
 
+---@param fromBinding CharacterJoypadAxis2dBinding
+function __CharacterJoypadAxis2dBinding:moveBindingFrom(fromBinding) end
+
+---@param binding JoypadAxis2d
+function __CharacterJoypadAxis2dBinding:removeBinding(binding) end
+
 ---@param newBinding JoypadAxis2d
 function __CharacterJoypadAxis2dBinding:setBinding(newBinding) end
 
@@ -43,9 +52,18 @@ CharacterJoypadAxis2dBinding.Aiming = nil
 ---@type CharacterJoypadAxis2dBinding
 CharacterJoypadAxis2dBinding.Movement = nil
 
+---@return kahlua.Array<CharacterJoypadAxis2dBinding>
+function CharacterJoypadAxis2dBinding.allBindings() end
+
+---@param joypadAxis JoypadAxis2d
+---@return kahlua.Array<CharacterJoypadAxis2dBinding>
+function CharacterJoypadAxis2dBinding.findBindings(joypadAxis) end
+
 ---@param name string
 ---@return CharacterJoypadAxis2dBinding
 function CharacterJoypadAxis2dBinding.fromString(name) end
+
+function CharacterJoypadAxis2dBinding.setAllToDefault() end
 
 ---@param name string
 ---@return CharacterJoypadAxis2dBinding

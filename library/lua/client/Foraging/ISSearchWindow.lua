@@ -74,6 +74,8 @@ function ISSearchWindow:onChangeSearchFocusCategory(_option) end
 
 function ISSearchWindow:onGainJoypadFocus() end
 
+function ISSearchWindow:onInfo(button) end
+
 function ISSearchWindow:onJoypadDirDown() end
 
 function ISSearchWindow:onJoypadDirLeft() end

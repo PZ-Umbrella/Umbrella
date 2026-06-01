@@ -25,8 +25,14 @@ function __IsoGenerator:getFuelPercentage() end
 ---@return ArrayList<string>
 function __IsoGenerator:getItemsPowered() end
 
+---@return integer
+function __IsoGenerator:getMaxAffectedLevel() end
+
 ---@return number
 function __IsoGenerator:getMaxFuel() end
+
+---@return integer
+function __IsoGenerator:getMinAffectedLevel() end
 
 ---@return string
 function __IsoGenerator:getObjectName() end
@@ -79,6 +85,9 @@ function __IsoGenerator:setSurroundingElectricity() end
 ---@param totalPowerUsing number
 function __IsoGenerator:setTotalPowerUsing(totalPowerUsing) end
 
+---@return boolean
+function __IsoGenerator:shouldShowOnOverlay() end
+
 ---@param bb ByteBufferReader
 function __IsoGenerator:syncIsoObjectReceive(bb) end
 
@@ -88,6 +97,36 @@ function __IsoGenerator:syncIsoObjectSend(b) end
 function __IsoGenerator:update() end
 
 IsoGenerator = {}
+
+---@type number
+IsoGenerator.BatteryChargerPowerConsumption = nil
+
+---@type number
+IsoGenerator.ClothingAppliancePowerConsumption = nil
+
+---@type number
+IsoGenerator.FridgeFreezerPowerConsumption = nil
+
+---@type number
+IsoGenerator.LightSwitchPowerConsumption = nil
+
+---@type number
+IsoGenerator.PipedFuelPowerConsumption = nil
+
+---@type number
+IsoGenerator.RadioPowerConsumption = nil
+
+---@type number
+IsoGenerator.SingleFridgeOrFreezerPowerConsumption = nil
+
+---@type number
+IsoGenerator.StackedWasherDryerPowerConsumption = nil
+
+---@type number
+IsoGenerator.StovePowerConsumption = nil
+
+---@type number
+IsoGenerator.TelevisionPowerConsumption = nil
 
 function IsoGenerator.Reset() end
 

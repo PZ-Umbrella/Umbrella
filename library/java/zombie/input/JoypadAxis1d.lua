@@ -7,6 +7,9 @@ local __JoypadAxis1d = {}
 ---@return number
 function __JoypadAxis1d:getDeadZone(joypadBind) end
 
+---@return string
+function __JoypadAxis1d:getNameTranslationKey() end
+
 ---@param joypadBind integer
 ---@return number
 function __JoypadAxis1d:getValue(joypadBind) end
@@ -38,6 +41,9 @@ JoypadAxis1d.RightTrigger = nil
 ---@param axisIdx integer
 ---@return JoypadAxis1d
 function JoypadAxis1d.fromIndex(axisIdx) end
+
+---@return kahlua.Array<JoypadAxis1d>
+function JoypadAxis1d.getAxes() end
 
 ---@return integer
 function JoypadAxis1d.getAxisCount() end

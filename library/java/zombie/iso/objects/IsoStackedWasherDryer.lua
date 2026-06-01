@@ -5,7 +5,13 @@ local __IsoStackedWasherDryer = {}
 
 function __IsoStackedWasherDryer:addToWorld() end
 
+---@return boolean
+function __IsoStackedWasherDryer:couldBePoweredByGenerator() end
+
 function __IsoStackedWasherDryer:createContainersFromSpriteProperties() end
+
+---@return number
+function __IsoStackedWasherDryer:getGeneratorPowerConsumption() end
 
 ---@return string
 function __IsoStackedWasherDryer:getObjectName() end

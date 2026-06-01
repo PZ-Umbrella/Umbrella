@@ -1105,6 +1105,19 @@ function __IsoGridSquare:getStairsHeightMin() end
 ---@return ArrayList<IsoMovingObject> # the StaticMovingObjects
 function __IsoGridSquare:getStaticMovingObjects() end
 
+---@generic ObjectType: IsoMovingObject
+---@param objectType Class<ObjectType>
+---@param objectFilter Predicate<ObjectType>
+---@return List<ObjectType>
+function __IsoGridSquare:getStaticMovingObjects(objectType, objectFilter) end
+
+---@generic ObjectType: IsoMovingObject
+---@param objectType Class<ObjectType>
+---@param squareFilter BiPredicate<IsoGridSquare, IsoGridSquare>
+---@param objectFilter Predicate<ObjectType>
+---@return List<ObjectType>
+function __IsoGridSquare:getStaticMovingObjectsInNearbySquares(objectType, squareFilter, objectFilter) end
+
 ---@return IsoObject
 function __IsoGridSquare:getStump() end
 
@@ -2092,7 +2105,43 @@ function __IsoGridSquare:tryAddCorpseToWorld(item, x, y, isVisible) end
 ---@param tilePropertyKey string
 function __IsoGridSquare:unset(tilePropertyKey) end
 
+---@generic Param
+---@param param Param
+---@param squareFilter BiPredicate<IsoGridSquare, IsoGridSquare>
+---@param squareVisitor BiConsumer<Param, IsoGridSquare>
+---@return Param
+function __IsoGridSquare:visitNearbySquares(param, squareFilter, squareVisitor) end
+
+---@generic Param
+---@generic ObjectType: IsoMovingObject
+---@param objectType Class<ObjectType>
+---@param param Param
+---@param objectFilter Predicate<ObjectType>
+---@param objectVisitor BiConsumer<Param, ObjectType>
+---@return Param
+function __IsoGridSquare:visitStaticMovingObjects(objectType, param, objectFilter, objectVisitor) end
+
+---@generic Param
+---@generic ObjectType: IsoMovingObject
+---@param objectType Class<ObjectType>
+---@param param Param
+---@param squareFilter BiPredicate<IsoGridSquare, IsoGridSquare>
+---@param objectFilter Predicate<ObjectType>
+---@param objectVisitor BiConsumer<Param, ObjectType>
+---@return Param
+function __IsoGridSquare:visitStaticMovingObjectsInNearbySquares(
+	objectType,
+	param,
+	squareFilter,
+	objectFilter,
+	objectVisitor
+)
+end
+
 IsoGridSquare = {}
+
+---@type boolean
+IsoGridSquare.ADD_UNDERGROUND_BLOCKS = nil
 
 ---@type string
 IsoGridSquare.FLOORS_BURNT_SPRITE_PREFIX = nil

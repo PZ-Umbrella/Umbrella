@@ -85,14 +85,26 @@ function __VehiclePart:getContainerCapacity() end
 ---@return integer
 function __VehiclePart:getContainerCapacity(chr) end
 
+---@return string
+function __VehiclePart:getContainerCloseSound() end
+
 ---@return number
 function __VehiclePart:getContainerContentAmount() end
 
 ---@return string
 function __VehiclePart:getContainerContentType() end
 
+---@return string
+function __VehiclePart:getContainerOpenSound() end
+
+---@return string
+function __VehiclePart:getContainerPutSound() end
+
 ---@return integer
 function __VehiclePart:getContainerSeatNumber() end
+
+---@return string
+function __VehiclePart:getContainerTakeSound() end
 
 ---@return number
 function __VehiclePart:getDelta() end

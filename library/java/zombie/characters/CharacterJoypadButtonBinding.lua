@@ -3,6 +3,33 @@
 ---@class CharacterJoypadButtonBinding: Enum<CharacterJoypadButtonBinding>
 local __CharacterJoypadButtonBinding = {}
 
+---@param button JoypadButton
+function __CharacterJoypadButtonBinding:addBinding(button) end
+
+---@param axis1d JoypadAxis1d
+function __CharacterJoypadButtonBinding:addBinding(axis1d) end
+
+---@param axis2d JoypadAxis2d
+function __CharacterJoypadButtonBinding:addBinding(axis2d) end
+
+---@param button JoypadButton
+---@return boolean
+function __CharacterJoypadButtonBinding:containsBinding(button) end
+
+---@param axis1d JoypadAxis1d
+---@return boolean
+function __CharacterJoypadButtonBinding:containsBinding(axis1d) end
+
+---@param axis2d JoypadAxis2d
+---@return boolean
+function __CharacterJoypadButtonBinding:containsBinding(axis2d) end
+
+---@return number
+function __CharacterJoypadButtonBinding:getAxisMaxThreshold() end
+
+---@return number
+function __CharacterJoypadButtonBinding:getAxisMinThreshold() end
+
 ---@return CharacterJoypadButtonBinding.IsDownBinding
 function __CharacterJoypadButtonBinding:getBinding() end
 
@@ -15,9 +42,27 @@ function __CharacterJoypadButtonBinding:getJoypadAxis2d() end
 ---@return JoypadButton
 function __CharacterJoypadButtonBinding:getJoypadButton() end
 
+---@return string
+function __CharacterJoypadButtonBinding:getNameTranslationKey() end
+
+---@return boolean
+function __CharacterJoypadButtonBinding:isAxisMaxThresholdInfinity() end
+
 ---@param joypadBind integer
 ---@return boolean
 function __CharacterJoypadButtonBinding:isDown(joypadBind) end
+
+---@param fromBinding CharacterJoypadButtonBinding
+function __CharacterJoypadButtonBinding:moveBindingFrom(fromBinding) end
+
+---@param button JoypadButton
+function __CharacterJoypadButtonBinding:removeBinding(button) end
+
+---@param axis1d JoypadAxis1d
+function __CharacterJoypadButtonBinding:removeBinding(axis1d) end
+
+---@param axis2d JoypadAxis2d
+function __CharacterJoypadButtonBinding:removeBinding(axis2d) end
 
 ---@param newBinding JoypadButton
 function __CharacterJoypadButtonBinding:setBinding(newBinding) end
@@ -31,12 +76,12 @@ function __CharacterJoypadButtonBinding:setBinding(axis1d, min, max) end
 ---@param min number
 function __CharacterJoypadButtonBinding:setBinding(axis1d, min) end
 
----@param axis2d CharacterJoypadAxis2dBinding
+---@param axis2d JoypadAxis2d
 ---@param min number
 ---@param max number
 function __CharacterJoypadButtonBinding:setBinding(axis2d, min, max) end
 
----@param axis2d CharacterJoypadAxis2dBinding
+---@param axis2d JoypadAxis2d
 ---@param min number
 function __CharacterJoypadButtonBinding:setBinding(axis2d, min) end
 
@@ -122,12 +167,36 @@ CharacterJoypadButtonBinding.TransferItem = nil
 ---@type CharacterJoypadButtonBinding
 CharacterJoypadButtonBinding.WalkTo = nil
 
+---@type CharacterJoypadButtonBinding
+CharacterJoypadButtonBinding.ZoomIn = nil
+
+---@type CharacterJoypadButtonBinding
+CharacterJoypadButtonBinding.ZoomOut = nil
+
 ---@return kahlua.Array<CharacterJoypadButtonBinding>
 function CharacterJoypadButtonBinding.allBindings() end
+
+---@param joypadButton JoypadButton
+---@return CharacterJoypadButtonBinding
+function CharacterJoypadButtonBinding.findBinding(joypadButton) end
+
+---@param joypadButton JoypadButton
+---@return kahlua.Array<CharacterJoypadButtonBinding>
+function CharacterJoypadButtonBinding.findBindings(joypadButton) end
+
+---@param joypadAxis JoypadAxis1d
+---@return kahlua.Array<CharacterJoypadButtonBinding>
+function CharacterJoypadButtonBinding.findBindings(joypadAxis) end
+
+---@param joypadAxis JoypadAxis2d
+---@return kahlua.Array<CharacterJoypadButtonBinding>
+function CharacterJoypadButtonBinding.findBindings(joypadAxis) end
 
 ---@param name string
 ---@return CharacterJoypadButtonBinding
 function CharacterJoypadButtonBinding.fromString(name) end
+
+function CharacterJoypadButtonBinding.setAllToDefault() end
 
 ---@param name string
 ---@return CharacterJoypadButtonBinding

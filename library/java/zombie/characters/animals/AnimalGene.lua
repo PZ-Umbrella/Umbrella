@@ -50,6 +50,10 @@ function AnimalGene.initGenome(animal) end
 ---@return AnimalGene
 function AnimalGene.new() end
 
+---@param gene AnimalGene
+---@return AnimalGene
+function AnimalGene.new(gene) end
+
 ---@type Class<AnimalGene>
 AnimalGene.class = nil
 

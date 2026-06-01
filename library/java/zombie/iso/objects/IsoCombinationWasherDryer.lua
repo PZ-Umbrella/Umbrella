@@ -5,6 +5,12 @@ local __IsoCombinationWasherDryer = {}
 
 function __IsoCombinationWasherDryer:addToWorld() end
 
+---@return boolean
+function __IsoCombinationWasherDryer:couldBePoweredByGenerator() end
+
+---@return number
+function __IsoCombinationWasherDryer:getGeneratorPowerConsumption() end
+
 ---@return string
 function __IsoCombinationWasherDryer:getObjectName() end
 
