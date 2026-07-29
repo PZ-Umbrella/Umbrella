@@ -70,6 +70,7 @@ function ISVehiclePartMenu.onInstallPart(playerObj, part, item) end
 function ISVehiclePartMenu.onLockDoor(playerObj, part) end
 
 ---@param playerObj IsoPlayer
+---@param vehicle BaseVehicle
 ---@param lock boolean
 function ISVehiclePartMenu.onLockDoors(playerObj, vehicle, lock) end
 

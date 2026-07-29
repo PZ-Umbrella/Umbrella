@@ -1,33 +1,33 @@
 ---@meta
 
----@alias umbrella.ISAdminPowerUI.SetFunction fun(self: ISAdminPowerUI, selected: boolean)
+---@alias umbrella.ISAdminPowerUI.GetFunction fun(self: umbrella.ISAdminPowerUI.Option): boolean
+
+---@alias umbrella.ISAdminPowerUI.SetFunction fun(self: umbrella.ISAdminPowerUI.Option, selected: boolean)
 
 ---@class ISAdminPowerUI : ISPanel
 ---@field cancel ISButton
----@field cheatTooltipsLeft table
----@field cheatTooltipsRight table
+---@field cheatTooltipsLeft table<string, string>
+---@field cheatTooltipsRight table<string, string>
 ---@field ok ISButton
----@field optionsLeft table
----@field optionsRight table
----@field player IsoPlayer
+---@field optionsLeft table<integer, umbrella.ISAdminPowerUI.Option>
+---@field optionsRight table<integer, umbrella.ISAdminPowerUI.Option>
+---@field player IsoPlayer?
 ---@field richText ISRichTextLayout
----@field setFunction table<integer, umbrella.ISAdminPowerUI.SetFunction>
----@field tickBox ISTickBox
 ---@field tickBoxLeft ISTickBox
 ---@field tickBoxRight ISTickBox
 ISAdminPowerUI = ISPanel:derive("ISAdminPowerUI")
 ISAdminPowerUI.Type = "ISAdminPowerUI"
 ISAdminPowerUI.messages = {}
-ISAdminPowerUI.OptionList = {}
-ISAdminPowerUI.OptionById = {}
+ISAdminPowerUI.OptionList = {} ---@type umbrella.ISAdminPowerUI.Option[]
+ISAdminPowerUI.OptionById = {} ---@type table<string, umbrella.ISAdminPowerUI.Option>
 ISAdminPowerUI.instance = nil ---@type ISAdminPowerUI?
-ISAdminPowerUI.cheatTooltips = {} ---@type table<string, string>
 
 ---@param id string
 ---@param side string
----@param functionGet function
----@param functionSet function
----@return table
+---@param capability Capability
+---@param functionGet umbrella.ISAdminPowerUI.GetFunction
+---@param functionSet umbrella.ISAdminPowerUI.SetFunction
+---@return umbrella.ISAdminPowerUI.Option
 function ISAdminPowerUI.AddOption(id, side, capability, functionGet, functionSet) end
 
 function ISAdminPowerUI.onGameStart() end
@@ -35,19 +35,14 @@ function ISAdminPowerUI.onGameStart() end
 ---@return ISAdminPowerUI
 function ISAdminPowerUI.OnOpenPanel() end
 
-function ISAdminPowerUI:addAdminPowerOptions() end
-
 function ISAdminPowerUI:addAdminPowerOptionsLeft() end
 
 function ISAdminPowerUI:addAdminPowerOptionsRight() end
 
----@param text string
----@param selected boolean
----@param setFunction umbrella.ISAdminPowerUI.SetFunction
-function ISAdminPowerUI:addOption(text, selected, setFunction) end
-
+---@param option umbrella.ISAdminPowerUI.Option
 function ISAdminPowerUI:addOptionLeft(option) end
 
+---@param option umbrella.ISAdminPowerUI.Option
 function ISAdminPowerUI:addOptionRight(option) end
 
 function ISAdminPowerUI:initialise() end
@@ -64,7 +59,7 @@ function ISAdminPowerUI:prerender() end
 function ISAdminPowerUI:render() end
 
 ---@param tickBox ISTickBox
----@param tooltips table
+---@param tooltips table<string, sring>
 function ISAdminPowerUI:renderTickBox(tickBox, tooltips) end
 
 function ISAdminPowerUI:saveOptions() end
@@ -78,3 +73,12 @@ function ISAdminPowerUI:updateAdminPower() end
 ---@param player IsoPlayer
 ---@return ISAdminPowerUI
 function ISAdminPowerUI:new(x, y, width, height, player) end
+
+---@class umbrella.ISAdminPowerUI.Option
+---@field capability Capability
+---@field getValue umbrella.ISAdminPowerUI.GetFunction
+---@field id string
+---@field player IsoPlayer?
+---@field setValue umbrella.ISAdminPowerUI.SetFunction
+---@field side string
+---@field tooltip string

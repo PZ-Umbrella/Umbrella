@@ -28,7 +28,7 @@ function ISColorPickerHSB:createChildren() end
 ---@param joypadData JoypadData
 function ISColorPickerHSB:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISColorPickerHSB:onJoypadDown(button) end
 
 ---@param joypadData JoypadData

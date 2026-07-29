@@ -8,7 +8,7 @@
 ---@field itemSlot ISItemSlot?
 ---@field resource ResourceItem
 ---@field sound integer
----@field targetItem unknown?
+---@field targetItem (InventoryItem | integer)?
 ISItemSlotRemoveAction = ISBaseTimedAction:derive("ISItemSlotRemoveAction")
 ISItemSlotRemoveAction.Type = "ISItemSlotRemoveAction"
 
@@ -35,6 +35,6 @@ function ISItemSlotRemoveAction:update() end
 ---@param entity IsoObject
 ---@param resource ResourceItem
 ---@param internalItemSlot ISItemSlot
----@param item InventoryItem?
+---@param targetItem (InventoryItem | integer)?
 ---@return ISItemSlotRemoveAction
-function ISItemSlotRemoveAction:new(character, entity, resource, internalItemSlot, item) end
+function ISItemSlotRemoveAction:new(character, entity, resource, internalItemSlot, targetItem) end

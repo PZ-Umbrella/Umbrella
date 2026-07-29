@@ -293,7 +293,7 @@ function __CraftRecipe:getTooltip() end
 function __CraftRecipe:getTranslationName() end
 
 ---@param index integer
----@return CraftRecipe.xp_Award
+---@return CraftRecipe.XpAward
 function __CraftRecipe:getXPAward(index) end
 
 ---@return integer

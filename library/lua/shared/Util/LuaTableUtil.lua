@@ -8,5 +8,8 @@ LuaTableUtil = {}
 function LuaTableUtil:contains(list, element) end
 
 ---@param list table
+function LuaTableUtil:insertAllUniqueElementsFromJavaList(list, elements) end
+
+---@param list table
 ---@return table
 function LuaTableUtil:insertUnique(list, element) end

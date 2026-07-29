@@ -54,6 +54,12 @@ function __WorldGenParams:setSeedString(seedString) end
 
 WorldGenParams = {}
 
+---@type integer
+WorldGenParams.GENERATION_SIZE = nil
+
+---@type integer
+WorldGenParams.GENERATION_SQUARES = nil
+
 ---@type WorldGenParams
 WorldGenParams.INSTANCE = nil
 

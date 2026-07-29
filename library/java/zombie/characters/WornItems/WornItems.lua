@@ -40,6 +40,9 @@ function __WornItems:getItemByIndex(index) end
 ---@param itemVisuals ItemVisuals
 function __WornItems:getItemVisuals(itemVisuals) end
 
+---@return List<WornItem>
+function __WornItems:getItems() end
+
 ---@param item InventoryItem
 ---@return ItemBodyLocation
 function __WornItems:getLocation(item) end

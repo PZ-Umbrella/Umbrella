@@ -79,7 +79,7 @@ function ISButton:forceClick() end
 ---@param height number
 function ISButton:forceImageSize(width, height) end
 
----@return table
+---@return umbrella.RGBA
 function ISButton:getBackgroundColor() end
 
 ---@return string

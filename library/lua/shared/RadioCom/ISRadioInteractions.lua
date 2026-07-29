@@ -20,6 +20,7 @@ function __ISRadioInteractions.addHalo(_str, _amount, _inverseCols) end
 ---@param _y number
 ---@param _z number
 ---@param _line string
+---@param _source unknown?
 function __ISRadioInteractions.checkPlayer(player, _guid, _interactCodes, _x, _y, _z, _line, _source) end
 
 ---@param _guid string

@@ -9,11 +9,8 @@
 ---@field isAutoFill boolean
 ---@field isAutoFillX boolean
 ---@field isAutoFillY boolean
----@field itemMargin number
 ---@field itemNameMaxLines number
----@field itemSpacing number
 ---@field logic BuildLogic
----@field margin number
 ---@field player IsoPlayer
 ---@field textureLink Texture
 ISBuildWidgetIngredientsInputs = ISPanelJoypad:derive("ISBuildWidgetIngredientsInputs")
@@ -33,6 +30,8 @@ function ISBuildWidgetIngredientsInputs:initialise() end
 ---@param joypadData JoypadData
 function ISBuildWidgetIngredientsInputs:onGainJoypadFocus(joypadData) end
 
+---@param button JoypadButton
+---@param joypadData JoypadData
 function ISBuildWidgetIngredientsInputs:onJoypadDown(button, joypadData) end
 
 ---@param joypadData JoypadData
@@ -41,6 +40,7 @@ function ISBuildWidgetIngredientsInputs:onLoseJoypadFocus(joypadData) end
 ---@param _manualSelect boolean
 function ISBuildWidgetIngredientsInputs:onManualSelectChanged(_manualSelect) end
 
+---@param _inputItems unknown?
 function ISBuildWidgetIngredientsInputs:onRebuildItemNodes(_inputItems) end
 
 function ISBuildWidgetIngredientsInputs:onRecipeChanged() end

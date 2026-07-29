@@ -24,6 +24,7 @@ function ISVehicleMenu.doTowingMenu(playerObj, vehicle, menu) end
 ---@param player integer
 ---@param context ISContextMenu
 ---@param vehicle BaseVehicle
+---@param test boolean
 function ISVehicleMenu.FillMenuOutsideVehicle(player, context, vehicle, test) end
 
 ---@param playerIndex integer
@@ -156,6 +157,7 @@ function ISVehicleMenu.onExit(playerObj, seatFrom) end
 ---@param seat integer
 function ISVehicleMenu.onExitAux(playerObj, seat) end
 
+---@param player integer
 ---@param context ISContextMenu
 ---@param worldobjects IsoObject[]
 ---@param test boolean?

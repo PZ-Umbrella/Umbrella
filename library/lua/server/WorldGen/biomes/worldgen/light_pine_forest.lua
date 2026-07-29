@@ -28,30 +28,60 @@ worldgen.biomes.light_pine_forest = {
 				p = 0.1,
 			},
 		},
+		BUSH = {
+			{
+				f = worldgen.features.BUSH.bush_primaryforest,
+				p = 0.05,
+			},
+		},
 		TREE = {
 			{
+				f = worldgen.features.TREE.pine_jumbo_xxl,
+				p = 0.0177075,
+			},
+			{
+				f = worldgen.features.TREE.pine_jumbo_xl,
+				p = 0.0177075,
+			},
+			{
 				f = worldgen.features.TREE.pine_jumbo,
-				p = 0.035415,
-			},
-			{
-				f = worldgen.features.TREE.holly_jumbo,
-				p = 0.035415,
-			},
-			{
-				f = worldgen.features.TREE.hemlock_jumbo,
-				p = 0.035415,
+				p = 0.003125,
 			},
 			{
 				f = worldgen.features.TREE.pine,
-				p = 0.00625,
+				p = 0.003125,
+			},
+			{
+				f = worldgen.features.TREE.holly_jumbo_xxl,
+				p = 0.0177075,
+			},
+			{
+				f = worldgen.features.TREE.holly_jumbo_xl,
+				p = 0.0177075,
+			},
+			{
+				f = worldgen.features.TREE.holly_jumbo,
+				p = 0.003125,
 			},
 			{
 				f = worldgen.features.TREE.holly,
-				p = 0.00625,
+				p = 0.003125,
+			},
+			{
+				f = worldgen.features.TREE.hemlock_jumbo_xxl,
+				p = 0.0177075,
+			},
+			{
+				f = worldgen.features.TREE.hemlock_jumbo_xl,
+				p = 0.0177075,
+			},
+			{
+				f = worldgen.features.TREE.hemlock_jumbo,
+				p = 0.003125,
 			},
 			{
 				f = worldgen.features.TREE.hemlock,
-				p = 0.00625,
+				p = 0.003125,
 			},
 			{
 				f = worldgen.features.TREE.stumps,
@@ -60,6 +90,13 @@ worldgen.biomes.light_pine_forest = {
 		},
 	},
 	params = {
+		subbiomes = {
+			TREE = {
+				TREE = {
+					worldgen.subbiomes.grass,
+				},
+			},
+		},
 		landscape = {
 			"LIGHT_FOREST",
 		},

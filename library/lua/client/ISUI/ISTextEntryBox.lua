@@ -43,7 +43,7 @@ function ISTextEntryBox:getPlaceholderText() end
 ---@return string
 function ISTextEntryBox:getText() end
 
----@return unknown
+---@return boolean
 function ISTextEntryBox:hasClearButton() end
 
 function ISTextEntryBox:ignoreFirstInput() end
@@ -69,7 +69,7 @@ function ISTextEntryBox:isSelectable() end
 
 function ISTextEntryBox:onCommandEntered() end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISTextEntryBox:onJoypadDown(button, joypadData) end
 
@@ -150,6 +150,7 @@ function ISTextEntryBox:setPlaceholderText(str) end
 ---@param a number
 function ISTextEntryBox:setPlaceholderTextRGBA(r, g, b, a) end
 
+---@param enable boolean
 function ISTextEntryBox:setSelectable(enable) end
 
 ---@param str string

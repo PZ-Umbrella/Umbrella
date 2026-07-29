@@ -97,32 +97,28 @@ function ISButtonPrompt:cmdUseVehicle(vehicle, part) end
 
 ---@param dir IsoDirections
 ---@param obj IsoObject
-function ISButtonPrompt:doAButtonDoorOrWindowOrWindowFrame(dir, obj) end
+function ISButtonPrompt:doClimbThroughButtonDoorOrWindowOrWindowFrame(dir, obj) end
 
 ---@param dir IsoDirections
 ---@param obj IsoObject
-function ISButtonPrompt:doBButtonDoorOrWindowOrWindowFrame(dir, obj) end
-
-function ISButtonPrompt:doClimbThroughButtonDoorOrWindowOrWindowFrame(dir, obj) end
-
 function ISButtonPrompt:doInteractButtonDoorOrWindowOrWindowFrame(dir, obj) end
 
 function ISButtonPrompt:dropCorpse() end
 
 ---@param dir IsoDirections
-function ISButtonPrompt:getBestAButtonAction(dir) end
-
 function ISButtonPrompt:getBestApplyBrakesButtonAction(dir) end
 
+---@param buttonBinding CharacterJoypadButtonBinding
 ---@param dir IsoDirections
-function ISButtonPrompt:getBestBButtonAction(dir) end
-
 function ISButtonPrompt:getBestButtonBindingAction(buttonBinding, dir) end
 
+---@param dir IsoDirections
 function ISButtonPrompt:getBestCancelButtonAction(dir) end
 
+---@param dir IsoDirections
 function ISButtonPrompt:getBestClimbThroughButtonAction(dir) end
 
+---@param dir IsoDirections
 function ISButtonPrompt:getBestInteractButtonAction(dir) end
 
 ---@param dir IsoDirections
@@ -131,8 +127,10 @@ function ISButtonPrompt:getBestLBButtonAction(dir) end
 ---@param dir IsoDirections
 function ISButtonPrompt:getBestRBButtonAction(dir) end
 
+---@param dir IsoDirections
 function ISButtonPrompt:getBestSmashWindowButtonAction(dir) end
 
+---@param dir IsoDirections
 function ISButtonPrompt:getBestSprintButtonAction(dir) end
 
 ---@param dir IsoDirections
@@ -141,15 +139,12 @@ function ISButtonPrompt:getBestXButtonAction(dir) end
 ---@param dir IsoDirections
 function ISButtonPrompt:getBestYButtonAction(dir) end
 
+---@param dir IsoDirections
 ---@return LuaList?
 function ISButtonPrompt:getInteractOptionsButtonObjects(dir) end
 
 ---@return number
 function ISButtonPrompt:getTopOf() end
-
----@param dir IsoDirections
----@return LuaList?
-function ISButtonPrompt:getXButtonObjects(dir) end
 
 function ISButtonPrompt:initialise() end
 
@@ -163,7 +158,7 @@ function ISButtonPrompt:onAPress() end
 
 function ISButtonPrompt:onBPress() end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISButtonPrompt:onJoypadButtonReleased(button, joypadData) end
 
@@ -205,10 +200,22 @@ function ISButtonPrompt:setAPrompt(str, func, param1, param2, param3, param4) en
 ---@param param4 unknown?
 function ISButtonPrompt:setBPrompt(str, func, param1, param2, param3, param4) end
 
+---@param buttonBinding CharacterJoypadButtonBinding
 ---@param str string
+---@param func function?
+---@param param1 unknown?
+---@param param2 unknown?
+---@param param3 unknown?
+---@param param4 unknown?
 function ISButtonPrompt:setButtonBindingPrompt(buttonBinding, str, func, param1, param2, param3, param4) end
 
+---@param button ISButton
 ---@param str string
+---@param func function?
+---@param param1 unknown?
+---@param param2 unknown?
+---@param param3 unknown?
+---@param param4 unknown?
 function ISButtonPrompt:setButtonPrompt(button, str, func, param1, param2, param3, param4) end
 
 ---@param str string?
@@ -251,15 +258,12 @@ function ISButtonPrompt:smashWindow(window) end
 function ISButtonPrompt:stopAction() end
 
 ---@param dir IsoDirections
-function ISButtonPrompt:testAButtonAction(dir) end
-
----@param dir IsoDirections
-function ISButtonPrompt:testBButtonAction(dir) end
-
 function ISButtonPrompt:testClimbThroughButtonAction(dir) end
 
+---@param dir IsoDirections
 function ISButtonPrompt:testInteractButtonAction(dir) end
 
+---@param dir IsoDirections
 function ISButtonPrompt:testSmashWindowButtonAction(dir) end
 
 function ISButtonPrompt:update() end

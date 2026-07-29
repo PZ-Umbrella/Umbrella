@@ -27,6 +27,7 @@ function WorldMapEditorMode_Annotations:generateLuaScript2() end
 ---@return boolean
 function WorldMapEditorMode_Annotations:isKeyConsumed(key) end
 
+---@param symbol WorldMapBaseSymbol
 function WorldMapEditorMode_Annotations:onAnnotationListItemSelected(symbol) end
 
 function WorldMapEditorMode_Annotations:onFilterTextChange() end

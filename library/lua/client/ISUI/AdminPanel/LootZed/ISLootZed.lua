@@ -2,7 +2,6 @@
 
 ---@class ISLootZed : ISPanelJoypad
 ---@field datas ISScrollingListBox
----@field name unknown?
 ---@field no ISButton
 ---@field player IsoPlayer
 ---@field playerSelect ISComboBox

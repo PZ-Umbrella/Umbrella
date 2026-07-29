@@ -5,7 +5,6 @@
 ---@field defaultEntryText string
 ---@field entry ISTextEntryBox
 ---@field fontHgt number
----@field name unknown?
 ---@field no ISButton
 ---@field onclick umbrella.ISButton.OnClick?
 ---@field param1 unknown?
@@ -32,7 +31,7 @@ function ISRichTextBox:onClick(button) end
 ---@param joypadData JoypadData
 function ISRichTextBox:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISRichTextBox:onJoypadDown(button, joypadData) end
 

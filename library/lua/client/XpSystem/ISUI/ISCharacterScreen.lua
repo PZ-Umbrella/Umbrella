@@ -81,7 +81,7 @@ function ISCharacterScreen:maxTextWidth(font, text, maxWidth) end
 ---@param joypadData JoypadData
 function ISCharacterScreen:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISCharacterScreen:onJoypadDown(button) end
 
 ---@param joypadData JoypadData

@@ -37,6 +37,11 @@ function MultiplayerZoneEditorMode_NonPVP:getSelectedZone() end
 ---@return boolean
 function MultiplayerZoneEditorMode_NonPVP:isNewZoneValid(x1, y1, x2, y2) end
 
+---@param x1 number
+---@param y1 number
+---@param x2 number
+---@param y2 number
+---@param index integer
 ---@return boolean
 function MultiplayerZoneEditorMode_NonPVP:isResizedZoneValid(x1, y1, x2, y2, index) end
 

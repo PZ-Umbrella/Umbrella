@@ -97,7 +97,7 @@ function ISCollapsableWindow:SaveLayout(name, layout) end
 ---@param visible boolean
 function ISCollapsableWindow:setDrawFrame(visible) end
 
----@param text unknown?
+---@param text string?
 function ISCollapsableWindow:setInfo(text) end
 
 ---@param resizable boolean

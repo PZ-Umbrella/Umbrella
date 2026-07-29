@@ -10,14 +10,15 @@ ISWashYourself = ISBaseTimedAction:derive("ISWashYourself")
 ISWashYourself.Type = "ISWashYourself"
 
 ---@param character IsoPlayer
----@return number
+---@return integer
 function ISWashYourself.GetRequiredSoap(character) end
 
 ---@param character IsoPlayer
----@return number
+---@return integer
 function ISWashYourself.GetRequiredWater(character) end
 
----@return number
+---@param soaps ArrayList<InventoryItem>
+---@return integer
 function ISWashYourself.GetSoapRemaining(soaps) end
 
 ---@param event string
@@ -55,6 +56,5 @@ function ISWashYourself:washPart(visual, part) end
 
 ---@param character IsoPlayer
 ---@param sink IsoObject
----@param soaps InventoryItem[]?
 ---@return ISWashYourself
-function ISWashYourself:new(character, sink, soaps) end
+function ISWashYourself:new(character, sink) end

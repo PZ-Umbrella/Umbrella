@@ -28,7 +28,9 @@ function STrapSystem:isValidIsoObject(isoObject) end
 ---@return STrapGlobalObject
 function STrapSystem:newLuaObject(globalObject) end
 
+---@param command string
 ---@param playerObj IsoPlayer
+---@param args table
 function STrapSystem:OnClientCommand(command, playerObj, args) end
 
 ---@param isoObject IsoObject

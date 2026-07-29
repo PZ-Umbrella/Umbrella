@@ -16,7 +16,7 @@ function ISServerDisconnectUI:createChildren() end
 ---@param joypadData JoypadData
 function ISServerDisconnectUI:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISServerDisconnectUI:onJoypadDown(button) end
 
 ---@param oldw number

@@ -297,6 +297,9 @@ function __ILuaGameCharacter:isAboveTopOfStairs() end
 function __ILuaGameCharacter:isAiming() end
 
 ---@return boolean
+function __ILuaGameCharacter:isAlwaysDayCheat() end
+
+---@return boolean
 function __ILuaGameCharacter:isAnimalCheat() end
 
 ---@return boolean
@@ -480,6 +483,9 @@ function __ILuaGameCharacter:resetModelNextFrame() end
 ---@param fullType string
 ---@param pages integer
 function __ILuaGameCharacter:setAlreadyReadPages(fullType, pages) end
+
+---@param arg0 boolean
+function __ILuaGameCharacter:setAlwaysDayCheat(arg0) end
 
 ---@param arg0 boolean
 function __ILuaGameCharacter:setAnimalCheat(arg0) end

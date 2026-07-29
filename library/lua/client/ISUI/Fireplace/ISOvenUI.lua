@@ -36,7 +36,7 @@ function ISOvenUI:onClick(button) end
 ---@param joypadData JoypadData
 function ISOvenUI:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISOvenUI:onJoypadDown(button) end
 
 function ISOvenUI:prerender() end

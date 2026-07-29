@@ -26,8 +26,8 @@
 ---@field marginRight number
 ---@field marginTop number
 ---@field maxLines number
----@field onmousedown unknown
----@field onmouseup unknown
+---@field onmousedown (fun(target: unknown?))?
+---@field onmouseup (fun(target: unknown?))?
 ---@field orient table<integer, "left" | "right" | "centre">
 ---@field r integer
 ---@field rgb table<integer, umbrella.RGB>
@@ -102,8 +102,12 @@ function ISRichTextPanel:setContentTransparency(alpha) end
 ---@param bottom number
 function ISRichTextPanel:setMargins(left, top, right, bottom) end
 
+---@param target unknown?
+---@param onmousedown function?
 function ISRichTextPanel:setOnMouseDownFunction(target, onmousedown) end
 
+---@param target unknown?
+---@param onmouseup function?
 function ISRichTextPanel:setOnMouseUpFunction(target, onmouseup) end
 
 ---@param text string?

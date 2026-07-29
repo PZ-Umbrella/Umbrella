@@ -23,7 +23,7 @@ function ISFirearmRadialMenu.getBestLBButtonAction(buttonPrompt) end
 function ISFirearmRadialMenu.getBestRBButtonAction(buttonPrompt) end
 
 ---@param buttonPrompt ISButtonPrompt
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISFirearmRadialMenu.onJoypadButtonReleased(buttonPrompt, button, joypadData) end
 
@@ -58,16 +58,19 @@ function ISFirearmRadialMenu:getWeapon() end
 function ISFirearmRadialMenu:new(character) end
 
 ---@class ISFirearmRadialMenu.BaseCommand : ISBaseObject
----@field character unknown
----@field frm unknown
+---@field character IsoPlayer
+---@field frm ISFirearmRadialMenu
 local __ISFirearmRadialMenu_BaseCommand = ISBaseObject:derive("BaseCommand")
 __ISFirearmRadialMenu_BaseCommand.Type = "BaseCommand"
 
+---@param menu ISRadialMenu
+---@param weapon HandWeapon
 function __ISFirearmRadialMenu_BaseCommand:fillMenu(menu, weapon) end
 
 ---@return unknown
 function __ISFirearmRadialMenu_BaseCommand:getWeapon() end
 
+---@param frm ISFirearmRadialMenu
 ---@return ISFirearmRadialMenu.BaseCommand
 function __ISFirearmRadialMenu_BaseCommand:new(frm) end
 
@@ -75,6 +78,8 @@ function __ISFirearmRadialMenu_BaseCommand:new(frm) end
 local __ISFirearmRadialMenu_CInsertMagazine = ISFirearmRadialMenu.BaseCommand:derive("CInsertMagazine")
 __ISFirearmRadialMenu_CInsertMagazine.Type = "CInsertMagazine"
 
+---@param menu ISRadialMenu
+---@param weapon HandWeapon
 function __ISFirearmRadialMenu_CInsertMagazine:fillMenu(menu, weapon) end
 
 function __ISFirearmRadialMenu_CInsertMagazine:invoke() end
@@ -87,6 +92,8 @@ function __ISFirearmRadialMenu_CInsertMagazine:new(frm) end
 local __ISFirearmRadialMenu_CEjectMagazine = ISFirearmRadialMenu.BaseCommand:derive("CEjectMagazine")
 __ISFirearmRadialMenu_CEjectMagazine.Type = "CEjectMagazine"
 
+---@param menu ISRadialMenu
+---@param weapon HandWeapon
 function __ISFirearmRadialMenu_CEjectMagazine:fillMenu(menu, weapon) end
 
 function __ISFirearmRadialMenu_CEjectMagazine:invoke() end
@@ -99,12 +106,14 @@ function __ISFirearmRadialMenu_CEjectMagazine:new(frm) end
 local __ISFirearmRadialMenu_CLoadBulletsInMagazine = ISFirearmRadialMenu.BaseCommand:derive("CLoadBulletsInMagazine")
 __ISFirearmRadialMenu_CLoadBulletsInMagazine.Type = "CLoadBulletsInMagazine"
 
+---@param menu ISRadialMenu
+---@param weapon HandWeapon
 function __ISFirearmRadialMenu_CLoadBulletsInMagazine:fillMenu(menu, weapon) end
 
 ---@return unknown?
 function __ISFirearmRadialMenu_CLoadBulletsInMagazine:getMagazine(weapon) end
 
----@param magazine unknown?
+---@param magazine InventoryItem?
 ---@return boolean
 function __ISFirearmRadialMenu_CLoadBulletsInMagazine:hasBulletsForMagazine(magazine) end
 
@@ -118,8 +127,11 @@ function __ISFirearmRadialMenu_CLoadBulletsInMagazine:new(frm) end
 local __ISFirearmRadialMenu_CLoadRounds = ISFirearmRadialMenu.BaseCommand:derive("CLoadRounds")
 __ISFirearmRadialMenu_CLoadRounds.Type = "CLoadRounds"
 
+---@param menu ISRadialMenu
+---@param weapon HandWeapon
 function __ISFirearmRadialMenu_CLoadRounds:fillMenu(menu, weapon) end
 
+---@param weapon HandWeapon
 ---@return boolean
 function __ISFirearmRadialMenu_CLoadRounds:hasBullets(weapon) end
 
@@ -133,6 +145,8 @@ function __ISFirearmRadialMenu_CLoadRounds:new(frm) end
 local __ISFirearmRadialMenu_CUnloadRounds = ISFirearmRadialMenu.BaseCommand:derive("CUnloadRounds")
 __ISFirearmRadialMenu_CUnloadRounds.Type = "CUnloadRounds"
 
+---@param menu ISRadialMenu
+---@param weapon HandWeapon
 function __ISFirearmRadialMenu_CUnloadRounds:fillMenu(menu, weapon) end
 
 function __ISFirearmRadialMenu_CUnloadRounds:invoke() end
@@ -145,6 +159,8 @@ function __ISFirearmRadialMenu_CUnloadRounds:new(frm) end
 local __ISFirearmRadialMenu_CRack = ISFirearmRadialMenu.BaseCommand:derive("CRack")
 __ISFirearmRadialMenu_CRack.Type = "CRack"
 
+---@param menu ISRadialMenu
+---@param weapon HandWeapon
 function __ISFirearmRadialMenu_CRack:fillMenu(menu, weapon) end
 
 function __ISFirearmRadialMenu_CRack:invoke() end

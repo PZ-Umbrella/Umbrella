@@ -31,7 +31,7 @@ function RWMPower:getYPrompt() end
 
 function RWMPower:initialise() end
 
----@param button integer
+---@param button JoypadButton
 function RWMPower:onJoypadDown(button) end
 
 function RWMPower:powerUpdateSimulation() end

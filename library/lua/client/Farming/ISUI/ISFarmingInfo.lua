@@ -126,7 +126,7 @@ function ISFarmingInfo:isPlantValid() end
 ---@param joypadData JoypadData
 function ISFarmingInfo:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISFarmingInfo:onJoypadDown(button, joypadData) end
 

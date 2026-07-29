@@ -14,7 +14,7 @@
 ---@field infoRichText ISModalRichText?
 ---@field inputModal ISTextBox
 ---@field itemheightoverride table<string, number>
----@field joypadNavigate table
+---@field joypadNavigate umbrella.JoypadNavigate
 ---@field listboxBadTrait ISScrollingListBox
 ---@field listboxProf ISScrollingListBox
 ---@field listboxTrait ISScrollingListBox
@@ -238,7 +238,7 @@ __characterCreationProfession_CharacterCreationProfessionListBox.Type = "Charact
 ---@param joypadData JoypadData
 function __characterCreationProfession_CharacterCreationProfessionListBox:onJoypadBeforeDeactivate(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __characterCreationProfession_CharacterCreationProfessionListBox:onJoypadDown(button, joypadData) end
 
@@ -261,7 +261,7 @@ function __characterCreationProfession_CharacterCreationProfessionPresetPanel:on
 ---@param joypadData JoypadData
 function __characterCreationProfession_CharacterCreationProfessionPresetPanel:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __characterCreationProfession_CharacterCreationProfessionPresetPanel:onJoypadDown(button, joypadData) end
 

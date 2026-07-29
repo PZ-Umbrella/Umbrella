@@ -12,9 +12,6 @@ ISOpenButcherHookUI.Type = "ISOpenButcherHookUI"
 ---@param parameter string
 function ISOpenButcherHookUI:animEvent(event, parameter) end
 
----@return boolean
-function ISOpenButcherHookUI:complete() end
-
 function ISOpenButcherHookUI:forceStop() end
 
 ---@return number
@@ -25,8 +22,6 @@ function ISOpenButcherHookUI:isValid() end
 
 ---@return boolean
 function ISOpenButcherHookUI:perform() end
-
-function ISOpenButcherHookUI:serverStart() end
 
 function ISOpenButcherHookUI:start() end
 

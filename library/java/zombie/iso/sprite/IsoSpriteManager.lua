@@ -14,6 +14,9 @@ function __IsoSpriteManager:AddSprite(tex, ID) end
 
 function __IsoSpriteManager:Dispose() end
 
+---@return Map<string, IsoSprite>
+function __IsoSpriteManager:getNamedMap() end
+
 ---@param tex string
 ---@return IsoSprite
 function __IsoSpriteManager:getOrAddSpriteCache(tex) end

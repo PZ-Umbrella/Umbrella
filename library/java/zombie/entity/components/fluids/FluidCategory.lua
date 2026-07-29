@@ -6,6 +6,9 @@ local __FluidCategory = {}
 ---@return integer
 function __FluidCategory:getId() end
 
+---@return string
+function __FluidCategory:getName() end
+
 FluidCategory = {}
 
 ---@type FluidCategory

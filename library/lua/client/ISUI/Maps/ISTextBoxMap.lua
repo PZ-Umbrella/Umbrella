@@ -13,11 +13,10 @@
 ---@field entry ISTextEntryBox
 ---@field fontHgt number
 ---@field fontPicker ISComboBox
----@field joypadIndex unknown
+---@field joypadIndex integer
 ---@field layerColorTickBox ISTickBox
 ---@field mapAPI unknown
 ---@field mapUI umbrella.MapUI
----@field name unknown?
 ---@field no ISButton
 ---@field onclick umbrella.ISButton.OnClick?
 ---@field param1 unknown?
@@ -75,15 +74,19 @@ function ISTextBoxMap:onJoypadDirDown(joypadData) end
 ---@param joypadData JoypadData
 function ISTextBoxMap:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISTextBoxMap:onJoypadDown(button, joypadData) end
 
 ---@param key integer
 function ISTextBoxMap:onOtherKey(key) end
 
+---@param value number
+---@param slider ISSliderPanel
 function ISTextBoxMap:onRotationChange(value, slider) end
 
+---@param value number
+---@param slider ISSliderPanel
 function ISTextBoxMap:onScaleChange(value, slider) end
 
 function ISTextBoxMap:onUseLayerColor() end
@@ -112,8 +115,10 @@ function ISTextBoxMap:setValidateFunction(target, func, arg1, arg2) end
 ---@param text string?
 function ISTextBoxMap:setValidateTooltipText(text) end
 
+---@param layerID string
 function ISTextBoxMap:showFontPicker(layerID) end
 
+---@param matchPerspective boolean
 function ISTextBoxMap:showMatchPerspectiveTickBox(matchPerspective) end
 
 ---@param degrees number
@@ -128,6 +133,8 @@ function ISTextBoxMap:showTranslationTickBox(isTranslation) end
 ---@param use boolean
 function ISTextBoxMap:showUseLayerColor(use) end
 
+---@param minZoomF number
+---@param maxZoomF number
 function ISTextBoxMap:showZoomPanel(minZoomF, maxZoomF) end
 
 function ISTextBoxMap:updateButtons() end

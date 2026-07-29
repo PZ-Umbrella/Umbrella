@@ -164,7 +164,8 @@ function __IsoObject:TestPathfindCollide(obj, from, to) end
 function __IsoObject:TestVision(from, to) end
 
 ---@param thumper IsoMovingObject
-function __IsoObject:Thump(thumper) end
+---@param thumpEventCount integer
+function __IsoObject:Thump(thumper, thumpEventCount) end
 
 ---@param object IsoObject
 function __IsoObject:UnCollision(object) end
@@ -1458,9 +1459,6 @@ function __IsoObject:transferFluidFrom(source, amount) end
 function __IsoObject:transferFluidTo(target, amount) end
 
 function __IsoObject:transmitCompleteItemToClients() end
-
----@deprecated
-function __IsoObject:transmitCompleteItemToServer() end
 
 function __IsoObject:transmitCustomColorToClients() end
 

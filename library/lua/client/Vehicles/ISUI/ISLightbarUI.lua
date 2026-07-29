@@ -23,7 +23,7 @@ function ISLightbarUI:createChildren() end
 ---@param joypadData JoypadData
 function ISLightbarUI:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISLightbarUI:onJoypadDown(button, joypadData) end
 

@@ -14,8 +14,10 @@ GameOptionControllerTab.Type = "GameOptionControllerTab"
 
 function GameOptionControllerTab:addContent() end
 
+---@param contentPanel ISUIElement
 function GameOptionControllerTab:addControllerPanelMidPanel(contentPanel) end
 
+---@param contentPanel ISUIElement
 function GameOptionControllerTab:addControllerPanelRightPanel(contentPanel) end
 
 function GameOptionControllerTab:ControllerReload() end
@@ -25,7 +27,7 @@ function GameOptionControllerTab:ControllerReload() end
 ---@return ISComboBox
 function GameOptionControllerTab:createGamepadBindingPresetsCBox(x, y) end
 
----@return unknown
+---@return ISStyle
 function GameOptionControllerTab:getStyle() end
 
 ---@param x number

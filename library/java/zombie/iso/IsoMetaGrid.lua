@@ -203,6 +203,9 @@ function __IsoMetaGrid:getZoneAt(x, y, z) end
 ---@return Zone
 function __IsoMetaGrid:getZoneWithBoundsAndType(x, y, z, w, h, type) end
 
+---@return List<Zone>
+function __IsoMetaGrid:getZones() end
+
 ---@param x integer
 ---@param y integer
 ---@param z integer
@@ -420,10 +423,6 @@ function __IsoMetaGrid:removeRoomsFromAdjacentCells(rooms, cellX1, cellY1, cellX
 ---@param zone Zone
 function __IsoMetaGrid:removeZone(zone) end
 
----@param cellX integer
----@param cellY integer
-function __IsoMetaGrid:removeZonesForCell(cellX, cellY) end
-
 ---@param lotDir string
 function __IsoMetaGrid:removeZonesForLotDirectory(lotDir) end
 
@@ -471,6 +470,9 @@ function __IsoMetaGrid:setCellData(x, y, cell) end
 function __IsoMetaGrid:wasLoaded() end
 
 IsoMetaGrid = {}
+
+---@type integer
+IsoMetaGrid.ANY_Z = nil
 
 ---@type ThreadLocal<IsoGameCharacter.Location>
 IsoMetaGrid.TL_Location = nil

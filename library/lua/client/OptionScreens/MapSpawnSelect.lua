@@ -79,6 +79,9 @@ function MapSpawnSelect:onJoypadBeforeDeactivate(joypadData) end
 ---@param joypadData JoypadData
 function MapSpawnSelect:onJoypadBeforeDeactivate_child(joypadData) end
 
+---@param descendant ISUIElement
+---@param button JoypadButton
+---@param joypadData JoypadData
 function MapSpawnSelect:onJoypadDown_Descendant(descendant, button, joypadData) end
 
 ---@param descendant ISUIElement
@@ -88,6 +91,7 @@ function MapSpawnSelect:onJoypadNavigateStart_Descendant(descendant, joypadData)
 ---@param key integer
 function MapSpawnSelect:onKeyRelease(key) end
 
+---@param joypadData JoypadData
 function MapSpawnSelect:onLoseJoypadFocus(joypadData) end
 
 ---@param button ISButton
@@ -156,7 +160,7 @@ function MapSpawnSelectImage:initMapData(directory) end
 
 function MapSpawnSelectImage:instantiate() end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function MapSpawnSelectImage:onJoypadDown(button, joypadData) end
 
@@ -236,7 +240,7 @@ function MapSpawnSelectInfoPanel:onJoypadDirDown(joypadData) end
 ---@param joypadData JoypadData
 function MapSpawnSelectInfoPanel:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function MapSpawnSelectInfoPanel:onJoypadDown(button, joypadData) end
 
@@ -258,6 +262,8 @@ function MapSpawnSelectSeedPanel:generateNewSeed() end
 ---@param joypadData JoypadData
 function MapSpawnSelectSeedPanel:onGainJoypadFocus(joypadData) end
 
+---@param button JoypadButton
+---@param joypadData JoypadData
 function MapSpawnSelectSeedPanel:onJoypadDown(button, joypadData) end
 
 ---@param joypadData JoypadData

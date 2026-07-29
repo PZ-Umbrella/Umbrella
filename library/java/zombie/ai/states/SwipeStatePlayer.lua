@@ -37,6 +37,9 @@ SwipeStatePlayer.GRAPPLING_TYPE = nil
 SwipeStatePlayer.IS_GRAPPLE_WINDOW = nil
 
 ---@type State.Param<boolean>
+SwipeStatePlayer.IS_THROWING = nil
+
+---@type State.Param<boolean>
 SwipeStatePlayer.LOWER_CONDITION = nil
 
 ---@type number

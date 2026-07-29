@@ -47,8 +47,6 @@ function __IsoCell:DoBuilding(player, bRender) end
 ---@return boolean
 function __IsoCell:DoesSquareHaveValidCutaways(playerSquare, square, playerIndex, currentTimeMillis) end
 
-function __IsoCell:DrawStencilMask() end
-
 ---@param xx integer
 ---@param yy integer
 ---@param zz integer
@@ -224,6 +222,8 @@ function __IsoCell:collapsibleBuildingSquareAlgorithm(def, sq, pl) end
 ---@param recalcAll boolean
 ---@return IsoGridSquare
 function __IsoCell:createNewGridSquare(x, y, z, recalcAll) end
+
+function __IsoCell:drawStencilMask() end
 
 ---@param perPlayerRender IsoCell.PerPlayerRender
 ---@param playerIndex integer
@@ -458,6 +458,9 @@ function __IsoCell:getSpriteManager() end
 ---@return ArrayList<IsoObject> # the StaticUpdaterObjectList
 function __IsoCell:getStaticUpdaterObjectList() end
 
+---@return List<IsoCell.StencilArea>
+function __IsoCell:getStencilAreas() end
+
 ---@return ArrayList<IsoSurvivor>
 function __IsoCell:getSurvivorList() end
 
@@ -501,6 +504,11 @@ function __IsoCell:invalidatePeekedRoom(playerIndex) end
 ---@param y integer
 ---@return boolean
 function __IsoCell:isInChunkMap(x, y) end
+
+---@param sx number
+---@param sy number
+---@return boolean
+function __IsoCell:isInStencil(sx, sy) end
 
 ---@param x integer
 ---@param y integer

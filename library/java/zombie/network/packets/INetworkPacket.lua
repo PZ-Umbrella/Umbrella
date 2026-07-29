@@ -7,6 +7,10 @@ local __INetworkPacket = {}
 ---@return boolean
 function __INetworkPacket:isPostponed() end
 
+---@param connection IConnection
+---@param packetType PacketTypes.PacketType
+function __INetworkPacket:logInconsistentPacket(connection, packetType) end
+
 ---@param b ByteBufferReader
 ---@param connection UdpConnection
 function __INetworkPacket:parseClient(b, connection) end

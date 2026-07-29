@@ -35,6 +35,7 @@ function ContextMenuCode.OpenCloseAmphoraLid(context, entity, character, param) 
 ---@param context ISContextMenu
 ---@param entity IsoObject
 ---@param character IsoPlayer
+---@param sprite string
 function ContextMenuCode.OpenCloseLid(context, entity, character, sprite) end
 
 ---@param context ISContextMenu
@@ -57,6 +58,7 @@ function ContextMenuCode.TakeGoldBars(context, entity, character, param) end
 
 ---@param context ISContextMenu
 ---@param entity IsoObject
+---@param character IsoPlayer
 ---@param param umbrella.ContextMenuCode.Param
 function ContextMenuCode.TakeHay(context, entity, character, param) end
 

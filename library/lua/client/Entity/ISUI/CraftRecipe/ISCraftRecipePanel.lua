@@ -35,6 +35,7 @@ function ISCraftRecipePanel:onGainJoypadFocus(joypadData) end
 
 function ISCraftRecipePanel:onInputsChanged() end
 
+---@param _inputItems unknown?
 function ISCraftRecipePanel:onRebuildItemNodes(_inputItems) end
 
 function ISCraftRecipePanel:onRecipeChanged() end

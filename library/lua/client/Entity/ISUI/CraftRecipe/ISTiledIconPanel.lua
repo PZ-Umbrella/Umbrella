@@ -43,7 +43,7 @@ function ISTiledIconPanel:onButtonClick(_button) end
 ---@param _sourceDataList ArrayList?
 function ISTiledIconPanel:onFilterData(_string, _dataList, _sourceDataList) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISTiledIconPanel:onJoypadButtonReleased(button, joypadData) end
 

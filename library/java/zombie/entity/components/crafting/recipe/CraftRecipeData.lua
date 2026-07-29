@@ -336,10 +336,11 @@ function __CraftRecipeData:offerInputItem(inputScript, item, verbose) end
 ---@return boolean
 function __CraftRecipeData:perform(character, inputResources, overrideInputItems, containers) end
 
+---@param player IsoGameCharacter
 ---@param inputItems List<InventoryItem>
 ---@param resources List<Resource>
 ---@param clearExisting boolean
-function __CraftRecipeData:populateInputs(inputItems, resources, clearExisting) end
+function __CraftRecipeData:populateInputs(player, inputItems, resources, clearExisting) end
 
 ---@param character IsoGameCharacter
 function __CraftRecipeData:processDestroyAndUsedItems(character) end

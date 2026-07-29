@@ -10,14 +10,14 @@
 ---@field itemHgt number
 ---@field itemPadY number
 ---@field listTakesFocus boolean
----@field nbOfAnimals number
----@field nbOfCorpses unknown
+---@field nbOfAnimals integer
+---@field nbOfCorpses integer
 ---@field ok ISButton
 ---@field player IsoPlayer
 ---@field playerNum integer
 ---@field reloadBtn ISButton
 ---@field showZoneTickBox ISTickBox
----@field updateTick number
+---@field updateTick integer
 ---@field zone DesignationZoneAnimal
 ISDesignationZoneAnimalZoneUI = ISPanelJoypad:derive("ISDesignationZoneAnimalZoneUI")
 ISDesignationZoneAnimalZoneUI.Type = "ISDesignationZoneAnimalZoneUI"
@@ -63,18 +63,20 @@ function ISDesignationZoneAnimalZoneUI:onJoypadDirDown(joypadData) end
 ---@param joypadData JoypadData
 function ISDesignationZoneAnimalZoneUI:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISDesignationZoneAnimalZoneUI:onJoypadDown(button, joypadData) end
 
 ---@param descendant ISUIElement
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISDesignationZoneAnimalZoneUI:onJoypadDown_Descendant(descendant, button, joypadData) end
 
 ---@param joypadData JoypadData
 function ISDesignationZoneAnimalZoneUI:onLoseJoypadFocus(joypadData) end
 
+---@param index integer
+---@param selected boolean
 function ISDesignationZoneAnimalZoneUI:onTicked(index, selected) end
 
 function ISDesignationZoneAnimalZoneUI:prerender() end
@@ -118,7 +120,7 @@ function ISDesignationZoneAnimalZoneUI_AnimalsPanel:onJoypadDirDown(joypadData) 
 ---@param joypadData JoypadData
 function ISDesignationZoneAnimalZoneUI_AnimalsPanel:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISDesignationZoneAnimalZoneUI_AnimalsPanel:onJoypadDown(button, joypadData) end
 

@@ -16,6 +16,7 @@ function ISTrapMenu.addAnimalDebug(trap, player, animal) end
 function ISTrapMenu.doTrapMenu(player, context, worldobjects, test) end
 
 ---@param worldobjects IsoObject[]
+---@param bait InventoryItem
 ---@param trap CTrapGlobalObject
 ---@param player IsoPlayer
 function ISTrapMenu.onAddBait(worldobjects, bait, trap, player) end

@@ -40,7 +40,7 @@ function RWMPanel:initialise() end
 ---@return (boolean | DeviceData)?
 function RWMPanel:isValidPrompt() end
 
----@param button integer
+---@param button JoypadButton
 function RWMPanel:onJoypadDown(button) end
 
 function RWMPanel:prerender() end

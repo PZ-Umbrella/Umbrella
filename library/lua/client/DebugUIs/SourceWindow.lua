@@ -29,6 +29,7 @@ function SourceWindow:fillFunctionCombo() end
 
 function SourceWindow:initialise() end
 
+---@param combo ISComboBox
 function SourceWindow:onFunctionCombo(combo) end
 
 function SourceWindow:onLineNumberEntered() end

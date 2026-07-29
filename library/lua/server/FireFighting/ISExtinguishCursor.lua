@@ -65,7 +65,7 @@ function ISExtinguishCursor:isValidArea(x, y, z) end
 
 ---@param joypadIndex integer
 ---@param joypadData JoypadData
----@param button integer
+---@param button JoypadButton
 ---@return unknown?
 function ISExtinguishCursor:onJoypadPressButton(joypadIndex, joypadData, button) end
 

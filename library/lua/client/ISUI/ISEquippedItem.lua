@@ -5,8 +5,8 @@
 ---@field adminIconOff Texture
 ---@field adminIconOn Texture
 ---@field arfBtn ISButton
----@field arfIconOff unknown
----@field arfIconOn unknown
+---@field arfIconOff Texture
+---@field arfIconOn Texture
 ---@field bhc ColorInfo
 ---@field buildBtn ISButton
 ---@field changingSafetyState boolean

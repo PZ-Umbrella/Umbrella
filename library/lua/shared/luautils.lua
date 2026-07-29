@@ -3,6 +3,8 @@
 ---@class luautils
 luautils = {}
 
+---@param table1 table
+---@param table2 table
 ---@return table
 function luautils.concatenateArrays(table1, table2) end
 
@@ -54,7 +56,7 @@ function luautils.haveToBeTransfered(player, item, dontWalk) end
 ---@return boolean
 function luautils.haveToBeTransferedWhileTrading(player, item, dontWalk) end
 
----@param table1 string
+---@param table1 table
 ---@return integer
 function luautils.indexOf(table1, value) end
 
@@ -88,6 +90,7 @@ function luautils.okModal(_text, _centered, _width, _height, _posX, _posY) end
 ---@return string?
 function luautils.packString(stringTable, sep) end
 
+---@param table1 table
 ---@return number
 function luautils.remove(table1, value) end
 
@@ -122,7 +125,7 @@ function luautils.stringEnds(String, End) end
 ---@return boolean
 function luautils.stringStarts(String, Start) end
 
----@param table2 string
+---@param table2 table
 ---@return boolean
 function luautils.tableContains(table2, value) end
 
@@ -166,12 +169,25 @@ function luautils.walkAdjAltTest(playerObj, square, altSquare, keepActions) end
 ---@return boolean
 function luautils.walkAdjFence(playerObj, square, object, keepActions) end
 
+---@param playerObj IsoPlayer
+---@param object IsoObject
+---@param allowDiagonal boolean?
+---@param keepActions boolean?
 ---@return boolean
 function luautils.walkAdjObject(playerObj, object, allowDiagonal, keepActions) end
 
+---@param playerObj IsoPlayer
+---@param squares IsoGridSquare[]
+---@param allowDiagonal boolean?
+---@param keepActions boolean?
 ---@return boolean
 function luautils.walkAdjSquares(playerObj, squares, allowDiagonal, keepActions) end
 
+---@param playerObj IsoPlayer
+---@param squares IsoGridSquare[]
+---@param squaresExcluded IsoGridSquare[]
+---@param allowDiagonal boolean?
+---@param keepActions boolean?
 ---@return boolean
 function luautils.walkAdjSquaresExcluded(playerObj, squares, squaresExcluded, allowDiagonal, keepActions) end
 

@@ -21,6 +21,7 @@ function TutorialStep:finish() end
 ---@return boolean
 function TutorialStep:isComplete() end
 
+---@param message unknown?
 function TutorialStep:onClose(message) end
 
 ---@param type table

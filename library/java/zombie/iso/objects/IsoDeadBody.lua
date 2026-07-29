@@ -23,8 +23,9 @@ function __IsoDeadBody:Say(line) end
 
 function __IsoDeadBody:addToWorld() end
 
+---@param isRemote boolean
 ---@return InventoryItem
-function __IsoDeadBody:becomeCorpseItem() end
+function __IsoDeadBody:becomeCorpseItem(isRemote) end
 
 ---@return boolean
 function __IsoDeadBody:canBeGrabbed() end

@@ -50,6 +50,7 @@ function ISGatherBloodFromAnimal:waitToStart() end
 
 ---@param character IsoPlayer
 ---@param body IsoAnimal
+---@param hook IsoButcherHook
 ---@param luaHookUI ISButcherHookUI
 ---@param bucket InventoryItem?
 ---@return ISGatherBloodFromAnimal

@@ -1,17 +1,22 @@
 ---@meta
 
 ---@class math
-math = {}
 
----@return unknown
+---@param val number
+---@param min number
+---@param max number
+---@return number
 function math.clamp(val, min, max) end
 
+---@param val number
+---@param min number
+---@param max number
 ---@return boolean
 function math.isBetweenInclusive(val, min, max) end
 
 ---@param x number
 ---@param y number
----@return unknown
+---@return number
 function math.length2(x, y) end
 
 ---@param x number
@@ -19,9 +24,14 @@ function math.length2(x, y) end
 ---@return number
 function math.length2sq(x, y) end
 
----@return unknown
+---@param a1 number
+---@param a2 number
+---@param b1 number
+---@param b2 number
+---@return boolean
 function math.rangesOverlap(a1, a2, b1, b2) end
 
+---@param x number
 ---@return number
 function math.sign(x) end
 
@@ -68,20 +78,26 @@ function safeColorToTable(_c) end
 ---@return boolean
 function onMouseWheelScrollHandler(_self, _del) end
 
----@return boolean
+---@param object any
+---@return TypeGuard<table>
 function isTable(object) end
 
----@return boolean
+---@param object any
+---@return TypeGuard<function>
 function isFunction(object) end
 
----@return boolean
+---@param object any
+---@return TypeGuard<nil>
 function isNil(object) end
 
----@return boolean
+---@param object any
+---@return TypeGuard<boolean>
 function isBoolean(object) end
 
----@return boolean
+---@param object any
+---@return TypeGuard<number>
 function isNumber(object) end
 
----@return boolean
+---@param object any
+---@return TypeGuard<string>
 function isString(object) end

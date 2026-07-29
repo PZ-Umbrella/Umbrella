@@ -4,7 +4,6 @@
 ---@field boolOptions ISTickBox
 ---@field close ISButton
 ---@field getKey ISButton
----@field name unknown?
 ---@field player IsoPlayer
 ---@field repair ISButton
 ---@field spawn ISButton

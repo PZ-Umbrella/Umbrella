@@ -86,6 +86,10 @@ function KahluaUtil.identityHashCode(o) end
 ---@return integer
 function KahluaUtil.ipow(base, exponent) end
 
+---@param o any
+---@return boolean
+function KahluaUtil.isFunction(o) end
+
 ---@param vDouble number
 ---@return boolean
 function KahluaUtil.isNegative(vDouble) end

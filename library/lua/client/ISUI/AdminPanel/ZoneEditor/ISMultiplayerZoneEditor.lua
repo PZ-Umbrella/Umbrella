@@ -157,7 +157,7 @@ function ISMultiplayerZoneEditor_ButtonPanel:createChildren() end
 ---@param joypadData JoypadData
 function ISMultiplayerZoneEditor_ButtonPanel:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISMultiplayerZoneEditor_ButtonPanel:onJoypadDown(button, joypadData) end
 

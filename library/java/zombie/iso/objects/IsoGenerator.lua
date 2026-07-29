@@ -22,6 +22,9 @@ function __IsoGenerator:getFuel() end
 ---@return number
 function __IsoGenerator:getFuelPercentage() end
 
+---@return string
+function __IsoGenerator:getGeneratorItemType() end
+
 ---@return ArrayList<string>
 function __IsoGenerator:getItemsPowered() end
 
@@ -156,13 +159,6 @@ function IsoGenerator.new(cell) end
 ---@param sq IsoGridSquare
 ---@return IsoGenerator
 function IsoGenerator.new(item, cell, sq) end
-
----@param item InventoryItem
----@param cell IsoCell
----@param sq IsoGridSquare
----@param remote boolean
----@return IsoGenerator
-function IsoGenerator.new(item, cell, sq, remote) end
 
 ---@type Class<IsoGenerator>
 IsoGenerator.class = nil

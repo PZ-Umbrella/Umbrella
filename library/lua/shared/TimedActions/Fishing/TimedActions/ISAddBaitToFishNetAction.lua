@@ -23,7 +23,7 @@ function ISAddBaitToFishNetAction:stop() end
 
 function ISAddBaitToFishNetAction:update() end
 
----@return unknown
+---@return boolean
 function ISAddBaitToFishNetAction:waitToStart() end
 
 ---@param character IsoPlayer

@@ -2,29 +2,31 @@
 
 ---@class Fishing
 Fishing = {}
-Fishing.Bobber = nil ---@type Fishing.Bobber
-Fishing.ServerBobberManager = {} ---@type table<integer, Fishing.Bobber>
+Fishing.Bobber = nil ---@type Bobber
+Fishing.ServerBobberManager = {} ---@type table<integer, Bobber>
 
 ---@class Bobber
 ---@field attractTimer number
 ---@field catchFishStarted boolean
 ---@field fish Fishing.Fish?
----@field fishingLvl unknown
+---@field fishingLvl integer
 ---@field fishingRod Fishing.FishingRod
----@field id unknown
----@field lure unknown
+---@field id integer?
+---@field lure string
 ---@field nibbleTimer number
----@field player unknown
+---@field player IsoPlayer
 ---@field renderFunc function
----@field sq unknown
+---@field sq IsoGridSquare
 ---@field x number
 ---@field y number
 ---@field z number
 Bobber = {}
 
----@return unknown?
+---@param player IsoPlayer
+---@return Bobber?
 function Bobber.getBobber(player) end
 
+---@param data umbrella.FishingActionUpdateData
 function Bobber.onFishingActionMPUpdate(data) end
 
 ---@return boolean
@@ -48,7 +50,7 @@ function Bobber:getY() end
 ---@return number
 function Bobber:getZ() end
 
----@return unknown?
+---@return InventoryItem?
 function Bobber:grabFish() end
 
 ---@return boolean
@@ -60,70 +62,12 @@ function Bobber:move(dx, dy) end
 
 function Bobber:update() end
 
+---@param player IsoPlayer
 ---@param fishingRod Fishing.FishingRod
 ---@param x number
 ---@param y number
 ---@return Bobber
 function Bobber:new(player, fishingRod, x, y) end
-
----@class Fishing.Bobber
----@field attractTimer integer
----@field catchFishStarted boolean
----@field fish Fishing.Fish?
----@field fishingLvl integer
----@field fishingRod Fishing.FishingRod
----@field id integer
----@field lure string
----@field nibbleTimer integer
----@field player IsoPlayer
----@field renderFunc function
----@field sq IsoGridSquare
----@field x number
----@field y number
----@field z number
-local __fishing_Bobber = {}
-
-function __fishing_Bobber.onFishingActionMPUpdate(data) end
-
----@return boolean
-function __fishing_Bobber:attractFish() end
-
-function __fishing_Bobber:destroy() end
-
----@return number
----@return number
-function __fishing_Bobber:getFreeWaterDirection() end
-
----@return integer
-function __fishing_Bobber:getNibbleTime() end
-
----@return number
-function __fishing_Bobber:getX() end
-
----@return number
-function __fishing_Bobber:getY() end
-
----@return number
-function __fishing_Bobber:getZ() end
-
----@return InventoryItem?
-function __fishing_Bobber:grabFish() end
-
----@return boolean
-function __fishing_Bobber:isOnGround() end
-
----@param dx number
----@param dy number
-function __fishing_Bobber:move(dx, dy) end
-
-function __fishing_Bobber:update() end
-
----@param player IsoPlayer
----@param fishingRod Fishing.FishingRod
----@param x number
----@param y number
----@return Fishing.Bobber
-function __fishing_Bobber:new(player, fishingRod, x, y) end
 
 ---@class umbrella.FishingActionUpdateData
 ---@field bobberItem InventoryItem?

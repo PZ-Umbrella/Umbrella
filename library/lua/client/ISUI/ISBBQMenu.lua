@@ -18,6 +18,10 @@ function ISBBQMenu.onDisplayInfo(worldobjects, player, bbq) end
 ---@param bbq IsoBarbecue
 function ISBBQMenu.onExtinguish(worldobjects, player, bbq) end
 
+---@param player integer
+---@param context ISContextMenu
+---@param worldobjects IsoObject[]
+---@param test boolean
 ---@return boolean?
 function ISBBQMenu.OnFillWorldObjectContextMenu(player, context, worldobjects, test) end
 
@@ -30,6 +34,7 @@ function ISBBQMenu.onInsertPropaneTank(worldobjects, player, bbq, tank) end
 ---@param worldobjects IsoObject[]
 ---@param player integer
 ---@param bbq IsoBarbecue
+---@param tank InventoryItem | IsoWorldInventoryObject
 function ISBBQMenu.onRemovePropaneTank(worldobjects, player, bbq, tank) end
 
 ---@param worldobjects IsoObject[]

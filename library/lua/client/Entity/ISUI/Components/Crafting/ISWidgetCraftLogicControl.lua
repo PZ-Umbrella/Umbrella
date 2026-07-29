@@ -59,8 +59,7 @@ function ISWidgetCraftLogicControl:sanitizeCraftQuantity() end
 ---@param amount number
 function ISWidgetCraftLogicControl:setCraftQuantity(amount) end
 
----@param force boolean
-function ISWidgetCraftLogicControl:startCraft(force) end
+function ISWidgetCraftLogicControl:startCraft() end
 
 function ISWidgetCraftLogicControl:update() end
 

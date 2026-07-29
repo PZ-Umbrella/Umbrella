@@ -58,7 +58,7 @@ function ISPaperCursor:isValid(square) end
 
 ---@param joypadIndex integer
 ---@param joypadData JoypadData
----@param button integer
+---@param button JoypadButton
 ---@return unknown?
 function ISPaperCursor:onJoypadPressButton(joypadIndex, joypadData, button) end
 

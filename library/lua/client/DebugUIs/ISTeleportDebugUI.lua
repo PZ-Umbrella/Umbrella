@@ -7,7 +7,6 @@
 ---@field entryZ ISTextEntryBox
 ---@field maxLines number
 ---@field multipleLine boolean
----@field name unknown?
 ---@field no ISButton
 ---@field numLines number
 ---@field onclick (fun(target: unknown?, x: string, y: string, z: string))?

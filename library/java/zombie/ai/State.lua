@@ -29,6 +29,9 @@ function __State:getAnimEventBroadcaster() end
 ---@param modifiers MoveDeltaModifiers
 function __State:getDeltaModifiers(owner, modifiers) end
 
+---@return UpdateSchedulerSimulationLevel
+function __State:getMinimumSimulationLevel() end
+
 ---@return string
 function __State:getName() end
 

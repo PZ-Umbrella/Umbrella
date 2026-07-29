@@ -121,7 +121,7 @@ function __AngelCodeFont:getWidth(text, start, _end, xadvance) end
 function __AngelCodeFont:getYOffset(text) end
 
 ---@return boolean
-function __AngelCodeFont:isEmpty() end
+function __AngelCodeFont:isLoading() end
 
 ---@return boolean
 function __AngelCodeFont:isSdf() end

@@ -363,6 +363,9 @@ function __IsoAnimal:getLastCellSavedToX() end
 ---@return integer
 function __IsoAnimal:getLastCellSavedToY() end
 
+---@return WorldSoundManager.WorldSound
+function __IsoAnimal:getLastSoundRespondedTo() end
+
 ---@return string
 function __IsoAnimal:getMate() end
 
@@ -758,6 +761,9 @@ IsoAnimal = {}
 
 ---@type integer
 IsoAnimal.INVALID_SQUARE_XY = nil
+
+---@type number
+IsoAnimal.SOUND_RADIUS_MULTIPLIER_WILD = nil
 
 ---@type Vector2
 IsoAnimal.tempVector2 = nil

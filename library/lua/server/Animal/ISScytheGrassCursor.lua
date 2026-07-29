@@ -9,7 +9,6 @@
 ---@field renderFloorHelper boolean
 ---@field scythe InventoryItem
 ---@field skipBuildAction boolean
----@field skipWalk boolean
 ISScytheGrassCursor = ISBuildingObject:derive("ISScytheGrassCursor")
 ISScytheGrassCursor.Type = "ISScytheGrassCursor"
 
@@ -26,10 +25,6 @@ function ISScytheGrassCursor:getAPrompt() end
 ---@param squares IsoGridSquare[]
 ---@return IsoGridSquare?
 function ISScytheGrassCursor:getClosestSquare(squares) end
-
----@param square IsoGridSquare
----@return IsoFire[]
-function ISScytheGrassCursor:getGrassObject(square) end
 
 ---@return string?
 function ISScytheGrassCursor:getLBPrompt() end
@@ -69,7 +64,7 @@ function ISScytheGrassCursor:isValidArea(x, y, z) end
 
 ---@param joypadIndex integer
 ---@param joypadData JoypadData
----@param button integer
+---@param button JoypadButton
 ---@return unknown?
 function ISScytheGrassCursor:onJoypadPressButton(joypadIndex, joypadData, button) end
 

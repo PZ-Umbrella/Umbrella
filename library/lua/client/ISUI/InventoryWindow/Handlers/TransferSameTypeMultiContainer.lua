@@ -1,7 +1,7 @@
 ---@meta
 
 ---@class ISInventoryWindowControlHandler_TransferSameTypeMultiContainer : ISInventoryWindowControlHandler
----@field control unknown
+---@field control ISUIElement?
 ---@field inventoryContainerCount number
 ---@field isMouseOver boolean
 ---@field itemsToTransferMap table
@@ -11,17 +11,20 @@ ISInventoryWindowControlHandler_TransferSameTypeMultiContainer =
 ISInventoryWindowControlHandler_TransferSameTypeMultiContainer.Type =
 	"ISInventoryWindowControlHandler_TransferSameTypeMultiContainer"
 
----@return table
+---@param lootContainer ItemContainer
+---@param allItemsMap table<string, InventoryItem[]>
+---@return InventoryItem[]
 function ISInventoryWindowControlHandler_TransferSameTypeMultiContainer:consumeItems(lootContainer, allItemsMap) end
 
----@return unknown
+---@return ISUIElement
 function ISInventoryWindowControlHandler_TransferSameTypeMultiContainer:getControl() end
 
----@return table
+---@param container ItemContainer
+---@return table<string, InventoryItem[]>
 function ISInventoryWindowControlHandler_TransferSameTypeMultiContainer:getItemsTable(container) end
 
----@return table
----@return table
+---@return InventoryItem[]
+---@return table<InventoryItem, boolean>
 function ISInventoryWindowControlHandler_TransferSameTypeMultiContainer:getItemsToTransfer() end
 
 ---@param button ISButton

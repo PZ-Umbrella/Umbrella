@@ -19,10 +19,13 @@ function ISMusicThreatStatusPanel:createChildren() end
 
 function ISMusicThreatStatusPanel:onButtonReload() end
 
+---@param _newval number
+---@param _slider ISSliderPanel
 function ISMusicThreatStatusPanel:onSliderChange(_newval, _slider) end
 
 ---@param _index integer
 ---@param _selected boolean
+---@param _tickbox ISTickBox
 function ISMusicThreatStatusPanel:onTicked(_index, _selected, _arg1, _arg2, _tickbox) end
 
 function ISMusicThreatStatusPanel:render() end

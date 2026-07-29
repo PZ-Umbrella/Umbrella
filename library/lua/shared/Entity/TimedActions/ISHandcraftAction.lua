@@ -7,6 +7,7 @@
 ---@field containers ArrayList<ItemContainer>
 ---@field craftBench CraftBench
 ---@field craftRecipe CraftRecipe
+---@field craftStarted boolean
 ---@field eatPercentage number
 ---@field isoObject IsoObject
 ---@field items ArrayList<InventoryItem>?

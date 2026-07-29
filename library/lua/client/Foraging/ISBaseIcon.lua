@@ -34,6 +34,7 @@
 ---@field isoMarker IsoMarker?
 ---@field isSeen boolean
 ---@field isSeenThisUpdate boolean
+---@field isValidSquare boolean
 ---@field itemCount number
 ---@field itemList ArrayList<InventoryItem>?
 ---@field itemObj InventoryItem?

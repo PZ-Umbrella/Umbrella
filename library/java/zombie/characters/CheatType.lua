@@ -9,6 +9,9 @@ function __CheatType:getTooltip() end
 CheatType = {}
 
 ---@type CheatType
+CheatType.ALWAYS_DAY = nil
+
+---@type CheatType
 CheatType.ANIMAL = nil
 
 ---@type CheatType
@@ -87,6 +90,9 @@ function CheatType.fromId(id) end
 ---@param str string
 ---@return CheatType
 function CheatType.fromString(str) end
+
+---@return List<CheatType>
+function CheatType.getList() end
 
 ---@param name string
 ---@return CheatType

@@ -1,8 +1,8 @@
 ---@meta
 
 ---@class ISMPEditAccount : ISPanelJoypad
----@field account unknown?
----@field accountLoginList table
+---@field account Account?
+---@field accountLoginList table<string, boolean>
 ---@field addBelow ISTickBox
 ---@field authType ISComboBox
 ---@field cancelBtn ISButton
@@ -12,28 +12,31 @@
 ---@field googleKey string
 ---@field isPasswordModified boolean
 ---@field login ISTextEntryBox
----@field originalHeight number
 ---@field password ISTextEntryBox
 ---@field rememberPasswordTickBox ISTickBox
 ---@field saveBtn ISButton
 ---@field seePasswordBtn ISButton
----@field server unknown
----@field servers_serveripmessage_lines unknown
----@field servers_serveripwarning_lines unknown
+---@field server Server
+---@field servers_serveripmessage_lines string[]
+---@field servers_serveripwarning_lines string[]
 ---@field steamRelayTickBox ISTickBox
----@field ui ISMPSelectAccount | MultiplayerUI
----@field ui_droplist unknown
----@field ui_password_eye unknown
+---@field ui ISUIElement
+---@field ui_droplist Texture
+---@field ui_password_eye Texture
 ISMPEditAccount = ISPanelJoypad:derive("ISMPEditAccount")
 ISMPEditAccount.Type = "ISMPEditAccount"
 ISMPEditAccount.instance = nil ---@type ISMPEditAccount?
 
 function ISMPEditAccount.OnConnected() end
 
+---@param message string
+---@param detail string?
 function ISMPEditAccount.OnConnectFailed(message, detail) end
 
+---@param txtEntry ISTextEntryBox
 function ISMPEditAccount.onLoginTextChange(txtEntry) end
 
+---@param message string
 function ISMPEditAccount.OnQRReceived(message) end
 
 function ISMPEditAccount:destroy() end
@@ -53,7 +56,7 @@ function ISMPEditAccount:onGainJoypadFocus(joypadData) end
 ---@param joypadData JoypadData
 function ISMPEditAccount:onJoypadBeforeDeactivate(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISMPEditAccount:onJoypadDown(button) end
 
 ---@param joypadData JoypadData
@@ -82,13 +85,18 @@ function ISMPEditAccount:onMouseUpOutside(x, y) end
 ---@param key integer
 function ISMPEditAccount:onOtherKey(key) end
 
+---@param oldw number
+---@param oldh number
+---@param neww number
+---@param newh number
 function ISMPEditAccount:onResolutionChange(oldw, oldh, neww, newh) end
 
 function ISMPEditAccount:prerender() end
 
 function ISMPEditAccount:render() end
 
----@param ui ISMPSelectAccount | MultiplayerUI
----@param account unknown?
+---@param ui ISUIElement
+---@param server Server
+---@param account Account?
 ---@return ISMPEditAccount
 function ISMPEditAccount:new(ui, server, account) end

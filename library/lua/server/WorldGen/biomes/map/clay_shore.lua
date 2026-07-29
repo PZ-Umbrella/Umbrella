@@ -30,6 +30,13 @@ worldgen.biomes_map.clay_shore = {
 		},
 	},
 	params = {
+		subbiomes = {
+			TREE = {
+				TREE = {
+					worldgen.subbiomes.no_tree,
+				},
+			},
+		},
 		landscape = {
 			"FOREST",
 		},

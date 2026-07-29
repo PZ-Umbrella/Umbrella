@@ -62,7 +62,7 @@ function ISCharacterInfo:onJoypadDirRight() end
 
 function ISCharacterInfo:onJoypadDirUp() end
 
----@param button integer
+---@param button JoypadButton
 function ISCharacterInfo:onJoypadDown(button) end
 
 ---@param joypadData JoypadData
@@ -76,6 +76,7 @@ function ISCharacterInfo:prerender() end
 
 function ISCharacterInfo:render() end
 
+---@param visible boolean
 function ISCharacterInfo:setVisible(visible) end
 
 function ISCharacterInfo:updateTooltipForJoypad() end

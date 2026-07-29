@@ -15,7 +15,6 @@
 ---@field lockButton ISButton
 ---@field locked boolean
 ---@field maxTextLength integer
----@field name unknown?
 ---@field newPage table
 ---@field nextPage ISButton
 ---@field no ISButton
@@ -49,7 +48,7 @@ function ISUIWriteJournal:onJoypadDirDown(joypadData) end
 ---@param joypadData JoypadData
 function ISUIWriteJournal:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISUIWriteJournal:onJoypadDown(button, joypadData) end
 

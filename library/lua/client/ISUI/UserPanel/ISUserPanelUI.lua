@@ -27,8 +27,12 @@ function ISUserPanelUI:initialise() end
 ---@param y number
 function ISUserPanelUI:onOptionMouseDown(button, x, y) end
 
+---@param option integer
+---@param enabled boolean
 function ISUserPanelUI:onShowConnectionInfo(option, enabled) end
 
+---@param option integer
+---@param enabled boolean
 function ISUserPanelUI:onShowServerInfo(option, enabled) end
 
 function ISUserPanelUI:render() end

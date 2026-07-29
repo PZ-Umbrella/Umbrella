@@ -47,12 +47,15 @@ function ISDestroyCursor:_isWall(object) end
 ---@return boolean
 function ISDestroyCursor:canDestroy(object) end
 
+---@param object IsoObject
 ---@return boolean
 function ISDestroyCursor:canDestroyWall_North(object) end
 
+---@param object IsoObject
 ---@return boolean
 function ISDestroyCursor:canDestroyWall_West(object) end
 
+---@param object IsoObject
 function ISDestroyCursor:checkNorthWestCorner(object) end
 
 ---@param object IsoObject
@@ -83,6 +86,7 @@ function ISDestroyCursor:getObjectList() end
 ---@return string?
 function ISDestroyCursor:getRBPrompt() end
 
+---@param object IsoObject
 ---@return boolean
 function ISDestroyCursor:isBasementWallAdjacentToTheVoid(object) end
 
@@ -96,7 +100,7 @@ function ISDestroyCursor:isValid(square) end
 
 ---@param joypadIndex integer
 ---@param joypadData JoypadData
----@param button integer
+---@param button JoypadButton
 ---@return unknown?
 function ISDestroyCursor:onJoypadPressButton(joypadIndex, joypadData, button) end
 

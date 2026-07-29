@@ -31,10 +31,12 @@ function ISSLFrame:dataToGrid(_t, _i) end
 
 ---@param _x number
 ---@param _y number
+---@param _t number
 function ISSLFrame:drawGridData(_x, _y, _t) end
 
 ---@param _x number
 ---@param _y number
+---@param _t number
 function ISSLFrame:drawGridDataold(_x, _y, _t) end
 
 function ISSLFrame:drawLinePoints() end

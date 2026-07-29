@@ -1,6 +1,7 @@
 ---@meta
 
 ---@class ISSearchManager : ISPanel
+---@field _nextForageReq number
 ---@field activeAlpha number
 ---@field activeIconRadius number
 ---@field activeIcons table<string, ISBaseIcon>
@@ -162,6 +163,8 @@ function ISSearchManager.setManager(_character, _manager) end
 ---@param _z number
 ---@return ISBaseIcon?
 function ISSearchManager:addIcon(_id, _iconClass, _itemType, _itemObj, _x, _y, _z) end
+
+function ISSearchManager:applyServerPool(_zoneId, _icons) end
 
 function ISSearchManager:checkActiveZones() end
 

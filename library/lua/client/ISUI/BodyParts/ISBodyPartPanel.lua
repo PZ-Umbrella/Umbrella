@@ -65,7 +65,7 @@ function ISBodyPartPanel:getRgbForValue(_val) end
 
 function ISBodyPartPanel:initialise() end
 
----@param button integer
+---@param button JoypadButton
 function ISBodyPartPanel:onJoypadDown(button) end
 
 ---@param x number
@@ -126,6 +126,8 @@ function ISBodyPartPanel:setSelected(mx, my, bLock) end
 ---@param _anchorY number
 function ISBodyPartPanel:setSelectLinesAnchor(_anchorX, _anchorY) end
 
+---@param _b boolean
+---@param _text string
 function ISBodyPartPanel:setToolTip(_b, _text) end
 
 ---@param _bodyPartType BodyPartType

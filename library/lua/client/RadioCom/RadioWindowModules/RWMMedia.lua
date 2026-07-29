@@ -46,7 +46,7 @@ function RWMMedia:getYPrompt() end
 
 function RWMMedia:initialise() end
 
----@param button integer
+---@param button JoypadButton
 function RWMMedia:onJoypadDown(button) end
 
 function RWMMedia:prerender() end

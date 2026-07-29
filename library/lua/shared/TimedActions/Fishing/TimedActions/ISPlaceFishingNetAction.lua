@@ -1,9 +1,9 @@
 ---@meta
 
 ---@class ISPlaceFishingNetAction : ISBaseTimedAction
----@field item unknown
----@field sprite unknown
----@field square unknown
+---@field item InventoryItem
+---@field sprite IsoSprite
+---@field square IsoGridSquare
 ISPlaceFishingNetAction = ISBaseTimedAction:derive("ISPlaceFishingNetAction")
 ISPlaceFishingNetAction.Type = "ISPlaceFishingNetAction"
 
@@ -22,8 +22,12 @@ function ISPlaceFishingNetAction:start() end
 
 function ISPlaceFishingNetAction:stop() end
 
----@return unknown
+---@return boolean
 function ISPlaceFishingNetAction:waitToStart() end
 
+---@param character IsoPlayer
+---@param item InventoryItem
+---@param square IsoGridSquare
+---@param sprite IsoSprite
 ---@return ISPlaceFishingNetAction
 function ISPlaceFishingNetAction:new(character, item, square, sprite) end

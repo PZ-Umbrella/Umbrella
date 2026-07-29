@@ -2,8 +2,8 @@
 
 ---@class ISThrowCorpseOverFence : ISBaseTimedAction
 ---@field allowedWhileDraggingCorpses boolean
----@field dir unknown
----@field fence unknown
+---@field dir IsoDirections
+---@field fence IsoObject
 ISThrowCorpseOverFence = ISBaseTimedAction:derive("ISThrowCorpseOverFence")
 ISThrowCorpseOverFence.Type = "ISThrowCorpseOverFence"
 
@@ -24,8 +24,11 @@ function ISThrowCorpseOverFence:stop() end
 
 function ISThrowCorpseOverFence:update() end
 
----@return unknown
+---@return boolean
 function ISThrowCorpseOverFence:waitToStart() end
 
+---@param character IsoPlayer
+---@param fence IsoObject
+---@param dir IsoDirections
 ---@return ISThrowCorpseOverFence
 function ISThrowCorpseOverFence:new(character, fence, dir) end

@@ -23,6 +23,9 @@ function __IsoWorldRegion:getCellX() end
 ---@return integer
 function __IsoWorldRegion:getCellY() end
 
+---@return List<IsoChunkRegion>
+function __IsoWorldRegion:getChunkRegions() end
+
 ---@return Color
 function __IsoWorldRegion:getColor() end
 

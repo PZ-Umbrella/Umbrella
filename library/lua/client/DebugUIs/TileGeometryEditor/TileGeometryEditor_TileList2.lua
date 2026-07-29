@@ -39,6 +39,7 @@ function TileGeometryEditor_TileList2:isValidColRow(col, row) end
 function TileGeometryEditor_TileList2:onClearAssignedDepthTextures() end
 
 ---@param tileName string
+---@param tileNameRight string
 function TileGeometryEditor_TileList2:onCopyGeometryFromRight(tileName, tileNameRight) end
 
 ---@param tileName string

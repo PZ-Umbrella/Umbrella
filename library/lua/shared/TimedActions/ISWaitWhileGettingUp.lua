@@ -1,6 +1,7 @@
 ---@meta
 
 ---@class ISWaitWhileGettingUp : ISBaseTimedAction
+---@field allowedWhileDraggingCorpses boolean
 ---@field onCompleteArgs table?
 ---@field onCompleteFunc function?
 ---@field retriggerLastAction boolean

@@ -57,6 +57,9 @@ function ISServerSandboxOptionsUI:new(x, y, width, height) end
 local __ISServerSandboxOptionsUI_SandboxOptionsScreenListBox = ISScrollingListBox:derive("SandboxOptionsScreenListBox")
 __ISServerSandboxOptionsUI_SandboxOptionsScreenListBox.Type = "SandboxOptionsScreenListBox"
 
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
 ---@return number
 function __ISServerSandboxOptionsUI_SandboxOptionsScreenListBox:doDrawItem(y, item, alt) end
 
@@ -66,7 +69,7 @@ function __ISServerSandboxOptionsUI_SandboxOptionsScreenListBox:onJoypadDirLeft(
 ---@param joypadData JoypadData
 function __ISServerSandboxOptionsUI_SandboxOptionsScreenListBox:onJoypadDirRight(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __ISServerSandboxOptionsUI_SandboxOptionsScreenListBox:onJoypadDown(button, joypadData) end
 
@@ -87,7 +90,7 @@ function __ISServerSandboxOptionsUI_SandboxOptionsScreenPanel:onJoypadDirLeft(jo
 ---@param joypadData JoypadData
 function __ISServerSandboxOptionsUI_SandboxOptionsScreenPanel:onJoypadDirRight(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __ISServerSandboxOptionsUI_SandboxOptionsScreenPanel:onJoypadDown(button, joypadData) end
 
@@ -105,7 +108,7 @@ function __ISServerSandboxOptionsUI_SandboxOptionsScreenPanel:render() end
 ---@class ISServerSandboxOptionsUI.SandboxOptionsScreenPresetPanel : ISPanelJoypad
 ---@field buttonApplyPreset ISButton
 ---@field listbox ISScrollingListBox
----@field options unknown
+---@field options SandboxOptions
 local __ISServerSandboxOptionsUI_SandboxOptionsScreenPresetPanel =
 	ISPanelJoypad:derive("SandboxOptionsScreenPresetPanel")
 __ISServerSandboxOptionsUI_SandboxOptionsScreenPresetPanel.Type = "SandboxOptionsScreenPresetPanel"
@@ -121,16 +124,17 @@ function __ISServerSandboxOptionsUI_SandboxOptionsScreenPresetPanel:onButtonAppl
 
 function __ISServerSandboxOptionsUI_SandboxOptionsScreenPresetPanel:prerender() end
 
+---@param options SandboxOptions
 function __ISServerSandboxOptionsUI_SandboxOptionsScreenPresetPanel:settingsToUI(options) end
 
 ---@class ISServerSandboxOptionsUI.SandboxOptionsScreenGroupBox : ISServerSandboxOptionsUI.SandboxOptionsScreenPanel
----@field contents unknown
----@field controls table
+---@field contents ISServerSandboxOptionsUI.SandboxOptionsScreenPanel
+---@field controls ISUIElement[]
 ---@field cover ISPanel
----@field joypadButtons unknown
----@field labels table
+---@field joypadButtons ISButtons[]
+---@field labels ISLabel[]
 ---@field MAX_WIDTH number
----@field settingNames table
+---@field settingNames string[]
 ---@field settings unknown?
 ---@field tickBox ISTickBox
 ---@field tickBoxLabel string
@@ -142,10 +146,13 @@ function __ISServerSandboxOptionsUI_SandboxOptionsScreenGroupBox:createChildren(
 
 function __ISServerSandboxOptionsUI_SandboxOptionsScreenGroupBox:ensureVisible() end
 
+---@param index integer
+---@param selected boolean
 function __ISServerSandboxOptionsUI_SandboxOptionsScreenGroupBox:onTicked(index, selected) end
 
 function __ISServerSandboxOptionsUI_SandboxOptionsScreenGroupBox:setJoypadButtons() end
 
+---@param settings SandboxOptions
 function __ISServerSandboxOptionsUI_SandboxOptionsScreenGroupBox:settingsToUI(settings) end
 
 ---@param x number

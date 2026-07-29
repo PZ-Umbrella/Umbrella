@@ -2,8 +2,8 @@
 
 ---@class ISUsersList : ISPanel
 ---@field add ISButton
----@field arrowDown unknown
----@field arrowUp unknown
+---@field arrowDown Texture
+---@field arrowUp Texture
 ---@field bannedIPs ISButton
 ---@field close ISButton
 ---@field datas ISScrollingListBox
@@ -13,10 +13,10 @@
 ---@field roleColumnX number
 ---@field searchEntry ISTextEntryBox
 ---@field showOnlineOnly boolean
----@field sortByLastConnectionButton unknown
----@field sortByNameButton unknown
----@field sortByRoleButton unknown
----@field sortByWarningsButton unknown
+---@field sortByLastConnectionButton ISButton
+---@field sortByNameButton ISButton
+---@field sortByRoleButton ISButton
+---@field sortByWarningsButton ISButton
 ---@field sortDown boolean
 ---@field sortType string
 ---@field warningsColumnX number
@@ -24,6 +24,8 @@ ISUsersList = ISPanel:derive("ISUsersList")
 ISUsersList.Type = "ISUsersList"
 ISUsersList.instance = nil ---@type ISUsersList?
 
+---@param user1 umbrella.ISScrollingListBox.Item
+---@param user2 umbrella.ISScrollingListBox.Item
 ---@return boolean?
 function ISUsersList.comparator(user1, user2) end
 
@@ -38,6 +40,7 @@ function ISUsersList:calculateColumnPositions() end
 function ISUsersList:closeModal() end
 
 ---@param name string
+---@param sortType string
 ---@param x number
 ---@param width number
 ---@return ISButton
@@ -68,6 +71,7 @@ function ISUsersList:onClick(button) end
 ---@param action string
 function ISUsersList:onClickOption(item, action) end
 
+---@param button ISButton
 function ISUsersList:onClickSort(button) end
 
 ---@param button ISButton

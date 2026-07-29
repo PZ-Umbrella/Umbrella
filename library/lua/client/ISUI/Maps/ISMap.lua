@@ -69,7 +69,7 @@ function ISMap:onConfirmRemove(button, note) end
 ---@param joypadData JoypadData
 function ISMap:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISMap:onJoypadDown(button, joypadData) end
 

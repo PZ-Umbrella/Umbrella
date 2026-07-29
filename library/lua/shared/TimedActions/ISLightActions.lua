@@ -46,6 +46,7 @@ function ISLightActions:isValidRemoveLightBulb() end
 function ISLightActions:perform() end
 
 ---@param mode string
+---@param character IsoPlayer
 ---@param lightswitch IsoLightSwitch
 ---@param item InventoryItem?
 ---@return ISLightActions

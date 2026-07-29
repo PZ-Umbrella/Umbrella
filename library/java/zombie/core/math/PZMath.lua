@@ -160,10 +160,10 @@ function PZMath.clamp_01(val) end
 ---@param y2 number
 ---@param px number
 ---@param py number
----@param epsilon number
+---@param endpointSnapEpsilon number
 ---@param out Vector2f
 ---@return number
-function PZMath.closestPointOnLineSegment(x1, y1, x2, y2, px, py, epsilon, out) end
+function PZMath.closestPointOnLineSegment(x1, y1, x2, y2, px, py, endpointSnapEpsilon, out) end
 
 ---@param x1 number
 ---@param y1 number

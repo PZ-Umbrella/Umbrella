@@ -10,8 +10,14 @@ JoypadIconTextureGetter.Type = "JoypadIconTextureGetter"
 ---@return string
 function JoypadIconTextureGetter:getFileNamePrefix() end
 
+---@return unknown
+function JoypadIconTextureGetter:getHeightOrig() end
+
 ---@return string
 function JoypadIconTextureGetter:getTextureFilePath() end
+
+---@return unknown
+function JoypadIconTextureGetter:getWidthOrig() end
 
 ---@param newPrefix string
 function JoypadIconTextureGetter:setFileNamePrefix(newPrefix) end

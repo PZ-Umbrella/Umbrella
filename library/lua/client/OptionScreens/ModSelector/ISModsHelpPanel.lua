@@ -14,7 +14,7 @@ function ISModsHelpPanel:doRightJoystickScrolling() end
 ---@param joypadData JoypadData
 function ISModsHelpPanel:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISModsHelpPanel:onJoypadDown(button, joypadData) end
 

@@ -13,42 +13,54 @@ local __debugScenarios_Trailer3Scenario_Building = {
 ---@param x number
 ---@param y number
 ---@param z number
+---@param tile string
+---@param openTile string
+---@param north boolean
 function __debugScenarios_Trailer3Scenario_Building.addDoor(x, y, z, tile, openTile, north) end
 
 ---@param x number
 ---@param y number
 ---@param z number
+---@param tile string
+---@param north boolean
 function __debugScenarios_Trailer3Scenario_Building.addFence(x, y, z, tile, north) end
 
 ---@param x number
 ---@param y number
 ---@param z number
+---@param tile string
 function __debugScenarios_Trailer3Scenario_Building.addFloor(x, y, z, tile) end
 
 ---@param x number
 ---@param y number
 ---@param z number
+---@param tile string
 function __debugScenarios_Trailer3Scenario_Building.addItem(x, y, z, tile) end
 
 ---@param x number
 ---@param y number
 ---@param z number
+---@param north boolean?
 function __debugScenarios_Trailer3Scenario_Building.addStairs(x, y, z, north) end
 
 ---@param x number
 ---@param y number
 ---@param z number
+---@param tile string
+---@param north boolean
 function __debugScenarios_Trailer3Scenario_Building.addWall(x, y, z, tile, north) end
 
 ---@param x number
 ---@param y number
 ---@param z number
+---@param tile string
+---@param north boolean
 function __debugScenarios_Trailer3Scenario_Building.addWallFrame(x, y, z, tile, north) end
 
 ---@param x number
 ---@param y number
 ---@param z number
----@return unknown
+---@return IsoGridSquare
 function __debugScenarios_Trailer3Scenario_Building.getSQ(x, y, z) end
 
 ---@param sq IsoGridSquare

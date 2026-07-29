@@ -22,7 +22,7 @@ function ISRemoveFishingNetAction:stop() end
 
 function ISRemoveFishingNetAction:update() end
 
----@return unknown
+---@return boolean
 function ISRemoveFishingNetAction:waitToStart() end
 
 ---@param character IsoPlayer

@@ -4,12 +4,16 @@
 ---@field character IsoPlayer
 ---@field drawJoypadFocus boolean
 ---@field listbox1 ISLiteratureList
+---@field listbox1Filter ISTextEntryBox
 ---@field listbox2 ISLiteratureList
+---@field listbox2Filter ISTextEntryBox
 ---@field listbox3 ISLiteratureList
 ---@field listbox5 ISLiteratureGrowingList
 ---@field listboxMedia table
 ---@field owner ISCharacterScreen
 ---@field playerNum integer
+---@field recipeListBox ISScrollingListBox
+---@field recipeListFilter ISTextEntryBox
 ---@field tabs ISTabPanel
 ISLiteratureUI = ISCollapsableWindowJoypad:derive("ISLiteratureUI")
 ISLiteratureUI.Type = "ISLiteratureUI"
@@ -47,13 +51,13 @@ function ISLiteratureUI:createChildren() end
 ---@param joypadData JoypadData
 function ISLiteratureUI:onGainJoypadFocus(joypadData) end
 
----@param button ISButton
+---@param button JoypadButton
 function ISLiteratureUI:onJoypadDirDown(button) end
 
----@param button ISButton
+---@param button JoypadButton
 function ISLiteratureUI:onJoypadDirUp(button) end
 
----@param button integer
+---@param button JoypadButton
 function ISLiteratureUI:onJoypadDown(button) end
 
 ---@param joypadData JoypadData
@@ -79,8 +83,13 @@ function ISLiteratureUI:new(x, y, width, height, character, owner) end
 
 ---@class ISLiteratureList : ISScrollingListBox
 ---@field character IsoPlayer
+---@field filterBox ISTextEntryBox
+---@field list ISScrollingListBox
+---@field parent ISLiteratureUI
 ISLiteratureList = ISScrollingListBox:derive("ISListeratureList")
 ISLiteratureList.Type = "ISListeratureList"
+
+function ISLiteratureList:createChildren() end
 
 ---@param y number
 ---@param item umbrella.ISScrollingListBox.Item

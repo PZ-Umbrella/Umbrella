@@ -4,7 +4,6 @@
 ---@field currentTime number
 ---@field forageIcon ISForageIcon
 ---@field iconID string
----@field itemCount integer
 ---@field itemDataList table[]
 ---@field itemDef umbrella.Foraging.ItemDefinition
 ---@field itemType string
@@ -17,8 +16,6 @@ ISForageAction.Type = "ISForageAction"
 
 ---@return boolean
 function ISForageAction:complete() end
-
-function ISForageAction:forage() end
 
 ---@return number
 function ISForageAction:getDuration() end

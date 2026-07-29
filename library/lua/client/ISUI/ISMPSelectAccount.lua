@@ -7,9 +7,9 @@
 ---@field closeBtn ISButton
 ---@field connectBtn ISButton
 ---@field modal ISMPEditAccount
----@field server unknown?
----@field ui MultiplayerUI
----@field ui_droplist unknown
+---@field server Server?
+---@field ui ISUIElement
+---@field ui_droplist Texture
 ISMPSelectAccount = ISPanelJoypad:derive("ISMPSelectAccount")
 ISMPSelectAccount.Type = "ISMPSelectAccount"
 
@@ -26,7 +26,7 @@ function ISMPSelectAccount:onGainJoypadFocus(joypadData) end
 ---@param joypadData JoypadData
 function ISMPSelectAccount:onJoypadBeforeDeactivate(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISMPSelectAccount:onJoypadDown(button) end
 
 ---@param joypadData JoypadData
@@ -52,6 +52,10 @@ function ISMPSelectAccount:onMouseUp(x, y) end
 ---@param y number
 function ISMPSelectAccount:onMouseUpOutside(x, y) end
 
+---@param oldw number
+---@param oldh number
+---@param neww number
+---@param newh number
 function ISMPSelectAccount:onResolutionChange(oldw, oldh, neww, newh) end
 
 function ISMPSelectAccount:prerender() end
@@ -60,6 +64,7 @@ function ISMPSelectAccount:render() end
 
 function ISMPSelectAccount:updateButtons() end
 
----@param ui MultiplayerUI
+---@param ui ISUIElement
+---@param server Server
 ---@return ISMPSelectAccount
 function ISMPSelectAccount:new(ui, server) end

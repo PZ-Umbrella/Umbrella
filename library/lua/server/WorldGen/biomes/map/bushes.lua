@@ -12,6 +12,13 @@ worldgen.biomes_map.bush_dry = {
 		},
 	},
 	params = {
+		subbiomes = {
+			TREE = {
+				TREE = {
+					worldgen.subbiomes.no_tree,
+				},
+			},
+		},
 		bush = {
 			"DRY",
 		},

@@ -27,7 +27,7 @@ function ISCharacterInfoWindow:initialise() end
 ---@return boolean
 function ISCharacterInfoWindow:isActive(viewName) end
 
----@param button integer
+---@param button JoypadButton
 function ISCharacterInfoWindow:onJoypadDown(button) end
 
 ---@param view umbrella.ISTabPanel.View

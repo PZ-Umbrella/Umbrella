@@ -109,7 +109,7 @@ function ISBuildingObject:onJoypadDirUp(joypadData) end
 
 ---@param joypadIndex integer
 ---@param joypadData JoypadData
----@param button integer
+---@param button JoypadButton
 function ISBuildingObject:onJoypadPressButton(joypadIndex, joypadData, button) end
 
 ---@param action ISBaseTimedAction

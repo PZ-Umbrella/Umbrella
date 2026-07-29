@@ -31,12 +31,12 @@ function ISAtomUIJoypad:onJoypadBeforeDeactivate(joypadData) end
 ---@param joypadData JoypadData
 function ISAtomUIJoypad:onJoypadBeforeDeactivate_Descendant(descendant, joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISAtomUIJoypad:onJoypadButtonReleased(button, joypadData) end
 
 ---@param descendant ISUIElement
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISAtomUIJoypad:onJoypadButtonReleased_Descendant(descendant, button, joypadData) end
 
@@ -68,12 +68,12 @@ function ISAtomUIJoypad:onJoypadDirUp(joypadData) end
 ---@param joypadData JoypadData
 function ISAtomUIJoypad:onJoypadDirUp_Descendant(descendant, joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISAtomUIJoypad:onJoypadDown(button, joypadData) end
 
 ---@param descendant ISUIElement
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISAtomUIJoypad:onJoypadDown_Descendant(descendant, button, joypadData) end
 
@@ -95,6 +95,7 @@ function ISAtomUIJoypad:onJoypadNavigateRight(joypadData) end
 ---@param joypadData JoypadData
 function ISAtomUIJoypad:onJoypadNavigateStart(joypadData) end
 
+---@param descendant ISUIElement
 ---@param joypadData JoypadData
 function ISAtomUIJoypad:onJoypadNavigateStart_Descendant(descendant, joypadData) end
 

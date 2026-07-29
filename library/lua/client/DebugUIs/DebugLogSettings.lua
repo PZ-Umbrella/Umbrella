@@ -16,11 +16,13 @@ function DebugLogSettings:onComboBox(comboBox, debugType) end
 ---@param y number
 function DebugLogSettings:onMouseDownOutside(x, y) end
 
+---@param button ISButton
 function DebugLogSettings:onSave(button) end
 
 ---@param comboBox ISComboBox
 function DebugLogSettings:onSetAll(comboBox) end
 
+---@param comboBox ISComboBox
 function DebugLogSettings:onSetProfile(comboBox) end
 
 ---@param bVisible boolean

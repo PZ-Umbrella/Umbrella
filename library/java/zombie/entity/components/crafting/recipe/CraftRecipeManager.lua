@@ -115,6 +115,12 @@ function CraftRecipeManager.isItemValidForRecipe(recipe, inventoryItem, characte
 ---@return boolean
 function CraftRecipeManager.isValidRecipeForCharacter(recipe, character, monitor, containers) end
 
+---@param player IsoGameCharacter
+---@param item InventoryItem
+---@param cacheData CraftRecipeData.CacheData
+---@return number
+function CraftRecipeManager.itemGetQueuedAmount(player, item, cacheData) end
+
 ---@param tagQueryString string
 ---@param listToPopulate List<CraftRecipe>
 ---@param clearList boolean

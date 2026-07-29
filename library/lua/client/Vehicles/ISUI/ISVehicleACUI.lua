@@ -27,7 +27,7 @@ function ISVehicleACUI:onClick(button) end
 ---@param joypadData JoypadData
 function ISVehicleACUI:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISVehicleACUI:onJoypadDown(button) end
 
 function ISVehicleACUI:prerender() end

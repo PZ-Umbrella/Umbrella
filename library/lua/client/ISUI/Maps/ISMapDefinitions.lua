@@ -3,12 +3,13 @@
 ---@class MapUtils
 MapUtils = {}
 
+---@param mapUI umbrella.MapUI
 function MapUtils.initDefaultAnnotations(mapUI) end
 
 ---@param mapUI umbrella.MapUI
 function MapUtils.initDefaultMapData(mapUI) end
 
----@param mapUI ISWorldMap
+---@param mapUI umbrella.MapUI
 function MapUtils.initDefaultStreetData(mapUI) end
 
 ---@param mapUI umbrella.MapUI
@@ -17,9 +18,10 @@ function MapUtils.initDefaultStyleV1(mapUI) end
 ---@param mapUI ISWorldMap
 function MapUtils.initDefaultStyleV3(mapUI) end
 
----@param mapUI ISMiniMapInner | ISWorldMap
+---@param mapUI umbrella.MapUI
 function MapUtils.initDefaultTextLayersV3(mapUI) end
 
+---@param mapUI umbrella.MapUI
 ---@param directory string
 function MapUtils.initDirectoryAnnotations(mapUI, directory) end
 
@@ -27,13 +29,14 @@ function MapUtils.initDirectoryAnnotations(mapUI, directory) end
 ---@param directory string
 function MapUtils.initDirectoryMapData(mapUI, directory) end
 
+---@param mapUI umbrella.MapUI
 ---@param directory string
 function MapUtils.initDirectoryStreetData(mapUI, directory) end
 
 ---@param mapUI umbrella.MapUI
 function MapUtils.overlayPaper(mapUI) end
 
----@param mapUI table
+---@param mapUI umbrella.MapUI
 function MapUtils.renderDarkModeOverlay(mapUI) end
 
 ---@param mapUI umbrella.MapUI

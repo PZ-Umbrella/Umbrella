@@ -28,30 +28,60 @@ worldgen.biomes.light_birch_forest = {
 				p = 0.1,
 			},
 		},
+		BUSH = {
+			{
+				f = worldgen.features.BUSH.bush_birchforest,
+				p = 0.05,
+			},
+		},
 		TREE = {
 			{
+				f = worldgen.features.TREE.birch_jumbo_xxl,
+				p = 0.053125,
+			},
+			{
+				f = worldgen.features.TREE.birch_jumbo_xl,
+				p = 0.053125,
+			},
+			{
 				f = worldgen.features.TREE.birch_jumbo,
-				p = 0.10625,
+				p = 0.003125,
 			},
 			{
 				f = worldgen.features.TREE.birch,
-				p = 0.00625,
+				p = 0.003125,
+			},
+			{
+				f = worldgen.features.TREE.hawthorn_jumbo_xxl,
+				p = 0.0015625,
+			},
+			{
+				f = worldgen.features.TREE.hawthorn_jumbo_xl,
+				p = 0.0015625,
 			},
 			{
 				f = worldgen.features.TREE.hawthorn_jumbo,
-				p = 0.003125,
+				p = 0.0015625,
 			},
 			{
 				f = worldgen.features.TREE.hawthorn,
-				p = 0.003125,
+				p = 0.0015625,
+			},
+			{
+				f = worldgen.features.TREE.yellowwood_jumbo_xxl,
+				p = 0.0015625,
+			},
+			{
+				f = worldgen.features.TREE.yellowwood_jumbo_xl,
+				p = 0.0015625,
 			},
 			{
 				f = worldgen.features.TREE.yellowwood_jumbo,
-				p = 0.003125,
+				p = 0.0015625,
 			},
 			{
 				f = worldgen.features.TREE.yellowwood,
-				p = 0.003125,
+				p = 0.0015625,
 			},
 			{
 				f = worldgen.features.TREE.stumps,
@@ -60,6 +90,13 @@ worldgen.biomes.light_birch_forest = {
 		},
 	},
 	params = {
+		subbiomes = {
+			TREE = {
+				TREE = {
+					worldgen.subbiomes.grass,
+				},
+			},
+		},
 		landscape = {
 			"LIGHT_FOREST",
 		},

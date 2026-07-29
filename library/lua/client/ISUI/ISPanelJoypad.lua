@@ -3,25 +3,30 @@
 ---@class rowTree
 ---@field above rowTree?
 ---@field below rowTree?
----@field elements table
+---@field elements ISUIElement[]
 local __rowTree = {}
 
+---@param row ISUIElement[]
 ---@return string
 function __rowTree.rowToString(row) end
 
+---@param left number
+---@param right number
+---@param vsElementIdx integer
 ---@return number?
 function __rowTree:findHorizontallyOverlappingElement(left, right, vsElementIdx) end
 
----@param result table?
----@return table?
+---@param result ISUIElement[]?
+---@return ISUIElement[]?
 function __rowTree:getAllRows(result) end
 
 ---@return rowTree?
 function __rowTree:getBottomMostBranch() end
 
----@return table
----@return table
----@return table
+---@param y number
+---@return ISUIElement[]
+---@return ISUIElement[]
+---@return ISUIElement[]
 function __rowTree:getSplitElements(y) end
 
 ---@return rowTree?
@@ -29,6 +34,7 @@ function __rowTree:getTopMostBranch() end
 
 function __rowTree:splitOverlappingColumns() end
 
+---@param elements ISUIElement[]
 ---@return rowTree
 function __rowTree:new(elements) end
 
@@ -47,23 +53,31 @@ function __rowTree:new(elements) end
 ---@field joypadButtonsY ISButton[][]
 ---@field joypadIndex integer
 ---@field joypadIndexY integer
----@field lastIntercepts table?
----@field lastProjectedBounds unknown?
+---@field lastIntercepts ISBounds[]?
+---@field lastProjectedBounds ISBounds?
 ---@field mouseOver boolean
 ---@field moveWithMouse boolean
 ---@field moving boolean
 ISPanelJoypad = ISUIElement:derive("ISPanelJoypad")
 ISPanelJoypad.Type = "ISPanelJoypad"
 
+---@param allJoypadButtons ISUIElement[]
+---@param uiElement ISUIElement
 ---@return boolean?
 function ISPanelJoypad.autoAddUIElementToJoypadButtons(allJoypadButtons, uiElement) end
 
----@return table
+---@param uiRootElement ISUIElement
+---@return ISUIElement[]
 function ISPanelJoypad.autoGenerateJoypadButtonRowsFromUIElement(uiRootElement) end
 
+---@return table
+function ISPanelJoypad.getVisibleElements(uiElements) end
+
+---@param list ISUIElement[]
 ---@return string
 function ISPanelJoypad.rowListToDebugString(list) end
 
+---@param rows ISButton[][]
 function ISPanelJoypad:addJoypadButtonRows(rows) end
 
 function ISPanelJoypad:autoGenerateJoypadButtonsLists() end
@@ -91,7 +105,13 @@ function ISPanelJoypad:doRightJoystickScrolling(dx, dy) end
 
 function ISPanelJoypad:ensureVisible() end
 
----@return unknown?
+---@param fromChild ISUIElement
+---@param fromChildBounds ISBounds
+---@param projectedBounds ISBounds
+---@param minDistance number
+---@param distanceToFunc fun(boundsA: ISBounds, boundsB: ISBounds): number
+---@param results { foundChild: ISUIElement, foundChildDistance: number }[]
+---@return ISUIElement?
 function ISPanelJoypad:findClosestNavigableChildAlongBounds(
 	fromChild,
 	fromChildBounds,
@@ -102,22 +122,32 @@ function ISPanelJoypad:findClosestNavigableChildAlongBounds(
 )
 end
 
----@return unknown?
+---@param fromChild ISUIElement
+---@param xDir number
+---@return ISUIElement?
 function ISPanelJoypad:findNextNavigableChildX(fromChild, xDir) end
 
----@return unknown?
+---@param fromChild ISUIElement
+---@param yDir number
+---@return ISUIElement?
 function ISPanelJoypad:findNextNavigableChildY(fromChild, yDir) end
 
----@return number
+---@param child ISButton
+---@return integer
 function ISPanelJoypad:getChildJoypadIndex(child) end
 
----@return number
+---@param child ISButton
+---@return integer
 function ISPanelJoypad:getChildJoypadIndexY(child) end
 
 ---@param children ISUIElement[]
 ---@param x number
 ---@return integer
 function ISPanelJoypad:getClosestChild(children, x) end
+
+---@param rowIndex number
+---@return unknown
+function ISPanelJoypad:getClosestChildOnRow(rowIndex, fromChild) end
 
 ---@return ISUIElement?
 function ISPanelJoypad:getJoypadFocus() end
@@ -137,7 +167,7 @@ function ISPanelJoypad:getNextVisibleRow(row) end
 function ISPanelJoypad:getPrevVisibleRow(row) end
 
 ---@param joypadIndexY integer
----@return ISUIElement[]
+---@return ISButton[]
 function ISPanelJoypad:getVisibleChildren(joypadIndexY) end
 
 function ISPanelJoypad:initialise() end
@@ -170,13 +200,10 @@ end
 ---@param list ISButton[]
 function ISPanelJoypad:insertNewListOfButtons(list) end
 
----@param list ISButton[]
-function ISPanelJoypad:insertNewListOfButtonsList(list) end
-
 ---@return boolean
 function ISPanelJoypad:isFocusOnControl() end
 
----@return unknown
+---@return ISPanelJoypad
 function ISPanelJoypad:noBackground() end
 
 ---@param joypadData JoypadData
@@ -191,7 +218,7 @@ function ISPanelJoypad:onJoypadDirRight(joypadData) end
 ---@param joypadData JoypadData
 function ISPanelJoypad:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData?
 function ISPanelJoypad:onJoypadDown(button, joypadData) end
 
@@ -217,11 +244,13 @@ function ISPanelJoypad:onMouseUpOutside(x, y) end
 
 function ISPanelJoypad:prerender() end
 
----@return table
+---@return umbrella.ISPanelJoypad.JoypadState
 function ISPanelJoypad:recordJoypadState() end
 
+---@param rows ISButton[][]
 function ISPanelJoypad:removeJoypadButtonRows(rows) end
 
+---@param list ISButton[]
 ---@return boolean
 function ISPanelJoypad:removeListOfButtons(list) end
 
@@ -232,6 +261,7 @@ function ISPanelJoypad:renderDebugUINavigation() end
 ---@param joypadData JoypadData
 function ISPanelJoypad:restoreJoypadFocus(joypadData) end
 
+---@param state umbrella.ISPanelJoypad.JoypadState
 function ISPanelJoypad:restoreJoypadState(state) end
 
 ---@param button ISButton
@@ -248,7 +278,11 @@ function ISPanelJoypad:setISButtonForY(button) end
 
 ---@param child ISUIElement
 ---@param joypadData JoypadData
+---@return boolean
 function ISPanelJoypad:setJoypadFocus(child, joypadData) end
+
+---@return boolean
+function ISPanelJoypad:setJoypadFocusTopLeft(joypadData) end
 
 ---@param visible boolean
 ---@param joypadData JoypadData?
@@ -260,3 +294,7 @@ function ISPanelJoypad:setVisible(visible, joypadData) end
 ---@param height number
 ---@return ISPanelJoypad
 function ISPanelJoypad:new(x, y, width, height) end
+
+---@class umbrella.ISPanelJoypad.JoypadState
+---@field index number
+---@field indexY number

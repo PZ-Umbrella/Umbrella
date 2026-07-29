@@ -46,6 +46,9 @@ function __Zone:getName() end
 ---@return string
 function __Zone:getOriginalName() end
 
+---@return List<integer>
+function __Zone:getPointsToLua() end
+
 ---@return kahlua.Array<number>
 function __Zone:getPolygonTriangles() end
 

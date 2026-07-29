@@ -22,7 +22,6 @@
 ---@field respawn ISTickBox
 ---@field safehouse SafeHouse
 ---@field selectedPlayer string?
----@field title ISLabel
 ---@field updateTick number
 ---@field updateTickMax number
 ISSafehouseUI = ISPanel:derive("ISSafehouseUI")

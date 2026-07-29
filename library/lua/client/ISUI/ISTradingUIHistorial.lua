@@ -7,8 +7,10 @@
 ---@field otherPlayer IsoPlayer
 ISTradingUIHistorical = ISPanel:derive("ISTradingUIHistorical")
 ISTradingUIHistorical.Type = "ISTradingUIHistorical"
-ISTradingUIHistorical.messages = {}
+ISTradingUIHistorical.messages = nil ---@type unknown
 ISTradingUIHistorical.instance = nil ---@type ISTradingUIHistorical?
+
+function ISTradingUIHistorical:close() end
 
 ---@param y number
 ---@param item umbrella.ISScrollingListBox.Item
@@ -20,6 +22,14 @@ function ISTradingUIHistorical:initialise() end
 
 ---@param button ISButton
 function ISTradingUIHistorical:onClick(button) end
+
+function ISTradingUIHistorical:onGainJoypadFocus(joypadData) end
+
+function ISTradingUIHistorical:onJoypadDirDown(joypadData) end
+
+function ISTradingUIHistorical:onJoypadDirUp(joypadData) end
+
+function ISTradingUIHistorical:onLoseJoypadFocus(joypadData) end
 
 ---@param list umbrella.ISTradingUI.HistoryMessage[]
 function ISTradingUIHistorical:populateList(list) end

@@ -28,7 +28,7 @@ function ISEntityWindow:onCraftButtonClick(_button) end
 function ISEntityWindow:onGainJoypadFocus(joypadData) end
 
 ---@param descendant ISUIElement
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISEntityWindow:onJoypadDown_Descendant(descendant, button, joypadData) end
 

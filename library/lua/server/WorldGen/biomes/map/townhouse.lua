@@ -6,26 +6,37 @@ worldgen.biomes_map.townhouse = {
 	features = {
 		BUSH = {
 			{
-				f = worldgen.features.BUSH.bush_clean,
+				f = worldgen.features.BUSH.bush_regular,
 				p = 1,
 			},
 		},
 		PLANT = {
 			{
-				f = worldgen.features.PLANT.grass_low,
-				p = 0.55,
+				f = worldgen.features.PLANT.grass_medium,
+				p = 0.2,
 			},
 			{
-				f = worldgen.features.PLANT.grass_medium,
-				p = 0.44,
+				f = worldgen.features.PLANT.grass_high,
+				p = 0.6,
+			},
+			{
+				f = worldgen.features.PLANT.fern,
+				p = 0.1,
 			},
 			{
 				f = worldgen.features.PLANT.generic_plant,
-				p = 0.01,
+				p = 0.1,
 			},
 		},
 	},
 	params = {
+		subbiomes = {
+			TREE = {
+				TREE = {
+					worldgen.subbiomes.no_tree,
+				},
+			},
+		},
 		landscape = {
 			"FOREST",
 		},

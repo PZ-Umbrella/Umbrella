@@ -20,6 +20,9 @@ function __ClimbOverFenceState:exit(owner) end
 ---@param modifiers MoveDeltaModifiers
 function __ClimbOverFenceState:getDeltaModifiers(owner, modifiers) end
 
+---@return UpdateSchedulerSimulationLevel
+function __ClimbOverFenceState:getMinimumSimulationLevel() end
+
 ---Description copied from class: State
 ---@param owner IsoGameCharacter
 ---@param fromX integer

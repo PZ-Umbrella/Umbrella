@@ -24,12 +24,14 @@ function WorldMapOptions:isMultiplayerOption(optionName) end
 ---@param option ConfigOption
 function WorldMapOptions:onCommandEntered(entry, option) end
 
+---@param value number
+---@param slider ISSliderPanel
 function WorldMapOptions:onDarkModeChanged(value, slider) end
 
 ---@param joypadData JoypadData
 function WorldMapOptions:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function WorldMapOptions:onJoypadDown(button, joypadData) end
 
@@ -59,7 +61,7 @@ ISWorldMapButtonPanel.Type = "ISWorldMapButtonPanel"
 ---@param joypadData JoypadData
 function ISWorldMapButtonPanel:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISWorldMapButtonPanel:onJoypadDown(button, joypadData) end
 
@@ -127,7 +129,7 @@ function ISWorldMapButtonPanel:new(x, y, width, height) end
 ---@field terrainBtn ISButton
 ---@field texViewIsometric Texture
 ---@field texViewOrthographic Texture
----@field texViewTerrainImage unknown
+---@field texViewTerrainImage Texture
 ---@field updateMS number
 ---@field zoomInButton ISButton
 ---@field zoomOutButton ISButton
@@ -182,6 +184,7 @@ function ISWorldMap:closeStashMap() end
 
 function ISWorldMap:createChildren() end
 
+---@param bounds umbrella.Bounds | ISBounds
 function ISWorldMap:drawMapRect(bounds) end
 
 ---@return unknown
@@ -211,7 +214,7 @@ function ISWorldMap:onConfirmForget(button) end
 
 function ISWorldMap:onForget() end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISWorldMap:onJoypadDown(button, joypadData) end
 
@@ -336,7 +339,7 @@ function ISWorldMap:updateJoypad() end
 function ISWorldMap:new(x, y, width, height) end
 
 ---@class AnnotatedMapOverlay : ISPanel
----@field mapAPI unknown
+---@field mapAPI UIWorldMapV3
 AnnotatedMapOverlay = ISPanel:derive("AnnotatedMapOverlay")
 AnnotatedMapOverlay.Type = "AnnotatedMapOverlay"
 

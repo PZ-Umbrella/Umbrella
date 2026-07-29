@@ -109,7 +109,6 @@ function MultiplayerZoneEditorMode_Safehouse:new(editor) end
 ---@class MultiplayerZoneEditorMode_Safehouse_Confirm : ISPanelJoypad
 ---@field entryOwner ISTextEntryBox
 ---@field entryTitle ISTextEntryBox
----@field name unknown?
 ---@field no ISButton
 ---@field onclick umbrella.ISButton.OnClick
 ---@field player integer?
@@ -142,7 +141,7 @@ function MultiplayerZoneEditorMode_Safehouse_Confirm:onJoypadDirDown(joypadData)
 ---@param joypadData JoypadData
 function MultiplayerZoneEditorMode_Safehouse_Confirm:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function MultiplayerZoneEditorMode_Safehouse_Confirm:onJoypadDown(button, joypadData) end
 

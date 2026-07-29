@@ -1,23 +1,24 @@
 ---@meta
 
 ---@class ISInventoryWindowControlHandler_TransferSameType : ISInventoryWindowControlHandler
----@field control unknown
+---@field control ISUIElement?
 ---@field inventoryContainerCount number
 ---@field isMouseOver boolean
----@field itemsToTransferMap table
+---@field itemsToTransferMap table<InventoryItem, boolean>
 ---@field lootContainerCount number
 ISInventoryWindowControlHandler_TransferSameType =
 	ISInventoryWindowControlHandler:derive("ISInventoryWindowControlHandler_TransferSameType")
 ISInventoryWindowControlHandler_TransferSameType.Type = "ISInventoryWindowControlHandler_TransferSameType"
 
----@return unknown
+---@return ISUIElement
 function ISInventoryWindowControlHandler_TransferSameType:getControl() end
 
----@return table
+---@param container ItemContainer
+---@return table<string, InventoryItem[]>
 function ISInventoryWindowControlHandler_TransferSameType:getItemsTable(container) end
 
----@return table
----@return table
+---@return InventoryItem[]
+---@return table<InventoryItem, boolean>
 function ISInventoryWindowControlHandler_TransferSameType:getItemsToTransfer() end
 
 ---@param button ISButton

@@ -27,7 +27,7 @@ function ModListPresets:createChildren() end
 ---@param joypadData JoypadData
 function ModListPresets:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ModListPresets:onJoypadDown(button, joypadData) end
 

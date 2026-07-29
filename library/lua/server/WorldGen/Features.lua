@@ -8,4 +8,5 @@ worldgen.features = {
 	BUSH = {},
 	TREE = {},
 	ORE = {},
+	NONE = {},
 }

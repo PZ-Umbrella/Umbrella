@@ -8,8 +8,11 @@
 ISGrabCorpseAction = ISBaseTimedAction:derive("ISGrabCorpseAction")
 ISGrabCorpseAction.Type = "ISGrabCorpseAction"
 
+---@param playerObj IsoPlayer
+---@param timePressedContext integer
 function ISGrabCorpseAction.OnContextKey(playerObj, timePressedContext) end
 
+---@param key integer
 function ISGrabCorpseAction.OnKeyPressed(key) end
 
 function ISGrabCorpseAction.PerformGrabCorpse() end

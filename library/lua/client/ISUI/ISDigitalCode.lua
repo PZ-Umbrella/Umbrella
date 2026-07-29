@@ -12,7 +12,6 @@
 ---@field cancel ISButton
 ---@field character IsoPlayer?
 ---@field joypadButtons ISButton[]?
----@field name unknown?
 ---@field new boolean
 ---@field number1 ISTextEntryBox
 ---@field number2 ISTextEntryBox
@@ -47,7 +46,7 @@ function ISDigitalCode:onClick(button) end
 ---@param joypadData JoypadData
 function ISDigitalCode:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISDigitalCode:onJoypadDown(button) end
 
 function ISDigitalCode:prerender() end

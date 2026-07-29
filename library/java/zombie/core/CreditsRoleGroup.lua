@@ -57,6 +57,9 @@ CreditsRoleGroup.SOUND_ARRIVAL = nil
 CreditsRoleGroup.TEA = nil
 
 ---@type CreditsRoleGroup
+CreditsRoleGroup.TMG = nil
+
+---@type CreditsRoleGroup
 CreditsRoleGroup.TOOLS = nil
 
 ---@type CreditsRoleGroup

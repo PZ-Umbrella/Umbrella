@@ -77,7 +77,7 @@ function ISHutchNestBox:onCheatRemoveAnimal() end
 
 function ISHutchNestBox:onCheatRemoveEgg() end
 
----@param button ISButton
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISHutchNestBox:onJoypadDownInParent(button, joypadData) end
 
@@ -157,7 +157,7 @@ function ISHutchRoost:onCheatRemoveAnimal(animal) end
 ---@param animal IsoAnimal
 function ISHutchRoost:onForceEgg(animal) end
 
----@param button ISButton
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISHutchRoost:onJoypadDownInParent(button, joypadData) end
 
@@ -252,7 +252,8 @@ function ISHutchUI:add3DAnimal(panel, animal, chickenX, chickenY) end
 ---@param chickenX number
 ---@param chickenY number
 ---@param rowY number
----@param SHELF_HEIGHT number
+---@param SHELF_HEIGHT number?
+---@param btnGrabOffset unknown?
 function ISHutchUI:checkAnimal(index, chickenX, chickenY, rowY, SHELF_HEIGHT, btnGrabOffset) end
 
 ---@param panel ISHutch3DModel
@@ -282,12 +283,12 @@ function ISHutchUI:onGrabNest(index) end
 ---@param index integer
 function ISHutchUI:onGrabRoost(index) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISHutchUI:onJoypadDown(button, joypadData) end
 
 ---@param descendant ISUIElement
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISHutchUI:onJoypadDown_Descendant(descendant, button, joypadData) end
 

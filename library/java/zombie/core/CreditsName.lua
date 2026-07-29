@@ -24,6 +24,9 @@ CreditsName.AFEKAY = nil
 CreditsName.AITOR_CRUZ = nil
 
 ---@type CreditsName
+CreditsName.ALAIN_DELLEPIANE = nil
+
+---@type CreditsName
 CreditsName.ALAN_CARTER = nil
 
 ---@type CreditsName
@@ -60,10 +63,16 @@ CreditsName.ANDREI_TOPILIN = nil
 CreditsName.ANDRES_CASTRO = nil
 
 ---@type CreditsName
+CreditsName.ANDRÁS_ÁCS = nil
+
+---@type CreditsName
 CreditsName.ANDY_HODGETTS = nil
 
 ---@type CreditsName
 CreditsName.ANGELA_BATEMAN = nil
+
+---@type CreditsName
+CreditsName.ANNA_SHEVCHENKO = nil
 
 ---@type CreditsName
 CreditsName.ANONYMOUS = nil
@@ -81,6 +90,9 @@ CreditsName.ARTEM_BORDYUGOV = nil
 CreditsName.ASH_BLAKE_HOOD = nil
 
 ---@type CreditsName
+CreditsName.ASIA_MLECZAK = nil
+
+---@type CreditsName
 CreditsName.AVI_GREENBURY = nil
 
 ---@type CreditsName
@@ -91,6 +103,9 @@ CreditsName.AYRTON_ORIO = nil
 
 ---@type CreditsName
 CreditsName.A_BRICK_FAIRY = nil
+
+---@type CreditsName
+CreditsName.BARBARA_MONTI = nil
 
 ---@type CreditsName
 CreditsName.BAURZHAN_SITKALIEV = nil
@@ -165,7 +180,13 @@ CreditsName.CHRIS_SIMPSON = nil
 CreditsName.CHRIS_WOOD = nil
 
 ---@type CreditsName
+CreditsName.CILLIAN_JUNG = nil
+
+---@type CreditsName
 CreditsName.CLEMENT_GIRAUDEAU = nil
+
+---@type CreditsName
+CreditsName.CLIFF_ANDERSON = nil
 
 ---@type CreditsName
 CreditsName.CONNALL_LINDSAY = nil
@@ -178,6 +199,9 @@ CreditsName.DADDYDIRKIEDIRK = nil
 
 ---@type CreditsName
 CreditsName.DANIEL_HEELAN = nil
+
+---@type CreditsName
+CreditsName.DANIEL_MARQUES = nil
 
 ---@type CreditsName
 CreditsName.DANIEL_SOBHI = nil
@@ -193,6 +217,9 @@ CreditsName.DEAN_HALL = nil
 
 ---@type CreditsName
 CreditsName.DEAN_TROTMAN = nil
+
+---@type CreditsName
+CreditsName.DEMI_BARTELS = nil
 
 ---@type CreditsName
 CreditsName.DEREK_BUCHANAN = nil
@@ -261,16 +288,31 @@ CreditsName.FOX_CHAOTICA = nil
 CreditsName.FRANCOIS_DESFORGES = nil
 
 ---@type CreditsName
+CreditsName.FRANK_JORDAN = nil
+
+---@type CreditsName
 CreditsName.GENNADII_POTAPOV = nil
 
 ---@type CreditsName
 CreditsName.GRAEME_STRUTHERS = nil
 
 ---@type CreditsName
+CreditsName.HELEEN_WIEMANS = nil
+
+---@type CreditsName
 CreditsName.HENRY_PATTERSON = nil
 
 ---@type CreditsName
+CreditsName.HENRY_SHU = nil
+
+---@type CreditsName
+CreditsName.HESTER_LEISTRA = nil
+
+---@type CreditsName
 CreditsName.HOODIE_GUY = nil
+
+---@type CreditsName
+CreditsName.HYESU_CHOE = nil
 
 ---@type CreditsName
 CreditsName.ILIA_TEPLISHCHEV = nil
@@ -280,6 +322,9 @@ CreditsName.ILJA_GAIDENKO = nil
 
 ---@type CreditsName
 CreditsName.INNOKENTIY_SEDOV = nil
+
+---@type CreditsName
+CreditsName.IRIS_KUPPEN = nil
 
 ---@type CreditsName
 CreditsName.ISAAC_SALES = nil
@@ -295,6 +340,9 @@ CreditsName.JACOB_HALEY = nil
 
 ---@type CreditsName
 CreditsName.JAIME_BYRNE = nil
+
+---@type CreditsName
+CreditsName.JAKOB_KANDEL = nil
 
 ---@type CreditsName
 CreditsName.JAMES_STRETTON = nil
@@ -324,7 +372,16 @@ CreditsName.JONATHAN_BURSAC = nil
 CreditsName.JONES_GAMBARINE = nil
 
 ---@type CreditsName
+CreditsName.JORGE_GUEDES = nil
+
+---@type CreditsName
 CreditsName.JOSH_HENNING = nil
+
+---@type CreditsName
+CreditsName.JUNWON_KONG = nil
+
+---@type CreditsName
+CreditsName.KAROLINA_BARSZCZ = nil
 
 ---@type CreditsName
 CreditsName.KASIA_DZIEKAN = nil
@@ -351,6 +408,12 @@ CreditsName.KIWO = nil
 CreditsName.KLEAN = nil
 
 ---@type CreditsName
+CreditsName.KONSTANTIN_KOPIN = nil
+
+---@type CreditsName
+CreditsName.KRISTINE_MYRENE = nil
+
+---@type CreditsName
 CreditsName.KRZYSZTOF_SAGOLA = nil
 
 ---@type CreditsName
@@ -364,6 +427,15 @@ CreditsName.LEO_DIMILO = nil
 
 ---@type CreditsName
 CreditsName.LEO_IVANOV = nil
+
+---@type CreditsName
+CreditsName.LINDA_MYRWOLD = nil
+
+---@type CreditsName
+CreditsName.LIWEN_ZHANG = nil
+
+---@type CreditsName
+CreditsName.LORENZO_BERTOLUCCI = nil
 
 ---@type CreditsName
 CreditsName.LORENZO_PIANI = nil
@@ -420,6 +492,9 @@ CreditsName.MATHILDACHAN = nil
 CreditsName.MATTEO_LUPIERI = nil
 
 ---@type CreditsName
+CreditsName.MATTEO_SCARABELLI = nil
+
+---@type CreditsName
 CreditsName.MATTHEW_HARBER = nil
 
 ---@type CreditsName
@@ -462,6 +537,9 @@ CreditsName.MIKE_BERRY = nil
 CreditsName.MIKHAIL_GUDIM = nil
 
 ---@type CreditsName
+CreditsName.MILLER_MEI = nil
+
+---@type CreditsName
 CreditsName.MISTER_LAMPREY = nil
 
 ---@type CreditsName
@@ -472,6 +550,9 @@ CreditsName.MR_BROLLOW = nil
 
 ---@type CreditsName
 CreditsName.MR_L_TARTAN = nil
+
+---@type CreditsName
+CreditsName.NATALIA_PATEREK = nil
 
 ---@type CreditsName
 CreditsName.NATALIA_ROWLEY = nil
@@ -498,6 +579,9 @@ CreditsName.NOTCH = nil
 CreditsName.OLIVIA_WHITE = nil
 
 ---@type CreditsName
+CreditsName.ORSOLYA_LIPTAY = nil
+
+---@type CreditsName
 CreditsName.PATRICK_BRENNAN = nil
 
 ---@type CreditsName
@@ -516,6 +600,9 @@ CreditsName.PAUL_RING = nil
 CreditsName.PAUL_WRIGHT = nil
 
 ---@type CreditsName
+CreditsName.PETER_LEE = nil
+
+---@type CreditsName
 CreditsName.PETER_LEWIN = nil
 
 ---@type CreditsName
@@ -523,6 +610,9 @@ CreditsName.PETER_LOVERSO = nil
 
 ---@type CreditsName
 CreditsName.PHILL_CAMERON = nil
+
+---@type CreditsName
+CreditsName.PIOTR_HELAK = nil
 
 ---@type CreditsName
 CreditsName.PR1VATELIME = nil
@@ -567,6 +657,9 @@ CreditsName.RUAL_STORGE = nil
 CreditsName.SACRIEL = nil
 
 ---@type CreditsName
+CreditsName.SAMI_OLAVI = nil
+
+---@type CreditsName
 CreditsName.SAM_SPAWTON = nil
 
 ---@type CreditsName
@@ -600,6 +693,9 @@ CreditsName.SIMON_CADET = nil
 CreditsName.SPIFFO = nil
 
 ---@type CreditsName
+CreditsName.STEPHEN_REID = nil
+
+---@type CreditsName
 CreditsName.STEVE_NORTH = nil
 
 ---@type CreditsName
@@ -610,6 +706,9 @@ CreditsName.STEVE_YOUNG = nil
 
 ---@type CreditsName
 CreditsName.STUART_JONES = nil
+
+---@type CreditsName
+CreditsName.TANJA_SUITIALA = nil
 
 ---@type CreditsName
 CreditsName.THE_COMMANDER = nil
@@ -627,6 +726,9 @@ CreditsName.THOMAS_DEYN = nil
 CreditsName.THOMAS_GUIMBRETIERE = nil
 
 ---@type CreditsName
+CreditsName.THOR_PENTHIN_GRUMLØSE = nil
+
+---@type CreditsName
 CreditsName.TIMOTHY_BAKER = nil
 
 ---@type CreditsName
@@ -636,6 +738,9 @@ CreditsName.TIM_BUCKLEY = nil
 CreditsName.TITOPEI = nil
 
 ---@type CreditsName
+CreditsName.TOMEK_KALISZEWSKI = nil
+
+---@type CreditsName
 CreditsName.TOM_PORTER = nil
 
 ---@type CreditsName
@@ -643,6 +748,9 @@ CreditsName.TRAILER_FARM = nil
 
 ---@type CreditsName
 CreditsName.TWIGGY = nil
+
+---@type CreditsName
+CreditsName.TZU_SHENG_HSIAO = nil
 
 ---@type CreditsName
 CreditsName.UNCONID = nil
@@ -657,10 +765,19 @@ CreditsName.VICKI_WOODS = nil
 CreditsName.WILL_PORTER = nil
 
 ---@type CreditsName
+CreditsName.WOJCIECH_BRUDZIŃSKI = nil
+
+---@type CreditsName
 CreditsName.YANA_DUNCAN = nil
 
 ---@type CreditsName
 CreditsName.YANNICK_WINTER = nil
+
+---@type CreditsName
+CreditsName.YICHING_CHOU = nil
+
+---@type CreditsName
+CreditsName.YULIIA_TATSENKO = nil
 
 ---@type CreditsName
 CreditsName.ZACH_BEEVER = nil

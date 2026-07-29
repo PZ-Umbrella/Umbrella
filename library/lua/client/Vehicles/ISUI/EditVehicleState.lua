@@ -442,6 +442,7 @@ function EditVehicleUI_EditAttachment:populateComboPart() end
 
 function EditVehicleUI_EditAttachment:prerenderEditor() end
 
+---@param attach ModelAttachment
 function EditVehicleUI_EditAttachment:setSelectedAttachment(attach) end
 
 function EditVehicleUI_EditAttachment:toUI() end
@@ -649,12 +650,16 @@ EditVehicleUI_EditPhysics.Type = "EditVehicleUI_EditPhysics"
 function EditVehicleUI_EditPhysics:addAABB(extents, offset, r, g, b) end
 
 ---@param offset Vector3f
+---@param rotate Vector3f
+---@param scale number
+---@param physicsShapeScript string
 ---@param r number
 ---@param g number
 ---@param b number
 function EditVehicleUI_EditPhysics:addPhysicsMesh(offset, rotate, scale, physicsShapeScript, r, g, b) end
 
 ---@param offset Vector3f
+---@param radius number
 ---@param r number
 ---@param g number
 ---@param b number

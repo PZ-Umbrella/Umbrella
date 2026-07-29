@@ -6,6 +6,7 @@ CFarmingSystem = CGlobalObjectSystem:derive("CFarmingSystem")
 CFarmingSystem.Type = "CFarmingSystem"
 CFarmingSystem.instance = nil ---@type CFarmingSystem?
 
+---@param square IsoGridSquare
 function CFarmingSystem.destroyPlant(square) end
 
 ---@param player IsoPlayer

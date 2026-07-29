@@ -49,12 +49,12 @@ function ISHandcraftWindow:isKeyConsumed(key) end
 ---@param joypadData JoypadData
 function ISHandcraftWindow:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISHandcraftWindow:onJoypadDown(button, joypadData) end
 
 ---@param descendant ISUIElement
----@param button ISButton
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISHandcraftWindow:onJoypadDown_Descendant(descendant, button, joypadData) end
 

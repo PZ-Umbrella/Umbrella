@@ -2,19 +2,10 @@
 
 ---@class ISCraftLogicPanel : ISBaseComponentPanel
 ---@field _filterString string?
----@field craftControl ISWidgetCraftControl?
----@field craftControlDebug ISWidgetCraftDebug?
 ---@field craftLogicComponent CraftLogic
----@field craftProgress ISWidgetCraftProgress?
----@field energyInputs ISEnergySlotPanel?
----@field energyOutputs ISEnergySlotPanel?
----@field fluidInputs ISFluidSlotPanel?
----@field fluidOutputs ISFluidSlotPanel?
 ---@field inputsGroupName string
 ---@field inventoryPanel ISCraftInventoryPanel?
 ---@field inventoryPanelColumn ISTableLayoutColumn?
----@field itemInputs ISItemSlotPanel?
----@field itemOutputs ISItemSlotPanel?
 ---@field logic CraftLogicUILogic
 ---@field outputsGroupName string
 ---@field recipeColumn ISTableLayoutColumn?
@@ -61,8 +52,6 @@ function ISCraftLogicPanel:createInventoryPanel() end
 ---@param _style string
 ---@return ISItemSlotPanel
 function ISCraftLogicPanel:createItemSlotPanel(_style) end
-
-function ISCraftLogicPanel:createLegacyRecipePanel() end
 
 function ISCraftLogicPanel:createRecipePanel() end
 

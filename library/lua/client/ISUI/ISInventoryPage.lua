@@ -42,8 +42,8 @@
 ---@field lookDir IsoDirections
 ---@field lootAll ISButton
 ---@field mouseOverButton ISButton?
----@field mouseOverColoredContainer unknown?
----@field mouseOverColoredContainerInv unknown
+---@field mouseOverColoredContainer ItemContainer?
+---@field mouseOverColoredContainerInv ItemContainer?
 ---@field onCharacter boolean
 ---@field pin boolean
 ---@field pinbutton Texture
@@ -56,7 +56,7 @@
 ---@field resizeWidget ISResizeWidget
 ---@field resizeWidget2 ISResizeWidget
 ---@field selectedButton ISButton
----@field selectedContainerForSound unknown?
+---@field selectedContainerForSound ItemContainer?
 ---@field selectedSqDrop IsoGridSquare?
 ---@field statusbarbkg Texture
 ---@field title string?
@@ -87,7 +87,7 @@ function ISInventoryPage.GetFloorContainer(playerNum) end
 ---@return number
 function ISInventoryPage.loadWeight(inv) end
 
----@param object unknown?
+---@param object (IsoObject | InventoryItem | IsoGridSquare)?
 function ISInventoryPage.OnContainerUpdate(object) end
 
 function ISInventoryPage.ongamestart() end
@@ -102,6 +102,8 @@ function ISInventoryPage.onKeyPressed(key) end
 ---@param isHighlighted boolean
 function ISInventoryPage.OnObjectHighlighted(playerNum, object, isHighlighted) end
 
+---@param container ItemContainer
+---@param player integer
 function ISInventoryPage.onRenameContainer(container, player) end
 
 function ISInventoryPage.toggleInventory() end
@@ -155,7 +157,7 @@ function ISInventoryPage:dropItemsInContainer(button) end
 ---@param index integer
 function ISInventoryPage:ensureVisible(index) end
 
----@param container unknown?
+---@param container ItemContainer?
 ---@return unknown?
 function ISInventoryPage:getContainerParent(container) end
 
@@ -213,7 +215,7 @@ function ISInventoryPage:onJoypadDirRight() end
 ---@param joypadData JoypadData
 function ISInventoryPage:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISInventoryPage:onJoypadDown(button) end
 
 ---@param joypadData JoypadData
@@ -268,7 +270,7 @@ function ISInventoryPage:onRightMouseDownOutside(x, y) end
 
 function ISInventoryPage:onToggleVisible() end
 
----@param container unknown?
+---@param container ItemContainer?
 ---@return boolean?
 function ISInventoryPage:playContainerCloseSound(container) end
 
@@ -329,6 +331,10 @@ function ISInventoryPage:setNewContainer(inventory) end
 
 function ISInventoryPage:setPinned() end
 
+---@return boolean
+function ISInventoryPage:shouldSetOutlineHighlight(button) end
+
+---@param container ItemContainer
 function ISInventoryPage:stopHighlightContainer(container) end
 
 function ISInventoryPage:syncAddFuel() end

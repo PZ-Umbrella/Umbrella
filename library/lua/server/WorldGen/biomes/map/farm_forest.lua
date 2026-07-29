@@ -6,32 +6,40 @@ worldgen.biomes_map.farm_forest = {
 	features = {
 		TREE = {
 			{
+				f = worldgen.features.TREE.yellowwood_jumbo,
+				p = 0.1,
+			},
+			{
+				f = worldgen.features.TREE.yellowwood_jumbo_xl,
+				p = 0.1,
+			},
+			{
+				f = worldgen.features.TREE.yellowwood_jumbo_xxl,
+				p = 0.15,
+			},
+			{
 				f = worldgen.features.TREE.maple_jumbo,
-				p = 0.2,
+				p = 0.1,
 			},
 			{
-				f = worldgen.features.TREE.maple,
-				p = 0.05,
+				f = worldgen.features.TREE.maple_jumbo_xl,
+				p = 0.1,
 			},
 			{
-				f = worldgen.features.TREE.dogwood_jumbo,
-				p = 0.2,
-			},
-			{
-				f = worldgen.features.TREE.dogwood,
-				p = 0.025,
+				f = worldgen.features.TREE.maple_jumbo_xxl,
+				p = 0.15,
 			},
 			{
 				f = worldgen.features.TREE.silverbell_jumbo,
 				p = 0.1,
 			},
 			{
-				f = worldgen.features.TREE.silverbell,
-				p = 0.025,
+				f = worldgen.features.TREE.silverbell_jumbo_xl,
+				p = 0.1,
 			},
 			{
-				f = worldgen.features.TREE.grass_high,
-				p = 0.4,
+				f = worldgen.features.TREE.silverbell_jumbo_xxl,
+				p = 0.1,
 			},
 		},
 		BUSH = {
@@ -64,6 +72,19 @@ worldgen.biomes_map.farm_forest = {
 		},
 	},
 	params = {
+		subbiomes = {
+			TREE = {
+				TREE = {
+					worldgen.subbiomes.grass,
+				},
+				BUSH = {
+					worldgen.subbiomes.bushes,
+				},
+				PLANT = {
+					worldgen.subbiomes.grass,
+				},
+			},
+		},
 		landscape = {
 			"FOREST",
 		},

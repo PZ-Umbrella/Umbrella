@@ -23,7 +23,7 @@ function RWMMicrophone:getYPrompt() end
 
 function RWMMicrophone:initialise() end
 
----@param button integer
+---@param button JoypadButton
 function RWMMicrophone:onJoypadDown(button) end
 
 function RWMMicrophone:onMuteButton() end

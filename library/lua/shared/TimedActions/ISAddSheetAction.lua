@@ -25,7 +25,7 @@ function ISAddSheetAction:update() end
 ---@return boolean
 function ISAddSheetAction:waitToStart() end
 
----@param character unknown?
+---@param character IsoPlayer
 ---@param item IsoDoor | IsoWindow | IsoWindowFrame | IsoThumpable
 ---@return ISAddSheetAction
 function ISAddSheetAction:new(character, item) end

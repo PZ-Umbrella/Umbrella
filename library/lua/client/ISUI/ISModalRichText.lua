@@ -3,8 +3,8 @@
 ---@class ISModalRichText : ISPanelJoypad
 ---@field chatText ISRichTextPanel
 ---@field destroyOnClick boolean
----@field name unknown?
 ---@field no ISButton?
+---@field noText string
 ---@field ok ISButton?
 ---@field onclick umbrella.ISButton.OnClick?
 ---@field param1 unknown?
@@ -14,6 +14,7 @@
 ---@field text string
 ---@field yes ISButton?
 ---@field yesno boolean
+---@field yesText string
 ISModalRichText = ISPanelJoypad:derive("ISModalRichText")
 ISModalRichText.Type = "ISModalRichText"
 
@@ -27,7 +28,7 @@ function ISModalRichText:onClick(button) end
 ---@param joypadData JoypadData
 function ISModalRichText:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISModalRichText:onJoypadDown(button) end
 
 ---@param joypadData JoypadData

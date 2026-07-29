@@ -2,6 +2,8 @@
 
 ---@alias umbrella.Foraging.TestFunction fun(character: IsoPlayer, skillDef: umbrella.Foraging.SkillDefinition, bonusEffect: string)
 
+---@alias umbrella.Foraging.ZoneDataBounds umbrella.Bounds
+
 ---@class forageSystem
 forageSystem = {
 	isInitialised = false,
@@ -21,6 +23,8 @@ forageSystem = {
 	zoneDefinitions = {},
 	categoryDefinitions = {},
 	defaultDefinitions = {},
+
+	---@type table<string, umbrella.Foraging.LootTable>
 	lootTable = {},
 	lootTableMonth = 1, ---@type integer?
 	processedEntries = {},
@@ -814,6 +818,8 @@ forageSystem = {
 }
 forageSystem.itemBlacklist = nil ---@type ArrayList<string>?
 
+---@param _character IsoPlayer
+---@param _iconID string
 function forageSystem.actionComplete(_character, _iconID) end
 
 ---@param _catDef table
@@ -965,9 +971,14 @@ function forageSystem.doWorldAgeSpawn(_character, _inventory, _itemDef, _items) 
 ---@param _zoneData umbrella.Foraging.ZoneData
 function forageSystem.fillZone(_zoneData) end
 
+---@param _character IsoPlayer
+---@param _forageIcon ISForageIcon
 function forageSystem.forageAction(_character, _forageIcon) end
 
 function forageSystem.generateLootTable() end
+
+---@return table
+function forageSystem.getAffinitySpriteNames(_object) end
 
 ---@param _character IsoPlayer
 ---@return number
@@ -1036,6 +1047,8 @@ function forageSystem.getLevelVisionBonus(_perkLevel) end
 ---@return number
 function forageSystem.getLightLevelPenalty(_character, _square, _doReduction) end
 
+---@param _itemDef umbrella.Foraging.ItemDefinition
+---@param _month integer
 ---@return number
 function forageSystem.getMonthMulti(_itemDef, _month) end
 
@@ -1095,6 +1108,10 @@ function forageSystem.getWeatherBonus(_def, _isRaining, _isSnowing, _hasRained) 
 ---@return number
 function forageSystem.getWeatherEffectReduction(_character) end
 
+---@param _def umbrella.Foraging.CategoryDefinition
+---@param _rainAmount number
+---@param _puddleAmount number
+---@param _snowAmount number
 ---@return number
 function forageSystem.getWeatherMulti(_def, _rainAmount, _puddleAmount, _snowAmount) end
 
@@ -1206,10 +1223,15 @@ function forageSystem.isItemTypeExist(_itemType) end
 ---@return boolean
 function forageSystem.isValidFloor(_square, _itemDef, _catDef) end
 
----@param _month integer
+---@param _def umbrella.Foraging.ItemDefinition
+---@param _month integer?
 ---@return boolean
 function forageSystem.isValidMonth(_def, _month) end
 
+---@param _character IsoPlayer
+---@param _itemDef umbrella.Foraging.ItemDefinition
+---@param _zoneDef umbrella.Foraging.ZoneDefinition
+---@param _month integer?
 ---@return unknown
 function forageSystem.isValidMonthInternal(_character, _itemDef, _zoneDef, _month) end
 
@@ -1265,6 +1287,11 @@ function forageSystem.recreateIcons() end
 
 ---@param _itemDef table
 function forageSystem.removeItemDef(_itemDef) end
+
+---@param _spriteName string
+---@return unknown?
+---@return unknown?
+function forageSystem.resolveSpriteAffinity(_spriteName, _focusCategory) end
 
 function forageSystem.setOptionValues() end
 
@@ -1343,6 +1370,7 @@ function forageSystem.zoneIntersects(_zoneData, _x, _y, _z, _w, _h) end
 ---@class umbrella.Foraging.LootTableCategory
 ---@field category string
 ---@field chance number
+---@field definition umbrella.Foraging.CategoryDefinition
 ---@field items umbrella.Foraging.LootTableItem[]
 ---@field totalChance number
 
@@ -1382,12 +1410,6 @@ function forageSystem.zoneIntersects(_zoneData, _x, _y, _z, _w, _h) end
 ---@field x number
 ---@field y number
 ---@field z number
-
----@class umbrella.Foraging.ZoneDataBounds
----@field x1 number
----@field x2 number
----@field y1 number
----@field y2 number
 
 ---@class umbrella.Foraging.ZoneDefinition
 ---@field abundanceSetting string

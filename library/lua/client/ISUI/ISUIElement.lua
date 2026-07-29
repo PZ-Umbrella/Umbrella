@@ -11,14 +11,14 @@
 ---@field anchorTop boolean
 ---@field autoAddJoypadButton boolean
 ---@field children table<integer, ISUIElement>
----@field childrenInOrder table
+---@field childrenInOrder ISUIElement[]
 ---@field contentHorizontalAlignment number
 ---@field controller integer?
----@field creationCallStack unknown
+---@field creationCallStack string?
 ---@field dock string
 ---@field enabled boolean?
 ---@field forceCursorVisible boolean?
----@field gameOption unknown?
+---@field gameOption GameOption?
 ---@field getAPrompt (fun(self: ISUIElement): string?)?
 ---@field getBPrompt (fun(self: ISUIElement): string?)?
 ---@field getLBPrompt (fun(self: ISUIElement): string?)?
@@ -28,24 +28,25 @@
 ---@field height number
 ---@field hscroll ISScrollBar?
 ---@field ID integer
+---@field ignoreAim boolean?
 ---@field internal string?
 ---@field isValidPrompt (fun(self: ISUIElement): boolean)?
 ---@field javaObject UIElement
 ---@field joyfocus unknown?
 ---@field joypadFocused boolean
----@field joypadNavigate table?
----@field joypadNavigatePrevRect table?
----@field joypadNavigateTransition table?
+---@field joypadNavigate umbrella.JoypadNavigate?
+---@field joypadNavigatePrevRect umbrella.XYWH?
+---@field joypadNavigateTransition umbrella.ISUIElement.JoypadNavigateTransition?
 ---@field minimumHeight number
 ---@field minimumWidth number
----@field name unknown?
----@field onDoLayout unknown?
+---@field name string?
+---@field onDoLayout function?
 ---@field onMouseDoubleClick umbrella.ISUIElement.MouseDoubleClick
 ---@field overrideBPrompt boolean?
 ---@field parent ISUIElement?
 ---@field removed boolean
 ---@field scrollwidth number
----@field style unknown?
+---@field style ISStyle?
 ---@field target unknown?
 ---@field vscroll ISScrollBar?
 ---@field wantExtraMouseEvents boolean?
@@ -59,7 +60,7 @@ ISUIElement.Type = "ISUIElement"
 ISUIElement.IDMax = 1
 
 ---@param otherElement ISUIElement
----@return unknown
+---@return ISUIElement
 function ISUIElement:addChild(otherElement) end
 
 ---@param addHorizontal boolean?
@@ -104,6 +105,7 @@ function ISUIElement:containsPointLocal(x, y) end
 
 function ISUIElement:createChildren() end
 
+---@param indent string?
 function ISUIElement:debugPrintTree(indent) end
 
 function ISUIElement:detachFromParent() end
@@ -118,10 +120,12 @@ function ISUIElement:doLayout() end
 ---@param h number
 function ISUIElement:drawItemIcon(item, x, y, a, w, h) end
 
+---@param texture Texture | ISUITextureGetter
 ---@param x number
 ---@param y number
 ---@param x2 number
 ---@param y2 number
+---@param thickness number
 ---@param a number
 ---@param r number
 ---@param g number
@@ -138,8 +142,12 @@ function ISUIElement:drawLine(texture, x, y, x2, y2, thickness, a, r, g, b) end
 ---@param b number
 function ISUIElement:drawLine2(x, y, x2, y2, a, r, g, b) end
 
+---@param texture Texture | ISUITextureGetter
 ---@param x number
 ---@param y number
+---@param x2 number
+---@param y2 number
+---@param thickness number
 ---@param a number
 ---@param r number
 ---@param g number
@@ -199,6 +207,7 @@ function ISUIElement:drawRectBorder(x, y, w, h, a, r, g, b) end
 ---@param b number
 function ISUIElement:drawRectBorderStatic(x, y, w, h, a, r, g, b) end
 
+---@param bounds ISBounds
 ---@param a number
 ---@param r number
 ---@param g number
@@ -223,14 +232,19 @@ function ISUIElement:drawRectStatic(x, y, w, h, a, r, g, b) end
 ---@param h number
 function ISUIElement:drawScriptItemIcon(scriptItem, x, y, a, w, h) end
 
+---@param texture Texture | ISUITextureGetter
+---@param subX number
+---@param subY number
+---@param subW number
+---@param subH number
 ---@param x number
 ---@param y number
 ---@param w number
 ---@param h number
 ---@param a number
----@param r number
----@param g number
----@param b number
+---@param r number?
+---@param g number?
+---@param b number?
 function ISUIElement:drawSubTexture(texture, subX, subY, subW, subH, x, y, w, h, a, r, g, b) end
 
 ---@param str string
@@ -303,7 +317,7 @@ function ISUIElement:drawTextStatic(str, x, y, r, g, b, a, font) end
 ---@param font UIFont?
 function ISUIElement:drawTextUntrimmed(str, x, y, r, g, b, a, font) end
 
----@param texture Texture
+---@param texture Texture | ISUITextureGetter
 ---@param x number
 ---@param y number
 ---@param a number
@@ -312,7 +326,7 @@ function ISUIElement:drawTextUntrimmed(str, x, y, r, g, b, a, font) end
 ---@param b number?
 function ISUIElement:drawTexture(texture, x, y, a, r, g, b) end
 
----@param texture Texture
+---@param texture Texture | ISUITextureGetter
 ---@param tlx number
 ---@param tly number
 ---@param trx number
@@ -327,13 +341,13 @@ function ISUIElement:drawTexture(texture, x, y, a, r, g, b) end
 ---@param a number
 function ISUIElement:drawTextureAllPoint(texture, tlx, tly, trx, try, brx, bry, blx, bly, r, g, b, a) end
 
----@param tex Texture
+---@param texture Texture | ISUITextureGetter
 ---@param centerX number
 ---@param centerY number
 ---@param angle number
-function ISUIElement:DrawTextureAngle(tex, centerX, centerY, angle) end
+function ISUIElement:DrawTextureAngle(texture, centerX, centerY, angle) end
 
----@param texture Texture
+---@param texture Texture | ISUITextureGetter
 ---@param x number
 ---@param y number
 ---@param w number
@@ -344,7 +358,7 @@ function ISUIElement:DrawTextureAngle(tex, centerX, centerY, angle) end
 ---@param b number?
 function ISUIElement:drawTextureScaled(texture, x, y, w, h, a, r, g, b) end
 
----@param texture Texture
+---@param texture Texture | ISUITextureGetter
 ---@param x number
 ---@param y number
 ---@param w number
@@ -355,7 +369,7 @@ function ISUIElement:drawTextureScaled(texture, x, y, w, h, a, r, g, b) end
 ---@param b number?
 function ISUIElement:drawTextureScaledAspect(texture, x, y, w, h, a, r, g, b) end
 
----@param texture Texture
+---@param texture Texture | ISUITextureGetter
 ---@param x number
 ---@param y number
 ---@param w number
@@ -366,7 +380,7 @@ function ISUIElement:drawTextureScaledAspect(texture, x, y, w, h, a, r, g, b) en
 ---@param b number?
 function ISUIElement:drawTextureScaledAspect2(texture, x, y, w, h, a, r, g, b) end
 
----@param texture Texture
+---@param texture Texture | ISUITextureGetter
 ---@param x number
 ---@param y number
 ---@param w number
@@ -377,7 +391,7 @@ function ISUIElement:drawTextureScaledAspect2(texture, x, y, w, h, a, r, g, b) e
 ---@param b number?
 function ISUIElement:drawTextureScaledAspect3(texture, x, y, w, h, a, r, g, b) end
 
----@param texture Texture
+---@param texture Texture | ISUITextureGetter
 ---@param x number
 ---@param y number
 ---@param w number
@@ -388,9 +402,10 @@ function ISUIElement:drawTextureScaledAspect3(texture, x, y, w, h, a, r, g, b) e
 ---@param b number?
 function ISUIElement:drawTextureScaledStatic(texture, x, y, w, h, a, r, g, b) end
 
----@param texture Texture
+---@param texture Texture | ISUITextureGetter
 ---@param x number
 ---@param y number
+---@param scale number
 ---@param a number
 ---@param r number?
 ---@param g number?
@@ -406,7 +421,7 @@ function ISUIElement:drawTextureScaledUniform(texture, x, y, scale, a, r, g, b) 
 ---@param b number?
 function ISUIElement:drawTextureStatic(texture, x, y, a, r, g, b) end
 
----@param texture Texture
+---@param texture Texture | ISUITextureGetter
 ---@param x number
 ---@param y number
 ---@param w number
@@ -417,7 +432,7 @@ function ISUIElement:drawTextureStatic(texture, x, y, a, r, g, b) end
 ---@param a number?
 function ISUIElement:drawTextureTiled(texture, x, y, w, h, r, g, b, a) end
 
----@param texture Texture
+---@param texture Texture | ISUITextureGetter
 ---@param x number
 ---@param y number
 ---@param w number
@@ -428,7 +443,7 @@ function ISUIElement:drawTextureTiled(texture, x, y, w, h, r, g, b, a) end
 ---@param a number?
 function ISUIElement:drawTextureTiledX(texture, x, y, w, h, r, g, b, a) end
 
----@param texture Texture
+---@param texture Texture | ISUITextureGetter
 ---@param x number
 ---@param y number
 ---@param w number
@@ -439,7 +454,7 @@ function ISUIElement:drawTextureTiledX(texture, x, y, w, h, r, g, b, a) end
 ---@param a number?
 function ISUIElement:drawTextureTiledY(texture, x, y, w, h, r, g, b, a) end
 
----@param texture Texture
+---@param texture Texture | ISUITextureGetter
 ---@param x number
 ---@param y number
 ---@param w number
@@ -496,16 +511,10 @@ function ISUIElement:getCenterX() end
 ---@return number
 function ISUIElement:getCenterY() end
 
----@return number
-function ISUIElement:getCentreX() end
-
----@return number
-function ISUIElement:getCentreY() end
-
 ---@return table<integer, ISUIElement>
 function ISUIElement:getChildren() end
 
----@return table
+---@return ISUIElement[]
 function ISUIElement:getChildrenInOrder() end
 
 ---@return integer?
@@ -532,7 +541,7 @@ function ISUIElement:getJoypadNavigateStartDelay() end
 ---@return boolean
 function ISUIElement:getKeepOnScreen() end
 
----@return unknown
+---@return number
 function ISUIElement:getLeft() end
 
 ---@return ISBounds
@@ -541,6 +550,7 @@ function ISUIElement:getLocalBounds() end
 ---@return number
 function ISUIElement:getMaxDrawHeight() end
 
+---@param ... ISUIElement
 ---@return number
 function ISUIElement:getMaxWidthOfElements(...) end
 
@@ -583,10 +593,10 @@ function ISUIElement:getScrollWithParent() end
 ---@return number
 function ISUIElement:getSelfCenterX() end
 
----@return unknown?
+---@return ISStyle?
 function ISUIElement:getStyle() end
 
----@return unknown
+---@return number
 function ISUIElement:getTop() end
 
 ---@param name string?
@@ -644,6 +654,8 @@ function ISUIElement:isMouseOverChild() end
 ---@return boolean
 function ISUIElement:isPointOver(screenX, screenY) end
 
+---@param screenX number
+---@param screenY number
 ---@return boolean
 function ISUIElement:isPointOverChild(screenX, screenY) end
 
@@ -662,7 +674,7 @@ function ISUIElement:isVScrollBarVisible() end
 ---@return boolean?
 function ISUIElement:isWantMouseEvents() end
 
----@return number
+---@return integer
 function ISUIElement:numChildren() end
 
 ---@param x number
@@ -684,7 +696,7 @@ function ISUIElement:onJoypadBeforeDeactivate_Descendant(descendant, joypadData)
 function ISUIElement:onJoypadButtonReleased(button, joypadData) end
 
 ---@param descendant ISUIElement
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISUIElement:onJoypadButtonReleased_Descendant(descendant, button, joypadData) end
 
@@ -716,12 +728,12 @@ function ISUIElement:onJoypadDirUp(joypadData) end
 ---@param joypadData JoypadData
 function ISUIElement:onJoypadDirUp_Descendant(descendant, joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISUIElement:onJoypadDown(button, joypadData) end
 
 ---@param descendant ISUIElement
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISUIElement:onJoypadDown_Descendant(descendant, button, joypadData) end
 
@@ -859,27 +871,31 @@ function ISUIElement:setAnchorRight(bAnchor) end
 ---@param bAnchor boolean
 function ISUIElement:setAnchors(bAnchor) end
 
----@param bAnchorT boolean
----@param bAnchorB boolean
----@param bAnchorL boolean
----@param bAnchorR boolean
+---@param bAnchorT boolean?
+---@param bAnchorB boolean?
+---@param bAnchorL boolean?
+---@param bAnchorR boolean?
 function ISUIElement:setAnchorsTBLR(bAnchorT, bAnchorB, bAnchorL, bAnchorR) end
 
 ---@param bAnchor boolean
 function ISUIElement:setAnchorTop(bAnchor) end
 
+---@param bounds ISBounds
 function ISUIElement:setBounds(bounds) end
 
 ---@param bCapture boolean
 function ISUIElement:setCapture(bCapture) end
 
+---@param x number
 function ISUIElement:setCenterX(x) end
 
+---@param y number
 function ISUIElement:setCenterY(y) end
 
 ---@param c integer
 function ISUIElement:setController(c) end
 
+---@param ... ISUIElement
 ---@return number
 function ISUIElement:setElementWidthToMaxOf(...) end
 
@@ -932,7 +948,7 @@ function ISUIElement:setScrollWithParent(b) end
 ---@param y number
 ---@param w number
 ---@param h number
----@return unknown
+---@return nil
 function ISUIElement:setStencilCircle(x, y, w, h) end
 
 ---@param x number
@@ -954,6 +970,7 @@ function ISUIElement:setWantExtraMouseEvents(want) end
 ---@param want boolean
 function ISUIElement:setWantKeyEvents(want) end
 
+---@param want boolean
 function ISUIElement:setWantMouseEvents(want) end
 
 ---@param w number
@@ -1001,7 +1018,8 @@ function ISUIElement:suspendStencil() end
 ---@return string
 function ISUIElement:toDebugString() end
 
----@return unknown
+---@param absoluteBounds ISBounds
+---@return ISBounds
 function ISUIElement:toLocalBounds(absoluteBounds) end
 
 ---@return string
@@ -1020,10 +1038,14 @@ function ISUIElement:update() end
 
 function ISUIElement:updateScrollbars() end
 
----@return unknown
+---@param param0 unknown?
+---@param visitor fun(target: unknown?, element: ISUIElement)
+---@return unknown?
 function ISUIElement:visitAllDescendants(param0, visitor) end
 
----@return unknown
+---@param param0 unknown?
+---@param visitor fun(target: unknown?, element: ISUIElement)
+---@return unknown?
 function ISUIElement:visitAndAllDescendants(param0, visitor) end
 
 ---@param title string
@@ -1038,3 +1060,14 @@ function ISUIElement:wrapInCollapsableWindow(title, resizable, subClass) end
 ---@param height number?
 ---@return ISUIElement
 function ISUIElement:new(x, y, width, height) end
+
+---@class umbrella.ISUIElement.JoypadNavigateTransition
+---@field elapsed number
+---@field h1 number
+---@field h2 number
+---@field w1 number
+---@field w2 number
+---@field x1 number
+---@field x2 number
+---@field y1 number
+---@field y2 number

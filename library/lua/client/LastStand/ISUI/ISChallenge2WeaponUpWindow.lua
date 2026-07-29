@@ -5,7 +5,7 @@
 ---@field char IsoPlayer
 ---@field joypadButtons ISButton[]
 ---@field playerId integer
-ISChallenge2WeaponUpWindow = ISPanelJoypad:derive("ISChallenge2WeaponUpWindow")
+ISChallenge2WeaponUpWindow = {}
 ISChallenge2WeaponUpWindow.Type = "ISChallenge2WeaponUpWindow"
 
 function ISChallenge2WeaponUpWindow:create() end
@@ -22,7 +22,7 @@ function ISChallenge2WeaponUpWindow:initialise() end
 
 function ISChallenge2WeaponUpWindow:loadJoypadButtons() end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISChallenge2WeaponUpWindow:onJoypadDown(button, joypadData) end
 

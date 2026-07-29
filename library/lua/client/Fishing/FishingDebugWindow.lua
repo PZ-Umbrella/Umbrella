@@ -1,7 +1,6 @@
 ---@meta
 
 ---@class FishingDebugWindow : ISPanelJoypad
----@field name unknown?
 ---@field player IsoPlayer
 ---@field titlebarbkg Texture
 FishingDebugWindow = ISPanelJoypad:derive("FishingDebugWindow")

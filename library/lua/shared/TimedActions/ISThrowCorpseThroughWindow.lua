@@ -2,7 +2,7 @@
 
 ---@class ISThrowCorpseThroughWindow : ISBaseTimedAction
 ---@field allowedWhileDraggingCorpses boolean
----@field window unknown
+---@field window IsoWindow
 ISThrowCorpseThroughWindow = ISBaseTimedAction:derive("ISThrowCorpseThroughWindow")
 ISThrowCorpseThroughWindow.Type = "ISThrowCorpseThroughWindow"
 
@@ -23,8 +23,10 @@ function ISThrowCorpseThroughWindow:stop() end
 
 function ISThrowCorpseThroughWindow:update() end
 
----@return unknown
+---@return boolean
 function ISThrowCorpseThroughWindow:waitToStart() end
 
+---@param character IsoPlayer
+---@param window IsoWindow
 ---@return ISThrowCorpseThroughWindow
 function ISThrowCorpseThroughWindow:new(character, window) end

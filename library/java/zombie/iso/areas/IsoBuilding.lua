@@ -85,6 +85,10 @@ function __IsoBuilding:getRandomRoom() end
 ---@return IsoRoom
 function __IsoBuilding:getRandomRoom(room) end
 
+---@param badRooms List<string>
+---@return IsoRoom
+function __IsoBuilding:getRandomRoomExcluding(badRooms) end
+
 ---@return integer
 function __IsoBuilding:getRoomsNumber() end
 
@@ -112,6 +116,10 @@ function __IsoBuilding:isToxic() end
 
 ---@param b boolean
 function __IsoBuilding:setAllExplored(b) end
+
+---@param b boolean
+---@param exception IsoRoom
+function __IsoBuilding:setAllExplored(b, exception) end
 
 ---@param isToxic boolean
 function __IsoBuilding:setToxic(isToxic) end

@@ -86,7 +86,7 @@ function ISRadioWindow:onJoypadDirRight() end
 
 function ISRadioWindow:onJoypadDirUp() end
 
----@param button integer
+---@param button JoypadButton
 function ISRadioWindow:onJoypadDown(button) end
 
 ---@param joypadData JoypadData

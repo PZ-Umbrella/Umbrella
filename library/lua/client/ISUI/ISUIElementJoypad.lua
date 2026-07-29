@@ -73,7 +73,7 @@ function ISUIElementJoypad:onJoypadDirRight() end
 
 function ISUIElementJoypad:onJoypadDirUp() end
 
----@param button integer
+---@param button JoypadButton
 function ISUIElementJoypad:onJoypadDown(button) end
 
 ---@param joypadData JoypadData

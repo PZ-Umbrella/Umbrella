@@ -1,6 +1,7 @@
 ---@meta
 
 ---@class ISDropCorpseAction : ISBaseTimedAction
+---@field allowedWhileDraggingCorpses boolean
 ---@field forceProgressBar boolean
 ISDropCorpseAction = ISBaseTimedAction:derive("ISDropCorpseAction")
 ISDropCorpseAction.Type = "ISDropCorpseAction"
@@ -28,6 +29,6 @@ function ISDropCorpseAction:update() end
 function ISDropCorpseAction:waitToStart() end
 
 ---@param character IsoPlayer
----@param targetSquare unknown?
+---@param targetSquare IsoGridSquare?
 ---@return ISDropCorpseAction
 function ISDropCorpseAction:new(character, targetSquare) end

@@ -29,6 +29,7 @@ function ISDropVehicleItemAction:stop() end
 
 function ISDropVehicleItemAction:update() end
 
+---@param character IsoPlayer
 ---@param item InventoryItem
 ---@param vehicle BaseVehicle
 ---@param door VehiclePart

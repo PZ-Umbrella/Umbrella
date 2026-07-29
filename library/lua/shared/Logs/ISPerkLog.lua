@@ -8,6 +8,7 @@ function ISPerkLog.init() end
 ---@param _character IsoPlayer
 function ISPerkLog.logAllPerks(_character) end
 
+---@param _player integer
 function ISPerkLog.logCreatePlayer(_player) end
 
 ---@param _character IsoPlayer

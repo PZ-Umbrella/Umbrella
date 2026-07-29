@@ -80,14 +80,17 @@ function LoadGameScreen:onJoypadBeforeDeactivate(joypadData) end
 ---@param joypadData JoypadData
 function LoadGameScreen:onJoypadBeforeDeactivate_child(joypadData) end
 
+---@param descendant ISUIElement
+---@param button JoypadButton
+---@param joypadData JoypadData
 function LoadGameScreen:onJoypadDown_Descendant(descendant, button, joypadData) end
 
----@param button ISButton
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function LoadGameScreen:onJoypadDown_listbox(button, joypadData) end
 
 ---@param descendant ISUIElement
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function LoadGameScreen:onJoypadNavigateStart_Descendant(descendant, button, joypadData) end
 

@@ -178,6 +178,9 @@ function __VehiclePart:getMechanicSkillInstaller() end
 ---@return table
 function __VehiclePart:getModData() end
 
+---@return VehiclePartOwner
+function __VehiclePart:getOwner() end
+
 ---@return VehiclePart
 function __VehiclePart:getParent() end
 
@@ -199,6 +202,9 @@ function __VehiclePart:getTable(id) end
 
 ---@return BaseVehicle
 function __VehiclePart:getVehicle() end
+
+---@return VehicleEngine
+function __VehiclePart:getVehicleEngine() end
 
 ---@return number
 function __VehiclePart:getWheelFriction() end
@@ -345,7 +351,7 @@ VehiclePart = {}
 ---@return number
 function VehiclePart.getNumberByCondition(number, cond, min) end
 
----@param vehicle BaseVehicle
+---@param vehicle VehiclePartOwner
 ---@return VehiclePart
 function VehiclePart.new(vehicle) end
 

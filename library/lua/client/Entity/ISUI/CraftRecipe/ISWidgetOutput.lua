@@ -13,7 +13,6 @@
 ---@field iconBorderSizeX number
 ---@field iconBorderSizeY number
 ---@field iconCreate ISImage
----@field iconMargin number
 ---@field iconSize number
 ---@field interactiveMode boolean
 ---@field isAutoFill boolean
@@ -21,7 +20,6 @@
 ---@field isAutoFillY boolean
 ---@field labelIconSize number
 ---@field logic BaseCraftingLogic
----@field margin number
 ---@field normalBorderColor table
 ---@field outputScript OutputScript
 ---@field player IsoPlayer

@@ -54,6 +54,7 @@ SpriteGridCache = {}
 ---@field customItem string?
 ---@field Eoffset number?
 ---@field facing ("N" | "E" | "S" | "W")?
+---@field fitsBeneathCountertop unknown
 ---@field groupName string?
 ---@field ignoreSurfaceSnap boolean?
 ---@field isClosedState boolean?
@@ -331,7 +332,7 @@ function ISMoveableSpriteProps:getMoveableOverlayFromObject(_object) end
 ---@param _left number
 ---@param _top number
 ---@param _z number
----@return table?
+---@return IsoGridSquare[]?
 function ISMoveableSpriteProps:getMultiTileSquares(_left, _top, _z) end
 
 ---@return number
@@ -473,6 +474,7 @@ function ISMoveableSpriteProps:hasTool(_player, _mode) end
 ---@return InventoryItem?
 function ISMoveableSpriteProps:instanceItem(_spriteNameOverride) end
 
+---@param object IsoPlayer
 ---@return boolean
 function ISMoveableSpriteProps:isBasementWallAdjacentToTheVoid(object) end
 
@@ -554,6 +556,7 @@ function ISMoveableSpriteProps:placeMoveableViaCursor(_character, _square, _orig
 ---@param _object IsoObject
 function ISMoveableSpriteProps:playBreakSound(_character, _object) end
 
+---@param _character IsoPlayer
 function ISMoveableSpriteProps:playScrapSuccessSound(_character) end
 
 ---@param obj IsoObject
@@ -582,6 +585,8 @@ function ISMoveableSpriteProps:repairObjectViaCursor(_character, _square, _origS
 ---@param components FluidContainer[]
 function ISMoveableSpriteProps:restoreComponentsAfterPlacing(obj, components) end
 
+---@param modData table
+---@param obj IsoObject
 function ISMoveableSpriteProps:restoreThumpableParameters(modData, obj) end
 
 ---@param _character IsoPlayer
@@ -653,26 +658,32 @@ function ISMoveableSpriteProps:snapFaceToSquare(_square) end
 ---@return boolean
 function ISMoveableSpriteProps:startScrapAction(_action) end
 
+---@param _character IsoPlayer
 ---@param _sound string
 function ISMoveableSpriteProps:transmitPlaySound(_character, _sound) end
 
 ---@param character IsoPlayer
 ---@param square IsoGridSquare
 ---@param keepActions boolean
+---@param directionNew "N" | "E" | "S" | "W"
 ---@return boolean?
-function ISMoveableSpriteProps:walkAdj(character, square, keepActions) end
+function ISMoveableSpriteProps:walkAdj(character, square, keepActions, directionNew) end
 
+---@param _character IsoPlayer
 ---@param _x number
 ---@param _y number
 ---@param _z number
+---@param _keepActions boolean
+---@param _directionRotated "N" | "E" | "S" | "W"
 ---@return boolean
 function ISMoveableSpriteProps:walkAdjMultiTile(_character, _x, _y, _z, _keepActions, _directionRotated) end
 
 ---@param _character IsoPlayer
 ---@param _square IsoGridSquare
 ---@param _mode string
+---@param _origSpriteName string
 ---@return boolean
-function ISMoveableSpriteProps:walkToAndEquip(_character, _square, _mode) end
+function ISMoveableSpriteProps:walkToAndEquip(_character, _square, _mode, _origSpriteName) end
 
 ---@param _sprite string
 ---@return ISMoveableSpriteProps
@@ -736,8 +747,9 @@ function ISThumpableSpriteProps:startScrapAction(_action) end
 ---@param _character IsoPlayer
 ---@param _square IsoGridSquare
 ---@param _mode string
+---@param _origSpriteName string
 ---@return boolean
-function ISThumpableSpriteProps:walkToAndEquip(_character, _square, _mode) end
+function ISThumpableSpriteProps:walkToAndEquip(_character, _square, _mode, _origSpriteName) end
 
 ---@param object IsoObject
 ---@return ISThumpableSpriteProps

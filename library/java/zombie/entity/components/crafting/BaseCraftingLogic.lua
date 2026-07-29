@@ -147,10 +147,11 @@ function __BaseCraftingLogic:isManualSelectInputs() end
 ---@return boolean
 function __BaseCraftingLogic:offerInputItem(item) end
 
+---@param player IsoGameCharacter
 ---@param inputItems List<InventoryItem>
 ---@param resources List<Resource>
 ---@param clearExisting boolean
-function __BaseCraftingLogic:populateInputs(inputItems, resources, clearExisting) end
+function __BaseCraftingLogic:populateInputs(player, inputItems, resources, clearExisting) end
 
 function __BaseCraftingLogic:refresh() end
 

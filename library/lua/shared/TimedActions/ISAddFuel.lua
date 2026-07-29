@@ -28,7 +28,7 @@ function ISAddFuel:update() end
 ---@return boolean
 function ISAddFuel:waitToStart() end
 
----@param character unknown?
+---@param character IsoPlayer
 ---@param generator IsoGenerator
 ---@param petrol InventoryItem
 ---@param maxTime number?

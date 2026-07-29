@@ -34,7 +34,8 @@ function ISComboBox:addOption(option) end
 
 ---@param option string
 ---@param data unknown?
-function ISComboBox:addOptionWithData(option, data) end
+---@param tooltip string?
+function ISComboBox:addOptionWithData(option, data, tooltip) end
 
 function ISComboBox:clear() end
 
@@ -121,6 +122,7 @@ function ISComboBox:onMouseMoveOutside(dx, dy) end
 ---@param y number
 function ISComboBox:onMouseUp(x, y) end
 
+---@param index integer
 function ISComboBox:pointOnItem(index) end
 
 function ISComboBox:prerender() end
@@ -145,6 +147,10 @@ function ISComboBox:setFilterText(text) end
 ---@param focused boolean
 function ISComboBox:setJoypadFocused(focused) end
 
+---@param target unknown?
+---@param onChange umbrella.ISComboBox.OnChange?
+---@param onChangeArg1 unknown?
+---@param onChangeArg2 unknown?
 function ISComboBox:setOnChange(target, onChange, onChangeArg1, onChangeArg2) end
 
 ---@param value integer
@@ -229,3 +235,4 @@ function ISComboBoxPopup:new(x, y, width, height) end
 ---@class umbrella.ISComboBox.Option
 ---@field data unknown
 ---@field text string
+---@field tooltip string?

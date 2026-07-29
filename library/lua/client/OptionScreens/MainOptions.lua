@@ -9,8 +9,6 @@
 ---@field addY number
 ---@field backButton ISButton
 ---@field badHighColor ISButton
----@field btnJoypadSensitivityM ISButton
----@field btnJoypadSensitivityP ISButton
 ---@field colorPicker ISColorPicker
 ---@field colorPicker2 ISColorPicker
 ---@field colorPicker3 ISColorPicker
@@ -18,7 +16,6 @@
 ---@field colorPicker5 ISColorPicker
 ---@field colorPicker6 ISColorPicker
 ---@field controllerTab GameOptionControllerTab
----@field controllerTestPanel ISControllerTestPanel
 ---@field cover ISPanel
 ---@field gameOptions GameOptions
 ---@field gameSounds ISGameSounds
@@ -26,7 +23,6 @@
 ---@field joypadButtons ISButton[]
 ---@field keyButtonWidth number
 ---@field keyTickBoxes ISTickBox[]
----@field labelJoypadSensitivity ISLabel
 ---@field mainPanel ISPanelJoypad
 ---@field modal ISUIElement?
 ---@field monitorSettings umbrella.MainOptions.MonitorSettings
@@ -37,7 +33,6 @@
 ---@field restartRequired boolean
 ---@field saveButton ISButton
 ---@field sprintBtn ISButton
----@field stuffBelowControllerTickbox ISPanel
 ---@field tabs ISTabPanel
 ---@field targetColor ColorInfo
 ---@field worldItemHighlightColor ISButton
@@ -251,9 +246,6 @@ function MainOptions:centerTabChildrenX(tabTitle) end
 
 function MainOptions:close() end
 
----@param button ISButton
-function MainOptions:ControllerReload(button) end
-
 function MainOptions:create() end
 
 function MainOptions:doLayout() end
@@ -261,12 +253,6 @@ function MainOptions:doLayout() end
 function MainOptions:initialise() end
 
 function MainOptions:instantiate() end
-
----@param button ISButton
-function MainOptions:joypadSensitivityM(button) end
-
----@param button ISButton
-function MainOptions:joypadSensitivityP(button) end
 
 ---@param button ISButton
 function MainOptions:onBadHighlightColor(button) end
@@ -454,77 +440,6 @@ function __mainOptions_HorizontalLine:new(x, y, width) end
 ---@field joypadTexSize number
 ---@field labelHeight number
 ISStyle = {}
-
----@class MainOptions.GameOption : ISBaseObject
----@field arg1 unknown?
----@field arg2 unknown?
----@field control ISUIElement?
----@field name string
----@field onChange function?
----@field tableContains function?
-local __mainOptions_GameOption = {}
-__mainOptions_GameOption.Type = "GameOption"
-
-function __mainOptions_GameOption:apply() end
-
----@param box ISComboBox
-function __mainOptions_GameOption:onChangeComboBox(box) end
-
----@param value number
----@param control ISSliderPanel
-function __mainOptions_GameOption:onChangeSlider(value, control) end
-
----@param index integer
----@param selected boolean
-function __mainOptions_GameOption:onChangeTickBox(index, selected) end
-
----@param control ISVolumeControl
----@param volume number
-function __mainOptions_GameOption:onChangeVolumeControl(control, volume) end
-
-function __mainOptions_GameOption:resetLua() end
-
-function __mainOptions_GameOption:restartRequired(oldValue, newValue) end
-
-function __mainOptions_GameOption:restoreOriginalValue() end
-
-function __mainOptions_GameOption:storeCurrentValue() end
-
-function __mainOptions_GameOption:toUI() end
-
----@param name string
----@param control ISUIElement?
----@param arg1 unknown?
----@param arg2 unknown?
----@return MainOptions.GameOption
-function __mainOptions_GameOption:new(name, control, arg1, arg2) end
-
----@class MainOptions.GameOptions : ISBaseObject
----@field changed boolean
----@field options table
-local __mainOptions_GameOptions = {}
-__mainOptions_GameOptions.Type = "GameOptions"
-
----@param option MainOptions.GameOption
-function __mainOptions_GameOptions:add(option) end
-
-function __mainOptions_GameOptions:apply() end
-
----@param optionName string
----@return MainOptions.GameOption?
-function __mainOptions_GameOptions:get(optionName) end
-
----@param option MainOptions.GameOption?
-function __mainOptions_GameOptions:onChange(option) end
-
-function __mainOptions_GameOptions:restoreOriginalValues() end
-
-function __mainOptions_GameOptions:storeCurrentValues() end
-
-function __mainOptions_GameOptions:toUI() end
-
----@return MainOptions.GameOptions
-function __mainOptions_GameOptions:new() end
 
 ---@class umbrella.MainOptions.KeyTextElement
 ---@field altCode integer

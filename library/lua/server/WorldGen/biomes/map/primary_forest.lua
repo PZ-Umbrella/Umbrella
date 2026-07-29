@@ -6,32 +6,44 @@ worldgen.biomes_map.primary_forest = {
 	features = {
 		TREE = {
 			{
-				f = worldgen.features.TREE.hemlock_jumbo,
-				p = 0.075,
+				f = worldgen.features.TREE.hemlock_jumbo_xxl,
+				p = 0.15,
 			},
 			{
-				f = worldgen.features.TREE.hemlock,
-				p = 0.02,
+				f = worldgen.features.TREE.hemlock_jumbo_xl,
+				p = 0.2,
 			},
 			{
-				f = worldgen.features.TREE.holly_jumbo,
-				p = 0.075,
+				f = worldgen.features.TREE.holly_jumbo_xxl,
+				p = 0.15,
 			},
 			{
-				f = worldgen.features.TREE.holly,
-				p = 0.02,
+				f = worldgen.features.TREE.holly_jumbo_xl,
+				p = 0.2,
 			},
 			{
-				f = worldgen.features.TREE.bush_primaryforest,
-				p = 0.22,
+				f = worldgen.features.TREE.maple_jumbo_xxl,
+				p = 0.05,
 			},
 			{
-				f = worldgen.features.TREE.boulders_primaryforest,
-				p = 0.03,
+				f = worldgen.features.TREE.maple_jumbo_xl,
+				p = 0.05,
 			},
 			{
-				f = worldgen.features.TREE.grass_primaryforest,
-				p = 0.65,
+				f = worldgen.features.TREE.dogwood_jumbo_xxl,
+				p = 0.05,
+			},
+			{
+				f = worldgen.features.TREE.dogwood_jumbo_xl,
+				p = 0.05,
+			},
+			{
+				f = worldgen.features.TREE.linden_jumbo_xxl,
+				p = 0.05,
+			},
+			{
+				f = worldgen.features.ORE.boulders_primaryforest,
+				p = 0.05,
 			},
 		},
 		BUSH = {
@@ -42,11 +54,11 @@ worldgen.biomes_map.primary_forest = {
 		},
 		PLANT = {
 			{
-				f = worldgen.features.PLANT.grass_medium,
+				f = worldgen.features.PLANT.grass_high,
 				p = 0.7,
 			},
 			{
-				f = worldgen.features.PLANT.grass_low,
+				f = worldgen.features.PLANT.grass_medium,
 				p = 0.2,
 			},
 			{
@@ -58,12 +70,25 @@ worldgen.biomes_map.primary_forest = {
 				p = 0.025,
 			},
 			{
-				f = worldgen.features.PLANT.boulderslow_prim,
+				f = worldgen.features.ORE.boulderslow_prim,
 				p = 0.025,
 			},
 		},
 	},
 	params = {
+		subbiomes = {
+			TREE = {
+				TREE = {
+					worldgen.subbiomes.bushes,
+				},
+				BUSH = {
+					worldgen.subbiomes.bushes,
+				},
+				PLANT = {
+					worldgen.subbiomes.grass,
+				},
+			},
+		},
 		landscape = {
 			"FOREST",
 		},

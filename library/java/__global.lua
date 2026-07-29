@@ -76,7 +76,9 @@ function ZombRandFloat(min, max) end
 
 ---@param faction Faction
 ---@param host string
-function acceptFactionInvite(faction, host) end
+---@param invited string
+---@param isAccepted boolean
+function acceptFactionInvite(faction, host, invited, isAccepted) end
 
 ---@param target IsoPlayer
 ---@param requester IsoPlayer
@@ -499,12 +501,6 @@ function canModifyPlayerScoreboard() end
 ---@return boolean
 function canSeePlayerStats() end
 
----@param player IsoPlayer
----@param item InventoryItem
----@param itemType string
----@return integer
-function changeItemTypeTransaction(player, item, itemType) end
-
 ---@param connection UdpConnection
 function checkModsNeedUpdate(connection) end
 
@@ -603,23 +599,11 @@ function createHordeFromTo(spawnX, spawnY, targetX, targetY, count) end
 function createHordeInAreaTo(spawnX, spawnY, spawnW, spawnH, targetX, targetY, count) end
 
 ---@param player IsoPlayer
----@param item InventoryItem
+---@param table table
 ---@param src ItemContainer
 ---@param dst ItemContainer
 ---@return integer
-function createItemTransaction(player, item, src, dst) end
-
----@deprecated
----@param player IsoPlayer
----@param item InventoryItem
----@param src ItemContainer
----@param dst ItemContainer
----@param direction string
----@param posX number
----@param posY number
----@param posZ number
----@return integer
-function createItemTransactionWithPosData(player, item, src, dst, direction, posX, posY, posZ) end
+function createItemTransaction(player, table, src, dst) end
 
 ---@param base string
 ---@param name string
@@ -1477,10 +1461,6 @@ function getRadioAPI() end
 ---@return string
 function getRadioText(txt) end
 
----@param language zombie.core.Language
----@return ArrayList<string>
-function getRadioTranslators(language) end
-
 ---@return string
 function getRandomUUID() end
 
@@ -1502,12 +1482,6 @@ function getRoles() end
 
 ---@return SLSoundManager
 function getSLSoundManager() end
-
----@param filename string
----@param createIfNull boolean
----@param append boolean
----@return LuaManager.GlobalObject.LuaFileWriter
-function getSandboxFileWriter(filename, createIfNull, append) end
 
 ---@return SandboxOptions
 function getSandboxOptions() end
@@ -1645,6 +1619,10 @@ function getSteamWorkshopStagedItems() end
 ---@return boolean
 function getStreamModeActive() end
 
+---@param worldMapStreets WorldMapStreets
+---@return List<WorldMapStreet>
+function getStreets(worldMapStreets) end
+
 ---@param txt string
 ---@return string
 function getText(txt) end
@@ -1747,10 +1725,6 @@ function getTimestamp() end
 
 ---@return integer
 function getTimestampMs() end
-
----@param language zombie.core.Language
----@return ArrayList<string>
-function getTranslatorCredits(language) end
 
 ---@param input string
 ---@return string
@@ -2169,6 +2143,10 @@ function luaDebug() end
 ---@param action string
 function manipulateSavefile(folder, action) end
 
+---@param tables kahlua.Array<table>
+---@return table
+function mergeTable(tables) end
+
 ---@param module string
 ---@param type string
 ---@return string
@@ -2507,9 +2485,31 @@ function sendDebugStory(square, type, name) end
 function sendEquip(player) end
 
 ---@param faction Faction
----@param host IsoPlayer
+---@param username string
+function sendFactionChangeOwner(faction, username) end
+
+---@param faction Faction
+function sendFactionChangeTag(faction) end
+
+---@param faction Faction
+---@param title string
+function sendFactionChangeTitle(faction, title) end
+
+---@param title string
+---@param host string
+function sendFactionCreate(title, host) end
+
+---@param faction Faction
+function sendFactionDisband(faction) end
+
+---@param faction Faction
+---@param host string
 ---@param invited string
 function sendFactionInvite(faction, host, invited) end
+
+---@param faction Faction
+---@param username string
+function sendFactionRemoveMember(faction, username) end
 
 ---@param player IsoPlayer
 function sendFactionStatsChange(player) end
@@ -2519,20 +2519,39 @@ function sendFactionStatsChange(player) end
 ---@param item InventoryItem
 function sendFeedAnimalFromHand(animal, player, item) end
 
+---@param player IsoPlayer
+---@param zoneId string
+---@param icons table
+function sendForagePool(player, zoneId, icons) end
+
+---@param player IsoPlayer
+---@param focus string
+function sendForageRequestZone(player, focus) end
+
+---@param player IsoPlayer
+---@param iconID string
+function sendForageSpot(player, iconID) end
+
 ---@param username string
 ---@param code string
 function sendGoogleAuth(username, code) end
 
+---@deprecated
 ---@param target IsoPlayer
 ---@param damage string
 ---@param range string
 function sendHitPlayer(target, damage, range) end
 
+---@deprecated
 ---@param target IsoGameCharacter
 ---@param damage string
 ---@param isTargetHitFromBehind boolean
 ---@param vehicleSpeed string
 function sendHitVehicle(target, damage, isTargetHitFromBehind, vehicleSpeed) end
+
+---@deprecated
+---@param target IsoPlayer
+function sendHitZombie(target) end
 
 ---@param player IsoPlayer
 function sendHumanVisual(player) end

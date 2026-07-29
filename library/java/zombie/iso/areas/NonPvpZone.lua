@@ -74,6 +74,10 @@ function NonPvpZone.getNonPvpZone(x, y) end
 ---@return NonPvpZone
 function NonPvpZone.getZoneByTitle(title) end
 
+---@param player IsoPlayer
+---@return boolean
+function NonPvpZone.isInNonPvpZone(player) end
+
 ---@param title string
 function NonPvpZone.removeNonPvpZone(title) end
 

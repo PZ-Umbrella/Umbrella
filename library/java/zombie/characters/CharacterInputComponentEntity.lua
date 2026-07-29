@@ -36,6 +36,12 @@ function __CharacterInputComponentEntity:isAnyAimKeyDown() end
 function __CharacterInputComponentEntity:isAttackButtonDown() end
 
 ---@return boolean
+function __CharacterInputComponentEntity:isBuildButtonDown() end
+
+---@return boolean
+function __CharacterInputComponentEntity:isBuildButtonReleased() end
+
+---@return boolean
 function __CharacterInputComponentEntity:isChangeCharacterKeyDown() end
 
 ---@return boolean

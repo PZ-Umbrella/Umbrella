@@ -1,9 +1,22 @@
 ---@meta _
 
+---@class umbrella.Bounds
+---@field x1 number
+---@field x2 number
+---@field y1 number
+---@field y2 number
+
 ---@class umbrella.HSB
 ---@field b number
 ---@field h number
 ---@field s number
+
+---@class umbrella.JoypadNavigate
+---@field down ISUIElement?
+---@field left ISUIElement?
+---@field parent ISUIElement?
+---@field right ISUIElement?
+---@field up ISUIElement?
 
 ---@class umbrella.Rect
 ---@field height number

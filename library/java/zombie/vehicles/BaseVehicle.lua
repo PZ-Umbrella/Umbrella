@@ -1,6 +1,6 @@
 ---@meta _
 
----@class BaseVehicle: IsoMovingObject, Thumpable, IFMODParameterUpdater, IPositional, VehicleSoundOwner
+---@class BaseVehicle: IsoMovingObject, Thumpable, IFMODParameterUpdater, IPositional, IVehicleAlarmListener, IVehicleEngineListener, VehiclePartOwner, VehicleSoundOwner
 local __BaseVehicle = {}
 
 ---@param amount number
@@ -11,7 +11,8 @@ function __BaseVehicle:Damage(amount) end
 function __BaseVehicle:HitByVehicle(vehicle, amount) end
 
 ---@param thumper IsoMovingObject
-function __BaseVehicle:Thump(thumper) end
+---@param thumpEventCount integer
+function __BaseVehicle:Thump(thumper, thumpEventCount) end
 
 ---@param chr IsoGameCharacter
 ---@param weapon HandWeapon
@@ -43,6 +44,9 @@ function __BaseVehicle:addDamageFrontHitAChr(dmg) end
 --- damaged will be mainly focus on windshield/truckbed, not on doors/windows like when hitting a wall.
 ---@param dmg integer
 function __BaseVehicle:addDamageRearHitAChr(dmg) end
+
+---@param speed number
+function __BaseVehicle:addEngineSpeed(speed) end
 
 ---@param impulse Vector3f
 ---@param rel_pos Vector3f
@@ -96,6 +100,9 @@ function __BaseVehicle:addToWorld() end
 
 ---@param crashed boolean
 function __BaseVehicle:addToWorld(crashed) end
+
+---@param partsNew VehicleParts
+function __BaseVehicle:adoptParts(partsNew) end
 
 function __BaseVehicle:applyAccumulatedImpulsesFromHitObjectsToPhysics() end
 
@@ -172,6 +179,8 @@ function __BaseVehicle:authorizationServerCollide(PlayerID, isCollide) end
 ---@param enter boolean
 function __BaseVehicle:authorizationServerOnSeat(player, enter) end
 
+function __BaseVehicle:beginAttachingTrailer() end
+
 ---@param x integer
 ---@param y integer
 ---@param z integer
@@ -181,6 +190,9 @@ function __BaseVehicle:blocked(x, y, z) end
 ---@param forgetID boolean
 ---@param remote boolean
 function __BaseVehicle:breakConstraint(forgetID, remote) end
+
+---@return boolean
+function __BaseVehicle:breakConstraintOnServer() end
 
 function __BaseVehicle:breakingObjects() end
 
@@ -296,6 +308,8 @@ function __BaseVehicle:checkSquareForVehicleKeySpotZombie(square) end
 
 function __BaseVehicle:checkSurroundingChunks() end
 
+function __BaseVehicle:checkVehicleSoundsExists() end
+
 ---@param zombie IsoZombie
 ---@return boolean
 function __BaseVehicle:checkZombieKeyForVehicle(zombie) end
@@ -384,6 +398,9 @@ function __BaseVehicle:engineDoShuttingDown() end
 ---@param sound string
 function __BaseVehicle:engineDoShuttingDown(sound) end
 
+---@param reason VehicleEngineStateChangeReason
+function __BaseVehicle:engineDoShuttingDown(reason) end
+
 function __BaseVehicle:engineDoStalling() end
 
 function __BaseVehicle:engineDoStarting() end
@@ -392,6 +409,9 @@ function __BaseVehicle:engineDoStartingFailed() end
 
 ---@param sound string
 function __BaseVehicle:engineDoStartingFailed(sound) end
+
+---@param reason VehicleEngineStateChangeReason
+function __BaseVehicle:engineDoStartingFailed(reason) end
 
 function __BaseVehicle:engineDoStartingFailedNoPower() end
 
@@ -497,12 +517,6 @@ function __BaseVehicle:getAuthorizationDescription() end
 
 ---@return number
 function __BaseVehicle:getBaseQuality() end
-
----@return VehiclePart
-function __BaseVehicle:getBattery() end
-
----@return number
-function __BaseVehicle:getBatteryCharge() end
 
 ---@param chr IsoGameCharacter
 ---@return integer
@@ -649,9 +663,6 @@ function __BaseVehicle:getHeadlightCanEmmitLight() end
 ---@return boolean
 function __BaseVehicle:getHeadlightsOn() end
 
----@return VehiclePart
-function __BaseVehicle:getHeater() end
-
 ---@return integer
 function __BaseVehicle:getId() end
 
@@ -680,11 +691,8 @@ function __BaseVehicle:getLightByIndex(index) end
 ---@return integer
 function __BaseVehicle:getLightCount() end
 
----@return integer
-function __BaseVehicle:getLightbarLightsMode() end
-
----@return integer
-function __BaseVehicle:getLightbarSirenMode() end
+---@return LightbarLightsMode
+function __BaseVehicle:getLightbarLightsModeObject() end
 
 ---@return LightbarSirenMode
 function __BaseVehicle:getLightbarSirenModeObject() end
@@ -729,6 +737,20 @@ function __BaseVehicle:getMinWheelSkid() end
 ---@return UpdateSchedulerSimulationLevel
 function __BaseVehicle:getMinimumSimulationLevel() end
 
+---@param player IsoGameCharacter
+---@return TextDrawHorizontal
+function __BaseVehicle:getNameAlignmentForPlayer(player) end
+
+---@param player IsoGameCharacter
+---@param zoom number
+---@param coord Vector2
+---@return boolean
+function __BaseVehicle:getNameCoordForPlayer(player, zoom, coord) end
+
+---@param player IsoGameCharacter
+---@return string
+function __BaseVehicle:getNamePrefixForPlayer(player) end
+
 ---@param chr IsoGameCharacter
 ---@return VehiclePart
 function __BaseVehicle:getNearestBodyworkPart(chr) end
@@ -743,9 +765,6 @@ function __BaseVehicle:getNearestVehiclePart(x, y, z, useDestroyed) end
 ---@return integer
 function __BaseVehicle:getNetPlayerId() end
 
----@return integer
-function __BaseVehicle:getNumberOfPartsWithContainers() end
-
 ---@return string
 function __BaseVehicle:getObjectName() end
 
@@ -758,28 +777,12 @@ function __BaseVehicle:getOffroadEfficiency() end
 ---@return IsoPlayer
 function __BaseVehicle:getPVPPlayerDriver() end
 
----@param id string
----@return VehiclePart
-function __BaseVehicle:getPartById(id) end
-
----@param index integer
----@return VehiclePart
-function __BaseVehicle:getPartByIndex(index) end
-
----@param id VehiclePart
----@return VehiclePart
-function __BaseVehicle:getPartByPartId(id) end
-
----@return integer
-function __BaseVehicle:getPartCount() end
-
 ---@param seat integer
 ---@return VehiclePart
 function __BaseVehicle:getPartForSeatContainer(seat) end
 
----@param id string
----@return integer
-function __BaseVehicle:getPartIndex(id) end
+---@return VehicleParts
+function __BaseVehicle:getParts() end
 
 ---@param seat integer
 ---@return BaseVehicle.Passenger
@@ -934,6 +937,9 @@ function __BaseVehicle:getSwitchSeatAnimRate(seatFrom, seatTo) end
 function __BaseVehicle:getSwitchSeatSound(seatFrom, seatTo) end
 
 ---@return number
+function __BaseVehicle:getThrottle() end
+
+---@return number
 function __BaseVehicle:getThumpCondition() end
 
 ---@param chr IsoGameCharacter
@@ -964,13 +970,13 @@ function __BaseVehicle:getTowedByWorldPos(attachmentName, v) end
 ---@return Vector3f
 function __BaseVehicle:getTowingLocalPos(attachmentName, v) end
 
+---@return BaseVehicle
+function __BaseVehicle:getTowingPartner() end
+
 ---@param attachmentName string
 ---@param v Vector3f
 ---@return Vector3f
 function __BaseVehicle:getTowingWorldPos(attachmentName, v) end
-
----@return VehiclePart
-function __BaseVehicle:getTrailerTrunkPart() end
 
 ---@return integer
 function __BaseVehicle:getTransmissionNumber() end
@@ -980,12 +986,6 @@ function __BaseVehicle:getTransmissionNumberEnum() end
 
 ---@return string
 function __BaseVehicle:getTransmissionNumberLetter() end
-
----@return VehiclePart
-function __BaseVehicle:getTrunkDoorPart() end
-
----@return VehiclePart
-function __BaseVehicle:getTrunkPart() end
 
 ---@param out Vector3f
 ---@return Vector3f
@@ -1003,6 +1003,9 @@ function __BaseVehicle:getUseablePart(chr) end
 ---@return VehiclePart
 function __BaseVehicle:getUseablePart(chr, checkDir) end
 
+---@return VehicleAlarm
+function __BaseVehicle:getVehicleAlarmObject() end
+
 ---@return VehicleEngineRPM
 function __BaseVehicle:getVehicleEngineRPM() end
 
@@ -1018,6 +1021,12 @@ function __BaseVehicle:getVehicleItemContainers(paramToCompare, isValidPredicate
 ---@param containerList PZArrayList<ItemContainer>
 ---@return PZArrayList<ItemContainer>
 function __BaseVehicle:getVehicleItemContainers(paramToCompare, isValidPredicate, containerList) end
+
+---@return BaseSoundEmitter
+function __BaseVehicle:getVehicleSoundEmitter() end
+
+---@return VehicleSounds
+function __BaseVehicle:getVehicleSounds() end
 
 ---@return BaseVehicle
 function __BaseVehicle:getVehicleTowedBy() end
@@ -1071,9 +1080,6 @@ function __BaseVehicle:getZombieType() end
 ---@return string
 function __BaseVehicle:getZone() end
 
----@return boolean
-function __BaseVehicle:hasAlarm() end
-
 ---@param connection UdpConnection
 ---@return boolean
 function __BaseVehicle:hasAuthorization(connection) end
@@ -1083,12 +1089,6 @@ function __BaseVehicle:hasBackSignal() end
 
 ---@return boolean
 function __BaseVehicle:hasHeadlights() end
-
----@return boolean
-function __BaseVehicle:hasHorn() end
-
----@return boolean
-function __BaseVehicle:hasLightbar() end
 
 ---@return boolean
 function __BaseVehicle:hasLighter() end
@@ -1137,6 +1137,12 @@ function __BaseVehicle:intersectLineWithExtents(x1, y1, x2, y2, adjust, intersec
 function __BaseVehicle:intersectLineWithPoly(x1, y1, x2, y2, intersection) end
 
 ---@return boolean
+function __BaseVehicle:isAlarmActive() end
+
+---@return boolean
+function __BaseVehicle:isAlarmSoundOn() end
+
+---@return boolean
 function __BaseVehicle:isAlarmSounding() end
 
 ---@return boolean
@@ -1155,10 +1161,16 @@ function __BaseVehicle:isAnyTireMissing() end
 function __BaseVehicle:isAtRest() end
 
 ---@return boolean
+function __BaseVehicle:isAttachingTrailer() end
+
+---@return boolean
 function __BaseVehicle:isBackSignalEmitting() end
 
 ---@return boolean
 function __BaseVehicle:isBackupBeeperSounding() end
+
+---@return boolean
+function __BaseVehicle:isBeingTowedBackwards() end
 
 ---@return boolean
 function __BaseVehicle:isBrakePedalPressed() end
@@ -1386,6 +1398,9 @@ function __BaseVehicle:isSeatInstalled(seat) end
 function __BaseVehicle:isSeatOccupied(seat) end
 
 ---@return boolean
+function __BaseVehicle:isSirenActive() end
+
+---@return boolean
 function __BaseVehicle:isSirenSounding() end
 
 ---@return boolean
@@ -1435,6 +1450,11 @@ function __BaseVehicle:onBackMoveSignalStart() end
 
 function __BaseVehicle:onBackMoveSignalStop() end
 
+---@param oldState BaseVehicle.engineStateTypes
+---@param newState BaseVehicle.engineStateTypes
+---@param reason VehicleEngineStateChangeReason
+function __BaseVehicle:onEngineStateChanged(oldState, newState, reason) end
+
 ---@param square IsoGridSquare
 function __BaseVehicle:onHitLandmine(square) end
 
@@ -1443,6 +1463,9 @@ function __BaseVehicle:onHornStart() end
 function __BaseVehicle:onHornStop() end
 
 function __BaseVehicle:onJump() end
+
+---@param event VehicleAlarmEvent
+function __BaseVehicle:onVehicleAlarmEvent(event) end
 
 function __BaseVehicle:partsClear() end
 
@@ -1645,6 +1668,9 @@ function __BaseVehicle:setDoColor(doColor) end
 ---@param engineForce integer
 function __BaseVehicle:setEngineFeature(quality, loudness, engineForce) end
 
+---@param speed number
+function __BaseVehicle:setEngineSpeed(speed) end
+
 function __BaseVehicle:setForceBrake() end
 
 ---@param baseQuality number
@@ -1677,6 +1703,9 @@ function __BaseVehicle:setLightbarLightsMode(mode) end
 
 ---@param mode integer
 function __BaseVehicle:setLightbarSirenMode(mode) end
+
+---@param locked boolean
+function __BaseVehicle:setLocked(locked) end
 
 ---@param mass number
 function __BaseVehicle:setMass(mass) end
@@ -1711,6 +1740,10 @@ function __BaseVehicle:setPassenger(seat, chr, offset) end
 
 ---@param active boolean
 function __BaseVehicle:setPhysicsActive(active) end
+
+---@param active boolean
+---@param setStatic boolean
+function __BaseVehicle:setPhysicsActive(active, setStatic) end
 
 ---@param bool boolean
 function __BaseVehicle:setPreviouslyEntered(bool) end
@@ -1767,6 +1800,12 @@ function __BaseVehicle:setTireRemoved(wheelIndex, removed) end
 ---@param locked boolean
 function __BaseVehicle:setTrunkLocked(locked) end
 
+---@param vehicleAlarm1 VehicleAlarm
+function __BaseVehicle:setVehicleAlarm(vehicleAlarm1) end
+
+---@param vehicleSounds1 VehicleSounds
+function __BaseVehicle:setVehicleSounds(vehicleSounds1) end
+
 ---@param vehicleA BaseVehicle
 ---@param attachmentA string
 ---@param attachmentB string
@@ -1804,6 +1843,9 @@ function __BaseVehicle:shouldNotHaveLoot() end
 ---@return boolean
 function __BaseVehicle:shouldSnapZToCurrentSquare() end
 
+---@return boolean
+function __BaseVehicle:shouldUpdateInMeta() end
+
 ---@param seat integer
 ---@return boolean
 function __BaseVehicle:showPassenger(seat) end
@@ -1817,9 +1859,6 @@ function __BaseVehicle:shutOff() end
 ---@param sound string
 function __BaseVehicle:shutOff(sound) end
 
----@return boolean
-function __BaseVehicle:sirenShutoffTimeExpired() end
-
 function __BaseVehicle:softReset() end
 
 ---@param eventInstance integer
@@ -1827,6 +1866,8 @@ function __BaseVehicle:softReset() end
 ---@param remote boolean
 ---@param parameterSet BitSet
 function __BaseVehicle:startEvent(eventInstance, clip, remote, parameterSet) end
+
+function __BaseVehicle:stopAttachingTrailer() end
 
 ---@param eventInstance integer
 ---@param clip GameSoundClip
@@ -1914,6 +1955,9 @@ function __BaseVehicle:transmitPartDoor(part) end
 function __BaseVehicle:transmitPartItem(part) end
 
 ---@param part VehiclePart
+function __BaseVehicle:transmitPartLight(part) end
+
+---@param part VehiclePart
 function __BaseVehicle:transmitPartModData(part) end
 
 ---@param part VehiclePart
@@ -1957,6 +2001,8 @@ function __BaseVehicle:updateBulletStats() end
 
 function __BaseVehicle:updateControls() end
 
+function __BaseVehicle:updateDamageOverlayLater() end
+
 ---@param eventInstance integer
 ---@param clip GameSoundClip
 function __BaseVehicle:updateEvent(eventInstance, clip) end
@@ -1991,8 +2037,10 @@ function __BaseVehicle:updateSounds() end
 
 function __BaseVehicle:updateTotalMass() end
 
----@return integer
-function __BaseVehicle:windowsOpen() end
+---@param playerX number
+---@param playerY number
+---@return boolean
+function __BaseVehicle:validateHitVehicleDistance(playerX, playerY) end
 
 BaseVehicle = {}
 
@@ -2000,13 +2048,19 @@ BaseVehicle = {}
 BaseVehicle.AMBIENT_SOUND_RADIUS = nil
 
 ---@type number
-BaseVehicle.DOT_PRODUCT_ATTACH_TRAILER = nil
+BaseVehicle.DOT_PRODUCT_ATTACH_TRAILER_FORWARD = nil
+
+---@type number
+BaseVehicle.DOT_PRODUCT_ATTACH_TRAILER_UP = nil
 
 ---@type integer
 BaseVehicle.ENGINE_SOUND_RADIUS = nil
 
 ---@type integer
 BaseVehicle.FADE_DISTANCE = nil
+
+---@type number
+BaseVehicle.HIT_VEHICLE_MAX_DISTANCE_TILES = nil
 
 ---@type integer
 BaseVehicle.MASK1_DOOR_LEFT_FRONT = nil
@@ -2092,6 +2146,12 @@ BaseVehicle.MASK2_ROOF = nil
 ---@type integer
 BaseVehicle.MAX_WHEELS = nil
 
+---@type number
+BaseVehicle.MINIMUM_DOT_UPRIGHT = nil
+
+---@type number
+BaseVehicle.MIN_HIT_SPEED_TILES_PER_SECOND = nil
+
 ---@type integer
 BaseVehicle.PHYSICS_PARAM_COUNT = nil
 
@@ -2101,11 +2161,23 @@ BaseVehicle.PHYSICS_Z_SCALE = nil
 ---@type number
 BaseVehicle.PLUS_RADIUS = nil
 
+---@type integer
+BaseVehicle.POSITION_HISTORY_INTERVAL_MS = nil
+
+---@type integer
+BaseVehicle.POSITION_HISTORY_MAX_ENTRIES = nil
+
 ---@type number
 BaseVehicle.RADIUS = nil
 
 ---@type integer
 BaseVehicle.RANDOMIZE_CONTAINER_CHANCE = nil
+
+---@type integer
+BaseVehicle.SIREN_WORLDSOUND_RADIUS = nil
+
+---@type integer
+BaseVehicle.SIREN_WORLDSOUND_VOLUME = nil
 
 ---@type ThreadLocal<BaseVehicle.Matrix4fObjectPool>
 BaseVehicle.TL_matrix4f_pool = nil

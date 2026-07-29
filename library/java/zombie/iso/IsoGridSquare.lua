@@ -742,6 +742,12 @@ function __IsoGridSquare:getContainerItem(type) end
 ---@return SquareCoord
 function __IsoGridSquare:getCoords() end
 
+---@return IsoObject
+function __IsoGridSquare:getCountertopAttachObject() end
+
+---@return IsoObject
+function __IsoGridSquare:getCountertopObject() end
+
 ---@param curtainType IsoObjectType
 ---@return IsoCurtain
 function __IsoGridSquare:getCurtain(curtainType) end
@@ -1766,14 +1772,15 @@ function __IsoGridSquare:removeCorpse(body, bRemote) end
 ---@param type string
 function __IsoGridSquare:removeErosionObject(type) end
 
+---@param window IsoWindow
+function __IsoGridSquare:removeGlassAttachments(window) end
+
 function __IsoGridSquare:removeGraffiti() end
 
 ---@return boolean
 function __IsoGridSquare:removeGrass() end
 
 function __IsoGridSquare:removeGrime() end
-
-function __IsoGridSquare:removeLightSwitch() end
 
 ---@param player IsoPlayer
 ---@param north boolean

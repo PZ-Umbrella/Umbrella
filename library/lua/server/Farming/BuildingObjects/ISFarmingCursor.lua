@@ -9,7 +9,7 @@
 ---@field renderZ number
 ---@field skipBuildAction boolean
 ---@field skipWalk boolean
-ISFarmingCursor = ISBuildingObject:derive("ISFarmingCursor")
+ISFarmingCursor = {}
 ISFarmingCursor.Type = "ISFarmingCursor"
 
 ---@param x number
@@ -37,7 +37,7 @@ function ISFarmingCursor:isValid(square) end
 
 ---@param joypadIndex integer
 ---@param joypadData JoypadData
----@param button integer
+---@param button JoypadButton
 ---@return unknown?
 function ISFarmingCursor:onJoypadPressButton(joypadIndex, joypadData, button) end
 

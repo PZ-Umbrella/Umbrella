@@ -2,11 +2,11 @@
 
 ---@class ISHealthPanel : ISPanelJoypad
 ---@field abutton Texture
----@field actions table
+---@field actions table<ISBaseTimedAction, BodyPart>
 ---@field allTextHeight number
 ---@field blockingAlpha number
 ---@field blockingMessage string?
----@field bodyPartAction table
+---@field bodyPartAction table<BodyPart, table>
 ---@field bodyPartPanel ISHealthBodyPartPanel
 ---@field character IsoPlayer
 ---@field characterX number
@@ -16,7 +16,7 @@
 ---@field fitness ISButton
 ---@field healthPanel ISNewHealthPanel
 ---@field listbox ISHealthBodyPartListBox
----@field otherPlayer unknown?
+---@field otherPlayer IsoPlayer?
 ---@field otherPlayerX number
 ---@field otherPlayerY number
 ---@field playerNum integer
@@ -28,8 +28,12 @@ ISHealthPanel.Type = "ISHealthPanel"
 ISHealthPanel.cheat = false or getDebug()
 ISHealthPanel.instance = nil ---@type ISHealthPanel?
 
+---@param target IsoPlayer
+---@param requester IsoPlayer
 function ISHealthPanel.AcceptedMedicalCheck(target, requester) end
 
+---@param target IsoPlayer
+---@param requester IsoPlayer
 ---@return boolean
 function ISHealthPanel.canPerformMedicalCheck(target, requester) end
 
@@ -75,6 +79,7 @@ function ISHealthPanel.onCheatItem(itemType, playerObj) end
 ---@param otherPlayer IsoPlayer
 function ISHealthPanel.onCheatOtherPlayer(bodyPart, action, player, otherPlayer) end
 
+---@param requester IsoPlayer
 function ISHealthPanel.ReceiveMedicalCheckRequest(requester) end
 
 ---@param playerObj IsoPlayer
@@ -86,10 +91,10 @@ function ISHealthPanel.setBodyPartActionForPlayer(playerObj, bodyPart, action, j
 
 ---@param container ItemContainer
 ---@param childContainers ItemContainer[]
----@param handlers umbrella.ISHealthPanel.BodyPartHandler[]
+---@param handlers ISHealthPanel.BaseHandler[]
 function ISHealthPanel:checkContainerItems(container, childContainers, handlers) end
 
----@param handlers umbrella.ISHealthPanel.BodyPartHandler[]
+---@param handlers ISHealthPanel.BaseHandler[]
 function ISHealthPanel:checkItems(handlers) end
 
 function ISHealthPanel:createChildren() end
@@ -125,6 +130,7 @@ function ISHealthPanel:getPatient() end
 
 function ISHealthPanel:initialise() end
 
+---@param button ISButton
 function ISHealthPanel:onAnswerMedicalCheckRequest(button) end
 
 ---@param joypadData JoypadData
@@ -134,7 +140,7 @@ function ISHealthPanel:onJoypadDirDown() end
 
 function ISHealthPanel:onJoypadDirUp() end
 
----@param button integer
+---@param button JoypadButton
 function ISHealthPanel:onJoypadDown(button) end
 
 ---@param joypadData JoypadData
@@ -242,7 +248,7 @@ function ISHealthBodyPartListBox:new(x, y, width, height) end
 
 ---@class HealthPanelAction : ISBaseTimedAction
 ---@field args table
----@field handler umbrella.ISHealthPanel.BodyPartHandler
+---@field handler ISHealthPanel.BaseHandler
 HealthPanelAction = ISBaseTimedAction:derive("HealthPanelAction")
 HealthPanelAction.Type = "HealthPanelAction"
 
@@ -258,7 +264,7 @@ function HealthPanelAction:stop() end
 function HealthPanelAction:update() end
 
 ---@param character IsoPlayer
----@param handler umbrella.ISHealthPanel.BodyPartHandler
+---@param handler ISHealthPanel.BaseHandler
 ---@param arg1 unknown?
 ---@param arg2 unknown?
 ---@param arg3 unknown?
@@ -271,47 +277,71 @@ function HealthPanelAction:update() end
 function HealthPanelAction:new(character, handler, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
 
 ---@class ISHealthPanel.BaseHandler : ISBaseObject
----@field bodyPart unknown
+---@field bodyPart BodyPart
 ---@field items table
----@field panel unknown
+---@field panel ISHealthPanel
 local __ISHealthPanel_BaseHandler = ISBaseObject:derive("BaseHandler")
 __ISHealthPanel_BaseHandler.Type = "BaseHandler"
 
+---@param items InventoryItem[]
+---@param item InventoryItem
 function __ISHealthPanel_BaseHandler:addItem(items, item) end
 
+---@param container ItemContainer
+---@param childContainers ItemContainer[]
 function __ISHealthPanel_BaseHandler:checkContainerItems(container, childContainers) end
 
 function __ISHealthPanel_BaseHandler:checkItems() end
 
+---@param items InventoryItem[]
 ---@return boolean
 function __ISHealthPanel_BaseHandler:dropItems(items) end
 
----@return table
+---@param items InventoryItem[]
+---@param type string
+---@return InventoryItem[]
 function __ISHealthPanel_BaseHandler:getAllItemsOfType(items, type) end
 
----@return table
+---@param items InventoryItem[]
+---@return string[]
 function __ISHealthPanel_BaseHandler:getAllItemTypes(items) end
 
----@return unknown
+---@return IsoPlayer
 function __ISHealthPanel_BaseHandler:getDoctor() end
 
----@return unknown?
+---@param items InventoryItem[]
+---@param type string
+---@return InventoryItem?
 function __ISHealthPanel_BaseHandler:getItemOfTag(items, type) end
 
----@return unknown?
+---@param items InventoryItem[]
+---@param type string
+---@return InventoryItem?
 function __ISHealthPanel_BaseHandler:getItemOfType(items, type) end
 
----@return unknown
+---@return IsoPlayer
 function __ISHealthPanel_BaseHandler:getPatient() end
 
 ---@return boolean
 function __ISHealthPanel_BaseHandler:isInjured() end
 
+---@param arg1 unknown?
+---@param arg2 unknown?
+---@param arg3 unknown?
+---@param arg4 unknown?
+---@param arg5 unknown?
+---@param arg6 unknown?
+---@param arg7 unknown?
+---@param arg8 unknown?
 function __ISHealthPanel_BaseHandler:onMenuOptionSelected(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
 
+---@param item InventoryItem
+---@param previousAction ISBaseTimedAction
 ---@return ISGrabCorpseItem | ISInventoryTransferAction
 function __ISHealthPanel_BaseHandler:toPlayerInventory(item, previousAction) end
 
+---@param panel ISHealthPanel
+---@param bodyPart BodyPart
 ---@return ISHealthPanel.BaseHandler
 function __ISHealthPanel_BaseHandler:new(panel, bodyPart) end
 
@@ -322,17 +352,23 @@ __ISHealthPanel_HApplyBandage.Type = "HApplyBandage"
 ---@param context ISContextMenu
 function __ISHealthPanel_HApplyBandage:addToMenu(context) end
 
+---@param item InventoryItem
 function __ISHealthPanel_HApplyBandage:checkItem(item) end
 
+---@param items InventoryItem[]
 ---@return boolean
 function __ISHealthPanel_HApplyBandage:dropItems(items) end
 
----@return unknown
+---@param itemType string
+---@return boolean
 function __ISHealthPanel_HApplyBandage:isValid(itemType) end
 
+---@param previousAction ISBaseTimedAction
+---@param itemType string
 function __ISHealthPanel_HApplyBandage:perform(previousAction, itemType) end
 
 ---@param panel ISHealthPanel
+---@param bodyPart BodyPart
 ---@return ISHealthPanel.HApplyBandage
 function __ISHealthPanel_HApplyBandage:new(panel, bodyPart) end
 
@@ -343,14 +379,17 @@ __ISHealthPanel_HRemoveBandage.Type = "HRemoveBandage"
 ---@param context ISContextMenu
 function __ISHealthPanel_HRemoveBandage:addToMenu(context) end
 
+---@param item InventoryItem
 function __ISHealthPanel_HRemoveBandage:checkItem(item) end
 
----@return unknown
+---@return boolean
 function __ISHealthPanel_HRemoveBandage:isValid() end
 
+---@param previousAction ISBaseTimedAction
 function __ISHealthPanel_HRemoveBandage:perform(previousAction) end
 
 ---@param panel ISHealthPanel
+---@param bodyPart BodyPart
 ---@return ISHealthPanel.HRemoveBandage
 function __ISHealthPanel_HRemoveBandage:new(panel, bodyPart) end
 
@@ -364,16 +403,23 @@ __ISHealthPanel_HApplyPoultice.Type = "HApplyPoultice"
 ---@param context ISContextMenu
 function __ISHealthPanel_HApplyPoultice:addToMenu(context) end
 
+---@param item InventoryItem
 function __ISHealthPanel_HApplyPoultice:checkItem(item) end
 
+---@param items InventoryItem[]
 ---@return boolean
 function __ISHealthPanel_HApplyPoultice:dropItems(items) end
 
+---@param itemType string
 ---@return boolean
 function __ISHealthPanel_HApplyPoultice:isValid(itemType) end
 
+---@param previousAction ISBaseTimedAction
+---@param itemType string
 function __ISHealthPanel_HApplyPoultice:perform(previousAction, itemType) end
 
+---@param panel ISHealthPanel
+---@param bodyPart BodyPart
 ---@param itemType string
 ---@param menuLabel string
 ---@param actionClass table
@@ -385,6 +431,7 @@ local __ISHealthPanel_HApplyComfrey = ISHealthPanel.HApplyPoultice:derive("HAppl
 __ISHealthPanel_HApplyComfrey.Type = "HApplyComfrey"
 
 ---@param panel ISHealthPanel
+---@param bodyPart BodyPart
 ---@return ISHealthPanel.HApplyComfrey
 function __ISHealthPanel_HApplyComfrey:new(panel, bodyPart) end
 
@@ -393,6 +440,7 @@ local __ISHealthPanel_HApplyGarlic = ISHealthPanel.HApplyPoultice:derive("HApply
 __ISHealthPanel_HApplyGarlic.Type = "HApplyGarlic"
 
 ---@param panel ISHealthPanel
+---@param bodyPart BodyPart
 ---@return ISHealthPanel.HApplyGarlic
 function __ISHealthPanel_HApplyGarlic:new(panel, bodyPart) end
 
@@ -401,6 +449,7 @@ local __ISHealthPanel_HApplyPlantain = ISHealthPanel.HApplyPoultice:derive("HApp
 __ISHealthPanel_HApplyPlantain.Type = "HApplyPlantain"
 
 ---@param panel ISHealthPanel
+---@param bodyPart BodyPart
 ---@return ISHealthPanel.HApplyPlantain
 function __ISHealthPanel_HApplyPlantain:new(panel, bodyPart) end
 
@@ -411,17 +460,23 @@ __ISHealthPanel_HDisinfect.Type = "HDisinfect"
 ---@param context ISContextMenu
 function __ISHealthPanel_HDisinfect:addToMenu(context) end
 
+---@param item InventoryItem
 function __ISHealthPanel_HDisinfect:checkItem(item) end
 
+---@param items InventoryItem[]
 ---@return boolean
 function __ISHealthPanel_HDisinfect:dropItems(items) end
 
----@return unknown
+---@param itemType string
+---@return boolean
 function __ISHealthPanel_HDisinfect:isValid(itemType) end
 
+---@param previousAction ISBaseTimedAction
+---@param itemType string
 function __ISHealthPanel_HDisinfect:perform(previousAction, itemType) end
 
 ---@param panel ISHealthPanel
+---@param bodyPart BodyPart
 ---@return ISHealthPanel.HDisinfect
 function __ISHealthPanel_HDisinfect:new(panel, bodyPart) end
 
@@ -433,17 +488,25 @@ __ISHealthPanel_HStitch.Type = "HStitch"
 ---@return boolean?
 function __ISHealthPanel_HStitch:addToMenu(context) end
 
+---@param item InventoryItem
 function __ISHealthPanel_HStitch:checkItem(item) end
 
+---@param items InventoryItem[]
 ---@return boolean
 function __ISHealthPanel_HStitch:dropItems(items) end
 
+---@param needleType string
+---@param threadType string
 ---@return boolean
 function __ISHealthPanel_HStitch:isValid(needleType, threadType) end
 
+---@param previousAction ISBaseTimedAction
+---@param needleType string
+---@param threadType string
 function __ISHealthPanel_HStitch:perform(previousAction, needleType, threadType) end
 
 ---@param panel ISHealthPanel
+---@param bodyPart BodyPart
 ---@return ISHealthPanel.HStitch
 function __ISHealthPanel_HStitch:new(panel, bodyPart) end
 
@@ -454,14 +517,17 @@ __ISHealthPanel_HRemoveStitch.Type = "HRemoveStitch"
 ---@param context ISContextMenu
 function __ISHealthPanel_HRemoveStitch:addToMenu(context) end
 
+---@param item InventoryItem
 function __ISHealthPanel_HRemoveStitch:checkItem(item) end
 
----@return unknown
+---@return boolean
 function __ISHealthPanel_HRemoveStitch:isValid() end
 
+---@param previousAction ISBaseTimedAction
 function __ISHealthPanel_HRemoveStitch:perform(previousAction) end
 
 ---@param panel ISHealthPanel
+---@param bodyPart BodyPart
 ---@return ISHealthPanel.HRemoveStitch
 function __ISHealthPanel_HRemoveStitch:new(panel, bodyPart) end
 
@@ -472,17 +538,23 @@ __ISHealthPanel_HRemoveGlass.Type = "HRemoveGlass"
 ---@param context ISContextMenu
 function __ISHealthPanel_HRemoveGlass:addToMenu(context) end
 
+---@param item InventoryItem
 function __ISHealthPanel_HRemoveGlass:checkItem(item) end
 
+---@param items InventoryItem[]
 ---@return boolean
 function __ISHealthPanel_HRemoveGlass:dropItems(items) end
 
+---@param itemType string
 ---@return boolean
 function __ISHealthPanel_HRemoveGlass:isValid(itemType) end
 
+---@param previousAction ISBaseTimedAction
+---@param itemType string
 function __ISHealthPanel_HRemoveGlass:perform(previousAction, itemType) end
 
 ---@param panel ISHealthPanel
+---@param bodyPart BodyPart
 ---@return ISHealthPanel.HRemoveGlass
 function __ISHealthPanel_HRemoveGlass:new(panel, bodyPart) end
 
@@ -494,17 +566,23 @@ __ISHealthPanel_HSplint.Type = "HSplint"
 ---@return boolean?
 function __ISHealthPanel_HSplint:addToMenu(context) end
 
+---@param item InventoryItem
 function __ISHealthPanel_HSplint:checkItem(item) end
 
+---@param items InventoryItem[]
 ---@return boolean
 function __ISHealthPanel_HSplint:dropItems(items) end
 
 ---@return boolean
 function __ISHealthPanel_HSplint:isValid(rippedSheetType, plankType) end
 
+---@param previousAction ISBaseTimedAction
+---@param rippedSheetType string
+---@param plankType string?
 function __ISHealthPanel_HSplint:perform(previousAction, rippedSheetType, plankType) end
 
 ---@param panel ISHealthPanel
+---@param bodyPart BodyPart
 ---@return ISHealthPanel.HSplint
 function __ISHealthPanel_HSplint:new(panel, bodyPart) end
 
@@ -515,14 +593,17 @@ __ISHealthPanel_HRemoveSplint.Type = "HRemoveSplint"
 ---@param context ISContextMenu
 function __ISHealthPanel_HRemoveSplint:addToMenu(context) end
 
+---@param item InventoryItem
 function __ISHealthPanel_HRemoveSplint:checkItem(item) end
 
 ---@return boolean
 function __ISHealthPanel_HRemoveSplint:isValid() end
 
+---@param previousAction ISBaseTimedAction
 function __ISHealthPanel_HRemoveSplint:perform(previousAction) end
 
 ---@param panel ISHealthPanel
+---@param bodyPart BodyPart
 ---@return ISHealthPanel.HRemoveSplint
 function __ISHealthPanel_HRemoveSplint:new(panel, bodyPart) end
 
@@ -533,17 +614,23 @@ __ISHealthPanel_HRemoveBullet.Type = "HRemoveBullet"
 ---@param context ISContextMenu
 function __ISHealthPanel_HRemoveBullet:addToMenu(context) end
 
+---@param item InventoryItem
 function __ISHealthPanel_HRemoveBullet:checkItem(item) end
 
+---@param items InventoryItem[]
 ---@return boolean
 function __ISHealthPanel_HRemoveBullet:dropItems(items) end
 
----@return unknown
+---@param itemType string
+---@return boolean
 function __ISHealthPanel_HRemoveBullet:isValid(itemType) end
 
+---@param previousAction ISBaseTimedAction
+---@param itemType string
 function __ISHealthPanel_HRemoveBullet:perform(previousAction, itemType) end
 
 ---@param panel ISHealthPanel
+---@param bodyPart BodyPart
 ---@return ISHealthPanel.HRemoveBullet
 function __ISHealthPanel_HRemoveBullet:new(panel, bodyPart) end
 
@@ -554,21 +641,22 @@ __ISHealthPanel_HCleanBurn.Type = "HCleanBurn"
 ---@param context ISContextMenu
 function __ISHealthPanel_HCleanBurn:addToMenu(context) end
 
+---@param item InventoryItem
 function __ISHealthPanel_HCleanBurn:checkItem(item) end
 
+---@param items InventoryItem[]
 ---@return boolean
 function __ISHealthPanel_HCleanBurn:dropItems(items) end
 
----@return unknown
+---@param itemType string
+---@return boolean
 function __ISHealthPanel_HCleanBurn:isValid(itemType) end
 
+---@param previousAction ISBaseTimedAction
+---@param itemType string
 function __ISHealthPanel_HCleanBurn:perform(previousAction, itemType) end
 
 ---@param panel ISHealthPanel
+---@param bodyPart BodyPart
 ---@return ISHealthPanel.HCleanBurn
 function __ISHealthPanel_HCleanBurn:new(panel, bodyPart) end
-
----@class umbrella.ISHealthPanel.BodyPartHandler : ISBaseObject
----@field bodyPart BodyPart
----@field items table
----@field panel ISHealthPanel

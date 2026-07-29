@@ -7,6 +7,10 @@ local __Thumpable = {}
 ---@param thumper IsoMovingObject
 function __Thumpable:Thump(thumper) end
 
+---@param arg0 IsoMovingObject
+---@param arg1 integer
+function __Thumpable:Thump(arg0, arg1) end
+
 ---@param chr IsoGameCharacter
 ---@param weapon HandWeapon
 function __Thumpable:WeaponHit(chr, weapon) end

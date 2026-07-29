@@ -10,13 +10,14 @@ ISDemoPopup.instance = nil ---@type ISDemoPopup?
 ---@return ISDemoPopup?
 function ISDemoPopup.getInstance() end
 
+---@param id integer
 function ISDemoPopup.OnJoypadActivate(id) end
 
 function ISDemoPopup:createChildren() end
 
 function ISDemoPopup:initialise() end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISDemoPopup:onJoypadDown(button, joypadData) end
 

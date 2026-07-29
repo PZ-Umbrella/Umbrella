@@ -19,7 +19,7 @@ function __ISGameSounds_MainPanel:onJoypadDirLeft(joypadData) end
 ---@param joypadData JoypadData
 function __ISGameSounds_MainPanel:onJoypadDirRight(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __ISGameSounds_MainPanel:onJoypadDown(button, joypadData) end
 

@@ -69,6 +69,7 @@ function ISBuildPanel:OnCloseWindow() end
 ---@param item CraftRecipe
 function ISBuildPanel:onDoubleClick(item) end
 
+---@param _manualSelectInputs boolean
 function ISBuildPanel:onManualSelectChanged(_manualSelectInputs) end
 
 ---@param _recipe CraftRecipe
@@ -105,8 +106,10 @@ function ISBuildPanel:setRecipeList(_recipeList) end
 ---@param _useListMode boolean
 function ISBuildPanel:setRecipeListMode(_useListMode) end
 
+---@param _recipeQuery List<CraftRecipe>
 function ISBuildPanel:setRecipes(_recipeQuery) end
 
+---@param _sortMode string
 function ISBuildPanel:setSortMode(_sortMode) end
 
 function ISBuildPanel:sortRecipeList() end

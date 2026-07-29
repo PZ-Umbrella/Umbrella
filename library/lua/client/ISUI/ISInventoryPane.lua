@@ -162,6 +162,7 @@ function ISInventoryPane:drawTextAndProgressBar(text, fraction, xoff, top, fgTex
 ---@param button ISButton
 function ISInventoryPane:expandAll(button) end
 
+---@param _itemTest (InventoryItem | umbrella.ISInventoryPane.ItemRecord)?
 function ISInventoryPane:findItemForWorldObjectHighlight(_itemTest) end
 
 ---@return number
@@ -280,6 +281,8 @@ function ISInventoryPane:saveSelection(selected) end
 ---@param index integer
 function ISInventoryPane:selectIndex(index) end
 
+---@param owner ISUIElement
+---@param itemTable table<InventoryItem, boolean>
 function ISInventoryPane:setItemsToHighlight(owner, itemTable) end
 
 ---@param mode string

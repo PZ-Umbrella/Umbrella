@@ -1,24 +1,25 @@
 ---@meta
 
 ---@class ISUITextureGetter : ISBaseObject
----@field texture unknown?
+---@field texture Texture?
 ---@field textureFilePath string
 ISUITextureGetter = ISBaseObject:derive("ISUITextureGetter")
 ISUITextureGetter.Type = "ISUITextureGetter"
 
----@return unknown
+---@param texture Texture | ISUITextureGetter
+---@return Texture?
 function ISUITextureGetter.checkGetTexture(texture) end
 
----@return unknown
+---@return number
 function ISUITextureGetter:getHeight() end
 
----@return unknown?
+---@return Texture?
 function ISUITextureGetter:getTexture() end
 
 ---@return string
 function ISUITextureGetter:getTextureFilePath() end
 
----@return unknown
+---@return number
 function ISUITextureGetter:getWidth() end
 
 function ISUITextureGetter:loadTexture() end

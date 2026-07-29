@@ -5,6 +5,7 @@
 ---@field destContainer ItemContainer
 ---@field destContainerOpened ItemContainer?
 ---@field dontAdd boolean
+---@field isTransferIntoVehicleSeatFromOutside boolean
 ---@field item InventoryItem?
 ---@field jobType string
 ---@field loopedAction boolean
@@ -18,6 +19,7 @@
 ---@field sourceContainerOpened ItemContainer?
 ---@field srcContainer ItemContainer
 ---@field started boolean
+---@field startTime unknown
 ---@field transactionId number
 ---@field transactions umbrella.ISInventoryTransferAction.Transaction
 ISInventoryTransferAction = ISBaseTimedAction:derive("ISInventoryTransferAction")
@@ -80,6 +82,7 @@ function ISInventoryTransferAction:playSourceContainerCloseSound() end
 
 function ISInventoryTransferAction:playSourceContainerOpenSound() end
 
+---@param item InventoryItem
 function ISInventoryTransferAction:playTransferCompleteSound(item) end
 
 ---@param allow boolean
@@ -108,6 +111,9 @@ function ISInventoryTransferAction:stopLoopingSound() end
 function ISInventoryTransferAction:transferItem(item) end
 
 function ISInventoryTransferAction:update() end
+
+---@return boolean
+function ISInventoryTransferAction:waitToStart() end
 
 ---@param character IsoPlayer
 ---@param item InventoryItem

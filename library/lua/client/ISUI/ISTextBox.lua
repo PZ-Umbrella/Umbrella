@@ -12,7 +12,6 @@
 ---@field fontHgt number
 ---@field maxLines number
 ---@field multipleLine boolean
----@field name unknown?
 ---@field no ISButton
 ---@field numLines number
 ---@field onclick umbrella.ISButton.OnClick?
@@ -59,7 +58,7 @@ function ISTextBox:onJoypadDirDown(joypadData) end
 ---@param joypadData JoypadData
 function ISTextBox:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISTextBox:onJoypadDown(button, joypadData) end
 

@@ -33,7 +33,7 @@ function ISMiniMapOuter:onButton6() end
 ---@param joypadData JoypadData
 function ISMiniMapOuter:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISMiniMapOuter:onJoypadDown(button, joypadData) end
 
@@ -207,19 +207,21 @@ ISMiniMapOptionsPanel.Type = "ISMiniMapOptionsPanel"
 
 function ISMiniMapOptionsPanel:createChildren() end
 
----@return table
+---@return ConfigOption[]
 function ISMiniMapOptionsPanel:getVisibleOptions() end
 
 ---@param optionName string
 ---@return boolean
 function ISMiniMapOptionsPanel:isMultiplayerOption(optionName) end
 
+---@param entry ISTextEntryBox
+---@param option ConfigOption
 function ISMiniMapOptionsPanel:onCommandEntered(entry, option) end
 
 ---@param joypadData JoypadData
 function ISMiniMapOptionsPanel:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISMiniMapOptionsPanel:onJoypadDown(button, joypadData) end
 
@@ -227,6 +229,9 @@ function ISMiniMapOptionsPanel:onJoypadDown(button, joypadData) end
 ---@param y number
 function ISMiniMapOptionsPanel:onMouseDownOutside(x, y) end
 
+---@param index integer
+---@param selected boolean
+---@param option ConfigOption
 function ISMiniMapOptionsPanel:onTickBox(index, selected, option) end
 
 function ISMiniMapOptionsPanel:synchUI() end

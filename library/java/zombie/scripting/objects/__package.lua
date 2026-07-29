@@ -76,6 +76,9 @@
 ---@class MetaRecipe
 
 ---(Not exposed)
+---@class ModelAttachmentId
+
+---(Not exposed)
 ---@class ModelWeaponPart
 
 ---(Not exposed)

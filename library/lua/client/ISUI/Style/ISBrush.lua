@@ -1,7 +1,7 @@
 ---@meta
 
 ---@class ISBrush : ISBaseObject
----@field color table
+---@field color umbrella.RGBA
 ---@field type string
 ISBrush = ISBaseObject:derive("ISBrush")
 ISBrush.Type = "ISBrush"

@@ -38,5 +38,6 @@ function ISUnequipAction:update() end
 ---@param character IsoPlayer
 ---@param item InventoryItem
 ---@param maxTimeInit number
+---@param reason string?
 ---@return ISUnequipAction
-function ISUnequipAction:new(character, item, maxTimeInit) end
+function ISUnequipAction:new(character, item, maxTimeInit, reason) end

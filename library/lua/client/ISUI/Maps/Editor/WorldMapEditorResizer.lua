@@ -1,5 +1,7 @@
 ---@meta
 
+---@alias umbrella.WorldMapEditorResizer.Bounds umbrella.Bounds
+
 ---@class WorldMapEditorResizer : ISBaseObject
 ---@field editor WorldMapEditor
 ---@field mapAPI UIWorldMapV1
@@ -50,9 +52,3 @@ function WorldMapEditorResizer:startResizing() end
 ---@param editor WorldMapEditor
 ---@return WorldMapEditorResizer
 function WorldMapEditorResizer:new(editor) end
-
----@class umbrella.WorldMapEditorResizer.Bounds
----@field x1 number
----@field x2 number
----@field y1 number
----@field y2 number

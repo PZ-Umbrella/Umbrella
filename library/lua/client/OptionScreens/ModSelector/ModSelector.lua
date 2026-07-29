@@ -4,7 +4,7 @@
 ---@field acceptButton ISButton
 ---@field backButton ISButton
 ---@field helpButton ISButton
----@field joypadNavigate table
+---@field joypadNavigate umbrella.JoypadNavigate
 ---@field mapOrderbtn ISButton
 ---@field model ModSelector.Model
 ---@field modInfoPanel ModInfoPanel

@@ -71,6 +71,10 @@ function ISFactionUI:onClickFactionPvp(clickedOption, enabled) end
 ---@param enabled boolean
 function ISFactionUI:onClickShowTag(clickedOption, enabled) end
 
+function ISFactionUI:onDisbandFaction(button, player) end
+
+---@param color umbrella.RGB
+---@param mouseUp boolean?
 function ISFactionUI:onPickedTagColor(color, mouseUp) end
 
 ---@param button ISButton

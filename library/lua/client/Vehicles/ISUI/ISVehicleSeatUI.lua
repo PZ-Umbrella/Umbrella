@@ -103,7 +103,7 @@ function ISVehicleSeatUI:onJoypadDirRight() end
 
 function ISVehicleSeatUI:onJoypadDirUp() end
 
----@param button integer
+---@param button JoypadButton
 function ISVehicleSeatUI:onJoypadDown(button) end
 
 ---@param key integer

@@ -4,11 +4,10 @@
 DebugContextMenu = {}
 DebugContextMenu.staggerBacking = false
 DebugContextMenu.stagTime = 0
-DebugContextMenu.player = nil
-DebugContextMenu.pickedCharacters = nil ---@type table?
-DebugContextMenu.highlightedCharacter = nil
-DebugContextMenu.selectedZombie = nil
-DebugContextMenu.ticked = false
+DebugContextMenu.player = nil ---@type integer?
+DebugContextMenu.pickedCharacters = nil ---@type IsoGameCharacter[]?
+DebugContextMenu.highlightedCharacter = nil ---@type IsoGameCharacter?
+DebugContextMenu.selectedZombie = nil ---@type IsoZombie?
 
 ---@param type string
 ---@param breed AnimalBreed
@@ -62,6 +61,7 @@ function DebugContextMenu.doDebugCorpseMenu(player, context, worldobjects, test)
 ---@return boolean?
 function DebugContextMenu.doDebugMenu(player, context, worldobjects, test) end
 
+---@param player integer
 ---@param context ISContextMenu
 ---@param worldobjects IsoObject[]
 ---@param test boolean?
@@ -117,9 +117,12 @@ function DebugContextMenu.doRandomizedZoneStory(square, rzs) end
 ---@param test boolean?
 function DebugContextMenu.doSurvivorSwapMenu(player, context, worldobjects, test) end
 
----@return table
+---@param square IsoGridSquare
+---@return IsoGameCharacter[]
 function DebugContextMenu.findIsoGameCharactersInSquare(square) end
 
+---@param option umbrella.ISContextMenu.Option
+---@param object IsoGameCharacter
 function DebugContextMenu.initWorldCharacterHighlightOption(option, object) end
 
 ---@param playerObj IsoPlayer
@@ -211,7 +214,10 @@ function DebugContextMenu.OnGetBuildingKey(worldobjects, player) end
 ---@param player integer
 function DebugContextMenu.OnGetDoorKey(worldobjects, door, player) end
 
+---@param _option umbrella.ISContextMenu.Option
+---@param _menu ISContextMenu
 ---@param _isHighlighted boolean
+---@param _object IsoGameCharacter
 function DebugContextMenu.onHighlightWorldCharacter(_option, _menu, _isHighlighted, _object) end
 
 ---@param vehicle BaseVehicle
@@ -241,6 +247,8 @@ function DebugContextMenu.OnMannequinSetScript(obj, script) end
 ---@param body IsoDeadBody
 function DebugContextMenu.OnReanimateCorpse(body) end
 
+function DebugContextMenu.onReloadTranslations() end
+
 ---@param zombie nil
 function DebugContextMenu.OnRemoveAllAnimals(zombie) end
 
@@ -260,6 +268,7 @@ function DebugContextMenu.OnRemoveAllZombiesClient(zombie) end
 function DebugContextMenu.onRemoveItemTool(playerObj) end
 
 ---@param playerObj IsoPlayer
+---@param vehicle BaseVehicle
 function DebugContextMenu.onRemoveVehicle(playerObj, vehicle) end
 
 ---@param zone Zone

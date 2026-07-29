@@ -62,7 +62,7 @@ function RWMElement:onJoypadDirRight(joypadData) end
 ---@param joypadData JoypadData
 function RWMElement:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function RWMElement:onJoypadDown(button) end
 
 ---@param joypadData JoypadData

@@ -56,7 +56,7 @@ function SFarmingSystem:getHealth() end
 function SFarmingSystem:getInitialStateForClient() end
 
 ---@param luaObject SPlantGlobalObject
----@param nextGrowing unknown?
+---@param nextGrowing number?
 ---@param updateNbOfGrow boolean
 function SFarmingSystem:growPlant(luaObject, nextGrowing, updateNbOfGrow) end
 

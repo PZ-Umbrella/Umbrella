@@ -46,6 +46,9 @@ IsoObjectChange.CONTAINERS = nil
 IsoObjectChange.CONTAINER_CUSTOM_TEMPERATURE = nil
 
 ---@type IsoObjectChange
+IsoObjectChange.COUGH = nil
+
+---@type IsoObjectChange
 IsoObjectChange.DRYER_STATE = nil
 
 ---@type IsoObjectChange

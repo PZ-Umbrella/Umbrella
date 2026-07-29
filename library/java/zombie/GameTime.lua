@@ -23,6 +23,14 @@ function __GameTime:RemoveZombiesIndiscriminate(i) end
 ---@return number # Interpolated value based on the current time.
 function __GameTime:TimeLerp(startVal, endVal, startTime, endTime) end
 
+---@param hours number
+---@return number
+function __GameTime:clampHours(hours) end
+
+---@param hours number
+---@return number
+function __GameTime:clampHours(hours) end
+
 ---Returns the number of days in a month.
 ---@param year integer Year of the month. Required to account for leap years.
 ---@param month integer 0 indexed month of the year.
@@ -304,6 +312,14 @@ function __GameTime:load(input) end
 
 function __GameTime:load() end
 
+---@param hours number
+---@return number
+function __GameTime:minHours(hours) end
+
+---@param hours number
+---@return number
+function __GameTime:minHours(hours) end
+
 function __GameTime:save() end
 
 ---@param output DataOutputStream
@@ -454,21 +470,50 @@ function __GameTime:updateCalendar(year, month, dayOfMonth, hourOfDay, minute) e
 
 GameTime = {}
 
+---@type integer
+GameTime.MILLISECONDS_PER_SECOND = nil
+
 ---@type number
 GameTime.MULTIPLIER = nil
 
 ---@type number
 GameTime.MinutesPerHour = nil
 
+---@type integer
+GameTime.NANOSECONDS_PER_SECOND = nil
+
+---@type integer
+GameTime.SECONDS_PER_MINUTE = nil
+
 ---@type number
 GameTime.SecondsPerHour = nil
 
 ---@type number
-GameTime.SecondsPerMinute = nil
+GameTime.THIRTY_FPS_SCALE = nil
 
 ---Because of how Kahlua exposes static fields, when accessed from Lua, this will return a stale GameTime object that does not hold the correct game state. Lua mods should always use getGameTime() or GameTime.getInstance() instead of this field.
 ---@type GameTime
 GameTime.instance = nil
+
+---@param hours number
+---@param worldAgeHours number
+---@return number
+function GameTime.checkHours(hours, worldAgeHours) end
+
+---@param hours number
+---@param worldAgeHours number
+---@return number
+function GameTime.checkHours(hours, worldAgeHours) end
+
+---@param hours number
+---@param worldAgeHours number
+---@return number
+function GameTime.clampHours(hours, worldAgeHours) end
+
+---@param hours number
+---@param worldAgeHours number
+---@return number
+function GameTime.clampHours(hours, worldAgeHours) end
 
 ---@return GameTime
 function GameTime.getInstance() end
@@ -487,6 +532,16 @@ function GameTime.getSlomoMultiplier() end
 
 ---@return boolean
 function GameTime.isGamePaused() end
+
+---@param hours number
+---@param worldAgeHours number
+---@return number
+function GameTime.minHours(hours, worldAgeHours) end
+
+---@param hours number
+---@param worldAgeHours number
+---@return number
+function GameTime.minHours(hours, worldAgeHours) end
 
 ---@param aInstance GameTime
 function GameTime.setInstance(aInstance) end

@@ -7,7 +7,6 @@
 ---@field buttonQuit ISButton
 ---@field destroyOnClick boolean
 ---@field javaStateObj TermsOfServiceState
----@field name unknown?
 ---@field ok unknown?
 ---@field prevFocus ISUIElement
 ---@field richText ISRichTextPanel
@@ -39,7 +38,7 @@ function ISTermsOfServiceUI:onButtonQuit(button) end
 ---@param joypadData JoypadData
 function ISTermsOfServiceUI:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISTermsOfServiceUI:onJoypadDown(button) end
 
 ---@param joypadData JoypadData

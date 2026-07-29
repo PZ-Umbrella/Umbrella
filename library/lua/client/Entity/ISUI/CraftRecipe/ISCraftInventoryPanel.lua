@@ -14,7 +14,6 @@
 ---@field itemListBox ISScrollingListBox?
 ---@field itemSlot ISItemSlot
 ---@field logic HandcraftLogic
----@field margin number
 ---@field player IsoPlayer
 ---@field previousSelected number
 ---@field selectedItem umbrella.ISCraftInventoryPanel.ListItem
@@ -73,6 +72,7 @@ function ISCraftInventoryPanel:onListItemClicked(_item) end
 ---@param _item umbrella.ISCraftInventoryPanel.ListItem
 function ISCraftInventoryPanel:onListSelected(_item) end
 
+---@param _inputItems unknown?
 function ISCraftInventoryPanel:onRebuildItemNodes(_inputItems) end
 
 function ISCraftInventoryPanel:onResize() end

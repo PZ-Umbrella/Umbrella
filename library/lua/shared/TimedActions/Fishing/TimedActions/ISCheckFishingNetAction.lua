@@ -23,7 +23,7 @@ function ISCheckFishingNetAction:stop() end
 
 function ISCheckFishingNetAction:update() end
 
----@return unknown
+---@return boolean
 function ISCheckFishingNetAction:waitToStart() end
 
 ---@param character IsoPlayer

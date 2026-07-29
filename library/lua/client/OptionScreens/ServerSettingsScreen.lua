@@ -5,6 +5,7 @@
 ---| umbrella.ServerSettingsScreen.EntrySetting
 ---| umbrella.ServerSettingsScreen.EnumSetting
 ---| umbrella.ServerSettingsScreen.StringSetting
+---| umbrella.ServerSettingsScreen.SpinboxSetting
 
 ---@class ServerSettingsScreen : ISPanelJoypad
 ---@field initialSelectedSettings string?
@@ -62,7 +63,7 @@ function BaseServerSettingsPanel:onJoypadDirDown(joypadData) end
 ---@param joypadData JoypadData
 function BaseServerSettingsPanel:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function BaseServerSettingsPanel:onJoypadDown(button, joypadData) end
 
@@ -169,13 +170,13 @@ function __serverSettingsScreen_Page2:new(x, y, width, height) end
 ---@field buttonAccept ISButton
 ---@field buttonCancel ISButton
 ---@field chooseModsWindow Page3.ChooseModsWindow
----@field controls table
----@field currentPanel unknown?
----@field customui table
+---@field controls table<string, table<string, ISUIElement>>
+---@field currentPanel ISUIElement?
+---@field customui ISUIElement[]
 ---@field filterEntry ISTextEntryBox
----@field groupBox table
+---@field groupBox table<string, table<string, ISUIElement>>
 ---@field listbox ISScrollingListBox
----@field nonDefaultOptions table
+---@field nonDefaultOptions { INI: ServerOptions, Sandbox: ServerOption }
 ---@field selectedMonth integer
 ---@field selectedYear integer
 ---@field settings umbrella.ServerSettingsScreen.Setting[]?
@@ -190,7 +191,9 @@ function __serverSettingsScreen_Page3:aboutToShowStartScreen() end
 
 function __serverSettingsScreen_Page3:create() end
 
----@return ServerSettingsScreen.ServerSettingsScreenGroupBox
+---@param category umbrella.ServerSettingsScreen.SettingsCategory
+---@param page umbrella.ServerSettingsScreen.SettingsPage
+---@return ServerSettingsScreen.ServerSettingsScreenPanel | ServerSettingsScreen.ServerSettingsScreenGroupBox
 function __serverSettingsScreen_Page3:createPanel(category, page) end
 
 ---@param y number
@@ -201,12 +204,18 @@ function __serverSettingsScreen_Page3:doDrawItem(y, item, alt) end
 
 function __serverSettingsScreen_Page3:doSearch() end
 
+---@param message string
+---@param arg1 unknown?
+---@param arg2 unknown?
+---@param arg3 unknown?
+---@param arg4 unknown?
 function __serverSettingsScreen_Page3:notify(message, arg1, arg2, arg3, arg4) end
 
 function __serverSettingsScreen_Page3:onButtonCancel() end
 
 function __serverSettingsScreen_Page3:onButtonSave() end
 
+---@param combo ISComboBox
 ---@param categoryName string
 ---@param optionName string
 function __serverSettingsScreen_Page3:onComboBoxSelected(combo, categoryName, optionName) end
@@ -226,14 +235,17 @@ function __serverSettingsScreen_Page3:onJoypadDirRight_ListBox(joypadData) end
 ---@param joypadData JoypadData
 function __serverSettingsScreen_Page3:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __serverSettingsScreen_Page3:onJoypadDown_ListBox(button, joypadData) end
 
+---@param item table
 function __serverSettingsScreen_Page3:onMouseDownListBox(item) end
 
 function __serverSettingsScreen_Page3:onPanelChange() end
 
+---@param _ integer
+---@param value boolean
 ---@param categoryName string
 ---@param optionName string
 function __serverSettingsScreen_Page3:onTickBoxSelected(_, value, categoryName, optionName) end
@@ -245,11 +257,13 @@ function __serverSettingsScreen_Page3:render() end
 function __serverSettingsScreen_Page3:settingsFromUI() end
 
 ---@param category string
+---@param options ServerOptions | SandboxOptions
 function __serverSettingsScreen_Page3:settingsFromUIAux(category, options) end
 
 function __serverSettingsScreen_Page3:settingsToUI() end
 
 ---@param category string
+---@param options ServerOptions | SandboxOptions
 function __serverSettingsScreen_Page3:settingsToUIAux(category, options) end
 
 ---@param settingName string
@@ -302,7 +316,7 @@ function __serverSettingsScreen_Page4:new(x, y, width, height) end
 ---@class ServerSettingsScreen.Page5 : BaseServerSettingsPanel
 ---@field buttonAccept ISButton
 ---@field buttonCancel ISButton
----@field checkName unknown?
+---@field checkName string?
 ---@field entry ISTextEntryBox
 ---@field newFilesY number
 local __serverSettingsScreen_Page5 = BaseServerSettingsPanel:derive("Page5")
@@ -368,16 +382,18 @@ function __serverSettingsScreen_Page6:new(x, y, width, height) end
 
 ---@class ServerSettingsScreen.MultiColumnPanelJoypad : ISPanelJoypad
 ---@field joypadButtons ISButton[]
----@field multiColumnCurrent table
+---@field multiColumnCurrent integer[]
 ---@field multiColumnIndex number
----@field multiColumnUI table
+---@field multiColumnUI ISUIElement[][]
 local __serverSettingsScreen_MultiColumnPanelJoypad = ISPanelJoypad:derive("MultiColumnPanelJoypad")
 __serverSettingsScreen_MultiColumnPanelJoypad.Type = "MultiColumnPanelJoypad"
 
+---@param uiList ISUIElement[]
 function __serverSettingsScreen_MultiColumnPanelJoypad:addJoypadColumn(uiList) end
 
 function __serverSettingsScreen_MultiColumnPanelJoypad:render() end
 
+---@param index integer
 function __serverSettingsScreen_MultiColumnPanelJoypad:setJoypadColumn(index) end
 
 ---@param x number
@@ -395,19 +411,22 @@ function __serverSettingsScreen_MultiColumnPanelJoypad:new(x, y, width, height) 
 ---@field buttonCancel ISButton
 ---@field entryAddSpawnPoint ISTextEntryBox
 ---@field entryOtherProfession ISTextEntryBox
----@field pointListBox unknown
+---@field pointListBox ServerSettingsScreen.ServerSettingsScreenMapsListBox
 ---@field profComboBox ISComboBox
 ---@field professionLabel ISLabel
----@field profListBox unknown
+---@field profListBox ServerSettingsScreen.ServerSettingsScreenMapsListBox
 ---@field spawnPointListLabel ISLabel
 local __serverSettingsScreen_Page7 = ServerSettingsScreen.MultiColumnPanelJoypad:derive("Page7")
 __serverSettingsScreen_Page7.Type = "Page7"
 
 function __serverSettingsScreen_Page7:aboutToShow() end
 
+---@param pointTable umbrella.SpawnPoint[]
+---@param select boolean
 function __serverSettingsScreen_Page7:addPointToList(pointTable, select) end
 
----@param pointsTable table
+---@param professionType string
+---@param pointsTable umbrella.SpawnPoint[]
 ---@param select boolean
 function __serverSettingsScreen_Page7:addProfessionToList(professionType, pointsTable, select) end
 
@@ -419,6 +438,7 @@ function __serverSettingsScreen_Page7:fillProfessionCombo() end
 
 function __serverSettingsScreen_Page7:fillProfessionList() end
 
+---@param professionType string
 ---@return boolean
 function __serverSettingsScreen_Page7:isProfessionInList(professionType) end
 
@@ -447,17 +467,20 @@ function __serverSettingsScreen_Page7:onJoypadDirRight(joypadData) end
 ---@param joypadData JoypadData
 function __serverSettingsScreen_Page7:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __serverSettingsScreen_Page7:onJoypadDown(button, joypadData) end
 
 ---@param joypadData JoypadData
 function __serverSettingsScreen_Page7:onLoseJoypadFocus(joypadData) end
 
+---@param data unknown?
 function __serverSettingsScreen_Page7:onMouseDownProfession(data) end
 
+---@param index integer
 function __serverSettingsScreen_Page7:onRemovePoint(index) end
 
+---@param index integer
 function __serverSettingsScreen_Page7:onRemoveProfession(index) end
 
 function __serverSettingsScreen_Page7:onResolutionChange() end
@@ -474,7 +497,7 @@ function __serverSettingsScreen_Page7:updateWhenVisible() end
 function __serverSettingsScreen_Page7:new(x, y, width, height) end
 
 ---@class ServerSettingsScreen.ServerSettingsScreenPanel : ISPanelJoypad
----@field entryText table
+---@field entryText table<string, string>
 local __serverSettingsScreen_ServerSettingsScreenPanel = ISPanelJoypad:derive("ServerSettingsScreenPanel")
 __serverSettingsScreen_ServerSettingsScreenPanel.Type = "ServerSettingsScreenPanel"
 
@@ -484,7 +507,7 @@ function __serverSettingsScreen_ServerSettingsScreenPanel:onGainJoypadFocus(joyp
 ---@param joypadData JoypadData
 function __serverSettingsScreen_ServerSettingsScreenPanel:onJoypadDirLeft(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __serverSettingsScreen_ServerSettingsScreenPanel:onJoypadDown(button, joypadData) end
 
@@ -505,11 +528,11 @@ local __serverSettingsScreen_ServerSettingsScreenBaseListBox =
 	ISScrollingListBox:derive("ServerSettingsScreenBaseListBox")
 __serverSettingsScreen_ServerSettingsScreenBaseListBox.Type = "ServerSettingsScreenBaseListBox"
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __serverSettingsScreen_ServerSettingsScreenBaseListBox:onJoypadDown(button, joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 ---@return boolean
 function __serverSettingsScreen_ServerSettingsScreenBaseListBox:onJoypadDownInParent(button, joypadData) end
@@ -525,17 +548,23 @@ function __serverSettingsScreen_ServerSettingsScreenBaseListBox:setJoypadFocused
 ---@field buttonEdit ISButton
 ---@field buttonRemove ISButton
 ---@field entry ISTextEntryBox
----@field listbox unknown
+---@field listbox ServerSettingsScreen.SpawnRegionsListBox
 ---@field nameFilePanel SpawnRegionsNameFilePanel
 ---@field settings umbrella.ServerSettingsScreen.Setting[]
 local __serverSettingsScreen_SpawnRegionsPanel = ServerSettingsScreen.MultiColumnPanelJoypad:derive("SpawnRegionsPanel")
 __serverSettingsScreen_SpawnRegionsPanel.Type = "SpawnRegionsPanel"
 
+---@param name string
 ---@param file string
 function __serverSettingsScreen_SpawnRegionsPanel:addToList(name, file) end
 
 function __serverSettingsScreen_SpawnRegionsPanel:createChildren() end
 
+---@param message string
+---@param arg1 unknown?
+---@param arg2 unknown?
+---@param arg3 unknown?
+---@param arg4 unknown?
 function __serverSettingsScreen_SpawnRegionsPanel:notify(message, arg1, arg2, arg3, arg4) end
 
 function __serverSettingsScreen_SpawnRegionsPanel:onButtonAddRegion() end
@@ -553,7 +582,7 @@ function __serverSettingsScreen_SpawnRegionsPanel:onJoypadDirLeft(joypadData) en
 ---@param joypadData JoypadData
 function __serverSettingsScreen_SpawnRegionsPanel:onJoypadDirRight(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __serverSettingsScreen_SpawnRegionsPanel:onJoypadDown(button, joypadData) end
 
@@ -564,15 +593,16 @@ function __serverSettingsScreen_SpawnRegionsPanel:onResolutionChange() end
 
 function __serverSettingsScreen_SpawnRegionsPanel:prerender() end
 
+---@param settings ServerSettings
 function __serverSettingsScreen_SpawnRegionsPanel:setSettings(settings) end
 
 function __serverSettingsScreen_SpawnRegionsPanel:settingsFromUI() end
 
 ---@class ServerSettingsScreen.SpawnRegionsListBox : ServerSettingsScreen.ServerSettingsScreenBaseListBox
----@field currentItem unknown?
+---@field currentItem integer?
 ---@field entryFile ISTextEntryBox
 ---@field entryName ISTextEntryBox
----@field scrollBarVisible unknown
+---@field scrollBarVisible boolean
 local __serverSettingsScreen_SpawnRegionsListBox =
 	ServerSettingsScreen.ServerSettingsScreenBaseListBox:derive("SpawnRegionsListBox")
 __serverSettingsScreen_SpawnRegionsListBox.Type = "SpawnRegionsListBox"
@@ -593,17 +623,17 @@ function __serverSettingsScreen_SpawnRegionsListBox:render() end
 
 ---@class ServerSettingsScreen.ServerSettingsScreenGroupBox : ServerSettingsScreen.ServerSettingsScreenPanel
 ---@field _instance ServerSettingsScreen.Page3
----@field category unknown
----@field contents unknown
----@field controls table
+---@field category string
+---@field contents ISUIElement
+---@field controls ISUIElement[]
 ---@field cover ISPanel
----@field joypadButtons unknown
----@field labels table
----@field settingNames table
+---@field joypadButtons ISButton[]
+---@field labels ISLabel[]
+---@field settingNames string[]
 ---@field settings umbrella.ServerSettingsScreen.Setting[]?
 ---@field tickBox ISTickBox
 ---@field tickBoxLabel string
----@field titles table
+---@field titles ISLabel[]
 local __serverSettingsScreen_ServerSettingsScreenGroupBox =
 	ServerSettingsScreen.ServerSettingsScreenPanel:derive("ServerSettingsScreenGroupBox")
 __serverSettingsScreen_ServerSettingsScreenGroupBox.Type = "ServerSettingsScreenGroupBox"
@@ -612,12 +642,16 @@ function __serverSettingsScreen_ServerSettingsScreenGroupBox:createChildren() en
 
 function __serverSettingsScreen_ServerSettingsScreenGroupBox:ensureVisible() end
 
+---@param index integer
+---@param selected boolean
 function __serverSettingsScreen_ServerSettingsScreenGroupBox:onTicked(index, selected) end
 
 function __serverSettingsScreen_ServerSettingsScreenGroupBox:prerender() end
 
 function __serverSettingsScreen_ServerSettingsScreenGroupBox:setJoypadButtons() end
 
+---@param settings ServerSettings
+---@param category string
 function __serverSettingsScreen_ServerSettingsScreenGroupBox:settingsToUI(settings, category) end
 
 ---@param x number
@@ -625,13 +659,13 @@ function __serverSettingsScreen_ServerSettingsScreenGroupBox:settingsToUI(settin
 ---@param width number
 ---@param height number
 ---@param tickBoxLabel string
+---@param category string
 ---@return ServerSettingsScreen.ServerSettingsScreenGroupBox
 function __serverSettingsScreen_ServerSettingsScreenGroupBox:new(x, y, width, height, tickBoxLabel, category) end
 
 ---@class ServerSettingsScreen.ServerSettingsScreenModsPanel : ServerSettingsScreen.MultiColumnPanelJoypad
----@field button ISButton
----@field listbox unknown
----@field modInfoByID table
+---@field listbox ServerSettingsScreen.ServerSettingsScreenModsListBox
+---@field modInfoByID table<string, ChooseGameInfo.Mod>
 ---@field settings umbrella.ServerSettingsScreen.Setting[]
 local __serverSettingsScreen_ServerSettingsScreenModsPanel =
 	ServerSettingsScreen.MultiColumnPanelJoypad:derive("ServerSettingsScreenModsPanel")
@@ -639,6 +673,7 @@ __serverSettingsScreen_ServerSettingsScreenModsPanel.Type = "ServerSettingsScree
 
 function __serverSettingsScreen_ServerSettingsScreenModsPanel:aboutToShowStartScreen() end
 
+---@param modID string
 function __serverSettingsScreen_ServerSettingsScreenModsPanel:addModToList(modID) end
 
 function __serverSettingsScreen_ServerSettingsScreenModsPanel:createChildren() end
@@ -655,7 +690,7 @@ function __serverSettingsScreen_ServerSettingsScreenModsPanel:onJoypadDirLeft(jo
 ---@param joypadData JoypadData
 function __serverSettingsScreen_ServerSettingsScreenModsPanel:onJoypadDirRight(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __serverSettingsScreen_ServerSettingsScreenModsPanel:onJoypadDown(button, joypadData) end
 
@@ -666,12 +701,13 @@ function __serverSettingsScreen_ServerSettingsScreenModsPanel:onResolutionChange
 
 function __serverSettingsScreen_ServerSettingsScreenModsPanel:prerender() end
 
+---@param settings ServerSettings
 function __serverSettingsScreen_ServerSettingsScreenModsPanel:setSettings(settings) end
 
 function __serverSettingsScreen_ServerSettingsScreenModsPanel:settingsFromUI() end
 
 ---@class ServerSettingsScreen.ServerSettingsScreenModsListBox : ServerSettingsScreen.ServerSettingsScreenBaseListBox
----@field mouseOverButtonIndex unknown?
+---@field mouseOverButtonIndex integer?
 local __serverSettingsScreen_ServerSettingsScreenModsListBox =
 	ServerSettingsScreen.ServerSettingsScreenBaseListBox:derive("ServerSettingsScreenModsListBox")
 __serverSettingsScreen_ServerSettingsScreenModsListBox.Type = "ServerSettingsScreenModsListBox"
@@ -694,21 +730,30 @@ function __serverSettingsScreen_ServerSettingsScreenModsListBox:prerender() end
 ---@field buttonRemove ISButton
 ---@field comboBox ISComboBox
 ---@field entry ISTextEntryBox
----@field listbox unknown
+---@field listbox ServerSettingsScreen.ServerSettingsScreenMapsListBox
 ---@field settings umbrella.ServerSettingsScreen.Setting[]
 local __serverSettingsScreen_ServerSettingsScreenMapsPanel =
 	ServerSettingsScreen.MultiColumnPanelJoypad:derive("ServerSettingsScreenMapsPanel")
 __serverSettingsScreen_ServerSettingsScreenMapsPanel.Type = "ServerSettingsScreenMapsPanel"
 
+---@param mapFolder string
+---@param index integer
 function __serverSettingsScreen_ServerSettingsScreenMapsPanel:addMapToList(mapFolder, index) end
 
 function __serverSettingsScreen_ServerSettingsScreenMapsPanel:createChildren() end
 
+---@param modsString string
 function __serverSettingsScreen_ServerSettingsScreenMapsPanel:fillComboBox(modsString) end
 
----@return unknown?
+---@param mapFolder string
+---@return integer?
 function __serverSettingsScreen_ServerSettingsScreenMapsPanel:findMapInList(mapFolder) end
 
+---@param message string
+---@param arg1 unknown?
+---@param arg2 unknown?
+---@param arg3 unknown?
+---@param arg4 unknown?
 function __serverSettingsScreen_ServerSettingsScreenMapsPanel:notify(message, arg1, arg2, arg3, arg4) end
 
 function __serverSettingsScreen_ServerSettingsScreenMapsPanel:onAddInstalledMap() end
@@ -730,7 +775,7 @@ function __serverSettingsScreen_ServerSettingsScreenMapsPanel:onJoypadDirLeft(jo
 ---@param joypadData JoypadData
 function __serverSettingsScreen_ServerSettingsScreenMapsPanel:onJoypadDirRight(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __serverSettingsScreen_ServerSettingsScreenMapsPanel:onJoypadDown(button, joypadData) end
 
@@ -741,12 +786,13 @@ function __serverSettingsScreen_ServerSettingsScreenMapsPanel:onResolutionChange
 
 function __serverSettingsScreen_ServerSettingsScreenMapsPanel:prerender() end
 
+---@param settings ServerSettings
 function __serverSettingsScreen_ServerSettingsScreenMapsPanel:setSettings(settings) end
 
 function __serverSettingsScreen_ServerSettingsScreenMapsPanel:settingsFromUI() end
 
 ---@class ServerSettingsScreen.ServerSettingsScreenMapsListBox : ServerSettingsScreen.ServerSettingsScreenBaseListBox
----@field mouseOverButtonIndex unknown?
+---@field mouseOverButtonIndex integer?
 local __serverSettingsScreen_ServerSettingsScreenMapsListBox =
 	ServerSettingsScreen.ServerSettingsScreenBaseListBox:derive("ServerSettingsScreenMapsListBox")
 __serverSettingsScreen_ServerSettingsScreenMapsListBox.Type = "ServerSettingsScreenMapsListBox"
@@ -769,8 +815,8 @@ function __serverSettingsScreen_ServerSettingsScreenMapsListBox:prerender() end
 ---@field buttonRemove ISButton
 ---@field comboBox ISComboBox
 ---@field entry ISTextEntryBox
----@field itemDetails table
----@field listbox unknown
+---@field itemDetails table<string, SteamUGCDetails>
+---@field listbox ServerSettingsScreen.ServerSettingsScreenWorkshopListBox
 ---@field settings umbrella.ServerSettingsScreen.Setting[]
 local __serverSettingsScreen_ServerSettingsScreenWorkshopPanel =
 	ServerSettingsScreen.MultiColumnPanelJoypad:derive("ServerSettingsScreenWorkshopPanel")
@@ -778,10 +824,12 @@ __serverSettingsScreen_ServerSettingsScreenWorkshopPanel.Type = "ServerSettingsS
 
 function __serverSettingsScreen_ServerSettingsScreenWorkshopPanel:aboutToShowStartScreen() end
 
+---@param workshopID string
 function __serverSettingsScreen_ServerSettingsScreenWorkshopPanel:addItemToList(workshopID) end
 
 function __serverSettingsScreen_ServerSettingsScreenWorkshopPanel:createChildren() end
 
+---@param workshopID string
 ---@return boolean
 function __serverSettingsScreen_ServerSettingsScreenWorkshopPanel:isValidWorkshopID(workshopID) end
 
@@ -797,6 +845,8 @@ function __serverSettingsScreen_ServerSettingsScreenWorkshopPanel:onButtonRemove
 ---@param joypadData JoypadData
 function __serverSettingsScreen_ServerSettingsScreenWorkshopPanel:onGainJoypadFocus(joypadData) end
 
+---@param status string
+---@param info Array<SteamUGCDetails>
 function __serverSettingsScreen_ServerSettingsScreenWorkshopPanel:onItemQueryFinished(status, info) end
 
 ---@param joypadData JoypadData
@@ -805,25 +855,27 @@ function __serverSettingsScreen_ServerSettingsScreenWorkshopPanel:onJoypadDirLef
 ---@param joypadData JoypadData
 function __serverSettingsScreen_ServerSettingsScreenWorkshopPanel:onJoypadDirRight(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __serverSettingsScreen_ServerSettingsScreenWorkshopPanel:onJoypadDown(button, joypadData) end
 
 ---@param joypadData JoypadData
 function __serverSettingsScreen_ServerSettingsScreenWorkshopPanel:onLoseJoypadFocus(joypadData) end
 
+---@param index integer
 function __serverSettingsScreen_ServerSettingsScreenWorkshopPanel:onRemoveItem(index) end
 
 function __serverSettingsScreen_ServerSettingsScreenWorkshopPanel:onResolutionChange() end
 
 function __serverSettingsScreen_ServerSettingsScreenWorkshopPanel:prerender() end
 
+---@param settings ServerSettings
 function __serverSettingsScreen_ServerSettingsScreenWorkshopPanel:setSettings(settings) end
 
 function __serverSettingsScreen_ServerSettingsScreenWorkshopPanel:settingsFromUI() end
 
 ---@class ServerSettingsScreen.ServerSettingsScreenWorkshopListBox : ServerSettingsScreen.ServerSettingsScreenBaseListBox
----@field mouseOverButtonIndex unknown?
+---@field mouseOverButtonIndex integer?
 local __serverSettingsScreen_ServerSettingsScreenWorkshopListBox =
 	ServerSettingsScreen.ServerSettingsScreenBaseListBox:derive("ServerSettingsScreenWorkshopListBox")
 __serverSettingsScreen_ServerSettingsScreenWorkshopListBox.Type = "ServerSettingsScreenWorkshopListBox"
@@ -842,7 +894,7 @@ function __serverSettingsScreen_ServerSettingsScreenWorkshopListBox:prerender() 
 
 ---@class ServerSettingsScreen.SandboxPresetPanel : ServerSettingsScreen.MultiColumnPanelJoypad
 ---@field buttonApplyPreset ISButton
----@field listbox unknown
+---@field listbox ServerSettingsScreen.ServerSettingsScreenModsListBox
 ---@field settings umbrella.ServerSettingsScreen.Setting[]
 local __serverSettingsScreen_SandboxPresetPanel =
 	ServerSettingsScreen.MultiColumnPanelJoypad:derive("SandboxPresetPanel")
@@ -866,7 +918,7 @@ function __serverSettingsScreen_SandboxPresetPanel:onJoypadDirLeft(joypadData) e
 ---@param joypadData JoypadData
 function __serverSettingsScreen_SandboxPresetPanel:onJoypadDirRight(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __serverSettingsScreen_SandboxPresetPanel:onJoypadDown(button, joypadData) end
 
@@ -877,6 +929,7 @@ function __serverSettingsScreen_SandboxPresetPanel:onResolutionChange() end
 
 function __serverSettingsScreen_SandboxPresetPanel:prerender() end
 
+---@param settings ServerSettings
 function __serverSettingsScreen_SandboxPresetPanel:setSettings(settings) end
 
 function __serverSettingsScreen_SandboxPresetPanel:settingsFromUI() end
@@ -897,11 +950,11 @@ function SpawnRegionsNameFilePanel:onFileEntered() end
 ---@param joypadData JoypadData
 function SpawnRegionsNameFilePanel:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function SpawnRegionsNameFilePanel:onJoypadDown(button, joypadData) end
 
----@param button ISButton
+---@param button JoypadButton
 ---@param joypadData JoypadData
 ---@return boolean
 function SpawnRegionsNameFilePanel:onJoypadDownInParent(button, joypadData) end
@@ -913,6 +966,7 @@ function SpawnRegionsNameFilePanel:onNameEntered() end
 
 function SpawnRegionsNameFilePanel:render() end
 
+---@param focused boolean
 ---@param joypadData JoypadData
 function SpawnRegionsNameFilePanel:setJoypadFocused(focused, joypadData) end
 
@@ -970,6 +1024,10 @@ function __page3_ChooseModsWindow:render() end
 ---@return Page3.ChooseModsWindow
 function __page3_ChooseModsWindow:new(x, y, width, height) end
 
+---@class umbrella.ServerSettingsScreen.SettingsCategory
+---@field name string
+---@field pages umbrella.ServerSettingsScreen.SettingsPage[]
+
 ---@class umbrella.ServerSettingsScreen.SettingsPage
 ---@field customui ISUIElement?
 ---@field name string
@@ -1000,6 +1058,10 @@ function __page3_ChooseModsWindow:new(x, y, width, height) end
 ---@class umbrella.ServerSettingsScreen.StringSetting
 ---@field text string
 ---@field type "string" | "text"
+
+---@class umbrella.ServerSettingsScreen.SpinboxSetting
+---@field name string
+---@field type "spinbox"
 
 ---@class umbrella.ServerSettingsScreen.SpawnRegionItem
 ---@field file string

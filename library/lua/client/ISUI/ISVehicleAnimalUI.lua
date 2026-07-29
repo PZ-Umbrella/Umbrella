@@ -55,7 +55,7 @@ function ISVehicleAnimalUI:onJoypadBeforeDeactivate(joypadData) end
 function ISVehicleAnimalUI:onJoypadBeforeDeactivate_Descendant(descendant, joypadData) end
 
 ---@param descendant ISUIElement
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISVehicleAnimalUI:onJoypadDown_Descendant(descendant, button, joypadData) end
 
@@ -89,7 +89,7 @@ ISAnimalInVehiclePanel.Type = "ISAnimalInVehiclePanel"
 
 function ISAnimalInVehiclePanel:createChildren() end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISAnimalInVehiclePanel:onJoypadDownInParent(button, joypadData) end
 

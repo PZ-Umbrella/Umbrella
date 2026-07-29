@@ -5,13 +5,13 @@
 ---@field isPasswordModified boolean
 ---@field saveBtn ISButton
 ---@field seePasswordBtn ISButton
----@field server unknown?
+---@field server Server?
 ---@field serverAddress ISTextEntryBox
 ---@field serverName ISTextEntryBox
 ---@field serverPassword ISTextEntryBox
 ---@field serverPort ISTextEntryBox
----@field ui MultiplayerUI
----@field ui_password_eye unknown
+---@field ui ISUIElement
+---@field ui_password_eye Texture
 ISMPEditServer = ISPanelJoypad:derive("ISMPEditServer")
 ISMPEditServer.Type = "ISMPEditServer"
 
@@ -28,7 +28,7 @@ function ISMPEditServer:onGainJoypadFocus(joypadData) end
 ---@param joypadData JoypadData
 function ISMPEditServer:onJoypadBeforeDeactivate(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISMPEditServer:onJoypadDown(button) end
 
 ---@param joypadData JoypadData
@@ -57,13 +57,17 @@ function ISMPEditServer:onMouseUpOutside(x, y) end
 ---@param key integer
 function ISMPEditServer:onOtherKey(key) end
 
+---@param oldw number
+---@param oldh number
+---@param neww number
+---@param newh number
 function ISMPEditServer:onResolutionChange(oldw, oldh, neww, newh) end
 
 function ISMPEditServer:prerender() end
 
 function ISMPEditServer:render() end
 
----@param ui MultiplayerUI
----@param server unknown?
+---@param ui ISUIElement
+---@param server Server?
 ---@return ISMPEditServer
 function ISMPEditServer:new(ui, server) end

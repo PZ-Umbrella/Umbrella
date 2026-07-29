@@ -41,6 +41,7 @@ function ISConsolidateDrainable:stop() end
 
 function ISConsolidateDrainable:update() end
 
+---@param character IsoPlayer
 ---@param drainable DrainableComboItem
 ---@param intoItem DrainableComboItem
 ---@param otherItems DrainableComboItem[]?

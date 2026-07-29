@@ -31,7 +31,7 @@ function ModInfoPanel:onJoypadDirDown(joypadData) end
 ---@param joypadData JoypadData
 function ModInfoPanel:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ModInfoPanel:onJoypadDown(button, joypadData) end
 

@@ -7,7 +7,6 @@
 ---@field button1p ISButton
 ---@field button5m ISButton
 ---@field button5p ISButton
----@field name unknown?
 ---@field no ISButton
 ---@field param1 unknown?
 ---@field param2 unknown?
@@ -42,7 +41,7 @@ function ISBombTimerDialog:onButton(button) end
 ---@param joypadData JoypadData
 function ISBombTimerDialog:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISBombTimerDialog:onJoypadDown(button) end
 
 function ISBombTimerDialog:prerender() end

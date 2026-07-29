@@ -4,6 +4,9 @@
 local __ItemType = {}
 
 ---@return string
+function __ItemType:getTranslationName() end
+
+---@return string
 function __ItemType:toString() end
 
 ItemType = {}

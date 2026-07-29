@@ -19,6 +19,9 @@
 ---@class BaseVehicle.Passenger
 
 ---(Not exposed)
+---@class BaseVehicle.PositionHistoryEntry
+
+---(Not exposed)
 ---@class BaseVehicle.QuaternionfObjectPool
 
 ---(Not exposed)
@@ -154,11 +157,26 @@
 ---@class UI3DScene.View
 
 ---(Not exposed)
+---@class VehicleAlarm
+
+---(Not exposed)
+---@class VehicleAlarmEvent
+
+---(Not exposed)
+---@class VehicleEngine
+
+---(Not exposed)
+---@class VehicleEngineStateChangeReason
+
+---(Not exposed)
 ---@class VehicleHitCharacterSounds
 
 ---(Not exposed)
 ---Created by kroto on 1/17/2017.
 ---@class VehicleInterpolation
+
+---(Not exposed)
+---@class VehicleParts
 
 ---(Not exposed)
 ---@class VehiclePedestrianContactTracking

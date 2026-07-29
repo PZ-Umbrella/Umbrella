@@ -1,6 +1,6 @@
 ---@meta _
 
----@class IsoGameCharacter.XP: AntiCheatXPUpdate.IAntiCheatUpdate
+---@class IsoGameCharacter.XP
 local __XP = {}
 
 ---@param type PerkFactory.Perk
@@ -52,14 +52,8 @@ function __XP:AddXPNoMultiplier(type, amount) end
 ---@param maxLevel integer
 function __XP:addXpMultiplier(perks, multiplier, minLevel, maxLevel) end
 
----@return number
-function __XP:getGrowthRate() end
-
 ---@return integer
 function __XP:getLevel() end
-
----@return number
-function __XP:getMultiplier() end
 
 ---@param perk PerkFactory.Perk
 ---@return number
@@ -78,9 +72,6 @@ function __XP:getTotalXp() end
 ---@param type PerkFactory.Perk
 ---@return number
 function __XP:getXP(type) end
-
----@return boolean
-function __XP:intervalCheck() end
 
 ---@param input ByteBuffer
 ---@param WorldVersion integer

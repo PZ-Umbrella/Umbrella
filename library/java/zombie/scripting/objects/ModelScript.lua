@@ -29,6 +29,10 @@ function __ModelScript:beforeRenameAttachment(attachment) end
 ---@return ModelAttachment
 function __ModelScript:getAttachment(index) end
 
+---@param id ModelAttachmentId
+---@return ModelAttachment
+function __ModelScript:getAttachmentById(id) end
+
 ---@param id string
 ---@return ModelAttachment
 function __ModelScript:getAttachmentById(id) end
@@ -44,6 +48,9 @@ function __ModelScript:getFullType() end
 
 ---@return string
 function __ModelScript:getMeshName() end
+
+---@return string
+function __ModelScript:getModelManagerKey() end
 
 ---@return string
 function __ModelScript:getName() end
@@ -73,6 +80,9 @@ function __ModelScript:reset() end
 
 ---@param scale number
 function __ModelScript:scaleAttachmentOffset(scale) end
+
+---@param modelManagerKey string
+function __ModelScript:setModelManagerKey(modelManagerKey) end
 
 ModelScript = {}
 

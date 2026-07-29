@@ -55,7 +55,7 @@ function ISFitnessUI:onClickTime(button) end
 ---@param joypadData JoypadData
 function ISFitnessUI:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISFitnessUI:onJoypadDown(button) end
 
 function ISFitnessUI:prerender() end

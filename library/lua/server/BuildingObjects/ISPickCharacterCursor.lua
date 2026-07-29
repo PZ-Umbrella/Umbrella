@@ -43,7 +43,7 @@ function ISPickCharacterCursor:isValidCharacter(chr) end
 
 ---@param joypadIndex integer
 ---@param joypadData JoypadData
----@param button integer
+---@param button JoypadButton
 ---@return unknown?
 function ISPickCharacterCursor:onJoypadPressButton(joypadIndex, joypadData, button) end
 

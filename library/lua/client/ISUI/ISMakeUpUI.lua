@@ -32,6 +32,7 @@ ISMakeUpUI = ISCollapsableWindowJoypad:derive("ISMakeUpUI")
 ISMakeUpUI.Type = "ISMakeUpUI"
 ISMakeUpUI.windows = {} ---@type table<integer, ISMakeUpUI>
 
+---@param playerObj IsoPlayer
 function ISMakeUpUI.OnClothingUpdated(playerObj) end
 
 ---@param playerObj IsoPlayer
@@ -53,7 +54,7 @@ function ISMakeUpUI:onApplyMakeUp() end
 ---@param joypadData JoypadData
 function ISMakeUpUI:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISMakeUpUI:onJoypadDown(button) end
 
 function ISMakeUpUI:onRemoveMakeUp() end
@@ -76,7 +77,8 @@ function ISMakeUpUI:setWidthToChildren(panel, minWidth) end
 
 function ISMakeUpUI:update() end
 
-function ISMakeUpUI:updateAvatar() end
+---@param noTriggerEvent boolean?
+function ISMakeUpUI:updateAvatar(noTriggerEvent) end
 
 function ISMakeUpUI:updateLayout() end
 

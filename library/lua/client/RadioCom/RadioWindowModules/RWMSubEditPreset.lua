@@ -43,7 +43,7 @@ function RWMSubEditPreset:getYPrompt() end
 
 function RWMSubEditPreset:initialise() end
 
----@param button integer
+---@param button JoypadButton
 ---@return boolean
 ---@return boolean
 function RWMSubEditPreset:onJoypadDown(button) end

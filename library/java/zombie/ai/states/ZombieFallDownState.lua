@@ -15,6 +15,9 @@ function __ZombieFallDownState:enter(owner) end
 ---@param owner IsoGameCharacter
 function __ZombieFallDownState:exit(owner) end
 
+---@return UpdateSchedulerSimulationLevel
+function __ZombieFallDownState:getMinimumSimulationLevel() end
+
 ZombieFallDownState = {}
 
 ---@return ZombieFallDownState

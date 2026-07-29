@@ -33,7 +33,8 @@ function __IsoThumpable:TestPathfindCollide(obj, from, to) end
 function __IsoThumpable:TestVision(from, to) end
 
 ---@param thumper IsoMovingObject
-function __IsoThumpable:Thump(thumper) end
+---@param thumpEventCount integer
+function __IsoThumpable:Thump(thumper, thumpEventCount) end
 
 ---@param chr IsoGameCharacter
 function __IsoThumpable:ToggleDoor(chr) end
@@ -130,6 +131,9 @@ function __IsoThumpable:getBarricadeOppositeCharacter(chr) end
 
 ---@return string
 function __IsoThumpable:getBreakSound() end
+
+---@return table
+function __IsoThumpable:getBuildMaterials() end
 
 ---Can you barricade/unbarricade the item
 ---@return boolean
@@ -239,6 +243,9 @@ function __IsoThumpable:getThumpableFor(chr) end
 ---@param weapon HandWeapon
 ---@return Thumpable
 function __IsoThumpable:getThumpableFor(chr, weapon) end
+
+---@return boolean
+function __IsoThumpable:hasBuildMaterials() end
 
 ---@return boolean
 function __IsoThumpable:hasModData() end
@@ -489,6 +496,10 @@ function __IsoThumpable:setLockedByCode(lockedByCode) end
 
 ---@param lockedByKey boolean
 function __IsoThumpable:setLockedByKey(lockedByKey) end
+
+---@param lockedByKey boolean
+---@param doSync boolean
+function __IsoThumpable:setLockedByKey(lockedByKey, doSync) end
 
 ---@param lockedByPadlock boolean
 function __IsoThumpable:setLockedByPadlock(lockedByPadlock) end

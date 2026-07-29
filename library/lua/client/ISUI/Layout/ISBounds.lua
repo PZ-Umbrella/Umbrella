@@ -7,21 +7,33 @@
 ---@field y number
 ISBounds = {}
 
+---@param bounds ISBounds
+---@param yDistance number
 ---@return ISBounds
 function ISBounds.getProjectedAlongX(bounds, yDistance) end
 
+---@param bounds ISBounds
+---@param yDistance number
 ---@return ISBounds
 function ISBounds.getProjectedAlongY(bounds, yDistance) end
 
+---@param boundsA ISBounds
+---@param boundsB ISBounds
 ---@return number
 function ISBounds.getXDistanceTo(boundsA, boundsB) end
 
+---@param boundsA ISBounds
+---@param boundsB ISBounds
 ---@return number
 function ISBounds.getYDistanceTo(boundsA, boundsB) end
 
+---@param a ISBounds
+---@param b ISBounds
 ---@return ISBounds
 function ISBounds.intersection(a, b) end
 
+---@param a ISBounds
+---@param b ISBounds
 ---@return boolean
 function ISBounds.intersects(a, b) end
 
@@ -56,6 +68,8 @@ function ISBounds:getMovedTo(x, y) end
 ---@return number
 function ISBounds:getRight() end
 
+---@param scaleX number
+---@param scaleY number
 ---@return ISBounds
 function ISBounds:getScaledFromCenter(scaleX, scaleY) end
 
@@ -70,28 +84,36 @@ function ISBounds:getWidth() end
 ---@return ISBounds
 function ISBounds:move(x, y) end
 
+---@param scaleX number
+---@param scaleY number
 ---@return ISBounds
 function ISBounds:scaleFromCenter(scaleX, scaleY) end
 
+---@param scale number
 ---@return ISBounds
 function ISBounds:scaleXFromCenter(scale) end
 
+---@param scale number
 ---@return ISBounds
 function ISBounds:scaleYFromCenter(scale) end
 
+---@param bottom number
 function ISBounds:setBottom(bottom) end
 
 ---@return ISBounds
 function ISBounds:setHeight(height) end
 
+---@param left number
 function ISBounds:setLeft(left) end
 
 ---@param x number
 ---@param y number
 function ISBounds:setPosition(x, y) end
 
+---@param right number
 function ISBounds:setRight(right) end
 
+---@param top number
 function ISBounds:setTop(top) end
 
 ---@return ISBounds

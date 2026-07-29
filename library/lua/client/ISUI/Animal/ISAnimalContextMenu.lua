@@ -54,6 +54,7 @@ function AnimalContextMenu.doKillAnimalMenu(playerObj, animalInv, context) end
 ---@param test boolean?
 function AnimalContextMenu.doMenu(player, context, animal, test) end
 
+---@param animalSubMenu ISContextMenu
 ---@param animal IsoAnimal
 ---@param playerObj IsoPlayer
 function AnimalContextMenu.doWaterAnimalMenu(animalSubMenu, animal, playerObj) end
@@ -84,6 +85,7 @@ function AnimalContextMenu.onAddEgg(animal, playerObj) end
 function AnimalContextMenu.onAnimalBehavior(animal, player) end
 
 ---@param animal IsoAnimal
+---@param chr IsoPlayer
 function AnimalContextMenu.onAnimalGenome(animal, chr) end
 
 ---@param animal IsoAnimal
@@ -142,6 +144,7 @@ function AnimalContextMenu.onDebugForcePoop(animal, playerObj) end
 
 ---@param animal IsoAnimal
 ---@param playerObj IsoPlayer
+---@param acceptance number
 function AnimalContextMenu.onDebugSetAcceptance(animal, playerObj, acceptance) end
 
 ---@param animal IsoAnimal
@@ -205,6 +208,7 @@ function AnimalContextMenu.onKillAnimal(animal, playerObj) end
 
 ---@param animal IsoAnimal
 ---@param playerObj IsoPlayer
+---@param item InventoryItem
 function AnimalContextMenu.onLure(animal, playerObj, item) end
 
 ---@param animal IsoAnimal
@@ -214,9 +218,11 @@ function AnimalContextMenu.onLure(animal, playerObj, item) end
 function AnimalContextMenu.onMilkAnimal(animal, chr, bucket, all) end
 
 ---@param animal IsoAnimal
+---@param chr IsoPlayer
 function AnimalContextMenu.onPetAnimal(animal, chr) end
 
 ---@param animal IsoAnimal
+---@param chr IsoPlayer
 function AnimalContextMenu.onPickupAnimal(animal, chr) end
 
 ---@param animal IsoAnimal

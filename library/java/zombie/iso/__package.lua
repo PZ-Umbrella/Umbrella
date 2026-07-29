@@ -49,6 +49,9 @@
 ---@class IsoCell.SnowGridTiles
 
 ---(Not exposed)
+---@class IsoCell.StencilArea
+
+---(Not exposed)
 ---@class IsoChunk.ChunkGetter
 
 ---(Not exposed)
@@ -56,6 +59,9 @@
 
 ---(Not exposed)
 ---@class IsoChunk.JobType
+
+---(Not exposed)
+---@class IsoChunk.PhysicsShapes
 
 ---(Not exposed)
 ---@class IsoChunk.SanityCheck

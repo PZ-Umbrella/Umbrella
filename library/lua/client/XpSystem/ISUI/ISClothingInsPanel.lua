@@ -79,7 +79,7 @@ function ISClothingInsPanel:onClickViewButton(_btn) end
 ---@param joypadData JoypadData
 function ISClothingInsPanel:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISClothingInsPanel:onJoypadDown(button, joypadData) end
 
@@ -110,6 +110,7 @@ function ISClothingInsPanel:setViewStyle(_viewStyle, _force) end
 
 function ISClothingInsPanel:update() end
 
+---@param player IsoPlayer
 ---@param x number
 ---@param y number
 ---@param width number

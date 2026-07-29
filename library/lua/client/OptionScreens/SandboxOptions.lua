@@ -8,7 +8,7 @@
 ---@field deletePresetButton ISButton
 ---@field devPresetButton ISButton
 ---@field hadJoypadFocus boolean
----@field joypadNavigate table
+---@field joypadNavigate umbrella.JoypadNavigate?
 ---@field listbox ISScrollingListBox
 ---@field nonDefaultOptions SandboxOptions
 ---@field playButton ISButton
@@ -34,7 +34,9 @@ function SandboxOptionsScreen:changeAdvancedMode(_, bool) end
 
 function SandboxOptionsScreen:create() end
 
----@return table
+---@param setting umbrella.ServerSettingsScreen.Setting
+---@param tooltip string?
+---@return ISUIElement
 function SandboxOptionsScreen:createControlForSetting(setting, tooltip) end
 
 ---@param page umbrella.ServerSettingsScreen.SettingsPage
@@ -50,29 +52,9 @@ function SandboxOptionsScreen:deletePresetStep2(button, joypadData) end
 
 function SandboxOptionsScreen:doSearch() end
 
+---@param preset string
 ---@return umbrella.SandboxOptionsScreen.Preset
-function SandboxOptionsScreen:getApocalypsePreset() end
-
----@return umbrella.SandboxOptionsScreen.Preset
-function SandboxOptionsScreen:getBeginnerPreset() end
-
----@return umbrella.SandboxOptionsScreen.Preset
-function SandboxOptionsScreen:getBuilderPreset() end
-
----@return umbrella.SandboxOptionsScreen.Preset
-function SandboxOptionsScreen:getHardPreset() end
-
----@return umbrella.SandboxOptionsScreen.Preset
-function SandboxOptionsScreen:getNormalPreset() end
-
----@return table
 function SandboxOptionsScreen:getSandboxPreset(preset) end
-
----@return umbrella.SandboxOptionsScreen.Preset
-function SandboxOptionsScreen:getSurvivalPreset() end
-
----@return umbrella.SandboxOptionsScreen.Preset
-function SandboxOptionsScreen:getSurvivorPreset() end
 
 function SandboxOptionsScreen:loadPresets() end
 
@@ -83,7 +65,7 @@ function SandboxOptionsScreen:onComboBoxSelected(combo, optionName) end
 ---@param joypadData JoypadData
 function SandboxOptionsScreen:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function SandboxOptionsScreen:onJoypadDown(button, joypadData) end
 
@@ -170,7 +152,7 @@ __sandboxOptions_SandboxOptionsScreenListBox.Type = "SandboxOptionsScreenListBox
 ---@return number
 function __sandboxOptions_SandboxOptionsScreenListBox:doDrawItem(y, item, alt) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __sandboxOptions_SandboxOptionsScreenListBox:onJoypadDown(button, joypadData) end
 
@@ -192,7 +174,7 @@ function __sandboxOptions_SandboxOptionsScreenPanel:onJoypadDirDown(joypadData) 
 ---@param joypadData JoypadData
 function __sandboxOptions_SandboxOptionsScreenPanel:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __sandboxOptions_SandboxOptionsScreenPanel:onJoypadDown(button, joypadData) end
 
@@ -214,7 +196,7 @@ __sandboxOptions_SandboxOptionsScreenPresetPanel.Type = "SandboxOptionsScreenPre
 ---@param joypadData JoypadData
 function __sandboxOptions_SandboxOptionsScreenPresetPanel:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __sandboxOptions_SandboxOptionsScreenPresetPanel:onJoypadDown(button, joypadData) end
 
@@ -250,7 +232,7 @@ function __sandboxOptions_SandboxAdvancedControl:onJoypadDirDown(joypadData) end
 ---@param joypadData JoypadData
 function __sandboxOptions_SandboxAdvancedControl:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __sandboxOptions_SandboxAdvancedControl:onJoypadDown(button, joypadData) end
 
@@ -264,6 +246,8 @@ function __sandboxOptions_SandboxAdvancedControl:setText(value) end
 ---@param y number
 ---@param width number
 ---@param height number
+---@param setting umbrella.ServerSettingsScreen.Setting
+---@param tooltip string?
 ---@return SandboxOptions.SandboxAdvancedControl
 function __sandboxOptions_SandboxAdvancedControl:new(x, y, width, height, setting, tooltip) end
 

@@ -3,13 +3,13 @@
 ---@class NewGameScreen.ModePanel : ISPanel
 ---@field borderColorInactive table
 ---@field borderColorMouseOver table
----@field callback unknown
+---@field callback fun(target: unknown?, parent: ISUIElement, x: number, y: number)
 ---@field centerThumbnail boolean
----@field data unknown?
----@field mode unknown
+---@field data umbrella.NewGameScreen.GameModeData?
+---@field mode string
 ---@field richText ISRichTextPanel
 ---@field selected boolean
----@field texture unknown?
+---@field texture Texture?
 ---@field textureHeight number
 ---@field textureWidth number
 ---@field textureX number
@@ -41,8 +41,10 @@ function __newGameScreen_ModePanel:onMouseMoveOutside(dx, dy) end
 
 function __newGameScreen_ModePanel:render() end
 
+---@param data umbrella.NewGameScreen.GameModeData
 function __newGameScreen_ModePanel:setData(data) end
 
+---@param val boolean
 function __newGameScreen_ModePanel:setSelected(val) end
 
 function __newGameScreen_ModePanel:updateView() end
@@ -51,38 +53,27 @@ function __newGameScreen_ModePanel:updateView() end
 ---@param y number
 ---@param width number
 ---@param height number
+---@param target unknown?
+---@param callback fun(target: unknown?, parent: ISUIElement, x: number, y: number)
 ---@return NewGameScreen.ModePanel
 function __newGameScreen_ModePanel:new(x, y, width, height, target, callback) end
 
 ---@class NewGameScreen : ISPanelJoypad
 ---@field backButton ISButton
----@field buttonMods ISButton
 ---@field dataShift number
----@field fadeIn number?
----@field fadeOut number?
----@field gameModeData table
+---@field gameModeData umbrella.NewGameScreen.GameModeData[]
 ---@field inChallengesView boolean
----@field itemheightoverride table
 ---@field joypadButtons ISButton[]
----@field joypadFocused boolean?
----@field mainPanel ISPanelJoypad
----@field mainPanelReqWidth number
 ---@field mediumResolution boolean
----@field modal unknown?
 ---@field modsButton ISButton
----@field MouseEnterMainMenuItem integer?
 ---@field nextButton ISButton
----@field nextData table
----@field overBottomPanelButton ISUIElement?
----@field panels table
----@field prevData table
+---@field nextData umbrella.NewGameScreen.GameModeData
+---@field panels NewGameScreen.ModePanel[]
+---@field prevData umbrella.NewGameScreen.GameModeData
 ---@field richText ISRichTextPanel
----@field selected integer
 ---@field selectedItem ISLabel
 ---@field selectedJoypad number
 ---@field smallResolution boolean
----@field startY number
----@field survival ISLabel
 ---@field titleLabel ISLabel
 ---@field viewDimensions table
 NewGameScreen = ISPanelJoypad:derive("NewGameScreen")
@@ -133,41 +124,6 @@ NewGameScreen.defaultGameModeData = {
 }
 NewGameScreen.instance = nil ---@type NewGameScreen?
 
----@param item ISLabel
----@param x number
----@param y number
-function NewGameScreen.dblClickChallenge(item, x, y) end
-
----@param item ISLabel
----@param x number
----@param y number
-function NewGameScreen.dblClickDifficulty(item, x, y) end
-
----@param item ISLabel
----@param x number
----@param y number
-function NewGameScreen.dblClickPlaystyle(item, x, y) end
-
----@param item ISLabel
----@param x number
----@param y number
-function NewGameScreen.dblClickSurvival(item, x, y) end
-
----@param item ISLabel
----@param x number
----@param y number
-function NewGameScreen.dblClickTutorial(item, x, y) end
-
----@param item ISLabel
----@param x number
----@param y number
-function NewGameScreen.onChooseDifficulty(item, x, y) end
-
----@param item ISLabel
----@param x number
----@param y number
-function NewGameScreen.onMenuItemMouseDown(item, x, y) end
-
 function NewGameScreen:calcViewDimensions() end
 
 function NewGameScreen:clickChallenges() end
@@ -176,30 +132,20 @@ function NewGameScreen:clickPlay() end
 
 function NewGameScreen:create() end
 
-function NewGameScreen:disableBtn() end
-
 ---@return number
 function NewGameScreen:findLastPanel() end
 
-function NewGameScreen:initialise() end
-
-function NewGameScreen:instantiate() end
-
----@param joypadData JoypadData
-function NewGameScreen:Label_setJoypadFocused(focused, joypadData) end
-
 function NewGameScreen:loadChallenges() end
-
----@return boolean
-function NewGameScreen:needDifficulty() end
 
 ---@param joypadData JoypadData
 function NewGameScreen:onGainJoypadFocus(joypadData) end
 
+---@param item NewGameScreen.ModePanel
 ---@param x number
 ---@param y number
 function NewGameScreen:onItemClick(item, x, y) end
 
+---@param item NewGameScreen.ModePanel
 ---@param x number
 ---@param y number
 function NewGameScreen:onItemDblClick(item, x, y) end
@@ -207,13 +153,11 @@ function NewGameScreen:onItemDblClick(item, x, y) end
 ---@param joypadData JoypadData
 function NewGameScreen:onJoypadBeforeDeactivate(joypadData) end
 
+---@param joypadData JoypadData
 function NewGameScreen:onJoypadDirLeft(joypadData) end
 
-function NewGameScreen:onJoypadDirRight(joypadData) end
-
----@param descendant ISUIElement
 ---@param joypadData JoypadData
-function NewGameScreen:onJoypadNavigateStart_Descendant(descendant, joypadData) end
+function NewGameScreen:onJoypadDirRight(joypadData) end
 
 ---@param key integer
 function NewGameScreen:onKeyRelease(key) end
@@ -229,27 +173,18 @@ function NewGameScreen:onOptionMouseDown(button, x, y) end
 ---@param reason string
 function NewGameScreen:onResetLua(reason) end
 
----@param oldw number
----@param oldh number
----@param neww number
----@param newh number
-function NewGameScreen:onResolutionChange(oldw, oldh, neww, newh) end
+function NewGameScreen:onResolutionChange() end
 
 function NewGameScreen:prerender() end
 
-function NewGameScreen:prerenderBottomPanelLabel() end
-
-function NewGameScreen:render() end
-
+---@param index integer
 function NewGameScreen:selectNewPanel(index) end
 
 ---@param visible boolean
----@param joypadData unknown?
+---@param joypadData JoypadData?
 function NewGameScreen:setVisible(visible, joypadData) end
 
 function NewGameScreen:update() end
-
-function NewGameScreen:updateBottomPanelButtons() end
 
 function NewGameScreen:updatePanels() end
 
@@ -262,65 +197,13 @@ function NewGameScreen:updatePreview() end
 ---@return NewGameScreen
 function NewGameScreen:new(x, y, width, height) end
 
----@class NewGameScreen.HorizontalLine : ISPanel
-local __newGameScreen_HorizontalLine = {}
-__newGameScreen_HorizontalLine.Type = "HorizontalLine"
-
-function __newGameScreen_HorizontalLine:prerender() end
-
-function __newGameScreen_HorizontalLine:render() end
-
----@param x number
----@param y number
----@param width number
----@return NewGameScreen.HorizontalLine
-function __newGameScreen_HorizontalLine:new(x, y, width) end
-
----@class NewGameScreen.MainPanel : ISPanelJoypad
----@field joypadButtons ISButton[]
----@field lastSelectedChild ISUIElement
-local __newGameScreen_MainPanel = {}
-__newGameScreen_MainPanel.Type = "NewGameScreen_MainPanel"
-
-function __newGameScreen_MainPanel:ensureVisible() end
-
----@param joypadData JoypadData
-function __newGameScreen_MainPanel:onGainJoypadFocus(joypadData) end
-
----@param joypadData JoypadData
-function __newGameScreen_MainPanel:onJoypadBeforeDeactivate(joypadData) end
-
----@param joypadData JoypadData
-function __newGameScreen_MainPanel:onLoseJoypadFocus(joypadData) end
-
----@param del number
----@return boolean
-function __newGameScreen_MainPanel:onMouseWheel(del) end
-
-function __newGameScreen_MainPanel:prerender() end
-
-function __newGameScreen_MainPanel:render() end
-
-function __newGameScreen_MainPanel:renderActiveMods() end
-
----@class NewGameScreen.RichText : ISRichTextPanel
-local __newGameScreen_RichText = {}
-__newGameScreen_RichText.Type = "NewGameScreen_RichText"
-__newGameScreen_RichText.doRightJoystickScrolling = ISPanelJoypad.doRightJoystickScrolling
-
----@param joypadData JoypadData
-function __newGameScreen_RichText:onJoypadBeforeDeactivate(joypadData) end
-
----@param joypadData JoypadData
-function __newGameScreen_RichText:onJoypadDirDown(joypadData) end
-
----@param joypadData JoypadData
-function __newGameScreen_RichText:onJoypadDirUp(joypadData) end
-
----@param button integer
----@param joypadData JoypadData
-function __newGameScreen_RichText:onJoypadDown(button, joypadData) end
-
-function __newGameScreen_RichText:prerender() end
-
-function __newGameScreen_RichText:render() end
+---@class umbrella.NewGameScreen.GameModeData
+---@field arrowButton boolean?
+---@field centerThumbnail boolean?
+---@field challenge umbrella.LastStandChallenge.Challenge?
+---@field desc string
+---@field internal string?
+---@field mode string
+---@field thumb string
+---@field title string
+---@field video string

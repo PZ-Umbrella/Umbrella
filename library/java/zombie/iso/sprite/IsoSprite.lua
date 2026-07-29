@@ -111,6 +111,9 @@ function __IsoSprite:getCurtainOffset() end
 ---@return IsoDirections
 function __IsoSprite:getFacing() end
 
+---@return FasciaEdge
+function __IsoSprite:getFasciaEdge() end
+
 ---@return integer
 function __IsoSprite:getFrameCount() end
 
@@ -477,6 +480,9 @@ function __IsoSprite:setAnimate(animate) end
 ---@param y number
 ---@param z number
 function __IsoSprite:setCurtainOffset(x, y, z) end
+
+---@param fasciaEdge FasciaEdge
+function __IsoSprite:setFasciaEdge(fasciaEdge) end
 
 ---@param objectName string
 ---@param animName string

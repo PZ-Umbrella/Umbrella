@@ -40,6 +40,7 @@ function ISCraftLogicRecipePanel:onGainJoypadFocus(joypadData) end
 
 function ISCraftLogicRecipePanel:onInputsChanged() end
 
+---@param _inputItems unknown?
 function ISCraftLogicRecipePanel:onRebuildItemNodes(_inputItems) end
 
 function ISCraftLogicRecipePanel:onRecipeChanged() end

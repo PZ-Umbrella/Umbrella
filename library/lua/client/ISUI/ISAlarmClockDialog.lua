@@ -10,7 +10,6 @@
 ---@field hours ISTextEntryBox
 ---@field joypadButtons ISButton[]
 ---@field mins ISTextEntryBox
----@field name unknown?
 ---@field ok ISButton
 ---@field player integer
 ---@field playerX number
@@ -44,7 +43,7 @@ function ISAlarmClockDialog:onClick(button) end
 ---@param joypadData JoypadData
 function ISAlarmClockDialog:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISAlarmClockDialog:onJoypadDown(button) end
 
 function ISAlarmClockDialog:prerender() end

@@ -2,6 +2,8 @@
 
 ---@alias umbrella.ISScrollingListBox.MouseCallback fun(target: unknown, item: unknown)
 
+---@alias umbrella.ISScrollingListBox.OverrideAButtonCallback fun(target: unknown, item: unknown)
+
 ---@class ISScrollingListBox : ISPanelJoypad
 ---@field altBgColor umbrella.RGBA?
 ---@field columns umbrella.ISScrollingListBox.Column[]
@@ -17,15 +19,16 @@
 ---@field listHeight number
 ---@field mouseOverHighlightColor umbrella.RGBA
 ---@field mouseoverselected integer?
----@field onmousedblclick umbrella.ISScrollingListBox.MouseCallback
----@field onmousedown umbrella.ISScrollingListBox.MouseCallback
----@field overrideAButtonFunction unknown
+---@field onmousedblclick umbrella.ISScrollingListBox.MouseCallback?
+---@field onmousedown umbrella.ISScrollingListBox.MouseCallback?
+---@field overrideAButtonFunction umbrella.ISScrollingListBox.OverrideAButtonCallback?
 ---@field selected integer?
 ---@field selectedBeforeReset number?
 ---@field selectedTextColor umbrella.RGBA
 ---@field selectionColor umbrella.RGBA
 ---@field smoothScrollTargetY number?
 ---@field smoothScrollY number?
+---@field stealJoypadFocusFromParent boolean
 ---@field stopPrerender boolean
 ---@field SuperType ISPanelJoypad
 ---@field textColor umbrella.RGBA
@@ -47,7 +50,7 @@ function ISScrollingListBox:addColumn(columnName, size) end
 
 ---@param name string
 ---@param item unknown?
----@param tooltip unknown?
+---@param tooltip string?
 ---@return umbrella.ISScrollingListBox.Item
 function ISScrollingListBox:addItem(name, item, tooltip) end
 
@@ -119,9 +122,12 @@ function ISScrollingListBox:onJoypadDirRight(joypadData) end
 
 function ISScrollingListBox:onJoypadDirUp() end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISScrollingListBox:onJoypadDown(button, joypadData) end
+
+---@return boolean
+function ISScrollingListBox:onJoypadDownInParent(button, joypadData) end
 
 ---@param joypadData JoypadData
 function ISScrollingListBox:onLoseJoypadFocus(joypadData) end
@@ -183,6 +189,12 @@ function ISScrollingListBox:render() end
 
 ---@param x number
 ---@param y number
+---@param w number
+---@param h number
+function ISScrollingListBox:renderJoypadFocus(x, y, w, h) end
+
+---@param x number
+---@param y number
 ---@return integer
 function ISScrollingListBox:rowAt(x, y) end
 
@@ -192,20 +204,24 @@ function ISScrollingListBox:scrollToSelected() end
 ---@param padY number?
 function ISScrollingListBox:setFont(font, padY) end
 
+---@param index integer
 ---@param r number
 ---@param g number
 ---@param b number
 ---@param a number
 function ISScrollingListBox:setItemSelectedTextColorRGBA(index, r, g, b, a) end
 
+---@param index integer
 function ISScrollingListBox:setItemSelectedTextColorToDefault(index) end
 
+---@param index integer
 ---@param r number
 ---@param g number
 ---@param b number
 ---@param a number
 function ISScrollingListBox:setItemTextColorRGBA(index, r, g, b, a) end
 
+---@param index integer
 function ISScrollingListBox:setItemTextColorToDefault(index) end
 
 ---@param focused boolean
@@ -220,6 +236,8 @@ function ISScrollingListBox:setOnMouseDoubleClick(target, onmousedblclick) end
 ---@param onmousedown umbrella.ISScrollingListBox.MouseCallback?
 function ISScrollingListBox:setOnMouseDownFunction(target, onmousedown) end
 
+---@param target unknown?
+---@param fct umbrella.ISScrollingListBox.OverrideAButtonCallback?
 function ISScrollingListBox:setOverrideAButtonFunction(target, fct) end
 
 ---@param r number
@@ -237,6 +255,7 @@ function ISScrollingListBox:setTextColorRGBA(r, g, b, a) end
 ---@return integer
 function ISScrollingListBox:size() end
 
+---@param comparator fun(a: umbrella.ISScrollingListBox.Item, b: umbrella.ISScrollingListBox.Item): boolean
 function ISScrollingListBox:sort(comparator) end
 
 ---@param index integer

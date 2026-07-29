@@ -61,6 +61,7 @@ function ISItemDropBox:initialise() end
 ---@param _items InventoryItem[]
 function ISItemDropBox:itemDropped(_items) end
 
+---@param item InventoryItem
 function ISItemDropBox:onDropItem(item) end
 
 ---@param x number

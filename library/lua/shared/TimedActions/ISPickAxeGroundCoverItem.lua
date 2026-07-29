@@ -6,12 +6,16 @@
 ---@field objectType string?
 ---@field pickAxe InventoryItem?
 ---@field spriteFrame number
+---@field started boolean
 ISPickAxeGroundCoverItem = ISBaseTimedAction:derive("ISPickAxeGroundCoverItem")
 ISPickAxeGroundCoverItem.Type = "ISPickAxeGroundCoverItem"
 
 ---@param event string
 ---@param parameter string
 function ISPickAxeGroundCoverItem:animEvent(event, parameter) end
+
+---@return boolean?
+function ISPickAxeGroundCoverItem:complete() end
 
 ---@return boolean
 function ISPickAxeGroundCoverItem:isMineralDeposit() end
@@ -21,6 +25,7 @@ function ISPickAxeGroundCoverItem:isValid() end
 
 function ISPickAxeGroundCoverItem:perform() end
 
+---@param item InventoryItem
 ---@return boolean
 function ISPickAxeGroundCoverItem:predicatePickAxe(item) end
 

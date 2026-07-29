@@ -22,6 +22,7 @@ function ISDebugUtils.addButton(_self, _data, _x, _y, _w, _h, _title, _func) end
 ---@param _x number
 ---@param _y number
 ---@param _w number
+---@param _font UIFont
 ---@param _func (fun(target: unknown, combo: ISComboBox, ...: unknown))?
 ---@return number
 ---@return ISComboBox

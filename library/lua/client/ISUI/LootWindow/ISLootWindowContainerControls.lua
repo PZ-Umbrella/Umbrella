@@ -1,33 +1,35 @@
 ---@meta
 
 ---@class ISLootWindowContainerControls : ISPanelJoypad
----@field controls table
----@field handlers table
+---@field controls ISUIElement[]
+---@field handlers table<ISLootWindowObjectControlHandler, ISLootWindowObjectControlHandler>
 ---@field lootWindow ISInventoryPage
 ISLootWindowContainerControls = ISPanelJoypad:derive("ISLootWindowContainerControls")
 ISLootWindowContainerControls.Type = "ISLootWindowContainerControls"
 
----@param handlerClass ISLootWindowFloorControlHandler_TakeAll | ISLootWindowFloorControlHandler_TakeSameType
+---@param handlerClass ISLootWindowObjectControlHandler
 function ISLootWindowContainerControls.AddFloorHandler(handlerClass) end
 
----@param handlerClass table
-function ISLootWindowContainerControls.AddHandler(handlerClass) end
+---@param handlerClass ISLootWindowObjectControlHandler
+---@param displayToRight boolean
+function ISLootWindowContainerControls.AddHandler(handlerClass, displayToRight) end
 
 function ISLootWindowContainerControls:arrange() end
 
----@param object unknown?
----@param container unknown?
----@return unknown
+---@param handlerClass ISLootWindowObjectControlHandler
+---@param object IsoObject?
+---@param container ItemContainer?
+---@return ISLootWindowObjectControlHandler
 function ISLootWindowContainerControls:checkHandler(handlerClass, object, container) end
 
 function ISLootWindowContainerControls:createChildren() end
 
 function ISLootWindowContainerControls:fixMouseOverButton() end
 
----@return unknown?
+---@return ItemContainer?
 function ISLootWindowContainerControls:getDisplayedContainer() end
 
----@return unknown?
+---@return IsoObject?
 function ISLootWindowContainerControls:getDisplayedObject() end
 
 ---@param context ISContextMenu

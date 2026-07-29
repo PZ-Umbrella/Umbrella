@@ -3,7 +3,7 @@
 ---@class ISBuildingRoomsEditor_ToolAddRect : ISBuildingObject
 ---@field character IsoPlayer
 ---@field choosingEndLocation boolean
----@field editor ISBuildingRoomsEditor
+---@field editor unknown
 ---@field javaEditor BuildingRoomsEditor
 ---@field mode string
 ---@field noNeedHammer boolean
@@ -22,6 +22,8 @@ function ISBuildingRoomsEditor_ToolAddRect:activate() end
 ---@param x number
 ---@param y number
 ---@param z number
+---@param north unknown?
+---@param sprite unknown?
 function ISBuildingRoomsEditor_ToolAddRect:create(x, y, z, north, sprite) end
 
 function ISBuildingRoomsEditor_ToolAddRect:deactivate() end
@@ -47,6 +49,8 @@ function ISBuildingRoomsEditor_ToolAddRect:getRectangle(x, y) end
 ---@return boolean
 function ISBuildingRoomsEditor_ToolAddRect:isValid(square) end
 
+---@param screenX number
+---@param screenY number
 ---@return IsoGridSquare
 ---@return integer
 ---@return integer
@@ -61,6 +65,5 @@ function ISBuildingRoomsEditor_ToolAddRect:render(x, y, z, square) end
 
 function ISBuildingRoomsEditor_ToolAddRect:reset() end
 
----@param editor ISBuildingRoomsEditor
 ---@return ISBuildingRoomsEditor_ToolAddRect
 function ISBuildingRoomsEditor_ToolAddRect:new(editor) end

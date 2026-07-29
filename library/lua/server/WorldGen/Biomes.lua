@@ -4,3 +4,4 @@
 worldgen = {}
 worldgen.biomes = {}
 worldgen.biomes_map = {}
+worldgen.subbiomes = {}

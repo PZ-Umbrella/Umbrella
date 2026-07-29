@@ -9,15 +9,12 @@
 ---@field charCreationProfession CharacterCreationProfession
 ---@field checkSavefileModal ISModalRichText?
 ---@field connectToServer ConnectToServer
+---@field continueDisabled boolean
 ---@field controllerLabel ISLabel
 ---@field controllerLabel2 ISLabel
 ---@field createWorld boolean
 ---@field creditOption ISLabel
----@field credits LuaList
----@field creditsIndex number
 ---@field creditsScreen CreditsScreen
----@field creditTime number
----@field creditTimeMax number
 ---@field debOption ISLabel
 ---@field defaultJoypadOption ISLabel
 ---@field delay number
@@ -25,6 +22,7 @@
 ---@field desc SurvivorDesc
 ---@field exitOption ISLabel
 ---@field firstFrame boolean
+---@field hasSaveFiles boolean
 ---@field infoModList ISPauseModListUI?
 ---@field inGame boolean
 ---@field inviteFriends InviteFriends
@@ -51,6 +49,7 @@
 ---@field overBottomPanelButton ISUIElement?
 ---@field quitToDesktop ISLabel
 ---@field quitToDesktopDialog ISModalDialog?
+---@field quitToDesktopOption ISLabel
 ---@field reportBug ISButton
 ---@field resetLua ISButton
 ---@field returnOption ISLabel
@@ -148,24 +147,10 @@ function MainScreen.setKeyboardMouseActivated() end
 
 function MainScreen.startTutorial() end
 
----@param credit string
----@param number number
-function MainScreen:addCredit(credit, number) end
-
 ---@return number
 function MainScreen:calcLogoHeight() end
 
 function MainScreen:copyRev() end
-
-function MainScreen:doArtCredits() end
-
-function MainScreen:doCodeCredits() end
-
-function MainScreen:doCredits() end
-
-function MainScreen:doScriptingCredits() end
-
-function MainScreen:doWritingCredits() end
 
 ---@return ISUIElement[]
 function MainScreen:getAllUIs() end
@@ -205,7 +190,7 @@ function MainScreen:onJoypadDirDown(joypadData) end
 ---@param joypadData JoypadData
 function MainScreen:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function MainScreen:onJoypadDown(button, joypadData) end
 
@@ -235,30 +220,24 @@ function MainScreen:prerenderBottomPanelLabel() end
 
 function MainScreen:presentServerConnectPopup() end
 
+function MainScreen:quitToDesktop() end
+
 function MainScreen:quitToDesktopFunc() end
 
 function MainScreen:render() end
-
-function MainScreen:setBeginnerPreset() end
 
 ---@param visible boolean
 function MainScreen:setBottomPanelVisible(visible) end
 
 function MainScreen:setDefaultSandboxVars() end
 
-function MainScreen:setEasyPreset() end
-
-function MainScreen:setHardcorePreset() end
-
-function MainScreen:setHardPreset() end
-
-function MainScreen:setNormalPreset() end
-
 ---@param preset umbrella.SandboxOptionsScreen.Preset
 function MainScreen:setSandboxPreset(preset) end
 
 ---@param message string
 function MainScreen:showInviteFailDialog(message) end
+
+function MainScreen:startNormalMainScreen() end
 
 function MainScreen:update() end
 

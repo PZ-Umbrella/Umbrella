@@ -10,6 +10,9 @@
 ---@class Matrix3dc
 
 ---(Not exposed)
+---@class Matrix3f
+
+---(Not exposed)
 ---@class Matrix3fc
 
 ---(Not exposed)

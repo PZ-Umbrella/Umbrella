@@ -59,6 +59,9 @@ function __workshopSubmitScreen_Page1:aboutToShow(joypadData) end
 
 function __workshopSubmitScreen_Page1:create() end
 
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
 ---@return number
 function __workshopSubmitScreen_Page1:doDrawItem(y, item, alt) end
 
@@ -75,6 +78,7 @@ function __workshopSubmitScreen_Page1:onJoypadDirDown(joypadData) end
 ---@param joypadData JoypadData
 function __workshopSubmitScreen_Page1:onJoypadDirUp(joypadData) end
 
+---@param item SteamWorkshopItem
 function __workshopSubmitScreen_Page1:onMouseDownListbox(item) end
 
 function __workshopSubmitScreen_Page1:render() end
@@ -92,10 +96,10 @@ function __workshopSubmitScreen_Page1:new(x, y, width, height) end
 ---@field backButton ISButton
 ---@field description ISTextEntryBox
 ---@field editDescription ISButton
----@field item unknown
+---@field item SteamWorkshopItem
 ---@field nextButton ISButton
 ---@field overlayButton ISButton
----@field preview unknown
+---@field preview Texture
 ---@field tags WorkshopSubmitScreen.TagsList
 ---@field titleEntry ISTextEntryBox
 ---@field visibility ISComboBox
@@ -124,14 +128,16 @@ function __workshopSubmitScreen_Page2:onJoypadDirDown(joypadData) end
 ---@param joypadData JoypadData
 function __workshopSubmitScreen_Page2:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __workshopSubmitScreen_Page2:onJoypadDown(button, joypadData) end
 
+---@param text string
 function __workshopSubmitScreen_Page2:onTextChanged(text) end
 
 function __workshopSubmitScreen_Page2:render() end
 
+---@param item SteamWorkshopItem
 function __workshopSubmitScreen_Page2:setWorkshopItem(item) end
 
 function __workshopSubmitScreen_Page2:updateWhenVisible() end
@@ -173,7 +179,7 @@ function __workshopSubmitScreen_Page3:onJoypadDirDown(joypadData) end
 ---@param joypadData JoypadData
 function __workshopSubmitScreen_Page3:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __workshopSubmitScreen_Page3:onJoypadDown(button, joypadData) end
 
@@ -211,7 +217,7 @@ function __workshopSubmitScreen_Page4:onJoypadDirDown(joypadData) end
 ---@param joypadData JoypadData
 function __workshopSubmitScreen_Page4:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __workshopSubmitScreen_Page4:onJoypadDown(button, joypadData) end
 
@@ -233,7 +239,7 @@ function __workshopSubmitScreen_Page4:new(x, y, width, height) end
 ---@field button1 ISButton
 ---@field button2 ISButton
 ---@field IDEntry ISTextEntryBox
----@field prevPage unknown
+---@field prevPage ISUIElement
 ---@field tipLabel ISLabel
 ---@field tipLabelVal number
 ---@field titleEntry ISTextEntryBox
@@ -260,7 +266,7 @@ function __workshopSubmitScreen_Page5:onJoypadDirDown(joypadData) end
 ---@param joypadData JoypadData
 function __workshopSubmitScreen_Page5:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __workshopSubmitScreen_Page5:onJoypadDown(button, joypadData) end
 
@@ -268,10 +274,12 @@ function __workshopSubmitScreen_Page5:onJoypadDown(button, joypadData) end
 ---@param y number
 function __workshopSubmitScreen_Page5:onMouseDownLegal(x, y) end
 
+---@param text string
 function __workshopSubmitScreen_Page5:onTextChanged(text) end
 
 function __workshopSubmitScreen_Page5:render() end
 
+---@param prevPage ISUIElement
 function __workshopSubmitScreen_Page5:setFields(prevPage) end
 
 ---@param x number
@@ -285,7 +293,7 @@ function __workshopSubmitScreen_Page5:new(x, y, width, height) end
 ---@field backButton ISButton
 ---@field entry ISTextEntryBox
 ---@field nextButton ISButton
----@field prevPage unknown
+---@field prevPage ISUIElement
 ---@field title string
 local __workshopSubmitScreen_Page6 = ISPanelJoypad:derive("Page6")
 __workshopSubmitScreen_Page6.Type = "Page6"
@@ -305,13 +313,15 @@ function __workshopSubmitScreen_Page6:onJoypadDirDown(joypadData) end
 ---@param joypadData JoypadData
 function __workshopSubmitScreen_Page6:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __workshopSubmitScreen_Page6:onJoypadDown(button, joypadData) end
 
 function __workshopSubmitScreen_Page6:render() end
 
 ---@param title string
+---@param text string
+---@param prevPage ISUIElement
 function __workshopSubmitScreen_Page6:setFields(title, text, prevPage) end
 
 ---@param x number
@@ -323,7 +333,7 @@ function __workshopSubmitScreen_Page6:new(x, y, width, height) end
 
 ---@class WorkshopSubmitScreen.Page7 : ISPanelJoypad
 ---@field closeButton ISButton
----@field item unknown
+---@field item SteamWorkshopItem
 ---@field log ISTextEntryBox
 ---@field overlayButton ISButton
 ---@field state string?
@@ -344,12 +354,17 @@ function __workshopSubmitScreen_Page7:onButtonOverlay() end
 ---@param joypadData JoypadData
 function __workshopSubmitScreen_Page7:onGainJoypadFocus(joypadData) end
 
+---@param itemID string
+---@param bUserNeedsToAcceptWorkshopLegalAgreement boolean
 function __workshopSubmitScreen_Page7:OnSteamWorkshopItemCreated(itemID, bUserNeedsToAcceptWorkshopLegalAgreement) end
 
+---@param result integer
 function __workshopSubmitScreen_Page7:OnSteamWorkshopItemNotCreated(result) end
 
+---@param result integer
 function __workshopSubmitScreen_Page7:OnSteamWorkshopItemNotUpdated(result) end
 
+---@param bUserNeedsToAcceptWorkshopLegalAgreement boolean
 function __workshopSubmitScreen_Page7:OnSteamWorkshopItemUpdated(bUserNeedsToAcceptWorkshopLegalAgreement) end
 
 function __workshopSubmitScreen_Page7:render() end
@@ -367,8 +382,8 @@ function __workshopSubmitScreen_Page7:new(x, y, width, height) end
 
 ---@class WorkshopSubmitScreen.Page8 : ISPanelJoypad
 ---@field backButton ISButton
----@field error unknown
----@field prevPage unknown
+---@field error string
+---@field prevPage ISUIElement
 local __workshopSubmitScreen_Page8 = ISPanelJoypad:derive("Page8")
 __workshopSubmitScreen_Page8.Type = "Page8"
 
@@ -381,6 +396,8 @@ function __workshopSubmitScreen_Page8:onGainJoypadFocus(joypadData) end
 
 function __workshopSubmitScreen_Page8:render() end
 
+---@param err string
+---@param prevPage ISUIElement
 function __workshopSubmitScreen_Page8:setFields(err, prevPage) end
 
 ---@param x number
@@ -448,29 +465,33 @@ function __workshopSubmitScreen_Page10:new(x, y, width, height) end
 
 ---@class WorkshopSubmitScreen.TagsList : ISScrollingListBox
 ---@field boxSize number
----@field checked table
+---@field checked table<string, boolean>
 ---@field enabled boolean
 ---@field leftMargin number
----@field selectedBeforeReset unknown?
+---@field selectedBeforeReset integer?
 ---@field textGap number
----@field tickTexture unknown
+---@field tickTexture Texture
 local __workshopSubmitScreen_TagsList = ISScrollingListBox:derive("TagsList")
 __workshopSubmitScreen_TagsList.Type = "TagsList"
 
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
 ---@return number
 function __workshopSubmitScreen_TagsList:doDrawItem(y, item, alt) end
 
----@return unknown
+---@return ArrayList<string>
 function __workshopSubmitScreen_TagsList:getCheckedTags() end
 
+---@param tag string
 ---@return boolean
 function __workshopSubmitScreen_TagsList:isChecked(tag) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __workshopSubmitScreen_TagsList:onJoypadDown(button, joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 ---@return boolean
 function __workshopSubmitScreen_TagsList:onJoypadDownInParent(button, joypadData) end
@@ -486,17 +507,21 @@ function __workshopSubmitScreen_TagsList:onMouseDown(x, y) end
 
 function __workshopSubmitScreen_TagsList:render() end
 
+---@param tag string
 ---@param checked boolean
 function __workshopSubmitScreen_TagsList:setChecked(tag, checked) end
 
+---@param tags ArrayList<string>
 function __workshopSubmitScreen_TagsList:setCheckedTags(tags) end
 
+---@param enabled boolean
 function __workshopSubmitScreen_TagsList:setEnabled(enabled) end
 
 ---@param focused boolean
 ---@param joypadData JoypadData
 function __workshopSubmitScreen_TagsList:setJoypadFocused(focused, joypadData) end
 
+---@param tags ArrayList<string>
 function __workshopSubmitScreen_TagsList:setTags(tags) end
 
 ---@param x number

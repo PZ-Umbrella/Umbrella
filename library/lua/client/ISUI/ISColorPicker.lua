@@ -29,7 +29,7 @@ function ISColorPicker:onJoypadDirRight(joypadData) end
 ---@param joypadData JoypadData
 function ISColorPicker:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISColorPicker:onJoypadDown(button) end
 
 ---@param x number

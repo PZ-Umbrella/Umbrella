@@ -45,7 +45,7 @@
 ---@field hairTypeLbl ISLabel
 ---@field inputModal ISTextBox
 ---@field itemheightoverride table
----@field joypadNavigate table
+---@field joypadNavigate umbrella.JoypadNavigate
 ---@field labelRight number
 ---@field lArrow Texture
 ---@field nonComboWidth number
@@ -323,7 +323,7 @@ function CharacterCreationMain:new(x, y, width, height) end
 ---@field comboResizeTable ISComboBox[]
 ---@field dividerResizeTable ISRect[]
 ---@field joypadButtons ISButton[]
----@field joypadNavigate table
+---@field joypadNavigate umbrella.JoypadNavigate
 ---@field prevJoypadIndexY number
 ---@field repos2Table ISLabel[]
 ---@field repos3Table ISButton[]
@@ -341,7 +341,7 @@ function CharacterCreationMainCharacterPanel:onGainJoypadFocus(joypadData) end
 ---@param joypadData JoypadData
 function CharacterCreationMainCharacterPanel:onJoypadDirRight(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function CharacterCreationMainCharacterPanel:onJoypadDown(button, joypadData) end
 
@@ -374,7 +374,7 @@ function CharacterCreationMainPresetPanel:onGainJoypadFocus(joypadData) end
 ---@param joypadData JoypadData
 function CharacterCreationMainPresetPanel:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function CharacterCreationMainPresetPanel:onJoypadDown(button, joypadData) end
 
@@ -385,7 +385,7 @@ function CharacterCreationMainPresetPanel:render() end
 
 ---@class CharacterCreationMain.ClothingPanel : ISPanelJoypad
 ---@field joypadButtons ISButton[]
----@field joypadNavigate table
+---@field joypadNavigate umbrella.JoypadNavigate
 ---@field prevJoypadIndexY number
 local __characterCreationMain_ClothingPanel = ISPanelJoypad:derive("CharacterCreationClothingPanel")
 __characterCreationMain_ClothingPanel.Type = "CharacterCreationClothingPanel"
@@ -393,7 +393,7 @@ __characterCreationMain_ClothingPanel.Type = "CharacterCreationClothingPanel"
 ---@param joypadData JoypadData
 function __characterCreationMain_ClothingPanel:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __characterCreationMain_ClothingPanel:onJoypadDown(button, joypadData) end
 

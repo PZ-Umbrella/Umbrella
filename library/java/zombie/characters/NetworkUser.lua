@@ -28,6 +28,9 @@ function __NetworkUser:getKicks() end
 ---@return string
 function __NetworkUser:getLastConnection() end
 
+---@return integer
+function __NetworkUser:getPing() end
+
 ---@return Role
 function __NetworkUser:getRole() end
 
@@ -76,6 +79,9 @@ function __NetworkUser:setInWhitelist(inWhitelist) end
 
 ---@param kicks integer
 function __NetworkUser:setKicks(kicks) end
+
+---@param ping integer
+function __NetworkUser:setPing(ping) end
 
 ---@param suspicionPoints integer
 function __NetworkUser:setSuspicionPoints(suspicionPoints) end

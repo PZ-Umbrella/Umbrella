@@ -33,6 +33,7 @@ function ISBuildRecipePanel:initialise() end
 ---@param _manualSelectInputs boolean
 function ISBuildRecipePanel:onManualSelectChanged(_manualSelectInputs) end
 
+---@param _inputItems unknown?
 function ISBuildRecipePanel:onRebuildItemNodes(_inputItems) end
 
 function ISBuildRecipePanel:onRecipeChanged() end

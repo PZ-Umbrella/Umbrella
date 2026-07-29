@@ -119,6 +119,9 @@ function __HandcraftLogic:startCraftAction(actionTable) end
 
 function __HandcraftLogic:stopCraftAction() end
 
+---@param stopAll boolean
+function __HandcraftLogic:stopCraftAction(stopAll) end
+
 HandcraftLogic = {}
 
 ---@param player IsoGameCharacter

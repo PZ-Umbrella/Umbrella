@@ -194,6 +194,166 @@ return {
 			},
 		},
 	},
+	crafted_04_88 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_01_35",
+				"books&misc_01_43",
+			},
+		},
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_35",
+				"books&misc_02_43",
+			},
+		},
+	},
+	crafted_04_90 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_01_39",
+				"books&misc_01_47",
+			},
+		},
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_39",
+				"books&misc_02_47",
+			},
+		},
+	},
+	crafted_04_92 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_60",
+				"books&misc_02_62",
+			},
+		},
+		{
+			name = "other",
+			tiles = {
+				"books&misc_01_60",
+				"books&misc_01_62",
+			},
+		},
+	},
+	crafted_04_95 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_61",
+				"books&misc_02_63",
+			},
+		},
+		{
+			name = "other",
+			tiles = {
+				"books&misc_01_61",
+				"books&misc_01_63",
+			},
+		},
+	},
+	crafted_05_48 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_01_32",
+				"books&misc_01_40",
+			},
+		},
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_32",
+				"books&misc_02_40",
+			},
+		},
+	},
+	crafted_05_49 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_01_34",
+				"books&misc_01_42",
+			},
+		},
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_34",
+				"books&misc_02_42",
+			},
+		},
+	},
+	crafted_05_50 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_01_35",
+				"books&misc_01_43",
+			},
+		},
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_35",
+				"books&misc_02_43",
+			},
+		},
+	},
+	crafted_05_51 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_01_39",
+				"books&misc_01_47",
+			},
+		},
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_39",
+				"books&misc_02_47",
+			},
+		},
+	},
+	crafted_05_52 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_01_36",
+				"books&misc_01_44",
+			},
+		},
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_36",
+				"books&misc_02_44",
+			},
+		},
+	},
+	crafted_05_53 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_01_38",
+				"books&misc_01_46",
+			},
+		},
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_38",
+				"books&misc_02_46",
+			},
+		},
+	},
 	furniture_shelving_01_0 = {
 		{
 			name = "other",
@@ -274,12 +434,46 @@ return {
 			},
 		},
 	},
+	furniture_shelving_01_5 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_122",
+				"books&misc_02_123",
+			},
+		},
+	},
+	furniture_shelving_01_6 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_124",
+				"books&misc_02_125",
+			},
+		},
+	},
+	furniture_shelving_01_7 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_126",
+				"books&misc_02_127",
+			},
+		},
+	},
 	furniture_shelving_01_8 = {
 		{
 			name = "other",
 			tiles = {
 				"books&misc_01_0",
 				"books&misc_01_1",
+			},
+		},
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_6",
+				"books&misc_02_7",
 			},
 		},
 	},
@@ -312,6 +506,51 @@ return {
 			tiles = {
 				"books&misc_02_17",
 				"books&misc_02_19",
+			},
+		},
+	},
+	furniture_shelving_01_11 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_112",
+				"books&misc_02_114",
+			},
+		},
+	},
+	furniture_shelving_01_12 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_113",
+				"books&misc_02_115",
+			},
+		},
+	},
+	furniture_shelving_01_13 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_116",
+				"books&misc_02_117",
+			},
+		},
+	},
+	furniture_shelving_01_14 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_118",
+				"books&misc_02_119",
+			},
+		},
+	},
+	furniture_shelving_01_15 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_120",
+				"books&misc_02_121",
 			},
 		},
 	},
@@ -731,6 +970,60 @@ return {
 			},
 		},
 	},
+	furniture_shelving_01_56 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_78",
+				"books&misc_02_86",
+			},
+		},
+	},
+	furniture_shelving_01_57 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_79",
+				"books&misc_02_87",
+			},
+		},
+	},
+	furniture_shelving_01_58 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_78",
+				"books&misc_02_86",
+			},
+		},
+	},
+	furniture_shelving_01_59 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_79",
+				"books&misc_02_87",
+			},
+		},
+	},
+	furniture_shelving_01_60 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_78",
+				"books&misc_02_86",
+			},
+		},
+	},
+	furniture_shelving_01_61 = {
+		{
+			name = "other",
+			tiles = {
+				"books&misc_02_79",
+				"books&misc_02_87",
+			},
+		},
+	},
 	location_entertainment_theatre_01_120 = {
 		{
 			name = "other",
@@ -884,102 +1177,6 @@ return {
 		},
 	},
 	location_restaurant_bar_01_39 = {
-		{
-			name = "other",
-			tiles = {
-				"food_01_79",
-				"food_01_87",
-			},
-		},
-		{
-			name = "other",
-			tiles = {
-				"food_02_79",
-				"food_02_87",
-			},
-		},
-	},
-	location_restaurant_bar_01_64 = {
-		{
-			name = "other",
-			tiles = {
-				"food_01_78",
-				"food_01_86",
-			},
-		},
-		{
-			name = "other",
-			tiles = {
-				"food_02_78",
-				"food_02_86",
-			},
-		},
-	},
-	location_restaurant_bar_01_65 = {
-		{
-			name = "other",
-			tiles = {
-				"food_01_78",
-				"food_01_86",
-			},
-		},
-		{
-			name = "other",
-			tiles = {
-				"food_02_78",
-				"food_02_86",
-			},
-		},
-	},
-	location_restaurant_bar_01_66 = {
-		{
-			name = "other",
-			tiles = {
-				"food_01_78",
-				"food_01_86",
-			},
-		},
-		{
-			name = "other",
-			tiles = {
-				"food_02_78",
-				"food_02_86",
-			},
-		},
-	},
-	location_restaurant_bar_01_72 = {
-		{
-			name = "other",
-			tiles = {
-				"food_01_79",
-				"food_01_87",
-			},
-		},
-		{
-			name = "other",
-			tiles = {
-				"food_02_79",
-				"food_02_87",
-			},
-		},
-	},
-	location_restaurant_bar_01_73 = {
-		{
-			name = "other",
-			tiles = {
-				"food_01_79",
-				"food_01_87",
-			},
-		},
-		{
-			name = "other",
-			tiles = {
-				"food_02_79",
-				"food_02_87",
-			},
-		},
-	},
-	location_restaurant_bar_01_74 = {
 		{
 			name = "other",
 			tiles = {
@@ -1930,6 +2127,94 @@ return {
 			},
 		},
 	},
+	location_shop_generic_01_42 = {
+		{
+			name = "clothesstore",
+			tiles = {
+				"clothing_01_10",
+				"clothing_01_18",
+			},
+		},
+		{
+			name = "clothesstore",
+			tiles = {
+				"clothing_02_10",
+				"clothing_02_18",
+			},
+		},
+		{
+			name = "departmentstore",
+			tiles = {
+				"clothing_01_10",
+				"clothing_01_18",
+			},
+		},
+		{
+			name = "departmentstore",
+			tiles = {
+				"clothing_02_10",
+				"clothing_02_18",
+			},
+		},
+		{
+			name = "generalstore",
+			tiles = {
+				"clothing_01_10",
+				"clothing_01_18",
+			},
+		},
+		{
+			name = "generalstore",
+			tiles = {
+				"clothing_02_10",
+				"clothing_02_18",
+			},
+		},
+	},
+	location_shop_generic_01_45 = {
+		{
+			name = "clothesstore",
+			tiles = {
+				"clothing_01_11",
+				"clothing_01_19",
+			},
+		},
+		{
+			name = "clothesstore",
+			tiles = {
+				"clothing_02_11",
+				"clothing_02_19",
+			},
+		},
+		{
+			name = "departmentstore",
+			tiles = {
+				"clothing_01_11",
+				"clothing_01_19",
+			},
+		},
+		{
+			name = "departmentstore",
+			tiles = {
+				"clothing_02_11",
+				"clothing_02_19",
+			},
+		},
+		{
+			name = "generalstore",
+			tiles = {
+				"clothing_01_11",
+				"clothing_01_19",
+			},
+		},
+		{
+			name = "generalstore",
+			tiles = {
+				"clothing_02_11",
+				"clothing_02_19",
+			},
+		},
+	},
 	location_shop_generic_01_46 = {
 		{
 			name = "clothesstore",
@@ -2301,31 +2586,19 @@ return {
 	},
 	location_shop_generic_01_62 = {
 		{
-			name = "clothesstore",
+			name = "other",
 			tiles = {
-				"clothing_01_37",
-				"clothing_01_45",
+				"clothing_01_52",
+				"clothing_01_54",
 			},
 		},
+	},
+	location_shop_generic_01_63 = {
 		{
-			name = "clothesstore",
+			name = "other",
 			tiles = {
-				"clothing_02_37",
-				"clothing_02_45",
-			},
-		},
-		{
-			name = "generalstore",
-			tiles = {
-				"clothing_01_37",
-				"clothing_01_45",
-			},
-		},
-		{
-			name = "generalstore",
-			tiles = {
-				"clothing_02_37",
-				"clothing_02_45",
+				"clothing_01_53",
+				"clothing_01_55",
 			},
 		},
 	},
@@ -2803,6 +3076,20 @@ return {
 	},
 	location_shop_generic_01_96 = {
 		{
+			name = "armysurplus",
+			tiles = {
+				"weapons_01_0",
+				"weapons_01_8",
+			},
+		},
+		{
+			name = "armysurplus",
+			tiles = {
+				"weapons_01_16",
+				"weapons_01_24",
+			},
+		},
+		{
 			name = "gunstore",
 			tiles = {
 				"weapons_01_0",
@@ -2839,6 +3126,20 @@ return {
 		},
 	},
 	location_shop_generic_01_97 = {
+		{
+			name = "armysurplus",
+			tiles = {
+				"weapons_01_1",
+				"weapons_01_9",
+			},
+		},
+		{
+			name = "armysurplus",
+			tiles = {
+				"weapons_01_17",
+				"weapons_01_25",
+			},
+		},
 		{
 			name = "gunstore",
 			tiles = {
@@ -2877,6 +3178,20 @@ return {
 	},
 	location_shop_generic_01_98 = {
 		{
+			name = "armysurplus",
+			tiles = {
+				"weapons_01_2",
+				"weapons_01_10",
+			},
+		},
+		{
+			name = "armysurplus",
+			tiles = {
+				"weapons_01_18",
+				"weapons_01_26",
+			},
+		},
+		{
 			name = "gunstore",
 			tiles = {
 				"weapons_01_2",
@@ -2914,6 +3229,13 @@ return {
 	},
 	location_shop_generic_01_99 = {
 		{
+			name = "armysurplus",
+			tiles = {
+				"weapons_01_3",
+				"weapons_01_11",
+			},
+		},
+		{
 			name = "gunstore",
 			tiles = {
 				"weapons_01_3",
@@ -2948,8 +3270,22 @@ return {
 				"books&misc_02_99",
 			},
 		},
+		{
+			name = "other",
+			tiles = {
+				"weapons_01_19",
+				"weapons_01_27",
+			},
+		},
 	},
 	location_shop_generic_01_100 = {
+		{
+			name = "armysurplus",
+			tiles = {
+				"weapons_01_4",
+				"weapons_01_12",
+			},
+		},
 		{
 			name = "gunstore",
 			tiles = {
@@ -2974,8 +3310,8 @@ return {
 		{
 			name = "other",
 			tiles = {
-				"weapons_01_20",
-				"weapons_01_28",
+				"books&misc_01_92",
+				"books&misc_01_100",
 			},
 		},
 		{
@@ -2985,8 +3321,22 @@ return {
 				"books&misc_02_100",
 			},
 		},
+		{
+			name = "other",
+			tiles = {
+				"weapons_01_20",
+				"weapons_01_28",
+			},
+		},
 	},
 	location_shop_generic_01_101 = {
+		{
+			name = "armysurplus",
+			tiles = {
+				"weapons_01_5",
+				"weapons_01_13",
+			},
+		},
 		{
 			name = "gunstore",
 			tiles = {
@@ -3022,8 +3372,22 @@ return {
 				"books&misc_02_101",
 			},
 		},
+		{
+			name = "other",
+			tiles = {
+				"weapons_01_21",
+				"weapons_01_29",
+			},
+		},
 	},
 	location_shop_generic_01_102 = {
+		{
+			name = "armysurplus",
+			tiles = {
+				"weapons_01_6",
+				"weapons_01_14",
+			},
+		},
 		{
 			name = "gunstore",
 			tiles = {
@@ -3059,8 +3423,22 @@ return {
 				"books&misc_02_102",
 			},
 		},
+		{
+			name = "other",
+			tiles = {
+				"weapons_01_22",
+				"weapons_01_30",
+			},
+		},
 	},
 	location_shop_generic_01_103 = {
+		{
+			name = "armysurplus",
+			tiles = {
+				"weapons_01_7",
+				"weapons_01_15",
+			},
+		},
 		{
 			name = "gunstore",
 			tiles = {
@@ -3094,6 +3472,13 @@ return {
 			tiles = {
 				"books&misc_02_95",
 				"books&misc_02_103",
+			},
+		},
+		{
+			name = "other",
+			tiles = {
+				"weapons_01_23",
+				"weapons_01_31",
 			},
 		},
 	},

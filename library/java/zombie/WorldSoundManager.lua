@@ -231,6 +231,10 @@ function __WorldSoundManager:init(cell) end
 
 function __WorldSoundManager:initFrame() end
 
+---@param worldSound WorldSoundManager.WorldSound
+---@return WorldSoundManager.WorldSound
+function __WorldSoundManager:release(worldSound) end
+
 function __WorldSoundManager:render() end
 
 function __WorldSoundManager:update() end

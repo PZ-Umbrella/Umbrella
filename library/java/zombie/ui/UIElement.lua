@@ -453,6 +453,22 @@ function __UIElement:clearMaxDrawHeight() end
 
 function __UIElement:clearStencilRect() end
 
+---@param font UIFont
+---@param text string
+---@param x number
+---@param y number
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+---@param padX number
+---@param padY number
+---@param bgR number
+---@param bgG number
+---@param bgB number
+---@param bgA number
+function __UIElement:drawTextWithBackground(font, text, x, y, r, g, b, a, padX, padY, bgR, bgG, bgB, bgA) end
+
 ---@return number
 function __UIElement:getAbsoluteX() end
 

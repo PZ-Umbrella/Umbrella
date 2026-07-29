@@ -389,6 +389,9 @@ DebugType.WorldGen = nil
 DebugType.Xml = nil
 
 ---@type DebugType
+DebugType.ZNet = nil
+
+---@type DebugType
 DebugType.Zombie = nil
 
 ---@type DebugType

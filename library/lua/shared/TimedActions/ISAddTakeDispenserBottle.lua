@@ -2,6 +2,7 @@
 
 ---@class ISAddTakeDispenserBottle : ISBaseTimedAction
 ---@field bottle InventoryItem
+---@field sound unknown
 ---@field square IsoGridSquare
 ---@field waterdispenser IsoObject
 ISAddTakeDispenserBottle = ISBaseTimedAction:derive("ISAddTakeDispenserBottle")
@@ -21,6 +22,8 @@ function ISAddTakeDispenserBottle:perform() end
 function ISAddTakeDispenserBottle:start() end
 
 function ISAddTakeDispenserBottle:stop() end
+
+function ISAddTakeDispenserBottle:stopSound() end
 
 function ISAddTakeDispenserBottle:update() end
 

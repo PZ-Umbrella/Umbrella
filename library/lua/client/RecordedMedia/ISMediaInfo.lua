@@ -3,7 +3,6 @@
 ---@class ISMediaInfo : ISCollapsableWindowJoypad
 ---@field buttonOK ISButton
 ---@field fontHgt number
----@field name unknown?
 ---@field playerNum integer
 ---@field richText ISRichTextPanel
 ---@field text string
@@ -30,7 +29,7 @@ function ISMediaInfo:onClick(button) end
 ---@param joypadData JoypadData
 function ISMediaInfo:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISMediaInfo:onJoypadDown(button) end
 
 function ISMediaInfo:prerender() end

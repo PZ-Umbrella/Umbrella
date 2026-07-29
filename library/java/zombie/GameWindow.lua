@@ -105,6 +105,8 @@ function GameWindow.WriteString(output, str) end
 ---@param uuid UUID
 function GameWindow.WriteUUID(output, uuid) end
 
+function GameWindow.doEpilepsyWarningText() end
+
 ---@param b boolean
 function GameWindow.doRenderEvent(b) end
 

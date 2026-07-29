@@ -161,6 +161,8 @@ function WorldMapStyleEditor_TabPanel:populateList(layer) end
 
 function WorldMapStyleEditor_TabPanel:undisplay() end
 
+---@param width number
+---@param editorMode WorldMapEditorMode
 ---@return WorldMapStyleEditor_TabPanel
 function WorldMapStyleEditor_TabPanel:new(width, editorMode) end
 
@@ -454,6 +456,7 @@ function WorldMapStyleEditor_PyramidPanel:createChildren() end
 
 function WorldMapStyleEditor_PyramidPanel:onFileEntered() end
 
+---@param layer WorldMapStyleV1.WorldMapStyleLayerV1
 function WorldMapStyleEditor_PyramidPanel:populateList(layer) end
 
 ---@param width number
@@ -469,6 +472,7 @@ WorldMapStyleEditor_PyramidLayerPanel.Type = "WorldMapStyleEditor_PyramidLayerPa
 
 function WorldMapStyleEditor_PyramidLayerPanel:createChildren() end
 
+---@param layer WorldMapStyleV1.WorldMapStyleLayerV1
 function WorldMapStyleEditor_PyramidLayerPanel:display(layer) end
 
 ---@param x number
@@ -512,6 +516,7 @@ function WorldMapStyleEditor_TextPanel:createChildren() end
 
 function WorldMapStyleEditor_TextPanel:onFontSelected() end
 
+---@param layer WorldMapStyleV1.WorldMapStyleLayerV1
 function WorldMapStyleEditor_TextPanel:populateList(layer) end
 
 ---@param width number
@@ -527,6 +532,7 @@ WorldMapStyleEditor_TextLayerPanel.Type = "WorldMapStyleEditor_TextLayerPanel"
 
 function WorldMapStyleEditor_TextLayerPanel:createChildren() end
 
+---@param layer WorldMapStyleV1.WorldMapStyleLayerV1
 function WorldMapStyleEditor_TextLayerPanel:display(layer) end
 
 ---@param x number
@@ -574,7 +580,7 @@ function WorldMapStyleEditor_TextureLayerPanel:createChildren() end
 function WorldMapStyleEditor_TextureLayerPanel:display(layer) end
 
 ---@param key integer
----@return unknown?
+---@return boolean?
 function WorldMapStyleEditor_TextureLayerPanel:onKeyPress(key) end
 
 ---@param x number

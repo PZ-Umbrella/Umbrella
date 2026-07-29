@@ -3,7 +3,7 @@
 ---@class TileGeometryEditor_TileList : ISPanel
 ---@field editor TileGeometryEditor
 ---@field picker TileGeometryEditor_TilePicker
----@field selected number
+---@field selected integer
 ---@field selection table
 ---@field tileset string?
 TileGeometryEditor_TileList = ISPanel:derive("TileGeometryEditor_TileList")

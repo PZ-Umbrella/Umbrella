@@ -380,6 +380,9 @@ function __Core:getOptionCrosshairTextureIndex() end
 function __Core:getOptionCycleContainerKey() end
 
 ---@return boolean
+function __Core:getOptionDisableLightningDuringStorms() end
+
+---@return boolean
 function __Core:getOptionDisplayAsCelsius() end
 
 ---@return boolean
@@ -435,9 +438,6 @@ function __Core:getOptionLanguageName() end
 
 ---@return boolean
 function __Core:getOptionLeaveKeyInIgnition() end
-
----@return boolean
-function __Core:getOptionLightSensitivity() end
 
 ---@return boolean
 function __Core:getOptionLockCursorToWindow() end
@@ -1100,6 +1100,9 @@ function __Core:setOptionCrosshairTextureIndex(index) end
 ---@param s string
 function __Core:setOptionCycleContainerKey(s) end
 
+---@param enable boolean
+function __Core:setOptionDisableLightningDuringStorms(enable) end
+
 ---@param b boolean
 function __Core:setOptionDisplayAsCelsius(b) end
 
@@ -1153,9 +1156,6 @@ function __Core:setOptionLanguageName(name) end
 
 ---@param enable boolean
 function __Core:setOptionLeaveKeyInIgnition(enable) end
-
----@param enable boolean
-function __Core:setOptionLightSensitivity(enable) end
 
 ---@param b boolean
 function __Core:setOptionLockCursorToWindow(b) end

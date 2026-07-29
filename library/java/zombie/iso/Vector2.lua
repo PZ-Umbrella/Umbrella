@@ -75,6 +75,10 @@ function __Vector2:getX() end
 ---@return number # the y
 function __Vector2:getY() end
 
+---@param m number
+---@return Vector2
+function __Vector2:mul(m) end
+
 ---@return number
 function __Vector2:normalize() end
 

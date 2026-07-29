@@ -1,14 +1,14 @@
 ---@meta
 
 ---@class ISControllerTestPanel : ISPanel
----@field axisLabelWid unknown
+---@field axisLabelWid number?
 ---@field axisY table
 ---@field buttonX number
 ---@field combo ISComboBox
 ---@field controllerTab GameOptionControllerTab
 ---@field label ISLabel
----@field selectedController unknown?
----@field smallFontHgt unknown
+---@field selectedController integer?
+---@field smallFontHgt number
 ISControllerTestPanel = ISPanel:derive("ControllerTest")
 ISControllerTestPanel.Type = "ControllerTest"
 
@@ -22,8 +22,10 @@ function ISControllerTestPanel:joypadSensitivityP() end
 
 function ISControllerTestPanel:onControllerSelected() end
 
+---@param index integer
 function ISControllerTestPanel:OnGamepadConnect(index) end
 
+---@param index integer
 function ISControllerTestPanel:OnGamepadDisconnect(index) end
 
 function ISControllerTestPanel:render() end

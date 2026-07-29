@@ -16,13 +16,21 @@ function ISPathFindAction:debugRender() end
 ---@return boolean
 function ISPathFindAction:isValid() end
 
+---@param character IsoPlayer
+---@param object IsoObject
+---@param allowDiagonal boolean
 ---@return ISPathFindAction?
 function ISPathFindAction:pathAdjacentToMultiTileObject(character, object, allowDiagonal) end
 
----@param squares table
+---@param character IsoPlayer
+---@param squares IsoGridSquare[]
+---@param allowDiagonal boolean
 ---@return ISPathFindAction?
 function ISPathFindAction:pathAdjacentToSquares(character, squares, allowDiagonal) end
 
+---@param character IsoPlayer
+---@param squares IsoGridSquare[]
+---@param allowDiagonal boolean
 ---@param predicate function
 ---@param predicateArg table
 ---@return ISPathFindAction?
@@ -45,8 +53,9 @@ function ISPathFindAction:pathToLocationF(character, targetX, targetY, targetZ) 
 ---@return ISPathFindAction
 function ISPathFindAction:pathToNearest(character, locations) end
 
----@param locations table
----@param locationsAlt table
+---@param character IsoPlayer
+---@param locations number[]
+---@param locationsAlt number[]
 ---@return ISPathFindAction
 function ISPathFindAction:pathToNearestPreferred(character, locations, locationsAlt) end
 

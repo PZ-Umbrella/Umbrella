@@ -72,6 +72,16 @@ function __TextManager:DrawStringCentre(x, y, str, r, g, b, a) end
 ---@param a number
 function __TextManager:DrawStringCentre(font, x, y, str, r, g, b, a) end
 
+---@param font AngelCodeFont
+---@param x number
+---@param y number
+---@param str string
+---@param r number
+---@param g number
+---@param b number
+---@param a number
+function __TextManager:DrawStringCentre(font, x, y, str, r, g, b, a) end
+
 ---@param font UIFont
 ---@param x number
 ---@param y number
@@ -189,6 +199,9 @@ function __TextManager:getFontHeight(fontID) end
 ---@param points integer
 ---@return AngelCodeFont
 function __TextManager:getNormalFromFontSize(points) end
+
+---@return boolean
+function __TextManager:isAnyFontLoading() end
 
 ---@param font UIFont
 ---@return boolean

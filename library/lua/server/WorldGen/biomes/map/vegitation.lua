@@ -6,7 +6,7 @@ worldgen.biomes_map.vegitation = {
 	features = {
 		TREE = {
 			{
-				f = worldgen.features.TREE.redbud_jumbo,
+				f = worldgen.features.TREE.redbud_jumbo_xxl,
 				p = 1,
 			},
 		},
@@ -36,6 +36,13 @@ worldgen.biomes_map.vegitation = {
 		},
 	},
 	params = {
+		subbiomes = {
+			TREE = {
+				TREE = {
+					worldgen.subbiomes.no_tree,
+				},
+			},
+		},
 		landscape = {
 			"FOREST",
 		},

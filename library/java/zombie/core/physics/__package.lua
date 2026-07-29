@@ -19,10 +19,4 @@
 ---(Not exposed)
 ---@class RagdollController
 
----(Not exposed)
----Transform represents translation and rotation (rigid transform). Scaling and
---- shearing is not supported.
----
---- You can use local shape scaling or UniformScalingShape for static rescaling
---- of collision objects.
----@class Transform
+zombie.core.physics = {}

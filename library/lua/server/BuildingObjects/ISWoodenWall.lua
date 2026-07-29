@@ -1,7 +1,7 @@
 ---@meta
 
 ---@class ISWoodenWall : ISBuildingObject
----@field corner unknown?
+---@field corner IsoSprite?
 ---@field javaObject IsoThumpable?
 ---@field name string
 ---@field sq IsoGridSquare
@@ -48,6 +48,6 @@ function ISWoodenWall:render(x, y, z, square) end
 
 ---@param sprite string
 ---@param northSprite string
----@param corner unknown?
+---@param corner IsoSprite?
 ---@return ISWoodenWall
 function ISWoodenWall:new(sprite, northSprite, corner) end

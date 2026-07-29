@@ -5,7 +5,7 @@
 ---@field char IsoPlayer
 ---@field joypadButtons ISButton[]
 ---@field playerId integer
-ISChallenge2VariousItemWindow = ISPanelJoypad:derive("ISChallenge2VariousItemWindow")
+ISChallenge2VariousItemWindow = {}
 ISChallenge2VariousItemWindow.Type = "ISChallenge2VariousItemWindow"
 
 function ISChallenge2VariousItemWindow:create() end
@@ -20,7 +20,7 @@ function ISChallenge2VariousItemWindow:initialise() end
 
 function ISChallenge2VariousItemWindow:loadJoypadButtons() end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISChallenge2VariousItemWindow:onJoypadDown(button, joypadData) end
 

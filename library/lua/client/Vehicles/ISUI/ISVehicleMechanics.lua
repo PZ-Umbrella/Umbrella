@@ -20,7 +20,7 @@
 ---@field partCatRGB umbrella.RGB
 ---@field partRGB umbrella.RGB
 ---@field playerNum integer
----@field progressHgt unknown
+---@field progressHgt number
 ---@field progressPadBottom number
 ---@field progressY number
 ---@field rectHgt number
@@ -47,6 +47,8 @@ function ISVehicleMechanics.onCheatGetKey(playerObj, vehicle) end
 
 ---@param playerObj IsoPlayer
 ---@param vehicle BaseVehicle
+---@param hotwired boolean
+---@param broken boolean
 function ISVehicleMechanics.onCheatHotwire(playerObj, vehicle, hotwired, broken) end
 
 ---@param playerObj IsoPlayer
@@ -64,6 +66,7 @@ function ISVehicleMechanics.onCheatRemoveAux(dummy, button, playerObj, vehicle) 
 function ISVehicleMechanics.onCheatRepair(playerObj, vehicle) end
 
 ---@param playerObj IsoPlayer
+---@param part VehiclePart
 function ISVehicleMechanics.onCheatRepairPart(playerObj, part) end
 
 ---@param playerObj IsoPlayer
@@ -186,7 +189,7 @@ function ISVehicleMechanics:onJoypadDirRight() end
 
 function ISVehicleMechanics:onJoypadDirUp() end
 
----@param button integer
+---@param button JoypadButton
 function ISVehicleMechanics:onJoypadDown(button) end
 
 ---@param key integer

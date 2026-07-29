@@ -1,45 +1,51 @@
 ---@meta
 
+---@alias umbrella.ISMPButton.MouseCallback fun(target: unknown, button: ISMPButton, x: number, y: number)
+
+---@alias umbrella.ISMPButton.OnClick fun(target: unknown, button: ISMPButton, ...: unknown)
+
+---@alias umbrella.ISMPButton.RepeatWhilePressed fun(target: unknown, button: ISMPButton)
+
 ---@class ISMPButton : ISPanel
----@field allowMouseUpProcessing unknown
----@field backgroundColorEnabled table
----@field backgroundColorMouseOver table
+---@field allowMouseUpProcessing boolean
+---@field backgroundColorEnabled umbrella.RGBA
+---@field backgroundColorMouseOver umbrella.RGBA
 ---@field backgroundColorPressed table
 ---@field blinkBGAlpha number
 ---@field blinkBGAlphaIncrease boolean
 ---@field blinkImageAlpha number
 ---@field blinkImageAlphaIncrease boolean
----@field borderColorEnabled table
+---@field borderColorEnabled umbrella.RGBA
 ---@field displayBackground boolean
 ---@field enable boolean
----@field fade unknown
----@field font unknown
+---@field fade UITransition
+---@field font UIFont
 ---@field forcedHeightImage number
 ---@field forcedWidthImage number
----@field image unknown
+---@field image Texture
 ---@field isJoypad boolean
 ---@field ISMPButton boolean
----@field joypadFocused unknown
+---@field joypadFocused boolean?
 ---@field joypadTexture unknown?
 ---@field joypadTextureWH number
----@field onclick unknown
+---@field onclick umbrella.ISMPButton.OnClick?
 ---@field onClickArgs table
----@field onmousedown unknown
----@field onmouseoutfunction unknown
----@field onmouseover unknown
+---@field onmousedown umbrella.ISMPButton.MouseCallback?
+---@field onmouseoutfunction umbrella.ISMPButton.MouseCallback?
+---@field onmouseover umbrella.ISMPButton.MouseCallback?
 ---@field originalHeight number
 ---@field originalWidth number
----@field overlayText unknown
+---@field overlayText string
 ---@field pressed boolean
----@field pressedTime unknown?
----@field repeatWhilePressedFunc unknown
+---@field pressedTime integer?
+---@field repeatWhilePressedFunc umbrella.ISMPButton.RepeatWhilePressed?
 ---@field repeatWhilePressedTimer number
----@field sounds table
+---@field sounds table<string, string>
 ---@field SuperType ISPanel
 ---@field target MultiplayerUI
----@field textColor table
----@field textureBackground unknown?
----@field textureColor table
+---@field textColor umbrella.RGBA
+---@field textureBackground Texture?
+---@field textureColor umbrella.RGBA
 ---@field title string
 ---@field tooltip unknown?
 ---@field tooltipUI ISToolTip
@@ -47,6 +53,8 @@
 ISMPButton = ISPanel:derive("ISMPButton")
 ISMPButton.Type = "ISMPButton"
 
+---@param _preferredWidth number?
+---@param _preferredHeight number?
 function ISMPButton:calculateLayout(_preferredWidth, _preferredHeight) end
 
 function ISMPButton:clearJoypadButton() end
@@ -117,28 +125,44 @@ function ISMPButton:setBackgroundRGBA(r, g, b, a) end
 ---@param a number
 function ISMPButton:setBorderRGBA(r, g, b, a) end
 
+---@param background boolean
 function ISMPButton:setDisplayBackground(background) end
 
+---@param bEnabled boolean
 function ISMPButton:setEnable(bEnabled) end
 
+---@param font UIFont
 function ISMPButton:setFont(font) end
 
+---@param image Texture
 function ISMPButton:setImage(image) end
 
+---@param texture Texture
 function ISMPButton:setJoypadButton(texture) end
 
+---@param focused boolean
 function ISMPButton:setJoypadFocused(focused) end
 
+---@param func umbrella.ISMPButton.OnClick
+---@param arg1 unknown?
+---@param arg2 unknown?
+---@param arg3 unknown?
+---@param arg4 unknown?
 function ISMPButton:setOnClick(func, arg1, arg2, arg3, arg4) end
 
+---@param onmouseout umbrella.ISMPButton.MouseCallback?
 function ISMPButton:setOnMouseOutFunction(onmouseout) end
 
+---@param onmouseover umbrella.ISMPButton.MouseCallback?
 function ISMPButton:setOnMouseOverFunction(onmouseover) end
 
+---@param text string
 function ISMPButton:setOverlayText(text) end
 
+---@param func umbrella.ISMPButton.RepeatWhilePressed?
 function ISMPButton:setRepeatWhilePressed(func) end
 
+---@param which string
 ---@param soundName string
 function ISMPButton:setSound(which, soundName) end
 
@@ -151,12 +175,14 @@ function ISMPButton:setTextureRGBA(r, g, b, a) end
 ---@param title string
 function ISMPButton:setTitle(title) end
 
+---@param tooltip string
 function ISMPButton:setTooltip(tooltip) end
 
----@param minWidth unknown?
+---@param minWidth number?
 ---@param isJoypad boolean?
 function ISMPButton:setWidthToTitle(minWidth, isJoypad) end
 
+---@param bEnabled boolean
 function ISMPButton:toggleAcceptCancel(bEnabled) end
 
 function ISMPButton:update() end
@@ -169,5 +195,8 @@ function ISMPButton:updateTooltip() end
 ---@param height number
 ---@param title string
 ---@param clicktarget MultiplayerUI
+---@param onclick umbrella.ISMPButton.OnClick?
+---@param onmousedown umbrella.ISMPButton.MouseCallback?
+---@param allowMouseUpProcessing boolean?
 ---@return ISMPButton
 function ISMPButton:new(x, y, width, height, title, clicktarget, onclick, onmousedown, allowMouseUpProcessing) end

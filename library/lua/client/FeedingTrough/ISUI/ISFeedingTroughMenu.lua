@@ -20,7 +20,8 @@ function ISFeedingTroughMenu.onAddWater(playerObj, luaObject, waterItem, all) en
 
 ---@param playerObj IsoPlayer
 ---@param isoObject IsoObject
-function ISFeedingTroughMenu.onAddWaterDebug(playerObj, isoObject) end
+---@param fluid Fluid?
+function ISFeedingTroughMenu.onAddWaterDebug(playerObj, isoObject, fluid) end
 
 ---@param playerObj IsoPlayer
 ---@param isoObject IsoObject
@@ -41,4 +42,6 @@ function ISFeedingTroughMenu.onInfo(trough, chr) end
 ---@param isoObject IsoObject
 function ISFeedingTroughMenu.onRemoveFoodDebug(playerObj, isoObject) end
 
+---@param playerObj IsoPlayer
+---@param isoObject IsoObject
 function ISFeedingTroughMenu.onRemoveWaterDebug(playerObj, isoObject) end

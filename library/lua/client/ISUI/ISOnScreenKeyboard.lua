@@ -122,7 +122,7 @@ function OnScreenKeyboardEntry:onJoypadDirRight(joypadData) end
 ---@param joypadData JoypadData
 function OnScreenKeyboardEntry:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function OnScreenKeyboardEntry:onJoypadDown(button, joypadData) end
 
@@ -207,7 +207,7 @@ function OnScreenKeyboardPanel:onGainJoypadFocus(joypadData) end
 ---@param joypadData JoypadData
 function OnScreenKeyboardPanel:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function OnScreenKeyboardPanel:onJoypadDown(button, joypadData) end
 

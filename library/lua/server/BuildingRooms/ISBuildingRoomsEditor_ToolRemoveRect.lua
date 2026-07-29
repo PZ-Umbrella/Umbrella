@@ -2,7 +2,7 @@
 
 ---@class ISBuildingRoomsEditor_ToolRemoveRect : ISBuildingObject
 ---@field character IsoPlayer
----@field editor ISBuildingRoomsEditor
+---@field editor unknown
 ---@field mouseOverRect number
 ---@field noNeedHammer boolean
 ---@field player number
@@ -18,6 +18,8 @@ function ISBuildingRoomsEditor_ToolRemoveRect:activate() end
 ---@param x number
 ---@param y number
 ---@param z number
+---@param north unknown?
+---@param sprite unknown?
 function ISBuildingRoomsEditor_ToolRemoveRect:create(x, y, z, north, sprite) end
 
 function ISBuildingRoomsEditor_ToolRemoveRect:deactivate() end
@@ -35,6 +37,8 @@ function ISBuildingRoomsEditor_ToolRemoveRect:getRBPrompt() end
 ---@return boolean
 function ISBuildingRoomsEditor_ToolRemoveRect:isValid(square) end
 
+---@param screenX number
+---@param screenY number
 ---@return IsoGridSquare
 ---@return integer
 ---@return integer
@@ -49,6 +53,5 @@ function ISBuildingRoomsEditor_ToolRemoveRect:render(x, y, z, square) end
 
 function ISBuildingRoomsEditor_ToolRemoveRect:reset() end
 
----@param editor ISBuildingRoomsEditor
 ---@return ISBuildingRoomsEditor_ToolRemoveRect
 function ISBuildingRoomsEditor_ToolRemoveRect:new(editor) end

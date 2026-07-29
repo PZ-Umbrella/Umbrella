@@ -106,7 +106,7 @@ function ISPlace3DItemCursor:onJoypadDirUp(joypadData) end
 
 ---@param joypadIndex integer
 ---@param joypadData JoypadData
----@param button integer
+---@param button JoypadButton
 function ISPlace3DItemCursor:onJoypadPressButton(joypadIndex, joypadData, button) end
 
 ---@param object IsoObject

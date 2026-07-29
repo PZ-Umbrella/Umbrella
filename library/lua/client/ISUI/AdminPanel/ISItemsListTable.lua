@@ -15,10 +15,21 @@
 ---@field viewer ISItemsListViewer
 ISItemsListTable = ISPanel:derive("ISItemsListTable")
 ISItemsListTable.Type = "ISItemsListTable"
+ISItemsListTable.COLUMN_WEAPON_TYPE = "WeaponType"
+ISItemsListTable.COLUMN_NAME = "Name"
+ISItemsListTable.COLUMN_CATEGORY = "Category"
+ISItemsListTable.COLUMN_DISPLAY_CATEGORY = "DisplayCategory"
+ISItemsListTable.COLUMN_LOOT_CATEGORY = "LootCategory"
+ISItemsListTable.COLUMN_CRAFT = "Craft"
+ISItemsListTable.COLUMN_FORAGE = "Forage"
+ISItemsListTable.COLUMN_LOOT = "Loot"
+ISItemsListTable.COLUMN_SPAWN_NUMBER = "SpawnNumber"
 ISItemsListTable.instance = nil ---@type ISItemsListTable?
 
 ---@param widget ISUIElement
 function ISItemsListTable.onFilterChange(widget) end
+
+function ISItemsListTable:addFilterCombo(column, x, entryY, size, filterFunction) end
 
 ---@param item Item
 function ISItemsListTable:addItem(item) end
@@ -30,6 +41,8 @@ function ISItemsListTable:createChildren() end
 ---@param alt boolean
 ---@return number
 function ISItemsListTable:drawDatas(y, item, alt) end
+
+function ISItemsListTable:drawTrueOrFalseColumn(columnIndex, testBool, xoffset, y, a) end
 
 ---@param widget ISComboBox
 ---@param scriptItem Item
@@ -66,6 +79,8 @@ function ISItemsListTable:filterLootCategory(widget, scriptItem) end
 ---@return boolean
 function ISItemsListTable:filterName(widget, scriptItem) end
 
+---@param widget ISComboBox
+---@param scriptItem Item
 ---@return boolean
 function ISItemsListTable:filterSpawned(widget, scriptItem) end
 
@@ -73,6 +88,9 @@ function ISItemsListTable:filterSpawned(widget, scriptItem) end
 ---@param scriptItem Item
 ---@return boolean
 function ISItemsListTable:filterType(widget, scriptItem) end
+
+---@return unknown
+function ISItemsListTable:filterWeaponType(widget, scriptItem) end
 
 function ISItemsListTable:initialise() end
 

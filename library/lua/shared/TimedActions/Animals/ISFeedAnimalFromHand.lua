@@ -28,6 +28,7 @@ function ISFeedAnimalFromHand:stopSound() end
 
 function ISFeedAnimalFromHand:update() end
 
+---@param character IsoPlayer
 ---@param animal IsoAnimal
 ---@param food InventoryItem
 ---@return ISFeedAnimalFromHand

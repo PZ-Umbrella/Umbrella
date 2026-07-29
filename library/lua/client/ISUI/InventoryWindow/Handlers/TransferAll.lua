@@ -1,12 +1,12 @@
 ---@meta
 
 ---@class ISInventoryWindowControlHandler_TransferAll : ISInventoryWindowControlHandler
----@field control unknown
+---@field control ISUIElement?
 ISInventoryWindowControlHandler_TransferAll =
 	ISInventoryWindowControlHandler:derive("ISInventoryWindowControlHandler_TransferAll")
 ISInventoryWindowControlHandler_TransferAll.Type = "ISInventoryWindowControlHandler_TransferAll"
 
----@return unknown
+---@return ISUIElement
 function ISInventoryWindowControlHandler_TransferAll:getControl() end
 
 function ISInventoryWindowControlHandler_TransferAll:perform() end

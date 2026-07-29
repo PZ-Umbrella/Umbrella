@@ -163,12 +163,14 @@ function __ItemContainer:canCharacterOpenVehicleDoor(playerObj) end
 ---@return boolean
 function __ItemContainer:canCharacterUnlockVehicleDoor(playerObj) end
 
+---@param chr IsoGameCharacter
 ---@return boolean
-function __ItemContainer:canHumanCorpseFit() end
+function __ItemContainer:canHumanCorpseFit(chr) end
 
 ---@param item InventoryItem
+---@param chr IsoGameCharacter
 ---@return boolean
-function __ItemContainer:canItemFit(item) end
+function __ItemContainer:canItemFit(item, chr) end
 
 function __ItemContainer:clear() end
 
@@ -1323,6 +1325,9 @@ function __ItemContainer:getVehicleDoorPart() end
 
 ---@return VehiclePart
 function __ItemContainer:getVehiclePart() end
+
+---@return VehiclePartOwner
+function __ItemContainer:getVehiclePartOwner() end
 
 ---@return VehicleDoor
 function __ItemContainer:getVehicleSeatDoor() end

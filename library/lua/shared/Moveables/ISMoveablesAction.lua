@@ -27,6 +27,7 @@ function ISMoveablesAction:getDuration() end
 ---@return boolean
 function ISMoveablesAction:isAdjacentToAnySquare() end
 
+---@param square IsoGridSquare
 ---@return boolean
 function ISMoveablesAction:isAdjacentToSquare(square) end
 

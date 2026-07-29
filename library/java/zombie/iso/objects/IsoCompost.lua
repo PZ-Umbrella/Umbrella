@@ -7,7 +7,8 @@ local __IsoCompost = {}
 function __IsoCompost:Damage(amount) end
 
 ---@param thumper IsoMovingObject
-function __IsoCompost:Thump(thumper) end
+---@param thumpEventCount integer
+function __IsoCompost:Thump(thumper, thumpEventCount) end
 
 ---@param owner IsoGameCharacter
 ---@param weapon HandWeapon

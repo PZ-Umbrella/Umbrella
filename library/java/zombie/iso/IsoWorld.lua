@@ -373,6 +373,12 @@ function __IsoWorld:update() end
 
 IsoWorld = {}
 
+---@type integer
+IsoWorld.MAX_TDEF_FILE_NUMBER_FOR_MODS = nil
+
+---@type integer
+IsoWorld.MIN_TDEF_FILE_NUMBER_FOR_MODS = nil
+
 ---@type HashMap<string, ArrayList<string>>
 IsoWorld.PropertyValueMap = nil
 
@@ -408,6 +414,9 @@ IsoWorld.WorldVersion_BodyDamageSavePoulticeValues = nil
 
 ---@type integer
 IsoWorld.WorldVersion_BodyDamageStatusesSync = nil
+
+---@type integer
+IsoWorld.WorldVersion_BuildMaterials = nil
 
 ---@type integer
 IsoWorld.WorldVersion_CharacterDiscomfort = nil
@@ -516,6 +525,9 @@ IsoWorld.WorldVersion_SquareSeen = nil
 
 ---@type integer
 IsoWorld.WorldVersion_Stats_Idleness = nil
+
+---@type integer
+IsoWorld.WorldVersion_ThermalDuration = nil
 
 ---@type integer
 IsoWorld.WorldVersion_TrapExplosionDuration = nil

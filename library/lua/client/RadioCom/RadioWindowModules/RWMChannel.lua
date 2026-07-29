@@ -67,7 +67,7 @@ function RWMChannel:isValidPresets() end
 ---@param _name string
 function RWMChannel:onChildSave(_freq, _name) end
 
----@param button integer
+---@param button JoypadButton
 ---@return boolean
 ---@return boolean
 function RWMChannel:onJoypadDown(button) end

@@ -7,9 +7,8 @@ local __IsoRegionsRenderer = {}
 
 function __IsoRegionsRenderer:editRotate() end
 
----@param x integer
----@param y integer
-function __IsoRegionsRenderer:editSquare(x, y) end
+---@return string
+function __IsoRegionsRenderer:getActiveEditKind() end
 
 ---@param name string
 ---@return boolean

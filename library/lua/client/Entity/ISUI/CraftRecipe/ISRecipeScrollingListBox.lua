@@ -48,7 +48,7 @@ function ISRecipeScrollingListBox:onJoypadDirDown() end
 
 function ISRecipeScrollingListBox:onJoypadDirUp() end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISRecipeScrollingListBox:onJoypadDown(button, joypadData) end
 

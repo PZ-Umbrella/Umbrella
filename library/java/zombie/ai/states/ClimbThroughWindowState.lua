@@ -26,6 +26,9 @@ function __ClimbThroughWindowState:exit(owner) end
 ---@param modifiers MoveDeltaModifiers
 function __ClimbThroughWindowState:getDeltaModifiers(owner, modifiers) end
 
+---@return UpdateSchedulerSimulationLevel
+function __ClimbThroughWindowState:getMinimumSimulationLevel() end
+
 ---@param owner IsoGameCharacter
 ---@return ClimbThroughWindowPositioningParams
 function __ClimbThroughWindowState:getPositioningParams(owner) end

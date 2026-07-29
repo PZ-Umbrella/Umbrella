@@ -30,7 +30,7 @@ function ISJoypadListBox:getUserNameCallback(button, playerObj) end
 
 function ISJoypadListBox:invoke() end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISJoypadListBox:onJoypadDown(button, joypadData) end
 

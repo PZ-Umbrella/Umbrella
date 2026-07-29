@@ -20,7 +20,7 @@ function ISBBQInfoWindow:createChildren() end
 ---@param joypadData JoypadData
 function ISBBQInfoWindow:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISBBQInfoWindow:onJoypadDown(button) end
 
 ---@param bbq IsoBarbecue

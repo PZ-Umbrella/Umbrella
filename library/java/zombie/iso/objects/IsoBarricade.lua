@@ -12,7 +12,8 @@ function __IsoBarricade:Damage(amount) end
 function __IsoBarricade:TestVision(from, to) end
 
 ---@param thumper IsoMovingObject
-function __IsoBarricade:Thump(thumper) end
+---@param thumpEventCount integer
+function __IsoBarricade:Thump(thumper, thumpEventCount) end
 
 ---@param owner IsoGameCharacter
 ---@param weapon HandWeapon

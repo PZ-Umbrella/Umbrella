@@ -55,7 +55,7 @@ function __modSelector_ModLoadOrderPanel:onJoypadDirRight(joypadData) end
 ---@param joypadData JoypadData
 function __modSelector_ModLoadOrderPanel:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __modSelector_ModLoadOrderPanel:onJoypadDown(button, joypadData) end
 

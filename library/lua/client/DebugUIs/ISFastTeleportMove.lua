@@ -6,6 +6,7 @@ ISFastTeleportMove.cheat = false
 ISFastTeleportMove.currentZ = 0
 ISFastTeleportMove.isAdded = false
 
+---@param player IsoPlayer
 ---@param dx number
 ---@param dy number
 function ISFastTeleportMove.moveXY(player, dx, dy) end

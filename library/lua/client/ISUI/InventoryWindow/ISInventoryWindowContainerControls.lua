@@ -1,26 +1,27 @@
 ---@meta
 
 ---@class ISInventoryWindowContainerControls : ISPanelJoypad
----@field controls table
----@field handlers table
+---@field controls ISUIElement[]
+---@field handlers table<ISInventoryWindowControlHandler, ISInventoryWindowControlHandler>
 ---@field inventoryWindow ISInventoryPage
 ISInventoryWindowContainerControls = ISPanelJoypad:derive("ISInventoryWindowContainerControls")
 ISInventoryWindowContainerControls.Type = "ISInventoryWindowContainerControls"
 
----@param handlerClass ISInventoryWindowControlHandler_TransferAll | ISInventoryWindowControlHandler_TransferSameType
+---@param handlerClass ISInventoryWindowControlHandler
 function ISInventoryWindowContainerControls.AddHandler(handlerClass) end
 
 function ISInventoryWindowContainerControls:arrange() end
 
----@param container unknown?
----@return unknown
+---@param handlerClass ISInventoryWindowControlHandler
+---@param container ItemContainer?
+---@return ISInventoryWindowControlHandler
 function ISInventoryWindowContainerControls:checkHandler(handlerClass, container) end
 
 function ISInventoryWindowContainerControls:createChildren() end
 
 function ISInventoryWindowContainerControls:fixMouseOverButton() end
 
----@return unknown?
+---@return ItemContainer?
 function ISInventoryWindowContainerControls:getDisplayedContainer() end
 
 ---@param context ISContextMenu

@@ -44,6 +44,9 @@ CreditsRole.CONCEPT_ARTIST = nil
 ---@type CreditsRole
 CreditsRole.CONTRIBUTORS = nil
 
+---@type Path
+CreditsRole.CREDITS_TRANSLATOR_JSON = nil
+
 ---@type CreditsRole
 CreditsRole.DESIGN_DIRECTOR = nil
 
@@ -87,6 +90,9 @@ CreditsRole.IN_LOVING_MEMORY_OF = nil
 CreditsRole.JUNIOR_SYSTEM_ADMINISTRATOR = nil
 
 ---@type CreditsRole
+CreditsRole.LEAD_COMMUNITY_MANAGER = nil
+
+---@type CreditsRole
 CreditsRole.LEAD_GAMEPLAY_PROGRAMMER = nil
 
 ---@type CreditsRole
@@ -94,6 +100,9 @@ CreditsRole.LEAD_PROGRAMMER = nil
 
 ---@type CreditsRole
 CreditsRole.LEAD_QA = nil
+
+---@type CreditsRole
+CreditsRole.LEAD_QA_TIS = nil
 
 ---@type CreditsRole
 CreditsRole.LEAD_SOUND_DESIGNER_ARRIVAL = nil
@@ -177,6 +186,51 @@ CreditsRole.TECHNICAL_SOUND_DESIGNER_ARRIVAL = nil
 CreditsRole.TECH_SUPPORT = nil
 
 ---@type CreditsRole
+CreditsRole.TMG_CH = nil
+
+---@type CreditsRole
+CreditsRole.TMG_CN = nil
+
+---@type CreditsRole
+CreditsRole.TMG_DA = nil
+
+---@type CreditsRole
+CreditsRole.TMG_DE = nil
+
+---@type CreditsRole
+CreditsRole.TMG_FI = nil
+
+---@type CreditsRole
+CreditsRole.TMG_HU = nil
+
+---@type CreditsRole
+CreditsRole.TMG_IT = nil
+
+---@type CreditsRole
+CreditsRole.TMG_KO = nil
+
+---@type CreditsRole
+CreditsRole.TMG_NL = nil
+
+---@type CreditsRole
+CreditsRole.TMG_NO = nil
+
+---@type CreditsRole
+CreditsRole.TMG_PL = nil
+
+---@type CreditsRole
+CreditsRole.TMG_PT = nil
+
+---@type CreditsRole
+CreditsRole.TMG_UA = nil
+
+---@type Path
+CreditsRole.TRANSLATION_FOLDER = nil
+
+---@type string
+CreditsRole.TRANSLATOR = nil
+
+---@type CreditsRole
 CreditsRole.UI_DESIGNER = nil
 
 ---@type CreditsRole
@@ -187,6 +241,13 @@ CreditsRole.WIKI_EDITORS = nil
 
 ---@type CreditsRole
 CreditsRole.WRITER = nil
+
+---@return table
+function CreditsRole.getTranslatorCredits() end
+
+---@param language zombie.core.Language
+---@return List<string>
+function CreditsRole.getTranslatorCreditsList(language) end
 
 ---@param name string
 ---@return CreditsRole

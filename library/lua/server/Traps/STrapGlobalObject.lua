@@ -21,6 +21,7 @@
 STrapGlobalObject = SGlobalObject:derive("STrapGlobalObject")
 STrapGlobalObject.Type = "STrapGlobalObject"
 
+---@param trapType string
 ---@param square IsoGridSquare
 ---@param object IsoObject
 function STrapGlobalObject.SpawnDestroyItems(trapType, square, object) end
@@ -29,6 +30,7 @@ function STrapGlobalObject.SpawnDestroyItems(trapType, square, object) end
 function STrapGlobalObject:addAliveAnimal(character) end
 
 ---@param bait string
+---@param age number
 ---@param baitAmountMulti number
 ---@param player IsoPlayer
 function STrapGlobalObject:addBait(bait, age, baitAmountMulti, player) end
@@ -77,8 +79,10 @@ function STrapGlobalObject:reinitModData(square) end
 function STrapGlobalObject:removeAnimal(character) end
 
 ---@param character IsoPlayer
+---@param isoAnimal IsoAnimal
 function STrapGlobalObject:removeAnimalCorpse(character, isoAnimal) end
 
+---@param character IsoPlayer
 function STrapGlobalObject:removeAnimalItem(character) end
 
 ---@param character IsoPlayer?

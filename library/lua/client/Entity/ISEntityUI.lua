@@ -42,6 +42,13 @@ function ISEntityUI.FindCraftSurface(_player, _radius) end
 ---@return boolean?
 function ISEntityUI.GenericCraftStart(_player, _entity, _component, _funcCanStart, _funcStart) end
 
+---@param _player IsoPlayer
+---@param _entity IsoObject
+---@param _component Component
+---@param _funcCanStart umbrella.ISEntityUI.CraftCanStart
+---@param _funcStart umbrella.ISEntityUI.CraftStart
+---@param _itemsToTransfer InventoryItem[]?
+---@param _itemSlot ISItemSlot?
 ---@return boolean?
 function ISEntityUI.GenericCraftTransferAndStart(
 	_player,

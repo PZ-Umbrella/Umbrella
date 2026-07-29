@@ -41,7 +41,7 @@ function ISAddFluidFromItemAction:updateAdd(delta) end
 ---@return boolean
 function ISAddFluidFromItemAction:waitToStart() end
 
----@param character unknown?
+---@param character IsoPlayer
 ---@param itemFrom InventoryItem
 ---@param objectTo IsoObject
 ---@return ISAddFluidFromItemAction

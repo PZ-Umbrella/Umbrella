@@ -13,8 +13,10 @@ __UI_ScrollBarVertical.anchorTop = 1
 __UI_ScrollBarVertical.anchorDown = -1
 __UI_ScrollBarVertical.anchorRight = 0
 
+---@param sizeCoeff number
 function __UI_ScrollBarVertical:setBarSize(sizeCoeff) end
 
+---@param percent number
 function __UI_ScrollBarVertical:updateBar(percent) end
 
 ---@class PZAPI.UI

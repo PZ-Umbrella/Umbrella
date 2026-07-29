@@ -15,6 +15,9 @@ function __FakeDeadAttackState:enter(owner) end
 ---@param owner IsoGameCharacter
 function __FakeDeadAttackState:exit(owner) end
 
+---@return UpdateSchedulerSimulationLevel
+function __FakeDeadAttackState:getMinimumSimulationLevel() end
+
 FakeDeadAttackState = {}
 
 ---@return FakeDeadAttackState

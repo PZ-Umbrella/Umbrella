@@ -2,7 +2,6 @@
 
 ---@class ISCollapsableModalRichText : ISCollapsableWindow
 ---@field chatText ISRichTextPanel
----@field name unknown?
 ---@field no ISButton?
 ---@field ok ISButton?
 ---@field onclick umbrella.ISButton.OnClick
@@ -33,7 +32,7 @@ function ISCollapsableModalRichText:onJoypadDirLeft() end
 
 function ISCollapsableModalRichText:onJoypadDirRight() end
 
----@param button integer
+---@param button JoypadButton
 function ISCollapsableModalRichText:onJoypadDown(button) end
 
 function ISCollapsableModalRichText:prerender() end

@@ -497,6 +497,9 @@ function __IsoGameCharacter:addWorldSoundUnlessInvisible(radius, volume, bStress
 function __IsoGameCharacter:aimAtFloorTargetDistance() end
 
 ---@return boolean
+function __IsoGameCharacter:allowsInvisibleAnimationSkips() end
+
+---@return boolean
 function __IsoGameCharacter:allowsTwist() end
 
 function __IsoGameCharacter:applyCharacterTraitsRecipes() end
@@ -523,8 +526,9 @@ function __IsoGameCharacter:autoDrink() end
 function __IsoGameCharacter:avoidDamage() end
 
 ---@param placeInContainer ItemContainer
+---@param chr IsoGameCharacter
 ---@return InventoryItem
-function __IsoGameCharacter:becomeCorpseItem(placeInContainer) end
+function __IsoGameCharacter:becomeCorpseItem(placeInContainer, chr) end
 
 ---@param part integer
 ---@return boolean
@@ -763,7 +767,6 @@ function __IsoGameCharacter:dbgGetAnimTrackTime(layerIdx, trackIdx) end
 ---@return number
 function __IsoGameCharacter:dbgGetAnimTrackWeight(layerIdx, trackIdx) end
 
----@return IsoDeadBody
 function __IsoGameCharacter:die() end
 
 ---@param killer IsoGameCharacter
@@ -2127,6 +2130,9 @@ function __IsoGameCharacter:isAlive() end
 function __IsoGameCharacter:isAllowConversation() end
 
 ---@return boolean
+function __IsoGameCharacter:isAlwaysDayCheat() end
+
+---@return boolean
 function __IsoGameCharacter:isAnimForecasted() end
 
 ---@return boolean
@@ -2589,6 +2595,9 @@ function __IsoGameCharacter:isRecipeKnown(name) end
 function __IsoGameCharacter:isRecipeKnown(name, ignoreSandbox) end
 
 ---@return boolean
+function __IsoGameCharacter:isRemote() end
+
+---@return boolean
 function __IsoGameCharacter:isResting() end
 
 ---@return boolean
@@ -2997,6 +3006,9 @@ function __IsoGameCharacter:setAllowConversation(AllowConversation) end
 ---@param fullType string
 ---@param pages integer
 function __IsoGameCharacter:setAlreadyReadPages(fullType, pages) end
+
+---@param b boolean
+function __IsoGameCharacter:setAlwaysDayCheat(b) end
 
 ---@param timeMs integer
 function __IsoGameCharacter:setAnimForecasted(timeMs) end
@@ -4003,6 +4015,15 @@ function IsoGameCharacter.getInf() end
 
 ---@return kahlua.Array<integer> # the LevelUpLevels
 function IsoGameCharacter.getLevelUpLevels() end
+
+---@param x number
+---@param y number
+---@param z number
+---@param offX number
+---@param offY number
+---@param zoom number
+---@param coord Vector2
+function IsoGameCharacter.getNameCoords(x, y, z, offX, offY, zoom, coord) end
 
 ---@return HashMap<integer, SurvivorDesc>
 function IsoGameCharacter.getSurvivorMap() end

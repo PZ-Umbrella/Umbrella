@@ -3,7 +3,7 @@
 ---@class CreditsScreen : ISPanelJoypad
 ---@field currentAlpha number
 ---@field escapeText string
----@field escapeTextWidth unknown
+---@field escapeTextWidth number
 ---@field fadeIn boolean
 ---@field pauseButton ISButton
 ---@field richText ISRichTextPanel
@@ -13,8 +13,12 @@ CreditsScreen = ISPanelJoypad:derive("CreditsScreen")
 CreditsScreen.Type = "CreditsScreen"
 CreditsScreen.instance = nil ---@type CreditsScreen?
 
+---@param key integer
 function CreditsScreen.onKeyPressed(key) end
 
+---@param key string
+---@param searchKey string
+---@param map string[]
 ---@param name string
 function CreditsScreen:addToMap(key, searchKey, map, name) end
 
@@ -26,11 +30,15 @@ function CreditsScreen:create() end
 function CreditsScreen:doCreditsText() end
 
 ---@param title string
+---@param creditTable string[]
 ---@return string
 function CreditsScreen:doCreditTable(title, creditTable) end
 
+---@param joypadData JoypadData
 function CreditsScreen:onGainJoypadFocus(joypadData) end
 
+---@param button JoypadButton
+---@param joypadData JoypadData
 function CreditsScreen:onJoypadDown(button, joypadData) end
 
 function CreditsScreen:onResolutionChange() end
@@ -39,12 +47,13 @@ function CreditsScreen:pause() end
 
 function CreditsScreen:prerender() end
 
+---@param joypadData JoypadData
 function CreditsScreen:recalcButtonPosition(joypadData) end
 
 function CreditsScreen:render() end
 
 ---@param visible boolean
----@param joypadData unknown?
+---@param joypadData JoypadData?
 function CreditsScreen:setVisible(visible, joypadData) end
 
 ---@param speed number

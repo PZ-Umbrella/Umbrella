@@ -169,6 +169,12 @@ IsoPropertyType.CORNER_NORTH_WALL = nil
 IsoPropertyType.CORNER_WEST_WALL = nil
 
 ---@type IsoPropertyType
+IsoPropertyType.COUNTERTOP = nil
+
+---@type IsoPropertyType
+IsoPropertyType.COUNTERTOP_ATTACH = nil
+
+---@type IsoPropertyType
 IsoPropertyType.CURTAIN_E = nil
 
 ---@type IsoPropertyType
@@ -269,6 +275,9 @@ IsoPropertyType.FENCE_TYPE_LOW = nil
 
 ---@type IsoPropertyType
 IsoPropertyType.FIRE_REQUIREMENT = nil
+
+---@type IsoPropertyType
+IsoPropertyType.FITS_BENEATH_COUNTERTOP = nil
 
 ---@type IsoPropertyType
 IsoPropertyType.FLOOR_ATTACHMENT_E = nil

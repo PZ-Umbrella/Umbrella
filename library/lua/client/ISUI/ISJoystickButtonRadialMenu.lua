@@ -6,11 +6,11 @@ ISJoystickButtonRadialMenu = {}
 ---@param joypadData JoypadData
 function ISJoystickButtonRadialMenu.displayLeft(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData?
 function ISJoystickButtonRadialMenu.onJoypadButtonReleased(button, joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData?
 function ISJoystickButtonRadialMenu.onJoypadDown(button, joypadData) end
 

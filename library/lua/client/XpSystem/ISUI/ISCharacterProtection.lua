@@ -24,13 +24,14 @@ function ISCharacterProtection:initialise() end
 
 function ISCharacterProtection:initTextures() end
 
----@param button integer
+---@param button JoypadButton
 function ISCharacterProtection:onJoypadDown(button) end
 
 function ISCharacterProtection:prerender() end
 
 function ISCharacterProtection:render() end
 
+---@param visible boolean
 function ISCharacterProtection:setVisible(visible) end
 
 ---@param x number

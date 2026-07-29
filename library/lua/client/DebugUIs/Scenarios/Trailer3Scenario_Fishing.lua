@@ -13,6 +13,7 @@ local __debugScenarios_Trailer3Scenario_Fishing = {
 ---@param x number
 ---@param y number
 ---@param z number
+---@param tile string
 function __debugScenarios_Trailer3Scenario_Fishing.addItem(x, y, z, tile) end
 
 ---@param x number

@@ -25,7 +25,7 @@ function ISCraftBenchPanel:OnCloseWindow() end
 ---@param joypadData JoypadData
 function ISCraftBenchPanel:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISCraftBenchPanel:onJoypadDown(button, joypadData) end
 

@@ -22,6 +22,9 @@ function __StaggerBackState:exit(owner) end
 ---@return number
 function __StaggerBackState:getMaxStaggerTime(owner) end
 
+---@return UpdateSchedulerSimulationLevel
+function __StaggerBackState:getMinimumSimulationLevel() end
+
 StaggerBackState = {}
 
 ---@return StaggerBackState

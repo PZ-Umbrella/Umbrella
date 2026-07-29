@@ -4,11 +4,9 @@
 ---@field borderX number
 ---@field labelWidth number
 ---@field modInfo ChooseGameInfo.Mod
----@field modLink string
----@field modLinkLen number
 ---@field name string
 ---@field path string
----@field pathLen unknown
+---@field pathLen number
 ---@field pressed boolean
 ---@field source string
 ---@field tickTexture Texture

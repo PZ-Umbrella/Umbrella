@@ -35,6 +35,7 @@ function ISCutAnimalOnHook:update() end
 ---@return unknown
 function ISCutAnimalOnHook:waitToStart() end
 
+---@param character IsoPlayer
 ---@param body IsoAnimal
 ---@param hook IsoButcherHook
 ---@param luaHookUI ISButcherHookUI

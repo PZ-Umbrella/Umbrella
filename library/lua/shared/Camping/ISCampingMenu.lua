@@ -7,11 +7,16 @@ ISCampingMenu = {}
 ---@param worldobjects IsoObject[]?
 ---@param currentFuel number
 ---@param fuelInfo umbrella.ISCampingMenu.NearbyFuelInfo
+---@param target IsoObject
 ---@param timedAction ISBBQAddFuel | ISAddFuelAction
 ---@param playerObj IsoPlayer
 ---@return boolean
 function ISCampingMenu.doAddFuelOption(context, worldobjects, currentFuel, fuelInfo, target, timedAction, playerObj) end
 
+---@param player integer
+---@param context ISContextMenu
+---@param worldobjects IsoObject[]
+---@param test boolean
 ---@return boolean?
 function ISCampingMenu.doCampingMenu(player, context, worldobjects, test) end
 
@@ -69,20 +74,20 @@ function ISCampingMenu.isValidFuel(item) end
 function ISCampingMenu.isValidTinder(item) end
 
 ---@param playerObj IsoPlayer
----@param target unknown?
+---@param target IsoObject
 ---@param timedAction ISBaseTimedAction
 ---@param currentFuel number
 function ISCampingMenu.onAddAllFuel(playerObj, target, timedAction, currentFuel) end
 
 ---@param playerObj IsoPlayer
----@param target unknown?
+---@param target IsoObject
 ---@param fuelType string
 ---@param timedAction ISBaseTimedAction
 ---@param currentFuel number
 function ISCampingMenu.onAddFuel(playerObj, target, fuelType, timedAction, currentFuel) end
 
 ---@param playerObj IsoPlayer
----@param target unknown?
+---@param target IsoObject
 ---@param fuelType string
 ---@param timedAction ISBaseTimedAction
 ---@param currentFuel number
@@ -104,21 +109,21 @@ function ISCampingMenu.onDropCorpse(worldobjects, playerObj, isoCampfireObject, 
 ---@param playerObj IsoPlayer
 ---@param percedWood InventoryItem
 ---@param stickOrBranch InventoryItem
----@param target unknown?
+---@param target IsoObject
 ---@param timedAction ISBaseTimedAction
 function ISCampingMenu.onLightFromKindle(playerObj, percedWood, stickOrBranch, target, timedAction) end
 
 ---@param playerObj IsoPlayer
 ---@param itemType string
 ---@param lighter InventoryItem
----@param target unknown?
+---@param target IsoObject
 ---@param timedAction ISBaseTimedAction
 function ISCampingMenu.onLightFromLiterature(playerObj, itemType, lighter, target, timedAction) end
 
 ---@param playerObj IsoPlayer
 ---@param lighter InventoryItem
 ---@param petrol InventoryItem
----@param target unknown?
+---@param target IsoObject
 ---@param timedAction ISBaseTimedAction
 function ISCampingMenu.onLightFromPetrol(playerObj, lighter, petrol, target, timedAction) end
 
@@ -131,6 +136,13 @@ function ISCampingMenu.onPutOutCampfire(worldobjects, playerObj, campfire) end
 ---@param playerObj IsoPlayer
 ---@param campfire CCampfireGlobalObject
 function ISCampingMenu.onRemoveCampfire(worldobjects, playerObj, campfire) end
+
+---@param campfires table
+---@return unknown?
+function ISCampingMenu.pickBestCampfire(playerObj, campfires) end
+
+---@param playerNum number
+function ISCampingMenu.selectCampfireInLootWindow(playerNum, isoCampfireObject) end
 
 ---@param item InventoryItem
 ---@param includeEquipped boolean?

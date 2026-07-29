@@ -15,7 +15,7 @@ function ISBackButtonWheel:onCommand(command) end
 ---@param joypadData JoypadData
 function ISBackButtonWheel:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISBackButtonWheel:onJoypadDown(button, joypadData) end
 

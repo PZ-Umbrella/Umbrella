@@ -6,60 +6,83 @@ worldgen.biomes_map.pr_forest = {
 	features = {
 		TREE = {
 			{
-				f = worldgen.features.TREE.redbud_jumbo,
-				p = 0.15,
+				f = worldgen.features.TREE.redbud_jumbo_xl,
+				p = 0.1,
 			},
 			{
-				f = worldgen.features.TREE.redbud,
-				p = 0.015,
+				f = worldgen.features.TREE.redbud_jumbo_xxl,
+				p = 0.05,
+			},
+			{
+				f = worldgen.features.TREE.redbud_jumbo,
+				p = 0.15,
 			},
 			{
 				f = worldgen.features.TREE.hawthorn_jumbo,
 				p = 0.15,
 			},
 			{
-				f = worldgen.features.TREE.hawthorn,
-				p = 0.015,
+				f = worldgen.features.TREE.hawthorn_jumbo_xxl,
+				p = 0.05,
+			},
+			{
+				f = worldgen.features.TREE.hawthorn_jumbo_xl,
+				p = 0.1,
 			},
 			{
 				f = worldgen.features.TREE.silverbell_jumbo,
 				p = 0.15,
 			},
 			{
-				f = worldgen.features.TREE.silverbell,
-				p = 0.02,
+				f = worldgen.features.TREE.silverbell_jumbo_xl,
+				p = 0.1,
 			},
 			{
-				f = worldgen.features.TREE.grass_high,
-				p = 0.5,
+				f = worldgen.features.TREE.silverbell_jumbo_xxl,
+				p = 0.05,
+			},
+			{
+				f = worldgen.features.PLANT.grass_high,
+				p = 0.1,
 			},
 		},
 		BUSH = {
 			{
 				f = worldgen.features.BUSH.bush_regular,
-				p = 1,
+				p = 1.0,
 			},
 		},
 		PLANT = {
 			{
 				f = worldgen.features.PLANT.grass_low,
-				p = 0.1,
-			},
-			{
-				f = worldgen.features.PLANT.grass_medium,
 				p = 0.2,
 			},
 			{
+				f = worldgen.features.PLANT.grass_medium,
+				p = 0.5,
+			},
+			{
+				f = worldgen.features.PLANT.grass_medium,
+				p = 0.1,
+			},
+			{
 				f = worldgen.features.PLANT.fern,
-				p = 0.4,
+				p = 0.1,
 			},
 			{
 				f = worldgen.features.PLANT.generic_plant,
-				p = 0.3,
+				p = 0.1,
 			},
 		},
 	},
 	params = {
+		subbiomes = {
+			TREE = {
+				TREE = {
+					worldgen.subbiomes.bushes,
+				},
+			},
+		},
 		landscape = {
 			"FOREST",
 		},

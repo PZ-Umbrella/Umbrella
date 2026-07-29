@@ -58,6 +58,13 @@ function __WorldSound:init(source, x, y, z, radius, volume, zombieIgnoreDist, st
 ---@return WorldSoundManager.WorldSound
 function __WorldSound:init(sourceIsZombie, x, y, z, radius, volume, stressHumans, zombieIgnoreDist, stressMod) end
 
+---@param other WorldSoundManager.WorldSound
+---@return WorldSoundManager.WorldSound
+function __WorldSound:init(other) end
+
+---@return boolean
+function __WorldSound:sourceIsVehicle() end
+
 WorldSound = {}
 
 ---@return WorldSoundManager.WorldSound

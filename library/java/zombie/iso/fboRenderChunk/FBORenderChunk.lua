@@ -100,7 +100,25 @@ FBORenderChunk.DIRTY_TREES = nil
 FBORenderChunk.FLOOR_HEIGHT = nil
 
 ---@type integer
-FBORenderChunk.JUMBO_HEIGHT = nil
+FBORenderChunk.FLOOR_WIDTH = nil
+
+---@type integer
+FBORenderChunk.JUMBO_L_HEIGHT = nil
+
+---@type integer
+FBORenderChunk.JUMBO_L_WIDTH = nil
+
+---@type integer
+FBORenderChunk.JUMBO_XL_HEIGHT = nil
+
+---@type integer
+FBORenderChunk.JUMBO_XL_WIDTH = nil
+
+---@type integer
+FBORenderChunk.JUMBO_XXL_HEIGHT = nil
+
+---@type integer
+FBORenderChunk.JUMBO_XXL_WIDTH = nil
 
 ---@type integer
 FBORenderChunk.LEVELS_PER_TEXTURE = nil

@@ -44,7 +44,7 @@ function ISRadialMenu:onGainJoypadFocus(joypadData) end
 ---@param joypadData JoypadData
 function ISRadialMenu:onJoypadButtonReleased(button, joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISRadialMenu:onJoypadDown(button, joypadData) end
 

@@ -16,10 +16,10 @@ function ISAttachAnimalToTree:complete() end
 ---@return number
 function ISAttachAnimalToTree:getDuration() end
 
----@return unknown?
+---@return InventoryItem?
 function ISAttachAnimalToTree:getRopeNotInHand(ropes) end
 
----@return unknown?
+---@return InventoryItem?
 function ISAttachAnimalToTree:getRopeToRemoveFromInventory() end
 
 ---@return boolean

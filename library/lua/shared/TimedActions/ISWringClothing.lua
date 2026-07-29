@@ -3,7 +3,6 @@
 ---@class ISWringClothing : ISBaseTimedAction
 ---@field forceProgressBar boolean
 ---@field item InventoryItem
----@field maxTime number
 ---@field sound integer?
 ISWringClothing = ISBaseTimedAction:derive("ISWringClothing")
 ISWringClothing.Type = "ISWringClothing"

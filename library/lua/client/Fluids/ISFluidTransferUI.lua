@@ -77,7 +77,7 @@ function ISFluidTransferUI:onContainerVerify(_item, _panel) end
 ---@param joypadData JoypadData
 function ISFluidTransferUI:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 ---@return unknown?
 function ISFluidTransferUI:onJoypadDown(button, joypadData) end

@@ -1,10 +1,7 @@
 ---@meta _
 
----@class SafeHouse
+---@class SafeHouse: Invite
 local __SafeHouse = {}
-
----@param invited string
-function __SafeHouse:addInvite(invited) end
 
 ---@param player string
 function __SafeHouse:addPlayer(player) end
@@ -82,10 +79,6 @@ function __SafeHouse:getY() end
 ---@return integer
 function __SafeHouse:getY2() end
 
----@param player string
----@return boolean
-function __SafeHouse:haveInvite(player) end
-
 ---@param player IsoPlayer
 ---@return boolean
 function __SafeHouse:isOwner(player) end
@@ -105,9 +98,6 @@ function __SafeHouse:playerAllowed(player) end
 ---@param name string
 ---@return boolean
 function __SafeHouse:playerAllowed(name) end
-
----@param player string
-function __SafeHouse:removeInvite(player) end
 
 ---@param player string
 function __SafeHouse:removePlayer(player) end

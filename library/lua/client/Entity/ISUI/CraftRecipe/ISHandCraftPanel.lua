@@ -93,6 +93,7 @@ function ISHandCraftPanel:setRecipeList(_recipeList) end
 ---@param _useListMode boolean
 function ISHandCraftPanel:setRecipeListMode(_useListMode) end
 
+---@param _recipeQuery List<CraftRecipe>
 function ISHandCraftPanel:setRecipes(_recipeQuery) end
 
 ---@param enabled boolean

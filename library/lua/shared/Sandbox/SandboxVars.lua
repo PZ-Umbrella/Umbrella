@@ -16,10 +16,12 @@
 ---@field AnimalMetaPredator boolean
 ---@field AnimalMetaStatsModifier integer
 ---@field AnimalMilkIncModifier integer
+---@field AnimalPathChance integer
 ---@field AnimalPregnancyTime integer
 ---@field AnimalRanchChance integer
 ---@field AnimalSoundAttractZombies boolean
 ---@field AnimalStatsModifier integer
+---@field AnimalTrackChance integer
 ---@field AnimalWoolIncModifier integer
 ---@field AnnotatedMapChance integer
 ---@field AttackBlockMovements boolean
@@ -37,6 +39,7 @@
 ---@field CharacterFreePoints integer
 ---@field ClayLakeChance number
 ---@field ClayRiverChance number
+---@field ClimateCycle integer
 ---@field ClothingDegradation integer
 ---@field ClothingLootNew number
 ---@field CommonLootFactor number
@@ -47,6 +50,7 @@
 ---@field CookwareLootNew number
 ---@field DamageToPlayerFromHitByACar integer
 ---@field DayLength integer
+---@field DayNightCycle integer
 ---@field DaysForRottenFoodRemoval integer
 ---@field DaysUntilMaximumDiminishedLoot integer
 ---@field DaysUntilMaximumLooted integer
@@ -77,6 +81,7 @@
 ---@field FirearmWeatherMultiplier number
 ---@field FireSpread boolean
 ---@field FishAbundance integer
+---@field FogCycle integer
 ---@field FoodLootNew number
 ---@field FoodRotSpeed integer
 ---@field FridgeFactor integer
@@ -86,6 +91,8 @@
 ---@field FuelStationGasMin number
 ---@field GeneratorFuelConsumption number
 ---@field GeneratorSpawning integer
+---@field GeneratorTileRange integer
+---@field GeneratorVerticalPowerRange integer
 ---@field Helicopter integer
 ---@field HoursForCorpseRemoval number
 ---@field HoursForLootRespawn integer
@@ -143,6 +150,7 @@
 ---@field RareLootFactor number
 ---@field RearVulnerability integer
 ---@field RecentlySurvivorVehicles integer
+---@field RecipeResourceLoot number
 ---@field RemoveStoryLoot boolean
 ---@field RemoveZombieLoot boolean
 ---@field RollsMultiplier number
@@ -151,6 +159,7 @@
 ---@field SeeNotLearntRecipe boolean
 ---@field SirenEffectsZombies boolean
 ---@field SirenShutoffHours number
+---@field SkillBookLoot number
 ---@field SleepingEvent integer
 ---@field StartDay integer
 ---@field StarterKit boolean
@@ -179,6 +188,7 @@
 ---@field ZombiePopLootEffect integer
 ---@field ZombieRespawn integer
 ---@field Zombies integer
+---@field ZombieVoronoiNoise boolean
 ---@field ZoneStoryChance integer
 SandboxVars = {}
 
@@ -253,6 +263,7 @@ SandboxVars = {}
 ---@field Cognition integer
 ---@field CrawlUnderVehicle integer
 ---@field DisableFakeDead integer
+---@field DoorOpeningPercentage number
 ---@field FenceDamageMultiplier number
 ---@field FenceThumpersRequired integer
 ---@field Hearing integer

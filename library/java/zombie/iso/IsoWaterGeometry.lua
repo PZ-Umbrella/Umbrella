@@ -6,12 +6,17 @@ local __IsoWaterGeometry = {}
 ---@return number
 function __IsoWaterGeometry:getFlow() end
 
+---@return number
+function __IsoWaterGeometry:getSpeed() end
+
 ---@return boolean
 function __IsoWaterGeometry:hasWater() end
 
 ---@param square IsoGridSquare
 ---@return IsoWaterGeometry
 function __IsoWaterGeometry:init(square) end
+
+function __IsoWaterGeometry:initRenderIfNeeded() end
 
 ---@return boolean
 function __IsoWaterGeometry:isActualShore() end

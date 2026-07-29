@@ -13,6 +13,5 @@ function ISBuildingRoomsEditor_ToolAddRoom:getLBPrompt() end
 ---@return string?
 function ISBuildingRoomsEditor_ToolAddRoom:getRBPrompt() end
 
----@param editor ISBuildingRoomsEditor
 ---@return ISBuildingRoomsEditor_ToolAddRoom
 function ISBuildingRoomsEditor_ToolAddRoom:new(editor) end

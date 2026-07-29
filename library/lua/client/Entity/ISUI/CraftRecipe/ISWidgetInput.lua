@@ -15,7 +15,6 @@
 ---@field iconBorderSizeX number
 ---@field iconBorderSizeY number
 ---@field iconConsumed ISImage
----@field iconMargin number
 ---@field iconReturned ISImage
 ---@field iconSize number
 ---@field iconTool ISImage

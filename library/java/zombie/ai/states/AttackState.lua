@@ -18,6 +18,9 @@ function __AttackState:execute(owner) end
 ---@param owner IsoGameCharacter
 function __AttackState:exit(owner) end
 
+---@return UpdateSchedulerSimulationLevel
+function __AttackState:getMinimumSimulationLevel() end
+
 ---Description copied from class: State
 ---@param owner IsoGameCharacter
 ---@return boolean

@@ -2,13 +2,11 @@
 
 ---@class ISRemoveItemTool : ISPanelJoypad
 ---@field close ISButton
----@field endPos table?
+---@field endPos { x: integer, y: integer }?
 ---@field highlightSquares IsoObject[]
 ---@field itemType ISRadioButtons
----@field marker WorldMarkers.GridSquareMarker?
 ---@field maxLines number
 ---@field multipleLine boolean
----@field name unknown?
 ---@field numLines number
 ---@field OnRenderTick function?
 ---@field player IsoPlayer
@@ -16,7 +14,7 @@
 ---@field select ISButton
 ---@field selectEnd boolean
 ---@field selectStart boolean
----@field startPos table?
+---@field startPos { x: integer, y: integer }?
 ---@field titlebarbkg Texture
 ---@field zPos number
 ISRemoveItemTool = ISPanelJoypad:derive("ISRemoveItemTool")
@@ -36,10 +34,6 @@ function ISRemoveItemTool:initialise() end
 
 ---@param button ISButton
 function ISRemoveItemTool:onClick(button) end
-
----@param buttons ISRadioButtons
----@param index integer
-function ISRemoveItemTool:onItemType(buttons, index) end
 
 ---@param x number
 ---@param y number

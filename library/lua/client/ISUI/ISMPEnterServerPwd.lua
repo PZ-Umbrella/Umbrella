@@ -1,13 +1,13 @@
 ---@meta
 
 ---@class ISMPEnterServerPwd : ISPanelJoypad
----@field addToFavAfter unknown
+---@field addToFavAfter boolean?
 ---@field closeBtn ISButton
 ---@field password ISTextEntryBox
 ---@field saveBtn ISButton
----@field server unknown
----@field ui MultiplayerUI
----@field ui_droplist unknown
+---@field server Server
+---@field ui ISUIElement
+---@field ui_droplist Texture
 ISMPEnterServerPwd = ISPanelJoypad:derive("ISMPEnterServerPwd")
 ISMPEnterServerPwd.Type = "ISMPEnterServerPwd"
 
@@ -26,7 +26,7 @@ function ISMPEnterServerPwd:onGainJoypadFocus(joypadData) end
 ---@param joypadData JoypadData
 function ISMPEnterServerPwd:onJoypadBeforeDeactivate(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISMPEnterServerPwd:onJoypadDown(button) end
 
 ---@param joypadData JoypadData
@@ -52,16 +52,22 @@ function ISMPEnterServerPwd:onMouseUp(x, y) end
 ---@param y number
 function ISMPEnterServerPwd:onMouseUpOutside(x, y) end
 
+---@param oldw number
+---@param oldh number
+---@param neww number
+---@param newh number
 function ISMPEnterServerPwd:onResolutionChange(oldw, oldh, neww, newh) end
 
 function ISMPEnterServerPwd:prerender() end
 
 function ISMPEnterServerPwd:render() end
 
+---@param addToFavAfter boolean
 function ISMPEnterServerPwd:setAddToFavAfter(addToFavAfter) end
 
 function ISMPEnterServerPwd:updateButtons() end
 
----@param ui MultiplayerUI
+---@param ui ISUIElement
+---@param server Server
 ---@return ISMPEnterServerPwd
 function ISMPEnterServerPwd:new(ui, server) end

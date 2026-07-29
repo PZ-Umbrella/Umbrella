@@ -74,6 +74,7 @@ function ISSearchWindow:onChangeSearchFocusCategory(_option) end
 
 function ISSearchWindow:onGainJoypadFocus() end
 
+---@param button ISButton
 function ISSearchWindow:onInfo(button) end
 
 function ISSearchWindow:onJoypadDirDown() end
@@ -84,7 +85,7 @@ function ISSearchWindow:onJoypadDirRight() end
 
 function ISSearchWindow:onJoypadDirUp() end
 
----@param _button ISButton
+---@param _button JoypadButton
 function ISSearchWindow:onJoypadDown(_button) end
 
 function ISSearchWindow:onLoseJoypadFocus() end

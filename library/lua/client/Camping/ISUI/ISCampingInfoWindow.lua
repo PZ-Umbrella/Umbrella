@@ -21,7 +21,7 @@ function ISCampingInfoWindow:createChildren() end
 ---@param joypadData JoypadData
 function ISCampingInfoWindow:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISCampingInfoWindow:onJoypadDown(button) end
 
 ---@param campfireObject IsoObject

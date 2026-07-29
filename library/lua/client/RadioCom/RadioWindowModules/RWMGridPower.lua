@@ -24,7 +24,7 @@ function RWMGridPower:getYPrompt() end
 
 function RWMGridPower:initialise() end
 
----@param button integer
+---@param button JoypadButton
 function RWMGridPower:onJoypadDown(button) end
 
 function RWMGridPower:prerender() end

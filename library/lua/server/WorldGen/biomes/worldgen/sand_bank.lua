@@ -11,7 +11,11 @@ worldgen.biomes.sand_bank = {
 			},
 			{
 				f = worldgen.features.GROUND.dirt,
-				p = 0.1,
+				p = 0.05,
+			},
+			{
+				f = worldgen.features.GROUND.clay,
+				p = 0.05,
 			},
 		},
 		TREE = {
@@ -38,14 +42,15 @@ worldgen.biomes.sand_bank = {
 		},
 	},
 	params = {
+		subbiomes = {
+			TREE = {
+				TREE = {
+					worldgen.subbiomes.grass,
+				},
+			},
+		},
 		landscape = {
 			"PLAIN",
-		},
-		plant = {
-			"GRASS",
-		},
-		bush = {
-			"DRY",
 		},
 		temperature = {
 			"HOT",

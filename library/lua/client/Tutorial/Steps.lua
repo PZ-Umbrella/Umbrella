@@ -237,6 +237,7 @@ function FightStep:KillZombie() end
 ---@return boolean
 function FightStep:LootKnife() end
 
+---@param zed IsoZombie
 function FightStep:OnMomDead(zed) end
 
 ---@return boolean

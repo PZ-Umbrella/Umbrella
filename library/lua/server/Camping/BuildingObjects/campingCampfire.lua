@@ -11,6 +11,8 @@ campingCampfire.Type = "campingCampfire"
 ---@param x number
 ---@param y number
 ---@param z number
+---@param north unknown?
+---@param sprite unknown?
 function campingCampfire:create(x, y, z, north, sprite) end
 
 ---@return unknown?
@@ -27,9 +29,11 @@ function campingCampfire:getRBPrompt() end
 function campingCampfire:isSquareFree(square) end
 
 ---@param square IsoGridSquare
+---@param north unknown?
 ---@return boolean
 function campingCampfire:isValid(square, north) end
 
+---@param action ISBaseTimedAction
 function campingCampfire:onTimedActionStart(action) end
 
 ---@param x number
@@ -38,6 +42,6 @@ function campingCampfire:onTimedActionStart(action) end
 ---@param square IsoGridSquare
 function campingCampfire:render(x, y, z, square) end
 
----@param character unknown?
+---@param character IsoPlayer?
 ---@return campingCampfire
 function campingCampfire:new(character) end

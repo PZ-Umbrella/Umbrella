@@ -156,7 +156,7 @@ function CoopOptionsScreenPanel:onGainJoypadFocus(joypadData) end
 ---@param joypadData JoypadData
 function CoopOptionsScreenPanel:onJoypadBeforeDeactivate(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function CoopOptionsScreenPanel:onJoypadDown(button, joypadData) end
 

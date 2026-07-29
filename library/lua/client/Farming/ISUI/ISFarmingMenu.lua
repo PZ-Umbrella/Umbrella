@@ -9,7 +9,6 @@ ISFarmingMenu.SlugRepellent = nil ---@type InventoryItem?
 ISFarmingMenu.cheat = false
 ISFarmingMenu.GardeningSprayAphids = nil ---@type InventoryItem?
 ISFarmingMenu.cursor = nil ---@type ISFarmingCursorMouse?
-ISFarmingMenu.TEMP_PLANT = nil ---@type table?
 
 ---@param worldObjects IsoObject[]
 ---@return boolean
@@ -46,6 +45,9 @@ function ISFarmingMenu.doFarmingMenu(player, context, worldobjects, test) end
 ---@param test boolean?
 ---@return boolean?
 function ISFarmingMenu.doFarmingMenu2(player, context, worldobjects, test) end
+
+---@return unknown?
+function ISFarmingMenu.getBestPlantFromTable(playerObj, worldobjects) end
 
 ---@return number
 function ISFarmingMenu.getFluidContainerMillilitresPerUse() end
@@ -184,6 +186,9 @@ function ISFarmingMenu.onSlugsCureSquareSelected() end
 ---@param sq IsoGridSquare
 ---@param context ISContextMenu
 function ISFarmingMenu.onWater(worldobjects, uses, handItem, playerObj, plant, sq, context) end
+
+---@return unknown?
+function ISFarmingMenu.pickBestPlantForJoypadPlayer(playerObj, plants) end
 
 ---@param prop umbrella.Farming.Props
 ---@return string

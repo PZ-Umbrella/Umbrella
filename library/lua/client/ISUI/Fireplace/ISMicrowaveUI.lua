@@ -28,7 +28,7 @@ function ISMicrowaveUI:onClick(button) end
 ---@param joypadData JoypadData
 function ISMicrowaveUI:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISMicrowaveUI:onJoypadDown(button) end
 
 function ISMicrowaveUI:prerender() end

@@ -9,11 +9,8 @@
 ---@field isAutoFill boolean
 ---@field isAutoFillX boolean
 ---@field isAutoFillY boolean
----@field itemMargin number
 ---@field itemNameMaxLines number
----@field itemSpacing number
 ---@field logic BaseCraftingLogic
----@field margin number
 ---@field panel ISPanel
 ---@field player IsoPlayer
 ---@field textureLink Texture
@@ -34,13 +31,14 @@ function ISWidgetIngredientsInputs:initialise() end
 ---@param joypadData JoypadData
 function ISWidgetIngredientsInputs:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISWidgetIngredientsInputs:onJoypadDown(button, joypadData) end
 
 ---@param joypadData JoypadData
 function ISWidgetIngredientsInputs:onLoseJoypadFocus(joypadData) end
 
+---@param _inputItems unknown?
 function ISWidgetIngredientsInputs:onRebuildItemNodes(_inputItems) end
 
 function ISWidgetIngredientsInputs:onRecipeChanged() end

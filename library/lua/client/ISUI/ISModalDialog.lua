@@ -1,7 +1,6 @@
 ---@meta
 
 ---@class ISModalDialog : ISPanelJoypad
----@field name unknown?
 ---@field no ISButton?
 ---@field ok ISButton?
 ---@field onclick umbrella.ISButton.OnClick?
@@ -35,7 +34,7 @@ function ISModalDialog:onGainJoypadFocus(joypadData) end
 ---@param joypadData JoypadData
 function ISModalDialog:onJoypadBeforeDeactivate(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISModalDialog:onJoypadDown(button) end
 
 ---@param joypadData JoypadData

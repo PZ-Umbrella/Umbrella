@@ -1,6 +1,7 @@
 ---@meta
 
 ---@class ISDropCorpseIntoContainer : ISBaseTimedAction
+---@field allowedWhileDraggingCorpses boolean
 ---@field grappledChar IGrappleable
 ---@field targetContainer ItemContainer
 ISDropCorpseIntoContainer = ISBaseTimedAction:derive("ISDropCorpseIntoContainer")

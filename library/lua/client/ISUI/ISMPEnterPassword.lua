@@ -1,14 +1,14 @@
 ---@meta
 
 ---@class ISMPEnterPassword : ISPanelJoypad
----@field account unknown
+---@field account Account
 ---@field accountPassword ISTextEntryBox
 ---@field cancelBtn ISButton
 ---@field connectBtn ISButton
 ---@field seePasswordBtn ISButton
----@field server unknown
----@field ui MultiplayerUI
----@field ui_password_eye unknown
+---@field server Server
+---@field ui ISUIElement
+---@field ui_password_eye Texture
 ISMPEnterPassword = ISPanelJoypad:derive("ISMPEnterPassword")
 ISMPEnterPassword.Type = "ISMPEnterPassword"
 
@@ -25,7 +25,7 @@ function ISMPEnterPassword:onGainJoypadFocus(joypadData) end
 ---@param joypadData JoypadData
 function ISMPEnterPassword:onJoypadBeforeDeactivate(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISMPEnterPassword:onJoypadDown(button) end
 
 ---@param joypadData JoypadData
@@ -51,10 +51,16 @@ function ISMPEnterPassword:onMouseUp(x, y) end
 ---@param y number
 function ISMPEnterPassword:onMouseUpOutside(x, y) end
 
+---@param oldw number
+---@param oldh number
+---@param neww number
+---@param newh number
 function ISMPEnterPassword:onResolutionChange(oldw, oldh, neww, newh) end
 
 function ISMPEnterPassword:prerender() end
 
----@param ui MultiplayerUI
+---@param ui ISUIElement
+---@param server Server
+---@param account Account
 ---@return ISMPEnterPassword
 function ISMPEnterPassword:new(ui, server, account) end

@@ -54,10 +54,9 @@ function ISWashClothing:useSoap(item, part) end
 
 ---@param character IsoPlayer
 ---@param sink IsoObject
----@param soaps InventoryItem[]
 ---@param item InventoryItem
 ---@param bloodAmount number
 ---@param dirtAmount number
 ---@param noSoap boolean
 ---@return ISWashClothing
-function ISWashClothing:new(character, sink, soaps, item, bloodAmount, dirtAmount, noSoap) end
+function ISWashClothing:new(character, sink, item, bloodAmount, dirtAmount, noSoap) end

@@ -12,6 +12,8 @@ function __WorldMapVisitedServer:forget(player) end
 ---@param connection IConnection
 function __WorldMapVisitedServer:loadUser(connection) end
 
+function __WorldMapVisitedServer:save() end
+
 ---@param player IsoPlayer
 ---@param minX integer
 ---@param minY integer

@@ -30,7 +30,8 @@ function __IsoDoor:TestPathfindCollide(obj, from, to) end
 function __IsoDoor:TestVision(from, to) end
 
 ---@param thumper IsoMovingObject
-function __IsoDoor:Thump(thumper) end
+---@param thumpEventCount integer
+function __IsoDoor:Thump(thumper, thumpEventCount) end
 
 ---@param chr IsoGameCharacter
 function __IsoDoor:ToggleDoor(chr) end
@@ -283,6 +284,10 @@ function __IsoDoor:setLocked(bLocked) end
 
 ---@param lockedByKey boolean
 function __IsoDoor:setLockedByKey(lockedByKey) end
+
+---@param lockedByKey boolean
+---@param doSync boolean
+function __IsoDoor:setLockedByKey(lockedByKey, doSync) end
 
 ---@param open boolean
 function __IsoDoor:setOpen(open) end

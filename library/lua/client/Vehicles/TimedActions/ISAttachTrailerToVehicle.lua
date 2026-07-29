@@ -10,6 +10,10 @@
 ISAttachTrailerToVehicle = ISBaseTimedAction:derive("ISAttachTrailerToVehicle")
 ISAttachTrailerToVehicle.Type = "ISAttachTrailerToVehicle"
 
+function ISAttachTrailerToVehicle:attachTrailer() end
+
+function ISAttachTrailerToVehicle:detachTrailer() end
+
 ---@return boolean
 function ISAttachTrailerToVehicle:isValid() end
 

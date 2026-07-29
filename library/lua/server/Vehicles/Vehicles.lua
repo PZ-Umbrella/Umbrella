@@ -110,6 +110,8 @@ function __vehicles_Create.Radio_HAM(vehicle, part) end
 ---@param part VehiclePart
 function __vehicles_Create.Radio_Racecar(vehicle, part) end
 
+---@param vehicle BaseVehicle
+---@param part VehiclePart
 function __vehicles_Create.Seat_Racecar(vehicle, part) end
 
 ---@param vehicle BaseVehicle
@@ -198,62 +200,77 @@ local __vehicles_Update = {}
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
+---@param elapsedMinutes number
 function __vehicles_Update.Battery(vehicle, part, elapsedMinutes) end
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
+---@param elapsedMinutes number
 function __vehicles_Update.Brakes(vehicle, part, elapsedMinutes) end
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
+---@param elapsedMinutes number
 function __vehicles_Update.Engine(vehicle, part, elapsedMinutes) end
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
+---@param elapsedMinutes number
 function __vehicles_Update.EngineDoor(vehicle, part, elapsedMinutes) end
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
+---@param elapsedMinutes number
 function __vehicles_Update.GasTank(vehicle, part, elapsedMinutes) end
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
+---@param elapsedMinutes number
 function __vehicles_Update.Headlight(vehicle, part, elapsedMinutes) end
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
+---@param elapsedMinutes number
 function __vehicles_Update.Heater(vehicle, part, elapsedMinutes) end
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
+---@param elapsedMinutes number
 function __vehicles_Update.Lightbar(vehicle, part, elapsedMinutes) end
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
+---@param elapsedMinutes number
 function __vehicles_Update.Muffler(vehicle, part, elapsedMinutes) end
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
+---@param elapsedMinutes number
 function __vehicles_Update.PassengerCompartment(vehicle, part, elapsedMinutes) end
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
+---@param elapsedMinutes number
 function __vehicles_Update.Radio(vehicle, part, elapsedMinutes) end
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
+---@param elapsedMinutes number
 function __vehicles_Update.Suspension(vehicle, part, elapsedMinutes) end
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
+---@param elapsedMinutes number
 function __vehicles_Update.Tire(vehicle, part, elapsedMinutes) end
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
+---@param elapsedMinutes number
 function __vehicles_Update.TrailerAnimalFood(vehicle, part, elapsedMinutes) end
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
+---@param elapsedMinutes number
 function __vehicles_Update.TrunkDoor(vehicle, part, elapsedMinutes) end
 
 ---@class Vehicles.Use
@@ -261,18 +278,22 @@ local __vehicles_Use = {}
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
+---@param character IsoPlayer
 function __vehicles_Use.Door(vehicle, part, character) end
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
+---@param character IsoPlayer
 function __vehicles_Use.EngineDoor(vehicle, part, character) end
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
+---@param character IsoPlayer
 function __vehicles_Use.TrunkDoor(vehicle, part, character) end
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
+---@param character IsoPlayer
 function __vehicles_Use.TrunkDoorOpen(vehicle, part, character) end
 
 ---@class Vehicles.CheckEngine
@@ -380,7 +401,8 @@ function VehicleUtils.getContainers(playerNum) end
 ---@return number
 function VehicleUtils.getInsideTemperature(player) end
 
----@param containers table
+---@param containers ItemContainer[]
+---@param container ItemContainer
 function VehicleUtils.getInventoryContainersRecurse(containers, container) end
 
 ---@param playerNum integer
@@ -414,8 +436,7 @@ function VehicleUtils.lowerUninstalledItemCondition(part, item, mechanicSkill, c
 
 ---@param character IsoPlayer
 ---@param vehicle BaseVehicle
----@param pressedNotTapped boolean
-function VehicleUtils.OnUseVehicle(character, vehicle, pressedNotTapped) end
+function VehicleUtils.OnUseVehicle(character, vehicle) end
 
 ---@param character IsoPlayer
 ---@param vehicle BaseVehicle

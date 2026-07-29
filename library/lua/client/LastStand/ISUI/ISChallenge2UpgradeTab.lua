@@ -7,7 +7,7 @@
 ---@field playerScreen ISChallenge2PlayerUpWindow
 ---@field repairScreen ISChallenge2WeaponRepairWindow
 ---@field weaponScreen ISChallenge2WeaponUpWindow
-ISChallenge2UpgradeTab = ISCollapsableWindow:derive("ISChallenge2UpgradeTab")
+ISChallenge2UpgradeTab = {}
 ISChallenge2UpgradeTab.Type = "ISChallenge2UpgradeTab"
 ISChallenge2UpgradeTab.instance = {} ---@type table<integer, ISChallenge2UpgradeTab>
 
@@ -20,7 +20,7 @@ function ISChallenge2UpgradeTab:initialise() end
 ---@param joypadData JoypadData
 function ISChallenge2UpgradeTab:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISChallenge2UpgradeTab:onJoypadDown(button, joypadData) end
 

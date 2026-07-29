@@ -9,7 +9,6 @@
 ---@field buttonLess ISButton
 ---@field buttonMax ISButton
 ---@field buttonMore ISButton
----@field buttonPadding number
 ---@field colProgress umbrella.RGBA
 ---@field craftTimes integer?
 ---@field durationLabel ISLabel
@@ -19,7 +18,6 @@
 ---@field isAutoFillX boolean
 ---@field isAutoFillY boolean
 ---@field logic HandcraftLogic
----@field margin number
 ---@field origButtonHeight number
 ---@field player IsoPlayer
 ---@field progressBar ISProgressBar

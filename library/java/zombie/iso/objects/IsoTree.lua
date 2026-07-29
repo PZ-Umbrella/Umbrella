@@ -66,6 +66,8 @@ function __IsoTree:load(input, WorldVersion, IS_DEBUG_SAVE) end
 ---@param shader Shader
 function __IsoTree:render(x, y, z, col, bDoAttached, bWallLightingPass, shader) end
 
+function __IsoTree:reset() end
+
 ---@param output ByteBuffer
 ---@param IS_DEBUG_SAVE boolean
 function __IsoTree:save(output, IS_DEBUG_SAVE) end
@@ -82,6 +84,21 @@ function __IsoTree:toppleTree() end
 function __IsoTree:toppleTree(owner) end
 
 IsoTree = {}
+
+---@type integer
+IsoTree.MAX_SIZE = nil
+
+---@type integer
+IsoTree.SIZE_JUMBO = nil
+
+---@type integer
+IsoTree.SIZE_JUMBO_L = nil
+
+---@type integer
+IsoTree.SIZE_JUMBO_XL = nil
+
+---@type integer
+IsoTree.SIZE_JUMBO_XXL = nil
 
 ---@param playerIndex integer
 function IsoTree.checkChopTreeIndicators(playerIndex) end

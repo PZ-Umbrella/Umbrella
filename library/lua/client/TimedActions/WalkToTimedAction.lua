@@ -5,6 +5,7 @@
 ---@class ISWalkToTimedAction : ISBaseTimedAction
 ---@field additionalContext unknown?
 ---@field additionalTest umbrella.ISWalkToTimedAction.AdditionalTest?
+---@field allowedWhileDraggingCorpses boolean
 ---@field character IsoPlayer
 ---@field location IsoGridSquare
 ---@field onCompleteArgs table?

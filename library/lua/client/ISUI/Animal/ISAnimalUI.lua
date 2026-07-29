@@ -57,13 +57,14 @@ function ISAnimalUI:onChangeGender() end
 ---@param joypadData JoypadData
 function ISAnimalUI:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISAnimalUI:onJoypadDown(button, joypadData) end
 
 function ISAnimalUI:onMilkAnimal() end
 
 ---@param button ISButton
+---@param animal unknown?
 function ISAnimalUI:onRenameAnimalClick(button, animal) end
 
 function ISAnimalUI:onSetAge() end

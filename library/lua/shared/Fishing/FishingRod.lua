@@ -5,7 +5,7 @@ Fishing = {}
 Fishing.FishingRod = nil ---@type Fishing.FishingRod
 
 ---@class Fishing.FishingRod
----@field bobber Fishing.Bobber?
+---@field bobber Bobber?
 ---@field currentLineStatus string?
 ---@field highTensionTimer number
 ---@field isFirstFishing boolean

@@ -27,7 +27,8 @@ function __IsoWindow:TestCollide(obj, from, to) end
 function __IsoWindow:TestVision(from, to) end
 
 ---@param thumper IsoMovingObject
-function __IsoWindow:Thump(thumper) end
+---@param thumpEventCount integer
+function __IsoWindow:Thump(thumper, thumpEventCount) end
 
 ---@param chr IsoGameCharacter
 function __IsoWindow:ToggleWindow(chr) end

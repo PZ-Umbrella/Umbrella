@@ -1,33 +1,37 @@
 ---@meta
 
 ---@class CharacterJoypadBindingUIEntry : ISBaseObject
----@field bindingKey unknown
----@field bindingRowPanel unknown
+---@field bindingKey umbrella.PhysicalJoypadElement
+---@field bindingRowPanel CharacterJoypadBindingUIRow
 ---@field characterJoypadBindingUI CharacterJoypadBindingUI
----@field containerPanel unknown?
+---@field containerPanel ISUIElement?
 ---@field initialBevelDirection string
 CharacterJoypadBindingUIEntry = ISBaseObject:derive("CharacterJoypadBindingUIEntry")
 CharacterJoypadBindingUIEntry.Type = "CharacterJoypadBindingUIEntry"
 
----@return unknown
+---@return CharacterJoypadBindingUIRow
 function CharacterJoypadBindingUIEntry:getBindingRowPanel() end
 
 ---@return ISLine?
 function CharacterJoypadBindingUIEntry:getLineToRowAbsolute() end
 
----@return unknown
+---@return ISStyle
 function CharacterJoypadBindingUIEntry:getStyle() end
 
 function CharacterJoypadBindingUIEntry:initBindingRowPanel() end
 
+---@param rowPanel CharacterJoypadBindingUIRow
 function CharacterJoypadBindingUIEntry:onBindingRowPanelEditingActivated(rowPanel) end
 
 function CharacterJoypadBindingUIEntry:onBindingRowPanelLayoutChanged() end
 
+---@param sender CharacterJoypadBindingUIRow
+---@param charBinding umbrella.PhysicalJoypadElement
 function CharacterJoypadBindingUIEntry:onJoypadAxisBindingValueEdited(sender, charBinding) end
 
 function CharacterJoypadBindingUIEntry:onJoypadButtonBindingEdited() end
 
+---@param containerPanel ISUIElement
 function CharacterJoypadBindingUIEntry:setContainerPanel(containerPanel) end
 
 ---@param isEditing boolean
@@ -37,5 +41,7 @@ function CharacterJoypadBindingUIEntry:setEditSelected(isEditing) end
 function CharacterJoypadBindingUIEntry:tostring() end
 
 ---@param characterJoypadBindingUI CharacterJoypadBindingUI
+---@param containerPanel ISUIElement
+---@param bindingKey umbrella.PhysicalJoypadElement
 ---@return CharacterJoypadBindingUIEntry
 function CharacterJoypadBindingUIEntry:new(characterJoypadBindingUI, containerPanel, bindingKey) end

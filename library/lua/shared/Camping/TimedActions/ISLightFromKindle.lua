@@ -2,7 +2,6 @@
 
 ---@class ISLightFromKindle : ISBaseTimedAction
 ---@field campfire SCampfireGlobalObject
----@field isOutdoorsMan boolean
 ---@field item InventoryItem?
 ---@field plank InventoryItem
 ISLightFromKindle = ISBaseTimedAction:derive("ISLightFromKindle")

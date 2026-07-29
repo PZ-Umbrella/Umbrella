@@ -30,6 +30,18 @@ function __ServerSettingsManager:isValidNewName(newName) end
 
 function __ServerSettingsManager:readAllSettings() end
 
+---@param filename string
+---@return boolean
+function __ServerSettingsManager:settingsFolderNameValidLength(filename) end
+
+---@param filename string
+---@return boolean
+function __ServerSettingsManager:settingsFolderPathValidLength(filename) end
+
+---@param filename string
+---@return boolean
+function __ServerSettingsManager:settingsFolderValidLengthChecks(filename) end
+
 ServerSettingsManager = {}
 
 ---@type ServerSettingsManager

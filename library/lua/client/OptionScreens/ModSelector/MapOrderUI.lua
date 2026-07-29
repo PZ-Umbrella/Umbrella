@@ -37,7 +37,7 @@ function __modSelector_MapOrderUI:onJoypadDirRight(joypadData) end
 ---@param joypadData JoypadData
 function __modSelector_MapOrderUI:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __modSelector_MapOrderUI:onJoypadDown(button, joypadData) end
 

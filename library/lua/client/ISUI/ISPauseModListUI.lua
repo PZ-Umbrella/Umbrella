@@ -6,7 +6,6 @@ PauseBuggedModList = {}
 ---@class ISPauseModListUI : ISPanelJoypad
 ---@field chatText ISRichTextPanel
 ---@field destroyOnClick boolean
----@field name unknown?
 ISPauseModListUI = ISPanelJoypad:derive("ISPauseModListUI")
 ISPauseModListUI.Type = "ISPauseModListUI"
 

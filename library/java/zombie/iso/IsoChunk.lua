@@ -23,8 +23,9 @@ function __IsoChunk:IsOnScreen(halfTileBorder) end
 
 ---@param wx integer
 ---@param wy integer
+---@param fromServer ByteBuffer
 ---@return boolean
-function __IsoChunk:LoadBrandNew(wx, wy) end
+function __IsoChunk:LoadChunk(wx, wy, fromServer) end
 
 ---@param wx integer
 ---@param wy integer
@@ -33,18 +34,6 @@ function __IsoChunk:LoadBrandNew(wx, wy) end
 function __IsoChunk:LoadFromBuffer(wx, wy, bb) end
 
 function __IsoChunk:LoadFromDisk() end
-
----@param bb ByteBuffer
-function __IsoChunk:LoadFromDiskOrBuffer(bb) end
-
----@param bb ByteBuffer
-function __IsoChunk:LoadFromDiskOrBufferInternal(bb) end
-
----@param wx integer
----@param wy integer
----@param fromServer ByteBuffer
----@return boolean
-function __IsoChunk:LoadOrCreate(wx, wy, fromServer) end
 
 ---@param v BaseVehicle
 ---@param zone Zone
@@ -208,6 +197,9 @@ function __IsoChunk:getVispolyDataForLevel(z) end
 ---@param coord SquareCoord
 ---@return boolean
 function __IsoChunk:hasAttachmentsPartial(coord) end
+
+---@return boolean
+function __IsoChunk:hasEmptySquaresOnLevelZero() end
 
 ---@return boolean
 function __IsoChunk:hasFence() end

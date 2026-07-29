@@ -88,11 +88,11 @@ function ISWorldMapSymbols:onButtonClick(button) end
 ---@param joypadData JoypadData
 function ISWorldMapSymbols:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISWorldMapSymbols:onJoypadDown(button, joypadData) end
 
----@param button ISButton
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISWorldMapSymbols:onJoypadDownInMap(button, joypadData) end
 
@@ -153,6 +153,7 @@ function ISWorldMapSymbols:renderSymbol(symbol, x, y) end
 ---@param y number
 ---@param degrees number
 ---@param scale number
+---@param bMatchPerspective boolean
 ---@param bApplyZoom boolean
 function ISWorldMapSymbols:renderSymbolAux(symbol, x, y, degrees, scale, bMatchPerspective, bApplyZoom) end
 
@@ -210,7 +211,7 @@ function ISWorldMapSymbolTool:getMouseY() end
 ---@return boolean
 function ISWorldMapSymbolTool:isKeyConsumed(key) end
 
----@param button ISButton
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISWorldMapSymbolTool:onJoypadDownInMap(button, joypadData) end
 
@@ -268,7 +269,7 @@ function ISWorldMapSymbolTool_AddSymbol:deactivate() end
 ---@return string
 function ISWorldMapSymbolTool_AddSymbol:getJoypadAButtonText() end
 
----@param button ISButton
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISWorldMapSymbolTool_AddSymbol:onJoypadDownInMap(button, joypadData) end
 
@@ -299,7 +300,7 @@ function ISWorldMapSymbolTool_AddNote:deactivate() end
 ---@return string
 function ISWorldMapSymbolTool_AddNote:getJoypadAButtonText() end
 
----@param button ISButton
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISWorldMapSymbolTool_AddNote:onJoypadDownInMap(button, joypadData) end
 
@@ -353,9 +354,11 @@ function ISWorldMapSymbolTool_EditAnnotation:onMouseDown(x, y) end
 function ISWorldMapSymbolTool_EditAnnotation:onMouseUp(x, y) end
 
 ---@param button ISButton
+---@param symbol WorldMapBaseSymbol
 function ISWorldMapSymbolTool_EditAnnotation:onNoteEdited(button, symbol) end
 
 ---@param button ISButton
+---@param symbol WorldMapBaseSymbol
 function ISWorldMapSymbolTool_EditAnnotation:onSymbolEdited(button, symbol) end
 
 function ISWorldMapSymbolTool_EditAnnotation:render() end
@@ -387,7 +390,7 @@ function ISWorldMapSymbolTool_MoveAnnotation:deactivate() end
 ---@return string?
 function ISWorldMapSymbolTool_MoveAnnotation:getJoypadAButtonText() end
 
----@param button ISButton
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISWorldMapSymbolTool_MoveAnnotation:onJoypadDownInMap(button, joypadData) end
 
@@ -446,13 +449,15 @@ function ISWorldMapSymbolTool_RotateAnnotation:cancelDrag() end
 
 function ISWorldMapSymbolTool_RotateAnnotation:deactivate() end
 
+---@param mx number
+---@param my number
 ---@return number
 function ISWorldMapSymbolTool_RotateAnnotation:getAngleTo(mx, my) end
 
 ---@return string?
 function ISWorldMapSymbolTool_RotateAnnotation:getJoypadAButtonText() end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISWorldMapSymbolTool_RotateAnnotation:onJoypadDownInMap(button, joypadData) end
 
@@ -506,9 +511,10 @@ function ISWorldMapSymbolTool_RemoveAnnotation:deactivate() end
 function ISWorldMapSymbolTool_RemoveAnnotation:getJoypadAButtonText() end
 
 ---@param button ISButton
+---@param symbolIndex integer
 function ISWorldMapSymbolTool_RemoveAnnotation:onConfirmRemoveAnnotation(button, symbolIndex) end
 
----@param button ISButton
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISWorldMapSymbolTool_RemoveAnnotation:onJoypadDownInMap(button, joypadData) end
 
@@ -543,7 +549,7 @@ function ISWorldMapSymbolTool_Sharing:deactivate() end
 ---@return string?
 function ISWorldMapSymbolTool_Sharing:getJoypadAButtonText() end
 
----@param button ISButton
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISWorldMapSymbolTool_Sharing:onJoypadDownInMap(button, joypadData) end
 
@@ -572,7 +578,7 @@ function ISWorldMapSymbolTool_Sharing:new(symbolsUI) end
 ISWorldMapSymbolsTabPanel = ISTabPanel:derive("ISWorldMapSymbolsTabPanel")
 ISWorldMapSymbolsTabPanel.Type = "ISWorldMapSymbolsTabPanel"
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISWorldMapSymbolsTabPanel:onJoypadDown(button, joypadData) end
 

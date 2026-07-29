@@ -12,6 +12,9 @@ function __LungeState:execute(owner) end
 ---@param chr IsoGameCharacter
 function __LungeState:exit(chr) end
 
+---@return UpdateSchedulerSimulationLevel
+function __LungeState:getMinimumSimulationLevel() end
+
 ---Return TRUE if the owner is currently moving.
 ---  Defaults to FALSE
 ---@param owner IsoGameCharacter

@@ -26,7 +26,7 @@ function __modSelector_ModListBox:enableTickMod() end
 ---@return umbrella.ModSelector.ModData?
 function __modSelector_ModListBox:getSelectedModData() end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function __modSelector_ModListBox:onJoypadDown(button, joypadData) end
 

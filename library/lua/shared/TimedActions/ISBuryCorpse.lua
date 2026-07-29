@@ -1,6 +1,7 @@
 ---@meta
 
 ---@class ISBuryCorpse : ISBaseTimedAction
+---@field allowedWhileDraggingCorpses boolean
 ---@field bodySquare IsoGridSquare
 ---@field grave IsoThumpable
 ---@field primaryHandItem InventoryItem?

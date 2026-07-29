@@ -54,7 +54,7 @@ function ISAddDesignationAnimalZoneUI:onJoypadDirRight(joypadData) end
 ---@param joypadData JoypadData
 function ISAddDesignationAnimalZoneUI:onJoypadDirUp(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISAddDesignationAnimalZoneUI:onJoypadDown(button, joypadData) end
 

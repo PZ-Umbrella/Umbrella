@@ -39,10 +39,6 @@ function __IsoMovingObject:DoCollideWorE() end
 ---@return number
 function __IsoMovingObject:Hit(weapon, wielder, damageSplit, bIgnoreDamage, modDelta) end
 
----This function calculate count of attackers
----@return integer # 0 - no attackets, 1 - one player can attack this character, 2 - multiply players can attack this character
-function __IsoMovingObject:canHaveMultipleHits() end
-
 function __IsoMovingObject:closeAnimationRecorder() end
 
 ---@param obj IsoObject
@@ -92,6 +88,9 @@ function __IsoMovingObject:getCollidedObject() end
 
 ---@return IsoBuilding
 function __IsoMovingObject:getCurrentBuilding() end
+
+---@return UpdateSchedulerSimulationLevel
+function __IsoMovingObject:getCurrentSimulationLevel() end
 
 ---@return IsoGridSquare # the current
 function __IsoMovingObject:getCurrentSquare() end
@@ -224,27 +223,6 @@ function __IsoMovingObject:getScreenX() end
 
 ---@return number
 function __IsoMovingObject:getScreenY() end
-
----@return string # the ScriptModule
-function __IsoMovingObject:getScriptModule() end
-
----@return number
-function __IsoMovingObject:getScriptNextX() end
-
----@return integer
-function __IsoMovingObject:getScriptNextXi() end
-
----@return number
-function __IsoMovingObject:getScriptNextY() end
-
----@return integer
-function __IsoMovingObject:getScriptNextYi() end
-
----@return number # the scriptnx
-function __IsoMovingObject:getScriptnx() end
-
----@return number # the scriptny
-function __IsoMovingObject:getScriptny() end
 
 ---@return IsoGridSquare
 function __IsoMovingObject:getSquare() end
@@ -443,6 +421,9 @@ function __IsoMovingObject:setCollidedWithDoor(CollidedWithDoor) end
 ---@param current IsoGridSquare the current to set
 function __IsoMovingObject:setCurrent(current) end
 
+---@param simulationLevel UpdateSchedulerSimulationLevel
+function __IsoMovingObject:setCurrentSimulationLevel(simulationLevel) end
+
 ---@param square IsoGridSquare
 function __IsoMovingObject:setCurrentSquare(square) end
 
@@ -553,23 +534,6 @@ function __IsoMovingObject:setPosition(pos) end
 ---@param y number
 ---@param z number
 function __IsoMovingObject:setPosition(x, y, z) end
-
----@param ScriptModule string the ScriptModule to set
-function __IsoMovingObject:setScriptModule(ScriptModule) end
-
----@param scriptnx number
----@return number
-function __IsoMovingObject:setScriptNextX(scriptnx) end
-
----@param scriptny number
----@return number
-function __IsoMovingObject:setScriptNextY(scriptny) end
-
----@param scriptnx number the scriptnx to set
-function __IsoMovingObject:setScriptnx(scriptnx) end
-
----@param scriptny number the scriptny to set
-function __IsoMovingObject:setScriptny(scriptny) end
 
 ---@param shootable boolean the shootable to set
 function __IsoMovingObject:setShootable(shootable) end

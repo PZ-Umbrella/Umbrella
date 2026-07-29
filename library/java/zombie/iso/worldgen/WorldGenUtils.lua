@@ -33,6 +33,10 @@ function __WorldGenUtils:doesFloorExit(cell, tileX, tileY, z) end
 ---@return string
 function __WorldGenUtils:generateSeed() end
 
+---@param b integer
+---@return integer
+function __WorldGenUtils:getCornerOfGeneration(b) end
+
 ---@param i integer
 ---@return string
 function __WorldGenUtils:getFile(i) end

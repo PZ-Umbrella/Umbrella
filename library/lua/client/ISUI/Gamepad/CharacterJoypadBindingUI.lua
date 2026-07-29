@@ -1,7 +1,9 @@
 ---@meta
 
+---@alias umbrella.PhysicalJoypadElement JoypadButton | JoypadAxis1d | JoypadAxis2d
+
 ---@class CharacterJoypadBindingUI : ISBaseObject
----@field bindingKeys table
+---@field bindingKeys umbrella.PhysicalJoypadElement[]
 ---@field controllerBindingsEditorPanel ISControllerBindingsEditorPanel
 CharacterJoypadBindingUI = ISBaseObject:derive("CharacterJoypadBindingUI")
 CharacterJoypadBindingUI.Type = "CharacterJoypadBindingUI"
@@ -17,26 +19,33 @@ CharacterJoypadBindingUI.BindingPanel = {
 	BottomRight = "BottomRight",
 }
 
----@return table
+---@return umbrella.PhysicalJoypadElement[]
 function CharacterJoypadBindingUI.getAllPhysicalJoypadElements() end
 
+---@param containerPanel ISUIElement
 function CharacterJoypadBindingUI.performLayoutRows(containerPanel) end
 
+---@param containerPanel ISUIElement
+---@param bindingKey umbrella.PhysicalJoypadElement
 function CharacterJoypadBindingUI:createGamepadUIBinding(containerPanel, bindingKey) end
 
----@return table
+---@return CharacterJoypadBindingUIEntry[]
 function CharacterJoypadBindingUI:getAllEntries() end
 
 ---@return ISUISprite
 function CharacterJoypadBindingUI:getSprite() end
 
----@return unknown
+---@return ISStyle
 function CharacterJoypadBindingUI:getStyle() end
 
 function CharacterJoypadBindingUI:onBindingEntryLayoutChanged() end
 
+---@param uiBinding CharacterJoypadBindingUIEntry
 function CharacterJoypadBindingUI:onBindingUIPanelEditingActivated(uiBinding) end
 
+---@param uiBinding CharacterJoypadBindingUIEntry
+---@param uiRow CharacterJoypadBindingUIRow
+---@param charBinding umbrella.PhysicalJoypadElement
 function CharacterJoypadBindingUI:onJoypadAxisBindingValueEdited(uiBinding, uiRow, charBinding) end
 
 function CharacterJoypadBindingUI:onJoypadButtonBindingEdited() end

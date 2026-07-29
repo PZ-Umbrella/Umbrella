@@ -24,7 +24,7 @@ function CharacterCreationAvatar:onJoypadDirLeft(joyadData) end
 ---@param joyadData JoypadData
 function CharacterCreationAvatar:onJoypadDirRight(joyadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joyadData JoypadData
 function CharacterCreationAvatar:onJoypadDown(button, joyadData) end
 

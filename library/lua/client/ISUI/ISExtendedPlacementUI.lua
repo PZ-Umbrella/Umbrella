@@ -5,7 +5,7 @@
 ---@field closeBtn ISButton
 ---@field drawJoypadFocus boolean
 ---@field font UIFont
----@field fontsmall unknown
+---@field fontsmall UIFont
 ---@field gizmo string
 ---@field ignoreSliderValueChange boolean
 ---@field item InventoryItem
@@ -44,9 +44,10 @@
 ---@field worlditem IsoWorldInventoryObject
 ISExtendedPlacementUI = ISCollapsableWindow:derive("ISExtendedPlacementUI")
 ISExtendedPlacementUI.Type = "ISExtendedPlacementUI"
-ISExtendedPlacementUI.windows = {}
+ISExtendedPlacementUI.windows = {} ---@type table<integer, ISExtendedPlacementUI>
 
----@return unknown
+---@param playerIndex integer
+---@return ISExtendedPlacementUI?
 function ISExtendedPlacementUI.GetWindowForPlayer(playerIndex) end
 
 function ISExtendedPlacementUI:adjust() end
@@ -74,14 +75,16 @@ function ISExtendedPlacementUI:onAxisTextChange(box) end
 ---@param joypadData JoypadData
 function ISExtendedPlacementUI:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISExtendedPlacementUI:onJoypadDown(button) end
 
 ---@param key integer
 function ISExtendedPlacementUI:onKeyRelease(key) end
 
+---@param vector3 Vector3f
 function ISExtendedPlacementUI:onRotateGizmo(vector3) end
 
+---@param vector3 Vector3f
 function ISExtendedPlacementUI:onTranslateGizmo(vector3) end
 
 function ISExtendedPlacementUI:prerender() end

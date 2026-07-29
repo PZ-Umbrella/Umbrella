@@ -13,7 +13,6 @@
 ---@field infoBody TextDrawObject
 ---@field mouseOverUI boolean
 ---@field moveableTexture umbrella.ISMoveableInfoWindow.TextureInfo?
----@field name unknown?
 ---@field playerNum integer
 ---@field square IsoGridSquare
 ---@field textureList umbrella.ISMoveableInfoWindow.TextureInfo[]
@@ -48,7 +47,7 @@ function ISMoveableInfoWindow:isMouseOverUI() end
 ---@param joypadData JoypadData
 function ISMoveableInfoWindow:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISMoveableInfoWindow:onJoypadDown(button) end
 
 ---@param x number

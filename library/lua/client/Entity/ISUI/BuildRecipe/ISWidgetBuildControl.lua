@@ -13,7 +13,6 @@
 ---@field isAutoFillX boolean
 ---@field isAutoFillY boolean
 ---@field logic BuildLogic
----@field margin number
 ---@field origButtonHeight number
 ---@field player IsoPlayer
 ---@field slider ISSliderPanel

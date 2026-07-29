@@ -71,8 +71,8 @@ function __IsoZombie:addRandomVisualDamages() end
 ---@param bloody boolean
 function __IsoZombie:addVisualBandage(bodyPart, bloody) end
 
----@return IsoDeadBody
-function __IsoZombie:becomeCorpseSilently() end
+---@return boolean
+function __IsoZombie:allowsInvisibleAnimationSkips() end
 
 ---@param player IsoPlayer
 ---@return boolean
@@ -153,9 +153,6 @@ function __IsoZombie:getHeadSquare(player) end
 ---@return integer
 function __IsoZombie:getHitHeadWhileOnFloor() end
 
----@return HitReactionNetworkAI
-function __IsoZombie:getHitReactionNetworkAI() end
-
 ---@return integer
 function __IsoZombie:getHitTime() end
 
@@ -171,7 +168,7 @@ function __IsoZombie:getItemVisuals(itemVisuals) end
 ---@return string
 function __IsoZombie:getLastHitPart() end
 
----@return NetworkCharacterAI
+---@return NetworkZombieAI
 function __IsoZombie:getNetworkCharacterAI() end
 
 ---@return string
@@ -252,6 +249,10 @@ function __IsoZombie:getZombieLungeSpeed() end
 ---@param temp Vector2
 function __IsoZombie:getZombieWalkTowardSpeed(speed, dist, temp) end
 
+---@param hitHead boolean
+---@return boolean
+function __IsoZombie:helmetFallFromVisuals(hitHead) end
+
 ---@param weapon HandWeapon
 ---@param wielder IsoGameCharacter
 ---@param bIgnoreDamage boolean
@@ -308,9 +309,6 @@ function __IsoZombie:isKnifeDeath() end
 ---@param other IsoMovingObject
 ---@return boolean
 function __IsoZombie:isLeadAggro(other) end
-
----@return boolean
-function __IsoZombie:isLocal() end
 
 ---@return boolean
 function __IsoZombie:isMovingToPlayerSound() end
@@ -441,6 +439,8 @@ function __IsoZombie:playHurtSound() end
 function __IsoZombie:postupdate() end
 
 function __IsoZombie:preupdate() end
+
+function __IsoZombie:registerECSComponents() end
 
 function __IsoZombie:removeFromWorld() end
 
@@ -701,6 +701,9 @@ IsoZombie.PALETTE_COUNT = nil
 
 ---@type integer
 IsoZombie.SPEED_FAST_SHAMBLER = nil
+
+---@type integer
+IsoZombie.SPEED_NONE = nil
 
 ---@type integer
 IsoZombie.SPEED_RANDOM = nil

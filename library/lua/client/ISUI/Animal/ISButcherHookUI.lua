@@ -41,6 +41,7 @@ ISButcherHookUI = ISCollapsableWindowJoypad:derive("ISButcherHookUI")
 ISButcherHookUI.Type = "ISButcherHookUI"
 ISButcherHookUI.ui = nil ---@type ISButcherHookUI?
 
+---@param self ISButcherHookUI
 function ISButcherHookUI.onHookReceivedNetUpdate(self) end
 
 ---@param hook IsoButcherHook
@@ -98,7 +99,7 @@ function ISButcherHookUI:onCutCorpse() end
 ---@param joypadData JoypadData
 function ISButcherHookUI:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 ---@param joypadData JoypadData
 function ISButcherHookUI:onJoypadDown(button, joypadData) end
 

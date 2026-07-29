@@ -344,8 +344,10 @@ function TileGeometryEditor_Scene:renderSolidSquareBox() end
 ---@param tileName string
 function TileGeometryEditor_Scene:renderSpriteGridTextureMask(sx, sy, sx2, sy2, pixelSize, tileName) end
 
+---@param sprite IsoSprite
 ---@param dx number
 ---@param dy number
+---@param dz number
 function TileGeometryEditor_Scene:renderSpriteGridTile(sprite, dx, dy, dz) end
 
 function TileGeometryEditor_Scene:renderSquareBox() end

@@ -3,7 +3,6 @@
 ---@class ISAdminMessage : ISPanel
 ---@field chatText ISRichTextPanel
 ---@field destroyOnClick boolean
----@field name unknown?
 ---@field no ISButton?
 ---@field px number
 ---@field py number

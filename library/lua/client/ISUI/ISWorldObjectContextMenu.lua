@@ -45,9 +45,15 @@ ISWorldObjectContextMenu.chairCheckList = {
 ---@param obj IsoObject
 function ISWorldObjectContextMenu.activateRadio(pl, obj) end
 
+---@param playerObj IsoPlayer
+---@param fluidContainer FluidContainer
+---@param fluid Fluid
 function ISWorldObjectContextMenu.addFluidDebug(playerObj, fluidContainer, fluid) end
 
+---@param player integer
 ---@param worldobjects IsoObject[]
+---@param subMenuGrab ISContextMenu
+---@param corpse IsoDeadBody
 function ISWorldObjectContextMenu.addGrabCorpseSubmenuOption(player, worldobjects, subMenuGrab, corpse) end
 
 ---@param context ISContextMenu
@@ -146,26 +152,10 @@ function ISWorldObjectContextMenu.doCleanGraffiti(playerObj, square) end
 ---@param square IsoGridSquare
 function ISWorldObjectContextMenu.doCreateChumOptions_makeChum(pl, square) end
 
----@param object IsoObject
----@param player integer
----@param context ISContextMenu
-function ISWorldObjectContextMenu.doDrinkWaterMenu(object, player, context) end
-
----@param sink IsoObject
----@param playerNum integer
----@param context ISContextMenu
-function ISWorldObjectContextMenu.doFillFluidMenu(sink, playerNum, context) end
-
 ---@param source IsoObject
 ---@param playerNum integer
 ---@param context ISContextMenu
 function ISWorldObjectContextMenu.doFillFuelMenu(source, playerNum, context) end
-
----@param context ISContextMenu
----@param object IsoObject
----@param player integer
----@return boolean
-function ISWorldObjectContextMenu.doFluidContainerMenu(context, object, player) end
 
 ---@param test boolean?
 ---@param context ISContextMenu
@@ -207,17 +197,6 @@ function ISWorldObjectContextMenu.doSheetRopeOptions(
 	_test
 )
 end
-
----@param test boolean?
----@param context ISContextMenu
----@param player integer
----@return boolean
-function ISWorldObjectContextMenu.doThumpableWindowOption(test, context, player) end
-
----@param sink IsoObject
----@param player integer
----@param context ISContextMenu
-function ISWorldObjectContextMenu.doWashClothingMenu(sink, player, context) end
 
 ---@param barrel IsoThumpable
 ---@param playerObj IsoPlayer
@@ -289,6 +268,7 @@ function ISWorldObjectContextMenu.handleCompost(test, context, worldobjects, pla
 
 ---@param playerObj IsoPlayer
 ---@param worldobjects IsoObject[]
+---@param subMenuGrab ISContextMenu
 ---@return boolean
 function ISWorldObjectContextMenu.handleGrabCorpseSubmenu(playerObj, worldobjects, subMenuGrab) end
 
@@ -307,6 +287,8 @@ function ISWorldObjectContextMenu.handleGrabWorldItem_onHighlight(_option, _menu
 ---@param _objects IsoWorldInventoryObject[]
 function ISWorldObjectContextMenu.handleGrabWorldItem_onHighlightMultiple(_option, _menu, _isHighlighted, _objects) end
 
+---@param option umbrella.ISContextMenu.Option
+---@param object IsoObject
 function ISWorldObjectContextMenu.initWorldItemHighlightOption(option, object) end
 
 ---@param item IsoObject
@@ -346,6 +328,8 @@ function ISWorldObjectContextMenu.onAddBaitToWater(playerObj, chum, square) end
 function ISWorldObjectContextMenu.onAddCompost(compost, item, playerObj) end
 
 ---@param worldobjects IsoObject[]
+---@param fluidObject IsoObject
+---@param fluidItem InventoryItem
 ---@param playerObj IsoPlayer
 function ISWorldObjectContextMenu.onAddFluidFromItem(worldobjects, fluidObject, fluidItem, playerObj) end
 
@@ -395,10 +379,10 @@ function ISWorldObjectContextMenu.onBuryCorpse(grave, player, primaryHandItem) e
 function ISWorldObjectContextMenu.onButcherHook(hook, playerObj) end
 
 ---@param worldobjects IsoObject[]?
----@param player IsoPlayer
+---@param playerObj IsoPlayer
 ---@param trap IsoObject
 ---@param hours integer
-function ISWorldObjectContextMenu.onCheckFishingNet(worldobjects, player, trap, hours) end
+function ISWorldObjectContextMenu.onCheckFishingNet(worldobjects, playerObj, trap, hours) end
 
 ---@param worldobjects IsoObject[]
 ---@param player IsoPlayer
@@ -581,9 +565,9 @@ function ISWorldObjectContextMenu.onLightModify(worldobjects, light, player, scr
 function ISWorldObjectContextMenu.onLockDoor(worldobjects, player, door) end
 
 ---@param worldobjects IsoObject[]
----@param player IsoPlayer
----@param otherPlayer IsoPlayer
-function ISWorldObjectContextMenu.onMedicalCheck(worldobjects, player, otherPlayer) end
+---@param requester IsoPlayer
+---@param target IsoPlayer
+function ISWorldObjectContextMenu.onMedicalCheck(worldobjects, requester, target) end
 
 ---@param worldobjects IsoObject[]
 ---@param stove IsoStove
@@ -673,9 +657,9 @@ function ISWorldObjectContextMenu.onRemoveDigitalPadlockWalkToComplete(player, t
 function ISWorldObjectContextMenu.onRemoveFire(worldobjects, firetile, extinguisher, player) end
 
 ---@param worldobjects IsoObject[]
----@param player IsoPlayer
+---@param playerObj IsoPlayer
 ---@param trap IsoObject
-function ISWorldObjectContextMenu.onRemoveFishingNet(worldobjects, player, trap) end
+function ISWorldObjectContextMenu.onRemoveFishingNet(worldobjects, playerObj, trap) end
 
 ---@param lightSource IsoObject
 ---@param player integer
@@ -696,6 +680,9 @@ function ISWorldObjectContextMenu.onRemoveGroundCoverItemHammerOrPickAxe(worldob
 ---@param object IsoObject
 function ISWorldObjectContextMenu.onRemoveGroundCoverItemPickAxe(worldobjects, player, object) end
 
+---@param worldobjects IsoObject[]
+---@param player integer
+---@param object IsoObject
 function ISWorldObjectContextMenu.onRemoveGroundCoverItemStump(worldobjects, player, object) end
 
 ---@param worldobjects IsoObject[]
@@ -766,6 +753,7 @@ function ISWorldObjectContextMenu.onTakeFuelNew(worldobjects, fuelObject, fuelCo
 
 ---@param worldobjects IsoObject[]
 ---@param generator IsoGenerator
+---@param player integer
 function ISWorldObjectContextMenu.onTakeGenerator(worldobjects, generator, player) end
 
 ---@param worldobjects IsoObject[]
@@ -785,8 +773,13 @@ function ISWorldObjectContextMenu.onTakeTrap(worldobjects, trap, player) end
 ---@param player integer
 function ISWorldObjectContextMenu.onTakeWater(worldobjects, waterObject, waterContainerList, waterContainer, player) end
 
+---@param playerObj IsoPlayer
+---@param fence IsoObject
+---@param dir IsoDirections
 function ISWorldObjectContextMenu.onThrowCorpseOverFence(playerObj, fence, dir) end
 
+---@param playerObj IsoPlayer
+---@param window IsoWindow
 function ISWorldObjectContextMenu.onThrowCorpseThroughWindow(playerObj, window) end
 
 ---@param timedAction string
@@ -851,6 +844,7 @@ function ISWorldObjectContextMenu.onUnLockDoor(worldobjects, player, door, doorK
 
 ---@param worldobjects IsoObject[]
 ---@param safehouse SafeHouse
+---@param player IsoPlayer
 function ISWorldObjectContextMenu.onViewSafeHouse(worldobjects, safehouse, player) end
 
 ---@param worldobjects IsoObject[]
@@ -858,8 +852,15 @@ function ISWorldObjectContextMenu.onViewSafeHouse(worldobjects, safehouse, playe
 ---@param otherPlayer IsoPlayer
 function ISWorldObjectContextMenu.onWakeOther(worldobjects, player, otherPlayer) end
 
+---@param callback fun(args: table)
+---@param args table
 function ISWorldObjectContextMenu.onWalkNextToWaterComplete(callback, args) end
 
+---@param playerObj IsoPlayer
+---@param waterSquare IsoGridSquare
+---@param range number
+---@param callback fun(args: table)
+---@param args table
 function ISWorldObjectContextMenu.onWalkNextToWaterFail(playerObj, waterSquare, range, callback, args) end
 
 ---@param worldobjects IsoObject[] | integer
@@ -872,8 +873,7 @@ function ISWorldObjectContextMenu.onWalkTo(worldobjects, item, player) end
 ---@param soapList InventoryItem[]
 ---@param washList InventoryItem[]
 ---@param singleClothing InventoryItem?
----@param noSoap boolean
-function ISWorldObjectContextMenu.onWashClothing(playerObj, sink, soapList, washList, singleClothing, noSoap) end
+function ISWorldObjectContextMenu.onWashClothing(playerObj, sink, soapList, washList, singleClothing) end
 
 ---@param playerObj IsoPlayer
 ---@param sink IsoObject
@@ -894,12 +894,6 @@ function ISWorldObjectContextMenu.restoreDoor(playerObj, door, isOpen) end
 
 ---@return boolean
 function ISWorldObjectContextMenu.setTest() end
-
----@param soapRemaining number
----@param waterRemaining number
----@param washList InventoryItem[]
----@param option umbrella.ISContextMenu.Option
-function ISWorldObjectContextMenu.setWashClothingTooltip(soapRemaining, waterRemaining, washList, option) end
 
 ---@param context ISContextMenu
 ---@param playerObj IsoPlayer

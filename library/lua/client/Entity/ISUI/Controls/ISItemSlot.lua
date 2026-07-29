@@ -74,6 +74,8 @@
 ISItemSlot = ISPanel:derive("ISItemSlot")
 ISItemSlot.Type = "ISItemSlot"
 
+---@param _itemSlot ISItemSlot
+---@param _tooltip ObjectTooltip
 function ISItemSlot.drawTooltip(_itemSlot, _tooltip) end
 
 function ISItemSlot:activateToolTip() end

@@ -43,6 +43,9 @@ function ISTabPanel.redoTab(self) end
 ---@return boolean
 function ISTabPanel:activateView(viewName) end
 
+---@return boolean
+function ISTabPanel:activateViewById(id) end
+
 ---@param name string
 ---@param view ISUIElement
 function ISTabPanel:addView(name, view) end

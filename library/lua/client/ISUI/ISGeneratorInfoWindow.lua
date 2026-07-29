@@ -24,7 +24,7 @@ function ISGeneratorInfoWindow:createChildren() end
 ---@param joypadData JoypadData
 function ISGeneratorInfoWindow:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISGeneratorInfoWindow:onJoypadDown(button) end
 
 ---@param object IsoGenerator

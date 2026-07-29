@@ -47,7 +47,7 @@ function RWMChannelTV:initialise() end
 ---@return boolean?
 function RWMChannelTV:isValidPresets() end
 
----@param button integer
+---@param button JoypadButton
 ---@return boolean
 ---@return boolean
 function RWMChannelTV:onJoypadDown(button) end

@@ -58,6 +58,9 @@ TileGeometryEditor_BoxPanel.Type = "TileGeometryEditor_BoxPanel"
 function TileGeometryEditor_BoxPanel:configGizmo() end
 
 ---@param face string
+---@param extentX number
+---@param extentY number
+---@param extentZ number
 function TileGeometryEditor_BoxPanel:configGizmoAux(face, extentX, extentY, extentZ) end
 
 function TileGeometryEditor_BoxPanel:createChildren() end

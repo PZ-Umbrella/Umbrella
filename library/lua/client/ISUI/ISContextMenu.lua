@@ -268,7 +268,7 @@ function ISContextMenu:calcWidth() end
 ---@param isHighlighted boolean
 function ISContextMenu:callOptionHighlightFunction(option, isHighlighted) end
 
----@param option unknown?
+---@param option umbrella.ISContextMenu.Option?
 function ISContextMenu:checkHighlightedOption(option) end
 
 function ISContextMenu:clear() end
@@ -437,7 +437,7 @@ function ISContextMenu:onJoypadDirRight() end
 
 function ISContextMenu:onJoypadDirUp() end
 
----@param button integer
+---@param button JoypadButton
 function ISContextMenu:onJoypadDown(button) end
 
 ---@param x number

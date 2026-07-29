@@ -1,7 +1,6 @@
 ---@meta
 
 ---@class ISSleepDialog : ISPanelJoypad
----@field name unknown?
 ---@field no ISButton?
 ---@field player IsoPlayer
 ---@field playerNum integer
@@ -23,7 +22,7 @@ function ISSleepDialog:onClick(button) end
 ---@param joypadData JoypadData
 function ISSleepDialog:onGainJoypadFocus(joypadData) end
 
----@param button integer
+---@param button JoypadButton
 function ISSleepDialog:onJoypadDown(button) end
 
 function ISSleepDialog:prerender() end

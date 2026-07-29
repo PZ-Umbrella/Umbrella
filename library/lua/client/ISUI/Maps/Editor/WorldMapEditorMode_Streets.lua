@@ -6,7 +6,7 @@
 ---@field buttonEditStreet ISButton
 ---@field buttonRemoveStreet ISButton
 ---@field dragPoint number
----@field editorAPI unknown
+---@field editorAPI EditStreetsV1
 ---@field editorStreet unknown?
 ---@field mapDirList ISScrollingListBox
 ---@field mode string
@@ -17,6 +17,7 @@
 ---@field selectedMapDirectory number?
 ---@field selectedStreet unknown?
 ---@field streetNameEntry ISTextEntryBox
+---@field streetsAPI WorldMapStreetsV1
 ---@field vector2 unknown
 ---@field widthEntry ISTextEntryBox
 WorldMapEditorMode_Streets = WorldMapEditorMode:derive("WorldMapEditorMode_Streets")
@@ -78,26 +79,34 @@ function WorldMapEditorMode_Streets:pickMouseOverStreet() end
 
 ---@param x number
 ---@param y number
----@return unknown
+---@return EditStreetV1
 function WorldMapEditorMode_Streets:pickStreet(x, y) end
 
+---@param street EditStreetV1
 ---@param x number
 ---@param y number
----@return unknown
+---@return integer
 function WorldMapEditorMode_Streets:pickStreetPoint(street, x, y) end
 
 function WorldMapEditorMode_Streets:render() end
 
+---@param worldX1 number
+---@param worldY1 number
+---@param worldX2 number
+---@param worldY2 number
 ---@param r number
 ---@param g number
 ---@param b number
 ---@param a number
 function WorldMapEditorMode_Streets:renderStreetLine(worldX1, worldY1, worldX2, worldY2, r, g, b, a) end
 
+---@param street EditStreetV1
 function WorldMapEditorMode_Streets:renderStreetLines(street) end
 
+---@param street EditStreetV1
 function WorldMapEditorMode_Streets:renderStreetPoints(street) end
 
+---@param street EditStreetV1
 ---@param x number
 ---@param y number
 ---@return boolean
@@ -105,5 +114,6 @@ function WorldMapEditorMode_Streets:streetContainsPoint(street, x, y) end
 
 function WorldMapEditorMode_Streets:undisplay() end
 
+---@param editor WorldMapEditor
 ---@return WorldMapEditorMode_Streets
 function WorldMapEditorMode_Streets:new(editor) end

@@ -23,6 +23,7 @@ function ISAnimalTracksUI:create() end
 ---@param g number
 ---@param b number
 ---@param a number
+---@param font UIFont
 function ISAnimalTracksUI:drawText(str, x, y, r, g, b, a, font) end
 
 ---@return string

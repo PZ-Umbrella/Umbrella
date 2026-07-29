@@ -33,7 +33,7 @@ function RWMVolume:getYPrompt() end
 
 function RWMVolume:initialise() end
 
----@param button integer
+---@param button JoypadButton
 function RWMVolume:onJoypadDown(button) end
 
 ---@param _ismute boolean

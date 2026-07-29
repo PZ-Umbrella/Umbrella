@@ -13,7 +13,12 @@ function forageClient.getZones() end
 
 function forageClient.init() end
 
+---@param _zoneData umbrella.Foraging.ZoneData
 function forageClient.removeZone(_zoneData) end
+
+function forageClient.requestZone(_character) end
+
+function forageClient.showForageHalo(_character, _itemList) end
 
 function forageClient.syncForageData() end
 

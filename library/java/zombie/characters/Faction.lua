@@ -1,6 +1,6 @@
 ---@meta _
 
----@class Faction
+---@class Faction: Invite
 local __Faction = {}
 
 ---@param pName string
@@ -36,8 +36,6 @@ function __Faction:isOwner(name) end
 ---@param WorldVersion integer
 function __Faction:load(input, WorldVersion) end
 
-function __Faction:removeFaction() end
-
 ---@param player string
 function __Faction:removePlayer(player) end
 
@@ -56,8 +54,6 @@ function __Faction:setTag(tag) end
 ---@param tagColor ColorInfo
 function __Faction:setTagColor(tagColor) end
 
-function __Faction:syncFaction() end
-
 ---@param bb ByteBufferWriter
 ---@param remove boolean
 function __Faction:writeToBuffer(bb, remove) end
@@ -70,11 +66,6 @@ Faction.factions = nil
 ---@param player IsoPlayer
 ---@return boolean
 function Faction.canCreateFaction(player) end
-
----@param name string
----@param owner string
----@return Faction
-function Faction.createFaction(name, owner) end
 
 ---@param name string
 ---@return boolean

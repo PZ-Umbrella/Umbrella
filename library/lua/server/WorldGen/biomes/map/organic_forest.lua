@@ -6,44 +6,40 @@ worldgen.biomes_map.organic_forest = {
 	features = {
 		TREE = {
 			{
-				f = worldgen.features.TREE.hemlock_jumbo,
-				p = 0.05,
+				f = worldgen.features.TREE.dogwood_jumbo,
+				p = 0.1,
 			},
 			{
-				f = worldgen.features.TREE.hemlock,
-				p = 0.05,
+				f = worldgen.features.TREE.dogwood_jumbo_xl,
+				p = 0.1,
+			},
+			{
+				f = worldgen.features.TREE.dogwood_jumbo_xxl,
+				p = 0.15,
+			},
+			{
+				f = worldgen.features.TREE.maple_jumbo,
+				p = 0.1,
+			},
+			{
+				f = worldgen.features.TREE.maple_jumbo_xl,
+				p = 0.1,
+			},
+			{
+				f = worldgen.features.TREE.maple_jumbo_xxl,
+				p = 0.15,
 			},
 			{
 				f = worldgen.features.TREE.linden_jumbo,
 				p = 0.1,
 			},
 			{
-				f = worldgen.features.TREE.linden,
-				p = 0.05,
-			},
-			{
-				f = worldgen.features.TREE.dogwood_jumbo,
+				f = worldgen.features.TREE.linden_jumbo_xl,
 				p = 0.1,
 			},
 			{
-				f = worldgen.features.TREE.dogwood,
-				p = 0.05,
-			},
-			{
-				f = worldgen.features.TREE.maple_jumbo,
-				p = 0.43,
-			},
-			{
-				f = worldgen.features.TREE.maple,
-				p = 0.05,
-			},
-			{
-				f = worldgen.features.TREE.boulders_primaryforest,
+				f = worldgen.features.TREE.linden_jumbo_xxl,
 				p = 0.1,
-			},
-			{
-				f = worldgen.features.TREE.grass_high,
-				p = 0.2,
 			},
 		},
 		BUSH = {
@@ -58,12 +54,8 @@ worldgen.biomes_map.organic_forest = {
 				p = 0.4,
 			},
 			{
-				f = worldgen.features.PLANT.grass_low,
-				p = 0.1,
-			},
-			{
 				f = worldgen.features.PLANT.grass_high,
-				p = 0.2,
+				p = 0.4,
 			},
 			{
 				f = worldgen.features.PLANT.fern,
@@ -71,11 +63,24 @@ worldgen.biomes_map.organic_forest = {
 			},
 			{
 				f = worldgen.features.PLANT.generic_plant,
-				p = 0.2,
+				p = 0.1,
 			},
 		},
 	},
 	params = {
+		subbiomes = {
+			TREE = {
+				TREE = {
+					worldgen.subbiomes.grass,
+				},
+				BUSH = {
+					worldgen.subbiomes.bushes,
+				},
+				PLANT = {
+					worldgen.subbiomes.grass,
+				},
+			},
+		},
 		landscape = {
 			"FOREST",
 		},

@@ -62,6 +62,9 @@ function __IsoPlayer:addSelectedZoneForHighlight(id) end
 function __IsoPlayer:addWorldSoundUnlessInvisible(radius, volume, bStressHumans) end
 
 ---@return boolean
+function __IsoPlayer:allowsInvisibleAnimationSkips() end
+
+---@return boolean
 function __IsoPlayer:allowsTwist() end
 
 ---@param vehicle BaseVehicle
@@ -190,7 +193,7 @@ function __IsoPlayer:getAnticheatMask(connection) end
 ---@return number
 function __IsoPlayer:getAsleepTime() end
 
----@return ArrayList<IsoAnimal>
+---@return List<IsoAnimal>
 function __IsoPlayer:getAttachedAnimals() end
 
 ---@return AttackType
@@ -251,9 +254,6 @@ function __IsoPlayer:getHeartDelay() end
 ---@return number
 function __IsoPlayer:getHeartDelayMax() end
 
----@return HitReactionNetworkAI
-function __IsoPlayer:getHitReactionNetworkAI() end
-
 ---@return number
 function __IsoPlayer:getHoursSurvived() end
 
@@ -294,7 +294,7 @@ function __IsoPlayer:getLastSpotted() end
 ---@return number
 function __IsoPlayer:getLightDistance() end
 
----@return ArrayList<IsoAnimal>
+---@return List<IsoAnimal>
 function __IsoPlayer:getLuredAnimals() end
 
 ---@return number
@@ -323,7 +323,7 @@ function __IsoPlayer:getMusicThreatStatuses() end
 ---@return BaseVehicle
 function __IsoPlayer:getNearVehicle() end
 
----@return NetworkCharacterAI
+---@return NetworkPlayerAI
 function __IsoPlayer:getNetworkCharacterAI() end
 
 ---@return Nutrition
@@ -458,6 +458,9 @@ function __IsoPlayer:getVoiceType() end
 ---@return number
 function __IsoPlayer:getZombieRelevenceScore(z) end
 
+---@return boolean
+function __IsoPlayer:hasAttachedAnimals() end
+
 ---@param weapon HandWeapon
 ---@param wielder IsoGameCharacter
 ---@param bIgnoreDamage boolean
@@ -578,9 +581,6 @@ function __IsoPlayer:isInvPageDirty() end
 
 ---@return boolean
 function __IsoPlayer:isJustMoved() end
-
----@return boolean
-function __IsoPlayer:isLocal() end
 
 ---@return boolean
 function __IsoPlayer:isLocalPlayer() end
@@ -923,6 +923,9 @@ function __IsoPlayer:setIgnoreAutoVault(ignoreAutoVault) end
 ---@param ignoreContextKey boolean
 function __IsoPlayer:setIgnoreContextKey(ignoreContextKey) end
 
+---@param ignoreMovement boolean
+function __IsoPlayer:setIgnoreMovement(ignoreMovement) end
+
 ---@param initiate boolean
 function __IsoPlayer:setInitiateAttack(initiate) end
 
@@ -943,6 +946,9 @@ function __IsoPlayer:setLastAngle(lastAngle) end
 
 ---@param lastAttackWasHandToHand boolean
 function __IsoPlayer:setLastAttackWasHandToHand(lastAttackWasHandToHand) end
+
+---@param lastCheatToggleMillis integer
+function __IsoPlayer:setLastCheatToggleMillis(lastCheatToggleMillis) end
 
 ---@param lastRemoteUpdate integer
 function __IsoPlayer:setLastRemoteUpdate(lastRemoteUpdate) end
