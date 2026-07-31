@@ -164,6 +164,8 @@ function ISSearchManager.setManager(_character, _manager) end
 ---@return ISBaseIcon?
 function ISSearchManager:addIcon(_id, _iconClass, _itemType, _itemObj, _x, _y, _z) end
 
+---@param _zoneId string
+---@param _icons table<string, umbrella.Foraging.PoolRecord>
 function ISSearchManager:applyServerPool(_zoneId, _icons) end
 
 function ISSearchManager:checkActiveZones() end

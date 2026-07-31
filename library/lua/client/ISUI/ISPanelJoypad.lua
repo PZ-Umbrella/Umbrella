@@ -70,7 +70,8 @@ function ISPanelJoypad.autoAddUIElementToJoypadButtons(allJoypadButtons, uiEleme
 ---@return ISUIElement[]
 function ISPanelJoypad.autoGenerateJoypadButtonRowsFromUIElement(uiRootElement) end
 
----@return table
+---@param uiElements ISUIElement[]
+---@return ISUIElement[]
 function ISPanelJoypad.getVisibleElements(uiElements) end
 
 ---@param list ISUIElement[]
@@ -141,12 +142,13 @@ function ISPanelJoypad:getChildJoypadIndex(child) end
 function ISPanelJoypad:getChildJoypadIndexY(child) end
 
 ---@param children ISUIElement[]
----@param x number
+---@param fromChild ISUIElement?
 ---@return integer
-function ISPanelJoypad:getClosestChild(children, x) end
+function ISPanelJoypad:getClosestChild(children, fromChild) end
 
 ---@param rowIndex number
----@return unknown
+---@param fromChild ISUIElement?
+---@return ISUIElement?
 function ISPanelJoypad:getClosestChildOnRow(rowIndex, fromChild) end
 
 ---@return ISUIElement?
@@ -281,6 +283,7 @@ function ISPanelJoypad:setISButtonForY(button) end
 ---@return boolean
 function ISPanelJoypad:setJoypadFocus(child, joypadData) end
 
+---@param joypadData JoypadData
 ---@return boolean
 function ISPanelJoypad:setJoypadFocusTopLeft(joypadData) end
 

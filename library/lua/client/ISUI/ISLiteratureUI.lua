@@ -7,7 +7,6 @@
 ---@field listbox1Filter ISTextEntryBox
 ---@field listbox2 ISLiteratureList
 ---@field listbox2Filter ISTextEntryBox
----@field listbox3 ISLiteratureList
 ---@field listbox5 ISLiteratureGrowingList
 ---@field listboxMedia table
 ---@field owner ISCharacterScreen
@@ -81,12 +80,12 @@ function ISLiteratureUI:setMediaLists(scriptItems) end
 ---@return ISLiteratureUI
 function ISLiteratureUI:new(x, y, width, height, character, owner) end
 
----@class ISLiteratureList : ISScrollingListBox
+---@class ISLiteratureList : ISPanel
 ---@field character IsoPlayer
 ---@field filterBox ISTextEntryBox
 ---@field list ISScrollingListBox
 ---@field parent ISLiteratureUI
-ISLiteratureList = ISScrollingListBox:derive("ISListeratureList")
+ISLiteratureList = ISPanel:derive("ISListeratureList")
 ISLiteratureList.Type = "ISListeratureList"
 
 function ISLiteratureList:createChildren() end
@@ -102,8 +101,9 @@ function ISLiteratureList:doDrawItem(y, item, alt) end
 ---@param width number
 ---@param height number
 ---@param character IsoPlayer
+---@param parent ISLiteratureUI
 ---@return ISLiteratureList
-function ISLiteratureList:new(x, y, width, height, character) end
+function ISLiteratureList:new(x, y, width, height, character, parent) end
 
 ---@class ISLiteratureMediaList : ISScrollingListBox
 ---@field character IsoPlayer

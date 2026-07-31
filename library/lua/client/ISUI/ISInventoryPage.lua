@@ -331,6 +331,7 @@ function ISInventoryPage:setNewContainer(inventory) end
 
 function ISInventoryPage:setPinned() end
 
+---@param button ISButton
 ---@return boolean
 function ISInventoryPage:shouldSetOutlineHighlight(button) end
 

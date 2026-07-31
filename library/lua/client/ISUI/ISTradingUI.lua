@@ -1,6 +1,6 @@
 ---@meta
 
----@class ISTradingUI : ISPanel
+---@class ISTradingUI : ISPanelJoypad
 ---@field acceptDeal ISButton
 ---@field addBtn ISButton
 ---@field blockingMessage string?
@@ -23,16 +23,16 @@
 ---@field otherSealedOffer boolean
 ---@field pendingRequest boolean
 ---@field player IsoPlayer
----@field prevFocus unknown
+---@field prevFocus ISUIElement?
 ---@field remove ISButton
 ---@field sealOffer ISTickBox
 ---@field selectedItem umbrella.ISScrollingListBox.Item?
 ---@field toolRender ISToolTipInv
 ---@field yourOffer unknown?
 ---@field yourOfferDatas ISScrollingListBox
-ISTradingUI = ISPanel:derive("ISTradingUI")
+ISTradingUI = ISPanelJoypad:derive("ISTradingUI")
 ISTradingUI.Type = "ISTradingUI"
-ISTradingUI.windows = {}
+ISTradingUI.windows = {} ---@type table<integer, ISTradingUI>
 ISTradingUI.CoolDownMessage = 300
 ISTradingUI.States = {
 	PlayerClosedWindow = 0,
@@ -42,29 +42,34 @@ ISTradingUI.States = {
 }
 ISTradingUI.MaxItems = 20
 ISTradingUI.tradeQuestionUI = nil ---@type ISModalDialog?
-ISTradingUI.messages = nil ---@type unknown
-ISTradingUI.instance = nil ---@type ISTradingUI?
 
+---@param otherPlayer IsoPlayer
+---@param player IsoPlayer
 ---@param accepted boolean
-function ISTradingUI.AcceptedTrade(accepted) end
+function ISTradingUI.AcceptedTrade(otherPlayer, player, accepted) end
 
----@return unknown?
+---@param playerObj IsoPlayer
+---@return ISTradingUI?
 function ISTradingUI.GetUIForPlayer(playerObj) end
 
+---@param otherPlayer IsoPlayer
 ---@param player IsoPlayer
 ---@param item InventoryItem
-function ISTradingUI.OtherAddNewItem(player, item) end
+function ISTradingUI.OtherAddNewItem(otherPlayer, player, item) end
 
----@param requester IsoPlayer
-function ISTradingUI.ReceiveTradeRequest(requester) end
+---@param otherPlayer IsoPlayer
+---@param player IsoPlayer
+function ISTradingUI.ReceiveTradeRequest(otherPlayer, player) end
 
+---@param otherPlayer IsoPlayer
 ---@param player IsoPlayer
 ---@param itemId integer
-function ISTradingUI.RemoveItem(player, itemId) end
+function ISTradingUI.RemoveItem(otherPlayer, player, itemId) end
 
+---@param otherPlayer IsoPlayer
 ---@param player IsoPlayer
 ---@param state integer
-function ISTradingUI.UpdateState(player, state) end
+function ISTradingUI.UpdateState(otherPlayer, player, state) end
 
 ---@param item InventoryItem
 function ISTradingUI:addItemToYourOffer(item) end
@@ -85,16 +90,18 @@ function ISTradingUI:finalizeDeal() end
 ---@return integer
 function ISTradingUI:getIndexFromItemId(itemId) end
 
----@return unknown?
+---@return InventoryItem?
 function ISTradingUI:getTooltipItem() end
 
 function ISTradingUI:initialise() end
 
+---@param joypadData JoypadData
 function ISTradingUI:initJoypadButtons(joypadData) end
 
 ---@return boolean
 function ISTradingUI:isInputBlocked() end
 
+---@param item InventoryItem
 ---@return boolean
 function ISTradingUI:isItemOffered(item) end
 
@@ -107,23 +114,29 @@ function ISTradingUI:onAnswerTradeRequest(button) end
 ---@param button ISButton
 function ISTradingUI:onClick(button) end
 
+---@param joypadData JoypadData
 function ISTradingUI:onGainJoypadFocus(joypadData) end
 
+---@param data table
 function ISTradingUI:onInvokeListItem_Inventory(data) end
 
+---@param data table
 function ISTradingUI:onInvokeListItem_YourOffer(data) end
 
+---@param button JoypadButton
+---@param joypadData JoypadData
 function ISTradingUI:onJoypadDown(button, joypadData) end
 
+---@param button JoypadButton
+---@param joypadData JoypadData
 function ISTradingUI:onJoypadDown_Descendant(descendant, button, joypadData) end
 
+---@param joypadData JoypadData
 function ISTradingUI:onLoseJoypadFocus(joypadData) end
 
 ---@param clickedOption integer
 ---@param enabled boolean
 function ISTradingUI:onSealOffer(clickedOption, enabled) end
-
-function ISTradingUI:populateList() end
 
 function ISTradingUI:prerender() end
 
@@ -148,10 +161,6 @@ function ISTradingUI:updateTooltip() end
 
 ---@param x number
 ---@param y number
-function ISTradingUI:yourOfferMouseUp(x, y) end
-
----@param x number
----@param y number
 ---@param width number
 ---@param height number
 ---@param player IsoPlayer
@@ -164,26 +173,32 @@ function ISTradingUI:new(x, y, width, height, player, otherPlayer) end
 ---@field inventoryContainerCount number
 ---@field itemTableList table
 ---@field itemTables table
----@field joyfocus unknown
+---@field joyfocus JoypadData?
 ---@field joypadParent ISTradingUI
----@field selected unknown
+---@field selected integer
 ---@field tradingUI ISTradingUI
----@field treeColIcon unknown
----@field treeExpIcon unknown
+---@field treeColIcon Texture
+---@field treeExpIcon Texture
 local __ISTradingUI_InventoryList = ISScrollingListBox:derive("ISTradingUI_InventoryList")
 __ISTradingUI_InventoryList.Type = "ISTradingUI_InventoryList"
 
+---@param a table
+---@param b table
 ---@return boolean
 function __ISTradingUI_InventoryList.itemSortByNameInc(a, b) end
 
+---@param item InventoryItem
 ---@param isEquipped boolean
 ---@param isInHotbar boolean
 function __ISTradingUI_InventoryList:addInventoryItemToGroup(item, isEquipped, isInHotbar) end
 
+---@param y number
+---@param item umbrella.ISScrollingListBox.Item
+---@param alt boolean
 ---@return number
 function __ISTradingUI_InventoryList:doDrawItem(y, item, alt) end
 
----@return unknown
+---@return number
 function __ISTradingUI_InventoryList:expandCollapseSize() end
 
 ---@param isEquipped boolean
@@ -195,6 +210,7 @@ function __ISTradingUI_InventoryList:groupInventoryItemsByName() end
 ---@return number
 function __ISTradingUI_InventoryList:iconSize() end
 
+---@param joypadData JoypadData
 function __ISTradingUI_InventoryList:onJoypadDirRight(joypadData) end
 
 ---@param x number

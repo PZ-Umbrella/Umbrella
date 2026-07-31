@@ -2,8 +2,8 @@
 
 ---@class ISDropAnimalCorpseAndThen : ISBaseTimedAction
 ---@field andThen string
----@field item unknown
----@field sound unknown
+---@field item InventoryItem
+---@field sound integer
 ISDropAnimalCorpseAndThen = ISBaseTimedAction:derive("ISDropAnimalCorpseAndThen")
 ISDropAnimalCorpseAndThen.Type = "ISDropAnimalCorpseAndThen"
 
@@ -29,6 +29,8 @@ function ISDropAnimalCorpseAndThen:update() end
 ---@return boolean
 function ISDropAnimalCorpseAndThen:waitToStart() end
 
+---@param character IsoPlayer
+---@param item InventoryItem
 ---@param andThen string
 ---@return ISDropAnimalCorpseAndThen
 function ISDropAnimalCorpseAndThen:new(character, item, andThen) end

@@ -54,7 +54,7 @@ SpriteGridCache = {}
 ---@field customItem string?
 ---@field Eoffset number?
 ---@field facing ("N" | "E" | "S" | "W")?
----@field fitsBeneathCountertop unknown
+---@field fitsBeneathCountertop boolean
 ---@field groupName string?
 ---@field ignoreSurfaceSnap boolean?
 ---@field isClosedState boolean?

@@ -36,9 +36,10 @@ function ISSafehouseUI.AcceptedSafehouseInvite(safehouseName, host) end
 
 function ISSafehouseUI.OnSafehousesChanged() end
 
----@param safehouse string
+---@param safehouse SafeHouse
 ---@param host string
-function ISSafehouseUI.ReceiveSafehouseInvite(safehouse, host) end
+---@param username string
+function ISSafehouseUI.ReceiveSafehouseInvite(safehouse, host, username) end
 
 function ISSafehouseUI:close() end
 

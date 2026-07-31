@@ -14,13 +14,15 @@ TopOfTheWorld.hourOfDay = 7
 
 function TopOfTheWorld.Add() end
 
----@param playerNum number
+---@param playerNum integer
+---@param playerObj IsoPlayer
 function TopOfTheWorld.AddPlayer(playerNum, playerObj) end
 
 function TopOfTheWorld.OnGameStart() end
 
 function TopOfTheWorld.OnInitWorld() end
 
+---@param p IsoPlayer
 function TopOfTheWorld.RemovePlayer(p) end
 
 function TopOfTheWorld.Render() end

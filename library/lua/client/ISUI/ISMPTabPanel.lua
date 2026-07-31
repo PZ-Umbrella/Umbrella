@@ -25,7 +25,7 @@
 ---@field tabTornOffTarget unknown?
 ---@field tabTransparency number
 ---@field textTransparency number
----@field viewList table
+---@field viewList umbrella.ISMPTabPanel.View[]
 ISMPTabPanel = ISPanel:derive("ISMPTabPanel")
 ISMPTabPanel.Type = "ISMPTabPanel"
 ISMPTabPanel.xMouse = -1
@@ -42,7 +42,7 @@ function ISMPTabPanel.redoTab(self) end
 ---@return boolean
 function ISMPTabPanel:activateView(viewName) end
 
----@param viewIndex number?
+---@param viewIndex integer
 function ISMPTabPanel:activateViewIndex(viewIndex) end
 
 ---@param name string
@@ -60,7 +60,7 @@ function ISMPTabPanel:getActiveView() end
 ---@return integer?
 function ISMPTabPanel:getActiveViewIndex() end
 
----@return number
+---@return integer
 function ISMPTabPanel:getNumViews() end
 
 ---@param x number

@@ -4,12 +4,12 @@
 CDDA = {}
 CDDA.id = "AReallyCDDAy"
 CDDA.completionText = "Survive a night to unlock next challenge."
-CDDA.image = "media/lua/client/LastStand/AReallyCDDAy.png"
-CDDA.video = "CDDA.bik"
+CDDA.image = "media/lua/client/LastStand/a_really_cdday.png"
+CDDA.video = "a_really_cdday.bik"
 CDDA.gameMode = "A Really CD DA"
 CDDA.world = "Muldraugh, KY"
-CDDA.x = (36 * 300) + 21
-CDDA.y = (31 * 300) + 111
+CDDA.x = 10816
+CDDA.y = 9413
 CDDA.z = 0
 CDDA.spawns = {
 	{

@@ -3,14 +3,13 @@
 ---@class ISDryMyself : ISBaseTimedAction
 ---@field item InventoryItem?
 ---@field lastUse number
----@field serverStartTime number
 ---@field started boolean
----@field tick number
----@field timer number
 ---@field useDelay number
 ISDryMyself = ISBaseTimedAction:derive("ISDryMyself")
 ISDryMyself.Type = "ISDryMyself"
 
+---@param event string
+---@param parameter string
 function ISDryMyself:animEvent(event, parameter) end
 
 ---@return boolean
@@ -26,13 +25,9 @@ function ISDryMyself:perform() end
 
 function ISDryMyself:serverStart() end
 
-function ISDryMyself:serverStop() end
-
 function ISDryMyself:start() end
 
 function ISDryMyself:stop() end
-
-function ISDryMyself:syncItemUses() end
 
 function ISDryMyself:update() end
 

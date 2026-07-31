@@ -7,7 +7,6 @@
 ---@field no ISButton
 ---@field player IsoPlayer
 ---@field playerList ISScrollingListBox
----@field scoreboard umbrella.ISMiniScoreboardUI.Scoreboard
 ISFactionAddPlayerUI = ISPanel:derive("ISFactionAddPlayerUI")
 ISFactionAddPlayerUI.Type = "ISFactionAddPlayerUI"
 ISFactionAddPlayerUI.messages = {}

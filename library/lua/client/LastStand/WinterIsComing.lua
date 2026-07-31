@@ -3,12 +3,12 @@
 ---@class WinterIsComing
 WinterIsComing = {}
 WinterIsComing.id = "WinterIsComing"
-WinterIsComing.image = "media/lua/client/LastStand/WinterIsComing.png"
-WinterIsComing.video = "WinterIsComing.bik"
+WinterIsComing.image = "media/lua/client/LastStand/winter_is_coming.png"
+WinterIsComing.video = "winter_is_coming.bik"
 WinterIsComing.gameMode = "Winter is Coming"
 WinterIsComing.world = "Muldraugh, KY"
-WinterIsComing.x = (36 * 300) + 21
-WinterIsComing.y = (31 * 300) + 111
+WinterIsComing.x = 10819
+WinterIsComing.y = 9417
 WinterIsComing.z = 0
 WinterIsComing.spawns = {
 	{

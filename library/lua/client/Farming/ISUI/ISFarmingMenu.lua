@@ -46,7 +46,9 @@ function ISFarmingMenu.doFarmingMenu(player, context, worldobjects, test) end
 ---@return boolean?
 function ISFarmingMenu.doFarmingMenu2(player, context, worldobjects, test) end
 
----@return unknown?
+---@param playerObj IsoPlayer
+---@param worldobjects IsoObject[]
+---@return SPlantGlobalObject?
 function ISFarmingMenu.getBestPlantFromTable(playerObj, worldobjects) end
 
 ---@return number
@@ -187,7 +189,9 @@ function ISFarmingMenu.onSlugsCureSquareSelected() end
 ---@param context ISContextMenu
 function ISFarmingMenu.onWater(worldobjects, uses, handItem, playerObj, plant, sq, context) end
 
----@return unknown?
+---@param playerObj IsoPlayer
+---@param plants SPlantGlobalObject[]
+---@return IsoObject?
 function ISFarmingMenu.pickBestPlantForJoypadPlayer(playerObj, plants) end
 
 ---@param prop umbrella.Farming.Props

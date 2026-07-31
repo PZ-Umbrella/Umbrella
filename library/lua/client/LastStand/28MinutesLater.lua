@@ -13,13 +13,15 @@ TwentyEightMinutesLater.z = 0
 
 function TwentyEightMinutesLater.Add() end
 
----@param playerNum number
+---@param playerNum integer
+---@param playerObj IsoPlayer
 function TwentyEightMinutesLater.AddPlayer(playerNum, playerObj) end
 
 function TwentyEightMinutesLater.OnGameStart() end
 
 function TwentyEightMinutesLater.OnInitWorld() end
 
+---@param p IsoPlayer
 function TwentyEightMinutesLater.RemovePlayer(p) end
 
 function TwentyEightMinutesLater.Render() end

@@ -16,23 +16,12 @@ CreditsScreen.instance = nil ---@type CreditsScreen?
 ---@param key integer
 function CreditsScreen.onKeyPressed(key) end
 
----@param key string
----@param searchKey string
----@param map string[]
----@param name string
-function CreditsScreen:addToMap(key, searchKey, map, name) end
-
 function CreditsScreen:changeSpeed() end
 
 function CreditsScreen:create() end
 
 ---@return string
 function CreditsScreen:doCreditsText() end
-
----@param title string
----@param creditTable string[]
----@return string
-function CreditsScreen:doCreditTable(title, creditTable) end
 
 ---@param joypadData JoypadData
 function CreditsScreen:onGainJoypadFocus(joypadData) end

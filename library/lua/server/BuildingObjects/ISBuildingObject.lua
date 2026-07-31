@@ -10,7 +10,6 @@
 ---@field canBePlastered boolean
 ---@field canPassThrough boolean
 ---@field chosenSprite string?
----@field clickedUI boolean
 ---@field completionSound string?
 ---@field crossSpeed number
 ---@field dismantable boolean

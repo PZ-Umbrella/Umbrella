@@ -29,6 +29,11 @@ ISItemsListTable.instance = nil ---@type ISItemsListTable?
 ---@param widget ISUIElement
 function ISItemsListTable.onFilterChange(widget) end
 
+---@param column umbrella.ISScrollingListBox.Column
+---@param x number
+---@param entryY number
+---@param size number
+---@param filterFunction fun(widget: ISComboBox, scriptItem: Item): boolean
 function ISItemsListTable:addFilterCombo(column, x, entryY, size, filterFunction) end
 
 ---@param item Item
@@ -42,6 +47,11 @@ function ISItemsListTable:createChildren() end
 ---@return number
 function ISItemsListTable:drawDatas(y, item, alt) end
 
+---@param columnIndex integer
+---@param testBool boolean
+---@param xoffset number
+---@param y number
+---@param a number
 function ISItemsListTable:drawTrueOrFalseColumn(columnIndex, testBool, xoffset, y, a) end
 
 ---@param widget ISComboBox
@@ -79,17 +89,9 @@ function ISItemsListTable:filterLootCategory(widget, scriptItem) end
 ---@return boolean
 function ISItemsListTable:filterName(widget, scriptItem) end
 
----@param widget ISComboBox
----@param scriptItem Item
----@return boolean
-function ISItemsListTable:filterSpawned(widget, scriptItem) end
-
 ---@param widget ISTextEntryBox
 ---@param scriptItem Item
 ---@return boolean
-function ISItemsListTable:filterType(widget, scriptItem) end
-
----@return unknown
 function ISItemsListTable:filterWeaponType(widget, scriptItem) end
 
 function ISItemsListTable:initialise() end

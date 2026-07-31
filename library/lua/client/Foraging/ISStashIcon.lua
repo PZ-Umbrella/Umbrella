@@ -2,7 +2,6 @@
 
 ---@class ISStashIcon : ISBaseIcon
 ---@field isForageable boolean?
----@field isValidSquare boolean
 ---@field itemObjTable table<InventoryItem, InventoryItem>
 ISStashIcon = ISBaseIcon:derive("ISStashIcon")
 ISStashIcon.Type = "ISStashIcon"

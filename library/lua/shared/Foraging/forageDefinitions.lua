@@ -1,6 +1,6 @@
 ---@meta
 
----@alias umbrella.Foraging.SpawnFunction fun(character: IsoPlayer, inventory: ItemContainer, itemDef: umbrella.Foraging.ItemDefinition, itemList: ArrayList<InventoryItem>)
+---@alias umbrella.Foraging.SpawnFunction fun(character: IsoPlayer, inventory: ItemContainer, itemDef: umbrella.Foraging.ItemDefinition, itemList: ArrayList<InventoryItem>): ArrayList<InventoryItem>?
 
 ---@class forageSystem
 forageSystem = {}

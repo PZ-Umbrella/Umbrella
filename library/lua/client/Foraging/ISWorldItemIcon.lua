@@ -2,7 +2,6 @@
 
 ---@class ISWorldItemIcon : ISBaseIcon
 ---@field container ItemContainer
----@field isValidSquare boolean
 ---@field itemObjTable table<InventoryItem, InventoryItem>
 ---@field onClickContext function
 ISWorldItemIcon = ISBaseIcon:derive("ISWorldItemIcon")

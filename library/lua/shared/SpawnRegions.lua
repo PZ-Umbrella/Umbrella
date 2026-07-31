@@ -30,10 +30,10 @@ function SpawnRegionMgr.loadSpawnRegionsFile(filename, server) end
 ---@field worldX integer?
 ---@field worldY integer?
 
----@class umbrella.SpawnRegion
----@field name string
----@field points umbrella.SpawnPoint
+---@class umbrella.SpawnRegion : umbrella.FileSpawnRegion
+---@field points table<string, umbrella.SpawnPoint[]>
 
 ---@class umbrella.FileSpawnRegion
----@field file string
+---@field file string?
 ---@field name string
+---@field serverfile string?

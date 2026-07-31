@@ -79,8 +79,9 @@ function ISHealthPanel.onCheatItem(itemType, playerObj) end
 ---@param otherPlayer IsoPlayer
 function ISHealthPanel.onCheatOtherPlayer(bodyPart, action, player, otherPlayer) end
 
+---@param target IsoPlayer
 ---@param requester IsoPlayer
-function ISHealthPanel.ReceiveMedicalCheckRequest(requester) end
+function ISHealthPanel.ReceiveMedicalCheckRequest(target, requester) end
 
 ---@param playerObj IsoPlayer
 ---@param bodyPart BodyPart

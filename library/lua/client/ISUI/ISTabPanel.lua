@@ -43,6 +43,7 @@ function ISTabPanel.redoTab(self) end
 ---@return boolean
 function ISTabPanel:activateView(viewName) end
 
+---@param id integer
 ---@return boolean
 function ISTabPanel:activateViewById(id) end
 
@@ -145,6 +146,7 @@ function ISTabPanel:new(x, y, width, height) end
 
 ---@class umbrella.ISTabPanel.View
 ---@field fade UITransition
+---@field id integer
 ---@field name string
 ---@field tabWidth number
 ---@field view ISUIElement

@@ -137,11 +137,13 @@ function ISCampingMenu.onPutOutCampfire(worldobjects, playerObj, campfire) end
 ---@param campfire CCampfireGlobalObject
 function ISCampingMenu.onRemoveCampfire(worldobjects, playerObj, campfire) end
 
----@param campfires table
----@return unknown?
+---@param playerObj IsoPlayer
+---@param campfires CCampfireGlobalObject[]
+---@return CCampfireGlobalObject?
 function ISCampingMenu.pickBestCampfire(playerObj, campfires) end
 
----@param playerNum number
+---@param playerNum integer
+---@param isoCampfireObject IsoObject
 function ISCampingMenu.selectCampfireInLootWindow(playerNum, isoCampfireObject) end
 
 ---@param item InventoryItem

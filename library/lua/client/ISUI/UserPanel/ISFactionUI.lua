@@ -23,7 +23,6 @@
 ---@field showTag ISTickBox
 ---@field tag ISLabel
 ---@field tagColor ISButton
----@field tagColorBtn ISButton
 ISFactionUI = ISPanel:derive("ISFactionUI")
 ISFactionUI.Type = "ISFactionUI"
 ISFactionUI.messages = {}
@@ -34,9 +33,10 @@ ISFactionUI.instance = nil ---@type ISFactionUI?
 ---@param host string
 function ISFactionUI.AcceptedFactionInvite(factionName, host) end
 
----@param factionName string
+---@param faction Faction
 ---@param host string
-function ISFactionUI.ReceiveFactionInvite(factionName, host) end
+---@param username string
+function ISFactionUI.ReceiveFactionInvite(faction, host, username) end
 
 ---@param factionName string
 function ISFactionUI.SyncFaction(factionName) end
@@ -71,6 +71,7 @@ function ISFactionUI:onClickFactionPvp(clickedOption, enabled) end
 ---@param enabled boolean
 function ISFactionUI:onClickShowTag(clickedOption, enabled) end
 
+---@param button ISButton
 function ISFactionUI:onDisbandFaction(button, player) end
 
 ---@param color umbrella.RGB

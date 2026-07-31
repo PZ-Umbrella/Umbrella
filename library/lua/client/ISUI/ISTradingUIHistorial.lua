@@ -1,14 +1,12 @@
 ---@meta
 
----@class ISTradingUIHistorical : ISPanel
+---@class ISTradingUIHistorical : ISPanelJoypad
 ---@field list ISScrollingListBox
 ---@field msgList umbrella.ISTradingUI.HistoryMessage[]
 ---@field no ISButton
 ---@field otherPlayer IsoPlayer
-ISTradingUIHistorical = ISPanel:derive("ISTradingUIHistorical")
+ISTradingUIHistorical = ISPanelJoypad:derive("ISTradingUIHistorical")
 ISTradingUIHistorical.Type = "ISTradingUIHistorical"
-ISTradingUIHistorical.messages = nil ---@type unknown
-ISTradingUIHistorical.instance = nil ---@type ISTradingUIHistorical?
 
 function ISTradingUIHistorical:close() end
 
@@ -23,12 +21,16 @@ function ISTradingUIHistorical:initialise() end
 ---@param button ISButton
 function ISTradingUIHistorical:onClick(button) end
 
+---@param joypadData JoypadData
 function ISTradingUIHistorical:onGainJoypadFocus(joypadData) end
 
+---@param joypadData JoypadData
 function ISTradingUIHistorical:onJoypadDirDown(joypadData) end
 
+---@param joypadData JoypadData
 function ISTradingUIHistorical:onJoypadDirUp(joypadData) end
 
+---@param joypadData JoypadData
 function ISTradingUIHistorical:onLoseJoypadFocus(joypadData) end
 
 ---@param list umbrella.ISTradingUI.HistoryMessage[]

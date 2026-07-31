@@ -8,16 +8,16 @@ function forageClient.addZone(_zoneData) end
 
 function forageClient.clearData() end
 
----@return forageData
-function forageClient.getZones() end
-
 function forageClient.init() end
 
 ---@param _zoneData umbrella.Foraging.ZoneData
 function forageClient.removeZone(_zoneData) end
 
+---@param _character IsoPlayer
 function forageClient.requestZone(_character) end
 
+---@param _character IsoPlayer
+---@param _itemList ArrayList<InventoryItem>
 function forageClient.showForageHalo(_character, _itemList) end
 
 function forageClient.syncForageData() end

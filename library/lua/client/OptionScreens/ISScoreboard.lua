@@ -28,7 +28,7 @@ ISScoreboard.instance = nil ---@type ISScoreboard?
 ---@param usernames ArrayList<string>
 ---@param displayNames ArrayList<string>
 ---@param steamIDs ArrayList<string>
-function ISScoreboard.onScoreboardUpdate(usernames, displayNames, steamIDs) end
+function ISScoreboard.onScoreboardUpdate(usernames, displayNames, steamIDs, pingValues) end
 
 function ISScoreboard.recreate() end
 
@@ -45,7 +45,7 @@ function ISScoreboard:drawMap(y, item, alt) end
 ---@param usernames ArrayList<string>
 ---@param displayNames ArrayList<string>
 ---@param steamIDs ArrayList<string>
-function ISScoreboard:fillList(usernames, displayNames, steamIDs) end
+function ISScoreboard:fillList(usernames, displayNames, steamIDs, pingValues) end
 
 function ISScoreboard:initialise() end
 

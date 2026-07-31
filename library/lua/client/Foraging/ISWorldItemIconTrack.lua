@@ -3,7 +3,6 @@
 ---@class ISWorldItemIconTrack : ISBaseIcon
 ---@field container ItemContainer
 ---@field isTrack boolean
----@field isValidSquare boolean
 ---@field itemObjTable table<InventoryItem, InventoryItem>
 ISWorldItemIconTrack = ISBaseIcon:derive("ISWorldItemIconTrack")
 ISWorldItemIconTrack.Type = "ISWorldItemIconTrack"

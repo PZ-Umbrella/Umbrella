@@ -5,7 +5,8 @@ ISFluidContainerMenu = {}
 
 ---@param cont FluidContainer
 ---@param fluid string
-function ISFluidContainerMenu.addDebugFluid(cont, fluid) end
+---@param item InventoryItem
+function ISFluidContainerMenu.addDebugFluid(cont, fluid, item) end
 
 ---@param context ISContextMenu
 ---@param item InventoryItem?

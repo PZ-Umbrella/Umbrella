@@ -1,6 +1,6 @@
 ---@meta
 
----@class MultiplayerUI : ISPanel
+---@class MultiplayerUI : ISPanelJoypad
 ---@field accountList ISScrollingListBox
 ---@field arrowDown Texture
 ---@field arrowUp Texture
@@ -76,7 +76,7 @@
 ---@field ui_subitem_first Texture
 ---@field ui_subitem_other Texture
 ---@field ui_whitelist Texture
-MultiplayerUI = ISPanel:derive("MultiplayerUI")
+MultiplayerUI = ISPanelJoypad:derive("MultiplayerUI")
 MultiplayerUI.Type = "MultiplayerUI"
 MultiplayerUI.startRefreshTime = nil ---@type number?
 MultiplayerUI.serverCount = nil
@@ -160,6 +160,8 @@ function MultiplayerUI:drawTickboxIcons(texture, x, y, scale) end
 ---@return umbrella.MultiplayerUI.AccountListItem?
 function MultiplayerUI:getServerFeatured(server) end
 
+---@param button JoypadButton
+---@param joypadData JoypadData
 ---@return boolean
 function MultiplayerUI:handleTabNavigateButtonDown(button, joypadData) end
 
@@ -183,8 +185,12 @@ function MultiplayerUI:onDeleteServer(button, server) end
 ---@param server Server
 function MultiplayerUI:onDoubleClickInternetList(server) end
 
+---@param button JoypadButton
+---@param joypadData JoypadData
 function MultiplayerUI:onJoypadDown(button, joypadData) end
 
+---@param button JoypadButton
+---@param joypadData JoypadData
 function MultiplayerUI:onJoypadDown_Descendant(descendant, button, joypadData) end
 
 ---@param x number

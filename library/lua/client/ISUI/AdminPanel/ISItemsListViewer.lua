@@ -19,12 +19,14 @@ function ISItemsListViewer:initialise() end
 
 function ISItemsListViewer:initList() end
 
+---@param key integer
 ---@return boolean
 function ISItemsListViewer:isKeyConsumed(key) end
 
 ---@param button ISButton
 function ISItemsListViewer:onClick(button) end
 
+---@param key integer
 function ISItemsListViewer:onKeyRelease(key) end
 
 function ISItemsListViewer:onSelectPlayer() end

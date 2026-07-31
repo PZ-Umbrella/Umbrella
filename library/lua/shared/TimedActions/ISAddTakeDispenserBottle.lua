@@ -2,7 +2,7 @@
 
 ---@class ISAddTakeDispenserBottle : ISBaseTimedAction
 ---@field bottle InventoryItem
----@field sound unknown
+---@field sound integer
 ---@field square IsoGridSquare
 ---@field waterdispenser IsoObject
 ISAddTakeDispenserBottle = ISBaseTimedAction:derive("ISAddTakeDispenserBottle")

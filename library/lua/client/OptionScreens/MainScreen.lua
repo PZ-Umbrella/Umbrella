@@ -2,7 +2,6 @@
 
 ---@class MainScreen : ISPanelJoypad
 ---@field abutton ISImage
----@field animPopup ISModalRichText
 ---@field bootstrapConnectPopup BootstrapConnectPopup
 ---@field bottomPanel ISPanel
 ---@field charCreationMain CharacterCreationMain
@@ -47,7 +46,6 @@
 ---@field onlineOption ISLabel
 ---@field optionsOption ISLabel
 ---@field overBottomPanelButton ISUIElement?
----@field quitToDesktop ISLabel
 ---@field quitToDesktopDialog ISModalDialog?
 ---@field quitToDesktopOption ISLabel
 ---@field reportBug ISButton

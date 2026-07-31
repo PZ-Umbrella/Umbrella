@@ -977,7 +977,8 @@ function forageSystem.forageAction(_character, _forageIcon) end
 
 function forageSystem.generateLootTable() end
 
----@return table
+---@param _object IsoObject
+---@return string[]
 function forageSystem.getAffinitySpriteNames(_object) end
 
 ---@param _character IsoPlayer
@@ -1289,8 +1290,9 @@ function forageSystem.recreateIcons() end
 function forageSystem.removeItemDef(_itemDef) end
 
 ---@param _spriteName string
----@return unknown?
----@return unknown?
+---@param _focusCategory string
+---@return string?
+---@return umbrella.Foraging.CategoryDefinition?
 function forageSystem.resolveSpriteAffinity(_spriteName, _focusCategory) end
 
 function forageSystem.setOptionValues() end

@@ -2,7 +2,6 @@
 
 ---@class ISButcherAnimal : ISBaseTimedAction
 ---@field body IsoDeadBody
----@field bodyItemToRemove InventoryItem | false
 ---@field perkLevel integer
 ---@field sound integer
 ISButcherAnimal = ISBaseTimedAction:derive("ISButcherAnimal")
@@ -38,6 +37,5 @@ function ISButcherAnimal:waitToStart() end
 
 ---@param character IsoPlayer
 ---@param body IsoDeadBody
----@param bodyItemToRemove InventoryItem?
 ---@return ISButcherAnimal
-function ISButcherAnimal:new(character, body, bodyItemToRemove) end
+function ISButcherAnimal:new(character, body) end

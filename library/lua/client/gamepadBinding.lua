@@ -1,21 +1,23 @@
 ---@meta
 
 ---@class gamepadBinding
----@field currentPreset unknown
----@field presets table
+---@field currentPreset umbrella.gamepadBinding.Preset?
+---@field presets table<string, umbrella.gamepadBinding.Preset>
 gamepadBinding = {}
 
 function gamepadBinding.optionGamepadBindingPresetChanged() end
 
----@return table
+---@param inputSet CharacterInputBindingSet
+---@return umbrella.gamepadBinding.Preset
 function gamepadBinding:addInputSet(inputSet) end
 
----@return table
+---@return umbrella.gamepadBinding.Preset
 function gamepadBinding:createNewFromCurrent() end
 
 ---@return string
 function gamepadBinding:getCurrentActivePresetName() end
 
+---@param presetKey string
 ---@return boolean
 function gamepadBinding:isCurrentBinding(presetKey) end
 
@@ -34,3 +36,9 @@ function gamepadBinding:saveAll() end
 function gamepadBinding:set(presetKey) end
 
 function gamepadBinding:setCurrentPresetToConfigOption() end
+
+---@class umbrella.gamepadBinding.Preset
+---@field descriptionText string
+---@field key string
+---@field labelText string
+---@field perform fun(self: umbrella.gamepadBinding.Preset)

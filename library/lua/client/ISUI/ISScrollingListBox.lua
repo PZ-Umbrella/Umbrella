@@ -46,7 +46,8 @@ function ISScrollingListBox.sortByName(a, b) end
 
 ---@param columnName string
 ---@param size number
-function ISScrollingListBox:addColumn(columnName, size) end
+---@param id string
+function ISScrollingListBox:addColumn(columnName, size, id) end
 
 ---@param name string
 ---@param item unknown?
@@ -126,6 +127,8 @@ function ISScrollingListBox:onJoypadDirUp() end
 ---@param joypadData JoypadData
 function ISScrollingListBox:onJoypadDown(button, joypadData) end
 
+---@param button JoypadButton
+---@param joypadData JoypadData
 ---@return boolean
 function ISScrollingListBox:onJoypadDownInParent(button, joypadData) end
 
@@ -274,6 +277,7 @@ function ISScrollingListBox:updateTooltip() end
 function ISScrollingListBox:new(x, y, width, height) end
 
 ---@class umbrella.ISScrollingListBox.Column
+---@field id string
 ---@field name string
 ---@field size number
 

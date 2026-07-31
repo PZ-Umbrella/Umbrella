@@ -19,9 +19,8 @@
 ---@field sourceContainerOpened ItemContainer?
 ---@field srcContainer ItemContainer
 ---@field started boolean
----@field startTime unknown
+---@field startTime integer
 ---@field transactionId number
----@field transactions umbrella.ISInventoryTransferAction.Transaction
 ISInventoryTransferAction = ISBaseTimedAction:derive("ISInventoryTransferAction")
 ISInventoryTransferAction.Type = "ISInventoryTransferAction"
 ISInventoryTransferAction.putSoundDelay = 2
