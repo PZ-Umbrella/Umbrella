@@ -52,6 +52,18 @@ Events.AcceptedFactionInvite = {
 	Remove = function(callback) end,
 }
 
+---
+---@alias Callback_AcceptedMedicalCheck fun(target:IsoPlayer,requester:IsoPlayer)
+
+---(Multiplayer) (Client) AcceptedMedicalCheck: Triggered when the target accepted a medical check request.
+---<br><br>
+Events.AcceptedMedicalCheck = {
+	---@param callback Callback_AcceptedMedicalCheck
+	Add = function(callback) end,
+	---@param callback Callback_AcceptedMedicalCheck
+	Remove = function(callback) end,
+}
+
 ---safehouse - Name of the safehouse.<br>username - Username of the safehouse owner.<br>
 ---@alias Callback_AcceptedSafehouseInvite fun(safehouse:string,username:string)
 
@@ -64,11 +76,11 @@ Events.AcceptedSafehouseInvite = {
 	Remove = function(callback) end,
 }
 
----accepted - Whether the trade was accepted.<br>
----@alias Callback_AcceptedTrade fun(accepted:boolean)
+---target - Player who accepted the trade.<br>requester - Player who requested the trade.<br>accepted - Whether the trade was accepted.<br>
+---@alias Callback_AcceptedTrade fun(target:IsoPlayer,requester:IsoPlayer,accepted:boolean)
 
 ---(Multiplayer) (Client) AcceptedTrade: Triggered when the other player in the client's current trade accepts or declines the trade.
----<br><br>accepted - Whether the trade was accepted.<br>
+---<br><br>target - Player who accepted the trade.<br>requester - Player who requested the trade.<br>accepted - Whether the trade was accepted.<br>
 Events.AcceptedTrade = {
 	---@param callback Callback_AcceptedTrade
 	Add = function(callback) end,
@@ -175,7 +187,7 @@ Events.GrapplerLetGo = {
 ---character - The character whose perk level changed.<br>perk - The perk that changed level.<br>level - The new level of the perk.<br>increased - True if the level increased, false if it decreased.<br>
 ---@alias Callback_LevelPerk fun(character:IsoGameCharacter,perk:PerkFactory.Perk,level:integer,increased:boolean)
 
----(Client) LevelPerk: Triggered after a local character gains or loses a perk level.
+---(Server) LevelPerk: Triggered after a character gains or loses a perk level.
 ---<br><br>character - The character whose perk level changed.<br>perk - The perk that changed level.<br>level - The new level of the perk.<br>increased - True if the level increased, false if it decreased.<br>
 Events.LevelPerk = {
 	---@param callback Callback_LevelPerk
@@ -437,7 +449,7 @@ Events.OnClothingUpdated = {
 }
 
 ---
----@alias Callback_OnConnectFailed fun(message:string)
+---@alias Callback_OnConnectFailed fun(message:string,detail:string | nil)
 
 ---(Multiplayer) (Client) OnConnectFailed: Triggered when the client fails to connect to a server.
 ---<br><br>
@@ -773,7 +785,7 @@ Events.OnFETick = {
 }
 
 ---roomType - Distribution type of the room the container is in, or the type of the vehicle.<br>containerType - The type of the container that was filled.<br>container - The container that was filled. An ItemPickerContainer is sometimes passed when a sub-container is spawned and filled, and is probably a bug.<br>
----@alias Callback_OnFillContainer fun(roomType:string,containerType:string,container:ItemContainer | ItemPickerContainer)
+---@alias Callback_OnFillContainer fun(roomType:string,containerType:string,container:ItemContainer | ItemPickerJava.ItemPickerContainer)
 
 ---(Server) OnFillContainer: Triggered whenever a container is first filled with loot, or when loot respawns.
 ---<br><br>roomType - Distribution type of the room the container is in, or the type of the vehicle.<br>containerType - The type of the container that was filled.<br>container - The container that was filled. An ItemPickerContainer is sometimes passed when a sub-container is spawned and filled, and is probably a bug.<br>
@@ -781,6 +793,18 @@ Events.OnFillContainer = {
 	---@param callback Callback_OnFillContainer
 	Add = function(callback) end,
 	---@param callback Callback_OnFillContainer
+	Remove = function(callback) end,
+}
+
+---playerIndex - The index of the player whose context menu has been filled.<br>context - The context menu that was filled.<br>isLoot - Whether the context menu was filled for a loot inventory window.<br>
+---@alias Callback_OnFillInventoryContextMenuNoItems fun(playerIndex:integer,context:ISContextMenu,isLoot:boolean)
+
+---(Client) OnFillInventoryContextMenuNoItems: Triggered after the context menu for no items has been filled.
+---<br><br>playerIndex - The index of the player whose context menu has been filled.<br>context - The context menu that was filled.<br>isLoot - Whether the context menu was filled for a loot inventory window.<br>
+Events.OnFillInventoryContextMenuNoItems = {
+	---@param callback Callback_OnFillInventoryContextMenuNoItems
+	Add = function(callback) end,
+	---@param callback Callback_OnFillInventoryContextMenuNoItems
 	Remove = function(callback) end,
 }
 
@@ -817,6 +841,42 @@ Events.OnFishingActionMPUpdate = {
 	---@param callback Callback_OnFishingActionMPUpdate
 	Add = function(callback) end,
 	---@param callback Callback_OnFishingActionMPUpdate
+	Remove = function(callback) end,
+}
+
+---
+---@alias Callback_OnForagePool fun(player:IsoPlayer,zoneId:string,icons:table<string, umbrella.Foraging.PoolRecord>)
+
+---(Client) OnForagePool: Triggered when a foraging pool is received from the server.
+---<br><br>
+Events.OnForagePool = {
+	---@param callback Callback_OnForagePool
+	Add = function(callback) end,
+	---@param callback Callback_OnForagePool
+	Remove = function(callback) end,
+}
+
+---
+---@alias Callback_OnForageRequestZone fun(player:IsoPlayer,focus:string)
+
+---(Server) OnForageRequestZone: Triggered when a request from the client is received to send forage pools.
+---<br><br>
+Events.OnForageRequestZone = {
+	---@param callback Callback_OnForageRequestZone
+	Add = function(callback) end,
+	---@param callback Callback_OnForageRequestZone
+	Remove = function(callback) end,
+}
+
+---
+---@alias Callback_OnForageSpot fun(player:IsoPlayer,iconID:string)
+
+---(Server) OnForageSpot: Triggered on the server when a client sends that they've spotted a foraging icon.
+---<br><br>
+Events.OnForageSpot = {
+	---@param callback Callback_OnForageSpot
+	Add = function(callback) end,
+	---@param callback Callback_OnForageSpot
 	Remove = function(callback) end,
 }
 
@@ -940,11 +1000,11 @@ Events.OnInitGlobalModData = {
 	Remove = function(callback) end,
 }
 
----weatherPeriod - The weather period that was created.<br>weatherStage - The weather stage that was created.<br>
+---weatherPeriod - The weather period that was created.<br>weatherStage - The weather stage that was created.<br>strength - The intensity of the weather stage.<br>
 ---@alias Callback_OnInitModdedWeatherStage fun(weatherPeriod:WeatherPeriod,weatherStage:WeatherPeriod.WeatherStage,strength:number)
 
 ---OnInitModdedWeatherStage: Triggered when a modded weather period is created.
----<br><br>weatherPeriod - The weather period that was created.<br>weatherStage - The weather stage that was created.<br>
+---<br><br>weatherPeriod - The weather period that was created.<br>weatherStage - The weather stage that was created.<br>strength - The intensity of the weather stage.<br>
 Events.OnInitModdedWeatherStage = {
 	---@param callback Callback_OnInitModdedWeatherStage
 	Add = function(callback) end,
@@ -989,7 +1049,7 @@ Events.OnInitWorld = {
 }
 
 ---
----@alias Callback_OnItemFound fun(player:IsoPlayer,itemType:string,amount:number)
+---@alias Callback_OnItemFound fun(player:IsoPlayer,itemType:string,distanceTraveled:number)
 
 ---OnItemFound:
 ---<br><br>
@@ -1057,6 +1117,18 @@ Events.OnJoypadDeactivate = {
 	---@param callback Callback_OnJoypadDeactivate
 	Add = function(callback) end,
 	---@param callback Callback_OnJoypadDeactivate
+	Remove = function(callback) end,
+}
+
+---
+---@alias Callback_OnJoypadDebugRenderUIOptionSet fun(debugDrawUI:boolean,debugDrawNavigation:boolean)
+
+---(Client) OnJoypadDebugRenderUIOptionSet: Triggered when rendering controller debug UI.
+---<br><br>
+Events.OnJoypadDebugRenderUIOptionSet = {
+	---@param callback Callback_OnJoypadDebugRenderUIOptionSet
+	Add = function(callback) end,
+	---@param callback Callback_OnJoypadDebugRenderUIOptionSet
 	Remove = function(callback) end,
 }
 
@@ -1445,7 +1517,7 @@ Events.OnPlayerDeath = {
 }
 
 ---character - The character who took damage.<br>damageType - The type of damage the character took.<br>damage - The damage that was taken.<br>
----@alias Callback_OnPlayerGetDamage fun(character:IsoGameCharacter,damageType:"POISON" | "HUNGRY" | "SICK" | "BLEEDING" | "THIRST" | "HEAVYLOAD" | "INFECTION" | "LOWWEIGHT" | "FALLDOWN" | "WEAPONHIT" | "CARHITDAMAGE" | "CARCRASHDAMAGE",damage:number)
+---@alias Callback_OnPlayerGetDamage fun(character:IsoGameCharacter,damageType:"POISON" | "HUNGRY" | "SICK" | "BLEEDING" | "THIRST" | "HEAVYLOAD" | "INFECTION" | "LOWWEIGHT" | "FALLDOWN" | "WEAPONHIT" | "CARHITDAMAGE" | "CARCRASHDAMAGE" | "FIRE",damage:number)
 
 ---OnPlayerGetDamage: Triggered every time a local player takes damage. Triggered once per frame by each bleeding body part. Also triggered when zombies are hit by weapons: this is the only case in which the event is triggered on the server.
 ---<br><br>character - The character who took damage.<br>damageType - The type of damage the character took.<br>damage - The damage that was taken.<br>
@@ -1564,6 +1636,18 @@ Events.OnPreDistributionMerge = {
 	Remove = function(callback) end,
 }
 
+---playerIndex - The index of the player whose context menu has been created.<br>context - The context menu that was created.<br>isLoot - Whether the context menu was created for a loot inventory window.<br>
+---@alias Callback_OnPreFillInventoryContextMenuNoItems fun(playerIndex:integer,context:ISContextMenu,isLoot:boolean)
+
+---(Client) OnPreFillInventoryContextMenuNoItems: Triggered when the context menu for no items is created, before it is filled.
+---<br><br>playerIndex - The index of the player whose context menu has been created.<br>context - The context menu that was created.<br>isLoot - Whether the context menu was created for a loot inventory window.<br>
+Events.OnPreFillInventoryContextMenuNoItems = {
+	---@param callback Callback_OnPreFillInventoryContextMenuNoItems
+	Add = function(callback) end,
+	---@param callback Callback_OnPreFillInventoryContextMenuNoItems
+	Remove = function(callback) end,
+}
+
 ---playerIndex - The index of the player whose context menu has been created.<br>context - The context menu that was created.<br>items - The items that were selected to fill the context menu. If only full stacks are selected, a table of ContextMenuItemStacks is passed. Otherwise it is a table of InventoryItems.<br>
 ---@alias Callback_OnPreFillInventoryObjectContextMenu fun(playerIndex:integer,context:ISContextMenu,items:InventoryItem[] | umbrella.ContextMenuItemStack[])
 
@@ -1672,11 +1756,11 @@ Events.OnProcessTransaction = {
 	Remove = function(callback) end,
 }
 
----
+---message - Status message for registration of the Google auth key.<br>
 ---@alias Callback_OnQRReceived fun(message:string)
 
 ---(Multiplayer) OnQRReceived:
----<br><br>
+---<br><br>message - Status message for registration of the Google auth key.<br>
 Events.OnQRReceived = {
 	---@param callback Callback_OnQRReceived
 	Add = function(callback) end,
@@ -1709,7 +1793,7 @@ Events.OnReceiveItemListNet = {
 }
 
 ---suspiciousActivity - Key is name of anticheat, value is number of times triggered (as a string for some reason).<br>
----@alias Callback_OnReceiveUserlog fun(username:string,logs:ArrayList,suspiciousActivity:table<string, string>)
+---@alias Callback_OnReceiveUserlog fun(username:string,logs:ArrayList,suspiciousActivity:table<string, string> | nil)
 
 ---(Multiplayer) (Client) OnReceiveUserlog: Triggered when receiving another client's Userlogs.
 ---<br><br>suspiciousActivity - Key is name of anticheat, value is number of times triggered (as a string for some reason).<br>
@@ -1841,7 +1925,7 @@ Events.OnSave = {
 }
 
 ---
----@alias Callback_OnScoreboardUpdate fun(usernames:ArrayList,displayNames:ArrayList,steamIDs:ArrayList)
+---@alias Callback_OnScoreboardUpdate fun(usernames:ArrayList,displayNames:ArrayList,steamIDs:ArrayList,pingValues:ArrayList)
 
 ---(Multiplayer) (Client) OnScoreboardUpdate: Triggered when the client receives an update to the in-game scoreboard.
 ---<br><br>
@@ -1973,7 +2057,7 @@ Events.OnSourceWindowFileReload = {
 }
 
 ---
----@alias Callback_OnSpawnRegionsLoaded fun(regions:table)
+---@alias Callback_OnSpawnRegionsLoaded fun(regions:umbrella.SpawnRegion[])
 
 ---(Client) OnSpawnRegionsLoaded: Triggered when the spawn regions have been loaded.
 ---<br><br>
@@ -2044,11 +2128,11 @@ Events.OnSteamRefreshInternetServers = {
 	Remove = function(callback) end,
 }
 
----rules - Table of information about the server<br>
----@alias Callback_OnSteamRulesRefreshComplete fun(address:string,port:number,rules:table)
+---address - IP address of the server.<br>port - Port of the server.<br>rules - Table of information about the server<br>
+---@alias Callback_OnSteamRulesRefreshComplete fun(address:string,port:number,rules:umbrella.ServerProperties)
 
 ---(Client) OnSteamRulesRefreshComplete: Triggered after a server's rules are retrieved.
----<br><br>rules - Table of information about the server<br>
+---<br><br>address - IP address of the server.<br>port - Port of the server.<br>rules - Table of information about the server<br>
 Events.OnSteamRulesRefreshComplete = {
 	---@param callback Callback_OnSteamRulesRefreshComplete
 	Add = function(callback) end,
@@ -2272,11 +2356,11 @@ Events.OnUpdateModdedWeatherStage = {
 	Remove = function(callback) end,
 }
 
----player - The player using the vehicle.<br>vehicle - The vehicle being used.<br>pressedNotTapped - True if the button was held for a short duration, false if the button was tapped.<br>
----@alias Callback_OnUseVehicle fun(player:IsoPlayer,vehicle:BaseVehicle,pressedNotTapped:boolean)
+---player - The player using the vehicle.<br>vehicle - The vehicle being used.<br>
+---@alias Callback_OnUseVehicle fun(player:IsoPlayer,vehicle:BaseVehicle)
 
 ---(Client) OnUseVehicle: Triggered when a local character enters or exits a vehicle.
----<br><br>player - The player using the vehicle.<br>vehicle - The vehicle being used.<br>pressedNotTapped - True if the button was held for a short duration, false if the button was tapped.<br>
+---<br><br>player - The player using the vehicle.<br>vehicle - The vehicle being used.<br>
 Events.OnUseVehicle = {
 	---@param callback Callback_OnUseVehicle
 	Add = function(callback) end,
@@ -2323,7 +2407,7 @@ Events.OnWaterAmountChange = {
 ---attacker - The character who attacked.<br>target - The character who was hit by the attack.<br>weapon - The weapon that was attacked with.<br>damage - How much damage the attack did.<br>
 ---@alias Callback_OnWeaponHitCharacter fun(attacker:IsoGameCharacter,target:IsoGameCharacter,weapon:HandWeapon,damage:number)
 
----(Client) OnWeaponHitCharacter: Triggered when a non-zombie character is hit by an attack from a local player.
+---(Client) OnWeaponHitCharacter: Triggered when a character, zombie or player, is hit by an attack from a local player.
 ---<br><br>attacker - The character who attacked.<br>target - The character who was hit by the attack.<br>weapon - The weapon that was attacked with.<br>damage - How much damage the attack did.<br>
 Events.OnWeaponHitCharacter = {
 	---@param callback Callback_OnWeaponHitCharacter
@@ -2489,10 +2573,34 @@ Events.OnZombieUpdate = {
 }
 
 ---
----@alias Callback_ReceiveFactionInvite fun(factionName:string,hostUsername:string)
+---@alias Callback_OptionControllerButtonStyleChanged fun(newOption:string)
+
+---(Client) OptionControllerButtonStyleChanged: Triggered when the controller button style option is changed.
+---<br><br>
+Events.OptionControllerButtonStyleChanged = {
+	---@param callback Callback_OptionControllerButtonStyleChanged
+	Add = function(callback) end,
+	---@param callback Callback_OptionControllerButtonStyleChanged
+	Remove = function(callback) end,
+}
+
+---
+---@alias Callback_OptionGamepadBindingPresetChanged fun(newOption:string)
+
+---(Client) OptionGamepadBindingPresetChanged: Triggered when the gamepad binding preset option is changed.
+---<br><br>
+Events.OptionGamepadBindingPresetChanged = {
+	---@param callback Callback_OptionGamepadBindingPresetChanged
+	Add = function(callback) end,
+	---@param callback Callback_OptionGamepadBindingPresetChanged
+	Remove = function(callback) end,
+}
+
+---faction - Faction the client is being invited to.<br>hostUsername - Username of the faction leader.<br>invitedUsername - Username of the player being invited.<br>
+---@alias Callback_ReceiveFactionInvite fun(faction:Faction,hostUsername:string,invitedUsername:string)
 
 ---(Multiplayer) (Client) ReceiveFactionInvite: Triggered when the client receives a faction invite.
----<br><br>
+---<br><br>faction - Faction the client is being invited to.<br>hostUsername - Username of the faction leader.<br>invitedUsername - Username of the player being invited.<br>
 Events.ReceiveFactionInvite = {
 	---@param callback Callback_ReceiveFactionInvite
 	Add = function(callback) end,
@@ -2500,11 +2608,11 @@ Events.ReceiveFactionInvite = {
 	Remove = function(callback) end,
 }
 
----
----@alias Callback_ReceiveSafehouseInvite fun(title:string,hostUsername:string)
+---safehouse - Safehouse the client is being invited to.<br>hostUsername - Username of the safehouse owner.<br>invitedUsername - Username of the player being invited.<br>
+---@alias Callback_ReceiveSafehouseInvite fun(safehouse:SafeHouse,hostUsername:string,invitedUsername:string)
 
 ---(Multiplayer) (Client) ReceiveSafehouseInvite: Triggered when the client receives a safehouse invite.
----<br><br>
+---<br><br>safehouse - Safehouse the client is being invited to.<br>hostUsername - Username of the safehouse owner.<br>invitedUsername - Username of the player being invited.<br>
 Events.ReceiveSafehouseInvite = {
 	---@param callback Callback_ReceiveSafehouseInvite
 	Add = function(callback) end,
@@ -2537,10 +2645,22 @@ Events.RenderOpaqueObjectsInWorld = {
 }
 
 ---
----@alias Callback_RequestTrade fun(requester:string)
+---@alias Callback_RequestMedicalCheck fun(target:IsoPlayer,requester:IsoPlayer)
+
+---(Multiplayer) (Client) RequestMedicalCheck: Triggered when a requester asks for a medical check.
+---<br><br>
+Events.RequestMedicalCheck = {
+	---@param callback Callback_RequestMedicalCheck
+	Add = function(callback) end,
+	---@param callback Callback_RequestMedicalCheck
+	Remove = function(callback) end,
+}
+
+---requester - Player who requested the trade.<br>target - Player receiving the trade request.<br>
+---@alias Callback_RequestTrade fun(requester:IsoPlayer,target:IsoPlayer)
 
 ---(Multiplayer) (Client) RequestTrade: Triggered when the client receives a trade request.
----<br><br>
+---<br><br>requester - Player who requested the trade.<br>target - Player receiving the trade request.<br>
 Events.RequestTrade = {
 	---@param callback Callback_RequestTrade
 	Add = function(callback) end,
@@ -2620,11 +2740,11 @@ Events.SyncFaction = {
 	Remove = function(callback) end,
 }
 
----player - The player who added the item.<br>item - The item that was added.<br>
----@alias Callback_TradingUIAddItem fun(player:IsoPlayer,item:InventoryItem)
+---otherPlayer - The player who added the item.<br>player - The local player who owns the trading UI.<br>item - The item that was added.<br>
+---@alias Callback_TradingUIAddItem fun(otherPlayer:IsoPlayer,player:IsoPlayer,item:InventoryItem)
 
 ---(Multiplayer) (Client) TradingUIAddItem: Triggered when the other player in a trade adds an item.
----<br><br>player - The player who added the item.<br>item - The item that was added.<br>
+---<br><br>otherPlayer - The player who added the item.<br>player - The local player who owns the trading UI.<br>item - The item that was added.<br>
 Events.TradingUIAddItem = {
 	---@param callback Callback_TradingUIAddItem
 	Add = function(callback) end,
@@ -2632,11 +2752,11 @@ Events.TradingUIAddItem = {
 	Remove = function(callback) end,
 }
 
----player - The player who removed the item.<br>id - The id of the removed item.<br>
----@alias Callback_TradingUIRemoveItem fun(player:IsoPlayer,id:integer)
+---otherPlayer - The player who removed the item.<br>player - The local player who owns the trading UI.<br>id - The id of the removed item.<br>
+---@alias Callback_TradingUIRemoveItem fun(otherPlayer:IsoPlayer,player:IsoPlayer,id:integer)
 
 ---(Multiplayer) (Client) TradingUIRemoveItem: Triggered when the other player in a trade removes an item.
----<br><br>player - The player who removed the item.<br>id - The id of the removed item.<br>
+---<br><br>otherPlayer - The player who removed the item.<br>player - The local player who owns the trading UI.<br>id - The id of the removed item.<br>
 Events.TradingUIRemoveItem = {
 	---@param callback Callback_TradingUIRemoveItem
 	Add = function(callback) end,
@@ -2644,11 +2764,11 @@ Events.TradingUIRemoveItem = {
 	Remove = function(callback) end,
 }
 
----player - The player changing the state.<br>state - The new state.<br>
----@alias Callback_TradingUIUpdateState fun(player:IsoPlayer,state:integer)
+---otherPlayer - The player changing the state.<br>player - The local player who owns the trading UI.<br>state - The new state.<br>
+---@alias Callback_TradingUIUpdateState fun(otherPlayer:IsoPlayer,player:IsoPlayer,state:integer)
 
 ---(Multiplayer) (Client) TradingUIUpdateState: Triggered when the other player in a trade changes the state of the trade.
----<br><br>player - The player changing the state.<br>state - The new state.<br>
+---<br><br>otherPlayer - The player changing the state.<br>player - The local player who owns the trading UI.<br>state - The new state.<br>
 Events.TradingUIUpdateState = {
 	---@param callback Callback_TradingUIUpdateState
 	Add = function(callback) end,
