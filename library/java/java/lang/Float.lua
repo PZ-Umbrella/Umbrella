@@ -23,65 +23,65 @@
 --- The class java.lang.Double has a discussion of equality,
 --- equivalence, and comparison of floating-point values that is
 --- equality applicable to float values.
----@class Float: Number, Comparable<number>, Constable, ConstantDesc
-local __Float = {}
+---@class number: Number, Comparable<number>, Constable, ConstantDesc
+local __number = {}
 
 ---@return integer
-function __Float:byteValue() end
+function __number:byteValue() end
 
 ---@param arg0 number
 ---@return integer
-function __Float:compareTo(arg0) end
+function __number:compareTo(arg0) end
 
 ---@return Optional<number>
-function __Float:describeConstable() end
+function __number:describeConstable() end
 
 ---@return number
-function __Float:doubleValue() end
+function __number:doubleValue() end
 
 ---@param arg0 any
 ---@return boolean
-function __Float:equals(arg0) end
+function __number:equals(arg0) end
 
 ---@return number
-function __Float:floatValue() end
+function __number:floatValue() end
 
 ---@return integer
-function __Float:hashCode() end
+function __number:hashCode() end
 
 ---@return integer
-function __Float:intValue() end
+function __number:intValue() end
 
 ---@return boolean
-function __Float:isInfinite() end
+function __number:isInfinite() end
 
 ---@return boolean
-function __Float:isNaN() end
+function __number:isNaN() end
 
 ---@return integer
-function __Float:longValue() end
+function __number:longValue() end
 
 ---@param arg0 MethodHandles.Lookup
 ---@return number
-function __Float:resolveConstantDesc(arg0) end
+function __number:resolveConstantDesc(arg0) end
 
 ---@return integer
-function __Float:shortValue() end
+function __number:shortValue() end
 
 ---@return string
-function __Float:toString() end
+function __number:toString() end
 
-Float = {}
+number = {}
 
 ---The number of bytes used to represent a float value.
 ---@type integer
-Float.BYTES = nil
+number.BYTES = nil
 
 ---Maximum exponent a finite float variable may have.  It
 --- is equal to the value returned by
 --- Math.getExponent(Float.MAX_VALUE).
 ---@type integer
-Float.MAX_EXPONENT = nil
+number.MAX_EXPONENT = nil
 
 ---A constant holding the largest positive finite value of type
 --- float, (2-2-23)·2127.
@@ -89,147 +89,147 @@ Float.MAX_EXPONENT = nil
 --- 0x1.fffffeP+127f and also equal to
 --- Float.intBitsToFloat(0x7f7fffff).
 ---@type number
-Float.MAX_VALUE = nil
+number.MAX_VALUE = nil
 
 ---Minimum exponent a normalized float variable may have.
 --- It is equal to the value returned by
 --- Math.getExponent(Float.MIN_NORMAL).
 ---@type integer
-Float.MIN_EXPONENT = nil
+number.MIN_EXPONENT = nil
 
 ---A constant holding the smallest positive normal value of type
 --- float, 2-126.  It is equal to the
 --- hexadecimal floating-point literal 0x1.0p-126f and also
 --- equal to Float.intBitsToFloat(0x00800000).
 ---@type number
-Float.MIN_NORMAL = nil
+number.MIN_NORMAL = nil
 
 ---A constant holding the smallest positive nonzero value of type
 --- float, 2-149. It is equal to the
 --- hexadecimal floating-point literal 0x0.000002P-126f
 --- and also equal to Float.intBitsToFloat(0x1).
 ---@type number
-Float.MIN_VALUE = nil
+number.MIN_VALUE = nil
 
 ---A constant holding the negative infinity of type
 --- float. It is equal to the value returned by
 --- Float.intBitsToFloat(0xff800000).
 ---@type number
-Float.NEGATIVE_INFINITY = nil
+number.NEGATIVE_INFINITY = nil
 
 ---A constant holding a Not-a-Number (NaN) value of type
 --- float.  It is equivalent to the value returned by
 --- Float.intBitsToFloat(0x7fc00000).
 ---@type number
-Float.NaN = nil
+number.NaN = nil
 
 ---A constant holding the positive infinity of type
 --- float. It is equal to the value returned by
 --- Float.intBitsToFloat(0x7f800000).
 ---@type number
-Float.POSITIVE_INFINITY = nil
+number.POSITIVE_INFINITY = nil
 
 ---@type integer
-Float.PRECISION = nil
+number.PRECISION = nil
 
 ---The number of bits used to represent a float value.
 ---@type integer
-Float.SIZE = nil
+number.SIZE = nil
 
 ---The Class instance representing the primitive type
 --- float.
 ---@type Class<number>
-Float.TYPE = nil
+number.TYPE = nil
 
 ---@param arg0 number
 ---@param arg1 number
 ---@return integer
-function Float.compare(arg0, arg1) end
+function number.compare(arg0, arg1) end
 
 ---@param arg0 integer
 ---@return number
-function Float.float16ToFloat(arg0) end
+function number.float16ToFloat(arg0) end
 
 ---@param arg0 number
 ---@return integer
-function Float.floatToFloat16(arg0) end
+function number.floatToFloat16(arg0) end
 
 ---@param arg0 number
 ---@return integer
-function Float.floatToIntBits(arg0) end
+function number.floatToIntBits(arg0) end
 
 ---@param arg0 number
 ---@return integer
-function Float.floatToRawIntBits(arg0) end
+function number.floatToRawIntBits(arg0) end
 
 ---@param arg0 number
 ---@return integer
-function Float.hashCode(arg0) end
+function number.hashCode(arg0) end
 
 ---@param arg0 integer
 ---@return number
-function Float.intBitsToFloat(arg0) end
+function number.intBitsToFloat(arg0) end
 
 ---@param arg0 number
 ---@return boolean
-function Float.isFinite(arg0) end
+function number.isFinite(arg0) end
 
 ---@param arg0 number
 ---@return boolean
-function Float.isInfinite(arg0) end
+function number.isInfinite(arg0) end
 
 ---@param arg0 number
 ---@return boolean
-function Float.isNaN(arg0) end
+function number.isNaN(arg0) end
 
 ---@param arg0 number
 ---@param arg1 number
 ---@return number
-function Float.max(arg0, arg1) end
+function number.max(arg0, arg1) end
 
 ---@param arg0 number
 ---@param arg1 number
 ---@return number
-function Float.min(arg0, arg1) end
+function number.min(arg0, arg1) end
 
 ---@param arg0 string
 ---@return number
-function Float.parseFloat(arg0) end
+function number.parseFloat(arg0) end
 
 ---@param arg0 number
 ---@param arg1 number
 ---@return number
-function Float.sum(arg0, arg1) end
+function number.sum(arg0, arg1) end
 
 ---@param arg0 number
 ---@return string
-function Float.toHexString(arg0) end
+function number.toHexString(arg0) end
 
 ---@param arg0 number
 ---@return string
-function Float.toString(arg0) end
+function number.toString(arg0) end
 
 ---@param arg0 string
 ---@return number
-function Float.valueOf(arg0) end
+function number.valueOf(arg0) end
 
 ---@param arg0 number
 ---@return number
-function Float.valueOf(arg0) end
+function number.valueOf(arg0) end
 
 ---@deprecated
 ---Constructs a newly allocated Float object that
 --- represents the primitive float argument.
 ---@param value number the value to be represented by the Float.
----@return Float
-function Float.new(value) end
+---@return number
+function number.new(value) end
 
 ---@deprecated
 ---Constructs a newly allocated Float object that
 --- represents the argument converted to type float.
 ---@param value number the value to be represented by the Float.
----@return Float
-function Float.new(value) end
+---@return number
+function number.new(value) end
 
 ---@deprecated
 ---Constructs a newly allocated Float object that
@@ -237,12 +237,12 @@ function Float.new(value) end
 --- represented by the string. The string is converted to a
 --- float value as if by the valueOf method.
 ---@param s string a string to be converted to a Float.
----@return Float
-function Float.new(s) end
+---@return number
+function number.new(s) end
 
----@type Class<Float>
-Float.class = nil
+---@type Class<number>
+number.class = nil
 
-__classmetatables[Float.class] = { __index = __Float }
+__classmetatables[number.class] = { __index = __number }
 
-java.lang.Float = Float
+java.lang.Float = number

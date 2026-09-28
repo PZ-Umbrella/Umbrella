@@ -167,18 +167,18 @@ function BloodClothingType.calcTotalBloodLevel(clothing) end
 function BloodClothingType.calcTotalDirtLevel(clothing) end
 
 ---@param str string
----@return BloodClothingType
+---@return BloodClothingType?
 function BloodClothingType.fromString(str) end
 
----@param bloodClothingType ArrayList<BloodClothingType>
+---@param bloodClothingType ArrayList<BloodClothingType>?
 ---@return integer
 function BloodClothingType.getCoveredPartCount(bloodClothingType) end
 
----@param bloodClothingType ArrayList<BloodClothingType>
+---@param bloodClothingType ArrayList<BloodClothingType>?
 ---@return ArrayList<BloodBodyPartType>
 function BloodClothingType.getCoveredParts(bloodClothingType) end
 
----@param bloodClothingType ArrayList<BloodClothingType>
+---@param bloodClothingType ArrayList<BloodClothingType>?
 ---@param result ArrayList<BloodBodyPartType>
 ---@return ArrayList<BloodBodyPartType>
 function BloodClothingType.getCoveredParts(bloodClothingType, result) end

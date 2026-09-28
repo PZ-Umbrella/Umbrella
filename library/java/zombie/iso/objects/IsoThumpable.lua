@@ -155,9 +155,6 @@ function __IsoThumpable:getHealth() end
 ---@return IsoGridSquare
 function __IsoThumpable:getIndoorSquare() end
 
----@return IsoGridSquare
-function __IsoThumpable:getInsideSquare() end
-
 ---@return integer
 function __IsoThumpable:getKeyId() end
 
@@ -202,9 +199,6 @@ function __IsoThumpable:getObjectName() end
 
 ---@return IsoSprite
 function __IsoThumpable:getOpenSprite() end
-
----@return IsoGridSquare
-function __IsoThumpable:getOppositeSquare() end
 
 ---@param chr IsoGameCharacter
 ---@return IsoGridSquare
@@ -273,6 +267,13 @@ function __IsoThumpable:isBarricaded() end
 
 ---@return boolean
 function __IsoThumpable:isBlockAllTheSquare() end
+
+---@return boolean
+function __IsoThumpable:isBlockedDoor() end
+
+---@param facingDirection GridSquareEdgeFacingDirection
+---@return boolean
+function __IsoThumpable:isBlockedDoor(facingDirection) end
 
 ---Can you pass through the item, if false we gonna test the collide default to false (so it collide)
 ---@return boolean

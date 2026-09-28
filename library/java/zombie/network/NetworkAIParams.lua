@@ -5,6 +5,9 @@ local __NetworkAIParams = {}
 
 NetworkAIParams = {}
 
+---@type number
+NetworkAIParams.ANIMAL_CLOSE_TO_REAL_DISTANCE = nil
+
 ---@type integer
 NetworkAIParams.ANIMAL_PREDICT_INTERVAL = nil
 
@@ -31,6 +34,9 @@ NetworkAIParams.MAX_TOWING_CAR_DISTANCE_SQ = nil
 
 ---@type number
 NetworkAIParams.MAX_TOWING_TRAILER_DISTANCE_SQ = nil
+
+---@type integer
+NetworkAIParams.NUM_CONNECTION_INDICES = nil
 
 ---@type number
 NetworkAIParams.TOWING_DISTANCE = nil

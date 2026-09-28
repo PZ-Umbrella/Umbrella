@@ -12,6 +12,13 @@ function __PlayerGetUpState:execute(owner) end
 ---@param owner IsoGameCharacter
 function __PlayerGetUpState:exit(owner) end
 
+---@return boolean
+function __PlayerGetUpState:isProcessedOnExit() end
+
+---@param owner IsoGameCharacter
+---@param delegate Map<any, any>
+function __PlayerGetUpState:processOnExit(owner, delegate) end
+
 ---@param owner IsoGameCharacter
 ---@param stage State.Stage
 function __PlayerGetUpState:setParams(owner, stage) end

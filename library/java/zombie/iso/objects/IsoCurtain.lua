@@ -1,6 +1,6 @@
 ---@meta _
 
----@class IsoCurtain: IsoObject, ICurtain
+---@class IsoCurtain: IsoObject, ICurtain, GridSquareEdgeElement
 local __IsoCurtain = {}
 
 ---@return boolean

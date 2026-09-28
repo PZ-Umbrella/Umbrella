@@ -5,6 +5,17 @@ local __ISWorldObjectContextMenuLogic = {}
 
 ISWorldObjectContextMenuLogic = {}
 
+---@param entry ContextMenuConfigScript.EntryScript
+---@param context ISContextMenuWrapper
+---@param entity GameEntity
+---@param playerObj IsoPlayer
+function ISWorldObjectContextMenuLogic.callCustomFunction(entry, context, entity, playerObj) end
+
+---@param entry ContextMenuConfigScript.EntryScript
+---@param item InventoryItem
+---@param playerObj IsoPlayer
+function ISWorldObjectContextMenuLogic.callCustomFunction(entry, item, playerObj) end
+
 ---@param chr IsoPlayer
 ---@return boolean
 function ISWorldObjectContextMenuLogic.checkBlowTorchForBarricade(chr) end

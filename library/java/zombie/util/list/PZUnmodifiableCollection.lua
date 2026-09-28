@@ -63,13 +63,13 @@ function __PZUnmodifiableCollection:stream() end
 function __PZUnmodifiableCollection:toArray() end
 
 ---@generic T
----@param a T
----@return T
+---@param a kahlua.Array<T>
+---@return kahlua.Array<T>
 function __PZUnmodifiableCollection:toArray(a) end
 
 ---@generic T
----@param f IntFunction<T>
----@return T
+---@param f IntFunction<kahlua.Array<T>>
+---@return kahlua.Array<T>
 function __PZUnmodifiableCollection:toArray(f) end
 
 ---@return string

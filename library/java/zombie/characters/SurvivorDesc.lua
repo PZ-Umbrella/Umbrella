@@ -77,7 +77,7 @@ function __SurvivorDesc:getLoyalty() end
 ---@return integer
 function __SurvivorDesc:getMetCount(descriptor) end
 
----@return HashMap<integer, integer>
+---@return HashMap<integer, integer> # the MetCount
 function __SurvivorDesc:getMetCount() end
 
 ---@return table

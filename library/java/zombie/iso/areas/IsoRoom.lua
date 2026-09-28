@@ -31,6 +31,9 @@ function __IsoRoom:addPotteryWheel() end
 ---@param sq IsoGridSquare
 function __IsoRoom:addSquare(sq) end
 
+---@param bLoading boolean
+function __IsoRoom:clear(bLoading) end
+
 ---@param active boolean
 function __IsoRoom:createLights(active) end
 
@@ -75,6 +78,9 @@ function __IsoRoom:getRandomWallFreeSquare() end
 
 ---@return IsoGridSquare
 function __IsoRoom:getRandomWallSquare() end
+
+---@return Rectangle
+function __IsoRoom:getRectsBounds() end
 
 ---@return RoomDef
 function __IsoRoom:getRoomDef() end

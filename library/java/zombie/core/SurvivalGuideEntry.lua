@@ -18,6 +18,10 @@ function __SurvivalGuideEntry:getKeys() end
 ---@return string
 function __SurvivalGuideEntry:getSubCategory() end
 
+---@param hasJoystick boolean
+---@return string?
+function __SurvivalGuideEntry:getText(hasJoystick) end
+
 ---@return string
 function __SurvivalGuideEntry:getThumbnail() end
 

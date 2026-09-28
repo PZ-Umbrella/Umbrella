@@ -102,65 +102,65 @@
 --- -0.0, and NaN, allows instances of wrapper classes to be used as
 --- elements of a SortedSet or as keys of a
 --- SortedMap.
----@class Double: Number, Comparable<number>, Constable, ConstantDesc
-local __Double = {}
+---@class number: Number, Comparable<number>, Constable, ConstantDesc
+local __number = {}
 
 ---@return integer
-function __Double:byteValue() end
+function __number:byteValue() end
 
 ---@param arg0 number
 ---@return integer
-function __Double:compareTo(arg0) end
+function __number:compareTo(arg0) end
 
 ---@return Optional<number>
-function __Double:describeConstable() end
+function __number:describeConstable() end
 
 ---@return number
-function __Double:doubleValue() end
+function __number:doubleValue() end
 
 ---@param arg0 any
 ---@return boolean
-function __Double:equals(arg0) end
+function __number:equals(arg0) end
 
 ---@return number
-function __Double:floatValue() end
+function __number:floatValue() end
 
 ---@return integer
-function __Double:hashCode() end
+function __number:hashCode() end
 
 ---@return integer
-function __Double:intValue() end
+function __number:intValue() end
 
 ---@return boolean
-function __Double:isInfinite() end
+function __number:isInfinite() end
 
 ---@return boolean
-function __Double:isNaN() end
+function __number:isNaN() end
 
 ---@return integer
-function __Double:longValue() end
+function __number:longValue() end
 
 ---@param arg0 MethodHandles.Lookup
 ---@return number
-function __Double:resolveConstantDesc(arg0) end
+function __number:resolveConstantDesc(arg0) end
 
 ---@return integer
-function __Double:shortValue() end
+function __number:shortValue() end
 
 ---@return string
-function __Double:toString() end
+function __number:toString() end
 
-Double = {}
+number = {}
 
 ---The number of bytes used to represent a double value.
 ---@type integer
-Double.BYTES = nil
+number.BYTES = nil
 
 ---Maximum exponent a finite double variable may have.
 --- It is equal to the value returned by
 --- Math.getExponent(Double.MAX_VALUE).
 ---@type integer
-Double.MAX_EXPONENT = nil
+number.MAX_EXPONENT = nil
 
 ---A constant holding the largest positive finite value of type
 --- double,
@@ -169,20 +169,20 @@ Double.MAX_EXPONENT = nil
 --- 0x1.fffffffffffffP+1023 and also equal to
 --- Double.longBitsToDouble(0x7fefffffffffffffL).
 ---@type number
-Double.MAX_VALUE = nil
+number.MAX_VALUE = nil
 
 ---Minimum exponent a normalized double variable may
 --- have.  It is equal to the value returned by
 --- Math.getExponent(Double.MIN_NORMAL).
 ---@type integer
-Double.MIN_EXPONENT = nil
+number.MIN_EXPONENT = nil
 
 ---A constant holding the smallest positive normal value of type
 --- double, 2-1022.  It is equal to the
 --- hexadecimal floating-point literal 0x1.0p-1022 and also
 --- equal to Double.longBitsToDouble(0x0010000000000000L).
 ---@type number
-Double.MIN_NORMAL = nil
+number.MIN_NORMAL = nil
 
 ---A constant holding the smallest positive nonzero value of type
 --- double, 2-1074. It is equal to the
@@ -190,112 +190,112 @@ Double.MIN_NORMAL = nil
 --- 0x0.0000000000001P-1022 and also equal to
 --- Double.longBitsToDouble(0x1L).
 ---@type number
-Double.MIN_VALUE = nil
+number.MIN_VALUE = nil
 
 ---A constant holding the negative infinity of type
 --- double. It is equal to the value returned by
 --- Double.longBitsToDouble(0xfff0000000000000L).
 ---@type number
-Double.NEGATIVE_INFINITY = nil
+number.NEGATIVE_INFINITY = nil
 
 ---A constant holding a Not-a-Number (NaN) value of type
 --- double. It is equivalent to the value returned by
 --- Double.longBitsToDouble(0x7ff8000000000000L).
 ---@type number
-Double.NaN = nil
+number.NaN = nil
 
 ---A constant holding the positive infinity of type
 --- double. It is equal to the value returned by
 --- Double.longBitsToDouble(0x7ff0000000000000L).
 ---@type number
-Double.POSITIVE_INFINITY = nil
+number.POSITIVE_INFINITY = nil
 
 ---@type integer
-Double.PRECISION = nil
+number.PRECISION = nil
 
 ---The number of bits used to represent a double value.
 ---@type integer
-Double.SIZE = nil
+number.SIZE = nil
 
 ---The Class instance representing the primitive type
 --- double.
 ---@type Class<number>
-Double.TYPE = nil
+number.TYPE = nil
 
 ---@param arg0 number
 ---@param arg1 number
 ---@return integer
-function Double.compare(arg0, arg1) end
+function number.compare(arg0, arg1) end
 
 ---@param arg0 number
 ---@return integer
-function Double.doubleToLongBits(arg0) end
+function number.doubleToLongBits(arg0) end
 
 ---@param arg0 number
 ---@return integer
-function Double.doubleToRawLongBits(arg0) end
+function number.doubleToRawLongBits(arg0) end
 
 ---@param arg0 number
 ---@return integer
-function Double.hashCode(arg0) end
+function number.hashCode(arg0) end
 
 ---@param arg0 number
 ---@return boolean
-function Double.isFinite(arg0) end
+function number.isFinite(arg0) end
 
 ---@param arg0 number
 ---@return boolean
-function Double.isInfinite(arg0) end
+function number.isInfinite(arg0) end
 
 ---@param arg0 number
 ---@return boolean
-function Double.isNaN(arg0) end
+function number.isNaN(arg0) end
 
 ---@param arg0 integer
 ---@return number
-function Double.longBitsToDouble(arg0) end
+function number.longBitsToDouble(arg0) end
 
 ---@param arg0 number
 ---@param arg1 number
 ---@return number
-function Double.max(arg0, arg1) end
+function number.max(arg0, arg1) end
 
 ---@param arg0 number
 ---@param arg1 number
 ---@return number
-function Double.min(arg0, arg1) end
+function number.min(arg0, arg1) end
 
 ---@param arg0 string
 ---@return number
-function Double.parseDouble(arg0) end
+function number.parseDouble(arg0) end
 
 ---@param arg0 number
 ---@param arg1 number
 ---@return number
-function Double.sum(arg0, arg1) end
+function number.sum(arg0, arg1) end
 
 ---@param arg0 number
 ---@return string
-function Double.toHexString(arg0) end
+function number.toHexString(arg0) end
 
 ---@param arg0 number
 ---@return string
-function Double.toString(arg0) end
+function number.toString(arg0) end
 
 ---@param arg0 string
 ---@return number
-function Double.valueOf(arg0) end
+function number.valueOf(arg0) end
 
 ---@param arg0 number
 ---@return number
-function Double.valueOf(arg0) end
+function number.valueOf(arg0) end
 
 ---@deprecated
 ---Constructs a newly allocated Double object that
 --- represents the primitive double argument.
 ---@param value number the value to be represented by the Double.
----@return Double
-function Double.new(value) end
+---@return number
+function number.new(value) end
 
 ---@deprecated
 ---Constructs a newly allocated Double object that
@@ -303,12 +303,12 @@ function Double.new(value) end
 --- represented by the string. The string is converted to a
 --- double value as if by the valueOf method.
 ---@param s string a string to be converted to a Double.
----@return Double
-function Double.new(s) end
+---@return number
+function number.new(s) end
 
----@type Class<Double>
-Double.class = nil
+---@type Class<number>
+number.class = nil
 
-__classmetatables[Double.class] = { __index = __Double }
+__classmetatables[number.class] = { __index = __number }
 
-java.lang.Double = Double
+java.lang.Double = number

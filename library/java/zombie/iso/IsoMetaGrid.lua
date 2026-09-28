@@ -330,6 +330,16 @@ function __IsoMetaGrid:registerGeometryZone(name, type, z, geometry, pointsTable
 
 ---@param name string
 ---@param type string
+---@param z integer
+---@param geometryType ZoneGeometryType
+---@param points TIntArrayList
+---@param properties table
+---@param width integer
+---@return Zone
+function __IsoMetaGrid:registerGeometryZone(name, type, z, geometryType, points, properties, width) end
+
+---@param name string
+---@param type string
 ---@param x integer
 ---@param y integer
 ---@param z integer
@@ -473,6 +483,9 @@ IsoMetaGrid = {}
 
 ---@type integer
 IsoMetaGrid.ANY_Z = nil
+
+---@type integer
+IsoMetaGrid.IDEAL_MAX_ZONE_SIZE = nil
 
 ---@type ThreadLocal<IsoGameCharacter.Location>
 IsoMetaGrid.TL_Location = nil

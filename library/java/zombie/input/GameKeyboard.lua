@@ -29,6 +29,10 @@ function GameKeyboard.isKeyDown(key) end
 ---@return boolean
 function GameKeyboard.isKeyDown(keyName) end
 
+---@param keybindId KeybindId
+---@return boolean
+function GameKeyboard.isKeyDown(keybindId) end
+
 ---@param key integer
 ---@return boolean
 function GameKeyboard.isKeyDownRaw(key) end
@@ -41,6 +45,10 @@ function GameKeyboard.isKeyPressed(key) end
 ---@param keyName string
 ---@return boolean
 function GameKeyboard.isKeyPressed(keyName) end
+
+---@param keybindId KeybindId
+---@return boolean
+function GameKeyboard.isKeyPressed(keybindId) end
 
 function GameKeyboard.poll() end
 
@@ -58,6 +66,10 @@ function GameKeyboard.wasKeyDown(key) end
 ---@return boolean
 function GameKeyboard.wasKeyDown(keyName) end
 
+---@param keybindId KeybindId
+---@return boolean
+function GameKeyboard.wasKeyDown(keybindId) end
+
 ---@param key integer
 ---@return boolean
 function GameKeyboard.wasKeyDownRaw(key) end
@@ -65,6 +77,10 @@ function GameKeyboard.wasKeyDownRaw(key) end
 ---@param keyName string
 ---@return integer
 function GameKeyboard.whichKeyDown(keyName) end
+
+---@param keybindId KeybindId
+---@return integer
+function GameKeyboard.whichKeyDown(keybindId) end
 
 ---@param keyName string
 ---@return integer

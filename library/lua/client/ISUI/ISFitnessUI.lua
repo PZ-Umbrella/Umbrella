@@ -7,6 +7,7 @@
 ---@field cancel ISButton
 ---@field clickedSquare IsoGridSquare
 ---@field close ISButton
+---@field currentExercice string?
 ---@field exeData umbrella.FitnessExercises.Exercise?
 ---@field exercises ISRadioButtons
 ---@field exeTime ISTextEntryBox
@@ -14,6 +15,7 @@
 ---@field fgBarOrange umbrella.RGBA
 ---@field fgBarRed umbrella.RGBA
 ---@field fitness Fitness
+---@field itemsToReequip table<string, InventoryItem>
 ---@field joypadButtons ISButton[]
 ---@field minusBtn ISButton
 ---@field ok ISButton
@@ -66,6 +68,8 @@ function ISFitnessUI:selectedNewExercise() end
 
 ---@param bVisible boolean
 function ISFitnessUI:setVisible(bVisible) end
+
+function ISFitnessUI:update() end
 
 ---@param currentAction ISBaseTimedAction
 function ISFitnessUI:updateButtons(currentAction) end

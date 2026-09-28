@@ -346,6 +346,10 @@ function __IsoMovingObject:isSolidForSeparate() end
 ---@return boolean
 function __IsoMovingObject:isStanding() end
 
+---@param target IsoMovingObject
+---@return boolean
+function __IsoMovingObject:isTransparentWallTo(target) end
+
 ---@param object IsoMovingObject
 ---@param minRange number
 ---@return boolean

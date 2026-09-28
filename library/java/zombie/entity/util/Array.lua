@@ -29,17 +29,17 @@ function __Array:addAll(array) end
 ---@param count integer
 function __Array:addAll(array, start, count) end
 
----@param array T
+---@param array kahlua.Array<T>
 function __Array:addAll(array) end
 
----@param array T
+---@param array kahlua.Array<T>
 ---@param start integer
 ---@param count integer
 function __Array:addAll(array, start, count) end
 
 function __Array:clear() end
 
----@param value T
+---@param value T?
 ---@param identity boolean
 ---@return boolean
 function __Array:contains(value, identity) end
@@ -55,7 +55,7 @@ function __Array:containsAll(values, identity) end
 function __Array:containsAny(values, identity) end
 
 ---@param additionalCapacity integer
----@return T
+---@return kahlua.Array<T>
 function __Array:ensureCapacity(additionalCapacity) end
 
 ---@param object any
@@ -76,7 +76,7 @@ function __Array:get(index) end
 ---@return integer
 function __Array:hashCode() end
 
----@param value T
+---@param value T?
 ---@param identity boolean
 ---@return integer
 function __Array:indexOf(value, identity) end
@@ -95,7 +95,7 @@ function __Array:isEmpty() end
 ---@return Array.ArrayIterator<T>
 function __Array:iterator() end
 
----@param value T
+---@param value T?
 ---@param identity boolean
 ---@return integer
 function __Array:lastIndexOf(value, identity) end
@@ -109,7 +109,7 @@ function __Array:peek() end
 ---@return T
 function __Array:pop() end
 
----@return T
+---@return T?
 function __Array:random() end
 
 ---@param array Array<T>
@@ -125,7 +125,7 @@ function __Array:removeIndex(index) end
 ---@param _end integer
 function __Array:removeRange(start, _end) end
 
----@param value T
+---@param value T?
 ---@param identity boolean
 ---@return boolean
 function __Array:removeValue(value, identity) end
@@ -151,10 +151,10 @@ function __Array:selectRankedIndex(comparator, kthLowest) end
 function __Array:set(index, value) end
 
 ---@param newSize integer
----@return T
+---@return kahlua.Array<T>
 function __Array:setSize(newSize) end
 
----@return T
+---@return kahlua.Array<T>
 function __Array:shrink() end
 
 function __Array:shuffle() end
@@ -168,12 +168,12 @@ function __Array:sort(comparator) end
 ---@param second integer
 function __Array:swap(first, second) end
 
----@return T
+---@return kahlua.Array<T>
 function __Array:toArray() end
 
 ---@generic V
 ---@param type Class<V>
----@return V
+---@return kahlua.Array<V>
 function __Array:toArray(type) end
 
 ---@return string
@@ -201,7 +201,7 @@ function Array.of(arrayType) end
 function Array.of(ordered, capacity, arrayType) end
 
 ---@generic T
----@param array T
+---@param array kahlua.Array<T>
 ---@return Array<T>
 function Array.with(array) end
 
@@ -238,13 +238,13 @@ function Array.new(arrayType) end
 function Array.new(array) end
 
 ---@generic T
----@param array T
+---@param array kahlua.Array<T>
 ---@return Array<T>
 function Array.new(array) end
 
 ---@generic T
 ---@param ordered boolean
----@param array T
+---@param array kahlua.Array<T>
 ---@param start integer
 ---@param count integer
 ---@return Array<T>

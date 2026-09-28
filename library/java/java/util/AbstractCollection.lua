@@ -72,8 +72,8 @@ function __AbstractCollection:size() end
 function __AbstractCollection:toArray() end
 
 ---@generic T
----@param arg0 T
----@return T
+---@param arg0 kahlua.Array<T>
+---@return kahlua.Array<T>
 function __AbstractCollection:toArray(arg0) end
 
 ---@return string

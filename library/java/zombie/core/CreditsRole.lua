@@ -18,6 +18,9 @@ CreditsRole.ADDITIONAL_ARTISTS = nil
 CreditsRole.ADDITIONAL_CODE = nil
 
 ---@type CreditsRole
+CreditsRole.ADDITIONAL_SUPPORT = nil
+
+---@type CreditsRole
 CreditsRole.ARTISTS = nil
 
 ---@type CreditsRole
@@ -72,6 +75,9 @@ CreditsRole.GENERAL_ARCADE = nil
 CreditsRole.GRAPHIC_DESIGNER = nil
 
 ---@type CreditsRole
+CreditsRole.HEAD_FQA = nil
+
+---@type CreditsRole
 CreditsRole.HEAD_PRODUCER = nil
 
 ---@type CreditsRole
@@ -103,6 +109,9 @@ CreditsRole.LEAD_QA = nil
 
 ---@type CreditsRole
 CreditsRole.LEAD_QA_TIS = nil
+
+---@type CreditsRole
+CreditsRole.LEAD_QA_USS = nil
 
 ---@type CreditsRole
 CreditsRole.LEAD_SOUND_DESIGNER_ARRIVAL = nil
@@ -138,6 +147,12 @@ CreditsRole.PRODUCTION_DIRECTOR = nil
 CreditsRole.QA = nil
 
 ---@type CreditsRole
+CreditsRole.QA_PROJECT_MANAGER = nil
+
+---@type CreditsRole
+CreditsRole.QA_TECHNICIANS = nil
+
+---@type CreditsRole
 CreditsRole.QUALITY_ASSURANCE = nil
 
 ---@type CreditsRole
@@ -157,6 +172,9 @@ CreditsRole.SENIOR_PROGRAMMER = nil
 
 ---@type CreditsRole
 CreditsRole.SENIOR_QA = nil
+
+---@type CreditsRole
+CreditsRole.SENIOR_QA_TECHNICIANS = nil
 
 ---@type CreditsRole
 CreditsRole.SENIOR_SOFTWARE_DEVELOPER = nil

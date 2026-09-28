@@ -91,6 +91,9 @@ IsoPropertyType.CAN_BREAK = nil
 IsoPropertyType.CAN_SCRAP = nil
 
 ---@type IsoPropertyType
+IsoPropertyType.CAR_SLOW_FACTOR = nil
+
+---@type IsoPropertyType
 IsoPropertyType.CHAIR_E = nil
 
 ---@type IsoPropertyType

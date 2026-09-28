@@ -156,6 +156,10 @@ function __PathFindBehavior2:shouldIgnoreCollisionWithSquare(square) end
 ---@return PathFindBehavior2.BehaviorResult
 function __PathFindBehavior2:update() end
 
+---@param speedMul number
+---@return PathFindBehavior2.BehaviorResult
+function __PathFindBehavior2:update(speedMul) end
+
 PathFindBehavior2 = {}
 
 ---@param x3 number

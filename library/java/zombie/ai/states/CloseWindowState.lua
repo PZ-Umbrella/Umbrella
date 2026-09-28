@@ -25,6 +25,10 @@ function __CloseWindowState:getWindow(owner) end
 ---@return boolean # TRUE if this state handles the "Cancel Action" key or the B controller button.
 function __CloseWindowState:isDoingActionThatCanBeCancelled() end
 
+---@param owner IsoGameCharacter
+---@param stage State.Stage
+function __CloseWindowState:setParams(owner, stage) end
+
 CloseWindowState = {}
 
 ---@type State.Param<IsoWindow>

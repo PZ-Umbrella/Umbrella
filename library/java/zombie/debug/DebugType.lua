@@ -218,6 +218,9 @@ DebugType.CharacterTrait = nil
 DebugType.Checksum = nil
 
 ---@type DebugType
+DebugType.ClientCommand = nil
+
+---@type DebugType
 DebugType.Clothing = nil
 
 ---@type DebugType
@@ -374,7 +377,13 @@ DebugType.Statistic = nil
 DebugType.Translation = nil
 
 ---@type DebugType
+DebugType.UnitTest = nil
+
+---@type DebugType
 DebugType.Vehicle = nil
+
+---@type DebugType
+DebugType.VehicleClientCommand = nil
 
 ---@type DebugType
 DebugType.VehicleHit = nil

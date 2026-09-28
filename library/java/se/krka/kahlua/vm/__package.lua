@@ -1,7 +1,7 @@
 ---@meta _
 
 ---(Not exposed)
----@class KahluaTable
+---@class Coroutine
 
 ---(Not exposed)
 ---@class KahluaThread
@@ -10,15 +10,9 @@
 ---@class LuaCallFrame
 
 ---(Not exposed)
----@class LuaClosure
-
----(Not exposed)
 ---@class Platform
 
 ---(Not exposed)
 ---@class Prototype
-
----(Not exposed)
----@class UpValue
 
 se.krka.kahlua.vm = {}

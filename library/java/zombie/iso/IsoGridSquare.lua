@@ -141,10 +141,6 @@ function __IsoGridSquare:CalculateCollide(gridSquare, bVision, bPathfind, bIgnor
 function __IsoGridSquare:CalculateCollide(gridSquare, bVision, bPathfind, bIgnoreSolidTrans, bIgnoreSolid, getter) end
 
 ---@param gridSquare IsoGridSquare
----@return boolean
-function __IsoGridSquare:CalculateVisionBlocked(gridSquare) end
-
----@param gridSquare IsoGridSquare
 ---@param getter IsoGridSquare.GetSquare
 ---@return boolean
 function __IsoGridSquare:CalculateVisionBlocked(gridSquare, getter) end
@@ -615,10 +611,7 @@ function __IsoGridSquare:createCorpse(zombie) end
 ---@return IsoDeadBody
 function __IsoGridSquare:createCorpse(zombie, skeleton) end
 
----@param player IsoPlayer
----@param north boolean
----@return boolean
-function __IsoGridSquare:damageSpriteSheetRopeFromBottom(player, north) end
+function __IsoGridSquare:damageSpriteSheetRopeFromBottom() end
 
 function __IsoGridSquare:destroyFarmingPlant() end
 
@@ -631,6 +624,44 @@ function __IsoGridSquare:discard() end
 ---@param getter IsoGridSquare.GetSquare
 ---@return IsoGridSquare
 function __IsoGridSquare:doGridNav(getter) end
+
+---@generic T: GridSquareEdgeElement
+---@param returnType Class<T>
+---@param facingDirection GridSquareEdgeFacingDirection
+---@return T
+function __IsoGridSquare:findEdgeObject(returnType, facingDirection) end
+
+---@generic T: GridSquareEdgeElement
+---@param returnType Class<T>
+---@param facingDirection GridSquareEdgeFacingDirection
+---@return T
+function __IsoGridSquare:findEdgeSpecialObject(returnType, facingDirection) end
+
+---@generic T
+---@param returnType Class<T>
+---@return T
+function __IsoGridSquare:findObject(returnType) end
+
+---@generic T
+---@generic U
+---@param returnType Class<T>
+---@param checkPredicate BiPredicate<T, U>
+---@param comparisonParam U
+---@return T
+function __IsoGridSquare:findObject(returnType, checkPredicate, comparisonParam) end
+
+---@generic T
+---@param returnType Class<T>
+---@return T
+function __IsoGridSquare:findSpecialObject(returnType) end
+
+---@generic T
+---@generic U
+---@param returnType Class<T>
+---@param checkPredicate BiPredicate<T, U>
+---@param comparisonParam U
+---@return T
+function __IsoGridSquare:findSpecialObject(returnType, checkPredicate, comparisonParam) end
 
 function __IsoGridSquare:fixPlacedItemRenderOffsets() end
 
@@ -677,13 +708,18 @@ function __IsoGridSquare:getApparentZ(dx, dy) end
 ---@return IsoObject
 function __IsoGridSquare:getBed() end
 
----@param next IsoGridSquare
+---@param facingDirection GridSquareEdgeFacingDirection
 ---@return IsoObject
-function __IsoGridSquare:getBedTo(next) end
+function __IsoGridSquare:getBendable(facingDirection) end
 
----@param north boolean
+---@param alongEdge GridSquareEdge
 ---@return IsoObject
-function __IsoGridSquare:getBendable(north) end
+function __IsoGridSquare:getBendable(alongEdge) end
+
+---@param alongEdge GridSquareEdge
+---@param getSquare IsoGridSquare.GetSquare
+---@return IsoObject
+function __IsoGridSquare:getBendable(alongEdge, getSquare) end
 
 ---@param next IsoGridSquare
 ---@return IsoObject
@@ -768,13 +804,18 @@ function __IsoGridSquare:getDeferedCharacters() end
 ---@return DeviceData
 function __IsoGridSquare:getDeviceData() end
 
----@param north boolean
+---@param facingDirection GridSquareEdgeFacingDirection
 ---@return IsoObject
-function __IsoGridSquare:getDoor(north) end
+function __IsoGridSquare:getDoor(facingDirection) end
 
----@param next IsoGridSquare
+---@param alongEdge GridSquareEdge
 ---@return IsoObject
-function __IsoGridSquare:getDoorFrameTo(next) end
+function __IsoGridSquare:getDoor(alongEdge) end
+
+---@param alongEdge GridSquareEdge
+---@param getSquare IsoGridSquare.GetSquare
+---@return IsoObject
+function __IsoGridSquare:getDoor(alongEdge, getSquare) end
 
 ---@param north boolean
 ---@return IsoObject
@@ -790,8 +831,34 @@ function __IsoGridSquare:getDoorOrWindowOrWindowFrame(dir, ignoreOpen) end
 ---@return IsoObject
 function __IsoGridSquare:getDoorTo(next) end
 
+---@param next IsoGridSquare
+---@param getSquare IsoGridSquare.GetSquare
+---@return IsoObject
+function __IsoGridSquare:getDoorTo(next, getSquare) end
+
 ---@return IsoGridSquare # the e
 function __IsoGridSquare:getE() end
+
+---@return IsoGridSquare
+function __IsoGridSquare:getEast() end
+
+---@param getSquare IsoGridSquare.GetSquare
+---@return IsoGridSquare
+function __IsoGridSquare:getEast(getSquare) end
+
+---@generic T
+---@param alongEdge GridSquareEdge
+---@param facingGetter BiFunction<IsoGridSquare, GridSquareEdgeFacingDirection, T>
+---@param getSquare IsoGridSquare.GetSquare
+---@return T
+function __IsoGridSquare:getEdgeElement(alongEdge, facingGetter, getSquare) end
+
+---@generic T
+---@param next IsoGridSquare
+---@param edgeGetter TriFunction<IsoGridSquare, GridSquareEdge, IsoGridSquare.GetSquare, T>
+---@param getSquare IsoGridSquare.GetSquare
+---@return T
+function __IsoGridSquare:getEdgeElementTo(next, edgeGetter, getSquare) end
 
 ---@return ErosionData.Square
 function __IsoGridSquare:getErosionData() end
@@ -849,13 +916,32 @@ function __IsoGridSquare:getHashCodeObjectsInt() end
 ---@return IsoObject
 function __IsoGridSquare:getHiddenStash() end
 
+---@deprecated
 ---@param north boolean
 ---@return IsoObject
 function __IsoGridSquare:getHoppable(north) end
 
----@param north boolean
+---@param facingDirection GridSquareEdgeFacingDirection
+---@return IsoObject
+function __IsoGridSquare:getHoppableOrWindowFrame(facingDirection) end
+
+---@param alongEdge GridSquareEdge
+---@return IsoObject
+function __IsoGridSquare:getHoppableOrWindowFrame(alongEdge) end
+
+---@param alongEdge GridSquareEdge
+---@param getSquare IsoGridSquare.GetSquare
+---@return IsoObject
+function __IsoGridSquare:getHoppableOrWindowFrame(alongEdge, getSquare) end
+
+---@param alongEdge GridSquareEdge
 ---@return IsoThumpable
-function __IsoGridSquare:getHoppableThumpable(north) end
+function __IsoGridSquare:getHoppableThumpable(alongEdge) end
+
+---@param alongEdge GridSquareEdge
+---@param getSquare IsoGridSquare.GetSquare
+---@return IsoThumpable
+function __IsoGridSquare:getHoppableThumpable(alongEdge, getSquare) end
 
 ---@param next IsoGridSquare
 ---@return IsoThumpable
@@ -864,6 +950,11 @@ function __IsoGridSquare:getHoppableThumpableTo(next) end
 ---@param next IsoGridSquare
 ---@return IsoObject
 function __IsoGridSquare:getHoppableTo(next) end
+
+---@param next IsoGridSquare
+---@param getSquare IsoGridSquare.GetSquare
+---@return IsoObject
+function __IsoGridSquare:getHoppableTo(next, getSquare) end
 
 ---@param bNorth boolean
 ---@return IsoObject
@@ -947,6 +1038,13 @@ function __IsoGridSquare:getN() end
 ---@return integer
 function __IsoGridSquare:getNextNonItemObjectIndex(index) end
 
+---@return IsoGridSquare
+function __IsoGridSquare:getNorth() end
+
+---@param getSquare IsoGridSquare.GetSquare
+---@return IsoGridSquare
+function __IsoGridSquare:getNorth(getSquare) end
+
 ---@generic T
 ---@param paramToCompare T
 ---@param isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
@@ -970,6 +1068,10 @@ function __IsoGridSquare:getOpenAir() end
 ---@param dir IsoDirections
 ---@return IsoObject
 function __IsoGridSquare:getOpenDoor(dir) end
+
+---@param edgeDirection GridSquareEdgeFacingDirection
+---@return IsoGridSquare
+function __IsoGridSquare:getOppositeSquare(edgeDirection) end
 
 ---@return IsoGridOcclusionData
 function __IsoGridSquare:getOrCreateOcclusionData() end
@@ -1074,7 +1176,14 @@ function __IsoGridSquare:getSlopedSurfaceHeightMax() end
 ---@return number
 function __IsoGridSquare:getSlopedSurfaceHeightMin() end
 
----@return ArrayList<IsoObject> # the SpecialObjects
+---@return IsoGridSquare
+function __IsoGridSquare:getSouth() end
+
+---@param getSquare IsoGridSquare.GetSquare
+---@return IsoGridSquare
+function __IsoGridSquare:getSouth(getSquare) end
+
+---@return List<IsoObject>
 function __IsoGridSquare:getSpecialObjects() end
 
 ---@return IsoGridSquare
@@ -1146,9 +1255,14 @@ function __IsoGridSquare:getThumpableWall(bNorth) end
 ---@return IsoObject
 function __IsoGridSquare:getThumpableWallOrHoppable(bNorth) end
 
----@param north boolean
+---@param alongEdge GridSquareEdge
 ---@return IsoThumpable
-function __IsoGridSquare:getThumpableWindow(north) end
+function __IsoGridSquare:getThumpableWindow(alongEdge) end
+
+---@param alongEdge GridSquareEdge
+---@param getSquare IsoGridSquare.GetSquare
+---@return IsoThumpable
+function __IsoGridSquare:getThumpableWindow(alongEdge, getSquare) end
 
 ---@param directions IsoDirections
 ---@return IsoGridSquare
@@ -1221,13 +1335,27 @@ function __IsoGridSquare:getWallExcludingObject(bNorth, exclude) end
 ---@return boolean
 function __IsoGridSquare:getWallFull() end
 
----@param north boolean
+---@param facingDirection GridSquareEdgeFacingDirection
 ---@return IsoObject
-function __IsoGridSquare:getWallHoppable(north) end
+function __IsoGridSquare:getWallHoppable(facingDirection) end
+
+---@param alongEdge GridSquareEdge
+---@return IsoObject
+function __IsoGridSquare:getWallHoppable(alongEdge) end
+
+---@param alongEdge GridSquareEdge
+---@param getSquare IsoGridSquare.GetSquare
+---@return IsoObject
+function __IsoGridSquare:getWallHoppable(alongEdge, getSquare) end
 
 ---@param next IsoGridSquare
 ---@return IsoObject
 function __IsoGridSquare:getWallHoppableTo(next) end
+
+---@param next IsoGridSquare
+---@param getSquare IsoGridSquare.GetSquare
+---@return IsoObject
+function __IsoGridSquare:getWallHoppableTo(next, getSquare) end
 
 ---@return IsoObject
 function __IsoGridSquare:getWallNW() end
@@ -1244,30 +1372,70 @@ function __IsoGridSquare:getWater() end
 ---@return IsoObject
 function __IsoGridSquare:getWaterObject() end
 
----@param north boolean
+---@return IsoGridSquare
+function __IsoGridSquare:getWest() end
+
+---@param getSquare IsoGridSquare.GetSquare
+---@return IsoGridSquare
+function __IsoGridSquare:getWest(getSquare) end
+
+---@param facingDirection GridSquareEdgeFacingDirection
 ---@return IsoWindow
-function __IsoGridSquare:getWindow(north) end
+function __IsoGridSquare:getWindow(facingDirection) end
+
+---@param alongEdge GridSquareEdge
+---@return IsoWindow
+function __IsoGridSquare:getWindow(alongEdge) end
+
+---@param alongEdge GridSquareEdge
+---@param getSquare IsoGridSquare.GetSquare
+---@return IsoWindow
+function __IsoGridSquare:getWindow(alongEdge, getSquare) end
 
 ---@return IsoWindow
 function __IsoGridSquare:getWindow() end
 
----@param north boolean
+---@param edgeFacingDirection GridSquareEdgeFacingDirection
 ---@return IsoWindowFrame
-function __IsoGridSquare:getWindowFrame(north) end
+function __IsoGridSquare:getWindowFrame(edgeFacingDirection) end
+
+---@param alongEdge GridSquareEdge
+---@return IsoWindowFrame
+function __IsoGridSquare:getWindowFrame(alongEdge) end
+
+---@param alongEdge GridSquareEdge
+---@param getSquare IsoGridSquare.GetSquare
+---@return IsoWindowFrame
+function __IsoGridSquare:getWindowFrame(alongEdge, getSquare) end
 
 ---@param next IsoGridSquare
 ---@return IsoWindowFrame
 function __IsoGridSquare:getWindowFrameTo(next) end
+
+---@param next IsoGridSquare
+---@param getSquare IsoGridSquare.GetSquare
+---@return IsoWindowFrame
+function __IsoGridSquare:getWindowFrameTo(next, getSquare) end
 
 ---Get the IsoThumpable window between this grid and the next in parameter
 ---@param next IsoGridSquare
 ---@return IsoThumpable
 function __IsoGridSquare:getWindowThumpableTo(next) end
 
+---@param next IsoGridSquare
+---@param getSquare IsoGridSquare.GetSquare
+---@return IsoThumpable
+function __IsoGridSquare:getWindowThumpableTo(next, getSquare) end
+
 ---Get the IsoWindow window between this grid and the next in parameter
 ---@param next IsoGridSquare
 ---@return IsoWindow
 function __IsoGridSquare:getWindowTo(next) end
+
+---@param next IsoGridSquare
+---@param getSquare IsoGridSquare.GetSquare
+---@return IsoWindow
+function __IsoGridSquare:getWindowTo(next, getSquare) end
 
 ---@return ArrayList<IsoWorldInventoryObject>
 function __IsoGridSquare:getWorldObjects() end
@@ -1326,13 +1494,13 @@ function __IsoGridSquare:hasAdjacentCanStandSquare() end
 ---@return boolean
 function __IsoGridSquare:hasAdjacentFireObject() end
 
----@param north boolean
+---@param facingDirection GridSquareEdgeFacingDirection
 ---@return boolean
-function __IsoGridSquare:hasBlockedDoor(north) end
+function __IsoGridSquare:hasBlockedDoor(facingDirection) end
 
----@param north boolean
+---@param facingDirection GridSquareEdgeFacingDirection
 ---@return boolean
-function __IsoGridSquare:hasBlockedWindow(north) end
+function __IsoGridSquare:hasBlockedWindow(facingDirection) end
 
 ---@return boolean
 function __IsoGridSquare:hasBush() end
@@ -1415,9 +1583,17 @@ function __IsoGridSquare:hasNaturalFloor() end
 ---@return boolean
 function __IsoGridSquare:hasNonHoppableWall(isNorth) end
 
+---@param checkPredicate Predicate<IsoObject>
+---@return boolean
+function __IsoGridSquare:hasObject(checkPredicate) end
+
 ---@param edge IsoDirections
 ---@return boolean
 function __IsoGridSquare:hasOpenDoorOnEdge(edge) end
+
+---@param flag IsoFlagType
+---@return boolean
+function __IsoGridSquare:hasProperty(flag) end
 
 ---@return boolean
 function __IsoGridSquare:hasRainBlockingTile() end
@@ -1507,15 +1683,43 @@ function __IsoGridSquare:invalidateVispolyChunkLevel() end
 ---@return boolean
 function __IsoGridSquare:isAdjacentTo(sq) end
 
+---@generic T
+---@param edgeGetter BiFunction<IsoGridSquare, GridSquareEdge, T>
+---@return boolean
+function __IsoGridSquare:isAdjacentToEdgeElement(edgeGetter) end
+
 ---@return boolean
 function __IsoGridSquare:isAdjacentToHoppable() end
 
 ---@return boolean
 function __IsoGridSquare:isAdjacentToWindow() end
 
+---@param alongEdge GridSquareEdge
+---@return boolean
+function __IsoGridSquare:isBlockedDoor(alongEdge) end
+
+---@param alongEdge GridSquareEdge
+---@param getSquare IsoGridSquare.GetSquare
+---@return boolean
+function __IsoGridSquare:isBlockedDoor(alongEdge, getSquare) end
+
 ---@param other IsoGridSquare
 ---@return boolean
 function __IsoGridSquare:isBlockedTo(other) end
+
+---@param other IsoGridSquare
+---@param getSquare IsoGridSquare.GetSquare
+---@return boolean
+function __IsoGridSquare:isBlockedTo(other, getSquare) end
+
+---@param alongEdge GridSquareEdge
+---@return boolean
+function __IsoGridSquare:isBlockedWindow(alongEdge) end
+
+---@param alongEdge GridSquareEdge
+---@param getSquare IsoGridSquare.GetSquare
+---@return boolean
+function __IsoGridSquare:isBlockedWindow(alongEdge, getSquare) end
 
 ---@return boolean # the CacheIsFree
 function __IsoGridSquare:isCacheIsFree() end
@@ -1539,7 +1743,29 @@ function __IsoGridSquare:isDerelict() end
 
 ---@param other IsoGridSquare
 ---@return boolean
+function __IsoGridSquare:isDiagonalTo(other) end
+
+---@param alongEdge GridSquareEdge
+---@return boolean
+function __IsoGridSquare:isDoor(alongEdge) end
+
+---@param alongEdge GridSquareEdge
+---@param getSquare IsoGridSquare.GetSquare
+---@return boolean
+function __IsoGridSquare:isDoor(alongEdge, getSquare) end
+
+---@param facingDirection GridSquareEdgeFacingDirection
+---@return boolean
+function __IsoGridSquare:isDoor(facingDirection) end
+
+---@param other IsoGridSquare
+---@return boolean
 function __IsoGridSquare:isDoorBlockedTo(other) end
+
+---@param other IsoGridSquare
+---@param getSquare IsoGridSquare.GetSquare
+---@return boolean
+function __IsoGridSquare:isDoorBlockedTo(other, getSquare) end
 
 ---@return boolean
 function __IsoGridSquare:isDoorOrWallSquare() end
@@ -1550,6 +1776,27 @@ function __IsoGridSquare:isDoorSquare() end
 ---@param other IsoGridSquare
 ---@return boolean
 function __IsoGridSquare:isDoorTo(other) end
+
+---@param other IsoGridSquare
+---@param getSquare IsoGridSquare.GetSquare
+---@return boolean
+function __IsoGridSquare:isDoorTo(other, getSquare) end
+
+---@param other IsoGridSquare
+---@return boolean
+function __IsoGridSquare:isEastOf(other) end
+
+---@param alongEdge GridSquareEdge
+---@param facingGetter BiPredicate<IsoGridSquare, GridSquareEdgeFacingDirection>
+---@param getSquare IsoGridSquare.GetSquare
+---@return boolean
+function __IsoGridSquare:isEdgeElement(alongEdge, facingGetter, getSquare) end
+
+---@param other IsoGridSquare
+---@param facingGetter TriPredicate<IsoGridSquare, GridSquareEdge, IsoGridSquare.GetSquare>
+---@param getSquare IsoGridSquare.GetSquare
+---@return boolean
+function __IsoGridSquare:isEdgeElementTo(other, facingGetter, getSquare) end
 
 ---@return boolean
 function __IsoGridSquare:isExtraFreeSquare() end
@@ -1581,9 +1828,23 @@ function __IsoGridSquare:isGoodOutsideSquare() end
 ---@return boolean
 function __IsoGridSquare:isGoodSquare() end
 
+---@param alongEdge GridSquareEdge
+---@return boolean
+function __IsoGridSquare:isHoppable(alongEdge) end
+
+---@param alongEdge GridSquareEdge
+---@param getSquare IsoGridSquare.GetSquare
+---@return boolean
+function __IsoGridSquare:isHoppable(alongEdge, getSquare) end
+
 ---@param other IsoGridSquare
 ---@return boolean
 function __IsoGridSquare:isHoppableTo(other) end
+
+---@param other IsoGridSquare
+---@param getSquare IsoGridSquare.GetSquare
+---@return boolean
+function __IsoGridSquare:isHoppableTo(other, getSquare) end
 
 ---@return boolean
 function __IsoGridSquare:isInARoom() end
@@ -1603,6 +1864,10 @@ function __IsoGridSquare:isNoPower() end
 
 ---@return boolean
 function __IsoGridSquare:isNoWater() end
+
+---@param other IsoGridSquare
+---@return boolean
+function __IsoGridSquare:isNorthOf(other) end
 
 ---@param bCountOtherCharacters boolean
 ---@return boolean
@@ -1643,6 +1908,9 @@ function __IsoGridSquare:isSameStaircase(x, y, z) end
 function __IsoGridSquare:isSeen(playerIndex) end
 
 ---@return boolean
+function __IsoGridSquare:isSeenByAnyLocalPlayer() end
+
+---@return boolean
 function __IsoGridSquare:isShop() end
 
 ---@param edge IsoDirections
@@ -1664,6 +1932,15 @@ function __IsoGridSquare:isSolidTrans() end
 ---@param other IsoGridSquare
 ---@return boolean
 function __IsoGridSquare:isSomethingTo(other) end
+
+---@param other IsoGridSquare
+---@param getSquare IsoGridSquare.GetSquare
+---@return boolean
+function __IsoGridSquare:isSomethingTo(other, getSquare) end
+
+---@param other IsoGridSquare
+---@return boolean
+function __IsoGridSquare:isSouthOf(other) end
 
 ---@param obj IsoObject
 ---@return boolean
@@ -1692,6 +1969,19 @@ function __IsoGridSquare:isVehicleIntersecting() end
 ---@return boolean
 function __IsoGridSquare:isVehicleIntersectingCrops() end
 
+---@param alongEdge GridSquareEdge
+---@return boolean
+function __IsoGridSquare:isWall(alongEdge) end
+
+---@param alongEdge GridSquareEdge
+---@param getSquare IsoGridSquare.GetSquare
+---@return boolean
+function __IsoGridSquare:isWall(alongEdge, getSquare) end
+
+---@param facingDirection GridSquareEdgeFacingDirection
+---@return boolean
+function __IsoGridSquare:isWall(facingDirection) end
+
 ---@return boolean
 function __IsoGridSquare:isWallSquare() end
 
@@ -1703,16 +1993,38 @@ function __IsoGridSquare:isWallSquareNW() end
 function __IsoGridSquare:isWallTo(other) end
 
 ---@param other IsoGridSquare
----@param depth integer
+---@param getSquare IsoGridSquare.GetSquare
 ---@return boolean
-function __IsoGridSquare:isWallTo(other, depth) end
+function __IsoGridSquare:isWallTo(other, getSquare) end
 
 ---@return boolean
 function __IsoGridSquare:isWaterSquare() end
 
 ---@param other IsoGridSquare
 ---@return boolean
+function __IsoGridSquare:isWestOf(other) end
+
+---@param alongEdge GridSquareEdge
+---@return boolean
+function __IsoGridSquare:isWindow(alongEdge) end
+
+---@param alongEdge GridSquareEdge
+---@param getSquare IsoGridSquare.GetSquare
+---@return boolean
+function __IsoGridSquare:isWindow(alongEdge, getSquare) end
+
+---@param facingDirection GridSquareEdgeFacingDirection
+---@return boolean
+function __IsoGridSquare:isWindow(facingDirection) end
+
+---@param other IsoGridSquare
+---@return boolean
 function __IsoGridSquare:isWindowBlockedTo(other) end
+
+---@param other IsoGridSquare
+---@param getSquare IsoGridSquare.GetSquare
+---@return boolean
+function __IsoGridSquare:isWindowBlockedTo(other, getSquare) end
 
 ---@param obj IsoObject
 ---@param north boolean
@@ -1722,6 +2034,11 @@ function __IsoGridSquare:isWindowOrWindowFrame(obj, north) end
 ---@param other IsoGridSquare
 ---@return boolean
 function __IsoGridSquare:isWindowTo(other) end
+
+---@param other IsoGridSquare
+---@param getSquare IsoGridSquare.GetSquare
+---@return boolean
+function __IsoGridSquare:isWindowTo(other, getSquare) end
 
 ---@param b ByteBuffer
 ---@param WorldVersion integer
@@ -1781,11 +2098,6 @@ function __IsoGridSquare:removeGraffiti() end
 function __IsoGridSquare:removeGrass() end
 
 function __IsoGridSquare:removeGrime() end
-
----@param player IsoPlayer
----@param north boolean
----@return boolean
-function __IsoGridSquare:removeSheetRopeFromBottom(player, north) end
 
 function __IsoGridSquare:removeUnderground() end
 
@@ -2106,7 +2418,7 @@ function __IsoGridSquare:tryAddCorpseToWorld(item, x, y) end
 ---@param x number
 ---@param y number
 ---@param isVisible boolean
----@return IsoDeadBody
+---@return IsoDeadBody?
 function __IsoGridSquare:tryAddCorpseToWorld(item, x, y, isVisible) end
 
 ---@param tilePropertyKey string
@@ -2204,7 +2516,7 @@ IsoGridSquare.ignoreBlockingSprites = nil
 ---@type boolean
 IsoGridSquare.isOnScreenLast = nil
 
----@type ConcurrentLinkedQueue<IsoGridSquare>
+---@type CappedConcurrentQueue<IsoGridSquare>
 IsoGridSquare.isoGridSquareCache = nil
 
 ---@type ArrayDeque<IsoGridSquare>
@@ -2265,6 +2577,11 @@ function IsoGridSquare.getRecalcLightTime() end
 ---@param isoGridSquareCacheDest ArrayDeque<IsoGridSquare>
 ---@param count integer
 function IsoGridSquare.getSquaresForThread(isoGridSquareCacheDest, count) end
+
+---@param obj IsoObject
+---@param facingDirection GridSquareEdgeFacingDirection
+---@return boolean
+function IsoGridSquare.isBlockedDoor(obj, facingDirection) end
 
 ---@return boolean # the bDoSlowPathfinding
 function IsoGridSquare.isbDoSlowPathfinding() end

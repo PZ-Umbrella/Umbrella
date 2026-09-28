@@ -5,6 +5,7 @@
 ---@field item IsoObject
 ---@field sledge InventoryItem?
 ---@field spriteFrame number
+---@field wasValid boolean
 ISDestroyStuffAction = ISBaseTimedAction:derive("ISDestroyStuffAction")
 ISDestroyStuffAction.Type = "ISDestroyStuffAction"
 
@@ -21,6 +22,11 @@ function ISDestroyStuffAction:getCornerWallSprite(wallSprite) end
 
 ---@return number
 function ISDestroyStuffAction:getDuration() end
+
+---@param character IsoPlayer
+---@param item IsoObject?
+---@return boolean
+function ISDestroyStuffAction:hasSledgehammerInRange(character, item) end
 
 ---@return boolean
 function ISDestroyStuffAction:isValid() end

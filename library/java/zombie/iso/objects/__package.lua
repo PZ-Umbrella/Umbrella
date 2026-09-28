@@ -40,9 +40,6 @@
 ---@class IsoWindow.WindowType
 
 ---(Not exposed)
----@class IsoWindowFrame.Direction
-
----(Not exposed)
 ---@class IsoZombieGiblets.GibletType
 
 ---(Not exposed)

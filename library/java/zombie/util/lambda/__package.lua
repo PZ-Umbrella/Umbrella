@@ -14,3 +14,9 @@
 
 ---(Not exposed)
 ---@class QuadConsumer<T, U, V, W>
+
+---(Not exposed)
+---@class TriFunction<P1, P2, P3, R>
+
+---(Not exposed)
+---@class TriPredicate<P1, P2, P3>

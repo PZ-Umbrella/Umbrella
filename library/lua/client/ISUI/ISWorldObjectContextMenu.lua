@@ -93,9 +93,6 @@ function ISWorldObjectContextMenu.canCleanGraffiti(playerObj, square) end
 ---@return IsoObject?
 function ISWorldObjectContextMenu.chairCheck(bed) end
 
----@param chr IsoPlayer
-function ISWorldObjectContextMenu.checkWeapon(chr) end
-
 function ISWorldObjectContextMenu.clearFetch() end
 
 ---@param item1 InventoryItem
@@ -109,7 +106,7 @@ function ISWorldObjectContextMenu.compareClothingBlood(item1, item2) end
 ---@param y number
 ---@param test boolean?
 ---@return (ISContextMenu | boolean)?
----@overload fun(player: integer, worldobjects: IsoObject[], x: number, y: number): ISContextMenu
+---@overload fun(player: integer, worldobjects: IsoObject[], x: number, y: number): ISContextMenu?
 function ISWorldObjectContextMenu.createMenu(player, worldobjects, x, y, test) end
 
 ---@param worldobjects IsoObject[]
@@ -440,9 +437,8 @@ function ISWorldObjectContextMenu.onConfirmSleep(this, button, player, bed) end
 ---@param context ISContextMenu
 ---@param object GameEntity
 ---@param playerObj IsoPlayer
----@param customFunction string
----@param param string?
-function ISWorldObjectContextMenu.onCustomFunction(context, object, playerObj, customFunction, param) end
+---@param entry ContextMenuConfigScript.EntryScript
+function ISWorldObjectContextMenu.onCustomFunction(context, object, playerObj, entry) end
 
 ---@param worldobjects IsoObject[]
 ---@param player IsoPlayer
@@ -781,12 +777,6 @@ function ISWorldObjectContextMenu.onThrowCorpseOverFence(playerObj, fence, dir) 
 ---@param playerObj IsoPlayer
 ---@param window IsoWindow
 function ISWorldObjectContextMenu.onThrowCorpseThroughWindow(playerObj, window) end
-
----@param timedAction string
----@param object InventoryItem
----@param playerObj IsoPlayer
----@param param string?
-function ISWorldObjectContextMenu.onTimedAction(timedAction, object, playerObj, param) end
 
 ---@param worldobjects IsoObject[]
 ---@param object IsoClothingDryer

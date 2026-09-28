@@ -46,6 +46,12 @@ function ISFarmingCursorMouse:render(x, y, z, square) end
 
 function ISFarmingCursorMouse:renderTooltip() end
 
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function ISFarmingCursorMouse:walkTo(x, y, z) end
+
 ---@param character IsoPlayer
 ---@param onSquareSelected umbrella.ISFarmingCursorMouse.OnSquareSelected
 ---@param isValid boolean

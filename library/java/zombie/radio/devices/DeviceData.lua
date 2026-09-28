@@ -18,7 +18,11 @@ function __DeviceData:addBattery(bat) end
 function __DeviceData:addEmergencyChannel() end
 
 ---@param headphones InventoryItem
-function __DeviceData:addHeadphones(headphones) end
+---@param container ItemContainer
+function __DeviceData:addHeadphones(headphones, container) end
+
+---@param inventory ItemContainer
+function __DeviceData:addHeadphonesToInventory(inventory) end
 
 ---@param media InventoryItem
 function __DeviceData:addMediaItem(media) end
@@ -81,10 +85,6 @@ function __DeviceData:getHasBattery() end
 
 ---@return integer
 function __DeviceData:getHeadphoneType() end
-
----@param inventory ItemContainer
----@return InventoryItem
-function __DeviceData:getHeadphones(inventory) end
 
 ---@return boolean
 function __DeviceData:getIsBatteryPowered() end

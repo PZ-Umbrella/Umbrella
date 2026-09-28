@@ -486,6 +486,12 @@ GameTime.NANOSECONDS_PER_SECOND = nil
 GameTime.SECONDS_PER_MINUTE = nil
 
 ---@type number
+GameTime.START_OF_NEW_DAY = nil
+
+---@type integer
+GameTime.SYNC_CLOCK_MS = nil
+
+---@type number
 GameTime.SecondsPerHour = nil
 
 ---@type number

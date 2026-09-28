@@ -63,6 +63,9 @@ CreditsRoleGroup.TMG = nil
 CreditsRoleGroup.TOOLS = nil
 
 ---@type CreditsRoleGroup
+CreditsRoleGroup.USS = nil
+
+---@type CreditsRoleGroup
 CreditsRoleGroup.VERTEX_BREAK = nil
 
 ---@return List<CreditsRoleGroup>

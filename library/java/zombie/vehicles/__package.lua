@@ -25,9 +25,6 @@
 ---@class BaseVehicle.QuaternionfObjectPool
 
 ---(Not exposed)
----@class BaseVehicle.ServerVehicleState
-
----(Not exposed)
 ---@class BaseVehicle.TransformPool
 
 ---(Not exposed)

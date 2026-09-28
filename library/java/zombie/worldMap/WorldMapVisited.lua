@@ -65,6 +65,9 @@ function __WorldMapVisited:load() end
 ---@param chunk kahlua.Array<integer>
 function __WorldMapVisited:processDataChunk(pos, chunk) end
 
+---@param bb ByteBufferReader
+function __WorldMapVisited:receiveRequestData(bb) end
+
 ---@param renderX number
 ---@param renderY number
 ---@param minX integer
@@ -130,10 +133,6 @@ function WorldMapVisited.SaveAll() end
 
 ---@return WorldMapVisited
 function WorldMapVisited.getInstance() end
-
----@param isLoadingNeeded boolean
----@return WorldMapVisited
-function WorldMapVisited.getInstance(isLoadingNeeded) end
 
 ---@return integer
 function WorldMapVisited.getVisitedLength() end

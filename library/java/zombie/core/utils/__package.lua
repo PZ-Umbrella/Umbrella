@@ -14,6 +14,9 @@
 ---@class IntGrid
 
 ---(Not exposed)
+---@class NativeImage
+
+---(Not exposed)
 ---@class OnceEvery
 
 ---(Not exposed)

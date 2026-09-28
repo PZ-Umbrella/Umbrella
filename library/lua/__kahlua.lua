@@ -46,30 +46,12 @@ function __random:random(m, n) end
 ---@param value unknown?
 function __random:seed(value) end
 
----@param multiline string?
----@param indent string?
----@return string
-function serialize(value, multiline, indent) end
-
----@param s string
----@return unknown
-function deserialize(s) end
-
----@return string
-function pp(value) end
-
 ---@param thread thread?
 ---@param level integer?
 ---@param maxLines integer?
 ---@param maxLevel integer?
 ---@return string
 function debugstacktrace(thread, level, maxLines, maxLevel) end
-
----@param stream Reader | InputStream
----@param chunkname string
----@return function?
----@return string?
-function loadstream(stream, chunkname) end
 
 ---@param loader string
 ---@return (string | function)?

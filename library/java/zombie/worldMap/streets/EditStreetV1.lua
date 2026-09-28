@@ -50,7 +50,7 @@ function __EditStreetV1:reverseDirection() end
 function __EditStreetV1:setPoint(index, x, y) end
 
 ---@param text string
-function __EditStreetV1:setTranslatedText(text) end
+function __EditStreetV1:setUntranslatedText(text) end
 
 ---@param width integer
 function __EditStreetV1:setWidth(width) end

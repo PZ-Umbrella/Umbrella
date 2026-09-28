@@ -58,6 +58,3 @@ function xpUpdate.OnWeaponHitTree(owner, weapon) end
 ---@param damage number
 ---@param hitCount integer
 function xpUpdate.onWeaponHitXp(owner, weapon, hitObject, damage, hitCount) end
-
----@return boolean
-function xpUpdate.randXp() end

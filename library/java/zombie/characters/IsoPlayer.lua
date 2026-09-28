@@ -629,6 +629,12 @@ function __IsoPlayer:isPushableForSeparate() end
 ---@return boolean
 function __IsoPlayer:isPushedByForSeparate(other) end
 
+---@param checkInterval integer
+---@param addXpChance number
+---@param perk PerkFactory.Perk
+---@return boolean
+function __IsoPlayer:isRandXp(checkInterval, addXpChance, perk) end
+
 ---@return boolean
 function __IsoPlayer:isRemoteAndHasObstacleOnPath() end
 

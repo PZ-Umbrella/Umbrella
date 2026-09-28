@@ -40,12 +40,6 @@ worldgen.subbiomes.dense_bushes = {
 				"!blends_natural_01_70",
 				"!blends_natural_01_71",
 			},
-			TREE = {
-				"blends_natural_01_64",
-				"blends_natural_01_69",
-				"blends_natural_01_70",
-				"blends_natural_01_71",
-			},
 		},
 		protected = {
 			"vegetation_drying*",

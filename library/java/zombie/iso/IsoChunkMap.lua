@@ -153,7 +153,7 @@ IsoChunkMap.bSettingChunk = nil
 ---@type integer
 IsoChunkMap.chunkGridWidth = nil
 
----@type ConcurrentLinkedQueue<IsoChunk>
+---@type CappedConcurrentQueue<IsoChunk>
 IsoChunkMap.chunkStore = nil
 
 ---@type integer

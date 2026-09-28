@@ -301,6 +301,14 @@ function PZMath.getLengthSq(x, y) end
 ---@return boolean
 function PZMath.intersectLineSegments(x1, y1, x2, y2, x3, y3, x4, y4, intersection) end
 
+---@param p1 Vector2f
+---@param p2 Vector2f
+---@param q1 Vector2f
+---@param q2 Vector2f
+---@param intersection Vector2f
+---@return boolean
+function PZMath.intersectLineSegments(p1, p2, q1, q2, intersection) end
+
 ---@param value number
 ---@param min number
 ---@param max number
@@ -371,6 +379,24 @@ function PZMath.lerpFunc_EaseOutInQuad(x) end
 ---@param x number
 ---@return number
 function PZMath.lerpFunc_EaseOutQuad(x) end
+
+---@param x1 number
+---@param y1 number
+---@param x2 number
+---@param y2 number
+---@param x3 number
+---@param y3 number
+---@param x4 number
+---@param y4 number
+---@return boolean
+function PZMath.lineSegmentsIntersect(x1, y1, x2, y2, x3, y3, x4, y4) end
+
+---@param p1 Vector2f
+---@param p2 Vector2f
+---@param q1 Vector2f
+---@param q2 Vector2f
+---@return boolean
+function PZMath.lineSegmentsIntersect(p1, p2, q1, q2) end
 
 ---@param a number
 ---@param b number
@@ -487,7 +513,7 @@ function PZMath.nextPowerOfTwo(value) end
 function PZMath.normalize(list, floatGet, floatSet) end
 
 ---@generic E
----@param list E
+---@param list kahlua.Array<E>
 ---@param floatGet PZMath.FloatGet<E>
 ---@param floatSet PZMath.FloatSet<E>
 function PZMath.normalize(list, floatGet, floatSet) end
@@ -580,6 +606,10 @@ function PZMath.sign(val) end
 ---@param alpha number
 ---@return Quaternion
 function PZMath.slerp(result, from, to, alpha) end
+
+---@param input integer
+---@return integer
+function PZMath.smallestEncompassingPowerOfTwo(input) end
 
 ---@param val number
 ---@return number

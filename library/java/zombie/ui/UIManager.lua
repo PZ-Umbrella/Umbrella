@@ -286,8 +286,8 @@ function UIManager.getPickedTile() end
 ---@return Vector2 # the PickedTileLocal
 function UIManager.getPickedTileLocal() end
 
----@param index number
----@return ActionProgressBar # the ProgressBar
+---@param index integer
+---@return ActionProgressBar
 function UIManager.getProgressBar(index) end
 
 ---@return IsoObject # the RightDownObject
@@ -504,6 +504,11 @@ function UIManager.setbFadeBeforeUI(abFadeBeforeUI) end
 ---@param key any
 ---@return any
 function UIManager.tableget(table, key) end
+
+---@param index integer
+---@param value number
+---@return boolean
+function UIManager.trySetProgressBarValue(index, value) end
 
 function UIManager.update() end
 

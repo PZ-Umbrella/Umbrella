@@ -421,7 +421,12 @@ function VehicleUtils.getPerksTableForChr(perks, chr) end
 
 ---@param vehicle BaseVehicle
 ---@param part VehiclePart
-function VehicleUtils.initHeadlight(vehicle, part) end
+---@param doNotCreateItem boolean?
+function VehicleUtils.initHeadlight(vehicle, part, doNotCreateItem) end
+
+---@param vehicle BaseVehicle
+---@param part VehiclePart
+function VehicleUtils.initHeadlightWithoutItem(vehicle, part) end
 
 ---@param part VehiclePart
 ---@param item InventoryItem

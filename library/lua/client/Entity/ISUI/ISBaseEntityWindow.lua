@@ -46,12 +46,18 @@ function ISBaseEntityWindow:prerender() end
 
 function ISBaseEntityWindow:render() end
 
+---@return boolean
+function ISBaseEntityWindow:shouldAutoClose() end
+
 function ISBaseEntityWindow:stayOnSplitScreen() end
 
 ---@return boolean
 function ISBaseEntityWindow:update() end
 
 function ISBaseEntityWindow:validateSizeBounds() end
+
+---@return boolean
+function ISBaseEntityWindow:wasEntityRemoved() end
 
 ---@param _preferredWidth number?
 ---@param _preferredHeight number?

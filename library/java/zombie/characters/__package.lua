@@ -43,6 +43,9 @@
 ---@class FallSeverity
 
 ---(Not exposed)
+---@class HitDirEnum
+
+---(Not exposed)
 ---@class HitReactionNetworkAI
 
 ---(Not exposed)

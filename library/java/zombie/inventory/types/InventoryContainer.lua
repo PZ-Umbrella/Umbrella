@@ -13,6 +13,9 @@ function __InventoryContainer:DoTooltip(tooltipUI, layout) end
 ---@return boolean
 function __InventoryContainer:IsInventoryContainer() end
 
+---@param container ItemContainer
+function __InventoryContainer:OnBeforeRemoveFromContainer(container) end
+
 ---@return ItemBodyLocation
 function __InventoryContainer:canBeEquipped() end
 

@@ -259,11 +259,11 @@ function __Collection:stream() end
 function __Collection:toArray() end
 
 ---@generic T
----@param arg0 T
----@return T
+---@param arg0 kahlua.Array<T>
+---@return kahlua.Array<T>
 function __Collection:toArray(arg0) end
 
 ---@generic T
----@param arg0 IntFunction<T>
----@return T
+---@param arg0 IntFunction<kahlua.Array<T>>
+---@return kahlua.Array<T>
 function __Collection:toArray(arg0) end

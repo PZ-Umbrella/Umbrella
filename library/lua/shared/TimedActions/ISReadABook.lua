@@ -55,6 +55,7 @@ function ISReadABook:serverStart() end
 
 function ISReadABook:start() end
 
+---@return Texture?
 function ISReadABook:startLoadingPrintMediaTextures() end
 
 function ISReadABook:stop() end

@@ -6,6 +6,10 @@ local __IsoWorldInventoryObject = {}
 ---@param tooltipUI ObjectTooltip
 function __IsoWorldInventoryObject:DoTooltip(tooltipUI) end
 
+---@param owner IsoGameCharacter
+---@param weapon HandWeapon
+function __IsoWorldInventoryObject:WeaponHit(owner, weapon) end
+
 ---@param fluidType FluidType
 ---@param amount number
 function __IsoWorldInventoryObject:addFluid(fluidType, amount) end

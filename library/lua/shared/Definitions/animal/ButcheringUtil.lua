@@ -101,6 +101,10 @@ function ButcheringUtil.onAddedCorpseOnHook(hook, corpse, character) end
 
 ---@param hook IsoButcherHook
 ---@param animal IsoAnimal
+function ButcheringUtil.onReattachAnimal(hook, animal) end
+
+---@param hook IsoButcherHook
+---@param animal IsoAnimal
 ---@return unknown
 function ButcheringUtil.onRemoveCorpseFromHook(hook, animal) end
 

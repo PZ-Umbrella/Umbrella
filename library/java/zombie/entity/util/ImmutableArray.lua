@@ -44,12 +44,12 @@ function __ImmutableArray:random() end
 ---@return integer
 function __ImmutableArray:size() end
 
----@return T
+---@return kahlua.Array<T>
 function __ImmutableArray:toArray() end
 
 ---@generic V
 ---@param type Class<V>
----@return V
+---@return kahlua.Array<V>
 function __ImmutableArray:toArray(type) end
 
 ---@return string

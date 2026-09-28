@@ -393,7 +393,7 @@ function __ScriptManager:resolveModelScript(module, modelScriptName) end
 
 ---@param base URI
 ---@param fo File
----@param loadList ArrayList<string>
+---@param loadList List<string>
 function __ScriptManager:searchFolders(base, fo, loadList) end
 
 function __ScriptManager:update() end

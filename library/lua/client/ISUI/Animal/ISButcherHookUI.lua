@@ -44,10 +44,6 @@ ISButcherHookUI.ui = nil ---@type ISButcherHookUI?
 ---@param self ISButcherHookUI
 function ISButcherHookUI.onHookReceivedNetUpdate(self) end
 
----@param hook IsoButcherHook
----@param animal IsoAnimal
-function ISButcherHookUI.onReattachAnimal(hook, animal) end
-
 ---@param self ISButcherHookUI
 function ISButcherHookUI.onStopBleedingAnimal(self) end
 

@@ -137,8 +137,9 @@ function __IsoAnimal:changeStress(inc) end
 ---@param other IsoPlayer
 function __IsoAnimal:checkAlphaAndTargetAlpha(other) end
 
+---@param replacingAnimal IsoAnimal
 ---@return boolean
-function __IsoAnimal:checkForChickenpocalypse() end
+function __IsoAnimal:checkForChickenpocalypse(replacingAnimal) end
 
 ---@return boolean
 function __IsoAnimal:checkForWater() end
@@ -595,6 +596,8 @@ function __IsoAnimal:remove() end
 
 ---@param baby IsoAnimal
 function __IsoAnimal:removeBaby(baby) end
+
+function __IsoAnimal:removeFromUpdateLists() end
 
 function __IsoAnimal:removeFromWorld() end
 

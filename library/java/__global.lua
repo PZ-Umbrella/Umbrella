@@ -667,6 +667,9 @@ function deleteAccountToAccountList(account) end
 ---@param gameMode string
 function deleteAllGameModeSaves(gameMode) end
 
+---@param folder string
+function deleteDatabase(folder) end
+
 ---@param savedir string
 ---@param player string
 ---@param world string
@@ -764,12 +767,12 @@ function getAbsoluteSaveFolderName(f) end
 ---@return string
 function getAccessLevel() end
 
+---@param player IsoPlayer
 ---@param id integer
 ---@return integer
-function getActionDuration(id) end
+function getActionDuration(player, id) end
 
----Gets the list of currently activated mods. Remember that in B42+, mod ids are prefixed with a \ character.
----@return ArrayList<string>
+---@return List<string>
 function getActivatedMods() end
 
 ---@return ArrayList<AnimalDefinitions>
@@ -1060,7 +1063,7 @@ function getFileReader(filename, createIfNull) end
 function getFileSeparator() end
 
 ---Gets a file writer for a file in the Lua cache.
----@param filename string Path, relative to the Lua cache root, to write to. '..' is not allowed.
+---@param filename string Path, relative to the Lua cache root, to write to. '..' is not allowed and only the following extensions are allowed: 'ini', 'cfg', 'txt', 'log', 'json'.
 ---@param createIfNull boolean Whether to create the file if it does not exist.
 ---@param append boolean Whether to open the file in append mode. If true, the writer will write after the file's current contents. If false, the current contents of the file will be erased.
 ---@return LuaManager.GlobalObject.LuaFileWriter? # File writer, or null if the path was not valid.
@@ -1324,6 +1327,9 @@ function getMaxActivePlayers() end
 ---@return number
 function getMaxPlayers() end
 
+---@return integer
+function getMaxUsernameLength() end
+
 ---@return number
 function getMaximumWorldLevel() end
 
@@ -1335,6 +1341,9 @@ function getMethodParameter(o, i) end
 ---@param o Method
 ---@return integer
 function getMethodParameterCount(o) end
+
+---@return integer
+function getMinUsernameLength() end
 
 ---@return number
 function getMinimumWorldLevel() end
@@ -1351,7 +1360,7 @@ function getModFileReader(modId, filename, createIfNull) end
 
 ---Gets a file writer for a file in a mod's directory. Note: it is generally unwise to write to a mod's lua or scripts directories, as this will change the checksum.
 ---@param modId string? ID of the target mod. If null, the path will be relative to the local mods directory.
----@param filename string Path, relative to the mod's common folder, to write to. '..' is not allowed.
+---@param filename string Path, relative to the mod's common folder, to write to. '..' is not allowed and only the following extensions are allowed: 'ini', 'cfg', 'txt', 'log', 'json'.
 ---@param createIfNull boolean Whether to create the file if it does not exist. The created file will be empty.
 ---@param append boolean Whether to open the file in append mode. If true, the writer will write after the file's current contents. If false, the current contents of the file will be erased.
 ---@return LuaManager.GlobalObject.LuaFileWriter? # The file writer, or null if the path or mod was not valid.
@@ -1456,10 +1465,6 @@ function getPuddlesManager() end
 
 ---@return RadioAPI
 function getRadioAPI() end
-
----@param txt string
----@return string
-function getRadioText(txt) end
 
 ---@return string
 function getRandomUUID() end
@@ -1624,39 +1629,9 @@ function getStreamModeActive() end
 function getStreets(worldMapStreets) end
 
 ---@param txt string
+---@param args kahlua.Array<any>
 ---@return string
-function getText(txt) end
-
----@param txt string
----@param arg1 any
----@return string
-function getText(txt, arg1) end
-
----@param txt string
----@param arg1 any
----@param arg2 any
----@return string
-function getText(txt, arg1, arg2) end
-
----@param txt string
----@param arg1 any
----@param arg2 any
----@param arg3 any
----@return string
-function getText(txt, arg1, arg2, arg3) end
-
----@param txt string
----@param arg1 any
----@param arg2 any
----@param arg3 any
----@param arg4 any
----@return string
-function getText(txt, arg1, arg2, arg3, arg4) end
-
----@param txt string
----@param args List<string>
----@return string
-function getTextList(txt, args) end
+function getText(txt, args) end
 
 ---@return TextManager
 function getTextManager() end
@@ -1666,34 +1641,9 @@ function getTextManager() end
 function getTextMediaEN(txt) end
 
 ---@param txt string
+---@param args kahlua.Array<any>
 ---@return string
-function getTextOrNull(txt) end
-
----@param txt string
----@param arg1 any
----@return string
-function getTextOrNull(txt, arg1) end
-
----@param txt string
----@param arg1 any
----@param arg2 any
----@return string
-function getTextOrNull(txt, arg1, arg2) end
-
----@param txt string
----@param arg1 any
----@param arg2 any
----@param arg3 any
----@return string
-function getTextOrNull(txt, arg1, arg2, arg3) end
-
----@param txt string
----@param arg1 any
----@param arg2 any
----@param arg3 any
----@param arg4 any
----@return string
-function getTextOrNull(txt, arg1, arg2, arg3, arg4) end
+function getTextOrNull(txt, args) end
 
 ---@param filename string
 ---@return Texture
@@ -1849,13 +1799,15 @@ function inviteFriend(steamID) end
 ---@return boolean
 function isAccessLevel(accessLevel) end
 
+---@param player IsoPlayer
 ---@param id integer
 ---@return boolean
-function isActionDone(id) end
+function isActionDone(player, id) end
 
+---@param player IsoPlayer
 ---@param id integer
 ---@return boolean
-function isActionRejected(id) end
+function isActionRejected(player, id) end
 
 ---@return boolean
 function isAdmin() end
@@ -1979,6 +1931,10 @@ function isKeyDown(key) end
 ---@return boolean
 function isKeyDown(keyName) end
 
+---@param keybindID KeybindId
+---@return boolean
+function isKeyDown(keybindID) end
+
 ---@param key integer
 ---@return boolean
 function isKeyPressed(key) end
@@ -1986,6 +1942,10 @@ function isKeyPressed(key) end
 ---@param keyName string
 ---@return boolean
 function isKeyPressed(keyName) end
+
+---@param keybindID KeybindId
+---@return boolean
+function isKeyPressed(keybindID) end
 
 ---@return boolean
 function isMetaKeyDown() end
@@ -2249,9 +2209,10 @@ function reloadVehicles() end
 
 function reloadXui() end
 
+---@param player IsoPlayer
 ---@param id integer
 ---@param isCanceled boolean
-function removeAction(id, isCanceled) end
+function removeAction(player, id, isCanceled) end
 
 ---@param player IsoPlayer
 function removeAllVehicles(player) end
@@ -2433,6 +2394,10 @@ function sendAddItemToContainer(container, item) end
 ---@param container ItemContainer
 ---@param items ArrayList<InventoryItem>
 function sendAddItemsToContainer(container, items) end
+
+---@param square IsoGridSquare
+---@param sprite string
+function sendAddObjectToMap(square, sprite) end
 
 ---@param animal IsoAnimal
 function sendAnimalGenome(animal) end
@@ -3101,7 +3066,7 @@ function tradingUISendRemoveItem(you, other, item) end
 
 ---@param you IsoPlayer
 ---@param other IsoPlayer
----@param state integer
+---@param state TradingState
 function tradingUISendUpdateState(you, other, state) end
 
 ---@param map HashMap<any, any>
@@ -3205,6 +3170,10 @@ function wasKeyDown(key) end
 ---@param keyName string
 ---@return boolean
 function wasKeyDown(keyName) end
+
+---@param keybindID KeybindId
+---@return boolean
+function wasKeyDown(keybindID) end
 
 ---@return boolean
 function wasMouseActiveMoreRecentlyThanJoypad() end

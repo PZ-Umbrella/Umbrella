@@ -14,6 +14,10 @@ function __WorldMapVisitedServer:loadUser(connection) end
 
 function __WorldMapVisitedServer:save() end
 
+---@param connection IConnection
+---@param b ByteBufferWriter
+function __WorldMapVisitedServer:sendRequestData(connection, b) end
+
 ---@param player IsoPlayer
 ---@param minX integer
 ---@param minY integer

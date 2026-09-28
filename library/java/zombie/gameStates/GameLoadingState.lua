@@ -36,9 +36,6 @@ GameLoadingState.gameLoadingString = nil
 GameLoadingState.loader = nil
 
 ---@type boolean
-GameLoadingState.mapDownloadFailed = nil
-
----@type boolean
 GameLoadingState.playerWrongIP = nil
 
 ---@type boolean

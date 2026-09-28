@@ -215,6 +215,8 @@ function __IsoWorld:isValidSquare(x, y, z) end
 ---@return Zone
 function __IsoWorld:registerMannequinZone(name, type, x, y, z, width, height, properties) end
 
+function __IsoWorld:registerNavZones() end
+
 ---@param name string
 ---@param type string
 ---@param x integer
@@ -372,6 +374,9 @@ function __IsoWorld:transmitWeather() end
 function __IsoWorld:update() end
 
 IsoWorld = {}
+
+---@type integer
+IsoWorld.LUA_CHECKSUM_TIMEOUT_MS = nil
 
 ---@type integer
 IsoWorld.MAX_TDEF_FILE_NUMBER_FOR_MODS = nil

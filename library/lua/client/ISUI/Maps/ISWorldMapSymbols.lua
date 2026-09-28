@@ -11,6 +11,7 @@
 ---@field currentTool ISWorldMapSymbolTool?
 ---@field editNoteBtn ISButton
 ---@field ignoreRightMouseUp boolean
+---@field isWorldMap boolean?
 ---@field joypadButtons ISButton[]
 ---@field keyPressConsumed boolean
 ---@field mapAPI UIWorldMapV2
@@ -178,8 +179,9 @@ function ISWorldMapSymbols:updateSymbolColors() end
 ---@param width number
 ---@param height number
 ---@param mapUI umbrella.MapUI
+---@param isWorldMap boolean?
 ---@return ISWorldMapSymbols
-function ISWorldMapSymbols:new(x, y, width, height, mapUI) end
+function ISWorldMapSymbols:new(x, y, width, height, mapUI, isWorldMap) end
 
 ---@class ISWorldMapSymbolTool : ISBaseObject
 ---@field dragging boolean
@@ -198,7 +200,7 @@ function ISWorldMapSymbolTool:activate() end
 
 function ISWorldMapSymbolTool:deactivate() end
 
----@overload fun(): string
+---@overload fun(): string?
 function ISWorldMapSymbolTool:getJoypadAButtonText() end
 
 ---@return number

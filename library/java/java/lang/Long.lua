@@ -20,266 +20,266 @@
 --- numberOfTrailingZeros) are
 --- based on material from Henry S. Warren, Jr.'s Hacker's
 --- Delight, (Addison Wesley, 2002).
----@class Long: Number, Comparable<integer>, Constable, ConstantDesc
-local __Long = {}
+---@class integer: Number, Comparable<integer>, Constable, ConstantDesc
+local __integer = {}
 
 ---@return integer
-function __Long:byteValue() end
+function __integer:byteValue() end
 
 ---@param arg0 integer
 ---@return integer
-function __Long:compareTo(arg0) end
+function __integer:compareTo(arg0) end
 
 ---@return Optional<integer>
-function __Long:describeConstable() end
+function __integer:describeConstable() end
 
 ---@return number
-function __Long:doubleValue() end
+function __integer:doubleValue() end
 
 ---@param arg0 any
 ---@return boolean
-function __Long:equals(arg0) end
+function __integer:equals(arg0) end
 
 ---@return number
-function __Long:floatValue() end
+function __integer:floatValue() end
 
 ---@return integer
-function __Long:hashCode() end
+function __integer:hashCode() end
 
 ---@return integer
-function __Long:intValue() end
+function __integer:intValue() end
 
 ---@return integer
-function __Long:longValue() end
+function __integer:longValue() end
 
 ---@param arg0 MethodHandles.Lookup
 ---@return integer
-function __Long:resolveConstantDesc(arg0) end
+function __integer:resolveConstantDesc(arg0) end
 
 ---@return integer
-function __Long:shortValue() end
+function __integer:shortValue() end
 
 ---@return string
-function __Long:toString() end
+function __integer:toString() end
 
-Long = {}
+integer = {}
 
 ---The number of bytes used to represent a long value in two's
 --- complement binary form.
 ---@type integer
-Long.BYTES = nil
+integer.BYTES = nil
 
 ---A constant holding the maximum value a long can
 --- have, 263-1.
 ---@type integer
-Long.MAX_VALUE = nil
+integer.MAX_VALUE = nil
 
 ---A constant holding the minimum value a long can
 --- have, -263.
 ---@type integer
-Long.MIN_VALUE = nil
+integer.MIN_VALUE = nil
 
 ---The number of bits used to represent a long value in two's
 --- complement binary form.
 ---@type integer
-Long.SIZE = nil
+integer.SIZE = nil
 
 ---The Class instance representing the primitive type
 --- long.
 ---@type Class<integer>
-Long.TYPE = nil
+integer.TYPE = nil
 
 ---@param arg0 integer
 ---@return integer
-function Long.bitCount(arg0) end
-
----@param arg0 integer
----@param arg1 integer
----@return integer
-function Long.compare(arg0, arg1) end
+function integer.bitCount(arg0) end
 
 ---@param arg0 integer
 ---@param arg1 integer
 ---@return integer
-function Long.compareUnsigned(arg0, arg1) end
+function integer.compare(arg0, arg1) end
 
 ---@param arg0 integer
 ---@param arg1 integer
 ---@return integer
-function Long.compress(arg0, arg1) end
+function integer.compareUnsigned(arg0, arg1) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function integer.compress(arg0, arg1) end
 
 ---@param arg0 string
 ---@return integer
-function Long.decode(arg0) end
+function integer.decode(arg0) end
 
 ---@param arg0 integer
 ---@param arg1 integer
 ---@return integer
-function Long.divideUnsigned(arg0, arg1) end
+function integer.divideUnsigned(arg0, arg1) end
 
 ---@param arg0 integer
 ---@param arg1 integer
 ---@return integer
-function Long.expand(arg0, arg1) end
+function integer.expand(arg0, arg1) end
 
 ---@param arg0 string
 ---@return integer
-function Long.getLong(arg0) end
-
----@param arg0 string
----@param arg1 integer
----@return integer
-function Long.getLong(arg0, arg1) end
+function integer.getLong(arg0) end
 
 ---@param arg0 string
 ---@param arg1 integer
 ---@return integer
-function Long.getLong(arg0, arg1) end
-
----@param arg0 integer
----@return integer
-function Long.hashCode(arg0) end
-
----@param arg0 integer
----@return integer
-function Long.highestOneBit(arg0) end
-
----@param arg0 integer
----@return integer
-function Long.lowestOneBit(arg0) end
-
----@param arg0 integer
----@param arg1 integer
----@return integer
-function Long.max(arg0, arg1) end
-
----@param arg0 integer
----@param arg1 integer
----@return integer
-function Long.min(arg0, arg1) end
-
----@param arg0 integer
----@return integer
-function Long.numberOfLeadingZeros(arg0) end
-
----@param arg0 integer
----@return integer
-function Long.numberOfTrailingZeros(arg0) end
+function integer.getLong(arg0, arg1) end
 
 ---@param arg0 string
 ---@param arg1 integer
 ---@return integer
-function Long.parseLong(arg0, arg1) end
+function integer.getLong(arg0, arg1) end
+
+---@param arg0 integer
+---@return integer
+function integer.hashCode(arg0) end
+
+---@param arg0 integer
+---@return integer
+function integer.highestOneBit(arg0) end
+
+---@param arg0 integer
+---@return integer
+function integer.lowestOneBit(arg0) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function integer.max(arg0, arg1) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return integer
+function integer.min(arg0, arg1) end
+
+---@param arg0 integer
+---@return integer
+function integer.numberOfLeadingZeros(arg0) end
+
+---@param arg0 integer
+---@return integer
+function integer.numberOfTrailingZeros(arg0) end
+
+---@param arg0 string
+---@param arg1 integer
+---@return integer
+function integer.parseLong(arg0, arg1) end
 
 ---@param arg0 CharSequence
 ---@param arg1 integer
 ---@param arg2 integer
 ---@param arg3 integer
 ---@return integer
-function Long.parseLong(arg0, arg1, arg2, arg3) end
+function integer.parseLong(arg0, arg1, arg2, arg3) end
 
 ---@param arg0 string
 ---@return integer
-function Long.parseLong(arg0) end
+function integer.parseLong(arg0) end
 
 ---@param arg0 string
 ---@param arg1 integer
 ---@return integer
-function Long.parseUnsignedLong(arg0, arg1) end
+function integer.parseUnsignedLong(arg0, arg1) end
 
 ---@param arg0 CharSequence
 ---@param arg1 integer
 ---@param arg2 integer
 ---@param arg3 integer
 ---@return integer
-function Long.parseUnsignedLong(arg0, arg1, arg2, arg3) end
+function integer.parseUnsignedLong(arg0, arg1, arg2, arg3) end
 
 ---@param arg0 string
 ---@return integer
-function Long.parseUnsignedLong(arg0) end
+function integer.parseUnsignedLong(arg0) end
 
 ---@param arg0 integer
 ---@param arg1 integer
 ---@return integer
-function Long.remainderUnsigned(arg0, arg1) end
+function integer.remainderUnsigned(arg0, arg1) end
 
 ---@param arg0 integer
 ---@return integer
-function Long.reverse(arg0) end
+function integer.reverse(arg0) end
 
 ---@param arg0 integer
 ---@return integer
-function Long.reverseBytes(arg0) end
+function integer.reverseBytes(arg0) end
 
 ---@param arg0 integer
 ---@param arg1 integer
 ---@return integer
-function Long.rotateLeft(arg0, arg1) end
+function integer.rotateLeft(arg0, arg1) end
 
 ---@param arg0 integer
 ---@param arg1 integer
 ---@return integer
-function Long.rotateRight(arg0, arg1) end
+function integer.rotateRight(arg0, arg1) end
 
 ---@param arg0 integer
 ---@return integer
-function Long.signum(arg0) end
+function integer.signum(arg0) end
 
 ---@param arg0 integer
 ---@param arg1 integer
 ---@return integer
-function Long.sum(arg0, arg1) end
+function integer.sum(arg0, arg1) end
 
 ---@param arg0 integer
 ---@return string
-function Long.toBinaryString(arg0) end
+function integer.toBinaryString(arg0) end
 
 ---@param arg0 integer
 ---@return string
-function Long.toHexString(arg0) end
+function integer.toHexString(arg0) end
 
 ---@param arg0 integer
 ---@return string
-function Long.toOctalString(arg0) end
-
----@param arg0 integer
----@param arg1 integer
----@return string
-function Long.toString(arg0, arg1) end
-
----@param arg0 integer
----@return string
-function Long.toString(arg0) end
+function integer.toOctalString(arg0) end
 
 ---@param arg0 integer
 ---@param arg1 integer
 ---@return string
-function Long.toUnsignedString(arg0, arg1) end
+function integer.toString(arg0, arg1) end
 
 ---@param arg0 integer
 ---@return string
-function Long.toUnsignedString(arg0) end
+function integer.toString(arg0) end
+
+---@param arg0 integer
+---@param arg1 integer
+---@return string
+function integer.toUnsignedString(arg0, arg1) end
+
+---@param arg0 integer
+---@return string
+function integer.toUnsignedString(arg0) end
 
 ---@param arg0 string
 ---@param arg1 integer
 ---@return integer
-function Long.valueOf(arg0, arg1) end
+function integer.valueOf(arg0, arg1) end
 
 ---@param arg0 string
 ---@return integer
-function Long.valueOf(arg0) end
+function integer.valueOf(arg0) end
 
 ---@param arg0 integer
 ---@return integer
-function Long.valueOf(arg0) end
+function integer.valueOf(arg0) end
 
 ---@deprecated
 ---Constructs a newly allocated Long object that
 --- represents the specified long argument.
 ---@param value integer the value to be represented by the
 ---          Long object.
----@return Long
-function Long.new(value) end
+---@return integer
+function integer.new(value) end
 
 ---@deprecated
 ---Constructs a newly allocated Long object that
@@ -289,12 +289,12 @@ function Long.new(value) end
 --- parseLong method for radix 10.
 ---@param s string the String to be converted to a
 ---             Long.
----@return Long
-function Long.new(s) end
+---@return integer
+function integer.new(s) end
 
----@type Class<Long>
-Long.class = nil
+---@type Class<integer>
+integer.class = nil
 
-__classmetatables[Long.class] = { __index = __Long }
+__classmetatables[integer.class] = { __index = __integer }
 
-java.lang.Long = Long
+java.lang.Long = integer

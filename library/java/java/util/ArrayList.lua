@@ -340,10 +340,10 @@ function __ArrayList:toArray() end
 --- list only if the caller knows that the list does not contain
 --- any null elements.)
 ---@generic T
----@param a T the array into which the elements of the list are to
+---@param a kahlua.Array<T> the array into which the elements of the list are to
 ---          be stored, if it is big enough; otherwise, a new array of the
 ---          same runtime type is allocated for this purpose.
----@return T # an array containing the elements of the list
+---@return kahlua.Array<T> # an array containing the elements of the list
 function __ArrayList:toArray(a) end
 
 ---Trims the capacity of this ArrayList instance to be the

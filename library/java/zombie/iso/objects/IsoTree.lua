@@ -100,6 +100,9 @@ IsoTree.SIZE_JUMBO_XL = nil
 ---@type integer
 IsoTree.SIZE_JUMBO_XXL = nil
 
+---@type integer
+IsoTree.WIDTH_JUMBO_XXL = nil
+
 ---@param playerIndex integer
 function IsoTree.checkChopTreeIndicators(playerIndex) end
 

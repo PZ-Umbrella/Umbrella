@@ -10,8 +10,9 @@ local __State = {}
 ---@param event AnimEvent
 function __State:animEvent(owner, layer, track, event) end
 
+---@param owner IsoGameCharacter
 ---@return number
-function __State:awayCheckDistance() end
+function __State:awayCheckDistance(owner) end
 
 ---@param owner IsoGameCharacter
 function __State:enter(owner) end

@@ -59,9 +59,9 @@ function __BentFences:isEnabled() end
 function __BentFences:isUnbentObject(obj) end
 
 ---@param obj IsoObject
----@param dir IsoDirections
+---@param facingDirection GridSquareEdgeFacingDirection
 ---@return boolean
-function __BentFences:isUnbentObject(obj, dir) end
+function __BentFences:isUnbentObject(obj, facingDirection) end
 
 ---@param obj IsoObject
 ---@param dir IsoDirections

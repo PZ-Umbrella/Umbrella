@@ -14,13 +14,6 @@ function ContextMenuCode.AddDispenserBottle(context, param) end
 function ContextMenuCode.BatteryLightSourceInteraction(context, param) end
 
 ---@param context ISContextMenu
----@param option umbrella.ISContextMenu.Option
----@param compost IsoCompost
----@param playerObj IsoPlayer
----@param param umbrella.ContextMenuCode.Param
-function ContextMenuCode.CompostInteraction(context, option, compost, playerObj, param) end
-
----@param context ISContextMenu
 ---@param hook IsoButcherHook
 ---@param playerObj IsoPlayer
 ---@param param umbrella.ContextMenuCode.Param

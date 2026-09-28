@@ -16,13 +16,13 @@
 --- equal as interchangeable and should not
 --- use instances for synchronization, or unpredictable behavior may
 --- occur. For example, in a future release, synchronization may fail.
----@class Boolean: Serializable, Comparable<boolean>, Constable
-local __Boolean = {}
+---@class boolean: Serializable, Comparable<boolean>, Constable
+local __boolean = {}
 
 ---Returns the value of this Boolean object as a boolean
 --- primitive.
 ---@return boolean # the primitive boolean value of this object.
-function __Boolean:booleanValue() end
+function __boolean:booleanValue() end
 
 ---Compares this Boolean instance with another.
 ---@param b boolean the Boolean instance to be compared
@@ -30,12 +30,12 @@ function __Boolean:booleanValue() end
 ---          argument; a positive value if this object represents true
 ---          and the argument represents false; and a negative value if
 ---          this object represents false and the argument represents true
-function __Boolean:compareTo(b) end
+function __boolean:compareTo(b) end
 
 ---Returns an Optional containing the nominal descriptor for this
 --- instance.
 ---@return Optional<DynamicConstantDesc<boolean>> # an Optional describing the Boolean instance
-function __Boolean:describeConstable() end
+function __boolean:describeConstable() end
 
 ---Returns true if and only if the argument is not
 --- null and is a Boolean object that
@@ -43,32 +43,32 @@ function __Boolean:describeConstable() end
 ---@param obj any the object to compare with.
 ---@return boolean # true if the Boolean objects represent the
 ---          same value; false otherwise.
-function __Boolean:equals(obj) end
+function __boolean:equals(obj) end
 
 ---Returns a hash code for this Boolean object.
 ---@return integer # the integer 1231 if this object represents
 --- true; returns the integer 1237 if this
 --- object represents false.
-function __Boolean:hashCode() end
+function __boolean:hashCode() end
 
 ---@return string
-function __Boolean:toString() end
+function __boolean:toString() end
 
-Boolean = {}
+boolean = {}
 
 ---The Boolean object corresponding to the primitive
 --- value false.
 ---@type boolean
-Boolean.FALSE = nil
+boolean.FALSE = nil
 
 ---The Boolean object corresponding to the primitive
 --- value true.
 ---@type boolean
-Boolean.TRUE = nil
+boolean.TRUE = nil
 
 ---The Class object representing the primitive type boolean.
 ---@type Class<boolean>
-Boolean.TYPE = nil
+boolean.TYPE = nil
 
 ---Compares two boolean values.
 --- The value returned is identical to what would be returned by:
@@ -79,7 +79,7 @@ Boolean.TYPE = nil
 ---@return integer # the value 0 if x == y;
 ---         a value less than 0 if !x && y; and
 ---         a value greater than 0 if x && !y
-function Boolean.compare(x, y) end
+function boolean.compare(x, y) end
 
 ---Returns true if and only if the system property named
 --- by the argument exists and is equal to, ignoring case, the
@@ -90,34 +90,34 @@ function Boolean.compare(x, y) end
 --- empty or null, then false is returned.
 ---@param name string the system property name.
 ---@return boolean # the boolean value of the system property.
-function Boolean.getBoolean(name) end
+function boolean.getBoolean(name) end
 
 ---Returns a hash code for a boolean value; compatible with
 --- Boolean.hashCode().
 ---@param value boolean the value to hash
 ---@return integer # a hash code value for a boolean value.
-function Boolean.hashCode(value) end
+function boolean.hashCode(value) end
 
 ---Returns the result of applying the logical AND operator to the
 --- specified boolean operands.
 ---@param a boolean the first operand
 ---@param b boolean the second operand
 ---@return boolean # the logical AND of a and b
-function Boolean.logicalAnd(a, b) end
+function boolean.logicalAnd(a, b) end
 
 ---Returns the result of applying the logical OR operator to the
 --- specified boolean operands.
 ---@param a boolean the first operand
 ---@param b boolean the second operand
 ---@return boolean # the logical OR of a and b
-function Boolean.logicalOr(a, b) end
+function boolean.logicalOr(a, b) end
 
 ---Returns the result of applying the logical XOR operator to the
 --- specified boolean operands.
 ---@param a boolean the first operand
 ---@param b boolean the second operand
 ---@return boolean # the logical XOR of a and b
-function Boolean.logicalXor(a, b) end
+function boolean.logicalXor(a, b) end
 
 ---Parses the string argument as a boolean.  The boolean
 --- returned represents the value true if the string argument
@@ -130,26 +130,26 @@ function Boolean.logicalXor(a, b) end
 ---@param s string the String containing the boolean
 ---                 representation to be parsed
 ---@return boolean # the boolean represented by the string argument
-function Boolean.parseBoolean(s) end
+function boolean.parseBoolean(s) end
 
 ---@param arg0 boolean
 ---@return string
-function Boolean.toString(arg0) end
+function boolean.toString(arg0) end
 
 ---@param arg0 boolean
 ---@return boolean
-function Boolean.valueOf(arg0) end
+function boolean.valueOf(arg0) end
 
 ---@param arg0 string
 ---@return boolean
-function Boolean.valueOf(arg0) end
+function boolean.valueOf(arg0) end
 
 ---@deprecated
 ---Allocates a Boolean object representing the
 --- value argument.
 ---@param value boolean the value of the Boolean.
----@return Boolean
-function Boolean.new(value) end
+---@return boolean
+function boolean.new(value) end
 
 ---@deprecated
 ---Allocates a Boolean object representing the value
@@ -158,12 +158,12 @@ function Boolean.new(value) end
 --- Otherwise, allocates a Boolean object representing the
 --- value false.
 ---@param s string the string to be converted to a Boolean.
----@return Boolean
-function Boolean.new(s) end
+---@return boolean
+function boolean.new(s) end
 
----@type Class<Boolean>
-Boolean.class = nil
+---@type Class<boolean>
+boolean.class = nil
 
-__classmetatables[Boolean.class] = { __index = __Boolean }
+__classmetatables[boolean.class] = { __index = __boolean }
 
-java.lang.Boolean = Boolean
+java.lang.Boolean = boolean

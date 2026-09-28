@@ -469,10 +469,10 @@ function __Vector:toArray() end
 --- of the Vector only if the caller knows that the Vector
 --- does not contain any null elements.)
 ---@generic T
----@param a T the array into which the elements of the Vector are to
+---@param a kahlua.Array<T> the array into which the elements of the Vector are to
 ---          be stored, if it is big enough; otherwise, a new array of the
 ---          same runtime type is allocated for this purpose.
----@return T # an array containing the elements of the Vector
+---@return kahlua.Array<T> # an array containing the elements of the Vector
 function __Vector:toArray(a) end
 
 ---@return string

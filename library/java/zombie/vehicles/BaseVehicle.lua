@@ -467,6 +467,10 @@ function __BaseVehicle:getAngleY() end
 ---@return number
 function __BaseVehicle:getAngleZ() end
 
+---@param animalId integer
+---@return IsoAnimal
+function __BaseVehicle:getAnimalById(animalId) end
+
 ---@return number
 function __BaseVehicle:getAnimalTrailerSize() end
 
@@ -1429,6 +1433,10 @@ function __BaseVehicle:leftSideFuel() end
 ---@param IS_DEBUG_SAVE boolean
 function __BaseVehicle:load(input, WorldVersion, IS_DEBUG_SAVE) end
 
+---@param change IsoObjectChange
+---@param bb ByteBufferReader
+function __BaseVehicle:loadChange(change, bb) end
+
 ---@param lockTimeMs integer
 function __BaseVehicle:lockServerUpdate(lockTimeMs) end
 
@@ -1583,6 +1591,11 @@ function __BaseVehicle:rightSideFuel() end
 ---@param output ByteBuffer
 ---@param IS_DEBUG_SAVE boolean
 function __BaseVehicle:save(output, IS_DEBUG_SAVE) end
+
+---@param change IsoObjectChange
+---@param tbl table
+---@param bb ByteBufferWriter
+function __BaseVehicle:saveChange(change, tbl, bb) end
 
 function __BaseVehicle:scriptReloaded() end
 

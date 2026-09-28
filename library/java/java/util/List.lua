@@ -218,8 +218,8 @@ function __List:subList(arg0, arg1) end
 function __List:toArray() end
 
 ---@generic T
----@param arg0 T
----@return T
+---@param arg0 kahlua.Array<T>
+---@return kahlua.Array<T>
 function __List:toArray(arg0) end
 
 List = {}
@@ -329,7 +329,7 @@ function List.of(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8) end
 function List.of(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) end
 
 ---@generic E
----@param arg0 E
+---@param arg0 kahlua.Array<E>
 ---@return List<E>
 function List.of(arg0) end
 

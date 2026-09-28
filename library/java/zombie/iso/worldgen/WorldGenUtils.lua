@@ -20,14 +20,14 @@ function __WorldGenUtils:displayTable(table) end
 ---@param tileX integer
 ---@param tileY integer
 ---@param z integer
----@return IsoObject
+---@return IsoObject?
 function __WorldGenUtils:doesFloorExit(chunk, tileX, tileY, z) end
 
 ---@param cell IsoCell
 ---@param tileX integer
 ---@param tileY integer
 ---@param z integer
----@return IsoObject
+---@return IsoObject?
 function __WorldGenUtils:doesFloorExit(cell, tileX, tileY, z) end
 
 ---@return string

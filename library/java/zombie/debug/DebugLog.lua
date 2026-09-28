@@ -132,6 +132,9 @@ function DebugLog.setDefaultLogSeverity() end
 ---@param bEnabled boolean
 function DebugLog.setLogEnabled(type, bEnabled) end
 
+---@param token string
+function DebugLog.setLogEnabledFromCommandLine(token) end
+
 ---@param debugType DebugType
 ---@param logSeverity LogSeverity
 function DebugLog.updateSelectedProfile(debugType, logSeverity) end

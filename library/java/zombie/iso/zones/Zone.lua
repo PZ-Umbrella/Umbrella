@@ -92,6 +92,9 @@ function __Zone:getZ() end
 function __Zone:getZombieDensity() end
 
 ---@return boolean
+function __Zone:hasWaterSquare() end
+
+---@return boolean
 function __Zone:haveCons() end
 
 ---@param x integer

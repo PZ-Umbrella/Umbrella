@@ -1210,6 +1210,10 @@ function __IsoGameCharacter:getCorpseSicknessRate() end
 ---@return string
 function __IsoGameCharacter:getCurrentActionContextStateName() end
 
+---@param outTargetPos Vector3
+---@return Vector3
+function __IsoGameCharacter:getCurrentAnimationTranslationTarget(outTargetPos) end
+
 ---@return BuildingDef
 function __IsoGameCharacter:getCurrentBuildingDef() end
 
@@ -1403,7 +1407,7 @@ function __IsoGameCharacter:getHeightAboveFloor() end
 ---@return integer
 function __IsoGameCharacter:getHitChancesMod() end
 
----@return string
+---@return HitDirEnum
 function __IsoGameCharacter:getHitDirEnum() end
 
 ---@return PZArrayList<HitInfo>
@@ -2458,6 +2462,9 @@ function __IsoGameCharacter:isMoving() end
 ---@return boolean
 function __IsoGameCharacter:isNearSirenVehicle() end
 
+---@return boolean
+function __IsoGameCharacter:isNearWallCrouching() end
+
 ---@param testVehicle BaseVehicle
 ---@return boolean
 function __IsoGameCharacter:isNetworkVehicleCollisionActive(testVehicle) end
@@ -2625,6 +2632,9 @@ function __IsoGameCharacter:isSitOnFurnitureObject(object) end
 
 ---@return boolean
 function __IsoGameCharacter:isSitOnGround() end
+
+---@return boolean
+function __IsoGameCharacter:isSitting() end
 
 ---@return boolean
 function __IsoGameCharacter:isSittingOnFurniture() end
@@ -3444,6 +3454,9 @@ function __IsoGameCharacter:setMoving(val) end
 ---@param value any
 function __IsoGameCharacter:setMusicIntensityEventModData(key, value) end
 
+---@param value boolean
+function __IsoGameCharacter:setNearWallCrouching(value) end
+
 ---@param NextWander integer the NextWander to set
 function __IsoGameCharacter:setNextWander(NextWander) end
 
@@ -3878,6 +3891,20 @@ function __IsoGameCharacter:throwGrappledOverFence(hoppableObject, dir) end
 ---@param windowObject IsoObject
 function __IsoGameCharacter:throwGrappledTargetOutWindow(windowObject) end
 
+---@param str string
+function __IsoGameCharacter:transmitHaloNote(str) end
+
+---@param str string
+---@param dispTime number
+function __IsoGameCharacter:transmitHaloNote(str, dispTime) end
+
+---@param str string
+---@param r integer
+---@param g integer
+---@param b integer
+---@param dispTime number
+function __IsoGameCharacter:transmitHaloNote(str, r, g, b, dispTime) end
+
 ---@param action string
 function __IsoGameCharacter:triggerContextualAction(action) end
 
@@ -4025,7 +4052,7 @@ function IsoGameCharacter.getLevelUpLevels() end
 ---@param coord Vector2
 function IsoGameCharacter.getNameCoords(x, y, z, offX, offY, zoom, coord) end
 
----@return HashMap<integer, SurvivorDesc>
+---@return HashMap<integer, SurvivorDesc> # the SurvivorMap
 function IsoGameCharacter.getSurvivorMap() end
 
 ---@return Vector2 # the tempo

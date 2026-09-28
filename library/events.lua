@@ -619,7 +619,7 @@ Events.OnCustomUIKeyReleased = {
 ---body - The dead body being spawned.<br>
 ---@alias Callback_OnDeadBodySpawn fun(body:IsoDeadBody)
 
----OnDeadBodySpawn: Triggered when spawning a dead body.
+---(Client) OnDeadBodySpawn: Triggered when spawning a dead body.
 ---<br><br>body - The dead body being spawned.<br>
 Events.OnDeadBodySpawn = {
 	---@param callback Callback_OnDeadBodySpawn

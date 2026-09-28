@@ -1,7 +1,7 @@
 ---@meta
 
 ---@class RecMedia
----@field [string] table<string, umbrella.RecMediaItem>
+---@field [string] umbrella.RecMediaItem
 RecMedia = {}
 
 ---@class umbrella.RecMediaItem
@@ -10,7 +10,7 @@ RecMedia = {}
 ---@field extra string?
 ---@field itemDisplayName string
 ---@field lines umbrella.RecMediaLine[]
----@field spawning (0 | 1 | 2)?
+---@field spawning (0 | 1 | 2)? Defines the rarity of the recorded media items.<br>0 = common, 1 = uncommon, 2 = rare (weights: 700, 300, 100)
 ---@field subtitle string?
 ---@field title string
 

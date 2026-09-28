@@ -21,9 +21,6 @@ function __IdleState:setParams(owner, stage) end
 
 IdleState = {}
 
----@type State.Param<boolean>
-IdleState.AIM = nil
-
 ---@return IdleState
 function IdleState.instance() end
 

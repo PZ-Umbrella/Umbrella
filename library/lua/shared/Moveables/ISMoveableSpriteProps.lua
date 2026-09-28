@@ -540,11 +540,12 @@ function ISMoveableSpriteProps:pickUpMoveableViaCursor(_character, _square, _ori
 ---@return boolean?
 function ISMoveableSpriteProps:placeMoveable(_character, _square, _origSpriteName, _forceAllow) end
 
+---@param _character IsoPlayer
 ---@param _square IsoGridSquare
 ---@param _item InventoryItem
 ---@param _spriteName string
 ---@return IsoObject?
-function ISMoveableSpriteProps:placeMoveableInternal(_square, _item, _spriteName) end
+function ISMoveableSpriteProps:placeMoveableInternal(_character, _square, _item, _spriteName) end
 
 ---@param _character IsoPlayer
 ---@param _square IsoGridSquare

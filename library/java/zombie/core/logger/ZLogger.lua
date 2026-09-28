@@ -3,6 +3,10 @@
 ---@class ZLogger
 local __ZLogger = {}
 
+function __ZLogger:close() end
+
+function __ZLogger:recreateLogFile() end
+
 ---@param logs string
 function __ZLogger:write(logs) end
 

@@ -127,6 +127,6 @@ function __Set:spliterator() end
 function __Set:toArray() end
 
 ---@generic T
----@param arg0 T
----@return T
+---@param arg0 kahlua.Array<T>
+---@return kahlua.Array<T>
 function __Set:toArray(arg0) end

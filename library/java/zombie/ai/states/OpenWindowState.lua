@@ -25,6 +25,10 @@ function __OpenWindowState:isDoingActionThatCanBeCancelled() end
 ---@param window IsoWindow
 function __OpenWindowState:setParams(owner, window) end
 
+---@param owner IsoGameCharacter
+---@param stage State.Stage
+function __OpenWindowState:setParams(owner, stage) end
+
 OpenWindowState = {}
 
 ---@type State.Param<IsoWindow>

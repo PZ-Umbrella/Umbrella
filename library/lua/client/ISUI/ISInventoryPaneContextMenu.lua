@@ -531,11 +531,10 @@ function ISInventoryPaneContextMenu.OnCraftComplete(
 )
 end
 
----@param customFunction string
+---@param entry ContextMenuConfigScript.EntryScript
 ---@param item InventoryItem
 ---@param playerObj IsoPlayer
----@param param string?
-function ISInventoryPaneContextMenu.onCustomFunction(customFunction, item, playerObj, param) end
+function ISInventoryPaneContextMenu.onCustomFunction(entry, item, playerObj) end
 
 ---@param item InventoryItem
 ---@param player integer

@@ -23,9 +23,6 @@ function ISEquipWeaponAction:animEvent(event, parameter) end
 ---@return boolean
 function ISEquipWeaponAction:complete() end
 
----@return number?
-function ISEquipWeaponAction:getDuration() end
-
 ---@return boolean
 function ISEquipWeaponAction:isAlreadyEquipped() end
 

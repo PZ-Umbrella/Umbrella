@@ -139,6 +139,14 @@ function __Core:TakeScreenshot(x, y, width, height, readBuffer) end
 ---@param alt boolean
 function __Core:addKeyBinding(keyName, key, altKey, shift, ctrl, alt) end
 
+---@param keybindID KeybindId
+---@param key integer
+---@param altKey integer
+---@param shift boolean
+---@param ctrl boolean
+---@param alt boolean
+function __Core:addKeyBinding(keybindID, key, altKey, shift, ctrl, alt) end
+
 ---@return boolean
 function __Core:allowOptionTextureCompression() end
 
@@ -167,6 +175,10 @@ function __Core:getAccountUsed() end
 ---@param keyName string
 ---@return integer
 function __Core:getAltKey(keyName) end
+
+---@param keybindID KeybindId
+---@return integer
+function __Core:getAltKey(keybindID) end
 
 ---@param playerIndex integer
 ---@return boolean
@@ -203,6 +215,9 @@ function __Core:getDebug() end
 function __Core:getDefaultZoomLevels() end
 
 ---@return string
+function __Core:getGameAndBuildVersion() end
+
+---@return string
 function __Core:getGameMode() end
 
 ---@return GameVersion
@@ -230,9 +245,17 @@ function __Core:getIsoCursorVisibility() end
 ---@return integer
 function __Core:getKey(keyName) end
 
+---@param keybindID KeybindId
+---@return integer
+function __Core:getKey(keybindID) end
+
 ---@param keyName string
 ---@return Core.KeyBinding
 function __Core:getKeyBinding(keyName) end
+
+---@param keybindID KeybindId
+---@return Core.KeyBinding
+function __Core:getKeyBinding(keybindID) end
 
 ---@param keyId integer
 ---@return Core.KeyBinding
@@ -406,9 +429,6 @@ function __Core:getOptionEnableDyslexicFont() end
 ---@return boolean
 function __Core:getOptionEnableLeftJoystickRadialMenu() end
 
----@return boolean
-function __Core:getOptionFocusloss() end
-
 ---@return integer
 function __Core:getOptionFontSize() end
 
@@ -499,6 +519,9 @@ function __Core:getOptionPanCameraWhileAiming() end
 
 ---@return boolean
 function __Core:getOptionPanCameraWhileDriving() end
+
+---@return boolean
+function __Core:getOptionPauseOnFocusloss() end
 
 ---@return number
 function __Core:getOptionPrecipitationSpeedMultiplier() end
@@ -823,6 +846,11 @@ function __Core:isInDebug() end
 ---@return boolean
 function __Core:isKey(keyName, key) end
 
+---@param keybindID KeybindId
+---@param key integer
+---@return boolean
+function __Core:isKey(keybindID, key) end
+
 ---@return boolean
 function __Core:isModsPopupDone() end
 
@@ -1127,9 +1155,6 @@ function __Core:setOptionEnableDyslexicFont(enable) end
 ---@param b boolean
 function __Core:setOptionEnableLeftJoystickRadialMenu(b) end
 
----@param pause boolean
-function __Core:setOptionFocusloss(pause) end
-
 ---@param size integer
 function __Core:setOptionFontSize(size) end
 
@@ -1217,6 +1242,9 @@ function __Core:setOptionPanCameraWhileAiming(enable) end
 
 ---@param enable boolean
 function __Core:setOptionPanCameraWhileDriving(enable) end
+
+---@param pause boolean
+function __Core:setOptionPauseOnFocusloss(pause) end
 
 ---@param f number
 function __Core:setOptionPrecipitationSpeedMultiplier(f) end

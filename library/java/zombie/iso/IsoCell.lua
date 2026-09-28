@@ -244,7 +244,7 @@ function __IsoCell:getBestBuildings(criteria, count) end
 ---@return ArrayList<IsoBuilding> # the BuildingList
 function __IsoCell:getBuildingList() end
 
----@return HashMap<integer, BuildingScore>
+---@return HashMap<integer, BuildingScore> # the BuildingScores
 function __IsoCell:getBuildingScores() end
 
 ---@param wx integer
@@ -402,7 +402,7 @@ function __IsoCell:getOrCreateGridSquare(x, y, z) end
 ---@return IsoCell.PerPlayerRender
 function __IsoCell:getPerPlayerRenderAt(playerIndex) end
 
----@return ArrayList<IsoObject>
+---@return Set<IsoObject>
 function __IsoCell:getProcessIsoObjectRemove() end
 
 ---@return ArrayList<IsoObject>
@@ -523,6 +523,9 @@ function __IsoCell:isSafeToAdd() end
 function __IsoCell:putInVehicle(chr) end
 
 function __IsoCell:reloadRainTextures() end
+
+---@param object IsoObject
+function __IsoCell:removeFromStaticUpdaterObjectList(object) end
 
 ---@param window IsoWindow
 function __IsoCell:removeFromWindowList(window) end

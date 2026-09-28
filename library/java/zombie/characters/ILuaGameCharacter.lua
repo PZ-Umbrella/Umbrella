@@ -611,6 +611,20 @@ function __ILuaGameCharacter:smashWindow(w) end
 function __ILuaGameCharacter:stopOrTriggerSound(eventInstance) end
 
 ---@param arg0 string
+function __ILuaGameCharacter:transmitHaloNote(arg0) end
+
+---@param arg0 string
+---@param arg1 number
+function __ILuaGameCharacter:transmitHaloNote(arg0, arg1) end
+
+---@param arg0 string
+---@param arg1 integer
+---@param arg2 integer
+---@param arg3 integer
+---@param arg4 number
+function __ILuaGameCharacter:transmitHaloNote(arg0, arg1, arg2, arg3, arg4) end
+
+---@param arg0 string
 function __ILuaGameCharacter:triggerContextualAction(arg0) end
 
 ---@param arg0 string

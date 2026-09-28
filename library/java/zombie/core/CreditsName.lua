@@ -150,6 +150,9 @@ CreditsName.CASEY_JO_KENNY = nil
 CreditsName.CASPIAN_PRINCE = nil
 
 ---@type CreditsName
+CreditsName.CATHERINE_NGO = nil
+
+---@type CreditsName
 CreditsName.CHARLIE_SLOAN = nil
 
 ---@type CreditsName
@@ -342,10 +345,16 @@ CreditsName.JACOB_HALEY = nil
 CreditsName.JAIME_BYRNE = nil
 
 ---@type CreditsName
+CreditsName.JAKE_RILEY = nil
+
+---@type CreditsName
 CreditsName.JAKOB_KANDEL = nil
 
 ---@type CreditsName
 CreditsName.JAMES_STRETTON = nil
+
+---@type CreditsName
+CreditsName.JAMIE_CARR = nil
 
 ---@type CreditsName
 CreditsName.JAMIE_MAGNUSON = nil
@@ -399,6 +408,9 @@ CreditsName.KEVIN_KING = nil
 CreditsName.KIERAN_RAFFERTY = nil
 
 ---@type CreditsName
+CreditsName.KIEREN_VERNON = nil
+
+---@type CreditsName
 CreditsName.KIM_METZGER = nil
 
 ---@type CreditsName
@@ -418,6 +430,9 @@ CreditsName.KRZYSZTOF_SAGOLA = nil
 
 ---@type CreditsName
 CreditsName.KYLE_ROWLEY = nil
+
+---@type CreditsName
+CreditsName.LEE_BARNES = nil
 
 ---@type CreditsName
 CreditsName.LEONKIEL = nil
@@ -564,6 +579,9 @@ CreditsName.NICHOLAS_STEVENS = nil
 CreditsName.NICK_COWEN = nil
 
 ---@type CreditsName
+CreditsName.NICOLÁS_SOSA_IALAZZO = nil
+
+---@type CreditsName
 CreditsName.NIKOLA_KAPIDZIC = nil
 
 ---@type CreditsName
@@ -660,6 +678,15 @@ CreditsName.SACRIEL = nil
 CreditsName.SAMI_OLAVI = nil
 
 ---@type CreditsName
+CreditsName.SAM_BASSETT_SEAMARK = nil
+
+---@type CreditsName
+CreditsName.SAM_BURROUGHES = nil
+
+---@type CreditsName
+CreditsName.SAM_GATES = nil
+
+---@type CreditsName
 CreditsName.SAM_SPAWTON = nil
 
 ---@type CreditsName
@@ -708,6 +735,9 @@ CreditsName.STEVE_YOUNG = nil
 CreditsName.STUART_JONES = nil
 
 ---@type CreditsName
+CreditsName.SYED_BILAL_AHMED = nil
+
+---@type CreditsName
 CreditsName.TANJA_SUITIALA = nil
 
 ---@type CreditsName
@@ -726,6 +756,9 @@ CreditsName.THOMAS_DEYN = nil
 CreditsName.THOMAS_GUIMBRETIERE = nil
 
 ---@type CreditsName
+CreditsName.THOMAS_ROBINSON = nil
+
+---@type CreditsName
 CreditsName.THOR_PENTHIN_GRUMLØSE = nil
 
 ---@type CreditsName
@@ -739,6 +772,9 @@ CreditsName.TITOPEI = nil
 
 ---@type CreditsName
 CreditsName.TOMEK_KALISZEWSKI = nil
+
+---@type CreditsName
+CreditsName.TOM_HALL = nil
 
 ---@type CreditsName
 CreditsName.TOM_PORTER = nil
@@ -795,6 +831,6 @@ function CreditsName.values() end
 ---@type Class<CreditsName>
 CreditsName.class = nil
 
-__classmetatables[CreditsName.class] = { __index = __CreditsName }
+__classmetatables[CreditsName.class] = {__index = __CreditsName}
 
 zombie.core.CreditsName = CreditsName

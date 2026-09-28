@@ -380,7 +380,7 @@ IsoChunk.doServerRequests = nil
 ---@type boolean
 IsoChunk.doWorldgen = nil
 
----@type ConcurrentLinkedQueue<IsoChunk>
+---@type CappedConcurrentQueue<IsoChunk>
 IsoChunk.loadGridSquare = nil
 
 ---@type kahlua.Array<kahlua.Array<integer>>
@@ -427,6 +427,10 @@ function IsoChunk.doSpawnedVehiclesInInvalidPosition(v) end
 function IsoChunk.removeFromCheckedVehicles(v) end
 
 function IsoChunk.updatePlayerInBullet() end
+
+---@param bb ByteBuffer
+---@return boolean
+function IsoChunk.validateByteBufferHeader(bb) end
 
 ---@param cell IsoCell
 ---@return IsoChunk

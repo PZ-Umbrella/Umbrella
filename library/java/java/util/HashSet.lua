@@ -118,10 +118,10 @@ function __HashSet:toArray() end
 
 ---Description copied from class: AbstractCollection
 ---@generic T
----@param a T the array into which the elements of this collection are to be
+---@param a kahlua.Array<T> the array into which the elements of this collection are to be
 ---        stored, if it is big enough; otherwise, a new array of the same
 ---        runtime type is allocated for this purpose.
----@return T # an array containing all of the elements in this collection
+---@return kahlua.Array<T> # an array containing all of the elements in this collection
 function __HashSet:toArray(a) end
 
 HashSet = {}

@@ -9,6 +9,9 @@
 ISRadioAction = ISBaseTimedAction:derive("ISRadioAction")
 ISRadioAction.Type = "ISRadioAction"
 
+---@return boolean
+function ISRadioAction:complete() end
+
 ---@return boolean?
 function ISRadioAction:isValid() end
 

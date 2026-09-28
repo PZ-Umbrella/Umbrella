@@ -11,6 +11,10 @@
 ISBrushToolTileCursor = ISBuildingObject:derive("ISBrushToolTileCursor")
 ISBrushToolTileCursor.Type = "ISBrushToolTileCursor"
 
+---@param square IsoGridSquare
+---@param sprite string
+function ISBrushToolTileCursor.onTileObjectAdded(square, sprite) end
+
 ---@param x number
 ---@param y number
 ---@param z number

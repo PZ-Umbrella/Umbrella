@@ -59,6 +59,9 @@ Registries.ITEM_TYPE = nil
 ---@type Registry<Job>
 Registries.JOB = nil
 
+---@type Registry<KeybindId>
+Registries.KEYBIND_ID = nil
+
 ---@type Registry<Letter>
 Registries.LETTER = nil
 

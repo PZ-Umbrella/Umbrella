@@ -50,6 +50,12 @@ function __Server:getLastOnline() end
 ---@return integer
 function __Server:getLastUpdate() end
 
+---@return integer
+function __Server:getLastWipe() end
+
+---@return string
+function __Server:getLastWipeDate() end
+
 ---@return string
 function __Server:getLocalIP() end
 
@@ -169,6 +175,9 @@ function __Server:setLastOnlineNow() end
 
 ---@param lastUpdate integer
 function __Server:setLastUpdate(lastUpdate) end
+
+---@param lastWipe integer
+function __Server:setLastWipe(lastWipe) end
 
 ---@param ip string
 function __Server:setLocalIP(ip) end

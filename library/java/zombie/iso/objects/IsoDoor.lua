@@ -126,9 +126,6 @@ function __IsoDoor:getObjectName() end
 ---@return IsoSprite
 function __IsoDoor:getOpenSprite() end
 
----@return IsoGridSquare
-function __IsoDoor:getOppositeSquare() end
-
 ---@param chr IsoGameCharacter
 ---@return IsoGridSquare
 function __IsoDoor:getOtherSideOfDoor(chr) end
@@ -179,6 +176,13 @@ function __IsoDoor:isBarricadeAllowed() end
 
 ---@return boolean
 function __IsoDoor:isBarricaded() end
+
+---@return boolean
+function __IsoDoor:isBlocked() end
+
+---@param facingDirection GridSquareEdgeFacingDirection
+---@return boolean
+function __IsoDoor:isBlocked(facingDirection) end
 
 ---@return boolean
 function __IsoDoor:isCurtainOpen() end

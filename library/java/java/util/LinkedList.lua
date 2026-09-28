@@ -341,10 +341,10 @@ function __LinkedList:toArray() end
 --- Note that toArray(new Object[0]) is identical in function to
 --- toArray().
 ---@generic T
----@param a T the array into which the elements of the list are to
+---@param a kahlua.Array<T> the array into which the elements of the list are to
 ---          be stored, if it is big enough; otherwise, a new array of the
 ---          same runtime type is allocated for this purpose.
----@return T # an array containing the elements of the list
+---@return kahlua.Array<T> # an array containing the elements of the list
 function __LinkedList:toArray(a) end
 
 LinkedList = {}

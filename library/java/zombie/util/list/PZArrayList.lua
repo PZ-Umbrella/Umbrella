@@ -44,7 +44,7 @@ function __PZArrayList:ensureCapacity(minCapacity) end
 ---@return E
 function __PZArrayList:get(index) end
 
----@return E
+---@return kahlua.Array<E>
 function __PZArrayList:getElements() end
 
 ---@param o any

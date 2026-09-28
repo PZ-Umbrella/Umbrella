@@ -262,6 +262,9 @@ function __Food:getWorldTexture() end
 ---@return boolean
 function __Food:hasAnimalParts() end
 
+---@return boolean
+function __Food:hasSpices() end
+
 ---@param otherItem InventoryItem
 function __Food:inheritFoodAgeFrom(otherItem) end
 

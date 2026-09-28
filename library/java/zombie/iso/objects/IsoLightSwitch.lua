@@ -21,6 +21,13 @@ function __IsoLightSwitch:canSwitchLight() end
 ---@return boolean
 function __IsoLightSwitch:couldBePoweredByGenerator() end
 
+function __IsoLightSwitch:createLightSource() end
+
+---@param r number
+---@param g number
+---@param b number
+function __IsoLightSwitch:createLightSource(r, g, b) end
+
 ---@return string
 function __IsoLightSwitch:getBulbItem() end
 
@@ -173,6 +180,9 @@ function __IsoLightSwitch:toggle() end
 function __IsoLightSwitch:update() end
 
 IsoLightSwitch = {}
+
+---@type integer
+IsoLightSwitch.DEFAULT_LIGHT_RADIUS = nil
 
 ---@param chunk IsoChunk
 function IsoLightSwitch.chunkLoaded(chunk) end

@@ -282,6 +282,9 @@ function __IsoObject:getAttachedAnimSprite() end
 ---@return integer
 function __IsoObject:getAttachedAnimSpriteCount() end
 
+---@return GridSquareEdgeFacingDirection
+function __IsoObject:getBlockedEdgeDirection() end
+
 ---@return IsoCell # the cell
 function __IsoObject:getCell() end
 
@@ -393,6 +396,9 @@ function __IsoObject:getHighlightColor() end
 ---@param playerIndex integer
 ---@return ColorInfo
 function __IsoObject:getHighlightColor(playerIndex) end
+
+---@return GridSquareEdgeFacingDirection
+function __IsoObject:getHoppableDirection() end
 
 ---@return boolean
 function __IsoObject:getIsSurfaceNormalOffset() end
@@ -605,6 +611,9 @@ function __IsoObject:getUsesExternalWaterSource() end
 ---@return ObjectRenderEffects
 function __IsoObject:getWindRenderEffects() end
 
+---@return GridSquareEdgeFacingDirection
+function __IsoObject:getWindowFrameDirection() end
+
 ---@return integer
 function __IsoObject:getWorldObjectIndex() end
 
@@ -776,6 +785,14 @@ function __IsoObject:isHighlighted(playerIndex) end
 ---@return boolean
 function __IsoObject:isHoppable() end
 
+---@param facingDirection GridSquareEdgeFacingDirection
+---@return boolean
+function __IsoObject:isHoppable(facingDirection) end
+
+---@param facingDirection GridSquareEdgeFacingDirection
+---@return boolean
+function __IsoObject:isHoppableOrWindowFrame(facingDirection) end
+
 ---@param container ItemContainer
 ---@param item InventoryItem
 ---@return boolean
@@ -800,9 +817,6 @@ function __IsoObject:isMovedThumpable() end
 
 ---@return boolean # the NoPicking
 function __IsoObject:isNoPicking() end
-
----@return boolean
-function __IsoObject:isNorthBlocked() end
 
 ---@return boolean
 function __IsoObject:isNorthHoppable() end
@@ -891,6 +905,10 @@ function __IsoObject:isTargetAlphaZero(playerIndex) end
 ---@return boolean
 function __IsoObject:isTent() end
 
+---@param facingDirection GridSquareEdgeFacingDirection
+---@return boolean
+function __IsoObject:isUnbentObject(facingDirection) end
+
 ---@return boolean
 function __IsoObject:isUseSnowSprite() end
 
@@ -908,6 +926,10 @@ function __IsoObject:isWallW() end
 
 ---@return boolean
 function __IsoObject:isWindow() end
+
+---@param facingDirection GridSquareEdgeFacingDirection
+---@return boolean
+function __IsoObject:isWindowFrame(facingDirection) end
 
 ---@return boolean
 function __IsoObject:isZombie() end

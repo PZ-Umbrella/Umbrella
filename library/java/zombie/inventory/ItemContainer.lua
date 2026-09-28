@@ -781,6 +781,9 @@ function __ItemContainer:getCustomName() end
 ---@return number
 function __ItemContainer:getCustomTemperature() end
 
+---@return string
+function __ItemContainer:getDisplayType() end
+
 ---@param chr IsoGameCharacter
 ---@return integer
 function __ItemContainer:getEffectiveCapacity(chr) end
@@ -1289,6 +1292,10 @@ function __ItemContainer:getSquare() end
 function __ItemContainer:getTakeSound() end
 
 ---@return number
+function __ItemContainer:getTemperature() end
+
+---@deprecated
+---@return number
 function __ItemContainer:getTemprature() end
 
 ---@param desc SurvivorDesc
@@ -1413,6 +1420,9 @@ function __ItemContainer:isFreezer() end
 ---@return boolean
 function __ItemContainer:isFridge() end
 
+---@return boolean
+function __ItemContainer:isFridgeOrFreezerWarming() end
+
 ---@param chr IsoGameCharacter
 ---@return boolean
 function __ItemContainer:isFull(chr) end
@@ -1434,6 +1444,10 @@ function __ItemContainer:isIsDevice() end
 ---@param item InventoryItem
 ---@return boolean
 function __ItemContainer:isItemAllowed(item) end
+
+---@param chr IsoGameCharacter
+---@return boolean
+function __ItemContainer:isLockedToCharacter(chr) end
 
 ---@return boolean
 function __ItemContainer:isMicrowave() end
@@ -1578,6 +1592,15 @@ function __ItemContainer:takeItemsFrom(other) end
 function __ItemContainer:toString() end
 
 ItemContainer = {}
+
+---@type number
+ItemContainer.COLD_LOSS_HOURS = nil
+
+---@type number
+ItemContainer.FRIDGE_FREEZER_TEMPERATURE = nil
+
+---@type number
+ItemContainer.POWER_SHUTOFF_HOUR_OF_DAY = nil
 
 ---@param val number
 ---@return number

@@ -117,9 +117,6 @@ function __IsoWindow:getHealth() end
 ---@return IsoGridSquare
 function __IsoWindow:getIndoorSquare() end
 
----@return IsoGridSquare
-function __IsoWindow:getInsideSquare() end
-
 ---@return boolean
 function __IsoWindow:getNorth() end
 
@@ -128,9 +125,6 @@ function __IsoWindow:getObjectName() end
 
 ---@return IsoSprite
 function __IsoWindow:getOpenSprite() end
-
----@return IsoGridSquare
-function __IsoWindow:getOppositeSquare() end
 
 ---@return IsoSprite
 function __IsoWindow:getSmashedSprite() end
@@ -155,6 +149,13 @@ function __IsoWindow:isBarricadeAllowed() end
 
 ---@return boolean
 function __IsoWindow:isBarricaded() end
+
+---@return boolean
+function __IsoWindow:isBlocked() end
+
+---@param facingDirection GridSquareEdgeFacingDirection
+---@return boolean
+function __IsoWindow:isBlocked(facingDirection) end
 
 ---@return boolean
 function __IsoWindow:isDestroyed() end

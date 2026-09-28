@@ -21,9 +21,6 @@ function ISUnequipAction:animEvent(event, parameter) end
 ---@return boolean
 function ISUnequipAction:complete() end
 
----@return number
-function ISUnequipAction:getDuration() end
-
 ---@return boolean
 function ISUnequipAction:isValid() end
 

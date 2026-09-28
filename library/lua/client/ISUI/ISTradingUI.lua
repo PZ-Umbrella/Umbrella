@@ -34,12 +34,6 @@ ISTradingUI = ISPanelJoypad:derive("ISTradingUI")
 ISTradingUI.Type = "ISTradingUI"
 ISTradingUI.windows = {} ---@type table<integer, ISTradingUI>
 ISTradingUI.CoolDownMessage = 300
-ISTradingUI.States = {
-	PlayerClosedWindow = 0,
-	SealOffer = 1,
-	UnSealOffer = 2,
-	FinalizeDeal = 3,
-}
 ISTradingUI.MaxItems = 20
 ISTradingUI.tradeQuestionUI = nil ---@type ISModalDialog?
 

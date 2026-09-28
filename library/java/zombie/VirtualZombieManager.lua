@@ -60,6 +60,10 @@ function __VirtualZombieManager:checkAndSpawnZombieForBuildingKey(zombie, bandit
 ---@return boolean
 function __VirtualZombieManager:checkZombieKeyForBuilding(outfitName, square) end
 
+---@param dir IsoDirections
+---@return IsoZombie
+function __VirtualZombieManager:createCorpseZombie(dir) end
+
 ---@param target IsoDeadBody
 ---@param nb integer
 function __VirtualZombieManager:createEatingZombies(target, nb) end
@@ -85,14 +89,16 @@ function __VirtualZombieManager:createRealZombieAlways(dir, bDead) end
 ---@param descriptorId integer
 ---@param dir IsoDirections
 ---@param bDead boolean
+---@param persistentId integer
 ---@return IsoZombie
-function __VirtualZombieManager:createRealZombieAlways(descriptorId, dir, bDead) end
+function __VirtualZombieManager:createRealZombieAlways(descriptorId, dir, bDead, persistentId) end
 
 ---@param dir IsoDirections
 ---@param bDead boolean
 ---@param outfitID integer
+---@param persistentId integer
 ---@return IsoZombie
-function __VirtualZombieManager:createRealZombieAlways(dir, bDead, outfitID) end
+function __VirtualZombieManager:createRealZombieAlways(dir, bDead, outfitID, persistentId) end
 
 ---@param x number
 ---@param y number

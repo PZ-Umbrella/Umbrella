@@ -102,6 +102,9 @@ function __VehiclePartOwner:getZ() end
 function __VehiclePartOwner:getZi() end
 
 ---@return boolean
+function __VehiclePartOwner:hasEnoughGasToRun() end
+
+---@return boolean
 function __VehiclePartOwner:isEngineWorking() end
 
 ---@param arg0 integer

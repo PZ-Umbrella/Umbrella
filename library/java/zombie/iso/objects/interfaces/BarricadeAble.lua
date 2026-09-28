@@ -1,6 +1,6 @@
 ---@meta _
 
----@class BarricadeAble
+---@class BarricadeAble: GridSquareEdgeElement
 local __BarricadeAble = {}
 
 ---@param chr IsoGameCharacter
@@ -23,15 +23,6 @@ function __BarricadeAble:getBarricadeOnSameSquare() end
 ---@param chr IsoGameCharacter
 ---@return IsoBarricade
 function __BarricadeAble:getBarricadeOppositeCharacter(chr) end
-
----@return boolean
-function __BarricadeAble:getNorth() end
-
----@return IsoGridSquare
-function __BarricadeAble:getOppositeSquare() end
-
----@return IsoGridSquare
-function __BarricadeAble:getSquare() end
 
 ---@return boolean
 function __BarricadeAble:isBarricadeAllowed() end

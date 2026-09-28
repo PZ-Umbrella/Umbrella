@@ -51,9 +51,6 @@ function __IsoWindowFrame:getNorth() end
 ---@return string
 function __IsoWindowFrame:getObjectName() end
 
----@return IsoGridSquare
-function __IsoWindowFrame:getOppositeSquare() end
-
 ---@param chr IsoGameCharacter
 ---@return Thumpable
 function __IsoWindowFrame:getThumpableFor(chr) end
@@ -131,15 +128,6 @@ function IsoWindowFrame.getOppositeSquare(o) end
 ---@param o IsoObject
 ---@return boolean
 function IsoWindowFrame.haveSheetRope(o) end
-
----@param o IsoObject
----@return boolean
-function IsoWindowFrame.isWindowFrame(o) end
-
----@param o IsoObject
----@param north boolean
----@return boolean
-function IsoWindowFrame.isWindowFrame(o, north) end
 
 ---@param o IsoObject
 ---@param player IsoPlayer

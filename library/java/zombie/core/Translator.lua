@@ -74,6 +74,10 @@ function Translator.getLanguage() end
 ---@return string
 function Translator.getMapLabelText(s) end
 
+---@param item IsoObject
+---@return string
+function Translator.getMoveableDisplayName(item) end
+
 ---@param name string
 ---@return string
 function Translator.getMoveableDisplayName(name) end
@@ -81,10 +85,6 @@ function Translator.getMoveableDisplayName(name) end
 ---@param name string
 ---@return string
 function Translator.getMoveableDisplayNameOrNull(name) end
-
----@param s string
----@return string
-function Translator.getRadioText(s) end
 
 ---@param name string
 ---@return string
@@ -94,12 +94,6 @@ function Translator.getRecipeGroupName(name) end
 ---@return string
 function Translator.getRecipeName(name) end
 
----Return the translated text for the selected language
---- If we don't fnid any translation for the selected language, we return the default text (in English)
----@param desc string
----@return string
-function Translator.getText(desc) end
-
 ---@param desc string
 ---@param args kahlua.Array<any>
 ---@return string
@@ -108,10 +102,6 @@ function Translator.getText(desc, args) end
 ---@param desc string
 ---@return string
 function Translator.getTextMediaEN(desc) end
-
----@param desc string
----@return string
-function Translator.getTextOrNull(desc) end
 
 ---@param desc string
 ---@param args kahlua.Array<any>

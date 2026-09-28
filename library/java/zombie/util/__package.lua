@@ -10,6 +10,9 @@
 ---@class ByteBufferPooledObject
 
 ---(Not exposed)
+---@class CappedConcurrentQueue<T>
+
+---(Not exposed)
 ---@class FrameDelay
 
 ---(Not exposed)

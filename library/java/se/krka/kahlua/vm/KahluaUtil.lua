@@ -110,12 +110,12 @@ function KahluaUtil.len(kahluaTable, low, high) end
 
 ---@param file File
 ---@param environment table
----@return function
+---@return function?
 function KahluaUtil.loadByteCodeFromFile(file, environment) end
 
 ---@param name string
 ---@param environment table
----@return function
+---@return function?
 function KahluaUtil.loadByteCodeFromResource(name, environment) end
 
 ---@param b boolean

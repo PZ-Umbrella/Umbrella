@@ -133,6 +133,9 @@ IsoObjectChange.SWAP_ITEM = nil
 IsoObjectChange.USES_EXTERNAL_WATER_SOURCE = nil
 
 ---@type IsoObjectChange
+IsoObjectChange.VEHICLE_HIT_OBJECT = nil
+
+---@type IsoObjectChange
 IsoObjectChange.VEHICLE_NO_KEY = nil
 
 ---@type IsoObjectChange

@@ -4,6 +4,7 @@
 ---@field container ItemContainer
 ---@field ignoreHandsWounds boolean
 ---@field item Literature
+---@field modal ISUIWriteJournal
 ISWriteSomething = ISBaseTimedAction:derive("ISWriteSomething")
 ISWriteSomething.Type = "ISWriteSomething"
 
