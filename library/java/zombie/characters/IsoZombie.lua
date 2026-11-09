@@ -700,6 +700,12 @@ IsoZombie.LUNGE_TIME = nil
 IsoZombie.PALETTE_COUNT = nil
 
 ---@type integer
+IsoZombie.SHEET_ROPE_DAMAGE_MAX = nil
+
+---@type integer
+IsoZombie.SHEET_ROPE_DAMAGE_MIN = nil
+
+---@type integer
 IsoZombie.SPEED_FAST_SHAMBLER = nil
 
 ---@type integer

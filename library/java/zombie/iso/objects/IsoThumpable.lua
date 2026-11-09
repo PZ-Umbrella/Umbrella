@@ -1,6 +1,6 @@
 ---@meta _
 
----@class IsoThumpable: IsoObject, BarricadeAble, Thumpable, IHasHealth, ILockableDoor
+---@class IsoThumpable: IsoObject, GridSquareEdgeElement, BarricadeAble, Thumpable, IHasHealth, ILockableDoor, IForceableDoor
 local __IsoThumpable = {}
 
 ---@param amount number
@@ -108,8 +108,20 @@ function __IsoThumpable:createLightSource(radius, offsetX, offsetY, offsetZ, lif
 
 function __IsoThumpable:destroy() end
 
+---@param owner IsoGameCharacter
+function __IsoThumpable:failForceOpen(owner) end
+
 ---@param consumer Consumer<IsoThumpable>
 function __IsoThumpable:forEachDoorObject(consumer) end
+
+---@param owner IsoGameCharacter
+function __IsoThumpable:forceOpen(owner) end
+
+---@param owner IsoGameCharacter
+function __IsoThumpable:forceStruggleDamage(owner) end
+
+---@param owner IsoGameCharacter
+function __IsoThumpable:forceStruggleEffects(owner) end
 
 ---@param chr IsoGameCharacter
 ---@return IsoGridSquare
@@ -190,9 +202,6 @@ function __IsoThumpable:getMaxHealth() end
 
 ---@return table
 function __IsoThumpable:getModData() end
-
----@return boolean
-function __IsoThumpable:getNorth() end
 
 ---@return string
 function __IsoThumpable:getObjectName() end
@@ -317,7 +326,16 @@ function __IsoThumpable:isLockedByPadlock() end
 function __IsoThumpable:isLockedToCharacter(chr) end
 
 ---@return boolean
+function __IsoThumpable:isNorth() end
+
+---@return boolean
+function __IsoThumpable:isNotValidForForcing() end
+
+---@return boolean
 function __IsoThumpable:isObstructed() end
+
+---@return boolean
+function __IsoThumpable:isOpen() end
 
 ---@return boolean
 function __IsoThumpable:isPaintable() end
@@ -511,6 +529,9 @@ function __IsoThumpable:setMaxHealth(maxHealth) end
 ---@param modData table
 function __IsoThumpable:setModData(modData) end
 
+---@param open boolean
+function __IsoThumpable:setOpen(open) end
+
 ---@param sprite IsoSprite
 function __IsoThumpable:setOpenSprite(sprite) end
 
@@ -534,7 +555,8 @@ function __IsoThumpable:setThumpDmg(pThumpDmg) end
 function __IsoThumpable:setThumpSound(thumpSound) end
 
 ---@param bb ByteBufferReader
-function __IsoThumpable:syncIsoObjectReceive(bb) end
+---@param source UdpConnection
+function __IsoThumpable:syncIsoObjectReceive(bb, source) end
 
 ---@param b ByteBufferWriter
 function __IsoThumpable:syncIsoObjectSend(b) end

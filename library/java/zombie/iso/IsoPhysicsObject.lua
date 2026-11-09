@@ -12,4 +12,6 @@ function __IsoPhysicsObject:collideWall() end
 ---@return number
 function __IsoPhysicsObject:getGlobalMovementMod(bDoNoises) end
 
+function __IsoPhysicsObject:postupdate() end
+
 function __IsoPhysicsObject:update() end

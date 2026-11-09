@@ -64,11 +64,11 @@ function __MashingLogic:isStartRequested() end
 ---@return boolean
 function __MashingLogic:isStopRequested() end
 
----@param player IsoPlayer
-function __MashingLogic:sendStartRequest(player) end
+---@param isoPlayer IsoPlayer
+function __MashingLogic:sendStartRequest(isoPlayer) end
 
----@param player IsoPlayer
-function __MashingLogic:sendStopRequest(player) end
+---@param isoPlayer IsoPlayer
+function __MashingLogic:sendStopRequest(isoPlayer) end
 
 ---@param time number
 function __MashingLogic:setElapsedTime(time) end

@@ -207,6 +207,10 @@ function RecipeCodeOnCreate.refillLighter(data, character) end
 
 ---@param data CraftRecipeData
 ---@param character IsoGameCharacter
+function RecipeCodeOnCreate.refillLighterGasoline(data, character) end
+
+---@param data CraftRecipeData
+---@param character IsoGameCharacter
 function RecipeCodeOnCreate.removeGasFilter(data, character) end
 
 ---@param data CraftRecipeData

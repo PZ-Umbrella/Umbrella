@@ -1,10 +1,13 @@
 ---@meta _
 
 ---(Not exposed)
----@class ClimbSheetRopeState.ClimbData
+---@class ClimbState.ClimbData
 
 ---(Not exposed)
----@class ClimbSheetRopeState.ClimbStatus
+---@class ClimbState.ClimbStatus
+
+---(Not exposed)
+---@class ClimbState.LadderDirection
 
 ---(Not exposed)
 ---@class ClimbThroughWindowPositioningParams

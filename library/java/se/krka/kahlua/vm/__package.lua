@@ -1,9 +1,6 @@
 ---@meta _
 
 ---(Not exposed)
----@class Coroutine
-
----(Not exposed)
 ---@class KahluaThread
 
 ---(Not exposed)
@@ -14,5 +11,8 @@
 
 ---(Not exposed)
 ---@class Prototype
+
+---(Not exposed)
+---@class UpValue
 
 se.krka.kahlua.vm = {}

@@ -1,6 +1,6 @@
 ---@meta _
 
----@class IsoWindow: IsoObject, BarricadeAble, Thumpable
+---@class IsoWindow: IsoObject, GridSquareEdgeElement, BarricadeAble, Thumpable, IForceablePortal
 local __IsoWindow = {}
 
 ---@param owner IsoGameCharacter
@@ -72,8 +72,23 @@ function __IsoWindow:canAttackBypassIsoBarricade(isoGameCharacter, handWeapon) e
 ---@return boolean
 function __IsoWindow:canClimbThrough(chr) end
 
+---@return boolean
+function __IsoWindow:canOpen() end
+
 ---@return integer
 function __IsoWindow:countAddSheetRope() end
+
+---@param owner IsoGameCharacter
+function __IsoWindow:failForceOpen(owner) end
+
+---@param owner IsoGameCharacter
+function __IsoWindow:forceOpen(owner) end
+
+---@param owner IsoGameCharacter
+function __IsoWindow:forceStruggleDamage(owner) end
+
+---@param owner IsoGameCharacter
+function __IsoWindow:forceStruggleEffects(owner) end
 
 ---@param chr IsoGameCharacter
 ---@return IsoGridSquare
@@ -92,6 +107,10 @@ function __IsoWindow:getBarricadeOnSameSquare() end
 ---@param chr IsoGameCharacter
 ---@return IsoBarricade
 function __IsoWindow:getBarricadeOppositeCharacter(chr) end
+
+---@param owner IsoGameCharacter
+---@return integer
+function __IsoWindow:getBaseForceOpenChance(owner) end
 
 ---@param pos Vector2
 ---@return Vector2
@@ -116,9 +135,6 @@ function __IsoWindow:getHealth() end
 
 ---@return IsoGridSquare
 function __IsoWindow:getIndoorSquare() end
-
----@return boolean
-function __IsoWindow:getNorth() end
 
 ---@return string
 function __IsoWindow:getObjectName() end
@@ -176,6 +192,12 @@ function __IsoWindow:isLocked() end
 function __IsoWindow:isNorth() end
 
 ---@return boolean
+function __IsoWindow:isNotValidForForcing() end
+
+---@return boolean
+function __IsoWindow:isOpen() end
+
+---@return boolean
 function __IsoWindow:isPermaLocked() end
 
 ---@return boolean
@@ -220,6 +242,9 @@ function __IsoWindow:saveState(bb) end
 ---@param removed boolean
 function __IsoWindow:setGlassRemoved(removed) end
 
+---@param health integer
+function __IsoWindow:setHealth(health) end
+
 ---@param lock boolean
 function __IsoWindow:setIsLocked(lock) end
 
@@ -245,10 +270,14 @@ function __IsoWindow:smashWindow(bRemote) end
 function __IsoWindow:smashWindow() end
 
 ---@param bb ByteBufferReader
-function __IsoWindow:syncIsoObjectReceive(bb) end
+---@param source UdpConnection
+function __IsoWindow:syncIsoObjectReceive(bb, source) end
 
 ---@param b ByteBufferWriter
 function __IsoWindow:syncIsoObjectSend(b) end
+
+---@param forcingCharacter IsoPlayer
+function __IsoWindow:tryForceOpen(forcingCharacter) end
 
 IsoWindow = {}
 
@@ -257,6 +286,9 @@ IsoWindow.NoWeaponDoorDamage = nil
 
 ---@type integer
 IsoWindow.SMASH_SOUND_RADIUS = nil
+
+---@type integer
+IsoWindow.WINDOW_FORCE_CHANCE = nil
 
 ---@type number
 IsoWindow.WeaponDoorDamageModifier = nil

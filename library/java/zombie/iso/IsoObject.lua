@@ -330,8 +330,8 @@ function __IsoObject:getContainerIndex(container) end
 ---@generic T
 ---@param paramToCompare T
 ---@param isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@param containerList PZArrayList<ItemContainer>
----@return PZArrayList<ItemContainer>
+---@param containerList List<ItemContainer>
+---@return List<ItemContainer>
 function __IsoObject:getContainers(paramToCompare, isValidPredicate, containerList) end
 
 ---@return Texture
@@ -905,6 +905,10 @@ function __IsoObject:isTargetAlphaZero(playerIndex) end
 ---@return boolean
 function __IsoObject:isTent() end
 
+---@param type IsoObjectType
+---@return boolean
+function __IsoObject:isType(type) end
+
 ---@param facingDirection GridSquareEdgeFacingDirection
 ---@return boolean
 function __IsoObject:isUnbentObject(facingDirection) end
@@ -1462,7 +1466,8 @@ function __IsoObject:syncFluidContainerSend(bb) end
 function __IsoObject:syncIsoObject(bRemote, val, source, bb) end
 
 ---@param bb ByteBufferReader
-function __IsoObject:syncIsoObjectReceive(bb) end
+---@param source UdpConnection
+function __IsoObject:syncIsoObjectReceive(bb, source) end
 
 ---@param bb ByteBufferWriter
 function __IsoObject:syncIsoObjectSend(bb) end

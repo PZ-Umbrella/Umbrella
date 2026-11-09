@@ -24,9 +24,16 @@ function __MapItem:getSymbols() end
 ---@param WorldVersion integer
 function __MapItem:load(input, WorldVersion) end
 
+---@param input ByteBuffer
+---@param worldVersion integer
+function __MapItem:loadData(input, worldVersion) end
+
 ---@param output ByteBuffer
 ---@param net boolean
 function __MapItem:save(output, net) end
+
+---@param output ByteBuffer
+function __MapItem:saveData(output) end
 
 ---@param mapID string
 function __MapItem:setMapID(mapID) end

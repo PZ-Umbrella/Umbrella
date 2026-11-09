@@ -24,9 +24,6 @@ function __IsoCurtain:canInteractWith(chr) end
 ---@return Vector2
 function __IsoCurtain:getFacingPosition(pos) end
 
----@return boolean
-function __IsoCurtain:getNorth() end
-
 ---@return IsoObject
 function __IsoCurtain:getObjectAttachedTo() end
 
@@ -50,6 +47,9 @@ function __IsoCurtain:isAdjacentToSquare(square2) end
 
 ---@return boolean
 function __IsoCurtain:isCurtainOpen() end
+
+---@return boolean
+function __IsoCurtain:isNorth() end
 
 ---@param input ByteBuffer
 ---@param WorldVersion integer

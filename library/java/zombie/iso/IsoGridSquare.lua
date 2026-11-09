@@ -678,16 +678,16 @@ function __IsoGridSquare:getAdjacentSquare(dir) end
 ---@generic T
 ---@param paramToCompare T
 ---@param isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@param containerList PZArrayList<ItemContainer>
----@return PZArrayList<ItemContainer>
+---@param containerList List<ItemContainer>
+---@return List<ItemContainer>
 function __IsoGridSquare:getAllContainers(paramToCompare, isValidPredicate, containerList) end
 
 ---@generic T
 ---@param dir IsoDirections
 ---@param paramToCompare T
 ---@param isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@param containerList PZArrayList<ItemContainer>
----@return PZArrayList<ItemContainer>
+---@param containerList List<ItemContainer>
+---@return List<ItemContainer>
 function __IsoGridSquare:getAllContainersFromAdjacentSquare(dir, paramToCompare, isValidPredicate, containerList) end
 
 ---@return IsoAnimalTrack
@@ -987,6 +987,12 @@ function __IsoGridSquare:getIsoDoor() end
 ---@return IWorldRegion
 function __IsoGridSquare:getIsoWorldRegion() end
 
+---@return IsoObject
+function __IsoGridSquare:getLadder() end
+
+---@return IsoObject
+function __IsoGridSquare:getLadderUnder() end
+
 ---@return number # the lampostTotalB
 function __IsoGridSquare:getLampostTotalB() end
 
@@ -1048,15 +1054,15 @@ function __IsoGridSquare:getNorth(getSquare) end
 ---@generic T
 ---@param paramToCompare T
 ---@param isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@param containerList PZArrayList<ItemContainer>
----@return PZArrayList<ItemContainer>
+---@param containerList List<ItemContainer>
+---@return List<ItemContainer>
 function __IsoGridSquare:getObjectContainers(paramToCompare, isValidPredicate, containerList) end
 
 ---@param spriteName string
 ---@return IsoObject
 function __IsoGridSquare:getObjectWithSprite(spriteName) end
 
----@return PZArrayList<IsoObject> # the Objects
+---@return List<IsoObject>
 function __IsoGridSquare:getObjects() end
 
 ---@return IsoGridOcclusionData
@@ -1296,14 +1302,14 @@ function __IsoGridSquare:getVehicleContainer() end
 ---@generic T
 ---@param paramToCompare T
 ---@param isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@return PZArrayList<ItemContainer>
+---@return List<ItemContainer>
 function __IsoGridSquare:getVehicleItemContainers(paramToCompare, isValidPredicate) end
 
 ---@generic T
 ---@param paramToCompare T
 ---@param isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@param containerList PZArrayList<ItemContainer>
----@return PZArrayList<ItemContainer>
+---@param containerList List<ItemContainer>
+---@return List<ItemContainer>
 function __IsoGridSquare:getVehicleItemContainers(paramToCompare, isValidPredicate, containerList) end
 
 ---@param i integer
@@ -2343,10 +2349,6 @@ function __IsoGridSquare:stopFire() end
 ---@param active boolean
 function __IsoGridSquare:switchLight(active) end
 
----@param weapon HandWeapon
----@param attacker IsoPlayer
-function __IsoGridSquare:syncIsoTrap(weapon, attacker) end
-
 ---@param collideObject IsoMovingObject
 ---@param x integer
 ---@param y integer
@@ -2582,6 +2584,16 @@ function IsoGridSquare.getSquaresForThread(isoGridSquareCacheDest, count) end
 ---@param facingDirection GridSquareEdgeFacingDirection
 ---@return boolean
 function IsoGridSquare.isBlockedDoor(obj, facingDirection) end
+
+---@param character IsoGameCharacter
+---@param edgeElement GridSquareEdgeElement
+---@return boolean
+function IsoGridSquare.isCharacterInSameRoom(character, edgeElement) end
+
+---@param character IsoGameCharacter
+---@param edgeElement GridSquareEdgeElement
+---@return boolean
+function IsoGridSquare.isWithinReachOfCharacter(character, edgeElement) end
 
 ---@return boolean # the bDoSlowPathfinding
 function IsoGridSquare.isbDoSlowPathfinding() end

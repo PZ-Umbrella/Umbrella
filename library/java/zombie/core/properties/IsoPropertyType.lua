@@ -433,6 +433,18 @@ IsoPropertyType.IS_WATER_COLLECTOR = nil
 IsoPropertyType.ITEM_HEIGHT = nil
 
 ---@type IsoPropertyType
+IsoPropertyType.LADDER_E = nil
+
+---@type IsoPropertyType
+IsoPropertyType.LADDER_N = nil
+
+---@type IsoPropertyType
+IsoPropertyType.LADDER_S = nil
+
+---@type IsoPropertyType
+IsoPropertyType.LADDER_W = nil
+
+---@type IsoPropertyType
 IsoPropertyType.LIGHT_RADIUS = nil
 
 ---@type IsoPropertyType

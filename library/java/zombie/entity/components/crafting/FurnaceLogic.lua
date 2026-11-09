@@ -100,11 +100,11 @@ function __FurnaceLogic:isStopRequested() end
 ---@return boolean
 function __FurnaceLogic:isValid() end
 
----@param player IsoPlayer
-function __FurnaceLogic:sendStartRequest(player) end
+---@param isoPlayer IsoPlayer
+function __FurnaceLogic:sendStartRequest(isoPlayer) end
 
----@param player IsoPlayer
-function __FurnaceLogic:sendStopRequest(player) end
+---@param isoPlayer IsoPlayer
+function __FurnaceLogic:sendStopRequest(isoPlayer) end
 
 ---@param recipeTagQuery string
 function __FurnaceLogic:setFuelRecipeTagQuery(recipeTagQuery) end

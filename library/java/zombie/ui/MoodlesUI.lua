@@ -27,6 +27,10 @@ MoodlesUI = {}
 ---@return MoodlesUI
 function MoodlesUI.getInstance() end
 
+---@param owner IsoGameCharacter
+---@param moodleType MoodleType
+function MoodlesUI.wiggle(owner, moodleType) end
+
 ---@return MoodlesUI
 function MoodlesUI.new() end
 

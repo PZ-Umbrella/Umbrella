@@ -78,9 +78,6 @@ function __HumanVisual:getHairModel() end
 ---@return number
 function __HumanVisual:getHole(bodyPartType) end
 
----@return string
-function __HumanVisual:getLastStandString() end
-
 ---@return Model
 function __HumanVisual:getModel() end
 
@@ -133,10 +130,6 @@ function __HumanVisual:lerp(start, _end, delta) end
 ---@param input ByteBuffer
 ---@param WorldVersion integer
 function __HumanVisual:load(input, WorldVersion) end
-
----@param saveStr string
----@return boolean
-function __HumanVisual:loadLastStandString(saveStr) end
 
 ---@return integer
 function __HumanVisual:pickRandomZombieRotStage() end

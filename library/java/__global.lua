@@ -445,6 +445,47 @@ function addZombiesInOutfit(
 )
 end
 
+---@param x integer
+---@param y integer
+---@param z integer
+---@param totalZombies integer
+---@param outfit string
+---@param femaleChance integer
+---@param isCrawler boolean
+---@param isFallOnFront boolean
+---@param isFakeDead boolean
+---@param isKnockedDown boolean
+---@param isInvulnerable boolean
+---@param isSitting boolean
+---@param health number
+---@param isAnimRecording boolean
+---@param heightOffset number
+---@param isRagdolling boolean
+---@param onFire boolean
+---@param isUseless boolean
+---@return ArrayList<IsoZombie>
+function addZombiesInOutfit(
+	x,
+	y,
+	z,
+	totalZombies,
+	outfit,
+	femaleChance,
+	isCrawler,
+	isFallOnFront,
+	isFakeDead,
+	isKnockedDown,
+	isInvulnerable,
+	isSitting,
+	health,
+	isAnimRecording,
+	heightOffset,
+	isRagdolling,
+	onFire,
+	isUseless
+)
+end
+
 ---@param x1 integer
 ---@param y1 integer
 ---@param x2 integer
@@ -628,9 +669,6 @@ function createRandomDeadBody(square, blood) end
 ---@return table
 function createRegionFile() end
 
----@param storyName string
-function createStory(storyName) end
-
 ---@param tile string
 ---@param square IsoGridSquare
 function createTile(tile, square) end
@@ -664,7 +702,7 @@ function debugSetRoomType(roomType) end
 ---@param account Account
 function deleteAccountToAccountList(account) end
 
----@param gameMode string
+---@param gameMode GameMode
 function deleteAllGameModeSaves(gameMode) end
 
 ---@param folder string
@@ -674,9 +712,6 @@ function deleteDatabase(folder) end
 ---@param player string
 ---@param world string
 function deletePlayerFromDatabase(savedir, player, world) end
-
----@param fileName string
-function deletePlayerSave(fileName) end
 
 ---@param name string
 function deleteRole(name) end
@@ -768,9 +803,9 @@ function getAbsoluteSaveFolderName(f) end
 function getAccessLevel() end
 
 ---@param player IsoPlayer
----@param id integer
+---@param transactionId integer
 ---@return integer
-function getActionDuration(player, id) end
+function getActionDuration(player, transactionId) end
 
 ---@return List<string>
 function getActivatedMods() end
@@ -802,10 +837,6 @@ function getAllOutfits(female) end
 
 ---@return ArrayList<Recipe>
 function getAllRecipes() end
-
----@deprecated
----@return List<BufferedReader>
-function getAllSavedPlayers() end
 
 ---@return ArrayList<string>
 function getAllVehicles() end
@@ -1239,12 +1270,6 @@ function getKeyName(key) end
 ---@param filename string
 ---@return string
 function getLastPlayedDate(filename) end
-
----@return List<string>
-function getLastStandPlayerFileNames() end
-
----@return string
-function getLastStandPlayersDirectory() end
 
 ---@return table
 function getLatestSave() end
@@ -1800,14 +1825,14 @@ function inviteFriend(steamID) end
 function isAccessLevel(accessLevel) end
 
 ---@param player IsoPlayer
----@param id integer
+---@param transactionId integer
 ---@return boolean
-function isActionDone(player, id) end
+function isActionDone(player, transactionId) end
 
 ---@param player IsoPlayer
----@param id integer
+---@param transactionId integer
 ---@return boolean
-function isActionRejected(player, id) end
+function isActionRejected(player, transactionId) end
 
 ---@return boolean
 function isAdmin() end
@@ -1964,6 +1989,9 @@ function isMouseButtonPressed(number) end
 
 ---@return boolean
 function isMultiplayer() end
+
+---@return boolean
+function isPlayerProfileReceived() end
 
 ---@param id integer
 ---@return boolean
@@ -2172,6 +2200,10 @@ function rainConfig(cmd, arg) end
 ---@return boolean
 function reactivateJoypadAfterResetLua() end
 
+---@param target IsoPlayer
+---@param requester IsoPlayer
+function rejectMedicalCheck(target, requester) end
+
 function reloadControllerConfigFiles() end
 
 function reloadEngineRPM() end
@@ -2210,9 +2242,9 @@ function reloadVehicles() end
 function reloadXui() end
 
 ---@param player IsoPlayer
----@param id integer
+---@param transactionId integer
 ---@param isCanceled boolean
-function removeAction(player, id, isCanceled) end
+function removeAction(player, transactionId, isCanceled) end
 
 ---@param player IsoPlayer
 function removeAllVehicles(player) end
@@ -2503,16 +2535,12 @@ function sendGoogleAuth(username, code) end
 
 ---@deprecated
 ---@param target IsoPlayer
----@param damage string
----@param range string
-function sendHitPlayer(target, damage, range) end
+function sendHitPlayer(target) end
 
 ---@deprecated
 ---@param target IsoGameCharacter
----@param damage string
 ---@param isTargetHitFromBehind boolean
----@param vehicleSpeed string
-function sendHitVehicle(target, damage, isTargetHitFromBehind, vehicleSpeed) end
+function sendHitVehicle(target, isTargetHitFromBehind) end
 
 ---@deprecated
 ---@param target IsoPlayer

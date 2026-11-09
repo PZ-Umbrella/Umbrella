@@ -459,6 +459,9 @@ ItemTag.FORK = nil
 ItemTag.FULL_BLADE = nil
 
 ---@type ItemTag
+ItemTag.FUNNEL = nil
+
+---@type ItemTag
 ItemTag.GARBAGE_BAG = nil
 
 ---@type ItemTag
@@ -538,6 +541,18 @@ ItemTag.HEAVY_ITEM = nil
 
 ---@type ItemTag
 ItemTag.HEAVY_THREAD = nil
+
+---@type ItemTag
+ItemTag.HELD_ITEM_BLOCKS_SHOVE = nil
+
+---@type ItemTag
+ItemTag.HELD_ITEM_MASK_BAG = nil
+
+---@type ItemTag
+ItemTag.HELD_ITEM_MASK_BUCKET = nil
+
+---@type ItemTag
+ItemTag.HELD_ITEM_MASK_TORCH = nil
 
 ---@type ItemTag
 ItemTag.HERBAL_TEA = nil

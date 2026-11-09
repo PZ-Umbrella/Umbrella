@@ -47,7 +47,8 @@ function __IsoButcherHook:startRemovingBlood(luaHook) end
 function __IsoButcherHook:stopRemovingBlood() end
 
 ---@param bb ByteBufferReader
-function __IsoButcherHook:syncIsoObjectReceive(bb) end
+---@param source UdpConnection
+function __IsoButcherHook:syncIsoObjectReceive(bb, source) end
 
 ---@param b ByteBufferWriter
 function __IsoButcherHook:syncIsoObjectSend(b) end

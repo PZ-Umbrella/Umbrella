@@ -11,6 +11,9 @@ function __DebugType:debugOnceln(formatNoParams) end
 ---@param params kahlua.Array<any>
 function __DebugType:debugOnceln(format, params) end
 
+---@param formatNoParams Supplier<any>
+function __DebugType:debugln(formatNoParams) end
+
 ---@param formatNoParams any
 function __DebugType:debugln(formatNoParams) end
 

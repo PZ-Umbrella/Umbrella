@@ -52,6 +52,9 @@
 ---@class FluidDefinitionScript.PropertyValue
 
 ---(Not exposed)
+---@class HeldItemMaskKey.Entry
+
+---(Not exposed)
 ---@class ItemFilterScript.FilterTypeInfo
 
 ---(Not exposed)

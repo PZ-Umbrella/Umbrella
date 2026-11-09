@@ -11,6 +11,8 @@ ContextualActionHandlers = {}
 ---@param arg4 unknown?
 function ContextualActionHandlers.AnimalsInteraction(action, playerObj, animal, arg2, arg3, arg4) end
 
+function ContextualActionHandlers.ClimbLadder(action, playerObj, arg1, arg2, arg3, arg4) end
+
 ---@param action string
 ---@param playerObj IsoPlayer
 ---@param arg1 IsoObject

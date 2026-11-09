@@ -81,7 +81,7 @@ function __IsoWorld:getFreeEmitter() end
 ---@return BaseSoundEmitter
 function __IsoWorld:getFreeEmitter(x, y, z) end
 
----@return string
+---@return GameMode
 function __IsoWorld:getGameMode() end
 
 ---Utility method for ClimateManager.getTemperature()
@@ -313,6 +313,9 @@ function __IsoWorld:setEmitterOwner(emitter, object) end
 ---@param mode string
 function __IsoWorld:setGameMode(mode) end
 
+---@param mode GameMode
+function __IsoWorld:setGameMode(mode) end
+
 ---@param on boolean
 function __IsoWorld:setHydroPowerOn(on) end
 
@@ -387,6 +390,30 @@ IsoWorld.MIN_TDEF_FILE_NUMBER_FOR_MODS = nil
 ---@type HashMap<string, ArrayList<string>>
 IsoWorld.PropertyValueMap = nil
 
+---@type string
+IsoWorld.TILE_DEFINITIONS_B42_CHUNK_CACHING = nil
+
+---@type string
+IsoWorld.TILE_DEFINITIONS_EROSION = nil
+
+---@type string
+IsoWorld.TILE_DEFINITIONS_JUMBO = nil
+
+---@type string
+IsoWorld.TILE_DEFINITIONS_JUMBO_BIG = nil
+
+---@type string
+IsoWorld.TILE_DEFINITIONS_NEW = nil
+
+---@type string
+IsoWorld.TILE_DEFINITIONS_NOISEWORKS_PATCH = nil
+
+---@type string
+IsoWorld.TILE_DEFINITIONS_OVERLAYS = nil
+
+---@type string
+IsoWorld.TILE_DEF_FOLDER = nil
+
 ---@type integer
 IsoWorld.WorldVersion = nil
 
@@ -413,6 +440,9 @@ IsoWorld.WorldVersion_AnimalRottingTexture = nil
 
 ---@type integer
 IsoWorld.WorldVersion_AnimalWild = nil
+
+---@type integer
+IsoWorld.WorldVersion_AttemptedKeyDrop = nil
 
 ---@type integer
 IsoWorld.WorldVersion_BodyDamageSavePoulticeValues = nil
@@ -545,6 +575,9 @@ IsoWorld.WorldVersion_VariableHeight = nil
 
 ---@type integer
 IsoWorld.WorldVersion_VehicleAlarm = nil
+
+---@type integer
+IsoWorld.WorldVersion_VehicleTowedByID = nil
 
 ---@type integer
 IsoWorld.WorldVersion_VisitedFileVersion = nil

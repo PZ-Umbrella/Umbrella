@@ -92,7 +92,8 @@ function __IsoGenerator:setTotalPowerUsing(totalPowerUsing) end
 function __IsoGenerator:shouldShowOnOverlay() end
 
 ---@param bb ByteBufferReader
-function __IsoGenerator:syncIsoObjectReceive(bb) end
+---@param source UdpConnection
+function __IsoGenerator:syncIsoObjectReceive(bb, source) end
 
 ---@param b ByteBufferWriter
 function __IsoGenerator:syncIsoObjectSend(b) end

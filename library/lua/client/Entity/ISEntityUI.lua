@@ -185,6 +185,8 @@ function ISEntityUI.ReadIni() end
 ---@param _window ISBaseEntityWindow
 function ISEntityUI.StoreWindowPrefs(_window) end
 
+function ISEntityUI.ValidateOpenWindows() end
+
 ---@param _player IsoPlayer
 ---@param _entity IsoObject
 ---@param _dist number?

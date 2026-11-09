@@ -144,7 +144,8 @@ function __IsoHutch:setHutchDirt(hutchDirt) end
 function __IsoHutch:setNestBoxDirt(nestBoxDirt) end
 
 ---@param bb ByteBufferReader
-function __IsoHutch:syncIsoObjectReceive(bb) end
+---@param source UdpConnection
+function __IsoHutch:syncIsoObjectReceive(bb, source) end
 
 ---@param b ByteBufferWriter
 function __IsoHutch:syncIsoObjectSend(b) end

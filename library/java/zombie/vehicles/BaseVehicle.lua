@@ -191,6 +191,11 @@ function __BaseVehicle:blocked(x, y, z) end
 ---@param remote boolean
 function __BaseVehicle:breakConstraint(forgetID, remote) end
 
+---@param player IsoPlayer
+---@param forgetID boolean
+---@param remote boolean
+function __BaseVehicle:breakConstraint(player, forgetID, remote) end
+
 ---@return boolean
 function __BaseVehicle:breakConstraintOnServer() end
 
@@ -671,6 +676,9 @@ function __BaseVehicle:getHeadlightsOn() end
 function __BaseVehicle:getId() end
 
 ---@return number
+function __BaseVehicle:getImpactVelocity() end
+
+---@return number
 function __BaseVehicle:getInitialMass() end
 
 ---@return number
@@ -1016,14 +1024,14 @@ function __BaseVehicle:getVehicleEngineRPM() end
 ---@generic T
 ---@param paramToCompare T
 ---@param isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@return PZArrayList<ItemContainer>
+---@return List<ItemContainer>
 function __BaseVehicle:getVehicleItemContainers(paramToCompare, isValidPredicate) end
 
 ---@generic T
 ---@param paramToCompare T
 ---@param isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@param containerList PZArrayList<ItemContainer>
----@return PZArrayList<ItemContainer>
+---@param containerList List<ItemContainer>
+---@return List<ItemContainer>
 function __BaseVehicle:getVehicleItemContainers(paramToCompare, isValidPredicate, containerList) end
 
 ---@return BaseSoundEmitter
@@ -1422,6 +1430,9 @@ function __BaseVehicle:isStopped() end
 ---@return boolean
 function __BaseVehicle:isTrunkLocked() end
 
+---@return boolean
+function __BaseVehicle:isWaitingToReattachTowingPartner() end
+
 ---@param item InventoryItem
 function __BaseVehicle:keyNamerVehicle(item) end
 
@@ -1694,7 +1705,14 @@ function __BaseVehicle:setGeneralPartCondition(baseQuality, chanceToSpawnDamaged
 function __BaseVehicle:setGoodCar(isGoodCar) end
 
 ---@param on boolean
+---@param playSound boolean
+function __BaseVehicle:setHeadlightsOn(on, playSound) end
+
+---@param on boolean
 function __BaseVehicle:setHeadlightsOn(on) end
+
+---@param on boolean
+function __BaseVehicle:setHeadlightsOnSilently(on) end
 
 ---@param hotwired boolean
 function __BaseVehicle:setHotwired(hotwired) end
@@ -2062,6 +2080,9 @@ BaseVehicle.AMBIENT_SOUND_RADIUS = nil
 
 ---@type number
 BaseVehicle.DOT_PRODUCT_ATTACH_TRAILER_FORWARD = nil
+
+---@type number
+BaseVehicle.DOT_PRODUCT_ATTACH_TRAILER_FORWARD_RECONNECT = nil
 
 ---@type number
 BaseVehicle.DOT_PRODUCT_ATTACH_TRAILER_UP = nil

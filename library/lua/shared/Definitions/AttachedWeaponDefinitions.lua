@@ -52,8 +52,8 @@ AttachedWeaponDefinitions.spearStomach_Special = {
 		"Base.SpearCraftedFireHardened",
 		"Base.SpearCrude",
 		"Base.SpearCrudeLong",
-		"Base.SpearBone",
-		"Base.SpearBone_Long",
+		"Base.Spear_Bone",
+		"Base.Spear_BoneLong",
 	},
 }
 AttachedWeaponDefinitions.katanaStomach = {
@@ -628,9 +628,9 @@ AttachedWeaponDefinitions.weaponInStomach_Special = {
 	daySurvived = 60,
 	weapons = {
 		"Base.BoltCutters",
-		"Base.Bone",
+		"Base.AnimalBone",
 		"Base.Branch_Broken",
-		"Base.LargeBone",
+		"Base.LargeAnimalBone",
 		"Base.TreeBranch2",
 	},
 }
@@ -1329,7 +1329,7 @@ AttachedWeaponDefinitions.meleeInBack_Mid = {
 		"Base.FieldHockeyStick_Broken_Nails",
 		"Base.FieldHockeyStick_Nails",
 		"Base.IceHockeyStick_BarbedWire",
-		"Base.LargeBone",
+		"Base.LargeAnimalBone",
 		"Base.ChairLeg_Nails",
 		"Base.Plank_Broken",
 		"Base.Plank_Broken_Nails",
@@ -1377,7 +1377,7 @@ AttachedWeaponDefinitions.meleeInBack_Late = {
 		"Base.BaseballBat_RakeHead",
 		"Base.BaseballBat_Sawblade",
 		"Base.Cudgel_Nails",
-		"Base.Cudgel_RailSpiked",
+		"Base.Cudgel_RailSpike",
 		"Base.Cudgel_Sawblade",
 		"Base.JawboneBovide_Axe",
 		"Base.JawboneBovide_Club",
@@ -1410,8 +1410,8 @@ AttachedWeaponDefinitions.meleeInBack_Late = {
 		"Base.Cudgel_Bone",
 		"Base.LargeBoneClub",
 		"Base.LargeBoneClub_Spiked",
-		"Base.SpearBone",
-		"Base.SpearBone_Long",
+		"Base.Spear_Bone",
+		"Base.Spear_BoneLong",
 		"Base.TreeBranch_Bone",
 		"Base.JawboneBovide_Morningstar",
 		"Base.KettleMace_Metal",
@@ -1690,7 +1690,7 @@ AttachedWeaponDefinitions.hammerBelt_Mid = {
 		"Base.PipeWrench",
 		"Base.Ratchet",
 		"Base.Wrench",
-		"Base.Bone",
+		"Base.AnimalBone",
 	},
 }
 AttachedWeaponDefinitions.hammerBelt_Late = {

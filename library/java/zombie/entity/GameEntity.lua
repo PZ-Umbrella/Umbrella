@@ -102,7 +102,7 @@ function __GameEntity:hasComponents() end
 function __GameEntity:hasRenderers() end
 
 ---@return boolean
-function __GameEntity:isAddedToEngine() end
+function __GameEntity:isAddedOrScheduledForEngine() end
 
 ---@return boolean
 function __GameEntity:isEntityValid() end

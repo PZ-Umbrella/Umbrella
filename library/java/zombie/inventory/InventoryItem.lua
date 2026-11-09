@@ -96,6 +96,10 @@ function __InventoryItem:allowRandomTint() end
 
 function __InventoryItem:applyMaxSharpness() end
 
+---@param multiplier integer
+---@param owner IsoGameCharacter
+function __InventoryItem:awardMaintenanceXP(multiplier, owner) end
+
 ---@return boolean
 function __InventoryItem:canBeActivated() end
 
@@ -829,6 +833,9 @@ function __InventoryItem:getStaticModel() end
 ---@return string
 function __InventoryItem:getStaticModelException() end
 
+---@return string
+function __InventoryItem:getStaticModelOn() end
+
 ---@return ArrayList<string>
 function __InventoryItem:getStaticModelsByIndex() end
 
@@ -1096,6 +1103,10 @@ function __InventoryItem:isAnimalCorpse() end
 
 ---@return boolean
 function __InventoryItem:isAnimalFeed() end
+
+---@param type string
+---@return boolean
+function __InventoryItem:isAvailableFluidContainer(type) end
 
 ---@return boolean
 function __InventoryItem:isBeingFilled() end
@@ -1958,8 +1969,18 @@ InventoryItem = {}
 ---@return boolean
 function InventoryItem.RemoveFromContainer(item) end
 
+---@param handItem InventoryItem
+---@param handReplacementSupplier Function<InventoryItem, ItemReplacement>
+---@param handModel ModelInstance
+---@return boolean
+function InventoryItem.canPerformHandToHandWithItem(handItem, handReplacementSupplier, handModel) end
+
 ---@return string
 function InventoryItem.getNoRecipesModDataString() end
+
+---@param item InventoryItem
+---@return boolean
+function InventoryItem.isHeavyItem(item) end
 
 ---@param input ByteBuffer
 ---@param WorldVersion integer

@@ -97,12 +97,12 @@ function __ILuaGameCharacter:canClimbSheetRope(sq) end
 
 function __ILuaGameCharacter:clearKnownMediaLines() end
 
-function __ILuaGameCharacter:climbDownSheetRope() end
+function __ILuaGameCharacter:climb() end
+
+function __ILuaGameCharacter:climbDown() end
 
 ---@param dir IsoDirections
 function __ILuaGameCharacter:climbOverFence(dir) end
-
-function __ILuaGameCharacter:climbSheetRope() end
 
 ---@param w IsoWindow
 function __ILuaGameCharacter:climbThroughWindow(w) end
@@ -133,6 +133,9 @@ function __ILuaGameCharacter:faceThisObject(object) end
 
 ---@param object IsoObject
 function __ILuaGameCharacter:faceThisObjectAlt(object) end
+
+---@param arg0 IsoObject
+function __ILuaGameCharacter:forceOpenWindowOrDoor(arg0) end
 
 ---@param fullType string
 ---@return integer

@@ -438,9 +438,6 @@ function __IsoAnimal:getTypeAndBreed() end
 ---@return AnimalAllele
 function __IsoAnimal:getUsedGene(name) end
 
----@return DesignationZone
-function __IsoAnimal:getZone() end
-
 ---@return number
 function __IsoAnimal:getZoneAcceptance() end
 

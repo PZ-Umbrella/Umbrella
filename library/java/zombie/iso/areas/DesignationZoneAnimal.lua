@@ -20,10 +20,10 @@ function __DesignationZoneAnimal:createSurroundingFence() end
 function __DesignationZoneAnimal:doMeta(hours) end
 
 ---@return ArrayList<IsoAnimal>
-function __DesignationZoneAnimal:getAnimals() end
-
----@return ArrayList<IsoAnimal>
 function __DesignationZoneAnimal:getAnimalsConnected() end
+
+---@return Set<IsoAnimal>
+function __DesignationZoneAnimal:getAnimalsInZone() end
 
 ---@return ArrayList<IsoDeadBody>
 function __DesignationZoneAnimal:getCorpses() end

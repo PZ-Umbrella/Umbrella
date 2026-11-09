@@ -40,6 +40,10 @@ function __INetworkPacket:processServer(packetType, connection) end
 function __INetworkPacket:sendToClient(packetType, connection) end
 
 ---@param packetType PacketTypes.PacketType
+---@param player IsoPlayer
+function __INetworkPacket:sendToClient(packetType, player) end
+
+---@param packetType PacketTypes.PacketType
 ---@param username string
 function __INetworkPacket:sendToClient(packetType, username) end
 
@@ -63,5 +67,5 @@ function __INetworkPacket:setData(values) end
 function __INetworkPacket:shouldInstantiate() end
 
 ---@param packetType PacketTypes.PacketType
----@param connection UdpConnection
+---@param connection IConnection
 function __INetworkPacket:sync(packetType, connection) end

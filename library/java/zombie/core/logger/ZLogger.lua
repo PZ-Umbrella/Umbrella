@@ -19,7 +19,7 @@ function __ZLogger:write(logs, level) end
 ---@param append boolean
 function __ZLogger:write(logs, level, append) end
 
----@param ex Exception
+---@param ex Throwable
 function __ZLogger:write(ex) end
 
 ---@param logs string

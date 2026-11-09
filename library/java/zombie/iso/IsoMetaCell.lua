@@ -58,6 +58,14 @@ function __IsoMetaCell:getBuildingCount(bExcludeUserDefined) end
 ---@param y integer
 ---@param w integer
 ---@param h integer
+---@param includeEmptyOutside boolean
+---@param result ArrayList<BuildingDef>
+function __IsoMetaCell:getBuildingsIntersecting(x, y, w, h, includeEmptyOutside, result) end
+
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
 ---@param result ArrayList<BuildingDef>
 function __IsoMetaCell:getBuildingsIntersecting(x, y, w, h, result) end
 
@@ -76,6 +84,14 @@ function __IsoMetaCell:getRoomCount() end
 ---@param bExcludeUserDefined boolean
 ---@return integer
 function __IsoMetaCell:getRoomCount(bExcludeUserDefined) end
+
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
+---@param includeEmptyOutside boolean
+---@param result ArrayList<RoomDef>
+function __IsoMetaCell:getRoomsIntersecting(x, y, w, h, includeEmptyOutside, result) end
 
 ---@param x integer
 ---@param y integer

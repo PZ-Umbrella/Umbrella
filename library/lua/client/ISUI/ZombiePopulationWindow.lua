@@ -79,6 +79,10 @@ function ZombiePopulationWindow:onRenderMouseWheel(del) end
 ---@param worldY number
 function ZombiePopulationWindow:onTeleport(worldX, worldY) end
 
+function ZombiePopulationWindow:render() end
+
+function ZombiePopulationWindow:renderCoordinates() end
+
 function ZombiePopulationWindow:renderTex() end
 
 ---@param x number

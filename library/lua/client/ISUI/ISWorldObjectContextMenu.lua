@@ -411,6 +411,8 @@ function ISWorldObjectContextMenu.onCleanGraffiti(worldobjects, square, player) 
 ---@param ashes IsoObject
 function ISWorldObjectContextMenu.onClearAshes(worldobjects, player, ashes) end
 
+function ISWorldObjectContextMenu.onClimbLadder(square, down, playerObj, ladder) end
+
 ---@param worldobjects IsoObject[]?
 ---@param fence IsoDoor | IsoThumpable
 ---@param direction IsoDirections
@@ -489,6 +491,8 @@ function ISWorldObjectContextMenu.onFluidInfo(player, fluidcontainer) end
 ---@param player integer
 ---@param fluidcontainer FluidContainer
 function ISWorldObjectContextMenu.onFluidTransfer(player, fluidcontainer) end
+
+function ISWorldObjectContextMenu.onForceOpen(worldobjects, object, player) end
 
 ---@param compost IsoCompost
 ---@param item InventoryItem

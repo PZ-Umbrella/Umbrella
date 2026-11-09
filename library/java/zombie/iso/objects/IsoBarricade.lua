@@ -136,7 +136,8 @@ function __IsoBarricade:setHealth(health) end
 function __IsoBarricade:syncIsoObject(bRemote, val, source, bb) end
 
 ---@param bb ByteBufferReader
-function __IsoBarricade:syncIsoObjectReceive(bb) end
+---@param source UdpConnection
+function __IsoBarricade:syncIsoObjectReceive(bb, source) end
 
 ---@param b ByteBufferWriter
 function __IsoBarricade:syncIsoObjectSend(b) end

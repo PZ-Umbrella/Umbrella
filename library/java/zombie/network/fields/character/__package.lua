@@ -1,4 +1,7 @@
 ---@meta _
 
 ---(Not exposed)
----@class PlayerID
+---@class ConnectionPlayer
+
+---(Not exposed)
+---@class OnlinePlayer

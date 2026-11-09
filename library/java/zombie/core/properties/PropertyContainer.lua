@@ -54,9 +54,9 @@ function __PropertyContainer:has(flag) end
 ---@return boolean
 function __PropertyContainer:has(isoPropertyType) end
 
----@param isoPropertyType kahlua.Array<IsoPropertyType>
+---@param properties kahlua.Array<IsoPropertyType>
 ---@return boolean
-function __PropertyContainer:has(isoPropertyType) end
+function __PropertyContainer:has(properties) end
 
 ---@param isoPropertyType string
 ---@return boolean

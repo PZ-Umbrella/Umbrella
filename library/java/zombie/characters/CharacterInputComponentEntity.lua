@@ -36,6 +36,9 @@ function __CharacterInputComponentEntity:isAnyAimKeyDown() end
 function __CharacterInputComponentEntity:isAttackButtonDown() end
 
 ---@return boolean
+function __CharacterInputComponentEntity:isBackwardButtonDown() end
+
+---@return boolean
 function __CharacterInputComponentEntity:isBuildButtonDown() end
 
 ---@return boolean
@@ -58,6 +61,9 @@ function __CharacterInputComponentEntity:isForceRun() end
 
 ---@return boolean
 function __CharacterInputComponentEntity:isForceSprint() end
+
+---@return boolean
+function __CharacterInputComponentEntity:isForwardButtonDown() end
 
 ---@return boolean
 function __CharacterInputComponentEntity:isIgnoreInputsForDirection() end

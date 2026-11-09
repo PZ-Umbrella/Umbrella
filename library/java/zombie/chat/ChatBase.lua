@@ -55,6 +55,10 @@ function __ChatBase:getType() end
 ---@return number
 function __ChatBase:getZombieAttractionRange() end
 
+---@param connection UdpConnection
+---@return boolean
+function __ChatBase:hasMember(connection) end
+
 ---@return boolean
 function __ChatBase:isEnabled() end
 
@@ -69,6 +73,7 @@ function __ChatBase:leaveMember(playerID) end
 function __ChatBase:packMessage(b, msg) end
 
 ---@param playerID integer
+---@return boolean
 function __ChatBase:removeMember(playerID) end
 
 ---@param msg ChatMessage

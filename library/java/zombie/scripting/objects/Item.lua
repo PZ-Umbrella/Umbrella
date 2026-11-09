@@ -493,6 +493,9 @@ function __Item:getStaticModel() end
 ---@return string
 function __Item:getStaticModelException() end
 
+---@return string
+function __Item:getStaticModelOn() end
+
 ---@return ArrayList<string>
 function __Item:getStaticModelsByIndex() end
 

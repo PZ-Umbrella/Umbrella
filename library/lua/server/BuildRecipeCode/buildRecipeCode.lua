@@ -5,13 +5,19 @@ BuildRecipeCode = {}
 BuildRecipeCode.barricade = nil ---@type BuildRecipeCode.barricade
 BuildRecipeCode.canBePlastered = nil ---@type BuildRecipeCode.canBePlastered
 BuildRecipeCode.stairs = nil ---@type BuildRecipeCode.stairs
+BuildRecipeCode.fenceOrWall = nil ---@type BuildRecipeCode.fenceOrWall
+BuildRecipeCode.fenceOrWallCanBePlastered = nil ---@type BuildRecipeCode.fenceOrWallCanBePlastered
 BuildRecipeCode.floor = nil ---@type BuildRecipeCode.floor
+BuildRecipeCode.door = nil ---@type BuildRecipeCode.door
 BuildRecipeCode.doorFrame = nil ---@type BuildRecipeCode.doorFrame
+BuildRecipeCode.doorFrameCanBePlastered = nil ---@type BuildRecipeCode.doorFrameCanBePlastered
 BuildRecipeCode.butcheringHook = nil ---@type BuildRecipeCode.butcheringHook
 BuildRecipeCode.chickenHutch = nil ---@type BuildRecipeCode.chickenHutch
 BuildRecipeCode.feedingTrough = nil ---@type BuildRecipeCode.feedingTrough
 BuildRecipeCode.campfire = nil ---@type BuildRecipeCode.campfire
 BuildRecipeCode.composter = nil ---@type BuildRecipeCode.composter
+BuildRecipeCode.windowFrame = nil ---@type BuildRecipeCode.windowFrame
+BuildRecipeCode.windowFrameCanBePlastered = nil ---@type BuildRecipeCode.windowFrameCanBePlastered
 BuildRecipeCode.windowGlass = nil ---@type BuildRecipeCode.windowGlass
 BuildRecipeCode.woodLampPillar = nil ---@type BuildRecipeCode.woodLampPillar
 BuildRecipeCode.barrelOven = nil ---@type BuildRecipeCode.barrelOven
@@ -63,6 +69,9 @@ function __buildRecipeCode_floor.OnIsValid(params) end
 
 ---@class BuildRecipeCode.doorFrame
 local __buildRecipeCode_doorFrame = {}
+
+---@return unknown?
+function __buildRecipeCode_doorFrame.OnCreate(params) end
 
 ---@param params umbrella.BuildRecipeCode.IsValidParams
 ---@return boolean
@@ -125,6 +134,42 @@ local __buildRecipeCode_barrelOven = {}
 ---@param params umbrella.BuildRecipeCode.OnCreateParams
 ---@return umbrella.BuildRecipeCode.OnCreateResult
 function __buildRecipeCode_barrelOven.OnCreate(params) end
+
+---@class BuildRecipeCode.fenceOrWall
+local __buildRecipeCode_fenceOrWall = {}
+
+---@return unknown?
+function __buildRecipeCode_fenceOrWall.OnCreate(params) end
+
+---@class BuildRecipeCode.fenceOrWallCanBePlastered
+local __buildRecipeCode_fenceOrWallCanBePlastered = {}
+
+---@return unknown?
+function __buildRecipeCode_fenceOrWallCanBePlastered.OnCreate(params) end
+
+---@class BuildRecipeCode.door
+local __buildRecipeCode_door = {}
+
+---@return unknown?
+function __buildRecipeCode_door.OnCreate(params) end
+
+---@class BuildRecipeCode.doorFrameCanBePlastered
+local __buildRecipeCode_doorFrameCanBePlastered = {}
+
+---@return unknown?
+function __buildRecipeCode_doorFrameCanBePlastered.OnCreate(params) end
+
+---@class BuildRecipeCode.windowFrame
+local __buildRecipeCode_windowFrame = {}
+
+---@return unknown?
+function __buildRecipeCode_windowFrame.OnCreate(params) end
+
+---@class BuildRecipeCode.windowFrameCanBePlastered
+local __buildRecipeCode_windowFrameCanBePlastered = {}
+
+---@return unknown?
+function __buildRecipeCode_windowFrameCanBePlastered.OnCreate(params) end
 
 ---@class umbrella.BuildRecipeCode.TimedActionIsValidParams
 ---@field facing string

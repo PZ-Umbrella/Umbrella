@@ -88,9 +88,6 @@ function __ItemVisual:getInventoryItem() end
 ---@return string
 function __ItemVisual:getItemType() end
 
----@return string
-function __ItemVisual:getLastStandString() end
-
 ---@param bodyPartType BloodBodyPartType
 ---@return number
 function __ItemVisual:getLeatherPatch(bodyPartType) end
@@ -192,10 +189,6 @@ ItemVisual = {}
 
 ---@type number
 ItemVisual.NULL_HUE = nil
-
----@param saveStr string
----@return InventoryItem
-function ItemVisual.createLastStandItem(saveStr) end
 
 ---@return ItemVisual
 function ItemVisual.new() end

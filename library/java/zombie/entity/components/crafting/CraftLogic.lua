@@ -110,11 +110,11 @@ function __CraftLogic:returnConsumedItemsToResourcesOrSquare(craftRecipeData) en
 
 function __CraftLogic:sendCraftLogicSync() end
 
----@param player IsoPlayer
-function __CraftLogic:sendStartRequest(player) end
+---@param isoPlayer IsoPlayer
+function __CraftLogic:sendStartRequest(isoPlayer) end
 
----@param player IsoPlayer
-function __CraftLogic:sendStopRequest(player) end
+---@param isoPlayer IsoPlayer
+function __CraftLogic:sendStopRequest(isoPlayer) end
 
 ---@param recipe CraftRecipe
 function __CraftLogic:setRecipe(recipe) end

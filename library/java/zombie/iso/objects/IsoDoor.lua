@@ -1,6 +1,6 @@
 ---@meta _
 
----@class IsoDoor: IsoObject, BarricadeAble, Thumpable, IHasHealth, ILockableDoor, ICurtain
+---@class IsoDoor: IsoObject, BarricadeAble, Thumpable, IHasHealth, ILockableDoor, IForceableDoor, ICurtain
 local __IsoDoor = {}
 
 ---@return IsoDoor
@@ -76,10 +76,28 @@ function __IsoDoor:checkKeyId() end
 ---@return boolean
 function __IsoDoor:couldBeOpen(chr) end
 
+---@param owner IsoGameCharacter
+function __IsoDoor:damageCheck(owner) end
+
+---@param owner IsoGameCharacter
+function __IsoDoor:destroy(owner) end
+
 function __IsoDoor:destroy() end
+
+---@param owner IsoGameCharacter
+function __IsoDoor:failForceOpen(owner) end
 
 ---@param consumer Consumer<IsoDoor>
 function __IsoDoor:forEachDoorObject(consumer) end
+
+---@param owner IsoGameCharacter
+function __IsoDoor:forceOpen(owner) end
+
+---@param owner IsoGameCharacter
+function __IsoDoor:forceStruggleDamage(owner) end
+
+---@param owner IsoGameCharacter
+function __IsoDoor:forceStruggleEffects(owner) end
 
 ---Returns the square the player should stand on to add a sheet.
 ---@param chr IsoGameCharacter
@@ -100,6 +118,13 @@ function __IsoDoor:getBarricadeOnSameSquare() end
 ---@return IsoBarricade
 function __IsoDoor:getBarricadeOppositeCharacter(chr) end
 
+---@param owner IsoGameCharacter
+---@return integer
+function __IsoDoor:getBaseForceOpenChance(owner) end
+
+---@return string
+function __IsoDoor:getBreakSound() end
+
 ---@param pos Vector2
 ---@return Vector2
 function __IsoDoor:getFacingPosition(pos) end
@@ -116,9 +141,6 @@ function __IsoDoor:getKeyId() end
 
 ---@return integer
 function __IsoDoor:getMaxHealth() end
-
----@return boolean
-function __IsoDoor:getNorth() end
 
 ---@return string
 function __IsoDoor:getObjectName() end
@@ -210,6 +232,12 @@ function __IsoDoor:isLocked() end
 
 ---@return boolean
 function __IsoDoor:isLockedByKey() end
+
+---@return boolean
+function __IsoDoor:isNorth() end
+
+---@return boolean
+function __IsoDoor:isNotValidForForcing() end
 
 ---@return boolean
 function __IsoDoor:isObstructed() end
@@ -316,7 +344,31 @@ function __IsoDoor:transmitSetCurtainOpen(open) end
 IsoDoor = {}
 
 ---@type integer
-IsoDoor.BREAK_SOUND_RADIUS = nil
+IsoDoor.BREAK_SOUND_PLAYER_IGNORE_RADIUS = nil
+
+---@type integer
+IsoDoor.BREAK_SOUND_RADIUS_PLAYER = nil
+
+---@type integer
+IsoDoor.BREAK_SOUND_RADIUS_PLAYER_SERVER = nil
+
+---@type integer
+IsoDoor.BREAK_SOUND_RADIUS_ZOMBIE = nil
+
+---@type integer
+IsoDoor.BREAK_SOUND_RADIUS_ZOMBIE_SERVER = nil
+
+---@type integer
+IsoDoor.BREAK_SOUND_ZOMBIE_IGNORE_RADIUS = nil
+
+---@type integer
+IsoDoor.FORCING_TOOL_DAMAGE_SAVE = nil
+
+---@type number
+IsoDoor.GARAGE_DOOR_CROWBAR_DAMAGE_CHECK_MODIFIER = nil
+
+---@type number
+IsoDoor.NORMAL_DOOR_CROWBAR_DAMAGE_CHECK_MODIFIER = nil
 
 ---@type Vector2
 IsoDoor.tempo = nil

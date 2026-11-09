@@ -9,7 +9,7 @@
 ---@field playButton ISButton
 ---@field playersDesc table<string, IsoSurvivor>
 ---@field selected integer
-LastStandPlayerSelect = ISPanelJoypad:derive("LastStandPlayerSelect")
+LastStandPlayerSelect = {}
 LastStandPlayerSelect.Type = "LastStandPlayerSelect"
 LastStandPlayerSelect.playerSelected = nil
 LastStandPlayerSelect.instance = nil ---@type LastStandPlayerSelect?

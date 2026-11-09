@@ -18,7 +18,4 @@
 ---(Not exposed)
 ---@class Predicate.PredicateIterable<T>
 
----(Not exposed)
----@class TimSort<T>
-
 zombie.entity.util = {}

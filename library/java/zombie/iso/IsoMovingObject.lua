@@ -113,6 +113,9 @@ function __IsoMovingObject:getEatingZombies() end
 ---@return Vector2
 function __IsoMovingObject:getFacingPosition(pos) end
 
+---@return number
+function __IsoMovingObject:getFallZ() end
+
 ---@param dist number
 ---@return IsoGridSquare
 function __IsoMovingObject:getFeelerTile(dist) end

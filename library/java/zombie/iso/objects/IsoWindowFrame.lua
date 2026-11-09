@@ -45,9 +45,6 @@ function __IsoWindowFrame:getBarricadeOppositeCharacter(chr) end
 ---@return IsoCurtain
 function __IsoWindowFrame:getCurtain() end
 
----@return boolean
-function __IsoWindowFrame:getNorth() end
-
 ---@return string
 function __IsoWindowFrame:getObjectName() end
 
@@ -69,6 +66,9 @@ function __IsoWindowFrame:isBarricadeAllowed() end
 
 ---@return boolean
 function __IsoWindowFrame:isBarricaded() end
+
+---@return boolean
+function __IsoWindowFrame:isNorth() end
 
 ---@param input ByteBuffer
 ---@param worldVersion integer

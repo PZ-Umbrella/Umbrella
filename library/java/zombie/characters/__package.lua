@@ -82,6 +82,9 @@
 ---@class IsoPlayer.MoveVars
 
 ---(Not exposed)
+---@class IsoPlayer.PlayerMPPredicate<C1, C2>
+
+---(Not exposed)
 ---@class IsoPlayer.VehicleContainerData
 
 ---(Not exposed)

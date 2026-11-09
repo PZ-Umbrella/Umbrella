@@ -88,9 +88,6 @@ function __IsoPlayer:canClimbOverWall(dir) end
 ---@return boolean
 function __IsoPlayer:canHearAll() end
 
----@return boolean
-function __IsoPlayer:canPerformHandToHandCombat() end
-
 ---@param square IsoGridSquare
 ---@return boolean
 function __IsoPlayer:canPlaceCorpseOnSquare(square) end
@@ -156,6 +153,9 @@ function __IsoPlayer:dressInNamedOutfit(outfitName) end
 
 ---@return IsoDeadBody
 function __IsoPlayer:findClosestCorpseOnGroundToPickup() end
+
+---@param openableObject IsoObject
+function __IsoPlayer:forceOpenWindowOrDoor(openableObject) end
 
 ---@deprecated
 ---@return string
@@ -529,6 +529,9 @@ function __IsoPlayer:isBlockMovement() end
 function __IsoPlayer:isCheatPlayerSeeEveryone() end
 
 ---@return boolean
+function __IsoPlayer:isClimbLoop() end
+
+---@return boolean
 function __IsoPlayer:isClimbOverWallStruggle() end
 
 ---@return boolean
@@ -671,9 +674,6 @@ function __IsoPlayer:isSolidForSeparate() end
 
 ---@return boolean
 function __IsoPlayer:isTargetedByZombie() end
-
----@return boolean
-function __IsoPlayer:isTimedActionInstant() end
 
 ---@return boolean
 function __IsoPlayer:isTorchCone() end
@@ -1107,6 +1107,8 @@ function __IsoPlayer:stopPlayerVoiceSound(suffix) end
 ---@param other IsoPlayer
 function __IsoPlayer:stopReceivingBodyDamageUpdates(other) end
 
+function __IsoPlayer:syncClothing() end
+
 function __IsoPlayer:syncVisuals() end
 
 ---@return boolean
@@ -1177,11 +1179,27 @@ function IsoPlayer.allPlayersDead() end
 ---@return boolean
 function IsoPlayer.anyPlayer(compareParam, predicate) end
 
+---@generic C1
+---@generic C2
+---@param compareParam1 C1
+---@param compareParam2 C2
+---@param predicate IsoPlayer.PlayerMPPredicate<C1, C2>
+---@return boolean
+function IsoPlayer.anyPlayerMP(compareParam1, compareParam2, predicate) end
+
 ---@generic C
 ---@param compareParam C
 ---@param predicate BiPredicate<IsoPlayer, C>
 ---@return IsoPlayer
 function IsoPlayer.findPlayer(compareParam, predicate) end
+
+---@generic C1
+---@generic C2
+---@param compareParam1 C1
+---@param compareParam2 C2
+---@param predicate IsoPlayer.PlayerMPPredicate<C1, C2>
+---@return IsoPlayer
+function IsoPlayer.findPlayerMP(compareParam1, compareParam2, predicate) end
 
 ---@param visitor Invokers.Params1.ICallback<IsoPlayer>
 function IsoPlayer.forEachPlayer(visitor) end
@@ -1251,6 +1269,10 @@ function IsoPlayer.isLocalPlayer(character) end
 ---@param characterObject any
 ---@return boolean
 function IsoPlayer.isLocalPlayer(characterObject) end
+
+---@param obj any
+---@return boolean
+function IsoPlayer.isPlayer(obj) end
 
 ---@param id string
 ---@return boolean

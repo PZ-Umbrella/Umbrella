@@ -79,6 +79,9 @@ function ButcheringUtil.getSkull(name) end
 ---@return string
 function ButcheringUtil.giveMeatModified(meatDef, nb, player, meatRatio, carcass, fromGround, rotten, deathAge) end
 
+---@return unknown
+function ButcheringUtil.hasBucket(character) end
+
 ---@param hook IsoButcherHook
 ---@param character IsoPlayer
 ---@return boolean

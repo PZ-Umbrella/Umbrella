@@ -210,6 +210,10 @@ function __ItemContainer:contains(type, doInv, ignoreBroken) end
 ---@return boolean
 function __ItemContainer:contains(type) end
 
+---@param type string
+---@return boolean
+function __ItemContainer:containsAvailableFluidContainer(type) end
+
 ---@param functionObj function
 ---@return boolean
 function __ItemContainer:containsEval(functionObj) end
@@ -1484,10 +1488,6 @@ function __ItemContainer:load(input, WorldVersion) end
 
 function __ItemContainer:removeAllItems() end
 
----@deprecated
----@param item InventoryItem
-function __ItemContainer:removeItemOnServer(item) end
-
 ---@param id integer
 ---@return boolean
 function __ItemContainer:removeItemWithID(id) end
@@ -1596,11 +1596,19 @@ ItemContainer = {}
 ---@type number
 ItemContainer.COLD_LOSS_HOURS = nil
 
+---@type integer
+ItemContainer.CONTAINER_MAX_NESTING = nil
+
 ---@type number
 ItemContainer.FRIDGE_FREEZER_TEMPERATURE = nil
 
 ---@type number
 ItemContainer.POWER_SHUTOFF_HOUR_OF_DAY = nil
+
+---@param start ItemContainer
+---@param itemId integer
+---@return boolean
+function ItemContainer.chainContainsContainingItem(start, itemId) end
 
 ---@param val number
 ---@return number

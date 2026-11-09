@@ -12,11 +12,19 @@ function __PlayerCraftHistory:cleanupHistory() end
 ---@return PlayerCraftHistory.CraftHistoryEntry
 function __PlayerCraftHistory:getCraftHistoryFor(craftType) end
 
+---@return Set<string>
+function __PlayerCraftHistory:getCraftTypes() end
+
 ---@param input ByteBuffer
 function __PlayerCraftHistory:load(input) end
 
 ---@param output ByteBuffer
 function __PlayerCraftHistory:save(output) end
+
+---@param craftType string
+---@param craftCount integer
+---@param lastCraftTime number
+function __PlayerCraftHistory:setCraftHistoryFor(craftType, craftCount, lastCraftTime) end
 
 PlayerCraftHistory = {}
 

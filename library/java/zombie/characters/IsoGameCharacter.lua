@@ -512,6 +512,9 @@ function __IsoGameCharacter:applyDamage(damageAmount) end
 ---@param damage number
 function __IsoGameCharacter:applyDamageFromVehicleHit(vehicle, vehicleSpeed, damage) end
 
+---@param isClimbing boolean
+function __IsoGameCharacter:applyIdealDirection(isClimbing) end
+
 function __IsoGameCharacter:applyProfessionRecipes() end
 
 ---@param luaTraits List<CharacterTrait>
@@ -622,6 +625,15 @@ function __IsoGameCharacter:canClimbDownSheetRopeInCurrentSquare() end
 function __IsoGameCharacter:canClimbSheetRope(sq) end
 
 ---@return boolean
+function __IsoGameCharacter:canPerformHandToHandCombat() end
+
+---@return boolean
+function __IsoGameCharacter:canPerformHandToHandCombatWithPrimary() end
+
+---@return boolean
+function __IsoGameCharacter:canPerformHandToHandCombatWithSecondary() end
+
+---@return boolean
 function __IsoGameCharacter:canRagdoll() end
 
 ---@param square IsoGridSquare
@@ -699,12 +711,14 @@ function __IsoGameCharacter:clearVariables() end
 
 function __IsoGameCharacter:clearWornItems() end
 
-function __IsoGameCharacter:climbDownSheetRope() end
+function __IsoGameCharacter:climb() end
+
+function __IsoGameCharacter:climbDown() end
+
+function __IsoGameCharacter:climbIdleLadder() end
 
 ---@param dir IsoDirections
 function __IsoGameCharacter:climbOverFence(dir) end
-
-function __IsoGameCharacter:climbSheetRope() end
 
 ---@param w IsoWindow
 function __IsoGameCharacter:climbThroughWindow(w) end
@@ -830,16 +844,23 @@ function __IsoGameCharacter:dressInRandomNonSillyOutfit() end
 ---Picks a random outfit from the OutfitManager
 function __IsoGameCharacter:dressInRandomOutfit() end
 
+function __IsoGameCharacter:dropHandItemForHandToHand() end
+
 function __IsoGameCharacter:dropHandItems() end
 
 function __IsoGameCharacter:dropHeavyItems() end
 
+function __IsoGameCharacter:dropHeldItemsServer() end
+
 ---@param x integer
 ---@param y integer
 ---@param z integer
----@param heavy boolean
----@param isThrow boolean
-function __IsoGameCharacter:dropHeldItems(x, y, z, heavy, isThrow) end
+---@param flags EnumByteFlags<PlayerDropHeldItemsPacket.Flag>
+function __IsoGameCharacter:dropHeldItemsServer(x, y, z, flags) end
+
+function __IsoGameCharacter:dropPrimaryHandItem() end
+
+function __IsoGameCharacter:dropSecondaryHandItem() end
 
 ---@param playbackVars AnimationVariableSource
 function __IsoGameCharacter:endPlaybackGameVariables(playbackVars) end
@@ -858,6 +879,8 @@ function __IsoGameCharacter:enterVehicle(v, seat, offset) end
 ---@param f number
 function __IsoGameCharacter:exert(f) end
 
+function __IsoGameCharacter:exertForForcing() end
+
 ---@param dir IsoDirections
 function __IsoGameCharacter:faceDirection(dir) end
 
@@ -875,6 +898,9 @@ function __IsoGameCharacter:faceLocationF(x, y) end
 ---@param y integer
 function __IsoGameCharacter:facePosition(x, y) end
 
+---@param edgeElement GridSquareEdgeElement
+function __IsoGameCharacter:faceThisEdgeElement(edgeElement) end
+
 ---@param object IsoObject
 function __IsoGameCharacter:faceThisObject(object) end
 
@@ -888,9 +914,14 @@ function __IsoGameCharacter:fallenOnKnees() end
 ---@param hardFall boolean
 function __IsoGameCharacter:fallenOnKnees(hardFall) end
 
+function __IsoGameCharacter:finishClimbingLadder() end
+
 function __IsoGameCharacter:flagForHotSave() end
 
 function __IsoGameCharacter:forceAwake() end
+
+---@param openableObject IsoObject
+function __IsoGameCharacter:forceOpenWindowOrDoor(openableObject) end
 
 function __IsoGameCharacter:forgetRecipes() end
 
@@ -1023,6 +1054,9 @@ function __IsoGameCharacter:getBarricadeStrengthMod() end
 ---@return number
 function __IsoGameCharacter:getBarricadeTimeMod() end
 
+---@return integer
+function __IsoGameCharacter:getBaseForceOpenChance() end
+
 ---@return IsoObject
 function __IsoGameCharacter:getBed() end
 
@@ -1107,8 +1141,16 @@ function __IsoGameCharacter:getChopTreeSpeed() end
 ---@return string
 function __IsoGameCharacter:getClickSound() end
 
----@return ClimbSheetRopeState.ClimbData
+---@return ClimbState.ClimbData
 function __IsoGameCharacter:getClimbData() end
+
+---@param targetGridSquare IsoGridSquare
+---@return IsoObject
+function __IsoGameCharacter:getClimbLadder(targetGridSquare) end
+
+---@param targetGridSquare IsoGridSquare
+---@return IsoObject
+function __IsoGameCharacter:getClimbLadderDown(targetGridSquare) end
 
 ---@param down boolean
 ---@return number
@@ -1116,6 +1158,9 @@ function __IsoGameCharacter:getClimbRopeSpeed(down) end
 
 ---@return number
 function __IsoGameCharacter:getClimbRopeTime() end
+
+---@return number
+function __IsoGameCharacter:getClimbZ() end
 
 ---@return number
 function __IsoGameCharacter:getClimbingFailChanceFloat() end
@@ -1160,22 +1205,22 @@ function __IsoGameCharacter:getContainers() end
 ---@generic T
 ---@param paramToCompare T
 ---@param isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@return PZArrayList<ItemContainer>
+---@return List<ItemContainer>
 function __IsoGameCharacter:getContextWorldContainers(paramToCompare, isValidPredicate) end
 
 ---@generic T
 ---@param paramToCompare T
 ---@param isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@param containerList PZArrayList<ItemContainer>
----@return PZArrayList<ItemContainer>
+---@param containerList List<ItemContainer>
+---@return List<ItemContainer>
 function __IsoGameCharacter:getContextWorldContainers(paramToCompare, isValidPredicate, containerList) end
 
 ---@generic T
 ---@param contextObjects kahlua.Array<IsoObject>
 ---@param paramToCompare T
 ---@param isValidPredicate Invokers.Params2.Boolean.ICallback<T, ItemContainer>
----@param containerList PZArrayList<ItemContainer>
----@return PZArrayList<ItemContainer>
+---@param containerList List<ItemContainer>
+---@return List<ItemContainer>
 function __IsoGameCharacter:getContextWorldContainersInObjects(
 	contextObjects,
 	paramToCompare,
@@ -1185,11 +1230,11 @@ function __IsoGameCharacter:getContextWorldContainersInObjects(
 end
 
 ---@param contextObjects kahlua.Array<IsoObject>
----@return PZArrayList<ItemContainer>
+---@return List<ItemContainer>
 function __IsoGameCharacter:getContextWorldContainersWithHumanCorpse(contextObjects) end
 
 ---@param contextObjects kahlua.Array<IsoObject>
----@return PZArrayList<ItemContainer>
+---@return List<ItemContainer>
 function __IsoGameCharacter:getContextWorldSuitableContainersToDropCorpseInObjects(contextObjects) end
 
 ---@return number
@@ -1410,7 +1455,7 @@ function __IsoGameCharacter:getHitChancesMod() end
 ---@return HitDirEnum
 function __IsoGameCharacter:getHitDirEnum() end
 
----@return PZArrayList<HitInfo>
+---@return ArrayList<HitInfo>
 function __IsoGameCharacter:getHitInfoList() end
 
 ---@return string
@@ -1448,6 +1493,10 @@ function __IsoGameCharacter:getInventory() end
 
 ---@return number
 function __IsoGameCharacter:getInventoryWeight() end
+
+---@param item InventoryItem
+---@return PlayerDropHeldItemsPacket.Flags
+function __IsoGameCharacter:getItemDropFlags(item) end
 
 ---@return ItemVisuals
 function __IsoGameCharacter:getItemVisuals() end
@@ -1716,6 +1765,9 @@ function __IsoGameCharacter:getPreviousStateName() end
 function __IsoGameCharacter:getPrimaryHandItem() end
 
 ---@return string
+function __IsoGameCharacter:getPrimaryHandMask() end
+
+---@return string
 function __IsoGameCharacter:getPrimaryHandType() end
 
 ---@return RagdollController
@@ -1774,6 +1826,9 @@ function __IsoGameCharacter:getSayLine() end
 
 ---@return InventoryItem # the rightHandItem
 function __IsoGameCharacter:getSecondaryHandItem() end
+
+---@return string
+function __IsoGameCharacter:getSecondaryHandMask() end
 
 ---@return string
 function __IsoGameCharacter:getSecondaryHandType() end
@@ -1856,29 +1911,29 @@ function __IsoGameCharacter:getStats() end
 ---@return IAnimationVariableSource
 function __IsoGameCharacter:getSubVariableSource(subVariableSourceName) end
 
----@return PZArrayList<ItemContainer>
+---@return List<ItemContainer>
 function __IsoGameCharacter:getSuitableContainersToDropCorpse() end
 
----@param foundContainers PZArrayList<ItemContainer>
----@return PZArrayList<ItemContainer>
+---@param foundContainers List<ItemContainer>
+---@return List<ItemContainer>
 function __IsoGameCharacter:getSuitableContainersToDropCorpse(foundContainers) end
 
 ---@param square IsoGridSquare
----@return PZArrayList<ItemContainer>
+---@return List<ItemContainer>
 function __IsoGameCharacter:getSuitableContainersToDropCorpseInSquare(square) end
 
 ---@param square IsoGridSquare
----@param foundContainers PZArrayList<ItemContainer>
----@return PZArrayList<ItemContainer>
+---@param foundContainers List<ItemContainer>
+---@return List<ItemContainer>
 function __IsoGameCharacter:getSuitableContainersToDropCorpseInSquare(square, foundContainers) end
 
 ---@param square IsoGridSquare
----@return PZArrayList<ItemContainer>
+---@return List<ItemContainer>
 function __IsoGameCharacter:getSuitableContainersWithHumanCorpseInSquare(square) end
 
 ---@param square IsoGridSquare
----@param foundContainers PZArrayList<ItemContainer>
----@return PZArrayList<ItemContainer>
+---@param foundContainers List<ItemContainer>
+---@return List<ItemContainer>
 function __IsoGameCharacter:getSuitableContainersWithHumanCorpseInSquare(square, foundContainers) end
 
 ---@return integer
@@ -2209,6 +2264,12 @@ function __IsoGameCharacter:isCheatSet(cheat) end
 function __IsoGameCharacter:isClimbing() end
 
 ---@return boolean
+function __IsoGameCharacter:isClimbingDownLadder() end
+
+---@return boolean
+function __IsoGameCharacter:isClimbingLadder() end
+
+---@return boolean
 function __IsoGameCharacter:isClimbingRope() end
 
 ---@param window IsoWindow
@@ -2332,14 +2393,13 @@ function __IsoGameCharacter:isGrappleThrowOverFence() end
 function __IsoGameCharacter:isHandItem(item) end
 
 ---@return boolean
+function __IsoGameCharacter:isHeadCameraZ() end
+
+---@return boolean
 function __IsoGameCharacter:isHeadLookAround() end
 
 ---@return boolean
 function __IsoGameCharacter:isHealthCheat() end
-
----@param item InventoryItem
----@return boolean
-function __IsoGameCharacter:isHeavyItem(item) end
 
 ---@return boolean
 function __IsoGameCharacter:isHideEquippedHandL() end
@@ -2468,6 +2528,9 @@ function __IsoGameCharacter:isNearWallCrouching() end
 ---@param testVehicle BaseVehicle
 ---@return boolean
 function __IsoGameCharacter:isNetworkVehicleCollisionActive(testVehicle) end
+
+---@return boolean
+function __IsoGameCharacter:isNotHoldingHandWeapon() end
 
 ---@return boolean
 function __IsoGameCharacter:isNpc() end
@@ -3132,9 +3195,6 @@ function __IsoGameCharacter:setCharacterGender(characterGender) end
 ---@param clickSound string
 function __IsoGameCharacter:setClickSound(clickSound) end
 
----@param climbData ClimbSheetRopeState.ClimbData
-function __IsoGameCharacter:setClimbData(climbData) end
-
 ---@param time number
 function __IsoGameCharacter:setClimbRopeTime(time) end
 
@@ -3283,6 +3343,9 @@ function __IsoGameCharacter:setHaloNote(str, dispTime) end
 ---@param dispTime number
 function __IsoGameCharacter:setHaloNote(str, r, g, b, dispTime) end
 
+---@param value boolean
+function __IsoGameCharacter:setHeadCameraZ(value) end
+
 ---@param b boolean
 function __IsoGameCharacter:setHeadLookAround(b) end
 
@@ -3316,6 +3379,10 @@ function __IsoGameCharacter:setHitReaction(hitReaction) end
 
 ---@param hurtSound string the hurtSound to set
 function __IsoGameCharacter:setHurtSound(hurtSound) end
+
+---@param isClimbing boolean
+---@param ladder IsoObject
+function __IsoGameCharacter:setIdealDirection(isClimbing, ladder) end
 
 ---@param ignoreMovement boolean
 function __IsoGameCharacter:setIgnoreMovement(ignoreMovement) end
@@ -3534,6 +3601,9 @@ function __IsoGameCharacter:setPlayingDeathSound(playing) end
 ---@param leftHandItem InventoryItem the leftHandItem to set
 function __IsoGameCharacter:setPrimaryHandItem(leftHandItem) end
 
+---@param newVal string
+function __IsoGameCharacter:setPrimaryHandMask(newVal) end
+
 ---@param value boolean
 function __IsoGameCharacter:setRagdollFall(value) end
 
@@ -3586,6 +3656,9 @@ function __IsoGameCharacter:setSceneCulled(isCulled) end
 
 ---@param rightHandItem InventoryItem the rightHandItem to set
 function __IsoGameCharacter:setSecondaryHandItem(rightHandItem) end
+
+---@param newVal string
+function __IsoGameCharacter:setSecondaryHandMask(newVal) end
 
 ---@param val boolean
 function __IsoGameCharacter:setShoveStompAnim(val) end
@@ -3843,6 +3916,8 @@ function __IsoGameCharacter:stopEvent(eventInstance, clip, remote, parameterSet)
 ---@param eventInstance integer
 function __IsoGameCharacter:stopOrTriggerSound(eventInstance) end
 
+function __IsoGameCharacter:syncClothing() end
+
 ---@param newX integer
 ---@param newY integer
 function __IsoGameCharacter:teleportTo(newX, newY) end
@@ -3853,7 +3928,7 @@ function __IsoGameCharacter:teleportTo(newX, newY) end
 
 ---@param newX number
 ---@param newY number
----@param newZ integer
+---@param newZ number
 function __IsoGameCharacter:teleportTo(newX, newY, newZ) end
 
 ---@param newX integer
@@ -4004,6 +4079,9 @@ IsoGameCharacter.HUMANOID_SCREEN_CHEST_HEIGHT = nil
 
 ---@type number
 IsoGameCharacter.HUMANOID_WORLD_CHEST_HEIGHT = nil
+
+---@type number
+IsoGameCharacter.LADDER_END_TRANSITION_SAFE_SPEED = nil
 
 ---@type integer
 IsoGameCharacter.RENDER_OFFSET_X = nil

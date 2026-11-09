@@ -252,6 +252,8 @@ function ISWorldMapSymbolTool:onRightMouseUp(x, y) end
 
 function ISWorldMapSymbolTool:render() end
 
+function ISWorldMapSymbolTool:syncMapItem() end
+
 ---@param symbolsUI ISWorldMapSymbols
 ---@return ISWorldMapSymbolTool
 function ISWorldMapSymbolTool:new(symbolsUI) end

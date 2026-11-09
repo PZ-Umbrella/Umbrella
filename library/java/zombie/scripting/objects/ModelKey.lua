@@ -3889,13 +3889,25 @@ ModelKey.FLASH_LIGHT_ANGLE_HEAD_ARMY = nil
 ModelKey.FLASH_LIGHT_ANGLE_HEAD_ARMY_GROUND = nil
 
 ---@type ModelKey
+ModelKey.FLASH_LIGHT_ANGLE_HEAD_ARMY_ON = nil
+
+---@type ModelKey
 ModelKey.FLASH_LIGHT_ANGLE_HEAD_GROUND = nil
+
+---@type ModelKey
+ModelKey.FLASH_LIGHT_ANGLE_HEAD_ON = nil
 
 ---@type ModelKey
 ModelKey.FLASH_LIGHT_GROUND = nil
 
 ---@type ModelKey
 ModelKey.FLASH_LIGHT_IMPROVISED = nil
+
+---@type ModelKey
+ModelKey.FLASH_LIGHT_IMPROVISED_ON = nil
+
+---@type ModelKey
+ModelKey.FLASH_LIGHT_ON = nil
 
 ---@type ModelKey
 ModelKey.FLASK = nil
@@ -4733,6 +4745,9 @@ ModelKey.HAND_TORCH = nil
 
 ---@type ModelKey
 ModelKey.HAND_TORCH_GROUND = nil
+
+---@type ModelKey
+ModelKey.HAND_TORCH_ON = nil
 
 ---@type ModelKey
 ModelKey.HANK_PIC = nil
@@ -5584,10 +5599,16 @@ ModelKey.LANTERN_HURRICANE_COPPER = nil
 ModelKey.LANTERN_HURRICANE_COPPER_HANDLE_UP = nil
 
 ---@type ModelKey
+ModelKey.LANTERN_HURRICANE_COPPER_HANDLE_UP_ON = nil
+
+---@type ModelKey
 ModelKey.LANTERN_HURRICANE_FORGED = nil
 
 ---@type ModelKey
 ModelKey.LANTERN_HURRICANE_FORGED_HANDLE_UP = nil
+
+---@type ModelKey
+ModelKey.LANTERN_HURRICANE_FORGED_HANDLE_UP_ON = nil
 
 ---@type ModelKey
 ModelKey.LANTERN_HURRICANE_GOLD = nil
@@ -5596,7 +5617,13 @@ ModelKey.LANTERN_HURRICANE_GOLD = nil
 ModelKey.LANTERN_HURRICANE_GOLD_HANDLE_UP = nil
 
 ---@type ModelKey
+ModelKey.LANTERN_HURRICANE_GOLD_HANDLE_UP_ON = nil
+
+---@type ModelKey
 ModelKey.LANTERN_HURRICANE_HANDLE_UP = nil
+
+---@type ModelKey
+ModelKey.LANTERN_HURRICANE_HANDLE_UP_ON = nil
 
 ---@type ModelKey
 ModelKey.LANTERN_HURRICANE_SILVER = nil
@@ -5605,13 +5632,22 @@ ModelKey.LANTERN_HURRICANE_SILVER = nil
 ModelKey.LANTERN_HURRICANE_SILVER_HANDLE_UP = nil
 
 ---@type ModelKey
+ModelKey.LANTERN_HURRICANE_SILVER_HANDLE_UP_ON = nil
+
+---@type ModelKey
 ModelKey.LANTERN_IMPROVISED = nil
+
+---@type ModelKey
+ModelKey.LANTERN_IMPROVISED_ON = nil
 
 ---@type ModelKey
 ModelKey.LANTERN_PROPANE = nil
 
 ---@type ModelKey
 ModelKey.LANTERN_PROPANE_HANDLE_UP = nil
+
+---@type ModelKey
+ModelKey.LANTERN_PROPANE_HANDLE_UP_ON = nil
 
 ---@type ModelKey
 ModelKey.LARD_GROUND = nil
@@ -7400,6 +7436,9 @@ ModelKey.PEN_LIGHT = nil
 
 ---@type ModelKey
 ModelKey.PEN_LIGHT_HAND = nil
+
+---@type ModelKey
+ModelKey.PEN_LIGHT_HAND_ON = nil
 
 ---@type ModelKey
 ModelKey.PEN_MULTICOLOR = nil

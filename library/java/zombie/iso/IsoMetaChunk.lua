@@ -35,6 +35,14 @@ function __IsoMetaChunk:getAssociatedBuildingAt(x, y) end
 ---@param y integer
 ---@param w integer
 ---@param h integer
+---@param includeEmptyOutside boolean
+---@param result ArrayList<BuildingDef>
+function __IsoMetaChunk:getBuildingsIntersecting(x, y, w, h, includeEmptyOutside, result) end
+
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
 ---@param result ArrayList<BuildingDef>
 function __IsoMetaChunk:getBuildingsIntersecting(x, y, w, h, result) end
 
@@ -52,6 +60,14 @@ function __IsoMetaChunk:getLootZombieIntensity() end
 ---@param z integer
 ---@return RoomDef
 function __IsoMetaChunk:getRoomAt(x, y, z) end
+
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
+---@param includeEmptyOutside boolean
+---@param result ArrayList<RoomDef>
+function __IsoMetaChunk:getRoomsIntersecting(x, y, w, h, includeEmptyOutside, result) end
 
 ---@param x integer
 ---@param y integer

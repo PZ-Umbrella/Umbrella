@@ -195,8 +195,9 @@ function __GameTime:getRealworldSecondsSinceLastUpdate() end
 ---@return number
 function __GameTime:getServerMultiplier() end
 
+---@param playerIndex integer
 ---@return integer
-function __GameTime:getSkyLightLevel() end
+function __GameTime:getSkyLightLevel(playerIndex) end
 
 ---Day of the month the game started on as defined by sandbox options. The value will change if sandbox options are changed, so getNightsSurvived() or getWorldAgeHours() should be used instead to determine the age of the world.
 ---@return integer # 0 indexed day of the month the game started on.

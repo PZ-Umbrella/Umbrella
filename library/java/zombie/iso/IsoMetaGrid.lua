@@ -71,6 +71,14 @@ function __IsoMetaGrid:getBuildings() end
 ---@param y integer
 ---@param w integer
 ---@param h integer
+---@param includeEmptyOutside boolean
+---@param result ArrayList<BuildingDef>
+function __IsoMetaGrid:getBuildingsIntersecting(x, y, w, h, includeEmptyOutside, result) end
+
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
 ---@param result ArrayList<BuildingDef>
 function __IsoMetaGrid:getBuildingsIntersecting(x, y, w, h, result) end
 
@@ -171,6 +179,14 @@ function __IsoMetaGrid:getRoomByID(roomID) end
 ---@param roomID integer
 ---@return RoomDef
 function __IsoMetaGrid:getRoomDefByID(roomID) end
+
+---@param x integer
+---@param y integer
+---@param w integer
+---@param h integer
+---@param includeEmptyOutside boolean
+---@param roomDefs ArrayList<RoomDef>
+function __IsoMetaGrid:getRoomsIntersecting(x, y, w, h, includeEmptyOutside, roomDefs) end
 
 ---@param x integer
 ---@param y integer

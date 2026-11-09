@@ -187,6 +187,10 @@ function __IsoChunk:getScavengeZone() end
 ---@return kahlua.Array<IsoGridSquare>
 function __IsoChunk:getSquaresForLevel(worldSquareZ) end
 
+---@param sqlId integer
+---@return BaseVehicle
+function __IsoChunk:getVehicleWithSqlId(sqlId) end
+
 ---@return VisibilityPolygon2.ChunkData
 function __IsoChunk:getVispolyData() end
 
@@ -207,6 +211,10 @@ function __IsoChunk:hasFence() end
 ---@param object IsoObject
 ---@return boolean
 function __IsoChunk:hasObjectAmbientEmitter(object) end
+
+---@param sqlId integer
+---@return boolean
+function __IsoChunk:hasVehicleWithSqlId(sqlId) end
 
 ---@return boolean
 function __IsoChunk:hasWaterSquare() end

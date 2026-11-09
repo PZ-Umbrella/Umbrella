@@ -572,12 +572,6 @@ ClimateManager.PacketUpdateClimateVars = nil
 ClimateManager.PacketWeatherUpdate = nil
 
 ---@type boolean
-ClimateManager.aStormIsComing = nil
-
----@type boolean
-ClimateManager.theDescendingFog = nil
-
----@type boolean
 ClimateManager.winterIsComing = nil
 
 ---@param val number

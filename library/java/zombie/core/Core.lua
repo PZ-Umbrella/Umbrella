@@ -217,7 +217,7 @@ function __Core:getDefaultZoomLevels() end
 ---@return string
 function __Core:getGameAndBuildVersion() end
 
----@return string
+---@return GameMode
 function __Core:getGameMode() end
 
 ---@return GameVersion
@@ -609,9 +609,6 @@ function __Core:getOptionStreamerMode() end
 function __Core:getOptionTemperatureDisplayCelsius() end
 
 ---@return boolean
-function __Core:getOptionTexture2x() end
-
----@return boolean
 function __Core:getOptionTextureCompression() end
 
 ---@return boolean
@@ -673,9 +670,6 @@ function __Core:getOptionWorldMapBrightness() end
 
 ---@return boolean
 function __Core:getOptionZoom() end
-
----@return string
-function __Core:getOptionZoomLevels1x() end
 
 ---@return string
 function __Core:getOptionZoomLevels2x() end
@@ -827,9 +821,6 @@ function __Core:isDisplayPlayerModel() end
 function __Core:isDoingTextEntry() end
 
 ---@return boolean
-function __Core:isDoneNewSaveFolder() end
-
----@return boolean
 function __Core:isFlashIsoCursor() end
 
 ---@return boolean
@@ -874,6 +865,12 @@ function __Core:isOptionShowChatTimestamp() end
 
 ---@return boolean
 function __Core:isOptionShowChatTitle() end
+
+---@return boolean
+function __Core:isOptionShowConnectionInfo() end
+
+---@return boolean
+function __Core:isOptionShowServerInfo() end
 
 ---@param bZombie boolean
 ---@return boolean
@@ -922,6 +919,9 @@ function __Core:isToggleToRun() end
 function __Core:isToggleToSprint() end
 
 ---@return boolean
+function __Core:isTutorial() end
+
+---@return boolean
 function __Core:isTutorialDone() end
 
 ---@return boolean
@@ -935,9 +935,6 @@ function __Core:isZoomEnabled() end
 
 ---@return boolean
 function __Core:loadOptions() end
-
----@return boolean
-function __Core:loadOptions_OLD() end
 
 ---@return boolean
 function __Core:loadedShader() end
@@ -1004,9 +1001,6 @@ function __Core:setDisplayCursor(display) end
 ---@param display boolean
 function __Core:setDisplayPlayerModel(display) end
 
----@param doneNewSaveFolder boolean
-function __Core:setDoneNewSaveFolder(doneNewSaveFolder) end
-
 ---@param flashIsoCursor boolean
 function __Core:setFlashIsoCursor(flashIsoCursor) end
 
@@ -1017,6 +1011,9 @@ function __Core:setForceSnow(forceSnow) end
 function __Core:setFramerate(index) end
 
 ---@param gameMode string
+function __Core:setGameMode(gameMode) end
+
+---@param gameMode GameMode
 function __Core:setGameMode(gameMode) end
 
 ---@param goodHighlitedColor ColorInfo
@@ -1294,6 +1291,9 @@ function __Core:setOptionShowChatTimestamp(optionShowChatTimestamp) end
 ---@param optionShowChatTitle boolean
 function __Core:setOptionShowChatTitle(optionShowChatTitle) end
 
+---@param optionShowConnectionInfo boolean
+function __Core:setOptionShowConnectionInfo(optionShowConnectionInfo) end
+
 ---@param b boolean
 function __Core:setOptionShowCraftingXP(b) end
 
@@ -1308,6 +1308,9 @@ function __Core:setOptionShowItemModInfo(b) end
 
 ---@param show boolean
 function __Core:setOptionShowReticleTexture(show) end
+
+---@param optionShowServerInfo boolean
+function __Core:setOptionShowServerInfo(optionShowServerInfo) end
 
 ---@param b boolean
 function __Core:setOptionShowSurvivalGuide(b) end
@@ -1336,9 +1339,6 @@ function __Core:setOptionSoundVolume(volume) end
 
 ---@param b boolean
 function __Core:setOptionStreamerMode(b) end
-
----@param b boolean
-function __Core:setOptionTexture2x(b) end
 
 ---@param b boolean
 function __Core:setOptionTextureCompression(b) end
@@ -1406,9 +1406,6 @@ function __Core:setOptionWorldMapBrightness(d) end
 
 ---@param zoom boolean
 function __Core:setOptionZoom(zoom) end
-
----@param levels string
-function __Core:setOptionZoomLevels1x(levels) end
 
 ---@param levels string
 function __Core:setOptionZoomLevels2x(levels) end
@@ -1604,9 +1601,6 @@ Core.exiting = nil
 Core.gameMap = nil
 
 ---@type string
-Core.gameMode = nil
-
----@type string
 Core.gameSaveWorld = nil
 
 ---@type integer
@@ -1641,9 +1635,6 @@ Core.initialHeight = nil
 
 ---@type number
 Core.initialWidth = nil
-
----@type boolean
-Core.lastStand = nil
 
 ---@type integer
 Core.maxJukeBoxesActive = nil
@@ -1728,13 +1719,14 @@ function Core.isDevMode() end
 function Core.isImGui() end
 
 ---@return boolean
-function Core.isLastStand() end
-
----@return boolean
 function Core.isUseGameViewport() end
 
 ---@return boolean
 function Core.isUseViewports() end
+
+---@param sha string
+---@param revision string
+function Core.setDevGitVersion(sha, revision) end
 
 ---@param width integer
 ---@param height integer
